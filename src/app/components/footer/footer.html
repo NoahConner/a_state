@@ -1,0 +1,236 @@
+<div class="footerMain">
+  <div class="container">
+    <div class="fupper row">
+      <div class="col" *ngFor="let section of insuranceMenu">
+        <!-- Heading -->
+        <div class="head1">
+          {{ section.title }}
+        </div>
+
+        <!-- Sub headings -->
+        <div class="subH" *ngFor="let item of section.items">
+          <a href="#">
+            {{ item }}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="fupper2">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item" *ngFor="let section of insuranceMenu; index as i">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              [class.collapsed]="i !== 0"
+              type="button"
+              data-bs-toggle="collapse"
+              [attr.data-bs-target]="'#collapseOne-' + i"
+              [attr.aria-expanded]="i === 0"
+              [attr.aria-controls]="'collapseOne-' + i"
+            >
+              {{ section.title }}
+            </button>
+          </h2>
+
+          <div
+            class="accordion-collapse"
+            [attr.id]="'collapseOne-' + i"
+            data-bs-parent="#accordionExample"
+            [class.collapse]="i !== 0"
+            [class.show]="i === 0"
+          >
+            <div class="accordion-body">
+              <div class="subH" *ngFor="let item of section.items">
+                <a href="#">
+                  {{ item }}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="upperLink">
+      <div class="uph">Quick Links</div>
+    </div>
+
+    <div class="subUppers">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="homeNav">
+            <div class="subupH">
+              <a href="#">Home</a>
+            </div>
+            <div class="subupH">
+              <a href="#">About Us</a>
+            </div>
+            <div class="subupH">
+              <a href="#">Insurance Service</a>
+            </div>
+            <div class="subupH">
+              <a href="#">Contact Us</a>
+            </div>
+            <div class="subupH">
+              <a href="#">Get a Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="otherLinks">
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+          <div class="row">
+            <div class="col-lg-3 col-sm-6">
+              <div class="uuper">
+                <div class="icon">
+                  <img src="/assets/images/location.png" alt="" />
+                </div>
+                <div class="uph red">Main office location</div>
+              </div>
+              <div class="lower">
+                <div class="icon"></div>
+                <a href="#" class="uph">707 Shotwell St Houston Tx 77020</a>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6">
+              <div class="uuper">
+                <div class="icon">
+                  <img src="/assets/images/location.png" alt="" />
+                </div>
+                <div class="uph">Southwest</div>
+              </div>
+              <div class="lower">
+                <div class="icon"></div>
+                <a href="#" class="uph">11503 Southwest Fwy Ste B Houston Tx 77031</a>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6">
+              <div class="uuper">
+                <div class="icon">
+                  <img src="/assets/images/location.png" alt="" />
+                </div>
+                <div class="uph">Antoine</div>
+              </div>
+              <div class="lower">
+                <div class="icon"></div>
+                <a href="#" class="uph">5712 Antoine Dr Houston Tx 77091</a>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6">
+              <div class="uuper">
+                <div class="icon">
+                  <img src="/assets/images/location.png" alt="" />
+                </div>
+                <div class="uph">Houston</div>
+              </div>
+              <div class="lower">
+                <div class="icon"></div>
+                <a href="#" class="uph">5206 Airline Dr, Ste G Houston, TX 77022</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-lg-3 col-sm-6">
+              <div class="uuper">
+                <div class="icon">
+                  <img src="/assets/images/location.png" alt="" />
+                </div>
+                <div class="uph">Shotwell</div>
+              </div>
+              <div class="lower">
+                <div class="icon"></div>
+                <a href="#" class="uph">707 Shotwell St Houston Tx 77020</a>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6">
+              <div class="uuper">
+                <div class="icon">
+                  <img src="/assets/images/location.png" alt="" />
+                </div>
+                <div class="uph">S Post Oak</div>
+              </div>
+              <div class="lower">
+                <div class="icon"></div>
+                <a href="#" class="uph">10547 S Post Oak Rd Houston Tx 77035</a>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6">
+              <div class="uuper">
+                <div class="icon">
+                  <img src="/assets/images/location.png" alt="" />
+                </div>
+                <div class="uph">Cullen</div>
+              </div>
+              <div class="lower">
+                <div class="icon"></div>
+                <a href="#" class="uph">9421 Cullen Blvd ste B Houston TX 77051</a>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6">
+              <div class="uuper">
+                <div class="icon">
+                  <i class="far fa-clock"></i>
+                </div>
+                <div class="uph red">Office business hours</div>
+              </div>
+              <div class="lower">
+                <div class="icon"></div>
+                <div href="#" class="timee">Mon – Sat: 9AM – 7PM Sunday: Closed</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lastRite">
+      <div class="block1">
+        <div class="b1">
+          <div class="icn">
+            <img src="/assets/images/policy.png" alt="" />
+          </div>
+          <div class="he">Privacy Policy</div>
+        </div>
+
+        <div class="b1">
+          <div class="icn">
+            <img src="/assets/images/terms.png" alt="" />
+          </div>
+          <div class="he">Terms & Conditions</div>
+        </div>
+      </div>
+      <div class="block1">
+        <div class="left">24/7 Customer support</div>
+        <div class="right">
+          <div class="opp">(713) 357- 7771</div>
+          <div class="opp">(713) 357- 7771</div>
+        </div>
+      </div>
+      <div class="block1">
+        <div class="imagess">
+          <img src="/assets/images/insta.png" alt="" />
+          <img src="/assets/images/fb.png" alt="" />
+        </div>
+        <div class="b1">
+          <div class="icn">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="he">info@astateins.com</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="laster">© 2026, A-State Insurance. All rights reserved</div>
