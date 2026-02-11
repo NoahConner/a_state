@@ -430,7 +430,7 @@
 }
 
 
-.feature-card-height{
+.feature-card-height {
   height: 200px;
 }
 
@@ -468,15 +468,6 @@
     font-size: 2.5rem;
     margin-bottom: 1rem;
   }
-
-  .seprator {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-
-
-  }
-
-
-
 
   .solution-card {
     background-color: rgba(255, 255, 255, 0);
@@ -542,8 +533,146 @@
     }
   }
 }
+
 // End Solutions Section Styles
 
+// Working Section
+
+.insurance-section {
+  min-height: 100vh;
+
+  .vertical-line {
+    position: absolute;
+    left: 45px;
+    top: 20px;
+    bottom: 20px;
+    width: 2px;
+    background-color: #ff2f2f;
+    z-index: 0;
+  }
+
+  .insurance-card {
+    background-color: #fff;
+    border-radius: 8px;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.2s;
+    box-shadow: 0 5px 5px rgba(255, 196, 0, 0.274), inset 0 0 0 rgba(255, 255, 255, 0);
+    padding: 20px;
+
+    &:hover {
+      transform: translateX(5px);
+    }
+  }
+
+  .step-number {
+    background-color: #ca2b28;
+    color: white;
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 8px rgba(#ca2b28, 0.3);
+  }
+
+  h2 {
+    font-weight: 600;
+  }
+
+  .working-heading h5 {
+    font-size: 28px;
+    font-weight: 550 !important;
+    font-family: "Afacad";
+  }
+
+  .working-heading p {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Afacad";
+  }
+}
+
+
+.testimonials {
+  position: relative;
+  background: #fff;
+
+  .header-banner {
+    position: absolute;
+    top: 0;
+    right: -293px;
+    width: 62%;
+    height: 78px;
+    z-index: 0;
+
+  }
+
+  .section-title {
+    position: relative;
+    z-index: 1;
+    color: #CA2B28;
+    font-size: 35px;
+    font-weight: 400;
+  }
+
+  .testimonial-card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    background-color: #F8F2F2;
+
+    &:hover {
+      background-color: #CA2B28;
+      color: white;
+      border-color: #c12a36;
+
+      .testimonial-text {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .quote-icon {
+        font-size: 2rem;
+        opacity: 0.8;
+        color: white;
+      }
+    }
+
+    &:not(:hover) {
+      .testimonial-text {
+        color: #555;
+      }
+    }
+  }
+
+  .testimonial-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .pagination-dots {
+    gap: 8px;
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: #ddd;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+
+      &.active {
+        background-color: #bbb;
+        width: 12px; // Slightly larger active dot
+        height: 12px;
+      }
+    }
+  }
+}
 
 @media only screen and (max-width: 768px) {
   .feature-card {
@@ -755,7 +884,7 @@
 
 
 @media only screen and (max-width: 768px) {
-  .texan-choose-image{
+  .texan-choose-image {
     background-image: none !important;
     background: none !important;
     background-color: transparent !important;
@@ -763,7 +892,7 @@
 }
 
 @media only screen and (max-width: 420px) {
-  .texan-choose-image{
+  .texan-choose-image {
     background-image: none !important;
     background: none !important;
     background-color: transparent !important;
@@ -775,4 +904,3 @@
     padding-bottom: 1rem;
   }
 }
-
