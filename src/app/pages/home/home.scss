@@ -534,12 +534,32 @@
   }
 }
 
-// End Solutions Section Styles
 
 // Working Section
-
 .insurance-section {
   min-height: 100vh;
+    position: relative;
+
+  .bg-shape {
+      position: absolute;
+      z-index: 1; 
+      pointer-events: none; 
+    }
+  
+    .shape-left {
+    left: -89px;
+      top: 39%;
+      height: auto;
+      transform: translateY(-20%);
+      width: auto;
+    }
+  
+    .shape-right {
+    right: -4px;
+      top: 10px;
+      width: auto;
+      height: auto;
+    }
 
   .vertical-line {
     position: absolute;
@@ -566,18 +586,18 @@
   }
 
   .step-number {
-    background-color: #ca2b28;
-    color: white;
-    width: 50px;
-    height: 50px;
-    min-width: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 1.1rem;
-    box-shadow: 0 4px 8px rgba(#ca2b28, 0.3);
+background-color: #ca2b28;
+  color: white;
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+  font-size: 20px;
+  box-shadow: 0 4px 8px rgba(202, 43, 40, 0.3);
   }
 
   h2 {
@@ -597,7 +617,7 @@
   }
 }
 
-
+// Testimonials
 .testimonials {
   position: relative;
   background: #fff;
@@ -625,12 +645,18 @@
     transition: all 0.3s ease;
     border: 2px solid transparent;
     background-color: #F8F2F2;
+    
+      .quote-icon {
+          font-size: 2rem;
+          opacity: 0.8;
+          color: #111111;
+          transform: rotate(-23deg);
+          font-size: 40px;
+        }
 
     &:hover {
       background-color: #CA2B28;
       color: white;
-      border-color: #c12a36;
-
       .testimonial-text {
         color: rgba(255, 255, 255, 0.9);
       }
@@ -639,14 +665,15 @@
         font-size: 2rem;
         opacity: 0.8;
         color: white;
+            transform: rotate(-23deg);
+              font-size: 40px;
       }
     }
+  }
 
-    &:not(:hover) {
-      .testimonial-text {
-        color: #555;
-      }
-    }
+  .testimonial-heading{
+      margin-top: 31px;
+      font-size: 24px;
   }
 
   .testimonial-text {
@@ -663,11 +690,10 @@
       background-color: #ddd;
       border-radius: 50%;
       display: inline-block;
-      cursor: pointer;
 
       &.active {
         background-color: #bbb;
-        width: 12px; // Slightly larger active dot
+        width: 12px;
         height: 12px;
       }
     }
