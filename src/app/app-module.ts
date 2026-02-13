@@ -10,9 +10,10 @@ import { App } from './app';
 import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
 import { Home } from './pages/home/home';
+import { Contact } from './pages/contact/contact';
 
 @NgModule({
-  declarations: [App, Header, Footer, Home],
+  declarations: [App, Header, Footer, Home, Contact],
   imports: [
     BrowserModule,
     HttpClientModule,

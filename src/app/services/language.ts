@@ -1,6 +1,8 @@
 import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
+import { Router } from '@angular/router';
+import { routeTranslations } from '../app-routing-module';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +14,7 @@ export class Language {
   constructor(
     private translate: TranslateService,
     @Inject(PLATFORM_ID) private platformId: Object,
+    private router: Router,
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
     this.initLanguage();
@@ -35,14 +38,35 @@ export class Language {
   }
 
   setLanguage(lang: string) {
-    this.translate.use(lang);
+    const currentUrl = this.router.url.split('/').filter(Boolean);
 
+    let currentLang = 'en';
+    let currentSlug = currentUrl[0];
+
+    if (currentUrl[0] === 'es') {
+      currentLang = 'es';
+      currentSlug = currentUrl[1];
+    }
+
+    // Find which logical page we're on
+    const routeKey = Object.keys(routeTranslations).find(
+      (key) => routeTranslations[key][currentLang] === currentSlug,
+    );
+
+    if (routeKey) {
+      const newSlug = routeTranslations[routeKey][lang];
+      if (lang === 'en') {
+        this.router.navigate([newSlug]);
+      } else {
+        this.router.navigate([lang, newSlug]);
+      }
+    }
+
+    // Update translation
+    this.translate.use(lang);
     if (this.isBrowser) {
       localStorage.setItem('lang', lang);
-
-      // ✅ Only manipulate document if in browser
       document.documentElement.lang = lang;
-      document.documentElement.dir = 'ltr'; // For English & Spanish
     }
   }
 
