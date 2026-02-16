@@ -8,29 +8,11 @@ import { Component } from '@angular/core';
 })
 export class Home {
   chips = [
-    {
-      name: 'Auto',
-      icon: 'fas fa-car',
-    },
-    {
-      name: 'Homeowners',
-      icon: 'fas fa-car',
-    },
-    {
-      name: 'Commercial',
-      icon: 'fas fa-car',
-    },
-    {
-      name: 'Life',
-      icon: 'fas fa-car',
-    },
-    {
-      name: 'Health',
-      icon: 'fas fa-car',
-    },
-    {
-      name: 'Surety Bonds',
-      icon: 'fas fa-car',
-    },
+    { name: 'HOME.BANNER.CHIPS.AUTO', icon: 'fas fa-car' },
+    { name: 'HOME.BANNER.CHIPS.HOMEOWNERS', icon: 'fas fa-house' },
+    { name: 'HOME.BANNER.CHIPS.COMMERCIAL', icon: 'fas fa-building' },
+    { name: 'HOME.BANNER.CHIPS.LIFE', icon: 'fas fa-heart' },
+    { name: 'HOME.BANNER.CHIPS.HEALTH', icon: 'fas fa-notes-medical' },
+    { name: 'HOME.BANNER.CHIPS.SURETY', icon: 'fas fa-file-contract' },
   ];
 }

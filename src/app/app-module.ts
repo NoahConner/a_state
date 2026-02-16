@@ -11,9 +11,10 @@ import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
 import { Home } from './pages/home/home';
 import { Contact } from './pages/contact/contact';
+import { TestimonialSliderComponent } from './components/testimonial-slider/testimonial-slider';
 
 @NgModule({
-  declarations: [App, Header, Footer, Home, Contact],
+  declarations: [App, Header, Footer, Home, Contact, TestimonialSliderComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

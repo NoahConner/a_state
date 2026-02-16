@@ -632,6 +632,26 @@ background-color: #ca2b28;
 
   }
 
+        .carousel-indicators {
+          margin-bottom: 0;
+    
+          .dot {
+            width: 10px;
+            height: 10px;
+            background-color: #ddd;
+            border-radius: 50%;
+            border: none; 
+            opacity: 1;
+            transition: all 0.3s ease;
+    
+            &.active {
+              background-color: #CA2B28; 
+              width: 12px;
+              height: 12px;
+            }
+          }
+        }
+
   .section-title {
     position: relative;
     z-index: 1;

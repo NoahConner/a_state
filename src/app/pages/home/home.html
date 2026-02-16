@@ -4,22 +4,36 @@
       <div class="topSub">
         <div class="topSub2">
           <div class="h1">
-            Texas Insurance Made Simple – <br />
-            Coverage for Everyone
+            {{ 'HOME.BANNER.TITLE_LINE1' | translate }} <br />
+            {{ 'HOME.BANNER.TITLE_LINE2' | translate }}
           </div>
+
           <div class="selectable">
             @for (item of chips; track item.name) {
             <div class="chip">
-              <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name }}</span>
+              <i class="{{ item.icon }}"></i>
+              <span>{{ item.name | translate }}</span>
             </div>
             }
           </div>
+
           <div class="inps">
-            <input type="text" placeholder="Full Name" class="form-control" />
-            <input type="number" placeholder="Phone Number" class="form-control" />
+            <input
+              type="text"
+              [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate"
+              class="form-control"
+            />
+
+            <input
+              type="number"
+              [placeholder]="'HOME.BANNER.FORM.PHONE' | translate"
+              class="form-control"
+            />
           </div>
-          <button class="btn">Get a Quote</button>
+
+          <button class="btn">
+            {{ 'HOME.BANNER.FORM.BUTTON' | translate }}
+          </button>
         </div>
       </div>
     </div>
@@ -28,26 +42,30 @@
   <!-- Why Texans Choose A-State Insurance -->
 
   <div class="texan-choose-image">
-    <div class="container py-5 mt-5 ">
+    <div class="container py-5 mt-5">
       <div class="row mb-5 text-center">
         <div class="col-12">
-          <h3 class="heading">Why Texans Choose<strong> A-State Insurance</strong></h3>
+          <h3 class="heading">
+            {{ 'WHY_CHOOSE.HEADING' | translate }}
+            <strong> {{ 'WHY_CHOOSE.HEADING_STRONG' | translate }} </strong>
+          </h3>
         </div>
       </div>
-      <div class=" gap-m">
+      <div class="gap-m">
         <!-- card start -->
-        <div class="row mb-2 ">
+        <div class="row mb-2">
           <div class="col px-4">
             <div class="feature-card feature-card-height">
               <div class="icon-wrapper">
-
-                <img src="../assets/images/carbon_license.png" alt="Car Icon">
+                <img src="../assets/images/carbon_license.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">Texas Licensed Brokers</h5>
-                <p class="card-text">Our insurance agency compares trusted carriers and guides you to the right,
-                  reliable
-                  coverage at the best rates.</p>
+                <h5 class="card-title">
+                  {{ 'WHY_CHOOSE.CARD1.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'WHY_CHOOSE.CARD1.DESC' | translate }}
+                </p>
               </div>
             </div>
           </div>
@@ -55,29 +73,33 @@
           <div class="col px-4">
             <div class="feature-card feature-card-height">
               <div class="icon-wrapper">
-                <img src="../assets/images/Heart.png" alt="Car Icon">
-
+                <img src="../assets/images/Heart.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">Hispanic & Latino Friendly</h5>
-                <p class="card-text">A supportive insurance agency in Texas that genuinely respects Hispanic and Latino
-                  communities, culture, and priorities.</p>
+                <h5 class="card-title">
+                  {{ 'WHY_CHOOSE.CARD2.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'WHY_CHOOSE.CARD2.DESC' | translate }}
+                </p>
               </div>
             </div>
           </div>
         </div>
 
         <div class="row mb-2">
-
           <div class="col px-4">
             <div class="feature-card feature-card-height">
               <div class="icon-wrapper">
-                <img src="../assets/images/calendar.png" alt="Car Icon">
+                <img src="../assets/images/calendar.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">20+ Years Serving Texans</h5>
-                <p class="card-text">Over two decades of experience protecting Texas families, their homes, vehicles,
-                  businesses, and personal well-being.</p>
+                <h5 class="card-title">
+                  {{ 'WHY_CHOOSE.CARD3.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'WHY_CHOOSE.CARD3.DESC' | translate }}
+                </p>
               </div>
             </div>
           </div>
@@ -85,29 +107,33 @@
           <div class="col px-4">
             <div class="feature-card feature-card-height">
               <div class="icon-wrapper">
-                <img src="../assets/images/price.png" alt="Car Icon">
+                <img src="../assets/images/price.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">Custom Coverage Plans</h5>
-                <p class="card-text">Coverage plans carefully shaped around your needs, lifestyle, budget, and potential
-                  risks for complete protection.</p>
+                <h5 class="card-title">
+                  {{ 'WHY_CHOOSE.CARD4.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'WHY_CHOOSE.CARD4.DESC' | translate }}
+                </p>
               </div>
             </div>
           </div>
         </div>
 
         <div class="row mb-2">
-
           <div class="col px-4">
             <div class="feature-card feature-card-height">
               <div class="icon-wrapper">
-                <img src="../assets/images/wifi.png" alt="Car Icon">
+                <img src="../assets/images/wifi.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">Online & Local</h5>
-                <p class="card-text">Get expert advice online or visit a familiar face at our local TX office—neighbors
-                  who
-                  know your community's needs.</p>
+                <h5 class="card-title">
+                  {{ 'WHY_CHOOSE.CARD5.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'WHY_CHOOSE.CARD5.DESC' | translate }}
+                </p>
               </div>
             </div>
           </div>
@@ -115,25 +141,24 @@
           <div class="col px-4">
             <div class="feature-card feature-card-height">
               <div class="icon-wrapper">
-                <img src="../assets/images/agents.png" alt="Car Icon">
+                <img src="../assets/images/agents.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">Multilingual Agents</h5>
-                <p class="card-text">Professional multilingual agents explain every option clearly in English, Spanish,
-                  and
-                  Hindi, ensuring understanding and confidence.</p>
+                <h5 class="card-title">
+                  {{ 'WHY_CHOOSE.CARD6.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'WHY_CHOOSE.CARD6.DESC' | translate }}
+                </p>
               </div>
             </div>
           </div>
         </div>
 
         <!-- card end -->
-
       </div>
     </div>
   </div>
-
-
 
   <!-- Our Insurance Solutions -->
   <div class="solutions-section">
@@ -141,7 +166,9 @@
     <div class="container position-relative">
       <div class="row mb-5 text-center">
         <div class="col-12">
-          <h2 class="section-title">Our Insurance Solutions</h2>
+          <h2 class="section-title">
+            {{ 'INSURANCE_SOLUTIONS.TITLE' | translate }}
+          </h2>
         </div>
       </div>
       <div class="row g-4">
@@ -149,14 +176,17 @@
           <div class="solution-card">
             <div class="d-flex align-items-start">
               <div class="icon-box">
-                <img src="../assets/images/car.png" alt="Car Icon">
+                <img src="../assets/images/car.png" alt="Car Icon" />
                 <!-- <i class="fas fa-car"></i> -->
               </div>
               <div class="card-content">
-                <h5 class="solution-title">Auto Insurance</h5>
-                <p class="solution-text">From daily commutes to Texas road trips, the right auto coverage keeps the
-                  focus
-                  on the drive. It’s about finding reliable protection for you and your passengers.</p>
+                <h5 class="solution-title">
+                  {{ 'INSURANCE_SOLUTIONS.AUTO.TITLE' | translate }}
+                </h5>
+
+                <p class="solution-text">
+                  {{ 'INSURANCE_SOLUTIONS.AUTO.DESC' | translate }}
+                </p>
               </div>
             </div>
           </div>
@@ -166,13 +196,16 @@
           <div class="solution-card seprator">
             <div class="d-flex align-items-start">
               <div class="icon-box">
-                <img src="../assets/images/house.png" alt="Car Icon">
-
+                <img src="../assets/images/house.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="solution-title">Homeowners Insurance</h5>
-                <p class="solution-text">Your home is your sanctuary. Finding the right coverage for your belongings and
-                  family provides peace of mind, ensuring you’re prepared for any unexpected turns.</p>
+                <h5 class="solution-title">
+                  {{ 'INSURANCE_SOLUTIONS.HOME.TITLE' | translate }}
+                </h5>
+
+                <p class="solution-text">
+                  {{ 'INSURANCE_SOLUTIONS.HOME.DESC' | translate }}
+                </p>
               </div>
             </div>
           </div>
@@ -182,14 +215,16 @@
           <div class="solution-card seprator">
             <div class="d-flex align-items-start">
               <div class="icon-box">
-                <img src="../assets/images/commercial.png" alt="Car Icon">
-
+                <img src="../assets/images/commercial.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="solution-title">Commercial Insurance</h5>
-                <p class="solution-text">Protecting what you’ve built takes more than just hard work. The right
-                  commercial
-                  coverage helps Texas business owners safeguard their property, teams, and legacy.</p>
+                <h5 class="solution-title">
+                  {{ 'INSURANCE_SOLUTIONS.COMMERCIAL.TITLE' | translate }}
+                </h5>
+
+                <p class="solution-text">
+                  {{ 'INSURANCE_SOLUTIONS.COMMERCIAL.DESC' | translate }}
+                </p>
               </div>
             </div>
           </div>
@@ -199,13 +234,16 @@
           <div class="solution-card">
             <div class="d-flex align-items-start">
               <div class="icon-box">
-                <img src="../assets/images/life.png" alt="Car Icon">
+                <img src="../assets/images/life.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="solution-title">Life Insurance</h5>
-                <p class="solution-text">Protecting your family’s future is about more than just finances. The right
-                  life
-                  insurance offers a way to ensure your loved ones are cared for, no matter what.</p>
+                <h5 class="solution-title">
+                  {{ 'INSURANCE_SOLUTIONS.LIFE.TITLE' | translate }}
+                </h5>
+
+                <p class="solution-text">
+                  {{ 'INSURANCE_SOLUTIONS.LIFE.DESC' | translate }}
+                </p>
               </div>
             </div>
           </div>
@@ -215,13 +253,16 @@
           <div class="solution-card">
             <div class="d-flex align-items-start">
               <div class="icon-box">
-                <img src="../assets/images/health.png" alt="Car Icon">
+                <img src="../assets/images/health.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="solution-title">Health Insurance</h5>
-                <p class="solution-text">Prioritizing your health is the first step toward a secure future. Finding a
-                  plan
-                  that fits your lifestyle helps ensure you have access to the care you need.</p>
+                <h5 class="solution-title">
+                  {{ 'INSURANCE_SOLUTIONS.HEALTH.TITLE' | translate }}
+                </h5>
+
+                <p class="solution-text">
+                  {{ 'INSURANCE_SOLUTIONS.HEALTH.DESC' | translate }}
+                </p>
               </div>
             </div>
           </div>
@@ -231,12 +272,16 @@
           <div class="solution-card seprator">
             <div class="d-flex align-items-start">
               <div class="icon-box">
-                <img src="../assets/images/secure.png" alt="Car Icon">
+                <img src="../assets/images/secure.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="solution-title">Surety Bonds</h5>
-                <p class="solution-text">Surety bonds play a vital role in building professional trust. Having the right
-                  bond in place helps Texas businesses meet legal and contract requirements.</p>
+                <h5 class="solution-title">
+                  {{ 'INSURANCE_SOLUTIONS.SURETY.TITLE' | translate }}
+                </h5>
+
+                <p class="solution-text">
+                  {{ 'INSURANCE_SOLUTIONS.SURETY.DESC' | translate }}
+                </p>
               </div>
             </div>
           </div>
@@ -244,7 +289,9 @@
       </div>
       <div class="row mt-5 text-end">
         <div class="col-12">
-          <button class="btn btn-see-all">See All Services</button>
+          <button class="btn btn-see-all">
+            {{ 'INSURANCE_SOLUTIONS.SEE_ALL' | translate }}
+          </button>
         </div>
       </div>
     </div>
@@ -260,24 +307,17 @@
               <div class="bar"></div>
               <div class="text">
                 <div class="h4">
-                  Every Story. Every Language. <br />
-                  Every Texan Protected.
+                  {{ 'EVERY_STORY.TITLE_LINE1' | translate }} <br />
+                  {{ 'EVERY_STORY.TITLE_LINE2' | translate }}
                 </div>
                 <p>
-                  At A-State Insurance, we believe everyone deserves coverage that fits their life,
-                  budget, and unique needs. From families to business owners, first-time buyers to
-                  long-time policyholders, our team ensures you have access to reliable protection.
-                  We offer support in English, Spanish, and Hindi, with multilingual agents ready to
-                  guide you through every insurance option with expertise and care.
+                  {{ 'EVERY_STORY.PARA1' | translate }}
                 </p>
+
                 <br />
+
                 <p>
-                  As one of Texas's top insurance agencies, we understand the needs of the Hispanic
-                  and Latino communities and provide tailored support that respects their culture
-                  and priorities. No matter your background, situation, or type of insurance (auto,
-                  home, commercial, life, health, or bonds), we make it simple to find coverage that
-                  works for you. Our mission is to protect what matters most while making the
-                  process easy for every Texan.
+                  {{ 'EVERY_STORY.PARA2' | translate }}
                 </p>
               </div>
             </div>
@@ -289,133 +329,86 @@
 
   <!-- Working With A State -->
   <div class="container-fluid py-5 insurance-section position-relative overflow-hidden">
-    <img src="../assets/images/insurance-left.png" class="bg-shape shape-left" alt="decoration">
-    <img src="../assets/images/insurance-right.png" class="bg-shape shape-right" alt="decoration">
-  
+    <img src="../assets/images/insurance-left.png" class="bg-shape shape-left" alt="decoration" />
+    <img src="../assets/images/insurance-right.png" class="bg-shape shape-right" alt="decoration" />
+
     <div class="container">
-      <h5 class="text-center mb-5 heading">Working With <strong>A-State Insurance</strong> Is Easy</h5>
-  
+      <h5 class="text-center mb-5 heading">
+        {{ 'WORKING_PROCESS.TITLE_LINE1' | translate }}
+        <strong>{{ 'WORKING_PROCESS.TITLE_STRONG' | translate }}</strong>
+        {{ 'WORKING_PROCESS.TITLE_LINE2' | translate }}
+      </h5>
+
       <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6 position-relative">
           <div class="vertical-line"></div>
-  
-          <div class="d-flex align-items-center mb-4 insurance-card p-3 ">
+
+          <div class="d-flex align-items-center mb-4 insurance-card p-3">
             <div class="step-number">01</div>
             <div class="ms-4 working-heading">
-              <h5 class="fw-bold mb-1">Reach Out</h5>
-              <p class="text-muted mb-0 small">Call, visit, or contact us online today to start your personalized
-                insurance journey with ease.</p>
+              <h5 class="fw-bold mb-1">
+                {{ 'WORKING_PROCESS.STEP1.TITLE' | translate }}
+              </h5>
+              <p class="text-muted mb-0 small">
+                {{ 'WORKING_PROCESS.STEP1.DESC' | translate }}
+              </p>
             </div>
           </div>
 
-<div class="d-flex align-items-center mb-4 insurance-card p-3 ">
-  <div class="step-number">02</div>
-  <div class="ms-4 working-heading">
-    <h5 class="fw-bold mb-1">Get Advice</h5>
-    <p class="text-muted mb-0 small">Our team at A-State Insurance reviews your needs and offers the best
-      insurance coverage options.</p>
-  </div>
-</div>
-
-  <div class="d-flex align-items-center mb-4 insurance-card p-3 ">
-    <div class="step-number">03</div>
-    <div class="ms-4 working-heading">
-      <h5 class="fw-bold mb-1">Pick Your Plan</h5>
-      <p class="text-muted mb-0 small">Choose the plan that fits your life, budget, and priorities, with clear
-        support at every step.</p>
-    </div>
-  </div>
-  
-  <div class="d-flex align-items-center insurance-card p-3 ">
-    <div class="step-number">04</div>
-    <div class="ms-4 working-heading">
-      <h5 class="fw-bold mb-1">We've Got You</h5>
-      <p class="text-muted mb-0 small">A-State Insurance ensures your coverage is active and protects what matters
-        most, hassle-free.</p>
-    </div>
-  </div>
-  
-  
-        </div>
-      </div>
-    </div>
-  </div>
-
-<!-- Testimonials Section -->
-  <section class="testimonials py-5 overflow-hidden">
-    <div class="container position-relative">
-      <div class="header-banner">
-        <img src="../assets/images/banner.png" alt="">
-      </div>
-
-      <h2 class="section-title mb-5">Hear From <span class="text-danger fw-bold">Texans</span> Like You</h2>
-
-      <div class="container" style="margin-top: 7rem;">
-    <div class="row g-4">
-      <div class="col-lg-4">
-        <div class="testimonial-card h-100 p-4 shadow-sm border-0">
-          <div class="d-flex justify-content-between align-items-start mb-3">
-            <h5 class="fw-bold testimonial-heading">Valeria Esquivel</h5>
-            <span class="quote-icon"><i class="fas fa-quote-right"></i></span>
+          <div class="d-flex align-items-center mb-4 insurance-card p-3">
+            <div class="step-number">02</div>
+            <div class="ms-4 working-heading">
+              <h5 class="fw-bold mb-1">
+                {{ 'WORKING_PROCESS.STEP2.TITLE' | translate }}
+              </h5>
+              <p class="text-muted mb-0 small">
+                {{ 'WORKING_PROCESS.STEP2.DESC' | translate }}
+              </p>
+            </div>
           </div>
-          <p class="testimonial-text">"Honestly, I was dreading shopping for car insurance, but Marisol made it so
-            easy. She didn't just dump a bunch of policies on me; she sat down and explained how each one protected my
-            kids. It felt like getting advice from a neighbor who actually cares. Truly a stress-free experience for
-            our family."</p>
-        </div>
-      </div>
-    
-      <div class="col-lg-4">
-        <div class="testimonial-card h-100 p-4 shadow-sm border-0 ">
-          <div class="d-flex justify-content-between align-items-start mb-3">
-            <h5 class="fw-bold testimonial-heading">Camila Castañeda</h5>
-            <span class="quote-icon"><i class="fas fa-quote-right"></i></span>
+
+          <div class="d-flex align-items-center mb-4 insurance-card p-3">
+            <div class="step-number">03</div>
+            <div class="ms-4 working-heading">
+              <h5 class="fw-bold mb-1">
+                {{ 'WORKING_PROCESS.STEP3.TITLE' | translate }}
+              </h5>
+              <p class="text-muted mb-0 small">
+                {{ 'WORKING_PROCESS.STEP3.DESC' | translate }}
+              </p>
+            </div>
           </div>
-          <p class="testimonial-text">"Buying our first home was a whirlwind, and the insurance part was honestly the
-            most confusing. I called and spoke with Diego, who took the time to explain what 'replacement cost'
-            actually meant for our little 1950s bungalow. It didn't feel like a sales pitch; it felt like a friend
-            making sure our new home was safe."</p>
-        </div>
-      </div>
-    
-      <div class="col-lg-4">
-        <div class="testimonial-card h-100 p-4 shadow-sm border-0 ">
-          <div class="d-flex justify-content-between align-items-start mb-3">
-            <h5 class="fw-bold testimonial-heading">Lucia Benavidez</h5>
-            <span class="quote-icon"><i class="fas fa-quote-right"></i></span>
+
+          <div class="d-flex align-items-center insurance-card p-3">
+            <div class="step-number">04</div>
+            <div class="ms-4 working-heading">
+              <h5 class="fw-bold mb-1">
+                {{ 'WORKING_PROCESS.STEP4.TITLE' | translate }}
+              </h5>
+              <p class="text-muted mb-0 small">
+                {{ 'WORKING_PROCESS.STEP4.DESC' | translate }}
+              </p>
+            </div>
           </div>
-          <p class="testimonial-text">"I've always known I needed life insurance for my kids, but I kept putting it
-            off because the paperwork was so intimidating. Speaking with Gabriel changed everything. Being able to go
-            back and forth between English and Spanish made it so much easier. Now, I can finally sleep better."</p>
         </div>
       </div>
     </div>
-      </div>
-  
+  </div>
 
-      <div class="pagination-dots d-flex justify-content-center mt-5">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
-    </div>
-  </section>
-
+  <!-- Testimonials Section -->
+  <app-testimonial-slider></app-testimonial-slider>
 
   <!-- get covered -->
   <div class="topBanner getCovver">
     <div class="container">
       <div class="topSub">
         <div class="topSub2">
-          <div class="h1">Get Covered in Texas Today</div>
+          <div class="h1">{{ 'COVERD.BANNER.TITLE' | translate }}</div>
           <div class="selectable mt-5">
             @for (item of chips.slice(0, 3); track item.name) {
             <div class="chip">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name }}</span>
+              <span>{{ item?.name | translate }}</span>
             </div>
             }
           </div>
@@ -423,15 +416,23 @@
             @for (item of chips.slice(3, 6); track item.name) {
             <div class="chip">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name }}</span>
+              <span>{{ item?.name | translate }}</span>
             </div>
             }
           </div>
           <div class="inps">
-            <input type="text" placeholder="Full Name" class="form-control" />
-            <input type="number" placeholder="Phone Number" class="form-control" />
+            <input
+              type="text"
+              [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate"
+              class="form-control"
+            />
+            <input
+              type="number"
+              [placeholder]="'HOME.BANNER.FORM.PHONE' | translate"
+              class="form-control"
+            />
           </div>
-          <button class="btn">Get a Quote</button>
+          <button class="btn">{{ 'COVERD.BANNER.FORM.BUTTON' | translate }}</button>
         </div>
       </div>
     </div>
@@ -451,7 +452,7 @@
             </div>
           </div>
           <div class="col-lg-6 col-sm-6 col-xs-12">
-            <div class="h4">We protect what matters to you.</div>
+            <div class="h4">{{ 'COVERD.FOOTUPPER.SLOGAN' | translate }}</div>
           </div>
         </div>
       </div>
