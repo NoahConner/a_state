@@ -1,0 +1,102 @@
+.testimonials {
+    position: relative;
+    background: #fff;
+
+    .header-banner {
+        position: absolute;
+        top: 0;
+        right: -293px;
+        width: 62%;
+        height: 78px;
+        z-index: 0;
+
+    }
+
+    .carousel-indicators {
+        margin-bottom: 0;
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: #ddd;
+            border-radius: 50%;
+            border: none;
+            opacity: 1;
+            transition: all 0.3s ease;
+
+            &.active {
+                background-color: #CA2B28;
+                width: 12px;
+                height: 12px;
+            }
+        }
+    }
+
+    .section-title {
+        position: relative;
+        z-index: 1;
+        color: #CA2B28;
+        font-size: 35px;
+        font-weight: 400;
+    }
+
+    .testimonial-card {
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        background-color: #F8F2F2;
+
+        .quote-icon {
+            font-size: 2rem;
+            opacity: 0.8;
+            color: #111111;
+            transform: rotate(-23deg);
+            font-size: 40px;
+        }
+
+        &:hover {
+            background-color: #CA2B28;
+            color: white;
+
+            .testimonial-text {
+                color: rgba(255, 255, 255, 0.9);
+            }
+
+            .quote-icon {
+                font-size: 2rem;
+                opacity: 0.8;
+                color: white;
+                transform: rotate(-23deg);
+                font-size: 40px;
+            }
+        }
+    }
+
+    .testimonial-heading {
+        margin-top: 31px;
+        font-size: 24px;
+    }
+
+    .testimonial-text {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .pagination-dots {
+        gap: 8px;
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: #ddd;
+            border-radius: 50%;
+            display: inline-block;
+
+            &.active {
+                background-color: #bbb;
+                width: 12px;
+                height: 12px;
+            }
+        }
+    }
+}

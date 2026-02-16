@@ -1,0 +1,60 @@
+<section class="testimonials py-5 overflow-hidden">
+  <div class="container position-relative">
+    <div class="header-banner">
+      <img src="../assets/images/banner.png" alt="" />
+    </div>
+
+    <h2 class="section-title mb-5">
+      {{ 'TESTIMONIALS.TITLE_LINE1' | translate }}
+      <span class="text-danger fw-bold">
+        {{ 'TESTIMONIALS.TITLE_HIGHLIGHT' | translate }}
+      </span>
+      {{ 'TESTIMONIALS.TITLE_LINE2' | translate }}
+    </h2>
+
+    <!-- Bootstrap Carousel -->
+    <div
+      id="testimonialSlider"
+      class="carousel slide"
+      data-bs-ride="carousel"
+      style="margin-top: 7rem"
+    >
+      <div class="carousel-inner">
+        <div
+          class="carousel-item"
+          *ngFor="let group of groupedTestimonials; let i = index"
+          [class.active]="i === 0"
+        >
+          <div class="row g-4 justify-content-center">
+            <div class="col-lg-4" *ngFor="let item of group">
+              <div class="testimonial-card h-100 p-4 shadow-sm border-0">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <h5 class="fw-bold testimonial-heading">
+                    {{ item.NAME }}
+                  </h5>
+                  <span class="quote-icon">
+                    <i class="fas fa-quote-right"></i>
+                  </span>
+                </div>
+                <p class="testimonial-text">"{{ item.TEXT }}"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Indicators -->
+      <div class="carousel-indicators pagination-dots position-relative mt-5">
+        <button
+          *ngFor="let group of groupedTestimonials; let i = index"
+          type="button"
+          data-bs-target="#testimonialSlider"
+          [attr.data-bs-slide-to]="i"
+          [class.active]="i === 0"
+          [attr.aria-current]="i === 0 ? 'true' : null"
+          class="dot"
+        ></button>
+      </div>
+    </div>
+  </div>
+</section>

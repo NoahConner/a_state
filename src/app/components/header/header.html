@@ -58,12 +58,18 @@
           <!-- Insurance Services dropdown -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-              Insurance Services
+              {{ 'HEADER.INSURANCE_SERVICES' | translate }}
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Auto Insurance</a></li>
-              <li><a class="dropdown-item" href="#">Home Insurance</a></li>
-              <li><a class="dropdown-item" href="#">Life Insurance</a></li>
+              <li>
+                <a class="dropdown-item" href="#">{{ 'HEADER.AUTO_INSURANCE' | translate }}</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">{{ 'HEADER.HOME_INSURANCE' | translate }}</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">{{ 'HEADER.LIFE_INSURANCE' | translate }}</a>
+              </li>
             </ul>
           </li>
 
@@ -78,14 +84,16 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">Office Locator</a>
+            <a class="nav-link" href="#">{{ 'HEADER.OFFICE_LOCATOR' | translate }}</a>
           </li>
         </ul>
 
         <!-- Right side -->
         <div class="d-flex align-items-center leftie">
           <!-- Get a Quote -->
-          <a href="#" class="btn btn-danger px-4 rounded-pill fw-semibold"> Get a Quote </a>
+          <a href="#" class="btn btn-danger px-4 rounded-pill fw-semibold">
+            {{ 'HEADER.GET_A_QUOTE' | translate }}
+          </a>
 
           <!-- Language dropdown -->
           <div class="dropdown">
@@ -94,7 +102,7 @@
               href="#"
               data-bs-toggle="dropdown"
             >
-              <i class="fa-solid fa-globe me-1"></i> ES
+              <i class="fa-solid fa-globe me-1"></i> {{ currentLang.toUpperCase() }}
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
               <li>

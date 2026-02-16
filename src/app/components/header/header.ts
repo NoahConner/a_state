@@ -10,6 +10,7 @@ import { routeTranslations } from '../../app-routing-module';
 })
 export class Header {
   constructor(public languageService: Language) {}
+  currentLang: 'en' | 'es' = 'es';
 
   changeLang(lang: string) {
     this.languageService.setLanguage(lang);
