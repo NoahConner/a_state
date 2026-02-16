@@ -8,7 +8,7 @@ import { Privacy } from './pages/privacy/privacy';
 import { Terms } from './pages/terms/terms';
 
 const routes: Routes = [
-  { path: '', component: Home, pathMatch: 'full' },
+  { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
   { path: 'contact-us', component: Contact },
   { path: 'insurance-services', component: InsuranceServices },
   { path: 'about-us', component: About },
