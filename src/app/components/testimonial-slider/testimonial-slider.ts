@@ -21,7 +21,7 @@ export class TestimonialSliderComponent implements OnInit {
   }
 
   loadTestimonials() {
-    this.translate.get('TESTIMONIALS.ITEMS').subscribe((res: any) => {
+    this.translate.get('HOME.TESTIMONIALS.ITEMS').subscribe((res: any) => {
       this.testimonials = res;
     });
   }

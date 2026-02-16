@@ -7,12 +7,30 @@
             {{ 'HOME.BANNER.TITLE_LINE1' | translate }} <br />
             {{ 'HOME.BANNER.TITLE_LINE2' | translate }}
           </div>
-
+          <!-- 
           <div class="selectable">
+            
             @for (item of chips; track item.name) {
             <div class="chip">
               <i class="{{ item.icon }}"></i>
               <span>{{ item.name | translate }}</span>
+            </div>
+            }
+          </div> -->
+
+          <div class="selectable mt-5">
+            @for (item of chips.slice(0, 3); track item.name) {
+            <div class="chip">
+              <i class="{{ item?.icon }}"></i>
+              <span>{{ item?.name | translate }}</span>
+            </div>
+            }
+          </div>
+          <div class="selectable mt-2">
+            @for (item of chips.slice(3, 6); track item.name) {
+            <div class="chip">
+              <i class="{{ item?.icon }}"></i>
+              <span>{{ item?.name | translate }}</span>
             </div>
             }
           </div>
@@ -46,8 +64,8 @@
       <div class="row mb-5 text-center">
         <div class="col-12">
           <h3 class="heading">
-            {{ 'WHY_CHOOSE.HEADING' | translate }}
-            <strong> {{ 'WHY_CHOOSE.HEADING_STRONG' | translate }} </strong>
+            {{ 'HOME.WHY_CHOOSE.HEADING' | translate }}
+            <strong> {{ 'HOME.WHY_CHOOSE.HEADING_STRONG' | translate }} </strong>
           </h3>
         </div>
       </div>
@@ -61,10 +79,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'WHY_CHOOSE.CARD1.TITLE' | translate }}
+                  {{ 'HOME.WHY_CHOOSE.CARD1.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'WHY_CHOOSE.CARD1.DESC' | translate }}
+                  {{ 'HOME.WHY_CHOOSE.CARD1.DESC' | translate }}
                 </p>
               </div>
             </div>
@@ -77,10 +95,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'WHY_CHOOSE.CARD2.TITLE' | translate }}
+                  {{ 'HOME.WHY_CHOOSE.CARD2.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'WHY_CHOOSE.CARD2.DESC' | translate }}
+                  {{ 'HOME.WHY_CHOOSE.CARD2.DESC' | translate }}
                 </p>
               </div>
             </div>
@@ -95,10 +113,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'WHY_CHOOSE.CARD3.TITLE' | translate }}
+                  {{ 'HOME.WHY_CHOOSE.CARD3.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'WHY_CHOOSE.CARD3.DESC' | translate }}
+                  {{ 'HOME.WHY_CHOOSE.CARD3.DESC' | translate }}
                 </p>
               </div>
             </div>
@@ -111,10 +129,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'WHY_CHOOSE.CARD4.TITLE' | translate }}
+                  {{ 'HOME.WHY_CHOOSE.CARD4.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'WHY_CHOOSE.CARD4.DESC' | translate }}
+                  {{ 'HOME.WHY_CHOOSE.CARD4.DESC' | translate }}
                 </p>
               </div>
             </div>
@@ -129,10 +147,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'WHY_CHOOSE.CARD5.TITLE' | translate }}
+                  {{ 'HOME.WHY_CHOOSE.CARD5.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'WHY_CHOOSE.CARD5.DESC' | translate }}
+                  {{ 'HOME.WHY_CHOOSE.CARD5.DESC' | translate }}
                 </p>
               </div>
             </div>
@@ -145,10 +163,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'WHY_CHOOSE.CARD6.TITLE' | translate }}
+                  {{ 'HOME.WHY_CHOOSE.CARD6.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'WHY_CHOOSE.CARD6.DESC' | translate }}
+                  {{ 'HOME.WHY_CHOOSE.CARD6.DESC' | translate }}
                 </p>
               </div>
             </div>
@@ -167,7 +185,7 @@
       <div class="row mb-5 text-center">
         <div class="col-12">
           <h2 class="section-title">
-            {{ 'INSURANCE_SOLUTIONS.TITLE' | translate }}
+            {{ 'HOME.INSURANCE_SOLUTIONS.TITLE' | translate }}
           </h2>
         </div>
       </div>
@@ -181,11 +199,11 @@
               </div>
               <div class="card-content">
                 <h5 class="solution-title">
-                  {{ 'INSURANCE_SOLUTIONS.AUTO.TITLE' | translate }}
+                  {{ 'HOME.INSURANCE_SOLUTIONS.AUTO.TITLE' | translate }}
                 </h5>
 
                 <p class="solution-text">
-                  {{ 'INSURANCE_SOLUTIONS.AUTO.DESC' | translate }}
+                  {{ 'HOME.INSURANCE_SOLUTIONS.AUTO.DESC' | translate }}
                 </p>
               </div>
             </div>
@@ -200,11 +218,11 @@
               </div>
               <div class="card-content">
                 <h5 class="solution-title">
-                  {{ 'INSURANCE_SOLUTIONS.HOME.TITLE' | translate }}
+                  {{ 'HOME.INSURANCE_SOLUTIONS.HOME.TITLE' | translate }}
                 </h5>
 
                 <p class="solution-text">
-                  {{ 'INSURANCE_SOLUTIONS.HOME.DESC' | translate }}
+                  {{ 'HOME.INSURANCE_SOLUTIONS.HOME.DESC' | translate }}
                 </p>
               </div>
             </div>
@@ -219,11 +237,11 @@
               </div>
               <div class="card-content">
                 <h5 class="solution-title">
-                  {{ 'INSURANCE_SOLUTIONS.COMMERCIAL.TITLE' | translate }}
+                  {{ 'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.TITLE' | translate }}
                 </h5>
 
                 <p class="solution-text">
-                  {{ 'INSURANCE_SOLUTIONS.COMMERCIAL.DESC' | translate }}
+                  {{ 'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.DESC' | translate }}
                 </p>
               </div>
             </div>
@@ -238,11 +256,11 @@
               </div>
               <div class="card-content">
                 <h5 class="solution-title">
-                  {{ 'INSURANCE_SOLUTIONS.LIFE.TITLE' | translate }}
+                  {{ 'HOME.INSURANCE_SOLUTIONS.LIFE.TITLE' | translate }}
                 </h5>
 
                 <p class="solution-text">
-                  {{ 'INSURANCE_SOLUTIONS.LIFE.DESC' | translate }}
+                  {{ 'HOME.INSURANCE_SOLUTIONS.LIFE.DESC' | translate }}
                 </p>
               </div>
             </div>
@@ -257,11 +275,11 @@
               </div>
               <div class="card-content">
                 <h5 class="solution-title">
-                  {{ 'INSURANCE_SOLUTIONS.HEALTH.TITLE' | translate }}
+                  {{ 'HOME.INSURANCE_SOLUTIONS.HEALTH.TITLE' | translate }}
                 </h5>
 
                 <p class="solution-text">
-                  {{ 'INSURANCE_SOLUTIONS.HEALTH.DESC' | translate }}
+                  {{ 'HOME.INSURANCE_SOLUTIONS.HEALTH.DESC' | translate }}
                 </p>
               </div>
             </div>
@@ -276,11 +294,11 @@
               </div>
               <div class="card-content">
                 <h5 class="solution-title">
-                  {{ 'INSURANCE_SOLUTIONS.SURETY.TITLE' | translate }}
+                  {{ 'HOME.INSURANCE_SOLUTIONS.SURETY.TITLE' | translate }}
                 </h5>
 
                 <p class="solution-text">
-                  {{ 'INSURANCE_SOLUTIONS.SURETY.DESC' | translate }}
+                  {{ 'HOME.INSURANCE_SOLUTIONS.SURETY.DESC' | translate }}
                 </p>
               </div>
             </div>
@@ -290,7 +308,7 @@
       <div class="row mt-5 text-end">
         <div class="col-12">
           <button class="btn btn-see-all">
-            {{ 'INSURANCE_SOLUTIONS.SEE_ALL' | translate }}
+            {{ 'HOME.INSURANCE_SOLUTIONS.SEE_ALL' | translate }}
           </button>
         </div>
       </div>
@@ -307,17 +325,17 @@
               <div class="bar"></div>
               <div class="text">
                 <div class="h4">
-                  {{ 'EVERY_STORY.TITLE_LINE1' | translate }} <br />
-                  {{ 'EVERY_STORY.TITLE_LINE2' | translate }}
+                  {{ 'HOME.EVERY_STORY.TITLE_LINE1' | translate }} <br />
+                  {{ 'HOME.EVERY_STORY.TITLE_LINE2' | translate }}
                 </div>
                 <p>
-                  {{ 'EVERY_STORY.PARA1' | translate }}
+                  {{ 'HOME.EVERY_STORY.PARA1' | translate }}
                 </p>
 
                 <br />
 
                 <p>
-                  {{ 'EVERY_STORY.PARA2' | translate }}
+                  {{ 'HOME.EVERY_STORY.PARA2' | translate }}
                 </p>
               </div>
             </div>
@@ -334,9 +352,9 @@
 
     <div class="container">
       <h5 class="text-center mb-5 heading">
-        {{ 'WORKING_PROCESS.TITLE_LINE1' | translate }}
-        <strong>{{ 'WORKING_PROCESS.TITLE_STRONG' | translate }}</strong>
-        {{ 'WORKING_PROCESS.TITLE_LINE2' | translate }}
+        {{ 'HOME.WORKING_PROCESS.TITLE_LINE1' | translate }}
+        <strong>{{ 'HOME.WORKING_PROCESS.TITLE_STRONG' | translate }}</strong>
+        {{ 'HOME.WORKING_PROCESS.TITLE_LINE2' | translate }}
       </h5>
 
       <div class="row justify-content-center">
@@ -347,10 +365,10 @@
             <div class="step-number">01</div>
             <div class="ms-4 working-heading">
               <h5 class="fw-bold mb-1">
-                {{ 'WORKING_PROCESS.STEP1.TITLE' | translate }}
+                {{ 'HOME.WORKING_PROCESS.STEP1.TITLE' | translate }}
               </h5>
               <p class="text-muted mb-0 small">
-                {{ 'WORKING_PROCESS.STEP1.DESC' | translate }}
+                {{ 'HOME.WORKING_PROCESS.STEP1.DESC' | translate }}
               </p>
             </div>
           </div>
@@ -359,10 +377,10 @@
             <div class="step-number">02</div>
             <div class="ms-4 working-heading">
               <h5 class="fw-bold mb-1">
-                {{ 'WORKING_PROCESS.STEP2.TITLE' | translate }}
+                {{ 'HOME.WORKING_PROCESS.STEP2.TITLE' | translate }}
               </h5>
               <p class="text-muted mb-0 small">
-                {{ 'WORKING_PROCESS.STEP2.DESC' | translate }}
+                {{ 'HOME.WORKING_PROCESS.STEP2.DESC' | translate }}
               </p>
             </div>
           </div>
@@ -371,10 +389,10 @@
             <div class="step-number">03</div>
             <div class="ms-4 working-heading">
               <h5 class="fw-bold mb-1">
-                {{ 'WORKING_PROCESS.STEP3.TITLE' | translate }}
+                {{ 'HOME.WORKING_PROCESS.STEP3.TITLE' | translate }}
               </h5>
               <p class="text-muted mb-0 small">
-                {{ 'WORKING_PROCESS.STEP3.DESC' | translate }}
+                {{ 'HOME.WORKING_PROCESS.STEP3.DESC' | translate }}
               </p>
             </div>
           </div>
@@ -383,10 +401,10 @@
             <div class="step-number">04</div>
             <div class="ms-4 working-heading">
               <h5 class="fw-bold mb-1">
-                {{ 'WORKING_PROCESS.STEP4.TITLE' | translate }}
+                {{ 'HOME.WORKING_PROCESS.STEP4.TITLE' | translate }}
               </h5>
               <p class="text-muted mb-0 small">
-                {{ 'WORKING_PROCESS.STEP4.DESC' | translate }}
+                {{ 'HOME.WORKING_PROCESS.STEP4.DESC' | translate }}
               </p>
             </div>
           </div>
@@ -403,7 +421,7 @@
     <div class="container">
       <div class="topSub">
         <div class="topSub2">
-          <div class="h1">{{ 'COVERD.BANNER.TITLE' | translate }}</div>
+          <div class="h1">{{ 'HOME.COVERDBANNER.TITLE' | translate }}</div>
           <div class="selectable mt-5">
             @for (item of chips.slice(0, 3); track item.name) {
             <div class="chip">
@@ -432,7 +450,7 @@
               class="form-control"
             />
           </div>
-          <button class="btn">{{ 'COVERD.BANNER.FORM.BUTTON' | translate }}</button>
+          <button class="btn">{{ 'HOME.COVERDBANNER.FORM.BUTTON' | translate }}</button>
         </div>
       </div>
     </div>
@@ -452,7 +470,7 @@
             </div>
           </div>
           <div class="col-lg-6 col-sm-6 col-xs-12">
-            <div class="h4">{{ 'COVERD.FOOTUPPER.SLOGAN' | translate }}</div>
+            <div class="h4">{{ 'FOOTER.SLOGAN' | translate }}</div>
           </div>
         </div>
       </div>

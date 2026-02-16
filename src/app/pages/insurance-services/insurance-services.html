@@ -1,1 +1,1107 @@
-<p>insurance-services works!</p>
+<div class="InsuranceMain">
+  <div class="topBanner">
+    <div class="container">
+      <div class="topSub">
+        <div class="topSub2">
+          <div class="h1">
+            {{ 'INSURANCE_SERVICES.BANNER.TITLE_LINE1' | translate }} <br />
+            {{ 'INSURANCE_SERVICES.BANNER.TITLE_LINE2' | translate }}
+          </div>
+
+          <div class="selectable mt-5">
+            @for (item of chips.slice(0, 3); track item.name) {
+            <div class="chip">
+              <i class="{{ item?.icon }}"></i>
+              <span>{{ item?.name | translate }}</span>
+            </div>
+            }
+          </div>
+          <div class="selectable mt-2">
+            @for (item of chips.slice(3, 6); track item.name) {
+            <div class="chip">
+              <i class="{{ item?.icon }}"></i>
+              <span>{{ item?.name | translate }}</span>
+            </div>
+            }
+          </div>
+
+          <div class="inps">
+            <input
+              type="text"
+              [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate"
+              class="form-control"
+            />
+
+            <input
+              type="number"
+              [placeholder]="'HOME.BANNER.FORM.PHONE' | translate"
+              class="form-control"
+            />
+          </div>
+
+          <button class="btn">
+            {{ 'HOME.BANNER.FORM.BUTTON' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="texan-choose-image">
+    <div class="container py-5 mt-5">
+      <div class="row mb-5 text-center">
+        <div class="col-12">
+          <h2 class="insurance-heading">
+            {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HEADING' | translate }}
+          </h2>
+        </div>
+      </div>
+
+      <div class="row mb-5 text-center">
+        <!-- Changed col-12 to col-lg-8 to make the text area narrower and centered -->
+        <div class="col-12 col-md-9 mt-3 mx-auto main-content">
+          <h4 class="insurance-heading-2">
+            {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HEADING_2' | translate }}
+          </h4>
+          <!-- Added a class to target specifically -->
+          <p class="description-text">
+            {{ 'INSURANCE_SERVICES.WHY_CHOOSE.DESCRIPTION' | translate }}
+          </p>
+        </div>
+      </div>
+
+      <div class="gap-m">
+        <!-- card start -->
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/carbon_license.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD1.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD1.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/Heart.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD2.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD2.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/calendar.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD3.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD3.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/price.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD4.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD4.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/wifi.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD5.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD5.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/agents.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD6.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD6.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/wifi.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD7.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD7.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/agents.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD8.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD8.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/wifi.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD9.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD9.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/agents.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD10.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD10.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/wifi.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD11.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD11.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col px-4"></div>
+        </div>
+
+        <!-- card end -->
+      </div>
+    </div>
+  </div>
+
+  <div class="homeowners-insurance">
+    <div class="side-strip"></div>
+    <div class="container">
+      <div class="row mb-5 text-center">
+        <!-- Changed col-12 to col-lg-8 to make the text area narrower and centered -->
+        <div class="col-12 col-md-10 mt-3 mx-auto main-content">
+          <h4 class="insurance-heading-2">
+            {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HEADING_2' | translate }}
+          </h4>
+          <!-- Added a class to target specifically -->
+          <p class="description-text">
+            {{ 'INSURANCE_SERVICES.WHY_CHOOSE.DESCRIPTION' | translate }}
+          </p>
+        </div>
+      </div>
+
+      <div class="gap-m">
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/carbon_license.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD1.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD1.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/Heart.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD2.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD2.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/calendar.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD3.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD3.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/price.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD4.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD4.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/wifi.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD5.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD5.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/agents.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD6.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD6.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/wifi.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD5.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD5.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col px-4"></div>
+        </div>
+
+        <!-- card end -->
+      </div>
+    </div>
+  </div>
+
+  <div class="texan-choose-image">
+    <div class="container py-5 mt-5">
+      <div class="row mb-5 text-center">
+        <!-- Changed col-12 to col-lg-8 to make the text area narrower and centered -->
+        <div class="col-12 col-md-10 mt-3 mx-auto main-content">
+          <h4 class="insurance-heading-2">
+            {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HEADING_2' | translate }}
+          </h4>
+          <!-- Added a class to target specifically -->
+          <p class="description-text">
+            {{ 'INSURANCE_SERVICES.WHY_CHOOSE.DESCRIPTION' | translate }}
+          </p>
+        </div>
+      </div>
+
+      <div class="gap-m">
+        <!-- card start -->
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/carbon_license.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD1.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD1.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/Heart.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD2.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD2.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/calendar.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD3.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD3.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/price.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD4.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD4.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/wifi.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD5.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD5.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/agents.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD6.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD6.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/wifi.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD5.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD5.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/agents.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD6.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD6.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/wifi.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD5.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD5.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/agents.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD6.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD6.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- card end -->
+      </div>
+    </div>
+  </div>
+
+  <div class="homeowners-insurance">
+    <div class="side-strip"></div>
+    <div class="container">
+      <div class="row mb-5 text-center">
+        <!-- Changed col-12 to col-lg-8 to make the text area narrower and centered -->
+        <div class="col-12 col-md-9 mt-3 mx-auto main-content">
+          <h4 class="insurance-heading-2">
+            {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HEADING_2' | translate }}
+          </h4>
+          <!-- Added a class to target specifically -->
+          <p class="description-text">
+            {{ 'INSURANCE_SERVICES.WHY_CHOOSE.DESCRIPTION' | translate }}
+          </p>
+        </div>
+      </div>
+
+      <div class="gap-m">
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/carbon_license.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD1.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD1.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/Heart.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD2.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD2.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/calendar.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD3.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD3.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/price.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD4.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD4.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/wifi.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD5.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD5.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/agents.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD6.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD6.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- card end -->
+      </div>
+    </div>
+  </div>
+
+  <div class="texan-choose-image">
+    <div class="container py-5 mt-5">
+      <div class="row mb-5 text-center">
+        <!-- Changed col-12 to col-lg-8 to make the text area narrower and centered -->
+        <div class="col-12 col-md-9 mt-3 mx-auto main-content">
+          <h4 class="insurance-heading-2">
+            {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HEADING_2' | translate }}
+          </h4>
+          <!-- Added a class to target specifically -->
+          <p class="description-text">
+            {{ 'INSURANCE_SERVICES.WHY_CHOOSE.DESCRIPTION' | translate }}
+          </p>
+        </div>
+      </div>
+
+      <div class="gap-m">
+        <!-- card start -->
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/carbon_license.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD1.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD1.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/Heart.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD2.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD2.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/calendar.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD3.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD3.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/price.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD4.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD4.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/wifi.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD5.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD5.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/agents.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD6.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD6.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/wifi.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD5.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD5.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/agents.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD6.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD6.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/wifi.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME.WHY_CHOOSE.CARD5.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME.WHY_CHOOSE.CARD5.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4"></div>
+        </div>
+
+        <!-- card end -->
+      </div>
+    </div>
+  </div>
+
+  <div class="surety-bonds">
+    <div class="side-strip"></div>
+    <div class="container">
+      <div class="row mb-5 text-center">
+        <div class="col-12 col-md-9 mt-5 mx-auto surety-content">
+          <h4>
+            {{ 'INSURANCE_SERVICES.SURETY.HEADING' | translate }}
+          </h4>
+          <!-- Added a class to target specifically -->
+          <p class="description-text">
+            {{ 'INSURANCE_SERVICES.SURETY.DESCRIPTION' | translate }}
+          </p>
+        </div>
+      </div>
+
+      <div class="gap-m">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-md-4 g-2 mb-2">
+          <div class="col">
+            <div class="surtey-card h-100">
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'INSURANCE_SERVICES.SURETY.CARD1.TITLE' | translate }}
+                </h5>
+                <p class="card-text">{{ 'INSURANCE_SERVICES.SURETY.CARD1.DESC' | translate }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="surtey-card h-100">
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'INSURANCE_SERVICES.SURETY.CARD2.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'INSURANCE_SERVICES.SURETY.CARD2.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="surtey-card h-100">
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'INSURANCE_SERVICES.SURETY.CARD3.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'INSURANCE_SERVICES.SURETY.CARD3.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="surtey-card h-100">
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'INSURANCE_SERVICES.SURETY.CARD4.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'INSURANCE_SERVICES.SURETY.CARD4.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid py-5 working-section position-relative mt-5 overflow-hidden">
+    <img src="../assets/images/insurance-left.png" class="bg-shape shape-left" alt="decoration" />
+    <img src="../assets/images/insurance-right.png" class="bg-shape shape-right" alt="decoration" />
+
+    <div class="container">
+      <h5 class="text-center mb-5 heading">
+        {{ 'HOME.WORKING_PROCESS.TITLE_LINE1' | translate }}
+        <strong>{{ 'HOME.WORKING_PROCESS.TITLE_STRONG' | translate }}</strong>
+        {{ 'HOME.WORKING_PROCESS.TITLE_LINE2' | translate }}
+      </h5>
+
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 position-relative">
+          <div class="vertical-line"></div>
+
+          <div class="d-flex align-items-center mb-4 insurance-card p-3">
+            <div class="step-number">01</div>
+            <div class="ms-4 working-heading">
+              <h5 class="fw-bold mb-1">
+                {{ 'HOME.WORKING_PROCESS.STEP1.TITLE' | translate }}
+              </h5>
+              <p class="text-muted mb-0 small">
+                {{ 'HOME.WORKING_PROCESS.STEP1.DESC' | translate }}
+              </p>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center mb-4 insurance-card p-3">
+            <div class="step-number">02</div>
+            <div class="ms-4 working-heading">
+              <h5 class="fw-bold mb-1">
+                {{ 'HOME.WORKING_PROCESS.STEP2.TITLE' | translate }}
+              </h5>
+              <p class="text-muted mb-0 small">
+                {{ 'HOME.WORKING_PROCESS.STEP2.DESC' | translate }}
+              </p>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center mb-4 insurance-card p-3">
+            <div class="step-number">03</div>
+            <div class="ms-4 working-heading">
+              <h5 class="fw-bold mb-1">
+                {{ 'HOME.WORKING_PROCESS.STEP3.TITLE' | translate }}
+              </h5>
+              <p class="text-muted mb-0 small">
+                {{ 'HOME.WORKING_PROCESS.STEP3.DESC' | translate }}
+              </p>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center insurance-card p-3">
+            <div class="step-number">04</div>
+            <div class="ms-4 working-heading">
+              <h5 class="fw-bold mb-1">
+                {{ 'HOME.WORKING_PROCESS.STEP4.TITLE' | translate }}
+              </h5>
+              <p class="text-muted mb-0 small">
+                {{ 'HOME.WORKING_PROCESS.STEP4.DESC' | translate }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Surety Bonds -->
+
+  <!-- get covered -->
+  <div class="topBanner getCovver">
+    <div class="container">
+      <div class="topSub">
+        <div class="topSub2">
+          <div class="h1">{{ 'HOME.COVERDBANNER.TITLE' | translate }}</div>
+          <div class="selectable mt-5">
+            @for (item of chips.slice(0, 3); track item.name) {
+            <div class="chip">
+              <i class="{{ item?.icon }}"></i>
+              <span>{{ item?.name | translate }}</span>
+            </div>
+            }
+          </div>
+          <div class="selectable mt-2">
+            @for (item of chips.slice(3, 6); track item.name) {
+            <div class="chip">
+              <i class="{{ item?.icon }}"></i>
+              <span>{{ item?.name | translate }}</span>
+            </div>
+            }
+          </div>
+          <div class="inps">
+            <input
+              type="text"
+              [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate"
+              class="form-control"
+            />
+            <input
+              type="number"
+              [placeholder]="'HOME.BANNER.FORM.PHONE' | translate"
+              class="form-control"
+            />
+          </div>
+          <button class="btn">{{ 'HOME.COVERDBANNER.FORM.BUTTON' | translate }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footuper -->
+  <div class="footUpper">
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="clipp"></div>
+    <div class="contain">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="icon">
+              <img src="/assets/images/logo.png" alt="User menu" />
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="h4">{{ 'FOOTER.SLOGAN' | translate }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  -->
+</div>

@@ -1,0 +1,719 @@
+.topBanner {
+  background-image: url('/assets/images/insuranceHero.png');
+  height: 57rem;
+  background-size: cover;
+
+  .container {
+    height: 100%;
+
+    .topSub {
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 7rem;
+
+      .topSub2 {
+        .h1 {
+          font-weight: 700;
+          color: #fff;
+          font-size: 3rem;
+        }
+
+        .selectable {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 10px;
+
+          .chip {
+            background-color: #ffffffa1;
+            border-radius: 8px;
+            width: 136px;
+            height: 43px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.5s all ease-in-out;
+
+            &:hover {
+              background-color: #fff22e;
+              color: #000;
+            }
+          }
+        }
+
+        .inps {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 10px;
+          margin: 1rem 0;
+          width: 100%;
+        }
+
+        button {
+          font-family: 'Afacad', sans-serif;
+          font-size: 16px;
+          font-weight: 700 !important;
+          padding: 10px 24px;
+          border-radius: 8px !important;
+          transition: 0.5s all ease-in-out;
+          background-color: #fff22e;
+          color: #ca2b28;
+          box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+            rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+            rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+          border: 0;
+
+          &:hover {
+            background-color: #ca2b28;
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+}
+
+.topBanner.getCovver {
+  background-image: url('/assets/images/coverd.png');
+  height: 45rem;
+  background-size: cover;
+
+  .container {
+    .topSub {
+      padding-bottom: 0;
+      align-items: center;
+
+      .topSub2 {
+        .inps {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.footUpper {
+  height: 130px;
+  width: 100%;
+  background-color: #ca2b28;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+  .left {
+    width: 55%;
+    height: 100%;
+  }
+
+  .right {
+    height: 100%;
+    background-color: #e62e2a;
+    width: 50%;
+  }
+
+  .clipp {
+    position: absolute;
+    clip-path: polygon(67% 0, 100% 0, 100% 99%, 20% 100%);
+    height: 130px;
+    width: 130px;
+    background-color: #e62e2a;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .contain {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+
+    .col-lg-6 {
+      display: flex;
+      align-items: center;
+
+      .icon {
+        height: 80%;
+        width: fit-content;
+      }
+
+      .h4 {
+        font-weight: 700;
+        color: #fff;
+        font-size: 42px;
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .topBanner {
+    height: 30rem;
+
+    .container {
+      .topSub {
+        padding-bottom: 3rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .topBanner {
+    background-position: center;
+
+    .container {
+      .topSub {
+        padding-bottom: 0rem;
+        align-items: center;
+        justify-content: center;
+
+        .topSub2 {
+          text-align: center;
+
+          .h1 {
+            font-size: 32px;
+            text-align: center;
+          }
+
+          .selectable {
+            justify-content: center;
+          }
+
+          .inps {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .topBanner.getCovver {
+    height: 30rem;
+
+    .topSub {
+      .topSub2 {
+        .selectable.mt-5 {
+          margin-top: 0 !important;
+        }
+
+        .h1 {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+
+  .footUpper {
+    height: 270px;
+    flex-direction: column;
+
+    .left {
+      width: 100%;
+    }
+
+    .right {
+      width: 100%;
+    }
+
+    .clipp {
+      display: none;
+    }
+
+    .contain {
+      .col-lg-6 {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+
+        .icon {
+          transform: translateY(-15px);
+        }
+
+        .h4 {
+          font-size: 40px;
+          margin: 0;
+          transform: translateY(10px);
+        }
+      }
+    }
+  }
+
+  .everyStory {
+    .h4 {
+      font-size: 2rem !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .topBanner {
+    .container {
+      .topSub {
+        .topSub2 {
+          .h1 {
+            font-size: 26px;
+            margin-bottom: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Start Why Texan Choose Us Section Styles
+.feature-card {
+  background-color: #ca2b28;
+  border-radius: 16px;
+  position: relative;
+  padding: 21px 37px 10px 41px;
+  height: 100%;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.238);
+  transition: all 0.25s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  }
+
+  .icon-wrapper {
+    position: absolute;
+    top: -5px;
+    left: -30px;
+    width: 65px;
+    height: 64px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px solid rgba(211, 199, 3);
+    z-index: 2;
+
+    img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  .card-content {
+    .card-title {
+      font-size: 26.5px;
+      font-weight: 500;
+      font-family: 'Afacad', sans-serif;
+      color: #ffffff;
+      margin-bottom: 0.9rem;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 14rem;
+        height: 5px;
+        margin-top: 8px;
+        background: linear-gradient(
+          90deg,
+          #ffffff 0%,
+          #ffffff 89%,
+          transparent 70%,
+          transparent 92%,
+          #ffffff 80%,
+          #ffffff 100%
+        );
+        border-radius: 3px;
+      }
+    }
+
+    .card-text {
+      font-size: 20px;
+      line-height: 1.6;
+      color: #ffffff;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.insurance-heading {
+  color: #ca2b28;
+  font-size: 65px;
+  font-weight: 500;
+  font-family: 'Afacad';
+}
+
+.insurance-heading-2 {
+  color: #ca2b28;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.main-content p {
+  color: #312e2e;
+  margin-top: 3rem;
+
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+.texan-choose-image {
+  position: relative;
+  width: 100%;
+  min-height: 800px;
+  padding-bottom: 68px;
+  background-image: url('/assets/images/insurance-right.png'), url('/assets/images/leftSide.png');
+  background-size: 350px auto, 200px auto;
+  background-position: right 20%, left 74%;
+  background-repeat: no-repeat;
+}
+
+.feature-card-height {
+  height: 200px;
+}
+
+.homeowners-insurance {
+  background-color: #f9f9f9;
+  position: relative;
+  padding: 5rem 0;
+  overflow: hidden;
+}
+
+// Working Section
+.working-section {
+  min-height: 100vh;
+  position: relative;
+
+  .bg-shape {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .shape-left {
+    left: -89px;
+    top: 39%;
+    height: auto;
+    transform: translateY(-20%);
+    width: auto;
+  }
+
+  .shape-right {
+    right: -4px;
+    top: 10px;
+    width: auto;
+    height: auto;
+  }
+
+  .vertical-line {
+    position: absolute;
+    left: 45px;
+    top: 20px;
+    bottom: 20px;
+    width: 2px;
+    background-color: #ff2f2f;
+    z-index: 0;
+  }
+
+  .insurance-card {
+    background-color: #fff;
+    border-radius: 8px;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.2s;
+    box-shadow: 0 5px 5px rgba(255, 196, 0, 0.274), inset 0 0 0 rgba(255, 255, 255, 0);
+    padding: 20px;
+
+    &:hover {
+      transform: translateX(5px);
+    }
+  }
+
+  .step-number {
+    background-color: #ca2b28;
+    color: white;
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    font-size: 20px;
+    box-shadow: 0 4px 8px rgba(202, 43, 40, 0.3);
+  }
+
+  h2 {
+    font-weight: 600;
+  }
+
+  .working-heading h5 {
+    font-size: 28px;
+    font-weight: 550 !important;
+    font-family: 'Afacad';
+  }
+
+  .working-heading p {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Afacad';
+  }
+}
+
+.heading {
+  color: #ca2b28;
+  font-size: 35px;
+  font-weight: 400;
+}
+
+// Surtey
+
+.surety-bonds {
+  background-image: url('/assets/images/SuretyBonds.png');
+  height: 40rem;
+  background-size: cover;
+}
+
+.surety-content h4 {
+  color: #fff;
+  font-size: 34px;
+  margin-bottom: 1.7rem;
+}
+
+.surety-content p {
+  color: #fff;
+  font-size: 17px;
+  line-height: 1.6rem;
+}
+
+.surtey-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 38px 36px 55px 32px;
+  margin-top: 33px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+  }
+
+  /* The Blue Bottom Strip from the image */
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8px; /* Thickness of the blue line */
+  }
+
+  .card-title {
+    font-size: 24px;
+    font-weight: 800; /* Extra bold like image */
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 15px;
+
+    /* The Red Line from the image */
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 10rem;
+      height: 3px;
+      background-color: #ca2b28;
+    }
+  }
+
+  .card-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #4a4a4a;
+    margin-bottom: 0;
+    font-family: sans-serif; /* Clean font like image */
+  }
+}
+
+/* Ensure the grid doesn't squash the cards */
+.gap-m .row {
+  justify-content: center;
+}
+
+/* Remove or hide the old icon-wrapper if you don't need it */
+.icon-wrapper {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .feature-card {
+    padding: 18px 20px 12px 48px;
+
+    .icon-wrapper {
+      left: -20px;
+      width: 56px;
+      height: 56px;
+
+      img {
+        height: 22px;
+        width: 22px;
+      }
+    }
+
+    .card-content {
+      .card-title {
+        font-size: 22px;
+
+        &::after {
+          width: 10rem;
+          height: 4px;
+        }
+      }
+
+      .card-text {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .feature-card {
+    padding: 14px 16px 12px 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    .icon-wrapper {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      margin-right: 12px;
+      box-shadow: none;
+
+      img {
+        height: 24px;
+        width: 24px;
+      }
+    }
+
+    .card-content {
+      margin-left: 2px;
+
+      .card-title {
+        font-size: 18px;
+
+        &::after {
+          width: 6rem;
+          height: 3px;
+        }
+      }
+
+      .card-text {
+        font-size: 15px;
+        line-height: 1.4;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .gap-m .col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .gap-m .row {
+    column-gap: 1.6rem;
+    row-gap: 1rem;
+  }
+
+  .feature-card-height {
+    min-height: auto;
+  }
+
+  .texan-choose-image {
+    height: auto;
+    margin-bottom: 0;
+    padding-bottom: 1.5rem;
+    background-position: top center;
+    background-size: contain;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .feature-card {
+    padding: 12px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .feature-card .icon-wrapper {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: none;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .feature-card .card-content {
+    .card-title {
+      font-size: 18px;
+    }
+
+    .card-text {
+      font-size: 14px;
+    }
+  }
+
+  .gap-m .row {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .texan-choose-image {
+    background-image: none !important;
+    background: none !important;
+    background-color: transparent !important;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .texan-choose-image {
+    background-image: none !important;
+    background: none !important;
+    background-color: transparent !important;
+  }
+
+  .texan-choose-image {
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
