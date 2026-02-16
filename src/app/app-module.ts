@@ -11,10 +11,25 @@ import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
 import { Home } from './pages/home/home';
 import { Contact } from './pages/contact/contact';
+import { InsuranceServices } from './pages/insurance-services/insurance-services';
+import { About } from './pages/about/about';
+import { Privacy } from './pages/privacy/privacy';
+import { Terms } from './pages/terms/terms';
 import { TestimonialSliderComponent } from './components/testimonial-slider/testimonial-slider';
 
 @NgModule({
-  declarations: [App, Header, Footer, Home, Contact, TestimonialSliderComponent],
+  declarations: [
+    App,
+    Header,
+    Footer,
+    Home,
+    Contact,
+    InsuranceServices,
+    About,
+    Privacy,
+    Terms,
+    TestimonialSliderComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,

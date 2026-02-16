@@ -2,15 +2,29 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Home } from './pages/home/home';
 import { Contact } from './pages/contact/contact';
+import { InsuranceServices } from './pages/insurance-services/insurance-services';
+import { About } from './pages/about/about';
+import { Privacy } from './pages/privacy/privacy';
+import { Terms } from './pages/terms/terms';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full' },
-  { path: 'contact', component: Contact },
+  { path: 'contact-us', component: Contact },
+  { path: 'insurance-services', component: InsuranceServices },
+  { path: 'about-us', component: About },
+  { path: 'privacy-policy', component: Privacy },
+  { path: 'terms-and-conditions', component: Terms },
 
   // Spanish
   {
     path: 'es',
-    children: [{ path: 'contacto', component: Contact }],
+    children: [
+      { path: 'contacto', component: Contact },
+      { path: 'servicios-de-seguros', component: InsuranceServices },
+      { path: 'sobre-nosotros', component: About },
+      { path: 'politica-de-privacidad', component: Privacy },
+      { path: 'terminos-y-condiciones', component: Terms },
+    ],
   },
 
   // Wildcard must always be last
@@ -29,7 +43,19 @@ export const routeTranslations: Record<string, Record<string, string>> = {
     es: 'contacto',
   },
   about: {
-    en: 'about',
-    es: 'acerca',
+    en: 'about-us',
+    es: 'sobre-nosotros',
+  },
+  insuranceServices: {
+    en: 'insurance-services',
+    es: 'servicios-de-seguros',
+  },
+  privacyPolicy: {
+    en: 'privacy-policy',
+    es: 'politica-de-privacidad',
+  },
+  termsAndConditions: {
+    en: 'terms-and-conditions',
+    es: 'terminos-y-condiciones',
   },
 };
