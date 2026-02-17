@@ -4,10 +4,12 @@
     height: 38rem;
     background-size: cover;
     background-position: bottom;
+
     .container {
       display: flex;
       align-items: end;
       height: 100%;
+
       .h1 {
         color: #fff22f;
         font-weight: 600;
@@ -120,6 +122,74 @@
   }
 }
 
+.trusted-insurance {
+  font-family: 'Afacad', sans-serif;
+  color: #333;
+
+  h2 {
+    font-weight: 400;
+    font-size: 2rem;
+      color: #ca2b28;
+
+
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+    }
+
+    strong.text-danger {
+      font-weight: 700;
+      color: #ca2b28;
+    }
+  }
+
+  .card {
+    background: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(202, 43, 40, 0.2);
+    }
+
+    .card-img-top {
+      height: 180px;
+      object-fit: cover;
+      border-top-left-radius: 0.75rem;
+      border-top-right-radius: 0.75rem;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+
+      .card-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #101010;
+        margin-bottom: 0.5rem;
+      }
+
+      .divider {
+        border: none;
+        height: 2px;
+        background-color: #ff0400;
+        width: auto;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+
+      }
+
+      .card-text {
+        font-size: 16px;
+        padding: 5px 7px 2px 7px;
+        color: #272424;
+        /* width: 22rem; */
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+
 .footUpper {
   height: 130px;
   width: 100%;
@@ -183,6 +253,7 @@
 
   .container {
     height: 100%;
+
     .topSub {
       height: 100%;
       display: flex;
@@ -263,6 +334,7 @@
   .aboutMain {
     .topBanner {
       height: 22rem;
+
       .container {
         .h1 {
           padding-right: 14rem;
@@ -276,9 +348,11 @@
   .aboutMain {
     .topBanner {
       height: 22rem;
+
       .container {
         align-items: center;
         justify-content: center;
+
         .h1 {
           padding-right: 0rem;
           margin-bottom: 0;
@@ -324,6 +398,7 @@
   .aboutMain {
     .topBanner {
       height: 15rem;
+
       .container {
         .h1 {
           font-size: 2rem;
