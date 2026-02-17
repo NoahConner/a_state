@@ -99,7 +99,7 @@
   }
 
   .solution-card.seprator {
-    background-color: #f5625f;
+    background-color: #c83f3d;
   }
 
   .btn-see-all {
@@ -129,8 +129,7 @@
   h2 {
     font-weight: 400;
     font-size: 2rem;
-      color: #ca2b28;
-
+    color: #ca2b28;
 
     @media (min-width: 768px) {
       font-size: 2.5rem;
@@ -171,11 +170,10 @@
       .divider {
         border: none;
         height: 2px;
-        background-color: #ff0400;
+        background-color: #ca2b28;
         width: auto;
         margin-bottom: 1rem;
         margin-top: 1rem;
-
       }
 
       .card-text {
@@ -189,6 +187,116 @@
   }
 }
 
+.why-choose-us {
+  font-family: 'Afacad', sans-serif;
+  min-height: 100vh;
+
+  .content-inner h4 {
+    color: #ca2b28;
+    font-weight: 400;
+    font-size: 2rem; // smaller on mobile
+    line-height: 1.2;
+
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+    }
+
+    @media (min-width: 992px) {
+      font-size: 3rem;
+    }
+  }
+
+  .image-wrapper img {
+    width: 98%;
+    height: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    display: block;
+  }
+
+  .features-list {
+    position: relative;
+    padding-left: 25px;
+
+    // Vertical line connecting dots
+    &::before {
+      content: '';
+      position: absolute;
+      left: 7px; // center of dots
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: rgba(202, 43, 40, 0.3);
+      z-index: 0;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 2rem; // space between items
+
+      .icon-dot {
+        width: 17px;
+        height: 17px;
+        position: relative;
+        z-index: 1;
+        background-color: #ca2b28;
+        border-radius: 50%;
+        flex-shrink: 0;
+        box-shadow: 0 0 10px rgba(202, 43, 40, 0.3);
+        margin-left: -25px; // place dot over line
+        margin-top: 5px; // adjust for vertical alignment
+      }
+
+      h5 {
+        color: #ca2b28;
+        font-size: 18px;
+
+        @media (min-width: 768px) {
+          font-size: 20px;
+        }
+
+        @media (min-width: 992px) {
+          font-size: 22px;
+        }
+      }
+
+      p {
+        font-size: 16px;
+        color: #484848 !important;
+        line-height: 1.5;
+        margin-top: 5px;
+        max-width: 100%;
+
+        @media (min-width: 768px) {
+          font-size: 17px;
+          max-width: 500px;
+        }
+
+        @media (min-width: 992px) {
+          font-size: 18px;
+          max-width: 591px;
+        }
+      }
+    }
+  }
+
+  // Responsive hiding of image on small screens
+  .col-md-6 {
+    @media (max-width: 767.98px) {
+      display: none !important;
+    }
+  }
+
+  // Add some top/bottom padding for small screens
+  .content-inner {
+    padding: 2rem 1rem;
+
+    @media (min-width: 768px) {
+      padding: 2rem;
+    }
+  }
+}
 
 .footUpper {
   height: 130px;
@@ -267,6 +375,11 @@
           font-size: 3rem;
         }
 
+        .paragraph {
+          color: #fff;
+          width: 63rem;
+        }
+
         .selectable {
           display: flex;
           flex-direction: row;
@@ -311,13 +424,9 @@
           transition: 0.5s all ease-in-out;
           background-color: #fff22e;
           color: #ca2b28;
-          box-shadow:
-            rgba(0, 0, 0, 0.07) 0px 1px 2px,
-            rgba(0, 0, 0, 0.07) 0px 2px 4px,
-            rgba(0, 0, 0, 0.07) 0px 4px 8px,
-            rgba(0, 0, 0, 0.07) 0px 8px 16px,
-            rgba(0, 0, 0, 0.07) 0px 16px 32px,
-            rgba(0, 0, 0, 0.07) 0px 32px 64px;
+          box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+            rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+            rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
           border: 0;
 
           &:hover {
@@ -326,6 +435,94 @@
           }
         }
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .topBanner {
+    background-position: center;
+
+    .container {
+      .topSub {
+        padding-bottom: 0rem;
+        align-items: center;
+        justify-content: center;
+
+        .topSub2 {
+          text-align: center;
+
+          .h1 {
+            font-size: 32px;
+            text-align: center;
+          }
+
+          .selectable {
+            justify-content: center;
+          }
+
+          .inps {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .topBanner.getCovver {
+    height: 30rem;
+
+    .topSub {
+      .topSub2 {
+        .selectable.mt-5 {
+          margin-top: 0 !important;
+        }
+
+        .h1 {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+
+  .footUpper {
+    height: 270px;
+    flex-direction: column;
+
+    .left {
+      width: 100%;
+    }
+
+    .right {
+      width: 100%;
+    }
+
+    .clipp {
+      display: none;
+    }
+
+    .contain {
+      .col-lg-6 {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+
+        .icon {
+          transform: translateY(-15px);
+        }
+
+        .h4 {
+          font-size: 40px;
+          margin: 0;
+          transform: translateY(10px);
+        }
+      }
+    }
+  }
+
+  .everyStory {
+    .h4 {
+      font-size: 2rem !important;
     }
   }
 }

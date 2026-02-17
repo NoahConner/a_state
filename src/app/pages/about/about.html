@@ -1,59 +1,62 @@
 <div class="aboutMain">
   <div class="topBanner">
     <div class="container">
-      <div class="h1">Protecting Texas Families and Businesses Since 2018</div>
+      <div class="h1">{{ 'ABOUT.HERO.HEADING' | translate }}</div>
     </div>
   </div>
 
   <section class="trusted-insurance py-5">
-  <div class="container">
-    <h2 class="text-center mb-5">
-      Your <strong class="text-danger">Trusted Insurance</strong> Partner
-    </h2>
+    <div class="container">
+      <h2 class="text-center mb-5">
+        {{ 'ABOUT.TRUSTED_PARTNER.TEXT1' | translate }}
+        <strong class="text-danger">
+          {{ 'ABOUT.TRUSTED_PARTNER.HIGHLIGHT' | translate }}
+        </strong>
+        {{ 'ABOUT.TRUSTED_PARTNER.TEXT2' | translate }}
+      </h2>
 
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm border-0 rounded-3">
-          <img src="assets/images/trusted1.png" class="card-img-top" alt="Company History" />
-          <div class="card-body">
-            <h5 class="card-title">Company History and Establishment Year</h5>
-            <div class="divider" ></div>
-            <p class="card-text">
-              Founded in 2018, A-State Insurance began with a simple but impactful mission: to make insurance clear, accessible, and reliable for all Texans. From the start, we partnered with multiple carriers to provide personalized coverage for homes, vehicles, businesses, health, life, and surety bonds. Over the years, we’ve grown steadily while remaining fully committed to exceptional service, multilingual support, and an understanding of the unique needs of every individual and community we proudly serve across Texas.
-            </p>
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0 rounded-3">
+            <img src="assets/images/trusted1.png" class="card-img-top" alt="Company History" />
+            <div class="card-body">
+              <h5 class="card-title">{{ 'ABOUT.TRUSTED_INSURANCE.CARD1.TITLE' | translate }}</h5>
+              <div class="divider"></div>
+              <p class="card-text">
+                {{ 'ABOUT.TRUSTED_INSURANCE.CARD1.DESC' | translate }}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm border-0 rounded-3">
-          <img src="assets/images/trusted3.png" class="card-img-top" alt="Company History" />
-          <div class="card-body">
-            <h5 class="card-title">Core Mission & Values</h5>
-            <div class="divider" ></div>
-            <p class="card-text">
-              At A-State Insurance, our mission is to provide Texans with insurance solutions built on trust, reliability, and clarity. We value strong relationships, personalized guidance, and serving every community with respect and care. By combining professional expertise with a commitment to honesty and support, we ensure clients feel confident, protected, and understood. Our focus is on helping families, businesses, and individuals secure the coverage they need while keeping the process simple and dependable.
-            </p>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0 rounded-3">
+            <img src="assets/images/trusted3.png" class="card-img-top" alt="Company History" />
+            <div class="card-body">
+              <h5 class="card-title">{{ 'ABOUT.TRUSTED_INSURANCE.CARD1.TITLE' | translate }}</h5>
+              <div class="divider"></div>
+              <p class="card-text">
+                {{ 'ABOUT.TRUSTED_INSURANCE.CARD1.DESC' | translate }}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm border-0 rounded-3">
-          <img src="assets/images/trusted2.png" class="card-img-top" alt="Company History" />
-          <div class="card-body">
-            <h5 class="card-title">Types of Clients Served</h5>
-            <div class="divider" ></div>
-            <p class="card-text">
-              A-State Insurance proudly serves a wide range of clients, including families, automobile owners, homeowners, and businesses of all sizes. We focus on building trust and providing reliable coverage tailored to each client’s unique needs. With a commitment to community and personalized service, our multilingual team ensures everyone feels supported, understood, and confident. From protecting homes and vehicles to safeguarding businesses and lives, we help Texans secure what matters most with care and integrity.
-            </p>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0 rounded-3">
+            <img src="assets/images/trusted2.png" class="card-img-top" alt="Company History" />
+            <div class="card-body">
+              <h5 class="card-title">{{ 'ABOUT.TRUSTED_INSURANCE.CARD1.TITLE' | translate }}</h5>
+              <div class="divider"></div>
+              <p class="card-text">
+                {{ 'ABOUT.TRUSTED_INSURANCE.CARD1.DESC' | translate }}
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Our Insurance Solutions -->
   <div class="solutions-section">
@@ -190,26 +193,103 @@
     </div>
   </div>
 
+  <section class="why-choose-us">
+    <div class="container-fluid p-0 overflow-hidden">
+      <div class="row g-0">
+        <div class="col-md-6 d-none d-md-block">
+          <div class="image-wrapper">
+            <img src="assets/images/aboutTexnas.png" alt="Texas Flags" class="object-fit-cover" />
+          </div>
+        </div>
+
+        <div class="col-lg-6 mt-5">
+          <div class="content-inner">
+            <h4 class="section-title mb-5">
+              {{ 'ABOUT.WHY_TEXANS_CHOOSE.HEADING' | translate }}<br />
+              <strong>{{ 'ABOUT.WHY_TEXANS_CHOOSE.HEADING2' | translate }}</strong>
+            </h4>
+
+            <div class="features-list">
+              <div class="feature-item d-flex mb-3">
+                <div class="icon-dot me-3 mt-2"></div>
+                <div>
+                  <h5 class="fw-bold mb-1">
+                    {{ 'ABOUT.WHY_TEXANS_CHOOSE.CARD1.TITLE' | translate }}
+                  </h5>
+                  <p>{{ 'ABOUT.WHY_TEXANS_CHOOSE.CARD1.DESC' | translate }}</p>
+                </div>
+              </div>
+
+              <div class="feature-item d-flex mb-3">
+                <div class="icon-dot me-3 mt-2"></div>
+                <div>
+                  <h5 class="fw-bold mb-1">
+                    {{ 'ABOUT.WHY_TEXANS_CHOOSE.CARD2.TITLE' | translate }}
+                  </h5>
+                  <p>{{ 'ABOUT.WHY_TEXANS_CHOOSE.CARD2.DESC' | translate }}</p>
+                </div>
+              </div>
+
+              <div class="feature-item d-flex mb-3">
+                <div class="icon-dot me-3 mt-2"></div>
+                <div>
+                  <h5 class="fw-bold mb-1">
+                    {{ 'ABOUT.WHY_TEXANS_CHOOSE.CARD3.TITLE' | translate }}
+                  </h5>
+                  <p>{{ 'ABOUT.WHY_TEXANS_CHOOSE.CARD3.DESC' | translate }}</p>
+                </div>
+              </div>
+
+              <div class="feature-item d-flex mb-3">
+                <div class="icon-dot me-3 mt-2"></div>
+                <div>
+                  <h5 class="fw-bold mb-1">
+                    {{ 'ABOUT.WHY_TEXANS_CHOOSE.CARD4.TITLE' | translate }}
+                  </h5>
+                  <p>{{ 'ABOUT.WHY_TEXANS_CHOOSE.CARD4.DESC' | translate }}</p>
+                </div>
+              </div>
+
+              <div class="feature-item d-flex mb-3">
+                <div class="icon-dot me-3 mt-2"></div>
+                <div>
+                  <h5 class="fw-bold mb-1">
+                    {{ 'ABOUT.WHY_TEXANS_CHOOSE.CARD5.TITLE' | translate }}
+                  </h5>
+                  <p>{{ 'ABOUT.WHY_TEXANS_CHOOSE.CARD5.DESC' | translate }}</p>
+                </div>
+              </div>
+
+              <!-- ... Repeat for other items ... -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- get covered -->
   <div class="getCovver">
     <div class="container">
       <div class="topSub">
         <div class="topSub2">
           <div class="h1">{{ 'HOME.COVERDBANNER.TITLE' | translate }}</div>
+          <p class="paragraph">{{ 'HOME.COVERDBANNER.DESC' | translate }}</p>
+
           <div class="selectable mt-5">
             @for (item of chips.slice(0, 3); track item.name) {
-              <div class="chip">
-                <i class="{{ item?.icon }}"></i>
-                <span>{{ item?.name | translate }}</span>
-              </div>
+            <div class="chip">
+              <i class="{{ item?.icon }}"></i>
+              <span>{{ item?.name | translate }}</span>
+            </div>
             }
           </div>
           <div class="selectable mt-2">
             @for (item of chips.slice(3, 6); track item.name) {
-              <div class="chip">
-                <i class="{{ item?.icon }}"></i>
-                <span>{{ item?.name | translate }}</span>
-              </div>
+            <div class="chip">
+              <i class="{{ item?.icon }}"></i>
+              <span>{{ item?.name | translate }}</span>
+            </div>
             }
           </div>
           <div class="inps">
