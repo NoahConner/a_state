@@ -1,1 +1,203 @@
-<p>about works!</p>
+<div class="aboutMain">
+  <div class="topBanner">
+    <div class="container">
+      <div class="h1">Protecting Texas Families and Businesses Since 2018</div>
+    </div>
+  </div>
+
+  <!-- Our Insurance Solutions -->
+  <div class="solutions-section">
+    <div class="side-strip"></div>
+    <div class="container position-relative">
+      <div class="row mb-5 text-center">
+        <div class="col-12">
+          <h2 class="section-title">{{ 'HOME.INSURANCE_SOLUTIONS.TITLE' | translate }}</h2>
+
+          <div class="ptag text-light">
+            A-State Insurance offers customized insurance coverage for homes, vehicles, health,
+            life, businesses, and bonds. With multilingual support, multiple carrier options, and
+            personalized guidance, we make choosing the right plan simple, reliable, and stress-free
+            for everyone. Trust us to protect what matters most to you and your family.
+          </div>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="solution-card">
+            <div class="d-flex align-items-start">
+              <div class="icon-box">
+                <img src="../assets/images/car.png" alt="Car Icon" />
+                <!-- <i class="fas fa-car"></i> -->
+              </div>
+              <div class="card-content">
+                <h5 class="solution-title">
+                  {{ 'HOME.INSURANCE_SOLUTIONS.AUTO.TITLE' | translate }}
+                </h5>
+
+                <p class="solution-text">
+                  {{ 'HOME.INSURANCE_SOLUTIONS.AUTO.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="solution-card seprator">
+            <div class="d-flex align-items-start">
+              <div class="icon-box">
+                <img src="../assets/images/house.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="solution-title">
+                  {{ 'HOME.INSURANCE_SOLUTIONS.HOME.TITLE' | translate }}
+                </h5>
+
+                <p class="solution-text">
+                  {{ 'HOME.INSURANCE_SOLUTIONS.HOME.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="solution-card seprator">
+            <div class="d-flex align-items-start">
+              <div class="icon-box">
+                <img src="../assets/images/commercial.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="solution-title">
+                  {{ 'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.TITLE' | translate }}
+                </h5>
+
+                <p class="solution-text">
+                  {{ 'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="solution-card">
+            <div class="d-flex align-items-start">
+              <div class="icon-box">
+                <img src="../assets/images/life.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="solution-title">
+                  {{ 'HOME.INSURANCE_SOLUTIONS.LIFE.TITLE' | translate }}
+                </h5>
+
+                <p class="solution-text">
+                  {{ 'HOME.INSURANCE_SOLUTIONS.LIFE.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="solution-card">
+            <div class="d-flex align-items-start">
+              <div class="icon-box">
+                <img src="../assets/images/health.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="solution-title">
+                  {{ 'HOME.INSURANCE_SOLUTIONS.HEALTH.TITLE' | translate }}
+                </h5>
+
+                <p class="solution-text">
+                  {{ 'HOME.INSURANCE_SOLUTIONS.HEALTH.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="solution-card seprator">
+            <div class="d-flex align-items-start">
+              <div class="icon-box">
+                <img src="../assets/images/secure.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="solution-title">
+                  {{ 'HOME.INSURANCE_SOLUTIONS.SURETY.TITLE' | translate }}
+                </h5>
+
+                <p class="solution-text">
+                  {{ 'HOME.INSURANCE_SOLUTIONS.SURETY.DESC' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- get covered -->
+  <div class="getCovver">
+    <div class="container">
+      <div class="topSub">
+        <div class="topSub2">
+          <div class="h1">{{ 'HOME.COVERDBANNER.TITLE' | translate }}</div>
+          <div class="selectable mt-5">
+            @for (item of chips.slice(0, 3); track item.name) {
+              <div class="chip">
+                <i class="{{ item?.icon }}"></i>
+                <span>{{ item?.name | translate }}</span>
+              </div>
+            }
+          </div>
+          <div class="selectable mt-2">
+            @for (item of chips.slice(3, 6); track item.name) {
+              <div class="chip">
+                <i class="{{ item?.icon }}"></i>
+                <span>{{ item?.name | translate }}</span>
+              </div>
+            }
+          </div>
+          <div class="inps">
+            <input
+              type="text"
+              [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate"
+              class="form-control"
+            />
+            <input
+              type="number"
+              [placeholder]="'HOME.BANNER.FORM.PHONE' | translate"
+              class="form-control"
+            />
+          </div>
+          <button class="btn">{{ 'HOME.COVERDBANNER.FORM.BUTTON' | translate }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footuper -->
+  <div class="footUpper">
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="clipp"></div>
+    <div class="contain">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="icon">
+              <img src="/assets/images/logo.png" alt="User menu" />
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="h4">{{ 'FOOTER.SLOGAN' | translate }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

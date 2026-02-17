@@ -74,7 +74,9 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">{{ 'HEADER.ABOUT' | translate }}</a>
+            <a class="nav-link" [routerLink]="getRoute('about')">{{
+              'HEADER.ABOUT' | translate
+            }}</a>
           </li>
 
           <li class="nav-item">
