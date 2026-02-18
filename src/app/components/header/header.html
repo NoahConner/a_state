@@ -42,14 +42,14 @@
       </a>
 
       <!-- Mobile toggle -->
-      <button
+      <!-- <button
         class="navbar-toggler"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#mainNavbar"
       >
         <span class="navbar-toggler-icon"></span>
-      </button>
+      </button> -->
 
       <!-- Navbar content -->
       <div class="collapse navbar-collapse" id="mainNavbar">
@@ -127,4 +127,27 @@
       </div>
     </div>
   </nav>
+  <div class="sidebarMain">
+    <section class="banner">
+      <label for="menu-control" class="hamburger">
+        <i class="hamburger__icon"></i>
+        <i class="hamburger__icon"></i>
+        <i class="hamburger__icon"></i>
+      </label>
+  
+      <input type="checkbox" id="menu-control" class="menu-control" />
+  
+      <aside class="sidebar">
+        <nav class="sidebar__menu">
+          <a routerLink="/">Home</a>
+          <a routerLink="/how-it-work">How it Works</a>
+          <a routerLink="/explore-stores">Explore Stores</a>
+        </nav>
+  
+        <label for="menu-control" class="sidebar__close"></label>
+      </aside>
+      <div class="overlay"></div>
+    </section>
+  </div>
 </div>
+
