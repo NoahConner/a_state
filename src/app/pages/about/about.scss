@@ -207,8 +207,8 @@
   }
 
   .image-wrapper img {
-    width: 98%;
-    height: auto;
+    max-width: 90%;
+        height: auto;
     margin-top: 60px;
     margin-bottom: 60px;
     display: block;
@@ -377,7 +377,9 @@
 
         .paragraph {
           color: #fff;
-          width: 63rem;
+          max-width: 800px;
+          width: 100%;
+          line-height: 1.6;
         }
 
         .selectable {
@@ -440,91 +442,64 @@
 }
 
 @media only screen and (max-width: 540px) {
-  .topBanner {
+
+  .getCovver {
+    height: auto !important;
+    padding: 3rem 1rem;
     background-position: center;
-
-    .container {
-      .topSub {
-        padding-bottom: 0rem;
-        align-items: center;
-        justify-content: center;
-
-        .topSub2 {
-          text-align: center;
-
-          .h1 {
-            font-size: 32px;
-            text-align: center;
-          }
-
-          .selectable {
-            justify-content: center;
-          }
-
-          .inps {
-            width: 100%;
-          }
-        }
-      }
-    }
   }
 
-  .topBanner.getCovver {
-    height: 30rem;
-
-    .topSub {
-      .topSub2 {
-        .selectable.mt-5 {
-          margin-top: 0 !important;
-        }
-
-        .h1 {
-          font-size: 30px;
-        }
-      }
-    }
+  .getCovver .container {
+    height: auto;
   }
 
-  .footUpper {
-    height: 270px;
+  .getCovver .topSub {
     flex-direction: column;
-
-    .left {
-      width: 100%;
-    }
-
-    .right {
-      width: 100%;
-    }
-
-    .clipp {
-      display: none;
-    }
-
-    .contain {
-      .col-lg-6 {
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-
-        .icon {
-          transform: translateY(-15px);
-        }
-
-        .h4 {
-          font-size: 40px;
-          margin: 0;
-          transform: translateY(10px);
-        }
-      }
-    }
+    align-items: center;
+    justify-content: center;
+    padding: 0;
   }
 
-  .everyStory {
-    .h4 {
-      font-size: 2rem !important;
-    }
+  .getCovver .topSub2 {
+    width: 100%;
+    text-align: center;
   }
+
+  .getCovver .h1 {
+    font-size: 26px;
+  }
+
+  .getCovver .paragraph {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  /* 🔥 CHIPS FIX PROPER */
+  .getCovver .selectable {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .getCovver .chip {
+    flex: 0 0 48%;
+    width: 48%;
+    height: 42px;
+    font-size: 14px;
+  }
+
+  .inps {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin: 1rem 0;
+    width: 99% !important;
+  }
+
+
+
 }
 
 @media only screen and (max-width: 1024px) {
