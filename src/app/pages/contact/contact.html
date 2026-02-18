@@ -1,1 +1,184 @@
-<p>contact works!</p>
+<div class="contactMain">
+  <div class="topBanner">
+    <div class="container">
+      <div class="h1">
+        {{ 'CONTACT.HEADING' | translate }} <br />
+        <strong> {{ 'CONTACT.HEADINGSTRONG' | translate }}</strong>
+      </div>
+    </div>
+  </div>
+
+  <section class="contact-section">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <!-- Left Image -->
+        <div class="col-lg-6 p-0">
+          <div class="contact-image">
+            <img src="assets/images/contact-section.png" alt="Family" />
+          </div>
+        </div>
+
+        <!-- Right Form -->
+        <div class="col-lg-6">
+          <div class="contact-form-wrapper">
+            <h2 class="contact-title">{{ 'CONTACT.CONTACT-INSURANCE.HEADING' | translate }}</h2>
+
+            <form class="mt-4">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    class="form-control custom-input"
+                    [placeholder]="'CONTACT.CONTACT-INSURANCE.FEILD1' | translate"
+                  />
+                </div>
+
+                <div class="col-md-6">
+                  <input
+                    type="email"
+                    class="form-control custom-input"
+                    [placeholder]="'CONTACT.CONTACT-INSURANCE.FEILD2' | translate"
+                  />
+                </div>
+
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    class="form-control custom-input"
+                    [placeholder]="'CONTACT.CONTACT-INSURANCE.FEILD3' | translate"
+                  />
+                </div>
+
+                <div class="col-md-6">
+                  <select class="form-select custom-input">
+                    <option selected>{{ 'CONTACT.CONTACT-INSURANCE.FEILD4' | translate }}</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <textarea
+                    rows="6"
+                    class="form-control custom-input textarea"
+                    [placeholder]="'CONTACT.CONTACT-INSURANCE.FEILD5' | translate"
+                  ></textarea>
+                </div>
+
+                <div class="col-12">
+                  <button type="submit" class="btn send-btn">
+                    {{ 'CONTACT.CONTACT-INSURANCE.BUTTON' | translate }}
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reach-section py-5">
+    <div class="container text-center">
+      <h2 class="section-title mb-5">{{ 'CONTACT.REACH-INSURANCE.HEADING' | translate }}</h2>
+
+      <div class="row justify-content-center g-4">
+        <div class="col-md-6 col-lg-5">
+          <div class="reach-card">
+            <div class="card-top">
+              <img src="assets/images/message.png" alt="" />
+
+              <h5>{{ 'CONTACT.REACH-INSURANCE.CARD1.TITLE' | translate }}</h5>
+            </div>
+            <p>
+              {{ 'CONTACT.REACH-INSURANCE.CARD1.DESC' | translate }} <span>(713) 357-7771</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Call Us -->
+        <div class="col-md-6 col-lg-5">
+          <div class="reach-card">
+            <div class="card-top">
+              <img src="assets/images/call.png" alt="" />
+              <h5>{{ 'CONTACT.REACH-INSURANCE.CARD2.TITLE' | translate }}</h5>
+            </div>
+            <p>
+              {{ 'CONTACT.REACH-INSURANCE.CARD2.DESC' | translate }}
+              <span class="underline">(713) 357-7771</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Email Us -->
+        <div class="col-md-6 col-lg-5">
+          <div class="reach-card">
+            <div class="card-top">
+              <img src="assets/images/email.png" alt="" />
+              <h5>{{ 'CONTACT.REACH-INSURANCE.CARD3.TITLE' | translate }}</h5>
+            </div>
+            <p>
+              {{ 'CONTACT.REACH-INSURANCE.CARD3.DESC' | translate }}
+              <span class="underline">info@astateins.com</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Visit Us -->
+        <div class="col-md-6 col-lg-5">
+          <div class="reach-card">
+            <div class="card-top">
+              <img src="assets/images/contact-location.png" alt="" />
+              <h5>{{ 'CONTACT.REACH-INSURANCE.CARD4.TITLE' | translate }}</h5>
+            </div>
+            <p>
+              <span class="underline">{{ 'CONTACT.REACH-INSURANCE.CARD4.DESC' | translate }}</span>
+              {{ 'CONTACT.REACH-INSURANCE.CARD4.DESC1' | translate }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hours -->
+      <div class="hours mt-5">
+        <img src="assets/images/tabler_clock.png" alt="" />
+        <span>{{ 'CONTACT.REACH-INSURANCE.DESC' | translate }}</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="connect-section">
+    <div class="container text-center">
+      <h2 class="connect-title">{{ 'CONTACT.CONNECTTITLE' | translate }}</h2>
+
+      <div class="social-wrapper">
+        <a href="#" class="social-box">
+          <img class="insta" src="assets/images/Instagram.png" alt="Instagram" />
+        </a>
+
+        <a href="#" class="social-box">
+          <img class="fb" src="assets/images/Facebook.png" alt="Facebook" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- footuper -->
+  <div class="footUpper">
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="clipp"></div>
+    <div class="contain">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="icon">
+              <img src="/assets/images/logo.png" alt="User menu" />
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="h4">{{ 'FOOTER.SLOGAN' | translate }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
