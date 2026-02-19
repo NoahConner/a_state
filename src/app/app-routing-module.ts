@@ -39,7 +39,7 @@ export class AppRoutingModule {}
 
 export const routeTranslations: Record<string, Record<string, string>> = {
   contact: {
-    en: 'contact',
+    en: 'contact-us',
     es: 'contacto',
   },
   about: {

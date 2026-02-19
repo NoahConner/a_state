@@ -1,1 +1,83 @@
-<p>terms works!</p>
+<div class="termsMain">
+  <div class="topBanner">
+    <div class="container">
+      <div class="h1">
+        {{ 'TERMS_PAGE.HEADING' | translate }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="terms-section">
+  <div class="container">
+    <div class="terms-block" *ngFor="let section of termsSections">
+      <h2 class="terms-heading">
+        {{ section.title | translate }}
+      </h2>
+
+      <p *ngFor="let paragraph of section.paragraphs">
+        {{ paragraph | translate }}
+      </p>
+
+      <!-- Bullet Points Support -->
+      <ul *ngIf="section.points">
+        <li *ngFor="let point of section.points">
+          {{ point | translate }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="terms-block">
+      <h2 class="contact-title">
+        {{ 'TERMS_PAGE.CONTACT_INFO.TITLE' | translate }}
+      </h2>
+      <div class="contact-content">
+        <h3>
+          {{ 'TERMS_PAGE.CONTACT_INFO.COMPANY' | translate }}
+        </h3>
+
+        <p>
+          {{ 'TERMS_PAGE.CONTACT_INFO.ADDRESS' | translate }}
+        </p>
+
+        <p>
+          <strong>{{ 'TERMS_PAGE.CONTACT_INFO.PHONE_LABEL' | translate }}</strong>
+          <a href="tel:7133577771">
+            {{ 'TERMS_PAGE.CONTACT_INFO.PHONE' | translate }}
+          </a>
+        </p>
+
+        <p>
+          <strong>{{ 'TERMS_PAGE.CONTACT_INFO.EMAIL_LABEL' | translate }}</strong>
+          <a href="mailto:info@astateins.com">
+            {{ 'TERMS_PAGE.CONTACT_INFO.EMAIL' | translate }}
+          </a>
+        </p>
+
+        <p>
+          {{ 'TERMS_PAGE.CONTACT_INFO.HOURS' | translate }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="footUpper">
+  <div class="left"></div>
+  <div class="right"></div>
+  <div class="clipp"></div>
+  <div class="contain">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-sm-6 col-xs-12">
+          <div class="icon">
+            <img src="/assets/images/logo.png" alt="User menu" />
+          </div>
+        </div>
+        <div class="col-lg-6 col-sm-6 col-xs-12">
+          <div class="h4">{{ 'FOOTER.SLOGAN' | translate }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

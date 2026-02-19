@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './privacy.scss',
 })
 export class Privacy {
-
+  personalList: string[] = [];
+  autoList: string[] = [];
 }
