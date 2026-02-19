@@ -38,8 +38,13 @@ export class Language {
   }
 
   setLanguage(lang: string) {
-    const currentUrl = this.router.url.split('/').filter(Boolean);
+    // Always update translation (safe for SSR)
+    this.translate.use(lang);
 
+    // Browser-only code
+    if (!this.isBrowser) return; // prevent SSR crashes
+
+    const currentUrl = this.router.url.split('/').filter(Boolean);
     let currentLang = 'en';
     let currentSlug = currentUrl[0];
 
@@ -48,7 +53,6 @@ export class Language {
       currentSlug = currentUrl[1];
     }
 
-    // Find which logical page we're on
     const routeKey = Object.keys(routeTranslations).find(
       (key) => routeTranslations[key][currentLang] === currentSlug,
     );
@@ -62,12 +66,8 @@ export class Language {
       }
     }
 
-    // Update translation
-    this.translate.use(lang);
-    if (this.isBrowser) {
-      localStorage.setItem('lang', lang);
-      document.documentElement.lang = lang;
-    }
+    localStorage.setItem('lang', lang);
+    document.documentElement.lang = lang;
   }
 
   getCurrentLanguage() {

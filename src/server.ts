@@ -41,10 +41,17 @@ app.use(
 app.use((req, res, next) => {
   angularApp
     .handle(req)
-    .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next(),
-    )
-    .catch(next);
+    .then((response) => {
+      if (response) {
+        writeResponseToNodeResponse(response, res);
+      } else {
+        next();
+      }
+    })
+    .catch((err) => {
+      console.error(`\n❌ Prerender ERROR for route "${req.url}":`, err);
+      next(err);
+    });
 });
 
 /**
