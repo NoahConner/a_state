@@ -31,11 +31,11 @@
       {{ 'PRIVACY.INFORMATION_COLLECT.PERSONAL_DESC' | translate }}
     </p>
 
-    <!-- <ol>
+    <ol>
       <li *ngFor="let item of personalList">
-        {{ item }}
+        {{ item | translate }}
       </li>
-    </ol> -->
+    </ol>
 
     <p>
       {{ 'PRIVACY.INFORMATION_COLLECT.PERSONAL_NOTE' | translate }}
@@ -48,12 +48,9 @@
       {{ 'PRIVACY.INFORMATION_COLLECT.AUTO_DESC' | translate }}
     </p>
 
-    <!-- <ol>
-      <li *ngFor="let item of autoList">
-        {{ item }}
-      </li>
-    </ol> -->
-
+    <ol>
+      <li *ngFor="let item of AUTO_LIST">{{ item | translate }}</li>
+    </ol>
     <p>
       {{ 'PRIVACY.INFORMATION_COLLECT.AUTO_NOTE' | translate }}
     </p>

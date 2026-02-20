@@ -6,6 +6,7 @@ import { InsuranceServices } from './pages/insurance-services/insurance-services
 import { About } from './pages/about/about';
 import { Privacy } from './pages/privacy/privacy';
 import { Terms } from './pages/terms/terms';
+import { Careers } from './pages/careers/careers';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'about-us', component: About },
   { path: 'privacy-policy', component: Privacy },
   { path: 'terms-and-conditions', component: Terms },
+  { path: 'careers', component: Careers },
 
   // Spanish
   {
@@ -24,6 +26,7 @@ const routes: Routes = [
       { path: 'sobre-nosotros', component: About },
       { path: 'politica-de-privacidad', component: Privacy },
       { path: 'terminos-y-condiciones', component: Terms },
+      { path: 'carreras', component: Careers },
     ],
   },
 
@@ -57,5 +60,10 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   termsAndConditions: {
     en: 'terms-and-conditions',
     es: 'terminos-y-condiciones',
+  },
+
+  careers: {
+    en: 'careers',
+    es: 'carreras',
   },
 };

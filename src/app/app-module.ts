@@ -16,6 +16,7 @@ import { About } from './pages/about/about';
 import { Privacy } from './pages/privacy/privacy';
 import { Terms } from './pages/terms/terms';
 import { TestimonialSliderComponent } from './components/testimonial-slider/testimonial-slider';
+import { Careers } from './pages/careers/careers';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { TestimonialSliderComponent } from './components/testimonial-slider/test
     InsuranceServices,
     About,
     Privacy,
+    Careers,
     Terms,
     TestimonialSliderComponent,
   ],

@@ -181,7 +181,9 @@
             <img src="/assets/images/policy.png" alt="" />
           </div>
           <div class="he">
-            <a href="/privacy-policy">{{ 'FOOTER.POLICIES.PRIVACY' | translate }}</a>
+            <a [routerLink]="getRoute('privacyPolicy')">{{
+              'FOOTER.POLICIES.PRIVACY' | translate
+            }}</a>
           </div>
         </div>
         <div class="b1">
@@ -189,7 +191,18 @@
             <img src="/assets/images/terms.png" alt="" />
           </div>
           <div class="he">
-            <a href="/terms-and-conditions"> {{ 'FOOTER.POLICIES.TERMS' | translate }}</a>
+            <a [routerLink]="getRoute('termsAndConditions')">
+              {{ 'FOOTER.POLICIES.TERMS' | translate }}</a
+            >
+          </div>
+        </div>
+
+        <div class="b1">
+          <div class="icn">
+            <img src="/assets/images/terms.png" alt="" />
+          </div>
+          <div class="he">
+            <a [routerLink]="getRoute('careers')"> {{ 'FOOTER.POLICIES.CAREERS' | translate }}</a>
           </div>
         </div>
       </div>
