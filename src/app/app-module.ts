@@ -17,6 +17,7 @@ import { Privacy } from './pages/privacy/privacy';
 import { Terms } from './pages/terms/terms';
 import { TestimonialSliderComponent } from './components/testimonial-slider/testimonial-slider';
 import { Careers } from './pages/careers/careers';
+import { Thankyou } from './pages/thank-you/thank-you';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { Careers } from './pages/careers/careers';
     Careers,
     Terms,
     TestimonialSliderComponent,
+    Thankyou,
   ],
   imports: [
     BrowserModule,

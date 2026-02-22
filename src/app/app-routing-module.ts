@@ -7,6 +7,7 @@ import { About } from './pages/about/about';
 import { Privacy } from './pages/privacy/privacy';
 import { Terms } from './pages/terms/terms';
 import { Careers } from './pages/careers/careers';
+import { Thankyou } from './pages/thank-you/thank-you';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'privacy-policy', component: Privacy },
   { path: 'terms-and-conditions', component: Terms },
   { path: 'careers', component: Careers },
+  { path: 'thank-you', component: Thankyou },
 
   // Spanish
   {
@@ -27,6 +29,7 @@ const routes: Routes = [
       { path: 'politica-de-privacidad', component: Privacy },
       { path: 'terminos-y-condiciones', component: Terms },
       { path: 'carreras', component: Careers },
+      { path: 'thank-you', component: Thankyou },
     ],
   },
 
@@ -65,5 +68,10 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   careers: {
     en: 'careers',
     es: 'carreras',
+  },
+
+  thankyou: {
+    en: 'thank-you',
+    es: 'thank-you',
   },
 };

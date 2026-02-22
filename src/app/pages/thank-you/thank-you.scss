@@ -1,0 +1,164 @@
+.thankyouMain {
+  .topBanner {
+    background-color: #ca2b28;
+    padding: 60px 0; // use padding instead of min-height
+    display: flex;
+    align-items: center;
+
+    .container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    .h1 {
+      color: #fff22f;
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0;
+      max-width: 650px;
+    }
+  }
+}
+
+.thank-you-section {
+  background-color: #f4f4f4;
+
+  .container {
+    max-width: 1100px;
+  }
+
+  p {
+    font-size: 22px; // Matches the visual scale of your original code
+    color: #272424; // Matching your specific color code
+    line-height: 1.4; // Tight line height like the image
+    margin: 0 0 4px 0; // Small gap between lines to match the "list" look in the image
+    font-weight: 400;
+  }
+}
+
+.send-btn {
+  background: #ffea00;
+  color: #c62828;
+  padding: 14px 35px;
+  font-weight: 600;
+  border-radius: 10px;
+  margin-top: 16px;
+  border: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.356);
+  transition: 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
+.footUpper {
+  height: 130px;
+  width: 100%;
+  background-color: #ca2b28;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+  .left {
+    width: 55%;
+    height: 100%;
+  }
+
+  .right {
+    height: 100%;
+    background-color: #e62e2a;
+    width: 50%;
+  }
+
+  .clipp {
+    position: absolute;
+    clip-path: polygon(67% 0, 100% 0, 100% 99%, 20% 100%);
+    height: 130px;
+    width: 130px;
+    background-color: #e62e2a;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .contain {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+
+    .col-lg-6 {
+      display: flex;
+      align-items: center;
+
+      .icon {
+        height: 80%;
+        width: fit-content;
+      }
+
+      .h4 {
+        font-weight: 700;
+        color: #fff;
+        font-size: 42px;
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .thankyouMain {
+    .topBanner {
+      min-height: 6rem;
+
+      .container {
+        justify-content: center;
+
+        .h1 {
+          font-size: 1.6rem;
+          margin-bottom: 2.8rem;
+          text-align: center;
+          padding: 0 1rem;
+        }
+      }
+    }
+  }
+
+  .footUpper {
+    height: 270px;
+    flex-direction: column;
+
+    .left {
+      width: 100%;
+    }
+
+    .right {
+      width: 100%;
+    }
+
+    .clipp {
+      display: none;
+    }
+
+    .contain {
+      .col-lg-6 {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+
+        .icon {
+          transform: translateY(-15px);
+        }
+
+        .h4 {
+          font-size: 40px;
+          margin: 0;
+          transform: translateY(10px);
+        }
+      }
+    }
+  }
+}
