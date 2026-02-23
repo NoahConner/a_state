@@ -18,6 +18,7 @@ import { Terms } from './pages/terms/terms';
 import { TestimonialSliderComponent } from './components/testimonial-slider/testimonial-slider';
 import { Careers } from './pages/careers/careers';
 import { Thankyou } from './pages/thank-you/thank-you';
+import { OurLocations } from './pages/our-locations/our-locations';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { Thankyou } from './pages/thank-you/thank-you';
     Terms,
     TestimonialSliderComponent,
     Thankyou,
+    OurLocations
   ],
   imports: [
     BrowserModule,
