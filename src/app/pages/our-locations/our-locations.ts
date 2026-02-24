@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { catchError, finalize } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { Language } from '../../services/language';
 
 interface Location {
   id: string;
@@ -34,26 +35,36 @@ export class OurLocations implements OnInit {
   locations: Location[] = [];
   loading = false;
   errorMessage = '';
+  currentLang:string = ''
 
   constructor(
     private http: HttpClient,
     private cdr: ChangeDetectorRef,
-    private sanitizer: DomSanitizer
-    
+    private sanitizer: DomSanitizer,
+    public languageService: Language
   ) {}
 
   ngOnInit(): void {
-    this.getLocations();
+    let currentLang = this.languageService.getCurrentLanguage();
+    this.getLocations(currentLang);
+     this.currentLang = currentLang
+    this.languageService
+    .getLanguageChange()
+    .subscribe((lang:any) => {
+      this.currentLang = lang.lang;
+      this.getLocations(lang.lang);
+    });
   }
 
-  getLocations() {
+  getLocations(lang:any) {
     const url = '/assets/locations.json';
-    this.http.get<Location[]>(url).subscribe({
+    this.http.get<any[]>(url).subscribe({
       next: (res) => {
-        this.locations = (res || []).map((loc) => ({
+        this.locations = (res[lang] || [])?.map((loc:any) => ({
           ...loc,
           safeMapUrl: this.sanitizer.bypassSecurityTrustResourceUrl(loc.mapEmbedUrl),
         }));
+        console.log(this.locations, res)
         this.cdr.detectChanges();
       },
     });

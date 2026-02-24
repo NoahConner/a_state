@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core'; // ChangeD
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { Language } from '../../services/language';
 
 interface Location {
   id: string;
@@ -36,7 +37,8 @@ export class LocationDetail implements OnInit {
     private http: HttpClient,
     private router: Router,
     private sanitizer: DomSanitizer,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    public languageService: Language
   ) {}
 
   chips = [
@@ -49,48 +51,53 @@ export class LocationDetail implements OnInit {
   ];
 
   getIcon(name: string): string {
-  const map: any = {
-    'Auto Insurance': 'assets/images/car.png',
-    'Homeowners Insurance': 'assets/images/house.png',
-    'Commercial Insurance': 'assets/images/commercial.png',
-    'Life Insurance': 'assets/images/life.png',
-    'Health Insurance': 'assets/images/health.png',
-    'Surety Bonds': 'assets/images/secure.png'
-  };
+    const map: any = {
+      'Auto Insurance': 'assets/images/car.png',
+      'Homeowners Insurance': 'assets/images/house.png',
+      'Commercial Insurance': 'assets/images/commercial.png',
+      'Life Insurance': 'assets/images/life.png',
+      'Health Insurance': 'assets/images/health.png',
+      'Surety Bonds': 'assets/images/secure.png',
+    };
 
-  return map[name] || 'assets/images/default.png';
-}
-
-  ngOnInit(): void {
-    this.getLocationDetail();
-   
+    return map[name] || 'assets/images/default.png';
   }
 
-  getLocationDetail() {
+  ngOnInit(): void {
+     let currentLang = this.languageService.getCurrentLanguage();
+     this.getLocationDetail(currentLang);
+    this.languageService
+    .getLanguageChange()
+    .subscribe((lang:any) => {
+      this.getLocationDetail(lang.lang);
+    });
+  }
+
+  getLocationDetail(lang:any) {
     const id = this.route.snapshot.paramMap.get('id');
 
-    if (!id) {
-      this.router.navigate(['/our-locations']);
-      return;
-    }
+    // if (!id) {
+    //   this.router.navigate(['/our-locations']);
+    //   return;
+    // }
 
-    this.http.get<Location[]>('assets/locations.json').subscribe({
+    this.http.get<any[]>('assets/locations.json').subscribe({
       next: (locations) => {
-        const found = locations.find((loc) => loc.id === id);
-        if (!found) {
-          this.router.navigate(['/our-locations']);
-          return;
-        }
+        const found = locations[lang].find((loc:any) => loc.id === id);
+        console.log(found, 'foundfound')
+        // if (!found) {
+        //   this.router.navigate(['/our-locations']);
+        //   return;
+        // }
         this.location = found;
         this.mapUrl = this.sanitizer.bypassSecurityTrustResourceUrl(found.mapEmbedUrl);
 
         this.cdr.detectChanges();
       },
       error: (err) => {
-        this.router.navigate(['/our-locations']);
+        // this.router.navigate(['/our-locations']);
+        console.log(err)
       },
     });
   }
-
-
 }

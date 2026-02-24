@@ -1,8 +1,9 @@
 import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 import { routeTranslations } from '../app-routing-module';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -10,6 +11,9 @@ import { routeTranslations } from '../app-routing-module';
 export class Language {
   availableLangs = ['en', 'es'];
   private isBrowser: boolean;
+  getLanguageChange(): Observable<LangChangeEvent> {
+  return this.translate.onLangChange;
+}
 
   constructor(
     private translate: TranslateService,

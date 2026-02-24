@@ -20,8 +20,9 @@ const routes: Routes = [
   { path: 'terms-and-conditions', component: Terms },
   { path: 'careers', component: Careers },
   { path: 'thank-you', component: Thankyou },
-  { path: 'our-locations', component: OurLocations },
-  { path: 'our-locations-detail/:id', component: LocationDetail },
+  { path: 'our-locations', component: OurLocations, runGuardsAndResolvers: 'always' },
+  { path: 'our-locations/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
+  // { path: 'our-locations-detail/:id', component: LocationDetail },
 
   // Spanish
   {
@@ -34,8 +35,8 @@ const routes: Routes = [
       { path: 'terminos-y-condiciones', component: Terms },
       { path: 'carreras', component: Careers },
       { path: 'gracias', component: Thankyou },
-      { path: 'nuestras-ubicaciones', component: OurLocations },
-      { path: 'nuestras-ubicaciones-detail/:id', component: LocationDetail },
+      { path: 'nuestras-ubicaciones', component: OurLocations, runGuardsAndResolvers: 'always' },
+      { path: 'nuestras-ubicaciones/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
     ],
   },
 
@@ -84,8 +85,8 @@ export const routeTranslations: Record<string, Record<string, string>> = {
     en: 'our-locations',
     es: 'nuestras-ubicaciones',
   },
-  ourLocationsDetail: {
-    en: 'our-locations-detail/:id',
-    es: 'nuestras-ubicaciones-detail/:id',
+  "ourLocations/:id": {
+    en: 'our-locations/:id',
+    es: 'nuestras-ubicaciones/:id',
   },
 };

@@ -54,7 +54,7 @@
           <div class="buttons">
             <button class="btn quote">Get a Quote</button>
             <button class="btn directions">Get Directions</button>
-            <button class="btn details-btn" [routerLink]="['/our-locations-detail', loc.id]">
+            <button class="btn details-btn" [routerLink]=" currentLang == 'es' ? ['/es/nuestras-ubicaciones', loc.id] : ['/our-locations', loc.id]">
               View Office Details
             </button>
           </div>
