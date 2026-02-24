@@ -75,27 +75,14 @@ export class LocationDetail implements OnInit {
 
   getLocationDetail(lang:any) {
     const id = this.route.snapshot.paramMap.get('id');
-
-    // if (!id) {
-    //   this.router.navigate(['/our-locations']);
-    //   return;
-    // }
-
     this.http.get<any[]>('assets/locations.json').subscribe({
       next: (locations) => {
         const found = locations[lang].find((loc:any) => loc.id === id);
-        console.log(found, 'foundfound')
-        // if (!found) {
-        //   this.router.navigate(['/our-locations']);
-        //   return;
-        // }
         this.location = found;
-        this.mapUrl = this.sanitizer.bypassSecurityTrustResourceUrl(found.mapEmbedUrl);
-
+        this.location.mapUrl = this.sanitizer.bypassSecurityTrustResourceUrl(found.mapEmbedUrl);
         this.cdr.detectChanges();
       },
       error: (err) => {
-        // this.router.navigate(['/our-locations']);
         console.log(err)
       },
     });

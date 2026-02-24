@@ -7,19 +7,14 @@
 
   <section class="neighborhood-section">
     <div class="container text-center">
-      <h2 class="title">We’re in Your Neighborhood</h2>
+      <h2 class="title">{{ 'OUR_LOCATION.SESSION1.TITLE' | translate }}</h2>
 
       <p class="desc">
-        Finding the right coverage shouldn’t feel like a chore. At A-State Insurance, we believe in
-        the power of a face-to-face conversation. As a dedicated Texas insurance agency, we don’t
-        work for one big insurance company—we work for you.
+        {{ 'OUR_LOCATION.SESSION1.DEC1' | translate }}
       </p>
 
       <p class="desc">
-        Whether you’re looking to protect your first home, secure a commercial surety bond, or find
-        affordable auto insurance for a new driver, our local brokers are here to simplify the
-        process. We take pride in being a hub for our diverse community, offering expert guidance in
-        English, Spanish, and Hindi so you feel confident in every decision you make.
+        {{ 'OUR_LOCATION.SESSION1.DEC2' | translate }}
       </p>
 
       <div class="location-card shadow" *ngFor="let loc of locations">
@@ -47,15 +42,19 @@
             </li>
             <li>
               <span class="icon">⏰</span>
-              {{ loc.hours }}
+              {{ loc.officeHours }}
             </li>
           </ul>
 
           <div class="buttons">
-            <button class="btn quote">Get a Quote</button>
-            <button class="btn directions">Get Directions</button>
-            <button class="btn details-btn" [routerLink]=" currentLang == 'es' ? ['/es/nuestras-ubicaciones', loc.id] : ['/our-locations', loc.id]">
-              View Office Details
+            <button class="btn quote">{{ loc.ctaButtons[0] }}</button>
+            <button class="btn directions">{{ loc.ctaButtons[1] }}</button>
+            <button class="btn details-btn" [routerLink]="
+                currentLang == 'es'
+                  ? ['/es/nuestras-ubicaciones', loc.id]
+                  : ['/our-locations', loc.id]
+              ">
+              {{ loc.ctaButtons[2] }}
             </button>
           </div>
         </div>
@@ -67,16 +66,13 @@
     <div class="container">
       <!-- Header -->
       <div class="text-center mb-5">
-        <h2 class="section-title">Why Visit an A-State Insurance Office?</h2>
+        <h2 class="section-title">{{ 'OUR_LOCATION.SESSION2.TITLE' | translate }}</h2>
         <div class="header-desc mx-auto">
           <p>
-            While many companies hide behind call centers and automated menus, A-State Insurance
-            believes that the best coverage starts with a handshake. As a local Texas agency and
-            independent broker, we design our offices to be a resource for the entire community.
+            {{ 'OUR_LOCATION.SESSION2.DEC1' | translate }}
           </p>
           <p>
-            When you walk through our doors, you aren't just a policy number—you're our neighbor.
-            Here is why Texans choose to visit us in person:
+            {{ 'OUR_LOCATION.SESSION2.DEC2' | translate }}
           </p>
         </div>
       </div>
@@ -85,34 +81,25 @@
       <div class="row feature-row">
         <!-- Feature 1 -->
         <div class="col-md-4 feature-col">
-          <h3 class="feature-title">Expert Guidance Across Multiple Carriers</h3>
+          <h3 class="feature-title">{{ 'OUR_LOCATION.SESSION2.CARD1.TITLE' | translate }}</h3>
           <p class="feature-text">
-            We don't work for one big insurance company; we work for you. As brokers, we compare
-            products from a wide range of top-rated carriers. Whether you need auto, homeowners,
-            commercial, life, or health insurance, we do the shopping for you to find the best
-            coverage at the most competitive price.
+            {{ 'OUR_LOCATION.SESSION2.CARD1.DESCRIPTION' | translate }}
           </p>
         </div>
 
         <!-- Feature 2 -->
         <div class="col-md-4 feature-col">
-          <h3 class="feature-title">The Personal Touch You Deserve</h3>
+          <h3 class="feature-title">{{ 'OUR_LOCATION.SESSION2.CARD2.TITLE' | translate }}</h3>
           <p class="feature-text">
-            Insurance can be complex, and a "one-size-fits-all" approach rarely works. Our local
-            agents take the time to sit down with you, listen to your specific needs, and explain
-            your options in plain language. You get real advice from real people who understand the
-            unique risks and requirements of living and working in Texas.
+            {{ 'OUR_LOCATION.SESSION2.CARD2.DESCRIPTION' | translate }}
           </p>
         </div>
 
         <!-- Feature 3 -->
         <div class="col-md-4 feature-col no-border">
-          <h3 class="feature-title">Proudly Serving Our Diverse Community</h3>
+          <h3 class="feature-title">{{ 'OUR_LOCATION.SESSION2.CARD3.TITLE' | translate }}</h3>
           <p class="feature-text">
-            We are committed to making insurance accessible to everyone. Our offices are cultural
-            hubs where the Hispanic, Latino, and South Asian communities can find specialized care.
-            With agents who speak English, Spanish, and Hindi, we ensure that nothing—not even a
-            language barrier—stands in the way of protecting your family or your business.
+            {{ 'OUR_LOCATION.SESSION2.CARD3.DESCRIPTION' | translate }}
           </p>
         </div>
       </div>
@@ -125,14 +112,10 @@
       <div class="topSub">
         <div class="topSub2">
           <div class="h1">
-            Can't Make It In? We’re Only <br />
-            a Click Away
+            {{ 'OUR_LOCATION.SESSION3.TITLE' | translate }}
           </div>
           <p class="paragraph">
-            We know life in Texas moves fast. Whether you are managing a busy work schedule or
-            simply prefer the convenience of home, you don’t have to visit an office to get the
-            "Agency Advantage." A-State Insurance offers a seamless digital experience that brings
-            our expert brokers directly to you.
+            {{ 'OUR_LOCATION.SESSION3.DEC1' | translate }}
           </p>
 
           <div class="selectable mt-5">

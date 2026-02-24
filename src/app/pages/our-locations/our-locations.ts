@@ -32,10 +32,10 @@ export class OurLocations implements OnInit {
     { name: 'HOME.BANNER.CHIPS.SURETY', icon: 'fas fa-file-contract' },
   ];
 
-  locations: Location[] = [];
+  locations: any;
   loading = false;
   errorMessage = '';
-  currentLang:string = ''
+  currentLang: string = '';
 
   constructor(
     private http: HttpClient,
@@ -47,24 +47,22 @@ export class OurLocations implements OnInit {
   ngOnInit(): void {
     let currentLang = this.languageService.getCurrentLanguage();
     this.getLocations(currentLang);
-     this.currentLang = currentLang
-    this.languageService
-    .getLanguageChange()
-    .subscribe((lang:any) => {
+    this.currentLang = currentLang;
+    this.languageService.getLanguageChange().subscribe((lang: any) => {
       this.currentLang = lang.lang;
       this.getLocations(lang.lang);
     });
   }
 
-  getLocations(lang:any) {
+  getLocations(lang: any) {
     const url = '/assets/locations.json';
     this.http.get<any[]>(url).subscribe({
       next: (res) => {
-        this.locations = (res[lang] || [])?.map((loc:any) => ({
+        this.locations = (res[lang] || [])?.map((loc: any) => ({
           ...loc,
           safeMapUrl: this.sanitizer.bypassSecurityTrustResourceUrl(loc.mapEmbedUrl),
         }));
-        console.log(this.locations, res)
+        console.log(this.locations, res);
         this.cdr.detectChanges();
       },
     });
