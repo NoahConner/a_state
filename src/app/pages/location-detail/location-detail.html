@@ -1,0 +1,341 @@
+<div class="homeMain" *ngIf="location as loc">
+  <div class="topBanner">
+    <div class="container">
+      <div class="topSub">
+        <div class="topSub2">
+          <div class="h1">
+            {{ loc?.detailPage?.banner.heroHeading }} <br />
+            {{ loc?.name }}
+          </div>
+
+          <div class="selectable mt-5">
+            @for (item of chips.slice(0, 3); track item.name) {
+            <div class="chip">
+              <i class="{{ item?.icon }}"></i>
+              <span>{{ item?.name | translate }}</span>
+            </div>
+            }
+          </div>
+          <div class="selectable mt-2">
+            @for (item of chips.slice(3, 6); track item.name) {
+            <div class="chip">
+              <i class="{{ item?.icon }}"></i>
+              <span>{{ item?.name | translate }}</span>
+            </div>
+            }
+          </div>
+
+          <div class="inps">
+            <input type="text" [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate" class="form-control" />
+
+            <input type="number" [placeholder]="'HOME.BANNER.FORM.PHONE' | translate" class="form-control" />
+          </div>
+
+          <button class="btn">
+            {{ 'HOME.BANNER.FORM.BUTTON' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="office-section py-5" *ngIf="location as loc">
+    <div class="container text-center mb-4">
+      <h2 class="title">
+        Visit Our <span class="highlight">{{ loc.name }}</span> Office
+      </h2>
+      <p class="subtitle">{{ loc.detail?.headline }}</p>
+    </div>
+
+    <div class="container">
+      <div class="card office-card p-3 p-md-4">
+        <div class="row g-4">
+
+          <!-- LEFT MAP -->
+          <div class="col-lg-6">
+            <div class="map-wrapper">
+              <iframe src="https://maps.google.com/maps?q=29.7700,-95.3500&z=15&output=embed" loading="lazy">
+              </iframe>
+            </div>
+          </div>
+
+          <!-- RIGHT CONTENT -->
+          <div class="col-lg-6">
+            <div class="content">
+
+              <!-- Location -->
+              <div class="section">
+                <h5>Location & Contact</h5>
+
+                <p><img src="/assets/images/detailLocation.png" alt=""> {{ loc.address }}</p>
+                <p><img src="/assets/images/phone.png" alt=""> {{ loc.phone }}</p>
+                <p><img src="/assets/images/detailMail.png" alt="">{{ loc.email }}</p>
+              </div>
+
+              <hr>
+
+              <!-- Office Hours -->
+              <div class="section">
+                <h5>Office Hours</h5>
+                <p><img src="/assets/images/clock.png" alt=""> {{ loc.officeHours }}</p>
+                <p><i class="bi bi-clock"></i> Sunday: Closed</p>
+              </div>
+
+              <hr>
+
+              <!-- Languages -->
+              <div class="section">
+                <h5>Languages Spoken</h5>
+                <p> {{ loc.languageHeaing }}</p>
+                <p><img src="/assets/images/language.png" alt=""> {{ loc.languages.join(' | ') }}</p>
+              </div>
+
+              <hr>
+
+              <!-- Getting Here -->
+              <div class="section">
+                <h5>Getting Here</h5>
+
+                <p><strong>Nearby Landmarks:</strong> {{ loc?.detail?.NearbyLandmarks }}</p>
+                <p><strong>Parking:</strong> {{ loc?.detail?.parking }}</p>
+              </div>
+
+              <!-- Buttons -->
+              <div class="btn-group-custom mt-4">
+                <button class="btn btn-yellow">Get a Quote</button>
+                <button class="btn btn-yellow">Get Directions</button>
+                <button class="btn btn-red">View Office Details</button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <div class="experience-section">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-9">
+
+          <h2 class="main-heading">
+            {{ loc.detailPage.session2.title }}
+          </h2>
+
+          <p class="main-description">
+            {{ loc.detailPage.session2.intro }}
+
+          </p>
+
+        </div>
+      </div>
+
+      <div class="row justify-content-center g-2">
+
+        <div class="col-md-4">
+          <div class="experience-card">
+
+            <div class="vertical-line"></div>
+
+            <div class="card-box">
+              <div class="card-title">{{ loc.detailPage.session2.blocks[0].heading }}</div>
+
+              <p>
+                {{ loc.detailPage.session2.blocks[0].text }}
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="experience-card">
+
+            <div class="vertical-line"></div>
+
+            <div class="card-box">
+              <div class="card-title">{{ loc.detailPage.session2.blocks[1].heading }}</div>
+
+              <p>
+                {{ loc.detailPage.session2.blocks[1].text }}
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Our Insurance Solutions -->
+  <div class="solutions-section" *ngIf="loc?.detailPage?.session3 as s3">
+    <div class="side-strip"></div>
+    <div class="container position-relative">
+      <div class="row text-center justify-content-center mb-5">
+        <div class="col-lg-8">
+          <h2 class="main-heading">
+            {{ loc.detailPage.session3.title }}
+          </h2>
+
+          <p class="main-subtext">
+            {{ loc.detailPage.session3.intro }}
+          </p>
+        </div>
+      </div>
+
+      <!-- EXISTING TITLE -->
+      <ng-container *ngFor="let group of s3.groups">
+
+        <!-- GROUP TITLE -->
+        <div class="row mb-4 mt-4 text-center">
+          <div class="col-12">
+            <h2 class="section-title">
+              {{ group.groupTitle }}
+            </h2>
+          </div>
+        </div>
+
+        <!-- ITEMS -->
+        <div class="row g-4">
+          <div class="col-md-4" *ngFor="let item of group.items; let i = index">
+            <div class="solution-card">
+              <div class="d-flex align-items-start">
+
+                <!-- ICON (dynamic optional) -->
+                <div class="icon-box">
+                  <img [src]="getIcon(item.name)" alt="icon" />
+                </div>
+
+                <!-- CONTENT -->
+                <div class="card-content">
+                  <h5 class="solution-title">
+                    {{ item.name }}
+                  </h5>
+
+                  <p class="solution-text">
+                    {{ item.text }}
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </ng-container>
+      <div class="row mt-5 text-center">
+        <div class="col-12">
+          <button class="btn btn-see-all">
+            {{ 'HOME.INSURANCE_SOLUTIONS.SEE_ALL' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="quote-section">
+    <div class="container">
+
+      <!-- HEADER -->
+      <div class="text-center mb-5">
+        <h2 class="title">
+          Get Your <span>Free Quote</span> in Minutes
+        </h2>
+        <p class="subtitle">
+          Stop overpaying for coverage. Fill out the form below, and one of our expert brokers at the
+          Denver Harbor office will shop the market to find your best rate.
+        </p>
+      </div>
+
+      <!-- FORM -->
+      <form>
+        <div class="row g-4 justify-content-center">
+
+          <div class="col-md-5">
+            <label>Full Name</label>
+            <input type="text" class="form-control custom-input" placeholder="John Doe">
+          </div>
+
+          <div class="col-md-5">
+            <label>Phone Number</label>
+            <input type="text" class="form-control custom-input" placeholder="+1 265 789 8900">
+          </div>
+
+          <div class="col-md-5">
+            <label>Insurance Type</label>
+            <select class="form-control custom-input">
+              <option>Auto</option>
+              <option>Home</option>
+            </select>
+          </div>
+
+          <div class="col-md-5">
+            <label>Preferred Language</label>
+            <select class="form-control custom-input">
+              <option>English</option>
+              <option>Spanish</option>
+            </select>
+          </div>
+
+          <div class="col-md-5">
+            <label>Best Time to Contact</label>
+            <select class="form-control custom-input">
+              <option>Morning</option>
+              <option>Evening</option>
+            </select>
+          </div>
+
+          <div class="col-md-5">
+            <label>Preferred Contact Method</label>
+            <select class="form-control custom-input">
+              <option>Call</option>
+              <option>Email</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- BUTTON -->
+        <div class="text-center mt-5">
+          <button type="submit" class="submit-btn">
+            Submit
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </section>
+
+
+
+
+
+  <!-- footuper -->
+  <div class="footUpper">
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="clipp"></div>
+    <div class="contain">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="icon">
+              <img src="/assets/images/logo.png" alt="User menu" />
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="h4">{{ 'FOOTER.SLOGAN' | translate }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  -->
+</div>

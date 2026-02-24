@@ -9,6 +9,7 @@ import { Terms } from './pages/terms/terms';
 import { Careers } from './pages/careers/careers';
 import { Thankyou } from './pages/thank-you/thank-you';
 import { OurLocations } from './pages/our-locations/our-locations';
+import { LocationDetail } from './pages/location-detail/location-detail';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'careers', component: Careers },
   { path: 'thank-you', component: Thankyou },
   { path: 'our-locations', component: OurLocations },
+  { path: 'our-locations-detail/:id', component: LocationDetail },
 
   // Spanish
   {
@@ -33,6 +35,7 @@ const routes: Routes = [
       { path: 'carreras', component: Careers },
       { path: 'gracias', component: Thankyou },
       { path: 'nuestras-ubicaciones', component: OurLocations },
+      { path: 'nuestras-ubicaciones-detail/:id', component: LocationDetail },
     ],
   },
 
@@ -80,5 +83,9 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   ourLocations: {
     en: 'our-locations',
     es: 'nuestras-ubicaciones',
+  },
+  ourLocationsDetail: {
+    en: 'our-locations-detail/:id',
+    es: 'nuestras-ubicaciones-detail/:id',
   },
 };
