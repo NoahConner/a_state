@@ -11,6 +11,7 @@ import { Thankyou } from './pages/thank-you/thank-you';
 import { OurLocations } from './pages/our-locations/our-locations';
 import { LocationDetail } from './pages/location-detail/location-detail';
 import { GetAQuote } from './pages/get-a-quote/get-a-quote';
+import { GetCustomQuote } from './pages/get-custom-quote/get-custom-quote';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -24,6 +25,9 @@ const routes: Routes = [
   { path: 'our-locations', component: OurLocations, runGuardsAndResolvers: 'always' },
   { path: 'our-locations/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
   { path: 'get-a-quote', component: GetAQuote },
+  { path: 'get-custom-quote', component: GetCustomQuote },
+
+
   // { path: 'our-locations-detail/:id', component: LocationDetail },
 
   // Spanish
@@ -38,6 +42,7 @@ const routes: Routes = [
       { path: 'carreras', component: Careers },
       { path: 'gracias', component: Thankyou },
       { path: 'solicitar-cotizacion', component: GetAQuote },
+      { path: 'obtener-cotizacion-personalizada', component: GetCustomQuote },
       { path: 'nuestras-ubicaciones', component: OurLocations, runGuardsAndResolvers: 'always' },
       { path: 'nuestras-ubicaciones/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
     ],
@@ -51,7 +56,7 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
 
 export const routeTranslations: Record<string, Record<string, string>> = {
   contact: {
@@ -87,6 +92,10 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   getAQuote: {
     en: 'get-a-quote',
     es: 'solicitar-cotizacion',
+  },
+  getCustomQuote: {
+    en: 'get-custom-quote',
+    es: 'obtener-cotizacion-personalizada',
   },
   ourLocations: {
     en: 'our-locations',

@@ -24,10 +24,9 @@
 .quote-section {
   .title {
     font-weight: 600;
-    color: #CA2B28;
+    color: #ca2b28;
     font-size: 48px;
     font-family: 'Afacad', sans-serif;
-
   }
 
   .subtitle {
@@ -50,14 +49,14 @@
 
     .card-header {
       background: #cf2e2e;
-    color: #fff;
-    font-weight: 700;
-    font-size: 27px;
-    padding: 22px 15px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 27px;
+      padding: 22px 15px;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
     }
 
     .card-body {
@@ -78,8 +77,8 @@
         left: 50%;
         transform: translateX(-50%);
 
-        background: #FFF22F;
-        color: #CA2B28;
+        background: #fff22f;
+        color: #ca2b28;
         font-size: 17px;
         font-weight: 500;
         padding: 12px 22px;
@@ -104,12 +103,10 @@
   }
 }
 
-
 .advantage-section {
-
   .title {
     font-weight: 600;
-    color: #CA2B28;
+    color: #ca2b28;
     font-size: 48px;
     font-family: 'Afacad', sans-serif;
     margin-bottom: 20px;
@@ -146,15 +143,14 @@
       padding: 25px 25px 10px;
 
       p {
-    font-size: 19px;
-    line-height: 1.9;
-    color: #333;
-    margin: 0 auto;
+        font-size: 19px;
+        line-height: 1.9;
+        color: #333;
+        margin: 0 auto;
       }
     }
   }
 }
-
 
 .footUpper {
   height: 130px;
@@ -214,11 +210,12 @@
 
 .getCovver {
   position: relative;
-  background: url('/assets/images/bannerGetQuote.png') center center / cover no-repeat;
+  background: url('/assets/images/cover-get-quote.png') center center / cover no-repeat;
+  // background-image: url('/assets/images/heroBannerGetQuote.png');
+
   height: 35rem;
   display: flex;
   margin-bottom: 10px;
-
 
   .container {
     position: relative;
@@ -263,7 +260,6 @@
 }
 
 @media only screen and (max-width: 540px) {
-
   .getCovver {
     height: auto !important;
     padding: 3rem 1rem;
@@ -318,9 +314,6 @@
     margin: 1rem 0;
     width: 99% !important;
   }
-
-
-
 }
 
 @media only screen and (max-width: 1024px) {

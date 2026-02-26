@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Language } from '../../services/language';
+import { routeTranslations } from '../../app-routing-module';
 
 @Component({
   selector: 'app-get-a-quote',
@@ -7,6 +9,22 @@ import { Component } from '@angular/core';
   styleUrl: './get-a-quote.scss',
 })
 export class GetAQuote {
+  constructor(public languageService: Language) { }
+  currentLang: 'en' | 'es' = 'es';
+
+  changeLang(lang: string) {
+    this.languageService.setLanguage(lang);
+  }
+
+  getRoute(page: string): string[] {
+    const lang = this.languageService.getCurrentLanguage();
+
+    const slug = routeTranslations[page]?.[lang] || routeTranslations[page]?.['en'];
+
+    if (!slug) return ['/']; // fallback to homepage
+
+    return lang === 'en' ? [slug] : [lang, slug];
+  }
   chips = [
     { name: 'HOME.BANNER.CHIPS.AUTO', icon: 'fas fa-car' },
     { name: 'HOME.BANNER.CHIPS.HOMEOWNERS', icon: 'fas fa-house' },

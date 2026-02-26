@@ -21,6 +21,7 @@ import { Thankyou } from './pages/thank-you/thank-you';
 import { OurLocations } from './pages/our-locations/our-locations';
 import { LocationDetail } from './pages/location-detail/location-detail';
 import { GetAQuote } from './pages/get-a-quote/get-a-quote';
+import { GetCustomQuote } from './pages/get-custom-quote/get-custom-quote';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { GetAQuote } from './pages/get-a-quote/get-a-quote';
     OurLocations,
     LocationDetail,
     GetAQuote,
+    GetCustomQuote
   ],
   imports: [
     BrowserModule,
@@ -62,4 +64,4 @@ import { GetAQuote } from './pages/get-a-quote/get-a-quote';
   ],
   bootstrap: [App],
 })
-export class AppModule {}
+export class AppModule { }
