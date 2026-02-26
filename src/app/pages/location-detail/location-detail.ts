@@ -50,40 +50,38 @@ export class LocationDetail implements OnInit {
     { name: 'HOME.BANNER.CHIPS.SURETY', icon: 'fas fa-file-contract' },
   ];
 
-  getIcon(name: string): string {
+  getIcon(key: string): string {
     const map: any = {
-      'Auto Insurance': 'assets/images/car.png',
-      'Homeowners Insurance': 'assets/images/house.png',
-      'Commercial Insurance': 'assets/images/commercial.png',
-      'Life Insurance': 'assets/images/life.png',
-      'Health Insurance': 'assets/images/health.png',
-      'Surety Bonds': 'assets/images/secure.png',
+      auto: 'assets/images/car.png',
+      home: 'assets/images/house.png',
+      commercial: 'assets/images/commercial.png',
+      life: 'assets/images/life.png',
+      health: 'assets/images/health.png',
+      bonds: 'assets/images/secure.png',
     };
 
-    return map[name] || 'assets/images/default.png';
+    return map[key] || 'assets/images/default.png';
   }
 
   ngOnInit(): void {
-     let currentLang = this.languageService.getCurrentLanguage();
-     this.getLocationDetail(currentLang);
-    this.languageService
-    .getLanguageChange()
-    .subscribe((lang:any) => {
+    let currentLang = this.languageService.getCurrentLanguage();
+    this.getLocationDetail(currentLang);
+    this.languageService.getLanguageChange().subscribe((lang: any) => {
       this.getLocationDetail(lang.lang);
     });
   }
 
-  getLocationDetail(lang:any) {
+  getLocationDetail(lang: any) {
     const id = this.route.snapshot.paramMap.get('id');
     this.http.get<any[]>('assets/locations.json').subscribe({
       next: (locations) => {
-        const found = locations[lang].find((loc:any) => loc.id === id);
+        const found = locations[lang].find((loc: any) => loc.id === id);
         this.location = found;
         this.location.mapUrl = this.sanitizer.bypassSecurityTrustResourceUrl(found.mapEmbedUrl);
         this.cdr.detectChanges();
       },
       error: (err) => {
-        console.log(err)
+        console.log(err);
       },
     });
   }

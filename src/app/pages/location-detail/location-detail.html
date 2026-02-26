@@ -26,9 +26,17 @@
           </div>
 
           <div class="inps">
-            <input type="text" [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate" class="form-control" />
+            <input
+              type="text"
+              [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate"
+              class="form-control"
+            />
 
-            <input type="number" [placeholder]="'HOME.BANNER.FORM.PHONE' | translate" class="form-control" />
+            <input
+              type="number"
+              [placeholder]="'HOME.BANNER.FORM.PHONE' | translate"
+              class="form-control"
+            />
           </div>
 
           <button class="btn">
@@ -53,8 +61,7 @@
         <div class="row g-4">
           <div class="col-lg-6">
             <div class="map-wrapper">
-              <iframe [src]="loc.mapUrl" loading="lazy">
-              </iframe>
+              <iframe [src]="loc.mapUrl" loading="lazy"> </iframe>
             </div>
           </div>
 
@@ -67,16 +74,28 @@
                   <img src="/assets/images/detailLocation.png" alt="" />
                   {{ loc.detailPage?.session1?.contact?.address }}
                 </p>
-                <p><img src="/assets/images/phone.png" alt="" /> {{ loc.detailPage?.session1?.contact?.phone }}</p>
-                <p><img src="/assets/images/detailMail.png" alt="" />{{ loc.detailPage?.session1?.contact?.email }}</p>
+                <p>
+                  <img src="/assets/images/phone.png" alt="" />
+                  {{ loc.detailPage?.session1?.contact?.phone }}
+                </p>
+                <p>
+                  <img src="/assets/images/detailMail.png" alt="" />{{
+                    loc.detailPage?.session1?.contact?.email
+                  }}
+                </p>
               </div>
 
               <hr />
 
               <div class="section">
                 <h5>{{ loc.detailPage?.session1?.OfficeHoursHeading }}</h5>
-                <p><img src="/assets/images/clock.png" alt="" /> {{ loc.detailPage?.session1?.contact?.hours }}</p>
-                <p><i class="bi bi-clock"></i> {{ loc.detailPage?.session1?.contact?.closedDay }}</p>
+                <p>
+                  <img src="/assets/images/clock.png" alt="" />
+                  {{ loc.detailPage?.session1?.contact?.hours }}
+                </p>
+                <p>
+                  <i class="bi bi-clock"></i> {{ loc.detailPage?.session1?.contact?.closedDay }}
+                </p>
               </div>
 
               <hr />
@@ -94,15 +113,23 @@
               <div class="section">
                 <h5>{{ loc.detailPage?.session1?.GettingHereHeading }}</h5>
 
-                <p><strong>{{ loc.detailPage?.session1?.NearbyLandmarksHeading }}:</strong> {{
-                  loc?.detailPage?.session1?.contact?.NearbyLandmarks }}</p>
-                <p><strong>{{ loc.detailPage?.session1?.ParkingHeading }}:</strong> {{
-                  loc?.detailPage?.session1?.contact?.parking }}</p>
+                <p>
+                  <strong>{{ loc.detailPage?.session1?.NearbyLandmarksHeading }}:</strong>
+                  {{ loc?.detailPage?.session1?.contact?.NearbyLandmarks }}
+                </p>
+                <p>
+                  <strong>{{ loc.detailPage?.session1?.ParkingHeading }}:</strong>
+                  {{ loc?.detailPage?.session1?.contact?.parking }}
+                </p>
               </div>
 
               <div class="btn-group-custom mt-4">
-                <button class="btn btn-yellow">{{ loc.detailPage?.session1?.ctaButtons[0] }}</button>
-                <button class="btn btn-yellow">{{ loc.detailPage?.session1?.ctaButtons[1] }}</button>
+                <button class="btn btn-yellow">
+                  {{ loc.detailPage?.session1?.ctaButtons[0] }}
+                </button>
+                <button class="btn btn-yellow">
+                  {{ loc.detailPage?.session1?.ctaButtons[1] }}
+                </button>
                 <button class="btn btn-red">{{ loc.detailPage?.session1?.ctaButtons[2] }}</button>
               </div>
             </div>
@@ -192,7 +219,7 @@
               <div class="d-flex align-items-start">
                 <!-- ICON (dynamic optional) -->
                 <div class="icon-box">
-                  <img [src]="getIcon(item.name)" alt="icon" />
+                  <img [src]="getIcon(item.key)" alt="icon" />
                 </div>
 
                 <!-- CONTENT -->
@@ -278,7 +305,9 @@
 
         <!-- BUTTON -->
         <div class="text-center mt-5">
-          <button type="submit" class="submit-btn">{{ loc.detailPage?.session4?.submitText }}</button>
+          <button type="submit" class="submit-btn">
+            {{ loc.detailPage?.session4?.submitText }}
+          </button>
         </div>
       </form>
     </div>
