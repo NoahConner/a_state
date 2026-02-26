@@ -10,6 +10,7 @@ import { Careers } from './pages/careers/careers';
 import { Thankyou } from './pages/thank-you/thank-you';
 import { OurLocations } from './pages/our-locations/our-locations';
 import { LocationDetail } from './pages/location-detail/location-detail';
+import { GetAQuote } from './pages/get-a-quote/get-a-quote';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'thank-you', component: Thankyou },
   { path: 'our-locations', component: OurLocations, runGuardsAndResolvers: 'always' },
   { path: 'our-locations/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
+  { path: 'get-a-quote', component: GetAQuote },
   // { path: 'our-locations-detail/:id', component: LocationDetail },
 
   // Spanish
@@ -35,6 +37,7 @@ const routes: Routes = [
       { path: 'terminos-y-condiciones', component: Terms },
       { path: 'carreras', component: Careers },
       { path: 'gracias', component: Thankyou },
+      { path: 'solicitar-cotizacion', component: GetAQuote },
       { path: 'nuestras-ubicaciones', component: OurLocations, runGuardsAndResolvers: 'always' },
       { path: 'nuestras-ubicaciones/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
     ],
@@ -80,6 +83,10 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   thankyou: {
     en: 'thank-you',
     es: 'gracias',
+  },
+  getAQuote: {
+    en: 'get-a-quote',
+    es: 'solicitar-cotizacion',
   },
   ourLocations: {
     en: 'our-locations',

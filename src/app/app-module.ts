@@ -20,6 +20,7 @@ import { Careers } from './pages/careers/careers';
 import { Thankyou } from './pages/thank-you/thank-you';
 import { OurLocations } from './pages/our-locations/our-locations';
 import { LocationDetail } from './pages/location-detail/location-detail';
+import { GetAQuote } from './pages/get-a-quote/get-a-quote';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { LocationDetail } from './pages/location-detail/location-detail';
     TestimonialSliderComponent,
     Thankyou,
     OurLocations,
-    LocationDetail
+    LocationDetail,
+    GetAQuote,
   ],
   imports: [
     BrowserModule,
