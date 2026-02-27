@@ -1,6 +1,6 @@
 .quoteMain {
   .topBanner {
-    background-image: url('/assets/images/heroBannerGetQuote.png');
+    background-image: url('/assets/images/customQuoteBanner.png');
     height: 38rem;
     background-size: cover;
     background-position: bottom;
@@ -16,6 +16,13 @@
         font-size: 3rem;
         padding-right: 35rem;
         margin-bottom: 5rem;
+      }
+
+      .heroDesc{
+        font-size: 1.2rem;
+        color: #fff;
+        font-weight: 400;
+        margin-top: 1rem;
       }
     }
   }
@@ -92,10 +99,10 @@
     margin: 0 auto;
 
     .form-title {
-      color: #ca2b28;
+      color: #CA2B28;
       font-weight: 600;
       margin-bottom: 30px;
-      font-size: 1.8rem;
+      font-size: 35px;
     }
   }
 
@@ -106,8 +113,9 @@
   }
 
   .form-label {
-    font-size: 0.95rem;
-    font-weight: 500;
+    color: #363636;
+    font-size: 18px;
+    font-weight: 400;
     margin-bottom: 8px;
 
     span {
@@ -118,7 +126,7 @@
 
   .form-control,
   .form-select {
-    background-color: #eaeaea;
+    background-color: #EAEAEA;
     border: none;
     border-radius: 8px;
     padding: 12px 15px;
@@ -157,10 +165,16 @@
     }
   }
 
+  .selection-heading {
+    font-size: 25px;
+    margin-bottom: 17px;
+  }
+
   .coverage-options {
     .custom-option {
       margin-bottom: 12px;
       padding-left: 0;
+
 
       .form-check-input {
         float: none;
@@ -196,7 +210,7 @@
 
   .form-sub-label {
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 19px;
     color: #333;
   }
 

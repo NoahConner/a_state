@@ -850,6 +850,88 @@
       "BUTTON": "Find A-State Near You"
     }
   },
+  "GET_CUSTOM_QUOTE": {
+    "HEADING": "Custom Insurance Quotes & Bundling: One Quote, Total Savings",
+    "DESCRIPTION": "Maximum Protection. Minimum Stress. Major Savings.",
+    "NEXT_BUTTON": "Next",
+    "PREVIOUS_BUTTON": "Previous",
+    "STEPPER": {
+      "STEP1": {
+        "TITLE": "Personal Details",
+        "FIELDS": {
+          "FULL_NAME": "First & Last Name",
+          "EMAIL": "Email Address",
+          "PHONE": "Phone Number",
+          "PREFERRED_LANGUAGE": "Preferred Language",
+          "FULL_ADDRESS": "Full Address"
+        }
+      },
+      "STEP2": {
+        "TITLE": "Customizing Your Coverage",
+        "DESC": "What are you looking for? (Select all that apply)",
+        "OPTIONS": [
+          "Auto",
+          "Home",
+          "Commercial",
+          "Life",
+          "Health",
+          "Surety Bonds",
+          "Bundle & Save"
+        ],
+        "DESC1": "Don't see your policy listed? Tell us what you need below:"
+      },
+      "STEP3": {
+        "TITLE": "Policy Status",
+        "FIELDLABEL1": "I am looking for:",
+        "FIELDLABEL2": "Current Insurance Status:"
+      },
+      "STEP4": {
+        "TITLE": "Contact Preferences",
+        "DESC": "How would you like to be contacted?",
+        "OPTIONS": [
+          "Phone",
+          "Text Message",
+          "Email"
+        ],
+        "DESC1": "Best time to reach you:",
+        "TIME_OPTIONS": [
+          "Morning",
+          "Afternoon",
+          "Evening"
+        ]
+      },
+      "STEP5": {
+        "TITLE": "Review Your Custom Quote Request"
+      }
+    },
+    "QUOTE_SUMMARY": {
+      "TITLE": "Your Quote Summary",
+      "DESC": "By clicking Submit My Quote Request, you agree to be contacted by an A-State Insurance agent. As an independent broker, we will share this information only with our top-rated insurance carriers to find your best rate.",
+      "SUBMIT_BUTTON": "Submit My Quote Request",
+      "CARD1": {
+        "TITLE": "1. Contact Information",
+        "EDIT": "Edit Information"
+      },
+      "CARD2": {
+        "TITLE": "2. Coverage Requested",
+        "EDIT": "Edit Coverage",
+        "OPTION": "Primary Interest:",
+        "OPTION1": "Specific Needs:"
+      },
+      "CARD3": {
+        "TITLE": "3. Current Insurance Status",
+        "EDIT": "Edit Details",
+        "OPTION1": "Goal",
+        "OPTION2": "Status"
+      },
+      "CARD4": {
+        "TITLE": "4. Contact Preferences",
+        "EDIT": "Edit Details",
+        "OPTION1": "Preferred Method:",
+        "OPTION2": "Best Time to Reach You:"
+      }
+    }
+  },
   "FOOTER": {
     "SLOGAN": "We protect what matters to you.",
     "INSURANCE_MENU": [

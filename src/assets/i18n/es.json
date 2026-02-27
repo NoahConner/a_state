@@ -849,6 +849,89 @@
   }
 },
 
+"GET_CUSTOM_QUOTE": {
+  "HEADING": "Cotizaciones de Seguros Personalizadas y Paquetes: Una Cotización, Ahorro Total",
+  "DESCRIPTION": "Máxima Protección. Mínimo Estrés. Grandes Ahorros.",
+  "NEXT_BUTTON": "Siguiente",
+  "PREVIOUS_BUTTON": "Anterior",
+  "STEPPER": {
+    "STEP1": {
+      "TITLE": "Datos Personales",
+      "FIELDS": {
+        "FULL_NAME": "Nombre y Apellido",
+        "EMAIL": "Correo Electrónico",
+        "PHONE": "Número de Teléfono",
+        "PREFERRED_LANGUAGE": "Idioma Preferido",
+        "FULL_ADDRESS": "Dirección Completa"
+      }
+    },
+    "STEP2": {
+      "TITLE": "Personaliza tu Cobertura",
+      "DESC": "¿Qué estás buscando? (Selecciona todo lo que aplique)",
+      "OPTIONS": [
+        "Auto",
+        "Hogar",
+        "Comercial",
+        "Vida",
+        "Salud",
+        "Fianzas",
+        "Paquete y Ahorra"
+      ],
+      "DESC1": "¿No ves tu póliza en la lista? Dinos lo que necesitas a continuación:"
+    },
+    "STEP3": {
+      "TITLE": "Estado de la Póliza",
+      "FIELDLABEL1": "Estoy buscando:",
+      "FIELDLABEL2": "Estado actual del seguro:"
+    },
+    "STEP4": {
+      "TITLE": "Preferencias de Contacto",
+      "DESC": "¿Cómo te gustaría ser contactado?",
+      "OPTIONS": [
+        "Teléfono",
+        "Mensaje de texto",
+        "Correo electrónico"
+      ],
+      "DESC1": "Mejor hora para contactarte:",
+      "TIME_OPTIONS": [
+        "Mañana",
+        "Tarde",
+        "Noche"
+      ]
+    },
+    "STEP5": {
+      "TITLE": "Revisa tu Solicitud de Cotización Personalizada"
+    }
+  },
+  "QUOTE_SUMMARY": {
+    "TITLE": "Resumen de tu Cotización",
+    "DESC": "Al hacer clic en 'Enviar mi solicitud de cotización', aceptas ser contactado por un agente de A-State Insurance. Como corredor independiente, compartiremos esta información solo con nuestras compañías de seguros mejor calificadas para encontrar la mejor tarifa para ti.",
+    "SUBMIT_BUTTON": "Enviar mi solicitud de cotización",
+    "CARD1": {
+      "TITLE": "1. Información de Contacto",
+      "EDIT": "Editar Información"
+    },
+    "CARD2": {
+      "TITLE": "2. Cobertura Solicitada",
+      "EDIT": "Editar Cobertura",
+      "OPTION": "Interés Principal:",
+      "OPTION1": "Necesidades Específicas:"
+    },
+    "CARD3": {
+      "TITLE": "3. Estado Actual del Seguro",
+      "EDIT": "Editar Detalles",
+      "OPTION1": "Objetivo",
+      "OPTION2": "Estado"
+    },
+    "CARD4": {
+      "TITLE": "4. Preferencias de Contacto",
+      "EDIT": "Editar Detalles",
+      "OPTION1": "Método Preferido:",
+      "OPTION2": "Mejor hora para contactarte:"
+    }
+  }
+},
+
   "FOOTER": {
     "SLOGAN": "Protegemos lo que es importante para ti.",
     "INSURANCE_MENU": [
