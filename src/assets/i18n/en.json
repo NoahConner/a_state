@@ -932,6 +932,133 @@
       }
     }
   },
+  "GET_AUTO_QUOTE": {
+    "HEADING": "Local Auto Insurance Quotes for Every Driver",
+    "DESCRIPTION": "As independent brokers, we don’t work for the insurance companies—we work for you. One quote, multiple carriers, total protection.",
+    "NEXT_BUTTON": "Next",
+    "PREVIOUS_BUTTON": "Previous",
+    "STEPPER": {
+      "STEP1": {
+        "TITLE": "Basic Information",
+        "FIELDS": {
+          "FULL_NAME": "First & Last Name",
+          "EMAIL": "Email Address",
+          "PHONE": "Phone Number",
+          "ZIPCODE": "Zip Code"
+        }
+      },
+      "STEP2": {
+        "TITLE": "Vehicles",
+        "FIELDS": {
+          "YEAR": "Year",
+          "MAKE": "Make",
+          "MODEL": "Model",
+          "OWNERSHIP": "Ownership",
+          "PRIMARY_USE": "Primary Use"
+        }
+      },
+      "STEP3": {
+        "TITLE": "Drivers",
+        "FIELDS": {
+          "FULL_NAME": "First & Last Name",
+          "DATE_OF_BIRTH": "Date of Birth",
+          "MARTIAL_STATUS": "Marital Status"
+        }
+      },
+      "STEP4": {
+        "TITLE": "History and Savings",
+        "INSURED_TITLE": "Currently Insured?",
+        "INSURED_OPTIONS": [
+          "Yes",
+          "No"
+        ],
+        "SR22_TITLE": "Do you need an SR-22 filing?",
+        "SR22_OPTIONS": [
+          "Yes",
+          "No"
+        ],
+        "BUNDLE_TITLE": "Do you want to bundle your policies to save more?",
+        "BUNDLE_OPTIONS": [
+          "Yes! I want an Auto + Home bundle discount.",
+          "Yes! I want an Auto + Life bundle discount.",
+          "Yes! I want an Auto + Health bundle discount.",
+          "No, just Auto for now."
+        ]
+      },
+      "STEP5": {
+        "TITLE": "Contact Preferences",
+        "LANGUAGE_TITLE": "Preferred Language:",
+        "LANGUAGE_OPTIONS": [
+          "English",
+          "Spanish",
+          "Hindi"
+        ],
+        "CONTACT_TITLE": "How should we reach you?",
+        "CONTACT_OPTIONS": [
+          "Phone Call",
+          "Text Message",
+          "Email"
+        ],
+        "TIME_TITLE": "Best Time to Connect:",
+        "TIME_OPTIONS": [
+          "Morning (8 AM - 12 PM)",
+          "Afternoon (12 PM - 5 PM)",
+          "Evening (5 PM - 8 PM)"
+        ]
+      }
+    },
+    "QUOTE_SUMMARY": {
+      "MAIN_TITLE": "Review Your Custom Auto Insurance Quote Request",
+      "MAIN_DESC": "Review your details below. If everything looks good, click 'Submit My Quote Request,' and an A-State broker will start shopping for your best Texas rates.",
+      "TITLE": "Your Quote Summary",
+      "DESC": "By clicking Submit My Quote Request, you agree to be contacted by an A-State Insurance agent. As an independent broker, we will share this information only with our top-rated insurance carriers to find your best rate.",
+      "SUBMIT_BUTTON": "Submit My Quote Request",
+      "CARD1": {
+        "TITLE": "1. Contact Details",
+        "EDIT": "Edit Information",
+        "FIELDS": {
+          "NAME": "Name:",
+          "ZIP": "ZIP Code:",
+          "EMAIL": "Email:",
+          "PHONE": "Phone:"
+        }
+      },
+      "CARD2": {
+        "TITLE": "2. Vehicles",
+        "EDIT": "Edit Coverage",
+        "FIELDS": {
+          "VEHICLE1": "Vehicle #1:",
+          "VEHICLE2": "Vehicle #2:"
+        }
+      },
+      "CARD3": {
+        "TITLE": "3. Drivers",
+        "EDIT": "Edit Details",
+        "FIELDS": {
+          "DRIVER1": "Driver #1:",
+          "DRIVER2": "Driver #2:"
+        }
+      },
+      "CARD4": {
+        "TITLE": "4. Coverage & Savings",
+        "EDIT": "Edit Details",
+        "FIELDS": {
+          "INSURED": "Currently Insured:",
+          "SR22": "SR-22 Filing Needed:",
+          "BUNDLE": "Bundle & Save:"
+        }
+      },
+      "CARD5": {
+        "TITLE": "5. How You’d Like to Connect",
+        "EDIT": "Edit Details",
+        "FIELDS": {
+          "LANGUAGE": "Language:",
+          "METHOD": "Method:",
+          "TIME": "Best Time:"
+        }
+      }
+    }
+  },
   "FOOTER": {
     "SLOGAN": "We protect what matters to you.",
     "INSURANCE_MENU": [

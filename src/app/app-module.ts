@@ -22,6 +22,7 @@ import { OurLocations } from './pages/our-locations/our-locations';
 import { LocationDetail } from './pages/location-detail/location-detail';
 import { GetAQuote } from './pages/get-a-quote/get-a-quote';
 import { GetCustomQuote } from './pages/get-custom-quote/get-custom-quote';
+import { GetAutoQuote } from './pages/get-auto-quote/get-auto-quote';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { GetCustomQuote } from './pages/get-custom-quote/get-custom-quote';
     OurLocations,
     LocationDetail,
     GetAQuote,
-    GetCustomQuote
+    GetCustomQuote,
+    GetAutoQuote
   ],
   imports: [
     BrowserModule,

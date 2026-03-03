@@ -12,6 +12,7 @@ import { OurLocations } from './pages/our-locations/our-locations';
 import { LocationDetail } from './pages/location-detail/location-detail';
 import { GetAQuote } from './pages/get-a-quote/get-a-quote';
 import { GetCustomQuote } from './pages/get-custom-quote/get-custom-quote';
+import { GetAutoQuote } from './pages/get-auto-quote/get-auto-quote';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -26,6 +27,9 @@ const routes: Routes = [
   { path: 'our-locations/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
   { path: 'get-a-quote', component: GetAQuote },
   { path: 'get-custom-quote', component: GetCustomQuote },
+  { path: 'get-auto-quote', component: GetAutoQuote },
+
+
 
 
   // { path: 'our-locations-detail/:id', component: LocationDetail },
@@ -43,6 +47,7 @@ const routes: Routes = [
       { path: 'gracias', component: Thankyou },
       { path: 'solicitar-cotizacion', component: GetAQuote },
       { path: 'obtener-cotizacion-personalizada', component: GetCustomQuote },
+      { path: 'obtener-cotizacion-auto', component: GetAutoQuote },
       { path: 'nuestras-ubicaciones', component: OurLocations, runGuardsAndResolvers: 'always' },
       { path: 'nuestras-ubicaciones/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
     ],
@@ -96,6 +101,10 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   getCustomQuote: {
     en: 'get-custom-quote',
     es: 'obtener-cotizacion-personalizada',
+  },
+  getAutoQuote: {
+    en: 'get-auto-quote',
+    es: 'obtener-cotizacion-auto',
   },
   ourLocations: {
     en: 'our-locations',
