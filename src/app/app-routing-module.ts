@@ -13,6 +13,8 @@ import { LocationDetail } from './pages/location-detail/location-detail';
 import { GetAQuote } from './pages/get-a-quote/get-a-quote';
 import { GetCustomQuote } from './pages/get-custom-quote/get-custom-quote';
 import { GetAutoQuote } from './pages/get-auto-quote/get-auto-quote';
+import { GetHomeQuote } from './pages/get-home-quote/get-home-quote';
+import { GetCommercialQuote } from './pages/get-commercial-quote/get-commercial-quote';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -27,7 +29,11 @@ const routes: Routes = [
   { path: 'our-locations/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
   { path: 'get-a-quote', component: GetAQuote },
   { path: 'get-custom-quote', component: GetCustomQuote },
+  { path: 'get-home-quote', component: GetHomeQuote },
+  { path: 'get-commercial-quote', component: GetCommercialQuote },
   { path: 'get-auto-quote', component: GetAutoQuote },
+
+  
 
 
 
@@ -48,6 +54,8 @@ const routes: Routes = [
       { path: 'solicitar-cotizacion', component: GetAQuote },
       { path: 'obtener-cotizacion-personalizada', component: GetCustomQuote },
       { path: 'obtener-cotizacion-auto', component: GetAutoQuote },
+      { path: 'obtener-cotizacion-casa', component: GetHomeQuote },
+      { path: 'obtener-cotizacion-comercial', component: GetCommercialQuote },
       { path: 'nuestras-ubicaciones', component: OurLocations, runGuardsAndResolvers: 'always' },
       { path: 'nuestras-ubicaciones/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
     ],
@@ -113,5 +121,13 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   "ourLocations/:id": {
     en: 'our-locations/:id',
     es: 'nuestras-ubicaciones/:id',
+  },
+  getHomeQuote: {
+    en: 'get-home-quote',
+    es: 'obtener-cotizacion-casa',
+  },
+  getCommercialQuote: {
+    en: 'get-commercial-quote',
+    es: 'obtener-cotizacion-comercial',
   },
 };

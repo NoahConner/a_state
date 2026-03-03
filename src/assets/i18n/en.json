@@ -1059,6 +1059,273 @@
       }
     }
   },
+  "GET_HOME_QUOTE": {
+    "HEADING": "Compare Homeowners Insurance Quotes and Save",
+    "DESCRIPTION": "Stop overpaying for home protection. We shop multiple top-rated carriers to find you the best rates and total coverage.",
+    "NEXT_BUTTON": "Next",
+    "PREVIOUS_BUTTON": "Previous",
+    "STEPPER": {
+      "STEP1": {
+        "TITLE": "Property Information",
+        "FIELDS": {
+          "PROPERTY_ADDRESS": "Property Address:",
+          "PRIMARY_RESIDENCE": "Is this your primary residence?",
+          "PRIMARY_RESIDENCE_OPTIONS": [
+            "Yes, I live here.",
+            "No, it’s a rental property / second home."
+          ],
+          "PROPERTY_TYPE": "Property Type"
+        }
+      },
+      "STEP2": {
+        "TITLE": "Property Features",
+        "FIELDS": {
+          "YEAR_BUILT": "Year Built (Approximate)",
+          "SQUARE_FOOTAGE": "Square Footage (Approximate)",
+          "NUMBER_OF_STORIES": "Number of Stories",
+          "ROOF_AGE": "Roof Age"
+        }
+      },
+      "STEP3": {
+        "TITLE": "Security & Safety",
+        "FIELDS": {
+          "MONITORED_ALARM": "Does the home have a monitored alarm system?",
+          "MONITORED_ALARM_OPTIONS": [
+            "Yes",
+            "No"
+          ],
+          "SWIMMING_POOL": "Is there a swimming pool?",
+          "SWIMMING_POOL_OPTIONS": [
+            "Yes",
+            "No"
+          ],
+          "PETS": "Are there any pets in the home?",
+          "PETS_OPTIONS": [
+            "Yes",
+            "No"
+          ]
+        }
+      },
+      "STEP4": {
+        "TITLE": "History and Bundling",
+        "INSURED_TITLE": "Current Home Insurance Status",
+        "INSURED_OPTIONS": [
+          "Currently Insured",
+          "Not Insured"
+        ],
+        "BUNDLE_TITLE": "Do you want to bundle your policies to save more?",
+        "BUNDLE_OPTIONS": [
+          "Yes! I want a Home + Auto bundle discount.",
+          "Yes! I want a Home + Life bundle discount.",
+          "No, just Home for now."
+        ]
+      },
+      "STEP5": {
+        "TITLE": "Contact Details and Preferences",
+        "FIELDS": {
+          "FULL_NAME": "Full Name",
+          "EMAIL": "Email Address",
+          "PHONE": "Phone Number"
+        },
+        "LANGUAGE_TITLE": "Preferred Language",
+        "LANGUAGE_OPTIONS": [
+          "English",
+          "Spanish",
+          "Hindi"
+        ],
+        "CONTACT_TITLE": "How should we reach you?",
+        "CONTACT_OPTIONS": [
+          "Phone Call",
+          "Text Message",
+          "Email"
+        ],
+        "TIME_TITLE": "Best Time to Connect",
+        "TIME_OPTIONS": [
+          "Morning (8 AM - 12 PM)",
+          "Afternoon (12 PM - 5 PM)",
+          "Evening (5 PM - 8 PM)"
+        ]
+      }
+    },
+    "QUOTE_SUMMARY": {
+      "MAIN_TITLE": "Review Your Custom Homeowners Insurance Quote Request",
+      "MAIN_DESC": "Review your details below. If everything looks good, click \"Submit My Quote Request,\" and an A-State broker will start shopping for your best Texas rates.",
+      "TITLE": "Your Quote Summary",
+      "DESC": "By clicking Submit My Quote Request, you agree to be contacted by an A-State Insurance agent. As an independent broker, we will share this information only with our top-rated insurance carriers to find your best rate.",
+      "SUBMIT_BUTTON": "Submit My Quote Request",
+      "CARD1": {
+        "TITLE": "1. Property Information",
+        "EDIT": "Edit Information",
+        "FIELDS": {
+          "ADDRESS": "Address",
+          "RESIDENCE_TYPE": "Primary Residence",
+          "PROPERTY_TYPE": "Property Type"
+        }
+      },
+      "CARD2": {
+        "TITLE": "2. Property Features",
+        "EDIT": "Edit Coverage",
+        "FIELDS": {
+          "YEAR_BUILT": "Year Built",
+          "SQUARE_FOOTAGE": "Square Footage",
+          "STORIES": "Number of Stories",
+          "ROOF_AGE": "Roof Age"
+        }
+      },
+      "CARD3": {
+        "TITLE": "3. Security & Safety",
+        "EDIT": "Edit Details",
+        "FIELDS": {
+          "ALARM": "Monitored Alarm",
+          "POOL": "Swimming Pool",
+          "PETS": "Pets in Home"
+        }
+      },
+      "CARD4": {
+        "TITLE": "4. History & Savings",
+        "EDIT": "Edit Details",
+        "FIELDS": {
+          "INSURED": "Current Status",
+          "BUNDLE": "Bundle & Save"
+        }
+      },
+      "CARD5": {
+        "TITLE": "5. Contact & Preferences",
+        "EDIT": "Edit Details",
+        "FIELDS": {
+          "NAME": "Name",
+          "EMAIL": "Email",
+          "PHONE": "Phone",
+          "LANGUAGE": "Language",
+          "CONTACT_METHOD": "Method",
+          "BEST_TIME": "Best Time"
+        }
+      }
+    }
+  },
+  "GET_COMMERCIAL_QUOTE": {
+    "HEADING": "Your Business Deserves a Better Commercial Insurance Quote",
+    "DESCRIPTION": "Stop overpaying for basic coverage. Our independent brokers hunt down the most competitive Texas rates to help your bottom line grow.",
+    "NEXT_BUTTON": "Next",
+    "PREVIOUS_BUTTON": "Previous",
+    "STEPPER": {
+      "STEP1": {
+        "TITLE": "Business Identity",
+        "FIELDS": {
+          "LEGAL_BUSINESS_NAME": "Legal Business Name",
+          "INDUSTRY_TYPE": "Industry/Type of Business",
+          "BUSINESS_ZIP_CODE": "Business Zip Code"
+        }
+      },
+      "STEP2": {
+        "TITLE": "Scale of Operations",
+        "FIELDS": {
+          "YEARS_IN_BUSINESS": "Years in Business",
+          "YEARS_OPTIONS": [
+            "New Venture",
+            "1-5 years",
+            "6-10 years",
+            "10+ years"
+          ],
+          "NUMBER_OF_EMPLOYEES": "Number of Employees",
+          "EMPLOYEES_OPTIONS": [
+            "1-10",
+            "11-50",
+            "51-200",
+            "200+"
+          ],
+          "ANNUAL_REVENUE": "Estimated Annual Revenue",
+          "REVENUE_OPTIONS": [
+            "Under $100k",
+            "$100k - $500k",
+            "$500k - $1M",
+            "$1M - $5M",
+            "$5M+"
+          ]
+        }
+      },
+      "STEP3": {
+        "TITLE": "Coverage Needs",
+        "COVERAGE_TITLE": "What are you looking to cover? (Select all that apply)",
+        "COVERAGE_OPTIONS": [
+          "My Business Property/Equipment",
+          "General Liability (Protection from lawsuits)",
+          "Commercial Auto / Work Trucks",
+          "Workers' Comp (Employee injuries)",
+          "I'm not sure, I need an expert's advice."
+        ],
+        "BUNDLE_TITLE": "Do you want to bundle your business policies to save more?",
+        "BUNDLE_OPTIONS": [
+          "Yes! I want the Commercial + Surety Bonds bundle discount.",
+          "No, just Commercial for now."
+        ]
+      },
+      "STEP4": {
+        "TITLE": "Contact Preferences",
+        "FIELDS": {
+          "CONTACT_NAME": "Contact Name",
+          "EMAIL_ADDRESS": "Email Address*",
+          "PHONE_NUMBER": "Phone Number*"
+        },
+        "LANGUAGE_TITLE": "Preferred Language",
+        "LANGUAGE_OPTIONS": [
+          "English",
+          "Spanish",
+          "Hindi"
+        ],
+        "TIME_TITLE": "Best Time to Connect",
+        "TIME_OPTIONS": [
+          "Morning",
+          "Afternoon",
+          "Evening"
+        ]
+      }
+    },
+    "QUOTE_SUMMARY": {
+      "MAIN_TITLE": "Review Your Custom Commercial Insurance Quote Request",
+      "MAIN_DESC": "Review your details below. If everything looks good, click \"Submit My Quote Request,\" and an A-State broker will start shopping for your best Texas rates.",
+      "TITLE": "Your Quote Summary",
+      "DESC": "By clicking Submit My Quote Request, you agree to be contacted by an A-State Insurance agent. As an independent broker, we will share this information only with our top-rated insurance carriers to find your best rate.",
+      "SUBMIT_BUTTON": "Submit My Quote Request",
+      "CARD1": {
+        "TITLE": "1. Business Identity",
+        "EDIT": "Edit Information",
+        "FIELDS": {
+          "LEGAL_BUSINESS_NAME": "Legal Business Name",
+          "INDUSTRY_TYPE": "Industry/Type",
+          "BUSINESS_ZIP_CODE": "Business Zip Code"
+        }
+      },
+      "CARD2": {
+        "TITLE": "2. Scale of Operations",
+        "EDIT": "Edit Coverage",
+        "FIELDS": {
+          "YEARS_IN_BUSINESS": "Years in Business",
+          "NUMBER_OF_EMPLOYEES": "Number of Employees",
+          "ANNUAL_REVENUE": "Estimated Annual Revenue"
+        }
+      },
+      "CARD3": {
+        "TITLE": "3. Coverage Needs",
+        "EDIT": "Edit Details",
+        "FIELDS": {
+          "COVERAGE_SELECTION": "Coverage Selection",
+          "BUNDLE_SAVE": "Bundle & Save"
+        }
+      },
+      "CARD4": {
+        "TITLE": "4. Contact & Preferences",
+        "EDIT": "Edit Details",
+        "FIELDS": {
+          "CONTACT_NAME": "Contact Name",
+          "EMAIL_ADDRESS": "Email Address",
+          "PHONE_NUMBER": "Phone Number",
+          "PREFERRED_LANGUAGE": "Preferred Language",
+          "BEST_TIME": "Best Time to Connect"
+        }
+      }
+    }
+  },
   "FOOTER": {
     "SLOGAN": "We protect what matters to you.",
     "INSURANCE_MENU": [

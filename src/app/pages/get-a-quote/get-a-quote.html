@@ -17,7 +17,8 @@
             <div class="card-header">{{ 'GET_QUOTE.QUOTE_TYPE.CARD1.TITLE' | translate }}</div>
             <div class="card-body">
               <p>{{ 'GET_QUOTE.QUOTE_TYPE.CARD1.DESC' | translate }}</p>
-              <button class="btn quote-btn">
+              <button class="btn quote-btn"
+                [routerLink]="languageService.getCurrentLanguage() === 'en' ? '/get-auto-quote' : '/es/obtener-cotizacion-auto'">
                 {{ 'GET_QUOTE.QUOTE_TYPE.CARD1.BUTTON' | translate }}
               </button>
             </div>
@@ -29,7 +30,8 @@
             <div class="card-header">{{ 'GET_QUOTE.QUOTE_TYPE.CARD2.TITLE' | translate }}</div>
             <div class="card-body">
               <p>{{ 'GET_QUOTE.QUOTE_TYPE.CARD2.DESC' | translate }}</p>
-              <button class="btn quote-btn">
+               <button class="btn quote-btn"
+                [routerLink]="languageService.getCurrentLanguage() === 'en' ? '/get-home-quote' : '/es/obtener-cotizacion-casa'">
                 {{ 'GET_QUOTE.QUOTE_TYPE.CARD2.BUTTON' | translate }}
               </button>
             </div>
@@ -41,7 +43,8 @@
             <div class="card-header">{{ 'GET_QUOTE.QUOTE_TYPE.CARD3.TITLE' | translate }}</div>
             <div class="card-body">
               <p>{{ 'GET_QUOTE.QUOTE_TYPE.CARD3.DESC' | translate }}</p>
-              <button class="btn quote-btn">
+                <button class="btn quote-btn"
+                [routerLink]="languageService.getCurrentLanguage() === 'en' ? '/get-commercial-quote' : '/es/obtener-cotizacion-comercial'">
                 {{ 'GET_QUOTE.QUOTE_TYPE.CARD3.BUTTON' | translate }}
               </button>
             </div>
@@ -92,7 +95,8 @@
               <p>
                 {{ 'GET_QUOTE.QUOTE_TYPE.CARD7.DESC' | translate }}
               </p>
-              <button class="btn quote-btn" [routerLink]="getRoute('getCustomQuote')">
+               <button class="btn quote-btn"
+                [routerLink]="languageService.getCurrentLanguage() === 'en' ? '/get-custom-quote' : '/es/obtener-cotizacion-personalizada'">
                 {{ 'GET_QUOTE.QUOTE_TYPE.CARD7.BUTTON' | translate }}
               </button>
             </div>

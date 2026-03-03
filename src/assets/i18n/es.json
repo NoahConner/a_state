@@ -932,6 +932,401 @@
   }
 },
 
+  "GET_AUTO_QUOTE": {
+    "HEADING": "Cotizaciones Locales de Seguro de Auto para Cada Conductor",
+    "DESCRIPTION": "Como corredores independientes, no trabajamos para las compañías de seguros, trabajamos para usted. Una cotización, múltiples aseguradoras, protección total.",
+    "NEXT_BUTTON": "Siguiente",
+    "PREVIOUS_BUTTON": "Anterior",
+    "STEPPER": {
+      "STEP1": {
+        "TITLE": "Información Básica",
+        "FIELDS": {
+          "FULL_NAME": "Nombre y Apellido",
+          "EMAIL": "Correo Electrónico",
+          "PHONE": "Número de Teléfono",
+          "ZIPCODE": "Código Postal"
+        }
+      },
+      "STEP2": {
+        "TITLE": "Vehículos",
+        "FIELDS": {
+          "YEAR": "Año",
+          "MAKE": "Marca",
+          "MODEL": "Modelo",
+          "OWNERSHIP": "Propiedad",
+          "PRIMARY_USE": "Uso Principal"
+        }
+      },
+      "STEP3": {
+        "TITLE": "Conductores",
+        "FIELDS": {
+          "FULL_NAME": "Nombre y Apellido",
+          "DATE_OF_BIRTH": "Fecha de Nacimiento",
+          "MARTIAL_STATUS": "Estado Civil"
+        }
+      },
+      "STEP4": {
+        "TITLE": "Historial y Ahorros",
+        "INSURED_TITLE": "¿Actualmente Asegurado?",
+        "INSURED_OPTIONS": [
+          "Sí",
+          "No"
+        ],
+        "SR22_TITLE": "¿Necesita un informe SR-22?",
+        "SR22_OPTIONS": [
+          "Sí",
+          "No"
+        ],
+        "BUNDLE_TITLE": "¿Desea combinar sus pólizas para ahorrar más?",
+        "BUNDLE_OPTIONS": [
+          "¡Sí! Quiero el descuento por combinar Auto + Hogar.",
+          "¡Sí! Quiero el descuento por combinar Auto + Vida.",
+          "¡Sí! Quiero el descuento por combinar Auto + Salud.",
+          "No, solo Auto por ahora."
+        ]
+      },
+      "STEP5": {
+        "TITLE": "Preferencias de Contacto",
+        "LANGUAGE_TITLE": "Idioma Preferido:",
+        "LANGUAGE_OPTIONS": [
+          "Inglés",
+          "Español",
+          "Hindi"
+        ],
+        "CONTACT_TITLE": "¿Cómo debemos comunicarnos con usted?",
+        "CONTACT_OPTIONS": [
+          "Llamada Telefónica",
+          "Mensaje de Texto",
+          "Correo Electrónico"
+        ],
+        "TIME_TITLE": "Mejor Hora para Contactar:",
+        "TIME_OPTIONS": [
+          "Mañana (8 AM - 12 PM)",
+          "Tarde (12 PM - 5 PM)",
+          "Noche (5 PM - 8 PM)"
+        ]
+      }
+    },
+    "QUOTE_SUMMARY": {
+      "MAIN_TITLE": "Revise Su Solicitud Personalizada de Seguro de Auto",
+      "MAIN_DESC": "Revise sus detalles a continuación. Si todo parece correcto, haga clic en 'Enviar Mi Solicitud de Cotización' y un agente de A-State comenzará a buscar las mejores tarifas para usted.",
+      "TITLE": "Resumen de Su Cotización",
+      "DESC": "Al hacer clic en Enviar Mi Solicitud de Cotización, acepta ser contactado por un agente de A-State Insurance. Como corredor independiente, compartiremos esta información solo con nuestras aseguradoras mejor calificadas para encontrar su mejor tarifa.",
+      "SUBMIT_BUTTON": "Enviar Mi Solicitud de Cotización",
+      "CARD1": {
+        "TITLE": "1. Datos de Contacto",
+        "EDIT": "Editar Información",
+        "FIELDS": {
+          "NAME": "Nombre:",
+          "ZIP": "Código Postal:",
+          "EMAIL": "Correo Electrónico:",
+          "PHONE": "Teléfono:"
+        }
+      },
+      "CARD2": {
+        "TITLE": "2. Vehículos",
+        "EDIT": "Editar Cobertura",
+        "FIELDS": {
+          "VEHICLE1": "Vehículo #1:",
+          "VEHICLE2": "Vehículo #2:"
+        }
+      },
+      "CARD3": {
+        "TITLE": "3. Conductores",
+        "EDIT": "Editar Detalles",
+        "FIELDS": {
+          "DRIVER1": "Conductor #1:",
+          "DRIVER2": "Conductor #2:"
+        }
+      },
+      "CARD4": {
+        "TITLE": "4. Cobertura y Ahorros",
+        "EDIT": "Editar Detalles",
+        "FIELDS": {
+          "INSURED": "Actualmente Asegurado:",
+          "SR22": "Informe SR-22 Necesario:",
+          "BUNDLE": "Combinar y Ahorrar:"
+        }
+      },
+      "CARD5": {
+        "TITLE": "5. Cómo Desea Conectarse",
+        "EDIT": "Editar Detalles",
+        "FIELDS": {
+          "LANGUAGE": "Idioma:",
+          "METHOD": "Método:",
+          "TIME": "Mejor Hora:"
+        }
+      }
+    }
+  },
+  "GET_HOME_QUOTE": {
+    "HEADING": "Compare Cotizaciones de Seguro de Hogar y Ahorre",
+    "DESCRIPTION": "Deje de pagar de más por la protección de su hogar. Buscamos en múltiples aseguradoras mejor calificadas para encontrarle las mejores tarifas y cobertura total.",
+    "NEXT_BUTTON": "Siguiente",
+    "PREVIOUS_BUTTON": "Anterior",
+    "STEPPER": {
+      "STEP1": {
+        "TITLE": "Información de la Propiedad",
+        "FIELDS": {
+          "PROPERTY_ADDRESS": "Dirección de la Propiedad:",
+          "PRIMARY_RESIDENCE": "¿Es esta su residencia principal?",
+          "PRIMARY_RESIDENCE_OPTIONS": [
+            "Sí, vivo aquí.",
+            "No, es propiedad de alquiler / segunda vivienda."
+          ],
+          "PROPERTY_TYPE": "Tipo de Propiedad"
+        }
+      },
+      "STEP2": {
+        "TITLE": "Características de la Propiedad",
+        "FIELDS": {
+          "YEAR_BUILT": "Año de Construcción (Aproximado)",
+          "SQUARE_FOOTAGE": "Metraje Cuadrado (Aproximado)",
+          "NUMBER_OF_STORIES": "Número de Pisos",
+          "ROOF_AGE": "Edad del Techo"
+        }
+      },
+      "STEP3": {
+        "TITLE": "Seguridad y Protección",
+        "FIELDS": {
+          "MONITORED_ALARM": "¿El hogar tiene sistema de alarma monitoreada?",
+          "MONITORED_ALARM_OPTIONS": [
+            "Sí",
+            "No"
+          ],
+          "SWIMMING_POOL": "¿Tiene piscina?",
+          "SWIMMING_POOL_OPTIONS": [
+            "Sí",
+            "No"
+          ],
+          "PETS": "¿Hay mascotas en el hogar?",
+          "PETS_OPTIONS": [
+            "Sí",
+            "No"
+          ]
+        }
+      },
+      "STEP4": {
+        "TITLE": "Historial y Combinación",
+        "INSURED_TITLE": "Estado Actual del Seguro de Hogar",
+        "INSURED_OPTIONS": [
+          "Actualmente Asegurado",
+          "No Asegurado"
+        ],
+        "BUNDLE_TITLE": "¿Desea combinar sus pólizas para ahorrar más?",
+        "BUNDLE_OPTIONS": [
+          "¡Sí! Quiero el descuento por combinar Hogar + Auto.",
+          "¡Sí! Quiero el descuento por combinar Hogar + Vida.",
+          "No, solo Hogar por ahora."
+        ]
+      },
+      "STEP5": {
+        "TITLE": "Datos de Contacto y Preferencias",
+        "FIELDS": {
+          "FULL_NAME": "Nombre Completo",
+          "EMAIL": "Correo Electrónico",
+          "PHONE": "Número de Teléfono"
+        },
+        "LANGUAGE_TITLE": "Idioma Preferido",
+        "LANGUAGE_OPTIONS": [
+          "Inglés",
+          "Español",
+          "Hindi"
+        ],
+        "CONTACT_TITLE": "¿Cómo debemos comunicarnos con usted?",
+        "CONTACT_OPTIONS": [
+          "Llamada Telefónica",
+          "Mensaje de Texto",
+          "Correo Electrónico"
+        ],
+        "TIME_TITLE": "Mejor Hora para Contactar",
+        "TIME_OPTIONS": [
+          "Mañana (8 AM - 12 PM)",
+          "Tarde (12 PM - 5 PM)",
+          "Noche (5 PM - 8 PM)"
+        ]
+      }
+    },
+    "QUOTE_SUMMARY": {
+      "MAIN_TITLE": "Revise Su Solicitud Personalizada de Seguro de Hogar",
+      "MAIN_DESC": "Revise sus detalles a continuación. Si todo parece correcto, haga clic en \"Enviar Mi Solicitud de Cotización\" y un agente de A-State comenzará a buscar las mejores tarifas para usted.",
+      "TITLE": "Resumen de Su Cotización",
+      "DESC": "Al hacer clic en Enviar Mi Solicitud de Cotización, acepta ser contactado por un agente de A-State Insurance. Como corredor independiente, compartiremos esta información solo con nuestras aseguradoras mejor calificadas para encontrar su mejor tarifa.",
+      "SUBMIT_BUTTON": "Enviar Mi Solicitud de Cotización",
+      "CARD1": {
+        "TITLE": "1. Información de la Propiedad",
+        "EDIT": "Editar Información",
+        "FIELDS": {
+          "ADDRESS": "Dirección",
+          "RESIDENCE_TYPE": "Residencia Principal",
+          "PROPERTY_TYPE": "Tipo de Propiedad"
+        }
+      },
+      "CARD2": {
+        "TITLE": "2. Características de la Propiedad",
+        "EDIT": "Editar Cobertura",
+        "FIELDS": {
+          "YEAR_BUILT": "Año de Construcción",
+          "SQUARE_FOOTAGE": "Metraje Cuadrado",
+          "STORIES": "Número de Pisos",
+          "ROOF_AGE": "Edad del Techo"
+        }
+      },
+      "CARD3": {
+        "TITLE": "3. Seguridad y Protección",
+        "EDIT": "Editar Detalles",
+        "FIELDS": {
+          "ALARM": "Alarma Monitoreada",
+          "POOL": "Piscina",
+          "PETS": "Mascotas en el Hogar"
+        }
+      },
+      "CARD4": {
+        "TITLE": "4. Historial y Ahorros",
+        "EDIT": "Editar Detalles",
+        "FIELDS": {
+          "INSURED": "Estado Actual",
+          "BUNDLE": "Combinar y Ahorrar"
+        }
+      },
+      "CARD5": {
+        "TITLE": "5. Contacto y Preferencias",
+        "EDIT": "Editar Detalles",
+        "FIELDS": {
+          "NAME": "Nombre",
+          "EMAIL": "Correo Electrónico",
+          "PHONE": "Teléfono",
+          "LANGUAGE": "Idioma",
+          "CONTACT_METHOD": "Método",
+          "BEST_TIME": "Mejor Hora"
+        }
+      }
+    }
+  },
+  "GET_COMMERCIAL_QUOTE": {
+    "HEADING": "Su Negocio Merece una Mejor Cotización de Seguro Comercial",
+    "DESCRIPTION": "Deje de pagar de más por cobertura básica. Nuestros corredores independientes buscan las tarifas más competitivas en Texas para ayudar a que su negocio crezca.",
+    "NEXT_BUTTON": "Siguiente",
+    "PREVIOUS_BUTTON": "Anterior",
+    "STEPPER": {
+      "STEP1": {
+        "TITLE": "Identidad del Negocio",
+        "FIELDS": {
+          "LEGAL_BUSINESS_NAME": "Nombre Legal del Negocio",
+          "INDUSTRY_TYPE": "Industria/Tipo de Negocio",
+          "BUSINESS_ZIP_CODE": "Código Postal del Negocio"
+        }
+      },
+      "STEP2": {
+        "TITLE": "Escala de Operaciones",
+        "FIELDS": {
+          "YEARS_IN_BUSINESS": "Años en el Negocio",
+          "YEARS_OPTIONS": [
+            "Nuevo Negocio",
+            "1-5 años",
+            "6-10 años",
+            "10+ años"
+          ],
+          "NUMBER_OF_EMPLOYEES": "Número de Empleados",
+          "EMPLOYEES_OPTIONS": [
+            "1-10",
+            "11-50",
+            "51-200",
+            "200+"
+          ],
+          "ANNUAL_REVENUE": "Ingresos Anuales Estimados",
+          "REVENUE_OPTIONS": [
+            "Menos de $100k",
+            "$100k - $500k",
+            "$500k - $1M",
+            "$1M - $5M",
+            "$5M+"
+          ]
+        }
+      },
+      "STEP3": {
+        "TITLE": "Necesidades de Cobertura",
+        "COVERAGE_TITLE": "¿Qué desea cubrir? (Seleccione todas las que correspondan)",
+        "COVERAGE_OPTIONS": [
+          "Mi Propiedad/Equipo Comercial",
+          "Responsabilidad Civil General (Protección contra demandas)",
+          "Auto Comercial / Camiones de Trabajo",
+          "Compensación Laboral (Lesiones de empleados)",
+          "No estoy seguro, necesito el consejo de un experto."
+        ],
+        "BUNDLE_TITLE": "¿Desea combinar sus pólizas comerciales para ahorrar más?",
+        "BUNDLE_OPTIONS": [
+          "¡Sí! Quiero el descuento por combinar Comercial + Fianzas de Garantía.",
+          "No, solo Comercial por ahora."
+        ]
+      },
+      "STEP4": {
+        "TITLE": "Preferencias de Contacto",
+        "FIELDS": {
+          "CONTACT_NAME": "Nombre de Contacto",
+          "EMAIL_ADDRESS": "Correo Electrónico*",
+          "PHONE_NUMBER": "Número de Teléfono*"
+        },
+        "LANGUAGE_TITLE": "Idioma Preferido",
+        "LANGUAGE_OPTIONS": [
+          "Inglés",
+          "Español",
+          "Hindi"
+        ],
+        "TIME_TITLE": "Mejor Hora para Contactar",
+        "TIME_OPTIONS": [
+          "Mañana",
+          "Tarde",
+          "Noche"
+        ]
+      }
+    },
+    "QUOTE_SUMMARY": {
+      "MAIN_TITLE": "Revise Su Solicitud Personalizada de Seguro Comercial",
+      "MAIN_DESC": "Revise sus detalles a continuación. Si todo parece correcto, haga clic en \"Enviar Mi Solicitud de Cotización\" y un agente de A-State comenzará a buscar las mejores tarifas para usted.",
+      "TITLE": "Resumen de Su Cotización",
+      "DESC": "Al hacer clic en Enviar Mi Solicitud de Cotización, acepta ser contactado por un agente de A-State Insurance. Como corredor independiente, compartiremos esta información solo con nuestras aseguradoras mejor calificadas para encontrar su mejor tarifa.",
+      "SUBMIT_BUTTON": "Enviar Mi Solicitud de Cotización",
+      "CARD1": {
+        "TITLE": "1. Identidad del Negocio",
+        "EDIT": "Editar Información",
+        "FIELDS": {
+          "LEGAL_BUSINESS_NAME": "Nombre Legal del Negocio",
+          "INDUSTRY_TYPE": "Industria/Tipo",
+          "BUSINESS_ZIP_CODE": "Código Postal del Negocio"
+        }
+      },
+      "CARD2": {
+        "TITLE": "2. Escala de Operaciones",
+        "EDIT": "Editar Cobertura",
+        "FIELDS": {
+          "YEARS_IN_BUSINESS": "Años en el Negocio",
+          "NUMBER_OF_EMPLOYEES": "Número de Empleados",
+          "ANNUAL_REVENUE": "Ingresos Anuales Estimados"
+        }
+      },
+      "CARD3": {
+        "TITLE": "3. Necesidades de Cobertura",
+        "EDIT": "Editar Detalles",
+        "FIELDS": {
+          "COVERAGE_SELECTION": "Selección de Cobertura",
+          "BUNDLE_SAVE": "Combinar y Ahorrar"
+        }
+      },
+      "CARD4": {
+        "TITLE": "4. Contacto y Preferencias",
+        "EDIT": "Editar Detalles",
+        "FIELDS": {
+          "CONTACT_NAME": "Nombre de Contacto",
+          "EMAIL_ADDRESS": "Correo Electrónico",
+          "PHONE_NUMBER": "Número de Teléfono",
+          "PREFERRED_LANGUAGE": "Idioma Preferido",
+          "BEST_TIME": "Mejor Hora para Contactar"
+        }
+      }
+    }
+  },
+
   "FOOTER": {
     "SLOGAN": "Protegemos lo que es importante para ti.",
     "INSURANCE_MENU": [

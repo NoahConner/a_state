@@ -12,23 +12,23 @@
       <div class="d-flex justify-content-between align-items-center stepper">
         <div class="step active">
           <div class="circle"><img src="/assets/images/quote-step-1.png" alt="" /></div>
-          <p>{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP1.TITLE' | translate }}</p>
+          <p>{{ 'GET_AUTO_QUOTE.STEPPER.STEP1.TITLE' | translate }}</p>
         </div>
         <div class="step">
           <div class="circle"><img src="/assets/images/quote-step-2.png" alt="" /></div>
-          <p>{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP2.TITLE' | translate }}</p>
+          <p>{{ 'GET_AUTO_QUOTE.STEPPER.STEP2.TITLE' | translate }}</p>
         </div>
         <div class="step">
           <div class="circle"><img src="/assets/images/quote-step-3.png" alt="" /></div>
-          <p>{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP3.TITLE' | translate }}</p>
+          <p>{{ 'GET_AUTO_QUOTE.STEPPER.STEP3.TITLE' | translate }}</p>
         </div>
         <div class="step">
           <div class="circle"><img src="/assets/images/quote-step-4.png" alt="" /></div>
-          <p>{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP4.TITLE' | translate }}</p>
+          <p>{{ 'GET_AUTO_QUOTE.STEPPER.STEP4.TITLE' | translate }}</p>
         </div>
         <div class="step">
           <div class="circle"><img src="/assets/images/quote-step-5.png" alt="" /></div>
-          <p>{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP5.TITLE' | translate }}</p>
+          <p>{{ 'GET_AUTO_QUOTE.STEPPER.STEP5.TITLE' | translate }}</p>
         </div>
       </div>
     </div>
@@ -75,35 +75,41 @@
 
       <div class="container mt-4 mb-4">
         <div class="form-wrapper">
-          <h2 class="form-title">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP2.TITLE' | translate }}</h2>
+          <h2 class="form-title">{{ 'GET_AUTO_QUOTE.STEPPER.STEP2.TITLE' | translate }}</h2>
 
           <div class="form-content-border">
             <form>
-              <div class="selection-group">
-                <h4 class="selection-heading">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP2.DESC' | translate }}</h4>
-
-                <div class="coverage-options">
-                  <div class="form-check" *ngFor="let option of coverageOptions">
-                    <input class="form-check-input" type="checkbox" [id]="option" />
-                    <label class="form-check-label" [for]="option">
-                      {{ option }}
-                    </label>
-                  </div>
+              <div class="row gy-3 mb-3">
+                <div class="col-md-3">
+                  <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.YEAR' | translate
+                    }}<span>*</span></label>
+                  <input type="text" class="form-control" placeholder="2025" />
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.MAKE' | translate
+                    }}<span>*</span></label>
+                  <input type="text" class="form-control" placeholder="BMW" />
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.MODEL' | translate
+                    }}<span>*</span></label>
+                  <input type="text" class="form-control" placeholder="X3" />
                 </div>
               </div>
 
-              <div class="mt-5">
-                <p class="form-sub-label">
-                  {{ 'GET_CUSTOM_QUOTE.STEPPER.STEP2.DESC1' | translate }}
-                </p>
-                <div class="row gy-3">
-                  <div class="col-md-8">
-                    <input type="text" class="form-control" placeholder="Type Here" />
-                  </div>
+              <div class="row gy-3">
+                <div class="col-md-4">
+                  <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.OWNERSHIP' | translate
+                    }}<span>*</span></label>
+                  <input type="text" class="form-control" placeholder="Owned" />
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.PRIMARY_USE' | translate
+                    }}<span>*</span></label>
+                  <input type="text" class="form-control" placeholder="Personal" />
                 </div>
               </div>
-
-              <div class="d-flex gap-3 mt-4">
+                          <div class="d-flex gap-3 mt-4">
                 <button type="button" class="btn btn-previous">{{ 'GET_CUSTOM_QUOTE.PREVIOUS_BUTTON' | translate
                   }}</button>
                 <button type="submit" class="btn btn-next">{{ 'GET_CUSTOM_QUOTE.NEXT_BUTTON' | translate }}</button>
@@ -115,32 +121,34 @@
 
       <div class="container mb-4">
         <div class="form-wrapper">
-          <h2 class="form-title">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP3.TITLE' | translate }}</h2>
+          <h2 class="form-title">{{ 'GET_AUTO_QUOTE.STEPPER.STEP3.TITLE' | translate }}</h2>
 
           <div class="form-content-border">
             <form>
-              <div class="row gy-3 mt-1">
-                <div class="col-md-8">
-                  <label class="form-label">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL1' | translate }}</label>
-                  <select class="form-select">
-                    <option selected>A brand new policy</option>
-                  </select>
+              <div class="row gy-3 mb-3">
+                <div class="col-md-4">
+                  <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP3.FIELDS.FULL_NAME' | translate
+                    }}<span>*</span></label>
+                  <input type="text" class="form-control" placeholder="John Doe" />
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP3.FIELDS.DATE_OF_BIRTH' | translate
+                    }}<span>*</span></label>
+                  <input type="text" class="form-control" placeholder="01/01/1990" />
                 </div>
               </div>
 
-              <div class="row gy-3 mt-1">
-                <div class="col-md-8">
-                  <label class="form-label">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL2' | translate }}</label>
-                  <select class="form-select">
-                    <option selected>Currently Insured</option>
-                  </select>
+              <div class="row gy-3">
+                <div class="col-md-4">
+                  <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP3.FIELDS.MARTIAL_STATUS' | translate
+                    }}<span>*</span></label>
+                  <input type="text" class="form-control" placeholder="Single" />
                 </div>
-              </div>
 
-              <div class="d-flex gap-3 mt-4">
+              </div>
+                          <div class="d-flex gap-3 mt-4">
                 <button type="button" class="btn btn-previous">{{ 'GET_CUSTOM_QUOTE.PREVIOUS_BUTTON' | translate
                   }}</button>
-
                 <button type="submit" class="btn btn-next">{{ 'GET_CUSTOM_QUOTE.NEXT_BUTTON' | translate }}</button>
               </div>
             </form>
@@ -150,15 +158,79 @@
 
       <div class="container mt-4 mb-4">
         <div class="form-wrapper">
-          <h2 class="form-title">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP4.TITLE' | translate }}</h2>
+          <h2 class="form-title">{{ 'GET_AUTO_QUOTE.STEPPER.STEP4.TITLE' | translate }}</h2>
 
           <div class="form-content-border">
             <form>
               <div class="selection-group">
-                <h4 class="selection-heading">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP4.DESC' | translate }}</h4>
+                <h4 class="selection-heading">{{ 'GET_AUTO_QUOTE.STEPPER.STEP4.INSURED_TITLE' | translate }}</h4>
 
                 <div class="coverage-options">
-                  <div class="form-check" *ngFor="let option of ('GET_CUSTOM_QUOTE.STEPPER.STEP4.OPTIONS' | translate)">
+                  <div class="form-check"
+                    *ngFor="let option of ('GET_AUTO_QUOTE.STEPPER.STEP4.INSURED_OPTIONS' | translate)">
+                    <input class="form-check-input" type="checkbox" [id]="option" />
+
+                    <label class="form-check-label" [for]="option">
+                      {{ option }}
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="selection-group mt-4">
+                <h4 class="selection-heading">{{ 'GET_AUTO_QUOTE.STEPPER.STEP4.SR22_TITLE' | translate }}</h4>
+
+                <div class="coverage-options">
+                  <div class="form-check"
+                    *ngFor="let option of ('GET_AUTO_QUOTE.STEPPER.STEP4.SR22_OPTIONS' | translate)">
+                    <input class="form-check-input" type="checkbox" [id]="option" />
+
+                    <label class="form-check-label" [for]="option">
+                      {{ option }}
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+                      <div class="selection-group mt-4">
+                <h4 class="selection-heading">{{ 'GET_AUTO_QUOTE.STEPPER.STEP4.BUNDLE_TITLE' | translate }}</h4>
+
+                <div class="coverage-options">
+                  <div class="form-check"
+                    *ngFor="let option of ('GET_AUTO_QUOTE.STEPPER.STEP4.BUNDLE_OPTIONS' | translate)">
+                    <input class="form-check-input" type="checkbox" [id]="option" />
+
+                    <label class="form-check-label" [for]="option">
+                      {{ option }}
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="d-flex gap-3 mt-4">
+                <button type="button" class="btn btn-previous">{{ 'GET_CUSTOM_QUOTE.PREVIOUS_BUTTON' | translate
+                  }}</button>
+                <button type="submit" class="btn btn-next">{{ 'GET_CUSTOM_QUOTE.NEXT_BUTTON' | translate }}</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mt-4 mb-4">
+        <div class="form-wrapper">
+          <h2 class="form-title">{{ 'GET_AUTO_QUOTE.STEPPER.STEP5.TITLE' | translate }}</h2>
+
+          <div class="form-content-border">
+            <form>
+              <div class="selection-group">
+                <h4 class="selection-heading">{{ 'GET_AUTO_QUOTE.STEPPER.STEP5.LANGUAGE_TITLE' | translate }}</h4>
+
+                <div class="coverage-options">
+                  <div class="form-check"
+                    *ngFor="let option of ('GET_AUTO_QUOTE.STEPPER.STEP5.LANGUAGE_OPTIONS' | translate)">
 
                     <input class="form-check-input" type="checkbox" [id]="option" />
 
@@ -170,10 +242,23 @@
               </div>
 
               <div class="selection-group mt-4">
-                <h4 class="selection-heading">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP4.DESC1' | translate }}</h4>
+                <h4 class="selection-heading">{{ 'GET_AUTO_QUOTE.STEPPER.STEP5.CONTACT_TITLE' | translate }}</h4>
 
                 <div class="coverage-options">
-<div class="form-check" *ngFor="let option of reachOptions">
+                  <div class="form-check" *ngFor="let option of contactOptions">
+                    <input class="form-check-input" type="checkbox" [id]="option" />
+                    <label class="form-check-label" [for]="option">
+                      {{ option }}
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="selection-group mt-4">
+                <h4 class="selection-heading">{{ 'GET_AUTO_QUOTE.STEPPER.STEP5.TIME_TITLE' | translate }}</h4>
+
+                <div class="coverage-options">
+                  <div class="form-check" *ngFor="let option of timeOptions">
                     <input class="form-check-input" type="checkbox" [id]="option" />
                     <label class="form-check-label" [for]="option">
                       {{ option }}
@@ -193,66 +278,79 @@
       </div>
 
 
-    </div>
+    </div>    
 
     <div class="quote-summary-container p-4 p-md-5 mt-5">
       <div class="container max-width-700">
-        <h2 class="text-center mb-4 section-title">{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.TITLE' | translate }}</h2>
+        <h2 class="text-center mb-4 section-title">{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.MAIN_TITLE' | translate }}</h2>
+        <p class="text-center mb-4">{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.MAIN_DESC' | translate }}</p>
+
+        <h2 class="text-center mb-4 section-title">{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.TITLE' | translate }}</h2>
 
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="m-0">{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD1.TITLE' | translate }}</h5>
+            <h5 class="m-0">{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.TITLE' | translate }}</h5>
             <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
-              'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD1.EDIT' | translate }}</a>
+              'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li>Name: Juan Rodriguez</li>
-            <li>Phone: (713) 555-0199</li>
-            <li>Email: j.rodriguez@email.com</li>
-            <li>Full Address: 9042 Street Road, Dallas, TX 75287</li>
-            <li>Preferred Language: Spanish (Español)</li>
+            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.NAME' | translate }}</strong> Juan Rodriguez</li>
+            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.ZIP' | translate }}</strong> 75287</li>
+            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.EMAIL' | translate }}</strong> j.rodriguez@email.com</li>
+            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.PHONE' | translate }}</strong> (713) 555-0199</li>
           </ul>
         </div>
 
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="m-0">{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD2.TITLE' | translate }}</h5>
+            <h5 class="m-0">{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD2.TITLE' | translate }}</h5>
             <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
-              'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD2.EDIT' | translate }}</a>
+              'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD2.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD2.OPTION' | translate }}</strong> Bundle & Save</li>
+            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.VEHICLE1' | translate }}</strong>  2022 Toyota Camry (Financed, Personal Use)</li>
             <li>
-              <strong>{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD2.OPTION1' | translate }}</strong> "I also need a quote for
-              a small utility trailer."
+              <strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.VEHICLE2' | translate }}</strong> 2019 Ford F-150 (Owned, Personal Use)
             </li>
           </ul>
         </div>
 
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="m-0">{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD3.TITLE' | translate }}</h5>
+            <h5 class="m-0">{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD3.TITLE' | translate }}</h5>
             <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
-              'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD3.EDIT' | translate }}</a>
+              'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD3.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD3.OPTION1' | translate }}:</strong> Finding a better rate
-              on my current policy</li>
-            <li><strong>{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD3.OPTION2' | translate }}:</strong> Currently Insured.
+            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.DRIVER1' | translate }}</strong> John Doe (DOB: 05/12/1985, Married)</li>
+            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.DRIVER2' | translate }}</strong> Jane Doe (DOB: 08/22/1987, Married)
             </li>
           </ul>
         </div>
 
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="m-0">{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD4.TITLE' | translate }}</h5>
+            <h5 class="m-0">{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD4.TITLE' | translate }}</h5>
             <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
-              'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD4.EDIT' | translate }}</a>
+              'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD4.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD4.OPTION1' | translate }}:</strong> Text Message</li>
-            <li><strong>{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD4.OPTION2' | translate }}:</strong> Afternoon (12 PM - 5
-              PM)</li>
+            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.INSURED' | translate }}</strong> Yes</li>
+            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.SR22' | translate }}</strong> NO</li>
+            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.BUNDLE' | translate }}</strong> YES! Apply my Auto + Life discount</li>
+          </ul>
+        </div>
+
+                <div class="summary-card mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="m-0">{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD5.TITLE' | translate }}</h5>
+            <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
+              'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD5.EDIT' | translate }}</a>
+          </div>
+          <ul class="list-unstyled mb-0">
+            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.LANGUAGE' | translate }}</strong> English</li>
+            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.METHOD' | translate }}</strong> Text Message</li>
+            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.TIME' | translate }}</strong>Afternoon (12 PM - 5 PM)</li>
           </ul>
         </div>
 
@@ -261,7 +359,7 @@
           <div class="form-check mb-4">
             <input class="form-check-input terms-check" type="checkbox" id="termsCheck" />
             <label class="form-check-label terms-check-label small" for="termsCheck">
-              {{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.DESC' | translate }}
+              {{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.DESC' | translate }}
             </label>
           </div>
           <button class="btn btn-submit">{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.SUBMIT_BUTTON' | translate }}</button>

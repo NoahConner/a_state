@@ -47,7 +47,11 @@
           </ul>
 
           <div class="buttons">
-            <button class="btn quote">{{ loc.ctaButtons[0] }}</button>
+            <button class="btn quote" [routerLink]="
+                currentLang == 'es'
+                  ? ['/es/solicitar-cotizacion']
+                  : ['/get-a-quote']
+              ">{{ loc.ctaButtons[0] }}</button>
             <button class="btn directions">{{ loc.ctaButtons[1] }}</button>
             <button class="btn details-btn" [routerLink]="
                 currentLang == 'es'

@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-get-auto-quote',
+  selector: 'app-get-home-quote',
   standalone: false,
-  templateUrl: './get-auto-quote.html',
-  styleUrl: './get-auto-quote.scss',
+  templateUrl: './get-home-quote.html',
+  styleUrl: './get-home-quote.scss',
 })
-export class GetAutoQuote {
+export class GetHomeQuote {
 
   // languageOptions: any;
 
