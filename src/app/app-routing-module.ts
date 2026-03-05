@@ -15,6 +15,9 @@ import { GetCustomQuote } from './pages/get-custom-quote/get-custom-quote';
 import { GetAutoQuote } from './pages/get-auto-quote/get-auto-quote';
 import { GetHomeQuote } from './pages/get-home-quote/get-home-quote';
 import { GetCommercialQuote } from './pages/get-commercial-quote/get-commercial-quote';
+import { GetLifeQuote } from './pages/get-life-quote/get-life-quote';
+import { GetHealthQuote } from './pages/get-health-quote/get-health-quote';
+import { GetSuretyQuote } from './pages/get-surety-quote/get-surety-quote';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -32,6 +35,10 @@ const routes: Routes = [
   { path: 'get-home-quote', component: GetHomeQuote },
   { path: 'get-commercial-quote', component: GetCommercialQuote },
   { path: 'get-auto-quote', component: GetAutoQuote },
+  { path: 'get-life-quote', component: GetLifeQuote },
+  { path: 'get-health-quote', component: GetHealthQuote },
+  { path: 'get-surety-quote', component: GetSuretyQuote },
+
 
   
 
@@ -56,6 +63,9 @@ const routes: Routes = [
       { path: 'obtener-cotizacion-auto', component: GetAutoQuote },
       { path: 'obtener-cotizacion-casa', component: GetHomeQuote },
       { path: 'obtener-cotizacion-comercial', component: GetCommercialQuote },
+      { path: 'obtener-cotizacion-vida', component: GetLifeQuote },
+      { path: 'obtener-cotizacion-salud', component: GetHealthQuote },
+      { path: 'obtener-cotizacion-surety', component: GetSuretyQuote },
       { path: 'nuestras-ubicaciones', component: OurLocations, runGuardsAndResolvers: 'always' },
       { path: 'nuestras-ubicaciones/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
     ],
@@ -130,4 +140,17 @@ export const routeTranslations: Record<string, Record<string, string>> = {
     en: 'get-commercial-quote',
     es: 'obtener-cotizacion-comercial',
   },
+  getLifeQuote: {
+    en: 'get-life-quote',
+    es: 'obtener-cotizacion-vida',
+  },
+  getHealthQuote: {
+    en: 'get-health-quote',
+    es: 'obtener-cotizacion-salud',
+  },
+  getSuretyQuote: {
+    en: 'get-surety-quote',
+    es: 'obtener-cotizacion-surety',
+  },
+
 };

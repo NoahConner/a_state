@@ -25,6 +25,9 @@ import { GetCustomQuote } from './pages/get-custom-quote/get-custom-quote';
 import { GetAutoQuote } from './pages/get-auto-quote/get-auto-quote';
 import { GetHomeQuote } from './pages/get-home-quote/get-home-quote';
 import { GetCommercialQuote } from './pages/get-commercial-quote/get-commercial-quote';
+import { GetLifeQuote } from './pages/get-life-quote/get-life-quote';
+import { GetHealthQuote } from './pages/get-health-quote/get-health-quote';
+import { GetSuretyQuote } from './pages/get-surety-quote/get-surety-quote';
 
 @NgModule({
   declarations: [
@@ -47,6 +50,9 @@ import { GetCommercialQuote } from './pages/get-commercial-quote/get-commercial-
     GetAutoQuote,
     GetHomeQuote,
     GetCommercialQuote,
+    GetLifeQuote,
+    GetHealthQuote,
+    GetSuretyQuote
   ],
   imports: [
     BrowserModule,

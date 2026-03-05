@@ -1326,6 +1326,319 @@
       }
     }
   },
+  "GET_LIFE_QUOTE": {
+    "HEADING": "A Life Insurance Quote Built for Your Family’s Future",
+    "DESCRIPTION": "Protecting what matters most shouldn't be complicated. We provide clear, affordable options and expert advice in English, Spanish, and Hindi.",
+    "NEXT_BUTTON": "Next",
+    "PREVIOUS_BUTTON": "Previous",
+    "STEPPER": {
+      "STEP1": {
+        "TITLE": "Personal Details",
+        "FIELDS": {
+          "FULL_NAME": "Full Name",
+          "EMAIL": "Email Address",
+          "PHONE": "Phone Number",
+          "GENDER": "Gender",
+          "DATE_OF_BIRTH": "Date of Birth",
+          "ZIPCODE": "Zip Code"
+        }
+      },
+      "STEP2": {
+        "TITLE": "Lifestyle Details",
+        "FIELDS": {
+          "TOBACCO_USE": "Do you use tobacco or nicotine products?",
+          "HEALTH_STATUS": "How would you describe your general health?"
+        },
+        "TOBACCO_OPTIONS": [
+          "Yes",
+          "No"
+        ],
+        "HEALTH_OPTIONS": [
+          "Excellent",
+          "Good",
+          "Fair"
+        ]
+      },
+      "STEP3": {
+        "TITLE": "Coverage Needs",
+        "COVERAGE_TITLE": "How much coverage are you thinking of?",
+        "COVERAGE_OPTIONS": [
+          "Basic / Final Expenses ($10k – $50k)",
+          "Mortgage Protection / Family Support ($100k – $500k)",
+          "High Value Protection ($500k+)",
+          "I'm not sure, I need an expert to help me calculate."
+        ],
+        "BUNDLE_TITLE": "Do you want to bundle your policies to save more?",
+        "BUNDLE_OPTIONS": [
+          "Yes! I want the Life + Auto bundle discount.",
+          "Yes! I want the Life + Home bundle discount.",
+          "Yes! I want the Life + Health bundle discount.",
+          "No, just Life for now."
+        ]
+      },
+      "STEP4": {
+        "TITLE": "Contact Details and Preferences",
+        "LANGUAGE_TITLE": "Preferred Language for your Quote",
+        "LANGUAGE_OPTIONS": [
+          "English",
+          "Spanish",
+          "Hindi"
+        ],
+        "CONTACT_TITLE": "Best Way to Reach You",
+        "CONTACT_OPTIONS": [
+          "Call",
+          "Text Message",
+          "Email"
+        ],
+        "TIME_TITLE": "Best Time to Connect",
+        "TIME_OPTIONS": [
+          "Morning (8 AM - 12 PM)",
+          "Afternoon (12 PM - 5 PM)",
+          "Evening (5 PM - 8 PM)"
+        ]
+      }
+    },
+    "QUOTE_SUMMARY": {
+      "MAIN_TITLE": "Review Your Custom Life Insurance Quote Request",
+      "MAIN_DESC": "Review your details below. If everything looks good, click 'Submit My Quote Request,' and an A-State broker will start shopping for your best Texas rates.",
+      "SUMMARY_TITLE": "Your Quote Summary",
+      "DISCLAIMER": "By clicking Submit My Quote Request, you agree to be contacted by an A-State Insurance agent. As an independent broker, we will share this information only with our top-rated insurance carriers to find your best rate.",
+      "SUBMIT_BUTTON": "Submit My Quote Request",
+      "CARD1": {
+        "TITLE": "1. Personal Details",
+        "EDIT": "Edit Information",
+        "FIELDS": {
+          "FULL_NAME": "Full Name:",
+          "EMAIL": "Email Address:",
+          "PHONE": "Phone Number:",
+          "GENDER": "Gender:",
+          "DOB": "Date of Birth:",
+          "ZIP": "Zip Code:"
+        }
+      },
+      "CARD2": {
+        "TITLE": "2. Lifestyle Details",
+        "EDIT": "Edit Information",
+        "FIELDS": {
+          "TOBACCO": "Tobacco/Nicotine User:",
+          "HEALTH": "General Health:"
+        }
+      },
+      "CARD3": {
+        "TITLE": "3. Coverage Needs",
+        "EDIT": "Edit Information",
+        "FIELDS": {
+          "COVERAGE_AMOUNT": "Coverage Amount:",
+          "BUNDLE_SAVE": "Bundle & Save:"
+        }
+      },
+      "CARD4": {
+        "TITLE": "4. Contact Preferences",
+        "EDIT": "Edit Information",
+        "FIELDS": {
+          "LANGUAGE": "Preferred Language:",
+          "CONTACT_METHOD": "Best Way to Reach You:",
+          "BEST_TIME": "Best Time to Connect:"
+        }
+      }
+    }
+  },
+
+  "GET_HEALTH_QUOTE": {
+    "HEADING": "A Health Insurance Quote Built for Your Family",
+    "DESCRIPTION": "Protecting your health shouldn’t be complicated. Get expert advice and clear options in English, Spanish, and Hindi.",
+    "NEXT_BUTTON": "Next",
+    "PREVIOUS_BUTTON": "Previous",
+    "STEPPER": {
+      "STEP1": {
+        "TITLE": "Coverage Type",
+        "COVERAGE_TITLE": "Who needs coverage?",
+        "COVERAGE_OPTIONS": [
+          "Just Me",
+          "Me + Spouse",
+          "Me + Children",
+          "My Whole Family"
+        ],
+        "FIELDS": {
+          "ZIPCODE": "Zip Code"
+        }
+      },
+      "STEP2": {
+        "TITLE": "Basic Health & Household",
+        "FIELDS": {
+          "HOUSEHOLD_SIZE": "How many people live in your household?",
+          "ANNUAL_INCOME": "What is your estimated annual household income?",
+          "ANNUAL_INCOME_NOTE": " (Optional) Note: This helps us check if you qualify for government savings/subsidies.",
+          "TOBACCO_USE": "Does anyone in the household use tobacco?"
+        },
+        "INCOME_OPTIONS": [
+          "Under $15,000",
+          "$15,000 – $30,000",
+          "$30,000 – $60,000",
+          "$60,000 – $100,000",
+          "Over $100,000"
+        ],
+        "TOBACCO_OPTIONS": [
+          "Yes",
+          "No"
+        ]
+      },
+      "STEP3": {
+        "TITLE": "Contact & Language Preference",
+        "FIELDS": {
+          "FULL_NAME": "Full Name",
+          "EMAIL": "Email Address",
+          "PHONE": "Phone Number",
+          "LANGUAGE": "Preferred Language for your Quote",
+          "BEST_TIME": "Best time to call?"
+        },
+        "LANGUAGE_OPTIONS": [
+          "English",
+          "Spanish",
+          "Hindi"
+        ],
+        "TIME_OPTIONS": [
+          "Morning",
+          "Afternoon",
+          "Evening"
+        ]
+      }
+    },
+    "QUOTE_SUMMARY": {
+      "MAIN_TITLE": "Review Your Custom Health Insurance Quote Request",
+      "MAIN_DESC": "Review your details below. If everything looks good, click “Submit My Quote Request,” and an A-State broker will start shopping for your best Texas rates.",
+      "SUMMARY_TITLE": "Your Quote Summary",
+      "CARD1": {
+        "TITLE": "1. Coverage Details",
+        "EDIT": "Edit Information",
+        "FIELDS": {
+          "COVERAGE_FOR": "Who needs coverage?",
+          "ZIP": "Zip Code"
+        }
+      },
+      "CARD2": {
+        "TITLE": "2. Health & Household",
+        "EDIT": "Edit Information",
+        "FIELDS": {
+          "HOUSEHOLD_SIZE": "Household Size",
+          "ANNUAL_INCOME": "Estimated Annual Income",
+          "TOBACCO": "Tobacco Use"
+        }
+      },
+      "CARD3": {
+        "TITLE": "3. Contact & Language Preferences",
+        "EDIT": "Edit Information",
+        "FIELDS": {
+          "FULL_NAME": "Full Name",
+          "PHONE": "Phone Number",
+          "EMAIL": "Email Address",
+          "LANGUAGE": "Preferred Language",
+          "BEST_TIME": "Best Time to Call"
+        }
+      },
+      "DISCLAIMER": "By clicking Submit My Quote Request, you agree to be contacted by an A-State Insurance agent. As an independent broker, we will share this information only with our top-rated insurance carriers to find your best rate.",
+      "SUBMIT_BUTTON": "Submit My Quote Request"
+    }
+  },
+
+  "SURETY_BOND_QUOTE": {
+    "HEADING": "Get Your Texas Surety Bond Quote in Minutes",
+    "DESCRIPTION": "Your one-stop shop for all Texas license, permit, and contract bonds. We shop the top carriers to find you the lowest rate—regardless of credit.",
+    "NEXT_BUTTON": "Next",
+    "PREVIOUS_BUTTON": "Previous",
+    "STEPPER": {
+      "STEP1": {
+        "TITLE": "Basic Details",
+        "FIELDS": {
+          "FULL_NAME": "Full Name/Business Name",
+          "PHONE": "Phone Number",
+          "EMAIL": "Email Address"
+        }
+      },
+      "STEP2": {
+        "TITLE": "Bond Details",
+        "FIELDS": {
+          "BOND_TYPE": "Bond Type",
+          
+          "BOND_AMOUNT": "Bond Amount: “How much coverage is required?”",
+          "OBLIGEE_NAME": "Obligee Name: “Who is asking you for this bond?”"
+        }
+      },
+      "STEP3": {
+        "TITLE": "Quick Underwriting",
+        "FIELDS": {
+          "CREDIT_SCORE_TITLE": "Estimated Credit Score: Crucial Explain that checking this won’t hurt their credit score.",
+            "CREDIT_SCORE_TITLE_OPTION": [
+          "Excellent",
+          "Good",
+          "Fair",
+          "Poor"
+        ],
+          "YEARS_IN_BUSINESS": "Years in Business"
+        }
+      },
+      "STEP4": {
+        "TITLE": "Contact & Language Preference",
+        "FIELDS": {
+          "LANGUAGE": "Preferred Language for your Quote",
+              "LANGUAGE_OPTIONS": [
+          "English",
+          "Spanish",
+          "Hindi"
+        ],
+          "BEST_TIME": "Best time to call?",
+                "TIME_OPTIONS": [
+          "Morning",
+          "Afternoon",
+          "Evening"
+        ]
+        }
+      }
+    },
+    "QUOTE_SUMMARY": {
+      "MAIN_TITLE": "Review Your Custom Surety Quote Request",
+      "MAIN_DESC": "Review your details below. If everything looks good, click “Submit My Quote Request,” and an A-State broker will start shopping for your best Texas rates.",
+      "SUMMARY_TITLE": "Your Quote Summary",
+      "CARD1": {
+        "TITLE": "1. Contact Information",
+        "EDIT": "Edit Information",
+        "FIELDS": {
+          "NAME": "Name/Business",
+          "PHONE": "Phone",
+            "EMAIL": "Email"
+        }
+      },
+      "CARD2": {
+        "TITLE": "2. Bond Details",
+        "EDIT": "Edit Information",
+        "FIELDS": {
+            "BOND_TYPE": "Bond Type",
+            "BOND_AMOUNT": "Coverage Amount",
+            "OBLIGEE": "Obligee"
+        }
+      },
+      "CARD3": {
+        "TITLE": "3. Business & Credit Profile",
+        "EDIT": "Edit Information",
+        "FIELDS": {
+            "CREDIT_SCORE": "Estimated Credit Score",
+            "YEARS_IN_BUSINESS": "Years in Business"
+        }
+      },
+      "CARD4": {
+        "TITLE": "4. Contact & Language Preferences",
+        "EDIT": "Edit Information",
+        "FIELDS": {
+            "LANGUAGE": "Preferred Language",
+            "BEST_TIME": "Best Time to Call"
+        
+        }
+      },
+      "DISCLAIMER": "By clicking Submit My Quote Request, you agree to be contacted by an A-State Insurance agent regarding your bond request.",
+      "SUBMIT_BUTTON": "Submit My Quote Request"
+    }
+  },
+
   "FOOTER": {
     "SLOGAN": "We protect what matters to you.",
     "INSURANCE_MENU": [

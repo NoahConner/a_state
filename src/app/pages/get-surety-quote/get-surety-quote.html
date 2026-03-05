@@ -1,0 +1,317 @@
+<div class="quoteMain">
+  <div class="topBanner">
+    <div class="container">
+      <div class="h1">{{ 'SURETY_BOND_QUOTE.HEADING' | translate }}
+        <p class="heroDesc">{{ 'SURETY_BOND_QUOTE.DESCRIPTION' | translate }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-5 quote-wrapper">
+    <div class="card border-0 p-4 mb-5">
+      <div class="d-flex justify-content-between align-items-center stepper">
+        <div class="step active">
+          <div class="circle"><img src="/assets/images/quote-step-1.png" alt="" /></div>
+          <p>{{ 'SURETY_BOND_QUOTE.STEPPER.STEP1.TITLE' | translate }}</p>
+        </div>
+        <div class="step">
+          <div class="circle"><img src="/assets/images/quote-step-2.png" alt="" /></div>
+          <p>{{ 'SURETY_BOND_QUOTE.STEPPER.STEP2.TITLE' | translate }}</p>
+        </div>
+        <div class="step">
+          <div class="circle"><img src="/assets/images/quote-step-3.png" alt="" /></div>
+          <p>{{ 'SURETY_BOND_QUOTE.STEPPER.STEP3.TITLE' | translate }}</p>
+        </div>
+        <div class="step">
+          <div class="circle"><img src="/assets/images/quote-step-4.png" alt="" /></div>
+          <p>{{ 'SURETY_BOND_QUOTE.STEPPER.STEP4.TITLE' | translate }}</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="steps-for-custom-quote">
+      <div class="container">
+        <div class="form-wrapper">
+          <h2 class="form-title">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP1.TITLE' | translate }}</h2>
+
+          <div class="form-content-border">
+            <form>
+              <div class="row gy-3 mb-2">
+                <div class="col-md-4">
+                  <label class="form-label">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP1.FIELDS.FULL_NAME' | translate
+                    }}<span>*</span></label>
+                  <input type="text" class="form-control" placeholder="John Doe" />
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP1.FIELDS.EMAIL' | translate
+                    }}<span>*</span></label>
+                  <input type="text" class="form-control" placeholder="John Doe" />
+                </div>
+              </div>
+
+
+              <div class="row gy-3 mb-3 mt-2">
+                <div class="col-md-4">
+                  <label class="form-label">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP1.FIELDS.PHONE' | translate
+                    }}<span>*</span></label>
+                  <input type="text" class="form-control" placeholder="John Doe" />
+                </div>
+              </div>
+
+              <div class="d-flex gap-3 mt-4">
+                <button type="submit" class="btn btn-next">{{ 'SURETY_BOND_QUOTE.NEXT_BUTTON' | translate }}</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mb-4 mt-4">
+        <div class="form-wrapper">
+          <h2 class="form-title">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP2.TITLE' | translate }}</h2>
+
+          <div class="form-content-border">
+            <form>
+              <div class="row gy-3 mb-3">
+                <div class="col-md-8">
+                  <label class="form-label">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP2.FIELDS.BOND_TYPE' | translate
+                    }}<span>*</span></label>
+                  <input type="text" class="form-control" placeholder="John Doe" />
+                </div>
+
+              </div>
+
+              <div class="row gy-3 mb-3">
+                <div class="col-md-8">
+                  <label class="form-label">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP2.FIELDS.BOND_AMOUNT' | translate
+                    }}</label>
+                  <input type="text" class="form-control" placeholder="John Doe" />
+
+                </div>
+
+              </div>
+
+              <div class="row gy-3 mb-3">
+                <div class="col-md-8">
+                  <label class="form-label">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP2.FIELDS.OBLIGEE_NAME' | translate
+                    }}</label>
+                  <input type="text" class="form-control" placeholder="John Doe" />
+                </div>
+
+              </div>
+              <div class="d-flex gap-3 mt-4">
+                <button type="button" class="btn btn-previous">{{ 'SURETY_BOND_QUOTE.PREVIOUS_BUTTON' | translate
+                  }}</button>
+                <button type="submit" class="btn btn-next">{{ 'SURETY_BOND_QUOTE.NEXT_BUTTON' | translate }}</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mb-4">
+        <div class="form-wrapper">
+          <h2 class="form-title">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP3.TITLE' | translate }}</h2>
+
+          <div class="form-content-border">
+            <form>
+              <div class="row gy-3 mt-2">
+                <div class="selection-group">
+                  <h4 class="selection-heading">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP3.FIELDS.CREDIT_SCORE_TITLE' |
+                    translate }}
+                  </h4>
+
+                  <div class="coverage-options">
+                    <div class="form-check"
+                      *ngFor="let option of ('SURETY_BOND_QUOTE.STEPPER.STEP3.FIELDS.CREDIT_SCORE_TITLE_OPTION' | translate)">
+                      <input class="form-check-input" type="checkbox" [id]="option" />
+
+                      <label class="form-check-label" [for]="option">
+                        {{ option }}
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row gy-3 mb-3 mt-4">
+                <div class="col-md-8">
+                  <label class="form-label">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP3.FIELDS.YEARS_IN_BUSINESS' | translate
+                    }}</label>
+                  <input type="text" class="form-control" placeholder="John Doe" />
+                </div>
+
+              </div>
+              <div class="d-flex gap-3 mt-4">
+                <button type="button" class="btn btn-previous">{{ 'GET_LIFE_QUOTE.PREVIOUS_BUTTON' | translate
+                  }}</button>
+                <button type="submit" class="btn btn-next">{{ 'GET_LIFE_QUOTE.NEXT_BUTTON' | translate }}</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="container mt-4 mb-4">
+        <div class="form-wrapper">
+          <h2 class="form-title">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP4.TITLE' | translate }}</h2>
+
+          <div class="form-content-border">
+            <form>
+              <div class="row gy-3 mb-3">
+                <div class="col-md-8">
+                  <label class="form-label">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP4.FIELDS.LANGUAGE' | translate
+                    }}</label>
+                  <select class="form-select">
+                    <option
+                      *ngFor="let option of ('SURETY_BOND_QUOTE.STEPPER.STEP4.FIELDS.LANGUAGE_OPTIONS' | translate)"
+                      [value]="option">{{ option }}</option>
+                  </select>
+                </div>
+
+              </div>
+
+              <div class="row gy-3 mb-3">
+                <div class="col-md-8">
+                  <label class="form-label">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP4.FIELDS.BEST_TIME' | translate
+                    }}</label>
+                  <select class="form-select">
+                    <option *ngFor="let option of ('SURETY_BOND_QUOTE.STEPPER.STEP4.FIELDS.TIME_OPTIONS' | translate)"
+                      [value]="option">{{ option }}</option>
+                  </select>
+                </div>
+
+              </div>
+
+
+
+
+              <div class="d-flex gap-3 mt-4">
+                <button type="button" class="btn btn-previous">{{ 'SURETY_BOND_QUOTE.PREVIOUS_BUTTON' | translate
+                  }}</button>
+                <button type="submit" class="btn btn-next">{{ 'SURETY_BOND_QUOTE.NEXT_BUTTON' | translate }}</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <div class="quote-summary-container p-4 p-md-5 mt-5">
+      <div class="container max-width-700">
+        <h2 class="text-center mb-4 section-title">{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.MAIN_TITLE' | translate }}
+        </h2>
+        <p class="text-center mb-4">{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.MAIN_DESC' | translate }}</p>
+
+        <h2 class="text-center mb-4 section-title">{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.SUMMARY_TITLE' | translate }}</h2>
+
+        <div class="summary-card mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="m-0">{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD1.TITLE' | translate }}</h5>
+            <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
+              'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD1.EDIT' | translate }}</a>
+          </div>
+          <ul class="list-unstyled mb-0">
+            <li><strong>{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.NAME' | translate
+                }}</strong>: Juan Rodriguez
+            </li>
+            <li><strong>{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.PHONE' | translate }}</strong>:
+              75287
+            </li>
+            <li><strong>{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.EMAIL' | translate }}</strong>:
+              j.rodriguez@email.com</li>
+          </ul>
+        </div>
+
+        <div class="summary-card mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="m-0">{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD2.TITLE' | translate }}</h5>
+            <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
+              'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD2.EDIT' | translate }}</a>
+          </div>
+          <ul class="list-unstyled mb-0">
+            <li><strong>{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.BOND_TYPE' | translate }}</strong>:
+              4+ years</li>
+            <li>
+              <strong>{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.BOND_AMOUNT' | translate }}</strong>:
+              5
+            </li>
+
+              <li>
+              <strong>{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.OBLIGEE' | translate }}</strong>:
+              5
+            </li>
+          </ul>
+        </div>
+
+        <div class="summary-card mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="m-0">{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD3.TITLE' | translate }}</h5>
+            <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
+              'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD3.EDIT' | translate }}</a>
+          </div>
+          <ul class="list-unstyled mb-0">
+            <li><strong>{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.CREDIT_SCORE' | translate }}</strong>:
+              Yes</li>
+            <li><strong>{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.YEARS_IN_BUSINESS' | translate }}</strong>: No
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="summary-card mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="m-0">{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD4.TITLE' | translate }}</h5>
+            <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
+              'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD4.EDIT' | translate }}</a>
+          </div>
+          <ul class="list-unstyled mb-0">
+            <li><strong>{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.LANGUAGE' | translate }}</strong>:
+              English</li>
+            <li><strong>{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.BEST_TIME' | translate }}</strong>:
+              Afternoon (12
+              PM - 5 PM)</li>
+          </ul>
+        </div>
+
+        <!-- Form Footer -->
+        <div class="mt-4">
+          <div class="form-check mb-4">
+            <input class="form-check-input terms-check" type="checkbox" id="termsCheck" />
+            <label class="form-check-label terms-check-label small" for="termsCheck">
+              {{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.DISCLAIMER' | translate }}
+            </label>
+          </div>
+          <button class="btn btn-submit">{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.SUBMIT_BUTTON' | translate }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footuper -->
+  <div class="footUpper">
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="clipp"></div>
+    <div class="contain">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="icon">
+              <img src="/assets/images/logo.png" alt="User menu" />
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="h4">{{ 'FOOTER.SLOGAN' | translate }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
