@@ -32,12 +32,12 @@ const routes: Routes = [
   { path: 'our-locations/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
   { path: 'get-a-quote', component: GetAQuote },
   { path: 'request-a-custom-quote', component: GetCustomQuote },
-  { path: 'get-home-quote', component: GetHomeQuote },
-  { path: 'get-commercial-quote', component: GetCommercialQuote },
-  { path: 'get-auto-quote', component: GetAutoQuote },
-  { path: 'get-life-quote', component: GetLifeQuote },
-  { path: 'get-health-quote', component: GetHealthQuote },
-  { path: 'get-surety-quote', component: GetSuretyQuote },
+   { path: 'auto-insurance/quote', component: GetAutoQuote },
+  { path: 'homeowners-insurance/quote', component: GetHomeQuote },
+  { path: 'commercial-insurance/quote', component: GetCommercialQuote },
+  { path: 'life-insurance/quote', component: GetLifeQuote },
+  { path: 'health-insurance/quote', component: GetHealthQuote },
+  { path: 'surety-bonds/quote', component: GetSuretyQuote },
 
 
   
@@ -60,12 +60,12 @@ const routes: Routes = [
       { path: 'gracias', component: Thankyou },
       { path: 'solicitar-cotizacion', component: GetAQuote },
       { path: 'solicitar-una-cotizacion-personalizada', component: GetCustomQuote },
-      { path: 'obtener-cotizacion-auto', component: GetAutoQuote },
-      { path: 'obtener-cotizacion-casa', component: GetHomeQuote },
-      { path: 'obtener-cotizacion-comercial', component: GetCommercialQuote },
-      { path: 'obtener-cotizacion-vida', component: GetLifeQuote },
-      { path: 'obtener-cotizacion-salud', component: GetHealthQuote },
-      { path: 'obtener-cotizacion-surety', component: GetSuretyQuote },
+     { path: 'seguro-de-auto/cotizacion', component: GetAutoQuote },
+      { path: 'seguro-de-vivienda/cotizacion', component: GetHomeQuote },
+      { path: 'seguro-comercial/cotizacion', component: GetCommercialQuote },
+      { path: 'seguro-de-vida/cotizacion', component: GetLifeQuote },
+      { path: 'seguro-de-salud/cotizacion', component: GetHealthQuote },
+      { path: 'fianzas/cotizacion', component: GetSuretyQuote },
       { path: 'nuestras-ubicaciones', component: OurLocations, runGuardsAndResolvers: 'always' },
       { path: 'nuestras-ubicaciones/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
     ],
@@ -121,8 +121,8 @@ export const routeTranslations: Record<string, Record<string, string>> = {
     es: 'solicitar-una-cotizacion-personalizada',
   },
   getAutoQuote: {
-    en: 'get-auto-quote',
-    es: 'obtener-cotizacion-auto',
+    en: 'auto-insurance/quote',
+    es: 'seguro-de-auto/cotizacion',
   },
   ourLocations: {
     en: 'our-locations',
@@ -133,24 +133,24 @@ export const routeTranslations: Record<string, Record<string, string>> = {
     es: 'nuestras-ubicaciones/:id',
   },
   getHomeQuote: {
-    en: 'get-home-quote',
-    es: 'obtener-cotizacion-casa',
+    en: 'homeowners-insurance/quote',
+    es: 'seguro-de-vivienda/cotizacion',
   },
   getCommercialQuote: {
-    en: 'get-commercial-quote',
-    es: 'obtener-cotizacion-comercial',
+    en: 'commercial-insurance/quote',
+    es: 'seguro-comercial/cotizacion',
   },
   getLifeQuote: {
-    en: 'get-life-quote',
-    es: 'obtener-cotizacion-vida',
+    en: 'life-insurance/quote',
+    es: 'seguro-de-vida/cotizacion',
   },
   getHealthQuote: {
-    en: 'get-health-quote',
-    es: 'obtener-cotizacion-salud',
+    en: 'health-insurance/quote',
+    es: 'seguro-de-salud/cotizacion',
   },
   getSuretyQuote: {
-    en: 'get-surety-quote',
-    es: 'obtener-cotizacion-surety',
+   en: 'surety-bonds/quote',
+    es: 'fianzas/cotizacion'
   },
 
 };

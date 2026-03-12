@@ -41,38 +41,44 @@ export class Language {
     this.setLanguage(langToUse);
   }
 
-  setLanguage(lang: string) {
-    // Always update translation (safe for SSR)
-    this.translate.use(lang);
+setLanguage(lang: string) {
 
-    // Browser-only code
-    if (!this.isBrowser) return; // prevent SSR crashes
+  this.translate.use(lang);
 
-    const currentUrl = this.router.url.split('/').filter(Boolean);
-    let currentLang = 'en';
-    let currentSlug = currentUrl[0];
+  if (!this.isBrowser) return;
 
-    if (currentUrl[0] === 'es') {
-      currentLang = 'es';
-      currentSlug = currentUrl[1];
-    }
+  const segments = this.router.url.split('/').filter(Boolean);
 
-    const routeKey = Object.keys(routeTranslations).find(
-      (key) => routeTranslations[key][currentLang] === currentSlug,
-    );
+  let currentLang = 'en';
+  let currentSlug = '';
 
-    if (routeKey) {
-      const newSlug = routeTranslations[routeKey][lang];
-      if (lang === 'en') {
-        this.router.navigate([newSlug]);
-      } else {
-        this.router.navigate([lang, newSlug]);
-      }
-    }
-
-    localStorage.setItem('lang', lang);
-    document.documentElement.lang = lang;
+  if (segments[0] === 'es') {
+    currentLang = 'es';
+    currentSlug = segments.slice(1).join('/');
+  } else {
+    currentSlug = segments.join('/');
   }
+
+  const routeKey = Object.keys(routeTranslations).find(
+    (key) => routeTranslations[key][currentLang] === currentSlug
+  );
+
+  if (!routeKey) {
+    return; // prevent fallback to /
+  }
+
+  const newSlug = routeTranslations[routeKey][lang];
+  const newSegments = newSlug.split('/');
+
+  if (lang === 'en') {
+    this.router.navigate(newSegments);
+  } else {
+    this.router.navigate(['es', ...newSegments]);
+  }
+
+  localStorage.setItem('lang', lang);
+  document.documentElement.lang = lang;
+}
 
   getCurrentLanguage() {
     return this.translate.currentLang;
