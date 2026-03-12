@@ -31,7 +31,7 @@ const routes: Routes = [
   { path: 'our-locations', component: OurLocations, runGuardsAndResolvers: 'always' },
   { path: 'our-locations/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
   { path: 'get-a-quote', component: GetAQuote },
-  { path: 'get-custom-quote', component: GetCustomQuote },
+  { path: 'request-a-custom-quote', component: GetCustomQuote },
   { path: 'get-home-quote', component: GetHomeQuote },
   { path: 'get-commercial-quote', component: GetCommercialQuote },
   { path: 'get-auto-quote', component: GetAutoQuote },
@@ -59,7 +59,7 @@ const routes: Routes = [
       { path: 'carreras', component: Careers },
       { path: 'gracias', component: Thankyou },
       { path: 'solicitar-cotizacion', component: GetAQuote },
-      { path: 'obtener-cotizacion-personalizada', component: GetCustomQuote },
+      { path: 'solicitar-una-cotizacion-personalizada', component: GetCustomQuote },
       { path: 'obtener-cotizacion-auto', component: GetAutoQuote },
       { path: 'obtener-cotizacion-casa', component: GetHomeQuote },
       { path: 'obtener-cotizacion-comercial', component: GetCommercialQuote },
@@ -116,9 +116,9 @@ export const routeTranslations: Record<string, Record<string, string>> = {
     en: 'get-a-quote',
     es: 'solicitar-cotizacion',
   },
-  getCustomQuote: {
-    en: 'get-custom-quote',
-    es: 'obtener-cotizacion-personalizada',
+  requestACustomQuote: {
+    en: 'request-a-custom-quote',
+    es: 'solicitar-una-cotizacion-personalizada',
   },
   getAutoQuote: {
     en: 'get-auto-quote',
