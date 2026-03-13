@@ -58,7 +58,7 @@ const routes: Routes = [
       { path: 'terminos-y-condiciones', component: Terms },
       { path: 'carreras', component: Careers },
       { path: 'gracias', component: Thankyou },
-      { path: 'solicitar-cotizacion', component: GetAQuote },
+      { path: 'obtener-una-cotizacion', component: GetAQuote },
       { path: 'solicitar-una-cotizacion-personalizada', component: GetCustomQuote },
       { path: 'seguros-de-auto/cotizacion', component: GetAutoQuote },
       { path: 'seguros-de-vivienda/cotizacion', component: GetHomeQuote },
@@ -114,7 +114,7 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   },
   getAQuote: {
     en: 'get-a-quote',
-    es: 'solicitar-cotizacion',
+    es: 'obtener-una-cotizacion',
   },
   requestACustomQuote: {
     en: 'request-a-custom-quote',
