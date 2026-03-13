@@ -60,11 +60,11 @@ const routes: Routes = [
       { path: 'gracias', component: Thankyou },
       { path: 'solicitar-cotizacion', component: GetAQuote },
       { path: 'solicitar-una-cotizacion-personalizada', component: GetCustomQuote },
-     { path: 'seguro-de-auto/cotizacion', component: GetAutoQuote },
-      { path: 'seguro-de-vivienda/cotizacion', component: GetHomeQuote },
-      { path: 'seguro-comercial/cotizacion', component: GetCommercialQuote },
-      { path: 'seguro-de-vida/cotizacion', component: GetLifeQuote },
-      { path: 'seguro-de-salud/cotizacion', component: GetHealthQuote },
+      { path: 'seguros-de-auto/cotizacion', component: GetAutoQuote },
+      { path: 'seguros-de-vivienda/cotizacion', component: GetHomeQuote },
+      { path: 'seguros-comerciales/cotizacion', component: GetCommercialQuote },
+      { path: 'seguros-de-vida/cotizacion', component: GetLifeQuote },
+      { path: 'seguros-de-salud/cotizacion', component: GetHealthQuote },
       { path: 'fianzas/cotizacion', component: GetSuretyQuote },
       { path: 'nuestras-ubicaciones', component: OurLocations, runGuardsAndResolvers: 'always' },
       { path: 'nuestras-ubicaciones/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
@@ -122,7 +122,7 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   },
   getAutoQuote: {
     en: 'auto-insurance/quote',
-    es: 'seguro-de-auto/cotizacion',
+    es: 'seguros-de-auto/cotizacion',
   },
   ourLocations: {
     en: 'our-locations',
@@ -134,19 +134,19 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   },
   getHomeQuote: {
     en: 'homeowners-insurance/quote',
-    es: 'seguro-de-vivienda/cotizacion',
+    es: 'seguros-de-vivienda/cotizacion',
   },
   getCommercialQuote: {
     en: 'commercial-insurance/quote',
-    es: 'seguro-comercial/cotizacion',
+    es: 'seguros-comerciales/cotizacion',
   },
   getLifeQuote: {
     en: 'life-insurance/quote',
-    es: 'seguro-de-vida/cotizacion',
+    es: 'seguros-de-vida/cotizacion',
   },
   getHealthQuote: {
     en: 'health-insurance/quote',
-    es: 'seguro-de-salud/cotizacion',
+    es: 'seguros-de-salud/cotizacion',
   },
   getSuretyQuote: {
    en: 'surety-bonds/quote',
