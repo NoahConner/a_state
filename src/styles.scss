@@ -12,3 +12,40 @@ img {
 * {
   font-family: 'Afacad', sans-serif;
 }
+
+/* SweetAlert Elegant Theme */
+.elegant-swal {
+  border-radius: 16px !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  padding: 1.5rem 2rem !important;
+}
+
+.elegant-swal-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 1.75rem !important;
+  letter-spacing: -0.5px !important;
+}
+
+.elegant-swal-confirm-btn {
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  padding: 10px 24px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.elegant-swal-error-btn {
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  padding: 10px 24px !important;
+  box-shadow: 0 4px 6px rgba(202, 43, 40, 0.2) !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.elegant-swal-confirm-btn:hover,
+.elegant-swal-error-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1) !important;
+}

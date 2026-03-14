@@ -937,6 +937,10 @@
     "DESCRIPTION": "As independent brokers, we don’t work for the insurance companies—we work for you. One quote, multiple carriers, total protection.",
     "NEXT_BUTTON": "Next",
     "PREVIOUS_BUTTON": "Previous",
+    "ERRORS": {
+      "REQUIRED": "This field is required.",
+      "EMAIL": "Please enter a valid email address."
+    },
     "STEPPER": {
       "STEP1": {
         "TITLE": "Basic Information",
@@ -968,15 +972,11 @@
       "STEP4": {
         "TITLE": "History and Savings",
         "INSURED_TITLE": "Currently Insured?",
-        "INSURED_OPTIONS": [
-          "Yes",
-          "No"
-        ],
+        "INSURED_YES": "Yes",
+        "INSURED_NO": "No",
         "SR22_TITLE": "Do you need an SR-22 filing?",
-        "SR22_OPTIONS": [
-          "Yes",
-          "No"
-        ],
+        "SR22_YES": "Yes",
+        "SR22_NO": "No",
         "BUNDLE_TITLE": "Do you want to bundle your policies to save more?",
         "BUNDLE_OPTIONS": [
           "Yes! I want an Auto + Home bundle discount.",
@@ -1027,16 +1027,14 @@
         "TITLE": "2. Vehicles",
         "EDIT": "Edit Coverage",
         "FIELDS": {
-          "VEHICLE1": "Vehicle #1:",
-          "VEHICLE2": "Vehicle #2:"
+          "VEHICLE": "Vehicle"
         }
       },
       "CARD3": {
         "TITLE": "3. Drivers",
         "EDIT": "Edit Details",
         "FIELDS": {
-          "DRIVER1": "Driver #1:",
-          "DRIVER2": "Driver #2:"
+          "DRIVER": "Driver"
         }
       },
       "CARD4": {
@@ -1064,16 +1062,18 @@
     "DESCRIPTION": "Stop overpaying for home protection. We shop multiple top-rated carriers to find you the best rates and total coverage.",
     "NEXT_BUTTON": "Next",
     "PREVIOUS_BUTTON": "Previous",
+    "ERRORS": {
+      "REQUIRED": "This field is required.",
+      "EMAIL": "Please enter a valid email address."
+    },
     "STEPPER": {
       "STEP1": {
         "TITLE": "Property Information",
         "FIELDS": {
           "PROPERTY_ADDRESS": "Property Address:",
           "PRIMARY_RESIDENCE": "Is this your primary residence?",
-          "PRIMARY_RESIDENCE_OPTIONS": [
-            "Yes, I live here.",
-            "No, it’s a rental property / second home."
-          ],
+          "PRIMARY_RESIDENCE_YES": "Yes, I live here.",
+          "PRIMARY_RESIDENCE_NO": "No, it’s a rental property / second home.",
           "PROPERTY_TYPE": "Property Type"
         }
       },
@@ -1090,20 +1090,14 @@
         "TITLE": "Security & Safety",
         "FIELDS": {
           "MONITORED_ALARM": "Does the home have a monitored alarm system?",
-          "MONITORED_ALARM_OPTIONS": [
-            "Yes",
-            "No"
-          ],
+          "MONITORED_ALARM_YES": "Yes",
+          "MONITORED_ALARM_NO": "No",
           "SWIMMING_POOL": "Is there a swimming pool?",
-          "SWIMMING_POOL_OPTIONS": [
-            "Yes",
-            "No"
-          ],
+          "SWIMMING_POOL_YES": "Yes",
+          "SWIMMING_POOL_NO": "No",
           "PETS": "Are there any pets in the home?",
-          "PETS_OPTIONS": [
-            "Yes",
-            "No"
-          ]
+          "PETS_YES": "Yes",
+          "PETS_NO": "No"
         }
       },
       "STEP4": {
@@ -1443,7 +1437,6 @@
       }
     }
   },
-
   "GET_HEALTH_QUOTE": {
     "HEADING": "A Health Insurance Quote Built for Your Family",
     "DESCRIPTION": "Protecting your health shouldn’t be complicated. Get expert advice and clear options in English, Spanish, and Hindi.",
@@ -1540,7 +1533,6 @@
       "SUBMIT_BUTTON": "Submit My Quote Request"
     }
   },
-
   "SURETY_BOND_QUOTE": {
     "HEADING": "Get Your Texas Surety Bond Quote in Minutes",
     "DESCRIPTION": "Your one-stop shop for all Texas license, permit, and contract bonds. We shop the top carriers to find you the lowest rate—regardless of credit.",
@@ -1559,7 +1551,6 @@
         "TITLE": "Bond Details",
         "FIELDS": {
           "BOND_TYPE": "Bond Type",
-          
           "BOND_AMOUNT": "Bond Amount: “How much coverage is required?”",
           "OBLIGEE_NAME": "Obligee Name: “Who is asking you for this bond?”"
         }
@@ -1568,12 +1559,12 @@
         "TITLE": "Quick Underwriting",
         "FIELDS": {
           "CREDIT_SCORE_TITLE": "Estimated Credit Score: Crucial Explain that checking this won’t hurt their credit score.",
-            "CREDIT_SCORE_TITLE_OPTION": [
-          "Excellent",
-          "Good",
-          "Fair",
-          "Poor"
-        ],
+          "CREDIT_SCORE_TITLE_OPTION": [
+            "Excellent",
+            "Good",
+            "Fair",
+            "Poor"
+          ],
           "YEARS_IN_BUSINESS": "Years in Business"
         }
       },
@@ -1581,17 +1572,17 @@
         "TITLE": "Contact & Language Preference",
         "FIELDS": {
           "LANGUAGE": "Preferred Language for your Quote",
-              "LANGUAGE_OPTIONS": [
-          "English",
-          "Spanish",
-          "Hindi"
-        ],
+          "LANGUAGE_OPTIONS": [
+            "English",
+            "Spanish",
+            "Hindi"
+          ],
           "BEST_TIME": "Best time to call?",
-                "TIME_OPTIONS": [
-          "Morning",
-          "Afternoon",
-          "Evening"
-        ]
+          "TIME_OPTIONS": [
+            "Morning",
+            "Afternoon",
+            "Evening"
+          ]
         }
       }
     },
@@ -1605,40 +1596,38 @@
         "FIELDS": {
           "NAME": "Name/Business",
           "PHONE": "Phone",
-            "EMAIL": "Email"
+          "EMAIL": "Email"
         }
       },
       "CARD2": {
         "TITLE": "2. Bond Details",
         "EDIT": "Edit Information",
         "FIELDS": {
-            "BOND_TYPE": "Bond Type",
-            "BOND_AMOUNT": "Coverage Amount",
-            "OBLIGEE": "Obligee"
+          "BOND_TYPE": "Bond Type",
+          "BOND_AMOUNT": "Coverage Amount",
+          "OBLIGEE": "Obligee"
         }
       },
       "CARD3": {
         "TITLE": "3. Business & Credit Profile",
         "EDIT": "Edit Information",
         "FIELDS": {
-            "CREDIT_SCORE": "Estimated Credit Score",
-            "YEARS_IN_BUSINESS": "Years in Business"
+          "CREDIT_SCORE": "Estimated Credit Score",
+          "YEARS_IN_BUSINESS": "Years in Business"
         }
       },
       "CARD4": {
         "TITLE": "4. Contact & Language Preferences",
         "EDIT": "Edit Information",
         "FIELDS": {
-            "LANGUAGE": "Preferred Language",
-            "BEST_TIME": "Best Time to Call"
-        
+          "LANGUAGE": "Preferred Language",
+          "BEST_TIME": "Best Time to Call"
         }
       },
       "DISCLAIMER": "By clicking Submit My Quote Request, you agree to be contacted by an A-State Insurance agent regarding your bond request.",
       "SUBMIT_BUTTON": "Submit My Quote Request"
     }
   },
-
   "FOOTER": {
     "SLOGAN": "We protect what matters to you.",
     "INSURANCE_MENU": [

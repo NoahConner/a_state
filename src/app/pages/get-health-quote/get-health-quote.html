@@ -10,174 +10,220 @@
   <div class="container my-5 quote-wrapper">
     <div class="card border-0 p-4 mb-5">
       <div class="d-flex justify-content-between align-items-center stepper">
-        <div class="step active">
+        <div class="step" [class.active]="currentStep === 1">
           <div class="circle"><img src="/assets/images/quote-step-1.png" alt="" /></div>
           <p>{{ 'GET_HEALTH_QUOTE.STEPPER.STEP1.TITLE' | translate }}</p>
         </div>
-        <div class="step">
+        <div class="step" [class.active]="currentStep === 2">
           <div class="circle"><img src="/assets/images/quote-step-2.png" alt="" /></div>
           <p>{{ 'GET_HEALTH_QUOTE.STEPPER.STEP2.TITLE' | translate }}</p>
         </div>
-        <div class="step">
+        <div class="step" [class.active]="currentStep === 3">
           <div class="circle"><img src="/assets/images/quote-step-3.png" alt="" /></div>
           <p>{{ 'GET_HEALTH_QUOTE.STEPPER.STEP3.TITLE' | translate }}</p>
         </div>
       </div>
     </div>
 
-    <div class="steps-for-custom-quote">
-      <div class="container">
-        <div class="form-wrapper">
-          <h2 class="form-title">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP1.TITLE' | translate }}</h2>
+    <form [formGroup]="healthQuoteForm">
+      <div class="steps-for-custom-quote">
+        <div class="container" *ngIf="currentStep === 1">
+          <div class="form-wrapper">
+            <h2 class="form-title">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP1.TITLE' | translate }}</h2>
 
-          <div class="form-content-border">
-            <form>
-              <div class="row gy-3 mb-2">
-                <div class="selection-group">
-                  <h4 class="selection-heading">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP1.COVERAGE_TITLE' | translate }}
-                  </h4>
+            <div class="form-content-border">
+                <div class="row gy-3 mb-2">
+                  <div class="selection-group">
+                    <h4 class="selection-heading">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP1.COVERAGE_TITLE' | translate }}
+                    </h4>
 
-                  <div class="coverage-options">
-                    <div class="form-check"
-                      *ngFor="let option of ('GET_HEALTH_QUOTE.STEPPER.STEP1.COVERAGE_OPTIONS' | translate)">
-                      <input class="form-check-input" type="checkbox" [id]="option" />
+                    <div class="coverage-options">
+                      <div class="form-check"
+                        *ngFor="let option of ('GET_HEALTH_QUOTE.STEPPER.STEP1.COVERAGE_OPTIONS' | translate)">
+                        <input class="form-check-input" type="radio" [value]="option" [id]="option" formControlName="who_needs_coverage" />
 
-                      <label class="form-check-label" [for]="option">
-                        {{ option }}
-                      </label>
+                        <label class="form-check-label" [for]="option">
+                          {{ option }}
+                        </label>
+                      </div>
+                      <div class="invalid-feedback d-block" *ngIf="healthQuoteForm.get('who_needs_coverage')?.invalid && healthQuoteForm.get('who_needs_coverage')?.touched">
+                        {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mt-3">
+                    <label class="form-label">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP1.FIELDS.ZIPCODE' | translate
+                      }}<span>*</span></label>
+                    <input type="text"
+                           formControlName="zip_code"
+                           [class.is-invalid]="healthQuoteForm.get('zip_code')?.invalid && healthQuoteForm.get('zip_code')?.touched"
+                           class="form-control" 
+                           placeholder="3232" />
+                    <div class="invalid-feedback" *ngIf="healthQuoteForm.get('zip_code')?.invalid && healthQuoteForm.get('zip_code')?.touched">
+                      {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
-                  <label class="form-label">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP1.FIELDS.ZIPCODE' | translate
-                    }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="3232" />
+                <div class="d-flex gap-3 mt-4">
+                  <button type="button" class="btn btn-next" (click)="nextStep()">{{ 'GET_HEALTH_QUOTE.NEXT_BUTTON' | translate }}</button>
                 </div>
-              </div>
-              <div class="d-flex gap-3 mt-4">
-                <button type="submit" class="btn btn-next">{{ 'GET_HEALTH_QUOTE.NEXT_BUTTON' | translate }}</button>
-              </div>
-            </form>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="container mb-4 mt-4">
-        <div class="form-wrapper">
-          <h2 class="form-title">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP2.TITLE' | translate }}</h2>
+        <div class="container mb-4 mt-4" *ngIf="currentStep === 2">
+          <div class="form-wrapper">
+            <h2 class="form-title">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP2.TITLE' | translate }}</h2>
 
-          <div class="form-content-border">
-            <form>
-              <div class="col-md-4">
-                <label class="form-label">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP2.FIELDS.HOUSEHOLD_SIZE' | translate
-                  }}<span>*</span></label>
-                <input type="text" class="form-control" placeholder="3232" />
-              </div>
+            <div class="form-content-border">
+                <div class="col-md-4">
+                  <label class="form-label">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP2.FIELDS.HOUSEHOLD_SIZE' | translate
+                    }}<span>*</span></label>
+                  <input type="text"
+                         formControlName="household_size"
+                         [class.is-invalid]="healthQuoteForm.get('household_size')?.invalid && healthQuoteForm.get('household_size')?.touched"
+                         class="form-control" 
+                         placeholder="1" />
+                  <div class="invalid-feedback" *ngIf="healthQuoteForm.get('household_size')?.invalid && healthQuoteForm.get('household_size')?.touched">
+                    {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                  </div>
+                </div>
 
-              <div class="row gy-3 mt-2">
-                <div class="selection-group">
-                  <h4 class="selection-heading">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP2.FIELDS.ANNUAL_INCOME' | translate }}
-                    <span class="note-heading">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP2.FIELDS.ANNUAL_INCOME_NOTE' | translate
-                      }}</span>
-                  </h4>
+                <div class="row gy-3 mt-4">
+                  <div class="selection-group">
+                    <h4 class="selection-heading">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP2.FIELDS.ANNUAL_INCOME' | translate }}
+                      <span class="note-heading">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP2.FIELDS.ANNUAL_INCOME_NOTE' | translate
+                        }}</span>
+                    </h4>
 
-                  <div class="coverage-options">
-                    <div class="form-check"
-                      *ngFor="let option of ('GET_HEALTH_QUOTE.STEPPER.STEP2.INCOME_OPTIONS' | translate)">
-                      <input class="form-check-input" type="checkbox" [id]="option" />
+                    <div class="coverage-options">
+                      <div class="form-check"
+                        *ngFor="let option of ('GET_HEALTH_QUOTE.STEPPER.STEP2.INCOME_OPTIONS' | translate)">
+                        <input class="form-check-input" type="radio" [value]="option" [id]="'income_' + option" formControlName="household_income" />
 
-                      <label class="form-check-label" [for]="option">
-                        {{ option }}
-                      </label>
+                        <label class="form-check-label" [for]="'income_' + option">
+                          {{ option }}
+                        </label>
+                      </div>
+                      <div class="invalid-feedback d-block" *ngIf="healthQuoteForm.get('household_income')?.invalid && healthQuoteForm.get('household_income')?.touched">
+                        {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="row gy-3 mt-2">
-                <div class="selection-group">
-                  <h4 class="selection-heading">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP2.FIELDS.TOBACCO_USE' | translate }}
-                  </h4>
+                <div class="row gy-3 mt-4">
+                  <div class="selection-group">
+                    <h4 class="selection-heading">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP2.FIELDS.TOBACCO_USE' | translate }}
+                    </h4>
 
-                  <div class="coverage-options">
-                    <div class="form-check"
-                      *ngFor="let option of ('GET_HEALTH_QUOTE.STEPPER.STEP2.TOBACCO_OPTIONS' | translate)">
-                      <input class="form-check-input" type="checkbox" [id]="option" />
+                    <div class="coverage-options">
+                      <div class="form-check"
+                        *ngFor="let option of ('GET_HEALTH_QUOTE.STEPPER.STEP2.TOBACCO_OPTIONS' | translate)">
+                        <input class="form-check-input" type="radio" [value]="option" [id]="'tobacco_' + option" formControlName="uses_tobacco" />
 
-                      <label class="form-check-label" [for]="option">
-                        {{ option }}
-                      </label>
+                        <label class="form-check-label" [for]="'tobacco_' + option">
+                          {{ option }}
+                        </label>
+                      </div>
+                      <div class="invalid-feedback d-block" *ngIf="healthQuoteForm.get('uses_tobacco')?.invalid && healthQuoteForm.get('uses_tobacco')?.touched">
+                        {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous">{{ 'GET_LIFE_QUOTE.PREVIOUS_BUTTON' | translate
-                  }}</button>
-                <button type="submit" class="btn btn-next">{{ 'GET_LIFE_QUOTE.NEXT_BUTTON' | translate }}</button>
-              </div>
-            </form>
+                <div class="d-flex gap-3 mt-4">
+                  <button type="button" class="btn btn-previous" (click)="previousStep()">{{ 'GET_LIFE_QUOTE.PREVIOUS_BUTTON' | translate
+                    }}</button>
+                  <button type="button" class="btn btn-next" (click)="nextStep()">{{ 'GET_LIFE_QUOTE.NEXT_BUTTON' | translate }}</button>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container mt-4 mb-4" *ngIf="currentStep === 3">
+          <div class="form-wrapper">
+            <h2 class="form-title">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP3.TITLE' | translate }}</h2>
+            <div class="form-content-border">
+                <div class="row gy-3 mb-2">
+                  <div class="col-md-4">
+                    <label class="form-label">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP3.FIELDS.FULL_NAME' | translate
+                      }}<span>*</span></label>
+                    <input type="text"
+                           formControlName="full_name"
+                           [class.is-invalid]="healthQuoteForm.get('full_name')?.invalid && healthQuoteForm.get('full_name')?.touched"
+                           class="form-control" 
+                           placeholder="John Doe" />
+                    <div class="invalid-feedback" *ngIf="healthQuoteForm.get('full_name')?.invalid && healthQuoteForm.get('full_name')?.touched">
+                        {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP3.FIELDS.EMAIL' | translate
+                      }}<span>*</span></label>
+                    <input type="email" 
+                           formControlName="email_address"
+                           [class.is-invalid]="healthQuoteForm.get('email_address')?.invalid && healthQuoteForm.get('email_address')?.touched"
+                           class="form-control" 
+                           id="email_address"
+                           placeholder="johndoe@email.com" />
+                    <div class="invalid-feedback" *ngIf="healthQuoteForm.get('email_address')?.invalid && healthQuoteForm.get('email_address')?.touched">
+                        {{ 'GET_AUTO_QUOTE.ERRORS.EMAIL' | translate }}
+                    </div>
+                  </div>
+                </div>
+                <div class="row gy-3 mb-3">
+                  <div class="col-md-4">
+                    <label class="form-label">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP3.FIELDS.PHONE' | translate
+                      }}<span>*</span></label>
+                    <input type="text" 
+                           formControlName="phone_number"
+                           [class.is-invalid]="healthQuoteForm.get('phone_number')?.invalid && healthQuoteForm.get('phone_number')?.touched"
+                           class="form-control" 
+                           placeholder="+1 234 567 8900" />
+                    <div class="invalid-feedback" *ngIf="healthQuoteForm.get('phone_number')?.invalid && healthQuoteForm.get('phone_number')?.touched">
+                        {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP3.FIELDS.LANGUAGE' | translate
+                      }}</label>
+                    <select class="form-select" formControlName="preferred_language"
+                            [class.is-invalid]="healthQuoteForm.get('preferred_language')?.invalid && healthQuoteForm.get('preferred_language')?.touched">
+                      <option *ngFor="let option of ('GET_HEALTH_QUOTE.STEPPER.STEP3.LANGUAGE_OPTIONS' | translate)"
+                        [value]="option">{{ option }}</option>
+                    </select>
+                    <div class="invalid-feedback" *ngIf="healthQuoteForm.get('preferred_language')?.invalid && healthQuoteForm.get('preferred_language')?.touched">
+                        {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row gy-3 mb-3">
+                  <div class="col-md-4">
+                    <label class="form-label">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP3.FIELDS.BEST_TIME' | translate
+                      }}</label>
+                    <select class="form-select" formControlName="best_time_to_call"
+                            [class.is-invalid]="healthQuoteForm.get('best_time_to_call')?.invalid && healthQuoteForm.get('best_time_to_call')?.touched">
+                      <option *ngFor="let option of ('GET_HEALTH_QUOTE.STEPPER.STEP3.TIME_OPTIONS' | translate)"
+                        [value]="option">{{ option }}</option>
+                    </select>
+                    <div class="invalid-feedback" *ngIf="healthQuoteForm.get('best_time_to_call')?.invalid && healthQuoteForm.get('best_time_to_call')?.touched">
+                        {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex gap-3 mt-4">
+                  <button type="button" class="btn btn-previous" (click)="previousStep()">{{ 'GET_HEALTH_QUOTE.PREVIOUS_BUTTON' | translate
+                    }}</button>
+                  <button type="button" class="btn btn-next" (click)="nextStep()">{{ 'GET_HEALTH_QUOTE.NEXT_BUTTON' | translate }}</button>
+                </div>
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="container mt-4 mb-4">
-        <div class="form-wrapper">
-          <h2 class="form-title">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP3.TITLE' | translate }}</h2>
-          <div class="form-content-border">
-            <form>
-              <div class="row gy-3 mb-2">
-                <div class="col-md-4">
-                  <label class="form-label">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP3.FIELDS.FULL_NAME' | translate
-                    }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="John Doe" />
-                </div>
-                <div class="col-md-4">
-                  <label class="form-label">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP3.FIELDS.EMAIL' | translate
-                    }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="John Doe" />
-                </div>
-              </div>
-              <div class="row gy-3 mb-3">
-                <div class="col-md-4">
-                  <label class="form-label">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP3.FIELDS.EMAIL' | translate
-                    }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="John Doe" />
-                </div>
-                <div class="col-md-4">
-                  <label class="form-label">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP3.FIELDS.LANGUAGE' | translate
-                    }}</label>
-                  <select class="form-select">
-                    <option *ngFor="let option of ('GET_HEALTH_QUOTE.STEPPER.STEP3.LANGUAGE_OPTIONS' | translate)"
-                      [value]="option">{{ option }}</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="row gy-3 mb-3">
-                <div class="col-md-4">
-                  <label class="form-label">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP3.FIELDS.BEST_TIME' | translate
-                    }}</label>
-                  <select class="form-select">
-                    <option *ngFor="let option of ('GET_HEALTH_QUOTE.STEPPER.STEP3.TIME_OPTIONS' | translate)"
-                      [value]="option">{{ option }}</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous">{{ 'GET_HEALTH_QUOTE.PREVIOUS_BUTTON' | translate
-                  }}</button>
-                <button type="submit" class="btn btn-next">{{ 'GET_HEALTH_QUOTE.NEXT_BUTTON' | translate }}</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
-
-
-    </div>
+    </form>
 
     <div class="quote-summary-container p-4 p-md-5 mt-5">
       <div class="container max-width-700">
@@ -190,15 +236,15 @@
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0">{{ 'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD1.TITLE' | translate }}</h5>
-            <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
+            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(1)"><i class="bi bi-pencil-square"></i> {{
               'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD1.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
             <li><strong>{{ 'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.COVERAGE_FOR' | translate
-                }}</strong>: Juan Rodriguez
+                }}</strong>: {{ healthQuoteForm.get('who_needs_coverage')?.value || 'None' }}
             </li>
             <li><strong>{{ 'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.ZIP' | translate }}</strong>:
-              75287
+              {{ healthQuoteForm.get('zip_code')?.value }}
             </li>
           </ul>
         </div>
@@ -206,20 +252,20 @@
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0">{{ 'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD2.TITLE' | translate }}</h5>
-            <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
+            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(2)"><i class="bi bi-pencil-square"></i> {{
               'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD2.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
             <li><strong>{{ 'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.HOUSEHOLD_SIZE' | translate }}</strong>:
-              4+ years</li>
+              {{ healthQuoteForm.get('household_size')?.value }}</li>
             <li>
               <strong>{{ 'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.ANNUAL_INCOME' | translate }}</strong>:
-              5
+              {{ healthQuoteForm.get('household_income')?.value }}
             </li>
 
                <li>
               <strong>{{ 'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.TOBACCO' | translate }}</strong>:
-              5
+              {{ healthQuoteForm.get('uses_tobacco')?.value }}
             </li>
           </ul>
         </div>
@@ -227,34 +273,36 @@
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0">{{ 'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD3.TITLE' | translate }}</h5>
-            <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
+            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(3)"><i class="bi bi-pencil-square"></i> {{
               'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD3.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
             <li><strong>{{ 'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.FULL_NAME' | translate }}</strong>:
-              English</li>
+              {{ healthQuoteForm.get('full_name')?.value }}</li>
                 <li><strong>{{ 'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.PHONE' | translate }}</strong>:
-              English</li>
+              {{ healthQuoteForm.get('phone_number')?.value }}</li>
                  <li><strong>{{ 'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.EMAIL' | translate }}</strong>:
-              English</li>
+              {{ healthQuoteForm.get('email_address')?.value }}</li>
             <li><strong>{{ 'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.LANGUAGE' | translate }}</strong>:
-              English
+              {{ healthQuoteForm.get('preferred_language')?.value }}
             </li>
             <li><strong>{{ 'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.BEST_TIME' | translate }}</strong>:
-              Afternoon (12
-              PM - 5 PM)</li>
+              {{ healthQuoteForm.get('best_time_to_call')?.value }}</li>
           </ul>
         </div>
 
         <!-- Form Footer -->
         <div class="mt-4">
           <div class="form-check mb-4">
-            <input class="form-check-input terms-check" type="checkbox" id="termsCheck" />
+            <input class="form-check-input terms-check" type="checkbox" id="termsCheck" (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
             <label class="form-check-label terms-check-label small" for="termsCheck">
-              {{ 'GET_HEALTH_QUOTE.QUOTE_SUMMARY.DISCLAIMER' | translate }}
+              {{ 'GET_HEALTH_QUOTE.QUOTE_SUMMARY.DESC' | translate }}
             </label>
           </div>
-          <button class="btn btn-submit">{{ 'GET_HEALTH_QUOTE.QUOTE_SUMMARY.SUBMIT_BUTTON' | translate }}</button>
+          <button class="btn btn-submit" (click)="sendHealthQuote()" [disabled]="loading || !termsAccepted">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+            {{ loading ? 'Submitting...' : ('GET_HEALTH_QUOTE.QUOTE_SUMMARY.SUBMIT_BUTTON' | translate) }}
+          </button>
         </div>
       </div>
     </div>

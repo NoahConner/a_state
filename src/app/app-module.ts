@@ -1,6 +1,7 @@
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { TranslateModule } from '@ngx-translate/core';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -28,6 +29,7 @@ import { GetCommercialQuote } from './pages/get-commercial-quote/get-commercial-
 import { GetLifeQuote } from './pages/get-life-quote/get-life-quote';
 import { GetHealthQuote } from './pages/get-health-quote/get-health-quote';
 import { GetSuretyQuote } from './pages/get-surety-quote/get-surety-quote';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -56,8 +58,11 @@ import { GetSuretyQuote } from './pages/get-surety-quote/get-surety-quote';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+
 
     // ✅ Required for NgModule apps
     TranslateModule.forRoot({

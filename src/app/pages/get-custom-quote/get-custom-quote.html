@@ -10,202 +10,258 @@
   <div class="container my-5 quote-wrapper">
     <div class="card border-0 p-4 mb-5">
       <div class="d-flex justify-content-between align-items-center stepper">
-        <div class="step active">
+        <div class="step" [class.active]="currentStep === 1">
           <div class="circle"><img src="/assets/images/quote-step-1.png" alt="" /></div>
           <p>{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP1.TITLE' | translate }}</p>
         </div>
-        <div class="step">
+        <div class="step" [class.active]="currentStep === 2">
           <div class="circle"><img src="/assets/images/quote-step-2.png" alt="" /></div>
           <p>{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP2.TITLE' | translate }}</p>
         </div>
-        <div class="step">
+        <div class="step" [class.active]="currentStep === 3">
           <div class="circle"><img src="/assets/images/quote-step-3.png" alt="" /></div>
           <p>{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP3.TITLE' | translate }}</p>
         </div>
-        <div class="step">
+        <div class="step" [class.active]="currentStep === 4">
           <div class="circle"><img src="/assets/images/quote-step-4.png" alt="" /></div>
           <p>{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP4.TITLE' | translate }}</p>
         </div>
-        <div class="step">
-          <div class="circle"><img src="/assets/images/quote-step-5.png" alt="" /></div>
-          <p>{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP5.TITLE' | translate }}</p>
-        </div>
       </div>
     </div>
 
-    <div class="steps-for-custom-quote">
-      <div class="container">
-        <div class="form-wrapper">
-          <h2 class="form-title">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP1.TITLE' | translate }}</h2>
+    <form [formGroup]="customQuoteForm">
+      <div class="steps-for-custom-quote">
+        <div class="container" *ngIf="currentStep === 1">
+          <div class="form-wrapper">
+            <h2 class="form-title">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP1.TITLE' | translate }}</h2>
 
-          <div class="form-content-border">
-            <form>
-              <div class="row gy-3 mb-3">
-                <div class="col-md-4">
-                  <label class="form-label">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.FULL_NAME' | translate
-                    }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="John Doe" />
-                </div>
-                <div class="col-md-4">
-                  <label class="form-label">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.PHONE' | translate
-                    }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="+1 265 789 8900" />
-                </div>
-              </div>
-
-              <div class="row gy-3">
-                <div class="col-md-4">
-                  <label class="form-label">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.EMAIL' | translate
-                    }}<span>*</span></label>
-                  <select class="form-select">
-                    <option selected>Auto</option>
-                  </select>
-                </div>
-                <div class="col-md-4">
-                  <label class="form-label">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.PREFERRED_LANGUAGE' | translate
-                    }}</label>
-                  <select class="form-select">
-                    <option selected>English</option>
-                  </select>
-                </div>
-              </div>
-              <div class="row gy-3 mt-1">
-                <div class="col-md-8">
-                  <label class="form-label">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.FULL_ADDRESS' | translate
-                    }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="John Doe" />
-                </div>
-              </div>
-
-              <div class="d-flex gap-3 mt-4">
-                <button type="submit" class="btn btn-next">{{ 'GET_CUSTOM_QUOTE.NEXT_BUTTON' | translate }}</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <div class="container mt-4 mb-4">
-        <div class="form-wrapper">
-          <h2 class="form-title">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP2.TITLE' | translate }}</h2>
-
-          <div class="form-content-border">
-            <form>
-              <div class="selection-group">
-                <h4 class="selection-heading">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP2.DESC' | translate }}</h4>
-
-                <div class="coverage-options">
-                  <div class="form-check" *ngFor="let option of coverageOptions">
-                    <input class="form-check-input" type="checkbox" [id]="option" />
-                    <label class="form-check-label" [for]="option">
-                      {{ option }}
-                    </label>
+            <div class="form-content-border">
+                <div class="row gy-3 mb-3">
+                  <div class="col-md-4">
+                    <label class="form-label">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.FULL_NAME' | translate
+                      }}<span>*</span></label>
+                    <input type="text"
+                           formControlName="name"
+                           [class.is-invalid]="customQuoteForm.get('name')?.invalid && customQuoteForm.get('name')?.touched"
+                           class="form-control" 
+                           placeholder="John Doe" />
+                    <div class="invalid-feedback" *ngIf="customQuoteForm.get('name')?.invalid && customQuoteForm.get('name')?.touched">
+                        {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.PHONE' | translate
+                      }}<span>*</span></label>
+                    <input type="text" 
+                           formControlName="phone_number"
+                           [class.is-invalid]="customQuoteForm.get('phone_number')?.invalid && customQuoteForm.get('phone_number')?.touched"
+                           class="form-control" 
+                           placeholder="+1 265 789 8900" />
+                    <div class="invalid-feedback" *ngIf="customQuoteForm.get('phone_number')?.invalid && customQuoteForm.get('phone_number')?.touched">
+                        {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="mt-5">
-                <p class="form-sub-label">
-                  {{ 'GET_CUSTOM_QUOTE.STEPPER.STEP2.DESC1' | translate }}
-                </p>
                 <div class="row gy-3">
+                  <div class="col-md-4">
+                    <label class="form-label">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.EMAIL' | translate
+                      }}<span>*</span></label>
+                    <input type="email" 
+                           formControlName="email"
+                           [class.is-invalid]="customQuoteForm.get('email')?.invalid && customQuoteForm.get('email')?.touched"
+                           class="form-control" 
+                           id="email"
+                           placeholder="johndoe@email.com" />
+                    <div class="invalid-feedback" *ngIf="customQuoteForm.get('email')?.invalid && customQuoteForm.get('email')?.touched">
+                        {{ 'GET_AUTO_QUOTE.ERRORS.EMAIL' | translate }}
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.PREFERRED_LANGUAGE' | translate
+                      }}<span>*</span></label>
+                    <input type="text" 
+                           formControlName="preferred_language"
+                           [class.is-invalid]="customQuoteForm.get('preferred_language')?.invalid && customQuoteForm.get('preferred_language')?.touched"
+                           class="form-control" 
+                           placeholder="English" />
+                    <div class="invalid-feedback" *ngIf="customQuoteForm.get('preferred_language')?.invalid && customQuoteForm.get('preferred_language')?.touched">
+                        {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                    </div>
+                  </div>
+                </div>
+                <div class="row gy-3 mt-1">
                   <div class="col-md-8">
-                    <input type="text" class="form-control" placeholder="Type Here" />
+                    <label class="form-label">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.FULL_ADDRESS' | translate
+                      }}<span>*</span></label>
+                    <input type="text" 
+                           formControlName="full_address"
+                           [class.is-invalid]="customQuoteForm.get('full_address')?.invalid && customQuoteForm.get('full_address')?.touched"
+                           class="form-control" 
+                           placeholder="123 Main St" />
+                    <div class="invalid-feedback" *ngIf="customQuoteForm.get('full_address')?.invalid && customQuoteForm.get('full_address')?.touched">
+                        {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous">{{ 'GET_CUSTOM_QUOTE.PREVIOUS_BUTTON' | translate
-                  }}</button>
-                <button type="submit" class="btn btn-next">{{ 'GET_CUSTOM_QUOTE.NEXT_BUTTON' | translate }}</button>
-              </div>
-            </form>
+                <div class="d-flex gap-3 mt-4">
+                  <button type="button" class="btn btn-next" (click)="nextStep()">{{ 'GET_CUSTOM_QUOTE.NEXT_BUTTON' | translate }}</button>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container mt-4 mb-4" *ngIf="currentStep === 2">
+          <div class="form-wrapper">
+            <h2 class="form-title">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP2.TITLE' | translate }}</h2>
+
+            <div class="form-content-border">
+                <div class="selection-group">
+                  <h4 class="selection-heading">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP2.DESC' | translate }}</h4>
+
+                  <div class="coverage-options">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="cov_auto" (change)="onCheckboxChange($event, 'coverage_auto')" [checked]="customQuoteForm.get('coverage_auto')?.value === 1" />
+                      <label class="form-check-label" for="cov_auto">Auto Insurance</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="cov_home" (change)="onCheckboxChange($event, 'coverage_home')" [checked]="customQuoteForm.get('coverage_home')?.value === 1" />
+                      <label class="form-check-label" for="cov_home">Home Insurance</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="cov_commercial" (change)="onCheckboxChange($event, 'coverage_commercial')" [checked]="customQuoteForm.get('coverage_commercial')?.value === 1" />
+                      <label class="form-check-label" for="cov_commercial">Commercial Insurance</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="cov_life" (change)="onCheckboxChange($event, 'coverage_life')" [checked]="customQuoteForm.get('coverage_life')?.value === 1" />
+                      <label class="form-check-label" for="cov_life">Life Insurance</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="cov_travel" (change)="onCheckboxChange($event, 'coverage_travel')" [checked]="customQuoteForm.get('coverage_travel')?.value === 1" />
+                      <label class="form-check-label" for="cov_travel">Travel Insurance</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="cov_super_bonds" (change)="onCheckboxChange($event, 'coverage_super_bonds')" [checked]="customQuoteForm.get('coverage_super_bonds')?.value === 1" />
+                      <label class="form-check-label" for="cov_super_bonds">Surety Bonds</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="cov_bundle_save" (change)="onCheckboxChange($event, 'coverage_bundle_save')" [checked]="customQuoteForm.get('coverage_bundle_save')?.value === 1" />
+                      <label class="form-check-label" for="cov_bundle_save">Bundle & Save</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-5">
+                  <p class="form-sub-label">
+                    {{ 'GET_CUSTOM_QUOTE.STEPPER.STEP2.DESC1' | translate }}
+                  </p>
+                  <div class="row gy-3">
+                    <div class="col-md-8">
+                      <input type="text" formControlName="coverage_other_details" class="form-control" placeholder="Type Here" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex gap-3 mt-4">
+                  <button type="button" class="btn btn-previous" (click)="previousStep()">{{ 'GET_CUSTOM_QUOTE.PREVIOUS_BUTTON' | translate
+                    }}</button>
+                  <button type="button" class="btn btn-next" (click)="nextStep()">{{ 'GET_CUSTOM_QUOTE.NEXT_BUTTON' | translate }}</button>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container mb-4" *ngIf="currentStep === 3">
+          <div class="form-wrapper">
+            <h2 class="form-title">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP3.TITLE' | translate }}</h2>
+
+            <div class="form-content-border">
+                <div class="row gy-3 mt-1">
+                  <div class="col-md-8">
+                    <label class="form-label">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL1' | translate }}<span>*</span></label>
+                    <input type="text" 
+                           formControlName="currently_insured"
+                           [class.is-invalid]="customQuoteForm.get('currently_insured')?.invalid && customQuoteForm.get('currently_insured')?.touched"
+                           class="form-control" 
+                           placeholder="e.g. A brand new policy or Currently Insured" />
+                    <div class="invalid-feedback" *ngIf="customQuoteForm.get('currently_insured')?.invalid && customQuoteForm.get('currently_insured')?.touched">
+                        {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row gy-3 mt-4">
+                  <div class="col-md-8">
+                    <label class="form-label">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL2' | translate }}<span>*</span></label>
+                    <input type="text" 
+                           formControlName="current_insurance_provider"
+                           [class.is-invalid]="customQuoteForm.get('current_insurance_provider')?.invalid && customQuoteForm.get('current_insurance_provider')?.touched"
+                           class="form-control" 
+                           placeholder="Provider Name" />
+                    <div class="invalid-feedback" *ngIf="customQuoteForm.get('current_insurance_provider')?.invalid && customQuoteForm.get('current_insurance_provider')?.touched">
+                        {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex gap-3 mt-4">
+                  <button type="button" class="btn btn-previous" (click)="previousStep()">{{ 'GET_CUSTOM_QUOTE.PREVIOUS_BUTTON' | translate
+                    }}</button>
+
+                  <button type="button" class="btn btn-next" (click)="nextStep()">{{ 'GET_CUSTOM_QUOTE.NEXT_BUTTON' | translate }}</button>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container mt-4 mb-4" *ngIf="currentStep === 4">
+          <div class="form-wrapper">
+            <h2 class="form-title">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP4.TITLE' | translate }}</h2>
+
+            <div class="form-content-border">
+                <div class="selection-group">
+                  <h4 class="selection-heading">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP4.DESC' | translate }}<span>*</span></h4>
+
+                  <div class="coverage-options">
+                    <div class="form-check" *ngFor="let option of contactOptions">
+                      <input class="form-check-input" type="radio" [value]="option" [id]="'contact_' + option" formControlName="preferred_contact_method" />
+                      <label class="form-check-label" [for]="'contact_' + option">
+                        {{ option }}
+                      </label>
+                    </div>
+                    <div class="invalid-feedback d-block" *ngIf="customQuoteForm.get('preferred_contact_method')?.invalid && customQuoteForm.get('preferred_contact_method')?.touched">
+                        {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="selection-group mt-4">
+                  <h4 class="selection-heading">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP4.DESC1' | translate }}<span>*</span></h4>
+
+                  <div class="coverage-options">
+                    <div class="form-check" *ngFor="let option of reachOptions">
+                      <input class="form-check-input" type="radio" [value]="option" [id]="'reach_' + option" formControlName="best_time_to_reach" />
+                      <label class="form-check-label" [for]="'reach_' + option">
+                        {{ option }}
+                      </label>
+                    </div>
+                    <div class="invalid-feedback d-block" *ngIf="customQuoteForm.get('best_time_to_reach')?.invalid && customQuoteForm.get('best_time_to_reach')?.touched">
+                        {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex gap-3 mt-4">
+                  <button type="button" class="btn btn-previous" (click)="previousStep()">{{ 'GET_CUSTOM_QUOTE.PREVIOUS_BUTTON' | translate
+                    }}</button>
+                  <button type="button" class="btn btn-next" (click)="nextStep()">{{ 'GET_CUSTOM_QUOTE.NEXT_BUTTON' | translate }}</button>
+                </div>
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="container mb-4">
-        <div class="form-wrapper">
-          <h2 class="form-title">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP3.TITLE' | translate }}</h2>
-
-          <div class="form-content-border">
-            <form>
-              <div class="row gy-3 mt-1">
-                <div class="col-md-8">
-                  <label class="form-label">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL1' | translate }}</label>
-                  <select class="form-select">
-                    <option selected>A brand new policy</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="row gy-3 mt-1">
-                <div class="col-md-8">
-                  <label class="form-label">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL2' | translate }}</label>
-                  <select class="form-select">
-                    <option selected>Currently Insured</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous">{{ 'GET_CUSTOM_QUOTE.PREVIOUS_BUTTON' | translate
-                  }}</button>
-
-                <button type="submit" class="btn btn-next">{{ 'GET_CUSTOM_QUOTE.NEXT_BUTTON' | translate }}</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <div class="container mt-4 mb-4">
-        <div class="form-wrapper">
-          <h2 class="form-title">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP4.TITLE' | translate }}</h2>
-
-          <div class="form-content-border">
-            <form>
-              <div class="selection-group">
-                <h4 class="selection-heading">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP4.DESC' | translate }}</h4>
-
-                <div class="coverage-options">
-                  <div class="form-check" *ngFor="let option of ('GET_CUSTOM_QUOTE.STEPPER.STEP4.OPTIONS' | translate)">
-
-                    <input class="form-check-input" type="checkbox" [id]="option" />
-
-                    <label class="form-check-label" [for]="option">
-                      {{ option }}
-                    </label>
-                  </div>
-                </div>
-              </div>
-
-              <div class="selection-group mt-4">
-                <h4 class="selection-heading">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP4.DESC1' | translate }}</h4>
-
-                <div class="coverage-options">
-<div class="form-check" *ngFor="let option of reachOptions">
-                    <input class="form-check-input" type="checkbox" [id]="option" />
-                    <label class="form-check-label" [for]="option">
-                      {{ option }}
-                    </label>
-                  </div>
-                </div>
-              </div>
-
-              <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous">{{ 'GET_CUSTOM_QUOTE.PREVIOUS_BUTTON' | translate
-                  }}</button>
-                <button type="submit" class="btn btn-next">{{ 'GET_CUSTOM_QUOTE.NEXT_BUTTON' | translate }}</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
-
-    </div>
+    </form>
 
     <div class="quote-summary-container p-4 p-md-5 mt-5">
       <div class="container max-width-700">
@@ -214,29 +270,36 @@
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0">{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD1.TITLE' | translate }}</h5>
-            <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
+            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(1)"><i class="bi bi-pencil-square"></i> {{
               'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD1.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li>Name: Juan Rodriguez</li>
-            <li>Phone: (713) 555-0199</li>
-            <li>Email: j.rodriguez@email.com</li>
-            <li>Full Address: 9042 Street Road, Dallas, TX 75287</li>
-            <li>Preferred Language: Spanish (Español)</li>
+            <li>Name: {{ customQuoteForm.get('name')?.value }}</li>
+            <li>Phone: {{ customQuoteForm.get('phone_number')?.value }}</li>
+            <li>Email: {{ customQuoteForm.get('email')?.value }}</li>
+            <li>Full Address: {{ customQuoteForm.get('full_address')?.value }}</li>
+            <li>Preferred Language: {{ customQuoteForm.get('preferred_language')?.value }}</li>
           </ul>
         </div>
 
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0">{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD2.TITLE' | translate }}</h5>
-            <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
+            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(2)"><i class="bi bi-pencil-square"></i> {{
               'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD2.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD2.OPTION' | translate }}</strong> Bundle & Save</li>
+            <li><strong>{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD2.OPTION' | translate }}</strong>
+               <span *ngIf="customQuoteForm.get('coverage_auto')?.value === 1">Auto, </span>
+               <span *ngIf="customQuoteForm.get('coverage_home')?.value === 1">Home, </span>
+               <span *ngIf="customQuoteForm.get('coverage_commercial')?.value === 1">Commercial, </span>
+               <span *ngIf="customQuoteForm.get('coverage_life')?.value === 1">Life, </span>
+               <span *ngIf="customQuoteForm.get('coverage_travel')?.value === 1">Travel, </span>
+               <span *ngIf="customQuoteForm.get('coverage_super_bonds')?.value === 1">Surety Bonds, </span>
+               <span *ngIf="customQuoteForm.get('coverage_bundle_save')?.value === 1">Bundle & Save</span>
+            </li>
             <li>
-              <strong>{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD2.OPTION1' | translate }}</strong> "I also need a quote for
-              a small utility trailer."
+              <strong>{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD2.OPTION1' | translate }}</strong> {{ customQuoteForm.get('coverage_other_details')?.value }}
             </li>
           </ul>
         </div>
@@ -244,39 +307,39 @@
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0">{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD3.TITLE' | translate }}</h5>
-            <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
+            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(3)"><i class="bi bi-pencil-square"></i> {{
               'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD3.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD3.OPTION1' | translate }}:</strong> Finding a better rate
-              on my current policy</li>
-            <li><strong>{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD3.OPTION2' | translate }}:</strong> Currently Insured.
-            </li>
+            <li><strong>{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL1' | translate }}:</strong> {{ customQuoteForm.get('currently_insured')?.value }}</li>
+            <li><strong>{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL2' | translate }}:</strong> {{ customQuoteForm.get('current_insurance_provider')?.value }}</li>
           </ul>
         </div>
 
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0">{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD4.TITLE' | translate }}</h5>
-            <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
+            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(4)"><i class="bi bi-pencil-square"></i> {{
               'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD4.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD4.OPTION1' | translate }}:</strong> Text Message</li>
-            <li><strong>{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD4.OPTION2' | translate }}:</strong> Afternoon (12 PM - 5
-              PM)</li>
+            <li><strong>{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP4.DESC' | translate }}:</strong> {{ customQuoteForm.get('preferred_contact_method')?.value }}</li>
+            <li><strong>{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP4.DESC1' | translate }}:</strong> {{ customQuoteForm.get('best_time_to_reach')?.value }}</li>
           </ul>
         </div>
 
         <!-- Form Footer -->
         <div class="mt-4">
           <div class="form-check mb-4">
-            <input class="form-check-input terms-check" type="checkbox" id="termsCheck" />
+            <input class="form-check-input terms-check" type="checkbox" id="termsCheck" (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
             <label class="form-check-label terms-check-label small" for="termsCheck">
               {{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.DESC' | translate }}
             </label>
           </div>
-          <button class="btn btn-submit">{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.SUBMIT_BUTTON' | translate }}</button>
+          <button class="btn btn-submit" (click)="sendCustomQuote()" [disabled]="loading || !termsAccepted">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+            {{ loading ? 'Submitting...' : ('GET_CUSTOM_QUOTE.QUOTE_SUMMARY.SUBMIT_BUTTON' | translate) }}
+          </button>
         </div>
       </div>
     </div>

@@ -1,7 +1,8 @@
 <div class="quoteMain">
   <div class="topBanner">
     <div class="container">
-      <div class="h1">{{ 'GET_HOME_QUOTE.HEADING' | translate }}
+      <div class="h1">
+        {{ 'GET_HOME_QUOTE.HEADING' | translate }}
         <p class="heroDesc">{{ 'GET_HOME_QUOTE.DESCRIPTION' | translate }}</p>
       </div>
     </div>
@@ -10,283 +11,460 @@
   <div class="container my-5 quote-wrapper">
     <div class="card border-0 p-4 mb-5">
       <div class="d-flex justify-content-between align-items-center stepper">
-        <div class="step active">
+        <div class="step" [class.active]="currentStep === 1">
           <div class="circle"><img src="/assets/images/quote-step-1.png" alt="" /></div>
           <p>{{ 'GET_HOME_QUOTE.STEPPER.STEP1.TITLE' | translate }}</p>
         </div>
-        <div class="step">
+        <div class="step" [class.active]="currentStep === 2">
           <div class="circle"><img src="/assets/images/quote-step-2.png" alt="" /></div>
           <p>{{ 'GET_HOME_QUOTE.STEPPER.STEP2.TITLE' | translate }}</p>
         </div>
-        <div class="step">
+        <div class="step" [class.active]="currentStep === 3">
           <div class="circle"><img src="/assets/images/quote-step-3.png" alt="" /></div>
           <p>{{ 'GET_HOME_QUOTE.STEPPER.STEP3.TITLE' | translate }}</p>
         </div>
-        <div class="step">
+        <div class="step" [class.active]="currentStep === 4">
           <div class="circle"><img src="/assets/images/quote-step-4.png" alt="" /></div>
           <p>{{ 'GET_HOME_QUOTE.STEPPER.STEP4.TITLE' | translate }}</p>
         </div>
-        <div class="step">
+        <div class="step" [class.active]="currentStep === 5">
           <div class="circle"><img src="/assets/images/quote-step-5.png" alt="" /></div>
           <p>{{ 'GET_HOME_QUOTE.STEPPER.STEP5.TITLE' | translate }}</p>
         </div>
       </div>
     </div>
+    <form [formGroup]="homeQuoteForm">
+      <div class="steps-for-custom-quote">
+        <div class="container" *ngIf="currentStep === 1">
+          <div class="form-wrapper">
+            <h2 class="form-title">{{ 'GET_HOME_QUOTE.STEPPER.STEP1.TITLE' | translate }}</h2>
 
-    <div class="steps-for-custom-quote">
-      <div class="container">
-        <div class="form-wrapper">
-          <h2 class="form-title">{{ 'GET_HOME_QUOTE.STEPPER.STEP1.TITLE' | translate }}</h2>
-
-          <div class="form-content-border">
-            <form>
+            <div class="form-content-border">
               <div class="row gy-3 mb-2">
                 <div class="col-md-8">
                   <label class="form-label">{{ 'GET_HOME_QUOTE.STEPPER.STEP1.FIELDS.PROPERTY_ADDRESS' | translate
                     }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="John Doe" />
+                  <input type="text" formControlName="property_address" [class.is-invalid]="
+                      homeQuoteForm.get('property_address')?.invalid &&
+                      homeQuoteForm.get('property_address')?.touched
+                    " class="form-control" placeholder="John Doe" />
+
+                  <div class="invalid-feedback" *ngIf="
+                      homeQuoteForm.get('property_address')?.invalid &&
+                      homeQuoteForm.get('property_address')?.touched
+                    ">
+                    {{ 'GET_HOME_QUOTE.ERRORS.REQUIRED' | translate }}
+                  </div>
                 </div>
               </div>
 
               <div class="row gy-3 mt-2">
                 <div class="selection-group">
-                  <h4 class="selection-heading">{{ 'GET_HOME_QUOTE.STEPPER.STEP1.FIELDS.PRIMARY_RESIDENCE' | translate
-                    }}</h4>
+                  <h4 class="selection-heading">
+                    {{ 'GET_HOME_QUOTE.STEPPER.STEP1.FIELDS.PRIMARY_RESIDENCE' | translate }}
+                  </h4>
 
                   <div class="coverage-options">
-                    <div class="form-check"
-                      *ngFor="let option of ('GET_HOME_QUOTE.STEPPER.STEP1.FIELDS.PRIMARY_RESIDENCE_OPTIONS' | translate)">
-                      <input class="form-check-input" type="checkbox" [id]="option" />
+                    <div class="form-check">
+                      <input type="radio" class="form-check-input" id="is_primary_residence"
+                        formControlName="is_primary_residence" value="Yes, I live here." />
+                      <label class="form-check-label" for="is_primary_residence">{{
+                        'GET_HOME_QUOTE.STEPPER.STEP1.FIELDS.PRIMARY_RESIDENCE_YES' | translate
+                        }}</label><br />
+                    </div>
 
-                      <label class="form-check-label" [for]="option">
-                        {{ option }}
-                      </label>
+                    <div class="form-check">
+                      <input type="radio" class="form-check-input" id="is_primary_residence"
+                        formControlName="is_primary_residence" value="No, it’s a rental property / second home." />
+                      <label class="form-check-label" for="is_primary_residence">{{
+                        'GET_HOME_QUOTE.STEPPER.STEP1.FIELDS.PRIMARY_RESIDENCE_NO' | translate
+                        }}</label>
+                    </div>
+
+                    <div class="invalid-feedback d-block" *ngIf="
+                        homeQuoteForm.get('is_primary_residence')?.invalid &&
+                        homeQuoteForm.get('is_primary_residence')?.touched
+                      ">
+                      {{ 'GET_HOME_QUOTE.ERRORS.REQUIRED' | translate }}
                     </div>
                   </div>
                 </div>
-
               </div>
 
               <div class="row gy-3 mb-3 mt-2">
                 <div class="col-md-8">
                   <label class="form-label">{{ 'GET_HOME_QUOTE.STEPPER.STEP1.FIELDS.PROPERTY_TYPE' | translate
                     }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="John Doe" />
+                  <input type="text" class="form-control" placeholder="John Doe" formControlName="property_type"
+                    [class.is-invalid]="
+                      homeQuoteForm.get('property_type')?.invalid &&
+                      homeQuoteForm.get('property_type')?.touched
+                    " />
+                  <div class="invalid-feedback" *ngIf="
+                      homeQuoteForm.get('property_type')?.invalid &&
+                      homeQuoteForm.get('property_type')?.touched
+                    ">
+                    {{ 'GET_HOME_QUOTE.ERRORS.REQUIRED' | translate }}
+                  </div>
                 </div>
               </div>
               <div class="d-flex gap-3 mt-4">
-                <button type="submit" class="btn btn-next">{{ 'GET_HOME_QUOTE.NEXT_BUTTON' | translate }}</button>
+                <button type="submit" class="btn btn-next" (click)="nextStep()">
+                  {{ 'GET_HOME_QUOTE.NEXT_BUTTON' | translate }}
+                </button>
               </div>
-            </form>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="container mt-4 mb-4">
-        <div class="form-wrapper">
-          <h2 class="form-title">{{ 'GET_HOME_QUOTE.STEPPER.STEP2.TITLE' | translate }}</h2>
+        <div class="container mt-4 mb-4" *ngIf="currentStep === 2">
+          <div class="form-wrapper">
+            <h2 class="form-title">{{ 'GET_HOME_QUOTE.STEPPER.STEP2.TITLE' | translate }}</h2>
 
-          <div class="form-content-border">
-            <form>
+            <div class="form-content-border">
               <div class="row gy-3 mb-3">
                 <div class="col-md-4">
-                  <label class="form-label">{{ 'GET_HOME_QUOTE.STEPPER.STEP2.FIELDS.YEAR_BUILT' | translate
-                    }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="2025" />
+                  <label class="form-label">
+                    {{ 'GET_HOME_QUOTE.STEPPER.STEP2.FIELDS.YEAR_BUILT' | translate }}<span>*</span>
+                  </label>
+                  <input type="text" class="form-control" formControlName="year_built" [class.is-invalid]="
+                      homeQuoteForm.get('year_built')?.invalid &&
+                      homeQuoteForm.get('year_built')?.touched
+                    " placeholder="2025" />
+                  <div class="invalid-feedback" *ngIf="
+                      homeQuoteForm.get('year_built')?.invalid &&
+                      homeQuoteForm.get('year_built')?.touched
+                    ">
+                    {{ 'GET_HOME_QUOTE.ERRORS.REQUIRED' | translate }}
+                  </div>
                 </div>
                 <div class="col-md-4">
-                  <label class="form-label">{{ 'GET_HOME_QUOTE.STEPPER.STEP2.FIELDS.SQUARE_FOOTAGE' | translate
-                    }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="BMW" />
+                  <label class="form-label">
+                    {{ 'GET_HOME_QUOTE.STEPPER.STEP2.FIELDS.SQUARE_FOOTAGE' | translate
+                    }}<span>*</span>
+                  </label>
+                  <input type="text" class="form-control" formControlName="square_footage" [class.is-invalid]="
+                      homeQuoteForm.get('square_footage')?.invalid &&
+                      homeQuoteForm.get('square_footage')?.touched
+                    " placeholder="1500" />
+                  <div class="invalid-feedback" *ngIf="
+                      homeQuoteForm.get('square_footage')?.invalid &&
+                      homeQuoteForm.get('square_footage')?.touched
+                    ">
+                    {{ 'GET_HOME_QUOTE.ERRORS.REQUIRED' | translate }}
+                  </div>
                 </div>
-
               </div>
 
               <div class="row gy-3">
                 <div class="col-md-4">
-                  <label class="form-label">{{ 'GET_HOME_QUOTE.STEPPER.STEP2.FIELDS.NUMBER_OF_STORIES' | translate
-                    }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="Owned" />
+                  <label class="form-label">
+                    {{ 'GET_HOME_QUOTE.STEPPER.STEP2.FIELDS.NUMBER_OF_STORIES' | translate
+                    }}<span>*</span>
+                  </label>
+                  <input type="text" class="form-control" formControlName="number_of_stories" [class.is-invalid]="
+                      homeQuoteForm.get('number_of_stories')?.invalid &&
+                      homeQuoteForm.get('number_of_stories')?.touched
+                    " placeholder="2" />
+                  <div class="invalid-feedback" *ngIf="
+                      homeQuoteForm.get('number_of_stories')?.invalid &&
+                      homeQuoteForm.get('number_of_stories')?.touched
+                    ">
+                    {{ 'GET_HOME_QUOTE.ERRORS.REQUIRED' | translate }}
+                  </div>
                 </div>
                 <div class="col-md-4">
-                  <label class="form-label">{{ 'GET_HOME_QUOTE.STEPPER.STEP2.FIELDS.ROOF_AGE' | translate
-                    }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="Personal" />
+                  <label class="form-label">
+                    {{ 'GET_HOME_QUOTE.STEPPER.STEP2.FIELDS.ROOF_AGE' | translate }}<span>*</span>
+                  </label>
+                  <input type="text" class="form-control" formControlName="roof_age" [class.is-invalid]="
+                      homeQuoteForm.get('roof_age')?.invalid &&
+                      homeQuoteForm.get('roof_age')?.touched
+                    " placeholder="5" />
+                  <div class="invalid-feedback" *ngIf="
+                      homeQuoteForm.get('roof_age')?.invalid &&
+                      homeQuoteForm.get('roof_age')?.touched
+                    ">
+                    {{ 'GET_HOME_QUOTE.ERRORS.REQUIRED' | translate }}
+                  </div>
                 </div>
               </div>
-                          <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous">{{ 'GET_HOME_QUOTE.PREVIOUS_BUTTON' | translate
-                  }}</button>
-                <button type="submit" class="btn btn-next">{{ 'GET_HOME_QUOTE.NEXT_BUTTON' | translate }}</button>
+              <div class="d-flex gap-3 mt-4">
+                <button type="button" class="btn btn-previous" (click)="previousStep()">
+                  {{ 'GET_HOME_QUOTE.PREVIOUS_BUTTON' | translate }}
+                </button>
+                <button type="button" class="btn btn-next" (click)="nextStep()">
+                  {{ 'GET_HOME_QUOTE.NEXT_BUTTON' | translate }}
+                </button>
               </div>
-            </form>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="container mt-4 mb-4">
-        <div class="form-wrapper">
-          <h2 class="form-title">{{ 'GET_HOME_QUOTE.STEPPER.STEP3.TITLE' | translate }}</h2>
+        <div class="container mt-4 mb-4" *ngIf="currentStep === 3">
+          <div class="form-wrapper">
+            <h2 class="form-title">{{ 'GET_HOME_QUOTE.STEPPER.STEP3.TITLE' | translate }}</h2>
 
-          <div class="form-content-border">
-            <form>
+            <div class="form-content-border">
               <div class="selection-group">
-                <h4 class="selection-heading">{{ 'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.MONITORED_ALARM' | translate }}
+                <h4 class="selection-heading">
+                  {{ 'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.MONITORED_ALARM' | translate }}
                 </h4>
 
                 <div class="coverage-options">
-                  <div class="form-check"
-                    *ngFor="let option of ('GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.MONITORED_ALARM_OPTIONS' | translate)">
-                    <input class="form-check-input" type="checkbox" [id]="option" />
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" id="has_alarm_system"
+                      formControlName="has_alarm_system" value="Yes" />
+                    <label class="form-check-label" for="has_alarm_system">
+                      {{
+                      'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.MONITORED_ALARM_YES' | translate
+                      }} </label><br />
+                  </div>
 
-                    <label class="form-check-label" [for]="option">
-                      {{ option }}
-                    </label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" id="has_alarm_system"
+                      formControlName="has_alarm_system" value="No" />
+                    <label class="form-check-label" for="has_alarm_system">{{
+                      'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.MONITORED_ALARM_NO' | translate
+                      }}</label>
+                  </div>
+
+                  <div class="invalid-feedback d-block" *ngIf="
+                      homeQuoteForm.get('has_alarm_system')?.invalid &&
+                      homeQuoteForm.get('has_alarm_system')?.touched
+                    ">
+                    {{ 'GET_HOME_QUOTE.ERRORS.REQUIRED' | translate }}
                   </div>
                 </div>
               </div>
 
               <div class="selection-group mt-4">
-                <h4 class="selection-heading">{{ 'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.SWIMMING_POOL' | translate }}</h4>
+                <h4 class="selection-heading">
+                  {{ 'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.SWIMMING_POOL' | translate }}
+                </h4>
 
                 <div class="coverage-options">
-                  <div class="form-check"
-                    *ngFor="let option of ('GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.SWIMMING_POOL_OPTIONS' | translate)">
-                    <input class="form-check-input" type="checkbox" [id]="option" />
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" id="has_swimming_pool"
+                      formControlName="has_swimming_pool" value="Yes" />
+                    <label class="form-check-label" for="has_swimming_pool">
+                      {{
+                      'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.SWIMMING_POOL_YES' | translate
+                      }} </label><br />
+                  </div>
 
-                    <label class="form-check-label" [for]="option">
-                      {{ option }}
-                    </label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" id="has_swimming_pool"
+                      formControlName="has_swimming_pool" value="No" />
+                    <label class="form-check-label" for="has_swimming_pool">{{
+                      'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.SWIMMING_POOL_NO' | translate
+                      }}</label>
+                  </div>
+
+                  <div class="invalid-feedback d-block" *ngIf="
+                      homeQuoteForm.get('has_swimming_pool')?.invalid &&
+                      homeQuoteForm.get('has_swimming_pool')?.touched
+                    ">
+                    {{ 'GET_HOME_QUOTE.ERRORS.REQUIRED' | translate }}
                   </div>
                 </div>
               </div>
 
               <div class="selection-group mt-4">
-                <h4 class="selection-heading">{{ 'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.PETS' | translate }}</h4>
+                <h4 class="selection-heading">
+                  {{ 'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.PETS' | translate }}
+                </h4>
 
                 <div class="coverage-options">
-                  <div class="form-check"
-                    *ngFor="let option of ('GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.PETS_OPTIONS' | translate)">
-                    <input class="form-check-input" type="checkbox" [id]="option" />
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" id="has_pets" formControlName="has_pets" value="Yes" />
+                    <label class="form-check-label" for="has_pets">
+                      {{ 'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.PETS_YES' | translate }} </label><br />
+                  </div>
 
-                    <label class="form-check-label" [for]="option">
-                      {{ option }}
-                    </label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" id="has_pets" formControlName="has_pets" value="No" />
+                    <label class="form-check-label" for="has_pets">{{
+                      'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.PETS_NO' | translate
+                      }}</label>
+                  </div>
+
+                  <div class="invalid-feedback d-block" *ngIf="
+                      homeQuoteForm.get('has_pets')?.invalid &&
+                      homeQuoteForm.get('has_pets')?.touched
+                    ">
+                    {{ 'GET_HOME_QUOTE.ERRORS.REQUIRED' | translate }}
                   </div>
                 </div>
               </div>
 
-
-
-               <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous">{{ 'GET_HOME_QUOTE.PREVIOUS_BUTTON' | translate
-                  }}</button>
-                <button type="submit" class="btn btn-next">{{ 'GET_HOME_QUOTE.NEXT_BUTTON' | translate }}</button>
+              <div class="d-flex gap-3 mt-4">
+                <button type="button" class="btn btn-previous" (click)="previousStep()">
+                  {{ 'GET_HOME_QUOTE.PREVIOUS_BUTTON' | translate }}
+                </button>
+                <button type="button" class="btn btn-next" (click)="nextStep()">
+                  {{ 'GET_HOME_QUOTE.NEXT_BUTTON' | translate }}
+                </button>
               </div>
-            </form>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="container mb-4">
-        <div class="form-wrapper">
-          <h2 class="form-title">{{ 'GET_HOME_QUOTE.STEPPER.STEP4.TITLE' | translate }}</h2>
+        <div class="container mb-4" *ngIf="currentStep === 4">
+          <div class="form-wrapper">
+            <h2 class="form-title">{{ 'GET_HOME_QUOTE.STEPPER.STEP4.TITLE' | translate }}</h2>
 
-          <div class="form-content-border">
-            <form>
+            <div class="form-content-border">
               <div class="row gy-3 mb-2">
                 <div class="col-md-8">
-                  <label class="form-label">{{ 'GET_HOME_QUOTE.STEPPER.STEP4.INSURED_TITLE' | translate
-                    }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="John Doe" />
+                  <label class="form-label">{{
+                    'GET_HOME_QUOTE.STEPPER.STEP4.INSURED_TITLE' | translate
+                    }}</label>
+                  <select class="form-select" formControlName="current_insurance_status">
+                    <option *ngFor="
+                        let option of 'GET_HOME_QUOTE.STEPPER.STEP4.INSURED_OPTIONS' | translate
+                      " [value]="option">
+                      {{ option }}
+                    </option>
+                  </select>
                 </div>
               </div>
 
               <div class="row gy-3 mt-2">
                 <div class="selection-group">
-                  <h4 class="selection-heading">{{ 'GET_HOME_QUOTE.STEPPER.STEP4.BUNDLE_TITLE' | translate }}</h4>
+                  <h4 class="selection-heading">
+                    {{ 'GET_HOME_QUOTE.STEPPER.STEP4.BUNDLE_TITLE' | translate }}
+                  </h4>
 
                   <div class="coverage-options">
-                    <div class="form-check"
-                      *ngFor="let option of ('GET_HOME_QUOTE.STEPPER.STEP4.BUNDLE_OPTIONS' | translate)">
-                      <input class="form-check-input" type="checkbox" [id]="option" />
-
+                    <div class="form-check" *ngFor="let option of bundleOptions">
+                      <input type="radio" class="form-check-input" [id]="option" formControlName="bundle_option"
+                        [value]="option" />
                       <label class="form-check-label" [for]="option">
                         {{ option }}
                       </label>
                     </div>
+                    <div class="invalid-feedback d-block" *ngIf="
+                        homeQuoteForm.get('bundle_option')?.invalid &&
+                        homeQuoteForm.get('bundle_option')?.touched
+                      ">
+                      {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                    </div>
                   </div>
                 </div>
               </div>
-               <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous">{{ 'GET_HOME_QUOTE.PREVIOUS_BUTTON' | translate
-                  }}</button>
-                <button type="submit" class="btn btn-next">{{ 'GET_HOME_QUOTE.NEXT_BUTTON' | translate }}</button>
+              <div class="d-flex gap-3 mt-4">
+                <button type="button" class="btn btn-previous" (click)="previousStep()">
+                  {{ 'GET_HOME_QUOTE.PREVIOUS_BUTTON' | translate }}
+                </button>
+                <button type="button" class="btn btn-next" (click)="nextStep()">
+                  {{ 'GET_HOME_QUOTE.NEXT_BUTTON' | translate }}
+                </button>
               </div>
-            </form>
+            </div>
           </div>
         </div>
-      </div>
 
+        <div class="container mt-4 mb-4" *ngIf="currentStep === 5">
+          <div class="form-wrapper">
+            <h2 class="form-title">{{ 'GET_HOME_QUOTE.STEPPER.STEP5.TITLE' | translate }}</h2>
 
-
-      <div class="container mt-4 mb-4">
-        <div class="form-wrapper">
-          <h2 class="form-title">{{ 'GET_HOME_QUOTE.STEPPER.STEP5.TITLE' | translate }}</h2>
-
-          <div class="form-content-border">
-            <form>
+            <div class="form-content-border">
               <div class="row gy-3 mb-3">
                 <div class="col-md-4">
                   <label class="form-label">{{ 'GET_HOME_QUOTE.STEPPER.STEP5.FIELDS.FULL_NAME' | translate
                     }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="John Doe" />
+                  <input type="text" formControlName="full_name" [class.is-invalid]="
+                      homeQuoteForm.get('full_name')?.invalid &&
+                      homeQuoteForm.get('full_name')?.touched
+                    " class="form-control" placeholder="123 Main St" />
+
+                  <div class="invalid-feedback" *ngIf="
+                      homeQuoteForm.get('full_name')?.invalid &&
+                      homeQuoteForm.get('full_name')?.touched
+                    ">
+                    {{ 'GET_HOME_QUOTE.ERRORS.REQUIRED' | translate }}
+                  </div>
                 </div>
                 <div class="col-md-4">
                   <label class="form-label">{{ 'GET_HOME_QUOTE.STEPPER.STEP5.FIELDS.PHONE' | translate
                     }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="BMW" />
-                </div>
+                  <input type="text" formControlName="phone_number" [class.is-invalid]="
+                      homeQuoteForm.get('phone_number')?.invalid &&
+                      homeQuoteForm.get('phone_number')?.touched
+                    " class="form-control" placeholder="123 Main St" />
 
+                  <div class="invalid-feedback" *ngIf="
+                      homeQuoteForm.get('phone_number')?.invalid &&
+                      homeQuoteForm.get('phone_number')?.touched
+                    ">
+                    {{ 'GET_HOME_QUOTE.ERRORS.REQUIRED' | translate }}
+                  </div>
+                </div>
               </div>
 
               <div class="row gy-3 mb-4">
                 <div class="col-md-4">
                   <label class="form-label">{{ 'GET_HOME_QUOTE.STEPPER.STEP5.FIELDS.EMAIL' | translate
                     }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="Owned" />
+                  <input type="email" formControlName="email_address" [class.is-invalid]="
+                      homeQuoteForm.get('email_address')?.invalid &&
+                      homeQuoteForm.get('email_address')?.touched
+                    " class="form-control" placeholder="123 Main St" />
+
+                  <div class="invalid-feedback" *ngIf="
+                      homeQuoteForm.get('email_address')?.invalid &&
+                      homeQuoteForm.get('email_address')?.touched
+                    ">
+                    {{ 'GET_HOME_QUOTE.ERRORS.REQUIRED' | translate }}
+                  </div>
                 </div>
+
                 <div class="col-md-4">
-                  <label class="form-label">{{ 'GET_HOME_QUOTE.STEPPER.STEP5.LANGUAGE_TITLE' | translate
-                    }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="Personal" />
+                  <label class="form-label">{{
+                    'GET_HOME_QUOTE.STEPPER.STEP5.LANGUAGE_TITLE' | translate
+                    }}</label>
+                  <select class="form-select" formControlName="preferred_language">
+                    <option *ngFor="
+                        let option of 'GET_HOME_QUOTE.STEPPER.STEP5.LANGUAGE_OPTIONS' | translate
+                      " [value]="option">
+                      {{ option }}
+                    </option>
+                  </select>
                 </div>
               </div>
 
-
               <div class="selection-group">
-                <h4 class="selection-heading">{{ 'GET_HOME_QUOTE.STEPPER.STEP5.CONTACT_TITLE' | translate }}</h4>
+                <h4 class="selection-heading">
+                  {{ 'GET_HOME_QUOTE.STEPPER.STEP5.CONTACT_TITLE' | translate }}
+                </h4>
 
                 <div class="coverage-options">
-                  <div class="form-check"
-                    *ngFor="let option of ('GET_HOME_QUOTE.STEPPER.STEP5.CONTACT_OPTIONS' | translate)">
-                    <input class="form-check-input" type="checkbox" [id]="option" />
-
+                  <div class="form-check" *ngFor="let option of reachOption">
+                    <input type="radio" class="form-check-input" [id]="option" formControlName="contact_method"
+                      [value]="option" />
                     <label class="form-check-label" [for]="option">
                       {{ option }}
                     </label>
+                  </div>
+                  <div class="invalid-feedback d-block" *ngIf="
+                      homeQuoteForm.get('contact_method')?.invalid &&
+                      homeQuoteForm.get('contact_method')?.touched
+                    ">
+                    {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
                   </div>
                 </div>
               </div>
 
               <div class="selection-group mt-4">
-                <h4 class="selection-heading">{{ 'GET_HOME_QUOTE.STEPPER.STEP5.TIME_TITLE' | translate }}</h4>
+                <h4 class="selection-heading">
+                  {{ 'GET_HOME_QUOTE.STEPPER.STEP5.TIME_TITLE' | translate }}
+                </h4>
 
                 <div class="coverage-options">
-                  <div class="form-check"
-                    *ngFor="let option of ('GET_HOME_QUOTE.STEPPER.STEP5.TIME_OPTIONS' | translate)">
-                    <input class="form-check-input" type="checkbox" [id]="option" />
-
+                  <div class="form-check" *ngFor="let option of timeOptions">
+                    <input type="radio" class="form-check-input" [id]="option" formControlName="best_time_to_connect"
+                      [value]="option" />
                     <label class="form-check-label" [for]="option">
                       {{ option }}
                     </label>
@@ -295,65 +473,79 @@
               </div>
 
               <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous">{{ 'GET_HOME_QUOTE.PREVIOUS_BUTTON' | translate
-                  }}</button>
-                <button type="submit" class="btn btn-next">{{ 'GET_HOME_QUOTE.NEXT_BUTTON' | translate }}</button>
+                <button type="button" class="btn btn-previous" (click)="previousStep()">
+                  {{ 'GET_HOME_QUOTE.PREVIOUS_BUTTON' | translate }}
+                </button>
+                <button type="button" class="btn btn-next" (click)="nextStep()">
+                  {{ 'GET_HOME_QUOTE.NEXT_BUTTON' | translate }}
+                </button>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
-
-
-
-    </div>
-
+    </form>
     <div class="quote-summary-container p-4 p-md-5 mt-5">
       <div class="container max-width-700">
-        <h2 class="text-center mb-4 section-title">{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.MAIN_TITLE' | translate }}</h2>
+        <h2 class="text-center mb-4 section-title">
+          {{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.MAIN_TITLE' | translate }}
+        </h2>
         <p class="text-center mb-4">{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.MAIN_DESC' | translate }}</p>
 
-        <h2 class="text-center mb-4 section-title">{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.TITLE' | translate }}</h2>
+        <h2 class="text-center mb-4 section-title">
+          {{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.TITLE' | translate }}
+        </h2>
 
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0">{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD1.TITLE' | translate }}</h5>
-            <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
-              'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD1.EDIT' | translate }}</a>
+            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(1)">
+              <i class="bi bi-pencil-square"></i>
+              {{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD1.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.ADDRESS' | translate }}</strong>: Juan Rodriguez
+            <li>
+              <strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.ADDRESS' | translate }}</strong>: {{
+              homeQuoteForm.get('property_address')?.value }}
             </li>
-            <li><strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.RESIDENCE_TYPE' | translate }}</strong>: 75287
+            <li>
+              <strong>{{
+                'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.RESIDENCE_TYPE' | translate
+                }}</strong>: {{ homeQuoteForm.get('is_primary_residence')?.value }}
             </li>
-            <li><strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.PROPERTY_TYPE' | translate }}</strong>:
-              j.rodriguez@email.com</li>
+            <li>
+              <strong>{{
+                'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.PROPERTY_TYPE' | translate
+                }}</strong>: {{ homeQuoteForm.get('property_type')?.value }}
+            </li>
           </ul>
         </div>
 
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0">{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD2.TITLE' | translate }}</h5>
-            <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
-              'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD2.EDIT' | translate }}</a>
+            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(2)">
+              <i class="bi bi-pencil-square"></i>
+              {{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD2.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.YEAR_BUILT' | translate }}</strong>: 2022 Toyota
-              Camry (Financed, Personal Use)</li>
             <li>
-              <strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.SQUARE_FOOTAGE' | translate }}</strong>: 2019 Ford
-              F-150
-              (Owned, Personal Use)
+              <strong>{{
+                'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.YEAR_BUILT' | translate
+                }}</strong>: {{ homeQuoteForm.get('year_built')?.value }}
             </li>
-
             <li>
-              <strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.STORIES' | translate }}</strong>: 2019 Ford F-150
-              (Owned, Personal Use)
+              <strong>{{
+                'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.SQUARE_FOOTAGE' | translate
+                }}</strong>: {{ homeQuoteForm.get('square_footage')?.value }}
             </li>
-
             <li>
-              <strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.ROOF_AGE' | translate }}</strong>: 2019 Ford F-150
-              (Owned, Personal Use)
+              <strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.STORIES' | translate }}</strong>: {{
+              homeQuoteForm.get('number_of_stories')?.value }}
+            </li>
+            <li>
+              <strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.ROOF_AGE' | translate }}</strong>: {{
+              homeQuoteForm.get('roof_age')?.value }}
             </li>
           </ul>
         </div>
@@ -361,14 +553,22 @@
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0">{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD3.TITLE' | translate }}</h5>
-            <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
-              'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD3.EDIT' | translate }}</a>
+            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(3)">
+              <i class="bi bi-pencil-square"></i>
+              {{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD3.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.ALARM' | translate }}</strong>: Yes</li>
-            <li><strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.POOL' | translate }}</strong>: No
+            <li>
+              <strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.ALARM' | translate }}</strong>: {{
+              homeQuoteForm.get('has_alarm_system')?.value }}
             </li>
-            <li><strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.PETS' | translate }}</strong>: No
+            <li>
+              <strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.POOL' | translate }}</strong>: {{
+              homeQuoteForm.get('has_swimming_pool')?.value }}
+            </li>
+            <li>
+              <strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.PETS' | translate }}</strong>: {{
+              homeQuoteForm.get('has_pets')?.value }}
             </li>
           </ul>
         </div>
@@ -376,40 +576,69 @@
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0">{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD4.TITLE' | translate }}</h5>
-            <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
-              'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD4.EDIT' | translate }}</a>
+            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(4)">
+              <i class="bi bi-pencil-square"></i>
+              {{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD4.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.INSURED' | translate }}</strong>: Yes</li>
-            <li><strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.BUNDLE' | translate }}</strong>: NO</li>
+            <li>
+              <strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.INSURED' | translate }}</strong>: {{
+              homeQuoteForm.get('current_insurance_status')?.value }}
+            </li>
+            <li>
+              <strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.BUNDLE' | translate }}</strong>: {{
+              homeQuoteForm.get('bundle_option')?.value }}
+            </li>
           </ul>
         </div>
 
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0">{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD5.TITLE' | translate }}</h5>
-            <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
-              'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD5.EDIT' | translate }}</a>
+            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(5)">
+              <i class="bi bi-pencil-square"></i>
+              {{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD5.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.NAME' | translate }}</strong>: English</li>
-            <li><strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.EMAIL' | translate }}</strong>: English</li>
-            <li><strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.PHONE' | translate }}</strong>: English</li>
-            <li><strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.LANGUAGE' | translate }}</strong>: Text Message</li>
-            <li><strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.CONTACT_METHOD' | translate }}</strong>: Afternoon (12 PM - 5 PM)</li>
-            <li><strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.BEST_TIME' | translate }}</strong>: Afternoon (12 PM - 5 PM)</li>
+            <li>
+              <strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.NAME' | translate }}</strong>: {{
+              homeQuoteForm.get('full_name')?.value }}
+            </li>
+            <li>
+              <strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.EMAIL' | translate }}</strong>: {{
+              homeQuoteForm.get('email_address')?.value }}
+            </li>
+            <li>
+              <strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.PHONE' | translate }}</strong>: {{
+              homeQuoteForm.get('phone_number')?.value }}
+            </li>
+            <li>
+              <strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.LANGUAGE' | translate }}</strong>: {{
+              homeQuoteForm.get('preferred_language')?.value }}
+            </li>
+            <li>
+              <strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.CONTACT_METHOD' | translate }}</strong>: {{
+              homeQuoteForm.get('contact_method')?.value }}
+            </li>
+            <li>
+              <strong>{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.BEST_TIME' | translate }}</strong>: {{
+              homeQuoteForm.get('best_time_to_connect')?.value }}
+            </li>
           </ul>
         </div>
 
         <!-- Form Footer -->
         <div class="mt-4">
           <div class="form-check mb-4">
-            <input class="form-check-input terms-check" type="checkbox" id="termsCheck" />
+            <input class="form-check-input terms-check" type="checkbox" id="termsCheck" (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
             <label class="form-check-label terms-check-label small" for="termsCheck">
-              {{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.DESC' | translate }}
+               {{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.DESC' | translate }}
             </label>
           </div>
-          <button class="btn btn-submit">{{ 'GET_HOME_QUOTE.QUOTE_SUMMARY.SUBMIT_BUTTON' | translate }}</button>
+          <button class="btn btn-submit" (click)="sendHomeQuote()" [disabled]="loading || !termsAccepted">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+            {{ loading ? 'Submitting...' : ('GET_HOME_QUOTE.QUOTE_SUMMARY.SUBMIT_BUTTON' | translate) }}
+          </button>
         </div>
       </div>
     </div>

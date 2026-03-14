@@ -1,7 +1,8 @@
 <div class="quoteMain">
   <div class="topBanner">
     <div class="container">
-      <div class="h1">{{ 'GET_AUTO_QUOTE.HEADING' | translate }}
+      <div class="h1">
+        {{ 'GET_AUTO_QUOTE.HEADING' | translate }}
         <p class="heroDesc">{{ 'GET_AUTO_QUOTE.DESCRIPTION' | translate }}</p>
       </div>
     </div>
@@ -10,46 +11,55 @@
   <div class="container my-5 quote-wrapper">
     <div class="card border-0 p-4 mb-5">
       <div class="d-flex justify-content-between align-items-center stepper">
-        <div class="step active">
+        <div class="step" [class.active]="currentStep === 1">
           <div class="circle"><img src="/assets/images/quote-step-1.png" alt="" /></div>
           <p>{{ 'GET_AUTO_QUOTE.STEPPER.STEP1.TITLE' | translate }}</p>
         </div>
-        <div class="step">
+        <div class="step" [class.active]="currentStep === 2">
           <div class="circle"><img src="/assets/images/quote-step-2.png" alt="" /></div>
           <p>{{ 'GET_AUTO_QUOTE.STEPPER.STEP2.TITLE' | translate }}</p>
         </div>
-        <div class="step">
+        <div class="step" [class.active]="currentStep === 3">
           <div class="circle"><img src="/assets/images/quote-step-3.png" alt="" /></div>
           <p>{{ 'GET_AUTO_QUOTE.STEPPER.STEP3.TITLE' | translate }}</p>
         </div>
-        <div class="step">
+        <div class="step" [class.active]="currentStep === 4">
           <div class="circle"><img src="/assets/images/quote-step-4.png" alt="" /></div>
           <p>{{ 'GET_AUTO_QUOTE.STEPPER.STEP4.TITLE' | translate }}</p>
         </div>
-        <div class="step">
+        <div class="step" [class.active]="currentStep === 5">
           <div class="circle"><img src="/assets/images/quote-step-5.png" alt="" /></div>
           <p>{{ 'GET_AUTO_QUOTE.STEPPER.STEP5.TITLE' | translate }}</p>
         </div>
       </div>
     </div>
+    <form [formGroup]="autoQuoteForm">
+      <div class="steps-for-custom-quote">
+        <div class="container" *ngIf="currentStep === 1">
+          <div class="form-wrapper">
+            <h2 class="form-title">{{ 'GET_AUTO_QUOTE.STEPPER.STEP1.TITLE' | translate }}</h2>
 
-    <div class="steps-for-custom-quote">
-      <div class="container">
-        <div class="form-wrapper">
-          <h2 class="form-title">{{ 'GET_AUTO_QUOTE.STEPPER.STEP1.TITLE' | translate }}</h2>
-
-          <div class="form-content-border">
-            <form>
+            <div class="form-content-border">
               <div class="row gy-3 mb-3">
                 <div class="col-md-4">
                   <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP1.FIELDS.FULL_NAME' | translate
                     }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="John Doe" />
+                  <input type="text" class="form-control" formControlName="first_name" placeholder="John Doe"
+                    [class.is-invalid]="autoQuoteForm.get('first_name')?.invalid && autoQuoteForm.get('first_name')?.touched" />
+                  <div class="invalid-feedback"
+                    *ngIf="autoQuoteForm.get('first_name')?.invalid && autoQuoteForm.get('first_name')?.touched">
+                    {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                  </div>
                 </div>
                 <div class="col-md-4">
                   <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP1.FIELDS.ZIPCODE' | translate
                     }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="+1 265 789 8900" />
+                  <input type="text" class="form-control" placeholder="+1 265 789 8900" formControlName="zip_code"
+                    [class.is-invalid]="autoQuoteForm.get('zip_code')?.invalid && autoQuoteForm.get('zip_code')?.touched" />
+                  <div class="invalid-feedback"
+                    *ngIf="autoQuoteForm.get('zip_code')?.invalid && autoQuoteForm.get('zip_code')?.touched">
+                    {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                  </div>
                 </div>
               </div>
 
@@ -57,260 +67,431 @@
                 <div class="col-md-4">
                   <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP1.FIELDS.EMAIL' | translate
                     }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="John Doe" />
+                  <input type="email" class="form-control" id="email_address" formControlName="email_address"
+                    [class.is-invalid]="autoQuoteForm.get('email_address')?.invalid && autoQuoteForm.get('email_address')?.touched"
+                    placeholder="example@domain.com" />
+                  <div class="invalid-feedback"
+                    *ngIf="autoQuoteForm.get('email_address')?.invalid && autoQuoteForm.get('email_address')?.touched">
+                    {{ 'GET_AUTO_QUOTE.ERRORS.EMAIL' | translate }}
+                  </div>
                 </div>
                 <div class="col-md-4">
                   <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP1.FIELDS.PHONE' | translate
                     }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="+1 265 789 8900" />
+                  <input type="text" class="form-control" placeholder="+1 265 789 8900" formControlName="phone_number"
+                    [class.is-invalid]="autoQuoteForm.get('phone_number')?.invalid && autoQuoteForm.get('phone_number')?.touched" />
+                  <div class="invalid-feedback"
+                    *ngIf="autoQuoteForm.get('phone_number')?.invalid && autoQuoteForm.get('phone_number')?.touched">
+                    {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                  </div>
                 </div>
               </div>
               <div class="d-flex gap-3 mt-4">
-                <button type="submit" class="btn btn-next">{{ 'GET_AUTO_QUOTE.NEXT_BUTTON' | translate }}</button>
+                <button type="button" class="btn btn-next" (click)="nextStep()">
+                  {{ 'GET_AUTO_QUOTE.NEXT_BUTTON' | translate }}
+                </button>
               </div>
-            </form>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="container mt-4 mb-4">
-        <div class="form-wrapper">
-          <h2 class="form-title">{{ 'GET_AUTO_QUOTE.STEPPER.STEP2.TITLE' | translate }}</h2>
+        <div class="container mt-4 mb-4" *ngIf="currentStep === 2">
+          <div class="form-wrapper">
+            <h2 class="form-title">{{ 'GET_AUTO_QUOTE.STEPPER.STEP2.TITLE' | translate }}</h2>
 
-          <div class="form-content-border">
-            <form>
-              <div class="row gy-3 mb-3">
-                <div class="col-md-3">
-                  <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.YEAR' | translate
-                    }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="2025" />
+            <div class="form-content-border" formArrayName="vehicles">
+              <div *ngFor="let vehicle of vehicles.controls; let i = index" [formGroupName]="i">
+                <div class="d-flex align-items-center justify-content-between mb-3 mt-3">
+                  <h5 class="vehicle-title mb-0">Vehicle {{ i + 1 }}</h5>
+                  <a *ngIf="vehicles.length > 1" (click)="removeVehicle(i)" class="remove-vehicle"
+                    title="Remove Vehicle">
+                    <i class="fa fa-times text-danger"></i>
+                  </a>
                 </div>
-                <div class="col-md-3">
-                  <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.MAKE' | translate
-                    }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="BMW" />
+
+                <div class="row gy-3 mb-3">
+                  <div class="col-md-3">
+                    <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.YEAR' | translate
+                      }}<span>*</span></label>
+                    <input type="text" class="form-control" placeholder="2025" formControlName="year"
+                      [class.is-invalid]="vehicle.get('year')?.invalid && vehicle.get('year')?.touched" />
+                    <div class="invalid-feedback" *ngIf="vehicle.get('year')?.invalid && vehicle.get('year')?.touched">
+                      {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.MAKE' | translate
+                      }}<span>*</span></label>
+                    <input type="text" class="form-control" placeholder="BMW" formControlName="make"
+                      [class.is-invalid]="vehicle.get('make')?.invalid && vehicle.get('make')?.touched" />
+                    <div class="invalid-feedback" *ngIf="vehicle.get('make')?.invalid && vehicle.get('make')?.touched">
+                      {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.MODEL' | translate
+                      }}<span>*</span></label>
+                    <input type="text" class="form-control" placeholder="X3" formControlName="model"
+                      [class.is-invalid]="vehicle.get('model')?.invalid && vehicle.get('model')?.touched" />
+                    <div class="invalid-feedback"
+                      *ngIf="vehicle.get('model')?.invalid && vehicle.get('model')?.touched">
+                      {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                    </div>
+                  </div>
                 </div>
-                <div class="col-md-3">
-                  <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.MODEL' | translate
-                    }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="X3" />
+
+                <div class="row gy-3">
+                  <div class="col-md-4">
+                    <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.OWNERSHIP' | translate
+                      }}<span>*</span></label>
+                    <input type="text" class="form-control" placeholder="Owned" formControlName="ownership"
+                      [class.is-invalid]="vehicle.get('ownership')?.invalid && vehicle.get('ownership')?.touched" />
+                    <div class="invalid-feedback"
+                      *ngIf="vehicle.get('ownership')?.invalid && vehicle.get('ownership')?.touched">
+                      {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.PRIMARY_USE' | translate
+                      }}<span>*</span></label>
+                    <input type="text" class="form-control" placeholder="Personal" formControlName="primary_use"
+                      [class.is-invalid]="vehicle.get('primary_use')?.invalid && vehicle.get('primary_use')?.touched" />
+                    <div class="invalid-feedback"
+                      *ngIf="vehicle.get('primary_use')?.invalid && vehicle.get('primary_use')?.touched">
+                      {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                    </div>
+                  </div>
                 </div>
               </div>
+              <div class="mt-3">
+                <a class="add-vehicle" (click)="addVehicle()"> Add More Vehicle </a>
+              </div>
 
-              <div class="row gy-3">
-                <div class="col-md-4">
-                  <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.OWNERSHIP' | translate
-                    }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="Owned" />
-                </div>
-                <div class="col-md-4">
-                  <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.PRIMARY_USE' | translate
-                    }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="Personal" />
-                </div>
+              <div class="d-flex gap-3 mt-4">
+                <button type="button" class="btn btn-previous" (click)="previousStep()">
+                  {{ 'GET_AUTO_QUOTE.PREVIOUS_BUTTON' | translate }}
+                </button>
+                <button type="button" class="btn btn-next" (click)="nextStep()">
+                  {{ 'GET_AUTO_QUOTE.NEXT_BUTTON' | translate }}
+                </button>
               </div>
-                          <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous">{{ 'GET_CUSTOM_QUOTE.PREVIOUS_BUTTON' | translate
-                  }}</button>
-                <button type="submit" class="btn btn-next">{{ 'GET_CUSTOM_QUOTE.NEXT_BUTTON' | translate }}</button>
-              </div>
-            </form>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="container mb-4">
-        <div class="form-wrapper">
-          <h2 class="form-title">{{ 'GET_AUTO_QUOTE.STEPPER.STEP3.TITLE' | translate }}</h2>
+        <div class="container mb-4" *ngIf="currentStep === 3">
+          <div class="form-wrapper">
+            <h2 class="form-title">{{ 'GET_AUTO_QUOTE.STEPPER.STEP3.TITLE' | translate }}</h2>
 
-          <div class="form-content-border">
-            <form>
-              <div class="row gy-3 mb-3">
-                <div class="col-md-4">
-                  <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP3.FIELDS.FULL_NAME' | translate
-                    }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="John Doe" />
+            <div class="form-content-border" formArrayName="drivers">
+              <div *ngFor="let driver of drivers.controls; let i = index" [formGroupName]="i">
+                <!-- Heading with remove option -->
+                <div class="d-flex align-items-center justify-content-between mb-3 mt-3">
+                  <h5 class="vehicle-title mb-0">Driver {{ i + 1 }}</h5>
+                  <a *ngIf="drivers.length > 1" (click)="removeDriver(i)" class="remove-vehicle" title="Remove Driver">
+                    <i class="fa fa-times text-danger"></i>
+                  </a>
                 </div>
-                <div class="col-md-4">
-                  <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP3.FIELDS.DATE_OF_BIRTH' | translate
-                    }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="01/01/1990" />
+
+                <div class="row gy-3 mb-3">
+                  <div class="col-md-4">
+                    <label class="form-label">
+                      {{ 'GET_AUTO_QUOTE.STEPPER.STEP3.FIELDS.FULL_NAME' | translate
+                      }}<span>*</span>
+                    </label>
+                    <input type="text" class="form-control" formControlName="full_name" placeholder="John Doe"
+                      [class.is-invalid]="driver.get('full_name')?.invalid && driver.get('full_name')?.touched" />
+                    <div class="invalid-feedback"
+                      *ngIf="driver.get('full_name')?.invalid && driver.get('full_name')?.touched">
+                      {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">
+                      {{ 'GET_AUTO_QUOTE.STEPPER.STEP3.FIELDS.DATE_OF_BIRTH' | translate
+                      }}<span>*</span>
+                    </label>
+                    <input type="text" class="form-control" formControlName="date_of_birth" placeholder="01/01/1990"
+                      [class.is-invalid]="driver.get('date_of_birth')?.invalid && driver.get('date_of_birth')?.touched" />
+                    <div class="invalid-feedback"
+                      *ngIf="driver.get('date_of_birth')?.invalid && driver.get('date_of_birth')?.touched">
+                      {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row gy-3">
+                  <div class="col-md-4">
+                    <label class="form-label">
+                      {{ 'GET_AUTO_QUOTE.STEPPER.STEP3.FIELDS.MARTIAL_STATUS' | translate
+                      }}<span>*</span>
+                    </label>
+                    <input type="text" class="form-control" formControlName="marital_status" placeholder="Single"
+                      [class.is-invalid]="driver.get('marital_status')?.invalid && driver.get('marital_status')?.touched" />
+                    <div class="invalid-feedback"
+                      *ngIf="driver.get('marital_status')?.invalid && driver.get('marital_status')?.touched">
+                      {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div class="row gy-3">
-                <div class="col-md-4">
-                  <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP3.FIELDS.MARTIAL_STATUS' | translate
-                    }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="Single" />
-                </div>
+              <!-- Add More Driver -->
+              <div class="mt-3">
+                <a class="add-vehicle" (click)="addDriver()">Add More Driver</a>
+              </div>
 
+              <div class="d-flex gap-3 mt-4">
+                <button type="button" class="btn btn-previous" (click)="previousStep()">
+                  {{ 'GET_AUTO_QUOTE.PREVIOUS_BUTTON' | translate }}
+                </button>
+                <button type="button" class="btn btn-next" (click)="nextStep()">
+                  {{ 'GET_AUTO_QUOTE.NEXT_BUTTON' | translate }}
+                </button>
               </div>
-                          <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous">{{ 'GET_CUSTOM_QUOTE.PREVIOUS_BUTTON' | translate
-                  }}</button>
-                <button type="submit" class="btn btn-next">{{ 'GET_CUSTOM_QUOTE.NEXT_BUTTON' | translate }}</button>
-              </div>
-            </form>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="container mt-4 mb-4">
-        <div class="form-wrapper">
-          <h2 class="form-title">{{ 'GET_AUTO_QUOTE.STEPPER.STEP4.TITLE' | translate }}</h2>
+        <div class="container mt-4 mb-4" *ngIf="currentStep === 4">
+          <div class="form-wrapper">
+            <h2 class="form-title">{{ 'GET_AUTO_QUOTE.STEPPER.STEP4.TITLE' | translate }}</h2>
 
-          <div class="form-content-border">
-            <form>
+            <div class="form-content-border">
               <div class="selection-group">
-                <h4 class="selection-heading">{{ 'GET_AUTO_QUOTE.STEPPER.STEP4.INSURED_TITLE' | translate }}</h4>
+                <h4 class="selection-heading">
+                  {{ 'GET_AUTO_QUOTE.STEPPER.STEP4.INSURED_TITLE' | translate }}
+                </h4>
 
                 <div class="coverage-options">
-                  <div class="form-check"
-                    *ngFor="let option of ('GET_AUTO_QUOTE.STEPPER.STEP4.INSURED_OPTIONS' | translate)">
-                    <input class="form-check-input" type="checkbox" [id]="option" />
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" id="currently_issued_yes"
+                      formControlName="currently_issued" value="Yes" />
+                    <label class="form-check-label" for="currently_issued_yes">{{
+                      'GET_AUTO_QUOTE.STEPPER.STEP4.INSURED_YES' | translate
+                      }}</label><br />
+                  </div>
 
-                    <label class="form-check-label" [for]="option">
-                      {{ option }}
-                    </label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" id="currently_issued_no"
+                      formControlName="currently_issued" value="No" />
+                    <label class="form-check-label" for="currently_issued_no">{{
+                      'GET_AUTO_QUOTE.STEPPER.STEP4.INSURED_NO' | translate
+                      }}</label>
+                  </div>
+
+                  <div class="invalid-feedback d-block"
+                    *ngIf="autoQuoteForm.get('currently_issued')?.invalid && autoQuoteForm.get('currently_issued')?.touched">
+                    {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
                   </div>
                 </div>
               </div>
 
               <div class="selection-group mt-4">
-                <h4 class="selection-heading">{{ 'GET_AUTO_QUOTE.STEPPER.STEP4.SR22_TITLE' | translate }}</h4>
+                <h4 class="selection-heading">
+                  {{ 'GET_AUTO_QUOTE.STEPPER.STEP4.SR22_TITLE' | translate }}
+                </h4>
 
                 <div class="coverage-options">
-                  <div class="form-check"
-                    *ngFor="let option of ('GET_AUTO_QUOTE.STEPPER.STEP4.SR22_OPTIONS' | translate)">
-                    <input class="form-check-input" type="checkbox" [id]="option" />
-
-                    <label class="form-check-label" [for]="option">
-                      {{ option }}
-                    </label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" id="sr22_yes" formControlName="sr_22_needed"
+                      value="Yes" />
+                    <label class="form-check-label" for="sr22_yes">{{
+                      'GET_AUTO_QUOTE.STEPPER.STEP4.SR22_YES' | translate
+                      }}</label><br />
                   </div>
-                </div>
-              </div>
 
-                      <div class="selection-group mt-4">
-                <h4 class="selection-heading">{{ 'GET_AUTO_QUOTE.STEPPER.STEP4.BUNDLE_TITLE' | translate }}</h4>
-
-                <div class="coverage-options">
-                  <div class="form-check"
-                    *ngFor="let option of ('GET_AUTO_QUOTE.STEPPER.STEP4.BUNDLE_OPTIONS' | translate)">
-                    <input class="form-check-input" type="checkbox" [id]="option" />
-
-                    <label class="form-check-label" [for]="option">
-                      {{ option }}
-                    </label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" id="sr22_no" formControlName="sr_22_needed"
+                      value="No" />
+                    <label class="form-check-label" for="sr22_no">{{
+                      'GET_AUTO_QUOTE.STEPPER.STEP4.SR22_NO' | translate
+                      }}</label>
                   </div>
-                </div>
-              </div>
 
-
-
-              <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous">{{ 'GET_CUSTOM_QUOTE.PREVIOUS_BUTTON' | translate
-                  }}</button>
-                <button type="submit" class="btn btn-next">{{ 'GET_CUSTOM_QUOTE.NEXT_BUTTON' | translate }}</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <div class="container mt-4 mb-4">
-        <div class="form-wrapper">
-          <h2 class="form-title">{{ 'GET_AUTO_QUOTE.STEPPER.STEP5.TITLE' | translate }}</h2>
-
-          <div class="form-content-border">
-            <form>
-              <div class="selection-group">
-                <h4 class="selection-heading">{{ 'GET_AUTO_QUOTE.STEPPER.STEP5.LANGUAGE_TITLE' | translate }}</h4>
-
-                <div class="coverage-options">
-                  <div class="form-check"
-                    *ngFor="let option of ('GET_AUTO_QUOTE.STEPPER.STEP5.LANGUAGE_OPTIONS' | translate)">
-
-                    <input class="form-check-input" type="checkbox" [id]="option" />
-
-                    <label class="form-check-label" [for]="option">
-                      {{ option }}
-                    </label>
+                  <div class="invalid-feedback d-block"
+                    *ngIf="autoQuoteForm.get('sr_22_needed')?.invalid && autoQuoteForm.get('sr_22_needed')?.touched">
+                    {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
                   </div>
                 </div>
               </div>
 
               <div class="selection-group mt-4">
-                <h4 class="selection-heading">{{ 'GET_AUTO_QUOTE.STEPPER.STEP5.CONTACT_TITLE' | translate }}</h4>
+                <h4 class="selection-heading">
+                  {{ 'GET_AUTO_QUOTE.STEPPER.STEP4.BUNDLE_TITLE' | translate }}
+                </h4>
+
+                <div class="coverage-options">
+                  <div class="form-check"
+                    *ngFor="let option of 'GET_AUTO_QUOTE.STEPPER.STEP4.BUNDLE_OPTIONS' | translate">
+                    <input class="form-check-input" type="radio" [id]="option" [name]="'bundle'"
+                      [checked]="autoQuoteForm.get('bundle')?.value === option"
+                      (change)="autoQuoteForm.get('bundle')?.setValue(option)" />
+
+                    <label class="form-check-label" [for]="option">
+                      {{ option }}
+                    </label>
+                  </div>
+                </div>
+
+                <div class="invalid-feedback d-block"
+                  *ngIf="autoQuoteForm.get('bundle')?.invalid && autoQuoteForm.get('bundle')?.touched">
+                  {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                </div>
+              </div>
+
+              <div class="d-flex gap-3 mt-4">
+                <button type="button" class="btn btn-previous" (click)="previousStep()">
+                  {{ 'GET_AUTO_QUOTE.PREVIOUS_BUTTON' | translate }}
+                </button>
+                <button type="button" class="btn btn-next" (click)="nextStep()">
+                  {{ 'GET_AUTO_QUOTE.NEXT_BUTTON' | translate }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container mt-4 mb-4" *ngIf="currentStep === 5">
+          <div class="form-wrapper">
+            <h2 class="form-title">{{ 'GET_AUTO_QUOTE.STEPPER.STEP5.TITLE' | translate }}</h2>
+
+            <div class="form-content-border">
+              <div class="selection-group">
+                <h4 class="selection-heading">
+                  {{ 'GET_AUTO_QUOTE.STEPPER.STEP5.LANGUAGE_TITLE' | translate }}
+                </h4>
+
+                <div class="coverage-options">
+                  <div class="form-check" *ngFor="
+                      let option of 'GET_AUTO_QUOTE.STEPPER.STEP5.LANGUAGE_OPTIONS' | translate
+                    ">
+                    <input class="form-check-input" type="radio" [id]="option" [name]="'language'"
+                      [checked]="autoQuoteForm.get('preferred_language')?.value === option"
+                      (change)="autoQuoteForm.get('preferred_language')?.setValue(option)" />
+
+                    <label class="form-check-label" [for]="option">
+                      {{ option }}
+                    </label>
+                  </div>
+                </div>
+
+                <div class="invalid-feedback d-block"
+                  *ngIf="autoQuoteForm.get('preferred_language')?.invalid && autoQuoteForm.get('preferred_language')?.touched">
+                  {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                </div>
+              </div>
+
+              <div class="selection-group mt-4">
+                <h4 class="selection-heading">
+                  {{ 'GET_AUTO_QUOTE.STEPPER.STEP5.CONTACT_TITLE' | translate }}
+                </h4>
 
                 <div class="coverage-options">
                   <div class="form-check" *ngFor="let option of contactOptions">
-                    <input class="form-check-input" type="checkbox" [id]="option" />
+                    <input class="form-check-input" type="radio" [id]="option" [name]="'contact'"
+                      [checked]="autoQuoteForm.get('contact_method')?.value === option"
+                      (change)="autoQuoteForm.get('contact_method')?.setValue(option)" />
                     <label class="form-check-label" [for]="option">
                       {{ option }}
                     </label>
                   </div>
+                </div>
+
+                <div class="invalid-feedback d-block"
+                  *ngIf="autoQuoteForm.get('contact_method')?.invalid && autoQuoteForm.get('contact_method')?.touched">
+                  {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
                 </div>
               </div>
 
               <div class="selection-group mt-4">
-                <h4 class="selection-heading">{{ 'GET_AUTO_QUOTE.STEPPER.STEP5.TIME_TITLE' | translate }}</h4>
+                <h4 class="selection-heading">
+                  {{ 'GET_AUTO_QUOTE.STEPPER.STEP5.TIME_TITLE' | translate }}
+                </h4>
 
                 <div class="coverage-options">
                   <div class="form-check" *ngFor="let option of timeOptions">
-                    <input class="form-check-input" type="checkbox" [id]="option" />
+                    <input class="form-check-input" type="radio" [id]="option" [name]="'time'"
+                      [checked]="autoQuoteForm.get('best_time_to_connect')?.value === option"
+                      (change)="autoQuoteForm.get('best_time_to_connect')?.setValue(option)" />
                     <label class="form-check-label" [for]="option">
                       {{ option }}
                     </label>
                   </div>
                 </div>
+
+                <div class="invalid-feedback d-block"
+                  *ngIf="autoQuoteForm.get('best_time_to_connect')?.invalid && autoQuoteForm.get('best_time_to_connect')?.touched">
+                  {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
+                </div>
               </div>
 
               <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous">{{ 'GET_CUSTOM_QUOTE.PREVIOUS_BUTTON' | translate
-                  }}</button>
-                <button type="submit" class="btn btn-next">{{ 'GET_CUSTOM_QUOTE.NEXT_BUTTON' | translate }}</button>
+                <button type="button" class="btn btn-previous" (click)="previousStep()">
+                  {{ 'GET_AUTO_QUOTE.PREVIOUS_BUTTON' | translate }}
+                </button>
+                <button type="button" class="btn btn-next" (click)="nextStep()">
+                  {{ 'GET_AUTO_QUOTE.NEXT_BUTTON' | translate }}
+                </button>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
-
-
-    </div>    
+    </form>
 
     <div class="quote-summary-container p-4 p-md-5 mt-5">
       <div class="container max-width-700">
-        <h2 class="text-center mb-4 section-title">{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.MAIN_TITLE' | translate }}</h2>
+        <h2 class="text-center mb-4 section-title">
+          {{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.MAIN_TITLE' | translate }}
+        </h2>
         <p class="text-center mb-4">{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.MAIN_DESC' | translate }}</p>
 
-        <h2 class="text-center mb-4 section-title">{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.TITLE' | translate }}</h2>
+        <h2 class="text-center mb-4 section-title">
+          {{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.TITLE' | translate }}
+        </h2>
 
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0">{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.TITLE' | translate }}</h5>
-            <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
-              'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.EDIT' | translate }}</a>
+            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(1)">
+              <i class="bi bi-pencil-square"></i>
+              {{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.NAME' | translate }}</strong> Juan Rodriguez</li>
-            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.ZIP' | translate }}</strong> 75287</li>
-            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.EMAIL' | translate }}</strong> j.rodriguez@email.com</li>
-            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.PHONE' | translate }}</strong> (713) 555-0199</li>
+            <li>
+              <strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.NAME' | translate }}</strong>
+              {{ autoQuoteForm.get('first_name')?.value }}
+            </li>
+            <li>
+              <strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.ZIP' | translate }}</strong>
+              {{ autoQuoteForm.get('zip_code')?.value }}
+            </li>
+            <li>
+              <strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.EMAIL' | translate }}</strong>
+              {{ autoQuoteForm.get('email_address')?.value }}
+            </li>
+            <li>
+              <strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.PHONE' | translate }}</strong>
+              {{ autoQuoteForm.get('phone_number')?.value }}
+            </li>
           </ul>
         </div>
 
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0">{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD2.TITLE' | translate }}</h5>
-            <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
-              'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD2.EDIT' | translate }}</a>
+            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(2)">
+              <i class="bi bi-pencil-square"></i>
+              {{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD2.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.VEHICLE1' | translate }}</strong>  2022 Toyota Camry (Financed, Personal Use)</li>
-            <li>
-              <strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.VEHICLE2' | translate }}</strong> 2019 Ford F-150 (Owned, Personal Use)
+            <li *ngFor="let vehicle of vehicles.controls; let i = index">
+              <strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.VEHICLE' | translate }}
+                {{ i + 1 }}</strong>
+              {{ vehicle.get('year')?.value }} {{ vehicle.get('make')?.value }}
+              {{ vehicle.get('model')?.value }} ({{ vehicle.get('ownership')?.value }},
+              {{ vehicle.get('primary_use')?.value }})
             </li>
           </ul>
         </div>
@@ -318,12 +499,16 @@
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0">{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD3.TITLE' | translate }}</h5>
-            <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
-              'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD3.EDIT' | translate }}</a>
+            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(3)">
+              <i class="bi bi-pencil-square"></i>
+              {{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD3.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.DRIVER1' | translate }}</strong> John Doe (DOB: 05/12/1985, Married)</li>
-            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.DRIVER2' | translate }}</strong> Jane Doe (DOB: 08/22/1987, Married)
+            <li *ngFor="let driver of drivers.controls; let i = index">
+              <strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.DRIVER' | translate }}
+                {{ i + 1 }}</strong>
+              {{ driver.get('full_name')?.value }} (DOB: {{ driver.get('date_of_birth')?.value }},
+              {{ driver.get('marital_status')?.value }})
             </li>
           </ul>
         </div>
@@ -331,38 +516,64 @@
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0">{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD4.TITLE' | translate }}</h5>
-            <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
-              'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD4.EDIT' | translate }}</a>
+            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(4)">
+              <i class="bi bi-pencil-square"></i>
+              {{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD4.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.INSURED' | translate }}</strong> Yes</li>
-            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.SR22' | translate }}</strong> NO</li>
-            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.BUNDLE' | translate }}</strong> YES! Apply my Auto + Life discount</li>
+            <li>
+              <strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.INSURED' | translate }}</strong>
+              {{ autoQuoteForm.get('currently_issued')?.value }}
+            </li>
+            <li>
+              <strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.SR22' | translate }}</strong>
+              {{ autoQuoteForm.get('sr_22_needed')?.value }}
+            </li>
+            <li>
+              <strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.BUNDLE' | translate }}</strong>
+              {{ autoQuoteForm.get('bundle')?.value || 'None' }}
+            </li>
           </ul>
         </div>
 
-                <div class="summary-card mb-4">
+        <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0">{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD5.TITLE' | translate }}</h5>
-            <a href="#" class="edit-link"><i class="bi bi-pencil-square"></i> {{
-              'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD5.EDIT' | translate }}</a>
+            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(5)">
+              <i class="bi bi-pencil-square"></i>
+              {{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD5.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.LANGUAGE' | translate }}</strong> English</li>
-            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.METHOD' | translate }}</strong> Text Message</li>
-            <li><strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.TIME' | translate }}</strong>Afternoon (12 PM - 5 PM)</li>
+            <li>
+              <strong>{{
+                'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.LANGUAGE' | translate
+                }}</strong>
+              {{ autoQuoteForm.get('preferred_language')?.value }}
+            </li>
+            <li>
+              <strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.METHOD' | translate }}</strong>
+              {{ autoQuoteForm.get('contact_method')?.value }}
+            </li>
+            <li>
+              <strong>{{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.TIME' | translate }}</strong>
+              {{ autoQuoteForm.get('best_time_to_connect')?.value }}
+            </li>
           </ul>
         </div>
 
         <!-- Form Footer -->
         <div class="mt-4">
           <div class="form-check mb-4">
-            <input class="form-check-input terms-check" type="checkbox" id="termsCheck" />
+            <input class="form-check-input terms-check" type="checkbox" id="termsCheck"
+              (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
             <label class="form-check-label terms-check-label small" for="termsCheck">
               {{ 'GET_AUTO_QUOTE.QUOTE_SUMMARY.DESC' | translate }}
             </label>
           </div>
-          <button class="btn btn-submit">{{ 'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.SUBMIT_BUTTON' | translate }}</button>
+          <button class="btn btn-submit" (click)="sendAutoQuote()" [disabled]="loading || !termsAccepted">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+            {{ loading ? 'Submitting...' : ('GET_AUTO_QUOTE.QUOTE_SUMMARY.SUBMIT_BUTTON' | translate) }}
+          </button>
         </div>
       </div>
     </div>
