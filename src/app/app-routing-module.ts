@@ -18,6 +18,7 @@ import { GetCommercialQuote } from './pages/get-commercial-quote/get-commercial-
 import { GetLifeQuote } from './pages/get-life-quote/get-life-quote';
 import { GetHealthQuote } from './pages/get-health-quote/get-health-quote';
 import { GetSuretyQuote } from './pages/get-surety-quote/get-surety-quote';
+import { AutoInsurance } from './pages/auto-insurance/auto-insurance';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -32,15 +33,16 @@ const routes: Routes = [
   { path: 'our-locations/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
   { path: 'get-a-quote', component: GetAQuote },
   { path: 'request-a-custom-quote', component: GetCustomQuote },
-   { path: 'auto-insurance/quote', component: GetAutoQuote },
+  { path: 'auto-insurance/quote', component: GetAutoQuote },
   { path: 'homeowners-insurance/quote', component: GetHomeQuote },
   { path: 'commercial-insurance/quote', component: GetCommercialQuote },
   { path: 'life-insurance/quote', component: GetLifeQuote },
   { path: 'health-insurance/quote', component: GetHealthQuote },
   { path: 'surety-bonds/quote', component: GetSuretyQuote },
+  { path: 'auto-insurance', component: AutoInsurance },
 
 
-  
+
 
 
 
@@ -66,6 +68,7 @@ const routes: Routes = [
       { path: 'seguros-de-vida/cotizacion', component: GetLifeQuote },
       { path: 'seguros-de-salud/cotizacion', component: GetHealthQuote },
       { path: 'fianzas/cotizacion', component: GetSuretyQuote },
+      { path: 'seguros-de-auto', component: AutoInsurance },
       { path: 'nuestras-ubicaciones', component: OurLocations, runGuardsAndResolvers: 'always' },
       { path: 'nuestras-ubicaciones/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
     ],
@@ -149,8 +152,12 @@ export const routeTranslations: Record<string, Record<string, string>> = {
     es: 'seguros-de-salud/cotizacion',
   },
   getSuretyQuote: {
-   en: 'surety-bonds/quote',
+    en: 'surety-bonds/quote',
     es: 'fianzas/cotizacion'
+  },
+  autoInsurance: {
+    en: 'auto-insurance',
+    es: 'seguros-de-auto'
   },
 
 };

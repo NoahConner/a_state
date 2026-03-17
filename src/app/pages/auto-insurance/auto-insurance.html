@@ -1,0 +1,130 @@
+<div class="homeMain">
+  <div class="topBanner">
+    <div class="container">
+      <div class="topSub">
+        <div class="topSub2">
+          <div class="h1">
+            {{ 'AUTO_INSURANCE.BANNER.TITLE_LINE1' | translate }} <br />
+            {{ 'AUTO_INSURANCE.BANNER.TITLE_LINE2' | translate }} <span class="heading-span">{{
+              'AUTO_INSURANCE.BANNER.TITLE_LINE3' |
+              translate }}</span>
+          </div>
+          <!-- 
+          <div class="selectable">
+            
+            @for (item of chips; track item.name) {
+            <div class="chip">
+              <i class="{{ item.icon }}"></i>
+              <span>{{ item.name | translate }}</span>
+            </div>
+            }
+          </div> -->
+
+          <div class="selectable mt-4">
+            @for (item of chips.slice(0, 3); track item.name) {
+            <div class="chip">
+              <i class="{{ item?.icon }}"></i>
+              <span>{{ item?.name | translate }}</span>
+            </div>
+            }
+          </div>
+          <div class="selectable mt-2">
+            @for (item of chips.slice(3, 6); track item.name) {
+            <div class="chip">
+              <i class="{{ item?.icon }}"></i>
+              <span>{{ item?.name | translate }}</span>
+            </div>
+            }
+          </div>
+
+          <div class="inps">
+            <input type="text" [placeholder]="'AUTO_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
+              class="form-control" />
+
+            <input type="number" [placeholder]="'AUTO_INSURANCE.BANNER.FORM.PHONE' | translate" class="form-control" />
+          </div>
+
+          <button class="btn">
+            {{ 'AUTO_INSURANCE.BANNER.FORM.BUTTON' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <h2 class="section-title mb-4">
+      {{ 'AUTO_INSURANCE.WHY_DO_YOU_NEED.TITLE' | translate }}
+    </h2>
+    <p class="section-description mb-4">
+      {{ 'AUTO_INSURANCE.WHY_DO_YOU_NEED.DESC' | translate }}
+    </p>
+
+    <p class="section-sub-title mb-4">
+      {{ 'AUTO_INSURANCE.WHY_DO_YOU_NEED.SUB_TITLE' | translate }}
+    </p>
+
+    <div class="insurance-list">
+      <div class="insurance-item" *ngFor="let item of 'AUTO_INSURANCE.WHY_DO_YOU_NEED.LIST' | translate; let i = index">
+
+        <div class="number">0{{ i + 1 }}</div>
+
+        <div class="content">
+          <h5>{{ item.TITLE }}</h5>
+          <p>{{ item.TEXT }}</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="container my-5">
+    <h2 class="section-title mb-4">
+      What is Auto Insurance and Why Do You Need It?
+    </h2>
+    <p class="section-description mb-4">
+      Auto insurance is basically a safety net for when things go wrong on the road. It’s a contract you have with an
+      insurance company to cover the costs if your car is damaged or if you're in an accident. At its core, auto
+      insurance helps pay for damages or injuries caused by a car accident or damage to your vehicle from things like
+      theft or weather. Many drivers look for auto insurance policies that balance protection and price so they can stay
+      covered without overpaying.
+    </p>
+
+    <p class="section-sub-title mb-4">
+      There are many reasons why having auto insurance is essential. Here are the most important ones:
+    </p>
+
+    <div class="insurance-list">
+      <div class="insurance-item" *ngFor="let item of insuranceReasons">
+        <div class="number">{{ item.id }}</div>
+        <div class="content">
+          <h5>{{ item.title }}</h5>
+          <p>{{ item.text }}</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+  <!-- footuper -->
+  <div class="footUpper">
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="clipp"></div>
+    <div class="contain">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="icon">
+              <img src="/assets/images/logo.png" alt="User menu" />
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="h4">{{ 'FOOTER.SLOGAN' | translate }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  -->
+</div>

@@ -3,16 +3,19 @@
   min-height: 50px;
   display: flex;
   align-items: center;
+
   .lefter {
     display: flex;
     align-items: center;
     flex-direction: row;
     gap: 10px;
+
     .icon {
       height: 30px;
       width: 30px;
       margin-top: -2px;
     }
+
     .text {
       font-family: 'Afacad', sans-serif;
       font-size: 22px;
@@ -20,17 +23,20 @@
       color: #fff;
     }
   }
+
   .mailerMain {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
     gap: 40px;
+
     .mailBoxer {
       display: flex;
       flex-direction: row;
       align-items: center;
       gap: 10px;
+
       .box {
         height: 50px;
         width: 50px;
@@ -40,6 +46,7 @@
         align-items: center;
         justify-content: center;
       }
+
       a {
         font-family: 'Afacad', sans-serif;
         font-size: 22px;
@@ -49,6 +56,7 @@
         display: flex;
         align-items: center;
         gap: 10px;
+
         span {
           color: #fff;
         }
@@ -61,6 +69,11 @@
   .navbar-brand {
     height: 90px;
   }
+
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
   #mainNavbar {
     .rounded-pill {
       font-family: 'Afacad', sans-serif;
@@ -77,15 +90,18 @@
         rgba(0, 0, 0, 0.07) 0px 16px 32px,
         rgba(0, 0, 0, 0.07) 0px 32px 64px;
       border: 0;
+
       &:hover {
         background-color: #fff22e;
         color: #000;
       }
     }
   }
+
   .navbar-nav {
     margin-right: 40px !important;
   }
+
   .navbar-nav .nav-link {
     padding: 0.75rem 1rem;
     color: #111;
@@ -106,6 +122,7 @@
   .dropdown-menu {
     border-radius: 0.5rem;
   }
+
   .leftie {
     gap: 2rem;
   }
@@ -224,19 +241,19 @@
     display: none;
 
     &:checked {
-      & + .sidebar {
+      &+.sidebar {
         transform: translateX(0); // Sidebar now moves from right to left
       }
 
-      & + .sidebar + .overlay {
+      &+.sidebar+.overlay {
         left: 0%;
       }
 
-      & + .sidebar .sidebar__close {
+      &+.sidebar .sidebar__close {
         transform: translateX(0) rotate(45deg); // Sidebar close button now moves from right to left
       }
 
-      & + .sidebar .sidebar__menu a {
+      &+.sidebar .sidebar__menu a {
         transform: translateX(0); // Menu links now slide in from right
       }
     }
@@ -263,10 +280,12 @@
   #mainNavbar {
     display: none;
   }
+
   .headerMain {
     position: fixed;
     z-index: 9999;
     width: 100%;
+
     .navbar-brand {
       height: 60px;
     }
@@ -280,6 +299,7 @@
       justify-content: center;
       margin: 1rem 0;
     }
+
     .mailerMain {
       justify-content: center !important;
     }
@@ -294,6 +314,7 @@
           height: 40px;
           width: 40px;
         }
+
         a {
           font-size: 16px;
         }

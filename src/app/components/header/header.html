@@ -57,12 +57,13 @@
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-semibold">
           <!-- Insurance Services dropdown -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="/insurance-services">
+            <a class="nav-link dropdown-toggle" [routerLink]="getRoute('insuranceServices')">
               {{ 'HEADER.INSURANCE_SERVICES' | translate }}
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a class="dropdown-item" href="#">{{ 'HEADER.AUTO_INSURANCE' | translate }}</a>
+                <a class="dropdown-item" [routerLink]="getRoute('autoInsurance')">{{ 'HEADER.AUTO_INSURANCE' | translate
+                  }}</a>
               </li>
               <li>
                 <a class="dropdown-item" href="#">{{ 'HEADER.HOME_INSURANCE' | translate }}</a>
@@ -76,13 +77,13 @@
           <li class="nav-item">
             <a class="nav-link" [routerLink]="getRoute('about')">{{
               'HEADER.ABOUT' | translate
-            }}</a>
+              }}</a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link" [routerLink]="getRoute('contact')">{{
               'HEADER.CONTACT' | translate
-            }}</a>
+              }}</a>
           </li>
 
           <li class="nav-item">
@@ -99,29 +100,17 @@
 
           <!-- Language dropdown -->
           <div class="dropdown">
-            <a
-              class="nav-link dropdown-toggle d-flex align-items-center"
-              href="#"
-              data-bs-toggle="dropdown"
-            >
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" data-bs-toggle="dropdown">
               <i class="fa-solid fa-globe me-1"></i> {{ currentLang.toUpperCase() }}
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
               <li>
-                <a
-                  class="dropdown-item"
-                  href="javascript:void(0)"
-                  (click)="changeLang('en'); $event.preventDefault()"
-                  >EN</a
-                >
+                <a class="dropdown-item" href="javascript:void(0)"
+                  (click)="changeLang('en'); $event.preventDefault()">EN</a>
               </li>
               <li>
-                <a
-                  class="dropdown-item"
-                  href="javascript:void(0)"
-                  (click)="changeLang('es'); $event.preventDefault()"
-                  >ES</a
-                >
+                <a class="dropdown-item" href="javascript:void(0)"
+                  (click)="changeLang('es'); $event.preventDefault()">ES</a>
               </li>
             </ul>
           </div>

@@ -30,6 +30,7 @@ import { GetLifeQuote } from './pages/get-life-quote/get-life-quote';
 import { GetHealthQuote } from './pages/get-health-quote/get-health-quote';
 import { GetSuretyQuote } from './pages/get-surety-quote/get-surety-quote';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AutoInsurance } from './pages/auto-insurance/auto-insurance';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     GetCommercialQuote,
     GetLifeQuote,
     GetHealthQuote,
-    GetSuretyQuote
+    GetSuretyQuote,
+    AutoInsurance
   ],
   imports: [
     BrowserModule,
