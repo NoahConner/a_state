@@ -165,4 +165,64 @@ export class AutoInsurance {
     { title: 'Trailer Insurance', description: 'Safeguard your trailer with coverage that protects against damage, theft, and liability while towing equipment, boats, or recreational vehicles.', icon: 'fas fa-trailer' },
   ];
 
+  insuranceSteps = [
+    { title: 'Reach Out', description: 'Contact our team online or by phone to request a quick quote for auto insurance.' },
+    { title: 'Get Advice', description: 'Our agents compare multiple carriers and guide you toward affordable auto insurance.' },
+    { title: 'Pick Your Plan', description: 'Review your options and choose the coverage that best fits your budget and driving needs.' },
+    { title: 'We\'ve Got You', description: 'Activate your policy and drive with confidence knowing your vehicle insurance is in place.' },
+  ];
+
+  switchSteps = [
+    {
+      step: 'Step 1: Get Your Free Comparison Quote',
+      description: 'Start with a quick comparison quote. Our brokers shop multiple carriers to find affordable auto insurance and show you better options for coverage, pricing, and discounts in minutes.'
+    },
+    {
+      step: 'Step 2: Pick Your Plan and Activate',
+      description: 'Choose the policy that fits your needs and budget. We help you review coverage details and activate your auto insurance quickly, so your protection begins without delays.'
+    },
+    {
+      step: 'Step 3: Cancel Your Old Policy (We\'ll Help!)',
+      description: 'Once your new policy is active, we will comprehensively guide you through canceling your old insurance. Never cancel early to avoid a coverage lapse. Most insurers refund any unused premium.'
+    }
+  ];
+
+  faqList = [
+    {
+      id: 'faq1',
+      question: 'Why is car insurance so expensive in Texas?',
+      answer: 'Texas auto insurance costs more due to heavy traffic, frequent accidents, severe weather, rising repair costs, and a high number of uninsured drivers.'
+    },
+    {
+      id: 'faq2',
+      question: 'Have auto insurance rates gone up in Texas?',
+      answer: 'Yes. Rising repair costs, medical expenses, and severe weather claims have increased rates. Drivers can still find affordable auto insurance in Texas by comparing quotes.'
+    },
+    {
+      id: 'faq3',
+      question: 'What is considered "full coverage" auto insurance in Texas?',
+      answer: 'Full coverage usually includes liability, collision, and comprehensive insurance. It protects both other drivers and your own vehicle from accidents, theft, and weather damage.'
+    },
+    {
+      id: 'faq4',
+      question: 'Is auto insurance required by law in Texas?',
+      answer: 'Yes. Texas law requires drivers to carry liability insurance before legally operating a vehicle to cover injuries or property damage they cause in an accident.'
+    },
+    {
+      id: 'faq5',
+      question: 'What are the minimum auto insurance requirements in Texas?',
+      answer: `Texas requires the 30/60/25 liability rule:
+    <ul>
+      <li><strong>$30,000</strong> bodily injury per person</li>
+      <li><strong>$60,000</strong> bodily injury per accident</li>
+      <li><strong>$25,000</strong> property damage</li>
+    </ul>`
+    },
+    {
+      id: 'faq6',
+      question: 'Is Texas a "no-fault" auto insurance state?',
+      answer: 'No. Texas is an at-fault state, meaning the driver responsible for the accident must pay for damages through their insurance policy.'
+    }
+  ];
+
 }
