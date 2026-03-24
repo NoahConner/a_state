@@ -553,8 +553,49 @@
     p {
       font-size: 0.85rem;
       line-height: 1.6;
-      color: #272424;
+      color: #555;
     }
+
+    h6 {
+      color: #ca2b28;
+    }
+  }
+
+  .custom-dots {
+    position: absolute;
+    bottom: -40px;
+
+    button {
+      width: 12px !important;
+      height: 12px !important;
+      border-radius: 50% !important;
+      background-color: #ddd !important;
+      border: none !important;
+      margin: 0 6px !important;
+      transition: all 0.3s ease !important;
+      opacity: 0.5 !important;
+
+      &.active {
+        background-color: #ca2b28 !important;
+        width: 30px !important;
+        border-radius: 10px !important;
+        opacity: 1 !important;
+      }
+
+      &:hover {
+        opacity: 0.8 !important;
+      }
+    }
+  }
+
+  .carousel-item {
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  .optional-header {
+    font-size: 18px;
+    font-weight: 700;
+    color: #191919;
   }
 
   .section-title {
@@ -1307,7 +1348,7 @@
 
   .card-content {
     .card-title {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 500;
       color: #414141;
       margin-bottom: 0.7rem;
@@ -1366,7 +1407,8 @@
 }
 
 .feature-card-height {
-  height: 170px;
+  // height: 170px;
+  height: 100%;
 }
 
 

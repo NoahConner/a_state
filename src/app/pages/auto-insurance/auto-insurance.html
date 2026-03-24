@@ -83,49 +83,41 @@
     <div class="container-max-800">
 
       <h1 class="main-title">
-        Texas Car Insurance Laws: <span class="accent-text">Understanding the 30/60/25 Rule</span>
+        {{ 'AUTO_INSURANCE.LAWS.TITLE' | translate }}<span class="accent-text">{{ 'AUTO_INSURANCE.LAWS.ACCENT_TEXT' |
+          translate }}</span>
       </h1>
 
       <p class="intro-text">
-        In Texas, car insurance laws require drivers to have basic coverage in case of an accident. These rules apply to
-        anyone purchasing vehicle insurance in Texas to legally operate a car in the state. One of the key requirements
-        is the 30/60/25 rule, shorthand for the minimum liability coverage you must carry as required by the <a href="#"
-          class="text-link">Texas Department of Insurance</a>.
+        {{ 'AUTO_INSURANCE.LAWS.INTRO' | translate }} <a href="#" class="text-link"> {{ 'AUTO_INSURANCE.LAWS.INTRO_LINK'
+          | translate }}</a>.
       </p>
 
-      <h2 class="section-subtitle">The Breakdown of 30/60/25</h2>
+      <h2 class="section-subtitle">{{ 'AUTO_INSURANCE.LAWS.SUBTITLE' | translate }}</h2>
 
       <div class="breakdown-list">
         <div class="row">
 
           <div class="col-lg-4 col-md-6 col-12">
             <div class="breakdown-item">
-              <h3 class="item-title">$30,000 (Bodily Injury per Person)</h3>
+              <h3 class="item-title">{{ 'AUTO_INSURANCE.LAWS.ITEM1.TITLE' | translate }}</h3>
               <p class="item-description">
-                This is the maximum amount your insurance will pay for medical bills, lost wages, or funeral expenses if
-                someone is injured in an accident you cause. It’s important to note that if multiple people are injured,
-                this limit applies to each person separately, meaning if two people are hurt, the $30,000 limit would be
-                split between them. </p>
+                {{ 'AUTO_INSURANCE.LAWS.ITEM1.DESC' | translate }} </p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 col-12">
             <div class="breakdown-item">
-              <h3 class="item-title">$60,000 (Bodily Injury per Accident)</h3>
+              <h3 class="item-title">{{ 'AUTO_INSURANCE.LAWS.ITEM2.TITLE' | translate }}</h3>
               <p class="item-description">
-                This is the total amount available to all people injured in a single accident. So, if three people are
-                injured in an accident you cause, the $60,000 will be divided among them. While this sounds like a lot,
-                depending on the severity of the injuries, this amount can be used up quickly in medical bills. </p>
+                {{ 'AUTO_INSURANCE.LAWS.ITEM2.DESC' | translate }} </p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 col-12">
             <div class="breakdown-item">
-              <h3 class="item-title">$25,000 (Property Damage)</h3>
+              <h3 class="item-title">{{ 'AUTO_INSURANCE.LAWS.ITEM3.TITLE' | translate }}</h3>
               <p class="item-description">
-                This covers damage you cause to someone else’s vehicle or property, such as fences or utility poles. If
-                the other person’s car is damaged, your insurance will pay for repairs or replacement, up to $25,000.
-                However, if the damage exceeds this amount, you could be personally liable for the difference. </p>
+                {{ 'AUTO_INSURANCE.LAWS.ITEM3.DESC' | translate }} </p>
             </div>
           </div>
 
@@ -137,27 +129,27 @@
 
 
   <section class="insurance-table-section py-5">
-    <div class="container-max-800">
+    <div class="container container-max-800 px-4">
 
-      <h2 class="table-main-title mb-4">Texas Auto Insurance Minimum Coverage Requirements</h2>
+      <h2 class="table-main-title mb-4">{{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.TITLE' | translate }}</h2>
 
       <p class="table-intro-text mb-5">
-        Minimum coverage refers to the basic liability insurance that all drivers are required to have. While this
-        satisfies legal requirements, many drivers explore affordable auto insurance in Texas options that offer
-        additional protection beyond the minimum. This coverage helps pay for injuries or damages you cause to others,
-        but it doesn't cover your vehicle or any injuries you sustain.
+        {{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.INTRO' | translate }}
       </p>
 
       <div class="custom-insurance-table">
         <div class="row g-2 header-row">
           <div class="col-4">
-            <div class="header-box text-center">Coverage</div>
+            <div class="header-box text-center">{{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.TABLE.HEADER_COVERAGE' | translate
+              }}</div>
           </div>
           <div class="col-4">
-            <div class="header-box text-center">What It Covers</div>
+            <div class="header-box text-center">{{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.TABLE.HEADER_WHAT_IT_COVERS' |
+              translate }}</div>
           </div>
           <div class="col-4">
-            <div class="header-box text-center">Minimum Amount</div>
+            <div class="header-box text-center">{{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.TABLE.HEADER_MIN_AMOUNT' | translate
+              }}</div>
           </div>
         </div>
 
@@ -165,8 +157,8 @@
           <div class="col-4">
             <div class="content-box side-label d-flex align-items-center justify-content-center text-center">
               <div>
-                <strong>Bodily Injury Liability</strong><br>
-                <small>(Required by Law)</small>
+                <strong>{{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.TABLE.ITEM1_LABEL' | translate }}</strong><br>
+                <small>{{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.TABLE.ITEM1_SUB_LABEL' | translate }}</small>
               </div>
             </div>
           </div>
@@ -174,11 +166,10 @@
             <div class="content-box detail-box pink-bg h-100">
               <div class="row h-100 align-items-center">
                 <div class="col-6 border-end-white pe-3">
-                  Injuries you cause to other people in an accident you're at fault for — covers medical bills, lost
-                  wages, and legal fees.
+                  {{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.TABLE.ITEM1_DESC' | translate }}
                 </div>
                 <div class="col-6 ps-3 fw-bold">
-                  $30,000 / person $60,000 / accident
+                  {{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.TABLE.ITEM1_AMOUNT' | translate }}
                 </div>
               </div>
             </div>
@@ -189,8 +180,8 @@
           <div class="col-4">
             <div class="content-box side-label d-flex align-items-center justify-content-center text-center">
               <div>
-                <strong>Property Damage Liability</strong><br>
-                <small>(Required by Law)</small>
+                <strong>{{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.TABLE.ITEM2_LABEL' | translate }}</strong><br>
+                <small>{{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.TABLE.ITEM2_SUB_LABEL' | translate }}</small>
               </div>
             </div>
           </div>
@@ -198,11 +189,10 @@
             <div class="content-box detail-box pink-bg h-100">
               <div class="row h-100 align-items-center">
                 <div class="col-6 border-end-white pe-3">
-                  Damage you cause to someone else's vehicle or property — covers repair or replacement costs for the
-                  other party.
+                  {{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.TABLE.ITEM2_DESC' | translate }}
                 </div>
                 <div class="col-6 ps-3 fw-bold">
-                  $25,000 / accident
+                  {{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.TABLE.ITEM2_AMOUNT' | translate }}
                 </div>
               </div>
             </div>
@@ -211,66 +201,56 @@
       </div>
 
       <div class="d-flex justify-content-between align-items-center mt-4 source-meta">
-        <p class="mb-0">Source: <a href="http://">Shamieh Law</a></p>
-        <p class="mb-0 text-muted">Last Updated: March 2026</p>
+        <p class="mb-0">{{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.SOURCE' | translate }} <a href="https://shamiehlaw.com/"
+            target="_blank">{{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.SOURCE_LINK' | translate }}</a></p>
+        <p class="mb-0 text-muted">{{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.LAST_UPDATED' | translate }}</p>
       </div>
 
       <div class="disclaimer-text mt-4">
-        <strong>Disclaimer:</strong> The information provided on this page is for general informational purposes only
-        and may not reflect the most current updates. Coverage requirements, rates, and laws are subject to change.
-        Please consult a licensed insurance agent for the most accurate and up-to-date information.
+        <strong>{{ 'COMMON.DISCLAIMER' | translate }}:</strong> {{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.DISCLAIMER' |
+        translate }}
       </div>
 
-      <h3 class="table-coverage-title mt-4">Is "Full Coverage" Required in the Lone Star State?</h3>
+      <h3 class="table-coverage-title mt-5">{{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.FULL_COVERAGE_TITLE' | translate }}</h3>
 
-      <p class="table-intro-text mb-4">
-        When it comes to auto insurance in Texas, there's a common misconception that "Full Coverage" is mandatory. The
-        truth is, Texas law only requires liability insurance, specifically the 30/60/25 coverage, which covers damage
-        you cause to others, not your own vehicle. 
-        While liability meets legal requirements, many drivers choose full coverage policies because they offer stronger
-        protection and are often recommended when searching for the best auto insurance.
+      <p class="table-intro-text mb-5">
+        {{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.FULL_COVERAGE_INTRO' | translate }}
       </p>
     </div>
 
-    <div class="container-max-800">
+    <div class="container container-max-800 px-4 mt-5">
 
-      <h2 class="insurance-coverage-title mb-3">What "Full Coverage" Actually Means</h2>
+      <h2 class="insurance-coverage-title mb-3">{{ 'AUTO_INSURANCE.FULL_COVERAGE_MEANS.TITLE' | translate }}</h2>
       <p class="insurance-coverage-intro-text mb-5">
-        Full Coverage is a term often used to describe a combination of coverages rather than a single policy. It
-        usually includes:
+        {{ 'AUTO_INSURANCE.FULL_COVERAGE_MEANS.INTRO' | translate }}
       </p>
 
       <div class="row justify-content-center g-4">
 
         <!-- Card 1 -->
         <div class="col-lg-4 col-md-6">
-          <div class="coverage-card">
+          <div class="coverage-card h-100">
             <img src="assets/images/auto_office-employee.png" class="card-icon" alt="icon">
-            <h3>Liability Insurance</h3>
-            <p>The basic coverage required by law in Texas (30/60/25).</p>
+            <h3>{{ 'AUTO_INSURANCE.FULL_COVERAGE_MEANS.CARD1.TITLE' | translate }}</h3>
+            <p>{{ 'AUTO_INSURANCE.FULL_COVERAGE_MEANS.CARD1.DESC' | translate }}</p>
           </div>
         </div>
 
         <!-- Card 2 -->
         <div class="col-lg-4 col-md-6">
-          <div class="coverage-card">
+          <div class="coverage-card h-100">
             <img src="assets/images/auto-car-repair.png" class="card-icon" alt="icon">
-            <h3>Collision Coverage</h3>
-            <p>
-              Pays for repairs to your car after a crash, no matter who’s at fault. If you’re in an accident and it’s
-              your fault, this helps fix your car.
-            </p>
+            <h3>{{ 'AUTO_INSURANCE.FULL_COVERAGE_MEANS.CARD2.TITLE' | translate }}</h3>
+            <p>{{ 'AUTO_INSURANCE.FULL_COVERAGE_MEANS.CARD2.DESC' | translate }}</p>
           </div>
         </div>
 
         <!-- Card 3 -->
         <div class="col-lg-4 col-md-6">
-          <div class="coverage-card">
+          <div class="coverage-card h-100">
             <img src="assets/images/auto_ice-water.png" class="card-icon" alt="icon">
-            <h3>Comprehensive Coverage</h3>
-            <p>
-              Covers non-collision incidents like hail damage, flooding, or theft, which are pretty common in Texas
-            </p>
+            <h3>{{ 'AUTO_INSURANCE.FULL_COVERAGE_MEANS.CARD3.TITLE' | translate }}</h3>
+            <p>{{ 'AUTO_INSURANCE.FULL_COVERAGE_MEANS.CARD3.DESC' | translate }}</p>
           </div>
         </div>
 
@@ -284,104 +264,59 @@
     <div class="container">
       <!-- Header -->
       <div class="header-content mb-5">
-        <h6 class="text-danger fw-bold">Standard and Optional Auto Insurance Coverages in Texas</h6>
-        <p class="small text-muted">When it comes to auto insurance, there are two main types of coverage to consider:
-          standard and optional. Many drivers compare policies to find the insurance that balances protection and cost.
-          Standard coverages protect you from the most common risks on the road, while optional add-ons allow drivers to
-          customize their vehicle insurance in Texas based on their needs.</p>
+        <h6 class="text-danger fw-bold">{{ 'AUTO_INSURANCE.COVERAGES.HEADER.TITLE' | translate }}</h6>
+        <p class="small text-muted">{{ 'AUTO_INSURANCE.COVERAGES.HEADER.DESC' | translate }}</p>
       </div>
 
       <!-- Standard Coverages -->
-      <h5 class="section-title mb-4">Standard Coverages (Required or Commonly Included)</h5>
+      <h5 class="section-title mb-4">{{ 'AUTO_INSURANCE.COVERAGES.STANDARD.TITLE' | translate }}</h5>
       <div class="row g-4 mb-5">
-        <!-- Card 1 -->
+        @for (item of ('AUTO_INSURANCE.COVERAGES.STANDARD.LIST' | translate); track item.TITLE) {
         <div class="col-md-5">
           <div class="insurance-card">
-            <div class="card-icon"><i class="bi bi-person-heart"></i></div>
+            <div class="card-icon"><i [class]="item.ICON"></i></div>
             <div class="card-body">
-              <h6>Bodily Injury Liability</h6>
-              <p>This coverage helps pay for medical bills, lost wages, and legal fees if you're responsible for an
-                accident that injures others. In Texas, it's required by law to have at least $30,000 per person and
-                $60,000 per accident in bodily injury liability.</p>
+              <h6>{{ item.TITLE }}</h6>
+              <p>{{ item.DESC }}</p>
             </div>
           </div>
         </div>
-        <!-- Card 2 -->
-        <div class="col-md-5">
-          <div class="insurance-card">
-            <div class="card-icon"><i class="bi bi-person-plus"></i></div>
-            <div class="card-body">
-              <h6>Personal Injury Protection (PIP)</h6>
-              <p>This insurance plan covers your medical bills and lost wages if you're injured in an accident,
-                regardless of fault. It's especially useful if you don't have health insurance or if your medical costs
-                exceed your regular coverage limits.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Card 3 -->
-        <div class="col-md-5">
-          <div class="insurance-card">
-            <div class="card-icon"><i class="bi bi-car-front"></i></div>
-            <div class="card-body">
-              <h6>Property Damage Liability</h6>
-              <p>Property damage liability covers the cost of repairing or replacing another person's vehicle or
-                property that you damage in an accident. The minimum required coverage in Texas is $25,000, but you may
-                want higher limits to better protect yourself.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Card 4 -->
-        <div class="col-md-5">
-          <div class="insurance-card">
-            <div class="card-icon"><i class="bi bi-shield-exclamation"></i></div>
-            <div class="card-body">
-              <h6>Uninsured / Underinsured Motorist Coverage (UM/UIM)</h6>
-              <p>This coverage protects you if you're in an accident with someone who either doesn't have insurance or
-                doesn't have enough to cover the costs. It helps pay for your medical bills and damages when the
-                at-fault driver is underinsured or uninsured.</p>
-            </div>
-          </div>
-        </div>
+        }
       </div>
 
-      <!-- Optional Coverages -->
       <div class="optional-header mb-4">
-        <span class="badge s bg-danger px-4 py-2 fs-5">Optional Coverages (Add-Ons)</span>
+        <span class="badge s bg-danger px-4 py-2 fs-5">{{ 'AUTO_INSURANCE.COVERAGES.OPTIONAL.BADGE' | translate
+          }}</span>
       </div>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="insurance-card optional">
-            <div class="card-body">
-              <!-- <div class="card-icon"><i class="bi bi-car-front-fill"></i></div> -->
+      <!-- Optional Coverages Carousel -->
+      <div id="optionalCoveragesCarousel" class="carousel slide pb-5" data-bs-ride="carousel">
+        <!-- Pagination Dots -->
+        <div class="carousel-indicators custom-dots mb-0">
+          @for (chunk of optionalCoveragesChunks; track $index) {
+          <button type="button" data-bs-target="#optionalCoveragesCarousel" [attr.data-bs-slide-to]="$index"
+            [class.active]="$index === 0" [attr.aria-current]="$index === 0"
+            [attr.aria-label]="'Slide ' + ($index + 1)"></button>
+          }
+        </div>
 
-              <h6>Comprehensive Coverage</h6>
-              <p>This part protects against damage that isn't caused by a collision, such as theft, hail damage, or
-                vandalism. It's especially important in Texas, where severe weather, such as hailstorms and floods, is
-                common.</p>
+        <!-- Carousel Items -->
+        <div class="carousel-inner">
+          @for (chunk of optionalCoveragesChunks; track $index) {
+          <div class="carousel-item" [class.active]="$index === 0">
+            <div class="row g-4">
+              @for (item of chunk; track item.TITLE) {
+              <div class="col-md-4">
+                <div class="insurance-card optional h-100">
+                  <div class="card-body">
+                    <h6>{{ item.TITLE }}</h6>
+                    <p>{{ item.DESC }}</p>
+                  </div>
+                </div>
+              </div>
+              }
             </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="insurance-card optional">
-            <!-- <div class="card-icon"><i class="bi bi-plus-square"></i></div> -->
-            <div class="card-body">
-              <h6>Medical Payments (MedPay)</h6>
-              <p>MedPay covers medical bills for you and your passengers after an accident, regardless of who's at
-                fault. It's a comprehensive and helpful option if you want to ensure that medical expenses are covered
-                in addition to your PIP or health insurance.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="insurance-card optional">
-            <!-- <div class="card-icon"><i class="bi bi-car-front"></i></div> -->
-            <div class="card-body">
-              <h6>Gap Insurance</h6>
-              <p>Gap insurance is useful if you owe more on your car loan or lease than the car is worth. If your car is
-                totaled in an accident, gap insurance helps cover the difference between what you owe and what your
-                insurance pays.</p>
-            </div>
-          </div>
+          }
         </div>
       </div>
     </div>
@@ -392,23 +327,16 @@
       <div class="row">
         <div class="col-lg-10">
           <!-- Title -->
-          <h4 class="cost-title mb-4">How Much Does Car Insurance Cost in Texas?</h4>
+          <h4 class="cost-title mb-4">{{ 'AUTO_INSURANCE.COST.TITLE' | translate }}</h4>
 
           <!-- Description Content -->
           <div class="cost-description">
             <p class="mb-4">
-              Car insurance rates in Texas can vary widely depending on several factors. On average, drivers in the
-              state can expect to pay around $85 per month for the minimum liability coverage and about $215 per month
-              for full coverage. However, your actual cost can vary based on where you live, your driving history, and
-              other factors.
+              {{ 'AUTO_INSURANCE.COST.DESC1' | translate }}
             </p>
 
             <p>
-              Texas car insurance rates are generally higher than in some other states due to factors such as traffic
-              congestion, frequent accidents, and the state's vulnerability to severe weather. Compared with other
-              states, Texas tends to have higher insurance costs, especially in urban areas. States with lower premiums
-              typically have fewer traffic issues, fewer accidents, and fewer weather-related claims, all of which
-              contribute to lower rates.
+              {{ 'AUTO_INSURANCE.COST.DESC2' | translate }}
             </p>
           </div>
         </div>
@@ -418,30 +346,26 @@
 
   <section class="rates-section py-5">
     <div class="container">
-      <!-- Header -->
+      <!-- Header 1: City -->
       <div class="rates-header mb-4">
-        <h5 class="fw-bold">Average Auto Insurance Rates by Texas City</h5>
-        <p class="small  mb-0">Auto insurance rates can vary significantly by city in Texas due to several
-          factors. These include traffic density, accident frequency, crime rates, and weather conditions. Cities like
-          Houston and Dallas tend to have higher rates because of heavy traffic, more accidents, and higher theft rates.
-          Smaller cities or rural areas may have lower rates due to less congestion and fewer claims.</p>
+        <h5 class="fw-bold">{{ 'AUTO_INSURANCE.RATES.CITY.TITLE' | translate }}</h5>
+        <p class="small mb-0">{{ 'AUTO_INSURANCE.RATES.CITY.DESC' | translate }}</p>
       </div>
 
-      <!-- Table Container -->
+      <!-- Table 1: City -->
       <div class="rates-table-card p-4">
         <div class="row g-2 text-center text-white fw-bold mb-2">
           <div class="col-6">
-            <div class="header-pill bg-danger py-2">City</div>
+            <div class="header-pill bg-danger py-2">{{ 'AUTO_INSURANCE.RATES.CITY.H1' | translate }}</div>
           </div>
           <div class="col-3">
-            <div class="header-pill bg-danger py-2">Avg. Monthly - Full Coverage</div>
+            <div class="header-pill bg-danger py-2">{{ 'AUTO_INSURANCE.RATES.CITY.H2' | translate }}</div>
           </div>
           <div class="col-3">
-            <div class="header-pill bg-danger py-2">Avg. Annual - Full Coverage</div>
+            <div class="header-pill bg-danger py-2">{{ 'AUTO_INSURANCE.RATES.CITY.H3' | translate }}</div>
           </div>
         </div>
 
-        <!-- Data Rows -->
         <div class="rates-rows">
           @for (rate of rates; track rate.city; let i = $index) {
           <div class="row g-2 text-center mb-2 align-items-center">
@@ -464,45 +388,38 @@
           }
         </div>
 
-
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>Source: <a href="#">Bankrate</a></p>
-          <p class="last-updated">Last Updated: March 2026</p>
+          <p>{{ 'AUTO_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">Bankrate</a></p>
+          <p class="last-updated">{{ 'AUTO_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
         </div>
         <div class="disclaimer mt-2">
-          <p class=" mb-0"><strong>Disclaimer:</strong> The information provided on this page is for
-            general informational purposes only and may not reflect the most current updates. Coverage requirements,
-            rates, and laws are subject to change. Please consult a licensed insurance agent for the most accurate and
-            up-to-date information.</p>
+          <p class="mb-0"><strong>Disclaimer:</strong> {{ 'AUTO_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
         </div>
       </div>
 
       <div class="py-5"></div>
 
+      <!-- Header 2: Company -->
       <div class="rates-header mb-4">
-        <h5 class="fw-bold">Average Auto Insurance Rates by Insurance Company in Texas</h5>
-        <p class="small  mb-0">Each insurance company sets its rates based on factors such as claims history,
-          underwriting rules, and risk models. Some providers focus on offering the cheapest vehicle insurance in Texas
-          for certain driver profiles, while others emphasize broader coverage options. Comparing quotes is one of the
-          best ways to find insurance that still provides reliable protection.</p>
+        <h5 class="fw-bold">{{ 'AUTO_INSURANCE.RATES.COMPANY.TITLE' | translate }}</h5>
+        <p class="small mb-0">{{ 'AUTO_INSURANCE.RATES.COMPANY.DESC' | translate }}</p>
       </div>
 
-      <!-- Table Container -->
+      <!-- Table 2: Company -->
       <div class="rates-table-card p-4">
         <div class="row g-2 text-center text-white fw-bold mb-2">
           <div class="col-6">
-            <div class="header-pill bg-danger py-2">Insurance Company</div>
+            <div class="header-pill bg-danger py-2">{{ 'AUTO_INSURANCE.RATES.COMPANY.H1' | translate }}</div>
           </div>
           <div class="col-3">
-            <div class="header-pill bg-danger py-2">Avg. Monthly - Liability Only</div>
+            <div class="header-pill bg-danger py-2">{{ 'AUTO_INSURANCE.RATES.COMPANY.H2' | translate }}</div>
           </div>
           <div class="col-3">
-            <div class="header-pill bg-danger py-2">Avg. Monthly - Full Coverage</div>
+            <div class="header-pill bg-danger py-2">{{ 'AUTO_INSURANCE.RATES.COMPANY.H3' | translate }}</div>
           </div>
         </div>
 
-        <!-- Data Rows -->
         <div class="rates-rows">
           @for (rate of companyRates; track rate.company; let i = $index) {
           <div class="row g-2 text-center mb-2 align-items-center">
@@ -525,47 +442,39 @@
           }
         </div>
 
-
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>Source: <a href="#">Insurify</a></p>
-          <p class="last-updated">Last Updated: March 2026</p>
+          <p>{{ 'AUTO_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">Insurify</a></p>
+          <p class="last-updated">{{ 'AUTO_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
         </div>
         <div class="disclaimer mt-2">
-          <p class=" mb-0"><strong>Disclaimer:</strong> The information provided on this page is for general
-            informational purposes only and may not reflect the most current updates. Coverage requirements, rates, and
-            laws are subject to change. Please consult a licensed insurance agent for the most accurate and up-to-date
-            information.</p>
+          <p class="mb-0"><strong>Disclaimer:</strong> {{ 'AUTO_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
         </div>
       </div>
 
       <div class="py-5"></div>
 
+      <!-- Header 3: Vehicle -->
       <div class="rates-header mb-4">
-        <h5 class="fw-bold">Average Rates by Vehicle Make in Texas</h5>
-        <p class="small  mb-0">The type of vehicle you drive can impact your auto insurance rates. Certain cars, like
-          sedans or those with advanced safety features, are often cheaper to insure. By choosing a vehicle that aligns
-          with your insurance provider's criteria, you can maximize your discounts and lower your premiums. Maintaining
-          a clean driving record and opting for higher deductibles can further reduce your costs.</p>
+        <h5 class="fw-bold">{{ 'AUTO_INSURANCE.RATES.VEHICLE.TITLE' | translate }}</h5>
+        <p class="small mb-0">{{ 'AUTO_INSURANCE.RATES.VEHICLE.DESC' | translate }}</p>
       </div>
 
-      <!-- Table Container -->
+      <!-- Table 3: Vehicle -->
       <div class="rates-table-card p-4">
         <div class="row g-2 text-center text-white fw-bold mb-2">
           <div class="col-6">
-            <div class="header-pill bg-danger py-2">Vehicle Make</div>
+            <div class="header-pill bg-danger py-2">{{ 'AUTO_INSURANCE.RATES.VEHICLE.H1' | translate }}</div>
           </div>
           <div class="col-6">
-            <div class="header-pill bg-danger py-2">Avg. Monthly Premium</div>
+            <div class="header-pill bg-danger py-2">{{ 'AUTO_INSURANCE.RATES.VEHICLE.H2' | translate }}</div>
           </div>
         </div>
 
-        <!-- Data Rows -->
         <div class="rates-rows">
-          <!-- Cheapest -->
           <div class="row g-2 mb-2">
             <div class="col-12">
-              <div class="category-pill">Cheapest to Insure</div>
+              <div class="category-pill">{{ 'AUTO_INSURANCE.RATES.VEHICLE.CAT1' | translate }}</div>
             </div>
           </div>
           @for (rate of cheapestVehicles; track rate.make; let i = $index) {
@@ -583,10 +492,9 @@
           </div>
           }
 
-          <!-- Expensive -->
           <div class="row g-2 mb-2 mt-4">
             <div class="col-12">
-              <div class="category-pill">Most Expensive to Insure</div>
+              <div class="category-pill">{{ 'AUTO_INSURANCE.RATES.VEHICLE.CAT2' | translate }}</div>
             </div>
           </div>
           @for (rate of expensiveVehicles; track rate.make; let i = $index) {
@@ -605,46 +513,39 @@
           }
         </div>
 
-
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>Source: <a href="https://www.finder.com/" target="_blank">Finder</a></p>
-          <p class="last-updated">Last Updated: March 2026</p>
+          <p>{{ 'AUTO_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="https://www.finder.com/"
+              target="_blank">Finder</a></p>
+          <p class="last-updated">{{ 'AUTO_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
         </div>
         <div class="disclaimer mt-2">
-          <p class=" mb-0"><strong>Disclaimer:</strong> The information provided on this page is for general
-            informational purposes only and may not reflect the most current updates. Coverage requirements, rates, and
-            laws are subject to change. Please consult a licensed insurance agent for the most accurate and up-to-date
-            information.</p>
+          <p class="mb-0"><strong>Disclaimer:</strong> {{ 'AUTO_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
         </div>
       </div>
 
       <div class="py-5"></div>
 
+      <!-- Header 4: Driver Profile -->
       <div class="rates-header mb-4">
-        <h5 class="fw-bold">Average Texas Car Insurance Rates by Driver Profile</h5>
-        <p class="small mb-0">A driver profile refers to the specific details about a driver that influence their
-          insurance rates. These details include driving history, age, gender, and the type of vehicle they drive.
-          Insurance companies use this information to determine the level of risk associated with insuring that driver,
-          which directly affects their monthly premium. Different profiles can lead to significant differences in rates.
-        </p>
+        <h5 class="fw-bold">{{ 'AUTO_INSURANCE.RATES.DRIVER.TITLE' | translate }}</h5>
+        <p class="small mb-0">{{ 'AUTO_INSURANCE.RATES.DRIVER.DESC' | translate }}</p>
       </div>
 
-      <!-- Table Container -->
+      <!-- Table 4: Driver Profile -->
       <div class="rates-table-card p-4">
         <div class="row g-2 text-center text-white fw-bold mb-2">
           <div class="col-6">
-            <div class="header-pill bg-danger py-2">Driver Record</div>
+            <div class="header-pill bg-danger py-2">{{ 'AUTO_INSURANCE.RATES.DRIVER.H1' | translate }}</div>
           </div>
           <div class="col-3">
-            <div class="header-pill bg-danger py-2">Avg. Monthly Quote</div>
+            <div class="header-pill bg-danger py-2">{{ 'AUTO_INSURANCE.RATES.DRIVER.H2' | translate }}</div>
           </div>
           <div class="col-3">
-            <div class="header-pill bg-danger py-2">% vs. Clean Record</div>
+            <div class="header-pill bg-danger py-2">{{ 'AUTO_INSURANCE.RATES.DRIVER.H3' | translate }}</div>
           </div>
         </div>
 
-        <!-- Data Rows -->
         <div class="rates-rows">
           @for (rate of driverRates; track rate.profile; let i = $index) {
           <div class="row g-2 text-center mb-2 align-items-center">
@@ -667,47 +568,39 @@
           }
         </div>
 
-
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>Source: <a href="https://insurify.com/" target="_blank">Insurify</a></p>
-          <p class="last-updated">Last Updated: March 2026</p>
+          <p>{{ 'AUTO_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="https://insurify.com/"
+              target="_blank">Insurify</a></p>
+          <p class="last-updated">{{ 'AUTO_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
         </div>
         <div class="disclaimer mt-2">
-          <p class=" mb-0"><strong>Disclaimer:</strong> The information provided on this page is for general
-            informational purposes only and may not reflect the most current updates. Coverage requirements, rates, and
-            laws are subject to change. Please consult a licensed insurance agent for the most accurate and up-to-date
-            information.</p>
+          <p class="mb-0"><strong>Disclaimer:</strong> {{ 'AUTO_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
         </div>
       </div>
-
 
       <div class="py-5"></div>
 
+      <!-- Header 5: Min vs Full -->
       <div class="rates-header mb-4">
-        <h5 class="fw-bold">Minimum Coverage vs. Full Coverage in Texas</h5>
-        <p class="small mb-0">In Texas, minimum coverage refers to the legally required liability insurance: $30,000 per
-          person for bodily injury, $60,000 per accident for bodily injury, and $25,000 for property damage. It covers
-          damages you cause to others, but it doesn't protect your own vehicle. Drivers considering policies often
-          consider whether minimum coverage is sufficient or whether upgrading will provide the best auto insurance for
-          their situation.</p>
+        <h5 class="fw-bold">{{ 'AUTO_INSURANCE.RATES.COMPARISON.TITLE' | translate }}</h5>
+        <p class="small mb-0">{{ 'AUTO_INSURANCE.RATES.COMPARISON.DESC' | translate }}</p>
       </div>
 
-      <!-- Table Container -->
+      <!-- Table 5: Min vs Full -->
       <div class="rates-table-card p-4">
         <div class="row g-2 text-center text-white fw-bold mb-2">
           <div class="col-6">
-            <div class="header-pill bg-danger py-2">Feature</div>
+            <div class="header-pill bg-danger py-2">{{ 'AUTO_INSURANCE.RATES.COMPARISON.H1' | translate }}</div>
           </div>
           <div class="col-3">
-            <div class="header-pill bg-danger py-2">Minimum Coverage (State Required)</div>
+            <div class="header-pill bg-danger py-2">{{ 'AUTO_INSURANCE.RATES.COMPARISON.H2' | translate }}</div>
           </div>
           <div class="col-3">
-            <div class="header-pill bg-danger py-2">Full Coverage (Recommended)</div>
+            <div class="header-pill bg-danger py-2">{{ 'AUTO_INSURANCE.RATES.COMPARISON.H3' | translate }}</div>
           </div>
         </div>
 
-        <!-- Data Rows -->
         <div class="rates-rows">
           @for (rate of coverageComparison; track rate.feature; let i = $index) {
           <div class="row g-2 text-center mb-2 align-items-center">
@@ -730,17 +623,14 @@
           }
         </div>
 
-
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>Source: <a href="https://smartinsurance.com/" target="_blank">Smart Insurance</a></p>
-          <p class="last-updated">Last Updated: March 2026</p>
+          <p>{{ 'AUTO_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="https://smartinsurance.com/"
+              target="_blank">Smart Insurance</a></p>
+          <p class="last-updated">{{ 'AUTO_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
         </div>
         <div class="disclaimer mt-2">
-          <p class=" mb-0"><strong>Disclaimer:</strong> The information provided on this page is for general
-            informational purposes only and may not reflect the most current updates. Coverage requirements, rates, and
-            laws are subject to change. Please consult a licensed insurance agent for the most accurate and up-to-date
-            information.</p>
+          <p class="mb-0"><strong>Disclaimer:</strong> {{ 'AUTO_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
         </div>
       </div>
     </div>
@@ -748,25 +638,21 @@
 
   <section class="factors-impact-section">
     <div class="container">
-      <h2 class="section-title">Factors That Impact Your Texas Auto Insurance Rates</h2>
+      <h2 class="section-title">{{ 'AUTO_INSURANCE.FACTORS_IMPACT.HEADER.TITLE' | translate }}</h2>
       <p class="intro-text">
-        Several factors influence how much you pay for auto insurance. Insurance companies evaluate these risks based on
-        a
-        variety of personal details, driving history, location, and the type of vehicle you own. Understanding these
-        fundamental factors can help drivers find affordable auto insurance in Texas when selecting coverage,
-        potentially lowering their premiums and ensuring they get the best deal.
+        {{ 'AUTO_INSURANCE.FACTORS_IMPACT.HEADER.DESC' | translate }}
       </p>
 
       <div class="row">
-        @for (factor of impactFactors; track factor.title) {
+        @for (key of impactFactorsKeys; track key) {
         <div class="col-lg-6">
           <div class="factor-item">
             <div class="icon-wrapper">
-              <i [class]="factor.icon"></i>
+              <i [class]="'AUTO_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.ICON' | translate"></i>
             </div>
             <div class="factor-content">
-              <h6>{{ factor.title }}</h6>
-              <p>{{ factor.description }}</p>
+              <h6>{{ ('AUTO_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }}</h6>
+              <p>{{ ('AUTO_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}</p>
             </div>
           </div>
         </div>
@@ -777,24 +663,21 @@
 
   <section class="factors-impact-section bg-white">
     <div class="container px-4">
-      <h2 class="section-title">How to Maximize Your Discounts and Lower Your Premium</h2>
+      <h2 class="section-title">{{ 'AUTO_INSURANCE.DISCOUNT_FACTORS.HEADER.TITLE' | translate }}</h2>
       <p class="intro-text">
-        Maximizing discounts is an easy way to lower your auto insurance premiums. Insurance companies offer various
-        discounts based on your driving habits, vehicle features, and other factors. By bundling policies, maintaining a
-        clean driving record, or having safety features in your car, you can reduce your rates. Explore all available
-        discounts to save on your auto insurance in Texas.
+        {{ 'AUTO_INSURANCE.DISCOUNT_FACTORS.HEADER.DESC' | translate }}
       </p>
 
       <div class="row mt-5">
-        @for (discount of discountFactors; track discount.title) {
+        @for (key of discountKeys; track key) {
         <div class="col-lg-6">
           <div class="factor-item">
             <div class="icon-wrapper">
-              <i [class]="discount.icon"></i>
+              <i [class]="'AUTO_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.ICON' | translate"></i>
             </div>
             <div class="factor-content">
-              <h6>{{ discount.title }}</h6>
-              <p>{{ discount.description }}</p>
+              <h6>{{ ('AUTO_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translate }}</h6>
+              <p>{{ ('AUTO_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translate }}</p>
             </div>
           </div>
         </div>
@@ -805,19 +688,11 @@
 
   <section class="rates-section bg-pink py-5">
     <div class="container container-max-1100 px-4">
-      <h2 class="section-title">Independent Insurance Agency vs. Captive Agent: Why Choice Saves You Money</h2>
+      <h2 class="section-title">{{ 'AUTO_INSURANCE.AGENT_COMPARISON.HEADER.TITLE' | translate }}</h2>
       <div class="intro-text">
-        <p>When shopping for auto insurance in Texas, the type of agent you work with can make a significant difference
-          in both
-          price and coverage. Many drivers assume all insurance agents work the same way, but that is not true. There
-          are
-          two main types of agents: captive agents and independent insurance brokers.</p>
-        <p>Insurance rates change frequently. In 2026, many carriers adjusted pricing due to inflation, repair costs,
-          and
-          increased claims. When you work with a captive agent, you are stuck if that company raises its rates. With an
-          independent broker, your policy can be re-shopped across multiple carriers when prices change. This allows you
-          to maintain affordable auto insurance in Texas without having to search for a new agent every year.</p>
-        <p>Understanding the difference can help you find cheap auto insurance without sacrificing coverage or service.
+        <p>{{ 'AUTO_INSURANCE.AGENT_COMPARISON.HEADER.DESC' | translate }}</p>
+        <p>{{ 'AUTO_INSURANCE.AGENT_COMPARISON.HEADER.DESC2' | translate }}</p>
+        <p>{{ 'AUTO_INSURANCE.AGENT_COMPARISON.HEADER.DESC3' | translate }}
         </p>
       </div>
 
@@ -825,33 +700,39 @@
       <div class="rates-table-card p-4 mt-5">
         <div class="row g-2 text-center text-white fw-bold mb-2">
           <div class="col-4">
-            <div class="header-pill bg-danger py-2">Feature</div>
+            <div class="header-pill bg-danger py-2">{{ 'AUTO_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.FEATURE' |
+              translate
+              }}</div>
           </div>
           <div class="col-4">
-            <div class="header-pill bg-danger py-2">Independent Broker</div>
+            <div class="header-pill bg-danger py-2">{{ 'AUTO_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.INDEPENDENT' |
+              translate
+              }}</div>
           </div>
           <div class="col-4">
-            <div class="header-pill bg-danger py-2">Captive Agent</div>
+            <div class="header-pill bg-danger py-2">{{ 'AUTO_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.CAPTIVE' |
+              translate
+              }}</div>
           </div>
         </div>
 
         <!-- Data Rows -->
         <div class="rates-rows">
-          @for (item of agentComparisonData; track item.feature; let i = $index) {
+          @for (item of agentComparisonData; track item; let i = $index) {
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ item.feature }}
+                {{ ('AUTO_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translate }}
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ item.independent }}
+                {{ ('AUTO_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translate }}
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ item.captive }}
+                {{ ('AUTO_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translate }}
               </div>
             </div>
           </div>
@@ -863,16 +744,16 @@
 
   <section class="vehicle-types-section">
     <div class="container px-4">
-      <h2 class="section-title">Your One-Stop Shop for Every Type of Vehicle in Texas</h2>
+      <h2 class="section-title">{{ 'AUTO_INSURANCE.VEHICLE_INSURANCE_TYPES.HEADER.TITLE' | translate }}</h2>
       <div class="row g-4">
-        @for (type of vehicleInsuranceTypes; track type.title) {
+        @for (type of vehicleInsuranceTypes; track type) {
         <div class="col-lg-4 col-md-6 col-sm-6">
           <div class="vehicle-type-card">
             <div class="icon-wrapper">
-              <i [class]="type.icon"></i>
+              <i [class]="'AUTO_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.ICON' | translate"></i>
             </div>
-            <h6>{{ type.title }}</h6>
-            <p>{{ type.description }}</p>
+            <h6>{{ ('AUTO_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.TITLE') | translate }}</h6>
+            <p>{{ ('AUTO_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.DESCRIPTION') | translate }}</p>
           </div>
         </div>
         }
@@ -882,32 +763,23 @@
 
   <section class="high-risk-section">
     <div class="container px-4">
-      <h2 class="section-title">High-Risk Driver? We Can Still Help You</h2>
+      <h2 class="section-title">{{ 'AUTO_INSURANCE.HIGH_RISK_DRIVER.HEADER.TITLE' | translate }}</h2>
       <div class="intro-text">
-        <p>If you have been labeled a high-risk driver, finding auto insurance in Texas can feel frustrating. Many
-          drivers with past violations worry they will be rejected, overcharged, or told they cannot get coverage at
-          all.</p>
-        <p>At A-State Insurance, we work with drivers in these situations every day. Our goal is to help you get back on
-          the road with affordable auto insurance in Texas, even if other companies have turned you away.</p>
-        <p>These situations often make it harder to find cheap auto insurance in Texas, but they do not make it
-          impossible. Our agents specialize in working with carriers that offer policies specifically designed for
-          higher-risk drivers.</p>
+        <p>{{ 'AUTO_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC1' | translate }}</p>
+        <p>{{ 'AUTO_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC2' | translate }}</p>
+        <p>{{ 'AUTO_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC3' | translate }}</p>
       </div>
     </div>
   </section>
 
   <section class="language-section">
     <div class="container px-4">
-      <h2 class="section-title">Hablamos Español / We Speak Your Language</h2>
+      <h2 class="section-title">{{ 'AUTO_INSURANCE.LANGUAGE_SUPPORT.HEADER.TITLE' | translate }}</h2>
       <div class="intro-text">
-        <p>If Spanish is your preferred language, our team is ready to help you completely in Spanish. We guide you
-          through your options, explain Texas insurance requirements, and help you compare policies to find the top auto
-          insurance that fits your budget.</p>
-        <p>Instead of dealing with automated phone systems or confusing paperwork, you can speak directly with a local
-          agent who takes the time to answer your questions and help you choose the right protection.</p>
-        <p>Our multilingual team assists customers in Spanish, English, and Hindi, making it easier for families and
-          drivers from different backgrounds to understand their coverage and secure reliable vehicle insurance in
-          Texas.</p>
+        <p>{{ 'AUTO_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC1' | translate }}</p>
+        <p>{{ 'AUTO_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC2' | translate }}</p>
+        <p>{{ 'AUTO_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC3' | translate }}</p>
+
       </div>
     </div>
   </section>
@@ -918,7 +790,7 @@
       <div class="row mb-5 text-center">
         <div class="col-6">
           <h3 class="heading">
-            What Makes A-State Insurance Different
+            {{ 'AUTO_INSURANCE.ASTATE_DIFFERENTIATORS.HEADER.TITLE' | translate }}
           </h3>
         </div>
       </div>
@@ -932,10 +804,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'HOME.WHY_CHOOSE.CARD1.TITLE' | translate }}
+                  {{ 'AUTO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'HOME.WHY_CHOOSE.CARD1.DESC' | translate }}
+                  {{ 'AUTO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.DESCRIPTION' | translate }}
                 </p>
               </div>
             </div>
@@ -948,10 +820,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'HOME.WHY_CHOOSE.CARD2.TITLE' | translate }}
+                  {{ 'AUTO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'HOME.WHY_CHOOSE.CARD2.DESC' | translate }}
+                  {{ 'AUTO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.DESCRIPTION' | translate }}
                 </p>
               </div>
             </div>
@@ -966,10 +838,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'HOME.WHY_CHOOSE.CARD3.TITLE' | translate }}
+                  {{ 'AUTO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'HOME.WHY_CHOOSE.CARD3.DESC' | translate }}
+                  {{ 'AUTO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.DESCRIPTION' | translate }}
                 </p>
               </div>
             </div>
@@ -982,10 +854,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'HOME.WHY_CHOOSE.CARD4.TITLE' | translate }}
+                  {{ 'AUTO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'HOME.WHY_CHOOSE.CARD4.DESC' | translate }}
+                  {{ 'AUTO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.DESCRIPTION' | translate }}
                 </p>
               </div>
             </div>
@@ -1000,10 +872,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'HOME.WHY_CHOOSE.CARD5.TITLE' | translate }}
+                  {{ 'AUTO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'HOME.WHY_CHOOSE.CARD5.DESC' | translate }}
+                  {{ 'AUTO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' | translate }}
                 </p>
               </div>
             </div>
@@ -1016,10 +888,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'HOME.WHY_CHOOSE.CARD6.TITLE' | translate }}
+                  {{ 'AUTO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'HOME.WHY_CHOOSE.CARD6.DESC' | translate }}
+                  {{ 'AUTO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.DESCRIPTION' | translate }}
                 </p>
               </div>
             </div>
@@ -1042,38 +914,38 @@
         </div>
 
         <div class="col-md-6 ps-md-5">
-          <h2 class="section-title mb-5">Get Covered in 4 Simple Steps</h2>
+          <h2 class="section-title mb-5">{{ 'AUTO_INSURANCE.INSURANCE_STEPS.HEADER.TITLE' | translate }}</h2>
 
           <div class="timeline">
             <div class="timeline-item">
               <div class="dot"></div>
               <div class="content">
-                <h3>Reach Out</h3>
-                <p><a href="#">Contact our team</a> online or by phone to request a quick quote for auto insurance.</p>
+                <h3>{{ 'AUTO_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.TITLE' | translate }}</h3>
+                <p>{{ 'AUTO_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translate }}</p>
               </div>
             </div>
 
             <div class="timeline-item">
               <div class="dot"></div>
               <div class="content">
-                <h3>Get Advice</h3>
-                <p>Our agents compare multiple carriers and guide you toward affordable auto insurance.</p>
+                <h3>{{ 'AUTO_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.TITLE' | translate }}</h3>
+                <p>{{ 'AUTO_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.DESCRIPTION' | translate }}</p>
               </div>
             </div>
 
             <div class="timeline-item">
               <div class="dot"></div>
               <div class="content">
-                <h3>Pick Your Plan</h3>
-                <p>Review your options and choose the coverage that best fits your budget and driving needs.</p>
+                <h3>{{ 'AUTO_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.TITLE' | translate }}</h3>
+                <p>{{ 'AUTO_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.DESCRIPTION' | translate }}</p>
               </div>
             </div>
 
             <div class="timeline-item">
               <div class="dot"></div>
               <div class="content">
-                <h3>We've Got You</h3>
-                <p>Activate your policy and drive with confidence knowing your vehicle insurance is in place.</p>
+                <h3>{{ 'AUTO_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.TITLE' | translate }}</h3>
+                <p>{{ 'AUTO_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.DESCRIPTION' | translate }}</p>
               </div>
             </div>
           </div>
@@ -1085,14 +957,14 @@
 
   <section class="switch-steps-section">
     <div class="container px-4">
-      <h2 class="section-title">How to Switch Your Auto Insurance to A-State Insurance</h2>
+      <h2 class="section-title">{{ 'AUTO_INSURANCE.SWITCH_STEPS.HEADER.TITLE' | translate }}</h2>
 
       <div class="switch-steps-grid">
-        @for (step of switchSteps; track step.step) {
+        @for (step of switchSteps; track step) {
         <div class="switch-card-wrapper">
           <div class="switch-card">
-            <h6>{{ step.step }}</h6>
-            <p>{{ step.description }}</p>
+            <h6>{{ 'AUTO_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE' | translate }}</h6>
+            <p>{{ 'AUTO_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION' | translate }}</p>
           </div>
         </div>
         }
@@ -1102,21 +974,22 @@
 
   <section class="faq-section py-5">
     <div class="container">
-      <h2 class="faq-title mb-4">Frequently Asked Questions About Texas Auto Insurance</h2>
+      <h2 class="faq-title mb-4">{{ 'AUTO_INSURANCE.FAQ_LIST.HEADER.TITLE' | translate }}</h2>
 
       <div class="accordion accordion-flush" id="faqAccordion">
 
-        @for (item of faqList; track item.id) {
+        @for (item of faqList; track item) {
         <div class="accordion-item mb-3">
           <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              [attr.data-bs-target]="'#' + item.id" [attr.aria-controls]="item.id">
-              {{ item.question }}
+              [attr.data-bs-target]="'#' + item" [attr.aria-controls]="item">
+              {{ 'AUTO_INSURANCE.FAQ_LIST.QUESTIONS.' + item + '.QUESTION' | translate }}
             </button>
           </h2>
 
-          <div [id]="item.id" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-            <div class="accordion-body" [innerHTML]="item.answer">
+          <div [id]="item" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body"
+              [innerHTML]="'AUTO_INSURANCE.FAQ_LIST.QUESTIONS.' + item + '.ANSWER' | translate">
             </div>
           </div>
         </div>
@@ -1131,26 +1004,9 @@
       <div class="topSub">
         <div class="topSub2">
           <div class="h1">
-            Get a Free Auto Insurance Quote in Texas
+            {{ 'AUTO_INSURANCE.FREE_QUOTE.HEADER' | translate }}
           </div>
-          <p class="para">Get a free auto insurance quote in Texas today! Simply provide us with your details, such as
-            your vehicle
-            information and coverage needs. Our team will review the information and get back to you with personalized
-            quotes that best fit your budget and requirements. We work with top providers to ensure you get the best
-            coverage at the lowest possible price. It's quick, easy, and designed to save you time and money. Let us
-            help you secure the right insurance today with expert industry professionals!
-          </p>
-          <!-- 
-          <div class="selectable">
-            
-            @for (item of chips; track item.name) {
-            <div class="chip">
-              <i class="{{ item.icon }}"></i>
-              <span>{{ item.name | translate }}</span>
-            </div>
-            }
-          </div> -->
-
+          <p class="para">{{ 'AUTO_INSURANCE.FREE_QUOTE.DESCRIPTION' | translate }}</p>
           <div class="selectable mt-4">
             @for (item of chips.slice(0, 3); track item.name) {
             <div class="chip">
