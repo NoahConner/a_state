@@ -1,0 +1,897 @@
+<div class="homeMain">
+  <div class="topBanner">
+    <div class="container">
+      <div class="topSub">
+        <div class="topSub2">
+          <div class="h1">
+            {{ 'HOME_INSURANCE.BANNER.TITLE_LINE1' | translate }} <br />
+            {{ 'HOME_INSURANCE.BANNER.TITLE_LINE2' | translate }} <span class="heading-span">{{
+              'HOME_INSURANCE.BANNER.TITLE_LINE3' |
+              translate }}</span>
+          </div>
+          <!-- 
+          <div class="selectable">
+            
+            @for (item of chips; track item.name) {
+            <div class="chip">
+              <i class="{{ item.icon }}"></i>
+              <span>{{ item.name | translate }}</span>
+            </div>
+            }
+          </div> -->
+
+          <div class="selectable mt-4">
+            @for (item of chips.slice(0, 3); track item.name) {
+            <div class="chip">
+              <i class="{{ item?.icon }}"></i>
+              <span>{{ item?.name | translate }}</span>
+            </div>
+            }
+          </div>
+          <div class="selectable mt-2">
+            @for (item of chips.slice(3, 6); track item.name) {
+            <div class="chip">
+              <i class="{{ item?.icon }}"></i>
+              <span>{{ item?.name | translate }}</span>
+            </div>
+            }
+          </div>
+
+          <div class="inps">
+            <input type="text" [placeholder]="'HOME_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
+              class="form-control" />
+
+            <input type="number" [placeholder]="'HOME_INSURANCE.BANNER.FORM.PHONE' | translate" class="form-control" />
+          </div>
+
+          <button class="btn">
+            {{ 'HOME_INSURANCE.BANNER.FORM.BUTTON' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <h2 class="section-title mb-4">
+      {{ 'HOME_INSURANCE.WHY_DO_YOU_NEED.TITLE' | translate }}
+    </h2>
+    <p class="section-description mb-4">
+      {{ 'HOME_INSURANCE.WHY_DO_YOU_NEED.DESC' | translate }}
+    </p>
+
+    <p class="section-sub-title mb-4">
+      {{ 'HOME_INSURANCE.WHY_DO_YOU_NEED.SUB_TITLE' | translate }}
+    </p>
+
+    <div class="insurance-list">
+      <div class="insurance-item" *ngFor="let item of 'HOME_INSURANCE.WHY_DO_YOU_NEED.LIST' | translate; let i = index">
+
+        <div class="number">0{{ i + 1 }}</div>
+
+        <div class="content">
+          <h5>{{ item.TITLE }}</h5>
+          <p>{{ item.TEXT }}</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <section class="insurance-laws-section py-5">
+    <div class="container-max-800">
+
+      <h1 class="main-title">
+        {{ 'HOME_INSURANCE.LAWS.TITLE' | translate }}
+      </h1>
+
+      <p class="intro-text">
+        {{ 'HOME_INSURANCE.LAWS.INTRO' | translate }}
+        <br>
+        {{ 'HOME_INSURANCE.LAWS.INTRO1' | translate }}
+
+      </p>
+
+
+
+      <h2 class="section-subtitle">{{ 'HOME_INSURANCE.LAWS.SUBTITLE' | translate }}</h2>
+
+      <div class="row g-4 mb-5 mt-3">
+        @for (item of ('HOME_INSURANCE.LAWS.LIST' | translate); track item.TITLE) {
+        <div class="col-md-4">
+          <div class="insurance-card">
+            <div class="card-body">
+              <p>{{ item.DESC }}</p>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+  <section class="insurance-section py-5">
+    <div class="container">
+      <!-- Header -->
+      <div class="header-content mb-5">
+        <h6 class="text-danger fw-bold">{{ 'HOME_INSURANCE.COVERAGES.HEADER.TITLE' | translate }}</h6>
+        <p class="small text-muted">{{ 'HOME_INSURANCE.COVERAGES.HEADER.DESC' | translate }}</p>
+      </div>
+
+      <!-- Standard Coverages -->
+      <h5 class="section-title mb-2">{{ 'HOME_INSURANCE.COVERAGES.STANDARD.TITLE' | translate }}</h5>
+      <p class="small text-muted mb-4">{{ 'HOME_INSURANCE.COVERAGES.STANDARD.DESC' | translate }}</p>
+
+      <div class="row g-4 mb-5">
+        @for (item of ('HOME_INSURANCE.COVERAGES.STANDARD.LIST' | translate); track item.TITLE) {
+        <div class="col-md-4">
+          <div class="insurance-card">
+            <div class="card-icon"><i [class]="item.ICON"></i></div>
+            <div class="card-body">
+              <h6>{{ item.TITLE }}</h6>
+              <p>{{ item.DESC }}</p>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+
+      <div class="optional-header mb-4">
+        <span class="badge s bg-danger px-4 py-2 fs-5">{{ 'HOME_INSURANCE.COVERAGES.OPTIONAL.BADGE' | translate
+          }}</span>
+      </div>
+      <!-- Optional Coverages Carousel -->
+      <div id="optionalCoveragesCarousel" class="carousel slide pb-5" data-bs-ride="carousel">
+        <!-- Pagination Dots -->
+        <div class="carousel-indicators custom-dots mb-0">
+          @for (chunk of optionalCoveragesChunks; track $index) {
+          <button type="button" data-bs-target="#optionalCoveragesCarousel" [attr.data-bs-slide-to]="$index"
+            [class.active]="$index === 0" [attr.aria-current]="$index === 0"
+            [attr.aria-label]="'Slide ' + ($index + 1)"></button>
+          }
+        </div>
+
+        <!-- Carousel Items -->
+        <div class="carousel-inner">
+          @for (chunk of optionalCoveragesChunks; track $index) {
+          <div class="carousel-item" [class.active]="$index === 0">
+            <div class="row g-4">
+              @for (item of chunk; track item.TITLE) {
+              <div class="col-md-4">
+                <div class="insurance-card optional h-100">
+                  <div class="card-body">
+                    <h6>{{ item.TITLE }}</h6>
+                    <p>{{ item.DESC }}</p>
+                  </div>
+                </div>
+              </div>
+              }
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pending Content Change -->
+  <section class="factors-impact-section bg-white">
+    <div class="container px-4">
+      <h2 class="section-title">{{ 'AUTO_INSURANCE.DISCOUNT_FACTORS.HEADER.TITLE' | translate }}</h2>
+      <p class="intro-text">
+        {{ 'AUTO_INSURANCE.DISCOUNT_FACTORS.HEADER.DESC' | translate }}
+      </p>
+
+      <div class="row mt-5">
+        @for (key of discountKeys; track key) {
+        <div class="col-lg-6">
+          <div class="factor-item">
+            <div class="icon-wrapper">
+              <i [class]="'AUTO_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.ICON' | translate"></i>
+            </div>
+            <div class="factor-content">
+              <h6>{{ ('AUTO_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translate }}</h6>
+              <p>{{ ('AUTO_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translate }}</p>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+  <!-- Pending Content Change -->
+
+
+  <section class="home-insurance-types py-5">
+    <div class="container setup">
+      <div class="row mb-5">
+        <div class="col-12">
+          <h2 class="section-title">Types of Home Insurance Policies in Texas</h2>
+          <p class="section-subtitle">
+            Not every home requires the same level of protection. Insurance companies offer several homeowners'
+            insurance policy forms designed for different property types, ownership situations, and coverage needs.
+            Understanding these options helps homeowners select a policy that properly protects their home and financial
+            security while ensuring the coverage aligns with their lifestyle and property risks.
+          </p>
+        </div>
+      </div>
+
+      <div class="policy-timeline">
+
+        <div class="row justify-content-start mb-4">
+          <div class="col-lg-7">
+            <div class="policy-card">
+              <h6>HO-1 — Basic Form (Limited Coverage)</h6>
+              <p>HO-1 is the most basic homeowners policy and covers only a limited list of specific risks, such as
+                fire, lightning, and vandalism. Because protection is very limited, this policy is rarely used today.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-end mb-4">
+          <div class="col-lg-7">
+            <div class="policy-card">
+              <h6>HO-2 — Broad Form (Named Perils)</h6>
+              <p>HO-2 policies cover a wider list of named risks than HO-1. These may include events like fire, theft,
+                wind, hail, and certain types of water damage. Coverage still applies only to listed events, so it
+                provides more protection.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-start mb-4">
+          <div class="col-lg-7">
+            <div class="policy-card">
+              <h6>HO-3 — Special form (Most Common in Texas)</h6>
+              <p>HO-3 is the most commonly used homeowners' insurance policy in Texas. It typically covers the home's
+                structure against most risks, while personal belongings remain protected against listed events such as
+                fire, theft, and storms.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-end mb-4">
+          <div class="col-lg-7">
+            <div class="policy-card">
+              <h6>HO-4 — Renters Insurance</h6>
+              <p>HO-4 policies are designed for people who rent rather than own their homes. This coverage protects
+                personal belongings, provides liability protection, and may help cover temporary living costs if the
+                rental becomes unlivable.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-start mb-4">
+          <div class="col-lg-7">
+            <div class="policy-card">
+              <h6>HO-5 — Comprehensive Form (Broadest Coverage)</h6>
+              <p>HO-5 policies offer some of the most extensive protection available for homeowners. Both the home and
+                personal belongings are usually covered against a wide range of risks unless specifically excluded.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-end mb-4">
+          <div class="col-lg-7">
+            <div class="policy-card">
+              <h6>HO-6 — Condo Insurance</h6>
+              <p>HO-6 insurance is designed for condominium owners. It typically covers personal belongings, interior
+                structures such as walls or flooring, and liability protection. Condo associations usually insure the
+                main building structure.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-start mb-4">
+          <div class="col-lg-7">
+            <div class="policy-card">
+              <h6>HO-7 — Mobile & Manufactured Home Insurance</h6>
+              <p>HO-7 policies are created specifically for mobile or manufactured homes. Coverage is similar to HO-3
+                policies but tailored to address the unique structures, installations, and risk factors associated with
+                manufactured housing properties.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-end mb-4">
+          <div class="col-lg-7">
+            <div class="policy-card">
+              <h6>HO-8 — Older & Historic Home Insurance</h6>
+              <p>HO-8 policies are designed for older or historic homes where rebuilding costs may exceed the property's
+                market value. This policy type focuses on practical repair coverage, helping homeowners maintain and
+                protect properties.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="minimum-coverage-section py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10">
+          <!-- Title -->
+          <h4 class="minimum-coverage-title mb-4">{{ 'HOME_INSURANCE.MINIMUM_COVERAGE.TITLE' | translate }}</h4>
+
+          <!-- Description Content -->
+          <div class="minimum-coverage-description">
+            <p class="mb-4">
+              {{ 'HOME_INSURANCE.MINIMUM_COVERAGE.DESC1' | translate }}
+            </p>
+
+            <p>
+              {{ 'HOME_INSURANCE.MINIMUM_COVERAGE.DESC2' | translate }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cost-section py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10">
+          <!-- Title -->
+          <h4 class="cost-title mb-4">{{ 'HOME_INSURANCE.COST.TITLE' | translate }}</h4>
+
+          <!-- Description Content -->
+          <div class="cost-description">
+            <p class="mb-4">
+              {{ 'HOME_INSURANCE.COST.DESC1' | translate }}
+            </p>
+
+            <p>
+              {{ 'HOME_INSURANCE.COST.DESC2' | translate }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="rates-section py-5">
+    <div class="container">
+      <!-- Header 1: City -->
+      <div class="rates-header mb-4">
+        <h5 class="fw-bold">{{ 'HOME_INSURANCE.RATES.CITY.TITLE' | translate }}</h5>
+        <p class="small mb-0">{{ 'HOME_INSURANCE.RATES.CITY.DESC' | translate }}</p>
+      </div>
+
+      <!-- Table 1: City -->
+      <div class="rates-table-card p-4">
+        <div class="row g-2 text-center text-white fw-bold mb-2">
+          <div class="col-4">
+            <div class="header-pill bg-danger py-2">{{ 'HOME_INSURANCE.RATES.CITY.H1' | translate }}</div>
+          </div>
+          <div class="col-4">
+            <div class="header-pill bg-danger py-2">{{ 'HOME_INSURANCE.RATES.CITY.H2' | translate }}</div>
+          </div>
+          <div class="col-4">
+            <div class="header-pill bg-danger py-2">{{ 'HOME_INSURANCE.RATES.CITY.H3' | translate }}</div>
+          </div>
+        </div>
+
+        <div class="rates-rows">
+          @for (rate of rates; track rate.city; let i = $index) {
+          <div class="row g-2 text-center mb-2 align-items-center">
+            <div class="col-4">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ rate.city }}
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ rate.monthly }}
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ rate.annual }}
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+
+        <!-- Footer Info -->
+        <div class="d-flex justify-content-between mt-4 rates-footer-info">
+          <p>{{ 'HOME_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">Bankrate</a></p>
+          <p class="last-updated">{{ 'HOME_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
+        </div>
+        <div class="disclaimer mt-2">
+          <p class="mb-0"><strong>{{ 'HOME_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translate }}:</strong> {{
+            'HOME_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
+        </div>
+      </div>
+
+      <div class="py-5"></div>
+
+      <div class="rates-header mb-4">
+        <h5 class="fw-bold">{{ 'HOME_INSURANCE.RATES.COMPANIES.TITLE' | translate }}</h5>
+        <p class="small mb-0">{{ 'HOME_INSURANCE.RATES.COMPANIES.DESC' | translate }}</p>
+      </div>
+
+      <!-- Table 1: City -->
+      <div class="rates-table-card p-4">
+        <div class="row g-2 text-center text-white fw-bold mb-2">
+          <div class="col-4">
+            <div class="header-pill bg-danger py-2">{{ 'HOME_INSURANCE.RATES.COMPANIES.H1' | translate }}</div>
+          </div>
+          <div class="col-8">
+            <div class="header-pill bg-danger py-2">{{ 'HOME_INSURANCE.RATES.COMPANIES.H2' | translate }}</div>
+          </div>
+        </div>
+
+        <div class="rates-rows">
+          @for (rate of companyRates; track rate.carrier; let i = $index) {
+          <div class="row g-2 text-center mb-2 align-items-center">
+            <div class="col-4">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ rate.carrier }}
+              </div>
+            </div>
+            <div class="col-8">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ rate.monthly }}
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+
+        <!-- Footer Info -->
+        <div class="d-flex justify-content-between mt-4 rates-footer-info">
+          <p>{{ 'HOME_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">Insurify</a></p>
+          <p class="last-updated">{{ 'HOME_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
+        </div>
+        <div class="disclaimer mt-2">
+          <p class="mb-0"><strong>{{ 'HOME_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translate }}:</strong> {{
+            'HOME_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pending Content Change -->
+  <section class="factors-impact-section">
+    <div class="container">
+      <h2 class="section-title">{{ 'AUTO_INSURANCE.FACTORS_IMPACT.HEADER.TITLE' | translate }}</h2>
+      <p class="intro-text">
+        {{ 'AUTO_INSURANCE.FACTORS_IMPACT.HEADER.DESC' | translate }}
+      </p>
+
+      <div class="row">
+        @for (key of impactFactorsKeys; track key) {
+        <div class="col-lg-6">
+          <div class="factor-item">
+            <div class="icon-wrapper">
+              <i [class]="'AUTO_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.ICON' | translate"></i>
+            </div>
+            <div class="factor-content">
+              <h6>{{ ('AUTO_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }}</h6>
+              <p>{{ ('AUTO_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}</p>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+  <!-- Pending Content Change -->
+
+  <!-- Pending Content Change -->
+  <section class="factors-impact-section bg-white">
+    <div class="container px-4">
+      <h2 class="section-title">{{ 'AUTO_INSURANCE.DISCOUNT_FACTORS.HEADER.TITLE' | translate }}</h2>
+      <p class="intro-text">
+        {{ 'AUTO_INSURANCE.DISCOUNT_FACTORS.HEADER.DESC' | translate }}
+      </p>
+
+      <div class="row mt-5">
+        @for (key of discountKeys; track key) {
+        <div class="col-lg-6">
+          <div class="factor-item">
+            <div class="icon-wrapper">
+              <i [class]="'AUTO_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.ICON' | translate"></i>
+            </div>
+            <div class="factor-content">
+              <h6>{{ ('AUTO_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translate }}</h6>
+              <p>{{ ('AUTO_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translate }}</p>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+  <!-- Pending Content Change -->
+
+  <!-- Pending Content Change -->
+  <section class="rates-section bg-pink py-5">
+    <div class="container container-max-1100 px-4">
+      <h2 class="section-title">{{ 'AUTO_INSURANCE.AGENT_COMPARISON.HEADER.TITLE' | translate }}</h2>
+      <div class="intro-text">
+        <p>{{ 'AUTO_INSURANCE.AGENT_COMPARISON.HEADER.DESC' | translate }}</p>
+        <p>{{ 'AUTO_INSURANCE.AGENT_COMPARISON.HEADER.DESC2' | translate }}</p>
+        <p>{{ 'AUTO_INSURANCE.AGENT_COMPARISON.HEADER.DESC3' | translate }}
+        </p>
+      </div>
+
+      <!-- Table Container -->
+      <div class="rates-table-card p-4 mt-5">
+        <div class="row g-2 text-center text-white fw-bold mb-2">
+          <div class="col-4">
+            <div class="header-pill bg-danger py-2">{{ 'AUTO_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.FEATURE' |
+              translate
+              }}</div>
+          </div>
+          <div class="col-4">
+            <div class="header-pill bg-danger py-2">{{ 'AUTO_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.INDEPENDENT' |
+              translate
+              }}</div>
+          </div>
+          <div class="col-4">
+            <div class="header-pill bg-danger py-2">{{ 'AUTO_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.CAPTIVE' |
+              translate
+              }}</div>
+          </div>
+        </div>
+
+        <!-- Data Rows -->
+        <div class="rates-rows">
+          @for (item of agentComparisonData; track item; let i = $index) {
+          <div class="row g-2 text-center mb-2 align-items-center">
+            <div class="col-4">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ ('AUTO_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translate }}
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ ('AUTO_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translate }}
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ ('AUTO_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translate }}
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Pending Content Change -->
+
+  <!-- Pending Content Change -->
+  <section class="vehicle-types-section">
+    <div class="container px-4">
+      <h2 class="section-title">{{ 'AUTO_INSURANCE.VEHICLE_INSURANCE_TYPES.HEADER.TITLE' | translate }}</h2>
+      <div class="row g-4">
+        @for (type of vehicleInsuranceTypes; track type) {
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="vehicle-type-card">
+            <div class="icon-wrapper">
+              <i [class]="'AUTO_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.ICON' | translate"></i>
+            </div>
+            <h6>{{ ('AUTO_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.TITLE') | translate }}</h6>
+            <p>{{ ('AUTO_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.DESCRIPTION') | translate }}</p>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+  <!-- Pending Content Change -->
+
+  <section class="high-risk-section">
+    <div class="container px-4">
+      <h2 class="section-title">{{ 'HOME_INSURANCE.HIGH_RISK_DRIVER.HEADER.TITLE' | translate }}</h2>
+      <div class="intro-text">
+        <p>{{ 'HOME_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC1' | translate }}</p>
+        <p>{{ 'HOME_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC2' | translate }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="language-section">
+    <div class="container px-4">
+      <h2 class="section-title">{{ 'HOME_INSURANCE.LANGUAGE_SUPPORT.HEADER.TITLE' | translate }}</h2>
+      <div class="intro-text">
+        <p>{{ 'HOME_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC1' | translate }}</p>
+        <p>{{ 'HOME_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC2' | translate }}</p>
+
+      </div>
+    </div>
+  </section>
+
+
+  <div class="texan-choose-image">
+    <div class="container py-5 mt-5">
+      <div class="row mb-5 text-center">
+        <div class="col-6">
+          <h3 class="heading">
+            {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.HEADER.TITLE' | translate }}
+          </h3>
+        </div>
+      </div>
+      <div class="gap-m">
+        <!-- card start -->
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/carbon_license.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.DESCRIPTION' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/Heart.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.DESCRIPTION' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/calendar.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.DESCRIPTION' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/price.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.DESCRIPTION' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/wifi.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/agents.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.DESCRIPTION' | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- card end -->
+      </div>
+    </div>
+  </div>
+
+  <section class="insurance-steps py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <div class="image-container rounded-4 overflow-hidden position-relative">
+            <img src="assets/images/auto-insurance-step.png" alt="Texas Flag" class="img-fluid w-100">
+            <div class="red-overlay"></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 ps-md-5">
+          <h2 class="section-title mb-5">{{ 'HOME_INSURANCE.INSURANCE_STEPS.HEADER.TITLE' | translate }}</h2>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="dot"></div>
+              <div class="content">
+                <h3>{{ 'HOME_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.TITLE' | translate }}</h3>
+                <p>{{ 'HOME_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translate }}</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="dot"></div>
+              <div class="content">
+                <h3>{{ 'HOME_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.TITLE' | translate }}</h3>
+                <p>{{ 'HOME_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.DESCRIPTION' | translate }}</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="dot"></div>
+              <div class="content">
+                <h3>{{ 'HOME_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.TITLE' | translate }}</h3>
+                <p>{{ 'HOME_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.DESCRIPTION' | translate }}</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="dot"></div>
+              <div class="content">
+                <h3>{{ 'HOME_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.TITLE' | translate }}</h3>
+                <p>{{ 'HOME_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.DESCRIPTION' | translate }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="switch-steps-section">
+    <div class="container px-4">
+      <h2 class="section-title">{{ 'HOME_INSURANCE.SWITCH_STEPS.HEADER.TITLE' | translate }}</h2>
+
+      <div class="switch-steps-grid">
+        @for (step of switchSteps; track step) {
+        <div class="switch-card-wrapper">
+          <div class="switch-card">
+            <h6>{{ 'HOME_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE' | translate }}</h6>
+            <p>{{ 'HOME_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION' | translate }}</p>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section py-5">
+    <div class="container">
+      <h2 class="faq-title mb-4">{{ 'HOME_INSURANCE.FAQ_LIST.HEADER.TITLE' | translate }}</h2>
+
+      <div class="accordion accordion-flush" id="faqAccordion">
+
+        @for (item of faqList; track item) {
+        <div class="accordion-item mb-3">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              [attr.data-bs-target]="'#' + item" [attr.aria-controls]="item">
+              {{ 'HOME_INSURANCE.FAQ_LIST.QUESTIONS.' + item + '.QUESTION' | translate }}
+            </button>
+          </h2>
+
+          <div [id]="item" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body"
+              [innerHTML]="'HOME_INSURANCE.FAQ_LIST.QUESTIONS.' + item + '.ANSWER' | translate">
+            </div>
+          </div>
+        </div>
+        }
+
+      </div>
+    </div>
+  </section>
+
+  <div class="getCoverd">
+    <div class="container">
+      <div class="topSub">
+        <div class="topSub2">
+          <div class="h1">
+            {{ 'HOME_INSURANCE.FREE_QUOTE.HEADER' | translate }}
+          </div>
+          <p class="para">{{ 'HOME_INSURANCE.FREE_QUOTE.DESCRIPTION' | translate }}</p>
+          <div class="selectable mt-4">
+            @for (item of chips.slice(0, 3); track item.name) {
+            <div class="chip">
+              <i class="{{ item?.icon }}"></i>
+              <span>{{ item?.name | translate }}</span>
+            </div>
+            }
+          </div>
+          <div class="selectable mt-2">
+            @for (item of chips.slice(3, 6); track item.name) {
+            <div class="chip">
+              <i class="{{ item?.icon }}"></i>
+              <span>{{ item?.name | translate }}</span>
+            </div>
+            }
+          </div>
+
+          <div class="inps">
+            <input type="text" [placeholder]="'HOME_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
+              class="form-control" />
+
+            <input type="number" [placeholder]="'HOME_INSURANCE.BANNER.FORM.PHONE' | translate" class="form-control" />
+          </div>
+
+          <button class="btn">
+            {{ 'HOME_INSURANCE.BANNER.FORM.BUTTON' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- footuper -->
+  <div class="footUpper">
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="clipp"></div>
+    <div class="contain">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="icon">
+              <img src="/assets/images/logo.png" alt="User menu" />
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="h4">{{ 'FOOTER.SLOGAN' | translate }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  -->
+</div>
