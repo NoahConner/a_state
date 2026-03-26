@@ -103,69 +103,81 @@ export class HomeInsurance implements OnInit {
   ];
 
   impactFactorsKeys = [
-    'DRIVING_RECORD',
-    'INSURANCE_HISTORY',
-    'CREDIT_SCORE',
-    'CLAIMS_HISTORY',
     'LOCATION',
-    'COVERAGE_DEDUCTIBLE',
-    'AGE_EXPERIENCE',
-    'MULTI_VEHICLE',
-    'GENDER',
-    'VEHICLE_USE',
+    'HOME_AGE',
+    'HOME_SIZE',
+    'ROOF',
+    'REPLACEMENT_COST',
+    'CLAIMS_HISTORY',
+    'CREDIT_SCORE',
+    'DEDUCTIBLE',
+    'COVERAGE',
+    'SECURITY',
+    'POOL',
+    'FIRE_STATION',
+    'COASTAL',
     'MARITAL_STATUS',
-    'GARAGING',
-    'VEHICLE_TYPE',
-    'SAFETY_FEATURES',
-    'VEHICLE_CONDITION',
-    'SR22',
-    'ANNUAL_MILEAGE'
+    'INSURANCE_HISTORY'
   ];
 
   discountKeys = [
     'BUNDLING',
-    'VEHICLE_SAFETY',
-    'MULTI_CAR',
-    'HOMEOWNER',
-    'SAFE_DRIVER',
-    'VEHICLE_USE',
-    'GOOD_STUDENT',
-    'MILITARY',
-    'DEFENSIVE_DRIVING',
-    'STUDENT_AWAY',
-    'TELEMATICS',
+    'NEW_HOME',
+    'NEW_ROOF',
+    'CLAIM_FREE',
     'LOYALTY',
     'PAID_FULL',
-    'LOW_MILEAGE',
     'AUTO_PAY',
-    'EARLY_SIGNING',
     'PAPERLESS',
+    'SECURITY_SYSTEM',
+    'FIRE_SAFETY',
+    'LOCKS',
+    'GATED',
+    'IMPACT_ROOF',
+    'WIND_MITIGATION',
+    'NON_SMOKER',
     'SENIOR',
-    'ANTI_THEFT',
-    'GOOD_CREDIT',
-    'NEW_VEHICLE'
+    'MILITARY',
+    'NEW_PURCHASE',
+    'HIGH_DEDUCTIBLE'
+  ];
+  notCoveredKeys = [
+    'FLOOD_DAMAGE',
+    'EARTHQUAKE_DAMAGE',
+    'SEWER_DRAIN_BACKUP',
+    'NORMAL_WEAR_TEAR',
+    'PEST_TERMITE_DAMAGE',
+    'MOLD_ROT',
+    'FOUNDATION_SETTLING_ISSUES',
+    'POWER_OUTAGES_EQUIPMENT_BREAKDOWN',
+    'HOME_BASED_BUSINESS_LIABILITY',
+    'INTENTIONAL_DAMAGE'
   ];
   agentComparisonData = [
-    'NUMBER_OF_COMPANIES',
-    'COMPARE_RATES',
-    'FLEXIBILITY',
-    'GOAL',
-    'CLAIMS_ASSISTANCE',
-    'LANGUAGE_SUPPORT'
+    'CARRIERS',
+    'PRICE_COMPARISON',
+    'COVERAGE_OPTIONS',
+    'HIGH_RISK',
+    'OLDER_HOME',
+    'FLOOD_WIND',
+    'LOYALTY',
+    'RENEWAL',
+    'CLAIMS',
+    'CUSTOMIZATION',
+    'BUNDLING',
+    'SWITCHING',
+    'LOCAL',
+    'LANGUAGE'
   ];
 
   vehicleInsuranceTypes = [
-    'CAR',
-    'MOTORCYCLE',
-    'BOAT',
-    'RV_MOTORHOME',
-    'CLASSIC_CAR',
-    'COMMERCIAL_AUTO',
-    'SR22',
-    'ATV_UTV',
-    'MEXICAN_CAR',
-    'RIDESHARE',
-    'TRAILER'
+    'RENTERS',
+    'CONDO',
+    'COMMERCIAL_PROPERTY',
+    'MANUFACTURED_HOME',
+    'LANDLORD',
+    'FLOOD',
+    'EARTHQUAKE',
   ];
 
 
@@ -180,8 +192,6 @@ export class HomeInsurance implements OnInit {
     'FAQ2',
     'FAQ3',
     'FAQ4',
-    'FAQ5',
-    'FAQ6',
   ];
 
 }
