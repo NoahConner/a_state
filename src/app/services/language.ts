@@ -1,9 +1,10 @@
 import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { routeTranslations } from '../app-routing-module';
 import { Observable } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -12,8 +13,8 @@ export class Language {
   availableLangs = ['en', 'es'];
   private isBrowser: boolean;
   getLanguageChange(): Observable<LangChangeEvent> {
-  return this.translate.onLangChange;
-}
+    return this.translate.onLangChange;
+  }
 
   constructor(
     private translate: TranslateService,
@@ -22,6 +23,7 @@ export class Language {
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
     this.initLanguage();
+    this.listenToRouteChanges();
   }
 
   private initLanguage() {
@@ -41,44 +43,58 @@ export class Language {
     this.setLanguage(langToUse);
   }
 
-setLanguage(lang: string) {
+  private listenToRouteChanges() {
+    if (!this.isBrowser) return;
 
-  this.translate.use(lang);
+    this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe(() => {
+      const segments = this.router.url.split('/').filter(Boolean);
+      const routeLang = segments[0] === 'es' ? 'es' : 'en';
 
-  if (!this.isBrowser) return;
-
-  const segments = this.router.url.split('/').filter(Boolean);
-
-  let currentLang = 'en';
-  let currentSlug = '';
-
-  if (segments[0] === 'es') {
-    currentLang = 'es';
-    currentSlug = segments.slice(1).join('/');
-  } else {
-    currentSlug = segments.join('/');
+      if (routeLang !== this.translate.currentLang) {
+        this.translate.use(routeLang);
+        localStorage.setItem('lang', routeLang);
+        document.documentElement.lang = routeLang;
+      }
+    });
   }
 
-  const routeKey = Object.keys(routeTranslations).find(
-    (key) => routeTranslations[key][currentLang] === currentSlug
-  );
+  setLanguage(lang: string) {
+    this.translate.use(lang);
 
-  if (!routeKey) {
-    return; // prevent fallback to /
+    if (!this.isBrowser) return;
+
+    const segments = this.router.url.split('/').filter(Boolean);
+
+    let currentLang = 'en';
+    let currentSlug = '';
+
+    if (segments[0] === 'es') {
+      currentLang = 'es';
+      currentSlug = segments.slice(1).join('/');
+    } else {
+      currentSlug = segments.join('/');
+    }
+
+    const routeKey = Object.keys(routeTranslations).find(
+      (key) => routeTranslations[key][currentLang] === currentSlug,
+    );
+
+    if (!routeKey) {
+      return; // prevent fallback to /
+    }
+
+    const newSlug = routeTranslations[routeKey][lang];
+    const newSegments = newSlug.split('/');
+
+    if (lang === 'en') {
+      this.router.navigate(newSegments);
+    } else {
+      this.router.navigate(['es', ...newSegments]);
+    }
+
+    localStorage.setItem('lang', lang);
+    document.documentElement.lang = lang;
   }
-
-  const newSlug = routeTranslations[routeKey][lang];
-  const newSegments = newSlug.split('/');
-
-  if (lang === 'en') {
-    this.router.navigate(newSegments);
-  } else {
-    this.router.navigate(['es', ...newSegments]);
-  }
-
-  localStorage.setItem('lang', lang);
-  document.documentElement.lang = lang;
-}
 
   getCurrentLanguage() {
     return this.translate.currentLang;
