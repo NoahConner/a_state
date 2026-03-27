@@ -7,6 +7,7 @@
     "AUTO_INSURANCE": "Auto Insurance",
     "HOME_INSURANCE": "Home Insurance",
     "LIFE_INSURANCE": "Life Insurance",
+    "COMMERCIAL_INSURANCE": "Commercial Insurance",
     "OFFICE_LOCATOR": "Office Locator",
     "GET_A_QUOTE": "Get a Quote",
     "LANGUAGE": "Language"
@@ -3123,6 +3124,779 @@
     "FREE_QUOTE": {
       "HEADER": "Get a Free Homeowners Insurance Quote in Texas",
       "DESCRIPTION": "Secure your home and belongings with a free quote from A-State Insurance, a trusted Texas-licensed broker with 20+ years of experience. We compare multiple top carriers to find the best homeowners insurance tailored to your needs. Enjoy personalized coverage plans, multilingual support, Hispanic & Latino-friendly service, and expert guidance, either online or at our local office. Get peace of mind today!"
+    }
+  },
+  "COMMERCIAL_INSURANCE": {
+    "BANNER": {
+      "TITLE_LINE1": "Best & Cheapest Commercial Insurance in",
+      "TITLE_LINE2": "Texas — Starting from",
+      "TITLE_LINE3": " $79/Month",
+      "CHIPS": {
+        "GENERAL_LIABILITY": "General Liability",
+        "BUSINESS_OWNERS": "Business Owners",
+        "COMMERCIAL_AUTO": "Commercial Auto",
+        "WORKERS_COMPENSATION": "Workers Compensation",
+        "PROFESSIONAL_LIABILITY": "Professional Liability",
+        "OTHER": "Other"
+      },
+      "FORM": {
+        "FULL_NAME": "Full Name",
+        "PHONE": "Phone Number",
+        "BUTTON": "Get a Quote"
+      }
+    },
+    "WHY_DO_YOU_NEED": {
+      "TITLE": "What is Business Insurance and Why Does Your Business Need It?",
+      "DESC": "Business insurance is a policy that helps protect your company from financial loss due to unexpected events. This could include damages, lawsuits, theft, accidents, or other risks that could harm your business. With the right coverage, you ensure your business stays afloat even when things go wrong.",
+      "DESC1": "It also gives you peace of mind, knowing that your assets, employees, and operations are safeguarded. From property damage to liability claims, having comprehensive business insurance allows you to focus on growth and success rather than worrying about potential setbacks. Whether you run a small startup or a larger enterprise, the right insurance coverage is an essential part of responsible business management.",
+      "SUB_TITLE": "The following are the reasons why your business needs it:",
+      "LIST": [
+        {
+          "TITLE": "Protection from Lawsuits",
+          "TEXT": "No business is immune to legal disputes. If a customer or employee files a lawsuit, having insurance can cover legal fees and settlements, preventing potentially devastating financial losses."
+        },
+        {
+          "TITLE": "Safeguard Your Assets",
+          "TEXT": "Whether it’s your office space, equipment, or inventory, your business's physical assets are valuable. Business insurance ensures that they’re covered in the event of damage, theft, or disasters such as fire or flooding."
+        },
+        {
+          "TITLE": "Compliance with Law",
+          "TEXT": "In many industries, certain types of insurance (like workers' compensation) are legally required. Not having the proper coverage can lead to fines or penalties."
+        },
+        {
+          "TITLE": "Employee Protection",
+          "TEXT": "Workers' compensation insurance provides coverage for medical expenses and lost wages if an employee gets injured while working. This keeps your team safe and minimizes the risk to your operations."
+        },
+        {
+          "TITLE": "Business Continuity",
+          "TEXT": "In the face of a disaster, business interruption insurance helps replace lost income and covers expenses while you recover, ensuring your company can bounce back without permanent damage."
+        }
+      ]
+    },
+    "LAWS": {
+      "TITLE": "Is Commercial Insurance Required by Law in Texas?",
+      "INTRO": "In Texas, certain types of commercial insurance are required by law, while others are not mandatory but highly recommended.",
+      "DESC": "The most common legal requirement is workers' compensation insurance. If your business has employees, Texas law requires you to carry workers' comp coverage. This protects your employees if they get injured on the job and can help you avoid costly legal battles or financial hardship from workplace accidents.",
+      "DESC1": "Additionally, businesses with company-owned vehicles must carry commercial auto insurance. This coverage protects your business in the event of accidents or damage caused by company vehicles.",
+      "DESC2": "While there isn't a state law mandating general liability or business property insurance for all businesses, these policies are strongly advised to protect your assets and mitigate potential lawsuits. Many businesses also need specific types of coverage depending on their industry.",
+      "DESC3": "For example, healthcare professionals must carry professional liability insurance, and contractors may need general liability or builder's risk insurance.",
+      "DESC4": "If you're unsure of your legal obligations, it’s essential to consult a local agent to ensure your business meets all necessary insurance requirements. To explore the legal requirements for your business, visit the Texas Department of Insurance website for more details.",
+      "DESC5": "Not carrying the required coverage can result in significant penalties and expose your business to financial and legal risks. So, it's crucial to stay on top of your responsibilities and make sure you're covered before it’s too late."
+    },
+    "COVERAGES": {
+      "HEADER": {
+        "TITLE": "What Does Homeowners Insurance Cover in Texas?",
+        "DESC": "Homeowners insurance policies typically include several core protections that help safeguard your home, personal belongings, and financial stability. In addition to standard coverages, many insurers offer optional add-ons that expand protection. These endorsements allow Texas homeowners to tailor coverage based on their property type, potential risks, valuable assets, and individual lifestyle needs."
+      },
+      "STANDARD": {
+        "TITLE": "What Happens If Your Business Is Not Insured in Texas?",
+        "DESC": "Operating without insurance may seem like a way to save money, but the consequences of being uninsured in Texas can be catastrophic. The risks far outweigh the savings, and failure to secure proper coverage puts everything you’ve built at risk.",
+        "LIST": [
+          {
+            "TITLE": "Lawsuits and Legal Liabilities",
+            "DESC": "Without business insurance, your company is vulnerable to lawsuits. If a customer or employee is injured, or if property is damaged due to your business operations, you will be personally liable. Legal fees, court costs, and settlements could drain your personal and business assets, possibly leading to bankruptcy.",
+            "ICON": "fas fa-gavel"
+          },
+          {
+            "TITLE": "Exposing Personal Assets",
+            "DESC": "If your business is sued and you don't have insurance, your personal assets, such as your home, savings, or car, could be at risk. Unlike corporations, which have limited liability, sole proprietors and partnerships are personally responsible for business debts and liabilities.",
+            "ICON": "fas fa-exclamation-triangle"
+          },
+          {
+            "TITLE": "Ineligibility for Contracts",
+            "DESC": "Many clients, especially larger corporations and government entities, require proof of insurance before signing contracts. Without the right coverage, you may be disqualified from bidding on projects or lose contracts, severely limiting your business opportunities.",
+            "ICON": "fas fa-file-contract"
+          },
+          {
+            "TITLE": "Business Closure",
+            "DESC": "In some cases, an uninsured business can face costs so overwhelming that it leads to closure. The financial strain of a lawsuit, property damage, or even a simple accident can force a business to shut its doors for good.",
+            "ICON": "fas fa-times-circle"
+          },
+          {
+            "TITLE": "Fines and Penalties",
+            "DESC": "For businesses that are legally required to carry certain types of insurance, such as workers’ compensation or commercial auto insurance, failing to comply can lead to steep fines. Texas law has strict regulations, and non-compliance can result in significant penalties that add even more financial strain to your business.",
+            "ICON": "fas fa-money-bill-wave"
+          },
+          {
+            "TITLE": "Damage to Reputation",
+            "DESC": "Word spreads fast when a business is found to be uninsured. Customers, clients, and partners may lose confidence in your ability to run your business properly, leading to lost trust, opportunities, and business relationships.",
+            "ICON": "fas fa-user-times"
+          }
+        ]
+      },
+      "OPTIONAL": {
+        "TITLE": "What Does Commercial Insurance NOT Cover in Texas?",
+        "DESC": "While commercial insurance provides extensive coverage, there are some risks it does not protect against. Understanding these exclusions is vital for managing your business's overall risk and securing additional coverage where necessary. These exclusions may vary by policy, so it's important to review your insurance plan carefully and explore supplementary coverage if needed.",
+        "LIST": [
+          {
+            "TITLE": "Intentional or Fraudulent Acts",
+            "DESC": "Commercial insurance does not cover damages caused by intentional or fraudulent actions. If an employee or business owner deliberately causes harm, the insurance policy will not cover any resulting claims or losses.",
+            "ICON": "fas fa-ban"
+          },
+          {
+            "TITLE": "Employee Discrimination & Harassment Claims (EPLI)",
+            "DESC": "Claims related to employee discrimination, harassment, or wrongful termination are typically excluded unless you have specific Employment Practices Liability Insurance (EPLI). These cases are usually not covered under general business policies.",
+            "ICON": "fas fa-user-slash"
+          },
+          {
+            "TITLE": "Flood & Earthquake Damage",
+            "DESC": "Standard commercial insurance policies generally do not cover damage caused by floods or earthquakes. Additional coverage must be purchased separately to protect against these natural disasters, especially if you’re in a high-risk area.",
+            "ICON": "fas fa-house-damage"
+          },
+          {
+            "TITLE": "Normal Wear & Tear & Mechanical Breakdown",
+            "DESC": "Your insurance won’t cover damages caused by regular wear and tear or mechanical failure. Routine maintenance and repairs are among business owners' responsibilities, and these issues are typically excluded from coverage.",
+            "ICON": "fas fa-tools"
+          },
+          {
+            "TITLE": "Personal Auto Used for Business",
+            "DESC": "Personal auto insurance doesn’t extend to vehicles used for business or commercial purposes. If you use your personal car for work-related tasks, you need commercial auto coverage to protect your business in case of accidents or damage.",
+            "ICON": "fas fa-car"
+          },
+          {
+            "TITLE": "Contractor's Faulty Workmanship",
+            "DESC": "Commercial insurance typically won’t cover damages resulting from faulty workmanship. Contractors are responsible for fixing their errors, and unless covered by a warranty or additional policy, these issues won’t be covered by business insurance.",
+            "ICON": "fas fa-hard-hat"
+          },
+          {
+            "TITLE": "Cyber Attacks on Unendorsed Policies",
+            "DESC": "If your commercial policy does not include a cyber liability endorsement, it won’t cover costs related to cyberattacks or data breaches. Businesses handling sensitive information need to add specific coverage for cyber risks to stay protected.",
+            "ICON": "fas fa-shield-alt"
+          },
+          {
+            "TITLE": "Workers Injuries Without Workers Comp",
+            "DESC": "Without workers' compensation coverage, injuries to employees on the job won’t be covered by your commercial policy. Workers' comp is necessary to protect both your business and employees from medical bills, lost wages, and potential lawsuits.",
+            "ICON": "fas fa-user-injured"
+          },
+          {
+            "TITLE": "Professional Mistakes Without E&O Coverage",
+            "DESC": "Errors and omissions insurance is crucial for protecting your business against mistakes or oversights in your services. Without this coverage, your business is exposed to lawsuits from clients alleging financial harm due to your actions.",
+            "ICON": "fas fa-file-signature"
+          },
+          {
+            "TITLE": "Executive & Management Misconduct (D&O)",
+            "DESC": "Insurance covers claims related to executive misconduct, but it is not included in standard commercial policies. If your business doesn't have D&O coverage, executives and managers may be personally liable for their decisions and actions.",
+            "ICON": "fas fa-user-tie"
+          },
+          {
+            "TITLE": "Pandemic & Communicable Disease Losses",
+            "DESC": "Most commercial insurance policies exclude losses caused by pandemics or communicable diseases. In the event of widespread health crises, businesses need specialized coverage, such as business interruption insurance, to address such disruptions.",
+            "ICON": "fas fa-virus"
+          },
+          {
+            "TITLE": "War & Terrorism (Without Endorsement)",
+            "DESC": "Damage caused by acts of war or terrorism is typically not covered unless you add an endorsement to your policy. If your business operates in high-risk areas, it’s crucial to obtain this additional coverage to protect against catastrophic events.",
+            "ICON": "fas fa-explosion"
+          }
+        ]
+      }
+    },
+    "MINIMUM_COVERAGE": {
+      "TITLE": "Texas Homeowners Insurance Minimum Coverage Requirements",
+      "DESC1": "In Texas, homeowners' insurance is not legally required, but most mortgage lenders mandate coverage to protect their investment. Minimum coverage typically includes protection for the home’s structure, personal belongings, and liability for injuries that occur on the property. This ensures that homeowners are financially protected against common risks such as fire, theft, or storm damage.",
+      "DESC2": "Choosing the right coverage level is important, as underinsuring your home can leave you vulnerable to unexpected costs. A trusted broker like A-State Insurance helps Texans compare multiple policies from top carriers to find home insurance that meets lender requirements while balancing affordability and sufficient protection for their property and family."
+    },
+    "COST": {
+      "TITLE": "How Much Does Commercial Insurance Cost in Texas?",
+      "DESC1": "The cost of commercial insurance in Texas can vary significantly depending on factors such as your business size, industry, and coverage needs. On average, small businesses in Texas can expect to pay between $400 and $1,500 per year for a basic policy that covers general liability and business property. Rates may rise for businesses with more employees, higher risks, or specific industry needs. For example, contractors or healthcare providers might face higher premiums due to the specialized coverage required.",
+      "DESC2": "Compared with the national average, commercial insurance in Texas is generally more affordable. States like California and New York tend to have higher premiums due to increased risks and regulatory requirements. Texas businesses can often find competitive rates, especially when shopping around. To get a more accurate estimate for your business, consider requesting a customized quote tailored to your unique situation."
+    },
+    "RATES": {
+      "CITY": {
+        "TITLE": "Texas Commercial Insurance Minimum Requirements by Business Type",
+        "DESC": "In Texas, the insurance requirements vary by business type. Certain coverages are mandated by law, while others depend on your specific industry or business activities. For example, all businesses with employees must carry workers' compensation, while contractors need general liability coverage. Understanding your specific obligations is essential to staying compliant and protected.",
+        "H1": "Business Type",
+        "H2": "Required Coverage",
+        "H3": "Required By"
+      },
+      "COMPANIES": {
+        "TITLE": "Average Commercial Insurance Rates by Insurance Company in Texas",
+        "DESC": "Commercial insurance rates can vary widely between insurance companies due to differences in coverage options, customer service, and underwriting criteria. Each company assesses risk differently, which means they may offer varying premiums for similar coverage. Some insurers specialize in certain industries, offering more tailored policies, while others might charge higher rates based on their broader customer base.",
+        "H1": "Insurance Company",
+        "H2": "Avg. Monthly Rate"
+      },
+      "FOOTER": {
+        "SOURCE": "Source:",
+        "DISCLAIMER_LABEL": "Disclaimer",
+        "LAST_UPDATED": "Last Updated: March 2026",
+        "DISCLAIMER": "The information provided on this page is for general informational purposes only and may not reflect the most current updates. Coverage requirements, rates, and laws are subject to change. Please consult a licensed insurance agent for the most accurate and up-to-date information."
+      }
+    },
+    "FACTORS_IMPACT": {
+      "HEADER": {
+        "TITLE": "Factors That Impact Your Texas Commercial Insurance Rates",
+        "DESC": "Commercial insurance rates in Texas can vary based on multiple business-related factors, including industry, size, revenue, location, claims history, coverage choices, and risk management practices. Understanding these factors helps business owners anticipate premium costs, compare options, and secure coverage that protects assets, employees, and operations without overpaying."
+      },
+      "LIST": {
+        "INDUSTRY": {
+          "TITLE": "Industry & Business Type",
+          "DESC": "Certain industries pose higher risks and carry higher premiums. Businesses in construction, healthcare, and similar high-risk sectors may require specialized coverage."
+        },
+        "BUSINESS_SIZE": {
+          "TITLE": "Business Size & Number of Employees",
+          "DESC": "Larger businesses or those with more employees face higher premiums due to increased liability risks and broader insurance needs."
+        },
+        "REVENUE_PAYROLL": {
+          "TITLE": "Annual Revenue & Payroll",
+          "DESC": "Businesses with higher revenue and payroll often incur higher insurance costs because larger operations expose them to greater risk."
+        },
+        "YEARS_IN_BUSINESS": {
+          "TITLE": "Years in Business",
+          "DESC": "Businesses with longer operating history often pay lower premiums, reflecting stability and a proven track record of fewer claims."
+        },
+        "LOCATION": {
+          "TITLE": "Business Location & ZIP Code",
+          "DESC": "Areas with frequent claims or higher risk factors can increase premiums, as insurers view businesses in these locations as more likely to experience losses."
+        },
+        "CLAIMS_HISTORY": {
+          "TITLE": "Claims History",
+          "DESC": "A record of frequent claims indicates higher risk to insurers and can result in higher premiums. Clean histories are rewarded with lower rates."
+        },
+        "COVERAGE": {
+          "TITLE": "Coverage Type & Limits",
+          "DESC": "The type of coverage chosen and the policy limits influence premiums. Higher coverage limits typically lead to higher costs."
+        },
+        "DEDUCTIBLE": {
+          "TITLE": "Deductible Amount",
+          "DESC": "Choosing a higher deductible can reduce premiums since the business assumes a larger portion of potential claims."
+        },
+        "VEHICLES": {
+          "TITLE": "Number of Business Vehicles",
+          "DESC": "More vehicles increase commercial auto insurance costs because each adds potential liability exposure."
+        },
+        "PROPERTY_VALUE": {
+          "TITLE": "Value of Business Property & Equipment",
+          "DESC": "Higher-value property and equipment raise premiums, reflecting the cost to replace or repair these assets in case of damage."
+        },
+        "CREDIT_SCORE": {
+          "TITLE": "Credit-Based Insurance Score",
+          "DESC": "Businesses with strong credit histories may receive lower premiums, as insurers associate good credit with financial responsibility and lower risk."
+        },
+        "CONTRACTUAL_REQUIREMENTS": {
+          "TITLE": "Contractual Requirements",
+          "DESC": "Some contracts mandate specific coverage types, which can affect premium costs to comply with contractual obligations."
+        },
+        "SAFETY_PROTOCOLS": {
+          "TITLE": "Safety Protocols & Risk Management",
+          "DESC": "Robust safety measures and risk management practices reduce the likelihood of accidents and can help lower premiums."
+        },
+        "SUBCONTRACTORS": {
+          "TITLE": "Number of Subcontractors Used",
+          "DESC": "Hiring more subcontractors increases liability exposure, potentially raising insurance costs."
+        },
+        "LICENSES_CERTIFICATIONS": {
+          "TITLE": "Professional Licenses & Certifications",
+          "DESC": "Specialized licenses or certifications may increase premiums due to higher risks or specialized expertise required."
+        },
+        "CYBER_RISK": {
+          "TITLE": "Online Presence & Cyber Risk Exposure",
+          "DESC": "Businesses with significant online operations or digital assets may face higher premiums due to the increased risk of cyberattacks."
+        },
+        "INSURANCE_HISTORY": {
+          "TITLE": "Prior Insurance History / Coverage Lapses",
+          "DESC": "Continuous insurance coverage with no gaps can lower premiums. Lapses or coverage gaps suggest higher risk and may increase rates."
+        }
+      }
+    },
+    "DISCOUNT_FACTORS": {
+      "HEADER": {
+        "TITLE": "How to Maximize Your Discounts and Lower Your Premium",
+        "DESC": "There are several ways to reduce your commercial insurance premiums by taking advantage of available discounts. Understanding and applying these discounts can significantly lower your overall insurance costs while still maintaining adequate coverage."
+      },
+      "LIST": {
+        "BUNDLING": {
+          "TITLE": "Bundling Discount (Multiple Policies)",
+          "DESC": "Combine multiple policies with the same insurer to earn a discount, simplify your coverage, and reduce costs."
+        },
+        "BOP_BUNDLE": {
+          "TITLE": "Business Owners Policy (BOP) Bundle Discount",
+          "DESC": "Save money by bundling general liability and property insurance into a single Business Owners Policy (BOP)."
+        },
+        "CLAIM_FREE": {
+          "TITLE": "Claims-Free Discount",
+          "DESC": "Maintain a claims-free record for a certain period to receive a discount, reflecting your lower risk to insurers."
+        },
+        "PAID_FULL": {
+          "TITLE": "Paid-in-Full Discount",
+          "DESC": "Pay your annual premium upfront to receive a discount, as insurers often reward businesses for full payment."
+        },
+        "AUTO_PAY": {
+          "TITLE": "Automatic Payment / EFT Discount",
+          "DESC": "Set up automatic payments or electronic funds transfer (EFT) to save on premiums while ensuring timely payments."
+        },
+        "PAPERLESS": {
+          "TITLE": "Paperless Billing Discount",
+          "DESC": "Opt for paperless billing to reduce administrative costs, and insurers may offer a discount for the eco-friendly choice."
+        },
+        "SAFETY_TRAINING": {
+          "TITLE": "Safety Training & Risk Management Discount",
+          "DESC": "Implement safety training and risk management practices to lower the likelihood of claims, resulting in reduced premiums."
+        },
+        "SECURITY_SYSTEM": {
+          "TITLE": "Security System & Surveillance Discount",
+          "DESC": "Install security systems or surveillance equipment to mitigate risks like theft, which could lower your premium."
+        },
+        "YEARS_IN_BUSINESS": {
+          "TITLE": "Years in Business / Experience Discount",
+          "DESC": "Long-established businesses with a solid track record of success and stability may qualify for experience-based discounts."
+        },
+        "INDUSTRY_ASSOCIATION": {
+          "TITLE": "Industry Association Member Discount",
+          "DESC": "Being a member of a certain industry can lead to discounts, as it shows your commitment to best practices and lower risk."
+        },
+        "MULTIPLE_VEHICLES": {
+          "TITLE": "Multiple Vehicles Discount",
+          "DESC": "Businesses with more than one vehicle may qualify for discounts by insuring multiple vehicles under a single policy."
+        },
+        "HIGH_DEDUCTIBLE": {
+          "TITLE": "Higher Deductible Discount",
+          "DESC": "Choose a higher deductible to lower your premium, since you're taking on more financial risk in the event of a claim."
+        },
+        "LOYALTY": {
+          "TITLE": "Loyalty / Renewal Discount",
+          "DESC": "Stay with the same insurance company for multiple years to earn a loyalty discount or a reduced rate at renewal."
+        },
+        "GREEN_BUSINESS": {
+          "TITLE": "Green Business Discount",
+          "DESC": "Businesses with environmentally friendly practices or energy-efficient features may qualify for a discount from insurers."
+        },
+        "LICENSE_CERTIFICATION": {
+          "TITLE": "Professional License & Certification Discount",
+          "DESC": "Holding certain licenses or certifications can qualify you for discounts, as it reduces risk for specialized businesses."
+        },
+        "EARLY_SIGNING": {
+          "TITLE": "Early Signing Discount",
+          "DESC": "Sign your policy early to lock in a lower rate, as insurers may offer discounts to businesses that commit in advance."
+        },
+        "LOW_MILEAGE": {
+          "TITLE": "Low Mileage / Limited Use Vehicle Discount",
+          "DESC": "For businesses with vehicles that aren’t used frequently, insurers offer discounts based on low mileage or limited use."
+        },
+        "BACKGROUND_CHECK": {
+          "TITLE": "Background Check Program Discount",
+          "DESC": "Businesses that conduct employee background checks regularly may receive a discount, as this helps reduce hiring-related risks."
+        },
+        "DRUG_FREE": {
+          "TITLE": "Drug-Free Workplace Discount",
+          "DESC": "Having a drug-free workplace lowers premiums by demonstrating a commitment to reducing workplace accidents and claims."
+        },
+        "CYBERSECURITY": {
+          "TITLE": "Cybersecurity Measures Discount",
+          "DESC": "Implementing strong cybersecurity measures to protect sensitive data and systems may qualify for a discount."
+        }
+      }
+    },
+    "NOT_COVERED": {
+      "HEADER": {
+        "TITLE": "What Does Commercial Insurance Cover in Texas?",
+        "DESC": "Commercial insurance provides essential protection for your business, covering a range of risks that could otherwise result in financial ruin. From property damage to employee injuries, business insurance safeguards your assets and operations. With the right coverage, you can focus on growing your business without the constant worry of unexpected costs or lawsuits."
+      },
+      "LIST": {
+        "THIRD_PARTY_LIABILITY": {
+          "TITLE": "Third-Party Bodily Injury & Property Damage",
+          "DESC": "This coverage helps protect your business if someone is injured or their property is damaged as a result of your business activities. It covers legal fees and settlements, reducing the financial strain caused by accidents or negligence.",
+          "ICON": "fas fa-user-injured"
+        },
+        "BUSINESS_PROPERTY": {
+          "TITLE": "Business Property & Equipment",
+          "DESC": "If your physical assets, such as office equipment, inventory, or machinery, are damaged or stolen, this comprehensive coverage helps with repair or replacement costs, ensuring your business can continue to function without disruption.",
+          "ICON": "fas fa-warehouse"
+        },
+        "BUSINESS_VEHICLES": {
+          "TITLE": "Business Vehicles & Fleet",
+          "DESC": "For vehicles used in your business, this protection covers accidents, theft, and damage. Whether it’s company cars, delivery vans, or fleets, this insurance shields your business from the high cost of vehicle-related incidents.",
+          "ICON": "fas fa-truck"
+        },
+        "EMPLOYEE_INJURIES": {
+          "TITLE": "Employee Injuries & Workers Compensation",
+          "DESC": "If an employee is injured while working, this coverage pays for medical expenses and lost wages. It ensures that your workers are taken care of, while protecting your business from the financial strain of workplace accidents.",
+          "ICON": "fas fa-user-shield"
+        },
+        "PROFESSIONAL_LIABILITY": {
+          "TITLE": "Professional Errors & Negligence Claims",
+          "DESC": "If your business faces a lawsuit due to errors or negligence in your services, this coverage helps cover legal fees and damages. It provides financial protection against claims that could harm your reputation and business.",
+          "ICON": "fas fa-file-signature"
+        },
+        "CYBER_SECURITY": {
+          "TITLE": "Cyber Attacks & Data Breaches",
+          "DESC": "In the event of a cyberattack or data breach, this coverage helps cover notification costs, system restoration, and damages caused by the breach. It ensures that your business can recover quickly from these costly and potentially damaging events.",
+          "ICON": "fas fa-shield-alt"
+        },
+        "BUSINESS_INTERRUPTION": {
+          "TITLE": "Business Interruption & Lost Income",
+          "DESC": "If your business is temporarily shut down due to a covered event, this protection replaces lost income and helps cover ongoing expenses. It ensures that your business can continue operating during recovery without severe financial strain.",
+          "ICON": "fas fa-business-time"
+        },
+        "LEGAL_COSTS": {
+          "TITLE": "Legal Defense & Court Costs",
+          "DESC": "This detailed coverage helps cover the cost of legal defense and court fees if your business is sued. It ensures that you have the financial resources to defend yourself in court and protect your business from costly litigation.",
+          "ICON": "fas fa-balance-scale"
+        },
+        "CONTRACTOR_EQUIPMENT": {
+          "TITLE": "Contractor Tools & Equipment",
+          "DESC": "For contractors, this protection covers tools and equipment that are vital to your business. If they're damaged or stolen, the policy helps cover the cost of repair or replacement, minimizing downtime and keeping your business running smoothly.",
+          "ICON": "fas fa-tools"
+        },
+        "PRODUCT_LIABILITY": {
+          "TITLE": "Product Liability",
+          "DESC": "If a product you sell causes harm to someone, this coverage protects your business by covering legal costs and settlements. It ensures you're financially protected against claims that arise from product defects or misuse.",
+          "ICON": "fas fa-box-open"
+        },
+        "HIRED_NON_OWNED_AUTO": {
+          "TITLE": "Hired & Non-Owned Auto Liability",
+          "DESC": "If your employees use personal or rented vehicles for business, this protects your business from liability claims resulting from accidents. It ensures the business is not financially responsible for accidents involving non-owned vehicles.",
+          "ICON": "fas fa-car"
+        },
+        "UMBRELLA_LIABILITY": {
+          "TITLE": "Commercial Umbrella & Excess Liability",
+          "DESC": "This protection provides additional coverage beyond your primary liability policies. It steps in when your regular coverage limits are exceeded, providing your business with extra financial protection against large or unexpected claims.",
+          "ICON": "fas fa-umbrella"
+        }
+      }
+    },
+    "AGENT_COMPARISON": {
+      "HEADER": {
+        "TITLE": "Independent Insurance Agency vs. Captive Agent: Why Choice Saves Your Business Money",
+        "DESC": "Choosing between an independent insurance agency and a captive agent can impact your business’s costs and coverage options. Independent agencies work with multiple insurers, allowing them to find the best rates and tailor policies to your needs. In contrast, captive agents are tied to one insurer, which limits your options and often results in higher premiums. Having more choices can help you save money and find the best protection."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Feature",
+          "INDEPENDENT": "Independent Agency (A-State)",
+          "CAPTIVE": "Captive Agent"
+        },
+        "LIST": {
+          "CARRIERS": {
+            "FEATURE": "Number of Carriers",
+            "INDEPENDENT": "Multiple — shops 10+ carriers for you",
+            "CAPTIVE": "One — locked into a single company"
+          },
+          "PRICE_COMPARISON": {
+            "FEATURE": "Price Comparison",
+            "INDEPENDENT": "Compares rates across multiple carriers to find the lowest",
+            "CAPTIVE": "Can only offer one company's rate"
+          },
+          "INDUSTRY_COVERAGE": {
+            "FEATURE": "Industry Coverage",
+            "INDEPENDENT": "Covers all industries including high-risk and hard-to-place",
+            "CAPTIVE": "Limited to standard industries one carrier accepts"
+          },
+          "HIGH_RISK": {
+            "FEATURE": "High-Risk Businesses",
+            "INDEPENDENT": "Access to non-standard and surplus lines markets",
+            "CAPTIVE": "May decline high-risk businesses entirely"
+          },
+          "CUSTOMIZATION": {
+            "FEATURE": "Coverage Customization",
+            "INDEPENDENT": "Builds custom coverage packages across multiple carriers",
+            "CAPTIVE": "Limited to one carrier's standard policy structures"
+          },
+          "WORKERS_COMP": {
+            "FEATURE": "Workers Comp Options",
+            "INDEPENDENT": "Shops multiple carriers for best workers comp rate",
+            "CAPTIVE": "Limited workers comp options through one carrier"
+          },
+          "COMMERCIAL_AUTO": {
+            "FEATURE": "Commercial Auto",
+            "INDEPENDENT": "Compares fleet and commercial auto rates across carriers",
+            "CAPTIVE": "Single carrier rate — no comparison available"
+          },
+          "GENERAL_LIABILITY": {
+            "FEATURE": "General Liability",
+            "INDEPENDENT": "Shops GL rates across multiple markets for best pricing",
+            "CAPTIVE": "One GL rate from one carrier"
+          },
+          "BOP": {
+            "FEATURE": "BOP Availability",
+            "INDEPENDENT": "Access to multiple BOP carriers for small businesses",
+            "CAPTIVE": "Limited to one carrier's BOP structure and pricing"
+          },
+          "CYBER_LIABILITY": {
+            "FEATURE": "Cyber Liability",
+            "INDEPENDENT": "Can place cyber liability across specialty markets",
+            "CAPTIVE": "Limited cyber options through standard carriers"
+          },
+          "LOYALTY": {
+            "FEATURE": "Loyalty to You",
+            "INDEPENDENT": "Works for the client — not the insurance company",
+            "CAPTIVE": "Works for the insurance company"
+          },
+          "RENEWAL": {
+            "FEATURE": "Rate Shopping at Renewal",
+            "INDEPENDENT": "Re-shops your rate every renewal across all carriers",
+            "CAPTIVE": "Locked into same carrier at renewal"
+          },
+          "CLAIMS": {
+            "FEATURE": "Claims Advocacy",
+            "INDEPENDENT": "Advocates on your behalf during claims",
+            "CAPTIVE": "Represents the insurance company's interests"
+          },
+          "MULTI_POLICY": {
+            "FEATURE": "Multi-Policy Bundling",
+            "INDEPENDENT": "Bundles GL, commercial auto, workers comp across carriers",
+            "CAPTIVE": "Bundles only within one carrier's product line"
+          },
+          "SWITCHING": {
+            "FEATURE": "Switching Carriers",
+            "INDEPENDENT": "Can switch you to a better carrier without changing agents",
+            "CAPTIVE": "Must find a new agent to switch carriers"
+          },
+          "LOCAL": {
+            "FEATURE": "Local Knowledge",
+            "INDEPENDENT": "Texas-based agents with local business market expertise",
+            "CAPTIVE": "May be national agents with no local context"
+          },
+          "MULTILINGUAL": {
+            "FEATURE": "Multilingual Support",
+            "INDEPENDENT": "Multi-Language support",
+            "CAPTIVE": "Varies by agent — not guaranteed"
+          }
+        }
+      }
+    },
+    "INDUSTRY_COVERAGE": {
+      "HEADER": {
+        "TITLE": "We Cover Every Industry in Texas"
+      },
+      "LIST": {
+        "CONSTRUCTION_TRADES": {
+          "TITLE": "Construction & Trades",
+          "DESCRIPTION": "Protect your construction or trade business with specialized coverage for tools, equipment, workers' compensation, and liability.",
+          "ICON": "fas fa-hard-hat"
+        },
+        "TRANSPORTATION_LOGISTICS": {
+          "TITLE": "Transportation & Logistics",
+          "DESCRIPTION": "Make sure your transportation business is covered for vehicle accidents, cargo damage, and liability in the logistics industry.",
+          "ICON": "fas fa-truck"
+        },
+        "FOOD_HOSPITALITY": {
+          "TITLE": "Food & Hospitality",
+          "DESCRIPTION": "Cover your restaurant or hospitality business with protection for property, food safety, liability, and workers’ compensation.",
+          "ICON": "fas fa-utensils"
+        },
+        "HEALTHCARE_MEDICAL": {
+          "TITLE": "Healthcare & Medical",
+          "DESCRIPTION": "Protect healthcare providers with professional liability, equipment, and workers' compensation, ensuring patient safety and business protection.",
+          "ICON": "fas fa-stethoscope"
+        },
+        "PROFESSIONAL_SERVICES": {
+          "TITLE": "Professional Services",
+          "DESCRIPTION": "Cover risks in consulting, legal, and accounting with professional liability insurance to protect your expertise and clients.",
+          "ICON": "fas fa-briefcase"
+        },
+        "RETAIL_ECOMMERCE": {
+          "TITLE": "Retail & E-Commerce",
+          "DESCRIPTION": "Insure your retail or online store against property damage, product liability, and business interruption to ensure smooth operations.",
+          "ICON": "fas fa-store"
+        },
+        "AUTOMOTIVE_VEHICLE": {
+          "TITLE": "Automotive & Vehicle Services",
+          "DESCRIPTION": "Protect auto repair shops, dealerships, or vehicle service businesses with coverage for property, equipment, and vehicle-related liability.",
+          "ICON": "fas fa-car"
+        },
+        "REAL_ESTATE_PROPERTY": {
+          "TITLE": "Real Estate & Property",
+          "DESCRIPTION": "Ensure your real estate business with property coverage, liability insurance, and protection for transactions and client interactions.",
+          "ICON": "fas fa-building"
+        },
+        "PERSONAL_CARE_BEAUTY": {
+          "TITLE": "Personal Care & Beauty",
+          "DESCRIPTION": "Cover your beauty or personal care business with liability, property insurance, and workers' compensation, ensuring safety and success.",
+          "ICON": "fas fa-spa"
+        },
+        "EDUCATION_CHILDCARE": {
+          "TITLE": "Education & Childcare",
+          "DESCRIPTION": "Protect educational institutions and childcare centers with coverage for liability, employee safety, property damage, and legal defense.",
+          "ICON": "fas fa-school"
+        },
+        "ENTERTAINMENT_EVENTS": {
+          "TITLE": "Entertainment & Events",
+          "DESCRIPTION": "Protect educational institutions and childcare centers with coverage for liability, employee safety, property damage, and legal defense.",
+          "ICON": "fas fa-theater-masks"
+        },
+        "FITNESS_WELLNESS": {
+          "TITLE": "Fitness & Wellness",
+          "DESCRIPTION": "Ensure your gym or wellness center has liability, equipment coverage, and protection against injuries to clients or employees.",
+          "ICON": "fas fa-dumbbell"
+        },
+        "LANDSCAPING_AGRICULTURE": {
+          "TITLE": "Landscaping & Agriculture",
+          "DESCRIPTION": "Cover your landscaping or agriculture business with liability insurance, property protection, and equipment coverage for everyday operations.",
+          "ICON": "fas fa-seedling"
+        },
+        "CLEANING_MAINTENANCE": {
+          "TITLE": "Cleaning & Maintenance",
+          "DESCRIPTION": "Protect your cleaning or maintenance business with general liability, workers' compensation, and coverage for equipment damage or theft.",
+          "ICON": "fas fa-broom"
+        },
+        "TECHNOLOGY_MEDIA": {
+          "TITLE": "Technology & Media",
+          "DESCRIPTION": "Protect your technology or media business with general liability, workers' compensation, and coverage for equipment damage or theft.",
+          "ICON": "fas fa-laptop-code"
+        },
+        "NONPROFIT_SOCIAL": {
+          "TITLE": "Nonprofit & Social Services",
+          "DESCRIPTION": "Insure your nonprofit or social services organization with general liability, property insurance, and coverage for your employees and volunteers.",
+          "ICON": "fas fa-hands-helping"
+        }
+      }
+    },
+    "SHOP_EVERY": {
+      "HEADER": {
+        "TITLE": "Your One-Stop Shop for Every Type of Commercial Insurance in Texas"
+      },
+      "LIST": {
+        "PROFESSIONAL_LIABILITY": {
+          "TITLE": "Professional Liability (E&O) Insurance",
+          "DESCRIPTION": "Protects your business from claims of negligence or mistakes in professional services, covering legal fees and damages comprehensively."
+        },
+        "GENERAL_LIABILITY": {
+          "TITLE": "General Liability Insurance",
+          "DESCRIPTION": "Covers third-party bodily injury, property damage, and advertising injury claims, safeguarding your business from potential lawsuits."
+        },
+        "WORKERS_COMPENSATION": {
+          "TITLE": "Workers’ Compensation Insurance",
+          "DESCRIPTION": "Covers medical costs and lost wages for employees injured on the job, ensuring financial protection for both workers and employers."
+        },
+        "COMMERCIAL_PROPERTY": {
+          "TITLE": "Commercial Property Insurance",
+          "DESCRIPTION": "Protects your business assets, such as buildings, equipment, and inventory, against damage or loss from events like fire or theft."
+        },
+        "COMMERCIAL_AUTO": {
+          "TITLE": "Commercial Auto Insurance",
+          "DESCRIPTION": "Covers vehicles used for business purposes, protecting your company against accidents, theft, or damage to your business vehicles."
+        },
+        "BUSINESS_OWNER_POLICY": {
+          "TITLE": "Business Owner’s Policy (BOP)",
+          "DESCRIPTION": "Combines essential coverage, such as general liability and property insurance, into a single, cost-effective policy for small businesses."
+        },
+        "EPLI": {
+          "TITLE": "Employment Practices Liability (EPLI) Insurance",
+          "DESCRIPTION": "Protects your business from claims of employee misconduct, including discrimination, harassment, and wrongful termination lawsuits."
+        },
+        "CYBER_LIABILITY": {
+          "TITLE": "Cyber Liability Insurance",
+          "DESCRIPTION": "Covers financial losses and recovery costs caused by cyberattacks, data breaches, and other cyber-related risks to your business."
+        },
+        "BUILDERS_RISK": {
+          "TITLE": "Builders Risk / Course of Construction Insurance",
+          "DESCRIPTION": "Covers financial losses to construction projects or buildings under construction, protecting materials, equipment, and property during the build."
+        },
+        "D_O_LIABILITY": {
+          "TITLE": "Directors & Officers (D&O) Liability Insurance",
+          "DESCRIPTION": "Protects business leaders from personal liability related to their management decisions, covering legal fees and claims against them."
+        }
+      }
+    },
+    "HIGH_RISK_DRIVER": {
+      "HEADER": {
+        "TITLE": "High-Risk Business? We Can Still Help You"
+      },
+      "CONTENT": {
+        "DESC1": "If you’re running a high-risk business, don’t assume you’ll be turned away or forced to pay sky-high premiums. At A-State Insurance, we specialize in working with businesses that others may hesitate to insure. Whether you’ve been declined in the past, have a history of claims, or operate in a higher-risk industry, we can help. Our team has the expertise to find the right coverage at the best possible price, no matter your risk profile.",
+        "DESC2": "We understand that every business is unique, which is why we take the time to assess your specific needs and risks. From small startups to established enterprises, we tailor solutions that provide comprehensive coverage without breaking the budget. With A-State Insurance, you’re not just getting a policy—you’re getting a partner committed to your long-term success and peace of mind. Our proactive approach ensures that when challenges arise, your business is ready, protected, and able to thrive."
+      }
+    },
+    "LANGUAGE_SUPPORT": {
+      "HEADER": {
+        "TITLE": "Hablamos Español / We Speak Your Language"
+      },
+      "CONTENT": {
+        "DESC1": "At A-State Insurance, we understand the importance of clear communication. That's why we offer services in both English and Spanish. Whether you prefer to discuss your insurance needs in Spanish or need assistance with your policy, our bilingual team is here to help. We're committed to ensuring that every client feels comfortable and fully informed, no matter the language they speak.",
+        "DESC2": "Our bilingual approach goes beyond translation—we make sure that complex insurance terms, coverage options, and policy details are explained clearly and in a way that makes sense to you. From quotes to claims, our team works closely with you to provide guidance and answer every question along the way. By breaking language barriers, we ensure that all our clients can confidently make informed decisions and receive the protection they need for their homes, vehicles, and businesses."
+      }
+    },
+    "ASTATE_DIFFERENTIATORS": {
+      "HEADER": {
+        "TITLE": "What Makes A-State Insurance Different"
+      },
+      "LIST": {
+        "LICENSED_BROKERS": {
+          "TITLE": "Texas Licensed Brokers",
+          "DESCRIPTION": "Our brokers are fully licensed in Texas, providing expert guidance and customized insurance solutions."
+        },
+        "HISPANIC_LATINO_FRIENDLY": {
+          "TITLE": "Hispanic & Latino Friendly",
+          "DESCRIPTION": "We proudly serve the Hispanic and Latino community with personalized, bilingual insurance services for their comfort."
+        },
+        "YEARS_SERVING": {
+          "TITLE": "20+ Years Serving Texans",
+          "DESCRIPTION": "With over 20 years of experience, we’ve been dedicated to serving Texas businesses and their unique needs."
+        },
+        "CUSTOM_COVERAGE": {
+          "TITLE": "Custom Coverage Plans",
+          "DESCRIPTION": "We offer customized insurance plans designed to Texans to meet the specific needs and risks of your business."
+        },
+        "ONLINE_LOCAL": {
+          "TITLE": "Online & Local",
+          "DESCRIPTION": "We combine the convenience of online services with the personal touch of professional, local, Texas-based agents."
+        },
+        "MULTILINGUAL_AGENTS": {
+          "TITLE": "Multilingual Agents",
+          "DESCRIPTION": "Our multilingual agents ensure clear communication, providing services in multiple languages to meet your needs."
+        }
+      }
+    },
+    "INSURANCE_STEPS": {
+      "HEADER": {
+        "TITLE": "Get Covered in 4 Simple Steps"
+      },
+      "STEPS": {
+        "REACH_OUT": {
+          "TITLE": "Reach Out",
+          "DESCRIPTION": "Contact us to get started with a free consultation tailored to your business needs."
+        },
+        "GET_ADVICE": {
+          "TITLE": "Get Advice",
+          "DESCRIPTION": "Our experts will provide personalized guidance on the best coverage options for you."
+        },
+        "PICK_PLAN": {
+          "TITLE": "Pick Your Plan",
+          "DESCRIPTION": "Choose the coverage plan that fits your business, and we’ll customize it for you."
+        },
+        "WE_GOT_YOU": {
+          "TITLE": "We’ve Got You",
+          "DESCRIPTION": "Relax knowing we’ve secured the right protection to keep your business safe and sound."
+        }
+      }
+    },
+    "SWITCH_STEPS": {
+      "HEADER": {
+        "TITLE": "How to Switch Your Business Insurance to A-State Insurance"
+      },
+      "STEPS": {
+        "STEP_1": {
+          "TITLE": "Step 1: Get Your Free Comparison Quote",
+          "DESCRIPTION": "Start by requesting a free comparison quote from A-State Insurance. We’ll evaluate your current coverage and find the best rates and policies to suit your business needs. You’ll receive a personalized quote with options tailored to your specific risks and budget."
+        },
+        "STEP_2": {
+          "TITLE": "Step 2: Pick Your Plan and Activate",
+          "DESCRIPTION": "Once you’ve reviewed your options, select the insurance plan that best fits your business. Our team will walk you through the activation process, ensuring your coverage is set up quickly and correctly to protect your business from day one."
+        },
+        "STEP_3": {
+          "TITLE": "Step 3: Cancel Your Old Policy (We’ll Help!)",
+          "DESCRIPTION": "We make switching easy by helping you cancel your old policy. We’ll guide you through the process, ensuring there are no coverage gaps or confusion. Our team will handle the details, so you can focus on what matters most: running your business."
+        }
+      }
+    },
+    "FAQ_LIST": {
+      "HEADER": {
+        "TITLE": "Frequently Asked Questions About Texas Commercial Insurance"
+      },
+      "QUESTIONS": {
+        "FAQ1": {
+          "QUESTION": "Is business insurance required in Texas?",
+          "ANSWER": "Business insurance is required in Texas for businesses with employees (workers' compensation) and vehicles (commercial auto insurance). While general liability and property insurance are not mandatory, they are highly recommended for protection."
+        },
+        "FAQ2": {
+          "QUESTION": "Do delivery drivers need commercial insurance in Texas?",
+          "ANSWER": "Yes, delivery drivers in Texas need commercial auto insurance if using their vehicle for business purposes, as personal auto policies typically don’t cover work-related accidents."
+        }
+      }
+    },
+    "FREE_QUOTE": {
+      "HEADER": "Get a Free Business Insurance Quote in Texas",
+      "DESCRIPTION": "Getting a free business insurance quote in Texas is simple and fast. Start by providing your business details, including the coverage you need, such as general liability, business owners policy, commercial auto, workers' compensation, and professional liability. After you fill in your business information and contact details, one of our agents will provide you with a customized quote tailored to your business needs. It's quick, easy, and commitment-free. Contact us today for your personalized plan."
     }
   }
 }

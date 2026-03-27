@@ -32,6 +32,7 @@ import { GetSuretyQuote } from './pages/get-surety-quote/get-surety-quote';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AutoInsurance } from './pages/auto-insurance/auto-insurance';
 import { HomeInsurance } from './pages/home-insurance/home-insurance';
+import { CommercialInsurance } from './pages/commercial-insurance/commercial-insurance';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { HomeInsurance } from './pages/home-insurance/home-insurance';
     GetHealthQuote,
     GetSuretyQuote,
     AutoInsurance,
-    HomeInsurance
+    HomeInsurance,
+    CommercialInsurance
   ],
   imports: [
     BrowserModule,
