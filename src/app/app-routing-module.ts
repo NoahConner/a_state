@@ -21,6 +21,7 @@ import { GetSuretyQuote } from './pages/get-surety-quote/get-surety-quote';
 import { AutoInsurance } from './pages/auto-insurance/auto-insurance';
 import { HomeInsurance } from './pages/home-insurance/home-insurance';
 import { CommercialInsurance } from './pages/commercial-insurance/commercial-insurance';
+import { LifeInsurance } from './pages/life-insurance/life-insurance';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -44,6 +45,7 @@ const routes: Routes = [
   { path: 'auto-insurance', component: AutoInsurance },
   { path: 'homeowners-insurance', component: HomeInsurance },
   { path: 'commercial-insurance', component: CommercialInsurance },
+  { path: 'life-insurance', component: LifeInsurance },
 
 
 
@@ -75,6 +77,7 @@ const routes: Routes = [
       { path: 'seguros-de-auto', component: AutoInsurance },
       { path: 'seguros-de-vivienda', component: HomeInsurance },
       { path: 'seguros-comerciales', component: CommercialInsurance },
+      { path: 'seguros-de-vida', component: LifeInsurance },
       { path: 'nuestras-ubicaciones', component: OurLocations, runGuardsAndResolvers: 'always' },
       { path: 'nuestras-ubicaciones/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
     ],
@@ -172,6 +175,10 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   commercialInsurance: {
     en: 'commercial-insurance',
     es: 'seguros-comerciales'
+  },
+  lifeInsurance: {
+    en: 'life-insurance',
+    es: 'seguros-de-vida'
   },
 
 };
