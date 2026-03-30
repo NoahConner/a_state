@@ -23,6 +23,7 @@ import { HomeInsurance } from './pages/home-insurance/home-insurance';
 import { CommercialInsurance } from './pages/commercial-insurance/commercial-insurance';
 import { LifeInsurance } from './pages/life-insurance/life-insurance';
 import { HealthInsurance } from './pages/health-insurance/health-insurance';
+import { SuretyBondInsurance } from './pages/surety-bond-insurance/surety-bond-insurance';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -48,6 +49,7 @@ const routes: Routes = [
   { path: 'commercial-insurance', component: CommercialInsurance },
   { path: 'life-insurance', component: LifeInsurance },
   { path: 'health-insurance', component: HealthInsurance },
+  { path: 'surety-bonds', component: SuretyBondInsurance },
 
 
 
@@ -81,6 +83,7 @@ const routes: Routes = [
       { path: 'seguros-comerciales', component: CommercialInsurance },
       { path: 'seguros-de-vida', component: LifeInsurance },
       { path: 'seguros-de-salud', component: HealthInsurance },
+      { path: 'fianzas', component: SuretyBondInsurance },
       { path: 'nuestras-ubicaciones', component: OurLocations, runGuardsAndResolvers: 'always' },
       { path: 'nuestras-ubicaciones/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
     ],
@@ -187,5 +190,8 @@ export const routeTranslations: Record<string, Record<string, string>> = {
     en: 'health-insurance',
     es: 'seguros-de-salud'
   },
-
+  suretyBondInsurance: {
+    en: 'surety-bonds',
+    es: 'fianzas'
+  },
 };

@@ -35,6 +35,7 @@ import { HomeInsurance } from './pages/home-insurance/home-insurance';
 import { CommercialInsurance } from './pages/commercial-insurance/commercial-insurance';
 import { LifeInsurance } from './pages/life-insurance/life-insurance';
 import { HealthInsurance } from './pages/health-insurance/health-insurance';
+import { SuretyBondInsurance } from './pages/surety-bond-insurance/surety-bond-insurance';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { HealthInsurance } from './pages/health-insurance/health-insurance';
     HomeInsurance,
     CommercialInsurance,
     LifeInsurance,
-    HealthInsurance
+    HealthInsurance,
+    SuretyBondInsurance
   ],
   imports: [
     BrowserModule,
