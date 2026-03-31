@@ -39,12 +39,12 @@ export class SuretyBondInsurance implements OnInit {
     return result;
   }
   chips = [
-    { name: 'HEALTH_INSURANCE.BANNER.CHIPS.INDIVIDUAL_FAMILY', icon: 'fas fa-car' },
-    { name: 'HEALTH_INSURANCE.BANNER.CHIPS.MEDICARE_SUPPLEMENT', icon: 'fas fa-house' },
-    { name: 'HEALTH_INSURANCE.BANNER.CHIPS.SHORT_TERM', icon: 'fas fa-building' },
-    { name: 'HEALTH_INSURANCE.BANNER.CHIPS.DENTAL_VISION', icon: 'fas fa-heart' },
-    { name: 'HEALTH_INSURANCE.BANNER.CHIPS.GROUP_EMPLOYER', icon: 'fas fa-notes-medical' },
-    { name: 'HEALTH_INSURANCE.BANNER.CHIPS.OTHER', icon: 'fas fa-file-contract' },
+    { name: 'SURETY_INSURANCE.BANNER.CHIPS.LICENSE_PERMIT', icon: 'fas fa-car' },
+    { name: 'SURETY_INSURANCE.BANNER.CHIPS.CONTRACT_CONSTRUCTION', icon: 'fas fa-house' },
+    { name: 'SURETY_INSURANCE.BANNER.CHIPS.COURT_PROBATE', icon: 'fas fa-building' },
+    { name: 'SURETY_INSURANCE.BANNER.CHIPS.FIDELITY_EMPLOYEE', icon: 'fas fa-heart' },
+    { name: 'SURETY_INSURANCE.BANNER.CHIPS.COMMERCIAL', icon: 'fas fa-notes-medical' },
+    { name: 'SURETY_INSURANCE.BANNER.CHIPS.OTHER', icon: 'fas fa-file-contract' },
   ];
 
   rates = [

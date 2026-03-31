@@ -4,10 +4,8 @@
       <div class="topSub">
         <div class="topSub2">
           <div class="h1">
-            {{ 'HEALTH_INSURANCE.BANNER.TITLE_LINE1' | translate }} <br />
-            {{ 'HEALTH_INSURANCE.BANNER.TITLE_LINE2' | translate }} <span class="heading-span">{{
-              'HEALTH_INSURANCE.BANNER.TITLE_LINE3' |
-              translate }}</span>
+            {{ 'SURETY_INSURANCE.BANNER.TITLE_LINE1' | translate }} <br />
+            {{ 'SURETY_INSURANCE.BANNER.TITLE_LINE2' | translate }}
           </div>
           <!-- 
           <div class="selectable">
@@ -38,15 +36,15 @@
           </div>
 
           <div class="inps">
-            <input type="text" [placeholder]="'HEALTH_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
+            <input type="text" [placeholder]="'SURETY_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
               class="form-control" />
 
-            <input type="number" [placeholder]="'HEALTH_INSURANCE.BANNER.FORM.PHONE' | translate"
+            <input type="number" [placeholder]="'SURETY_INSURANCE.BANNER.FORM.PHONE' | translate"
               class="form-control" />
           </div>
 
           <button class="btn">
-            {{ 'HEALTH_INSURANCE.BANNER.FORM.BUTTON' | translate }}
+            {{ 'SURETY_INSURANCE.BANNER.FORM.BUTTON' | translate }}
           </button>
         </div>
       </div>
@@ -55,19 +53,19 @@
 
   <div class="container my-5">
     <h2 class="section-title mb-4">
-      {{ 'HEALTH_INSURANCE.WHY_DO_YOU_NEED.TITLE' | translate }}
+      {{ 'SURETY_INSURANCE.WHY_DO_YOU_NEED.TITLE' | translate }}
     </h2>
     <p class="section-description mb-4">
-      {{ 'HEALTH_INSURANCE.WHY_DO_YOU_NEED.DESC' | translate }}
+      {{ 'SURETY_INSURANCE.WHY_DO_YOU_NEED.DESC' | translate }}
     </p>
 
     <p class="section-sub-title mb-4">
-      {{ 'HEALTH_INSURANCE.WHY_DO_YOU_NEED.SUB_TITLE' | translate }}
+      {{ 'SURETY_INSURANCE.WHY_DO_YOU_NEED.SUB_TITLE' | translate }}
     </p>
 
     <div class="insurance-list">
       <div class="insurance-item"
-        *ngFor="let item of 'HEALTH_INSURANCE.WHY_DO_YOU_NEED.LIST' | translate; let i = index">
+        *ngFor="let item of 'SURETY_INSURANCE.WHY_DO_YOU_NEED.LIST' | translate; let i = index">
 
         <div class="number">0{{ i + 1 }}</div>
 
@@ -104,7 +102,7 @@
   </section>
 
 
-  <section class="how-it-work py-5">
+  <section class="how-it-work py-5 bg-white">
     <div class="container">
       <div class="row">
         <div class="col-lg-10">
@@ -124,9 +122,7 @@
               <br>
               {{ 'HEALTH_INSURANCE.HOW_IT_WORKS.DESC3' | translate }}
 
-              <br>
-              <br>
-              {{ 'HEALTH_INSURANCE.HOW_IT_WORKS.DESC4' | translate }}
+
 
             </p>
           </div>
@@ -137,55 +133,7 @@
 
 
 
-  <section class="factors-impact-section bg-white">
-    <div class="container px-4">
-      <h2 class="section-title">{{ 'HEALTH_INSURANCE.NOT_COVERED.HEADER.TITLE' | translate }}</h2>
-      <div class="row mt-5">
-        @for (key of notCoveredKeys; track key) {
-        <div class="col-lg-4">
-          <div class="factor-item">
-            <div class="icon-wrapper">
-              <i [class]="'HEALTH_INSURANCE.NOT_COVERED.LIST.' + key + '.ICON' | translate"></i>
-            </div>
-            <div class="factor-content">
-              <h6>{{ ('HEALTH_INSURANCE.NOT_COVERED.LIST.' + key + '.TITLE') | translate }}</h6>
-              <p>{{ ('HEALTH_INSURANCE.NOT_COVERED.LIST.' + key + '.DESC') | translate }}</p>
-            </div>
-          </div>
-        </div>
-        }
-      </div>
-    </div>
-  </section>
-
-  <section class="insurance-section py-5">
-    <div class="container">
-      <!-- Header -->
-      <div class="header-content mb-5">
-        <h6 class="text-danger fw-bold">{{ 'HEALTH_INSURANCE.COVERAGES.STANDARD.TITLE' | translate }}</h6>
-        <p class="small text-muted">{{ 'HEALTH_INSURANCE.COVERAGES.STANDARD.DESC' | translate }}</p>
-      </div>
-
-      <div class="row g-4 mb-5">
-        @for (item of ('HEALTH_INSURANCE.COVERAGES.STANDARD.LIST' | translate); track item.TITLE) {
-        <div class="col-md-4">
-          <div class="insurance-card">
-            <div class="card-icon"><i [class]="item.ICON"></i></div>
-            <div class="card-body">
-              <h6>{{ item.TITLE }}</h6>
-              <p>{{ item.DESC }}</p>
-            </div>
-          </div>
-        </div>
-        }
-      </div>
-
-      <!-- Optional Coverages Carousel -->
-
-    </div>
-  </section>
-
-  <section class="insurance-section py-5 bg-gray">
+  <section class="insurance-section py-5 bg-pink">
     <div class="container">
       <div class="header-content mb-5">
         <h6 class="text-danger fw-bold">{{ 'HEALTH_INSURANCE.COVERAGES.OPTIONAL.TITLE' | translate }}</h6>
@@ -227,15 +175,76 @@
     </div>
   </section>
 
-  <section class="how-much-do-you-need mt-5">
+  <section class="insurance-section py-5 bg-white">
     <div class="container">
-      <h1 class="how-much-do-you-need-title">{{ 'HEALTH_INSURANCE.HEALTH_INSURANCE_OUTSIDE.TITLE' | translate }}</h1>
-      <div class="how-much-do-you-need-description">
-        <p>{{ 'HEALTH_INSURANCE.HEALTH_INSURANCE_OUTSIDE.DESC1' | translate }}</p>
-        <p>{{ 'HEALTH_INSURANCE.HEALTH_INSURANCE_OUTSIDE.DESC2' | translate }}</p>
+      <!-- Header -->
+      <div class="header-content mb-5">
+        <h6 class="text-danger fw-bold">{{ 'HEALTH_INSURANCE.COVERAGES.STANDARD.TITLE' | translate }}</h6>
+        <p class="small text-muted">{{ 'HEALTH_INSURANCE.COVERAGES.STANDARD.DESC' | translate }}</p>
+      </div>
+
+      <div class="row g-4 mb-5">
+        @for (item of ('HEALTH_INSURANCE.COVERAGES.STANDARD.LIST' | translate); track item.TITLE) {
+        <div class="col-md-4">
+          <div class="insurance-card">
+            <div class="card-icon"><i [class]="item.ICON"></i></div>
+            <div class="card-body">
+              <h6>{{ item.TITLE }}</h6>
+              <p>{{ item.DESC }}</p>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+
+      <!-- Optional Coverages Carousel -->
+
+    </div>
+  </section>
+
+  <section class="insurance-section py-5 bg-pink">
+    <div class="container">
+      <div class="header-content mb-5">
+        <h6 class="text-danger fw-bold">{{ 'HEALTH_INSURANCE.COVERAGES.OPTIONAL.TITLE' | translate }}</h6>
+        <p class="small text-muted">{{ 'HEALTH_INSURANCE.COVERAGES.OPTIONAL.DESC' | translate }}</p>
+      </div>
+      <div id="optionalCoveragesCarousel" class="carousel slide pb-5" data-bs-ride="carousel">
+        <!-- Pagination Dots -->
+        <div class="carousel-indicators custom-dots mb-0">
+          @for (chunk of optionalCoveragesChunks; track $index) {
+          <button type="button" data-bs-target="#optionalCoveragesCarousel" [attr.data-bs-slide-to]="$index"
+            [class.active]="$index === 0" [attr.aria-current]="$index === 0"
+            [attr.aria-label]="'Slide ' + ($index + 1)"></button>
+          }
+        </div>
+
+        <!-- Carousel Items -->
+        <div class="carousel-inner">
+          @for (chunk of optionalCoveragesChunks; track $index) {
+          <div class="carousel-item" [class.active]="$index === 0">
+            <div class="row g-4">
+              @for (item of chunk; track item.TITLE) {
+              <div class="col-md-4">
+                <div class="insurance-card optional h-100">
+
+                  <div class="card-body">
+                    <div class="card-icon"><i [class]="item.ICON"></i></div>
+
+                    <h6 class="mt-2">{{ item.TITLE }}</h6>
+                    <p>{{ item.DESC }}</p>
+                  </div>
+                </div>
+              </div>
+              }
+            </div>
+          </div>
+          }
+        </div>
       </div>
     </div>
   </section>
+
+
 
   <section class="how-much-do-you-need mt-5 mb-5">
     <div class="container">
@@ -248,136 +257,7 @@
   </section>
 
 
-
-
-  <section class="rates-section py-5 bg-pink">
-    <div class="container">
-      <!-- Header 1: City -->
-      <div class="rates-header mb-4">
-        <h5 class="fw-bold">{{ 'HEALTH_INSURANCE.RATES.PROVIDERS.TITLE' | translate }}</h5>
-        <p class="small mb-0">{{ 'HEALTH_INSURANCE.RATES.PROVIDERS.DESC' | translate }}</p>
-      </div>
-
-      <!-- Table 1: City -->
-      <div class="rates-table-card p-4">
-        <div class="row g-2 text-center text-white fw-bold mb-2">
-          <div class="col-4">
-            <div class="header-pill bg-danger py-2">{{ 'HEALTH_INSURANCE.RATES.PROVIDERS.H1' | translate }}</div>
-          </div>
-          <div class="col-4">
-            <div class="header-pill bg-danger py-2">{{ 'HEALTH_INSURANCE.RATES.PROVIDERS.H2' | translate }}</div>
-          </div>
-          <div class="col-4">
-            <div class="header-pill bg-danger py-2">{{ 'HEALTH_INSURANCE.RATES.PROVIDERS.H3' | translate }}</div>
-          </div>
-        </div>
-
-        <div class="rates-rows">
-          @for (item of providerRates; track item.company; let i = $index) {
-          <div class="row g-2 text-center mb-2 align-items-center">
-            <div class="col-4">
-              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ item.company }}
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ item.monthly }}
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ item.annual }}
-              </div>
-            </div>
-          </div>
-          }
-        </div>
-
-        <!-- Footer Info -->
-        <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'HEALTH_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">MoneyGeek</a></p>
-
-          <p class="last-updated">{{ 'HEALTH_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
-        </div>
-        <div class="disclaimer mt-2">
-          <p class="mb-0"><strong>{{ 'HEALTH_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translate }}:</strong> {{
-            'HEALTH_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <section class="rates-section py-5 bg-pink">
-    <div class="container">
-      <!-- Header 1: City -->
-      <div class="rates-header mb-5 mt-5">
-        <h5 class="fw-bold">{{ 'HEALTH_INSURANCE.RATES.AGE.TITLE' | translate }}</h5>
-        <p class="small mb-0">{{ 'HEALTH_INSURANCE.RATES.AGE.DESC' | translate }}</p>
-      </div>
-
-      <!-- Table 1: City -->
-      <div class="rates-table-card p-4">
-        <div class="row g-2 text-center text-white fw-bold mb-2">
-          <div class="col-3">
-            <div class="header-pill bg-danger py-2">{{ 'HEALTH_INSURANCE.RATES.AGE.H1' | translate }}</div>
-          </div>
-          <div class="col-3">
-            <div class="header-pill bg-danger py-2">{{ 'HEALTH_INSURANCE.RATES.AGE.H2' | translate }}</div>
-          </div>
-          <div class="col-3">
-            <div class="header-pill bg-danger py-2">{{ 'HEALTH_INSURANCE.RATES.AGE.H3' | translate }}</div>
-          </div>
-          <div class="col-3">
-            <div class="header-pill bg-danger py-2">{{ 'HEALTH_INSURANCE.RATES.AGE.H4' | translate }}</div>
-          </div>
-        </div>
-
-        <div class="rates-rows">
-          @for (item of rates; track item.age; let i = $index) {
-          <div class="row g-2 text-center mb-2 align-items-center">
-            <div class="col-3">
-              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ item.age }}
-              </div>
-            </div>
-            <div class="col-3">
-              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ item.bronze }}
-              </div>
-            </div>
-            <div class="col-3">
-              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ item.silver }}
-              </div>
-            </div>
-            <div class="col-3">
-              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ item.gold }}
-              </div>
-            </div>
-          </div>
-          }
-        </div>
-
-        <!-- Footer Info -->
-        <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'HEALTH_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">Salusion</a></p>
-
-          <p class="last-updated">{{ 'HEALTH_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
-        </div>
-        <div class="disclaimer mt-2">
-          <p class="mb-0"><strong>{{ 'HEALTH_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translate }}:</strong> {{
-            'HEALTH_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="factors-impact-section bg-white">
+  <section class="factors-impact-section bg-gray">
     <div class="container">
       <h2 class="section-title">{{ 'HEALTH_INSURANCE.FACTORS_IMPACT.HEADER.TITLE' | translate }}</h2>
       <p class="intro-text">
@@ -399,7 +279,7 @@
     </div>
   </section>
 
-  <div class="factors-impact-section">
+  <div class="factors-impact-section bg-white">
     <div class="container">
       <h2 class="section-title">{{'HEALTH_INSURANCE.DISCOUNT_FACTORS.HEADER.TITLE' | translate}}</h2>
       <p class="intro-text">
@@ -429,7 +309,7 @@
   </div>
 
 
-  <section class="rates-section py-5">
+  <section class="rates-section py-5 bg-gray">
     <div class="container container-max-1100 px-4">
       <h2 class="section-title">{{ 'HEALTH_INSURANCE.AGENT_COMPARISON.HEADER.TITLE' | translate }}</h2>
       <div class="intro-text">
@@ -483,7 +363,7 @@
     </div>
   </section>
 
-  <section class="vehicle-types-section ">
+  <section class="vehicle-types-section bg-white">
     <div class="container px-4">
       <h2 class="section-title">{{ 'HEALTH_INSURANCE.HEALTH_INSURANCE_TYPES.HEADER.TITLE' | translate }}</h2>
       <div class="row g-4">
@@ -512,7 +392,7 @@
     </div>
   </section>
 
-  <section class="language-section">
+  <section class="language-section bg-pink">
     <div class="container px-4">
       <h2 class="section-title">{{ 'HOME_INSURANCE.LANGUAGE_SUPPORT.HEADER.TITLE' | translate }}</h2>
       <div class="intro-text">
