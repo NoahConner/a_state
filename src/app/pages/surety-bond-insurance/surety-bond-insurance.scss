@@ -1,5 +1,5 @@
 .topBanner {
-  background-image: url('/assets/images/health-insurance/banner.png');
+  background-image: url('/assets/images/surety-insurance/banner.png');
   height: 38.5rem;
   background-size: cover;
   background-repeat: no-repeat;
@@ -156,7 +156,7 @@
 
 
 .getCoverd {
-  background-image: url('/assets/images/health-insurance/coverd-banner.png');
+  background-image: url('/assets/images/surety-insurance/coverd-banner.png');
   height: 38.5rem;
   background-size: cover;
   background-repeat: no-repeat;
@@ -375,6 +375,41 @@
     color: #000000;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
+  }
+
+  .laws-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.252);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 80%;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      background: #CA2B28;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .laws-content {
+      h6.laws-title {
+        font-size: 16.5px;
+        font-weight: 700;
+        color: #000;
+        margin-bottom: 8px;
+        line-height: 1.2;
+      }
+
+      p.laws-desc {
+        font-size: 13.5px;
+        line-height: 1.6;
+        color: #222;
+        margin: 0;
+      }
+    }
   }
 
 }
@@ -953,11 +988,11 @@
       }
 
       p {
-        font-size: 12.5px;
+        font-size: 15px;
         line-height: 1.6;
         color: #222222;
         margin-bottom: 0;
-        width: 15rem;
+        width: 16rem;
       }
     }
   }

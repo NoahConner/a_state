@@ -83,21 +83,28 @@
     <div class="container-max-800">
 
       <h1 class="main-title">
-        {{ 'HEALTH_INSURANCE.LAWS.TITLE' | translate }}
+        {{ 'SURETY_INSURANCE.SURETY_VS_INSURANCE.TITLE' | translate }}
       </h1>
 
       <p class="intro-text">
-        {{ 'HEALTH_INSURANCE.LAWS.DESC' | translate }}
-        <br>
-        <br>
-        {{ 'HEALTH_INSURANCE.LAWS.DESC1' | translate }}
-        <br>
-        <br>
-        {{ 'HEALTH_INSURANCE.LAWS.DESC2' | translate }}
-        <br>
-        <br>
-        {{ 'HEALTH_INSURANCE.LAWS.DESC3' | translate }}
+        {{ 'SURETY_INSURANCE.SURETY_VS_INSURANCE.OVERVIEW' | translate }}
       </p>
+
+      <div class="row">
+        @for (key of lawsKey; track key) {
+
+        <div class="col-lg-6">
+          <div class="laws-card">
+            <div class="laws-content">
+              <p> <strong>{{ ('SURETY_INSURANCE.SURETY_VS_INSURANCE.LIST.' + key + '.LABEL') | translate }} </strong>
+                <br>
+                {{ ('SURETY_INSURANCE.SURETY_VS_INSURANCE.LIST.' + key + '.CONTENT') | translate }}
+              </p>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
     </div>
   </section>
 
@@ -107,20 +114,20 @@
       <div class="row">
         <div class="col-lg-10">
           <!-- Title -->
-          <h4 class="how-it-work-title mb-4">{{ 'HEALTH_INSURANCE.HOW_IT_WORKS.TITLE' | translate }}</h4>
+          <h4 class="how-it-work-title mb-4">{{ 'SURETY_INSURANCE.HOW_IT_WORKS.TITLE' | translate }}</h4>
 
           <!-- Description Content -->
           <div class="how-it-work-description">
             <p class="mb-4">
-              {{ 'HEALTH_INSURANCE.HOW_IT_WORKS.DESC1' | translate }}
+              {{ 'SURETY_INSURANCE.HOW_IT_WORKS.DESC1' | translate }}
 
               <br>
               <br>
-              {{ 'HEALTH_INSURANCE.HOW_IT_WORKS.DESC2' | translate }}
+              {{ 'SURETY_INSURANCE.HOW_IT_WORKS.DESC2' | translate }}
 
               <br>
               <br>
-              {{ 'HEALTH_INSURANCE.HOW_IT_WORKS.DESC3' | translate }}
+              {{ 'SURETY_INSURANCE.HOW_IT_WORKS.DESC3' | translate }}
 
 
 
@@ -136,13 +143,13 @@
   <section class="insurance-section py-5 bg-pink">
     <div class="container">
       <div class="header-content mb-5">
-        <h6 class="text-danger fw-bold">{{ 'HEALTH_INSURANCE.COVERAGES.OPTIONAL.TITLE' | translate }}</h6>
-        <p class="small text-muted">{{ 'HEALTH_INSURANCE.COVERAGES.OPTIONAL.DESC' | translate }}</p>
+        <h6 class="text-danger fw-bold">{{ 'SURETY_INSURANCE.COVERAGES.WHO_REQUIRES.TITLE' | translate }}</h6>
+        <p class="small text-muted">{{ 'SURETY_INSURANCE.COVERAGES.WHO_REQUIRES.DESC' | translate }}</p>
       </div>
       <div id="optionalCoveragesCarousel" class="carousel slide pb-5" data-bs-ride="carousel">
         <!-- Pagination Dots -->
         <div class="carousel-indicators custom-dots mb-0">
-          @for (chunk of optionalCoveragesChunks; track $index) {
+          @for (chunk of whoRequiresChunks; track $index) {
           <button type="button" data-bs-target="#optionalCoveragesCarousel" [attr.data-bs-slide-to]="$index"
             [class.active]="$index === 0" [attr.aria-current]="$index === 0"
             [attr.aria-label]="'Slide ' + ($index + 1)"></button>
@@ -151,7 +158,7 @@
 
         <!-- Carousel Items -->
         <div class="carousel-inner">
-          @for (chunk of optionalCoveragesChunks; track $index) {
+          @for (chunk of whoRequiresChunks; track $index) {
           <div class="carousel-item" [class.active]="$index === 0">
             <div class="row g-4">
               @for (item of chunk; track item.TITLE) {
@@ -179,12 +186,12 @@
     <div class="container">
       <!-- Header -->
       <div class="header-content mb-5">
-        <h6 class="text-danger fw-bold">{{ 'HEALTH_INSURANCE.COVERAGES.STANDARD.TITLE' | translate }}</h6>
-        <p class="small text-muted">{{ 'HEALTH_INSURANCE.COVERAGES.STANDARD.DESC' | translate }}</p>
+        <h6 class="text-danger fw-bold">{{ 'SURETY_INSURANCE.COVERAGES.STANDARD.TITLE' | translate }}</h6>
+        <p class="small text-muted">{{ 'SURETY_INSURANCE.COVERAGES.STANDARD.DESC' | translate }}</p>
       </div>
 
       <div class="row g-4 mb-5">
-        @for (item of ('HEALTH_INSURANCE.COVERAGES.STANDARD.LIST' | translate); track item.TITLE) {
+        @for (item of ('SURETY_INSURANCE.COVERAGES.STANDARD.LIST' | translate); track item.TITLE) {
         <div class="col-md-4">
           <div class="insurance-card">
             <div class="card-icon"><i [class]="item.ICON"></i></div>
@@ -205,8 +212,8 @@
   <section class="insurance-section py-5 bg-pink">
     <div class="container">
       <div class="header-content mb-5">
-        <h6 class="text-danger fw-bold">{{ 'HEALTH_INSURANCE.COVERAGES.OPTIONAL.TITLE' | translate }}</h6>
-        <p class="small text-muted">{{ 'HEALTH_INSURANCE.COVERAGES.OPTIONAL.DESC' | translate }}</p>
+        <h6 class="text-danger fw-bold">{{ 'SURETY_INSURANCE.COVERAGES.OPTIONAL.TITLE' | translate }}</h6>
+        <p class="small text-muted">{{ 'SURETY_INSURANCE.COVERAGES.OPTIONAL.DESC' | translate }}</p>
       </div>
       <div id="optionalCoveragesCarousel" class="carousel slide pb-5" data-bs-ride="carousel">
         <!-- Pagination Dots -->
@@ -248,10 +255,10 @@
 
   <section class="how-much-do-you-need mt-5 mb-5">
     <div class="container">
-      <h1 class="how-much-do-you-need-title">{{ 'HEALTH_INSURANCE.HEALTH_INSURANCE_COST.TITLE' | translate }}</h1>
+      <h1 class="how-much-do-you-need-title">{{ 'SURETY_INSURANCE.SURETY_BOND_COST.TITLE' | translate }}</h1>
       <div class="how-much-do-you-need-description">
-        <p>{{ 'HEALTH_INSURANCE.HEALTH_INSURANCE_COST.DESC1' | translate }}</p>
-        <p>{{ 'HEALTH_INSURANCE.HEALTH_INSURANCE_COST.DESC2' | translate }}</p>
+        <p>{{ 'SURETY_INSURANCE.SURETY_BOND_COST.DESC1' | translate }}</p>
+        <p>{{ 'SURETY_INSURANCE.SURETY_BOND_COST.DESC2' | translate }}</p>
       </div>
     </div>
   </section>
@@ -259,9 +266,9 @@
 
   <section class="factors-impact-section bg-gray">
     <div class="container">
-      <h2 class="section-title">{{ 'HEALTH_INSURANCE.FACTORS_IMPACT.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'SURETY_INSURANCE.FACTORS_IMPACT.HEADER.TITLE' | translate }}</h2>
       <p class="intro-text">
-        {{ 'HEALTH_INSURANCE.FACTORS_IMPACT.HEADER.DESC' | translate }}
+        {{ 'SURETY_INSURANCE.FACTORS_IMPACT.HEADER.DESC' | translate }}
       </p>
 
       <div class="row">
@@ -269,8 +276,8 @@
         <div class="col-lg-6">
           <div class="factor-item">
             <div class="factor-content">
-              <p> <strong>{{ ('HEALTH_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }} :</strong>
-                {{ ('HEALTH_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}</p>
+              <p> <strong>{{ ('SURETY_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }} :</strong>
+                {{ ('SURETY_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}</p>
             </div>
           </div>
         </div>
@@ -281,9 +288,9 @@
 
   <div class="factors-impact-section bg-white">
     <div class="container">
-      <h2 class="section-title">{{'HEALTH_INSURANCE.DISCOUNT_FACTORS.HEADER.TITLE' | translate}}</h2>
+      <h2 class="section-title">{{'SURETY_INSURANCE.DISCOUNT_FACTORS.HEADER.TITLE' | translate}}</h2>
       <p class="intro-text">
-        {{'HEALTH_INSURANCE.DISCOUNT_FACTORS.HEADER.DESC' | translate}}
+        {{'SURETY_INSURANCE.DISCOUNT_FACTORS.HEADER.DESC' | translate}}
       </p>
 
       <div class="row">
@@ -291,8 +298,8 @@
         <div class="col-lg-6">
           <div class="factor-card">
             <div class="factor-content">
-              <p> <strong>{{ ('HEALTH_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translate }} :</strong>
-                {{ ('HEALTH_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translate }}</p>
+              <p> <strong>{{ ('SURETY_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translate }} :</strong>
+                {{ ('SURETY_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translate }}</p>
 
               <!-- <h6 class="factor-title">
                 {{ ('COMMERCIAL_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }}
@@ -311,27 +318,27 @@
 
   <section class="rates-section py-5 bg-gray">
     <div class="container container-max-1100 px-4">
-      <h2 class="section-title">{{ 'HEALTH_INSURANCE.AGENT_COMPARISON.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'SURETY_INSURANCE.AGENT_COMPARISON.HEADER.TITLE' | translate }}</h2>
       <div class="intro-text">
-        <p>{{ 'HEALTH_INSURANCE.AGENT_COMPARISON.HEADER.DESC' | translate }}</p>
+        <p>{{ 'SURETY_INSURANCE.AGENT_COMPARISON.HEADER.DESC' | translate }}</p>
       </div>
 
       <!-- Table Container -->
       <div class="rates-table-card p-4 mt-5">
         <div class="row g-2 text-center text-white fw-bold mb-2">
           <div class="col-4">
-            <div class="header-pill bg-danger py-2">{{ 'HEALTH_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.FEATURE' |
+            <div class="header-pill bg-danger py-2">{{ 'SURETY_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.FEATURE' |
               translate
               }}</div>
           </div>
           <div class="col-4">
-            <div class="header-pill bg-danger py-2">{{ 'HEALTH_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.INDEPENDENT'
+            <div class="header-pill bg-danger py-2">{{ 'SURETY_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.INDEPENDENT'
               |
               translate
               }}</div>
           </div>
           <div class="col-4">
-            <div class="header-pill bg-danger py-2">{{ 'HEALTH_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.CAPTIVE' |
+            <div class="header-pill bg-danger py-2">{{ 'SURETY_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.DIRECT' |
               translate
               }}</div>
           </div>
@@ -343,17 +350,17 @@
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('HEALTH_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translate }}
+                {{ ('SURETY_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translate }}
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('HEALTH_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translate }}
+                {{ ('SURETY_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translate }}
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('HEALTH_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translate }}
+                {{ ('SURETY_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.DIRECT') | translate }}
               </div>
             </div>
           </div>
@@ -365,16 +372,16 @@
 
   <section class="vehicle-types-section bg-white">
     <div class="container px-4">
-      <h2 class="section-title">{{ 'HEALTH_INSURANCE.HEALTH_INSURANCE_TYPES.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'SURETY_INSURANCE.SURETY_BOND_TYPES.HEADER.TITLE' | translate }}</h2>
       <div class="row g-4">
         @for (type of industryCoverageKeys; track type) {
-        <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="col-lg-5 col-md-6 col-sm-6">
           <div class="vehicle-type-card">
             <div class="icon-wrapper">
-              <i [class]="'HEALTH_INSURANCE.HEALTH_INSURANCE_TYPES.LIST.' + type + '.ICON' | translate"></i>
+              <i [class]="'SURETY_INSURANCE.SURETY_BOND_TYPES.LIST.' + type + '.ICON' | translate"></i>
             </div>
-            <h6>{{ ('HEALTH_INSURANCE.HEALTH_INSURANCE_TYPES.LIST.' + type + '.TITLE') | translate }}</h6>
-            <p>{{ ('HEALTH_INSURANCE.HEALTH_INSURANCE_TYPES.LIST.' + type + '.DESCRIPTION') | translate }}</p>
+            <h6>{{ ('SURETY_INSURANCE.SURETY_BOND_TYPES.LIST.' + type + '.TITLE') | translate }}</h6>
+            <p>{{ ('SURETY_INSURANCE.SURETY_BOND_TYPES.LIST.' + type + '.DESCRIPTION') | translate }}</p>
           </div>
         </div>
         }
@@ -384,21 +391,22 @@
 
   <section class="high-risk-section bg-white">
     <div class="container px-4">
-      <h2 class="section-title">{{ 'HEALTH_INSURANCE.HIGH_RISK_APPLICANT.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'SURETY_INSURANCE.BAD_CREDIT_APPLICANT.HEADER.TITLE' | translate }}</h2>
       <div class="intro-text">
-        <p>{{ 'HEALTH_INSURANCE.HIGH_RISK_APPLICANT.CONTENT.DESC1' | translate }}</p>
-        <p>{{ 'HEALTH_INSURANCE.HIGH_RISK_APPLICANT.CONTENT.DESC2' | translate }}</p>
+        <p>{{ 'SURETY_INSURANCE.BAD_CREDIT_APPLICANT.CONTENT.DESC1' | translate }}</p>
+        <p>{{ 'SURETY_INSURANCE.BAD_CREDIT_APPLICANT.CONTENT.DESC2' | translate }}</p>
+        <p>{{ 'SURETY_INSURANCE.BAD_CREDIT_APPLICANT.CONTENT.DESC3' | translate }}</p>
       </div>
     </div>
   </section>
 
   <section class="language-section bg-pink">
     <div class="container px-4">
-      <h2 class="section-title">{{ 'HOME_INSURANCE.LANGUAGE_SUPPORT.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'SURETY_INSURANCE.LANGUAGE_SUPPORT.HEADER.TITLE' | translate }}</h2>
       <div class="intro-text">
-        <p>{{ 'HOME_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC1' | translate }}</p>
-        <p>{{ 'HOME_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC2' | translate }}</p>
-
+        <p>{{ 'SURETY_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC1' | translate }}</p>
+        <p>{{ 'SURETY_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC2' | translate }}</p>
+        <p>{{ 'SURETY_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC3' | translate }}</p>
       </div>
     </div>
   </section>
@@ -409,7 +417,7 @@
       <div class="row mb-5 text-center">
         <div class="col-6">
           <h3 class="heading">
-            {{ 'HEALTH_INSURANCE.ASTATE_DIFFERENTIATORS.HEADER.TITLE' | translate }}
+            {{ 'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.HEADER.TITLE' | translate }}
           </h3>
         </div>
       </div>
@@ -423,10 +431,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'HEALTH_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.TITLE' | translate }}
+                  {{ 'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'HEALTH_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.DESCRIPTION' | translate }}
+                  {{ 'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.DESCRIPTION' | translate }}
                 </p>
               </div>
             </div>
@@ -439,10 +447,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'HEALTH_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.TITLE' | translate }}
+                  {{ 'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'HEALTH_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.DESCRIPTION' | translate }}
+                  {{ 'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.DESCRIPTION' | translate }}
                 </p>
               </div>
             </div>
@@ -457,10 +465,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'HEALTH_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.TITLE' | translate }}
+                  {{ 'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'HEALTH_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.DESCRIPTION' | translate }}
+                  {{ 'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.DESCRIPTION' | translate }}
                 </p>
               </div>
             </div>
@@ -473,10 +481,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'HEALTH_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.TITLE' | translate }}
+                  {{ 'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'HEALTH_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.DESCRIPTION' | translate }}
+                  {{ 'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.DESCRIPTION' | translate }}
                 </p>
               </div>
             </div>
@@ -491,10 +499,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'HEALTH_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translate }}
+                  {{ 'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'HEALTH_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' | translate }}
+                  {{ 'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' | translate }}
                 </p>
               </div>
             </div>
@@ -507,10 +515,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'HEALTH_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.TITLE' | translate }}
+                  {{ 'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'HEALTH_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.DESCRIPTION' | translate }}
+                  {{ 'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.DESCRIPTION' | translate }}
                 </p>
               </div>
             </div>
@@ -533,38 +541,38 @@
         </div>
 
         <div class="col-md-6 ps-md-5">
-          <h2 class="section-title mb-5">{{ 'HEALTH_INSURANCE.INSURANCE_STEPS.HEADER.TITLE' | translate }}</h2>
+          <h2 class="section-title mb-5">{{ 'SURETY_INSURANCE.INSURANCE_STEPS.HEADER.TITLE' | translate }}</h2>
 
           <div class="timeline">
             <div class="timeline-item">
               <div class="dot"></div>
               <div class="content">
-                <h3>{{ 'HEALTH_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.TITLE' | translate }}</h3>
-                <p>{{ 'HEALTH_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translate }}</p>
+                <h3>{{ 'SURETY_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.TITLE' | translate }}</h3>
+                <p>{{ 'SURETY_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translate }}</p>
               </div>
             </div>
 
             <div class="timeline-item">
               <div class="dot"></div>
               <div class="content">
-                <h3>{{ 'HEALTH_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.TITLE' | translate }}</h3>
-                <p>{{ 'HEALTH_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.DESCRIPTION' | translate }}</p>
+                <h3>{{ 'SURETY_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.TITLE' | translate }}</h3>
+                <p>{{ 'SURETY_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.DESCRIPTION' | translate }}</p>
               </div>
             </div>
 
             <div class="timeline-item">
               <div class="dot"></div>
               <div class="content">
-                <h3>{{ 'HEALTH_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.TITLE' | translate }}</h3>
-                <p>{{ 'HEALTH_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.DESCRIPTION' | translate }}</p>
+                <h3>{{ 'SURETY_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.TITLE' | translate }}</h3>
+                <p>{{ 'SURETY_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.DESCRIPTION' | translate }}</p>
               </div>
             </div>
 
             <div class="timeline-item">
               <div class="dot"></div>
               <div class="content">
-                <h3>{{ 'HEALTH_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.TITLE' | translate }}</h3>
-                <p>{{ 'HEALTH_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.DESCRIPTION' | translate }}</p>
+                <h3>{{ 'SURETY_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.TITLE' | translate }}</h3>
+                <p>{{ 'SURETY_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.DESCRIPTION' | translate }}</p>
               </div>
             </div>
           </div>
@@ -576,14 +584,14 @@
 
   <section class="switch-steps-section">
     <div class="container px-4">
-      <h2 class="section-title">{{ 'HEALTH_INSURANCE.SWITCH_STEPS.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'SURETY_INSURANCE.SWITCH_STEPS.HEADER.TITLE' | translate }}</h2>
 
       <div class="switch-steps-grid">
         @for (step of switchSteps; track step) {
         <div class="switch-card-wrapper">
           <div class="switch-card">
-            <h6>{{ 'HEALTH_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE' | translate }}</h6>
-            <p>{{ 'HEALTH_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION' | translate }}</p>
+            <h6>{{ 'SURETY_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE' | translate }}</h6>
+            <p>{{ 'SURETY_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION' | translate }}</p>
           </div>
         </div>
         }
@@ -591,41 +599,16 @@
     </div>
   </section>
 
-  <section class="faq-section py-5">
-    <div class="container">
-      <h2 class="faq-title mb-4">{{ 'HEALTH_INSURANCE.FAQ_LIST.HEADER.TITLE' | translate }}</h2>
 
-      <div class="accordion accordion-flush" id="faqAccordion">
-
-        @for (item of faqList; track item) {
-        <div class="accordion-item mb-3">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              [attr.data-bs-target]="'#' + item" [attr.aria-controls]="item">
-              {{ 'HEALTH_INSURANCE.FAQ_LIST.QUESTIONS.' + item + '.QUESTION' | translate }}
-            </button>
-          </h2>
-
-          <div [id]="item" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-            <div class="accordion-body"
-              [innerHTML]="'COMMERCIAL_INSURANCE.FAQ_LIST.QUESTIONS.' + item + '.ANSWER' | translate">
-            </div>
-          </div>
-        </div>
-        }
-
-      </div>
-    </div>
-  </section>
 
   <div class="getCoverd">
     <div class="container">
       <div class="topSub">
         <div class="topSub2">
           <div class="h1">
-            {{ 'HEALTH_INSURANCE.FREE_QUOTE.HEADER' | translate }}
+            {{ 'SURETY_INSURANCE.FREE_QUOTE.HEADER' | translate }}
           </div>
-          <p class="para">{{ 'HEALTH_INSURANCE.FREE_QUOTE.DESCRIPTION' | translate }}</p>
+          <p class="para">{{ 'SURETY_INSURANCE.FREE_QUOTE.DESCRIPTION' | translate }}</p>
           <div class="selectable mt-4">
             @for (item of chips.slice(0, 3); track item.name) {
             <div class="chip">
@@ -644,15 +627,15 @@
           </div>
 
           <div class="inps">
-            <input type="text" [placeholder]="'HEALTH_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
+            <input type="text" [placeholder]="'SURETY_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
               class="form-control" />
 
-            <input type="number" [placeholder]="'HEALTH_INSURANCE.BANNER.FORM.PHONE' | translate"
+            <input type="number" [placeholder]="'SURETY_INSURANCE.BANNER.FORM.PHONE' | translate"
               class="form-control" />
           </div>
 
           <button class="btn">
-            {{ 'HEALTH_INSURANCE.BANNER.FORM.BUTTON' | translate }}
+            {{ 'SURETY_INSURANCE.BANNER.FORM.BUTTON' | translate }}
           </button>
         </div>
       </div>

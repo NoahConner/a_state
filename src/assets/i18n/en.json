@@ -5328,19 +5328,37 @@
         }
       ]
     },
-    "LAWS": {
-      "TITLE": "Is Health Insurance Required in Texas?",
-      "DESC": "Alright, let’s get straight to the point. No, health insurance isn’t required by law in Texas. Unlike some states, Texas doesn’t have a mandate requiring you to have health insurance.",
-      "DESC1": "But just because it’s not legally required doesn’t mean it’s not super important. In fact, Texas has the highest uninsured rate in the country. Yep, that's a fact! So, while you might not face a fine for not having coverage, you could be facing some major financial risks.",
-      "DESC2": "Without health insurance, one big accident or serious illness could leave you with bills that are way harder to handle. Emergency room visits can cost thousands of dollars, and that’s just for a single visit. Imagine ongoing medical care without insurance – it’s a big hit to your wallet.",
-      "DESC3": "So, while it’s not mandatory, think of health insurance like a financial safety net. It’s always better to be covered than to get hit with unexpected bills. "
+    "SURETY_VS_INSURANCE": {
+      "TITLE": "What is the Difference Between a Surety Bond and Insurance?",
+      "OVERVIEW": "Surety bonds and insurance both offer financial protection, but they serve different purposes. Insurance protects the policyholder from losses, while a bond requires the bond if obligations are not met. Understanding this difference helps avoid confusion, denied claims, and unexpected repayment obligations later.",
+      "LIST": {
+        "PROTECTION": {
+          "LABEL": "Who Is Protected",
+          "CONTENT": "Insurance protects the policyholder. A surety bond protects the client, government agency, or public requiring the bond."
+        },
+        "REPAYMENT": {
+          "LABEL": "Repayment Responsibility",
+          "CONTENT": "Insurance pays claims without repayment. With a bond, the bonded party must repay the surety company if a claim is paid."
+        },
+        "PURPOSE": {
+          "LABEL": "Purpose of Coverage",
+          "CONTENT": "Insurance covers accidents or unexpected loss. Bonds guarantee that contracts, laws, or professional obligations will be followed."
+        },
+        "RISK": {
+          "LABEL": "Risk Assessment",
+          "CONTENT": "Insurance spreads risk among many policyholders. A bond evaluates the business’s reliability and financial responsibility."
+        },
+        "USE_CASES": {
+          "LABEL": "Common Use Cases",
+          "CONTENT": "Insurance covers property damage or liability. Surety bonds are often required for licenses, construction contracts, and government projects."
+        }
+      }
     },
     "HOW_IT_WORKS": {
-      "TITLE": "How Does Health Insurance Work?",
-      "DESC1": "So, you know you need health insurance, but you’re not sure how it actually works once you’ve got it. No worries, we’ll break it down!",
-      "DESC2": "Health insurance is like a partnership between you and your insurance company. You pay a monthly amount, called a premium, and in return, your insurance helps cover your medical bills. Think of it as a safety net that helps you pay for things like doctor visits, prescriptions, and hospital stays.",
-      "DESC3": "Once you have your insurance, you just use it like a tool to help pay for healthcare. When you go to the doctor or need a procedure, your insurance will help cover the cost, depending on your plan details. Your insurance company will work with you to make sure you get the care you need while paying as little as possible out of pocket.",
-      "DESC4": "It’s not as complicated as it seems once you get the hang of it! Health insurance is there to make sure you don’t have to pay for everything by yourself. It’s all about sharing the costs, so you’re not left with a huge financial burden if something unexpected happens."
+      "TITLE": "Why Do You Need a Surety Bond in Texas?",
+      "DESC1": "Many businesses and professionals are required to obtain a surety bond in Texas before they can legally operate or secure certain contracts. State agencies, local governments, and project owners use bonds to ensure rules are followed and obligations are met. Without the required bond, licenses may be denied, projects delayed, or permits rejected.",
+      "DESC2": "Surety bonds protect customers, clients, and government agencies if a business fails to meet legal or contractual duties. If work is not completed properly or regulations are violated, the bond provides financial protection to the affected party. This helps maintain trust and accountability in industries where public protection is important.",
+      "DESC3": "For many professionals, having the right bond is simply a step required to move forward. Contractors need it to bid on jobs, auto dealers need it for licensing, and certain legal processes require bonding. Securing the bond quickly ensures you stay compliant, meet deadlines, and keep your business or project moving without interruption."
     },
     "NOT_COVERED": {
       "HEADER": {
@@ -5401,513 +5419,465 @@
     },
     "COVERAGES": {
       "STANDARD": {
-        "TITLE": "What Does Health Insurance Cover in Texas?",
-        "DESC": "Health insurance covers a wide range of essential medical services, helping protect you from high out-of-pocket costs. Coverage typically includes doctor visits, hospital stays, emergency care, prescriptions, mental health services, and preventive care. Having the right health insurance ensures you receive necessary treatments without the financial strain of paying everything on your own.",
+        "TITLE": "What Does a Surety Bond Cover in Texas?",
+        "DESC": "A surety bond helps protect clients, government agencies, and the public when a business fails to meet legal or contractual responsibilities. Instead of covering accidents, as insurance does, it guarantees that licensed professionals follow regulations and complete the agreed-upon work. If obligations are violated, the bond can compensate the affected party for financial losses, thereby maintaining accountability.",
         "LIST": [
           {
-            "TITLE": "Preventive Care & Wellness Visits",
-            "DESC": "Preventive care includes regular check-ups, vaccinations, and screenings to detect health issues early. Many health insurance plans cover these services at no cost to help maintain your overall well-being and prevent more serious conditions later.",
-            "ICON": "fas fa-heartbeat"
+            "TITLE": "Contractor Default & Project Abandonment",
+            "DESC": "If a contractor walks off the job or fails to complete the project as agreed, the bond provides financial protection by covering losses and ensuring fulfillment of obligations.",
+            "ICON": "fas fa-hard-hat"
           },
           {
-            "TITLE": "Doctor & Specialist Visits",
-            "DESC": "Doctor and specialist visits are covered by most health plans, offering access to routine care and specialists. Depending on your plan, you may need a referral to specialists, but these visits help manage your health and specific medical concerns.",
-            "ICON": "fas fa-user-md"
+            "TITLE": "Unpaid Subcontractors & Suppliers",
+            "DESC": "Ensures that subcontractors, laborers, and material suppliers are fully compensated if the primary contractor fails to pay for services or materials provided.",
+            "ICON": "fas fa-file-invoice-dollar"
           },
           {
-            "TITLE": "Emergency Room & Urgent Care",
-            "DESC": "Emergency room and urgent care visits are covered for medical emergencies or sudden illnesses. These services provide immediate care, though ER visits may have higher out-of-pocket costs depending on your plan.",
-            "ICON": "fas fa-ambulance"
+            "TITLE": "Unpaid Taxes & Government Fees",
+            "DESC": "Provides financial protection to authorities if a business fails to pay required taxes, licensing fees, or regulatory costs, ensuring operational compliance.",
+            "ICON": "fas fa-coins"
           },
           {
-            "TITLE": "Hospital Stays & Surgery",
-            "DESC": "Hospital stays and surgeries are typically covered, including room charges, surgical procedures, and aftercare. Your deductible and coinsurance determine how much you pay.",
-            "ICON": "fas fa-hospital"
+            "TITLE": "Employee Theft & Fraud",
+            "DESC": "Reimburses clients for financial losses if an employee commits theft, fraud, or other dishonest acts while performing their professional duties.",
+            "ICON": "fas fa-user-shield"
           },
           {
-            "TITLE": "Prescription Drugs & Medications",
-            "DESC": "Most plans cover prescription drugs, including generic and brand-name medications. Costs vary based on your plan’s formulary and coverage tiers.",
-            "ICON": "fas fa-pills"
+            "TITLE": "Failure to Obtain Required Permits",
+            "DESC": "Protects clients and government authorities by covering damages, fines, or penalties resulting from noncompliance with building or operational permit regulations.",
+            "ICON": "fas fa-clipboard-check"
           },
           {
-            "TITLE": "Mental Health & Substance Abuse Treatment",
-            "DESC": "Mental health services such as therapy, counseling, and rehab programs are often included, helping support emotional well-being and recovery.",
-            "ICON": "fas fa-brain"
+            "TITLE": "Violation of License Conditions",
+            "DESC": "Provides compensation if a business violates state or local licensing rules or fails to follow the ethical standards required for their professional license.",
+            "ICON": "fas fa-certificate"
           },
           {
-            "TITLE": "Maternity & Newborn Care",
-            "DESC": "Coverage includes prenatal visits, labor and delivery, and postnatal care for both mother and baby, ensuring a healthy start.",
-            "ICON": "fas fa-baby"
+            "TITLE": "Court-Ordered Financial Obligations",
+            "DESC": "Guarantees fulfillment of payments ordered by a court, protecting beneficiaries from financial loss arising from a failure to comply with legal requirements.",
+            "ICON": "fas fa-gavel"
           },
           {
-            "TITLE": "Pediatric Care & Children's Services",
-            "DESC": "Includes regular check-ups, vaccinations, and medical care for children to monitor growth and address health concerns.",
-            "ICON": "fas fa-child"
+            "TITLE": "Failure to Comply With Contract Terms",
+            "DESC": "Provides compensation for financial losses caused by delays, breaches, or incomplete performance of duties outlined in a formal contract.",
+            "ICON": "fas fa-file-contract"
           },
           {
-            "TITLE": "Lab Tests & Diagnostic Imaging",
-            "DESC": "Lab tests, blood work, MRIs, and X-rays are covered to diagnose and monitor medical conditions. Costs vary by plan.",
-            "ICON": "fas fa-vials"
+            "TITLE": "Public & Consumer Financial Protection",
+            "DESC": "Guarantees remedies for harm or loss caused to the public if a business acts dishonestly or violates consumer protection regulations.",
+            "ICON": "fas fa-users"
           },
           {
-            "TITLE": "Rehabilitation & Physical Therapy",
-            "DESC": "Therapies like physical, occupational, and speech therapy help recovery after injuries or surgeries. Coverage may limit sessions.",
-            "ICON": "fas fa-dumbbell"
+            "TITLE": "Customs & Import Compliance Failures",
+            "DESC": "Guarantees that government agencies are protected if importers fail to pay duties or comply with federal regulations regarding international trade.",
+            "ICON": "fas fa-ship"
           },
           {
-            "TITLE": "Home Health Care Services",
-            "DESC": "Provides nursing care and therapy at home for those needing medical attention without hospital stays, based on medical necessity.",
-            "ICON": "fas fa-home"
-          },
-          {
-            "TITLE": "Medical Equipment & Supplies",
-            "DESC": "Covers items like wheelchairs, oxygen equipment, and diabetic supplies depending on medical need and plan approval.",
-            "ICON": "fas fa-procedures"
-          },
-          {
-            "TITLE": "Dental & Vision (Add-On Coverage)",
-            "DESC": "Dental and vision benefits are usually optional add-ons covering check-ups, treatments, glasses, and procedures.",
-            "ICON": "fas fa-eye"
-          },
-          {
-            "TITLE": "Telehealth & Virtual Visits",
-            "DESC": "Virtual doctor consultations are often covered, allowing convenient and cost-effective access to healthcare from home.",
-            "ICON": "fas fa-video"
-          },
-          {
-            "TITLE": "Preventive Screenings & Vaccinations",
-            "DESC": "Includes screenings like mammograms and vaccines to detect and prevent serious illnesses early, often at no extra cost.",
-            "ICON": "fas fa-shield-alt"
+            "TITLE": "Freight Broker Payment Defaults",
+            "DESC": "Guarantees payment to contracted carriers or shippers if a freight broker fails to provide compensation for transportation services.",
+            "ICON": "fas fa-truck"
           }
         ]
       },
       "OPTIONAL": {
-        "TITLE": "What Does Health Insurance NOT Cover in Texas?",
-        "DESC": "While health insurance covers many essential services, some treatments and situations are typically excluded. These may include cosmetic procedures, experimental treatments, non-essential services, and certain out-of-network care. Reviewing your policy helps you understand these limitations and avoid unexpected costs.",
+        "TITLE": "What Does a Surety Bond NOT Cover in Texas?",
+        "DESC": "A surety bond protects the public by ensuring a business follows legal and contractual obligations, but it does not cover every type of loss. Understanding these limits helps businesses know when additional insurance or financial protection may be required.",
         "LIST": [
           {
-            "TITLE": "Cosmetic & Elective Procedures",
-            "DESC": "Procedures like facelifts, liposuction, and non-essential dental work are usually not covered unless medically necessary.",
-            "ICON": "fas fa-user"
+            "TITLE": "The Principal's Own Financial Losses",
+            "DESC": "A surety bond does not reimburse the bonded business for its own mistakes or mismanagement; it only protects the party receiving the guarantee.",
+            "ICON": "fas fa-user-minus"
           },
           {
-            "TITLE": "Experimental & Investigational Treatments",
-            "DESC": "Treatments not yet proven or widely accepted through clinical trials are typically excluded from coverage.",
-            "ICON": "fas fa-flask"
+            "TITLE": "Accidental Property Damage or Bodily Injury",
+            "DESC": "These are general liability matters. Bonds are for compliance and performance, not for accidental physical damage or injuries.",
+            "ICON": "fas fa-house-damage"
           },
           {
-            "TITLE": "Out-of-Network Care (Without Authorization)",
-            "DESC": "Receiving care outside your provider network without prior approval can result in little or no coverage.",
-            "ICON": "fas fa-network-wired"
+            "TITLE": "Natural Disasters & Acts of God",
+            "DESC": "Losses from floods, hurricanes, or earthquakes require separate insurance, as bonds focus on intentional performance guarantees.",
+            "ICON": "fas fa-cloud-showers-heavy"
           },
           {
-            "TITLE": "Long-Term & Custodial Care",
-            "DESC": "Ongoing care such as nursing homes or personal assistance is generally not covered under standard health insurance plans.",
-            "ICON": "fas fa-procedures"
+            "TITLE": "Normal Business Disputes",
+            "DESC": "Standard disagreements over contract terms or ordinary commercial disputes are not covered unless they involve a breach of legal obligations.",
+            "ICON": "fas fa-comments-slash"
           },
           {
-            "TITLE": "Routine Dental & Vision",
-            "DESC": "Basic dental and vision services like cleanings, eye exams, and glasses are usually excluded unless you have add-on coverage.",
-            "ICON": "fas fa-eye"
+            "TITLE": "Losses Caused by Third Parties",
+            "DESC": "Surety bonds only protect against the principal’s failure to meet specific obligations, excluding external errors or third-party losses.",
+            "ICON": "fas fa-users-slash"
           },
           {
-            "TITLE": "Hearing Aids & Audiology",
-            "DESC": "Hearing aids, tests, and related treatments are often not included and may require separate coverage.",
-            "ICON": "fas fa-deaf"
+            "TITLE": "Employee Injuries & Workers Comp",
+            "DESC": "Workplace accidents and employee health claims require separate workers’ compensation insurance and are not covered by a bond.",
+            "ICON": "fas fa-briefcase-medical"
           },
           {
-            "TITLE": "Infertility Treatments",
-            "DESC": "Procedures like IVF are commonly not covered, as Texas does not mandate infertility coverage.",
-            "ICON": "fas fa-baby"
+            "TITLE": "Professional Errors & Negligence",
+            "DESC": "Claims for professional malpractice or mistakes must be addressed through specialized Errors & Omissions (E&O) liability coverage.",
+            "ICON": "fas fa-exclamation-triangle"
           },
           {
-            "TITLE": "Weight Loss Surgery (Non-Medical)",
-            "DESC": "Weight loss procedures are excluded unless deemed medically necessary due to serious health conditions.",
-            "ICON": "fas fa-weight"
+            "TITLE": "Cyber Attacks & Data Breaches",
+            "DESC": "Digital security failures and technology-related risks are not included; businesses need separate cyber liability insurance for these.",
+            "ICON": "fas fa-shield-virus"
           },
           {
-            "TITLE": "Alternative Medicine",
-            "DESC": "Treatments like acupuncture or naturopathy are often not covered unless part of specific approved programs.",
-            "ICON": "fas fa-leaf"
-          },
-          {
-            "TITLE": "Over-the-Counter Medications",
-            "DESC": "Non-prescription drugs and supplements are generally not covered under standard plans.",
+            "TITLE": "General Liability Claims",
+            "DESC": "Bonds guarantee obligations and do not provide protection for bodily injury or property damage caused during normal operations.",
             "ICON": "fas fa-pills"
           },
           {
-            "TITLE": "Injuries From Illegal Activities",
-            "DESC": "Medical costs resulting from illegal activities are typically excluded from coverage.",
+            "TITLE": "Fraudulent Claims Against the Bond",
+            "DESC": "Claims made in bad faith or for personal gain are not covered; the surety will investigate and deny illegitimate claims.",
+            "ICON": "fas fa-search-dollar"
+          },
+          {
+            "TITLE": "Losses Beyond the Bond Amount",
+            "DESC": "The bond only covers up to its maximum stated limit. Any excess loss remains the responsibility of the principal.",
+            "ICON": "fas fa-layer-group"
+          },
+          {
+            "TITLE": "Personal Guarantor Liability",
+            "DESC": "Once a bond limit is exhausted, any remaining legal or financial obligations must be settled by the personal guarantor.",
+            "ICON": "fas fa-file-invoice-dollar"
+          }
+        ]
+      },
+      "WHO_REQUIRES": {
+        "TITLE": "Who Requires a Surety Bond in Texas?",
+        "DESC": "A surety bond helps protect clients, government agencies, and the public when a business fails to meet legal or contractual obligations. Instead of covering accidents as insurance does, it guarantees that rules, contracts, and licensing requirements will be followed.",
+        "LIST": [
+          {
+            "TITLE": "Texas Department of Licensing and Regulation (TDLR)",
+            "DESC": "Many professions regulated by TDLR require surety bonds to ensure businesses follow state rules and protect consumers from financial harm.",
+            "ICON": "fas fa-id-card"
+          },
+          {
+            "TITLE": "Texas Department of Motor Vehicles (TxDMV)",
+            "DESC": "Auto dealers and motor vehicle businesses need bonds to protect buyers and the state if a dealer violates laws or commits fraud.",
+            "ICON": "fas fa-car"
+          },
+          {
+            "TITLE": "Texas Department of Insurance (TDI)",
+            "DESC": "Certain insurance professionals need bonds to guarantee compliance with licensing laws and protect clients from misconduct.",
+            "ICON": "fas fa-shield-alt"
+          },
+          {
+            "TITLE": "Texas Secretary of State",
+            "DESC": "Required for certain filings or registrations to ensure companies comply with legal obligations and honor agreements.",
+            "ICON": "fas fa-file-contract"
+          },
+          {
+            "TITLE": "Texas Department of Transportation (TxDOT)",
+            "DESC": "Construction companies on public projects need bonds to guarantee project completion and payment to subcontractors.",
+            "ICON": "fas fa-road"
+          },
+          {
+            "TITLE": "Federal Government & Agencies",
+            "DESC": "Federal projects and regulated industries require bonds to ensure federal rules are followed and protect against financial loss.",
+            "ICON": "fas fa-landmark"
+          },
+          {
+            "TITLE": "Texas Courts & Probate Courts",
+            "DESC": "Fiduciary or probate bonds protect beneficiaries if an appointed individual mismanages estate funds or assets.",
             "ICON": "fas fa-gavel"
           },
           {
-            "TITLE": "Services Before Coverage Starts",
-            "DESC": "Any treatment received before your policy becomes active is not covered.",
-            "ICON": "fas fa-calendar-times"
+            "TITLE": "City & County Government Agencies",
+            "DESC": "Local agencies require bonds for contractor licensing and permits to ensure compliance with municipal laws and safety codes.",
+            "ICON": "fas fa-city"
           },
           {
-            "TITLE": "Travel Vaccines & Travel Medicine",
-            "DESC": "Vaccines and treatments related to travel are usually not covered unless medically necessary.",
-            "ICON": "fas fa-plane"
+            "TITLE": "General Contractors & Project Owners",
+            "DESC": "Performance and payment bonds guarantee that contractors complete projects and that all laborers receive proper payment.",
+            "ICON": "fas fa-hard-hat"
           },
           {
-            "TITLE": "Private Nursing & In-Home Care",
-            "DESC": "Personal nursing services at home are often excluded unless deemed medically necessary.",
-            "ICON": "fas fa-home"
-          },
-          {
-            "TITLE": "Pre-Existing Conditions (Short-Term Plans)",
-            "DESC": "Short-term health plans often exclude coverage for pre-existing conditions diagnosed before the policy begins.",
-            "ICON": "fas fa-notes-medical"
+            "TITLE": "Mortgage & Financial Institutions",
+            "DESC": "Bonds protect transactions and ensure compliance with lending regulations, reducing risk in financial agreements.",
+            "ICON": "fas fa-university"
           }
         ]
       }
     },
-    "HEALTH_INSURANCE_COST": {
-      "TITLE": "How Much Does Health Insurance Cost in Texas?",
-      "DESC1": "Health insurance costs in Texas can vary widely depending on factors like your age, location, plan type, and whether you're eligible for subsidies. On average, premiums for individual plans in Texas range from $300 to $600 per month. If you qualify for subsidies through the Affordable Care Act, your premiums could be significantly lower. It's also important to consider additional costs, such as deductibles, copays, and out-of-pocket maximums, which can vary by plan.",
-      "DESC2": "Compared with the national average, health insurance premiums in Texas tend to be lower, though the state also has one of the highest uninsured rates in the country. On average, Texans pay less than individuals in states like California or New York, but the costs can still add up, especially in rural areas or for older individuals. To get a precise estimate for your situation, it’s best to get a personalized quote based on your needs."
-    },
-    "HEALTH_INSURANCE_OUTSIDE": {
-      "TITLE": "Can You Get Health Insurance Outside of Open Enrollment?",
-      "DESC1": "Don’t worry if you missed the open enrollment period; there are still options available for you to get health insurance! If you’ve experienced a qualifying life event, such as a change in marital status, the birth of a child, or a job loss, you may qualify for a Special Enrollment Period. This allows you to enroll in a plan outside of the regular open enrollment window. Additionally, if you're eligible for Medicaid or CHIP, you can apply for coverage at any time of the year.",
-      "DESC2": "Don’t let the missed deadline discourage you; our team is here to guide you through the process and help you find coverage that fits your needs. Reach out today to explore your options!"
-    },
-    "RATES": {
-      "AGE": {
-        "TITLE": "Average Health Insurance Rates by Age in Texas",
-        "DESC": "Health insurance rates vary by age because older individuals are generally at higher risk for health issues and require more medical care, which raises costs. Younger people typically have fewer health problems, leading to lower premiums. As you age, insurance providers adjust rates to reflect the increased likelihood of needing care, which is why costs are higher for older age groups.",
-        "H1": "Age",
-        "H2": "Average Bronze",
-        "H3": "Average Silver",
-        "H4": "Average Gold"
-      },
-      "PROVIDERS": {
-        "TITLE": "Average Health Insurance Rates by Insurance Company in Texas",
-        "DESC": "Health insurance rates differ by company because each insurer sets prices based on its own costs, network agreements, administrative fees, and care management. Some carriers have broader networks or more efficient systems that lower costs, while others focus on specialized services that raise premiums. Consumer demand, regional risk pools, and plan designs also influence rate differences.",
-        "H1": "Insurance Provider",
-        "H2": "Average Monthly Rate",
-        "H3": "Average Annual Rate"
-      },
-      "FOOTER": {
-        "SOURCE": "Source:",
-        "DISCLAIMER_LABEL": "Disclaimer",
-        "LAST_UPDATED": "Last Updated: March 2026",
-        "DISCLAIMER": "The information provided on this page is for general informational purposes only and may not reflect the most current updates. Coverage requirements, rates, and laws are subject to change. Please consult a licensed insurance agent for the most accurate and up-to-date information."
-      }
+    "SURETY_BOND_COST": {
+      "TITLE": "How Much Does a Surety Bond Cost in Texas?",
+      "DESC1": "The cost of a surety bond in Texas is not the full bond amount. Instead, businesses pay a small percentage, called a premium, based on the total bond value required by the state or licensing authority. Most surety bonds in Texas typically cost between 1% and 10% of the bond amount, depending on the applicant’s risk profile and financial history.",
+      "DESC2": "Compared with many other states, Texas bond rates are fairly typical. In states with stricter risk underwriting or higher regulatory requirements, premiums for the same $10,000 bond can reach $400 to $1,000 annually. Texas often ranks lower because the state has a competitive bonding market and many licensed surety providers."
     },
     "FACTORS_IMPACT": {
       "HEADER": {
-        "TITLE": "Factors That Impact Your Texas Health Insurance Rates",
-        "DESC": "Several factors can impact your health insurance rates in Texas, including age, location, tobacco use, plan type, and coverage level. Understanding these variables helps you compare plans, estimate costs, and choose coverage that fits your healthcare needs and budget."
+        "TITLE": "Factors That Impact Your Texas Surety Bond Rates",
+        "DESC": "Several factors influence your surety bond rates in Texas. Your personal credit score is one of the biggest factors, as higher scores usually mean lower risk and better pricing. Business financials, including revenue and stability, also matter. The type of bond, required amount, and industry risk level can impact cost. A clean claims record often helps you qualify for lower premiums."
       },
       "LIST": {
-        "AGE": {
-          "TITLE": "Age",
-          "DESC": "Health insurance rates typically increase with age, as older individuals are more likely to require medical care and services."
+        "PERSONAL_CREDIT": {
+          "TITLE": "Personal Credit Score",
+          "DESC": "A strong personal credit score signals reliability to surety providers and typically results in lower bond premiums."
         },
-        "LOCATION": {
-          "TITLE": "Location & ZIP Code",
-          "DESC": "Your location affects premiums because healthcare costs, provider availability, and regional risk factors vary by area."
+        "BUSINESS_CREDIT": {
+          "TITLE": "Business Credit History",
+          "DESC": "A stable business credit history shows lenders that your company manages debt responsibly and reduces underwriting risk."
         },
-        "TOBACCO_USE": {
-          "TITLE": "Tobacco Use",
-          "DESC": "Tobacco users often pay higher premiums since they are considered higher risk for serious health conditions."
+        "EXPERIENCE": {
+          "TITLE": "Years in Business & Industry Experience",
+          "DESC": "More years in business and proven industry experience increase trust and can help secure better bond rates overall."
         },
-        "PLAN_TYPE": {
-          "TITLE": "Plan Type (HMO, PPO, EPO, HDHP)",
-          "DESC": "Different plan types impact cost. PPO plans usually cost more for flexibility, while HMO plans are more affordable but restrictive."
+        "FINANCIAL_STATEMENTS": {
+          "TITLE": "Financial Statements & Net Worth",
+          "DESC": "Clear financial statements and a healthy net worth demonstrate stability and improve your chances of lower premiums."
         },
-        "COVERAGE_LEVEL": {
-          "TITLE": "Coverage Level (Bronze, Silver, Gold, Platinum)",
-          "DESC": "Higher-tier plans offer more coverage and lower out-of-pocket costs but come with higher monthly premiums."
+        "BOND_REQUIREMENTS": {
+          "TITLE": "Bond Type & Bond Amount Required",
+          "DESC": "Different bond types and higher required bond amounts increase risk exposure and can raise the premium cost."
         },
-        "DEDUCTIBLE": {
-          "TITLE": "Deductible & Out-of-Pocket Maximum",
-          "DESC": "Plans with higher deductibles usually have lower premiums, while lower deductibles increase monthly costs."
+        "INDUSTRY_TYPE": {
+          "TITLE": "Industry & Business Type",
+          "DESC": "Some industries carry greater financial or regulatory risk, which can directly impact bond approval and pricing."
         },
-        "FAMILY_SIZE": {
-          "TITLE": "Number of People on the Plan",
-          "DESC": "Adding dependents increases your premium, especially for family coverage plans."
+        "CLAIMS_HISTORY": {
+          "TITLE": "Claims History & Prior Bond Defaults",
+          "DESC": "A clean claims record often helps you qualify for lower premiums, whereas prior defaults can lead to stricter underwriting."
         },
-        "INCOME": {
-          "TITLE": "Income Level & Subsidy Eligibility",
-          "DESC": "Your income may qualify you for subsidies or tax credits that reduce your monthly premium and out-of-pocket costs."
+        "LIQUID_ASSETS": {
+          "TITLE": "Liquid Assets & Cash Reserves",
+          "DESC": "Strong cash reserves and some liquid assets show financial strength and help reduce the perceived risk."
         },
-        "EMPLOYER": {
-          "TITLE": "Employer Contribution (Group Plans)",
-          "DESC": "Employer-sponsored plans often reduce your premium since employers cover part of the cost."
+        "DEBT_LIABILITIES": {
+          "TITLE": "Outstanding Debt & Liabilities",
+          "DESC": "High debt levels or liabilities can also signal financial strain and may increase the bond premium rate."
         },
-        "HEALTH_STATUS": {
-          "TITLE": "Health Status (Short-Term Plans Only)",
-          "DESC": "Short-term plans may consider your health condition, which can impact pricing or eligibility."
+        "REVENUE_PROFITABILITY": {
+          "TITLE": "Business Revenue & Profitability",
+          "DESC": "Consistent revenue and profitability show business health and help strengthen your bond application."
         },
-        "PRE_EXISTING": {
-          "TITLE": "Pre-Existing Conditions (Short-Term Plans Only)",
-          "DESC": "Short-term insurance may exclude pre-existing conditions, affecting coverage and costs."
+        "EMPLOYEE_COUNT": {
+          "TITLE": "Number of Employees",
+          "DESC": "The size of your workforce can influence operational risk and affect how underwriters view your business."
         },
-        "NETWORK": {
-          "TITLE": "Network Size & Provider Availability",
-          "DESC": "Plans with larger provider networks generally cost more but offer greater flexibility in choosing doctors and hospitals."
+        "LICENSING_STATUS": {
+          "TITLE": "Licensing & Certification Status",
+          "DESC": "Proper licenses and certifications prove compliance and professionalism, which can help reduce underwriting risk."
         },
-        "ADDONS": {
-          "TITLE": "Add-On Coverages (Dental, Vision, Mental Health)",
-          "DESC": "Adding extra coverage like dental or vision increases premiums but provides more complete healthcare protection."
+        "PROJECT_COMPLEXITY": {
+          "TITLE": "Project Size & Complexity (Construction Bonds)",
+          "DESC": "Large-scale, complex projects carry more risk, which can increase bond costs and lead to stricter underwriting."
         },
-        "START_DATE": {
-          "TITLE": "Coverage Start Date & Waiting Period",
-          "DESC": "Some plans have waiting periods before benefits begin, which can impact access to care and overall value."
+        "PERSONAL_GUARANTEE": {
+          "TITLE": "Personal Guarantee Requirement",
+          "DESC": "Some bonds require a personal guarantee, meaning owners must accept responsibility if a claim arises."
         },
-        "INSURANCE_HISTORY": {
-          "TITLE": "Insurance History / Coverage Lapses",
-          "DESC": "Gaps in previous coverage or inconsistent insurance history may affect your premium and eligibility."
+        "COMPLIANCE_HISTORY": {
+          "TITLE": "State & Federal Regulatory Compliance History",
+          "DESC": "A clean compliance record with regulators reassures underwriters and can help secure better bond terms."
         }
       }
     },
     "DISCOUNT_FACTORS": {
       "HEADER": {
-        "TITLE": "How to Maximize Your Discounts and Lower Your Premium",
-        "DESC": "Maximizing your discounts and lowering your premium is all about taking advantage of available options. From subsidies and employer contributions to healthy habits and smart plan choices, you can significantly reduce your health insurance costs while maintaining the coverage you need."
+        "TITLE": "How to Lower Your Surety Bond Premium",
+        "DESC": "Lowering your surety bond premium starts with reducing the risk you present to the surety company. Businesses with strong credit, stable finances, and a clean claims history often qualify for better rates. Improving your credit score, maintaining accurate financial records, and building industry experience can help lower costs and make it easier to secure favorable bond pricing."
       },
       "LIST": {
-        "ACA_SUBSIDY": {
-          "TITLE": "ACA Premium Tax Credit / Subsidy",
-          "DESC": "If your income qualifies, you may receive a subsidy that lowers your monthly premium, making health insurance more affordable."
+        "IMPROVE_CREDIT": {
+          "TITLE": "Improve Your Personal Credit Score",
+          "DESC": "Pay bills on time, reduce credit balances, and monitor reports regularly to steadily improve your personal credit score."
         },
-        "CSR": {
-          "TITLE": "Cost-Sharing Reductions (Silver Plan Subsidy)",
-          "DESC": "This benefit reduces deductibles, copays, and out-of-pocket costs for eligible individuals enrolled in Silver plans."
+        "BUSINESS_CREDIT": {
+          "TITLE": "Build a Strong Business Credit History",
+          "DESC": "Open vendor accounts, pay business debts early, and build consistent credit activity to strengthen your profile."
         },
-        "MEDICAID_CHIP": {
-          "TITLE": "Medicaid & CHIP Eligibility",
-          "DESC": "Low-income individuals and families may qualify for Medicaid or CHIP, offering free or low-cost health coverage."
+        "CLEAN_RECORD": {
+          "TITLE": "Maintain Clean Claims & Bond Default Record",
+          "DESC": "Avoid bond claims and defaults by meeting all obligations and keeping contracts, payments, and compliance records up to date."
         },
-        "EMPLOYER_CONTRIBUTION": {
-          "TITLE": "Employer Contribution Discount (Group Plans)",
-          "DESC": "Employer-sponsored plans often reduce your premium since your employer pays part of the cost."
+        "LIQUID_ASSETS": {
+          "TITLE": "Increase Liquid Assets & Cash Reserves",
+          "DESC": "Maintaining strong cash reserves and liquid assets helps show stability and reduces perceived financial risk."
         },
-        "HSA_SAVINGS": {
-          "TITLE": "Health Savings Account (HSA) Tax Savings",
-          "DESC": "HSA contributions are tax-deductible and allow you to save money for qualified medical expenses."
+        "REDUCE_DEBT": {
+          "TITLE": "Reduce Outstanding Debt & Liabilities",
+          "DESC": "Lower existing loans and liabilities to improve financial health and demonstrate responsible debt management."
         },
-        "FSA_SAVINGS": {
-          "TITLE": "Flexible Spending Account (FSA) Tax Savings",
-          "DESC": "FSA contributions are made pre-tax, lowering your taxable income while covering healthcare costs."
+        "AUDITED_FINANCIALS": {
+          "TITLE": "Provide Audited Financial Statements",
+          "DESC": "Audited financial statements increase transparency and give surety companies greater confidence in your finances."
         },
-        "TOBACCO_FREE": {
-          "TITLE": "Tobacco-Free Discount",
-          "DESC": "Non-smokers often qualify for lower premiums due to reduced health risks."
+        "INDUSTRY_EXPERIENCE": {
+          "TITLE": "Demonstrate Years of Industry Experience",
+          "DESC": "Proven industry experience shows reliability and competence, helping sureties trust your ability to meet obligations."
+        },
+        "LICENSING_CERTIFICATION": {
+          "TITLE": "Obtain & Maintain Proper Licensing & Certifications",
+          "DESC": "Keeping licenses and certifications up to date demonstrates compliance and professionalism in your industry."
+        },
+        "BUNDLING": {
+          "TITLE": "Bundle Multiple Bonds With One Surety",
+          "DESC": "Purchasing several bonds through one provider may qualify your business for bundled pricing or loyalty discounts."
         },
         "ANNUAL_PAYMENT": {
-          "TITLE": "Annual Payment Discount",
-          "DESC": "Paying your premium annually instead of monthly may result in a lower overall cost."
+          "TITLE": "Pay Premium Annually Instead of Monthly",
+          "DESC": "Choosing annual premium payments instead of monthly billing may reduce administrative costs and lower pricing."
         },
         "AUTO_PAY": {
           "TITLE": "Automatic Payment / EFT Discount",
-          "DESC": "Setting up automatic payments can earn discounts while ensuring timely premium payments."
+          "DESC": "Setting up automatic bank payments or EFT can qualify you for small discounts from certain surety providers."
         },
         "PAPERLESS": {
           "TITLE": "Paperless Billing Discount",
-          "DESC": "Switching to paperless billing can reduce administrative costs and may qualify you for discounts."
-        },
-        "BUNDLING": {
-          "TITLE": "Bundling Discount (Health + Dental + Vision)",
-          "DESC": "Combining health, dental, and vision plans with one provider can lead to significant savings."
-        },
-        "HIGH_DEDUCTIBLE": {
-          "TITLE": "Higher Deductible / HDHP Discount",
-          "DESC": "Choosing a high-deductible health plan (HDHP) lowers your monthly premium while increasing out-of-pocket responsibility."
-        },
-        "WELLNESS": {
-          "TITLE": "Wellness Program & Preventive Care Discount",
-          "DESC": "Participating in wellness programs or preventive care initiatives can reduce premiums and promote better health."
-        },
-        "STUDENT": {
-          "TITLE": "Student Health Plan Discount",
-          "DESC": "Students may qualify for discounted health insurance plans tailored to their needs and budget."
-        },
-        "GROUP_ASSOCIATION": {
-          "TITLE": "Group / Association Member Discount",
-          "DESC": "Membership in certain organizations or associations may provide access to discounted health plans."
+          "DESC": "Opting for digital statements and billing may reduce administrative fees and qualify for minor discounts."
         },
         "LOYALTY": {
           "TITLE": "Loyalty / Renewal Discount",
-          "DESC": "Renewing your policy or staying with the same insurer may result in lower premiums over time."
+          "DESC": "Long-term clients who consistently renew bonds may receive loyalty discounts or lower premium rates."
         },
-        "EARLY_ENROLLMENT": {
-          "TITLE": "Early Enrollment Discount",
-          "DESC": "Signing up early during open enrollment may qualify you for reduced premium rates."
+        "EARLY_RENEWAL": {
+          "TITLE": "Early Renewal Discount",
+          "DESC": "Renewing your bond early demonstrates reliability and may help you secure better pricing with some providers."
         },
-        "TELEMEDICINE": {
-          "TITLE": "Telemedicine Usage Discount",
-          "DESC": "Using telehealth services instead of in-person visits can lower costs and may qualify for premium discounts."
+        "INDEPENDENT_AGENT": {
+          "TITLE": "Work With an Independent Agent for Better Rates",
+          "DESC": "Independent agents compare multiple surety providers to help you find competitive rates and coverage options."
         }
       }
     },
     "AGENT_COMPARISON": {
       "HEADER": {
-        "TITLE": "Independent Insurance Agency vs. Captive Agent: Why Choice Saves Your Money",
-        "DESC": "Choosing the right insurance agent can impact both your coverage and your wallet. Independent agencies work with multiple carriers, allowing them to find the best rates and tailor policies to your needs. Captive agents represent only one insurer, which limits options and may result in higher premiums. More choice can help you save money while getting coverage suited to your needs."
+        "TITLE": "Independent Agency vs. Direct Surety: Why Choice Saves You Money",
+        "DESC": "Choosing between an independent agency and going directly to a surety company can significantly affect how much you pay for a bond. Independent agencies work with multiple surety providers, allowing them to compare rates and underwriting requirements to secure more competitive pricing for your situation."
       },
       "TABLE": {
         "COLUMNS": {
           "FEATURE": "Feature",
           "INDEPENDENT": "Independent Agency (A-State)",
-          "CAPTIVE": "Captive Agent"
+          "DIRECT": "Direct Surety"
         },
         "LIST": {
-          "CARRIERS": {
-            "FEATURE": "Number of Carriers",
-            "INDEPENDENT": "Multiple — shops 10+ carriers for you",
-            "CAPTIVE": "One — locked into a single company"
+          "MARKETS": {
+            "FEATURE": "Number of Surety Markets",
+            "INDEPENDENT": "Multiple — shops 10+ surety companies for you",
+            "DIRECT": "One — limited to their own surety market"
           },
           "PRICE_COMPARISON": {
             "FEATURE": "Price Comparison",
-            "INDEPENDENT": "Compares rates across multiple carriers to find the lowest",
-            "CAPTIVE": "Can only offer one company's rate"
+            "INDEPENDENT": "Compares bond premiums across multiple sureties for best rate",
+            "DIRECT": "Single rate from one surety — no comparison"
           },
-          "PLAN_TYPES": {
-            "FEATURE": "Plan Types Available",
-            "INDEPENDENT": "HMO, PPO, EPO, HDHP & short-term across multiple carriers",
-            "CAPTIVE": "Limited to one carrier's plan lineup"
-          },
-          "SUBSIDY_ACA": {
-            "FEATURE": "Subsidy & ACA Guidance",
-            "INDEPENDENT": "Helps identify and maximize ACA subsidies across all plans",
-            "CAPTIVE": "Limited to one carrier's ACA offerings"
-          },
-          "MEDICARE_OPTIONS": {
-            "FEATURE": "Medicare Options",
-            "INDEPENDENT": "Shops Medicare Supplement plans across multiple carriers",
-            "CAPTIVE": "Limited to one carrier's Medicare products"
-          },
-          "SHORT_TERM_PLANS": {
-            "FEATURE": "Short-Term Health Plans",
-            "INDEPENDENT": "Access to multiple short-term carriers for best rate",
-            "CAPTIVE": "Limited short-term options through one carrier"
-          },
-          "DENTAL_VISION": {
-            "FEATURE": "Dental & Vision Bundling",
-            "INDEPENDENT": "Bundles health with dental and vision across carriers",
-            "CAPTIVE": "Bundles only within one carrier's product line"
-          },
-          "LOW_INCOME_MEDICAID": {
-            "FEATURE": "Low-Income & Medicaid",
-            "INDEPENDENT": "Navigates Medicaid, CHIP, and subsidy eligibility across programs",
-            "CAPTIVE": "Limited guidance on government program options"
+          "BAD_CREDIT": {
+            "FEATURE": "Bad Credit Applicants",
+            "INDEPENDENT": "Access to non-standard sureties specializing in bad credit bonds",
+            "DIRECT": "May decline bad credit applicants entirely"
           },
           "HIGH_RISK": {
-            "FEATURE": "High-Risk Applicants",
-            "INDEPENDENT": "Access to carriers most favorable to specific health profiles",
-            "CAPTIVE": "Limited to one carrier's underwriting guidelines"
+            "FEATURE": "High-Risk Industries",
+            "INDEPENDENT": "Access to specialty surety markets for hard-to-place risks",
+            "DIRECT": "Limited to standard industries one surety accepts"
           },
-          "PRE_EXISTING": {
-            "FEATURE": "Pre-Existing Conditions",
-            "INDEPENDENT": "Identifies carriers most favorable to specific conditions",
-            "CAPTIVE": "Single carrier's coverage terms — no comparison"
+          "BOND_TYPES": {
+            "FEATURE": "Bond Type Coverage",
+            "INDEPENDENT": "All bond types across multiple markets — contract, license, court, fidelity, federal",
+            "DIRECT": "Limited to bond types one surety offers"
           },
-          "NETWORK": {
-            "FEATURE": "Network Availability",
-            "INDEPENDENT": "Compares network size and provider availability across carriers",
-            "CAPTIVE": "Limited to one carrier's provider network"
+          "GUIDANCE": {
+            "FEATURE": "Application Guidance",
+            "INDEPENDENT": "Guides applicant through the entire bonding process",
+            "DIRECT": "Self-service — applicant navigates process alone"
+          },
+          "OPTIMIZATION": {
+            "FEATURE": "Credit Profile Optimization",
+            "INDEPENDENT": "Structures application to highlight strengths for best approval odds",
+            "DIRECT": "No application guidance or optimization"
+          },
+          "CLAIMS": {
+            "FEATURE": "Claims Navigation",
+            "INDEPENDENT": "Advocates on your behalf if a bond claim is filed",
+            "DIRECT": "Represents the surety's interests in a claim"
+          },
+          "RENEWAL": {
+            "FEATURE": "Renewal Rate Shopping",
+            "INDEPENDENT": "Re-shops bond premium at every renewal across all markets",
+            "DIRECT": "Locked into same surety rate at renewal"
+          },
+          "MANAGEMENT": {
+            "FEATURE": "Multiple Bond Management",
+            "INDEPENDENT": "Manages all bond types under one agency relationship",
+            "DIRECT": "Each bond type may require a separate direct relationship"
+          },
+          "EXPERTISE": {
+            "FEATURE": "Contractor Bond Expertise",
+            "INDEPENDENT": "Texas-based agents with construction and contractor bond expertise",
+            "DIRECT": "May lack industry-specific knowledge"
+          },
+          "COMPLIANCE": {
+            "FEATURE": "License Bond Compliance",
+            "INDEPENDENT": "Monitors Texas licensing requirements and renewal deadlines",
+            "DIRECT": "No proactive compliance monitoring"
+          },
+          "FEDERAL_ACCESS": {
+            "FEATURE": "Federal Bond Access",
+            "INDEPENDENT": "Access to federal surety markets for government contractors",
+            "DIRECT": "May lack federal surety market relationships"
           },
           "LOYALTY": {
             "FEATURE": "Loyalty to You",
-            "INDEPENDENT": "Works for the client — not the insurance company",
-            "CAPTIVE": "Works for the insurance company"
-          },
-          "RENEWAL": {
-            "FEATURE": "Rate Shopping at Renewal",
-            "INDEPENDENT": "Re-shops your rate every open enrollment across all carriers",
-            "CAPTIVE": "Locked into same carrier at renewal"
-          },
-          "CLAIMS": {
-            "FEATURE": "Claims Advocacy",
-            "INDEPENDENT": "Advocates on your behalf during claims and billing disputes",
-            "CAPTIVE": "Represents the insurance company's interests"
-          },
-          "OPEN_ENROLLMENT": {
-            "FEATURE": "Open Enrollment Guidance",
-            "INDEPENDENT": "Guides you through open enrollment across all available plans",
-            "CAPTIVE": "Limited to one carrier's enrollment process"
+            "INDEPENDENT": "Works for the applicant — not the surety company",
+            "DIRECT": "Works for the surety company's interests"
           },
           "SWITCHING": {
-            "FEATURE": "Switching Carriers",
-            "INDEPENDENT": "Can switch you to a better carrier every open enrollment",
-            "CAPTIVE": "Must find a new agent to switch carriers"
+            "FEATURE": "Switching Sureties",
+            "INDEPENDENT": "Can move you to a better surety at renewal without changing agents",
+            "DIRECT": "Must find a new provider to switch sureties"
           },
           "LOCAL": {
             "FEATURE": "Local Knowledge",
-            "INDEPENDENT": "Texas-based agents with local healthcare market expertise",
-            "CAPTIVE": "May be national agents with no local context"
+            "INDEPENDENT": "Texas-based agents with local regulatory and market expertise",
+            "DIRECT": "May be national providers with no local context"
           },
           "MULTILINGUAL": {
             "FEATURE": "Multilingual Support",
-            "INDEPENDENT": "Multi-Language support",
-            "CAPTIVE": "Varies by agent — not guaranteed"
+            "INDEPENDENT": "Multi-language",
+            "DIRECT": "Varies by provider — not guaranteed"
           }
         }
       }
     },
-    "HEALTH_INSURANCE_TYPES": {
+    "SURETY_BOND_TYPES": {
       "HEADER": {
-        "TITLE": "Your One-Stop Shop for Every Type of Health Insurance in Texas"
+        "TITLE": "Your One-Stop Shop for Every Type of Surety Bond in Texas"
       },
       "LIST": {
-        "INDIVIDUAL": {
-          "TITLE": "Individual Health Insurance",
-          "DESCRIPTION": "Get personalized coverage tailored to your needs and budget, with essential benefits for individuals seeking protection.",
-          "ICON": "fas fa-user"
+        "PERFORMANCE_PAYMENT": {
+          "TITLE": "Performance & Payment Bonds",
+          "DESCRIPTION": "Protect project owners and subcontractors by ensuring contractors complete work and pay suppliers and laborers.",
+          "ICON": "fas fa-hard-hat"
         },
-        "FAMILY": {
-          "TITLE": "Family Health Insurance",
-          "DESCRIPTION": "Cover your entire family with an affordable health plan that includes medical, preventive care, and more for all family members.",
-          "ICON": "fas fa-home"
-        },
-        "SMALL_BUSINESS": {
-          "TITLE": "Small Business Health Insurance",
-          "DESCRIPTION": "Provide your employees with health insurance that fits your budget, offering group plans that are both affordable and comprehensive.",
+        "COMMERCIAL": {
+          "TITLE": "Commercial Surety Bonds",
+          "DESCRIPTION": "Guarantee that businesses comply with laws, licensing requirements, and contractual obligations imposed by regulators.",
           "ICON": "fas fa-briefcase"
         },
-        "EMPLOYER_GROUP": {
-          "TITLE": "Employer & Group Health Insurance",
-          "DESCRIPTION": "Offer employees a valuable benefit with group health insurance plans, providing access to essential care at a competitive cost.",
-          "ICON": "fas fa-building"
+        "BID_BONDS": {
+          "TITLE": "Bid Bonds",
+          "DESCRIPTION": "Guarantee that contractors who win a project bid will accept the contract and provide the required follow-up bonds.",
+          "ICON": "fas fa-gavel"
         },
-        "TRAVEL": {
-          "TITLE": "Travel Health Insurance",
-          "DESCRIPTION": "Ensure you're covered for unexpected medical expenses while traveling abroad with plans that provide emergency care and assistance.",
-          "ICON": "fas fa-plane"
-        },
-        "MEDICARE_SUPP": {
-          "TITLE": "Medicare Supplement / Medigap",
-          "DESCRIPTION": "Cover the gaps in original Medicare, helping with out-of-pocket costs like copayments, deductibles, and coinsurance.",
-          "ICON": "fas fa-hand-holding-medical"
-        },
-        "SHORT_TERM": {
-          "TITLE": "Short-Term Health Insurance",
-          "DESCRIPTION": "Ideal for those in transition, offering temporary coverage for individuals between jobs or in need of quick protection.",
-          "ICON": "fas fa-clock"
-        },
-        "DENTAL_VISION": {
-          "TITLE": "Dental & Vision Insurance",
-          "DESCRIPTION": "Improved health plan with dental and vision coverage, including preventive care, treatments, and eye exam discounts.",
-          "ICON": "fas fa-tooth"
-        },
-        "ACA_MARKETPLACE": {
-          "TITLE": "ACA / Marketplace Plans",
-          "DESCRIPTION": "Affordable ACA Marketplace plans with options for premium subsidies based on your income, offering comprehensive coverage.",
-          "ICON": "fas fa-shopping-cart"
+        "NOTARY": {
+          "TITLE": "Notary Bonds",
+          "DESCRIPTION": "Protect the public from financial loss caused by mistakes or misconduct by a commissioned notary during official duties.",
+          "ICON": "fas fa-stamp"
         }
       }
     },
-    "HIGH_RISK_APPLICANT": {
+    "BAD_CREDIT_APPLICANT": {
       "HEADER": {
-        "TITLE": "High-Risk Applicant? We Can Still Help You"
+        "TITLE": "Bad Credit? We Can Still Get You Bonded"
       },
       "CONTENT": {
-        "DESC1": "If you’ve been denied health insurance or quoted unaffordable rates due to age, health conditions, tobacco use, or a high-risk occupation, don’t worry, there are still options for you. At A-State Insurance, we specialize in helping high-risk applicants find coverage.",
-        "DESC2": "We work with multiple carriers who understand the challenges posed by unique health profiles. Even if you’ve faced rejection elsewhere, our team will explore tailored plans, including specialized coverage for pre-existing conditions, tobacco users, and high-risk occupations to find a solution at a price you can manage."
+        "DESC1": "Bad credit doesn’t have to block your ability to get bonded. At A-State Insurance, we specialize in working with applicants who have been declined or quoted high rates elsewhere. Our experience in non-standard surety markets allows us to find solutions for a wide range of credit profiles, so you don’t have to give up on your projects or contracts.",
+        "DESC2": "Even if your credit score has affected past approvals, we know how to navigate the underwriting process to secure a bond that meets your needs. We focus on practical solutions, reviewing your financials, business history, and other risk factors to match you with the right surety provider.",
+        "DESC3": "With A-State Insurance, getting bonded doesn’t require perfection; it requires the right guidance. Our team works efficiently to find competitive rates and reliable coverage, turning past rejections into approvals. You can move forward with confidence knowing that your bond application is in expert hands."
       }
     },
     "LANGUAGE_SUPPORT": {
@@ -5915,8 +5885,9 @@
         "TITLE": "Hablamos Español / We Speak Your Language"
       },
       "CONTENT": {
-        "DESC1": "At A-State Insurance, we understand the importance of offering accessible services to everyone, which is why we have Spanish-speaking agents. If you prefer to speak in Spanish, we’re here to help you find the right health plan for you and your family. No matter your situation, our agents will guide you through every step of the process and ensure you fully understand your coverage options. Contact us today and get the help you need in your language!",
-        "DESC2": "Our bilingual team goes beyond translation—we make sure complex insurance terms, benefits, and policy details are explained clearly so you can make confident decisions. Whether it’s enrolling in a new plan, renewing your coverage, or filing a claim, we’re committed to providing personalized support that meets your unique needs. With A-State Insurance, language is never a barrier to getting the health coverage you deserve."
+        "DESC1": "At A-State Insurance, we understand that clear communication is essential when securing a surety bond. That’s why we proudly offer services in Spanish. Whether you’re navigating complex bond requirements or reviewing financial documents, our bilingual team ensures you fully understand every step of the process, free of confusion or miscommunication.",
+        "DESC2": "We know that language barriers can create unnecessary delays or misunderstandings. By providing Spanish-language support, we make bonding accessible to more business owners, contractors, and professionals across Texas. Our goal is to remove friction and provide guidance in the language you’re most comfortable with, so you can focus on growing your business.",
+        "DESC3": "From initial inquiries to final approvals, our bilingual staff is available to answer questions, explain options, and guide you through the underwriting process. We take pride in serving Spanish-speaking clients with the same expertise and attention to detail that all A-State Insurance customers receive, ensuring a smooth, confident bonding experience."
       }
     },
     "ASTATE_DIFFERENTIATORS": {
@@ -5926,27 +5897,27 @@
       "LIST": {
         "LICENSED_BROKERS": {
           "TITLE": "Texas Licensed Brokers",
-          "DESCRIPTION": "Our professional brokers are licensed in Texas, providing expert guidance and comparing carriers to find the best health insurance rates for your needs."
+          "DESCRIPTION": "Our licensed brokers are fully authorized in Texas, ensuring every bond meets state requirements and industry standards."
         },
         "HISPANIC_LATINO_FRIENDLY": {
           "TITLE": "Hispanic & Latino Friendly",
-          "DESCRIPTION": "We proudly offer services in Spanish, ensuring that high-quality health insurance is accessible and easy to understand for Hispanic and Latino families."
+          "DESCRIPTION": "We provide full support in Spanish, making bonding accessible and clear for Hispanic and Latino business owners."
         },
         "YEARS_SERVING": {
           "TITLE": "20+ Years Serving Texans",
-          "DESCRIPTION": "With over 20 years of experience, we have a deep understanding of the unique healthcare needs of Texans and are dedicated to helping our community."
+          "DESCRIPTION": "With over 20 years of experience, we’ve helped Texas businesses secure bonds efficiently and reliably across industries."
         },
         "CUSTOM_COVERAGE": {
           "TITLE": "Custom Coverage Plans",
-          "DESCRIPTION": "We create personalized health insurance plans tailored to your specific needs, budget, and healthcare preferences, ensuring the right fit for your lifestyle."
+          "DESCRIPTION": "We tailor surety bond solutions to meet your unique business needs, ensuring coverage fits your specific situation."
         },
         "ONLINE_LOCAL": {
           "TITLE": "Online & Local",
-          "DESCRIPTION": "Connect with us online or visit our local office. Our agents are your neighbors, offering a personal touch and local expertise that national carriers can't match."
+          "DESCRIPTION": "Access our bonding services online or in person at our local offices, combining convenience with personalized support."
         },
         "MULTILINGUAL_AGENTS": {
           "TITLE": "Multilingual Agents",
-          "DESCRIPTION": "Our multilingual team is here to assist you in various languages, breaking down barriers and making the insurance enrollment process easier for everyone."
+          "DESCRIPTION": "Our team speaks multiple languages, helping clients navigate bond applications clearly without communication barriers."
         }
       }
     },
@@ -5957,67 +5928,44 @@
       "STEPS": {
         "REACH_OUT": {
           "TITLE": "Reach Out",
-          "DESCRIPTION": "Contact us today to start the process and explore your health insurance options with our dedicated team."
+          "DESCRIPTION": "Contact our team to start your bond application quickly and get personalized guidance from the start."
         },
         "GET_ADVICE": {
           "TITLE": "Get Advice",
-          "DESCRIPTION": "Our experts will guide you through your options, providing clear advice to help you make an informed decision."
+          "DESCRIPTION": "Our experts review your needs and explain your options so you can make an informed decision about bonding."
         },
         "PICK_PLAN": {
           "TITLE": "Pick Your Plan",
-          "DESCRIPTION": "Choose the health insurance plan that best fits your needs, budget, and lifestyle with total confidence."
+          "DESCRIPTION": "Choose the bond type and coverage that best fit your business goals and project requirements."
         },
         "WE_GOT_YOU": {
           "TITLE": "We’ve Got You",
-          "DESCRIPTION": "Rest easy knowing that we’ll support you throughout the entire insurance journey, from enrollment to claims."
+          "DESCRIPTION": "Once selected, we handle the paperwork and ensure your bond is issued smoothly and on time."
         }
       }
     },
     "SWITCH_STEPS": {
       "HEADER": {
-        "TITLE": "How to Switch Your Health Insurance to A-State Insurance"
+        "TITLE": "How to Switch Your Surety Bond to A-State Insurance"
       },
       "STEPS": {
         "STEP_1": {
           "TITLE": "Step 1: Get Your Free Comparison Quote",
-          "DESCRIPTION": "Start by reaching out to us for a free, no-obligation quote. We’ll compare multiple plans to help you find the best coverage for your needs. You’ll receive a detailed comparison to help you make an informed decision without guesswork or hidden costs."
+          "DESCRIPTION": "Start by requesting a free quote to see multiple surety bond options side by side. Our team evaluates your business, credit, and project requirements to provide clear, transparent comparisons so you can make a confident choice without surprises or hidden fees."
         },
         "STEP_2": {
           "TITLE": "Step 2: Pick Your Plan and Activate",
-          "DESCRIPTION": "Once you’ve reviewed your options, choose the health plan that fits your budget and requirements. Our team will walk you through the activation process, handling the paperwork to ensure your new policy starts smoothly and without any hiccups."
+          "DESCRIPTION": "Once you review your options, select the bond plan that fits your needs. Our team guides you through the activation process, ensuring all documentation is accurate and submitted correctly. You’ll have peace of mind knowing your coverage is officially in place."
         },
         "STEP_3": {
           "TITLE": "Step 3: Cancel Your Old Policy (We’ll Help!)",
-          "DESCRIPTION": "After your new coverage is activated, we’ll assist you in canceling your old health insurance policy. Our team will guide you through the necessary steps to ensure there’s no overlap or gap in coverage, making the entire switching process easy and stress-free."
-        }
-      }
-    },
-    "FAQ_LIST": {
-      "HEADER": {
-        "TITLE": "Frequently Asked Questions About Texas Health Insurance"
-      },
-      "QUESTIONS": {
-        "FAQ1": {
-          "QUESTION": "How do I apply for health insurance in Texas?",
-          "ANSWER": "To apply for health insurance in Texas, you can either go through the ACA Marketplace, apply directly with an insurer, or work with a licensed agent. If you qualify for a Special Enrollment Period due to life changes like marriage, moving, or losing other coverage, you can apply anytime. Otherwise, you’ll need to wait for the next Open Enrollment Period."
-        },
-        "FAQ2": {
-          "QUESTION": "Is it illegal to not have health insurance in Texas?",
-          "ANSWER": "While there is no longer a federal tax penalty for not having health insurance (the individual mandate was reduced to $0), Texas does not have its own state-level penalty. However, going without insurance leaves you responsible for 100% of your medical costs in the event of an illness or injury."
-        },
-        "FAQ3": {
-          "QUESTION": "Does my Texas health insurance cover me in other states?",
-          "ANSWER": "Yes, most health insurance plans in Texas will cover you in other states, especially if you have a PPO or other nationwide plan. However, coverage might be limited if you choose an HMO plan, which usually restricts you to in-network providers. It’s important to check with your insurer to understand out-of-state coverage details before traveling."
-        },
-        "FAQ4": {
-          "QUESTION": "Are employers required to provide health insurance in Texas?",
-          "ANSWER": "Employers with 50 or more full-time employees are required by federal law to provide health insurance under the Affordable Care Act (ACA). These employers must offer health insurance that meets specific standards. Smaller employers are not mandated to provide coverage but may choose to do so."
+          "DESCRIPTION": "Switching bonds doesn’t have to be complicated. After your new bond is active, our team assists with canceling your previous policy and coordinates directly with the old provider. This ensures a smooth transition without gaps in coverage."
         }
       }
     },
     "FREE_QUOTE": {
-      "HEADER": "Get a Free Health Insurance Quote in Texas",
-      "DESCRIPTION": "Getting a free health insurance quote in Texas is quick and easy. Whether you're seeking coverage for yourself, your family, or your employees, we offer a range of options to fit your needs. Choose from individual and family plans, Medicare and Medicare Supplement options, short-term health insurance, and dental and vision coverage. Our team provides personalized quotes to ensure you get the best coverage at the most affordable price. Reach out today for a plan tailored to your budget and healthcare preferences."
+      "HEADER": "Get a Free Surety Bond Quote in Texas",
+      "DESCRIPTION": "Getting a surety bond in Texas is easier than you think. At A-State Insurance, we provide fast, free quotes tailored to your business, credit, and project needs. Whether it’s a construction, commercial, or notary bond, our experts compare rates from multiple providers to find the most competitive rates. Requesting your quote takes just minutes, and our team guides you through the process from start to finish, ensuring you understand every detail and get bonded quickly with confidence."
     }
   }
 }

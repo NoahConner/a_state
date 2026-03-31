@@ -9,6 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class SuretyBondInsurance implements OnInit {
   optionalCoveragesChunks: any[][] = [];
+  whoRequiresChunks: any[][] = [];
 
 
   constructor(private translate: TranslateService) { }
@@ -21,9 +22,14 @@ export class SuretyBondInsurance implements OnInit {
   }
 
   loadOptionalCoverages() {
-    this.translate.get('HEALTH_INSURANCE.COVERAGES.OPTIONAL.LIST').subscribe((list: any[]) => {
+    this.translate.get('SURETY_INSURANCE.COVERAGES.OPTIONAL.LIST').subscribe((list: any[]) => {
       if (Array.isArray(list)) {
         this.optionalCoveragesChunks = this.chunkArray(list, 3);
+      }
+    });
+    this.translate.get('SURETY_INSURANCE.COVERAGES.WHO_REQUIRES.LIST').subscribe((list: any[]) => {
+      if (Array.isArray(list)) {
+        this.whoRequiresChunks = this.chunkArray(list, 3);
       }
     });
   }
@@ -65,43 +71,48 @@ export class SuretyBondInsurance implements OnInit {
   ];
 
 
+  lawsKey = [
+    'PROTECTION',
+    'REPAYMENT',
+    'PURPOSE',
+    'RISK',
+    'USE_CASES'
+  ]
 
   impactFactorsKeys = [
-    'AGE',
-    'LOCATION',
-    'TOBACCO_USE',
-    'PLAN_TYPE',
-    'COVERAGE_LEVEL',
-    'DEDUCTIBLE',
-    'FAMILY_SIZE',
-    'INCOME',
-    'EMPLOYER',
-    'HEALTH_STATUS',
-    'PRE_EXISTING',
-    'NETWORK',
-    'ADDONS',
-    'START_DATE',
-    'INSURANCE_HISTORY',
+    'PERSONAL_CREDIT',
+    'BUSINESS_CREDIT',
+    'EXPERIENCE',
+    'FINANCIAL_STATEMENTS',
+    'BOND_REQUIREMENTS',
+    'INDUSTRY_TYPE',
+    'CLAIMS_HISTORY',
+    'LIQUID_ASSETS',
+    'DEBT_LIABILITIES',
+    'REVENUE_PROFITABILITY',
+    'EMPLOYEE_COUNT',
+    'LICENSING_STATUS',
+    'PROJECT_COMPLEXITY',
+    'PERSONAL_GUARANTEE',
+    'COMPLIANCE_HISTORY',
   ];
   discountKeys = [
-    'ACA_SUBSIDY',
-    'CSR',
-    'MEDICAID_CHIP',
-    'EMPLOYER_CONTRIBUTION',
-    'HSA_SAVINGS',
-    'FSA_SAVINGS',
-    'TOBACCO_FREE',
+    'IMPROVE_CREDIT',
+    'BUSINESS_CREDIT',
+    'CLEAN_RECORD',
+    'LIQUID_ASSETS',
+    'REDUCE_DEBT',
+    'AUDITED_FINANCIALS',
+    'INDUSTRY_EXPERIENCE',
+    'LICENSING_CERTIFICATION',
+    'BUNDLING',
     'ANNUAL_PAYMENT',
     'AUTO_PAY',
     'PAPERLESS',
-    'BUNDLING',
-    'HIGH_DEDUCTIBLE',
-    'WELLNESS',
-    'STUDENT',
-    'GROUP_ASSOCIATION',
     'LOYALTY',
-    'EARLY_ENROLLMENT',
-    'TELEMEDICINE'
+    'EARLY_RENEWAL',
+    'INDEPENDENT_AGENT',
+
   ];
   notCoveredKeys = [
     'PREMIUM',
@@ -116,37 +127,31 @@ export class SuretyBondInsurance implements OnInit {
     'HSA',
   ];
   agentComparisonData = [
-    'CARRIERS',
+    'MARKETS',
     'PRICE_COMPARISON',
-    'PLAN_TYPES',
-    'SUBSIDY_ACA',
-    'MEDICARE_OPTIONS',
-    'SHORT_TERM_PLANS',
-    'DENTAL_VISION',
-    'LOW_INCOME_MEDICAID',
+    'BAD_CREDIT',
     'HIGH_RISK',
-    'PRE_EXISTING',
-    'NETWORK',
-    'LOYALTY',
-    'RENEWAL',
+    'BOND_TYPES',
+    'GUIDANCE',
+    'OPTIMIZATION',
     'CLAIMS',
-    'OPEN_ENROLLMENT',
+    'RENEWAL',
+    'MANAGEMENT',
+    'EXPERTISE',
+    'COMPLIANCE',
+    'FEDERAL_ACCESS',
+    'LOYALTY',
     'SWITCHING',
     'LOCAL',
     'MULTILINGUAL'
   ];
   industryCoverageKeys = [
-    'INDIVIDUAL',
-    'FAMILY',
-    'SMALL_BUSINESS',
-    'EMPLOYER_GROUP',
-    'TRAVEL',
-    'MEDICARE_SUPP',
-    'SHORT_TERM',
-    'DENTAL_VISION',
-    'ACA_MARKETPLACE'
-  ];
-  switchSteps = [
+    'PERFORMANCE_PAYMENT',
+    'COMMERCIAL',
+    'BID_BONDS',
+    'NOTARY',
+
+  ]; switchSteps = [
     'STEP_1',
     'STEP_2',
     'STEP_3',
