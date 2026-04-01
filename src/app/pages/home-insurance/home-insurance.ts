@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HomeInsurance implements OnInit {
   optionalCoveragesChunks: any[][] = [];
-
+  typesOfHomeInsurance: any[] = [];
   constructor(private translate: TranslateService) { }
 
   ngOnInit() {
@@ -17,6 +17,7 @@ export class HomeInsurance implements OnInit {
       this.loadOptionalCoverages();
     });
     this.loadOptionalCoverages();
+    this.loadTypesOfHomeInsurance();
   }
 
   loadOptionalCoverages() {
@@ -25,6 +26,16 @@ export class HomeInsurance implements OnInit {
         this.optionalCoveragesChunks = this.chunkArray(list, 3);
       }
     });
+  }
+
+  loadTypesOfHomeInsurance() {
+    this.translate
+      .get('HOME_INSURANCE.TYPES_HOME_INSURANCE.LIST')
+      .subscribe((list: any[]) => {
+        if (Array.isArray(list)) {
+          this.typesOfHomeInsurance = list; // ✅ direct assign
+        }
+      });
   }
 
   chunkArray(array: any[], size: number) {

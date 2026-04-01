@@ -209,101 +209,21 @@
     <div class="container setup">
       <div class="row mb-5">
         <div class="col-12">
-          <h2 class="section-title">Types of Home Insurance Policies in Texas</h2>
+          <h2 class="section-title">{{ 'HOME_INSURANCE.TYPES_HOME_INSURANCE.HEADER.TITLE' | translate }}</h2>
           <p class="section-subtitle">
-            Not every home requires the same level of protection. Insurance companies offer several homeowners'
-            insurance policy forms designed for different property types, ownership situations, and coverage needs.
-            Understanding these options helps homeowners select a policy that properly protects their home and financial
-            security while ensuring the coverage aligns with their lifestyle and property risks.
+            {{ 'HOME_INSURANCE.TYPES_HOME_INSURANCE.HEADER.DESC' | translate }}
           </p>
         </div>
       </div>
 
       <div class="policy-timeline">
 
-        <div class="row justify-content-start mb-4">
+        <div class="row mb-4" *ngFor="let policy of typesOfHomeInsurance; let i = index"
+          [ngClass]="i % 2 === 0 ? 'justify-content-start' : 'justify-content-end'">
           <div class="col-lg-7">
             <div class="policy-card">
-              <h6>HO-1 — Basic Form (Limited Coverage)</h6>
-              <p>HO-1 is the most basic homeowners policy and covers only a limited list of specific risks, such as
-                fire, lightning, and vandalism. Because protection is very limited, this policy is rarely used today.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row justify-content-end mb-4">
-          <div class="col-lg-7">
-            <div class="policy-card">
-              <h6>HO-2 — Broad Form (Named Perils)</h6>
-              <p>HO-2 policies cover a wider list of named risks than HO-1. These may include events like fire, theft,
-                wind, hail, and certain types of water damage. Coverage still applies only to listed events, so it
-                provides more protection.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row justify-content-start mb-4">
-          <div class="col-lg-7">
-            <div class="policy-card">
-              <h6>HO-3 — Special form (Most Common in Texas)</h6>
-              <p>HO-3 is the most commonly used homeowners' insurance policy in Texas. It typically covers the home's
-                structure against most risks, while personal belongings remain protected against listed events such as
-                fire, theft, and storms.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row justify-content-end mb-4">
-          <div class="col-lg-7">
-            <div class="policy-card">
-              <h6>HO-4 — Renters Insurance</h6>
-              <p>HO-4 policies are designed for people who rent rather than own their homes. This coverage protects
-                personal belongings, provides liability protection, and may help cover temporary living costs if the
-                rental becomes unlivable.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row justify-content-start mb-4">
-          <div class="col-lg-7">
-            <div class="policy-card">
-              <h6>HO-5 — Comprehensive Form (Broadest Coverage)</h6>
-              <p>HO-5 policies offer some of the most extensive protection available for homeowners. Both the home and
-                personal belongings are usually covered against a wide range of risks unless specifically excluded.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row justify-content-end mb-4">
-          <div class="col-lg-7">
-            <div class="policy-card">
-              <h6>HO-6 — Condo Insurance</h6>
-              <p>HO-6 insurance is designed for condominium owners. It typically covers personal belongings, interior
-                structures such as walls or flooring, and liability protection. Condo associations usually insure the
-                main building structure.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row justify-content-start mb-4">
-          <div class="col-lg-7">
-            <div class="policy-card">
-              <h6>HO-7 — Mobile & Manufactured Home Insurance</h6>
-              <p>HO-7 policies are created specifically for mobile or manufactured homes. Coverage is similar to HO-3
-                policies but tailored to address the unique structures, installations, and risk factors associated with
-                manufactured housing properties.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row justify-content-end mb-4">
-          <div class="col-lg-7">
-            <div class="policy-card">
-              <h6>HO-8 — Older & Historic Home Insurance</h6>
-              <p>HO-8 policies are designed for older or historic homes where rebuilding costs may exceed the property's
-                market value. This policy type focuses on practical repair coverage, helping homeowners maintain and
-                protect properties.</p>
+              <h6>{{ policy.TITLE }}</h6>
+              <p>{{ policy.DESC }}</p>
             </div>
           </div>
         </div>
