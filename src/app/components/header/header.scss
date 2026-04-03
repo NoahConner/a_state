@@ -98,6 +98,7 @@
     }
   }
 
+
   .navbar-nav {
     margin-right: 40px !important;
   }
@@ -125,6 +126,88 @@
 
   .leftie {
     gap: 2rem;
+  }
+
+  /* Submenu Fix */
+  .dropdown-submenu {
+    position: relative;
+  }
+
+  .dropdown-submenu .submenu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: 8px;
+    min-width: 200px;
+    display: none;
+    background: #fff;
+    border-radius: 0.5rem;
+    padding: 5px 0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+
+  /* Show submenu on hover (desktop) */
+  .dropdown-submenu:hover>.submenu {
+    display: block;
+  }
+
+  /* Smooth animation */
+  .dropdown-menu,
+  .dropdown-submenu .submenu {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    display: block;
+    visibility: hidden;
+  }
+
+  .nav-item.dropdown:hover>.dropdown-menu,
+  .dropdown-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    display: block;
+  }
+
+  .dropdown-submenu:hover>.submenu {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  /* Arrow for submenu */
+  .dropdown-submenu>a::after {
+    content: "›";
+    float: right;
+    font-size: 14px;
+  }
+
+  /* Better hover UI */
+  .dropdown-item:hover {
+    background-color: #f8f9fa;
+    padding-left: 18px;
+    transition: 0.3s;
+  }
+
+  /* Mobile Fix */
+  @media (max-width: 991px) {
+
+    .dropdown-menu,
+    .dropdown-submenu .submenu {
+      position: relative !important;
+      left: 0 !important;
+      top: 0;
+      transform: none !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      display: none;
+    }
+
+    .dropdown-menu.show,
+    .dropdown-submenu.show>.submenu {
+      display: block;
+    }
   }
 }
 

@@ -61,9 +61,59 @@
               {{ 'HEADER.INSURANCE_SERVICES' | translate }}
             </a>
             <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" [routerLink]="getRoute('autoInsurance')">{{ 'HEADER.AUTO_INSURANCE' | translate
-                  }}</a>
+              <li class="dropdown-submenu">
+                <a class="dropdown-item submenu-toggle" [routerLink]="getRoute('autoInsurance')">
+                  {{ 'HEADER.AUTO_INSURANCE' | translate }}
+                </a>
+
+                <ul class="dropdown-menu submenu">
+                  <li>
+                    <a class="dropdown-item" [routerLink]="getRoute('carInsurance')">
+                      {{ 'HEADER.CAR_INSURANCE' | translate }}
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" [routerLink]="getRoute('motorcycleInsurance')">
+                      {{ 'HEADER.MOTORCYCLE_INSURANCE' | translate }}
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" [routerLink]="getRoute('boatInsurance')">
+                      {{ 'HEADER.BOAT_INSURANCE' | translate }}
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" [routerLink]="getRoute('rvInsurance')">
+                      {{ 'HEADER.RV_MOTORHOME_INSURANCE' | translate }}
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" [routerLink]="getRoute('classicCarInsurance')">
+                      {{ 'HEADER.CLASSIC_CAR_INSURANCE' | translate }}
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" [routerLink]="getRoute('sr22Insurance')">
+                      {{ 'HEADER.SR22_INSURANCE' | translate }}
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" [routerLink]="getRoute('atvAndUtvInsurance')">
+                      {{ 'HEADER.ATV_UTV_INSURANCE' | translate }}
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" [routerLink]="getRoute('trailerInsurance')">
+                      {{ 'HEADER.TRAILER_INSURANCE' | translate }}
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" [routerLink]="getRoute('mexicanCarInsurance')">
+                      {{ 'HEADER.MEXICAN_CAR_INSURANCE' | translate }}
+                    </a>
+                  </li>
+                </ul>
               </li>
               <li>
                 <a class="dropdown-item" [routerLink]="getRoute('homeInsurance')">{{ 'HEADER.HOME_INSURANCE' | translate
@@ -125,7 +175,7 @@
             <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" data-bs-toggle="dropdown">
               <i class="fa-solid fa-globe me-1"></i> {{ currentLang.toUpperCase() }}
             </a>
-            <ul class="dropdown-menu dropdown-menu-end">
+            <ul class="dropdown-menu">
               <li>
                 <a class="dropdown-item" href="javascript:void(0)"
                   (click)="changeLang('en'); $event.preventDefault()">EN</a>

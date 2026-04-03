@@ -35,84 +35,137 @@ export class CarInsurance {
     return result;
   }
   chips = [
-    { name: 'AUTO_INSURANCE.BANNER.CHIPS.PERSONAL_CAR', icon: 'fas fa-car' },
-    { name: 'AUTO_INSURANCE.BANNER.CHIPS.COMMERCIAL_AUTO', icon: 'fas fa-house' },
-    { name: 'AUTO_INSURANCE.BANNER.CHIPS.RIDESHARE', icon: 'fas fa-building' },
-    { name: 'AUTO_INSURANCE.BANNER.CHIPS.SR22', icon: 'fas fa-heart' },
-    { name: 'AUTO_INSURANCE.BANNER.CHIPS.RV_MOTORHOME', icon: 'fas fa-notes-medical' },
-    { name: 'AUTO_INSURANCE.BANNER.CHIPS.OTHER', icon: 'fas fa-file-contract' },
+    { name: 'CAR_INSURANCE.BANNER.CHIPS.SEDAN', icon: 'fas fa-car' },
+    { name: 'CAR_INSURANCE.BANNER.CHIPS.SUV_CROSSOVER', icon: 'fas fa-house' },
+    { name: 'CAR_INSURANCE.BANNER.CHIPS.TRUCK_PICKUP', icon: 'fas fa-building' },
+    { name: 'CAR_INSURANCE.BANNER.CHIPS.SPORTS_PERFORMANCE', icon: 'fas fa-heart' },
+    { name: 'CAR_INSURANCE.BANNER.CHIPS.ELECTRIC_VEHICLE', icon: 'fas fa-notes-medical' },
+    { name: 'CAR_INSURANCE.BANNER.CHIPS.OTHER', icon: 'fas fa-file-contract' },
   ];
 
-  rates = [
-    { city: 'Houston', monthly: '$265', annual: '$3,153' },
-    { city: 'San Antonio', monthly: '$232', annual: '$2,782' },
-    { city: 'Dallas', monthly: '$262', annual: '$3,146' },
-    { city: 'Austin', monthly: '$218', annual: '$2,616' },
-    { city: 'Fort Worth', monthly: '$229', annual: '$2,750' },
-    { city: 'El Paso', monthly: '$220', annual: '$2,646' },
-    { city: 'Arlington', monthly: '$237', annual: '$2,839' },
-    { city: 'Corpus Christi', monthly: '$221', annual: '$2,657' },
-    { city: 'Plano', monthly: '$224', annual: '$2,688' },
-    { city: 'Lubbock', monthly: '$216', annual: '$2,592' },
+  citiesRate = [
+    { city: "Houston", monthly: "$270", annual: "$3,240" },
+    { city: "San Antonio", monthly: "$218", annual: "$2,616" },
+    { city: "Dallas", monthly: "$238", annual: "$2,856" },
+    { city: "Austin", monthly: "$209", annual: "$2,508" },
+    { city: "Fort Worth", monthly: "$210", annual: "$2,520" },
+    { city: "El Paso", monthly: "$191", annual: "$2,292" },
+    { city: "Arlington", monthly: "$215", annual: "$2,580" },
+    { city: "Corpus Christi", monthly: "$201", annual: "$2,412" },
+    { city: "Plano", monthly: "$206", annual: "$2,472" },
+    { city: "Lubbock", monthly: "$209", annual: "$2,508" }
   ];
 
-  companyRates = [
-    { company: 'State Farm', liability: '$57', full: '$201' },
-    { company: 'Progressive', liability: '$80', full: '$241' },
-    { company: 'Allstate', liability: '$81', full: '$243' },
-    { company: 'Mile Auto', liability: '$74', full: '$157' },
-    { company: 'Mercury', liability: '$102', full: '$171' },
-    { company: 'USAA', liability: '$102', full: '$180' },
-    { company: 'GEICO', liability: '$95', full: '$181' },
-    { company: 'Root', liability: '$121', full: '$209' },
-    { company: 'Safeco', liability: '$141', full: '$216' },
-    { company: 'Clearcover', liability: '$125', full: '$251' },
-    { company: 'Direct Auto', liability: '$146', full: '$224' },
-    { company: 'Nationwide', liability: '$119', full: '$227' },
-    { company: 'Amica', liability: '$118', full: '$235' },
-    { company: 'Elephant', liability: '$150', full: '$236' },
-    { company: 'The General', liability: '$125', full: '$239' },
-    { company: 'National General', liability: '$146', full: '$243' },
-    { company: 'Bristol West', liability: '$135', full: '$250' },
-    { company: 'GAINSCO', liability: '$127', full: '$134' },
-    { company: 'Mendota', liability: '$136', full: '$257' },
-    { company: 'Sun Coast', liability: '$138', full: '$261' },
-    { company: 'AssuranceAmerica', liability: '$135', full: '$275' },
-    { company: 'First Acceptance', liability: '$121', full: '$209' },
-    { company: 'Loop', liability: '$147', full: '$277' },
-    { company: 'Commonwealth Casualty', liability: '$132', full: '$288' },
-    { company: 'Lone Star', liability: '$137', full: '$291' },
-    { company: 'Covercube', liability: '$127', full: '$300' },
-    { company: 'Chubb', liability: '$176', full: '$306' },
-    { company: 'Freedom National', liability: '$121', full: '$314' },
-    { company: 'Texas One', liability: '$156', full: '$357' },
-    { company: 'Dairyland', liability: '$130', full: '$338' },
-    { company: 'Liberty Mutual', liability: '$112', full: '$341' },
-    { company: '21st Century', liability: '$101', full: '$354' },
+  carRates = [
+    {
+      company: "State Farm",
+      minCoverageMonthly: "$41",
+      fullCoverageMonthly: "$93",
+      minCoverageAnnual: "$497",
+      fullCoverageAnnual: "$1,118"
+    },
+    {
+      company: "Geico",
+      minCoverageMonthly: "$54",
+      fullCoverageMonthly: "$112",
+      minCoverageAnnual: "$651",
+      fullCoverageAnnual: "$1,341"
+    },
+    {
+      company: "Mercury Insurance",
+      minCoverageMonthly: "$54",
+      fullCoverageMonthly: "$133",
+      minCoverageAnnual: "$648",
+      fullCoverageAnnual: "$1,594"
+    },
+    {
+      company: "AAA",
+      minCoverageMonthly: "$63",
+      fullCoverageMonthly: "$126",
+      minCoverageAnnual: "$762",
+      fullCoverageAnnual: "$1,513"
+    },
+    {
+      company: "Germania Insurance",
+      minCoverageMonthly: "$72",
+      fullCoverageMonthly: "$143",
+      minCoverageAnnual: "$868",
+      fullCoverageAnnual: "$1,715"
+    },
+    {
+      company: "Progressive",
+      minCoverageMonthly: "$87",
+      fullCoverageMonthly: "$149",
+      minCoverageAnnual: "$1,048",
+      fullCoverageAnnual: "$1,783"
+    }
   ];
 
-  cheapestVehicles = [
-    { make: 'Honda', price: '$161' },
-    { make: 'Acura', price: '$167' },
-    { make: 'Subaru', price: '$168' },
-    { make: 'Hyundai', price: '$180' },
-    { make: 'Ford', price: '$185' },
-    { make: 'Toyota', price: '$185' },
-  ];
 
-  expensiveVehicles = [
-    { make: 'Maserati', price: '$411' },
-    { make: 'Lotus', price: '$444' },
-    { make: 'Lamborghini', price: '$502' },
-    { make: 'Aston Martin', price: '$548' },
-    { make: 'Ferrari', price: '$913' },
-  ];
+  vehiclesMake = [
+    {
+      model: "Ford F-150",
+      minCoverageMonthly: "$100",
+      minCoverageAnnual: "$1,204",
+      fullCoverageMonthly: "$205",
+      fullCoverageAnnual: "$2,457"
+    },
+    {
+      model: "Honda Civic",
+      minCoverageMonthly: "$103",
+      minCoverageAnnual: "$1,237",
+      fullCoverageMonthly: "$211",
+      fullCoverageAnnual: "$2,538"
+    },
+    {
+      model: "Honda Accord",
+      minCoverageMonthly: "$107",
+      minCoverageAnnual: "$1,280",
+      fullCoverageMonthly: "$219",
+      fullCoverageAnnual: "$2,625"
+    },
+    {
+      model: "Toyota Prius",
+      minCoverageMonthly: "$110",
+      minCoverageAnnual: "$1,325",
+      fullCoverageMonthly: "$226",
+      fullCoverageAnnual: "$2,715"
+    },
+    {
+      model: "Toyota Camry",
+      minCoverageMonthly: "$111",
+      minCoverageAnnual: "$1,334",
+      fullCoverageMonthly: "$228",
+      fullCoverageAnnual: "$2,733"
+    },
+    {
+      model: "Toyota RAV4",
+      minCoverageMonthly: "$113",
+      minCoverageAnnual: "$1,361",
+      fullCoverageMonthly: "$233",
+      fullCoverageAnnual: "$2,791"
+    },
+    {
+      model: "Tesla Model 3",
+      minCoverageMonthly: "$125",
+      minCoverageAnnual: "$1,501",
+      fullCoverageMonthly: "$255",
+      fullCoverageAnnual: "$3,064"
+    },
+    {
+      model: "Tesla Model Y",
+      minCoverageMonthly: "$146",
+      minCoverageAnnual: "$1,751",
+      fullCoverageMonthly: "$297",
+      fullCoverageAnnual: "$3,565"
+    }
+  ]
 
-  driverRates = [
-    { profile: 'Clean Record', quote: '$178', comparison: 'Baseline' },
-    { profile: 'With Accident', quote: '$246', comparison: '+38%' },
-    { profile: 'With Speeding Ticket', quote: '$236', comparison: '+33%' },
-    { profile: 'With DUI', quote: '$282', comparison: '+58%' },
+  driverProfileRates = [
+    { profile: 'Clean Record', quote: '$178' },
+    { profile: 'With Accident', quote: '$246' },
+    { profile: 'With Speeding Ticket', quote: '$236' },
+    { profile: 'With DUI', quote: '$282' },
   ];
 
   coverageComparison = [
@@ -126,24 +179,22 @@ export class CarInsurance {
   ];
 
   impactFactorsKeys = [
-    'DRIVING_RECORD',
-    'INSURANCE_HISTORY',
-    'CREDIT_SCORE',
-    'CLAIMS_HISTORY',
-    'LOCATION',
-    'COVERAGE_DEDUCTIBLE',
-    'AGE_EXPERIENCE',
-    'MULTI_VEHICLE',
-    'GENDER',
-    'VEHICLE_USE',
-    'MARITAL_STATUS',
-    'GARAGING',
-    'VEHICLE_TYPE',
-    'SAFETY_FEATURES',
-    'VEHICLE_CONDITION',
-    'SR22',
-    'ANNUAL_MILEAGE'
-  ];
+    "DRIVING_RECORD",
+    "CREDIT_SCORE",
+    "LOCATION",
+    "AGE_EXPERIENCE",
+    "GENDER",
+    "MARITAL_STATUS",
+    "VEHICLE_TYPE",
+    "VEHICLE_CONDITION",
+    "ANNUAL_MILEAGE",
+    "INSURANCE_HISTORY",
+    "CLAIMS_HISTORY",
+    "COVERAGE_DEDUCTIBLE",
+    "VEHICLE_USE",
+    "SAFETY_FEATURES",
+    "SR22"
+  ]
 
   discountKeys = [
     'BUNDLING',
@@ -169,26 +220,36 @@ export class CarInsurance {
     'NEW_VEHICLE'
   ];
   agentComparisonData = [
-    'NUMBER_OF_COMPANIES',
-    'COMPARE_RATES',
-    'FLEXIBILITY',
-    'GOAL',
-    'CLAIMS_ASSISTANCE',
-    'LANGUAGE_SUPPORT'
+    "NUMBER_OF_COMPANIES",
+    "PRICE_COMPARISON",
+    "COVERAGE_OPTIONS",
+    "HIGH_RISK",
+    "SR22",
+    "BAD_CREDIT",
+    "VIOLATIONS",
+    "CUSTOMIZATION",
+    "LOYALTY",
+    "RENEWAL_SHOPPING",
+    "CLAIMS_ADVOCACY",
+    "MULTI_VEHICLE",
+    "SWITCHING",
+    "BUNDLING",
+    "LOCAL_KNOWLEDGE",
+    "LANGUAGE_SUPPORT"
   ];
 
   vehicleInsuranceTypes = [
-    'CAR',
-    'MOTORCYCLE',
-    'BOAT',
-    'RV_MOTORHOME',
-    'CLASSIC_CAR',
-    'COMMERCIAL_AUTO',
-    'SR22',
-    'ATV_UTV',
-    'MEXICAN_CAR',
-    'RIDESHARE',
-    'TRAILER'
+    "SEDANS",
+    "SUVS_CROSSOVERS",
+    "TRUCKS_PICKUPS",
+    "SPORTS_PERFORMANCE",
+    "EVS",
+    "HYBRIDS",
+    "MINIVANS_VANS",
+    "MODIFIED_CUSTOM",
+    "CLASSIC_CAR",
+    "COMMERCIAL_AUTO",
+    "SR22"
   ];
 
 
@@ -205,5 +266,7 @@ export class CarInsurance {
     'FAQ4',
     'FAQ5',
     'FAQ6',
+    'FAQ7',
+    'FAQ8',
   ];
 }

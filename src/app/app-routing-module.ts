@@ -24,6 +24,15 @@ import { CommercialInsurance } from './pages/commercial-insurance/commercial-ins
 import { LifeInsurance } from './pages/life-insurance/life-insurance';
 import { HealthInsurance } from './pages/health-insurance/health-insurance';
 import { SuretyBondInsurance } from './pages/surety-bond-insurance/surety-bond-insurance';
+import { CarInsurance } from './pages/auto-insurance/car-insurance/car-insurance';
+import { MotorcycleInsurance } from './pages/auto-insurance/motor-insurance/motorcycle-insurance';
+import { BoatInsurance } from './pages/auto-insurance/boat-insurance/boat-insurance';
+import { RvInsurance } from './pages/auto-insurance/rv-insurance/rv-insurance';
+import { ClassicCarInsurance } from './pages/auto-insurance/classic-car-insurance/classic-car-insurance';
+import { Sr22Insurance } from './pages/auto-insurance/sr-22-insurance/sr-22-insurance';
+import { AtvAndUtvInsurance } from './pages/auto-insurance/atv-utv-insurance/atv-utv-insurance';
+import { TrailerInsurance } from './pages/auto-insurance/trailer-insurance/trailer-insurance';
+import { MexicanCarInsurance } from './pages/auto-insurance/mexican-car-insurance/mexican-car-insurance';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -44,12 +53,27 @@ const routes: Routes = [
   { path: 'life-insurance/quote', component: GetLifeQuote },
   { path: 'health-insurance/quote', component: GetHealthQuote },
   { path: 'surety-bonds/quote', component: GetSuretyQuote },
-  { path: 'auto-insurance', component: AutoInsurance },
+  // { path: 'auto-insurance', component: AutoInsurance },
   { path: 'homeowners-insurance', component: HomeInsurance },
   { path: 'commercial-insurance', component: CommercialInsurance },
   { path: 'life-insurance', component: LifeInsurance },
   { path: 'health-insurance', component: HealthInsurance },
   { path: 'surety-bonds', component: SuretyBondInsurance },
+  {
+    path: 'auto-insurance',
+    children: [
+      { path: '', component: AutoInsurance },
+      { path: 'car-insurance', component: CarInsurance },
+      { path: 'motorcycle-insurance', component: MotorcycleInsurance },
+      { path: 'boat-insurance', component: BoatInsurance },
+      { path: 'rv-motorhome-insurance', component: RvInsurance },
+      { path: 'classic-car-insurance', component: ClassicCarInsurance },
+      { path: 'sr-22-insurance', component: Sr22Insurance },
+      { path: 'atv-utv-insurance', component: AtvAndUtvInsurance },
+      { path: 'trailer-insurance', component: TrailerInsurance },
+      { path: 'mexican-car-insurance', component: MexicanCarInsurance }
+    ]
+  },
 
 
 
@@ -78,7 +102,21 @@ const routes: Routes = [
       { path: 'seguros-de-vida/cotizacion', component: GetLifeQuote },
       { path: 'seguros-de-salud/cotizacion', component: GetHealthQuote },
       { path: 'fianzas/cotizacion', component: GetSuretyQuote },
-      { path: 'seguros-de-auto', component: AutoInsurance },
+      {
+        path: 'seguros-de-auto',
+        children: [
+          { path: '', component: AutoInsurance },
+          { path: 'seguro-de-carro', component: CarInsurance },
+          { path: 'seguro-de-motocicleta', component: MotorcycleInsurance },
+          { path: 'seguro-de-barco', component: BoatInsurance },
+          { path: 'seguro-de-rv-y-motorhome', component: RvInsurance },
+          { path: 'seguro-de-auto-clasico', component: ClassicCarInsurance },
+          { path: 'seguro-de-sr-22', component: Sr22Insurance },
+          { path: 'seguro-de-atv-utv', component: AtvAndUtvInsurance },
+          { path: 'seguro-de-trailer', component: TrailerInsurance },
+          { path: 'seguro-de-carro-mexicano', component: MexicanCarInsurance }
+        ]
+      },
       { path: 'seguros-de-vivienda', component: HomeInsurance },
       { path: 'seguros-comerciales', component: CommercialInsurance },
       { path: 'seguros-de-vida', component: LifeInsurance },
@@ -194,4 +232,40 @@ export const routeTranslations: Record<string, Record<string, string>> = {
     en: 'surety-bonds',
     es: 'fianzas'
   },
+  carInsurance: {
+    en: 'auto-insurance/car-insurance',
+    es: 'seguros-de-auto/seguro-de-carro'
+  },
+  motorcycleInsurance: {
+    en: 'auto-insurance/motorcycle-insurance',
+    es: 'seguros-de-auto/seguro-de-motocicleta'
+  },
+  boatInsurance: {
+    en: 'auto-insurance/boat-insurance',
+    es: 'seguros-de-auto/seguro-de-barco'
+  },
+  rvInsurance: {
+    en: 'auto-insurance/rv-motorhome-insurance',
+    es: 'seguros-de-auto/seguro-de-rv-y-motorhome'
+  },
+  classicCarInsurance: {
+    en: 'auto-insurance/classic-car-insurance',
+    es: 'seguros-de-auto/seguro-de-auto-clasico'
+  },
+  sr22Insurance: {
+    en: 'auto-insurance/sr-22-insurance',
+    es: 'seguros-de-auto/seguro-de-sr-22'
+  },
+  atvAndUtvInsurance: {
+    en: 'auto-insurance/atv-utv-insurance',
+    es: 'seguros-de-auto/seguro-de-atv-utv'
+  },
+  trailerInsurance: {
+    en: 'auto-insurance/trailer-insurance',
+    es: 'seguros-de-auto/seguro-de-trailer'
+  },
+  mexicanCarInsurance: {
+    en: 'auto-insurance/mexican-car-insurance',
+    es: 'seguros-de-auto/seguro-de-carro-mexicano'
+  }
 };

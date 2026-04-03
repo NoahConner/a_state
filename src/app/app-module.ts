@@ -36,6 +36,15 @@ import { CommercialInsurance } from './pages/commercial-insurance/commercial-ins
 import { LifeInsurance } from './pages/life-insurance/life-insurance';
 import { HealthInsurance } from './pages/health-insurance/health-insurance';
 import { SuretyBondInsurance } from './pages/surety-bond-insurance/surety-bond-insurance';
+import { CarInsurance } from './pages/auto-insurance/car-insurance/car-insurance';
+import { MotorcycleInsurance } from './pages/auto-insurance/motor-insurance/motorcycle-insurance';
+import { BoatInsurance } from './pages/auto-insurance/boat-insurance/boat-insurance';
+import { RvInsurance } from './pages/auto-insurance/rv-insurance/rv-insurance';
+import { ClassicCarInsurance } from './pages/auto-insurance/classic-car-insurance/classic-car-insurance';
+import { Sr22Insurance } from './pages/auto-insurance/sr-22-insurance/sr-22-insurance';
+import { AtvAndUtvInsurance } from './pages/auto-insurance/atv-utv-insurance/atv-utv-insurance';
+import { TrailerInsurance } from './pages/auto-insurance/trailer-insurance/trailer-insurance';
+import { MexicanCarInsurance } from './pages/auto-insurance/mexican-car-insurance/mexican-car-insurance';
 
 @NgModule({
   declarations: [
@@ -66,7 +75,16 @@ import { SuretyBondInsurance } from './pages/surety-bond-insurance/surety-bond-i
     CommercialInsurance,
     LifeInsurance,
     HealthInsurance,
-    SuretyBondInsurance
+    SuretyBondInsurance,
+    CarInsurance,
+    MotorcycleInsurance,
+    BoatInsurance,
+    RvInsurance,
+    ClassicCarInsurance,
+    Sr22Insurance,
+    AtvAndUtvInsurance,
+    TrailerInsurance,
+    MexicanCarInsurance
   ],
   imports: [
     BrowserModule,

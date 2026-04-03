@@ -9,7 +9,7 @@ import { routeTranslations } from '../../app-routing-module';
   styleUrl: './header.scss',
 })
 export class Header {
-  constructor(public languageService: Language) {}
+  constructor(public languageService: Language) { }
   currentLang: 'en' | 'es' = 'es';
 
   changeLang(lang: string) {
@@ -19,10 +19,16 @@ export class Header {
   getRoute(page: string): string[] {
     const lang = this.languageService.getCurrentLanguage();
 
-    const slug = routeTranslations[page]?.[lang] || routeTranslations[page]?.['en'];
+    const slug =
+      routeTranslations[page]?.[lang] ||
+      routeTranslations[page]?.['en'];
 
-    if (!slug) return ['/']; // fallback to homepage
+    if (!slug) return ['/'];
 
-    return lang === 'en' ? [slug] : [lang, slug];
+    const segments = slug.split('/');
+
+    return lang === 'en'
+      ? ['/', ...segments]
+      : ['/', lang, ...segments];
   }
 }

@@ -135,7 +135,150 @@
         </div>
     </section>
 
-    <section class="insurance-section py-5 bg-white">
+
+    <section class="insurance-table-section py-5">
+        <div class="container container-max-800 px-4">
+
+            <h2 class="table-main-title mb-4">{{ 'CAR_INSURANCE.MIN_REQUIREMENTS.TITLE' | translate }}</h2>
+
+            <p class="table-intro-text mb-5">
+                {{ 'CAR_INSURANCE.MIN_REQUIREMENTS.INTRO' | translate }}
+            </p>
+
+            <div class="custom-insurance-table">
+                <div class="row g-2 header-row">
+                    <div class="col-4">
+                        <div class="header-box text-center">{{ 'CAR_INSURANCE.MIN_REQUIREMENTS.TABLE.HEADER_COVERAGE' |
+                            translate
+                            }}</div>
+                    </div>
+                    <div class="col-4">
+                        <div class="header-box text-center">{{
+                            'CAR_INSURANCE.MIN_REQUIREMENTS.TABLE.HEADER_WHAT_IT_COVERS' |
+                            translate }}</div>
+                    </div>
+                    <div class="col-4">
+                        <div class="header-box text-center">{{ 'CAR_INSURANCE.MIN_REQUIREMENTS.TABLE.HEADER_MIN_AMOUNT'
+                            | translate
+                            }}</div>
+                    </div>
+                </div>
+
+                <div class="row g-2 content-row mt-1">
+                    <div class="col-4">
+                        <div
+                            class="content-box side-label d-flex align-items-center justify-content-center text-center">
+                            <div>
+                                <strong>{{ 'CAR_INSURANCE.MIN_REQUIREMENTS.TABLE.ITEM1_LABEL' | translate
+                                    }}</strong><br>
+                                <small>{{ 'CAR_INSURANCE.MIN_REQUIREMENTS.TABLE.ITEM1_SUB_LABEL' | translate }}</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="content-box detail-box pink-bg h-100">
+                            <div class="row h-100 align-items-center">
+                                <div class="col-6 border-end-white pe-3">
+                                    {{ 'CAR_INSURANCE.MIN_REQUIREMENTS.TABLE.ITEM1_DESC' | translate }}
+                                </div>
+                                <div class="col-6 ps-3 fw-bold">
+                                    {{ 'CAR_INSURANCE.MIN_REQUIREMENTS.TABLE.ITEM1_AMOUNT' | translate }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-2 content-row mt-1">
+                    <div class="col-4">
+                        <div
+                            class="content-box side-label d-flex align-items-center justify-content-center text-center">
+                            <div>
+                                <strong>{{ 'CAR_INSURANCE.MIN_REQUIREMENTS.TABLE.ITEM2_LABEL' | translate
+                                    }}</strong><br>
+                                <small>{{ 'CAR_INSURANCE.MIN_REQUIREMENTS.TABLE.ITEM2_SUB_LABEL' | translate }}</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="content-box detail-box pink-bg h-100">
+                            <div class="row h-100 align-items-center">
+                                <div class="col-6 border-end-white pe-3">
+                                    {{ 'CAR_INSURANCE.MIN_REQUIREMENTS.TABLE.ITEM2_DESC' | translate }}
+                                </div>
+                                <div class="col-6 ps-3 fw-bold">
+                                    {{ 'CAR_INSURANCE.MIN_REQUIREMENTS.TABLE.ITEM2_AMOUNT' | translate }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mt-4 source-meta">
+                <p class="mb-0">{{ 'CAR_INSURANCE.MIN_REQUIREMENTS.SOURCE' | translate }} <a
+                        href="https://shamiehlaw.com/" target="_blank">{{ 'CAR_INSURANCE.MIN_REQUIREMENTS.SOURCE_LINK'
+                        | translate }}</a></p>
+                <p class="mb-0 text-muted">{{ 'CAR_INSURANCE.MIN_REQUIREMENTS.LAST_UPDATED' | translate }}</p>
+            </div>
+
+            <div class="disclaimer-text mt-4">
+                <strong>{{ 'COMMON.DISCLAIMER' | translate }}:</strong> {{ 'CAR_INSURANCE.MIN_REQUIREMENTS.DISCLAIMER'
+                |
+                translate }}
+            </div>
+
+            <h3 class="table-coverage-title mt-5">{{ 'CAR_INSURANCE.MIN_REQUIREMENTS.FULL_COVERAGE_TITLE' | translate
+                }}</h3>
+
+            <p class="table-intro-text mb-5">
+                {{ 'CAR_INSURANCE.MIN_REQUIREMENTS.FULL_COVERAGE_INTRO' | translate }}
+            </p>
+        </div>
+
+        <div class="container container-max-800 px-4 mt-5">
+
+            <h2 class="insurance-coverage-title mb-3">{{ 'CAR_INSURANCE.FULL_COVERAGE_MEANS.TITLE' | translate }}</h2>
+            <p class="insurance-coverage-intro-text mb-5">
+                {{ 'CAR_INSURANCE.FULL_COVERAGE_MEANS.INTRO' | translate }}
+            </p>
+
+            <div class="row justify-content-center g-4">
+
+                <!-- Card 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="coverage-card h-100">
+                        <img src="assets/images/auto_office-employee.png" class="card-icon" alt="icon">
+                        <h3>{{ 'CAR_INSURANCE.FULL_COVERAGE_MEANS.CARD1.TITLE' | translate }}</h3>
+                        <p>{{ 'CAR_INSURANCE.FULL_COVERAGE_MEANS.CARD1.DESC' | translate }}</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="coverage-card h-100">
+                        <img src="assets/images/auto-car-repair.png" class="card-icon" alt="icon">
+                        <h3>{{ 'CAR_INSURANCE.FULL_COVERAGE_MEANS.CARD2.TITLE' | translate }}</h3>
+                        <p>{{ 'CAR_INSURANCE.FULL_COVERAGE_MEANS.CARD2.DESC' | translate }}</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="coverage-card h-100">
+                        <img src="assets/images/auto_ice-water.png" class="card-icon" alt="icon">
+                        <h3>{{ 'CAR_INSURANCE.FULL_COVERAGE_MEANS.CARD3.TITLE' | translate }}</h3>
+                        <p>{{ 'CAR_INSURANCE.FULL_COVERAGE_MEANS.CARD3.DESC' | translate }}</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="insurance-section py-5">
         <div class="container">
             <!-- Header -->
             <div class="header-content mb-5">
@@ -223,29 +366,26 @@
         <div class="container">
             <!-- Header 1: City -->
             <div class="rates-header mb-4">
-                <h5 class="fw-bold">{{ 'CAR_INSURANCE.RATES.CITIES_RATE.TITLE' | translate }}</h5>
-                <p class="small mb-0">{{ 'CAR_INSURANCE.RATES.CITIES_RATE.DESC' | translate }}</p>
+                <h5 class="fw-bold">{{ 'CAR_INSURANCE.RATES.CITY.TITLE' | translate }}</h5>
+                <p class="small mb-0">{{ 'CAR_INSURANCE.RATES.CITY.DESC' | translate }}</p>
             </div>
 
             <!-- Table 1: City -->
             <div class="rates-table-card p-4">
                 <div class="row g-2 text-center text-white fw-bold mb-2">
                     <div class="col-6">
-                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.CITIES_RATE.H1' | translate }}
-                        </div>
+                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.CITY.H1' | translate }}</div>
                     </div>
                     <div class="col-3">
-                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.CITIES_RATE.H2' | translate }}
-                        </div>
+                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.CITY.H2' | translate }}</div>
                     </div>
                     <div class="col-3">
-                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.CITIES_RATE.H3' | translate }}
-                        </div>
+                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.CITY.H3' | translate }}</div>
                     </div>
                 </div>
 
                 <div class="rates-rows">
-                    @for (rate of citiesRate; track rate.city; let i = $index) {
+                    @for (rate of rates; track rate.city; let i = $index) {
                     <div class="row g-2 text-center mb-2 align-items-center">
                         <div class="col-6">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
@@ -271,6 +411,67 @@
 
                 <!-- Footer Info -->
                 <div class="d-flex justify-content-between mt-4 rates-footer-info">
+                    <p>{{ 'CAR_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">Bankrate</a></p>
+                    <p class="last-updated">{{ 'CAR_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
+                </div>
+                <div class="disclaimer mt-2">
+                    <p class="mb-0"><strong>Disclaimer:</strong> {{ 'CAR_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate
+                        }}</p>
+                </div>
+            </div>
+
+            <div class="py-5"></div>
+
+            <!-- Header 2: Company -->
+            <div class="rates-header mb-4">
+                <h5 class="fw-bold">{{ 'CAR_INSURANCE.RATES.COMPANY.TITLE' | translate }}</h5>
+                <p class="small mb-0">{{ 'CAR_INSURANCE.RATES.COMPANY.DESC' | translate }}</p>
+            </div>
+
+            <!-- Table 2: Company -->
+            <div class="rates-table-card p-4">
+                <div class="row g-2 text-center text-white fw-bold mb-2">
+                    <div class="col-6">
+                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.COMPANY.H1' | translate }}
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.COMPANY.H2' | translate }}
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.COMPANY.H3' | translate }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rates-rows">
+                    @for (rate of companyRates; track rate.company; let i = $index) {
+                    <div class="row g-2 text-center mb-2 align-items-center">
+                        <div class="col-6">
+                            <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
+                                [class.data-pill-color-1]="i % 2 !== 0">
+                                {{ rate.company }}
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
+                                [class.data-pill-color-1]="i % 2 !== 0">
+                                {{ rate.liability }}
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
+                                [class.data-pill-color-1]="i % 2 !== 0">
+                                {{ rate.full }}
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+
+                <!-- Footer Info -->
+                <div class="d-flex justify-content-between mt-4 rates-footer-info">
                     <p>{{ 'CAR_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">Insurify</a></p>
                     <p class="last-updated">{{ 'CAR_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
                 </div>
@@ -282,68 +483,65 @@
 
             <div class="py-5"></div>
 
-            <!-- Table 2: Car Insurance Rate -->
+            <!-- Header 3: Vehicle -->
             <div class="rates-header mb-4">
-                <h5 class="fw-bold">{{ 'CAR_INSURANCE.RATES.CAR_INSURANCE_RATE.TITLE' | translate }}</h5>
-                <p class="small mb-0">{{ 'CAR_INSURANCE.RATES.CAR_INSURANCE_RATE.DESC' | translate }}</p>
+                <h5 class="fw-bold">{{ 'CAR_INSURANCE.RATES.VEHICLE.TITLE' | translate }}</h5>
+                <p class="small mb-0">{{ 'CAR_INSURANCE.RATES.VEHICLE.DESC' | translate }}</p>
             </div>
 
-            <!-- Table 2: Car Insurance Rate -->
+            <!-- Table 3: Vehicle -->
             <div class="rates-table-card p-4">
                 <div class="row g-2 text-center text-white fw-bold mb-2">
-                    <div class="col-2">
-                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.CAR_INSURANCE_RATE.H1' |
-                            translate }}</div>
+                    <div class="col-6">
+                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.VEHICLE.H1' | translate }}
+                        </div>
                     </div>
-                    <div class="col-3">
-                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.CAR_INSURANCE_RATE.H2' |
-                            translate }}</div>
-                    </div>
-                    <div class="col-3">
-                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.CAR_INSURANCE_RATE.H3' |
-                            translate }}</div>
-                    </div>
-                    <div class="col-2">
-                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.CAR_INSURANCE_RATE.H4' |
-                            translate }}</div>
-                    </div>
-                    <div class="col-2">
-                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.CAR_INSURANCE_RATE.H5' |
-                            translate }}</div>
+                    <div class="col-6">
+                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.VEHICLE.H2' | translate }}
+                        </div>
                     </div>
                 </div>
 
                 <div class="rates-rows">
-                    @for (rate of carRates; track rate.company; let i = $index) {
+                    <div class="row g-2 mb-2">
+                        <div class="col-12">
+                            <div class="category-pill">{{ 'CAR_INSURANCE.RATES.VEHICLE.CAT1' | translate }}</div>
+                        </div>
+                    </div>
+                    @for (rate of cheapestVehicles; track rate.make; let i = $index) {
                     <div class="row g-2 text-center mb-2 align-items-center">
-                        <div class="col-2">
+                        <div class="col-6">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ rate.company }}
+                                {{ rate.make }}
                             </div>
                         </div>
-                        <div class="col-3">
+                        <div class="col-6">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ rate.minCoverageMonthly }}
+                                {{ rate.price }}
                             </div>
                         </div>
-                        <div class="col-3">
+                    </div>
+                    }
+
+                    <div class="row g-2 mb-2 mt-4">
+                        <div class="col-12">
+                            <div class="category-pill">{{ 'CAR_INSURANCE.RATES.VEHICLE.CAT2' | translate }}</div>
+                        </div>
+                    </div>
+                    @for (rate of expensiveVehicles; track rate.make; let i = $index) {
+                    <div class="row g-2 text-center mb-2 align-items-center">
+                        <div class="col-6">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ rate.fullCoverageMonthly }}
+                                {{ rate.make }}
                             </div>
                         </div>
-                        <div class="col-2">
+                        <div class="col-6">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ rate.minCoverageAnnual }}
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
-                                [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ rate.fullCoverageAnnual }}
+                                {{ rate.price }}
                             </div>
                         </div>
                     </div>
@@ -352,7 +550,8 @@
 
                 <!-- Footer Info -->
                 <div class="d-flex justify-content-between mt-4 rates-footer-info">
-                    <p>{{ 'CAR_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">MoneyGeek</a></p>
+                    <p>{{ 'CAR_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="https://www.finder.com/"
+                            target="_blank">Finder</a></p>
                     <p class="last-updated">{{ 'CAR_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
                 </div>
                 <div class="disclaimer mt-2">
@@ -363,106 +562,28 @@
 
             <div class="py-5"></div>
 
-            <!-- Table 3: Vehicle Make -->
+            <!-- Header 4: Driver Profile -->
             <div class="rates-header mb-4">
-                <h5 class="fw-bold">{{ 'CAR_INSURANCE.RATES.VEHICLE_MAKE.TITLE' | translate }}</h5>
-                <p class="small mb-0">{{ 'CAR_INSURANCE.RATES.VEHICLE_MAKE.DESC' | translate }}</p>
+                <h5 class="fw-bold">{{ 'CAR_INSURANCE.RATES.DRIVER.TITLE' | translate }}</h5>
+                <p class="small mb-0">{{ 'CAR_INSURANCE.RATES.DRIVER.DESC' | translate }}</p>
             </div>
 
-            <!-- Table 3: Vehicle Make -->
+            <!-- Table 4: Driver Profile -->
             <div class="rates-table-card p-4">
                 <div class="row g-2 text-center text-white fw-bold mb-2">
-                    <div class="col-2">
-                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.VEHICLE_MAKE.H1' |
-                            translate }}</div>
+                    <div class="col-6">
+                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.DRIVER.H1' | translate }}</div>
                     </div>
                     <div class="col-3">
-                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.VEHICLE_MAKE.H2' |
-                            translate }}</div>
+                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.DRIVER.H2' | translate }}</div>
                     </div>
                     <div class="col-3">
-                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.VEHICLE_MAKE.H3' |
-                            translate }}</div>
-                    </div>
-                    <div class="col-2">
-                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.VEHICLE_MAKE.H4' |
-                            translate }}</div>
-                    </div>
-                    <div class="col-2">
-                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.VEHICLE_MAKE.H5' |
-                            translate }}</div>
+                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.DRIVER.H3' | translate }}</div>
                     </div>
                 </div>
 
                 <div class="rates-rows">
-                    @for (rate of vehiclesMake; track rate.model; let i = $index) {
-                    <div class="row g-2 text-center mb-2 align-items-center">
-                        <div class="col-2">
-                            <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
-                                [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ rate.model }}
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
-                                [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ rate.minCoverageMonthly }}
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
-                                [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ rate.fullCoverageMonthly }}
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
-                                [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ rate.minCoverageAnnual }}
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
-                                [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ rate.fullCoverageAnnual }}
-                            </div>
-                        </div>
-                    </div>
-                    }
-                </div>
-
-                <!-- Footer Info -->
-                <div class="d-flex justify-content-between mt-4 rates-footer-info">
-                    <p>{{ 'CAR_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">MoneyGeek</a></p>
-                    <p class="last-updated">{{ 'CAR_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
-                </div>
-                <div class="disclaimer mt-2">
-                    <p class="mb-0"><strong>Disclaimer:</strong> {{ 'CAR_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate
-                        }}</p>
-                </div>
-            </div>
-            <div class="py-5"></div>
-
-            <div class="rates-header mb-4">
-                <h5 class="fw-bold">{{ 'CAR_INSURANCE.RATES.DRIVER_PROFILE.TITLE' | translate }}</h5>
-                <p class="small mb-0">{{ 'CAR_INSURANCE.RATES.DRIVER_PROFILE.DESC' | translate }}</p>
-            </div>
-
-            <!-- Table 3: Vehicle Make -->
-            <div class="rates-table-card p-4">
-                <div class="row g-2 text-center text-white fw-bold mb-2">
-                    <div class="col-6">
-                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.DRIVER_PROFILE.H1' |
-                            translate }}</div>
-                    </div>
-                    <div class="col-6">
-                        <div class="header-pill bg-danger py-2">{{ 'CAR_INSURANCE.RATES.DRIVER_PROFILE.H2' |
-                            translate }}</div>
-                    </div>
-                </div>
-
-                <div class="rates-rows">
-                    @for (rate of driverProfileRates; track rate.profile; let i = $index) {
+                    @for (rate of driverRates; track rate.profile; let i = $index) {
                     <div class="row g-2 text-center mb-2 align-items-center">
                         <div class="col-6">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
@@ -470,10 +591,16 @@
                                 {{ rate.profile }}
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-3">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
                                 {{ rate.quote }}
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
+                                [class.data-pill-color-1]="i % 2 !== 0">
+                                {{ rate.comparison }}
                             </div>
                         </div>
                     </div>
@@ -482,7 +609,8 @@
 
                 <!-- Footer Info -->
                 <div class="d-flex justify-content-between mt-4 rates-footer-info">
-                    <p>{{ 'CAR_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">MoneyGeek</a></p>
+                    <p>{{ 'CAR_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="https://insurify.com/"
+                            target="_blank">Insurify</a></p>
                     <p class="last-updated">{{ 'CAR_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
                 </div>
                 <div class="disclaimer mt-2">
@@ -490,6 +618,7 @@
                         }}</p>
                 </div>
             </div>
+
             <div class="py-5"></div>
 
             <!-- Header 5: Min vs Full -->
@@ -843,7 +972,7 @@
             <div class="row align-items-center">
                 <div class="col-md-6 mb-4 mb-md-0">
                     <div class="image-container rounded-4 overflow-hidden position-relative">
-                        <img src="assets/images/car-insurance/poster.png" alt="Texas Flag" class="img-fluid w-100">
+                        <img src="assets/images/boat-insurance/poster.png" alt="Texas Flag" class="img-fluid w-100">
                         <div class="red-overlay"></div>
                     </div>
                 </div>
