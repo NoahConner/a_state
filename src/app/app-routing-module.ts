@@ -33,6 +33,7 @@ import { Sr22Insurance } from './pages/auto-insurance/sr-22-insurance/sr-22-insu
 import { AtvAndUtvInsurance } from './pages/auto-insurance/atv-utv-insurance/atv-utv-insurance';
 import { TrailerInsurance } from './pages/auto-insurance/trailer-insurance/trailer-insurance';
 import { MexicanCarInsurance } from './pages/auto-insurance/mexican-car-insurance/mexican-car-insurance';
+import { RideshareInsurance } from './pages/auto-insurance/rideshare-insurance/rideshare-insurance';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -71,7 +72,8 @@ const routes: Routes = [
       { path: 'sr-22-insurance', component: Sr22Insurance },
       { path: 'atv-utv-insurance', component: AtvAndUtvInsurance },
       { path: 'trailer-insurance', component: TrailerInsurance },
-      { path: 'mexican-car-insurance', component: MexicanCarInsurance }
+      { path: 'mexican-car-insurance', component: MexicanCarInsurance },
+      { path: 'rideshare-insurance', component: RideshareInsurance },
     ]
   },
 
@@ -114,7 +116,8 @@ const routes: Routes = [
           { path: 'seguro-de-sr-22', component: Sr22Insurance },
           { path: 'seguro-de-atv-utv', component: AtvAndUtvInsurance },
           { path: 'seguro-de-trailer', component: TrailerInsurance },
-          { path: 'seguro-de-carro-mexicano', component: MexicanCarInsurance }
+          { path: 'seguro-de-carro-mexicano', component: MexicanCarInsurance },
+          { path: 'seguro-de-rideshare', component: RideshareInsurance },
         ]
       },
       { path: 'seguros-de-vivienda', component: HomeInsurance },
@@ -267,5 +270,9 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   mexicanCarInsurance: {
     en: 'auto-insurance/mexican-car-insurance',
     es: 'seguros-de-auto/seguro-de-carro-mexicano'
+  },
+  rideshareInsurance: {
+    en: 'auto-insurance/rideshare-insurance',
+    es: 'seguros-de-auto/seguro-de-rideshare'
   }
 };

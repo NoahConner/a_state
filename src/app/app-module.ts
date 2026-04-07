@@ -45,6 +45,7 @@ import { Sr22Insurance } from './pages/auto-insurance/sr-22-insurance/sr-22-insu
 import { AtvAndUtvInsurance } from './pages/auto-insurance/atv-utv-insurance/atv-utv-insurance';
 import { TrailerInsurance } from './pages/auto-insurance/trailer-insurance/trailer-insurance';
 import { MexicanCarInsurance } from './pages/auto-insurance/mexican-car-insurance/mexican-car-insurance';
+import { RideshareInsurance } from './pages/auto-insurance/rideshare-insurance/rideshare-insurance';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { MexicanCarInsurance } from './pages/auto-insurance/mexican-car-insuranc
     Sr22Insurance,
     AtvAndUtvInsurance,
     TrailerInsurance,
-    MexicanCarInsurance
+    MexicanCarInsurance,
+    RideshareInsurance
   ],
   imports: [
     BrowserModule,
