@@ -4,9 +4,9 @@
             <div class="topSub">
                 <div class="topSub2">
                     <div class="h1">
-                        {{ 'TRAILER_INSURANCE.BANNER.TITLE_LINE1' | translate }} <br />
-                        {{ 'TRAILER_INSURANCE.BANNER.TITLE_LINE2' | translate }} <span class="heading-span">{{
-                            'TRAILER_INSURANCE.BANNER.TITLE_LINE3' |
+                        {{ 'RIDESHARE_INSURANCE.BANNER.TITLE_LINE1' | translate }} <br />
+                        {{ 'RIDESHARE_INSURANCE.BANNER.TITLE_LINE2' | translate }} <span class="heading-span">{{
+                            'RIDESHARE_INSURANCE.BANNER.TITLE_LINE3' |
                             translate }}</span>
                     </div>
                     <!-- 
@@ -38,15 +38,15 @@
                     </div>
 
                     <div class="inps">
-                        <input type="text" [placeholder]="'TRAILER_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
+                        <input type="text" [placeholder]="'RIDESHARE_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
                             class="form-control" />
 
-                        <input type="number" [placeholder]="'TRAILER_INSURANCE.BANNER.FORM.PHONE' | translate"
+                        <input type="number" [placeholder]="'RIDESHARE_INSURANCE.BANNER.FORM.PHONE' | translate"
                             class="form-control" />
                     </div>
 
                     <button class="btn">
-                        {{ 'TRAILER_INSURANCE.BANNER.FORM.BUTTON' | translate }}
+                        {{ 'RIDESHARE_INSURANCE.BANNER.FORM.BUTTON' | translate }}
                     </button>
                 </div>
             </div>
@@ -55,22 +55,22 @@
 
     <div class="container my-5">
         <h2 class="section-title mb-4">
-            {{ 'TRAILER_INSURANCE.WHY_DO_YOU_NEED.TITLE' | translate }}
+            {{ 'RIDESHARE_INSURANCE.WHY_DO_YOU_NEED.TITLE' | translate }}
         </h2>
         <p class="section-description mb-4">
-            {{ 'TRAILER_INSURANCE.WHY_DO_YOU_NEED.DESC1' | translate }}
+            {{ 'RIDESHARE_INSURANCE.WHY_DO_YOU_NEED.DESC1' | translate }}
             <br>
             <br>
-            {{ 'TRAILER_INSURANCE.WHY_DO_YOU_NEED.DESC2' | translate }}
+            {{ 'RIDESHARE_INSURANCE.WHY_DO_YOU_NEED.DESC2' | translate }}
         </p>
 
         <p class="section-sub-title mb-4">
-            {{ 'TRAILER_INSURANCE.WHY_DO_YOU_NEED.SUB_TITLE' | translate }}
+            {{ 'RIDESHARE_INSURANCE.WHY_DO_YOU_NEED.SUB_TITLE' | translate }}
         </p>
 
         <div class="insurance-list">
             <div class="insurance-item"
-                *ngFor="let item of 'TRAILER_INSURANCE.WHY_DO_YOU_NEED.LIST' | translate; let i = index">
+                *ngFor="let item of 'RIDESHARE_INSURANCE.WHY_DO_YOU_NEED.LIST' | translate; let i = index">
 
                 <div class="number">0{{ i + 1 }}</div>
 
@@ -88,20 +88,15 @@
         <div class="container-max-800">
 
             <h1 class="main-title">
-                {{ 'TRAILER_INSURANCE.LAWS.TITLE' | translate }}
+                {{ 'RIDESHARE_INSURANCE.AUTO_COVERAGE.TITLE' | translate }}
             </h1>
 
             <p class="intro-text">
-                {{ 'TRAILER_INSURANCE.LAWS.INTRO1' | translate }}
+                {{ 'RIDESHARE_INSURANCE.AUTO_COVERAGE.DESC1' | translate }}
 
                 <br>
                 <br>
-                {{ 'TRAILER_INSURANCE.LAWS.INTRO2' | translate }}
-
-                <br>
-                <br>
-
-                {{ 'TRAILER_INSURANCE.LAWS.INTRO3' | translate }}
+                {{ 'RIDESHARE_INSURANCE.AUTO_COVERAGE.DESC2' | translate }}
 
             </p>
 
@@ -113,12 +108,12 @@
         <div class="container">
             <!-- Header -->
             <div class="header-content mb-5">
-                <h6 class="text-danger fw-bold">{{ 'TRAILER_INSURANCE.COVERAGES.HEADER.TITLE' | translate }}</h6>
-                <p class="small text-muted">{{ 'TRAILER_INSURANCE.COVERAGES.HEADER.DESC' | translate }}</p>
+                <h6 class="text-danger fw-bold">{{ 'RIDESHARE_INSURANCE.COVERAGES.HEADER.TITLE' | translate }}</h6>
+                <p class="small text-muted">{{ 'RIDESHARE_INSURANCE.COVERAGES.HEADER.DESC' | translate }}</p>
             </div>
 
             <div class="row g-4 mb-5">
-                @for (item of ('TRAILER_INSURANCE.COVERAGES.STANDARD.LIST' | translate); track item.TITLE) {
+                @for (item of ('RIDESHARE_INSURANCE.COVERAGES.STANDARD.LIST' | translate); track item.TITLE) {
                 <div class="col-md-4">
                     <div class="insurance-card">
                         <div class="card-icon"><i [class]="item.ICON"></i></div>
@@ -134,27 +129,31 @@
     </section>
 
 
-    <section class="cost-section py-5">
+     <section class="insurance-section py-5 ">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-10">
-                    <!-- Title -->
-                    <h4 class="cost-title mb-4">{{ 'TRAILER_INSURANCE.COST.TITLE' | translate }}</h4>
+            <!-- Header -->
+            <div class="header-content mb-5">
+                <h6 class="text-danger fw-bold">{{ 'RIDESHARE_INSURANCE.DRIVING_PERIODS.TITLE' | translate }}</h6>
+                <p class="small text-muted">{{ 'RIDESHARE_INSURANCE.DRIVING_PERIODS.INTRO' | translate }}</p>
+            </div>
 
-                    <!-- Description Content -->
-                    <div class="cost-description">
-                        <p class="mb-4">
-                            {{ 'TRAILER_INSURANCE.COST.DESC1' | translate }}
-                        </p>
-
-                        <p>
-                            {{ 'TRAILER_INSURANCE.COST.DESC2' | translate }}
-                        </p>
+            <div class="row g-4 mb-5">
+                @for (item of ('RIDESHARE_INSURANCE.DRIVING_PERIODS.LIST' | translate); track item.TITLE) {
+                <div class="col-md-4">
+                    <div class="insurance-card">
+                        <div class="card-icon"><i [class]="item.ICON"></i></div>
+                        <div class="card-body">
+                            <h6>{{ item.TITLE }}</h6>
+                            <p>{{ item.DESC }}</p>
+                        </div>
                     </div>
                 </div>
+                }
             </div>
         </div>
     </section>
+
+
 
 
     <section class="cost-section bg-white py-5">
@@ -162,16 +161,16 @@
             <div class="row">
                 <div class="col-lg-10">
                     <!-- Title -->
-                    <h4 class="cost-title mb-4">{{ 'TRAILER_INSURANCE.AUTO_COVERAGE.TITLE' | translate }}</h4>
+                    <h4 class="cost-title mb-4">{{ 'RIDESHARE_INSURANCE.COST.TITLE' | translate }}</h4>
 
                     <!-- Description Content -->
                     <div class="cost-description">
                         <p class="mb-4">
-                            {{ 'TRAILER_INSURANCE.AUTO_COVERAGE.DESC1' | translate }}
+                            {{ 'RIDESHARE_INSURANCE.COST.DESC1' | translate }}
                         </p>
 
                         <p>
-                            {{ 'TRAILER_INSURANCE.AUTO_COVERAGE.DESC2' | translate }}
+                            {{ 'RIDESHARE_INSURANCE.COST.DESC2' | translate }}
                         </p>
                     </div>
                 </div>
@@ -180,11 +179,14 @@
     </section>
 
 
+
+
+
     <section class="factors-impact-section">
         <div class="container">
-            <h2 class="section-title">{{ 'TRAILER_INSURANCE.FACTORS_IMPACT.HEADER.TITLE' | translate }}</h2>
+            <h2 class="section-title">{{ 'RIDESHARE_INSURANCE.FACTORS_IMPACT.HEADER.TITLE' | translate }}</h2>
             <p class="intro-text">
-                {{ 'TRAILER_INSURANCE.FACTORS_IMPACT.HEADER.DESC' | translate }}
+                {{ 'RIDESHARE_INSURANCE.FACTORS_IMPACT.HEADER.DESC' | translate }}
             </p>
 
             <div class="row">
@@ -192,11 +194,11 @@
                 <div class="col-lg-6">
                     <div class="factor-item">
                         <div class="icon-wrapper">
-                            <i [class]="'TRAILER_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.ICON' | translate"></i>
+                            <i [class]="'RIDESHARE_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.ICON' | translate"></i>
                         </div>
                         <div class="factor-content">
-                            <h6>{{ ('TRAILER_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }}</h6>
-                            <p>{{ ('TRAILER_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}</p>
+                            <h6>{{ ('RIDESHARE_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }}</h6>
+                            <p>{{ ('RIDESHARE_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}</p>
                         </div>
                     </div>
                 </div>
@@ -207,9 +209,9 @@
 
     <section class="factors-impact-section bg-white">
         <div class="container px-4">
-            <h2 class="section-title">{{ 'TRAILER_INSURANCE.DISCOUNT_FACTORS.HEADER.TITLE' | translate }}</h2>
+            <h2 class="section-title">{{ 'RIDESHARE_INSURANCE.DISCOUNT_FACTORS.HEADER.TITLE' | translate }}</h2>
             <p class="intro-text">
-                {{ 'TRAILER_INSURANCE.DISCOUNT_FACTORS.HEADER.DESC' | translate }}
+                {{ 'RIDESHARE_INSURANCE.DISCOUNT_FACTORS.HEADER.DESC' | translate }}
             </p>
 
             <div class="row mt-5">
@@ -217,11 +219,11 @@
                 <div class="col-lg-6">
                     <div class="factor-item">
                         <div class="icon-wrapper">
-                            <i [class]="'TRAILER_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.ICON' | translate"></i>
+                            <i [class]="'RIDESHARE_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.ICON' | translate"></i>
                         </div>
                         <div class="factor-content">
-                            <h6>{{ ('TRAILER_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translate }}</h6>
-                            <p>{{ ('TRAILER_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translate }}</p>
+                            <h6>{{ ('RIDESHARE_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translate }}</h6>
+                            <p>{{ ('RIDESHARE_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translate }}</p>
                         </div>
                     </div>
                 </div>
@@ -230,13 +232,13 @@
         </div>
     </section>
 
-    <section class="rates-section bg-pink py-5">
+    <section class="rates-section py-5">
         <div class="container container-max-1100 px-4">
-            <h2 class="section-title">{{ 'TRAILER_INSURANCE.AGENT_COMPARISON.HEADER.TITLE' | translate }}</h2>
+            <h2 class="section-title">{{ 'RIDESHARE_INSURANCE.AGENT_COMPARISON.HEADER.TITLE' | translate }}</h2>
             <div class="intro-text">
-                <p>{{ 'TRAILER_INSURANCE.AGENT_COMPARISON.HEADER.DESC' | translate }}</p>
-                <p>{{ 'TRAILER_INSURANCE.AGENT_COMPARISON.HEADER.DESC2' | translate }}</p>
-                <p>{{ 'TRAILER_INSURANCE.AGENT_COMPARISON.HEADER.DESC3' | translate }}
+                <p>{{ 'RIDESHARE_INSURANCE.AGENT_COMPARISON.HEADER.DESC' | translate }}</p>
+                <p>{{ 'RIDESHARE_INSURANCE.AGENT_COMPARISON.HEADER.DESC2' | translate }}</p>
+                <p>{{ 'RIDESHARE_INSURANCE.AGENT_COMPARISON.HEADER.DESC3' | translate }}
                 </p>
             </div>
 
@@ -245,19 +247,19 @@
                 <div class="row g-2 text-center text-white fw-bold mb-2">
                     <div class="col-4">
                         <div class="header-pill bg-danger py-2">{{
-                            'TRAILER_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.FEATURE' |
+                            'RIDESHARE_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.FEATURE' |
                             translate
                             }}</div>
                     </div>
                     <div class="col-4">
                         <div class="header-pill bg-danger py-2">{{
-                            'TRAILER_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.INDEPENDENT' |
+                            'RIDESHARE_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.INDEPENDENT' |
                             translate
                             }}</div>
                     </div>
                     <div class="col-4">
                         <div class="header-pill bg-danger py-2">{{
-                            'TRAILER_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.CAPTIVE' |
+                            'RIDESHARE_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.CAPTIVE' |
                             translate
                             }}</div>
                     </div>
@@ -270,13 +272,13 @@
                         <div class="col-4">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ ('TRAILER_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translate }}
+                                {{ ('RIDESHARE_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translate }}
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ ('TRAILER_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') |
+                                {{ ('RIDESHARE_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') |
                                 translate
                                 }}
                             </div>
@@ -284,7 +286,7 @@
                         <div class="col-4">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ ('TRAILER_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translate }}
+                                {{ ('RIDESHARE_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translate }}
                             </div>
                         </div>
                     </div>
@@ -294,45 +296,24 @@
         </div>
     </section>
 
-    <section class="vehicle-types-section">
-        <div class="container px-4">
-            <h2 class="section-title">{{ 'TRAILER_INSURANCE.VEHICLE_INSURANCE_TYPES.HEADER.TITLE' | translate }}</h2>
-            <div class="row g-4">
-                @for (type of vehicleInsuranceTypes; track type) {
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="vehicle-type-card">
-                        <div class="icon-wrapper">
-                            <i
-                                [class]="'TRAILER_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.ICON' | translate"></i>
-                        </div>
-                        <h6>{{ ('TRAILER_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.TITLE') | translate }}</h6>
-                        <p>{{ ('TRAILER_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.DESCRIPTION') | translate }}
-                        </p>
-                    </div>
-                </div>
-                }
-            </div>
-        </div>
-    </section>
+
 
     <section class="high-risk-section">
         <div class="container px-4">
-            <h2 class="section-title">{{ 'TRAILER_INSURANCE.HIGH_RISK_DRIVER.HEADER.TITLE' | translate }}</h2>
+            <h2 class="section-title">{{ 'RIDESHARE_INSURANCE.HIGH_RISK_DRIVER.HEADER.TITLE' | translate }}</h2>
             <div class="intro-text">
-                <p>{{ 'TRAILER_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC1' | translate }}</p>
-                <p>{{ 'TRAILER_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC2' | translate }}</p>
-                <p>{{ 'TRAILER_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC3' | translate }}</p>
+                <p>{{ 'RIDESHARE_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC1' | translate }}</p>
+                <p>{{ 'RIDESHARE_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC2' | translate }}</p>
             </div>
         </div>
     </section>
 
     <section class="language-section">
         <div class="container px-4">
-            <h2 class="section-title">{{ 'TRAILER_INSURANCE.LANGUAGE_SUPPORT.HEADER.TITLE' | translate }}</h2>
+            <h2 class="section-title">{{ 'RIDESHARE_INSURANCE.LANGUAGE_SUPPORT.HEADER.TITLE' | translate }}</h2>
             <div class="intro-text">
-                <p>{{ 'TRAILER_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC1' | translate }}</p>
-                <p>{{ 'TRAILER_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC2' | translate }}</p>
-                <p>{{ 'TRAILER_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC3' | translate }}</p>
+                <p>{{ 'RIDESHARE_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC1' | translate }}</p>
+                <p>{{ 'RIDESHARE_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC2' | translate }}</p>
 
             </div>
         </div>
@@ -344,7 +325,7 @@
             <div class="row mb-5 text-center">
                 <div class="col-6">
                     <h3 class="heading">
-                        {{ 'TRAILER_INSURANCE.ASTATE_DIFFERENTIATORS.HEADER.TITLE' | translate }}
+                        {{ 'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.HEADER.TITLE' | translate }}
                     </h3>
                 </div>
             </div>
@@ -358,12 +339,12 @@
                             </div>
                             <div class="card-content">
                                 <h5 class="card-title">
-                                    {{ 'TRAILER_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.TITLE' |
+                                    {{ 'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.TITLE' |
                                     translate
                                     }}
                                 </h5>
                                 <p class="card-text">
-                                    {{ 'TRAILER_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.DESCRIPTION' |
+                                    {{ 'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.DESCRIPTION' |
                                     translate }}
                                 </p>
                             </div>
@@ -377,12 +358,12 @@
                             </div>
                             <div class="card-content">
                                 <h5 class="card-title">
-                                    {{ 'TRAILER_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.TITLE' |
+                                    {{ 'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.TITLE' |
                                     translate }}
                                 </h5>
                                 <p class="card-text">
                                     {{
-                                    'TRAILER_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.DESCRIPTION'
+                                    'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.DESCRIPTION'
                                     | translate }}
                                 </p>
                             </div>
@@ -398,11 +379,11 @@
                             </div>
                             <div class="card-content">
                                 <h5 class="card-title">
-                                    {{ 'TRAILER_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.TITLE' | translate
+                                    {{ 'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.TITLE' | translate
                                     }}
                                 </h5>
                                 <p class="card-text">
-                                    {{ 'TRAILER_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.DESCRIPTION' |
+                                    {{ 'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.DESCRIPTION' |
                                     translate }}
                                 </p>
                             </div>
@@ -416,11 +397,11 @@
                             </div>
                             <div class="card-content">
                                 <h5 class="card-title">
-                                    {{ 'TRAILER_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.TITLE' | translate
+                                    {{ 'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.TITLE' | translate
                                     }}
                                 </h5>
                                 <p class="card-text">
-                                    {{ 'TRAILER_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.DESCRIPTION' |
+                                    {{ 'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.DESCRIPTION' |
                                     translate }}
                                 </p>
                             </div>
@@ -436,10 +417,10 @@
                             </div>
                             <div class="card-content">
                                 <h5 class="card-title">
-                                    {{ 'TRAILER_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translate }}
+                                    {{ 'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translate }}
                                 </h5>
                                 <p class="card-text">
-                                    {{ 'TRAILER_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' |
+                                    {{ 'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' |
                                     translate
                                     }}
                                 </p>
@@ -454,11 +435,11 @@
                             </div>
                             <div class="card-content">
                                 <h5 class="card-title">
-                                    {{ 'TRAILER_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.TITLE' |
+                                    {{ 'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.TITLE' |
                                     translate }}
                                 </h5>
                                 <p class="card-text">
-                                    {{ 'TRAILER_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.DESCRIPTION' |
+                                    {{ 'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.DESCRIPTION' |
                                     translate }}
                                 </p>
                             </div>
@@ -483,23 +464,23 @@
                 </div>
 
                 <div class="col-md-6 ps-md-5">
-                    <h2 class="section-title mb-5">{{ 'TRAILER_INSURANCE.INSURANCE_STEPS.HEADER.TITLE' | translate }}
+                    <h2 class="section-title mb-5">{{ 'RIDESHARE_INSURANCE.INSURANCE_STEPS.HEADER.TITLE' | translate }}
                     </h2>
 
                     <div class="timeline">
                         <div class="timeline-item">
                             <div class="dot"></div>
                             <div class="content">
-                                <h3>{{ 'TRAILER_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.TITLE' | translate }}</h3>
-                                <p>{{ 'TRAILER_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translate }}</p>
+                                <h3>{{ 'RIDESHARE_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.TITLE' | translate }}</h3>
+                                <p>{{ 'RIDESHARE_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translate }}</p>
                             </div>
                         </div>
 
                         <div class="timeline-item">
                             <div class="dot"></div>
                             <div class="content">
-                                <h3>{{ 'TRAILER_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.TITLE' | translate }}</h3>
-                                <p>{{ 'TRAILER_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.DESCRIPTION' | translate }}
+                                <h3>{{ 'RIDESHARE_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.TITLE' | translate }}</h3>
+                                <p>{{ 'RIDESHARE_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.DESCRIPTION' | translate }}
                                 </p>
                             </div>
                         </div>
@@ -507,16 +488,16 @@
                         <div class="timeline-item">
                             <div class="dot"></div>
                             <div class="content">
-                                <h3>{{ 'TRAILER_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.TITLE' | translate }}</h3>
-                                <p>{{ 'TRAILER_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.DESCRIPTION' | translate }}</p>
+                                <h3>{{ 'RIDESHARE_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.TITLE' | translate }}</h3>
+                                <p>{{ 'RIDESHARE_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.DESCRIPTION' | translate }}</p>
                             </div>
                         </div>
 
                         <div class="timeline-item">
                             <div class="dot"></div>
                             <div class="content">
-                                <h3>{{ 'TRAILER_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.TITLE' | translate }}</h3>
-                                <p>{{ 'TRAILER_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.DESCRIPTION' | translate }}
+                                <h3>{{ 'RIDESHARE_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.TITLE' | translate }}</h3>
+                                <p>{{ 'RIDESHARE_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.DESCRIPTION' | translate }}
                                 </p>
                             </div>
                         </div>
@@ -529,14 +510,14 @@
 
     <section class="switch-steps-section">
         <div class="container px-4">
-            <h2 class="section-title">{{ 'TRAILER_INSURANCE.SWITCH_STEPS.HEADER.TITLE' | translate }}</h2>
+            <h2 class="section-title">{{ 'RIDESHARE_INSURANCE.SWITCH_STEPS.HEADER.TITLE' | translate }}</h2>
 
             <div class="switch-steps-grid">
                 @for (step of switchSteps; track step) {
                 <div class="switch-card-wrapper">
                     <div class="switch-card">
-                        <h6>{{ 'TRAILER_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE' | translate }}</h6>
-                        <p>{{ 'TRAILER_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION' | translate }}</p>
+                        <h6>{{ 'RIDESHARE_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE' | translate }}</h6>
+                        <p>{{ 'RIDESHARE_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION' | translate }}</p>
                     </div>
                 </div>
                 }
@@ -549,9 +530,9 @@
             <div class="topSub">
                 <div class="topSub2">
                     <div class="h1">
-                        {{ 'TRAILER_INSURANCE.FREE_QUOTE.HEADER' | translate }}
+                        {{ 'RIDESHARE_INSURANCE.FREE_QUOTE.HEADER' | translate }}
                     </div>
-                    <p class="para">{{ 'TRAILER_INSURANCE.FREE_QUOTE.DESCRIPTION' | translate }}</p>
+                    <p class="para">{{ 'RIDESHARE_INSURANCE.FREE_QUOTE.DESCRIPTION' | translate }}</p>
                     <div class="selectable mt-4">
                         @for (item of chips.slice(0, 3); track item.name) {
                         <div class="chip">
@@ -570,15 +551,15 @@
                     </div>
 
                     <div class="inps">
-                        <input type="text" [placeholder]="'TRAILER_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
+                        <input type="text" [placeholder]="'RIDESHARE_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
                             class="form-control" />
 
-                        <input type="number" [placeholder]="'TRAILER_INSURANCE.BANNER.FORM.PHONE' | translate"
+                        <input type="number" [placeholder]="'RIDESHARE_INSURANCE.BANNER.FORM.PHONE' | translate"
                             class="form-control" />
                     </div>
 
                     <button class="btn">
-                        {{ 'TRAILER_INSURANCE.BANNER.FORM.BUTTON' | translate }}
+                        {{ 'RIDESHARE_INSURANCE.BANNER.FORM.BUTTON' | translate }}
                     </button>
                 </div>
             </div>
