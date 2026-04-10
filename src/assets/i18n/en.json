@@ -901,9 +901,17 @@
       "STEP4": {
         "TITLE": "Contact Preferences",
         "DESC": "How would you like to be contacted?",
-        "OPTIONS": ["Phone", "Text Message", "Email"],
+        "OPTIONS": [
+          "Phone",
+          "Text Message",
+          "Email"
+        ],
         "DESC1": "Best time to reach you:",
-        "TIME_OPTIONS": ["Morning", "Afternoon", "Evening"]
+        "TIME_OPTIONS": [
+          "Morning",
+          "Afternoon",
+          "Evening"
+        ]
       },
       "STEP5": {
         "TITLE": "Review Your Custom Quote Request"
@@ -993,9 +1001,17 @@
       "STEP5": {
         "TITLE": "Contact Preferences",
         "LANGUAGE_TITLE": "Preferred Language:",
-        "LANGUAGE_OPTIONS": ["English", "Spanish", "Hindi"],
+        "LANGUAGE_OPTIONS": [
+          "English",
+          "Spanish",
+          "Hindi"
+        ],
         "CONTACT_TITLE": "How should we reach you?",
-        "CONTACT_OPTIONS": ["Phone Call", "Text Message", "Email"],
+        "CONTACT_OPTIONS": [
+          "Phone Call",
+          "Text Message",
+          "Email"
+        ],
         "TIME_TITLE": "Best Time to Connect:",
         "TIME_OPTIONS": [
           "Morning (8 AM - 12 PM)",
@@ -1100,7 +1116,10 @@
       "STEP4": {
         "TITLE": "History and Bundling",
         "INSURED_TITLE": "Current Home Insurance Status",
-        "INSURED_OPTIONS": ["Currently Insured", "Not Insured"],
+        "INSURED_OPTIONS": [
+          "Currently Insured",
+          "Not Insured"
+        ],
         "BUNDLE_TITLE": "Do you want to bundle your policies to save more?",
         "BUNDLE_OPTIONS": [
           "Yes! I want a Home + Auto bundle discount.",
@@ -1116,9 +1135,17 @@
           "PHONE": "Phone Number"
         },
         "LANGUAGE_TITLE": "Preferred Language",
-        "LANGUAGE_OPTIONS": ["English", "Spanish", "Hindi"],
+        "LANGUAGE_OPTIONS": [
+          "English",
+          "Spanish",
+          "Hindi"
+        ],
         "CONTACT_TITLE": "How should we reach you?",
-        "CONTACT_OPTIONS": ["Phone Call", "Text Message", "Email"],
+        "CONTACT_OPTIONS": [
+          "Phone Call",
+          "Text Message",
+          "Email"
+        ],
         "TIME_TITLE": "Best Time to Connect",
         "TIME_OPTIONS": [
           "Morning (8 AM - 12 PM)",
@@ -1201,11 +1228,27 @@
         "TITLE": "Scale of Operations",
         "FIELDS": {
           "YEARS_IN_BUSINESS": "Years in Business",
-          "YEARS_OPTIONS": ["New Venture", "1-5 years", "6-10 years", "10+ years"],
+          "YEARS_OPTIONS": [
+            "New Venture",
+            "1-5 years",
+            "6-10 years",
+            "10+ years"
+          ],
           "NUMBER_OF_EMPLOYEES": "Number of Employees",
-          "EMPLOYEES_OPTIONS": ["1-10", "11-50", "51-200", "200+"],
+          "EMPLOYEES_OPTIONS": [
+            "1-10",
+            "11-50",
+            "51-200",
+            "200+"
+          ],
           "ANNUAL_REVENUE": "Estimated Annual Revenue",
-          "REVENUE_OPTIONS": ["Under $100k", "$100k - $500k", "$500k - $1M", "$1M - $5M", "$5M+"]
+          "REVENUE_OPTIONS": [
+            "Under $100k",
+            "$100k - $500k",
+            "$500k - $1M",
+            "$1M - $5M",
+            "$5M+"
+          ]
         }
       },
       "STEP3": {
@@ -1232,9 +1275,17 @@
           "PHONE_NUMBER": "Phone Number*"
         },
         "LANGUAGE_TITLE": "Preferred Language",
-        "LANGUAGE_OPTIONS": ["English", "Spanish", "Hindi"],
+        "LANGUAGE_OPTIONS": [
+          "English",
+          "Spanish",
+          "Hindi"
+        ],
         "TIME_TITLE": "Best Time to Connect",
-        "TIME_OPTIONS": ["Morning", "Afternoon", "Evening"]
+        "TIME_OPTIONS": [
+          "Morning",
+          "Afternoon",
+          "Evening"
+        ]
       }
     },
     "QUOTE_SUMMARY": {
@@ -1305,8 +1356,15 @@
           "TOBACCO_USE": "Do you use tobacco or nicotine products?",
           "HEALTH_STATUS": "How would you describe your general health?"
         },
-        "TOBACCO_OPTIONS": ["Yes", "No"],
-        "HEALTH_OPTIONS": ["Excellent", "Good", "Fair"]
+        "TOBACCO_OPTIONS": [
+          "Yes",
+          "No"
+        ],
+        "HEALTH_OPTIONS": [
+          "Excellent",
+          "Good",
+          "Fair"
+        ]
       },
       "STEP3": {
         "TITLE": "Coverage Needs",
@@ -1328,9 +1386,17 @@
       "STEP4": {
         "TITLE": "Contact Details and Preferences",
         "LANGUAGE_TITLE": "Preferred Language for your Quote",
-        "LANGUAGE_OPTIONS": ["English", "Spanish", "Hindi"],
+        "LANGUAGE_OPTIONS": [
+          "English",
+          "Spanish",
+          "Hindi"
+        ],
         "CONTACT_TITLE": "Best Way to Reach You",
-        "CONTACT_OPTIONS": ["Call", "Text Message", "Email"],
+        "CONTACT_OPTIONS": [
+          "Call",
+          "Text Message",
+          "Email"
+        ],
         "TIME_TITLE": "Best Time to Connect",
         "TIME_OPTIONS": [
           "Morning (8 AM - 12 PM)",
@@ -1393,7 +1459,12 @@
       "STEP1": {
         "TITLE": "Coverage Type",
         "COVERAGE_TITLE": "Who needs coverage?",
-        "COVERAGE_OPTIONS": ["Just Me", "Me + Spouse", "Me + Children", "My Whole Family"],
+        "COVERAGE_OPTIONS": [
+          "Just Me",
+          "Me + Spouse",
+          "Me + Children",
+          "My Whole Family"
+        ],
         "FIELDS": {
           "ZIPCODE": "Zip Code"
         }
@@ -1413,7 +1484,10 @@
           "$60,000 – $100,000",
           "Over $100,000"
         ],
-        "TOBACCO_OPTIONS": ["Yes", "No"]
+        "TOBACCO_OPTIONS": [
+          "Yes",
+          "No"
+        ]
       },
       "STEP3": {
         "TITLE": "Contact & Language Preference",
@@ -1424,8 +1498,16 @@
           "LANGUAGE": "Preferred Language for your Quote",
           "BEST_TIME": "Best time to call?"
         },
-        "LANGUAGE_OPTIONS": ["English", "Spanish", "Hindi"],
-        "TIME_OPTIONS": ["Morning", "Afternoon", "Evening"]
+        "LANGUAGE_OPTIONS": [
+          "English",
+          "Spanish",
+          "Hindi"
+        ],
+        "TIME_OPTIONS": [
+          "Morning",
+          "Afternoon",
+          "Evening"
+        ]
       }
     },
     "QUOTE_SUMMARY": {
@@ -1490,7 +1572,12 @@
         "TITLE": "Quick Underwriting",
         "FIELDS": {
           "CREDIT_SCORE_TITLE": "Estimated Credit Score: Crucial Explain that checking this won’t hurt their credit score.",
-          "CREDIT_SCORE_TITLE_OPTION": ["Excellent", "Good", "Fair", "Poor"],
+          "CREDIT_SCORE_TITLE_OPTION": [
+            "Excellent",
+            "Good",
+            "Fair",
+            "Poor"
+          ],
           "YEARS_IN_BUSINESS": "Years in Business"
         }
       },
@@ -1498,9 +1585,17 @@
         "TITLE": "Contact & Language Preference",
         "FIELDS": {
           "LANGUAGE": "Preferred Language for your Quote",
-          "LANGUAGE_OPTIONS": ["English", "Spanish", "Hindi"],
+          "LANGUAGE_OPTIONS": [
+            "English",
+            "Spanish",
+            "Hindi"
+          ],
           "BEST_TIME": "Best time to call?",
-          "TIME_OPTIONS": ["Morning", "Afternoon", "Evening"]
+          "TIME_OPTIONS": [
+            "Morning",
+            "Afternoon",
+            "Evening"
+          ]
         }
       }
     },
@@ -1619,16 +1714,31 @@
       },
       {
         "TITLE": "Surety Bonds",
-        "ITEMS": ["Performance Bonds / Payment", "Commercial Surety", "Bid", "Notary"]
+        "ITEMS": [
+          "Performance Bonds / Payment",
+          "Commercial Surety",
+          "Bid",
+          "Notary"
+        ]
       },
       {
         "TITLE": "Additional Insurance",
-        "ITEMS": ["Pet", "Title", "Title Transfer"]
+        "ITEMS": [
+          "Pet",
+          "Title",
+          "Title Transfer"
+        ]
       }
     ],
     "QUICK_LINKS": {
       "TITLE": "Quick Links",
-      "LINKS": ["Home", "About Us", "Insurance Service", "Contact Us", "Get a Quote"]
+      "LINKS": [
+        "Home",
+        "About Us",
+        "Insurance Service",
+        "Contact Us",
+        "Get a Quote"
+      ]
     },
     "CONTACT": {
       "OFFICES": [
@@ -1663,7 +1773,10 @@
       ],
       "HOURS": "Mon – Sat: 9AM – 7PM Sunday: Closed",
       "EMAIL": "info@astateins.com",
-      "PHONE": ["(713) 357-7771", "(713) 357-7771"]
+      "PHONE": [
+        "(713) 357-7771",
+        "(713) 357-7771"
+      ]
     },
     "POLICIES": {
       "PRIVACY": "Privacy Policy",
@@ -11521,7 +11634,6 @@
       "DESCRIPTION": "Protecting your trailer in Texas is easy with A-State Insurance. Get a free, no-obligation quote today by sharing a few details about your trailer, usage, and coverage needs. Our licensed agents compare top carriers to find the best plan for your budget. Whether it’s a utility, horse, or refrigerated trailer, we tailor coverage to keep your trailer and cargo safe on the road, in storage, and during transport, giving you complete peace of mind and confidence."
     }
   },
-
   "RIDESHARE_INSURANCE": {
     "BANNER": {
       "TITLE_LINE1": "Best & Cheapest Rideshare Insurance in",
@@ -11704,11 +11816,26 @@
     "COMPANY_RATES": {
       "TITLE": "Average Rideshare Insurance Rates by Company in Texas",
       "LIST": [
-        { "COMPANY": "State Farm", "PRICE": "$87/month" },
-        { "COMPANY": "GEICO", "PRICE": "$96/month" },
-        { "COMPANY": "Allstate", "PRICE": "$123/month" },
-        { "COMPANY": "USAA", "PRICE": "$156/month" },
-        { "COMPANY": "Progressive", "PRICE": "$235/month" }
+        {
+          "COMPANY": "State Farm",
+          "PRICE": "$87/month"
+        },
+        {
+          "COMPANY": "GEICO",
+          "PRICE": "$96/month"
+        },
+        {
+          "COMPANY": "Allstate",
+          "PRICE": "$123/month"
+        },
+        {
+          "COMPANY": "USAA",
+          "PRICE": "$156/month"
+        },
+        {
+          "COMPANY": "Progressive",
+          "PRICE": "$235/month"
+        }
       ]
     },
     "FACTORS_IMPACT": {
@@ -12014,24 +12141,24 @@
         }
       }
     },
-   "HIGH_RISK_DRIVER": {
-  "HEADER": {
-    "TITLE": "High-Risk Rideshare Driver? We Can Still Help You"
-  },
-  "CONTENT": {
-    "DESC1": "Even if you’ve had accidents, traffic violations, or lapses in coverage, rideshare insurance is still available. High-risk drivers in Texas often face higher premiums, but a knowledgeable broker can help you find insurers willing to provide coverage while keeping costs reasonable. It’s about matching your risk profile with the right company and plan.",
-    "DESC2": "Our team at A-State Insurance works with multiple carriers experienced in high-risk cases. We assess your driving history, vehicle, and coverage needs to find options that protect you, your passengers, and your vehicle. Being labeled high-risk doesn’t mean you go uninsured; it means we tailor a plan that fits your situation safely and legally."
-    }
-},
-"LANGUAGE_SUPPORT": {
-  "HEADER": {
-    "TITLE": "Hablamos Español / We Speak Your Language"
-  },
-  "CONTENT": {
-    "DESC1": "At A-State Insurance, we understand that clear communication is key when choosing the right coverage. That’s why our bilingual agents speak English, Spanish, and Hindi, helping you navigate policy options, understand terms, and make informed decisions without confusion or stress.",
-    "DESC2": "Our team is committed to serving the Hispanic and Latino communities in Texas with respect and cultural understanding. Whether you’re reviewing auto, home, commercial, or rideshare insurance, we ensure every explanation is simple, clear, and tailored to your needs, so you feel confident in your coverage choices."
-  }
-},
+    "HIGH_RISK_DRIVER": {
+      "HEADER": {
+        "TITLE": "High-Risk Rideshare Driver? We Can Still Help You"
+      },
+      "CONTENT": {
+        "DESC1": "Even if you’ve had accidents, traffic violations, or lapses in coverage, rideshare insurance is still available. High-risk drivers in Texas often face higher premiums, but a knowledgeable broker can help you find insurers willing to provide coverage while keeping costs reasonable. It’s about matching your risk profile with the right company and plan.",
+        "DESC2": "Our team at A-State Insurance works with multiple carriers experienced in high-risk cases. We assess your driving history, vehicle, and coverage needs to find options that protect you, your passengers, and your vehicle. Being labeled high-risk doesn’t mean you go uninsured; it means we tailor a plan that fits your situation safely and legally."
+      }
+    },
+    "LANGUAGE_SUPPORT": {
+      "HEADER": {
+        "TITLE": "Hablamos Español / We Speak Your Language"
+      },
+      "CONTENT": {
+        "DESC1": "At A-State Insurance, we understand that clear communication is key when choosing the right coverage. That’s why our bilingual agents speak English, Spanish, and Hindi, helping you navigate policy options, understand terms, and make informed decisions without confusion or stress.",
+        "DESC2": "Our team is committed to serving the Hispanic and Latino communities in Texas with respect and cultural understanding. Whether you’re reviewing auto, home, commercial, or rideshare insurance, we ensure every explanation is simple, clear, and tailored to your needs, so you feel confident in your coverage choices."
+      }
+    },
     "ASTATE_DIFFERENTIATORS": {
       "HEADER": {
         "TITLE": "What Makes A-State Insurance Different"
@@ -12121,6 +12248,924 @@
     "FREE_QUOTE": {
       "HEADER": "Get a Free Rideshare Insurance Quote in Texas",
       "DESCRIPTION": "Get your free rideshare insurance quote in Texas today and see how affordable the right coverage can be for your needs as a driver. Our brokers compare top carriers, tailored to your driving history, vehicle, and platform use. Whether you drive for Uber, Lyft, or delivery apps, we help you find options that protect you at every stage of driving. No obligation, simple process, expert support every step. Contact us now to start your free quote and expert guidance."
+    }
+  },
+  "SR22_INSURANCE": {
+    "BANNER": {
+      "TITLE_LINE1": "Best & Cheapest SR-22 Insurance in",
+      "TITLE_LINE2": "Texas — Starting from",
+      "TITLE_LINE3": "$79/Month",
+      "CHIPS": {
+        "OWNER": "Owner",
+        "NON_OWNER": "Non-Owner",
+        "DUI_DWI": "DUI / DWI",
+        "UNINSURED_ACCIDENT": "Uninsured Accident",
+        "LICENSE_REINSTATEMENT": "License Reinstatement",
+        "OTHER": "Other"
+      },
+      "FORM": {
+        "FULL_NAME": "Full Name",
+        "PHONE": "Phone Number",
+        "BUTTON": "Get Quote"
+      }
+    },
+    "WHY_DO_YOU_NEED": {
+      "TITLE": "What is SR-22 Insurance and Why Do You Need It?",
+      "DESC1": "SR-22 is not actually a type of insurance policy, but a certificate filed by your insurance company with the state to prove you carry the required liability coverage.",
+      "DESC2": "Drivers are usually required to file this after serious violations like DUIs, repeated traffic offenses, or driving without insurance. If you need SR-22, the state monitors your coverage to ensure you remain legally insured.",
+      "DESC3": "In most cases, the court or Department of Public Safety requires this filing to reinstate or maintain your driving privileges. The SR-22 must remain active for a set period, and any lapse can result in license suspension.",
+      "SUB_TITLE": "SR-22 insurance is required for several important reasons, including:",
+      "LIST": [
+        {
+          "TITLE": "State Filing Requirement",
+          "TEXT": "An SR-22 is proof that your insurance meets minimum liability requirements and is filed directly with the state by your insurer."
+        },
+        {
+          "TITLE": "Required After High-Risk Violations",
+          "TEXT": "Drivers with DUIs, uninsured accidents, or repeated traffic violations are often required to carry an SR-22."
+        },
+        {
+          "TITLE": "Ensures Continuous Coverage",
+          "TEXT": "Your SR-22 must remain active without any gaps. If your policy lapses, the insurer notifies the state immediately."
+        },
+        {
+          "TITLE": "License Reinstatement",
+          "TEXT": "Filing an SR-22 is often necessary to reinstate or maintain your driving privileges after a suspension."
+        },
+        {
+          "TITLE": "Legal Proof of Responsibility",
+          "TEXT": "Provides official proof that you meet state insurance requirements and helps you comply with court or DMV mandates."
+        }
+      ]
+    },
+    "SR22_CAR_INSURANCE": {
+      "HEADER": {
+        "TITLE": "What is the Difference Between SR-22 and Regular Car Insurance?",
+        "DESC": "SR-22 and regular car insurance are often confused, but they serve different purposes. Standard auto insurance provides financial protection for accidents, damages, and liability.",
+        "DESC2": "An SR-22 is a state-required filing that proves you carry the required insurance after a violation. It does not add coverage — it simply verifies compliance with legal requirements and state driving laws."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Feature",
+          "REGULAR": "Regular Car Insurance",
+          "SR22": "SR-22 Insurance"
+        },
+        "LIST": {
+          "WHAT_IT_IS": {
+            "FEATURE": "What It Is",
+            "REGULAR": "A standard insurance policy providing coverage",
+            "SR22": "A state-required certificate proving minimum coverage exists"
+          },
+          "IS_IT_POLICY": {
+            "FEATURE": "Is It a Policy?",
+            "REGULAR": "Yes — a full insurance policy",
+            "SR22": "No — it is a filing attached to an existing policy"
+          },
+          "WHO_REQUIRES_IT": {
+            "FEATURE": "Who Requires It",
+            "REGULAR": "Lenders, Texas law, or personal choice",
+            "SR22": "Texas DPS, courts, or judge's order"
+          },
+          "WHO_NEEDS_IT": {
+            "FEATURE": "Who Needs It",
+            "REGULAR": "All Texas drivers",
+            "SR22": "High-risk drivers with violations or license suspension"
+          },
+          "FILING_WITH_STATE": {
+            "FEATURE": "Filing With State",
+            "REGULAR": "Not required",
+            "SR22": "Required — filed directly with Texas DPS by your insurer"
+          },
+          "COST_IMPACT": {
+            "FEATURE": "Cost Impact",
+            "REGULAR": "Standard rates based on driving profile",
+            "SR22": "Higher premiums due to high-risk classification"
+          },
+          "COVERAGE_PROVIDED": {
+            "FEATURE": "Coverage Provided",
+            "REGULAR": "Liability, collision, comprehensive & more",
+            "SR22": "Same coverage as standard policy — SR-22 is just the filing"
+          },
+          "DURATION_REQUIREMENT": {
+            "FEATURE": "Duration Requirement",
+            "REGULAR": "No mandatory duration",
+            "SR22": "Typically 2 years of continuous coverage required"
+          },
+          "LAPSE_CONSEQUENCES": {
+            "FEATURE": "Lapse Consequences",
+            "REGULAR": "Policy cancels — standard reinstatement",
+            "SR22": "Immediate notification to state — license suspension risk"
+          },
+          "WHO_FILES_IT": {
+            "FEATURE": "Who Files It",
+            "REGULAR": "Not applicable",
+            "SR22": "Your insurance provider files it on your behalf"
+          },
+          "NON_OWNER_OPTION": {
+            "FEATURE": "Available to Non-Owners",
+            "REGULAR": "Not applicable",
+            "SR22": "Yes — non-owner SR-22 policies available"
+          },
+          "REMOVAL_PROCESS": {
+            "FEATURE": "Removal Process",
+            "REGULAR": "Not applicable",
+            "SR22": "Removed after required period is successfully completed"
+          }
+        }
+      }
+    },
+    "LAWS": {
+      "TITLE": "Is ATV & UTV Insurance Required in Texas?",
+      "INTRO1": "In Texas, ATV and UTV insurance is not always mandatory, but there are specific situations where it is required. If your vehicle is street-legal or used on public roads, you must carry liability coverage to comply with state laws.",
+      "INTRO2": "Even if you’re not legally required to carry insurance in all situations, having coverage is highly recommended. Without it, you could face significant financial and legal risks if you’re involved in an accident, including medical bills, property damage, and legal fees.",
+      "INTRO3": "Operating an ATV or UTV without proper insurance can lead to fines, penalties, or even vehicle impoundment. Additionally, in the event of an accident or theft, you’d be left to cover the full cost of repairs, replacement, and medical expenses out of pocket.",
+      "INTRO4": "Don’t take that chance. Protect yourself, your passengers, and your vehicle by getting the right insurance coverage. It’s not just about complying with the law; it’s about safeguarding your financial future and peace of mind every time you hit the trail."
+    },
+    "COVERAGES": {
+      "HEADER": {
+        "TITLE": "What Does SR-22 Insurance Cover in Texas?",
+        "DESC": "SR-22 insurance does not provide additional coverage on its own; it simply confirms that your auto policy meets Texas minimum liability requirements. It ensures you remain legally insured while driving and compliant with state laws."
+      },
+      "STANDARD": {
+        "LIST": [
+          {
+            "TITLE": "Bodily Injury Liability",
+            "DESC": "Covers medical expenses, lost wages, and legal costs if you cause an accident that injures another person.",
+            "ICON": "fas fa-user-injured"
+          },
+          {
+            "TITLE": "Property Damage Liability",
+            "DESC": "Pays for repair or replacement of another person’s property including vehicles, buildings, or structures damaged in an accident.",
+            "ICON": "fas fa-car-crash"
+          },
+          {
+            "TITLE": "Uninsured / Underinsured Motorist Coverage",
+            "DESC": "Covers your expenses if you're involved in an accident with a driver who has little or no insurance.",
+            "ICON": "fas fa-user-shield"
+          },
+          {
+            "TITLE": "Personal Injury Protection (PIP)",
+            "DESC": "Covers medical expenses, lost income, and essential services after an accident regardless of fault.",
+            "ICON": "fas fa-hospital-user"
+          },
+          {
+            "TITLE": "Medical Payments (MedPay)",
+            "DESC": "Pays for medical expenses for you and your passengers after an accident, regardless of fault.",
+            "ICON": "fas fa-briefcase-medical"
+          },
+          {
+            "TITLE": "Collision Coverage (Optional)",
+            "DESC": "Covers repair or replacement costs for your vehicle after an accident, regardless of fault.",
+            "ICON": "fas fa-exchange-alt"
+          },
+          {
+            "TITLE": "Comprehensive Coverage (Optional)",
+            "DESC": "Protects your vehicle from non-collision risks such as theft, fire, vandalism, or natural disasters.",
+            "ICON": "fas fa-shield-alt"
+          },
+          {
+            "TITLE": "Non-Owner SR-22 Coverage",
+            "DESC": "Provides liability coverage for drivers who do not own a vehicle but need to meet SR-22 requirements.",
+            "ICON": "fas fa-user"
+          },
+          {
+            "TITLE": "Rental Car Coverage (Optional)",
+            "DESC": "Helps cover the cost of a rental vehicle while your car is being repaired after a covered claim.",
+            "ICON": "fas fa-car"
+          },
+          {
+            "TITLE": "Roadside Assistance & Towing (Optional)",
+            "DESC": "Provides towing, jump-starts, flat tire assistance, and emergency roadside services.",
+            "ICON": "fas fa-truck-moving"
+          }
+        ]
+      },
+      "WHO_NEEDS_SR22": {
+        "HEADER": {
+          "TITLE": "Who Needs SR-22 Insurance in Texas?",
+          "DESC": "SR-22 insurance is required for drivers considered high-risk by the state. This includes individuals with serious violations such as DUI, driving without insurance, or license suspension. Courts or the Texas Department of Public Safety may require an SR-22 filing to reinstate or maintain driving privileges. Continuous coverage is mandatory, as any lapse can result in further penalties or license suspension."
+        },
+        "LIST": [
+          {
+            "TITLE": "DUI & DWI Convictions",
+            "DESC": "Drivers convicted of DUI or DWI must file an SR-22 to reinstate and maintain their driving privileges.",
+            "ICON": "fas fa-wine-bottle"
+          },
+          {
+            "TITLE": "Reckless Driving Convictions",
+            "DESC": "Drivers involved in reckless driving such as excessive speeding or street racing may be required by the court to file SR-22.",
+            "ICON": "fas fa-car-side"
+          },
+          {
+            "TITLE": "Driving Without Insurance",
+            "DESC": "Drivers caught without valid insurance must file SR-22 to restore their license after suspension.",
+            "ICON": "fas fa-file-contract"
+          },
+          {
+            "TITLE": "At-Fault Uninsured Accidents",
+            "DESC": "Drivers responsible for accidents without insurance must file SR-22 to reinstate their license and cover liabilities.",
+            "ICON": "fas fa-car-crash"
+          },
+          {
+            "TITLE": "Excessive Traffic Violations",
+            "DESC": "Drivers accumulating multiple violations or points may be required by Texas DPS to carry SR-22.",
+            "ICON": "fas fa-exclamation-circle"
+          },
+          {
+            "TITLE": "Failure to Appear in Court",
+            "DESC": "Missing court hearings or unpaid fines can lead to license suspension and SR-22 requirement for reinstatement.",
+            "ICON": "fas fa-gavel"
+          },
+          {
+            "TITLE": "License Suspension or Revocation",
+            "DESC": "Any driver with a suspended or revoked license must file SR-22 before driving privileges are restored.",
+            "ICON": "fas fa-id-card"
+          },
+          {
+            "TITLE": "Repeat Traffic Offenders",
+            "DESC": "Drivers with repeated serious violations may be classified as high-risk and required to maintain SR-22.",
+            "ICON": "fas fa-history"
+          },
+          {
+            "TITLE": "Non-Owner SR-22 (No Vehicle)",
+            "DESC": "Drivers without a vehicle still need SR-22 to meet legal requirements and reinstate their license.",
+            "ICON": "fas fa-user"
+          },
+          {
+            "TITLE": "Out-of-State SR-22 Requirements",
+            "DESC": "Drivers with SR-22 obligations from another state must fulfill those requirements based on residency laws.",
+            "ICON": "fas fa-globe"
+          }
+        ]
+      }
+    },
+    "SR22_DURATION_COST": {
+      "TITLE": "How Long Do You Need SR-22 Insurance in Texas?",
+      "DESC1": "In Texas, most drivers are required to maintain SR-22 insurance for about two years, depending on the violation. The requirement usually begins from the date of conviction or when your license is reinstated.",
+      "DESC2": "It is important to maintain continuous coverage during this period. Any lapse can result in license suspension, fines, or restarting the SR-22 requirement from the beginning.",
+      "DESC3": "Drivers can explore affordable SR-22 insurance options in Texas to meet state requirements without overpaying. Choosing a reliable SR-22 provider ensures proper filing, continuous compliance, and protection of your driving privileges throughout the required period."
+    },
+    "COST": {
+      "TITLE": "How Much Does SR-22 Insurance Cost in Texas?",
+      "DESC1": "The cost of SR-22 insurance in Texas depends on factors like your driving record, age, and coverage type. The SR-22 filing itself typically costs between $20 and $50 per month, in addition to your standard auto insurance premium. Due to high-risk classification, many drivers pay higher overall premiums, often ranging from $78 to $340 per month.",
+      "DESC2": "Compared to other states, SR-22 insurance rates in Texas are generally moderate. States like California or Florida may have higher premiums due to stricter regulations and higher risk levels, while some smaller states may offer lower costs. Texas offers a balance between affordability and reliable coverage for high-risk drivers."
+    },
+    "RATES": {
+      "AVERAGE_RATES": {
+        "TITLE": "Average SR-22 Insurance Rates by Texas City",
+        "DESC": "SR-22 insurance rates in Texas vary by city due to factors like traffic density, accident frequency, and local risk levels. Cities with higher congestion typically have higher premiums, while smaller or less populated areas tend to have lower costs. Comparing city-based averages can help drivers better understand expected monthly expenses under an SR-22 requirement.",
+        "H1": "City",
+        "H2": "Lowest Monthly Premium"
+      },
+      "COMPANY_RATES": {
+        "TITLE": "Average SR-22 Insurance Rates by Insurance Company in Texas",
+        "DESC": "SR-22 insurance rates in Texas vary significantly between providers, especially for high-risk drivers. Some companies offer more affordable pricing, while others charge higher premiums based on risk profiles, driving history, and coverage level. Comparing insurers helps drivers find the most cost-effective SR-22 policy.",
+        "H1": "Insurance Company",
+        "H2": "Liability Only",
+        "H3": "Full Coverage",
+        "LIST": [
+          {
+            "COMPANY": "State Farm",
+            "LIABILITY_ONLY": "$63/month",
+            "FULL_COVERAGE": "$111/month"
+          },
+          {
+            "COMPANY": "Mile Auto",
+            "LIABILITY_ONLY": "$82/month",
+            "FULL_COVERAGE": "$174/month"
+          },
+          {
+            "COMPANY": "Allstate",
+            "LIABILITY_ONLY": "$89/month",
+            "FULL_COVERAGE": "$158/month"
+          },
+          {
+            "COMPANY": "Progressive",
+            "LIABILITY_ONLY": "$90/month",
+            "FULL_COVERAGE": "$171/month"
+          },
+          {
+            "COMPANY": "GEICO",
+            "LIABILITY_ONLY": "$104/month",
+            "FULL_COVERAGE": "$199/month"
+          },
+          {
+            "COMPANY": "USAA",
+            "LIABILITY_ONLY": "$112/month",
+            "FULL_COVERAGE": "$198/month"
+          },
+          {
+            "COMPANY": "Mercury",
+            "LIABILITY_ONLY": "$122/month",
+            "FULL_COVERAGE": "$188/month"
+          },
+          {
+            "COMPANY": "First Acceptance",
+            "LIABILITY_ONLY": "$127/month",
+            "FULL_COVERAGE": "$301/month"
+          },
+          {
+            "COMPANY": "Alinsco",
+            "LIABILITY_ONLY": "$129/month",
+            "FULL_COVERAGE": "$259/month"
+          },
+          {
+            "COMPANY": "Lone Star",
+            "LIABILITY_ONLY": "$129/month",
+            "FULL_COVERAGE": "$320/month"
+          },
+          {
+            "COMPANY": "Freedom National",
+            "LIABILITY_ONLY": "$132/month",
+            "FULL_COVERAGE": "$344/month"
+          },
+          {
+            "COMPANY": "Dairyland",
+            "LIABILITY_ONLY": "$132/month",
+            "FULL_COVERAGE": "$354/month"
+          },
+          {
+            "COMPANY": "Root",
+            "LIABILITY_ONLY": "$134/month",
+            "FULL_COVERAGE": "$231/month"
+          },
+          {
+            "COMPANY": "Commonwealth Casualty",
+            "LIABILITY_ONLY": "$134/month",
+            "FULL_COVERAGE": "$315/month"
+          },
+          {
+            "COMPANY": "The General",
+            "LIABILITY_ONLY": "$136/month",
+            "FULL_COVERAGE": "$263/month"
+          },
+          {
+            "COMPANY": "Bristol West",
+            "LIABILITY_ONLY": "$138/month",
+            "FULL_COVERAGE": "$276/month"
+          },
+          {
+            "COMPANY": "GAINSCO",
+            "LIABILITY_ONLY": "$139/month",
+            "FULL_COVERAGE": "$279/month"
+          },
+          {
+            "COMPANY": "Mendota",
+            "LIABILITY_ONLY": "$139/month",
+            "FULL_COVERAGE": "$284/month"
+          },
+          {
+            "COMPANY": "Covercube",
+            "LIABILITY_ONLY": "$142/month",
+            "FULL_COVERAGE": "$336/month"
+          },
+          {
+            "COMPANY": "Nationwide",
+            "LIABILITY_ONLY": "$142/month",
+            "FULL_COVERAGE": "$250/month"
+          },
+          {
+            "COMPANY": "AssuranceAmerica",
+            "LIABILITY_ONLY": "$149/month",
+            "FULL_COVERAGE": "$301/month"
+          },
+          {
+            "COMPANY": "Clearcover",
+            "LIABILITY_ONLY": "$150/month",
+            "FULL_COVERAGE": "$244/month"
+          },
+          {
+            "COMPANY": "Sun Coast",
+            "LIABILITY_ONLY": "$152/month",
+            "FULL_COVERAGE": "$289/month"
+          },
+          {
+            "COMPANY": "Safeco",
+            "LIABILITY_ONLY": "$155/month",
+            "FULL_COVERAGE": "$238/month"
+          },
+          {
+            "COMPANY": "National General",
+            "LIABILITY_ONLY": "$160/month",
+            "FULL_COVERAGE": "$273/month"
+          },
+          {
+            "COMPANY": "Direct Auto",
+            "LIABILITY_ONLY": "$161/month",
+            "FULL_COVERAGE": "$245/month"
+          },
+          {
+            "COMPANY": "Loop",
+            "LIABILITY_ONLY": "$162/month",
+            "FULL_COVERAGE": "$305/month"
+          },
+          {
+            "COMPANY": "Elephant",
+            "LIABILITY_ONLY": "$165/month",
+            "FULL_COVERAGE": "$261/month"
+          },
+          {
+            "COMPANY": "Trexis One",
+            "LIABILITY_ONLY": "$176/month",
+            "FULL_COVERAGE": "$367/month"
+          },
+          {
+            "COMPANY": "Chubb",
+            "LIABILITY_ONLY": "$192/month",
+            "FULL_COVERAGE": "$337/month"
+          },
+          {
+            "COMPANY": "21st Century",
+            "LIABILITY_ONLY": "$222/month",
+            "FULL_COVERAGE": "$390/month"
+          },
+          {
+            "COMPANY": "Liberty Mutual",
+            "LIABILITY_ONLY": "$289/month",
+            "FULL_COVERAGE": "$376/month"
+          }
+        ]
+      },
+      "FOOTER": {
+        "SOURCE": "Source:",
+        "LAST_UPDATED": "Last Updated: March 2026",
+        "DISCLAIMER": " The information provided on this page is for general informational purposes only and may not reflect the most current updates. Coverage requirements, rates, and laws are subject to change. Please consult a licensed insurance agent for the most accurate and up-to-date information."
+      }
+    },
+    "FACTORS_IMPACT": {
+      "HEADER": {
+        "TITLE": "Factors That Impact Your SR-22 Insurance Rates in Texas",
+        "DESC": "SR-22 insurance rates in Texas depend on several personal and legal factors such as driving history, age, location, credit score, and the severity of the violation. Insurers assess overall risk based on past behavior, financial responsibility, and compliance history to determine premium costs."
+      },
+      "LIST": {
+        "TYPE_SEVERITY_VIOLATION": {
+          "TITLE": "Type & Severity of Violation",
+          "DESC": "Serious violations such as DUIs or repeated traffic offenses significantly increase SR-22 insurance premiums due to higher perceived risk.",
+          "ICON": "fas fa-gavel"
+        },
+        "NUMBER_OF_VIOLATIONS": {
+          "TITLE": "Number of Violations on Record",
+          "DESC": "Multiple violations indicate higher risk behavior, leading to increased SR-22 insurance costs over time.",
+          "ICON": "fas fa-exclamation-triangle"
+        },
+        "TIME_SINCE_VIOLATION": {
+          "TITLE": "Time Since Most Recent Violation",
+          "DESC": "The longer the time since your last violation, the more likely insurers are to reduce your SR-22 premiums.",
+          "ICON": "fas fa-hourglass-half"
+        },
+        "DUI_DWI_VS_OTHER": {
+          "TITLE": "DUI / DWI vs. Non-Alcohol Violations",
+          "DESC": "Alcohol-related offenses such as DUI or DWI lead to significantly higher SR-22 insurance rates than non-alcohol-related violations.",
+          "ICON": "fas fa-wine-bottle"
+        },
+        "AGE_EXPERIENCE": {
+          "TITLE": "Age & Driving Experience",
+          "DESC": "Younger and inexperienced drivers generally face higher SR-22 insurance premiums due to higher accident risk.",
+          "ICON": "fas fa-user-clock"
+        },
+        "CREDIT_SCORE": {
+          "TITLE": "Credit-Based Insurance Score",
+          "DESC": "Higher credit scores can lower SR-22 premiums, while lower scores often increase costs due to perceived financial risk.",
+          "ICON": "fas fa-credit-card"
+        },
+        "LOCATION_ZIP": {
+          "TITLE": "Location & ZIP Code",
+          "DESC": "Urban areas with higher traffic and accident rates usually result in higher SR-22 insurance premiums than rural areas.",
+          "ICON": "fas fa-map-marker-alt"
+        },
+        "VEHICLE_TYPE": {
+          "TITLE": "Vehicle Make & Model",
+          "DESC": "Expensive or high-performance vehicles increase SR-22 insurance costs due to higher repair and replacement expenses.",
+          "ICON": "fas fa-car"
+        },
+        "COVERAGE_LEVEL": {
+          "TITLE": "Coverage Level & Deductible",
+          "DESC": "Higher coverage limits and lower deductibles increase SR-22 premiums because they raise insurer liability.",
+          "ICON": "fas fa-file-invoice-dollar"
+        },
+        "INSURANCE_LAPSES": {
+          "TITLE": "Insurance History / Coverage Lapses",
+          "DESC": "Gaps in insurance coverage increase perceived risk and often lead to higher SR-22 premiums.",
+          "ICON": "fas fa-file-alt"
+        },
+        "PRIOR_SR22_HISTORY": {
+          "TITLE": "Prior SR-22 Filing History",
+          "DESC": "Drivers with previous SR-22 filings may be considered higher risk, which can increase premiums.",
+          "ICON": "fas fa-history"
+        },
+        "ANNUAL_MILEAGE": {
+          "TITLE": "Annual Mileage",
+          "DESC": "Higher annual mileage increases exposure to risk, which can raise SR-22 insurance costs.",
+          "ICON": "fas fa-road"
+        },
+        "GENDER": {
+          "TITLE": "Gender",
+          "DESC": "Some insurers may adjust SR-22 rates based on statistical risk differences between genders.",
+          "ICON": "fas fa-venus-mars"
+        },
+        "MARITAL_STATUS": {
+          "TITLE": "Marital Status",
+          "DESC": "Married drivers may receive lower SR-22 premiums compared to single drivers due to perceived stability.",
+          "ICON": "fas fa-heart"
+        },
+        "INSURANCE_CARRIER": {
+          "TITLE": "Choice of Insurance Carrier",
+          "DESC": "Different insurance companies apply different underwriting rules, resulting in varying SR-22 premiums.",
+          "ICON": "fas fa-building"
+        },
+        "FILING_TYPE": {
+          "TITLE": "SR-22 Filing Type (Owner vs Non-Owner)",
+          "DESC": "Non-owner SR-22 policies are usually cheaper than owner policies since they cover drivers without vehicles.",
+          "ICON": "fas fa-file-signature"
+        },
+        "CONTINUOUS_COVERAGE": {
+          "TITLE": "Continuous Coverage Since Violation",
+          "DESC": "Maintaining continuous insurance coverage helps lower SR-22 premiums by demonstrating lower risk over time.",
+          "ICON": "fas fa-shield-alt"
+        }
+      }
+    },
+    "DISCOUNT_FACTORS": {
+      "HEADER": {
+        "TITLE": "How to Lower Your SR-22 Insurance Premium in Texas",
+        "DESC": "Lowering SR-22 insurance premiums in Texas involves maintaining continuous coverage, improving your credit score, avoiding violations, and taking advantage of available discounts. Comparing carriers, adjusting coverage levels, and choosing the right payment structure can also help reduce overall costs over time."
+      },
+      "LIST": {
+        "SHOP_MULTIPLE_CARRIERS": {
+          "TITLE": "Shop Multiple Carriers Through an Independent Agent",
+          "DESC": "Compare quotes from multiple insurance companies through an independent agent to find the most competitive SR-22 rates and coverage options.",
+          "ICON": "fas fa-search-dollar"
+        },
+        "AUTOPAY_SETUP": {
+          "TITLE": "Set Up Automatic Payments to Prevent Lapses",
+          "DESC": "Automatic payments help prevent missed bills or policy lapses, which can lead to higher SR-22 insurance costs.",
+          "ICON": "fas fa-credit-card"
+        },
+        "CONTINUOUS_COVERAGE": {
+          "TITLE": "Maintain Continuous Coverage Without Interruption",
+          "DESC": "Keeping your insurance active without gaps demonstrates responsibility and can help reduce SR-22 premiums over time.",
+          "ICON": "fas fa-shield-alt"
+        },
+        "HIGHER_DEDUCTIBLE": {
+          "TITLE": "Choose a Higher Deductible to Lower Monthly Premium",
+          "DESC": "Selecting a higher deductible reduces monthly SR-22 costs, though it increases out-of-pocket expenses in case of a claim.",
+          "ICON": "fas fa-file-invoice-dollar"
+        },
+        "LOW_MILEAGE": {
+          "TITLE": "Drive Less & Reduce Annual Mileage",
+          "DESC": "Lower mileage reduces exposure to risk and may help reduce SR-22 insurance premiums.",
+          "ICON": "fas fa-road"
+        },
+        "CREDIT_IMPROVEMENT": {
+          "TITLE": "Improve Your Credit Score Over Time",
+          "DESC": "A better credit score can lower SR-22 insurance rates since insurers factor financial responsibility into pricing.",
+          "ICON": "fas fa-credit-card"
+        },
+        "DEFENSIVE_DRIVING": {
+          "TITLE": "Take a Defensive Driving Course",
+          "DESC": "Completing a defensive driving course may qualify you for discounts and demonstrate safer driving behavior.",
+          "ICON": "fas fa-chalkboard-teacher"
+        },
+        "NO_ADDITIONAL_VIOLATIONS": {
+          "TITLE": "Avoid Additional Violations During SR-22 Period",
+          "DESC": "Maintaining a clean record during your SR-22 period helps prevent rate increases and additional penalties.",
+          "ICON": "fas fa-gavel"
+        },
+        "MINIMUM_COVERAGE": {
+          "TITLE": "Select Minimum Required Coverage (If Budget Is Priority)",
+          "DESC": "Choosing minimum liability coverage can reduce SR-22 costs, but provides less financial protection.",
+          "ICON": "fas fa-file-alt"
+        },
+        "ANNUAL_PAYMENT": {
+          "TITLE": "Pay Premium Annually Instead of Monthly",
+          "DESC": "Paying annually can reduce overall costs by avoiding installment and processing fees.",
+          "ICON": "fas fa-money-bill-wave"
+        },
+        "COVERAGE_OPTIMIZATION": {
+          "TITLE": "Remove Unnecessary Coverage on Older Vehicles",
+          "DESC": "Dropping optional coverage on older vehicles can help reduce total insurance costs.",
+          "ICON": "fas fa-car-side"
+        },
+        "LOW_MILEAGE_DISCOUNT": {
+          "TITLE": "Ask About Low Mileage Discount",
+          "DESC": "Drivers who drive less may qualify for low mileage discounts that reduce SR-22 premiums.",
+          "ICON": "fas fa-tachometer-alt"
+        },
+        "REQUOTE_EVERY_6_MONTHS": {
+          "TITLE": "Re-Quote Your Policy Every 6 Months as Violation Ages",
+          "DESC": "As violations age, insurers may lower rates, making it beneficial to compare quotes regularly.",
+          "ICON": "fas fa-sync-alt"
+        },
+        "BUNDLE_POLICIES": {
+          "TITLE": "Bundle With Renters or Other Insurance",
+          "DESC": "Bundling multiple policies can help reduce overall insurance costs and unlock multi-policy discounts.",
+          "ICON": "fas fa-house-user"
+        },
+        "MAINTAIN_SR22_PERIOD": {
+          "TITLE": "Maintain SR-22 for Full Required Period Without Lapse",
+          "DESC": "Keeping SR-22 coverage active for the full required period avoids penalties and ensures compliance with state law.",
+          "ICON": "fas fa-calendar-check"
+        }
+      }
+    },
+    "AGENT_COMPARISON": {
+      "HEADER": {
+        "TITLE": "Independent Insurance Agency vs. Captive Agent: Why Choice Saves You Money",
+        "DESC": "Choosing between an independent insurance agency and a captive agent can significantly impact SR-22 insurance costs in Texas. Independent agents work with multiple carriers to compare rates and find the best option for high-risk drivers, while captive agents are limited to a single insurance company.",
+        "DESC2": "Because SR-22 insurance is considered high-risk, pricing can vary widely between carriers. Independent agents can shop multiple SR-22 markets, while captive agents are restricted to one carrier’s underwriting rules and pricing.",
+        "DESC3": "Understanding the difference can help drivers secure lower SR-22 premiums, better coverage flexibility, and faster reinstatement options."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Feature",
+          "INDEPENDENT": "Independent Agency",
+          "CAPTIVE": "Captive Agent"
+        },
+        "LIST": {
+          "NUMBER_OF_CARRIERS": {
+            "FEATURE": "Number of Carriers",
+            "INDEPENDENT": "Multiple — shops 10+ SR-22 carriers for high-risk drivers",
+            "CAPTIVE": "One — limited to a single insurance company"
+          },
+          "PRICE_COMPARISON": {
+            "FEATURE": "Price Comparison",
+            "INDEPENDENT": "Compares SR-22 rates across multiple carriers to find the lowest premium",
+            "CAPTIVE": "Can only offer one company's SR-22 rate"
+          },
+          "SR22_ELIGIBILITY": {
+            "FEATURE": "SR-22 Eligibility Access",
+            "INDEPENDENT": "Access to multiple SR-22 friendly carriers, including high-risk markets",
+            "CAPTIVE": "May decline DUI/DWI or high-risk SR-22 drivers"
+          },
+          "HIGH_RISK_APPROVAL": {
+            "FEATURE": "High-Risk Driver Approval",
+            "INDEPENDENT": "Specializes in DUI, DWI, uninsured accident, and multiple violation drivers",
+            "CAPTIVE": "Limited acceptance of high-risk SR-22 profiles"
+          },
+          "NON_OWNER_SR22": {
+            "FEATURE": "Non-Owner SR-22 Options",
+            "INDEPENDENT": "Multiple carriers available for non-owner SR-22 policies",
+            "CAPTIVE": "Limited or no non-owner SR-22 flexibility"
+          },
+          "SR22_FILING_SPEED": {
+            "FEATURE": "SR-22 Filing Speed",
+            "INDEPENDENT": "Files SR-22 electronically with Texas DPS same day in most cases",
+            "CAPTIVE": "Filing depends on one carrier’s processing speed"
+          },
+          "RATE_SHOPPING": {
+            "FEATURE": "Rate Shopping at Renewal",
+            "INDEPENDENT": "Re-shops SR-22 rates every 6 months as violations age",
+            "CAPTIVE": "Locked into one carrier for full SR-22 period"
+          },
+          "LAPSE_PREVENTION": {
+            "FEATURE": "Lapse Prevention",
+            "INDEPENDENT": "Monitors policy and helps prevent SR-22 lapses proactively",
+            "CAPTIVE": "Limited proactive monitoring"
+          },
+          "COVERAGE_CUSTOMIZATION": {
+            "FEATURE": "Coverage Customization",
+            "INDEPENDENT": "Customizes SR-22 coverage across multiple carriers",
+            "CAPTIVE": "Restricted to one carrier’s policy structure"
+          },
+          "CARRIER_RELATIONSHIPS": {
+            "FEATURE": "Carrier Relationships",
+            "INDEPENDENT": "Access to non-standard and specialty SR-22 markets",
+            "CAPTIVE": "Limited to one carrier’s underwriting appetite"
+          },
+          "MULTIPLE_VIOLATIONS": {
+            "FEATURE": "Multiple Violations Handling",
+            "INDEPENDENT": "Finds carriers for drivers with multiple violations",
+            "CAPTIVE": "May decline high-violation drivers"
+          },
+          "DUI_DWI_SUPPORT": {
+            "FEATURE": "DUI / DWI Support",
+            "INDEPENDENT": "Strong access to DUI/DWI SR-22 friendly carriers",
+            "CAPTIVE": "Often restricted or higher surcharges apply"
+          },
+          "FR44_TRANSITION": {
+            "FEATURE": "FR-44 to SR-22 Transition",
+            "INDEPENDENT": "Assists drivers transitioning from FR-44 states to Texas SR-22",
+            "CAPTIVE": "Limited cross-state filing expertise"
+          },
+          "LOYALTY": {
+            "FEATURE": "Loyalty to You",
+            "INDEPENDENT": "Works for the driver — not the insurance company",
+            "CAPTIVE": "Works for the insurance company"
+          },
+          "CLAIMS_ADVOCACY": {
+            "FEATURE": "Claims Advocacy",
+            "INDEPENDENT": "Advocates for the driver during claims",
+            "CAPTIVE": "Represents insurer’s interests"
+          },
+          "SWITCHING_CARRIERS": {
+            "FEATURE": "Switching Carriers",
+            "INDEPENDENT": "Can switch SR-22 carriers without changing agents",
+            "CAPTIVE": "Must change agents to switch carriers"
+          },
+          "LOCAL_TEXAS_EXPERTISE": {
+            "FEATURE": "Local Texas Expertise",
+            "INDEPENDENT": "Texas DPS SR-22 filing expertise and local market knowledge",
+            "CAPTIVE": "May lack Texas-specific SR-22 experience"
+          },
+          "MULTILINGUAL_SUPPORT": {
+            "FEATURE": "Multilingual Support",
+            "INDEPENDENT": "Hablamos Español — supports diverse high-risk driver communities",
+            "CAPTIVE": "Varies by agent — not guaranteed"
+          }
+        }
+      }
+    },
+    "VEHICLE_INSURANCE_TYPES": {
+      "HEADER": {
+        "TITLE": "Types of ATVs & UTVs We Insure in Texas"
+      },
+      "LIST": {
+        "SPORT_ATV": {
+          "TITLE": "Sport ATVs",
+          "DESCRIPTION": "Sport ATVs offer thrilling rides across rough terrains. We insure a variety of sports models to ensure you're covered on every adventure.",
+          "ICON": "fas fa-motorcycle"
+        },
+        "UTILITY_ATV": {
+          "TITLE": "Utility ATVs",
+          "DESCRIPTION": "Utility ATVs are perfect for work or off-road exploration. Get reliable insurance coverage to protect your workhorse in any condition.",
+          "ICON": "fas fa-tractor"
+        },
+        "YOUTH_ATV": {
+          "TITLE": "Youth ATVs",
+          "DESCRIPTION": "Youth ATVs are designed for younger riders. We offer coverage that ensures your child's ATV is safe, protected, and ready for adventure.",
+          "ICON": "fas fa-child"
+        },
+        "SIDE_BY_SIDE_UTV": {
+          "TITLE": "Side-by-Side UTVs (SxS)",
+          "DESCRIPTION": "Side-by-side UTVs provide a fun, rugged ride for friends or family. We insure all models to keep you covered during off-road journeys.",
+          "ICON": "fas fa-users"
+        },
+        "SPORT_UTV": {
+          "TITLE": "Sport UTVs",
+          "DESCRIPTION": "Sport UTVs combine performance and power for intense off-road experiences. Ensure your vehicle is protected with the best insurance in Texas.",
+          "ICON": "fas fa-flag-checkered"
+        },
+        "UTILITY_UTV": {
+          "TITLE": "Utility UTVs",
+          "DESCRIPTION": "Utility UTVs are built for tough tasks. Get the coverage you need to protect your vehicle, whether it's for work or recreational use.",
+          "ICON": "fas fa-tools"
+        },
+        "GOLF_CART_LSV": {
+          "TITLE": "Golf Carts & Low-Speed Vehicles (LSV)",
+          "DESCRIPTION": "Golf carts and low-speed vehicles offer a unique ride. We insure them with coverage designed for safe, low-speed travel on and off the course.",
+          "ICON": "fas fa-golf-ball"
+        },
+        "DUNE_BUGGY": {
+          "TITLE": "Dune Buggies & Sand Rails",
+          "DESCRIPTION": "Dune buggies and sand rails tackle the toughest terrains. We provide insurance to keep your custom off-road vehicle covered in the sand or dunes.",
+          "ICON": "fas fa-mountain"
+        },
+        "ROCK_CRAWLER": {
+          "TITLE": "Rock Crawlers",
+          "DESCRIPTION": "Rock crawlers are designed for serious off-roading. Protect your crawler with insurance that covers your toughest rock climbing adventures.",
+          "ICON": "fas fa-mountain"
+        },
+        "ELECTRIC_ATV_UTV": {
+          "TITLE": "Electric ATVs & UTVs",
+          "DESCRIPTION": "Electric ATVs and UTVs are eco-friendly alternatives for off-road fun. We insure these models with coverage to keep your electric ride protected.",
+          "ICON": "fas fa-bolt"
+        },
+        "THREE_WHEELER": {
+          "TITLE": "Three-Wheelers & Trikes",
+          "DESCRIPTION": "Three-wheelers and trikes provide a unique ride. Ensure your vehicle is covered by the right insurance, whether you're on the trail or on the road.",
+          "ICON": "fas fa-tricycle"
+        },
+        "AMPHIBIOUS_ATV": {
+          "TITLE": "Amphibious ATVs",
+          "DESCRIPTION": "Amphibious ATVs can operate on land and in water. Get coverage that protects your off-road adventures, no matter if you’re on dry land or in the water.",
+          "ICON": "fas fa-water"
+        },
+        "FARM_RANCH_UTV": {
+          "TITLE": "Farm & Ranch UTVs",
+          "DESCRIPTION": "Farm and ranch UTVs help you get the job done. Ensure your vehicle is covered for all your agricultural needs with the right insurance.",
+          "ICON": "fas fa-tractor"
+        },
+        "RACING_ATV_UTV": {
+          "TITLE": "Racing ATVs & UTVs",
+          "DESCRIPTION": "Racing ATVs and UTVs are built for speed and competition. We offer specialized insurance to protect your high-performance vehicles during races.",
+          "ICON": "fas fa-flag-checkered"
+        },
+        "CUSTOM_MODIFIED_ATV": {
+          "TITLE": "Custom & Modified ATVs",
+          "DESCRIPTION": "Custom and modified ATVs require specialized coverage. Protect your unique build with insurance tailored to your custom modifications and needs.",
+          "ICON": "fas fa-tools"
+        }
+      }
+    },
+    "HIGH_RISK_DRIVER": {
+      "HEADER": {
+        "TITLE": "High-Risk ATV & UTV Owner? We Can Still Help You"
+      },
+      "CONTENT": {
+        "DESC1": "High-risk riders often face challenges after a DUI, SR-22 requirement, license suspension, or past claims, but coverage is still possible. Many insurers reject these profiles, but we focus on helping you rebuild and get back on the trails.",
+        "DESC2": "Whether you need SR-22 filing, coverage after violations, or non-standard ATV/UTV insurance, we guide you through every step. Our team compares multiple providers to secure fair rates and reliable protection, ensuring you meet Texas requirements.",
+        "DESC3": "We understand your situation and work to find coverage that fits your budget without unnecessary stress or delays. You won’t be judged or turned away—we help you get insured legally, confidently, and with the protection you need."
+      }
+    },
+    "LANGUAGE_SUPPORT": {
+      "HEADER": {
+        "TITLE": "Hablamos Español / We Speak Your Language"
+      },
+      "CONTENT": {
+        "DESC1": "Clear communication matters when choosing ATV or UTV insurance. That’s why we proudly offer support in English, Spanish, and Hindi. Our bilingual team helps you understand coverage options, requirements, and pricing without confusion.",
+        "DESC2": "Language should never be a barrier to getting insured. Whether you’re asking questions, reviewing policies, or completing applications, we guide you in the language you’re most comfortable with.",
+        "DESC3": "Our goal is to make the entire process simple, clear, and stress-free from start to finish, so you can make confident decisions about your ATV and UTV insurance in Texas."
+      }
+    },
+    "ASTATE_DIFFERENTIATORS": {
+      "HEADER": {
+        "TITLE": "What Makes A-State Insurance Different"
+      },
+      "LIST": {
+        "LICENSED_BROKERS": {
+          "TITLE": "Texas Licensed Brokers",
+          "DESCRIPTION": "Our Texas-based, licensed brokers have the expertise to guide you through the best ATV & UTV insurance options available.",
+          "ICON": "fas fa-certificate"
+        },
+        "HISPANIC_LATINO_FRIENDLY": {
+          "TITLE": "Hispanic & Latino Friendly",
+          "DESCRIPTION": "A-State Insurance is proud to serve the Hispanic & Latino communities with personalized service and Spanish-speaking agents.",
+          "ICON": "fas fa-users"
+        },
+        "YEARS_SERVING": {
+          "TITLE": "20+ Years Serving Texans",
+          "DESCRIPTION": "With over 20 years of experience, we’ve proudly served Texans, helping them secure the best ATV & UTV insurance coverage.",
+          "ICON": "fas fa-calendar-check"
+        },
+        "CUSTOM_COVERAGE": {
+          "TITLE": "Custom Coverage Plans",
+          "DESCRIPTION": "We offer custom ATV & UTV insurance plans tailored to your specific needs, ensuring the right coverage for your lifestyle.",
+          "ICON": "fas fa-shield-alt"
+        },
+        "ONLINE_LOCAL": {
+          "TITLE": "Online & Local",
+          "DESCRIPTION": "We combine fast digital quotes with the personal touch of local, Texas-based agents for personalized support.",
+          "ICON": "fas fa-laptop-house"
+        },
+        "MULTILINGUAL_AGENTS": {
+          "TITLE": "Multilingual Agents",
+          "DESCRIPTION": "Our team speaks English, Spanish, and Hindi, ensuring every Texan receives clear, personalized assistance.",
+          "ICON": "fas fa-language"
+        }
+      }
+    },
+    "INSURANCE_STEPS": {
+      "HEADER": {
+        "TITLE": "Get Covered in 4 Simple Steps"
+      },
+      "STEPS": {
+        "REACH_OUT": {
+          "TITLE": "Reach Out",
+          "DESCRIPTION": "Call, message, or visit us online to start your ATV & UTV insurance application with quick and friendly support.",
+          "ICON": "fas fa-phone-alt"
+        },
+        "GET_ADVICE": {
+          "TITLE": "Get Advice",
+          "DESCRIPTION": "Our experts review your specific needs and explain options clearly so you can make confident coverage choices.",
+          "ICON": "fas fa-comments"
+        },
+        "PICK_PLAN": {
+          "TITLE": "Pick Your Plan",
+          "DESCRIPTION": "Select coverage that fits your budget, lifestyle, and protection goals, from basic liability to comprehensive plans.",
+          "ICON": "fas fa-check-circle"
+        },
+        "WE_GOT_YOU": {
+          "TITLE": "We’ve Got You",
+          "DESCRIPTION": "We handle paperwork and finalize your policy, ensuring smooth activation so you can ride with peace of mind.",
+          "ICON": "fas fa-shield-alt"
+        }
+      }
+    },
+    "SWITCH_STEPS": {
+      "HEADER": {
+        "TITLE": "How to Switch Your Insurance to A-State Insurance"
+      },
+      "STEPS": {
+        "STEP_1": {
+          "TITLE": "Step 1: Get Your Free Comparison Quote",
+          "DESCRIPTION": "Have your current policy details ready. A-State Insurance will compare your existing coverage with 10+ top Texas carriers to find a lower rate that provides the same or better protection, whether for motorcycles, RVs, or motorhomes.",
+          "ICON": "fas fa-file-invoice-dollar"
+        },
+        "STEP_2": {
+          "TITLE": "Step 2: Pick Your Plan and Activate",
+          "DESCRIPTION": "Switching is simple! Complete the process online or over the phone. Our agents speak English, Spanish, and Hindi, helping you understand every detail before activating your new coverage.",
+          "ICON": "fas fa-file-signature"
+        },
+        "STEP_3": {
+          "TITLE": "Step 3: Cancel Your Old Policy (We’ll Help!)",
+          "DESCRIPTION": "Never cancel your old policy until your new A-State coverage is active to avoid a lapse. We’ll guide you through proper cancellation, and most Texas insurers refund unused premiums for a smooth, stress-free switch.",
+          "ICON": "fas fa-times-circle"
+        }
+      }
+    },
+    "FREE_QUOTE": {
+      "HEADER": "Get a Free ATV, UTV, Motorcycle & RV Insurance Quote in Texas",
+      "DESCRIPTION": "Getting a free insurance quote in Texas is fast and simple. At A-State Insurance, we compare multiple providers to find coverage that fits your vehicle, usage, and budget. Whether you ride a motorcycle, drive an RV/motorhome, or own an ATV/UTV, our experts guide you through each option to ensure you understand every detail before deciding. We tailor quotes for sport ATVs, side-by-side UTVs, golf carts, cruisers, sportbikes, touring motorcycles, Class A/B/C motorhomes, travel trailers, and more. With transparent rates and personalized recommendations, you can secure protection for yourself, passengers, and your vehicle. Requesting your quote takes minutes, giving you peace of mind and confidence on the road. Fill out the form below to receive your free, no-obligation quote today!"
     }
   }
 }
