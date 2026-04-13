@@ -9,23 +9,42 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class Sr22Insurance {
   optionalCoveragesChunks: any[][] = [];
+  companyRates: any[] = [];
+  violationRates: any[] = [];
+  sr22VsFr44Data: any[] = [];
+
 
   constructor(private translate: TranslateService) { }
 
   ngOnInit() {
-    this.translate.onLangChange.subscribe(() => {
-      this.loadOptionalCoverages();
-    });
-    this.loadOptionalCoverages();
+    const data = this.translate.instant('SR22_INSURANCE.RATES.COMPANY_RATES.LIST');
+
+    this.companyRates = data.map((item: any) => ({
+      company: item.COMPANY,
+      liability: item.LIABILITY_ONLY,
+      full: item.FULL_COVERAGE
+    }));
+
+    const violationData = this.translate.instant('SR22_INSURANCE.RATES.VIOLATION_RATES.LIST');
+
+    this.violationRates = violationData.map((item: any) => ({
+      violation: item.VIOLATION,
+      liability: item.MIN_COVERAGE,
+      full: item.FULL_COVERAGE
+    }));
+
+    const sr22VsFr44Data = this.translate.instant('SR22_INSURANCE.RATES.SR22_VS_FR44.LIST');
+
+    this.sr22VsFr44Data = sr22VsFr44Data.map((item: any) => ({
+      feature: item.FEATURE,
+      sr22: item.SR22,
+      fr44: item.FR44
+    }));
+
+    console.log('>', this.sr22VsFr44Data)
   }
 
-  loadOptionalCoverages() {
-    this.translate.get('AUTO_INSURANCE.COVERAGES.OPTIONAL.LIST').subscribe((list: any[]) => {
-      if (Array.isArray(list)) {
-        this.optionalCoveragesChunks = this.chunkArray(list, 3);
-      }
-    });
-  }
+
 
   chunkArray(array: any[], size: number) {
     const result = [];
@@ -35,168 +54,120 @@ export class Sr22Insurance {
     return result;
   }
   chips = [
-    { name: 'CAR_INSURANCE.BANNER.CHIPS.SEDAN', icon: 'fas fa-car' },
-    { name: 'CAR_INSURANCE.BANNER.CHIPS.SUV_CROSSOVER', icon: 'fas fa-house' },
-    { name: 'CAR_INSURANCE.BANNER.CHIPS.TRUCK_PICKUP', icon: 'fas fa-building' },
-    { name: 'CAR_INSURANCE.BANNER.CHIPS.SPORTS_PERFORMANCE', icon: 'fas fa-heart' },
-    { name: 'CAR_INSURANCE.BANNER.CHIPS.ELECTRIC_VEHICLE', icon: 'fas fa-notes-medical' },
-    { name: 'CAR_INSURANCE.BANNER.CHIPS.OTHER', icon: 'fas fa-file-contract' },
+    { name: 'SR22_INSURANCE.BANNER.CHIPS.OWNER', icon: 'fas fa-car' },
+    { name: 'SR22_INSURANCE.BANNER.CHIPS.NON_OWNER', icon: 'fas fa-house' },
+    { name: 'SR22_INSURANCE.BANNER.CHIPS.DUI_DWI', icon: 'fas fa-building' },
+    { name: 'SR22_INSURANCE.BANNER.CHIPS.UNINSURED_ACCIDENT', icon: 'fas fa-heart' },
+    { name: 'SR22_INSURANCE.BANNER.CHIPS.LICENSE_REINSTATEMENT', icon: 'fas fa-notes-medical' },
+    { name: 'SR22_INSURANCE.BANNER.CHIPS.OTHER', icon: 'fas fa-file-contract' },
   ];
 
-  rates = [
-    { city: 'Houston', monthly: '$265', annual: '$3,153' },
-    { city: 'San Antonio', monthly: '$232', annual: '$2,782' },
-    { city: 'Dallas', monthly: '$262', annual: '$3,146' },
-    { city: 'Austin', monthly: '$218', annual: '$2,616' },
-    { city: 'Fort Worth', monthly: '$229', annual: '$2,750' },
-    { city: 'El Paso', monthly: '$220', annual: '$2,646' },
-    { city: 'Arlington', monthly: '$237', annual: '$2,839' },
-    { city: 'Corpus Christi', monthly: '$221', annual: '$2,657' },
-    { city: 'Plano', monthly: '$224', annual: '$2,688' },
-    { city: 'Lubbock', monthly: '$216', annual: '$2,592' },
+
+
+
+  averageRates = [
+    { city: 'Houston', price: '$128' },
+    { city: 'San Antonio', price: '$117' },
+    { city: 'Dallas', price: '$121' },
+    { city: 'Austin', price: '$103' },
+    { city: 'Fort Worth', price: '$109' },
+    { city: 'El Paso', price: '$101' },
+    { city: 'Arlington', price: '$113' },
+    { city: 'Corpus Christi', price: '$112' },
+    { city: 'Plano', price: '$111' },
+    { city: 'Lubbock', price: '$94' },
   ];
 
-  companyRates = [
-    { company: 'State Farm', liability: '$57', full: '$201' },
-    { company: 'Progressive', liability: '$80', full: '$241' },
-    { company: 'Allstate', liability: '$81', full: '$243' },
-    { company: 'Mile Auto', liability: '$74', full: '$157' },
-    { company: 'Mercury', liability: '$102', full: '$171' },
-    { company: 'USAA', liability: '$102', full: '$180' },
-    { company: 'GEICO', liability: '$95', full: '$181' },
-    { company: 'Root', liability: '$121', full: '$209' },
-    { company: 'Safeco', liability: '$141', full: '$216' },
-    { company: 'Clearcover', liability: '$125', full: '$251' },
-    { company: 'Direct Auto', liability: '$146', full: '$224' },
-    { company: 'Nationwide', liability: '$119', full: '$227' },
-    { company: 'Amica', liability: '$118', full: '$235' },
-    { company: 'Elephant', liability: '$150', full: '$236' },
-    { company: 'The General', liability: '$125', full: '$239' },
-    { company: 'National General', liability: '$146', full: '$243' },
-    { company: 'Bristol West', liability: '$135', full: '$250' },
-    { company: 'GAINSCO', liability: '$127', full: '$134' },
-    { company: 'Mendota', liability: '$136', full: '$257' },
-    { company: 'Sun Coast', liability: '$138', full: '$261' },
-    { company: 'AssuranceAmerica', liability: '$135', full: '$275' },
-    { company: 'First Acceptance', liability: '$121', full: '$209' },
-    { company: 'Loop', liability: '$147', full: '$277' },
-    { company: 'Commonwealth Casualty', liability: '$132', full: '$288' },
-    { company: 'Lone Star', liability: '$137', full: '$291' },
-    { company: 'Covercube', liability: '$127', full: '$300' },
-    { company: 'Chubb', liability: '$176', full: '$306' },
-    { company: 'Freedom National', liability: '$121', full: '$314' },
-    { company: 'Texas One', liability: '$156', full: '$357' },
-    { company: 'Dairyland', liability: '$130', full: '$338' },
-    { company: 'Liberty Mutual', liability: '$112', full: '$341' },
-    { company: '21st Century', liability: '$101', full: '$354' },
-  ];
 
-  cheapestVehicles = [
-    { make: 'Honda', price: '$161' },
-    { make: 'Acura', price: '$167' },
-    { make: 'Subaru', price: '$168' },
-    { make: 'Hyundai', price: '$180' },
-    { make: 'Ford', price: '$185' },
-    { make: 'Toyota', price: '$185' },
-  ];
 
-  expensiveVehicles = [
-    { make: 'Maserati', price: '$411' },
-    { make: 'Lotus', price: '$444' },
-    { make: 'Lamborghini', price: '$502' },
-    { make: 'Aston Martin', price: '$548' },
-    { make: 'Ferrari', price: '$913' },
-  ];
-
-  driverRates = [
-    { profile: 'Clean Record', quote: '$178', comparison: 'Baseline' },
-    { profile: 'With Accident', quote: '$246', comparison: '+38%' },
-    { profile: 'With Speeding Ticket', quote: '$236', comparison: '+33%' },
-    { profile: 'With DUI', quote: '$282', comparison: '+58%' },
-  ];
-
-  coverageComparison = [
-    { feature: 'Meets Texas legal requirements', min: '✓ Yes', full: '✓ Yes' },
-    { feature: 'Covers your car repairs', min: '✗ No', full: '✓ Yes' },
-    { feature: 'Covers weather damage', min: '✗ No', full: '✓ Yes' },
-    { feature: 'Covers theft & vandalism', min: '✗ No', full: '✓ Yes' },
-    { feature: 'Covers your medical bills', min: '✗ No', full: '— With PIP/MedPay' },
-    { feature: 'Required by lenders', min: '✗ No', full: '✓ Yes' },
-    { feature: 'Monthly cost', min: '$ Lower', full: '$$ Higher' },
-  ];
 
   impactFactorsKeys = [
-    "DRIVING_RECORD",
-    "CREDIT_SCORE",
-    "LOCATION",
+    "TYPE_SEVERITY_VIOLATION",
+    "NUMBER_OF_VIOLATIONS",
+    "TIME_SINCE_VIOLATION",
+    "DUI_DWI_VS_OTHER",
     "AGE_EXPERIENCE",
+    "CREDIT_SCORE",
+    "LOCATION_ZIP",
+    "VEHICLE_TYPE",
+    "COVERAGE_LEVEL",
+    "INSURANCE_LAPSES",
+    "PRIOR_SR22_HISTORY",
+    "ANNUAL_MILEAGE",
     "GENDER",
     "MARITAL_STATUS",
-    "VEHICLE_TYPE",
-    "VEHICLE_CONDITION",
-    "ANNUAL_MILEAGE",
-    "INSURANCE_HISTORY",
-    "CLAIMS_HISTORY",
-    "COVERAGE_DEDUCTIBLE",
-    "VEHICLE_USE",
-    "SAFETY_FEATURES",
-    "SR22"
+    "INSURANCE_CARRIER",
+    "FILING_TYPE",
+    "CONTINUOUS_COVERAGE"
   ]
 
+
+
   discountKeys = [
-    'BUNDLING',
-    'VEHICLE_SAFETY',
-    'MULTI_CAR',
-    'HOMEOWNER',
-    'SAFE_DRIVER',
-    'VEHICLE_USE',
-    'GOOD_STUDENT',
-    'MILITARY',
-    'DEFENSIVE_DRIVING',
-    'STUDENT_AWAY',
-    'TELEMATICS',
-    'LOYALTY',
-    'PAID_FULL',
+    'SHOP_MULTIPLE_CARRIERS',
+    'AUTOPAY_SETUP',
+    'CONTINUOUS_COVERAGE',
+    'HIGHER_DEDUCTIBLE',
     'LOW_MILEAGE',
-    'AUTO_PAY',
-    'EARLY_SIGNING',
-    'PAPERLESS',
-    'SENIOR',
-    'ANTI_THEFT',
-    'GOOD_CREDIT',
-    'NEW_VEHICLE'
-  ];
-  agentComparisonData = [
-    "NUMBER_OF_COMPANIES",
-    "PRICE_COMPARISON",
-    "COVERAGE_OPTIONS",
-    "HIGH_RISK",
-    "SR22",
-    "BAD_CREDIT",
-    "VIOLATIONS",
-    "CUSTOMIZATION",
-    "LOYALTY",
-    "RENEWAL_SHOPPING",
-    "CLAIMS_ADVOCACY",
-    "MULTI_VEHICLE",
-    "SWITCHING",
-    "BUNDLING",
-    "LOCAL_KNOWLEDGE",
-    "LANGUAGE_SUPPORT"
+    'CREDIT_IMPROVEMENT',
+    'DEFENSIVE_DRIVING',
+    'NO_ADDITIONAL_VIOLATIONS',
+    'MINIMUM_COVERAGE',
+    'ANNUAL_PAYMENT',
+    'COVERAGE_OPTIMIZATION',
+    'LOW_MILEAGE_DISCOUNT',
+    'REQUOTE_EVERY_6_MONTHS',
+    'BUNDLE_POLICIES',
+    'MAINTAIN_SR22_PERIOD'
   ];
 
+
+  agentComparisonData = [
+    "NUMBER_OF_CARRIERS",
+    "PRICE_COMPARISON",
+    "SR22_ELIGIBILITY",
+    "HIGH_RISK_APPROVAL",
+    "NON_OWNER_SR22",
+    "SR22_FILING_SPEED",
+    "RATE_SHOPPING",
+    "LAPSE_PREVENTION",
+    "COVERAGE_CUSTOMIZATION",
+    "CARRIER_RELATIONSHIPS",
+    "MULTIPLE_VIOLATIONS",
+    "DUI_DWI_SUPPORT",
+    "FR44_TRANSITION",
+    "LOYALTY",
+    "CLAIMS_ADVOCACY",
+    "SWITCHING_CARRIERS",
+    "LOCAL_TEXAS_EXPERTISE",
+    "MULTILINGUAL_SUPPORT"
+  ];
+
+
+
+  needsSR22 = [
+    "WHAT_IT_IS",
+    "IS_IT_POLICY",
+    "WHO_REQUIRES_IT",
+    "WHO_NEEDS_IT",
+    "FILING_WITH_STATE",
+    "COST_IMPACT",
+    "COVERAGE_PROVIDED",
+    "DURATION_REQUIREMENT",
+    "LAPSE_CONSEQUENCES",
+    "WHO_FILES_IT",
+    "NON_OWNER_OPTION",
+    "REMOVAL_PROCESS"
+  ];
+
+
+
   vehicleInsuranceTypes = [
-    "SEDANS",
-    "SUVS_CROSSOVERS",
-    "TRUCKS_PICKUPS",
-    "SPORTS_PERFORMANCE",
-    "EVS",
-    "HYBRIDS",
-    "MINIVANS_VANS",
-    "MODIFIED_CUSTOM",
-    "CLASSIC_CAR",
-    "COMMERCIAL_AUTO",
-    "SR22"
+    "OWNER_SR22",
+    "NON_OWNER_SR22",
+    "OPERATOR_SR22",
+    "ELECTRONIC_SR22",
+    "PAPER_SR22"
   ];
 
 
