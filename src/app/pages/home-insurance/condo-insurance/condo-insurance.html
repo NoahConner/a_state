@@ -4,9 +4,9 @@
       <div class="topSub">
         <div class="topSub2">
           <div class="h1">
-            {{ 'RENTERS_INSURANCE.BANNER.TITLE_LINE1' | translate }} <br />
-            {{ 'RENTERS_INSURANCE.BANNER.TITLE_LINE2' | translate }} <span class="heading-span">{{
-              'RENTERS_INSURANCE.BANNER.TITLE_LINE3' |
+            {{ 'CONDO_INSURANCE.BANNER.TITLE_LINE1' | translate }} <br />
+            {{ 'CONDO_INSURANCE.BANNER.TITLE_LINE2' | translate }} <span class="heading-span">{{
+              'CONDO_INSURANCE.BANNER.TITLE_LINE3' |
               translate }}</span>
           </div>
           <!-- 
@@ -38,15 +38,14 @@
           </div>
 
           <div class="inps">
-            <input type="text" [placeholder]="'RENTERS_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
+            <input type="text" [placeholder]="'CONDO_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
               class="form-control" />
 
-            <input type="number" [placeholder]="'RENTERS_INSURANCE.BANNER.FORM.PHONE' | translate"
-              class="form-control" />
+            <input type="number" [placeholder]="'CONDO_INSURANCE.BANNER.FORM.PHONE' | translate" class="form-control" />
           </div>
 
           <button class="btn">
-            {{ 'RENTERS_INSURANCE.BANNER.FORM.BUTTON' | translate }}
+            {{ 'CONDO_INSURANCE.BANNER.FORM.BUTTON' | translate }}
           </button>
         </div>
       </div>
@@ -55,19 +54,21 @@
 
   <div class="container my-5">
     <h2 class="section-title mb-4">
-      {{ 'RENTERS_INSURANCE.WHY_DO_YOU_NEED.TITLE' | translate }}
+      {{ 'CONDO_INSURANCE.WHY_DO_YOU_NEED.TITLE' | translate }}
     </h2>
     <p class="section-description mb-4">
-      {{ 'RENTERS_INSURANCE.WHY_DO_YOU_NEED.DESC' | translate }}
+      {{ 'CONDO_INSURANCE.WHY_DO_YOU_NEED.DESC' | translate }}
+
+      <br>
+      <br>
+      {{ 'CONDO_INSURANCE.WHY_DO_YOU_NEED.DESC1' | translate }}
     </p>
 
-    <p class="section-sub-title mb-4">
-      {{ 'RENTERS_INSURANCE.WHY_DO_YOU_NEED.SUB_TITLE' | translate }}
-    </p>
+
 
     <div class="insurance-list">
       <div class="insurance-item"
-        *ngFor="let item of 'RENTERS_INSURANCE.WHY_DO_YOU_NEED.LIST' | translate; let i = index">
+        *ngFor="let item of 'CONDO_INSURANCE.WHY_DO_YOU_NEED.LIST' | translate; let i = index">
 
         <div class="number">0{{ i + 1 }}</div>
 
@@ -85,14 +86,14 @@
     <div class="container-max-800">
 
       <h1 class="main-title">
-        {{ 'RENTERS_INSURANCE.RENTERS_REQUIRED.TITLE' | translate }}
+        {{ 'CONDO_INSURANCE.CONDO_REQUIRED.TITLE' | translate }}
       </h1>
 
       <p class="intro-text">
-        {{ 'RENTERS_INSURANCE.RENTERS_REQUIRED.DESC1' | translate }}
+        {{ 'CONDO_INSURANCE.CONDO_REQUIRED.DESC1' | translate }}
         <br>
         <br>
-        {{ 'RENTERS_INSURANCE.RENTERS_REQUIRED.DESC2' | translate }}
+        {{ 'CONDO_INSURANCE.CONDO_REQUIRED.DESC2' | translate }}
 
       </p>
     </div>
@@ -102,14 +103,14 @@
     <div class="container-max-800">
 
       <h1 class="main-title">
-        {{ 'RENTERS_INSURANCE.LANDLOAD_INSURANCE.TITLE' | translate }}
+        {{ 'CONDO_INSURANCE.POLICY_COVER.TITLE' | translate }}
       </h1>
 
       <p class="intro-text">
-        {{ 'RENTERS_INSURANCE.LANDLOAD_INSURANCE.DESC1' | translate }}
+        {{ 'CONDO_INSURANCE.POLICY_COVER.DESC1' | translate }}
         <br>
         <br>
-        {{ 'RENTERS_INSURANCE.LANDLOAD_INSURANCE.DESC2' | translate }}
+        {{ 'CONDO_INSURANCE.POLICY_COVER.DESC2' | translate }}
 
       </p>
     </div>
@@ -122,16 +123,16 @@
     <div class="container">
       <!-- Header -->
       <div class="header-content mb-5">
-        <h6 class="text-danger fw-bold">{{ 'RENTERS_INSURANCE.COVERAGES.HEADER.TITLE' | translate }}</h6>
-        <p class="small text-muted">{{ 'RENTERS_INSURANCE.COVERAGES.HEADER.DESC' | translate }}</p>
+        <h6 class="text-danger fw-bold">{{ 'CONDO_INSURANCE.COVERAGES.HEADER.TITLE' | translate }}</h6>
+        <p class="small text-muted">{{ 'CONDO_INSURANCE.COVERAGES.HEADER.DESC' | translate }}</p>
       </div>
 
       <!-- Standard Coverages -->
-      <!-- <h5 class="section-title mb-2">{{ 'RENTERS_INSURANCE.COVERAGES.STANDARD.TITLE' | translate }}</h5>
-      <p class="small text-muted mb-4">{{ 'RENTERS_INSURANCE.COVERAGES.STANDARD.DESC' | translate }}</p> -->
+      <!-- <h5 class="section-title mb-2">{{ 'CONDO_INSURANCE.COVERAGES.STANDARD.TITLE' | translate }}</h5>
+      <p class="small text-muted mb-4">{{ 'CONDO_INSURANCE.COVERAGES.STANDARD.DESC' | translate }}</p> -->
 
       <div class="row g-4 mb-5">
-        @for (item of ('RENTERS_INSURANCE.COVERAGES.STANDARD.LIST' | translate); track item.TITLE) {
+        @for (item of ('CONDO_INSURANCE.COVERAGES.STANDARD.LIST' | translate); track item.TITLE) {
         <div class="col-md-4">
           <div class="insurance-card">
             <div class="card-icon"><i [class]="item.ICON"></i></div>
@@ -148,9 +149,9 @@
 
   <section class="factors-impact-section bg-white">
     <div class="container px-4">
-      <h2 class="section-title">{{ 'RENTERS_INSURANCE.NOT_COVERED.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'CONDO_INSURANCE.NOT_COVERED.HEADER.TITLE' | translate }}</h2>
       <p class="intro-text">
-        {{ 'RENTERS_INSURANCE.NOT_COVERED.HEADER.DESC' | translate }}
+        {{ 'CONDO_INSURANCE.NOT_COVERED.HEADER.DESC' | translate }}
       </p>
 
       <div class="row mt-5">
@@ -158,11 +159,11 @@
         <div class="col-lg-6">
           <div class="factor-item">
             <div class="icon-wrapper">
-              <i [class]="'RENTERS_INSURANCE.NOT_COVERED.LIST.' + key + '.ICON' | translate"></i>
+              <i [class]="'CONDO_INSURANCE.NOT_COVERED.LIST.' + key + '.ICON' | translate"></i>
             </div>
             <div class="factor-content">
-              <h6>{{ ('RENTERS_INSURANCE.NOT_COVERED.LIST.' + key + '.TITLE') | translate }}</h6>
-              <p>{{ ('RENTERS_INSURANCE.NOT_COVERED.LIST.' + key + '.DESC') | translate }}</p>
+              <h6>{{ ('CONDO_INSURANCE.NOT_COVERED.LIST.' + key + '.TITLE') | translate }}</h6>
+              <p>{{ ('CONDO_INSURANCE.NOT_COVERED.LIST.' + key + '.DESC') | translate }}</p>
             </div>
           </div>
         </div>
@@ -178,16 +179,16 @@
       <div class="row">
         <div class="col-lg-10">
           <!-- Title -->
-          <h4 class="cost-title mb-4">{{ 'RENTERS_INSURANCE.COST.TITLE' | translate }}</h4>
+          <h4 class="cost-title mb-4">{{ 'CONDO_INSURANCE.COST.TITLE' | translate }}</h4>
 
           <!-- Description Content -->
           <div class="cost-description">
             <p class="mb-4">
-              {{ 'RENTERS_INSURANCE.COST.DESC1' | translate }}
+              {{ 'CONDO_INSURANCE.COST.DESC1' | translate }}
             </p>
 
             <p>
-              {{ 'RENTERS_INSURANCE.COST.DESC2' | translate }}
+              {{ 'CONDO_INSURANCE.COST.DESC2' | translate }}
             </p>
           </div>
         </div>
@@ -200,21 +201,21 @@
     <div class="container">
       <!-- Header 1: City -->
       <div class="rates-header mb-4">
-        <h5 class="fw-bold">{{ 'RENTERS_INSURANCE.RATES.CITY.TITLE' | translate }}</h5>
-        <p class="small mb-0">{{ 'RENTERS_INSURANCE.RATES.CITY.DESC' | translate }}</p>
+        <h5 class="fw-bold">{{ 'CONDO_INSURANCE.RATES.CITY.TITLE' | translate }}</h5>
+        <p class="small mb-0">{{ 'CONDO_INSURANCE.RATES.CITY.DESC' | translate }}</p>
       </div>
 
       <!-- Table 1: City -->
       <div class="rates-table-card p-4">
         <div class="row g-2 text-center text-white fw-bold mb-2">
           <div class="col-4">
-            <div class="header-pill bg-danger py-2">{{ 'RENTERS_INSURANCE.RATES.CITY.H1' | translate }}</div>
+            <div class="header-pill bg-danger py-2">{{ 'CONDO_INSURANCE.RATES.CITY.H1' | translate }}</div>
           </div>
           <div class="col-4">
-            <div class="header-pill bg-danger py-2">{{ 'RENTERS_INSURANCE.RATES.CITY.H2' | translate }}</div>
+            <div class="header-pill bg-danger py-2">{{ 'CONDO_INSURANCE.RATES.CITY.H2' | translate }}</div>
           </div>
           <div class="col-4">
-            <div class="header-pill bg-danger py-2">{{ 'RENTERS_INSURANCE.RATES.CITY.H3' | translate }}</div>
+            <div class="header-pill bg-danger py-2">{{ 'CONDO_INSURANCE.RATES.CITY.H3' | translate }}</div>
           </div>
         </div>
 
@@ -242,30 +243,33 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'RENTERS_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">NerdWallet</a></p>
-          <p class="last-updated">{{ 'RENTERS_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
+          <p>{{ 'CONDO_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">Insurance.com</a></p>
+          <p class="last-updated">{{ 'CONDO_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
         </div>
         <div class="disclaimer mt-2">
-          <p class="mb-0"><strong>{{ 'RENTERS_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translate }}:</strong> {{
-            'RENTERS_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
+          <p class="mb-0"><strong>{{ 'CONDO_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translate }}:</strong> {{
+            'CONDO_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
         </div>
       </div>
 
       <div class="py-5"></div>
 
       <div class="rates-header mb-4">
-        <h5 class="fw-bold">{{ 'RENTERS_INSURANCE.RATES.COMPANIES.TITLE' | translate }}</h5>
-        <p class="small mb-0">{{ 'RENTERS_INSURANCE.RATES.COMPANIES.DESC' | translate }}</p>
+        <h5 class="fw-bold">{{ 'CONDO_INSURANCE.RATES.COMPANIES.TITLE' | translate }}</h5>
+        <p class="small mb-0">{{ 'CONDO_INSURANCE.RATES.COMPANIES.DESC' | translate }}</p>
       </div>
 
       <!-- Table 1: City -->
       <div class="rates-table-card p-4">
         <div class="row g-2 text-center text-white fw-bold mb-2">
           <div class="col-4">
-            <div class="header-pill bg-danger py-2">{{ 'RENTERS_INSURANCE.RATES.COMPANIES.H1' | translate }}</div>
+            <div class="header-pill bg-danger py-2">{{ 'CONDO_INSURANCE.RATES.COMPANIES.H1' | translate }}</div>
           </div>
-          <div class="col-8">
-            <div class="header-pill bg-danger py-2">{{ 'RENTERS_INSURANCE.RATES.COMPANIES.H2' | translate }}</div>
+          <div class="col-4">
+            <div class="header-pill bg-danger py-2">{{ 'CONDO_INSURANCE.RATES.COMPANIES.H2' | translate }}</div>
+          </div>
+          <div class="col-4">
+            <div class="header-pill bg-danger py-2">{{ 'CONDO_INSURANCE.RATES.COMPANIES.H3' | translate }}</div>
           </div>
         </div>
 
@@ -277,9 +281,14 @@
                 {{ rate.carrier }}
               </div>
             </div>
-            <div class="col-8">
+            <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
                 {{ rate.monthly }}
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ rate.annual }}
               </div>
             </div>
           </div>
@@ -288,12 +297,12 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'RENTERS_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">NerdWallet</a></p>
-          <p class="last-updated">{{ 'RENTERS_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
+          <p>{{ 'CONDO_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">Insurance.com</a></p>
+          <p class="last-updated">{{ 'CONDO_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
         </div>
         <div class="disclaimer mt-2">
-          <p class="mb-0"><strong>{{ 'RENTERS_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translate }}:</strong> {{
-            'RENTERS_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
+          <p class="mb-0"><strong>{{ 'CONDO_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translate }}:</strong> {{
+            'CONDO_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
         </div>
       </div>
     </div>
@@ -301,9 +310,9 @@
 
   <section class="factors-impact-section">
     <div class="container">
-      <h2 class="section-title">{{ 'RENTERS_INSURANCE.FACTORS_IMPACT.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'CONDO_INSURANCE.FACTORS_IMPACT.HEADER.TITLE' | translate }}</h2>
       <p class="intro-text">
-        {{ 'RENTERS_INSURANCE.FACTORS_IMPACT.HEADER.DESC' | translate }}
+        {{ 'CONDO_INSURANCE.FACTORS_IMPACT.HEADER.DESC' | translate }}
       </p>
 
       <div class="row">
@@ -311,8 +320,8 @@
         <div class="col-lg-6">
           <div class="factor-item">
             <div class="factor-content">
-              <p> <strong>{{ ('RENTERS_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }} :</strong>
-                {{ ('RENTERS_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}</p>
+              <p> <strong>{{ ('CONDO_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }} :</strong>
+                {{ ('CONDO_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}</p>
             </div>
           </div>
         </div>
@@ -323,9 +332,9 @@
 
   <section class="factors-impact-section bg-white">
     <div class="container px-4">
-      <h2 class="section-title">{{ 'RENTERS_INSURANCE.DISCOUNT_FACTORS.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'CONDO_INSURANCE.DISCOUNT_FACTORS.HEADER.TITLE' | translate }}</h2>
       <p class="intro-text">
-        {{ 'RENTERS_INSURANCE.DISCOUNT_FACTORS.HEADER.DESC' | translate }}
+        {{ 'CONDO_INSURANCE.DISCOUNT_FACTORS.HEADER.DESC' | translate }}
       </p>
 
       <div class="row mt-5">
@@ -333,11 +342,11 @@
         <div class="col-lg-6">
           <div class="factor-item">
             <div class="icon-wrapper">
-              <i [class]="'RENTERS_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.ICON' | translate"></i>
+              <i [class]="'CONDO_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.ICON' | translate"></i>
             </div>
             <div class="factor-content">
-              <h6>{{ ('RENTERS_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translate }}</h6>
-              <p>{{ ('RENTERS_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translate }}</p>
+              <h6>{{ ('CONDO_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translate }}</h6>
+              <p>{{ ('CONDO_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translate }}</p>
             </div>
           </div>
         </div>
@@ -348,29 +357,26 @@
 
   <section class="rates-section bg-pink py-5">
     <div class="container container-max-1100 px-4">
-      <h2 class="section-title">{{ 'RENTERS_INSURANCE.AGENT_COMPARISON.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'CONDO_INSURANCE.AGENT_COMPARISON.HEADER.TITLE' | translate }}</h2>
       <div class="intro-text">
-        <p>{{ 'RENTERS_INSURANCE.AGENT_COMPARISON.HEADER.DESC' | translate }}</p>
-        <p>{{ 'RENTERS_INSURANCE.AGENT_COMPARISON.HEADER.DESC2' | translate }}</p>
-        <p>{{ 'RENTERS_INSURANCE.AGENT_COMPARISON.HEADER.DESC3' | translate }}
-        </p>
+        <p>{{ 'CONDO_INSURANCE.AGENT_COMPARISON.HEADER.DESC' | translate }}</p>
       </div>
 
       <!-- Table Container -->
       <div class="rates-table-card p-4 mt-5">
         <div class="row g-2 text-center text-white fw-bold mb-2">
           <div class="col-4">
-            <div class="header-pill bg-danger py-2">{{ 'RENTERS_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.FEATURE' |
+            <div class="header-pill bg-danger py-2">{{ 'CONDO_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.FEATURE' |
               translate
               }}</div>
           </div>
           <div class="col-4">
-            <div class="header-pill bg-danger py-2">{{ 'RENTERS_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.INDEPENDENT' |
+            <div class="header-pill bg-danger py-2">{{ 'CONDO_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.INDEPENDENT' |
               translate
               }}</div>
           </div>
           <div class="col-4">
-            <div class="header-pill bg-danger py-2">{{ 'RENTERS_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.CAPTIVE' |
+            <div class="header-pill bg-danger py-2">{{ 'CONDO_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.CAPTIVE' |
               translate
               }}</div>
           </div>
@@ -382,17 +388,17 @@
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('RENTERS_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translate }}
+                {{ ('CONDO_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translate }}
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('RENTERS_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translate }}
+                {{ ('CONDO_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translate }}
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('RENTERS_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translate }}
+                {{ ('CONDO_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translate }}
               </div>
             </div>
           </div>
@@ -405,20 +411,20 @@
 
   <section class="high-risk-section bg-white">
     <div class="container px-4">
-      <h2 class="section-title">{{ 'RENTERS_INSURANCE.HIGH_RISK_DRIVER.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'CONDO_INSURANCE.HIGH_VALUE_PROPERTY.HEADER.TITLE' | translate }}</h2>
       <div class="intro-text">
-        <p>{{ 'RENTERS_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC1' | translate }}</p>
-        <p>{{ 'RENTERS_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC2' | translate }}</p>
+        <p>{{ 'CONDO_INSURANCE.HIGH_VALUE_PROPERTY.CONTENT.DESC1' | translate }}</p>
+        <p>{{ 'CONDO_INSURANCE.HIGH_VALUE_PROPERTY.CONTENT.DESC2' | translate }}</p>
       </div>
     </div>
   </section>
 
   <section class="language-section">
     <div class="container px-4">
-      <h2 class="section-title">{{ 'RENTERS_INSURANCE.LANGUAGE_SUPPORT.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'CONDO_INSURANCE.LANGUAGE_SUPPORT.HEADER.TITLE' | translate }}</h2>
       <div class="intro-text">
-        <p>{{ 'RENTERS_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC1' | translate }}</p>
-        <p>{{ 'RENTERS_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC2' | translate }}</p>
+        <p>{{ 'CONDO_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC1' | translate }}</p>
+        <p>{{ 'CONDO_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC2' | translate }}</p>
 
       </div>
     </div>
@@ -430,7 +436,7 @@
       <div class="row mb-5 text-center">
         <div class="col-6">
           <h3 class="heading">
-            {{ 'RENTERS_INSURANCE.ASTATE_DIFFERENTIATORS.HEADER.TITLE' | translate }}
+            {{ 'CONDO_INSURANCE.ASTATE_DIFFERENTIATORS.HEADER.TITLE' | translate }}
           </h3>
         </div>
       </div>
@@ -444,10 +450,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'RENTERS_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.TITLE' | translate }}
+                  {{ 'CONDO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'RENTERS_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.DESCRIPTION' | translate }}
+                  {{ 'CONDO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.DESCRIPTION' | translate }}
                 </p>
               </div>
             </div>
@@ -460,10 +466,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'RENTERS_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.TITLE' | translate }}
+                  {{ 'CONDO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'RENTERS_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.DESCRIPTION' | translate }}
+                  {{ 'CONDO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.DESCRIPTION' | translate }}
                 </p>
               </div>
             </div>
@@ -478,10 +484,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'RENTERS_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.TITLE' | translate }}
+                  {{ 'CONDO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'RENTERS_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.DESCRIPTION' | translate }}
+                  {{ 'CONDO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.DESCRIPTION' | translate }}
                 </p>
               </div>
             </div>
@@ -494,10 +500,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'RENTERS_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.TITLE' | translate }}
+                  {{ 'CONDO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'RENTERS_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.DESCRIPTION' | translate }}
+                  {{ 'CONDO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.DESCRIPTION' | translate }}
                 </p>
               </div>
             </div>
@@ -512,10 +518,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'RENTERS_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translate }}
+                  {{ 'CONDO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'RENTERS_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' | translate }}
+                  {{ 'CONDO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' | translate }}
                 </p>
               </div>
             </div>
@@ -528,10 +534,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'RENTERS_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.TITLE' | translate }}
+                  {{ 'CONDO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'RENTERS_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.DESCRIPTION' | translate }}
+                  {{ 'CONDO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.DESCRIPTION' | translate }}
                 </p>
               </div>
             </div>
@@ -554,38 +560,38 @@
         </div>
 
         <div class="col-md-6 ps-md-5">
-          <h2 class="section-title mb-5">{{ 'RENTERS_INSURANCE.INSURANCE_STEPS.HEADER.TITLE' | translate }}</h2>
+          <h2 class="section-title mb-5">{{ 'CONDO_INSURANCE.INSURANCE_STEPS.HEADER.TITLE' | translate }}</h2>
 
           <div class="timeline">
             <div class="timeline-item">
               <div class="dot"></div>
               <div class="content">
-                <h3>{{ 'RENTERS_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.TITLE' | translate }}</h3>
-                <p>{{ 'RENTERS_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translate }}</p>
+                <h3>{{ 'CONDO_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.TITLE' | translate }}</h3>
+                <p>{{ 'CONDO_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translate }}</p>
               </div>
             </div>
 
             <div class="timeline-item">
               <div class="dot"></div>
               <div class="content">
-                <h3>{{ 'RENTERS_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.TITLE' | translate }}</h3>
-                <p>{{ 'RENTERS_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.DESCRIPTION' | translate }}</p>
+                <h3>{{ 'CONDO_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.TITLE' | translate }}</h3>
+                <p>{{ 'CONDO_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.DESCRIPTION' | translate }}</p>
               </div>
             </div>
 
             <div class="timeline-item">
               <div class="dot"></div>
               <div class="content">
-                <h3>{{ 'RENTERS_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.TITLE' | translate }}</h3>
-                <p>{{ 'RENTERS_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.DESCRIPTION' | translate }}</p>
+                <h3>{{ 'CONDO_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.TITLE' | translate }}</h3>
+                <p>{{ 'CONDO_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.DESCRIPTION' | translate }}</p>
               </div>
             </div>
 
             <div class="timeline-item">
               <div class="dot"></div>
               <div class="content">
-                <h3>{{ 'RENTERS_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.TITLE' | translate }}</h3>
-                <p>{{ 'RENTERS_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.DESCRIPTION' | translate }}</p>
+                <h3>{{ 'CONDO_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.TITLE' | translate }}</h3>
+                <p>{{ 'CONDO_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.DESCRIPTION' | translate }}</p>
               </div>
             </div>
           </div>
@@ -597,14 +603,14 @@
 
   <section class="switch-steps-section">
     <div class="container px-4">
-      <h2 class="section-title">{{ 'RENTERS_INSURANCE.SWITCH_STEPS.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'CONDO_INSURANCE.SWITCH_STEPS.HEADER.TITLE' | translate }}</h2>
 
       <div class="switch-steps-grid">
         @for (step of switchSteps; track step) {
         <div class="switch-card-wrapper">
           <div class="switch-card">
-            <h6>{{ 'RENTERS_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE' | translate }}</h6>
-            <p>{{ 'RENTERS_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION' | translate }}</p>
+            <h6>{{ 'CONDO_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE' | translate }}</h6>
+            <p>{{ 'CONDO_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION' | translate }}</p>
           </div>
         </div>
         }
@@ -617,9 +623,9 @@
       <div class="topSub">
         <div class="topSub2">
           <div class="h1">
-            {{ 'RENTERS_INSURANCE.FREE_QUOTE.HEADER' | translate }}
+            {{ 'CONDO_INSURANCE.FREE_QUOTE.HEADER' | translate }}
           </div>
-          <p class="para">{{ 'RENTERS_INSURANCE.FREE_QUOTE.DESCRIPTION' | translate }}</p>
+          <p class="para">{{ 'CONDO_INSURANCE.FREE_QUOTE.DESCRIPTION' | translate }}</p>
           <div class="selectable mt-4">
             @for (item of chips.slice(0, 3); track item.name) {
             <div class="chip">
@@ -638,15 +644,14 @@
           </div>
 
           <div class="inps">
-            <input type="text" [placeholder]="'RENTERS_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
+            <input type="text" [placeholder]="'CONDO_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
               class="form-control" />
 
-            <input type="number" [placeholder]="'RENTERS_INSURANCE.BANNER.FORM.PHONE' | translate"
-              class="form-control" />
+            <input type="number" [placeholder]="'CONDO_INSURANCE.BANNER.FORM.PHONE' | translate" class="form-control" />
           </div>
 
           <button class="btn">
-            {{ 'RENTERS_INSURANCE.BANNER.FORM.BUTTON' | translate }}
+            {{ 'CONDO_INSURANCE.BANNER.FORM.BUTTON' | translate }}
           </button>
         </div>
       </div>

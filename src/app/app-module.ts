@@ -47,6 +47,10 @@ import { TrailerInsurance } from './pages/auto-insurance/trailer-insurance/trail
 import { MexicanCarInsurance } from './pages/auto-insurance/mexican-car-insurance/mexican-car-insurance';
 import { RideshareInsurance } from './pages/auto-insurance/rideshare-insurance/rideshare-insurance';
 import { RentersInsurance } from './pages/home-insurance/renters-insurance/renters-insurance';
+import { CondoInsurance } from './pages/home-insurance/condo-insurance/condo-insurance';
+import { ManufacturedMobileHomeInsurance } from './pages/home-insurance/manufactured-mobile-home-insurance/manufactured-mobile-home-insurance';
+import { LandlordInsurance } from './pages/home-insurance/landlord-insurance/landlord-insurance';
+import { EarthquakeInsurance } from './pages/home-insurance/earthquake-insurance/earthquake-insurance';
 
 @NgModule({
   declarations: [
@@ -88,7 +92,11 @@ import { RentersInsurance } from './pages/home-insurance/renters-insurance/rente
     TrailerInsurance,
     MexicanCarInsurance,
     RideshareInsurance,
-    RentersInsurance
+    RentersInsurance,
+    CondoInsurance,
+    ManufacturedMobileHomeInsurance,
+    LandlordInsurance,
+    EarthquakeInsurance
   ],
   imports: [
     BrowserModule,

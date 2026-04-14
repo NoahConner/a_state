@@ -35,6 +35,10 @@ import { TrailerInsurance } from './pages/auto-insurance/trailer-insurance/trail
 import { MexicanCarInsurance } from './pages/auto-insurance/mexican-car-insurance/mexican-car-insurance';
 import { RideshareInsurance } from './pages/auto-insurance/rideshare-insurance/rideshare-insurance';
 import { RentersInsurance } from './pages/home-insurance/renters-insurance/renters-insurance';
+import { CondoInsurance } from './pages/home-insurance/condo-insurance/condo-insurance';
+import { ManufacturedMobileHomeInsurance } from './pages/home-insurance/manufactured-mobile-home-insurance/manufactured-mobile-home-insurance';
+import { LandlordInsurance } from './pages/home-insurance/landlord-insurance/landlord-insurance';
+import { EarthquakeInsurance } from './pages/home-insurance/earthquake-insurance/earthquake-insurance';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -83,6 +87,10 @@ const routes: Routes = [
     children: [
       { path: '', component: HomeInsurance },
       { path: 'renters-insurance', component: RentersInsurance },
+      { path: 'condo-insurance', component: CondoInsurance },
+      { path: 'manufactured-mobile-home-insurance', component: ManufacturedMobileHomeInsurance },
+      { path: 'landlord-insurance', component: LandlordInsurance },
+      { path: 'earthquake-insurance', component: EarthquakeInsurance },
 
     ]
   },
@@ -136,6 +144,10 @@ const routes: Routes = [
         children: [
           { path: '', component: HomeInsurance },
           { path: 'seguro-de-renters', component: RentersInsurance },
+          { path: 'seguros-para-condominios', component: CondoInsurance },
+          { path: 'seguro-de-manufactured-mobile-home', component: ManufacturedMobileHomeInsurance },
+          { path: 'seguro-de-landlord', component: LandlordInsurance },
+          { path: 'seguro-de-earthquake', component: EarthquakeInsurance },
         ]
       },
       { path: 'seguros-comerciales', component: CommercialInsurance },
@@ -295,5 +307,21 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   rentersInsurance: {
     en: 'homeowners-insurance/renters-insurance',
     es: 'seguros-de-vivienda/seguro-de-renters'
+  },
+  condoInsurance: {
+    en: 'homeowners-insurance/condo-insurance',
+    es: 'seguros-de-vivienda/seguros-para-condominios'
+  },
+  manufacturedMobileHomeInsurance: {
+    en: 'homeowners-insurance/manufactured-mobile-home-insurance',
+    es: 'seguros-de-vivienda/seguro-de-manufactured-mobile-home'
+  },
+  landlordInsurance: {
+    en: 'homeowners-insurance/landlord-insurance',
+    es: 'seguros-de-vivienda/seguro-de-landlord'
+  },
+  earthquakeInsurance: {
+    en: 'homeowners-insurance/earthquake-insurance',
+    es: 'seguros-de-vivienda/seguro-de-earthquake'
   }
 };
