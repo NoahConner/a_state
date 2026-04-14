@@ -20,6 +20,7 @@
     "TRAILER_INSURANCE": "Trailer Insurance",
     "MEXICAN_CAR_INSURANCE": "Mexican Car Insurance",
     "RIDESHARE_INSURANCE": "Rideshare Insurance",
+    "RENTERS_INSURANCE": "Renters Insurance",
     "OFFICE_LOCATOR": "Office Locator",
     "GET_A_QUOTE": "Get a Quote",
     "LANGUAGE": "Language"
@@ -13217,6 +13218,647 @@
     "FREE_QUOTE": {
       "HEADER": "Get a Free SR-22 Insurance Quote in Texas",
       "DESCRIPTION": "Getting a free SR-22 insurance quote in Texas is fast, easy, and completely hassle-free. By comparing multiple trusted carriers, you can find the most affordable rates that meet all state requirements. Whether you need SR-22 for a DUI or license reinstatement, our experienced insurance experts guide you through the process, ensuring continuous coverage, compliance, and peace of mind while helping you secure reliable, cost-effective SR-22 insurance tailored to your driving needs."
+    }
+  },
+  "RENTERS_INSURANCE": {
+    "BANNER": {
+      "TITLE_LINE1": "Best & Cheapest Renters Insurance in",
+      "TITLE_LINE2": "Texas — Starting from",
+      "TITLE_LINE3": "$15/Month",
+      "CHIPS": {
+        "PERSONAL_PROPERTY": "Personal Property",
+        "LIABILITY": "Liability",
+        "ADDITIONAL_LIVING_EXPENSES": "Additional Living Expenses",
+        "SCHEDULED_PROPERTY": "Scheduled Personal Property",
+        "UMBRELLA": "Renters Liability Umbrella",
+        "OTHER": "Other"
+      },
+      "FORM": {
+        "FULL_NAME": "Full Name",
+        "PHONE": "Phone Number",
+        "BUTTON": "Get a Quote"
+      }
+    },
+    "WHY_DO_YOU_NEED": {
+      "TITLE": "What is Renters Insurance and Why Do You Need It?",
+      "DESC": "Renters insurance is a type of policy designed to protect tenants and their personal belongings from unexpected events such as theft, fire, or damage. While your landlord's insurance covers the building structure, it does not cover your personal items. Renters insurance ensures that your belongings and liability are financially protected, giving you peace of mind.",
+      "SUB_TITLE": "Here are the most important reasons renters insurance is essential:",
+      "LIST": [
+        {
+          "TITLE": "Protection for Personal Property",
+          "TEXT": "Renters insurance covers the cost of repairing or replacing your belongings such as furniture, electronics, clothing, and appliances if they are damaged, lost, or stolen."
+        },
+        {
+          "TITLE": "Liability Coverage",
+          "TEXT": "If someone is injured in your rented space, renters insurance helps cover medical expenses and legal costs if you are found responsible."
+        },
+        {
+          "TITLE": "Affordable Coverage",
+          "TEXT": "Renters insurance is very affordable, often starting as low as $15–$20 per month, making it a cost-effective way to protect your valuables."
+        },
+        {
+          "TITLE": "Additional Living Expenses",
+          "TEXT": "If your rental becomes uninhabitable due to a covered event like fire or severe damage, renters insurance helps pay for temporary housing, food, and other living expenses."
+        },
+        {
+          "TITLE": "Protection Against Theft and Vandalism",
+          "TEXT": "Your belongings are protected against theft or vandalism whether they are inside your rental unit or even outside, such as items kept in your car."
+        }
+      ]
+    },
+    "RENTERS_REQUIRED": {
+      "TITLE": "Is Renters Insurance Required in Texas?",
+      "DESC1": "Renters' insurance is not legally required in Texas. However, many landlords and property management companies make it a mandatory condition for leasing their property. This requirement is designed to protect both the tenant and the landlord in the event of accidents, damage, or other unforeseen events. While the law doesn't mandate renters' insurance, it is a common stipulation in rental agreements.",
+      "DESC2": "Even though renters insurance isn't required by the state, it's still a smart decision to have coverage. It can protect your personal belongings, cover liability costs, and help with additional living expenses in the event of an emergency, such as a fire or water damage. Without renters insurance, you could face a significant financial burden in the event of a disaster or accident."
+    },
+    "LANDLOAD_INSURANCE": {
+      "TITLE": "Does My Landlord's Insurance Cover My Belongings?",
+      "DESC1": "No, your landlord's insurance does not cover your personal belongings. Landlord insurance typically covers the building's structure, including common areas, and any damage to the property caused by events such as fire or weather. However, it does not extend to the tenant's possessions inside the rental unit. If your personal items are damaged, stolen, or destroyed, you would be responsible for replacing them unless you have renters' insurance.",
+      "DESC2": "To ensure your belongings are protected, it’s essential to have renters' insurance. This policy will cover the cost of replacing or repairing your personal property in the event of theft, fire, or water damage. Without it, you would bear the full financial responsibility for any loss or damage to your possessions."
+    },
+    "COVERAGES": {
+      "HEADER": {
+        "TITLE": "What Does Renters Insurance Cover in Texas?",
+        "DESC": "Renters insurance provides financial protection for tenants by covering personal belongings, liability risks, and additional living expenses. It protects against common risks such as theft, fire, vandalism, and certain natural disasters. Optional add-ons and endorsements can further enhance your coverage based on your lifestyle and valuable possessions."
+      },
+      "STANDARD": {
+        "TITLE": "Standard Coverages (Included in Most Policies)",
+        "DESC": "Most renters insurance policies include essential protections that cover personal belongings, liability risks, and temporary living expenses. These coverages ensure tenants are protected from unexpected financial losses.",
+        "LIST": [
+          {
+            "TITLE": "Personal Belongings & Contents",
+            "DESC": "Covers the cost of replacing personal items like furniture, electronics, clothing, and appliances if they are damaged, stolen, or destroyed due to covered events.",
+            "ICON": "bi bi-box-seam"
+          },
+          {
+            "TITLE": "Furniture & Appliances",
+            "DESC": "Provides coverage for furniture and household appliances damaged by events such as fire, smoke, or theft, helping you recover replacement costs.",
+            "ICON": "bi bi-lamp"
+          },
+          {
+            "TITLE": "Electronics & Technology",
+            "DESC": "Protects devices like phones, laptops, and TVs against loss, theft, or damage from covered incidents.",
+            "ICON": "bi bi-phone"
+          },
+          {
+            "TITLE": "Clothing & Accessories",
+            "DESC": "Covers your wardrobe, including clothing, shoes, and accessories, in case of theft, fire, or other covered damage.",
+            "ICON": "bi bi-bag"
+          },
+          {
+            "TITLE": "Jewelry & Valuables",
+            "DESC": "Covers high-value items such as jewelry, collectibles, and artwork up to policy limits, with options to schedule items for higher protection.",
+            "ICON": "bi bi-gem"
+          },
+          {
+            "TITLE": "Personal Liability Coverage",
+            "DESC": "Protects you financially if someone is injured in your rental or if you accidentally damage someone else's property, covering legal fees and medical costs.",
+            "ICON": "bi bi-shield-check"
+          },
+          {
+            "TITLE": "Medical Payments to Others",
+            "DESC": "Pays for minor medical expenses if a guest is injured in your rental, regardless of fault.",
+            "ICON": "bi bi-heart-pulse"
+          },
+          {
+            "TITLE": "Additional Living Expenses (Loss of Use)",
+            "DESC": "Covers temporary housing, meals, and other expenses if your rental becomes uninhabitable due to a covered event.",
+            "ICON": "bi bi-house-exclamation"
+          },
+          {
+            "TITLE": "Fire & Smoke Damage",
+            "DESC": "Helps replace or repair belongings damaged or destroyed by fire or smoke.",
+            "ICON": "bi bi-fire"
+          },
+          {
+            "TITLE": "Theft & Burglary",
+            "DESC": "Covers stolen belongings if your rental is broken into, reimbursing you up to your policy limits.",
+            "ICON": "bi bi-shield-lock"
+          },
+          {
+            "TITLE": "Water Damage (Sudden & Accidental)",
+            "DESC": "Covers damage caused by unexpected water incidents like burst pipes or leaks (excluding flooding).",
+            "ICON": "bi bi-droplet"
+          },
+          {
+            "TITLE": "Wind & Hail Damage",
+            "DESC": "Provides protection against damage caused by windstorms or hail affecting your belongings.",
+            "ICON": "bi bi-cloud-lightning"
+          }
+        ]
+      }
+    },
+    "NOT_COVERED": {
+      "HEADER": {
+        "TITLE": "What Does Renters Insurance NOT Cover in Texas?",
+        "DESC": "While renters insurance provides broad protection for personal belongings and liability, there are important exclusions to understand. Standard policies do not cover certain natural disasters, structural damage, or specific types of losses unless additional coverage or endorsements are added. Knowing these exclusions helps you avoid surprises and ensures you have the right protection."
+      },
+      "LIST": {
+        "FLOOD_DAMAGE": {
+          "TITLE": "Flood Damage",
+          "DESC": "Standard renters insurance does not cover damage caused by flooding due to heavy rain, storms, or rising water. A separate flood insurance policy is required.",
+          "ICON": "fas fa-water"
+        },
+        "EARTHQUAKE_DAMAGE": {
+          "TITLE": "Earthquake Damage",
+          "DESC": "Damage from earthquakes is not included in standard renters insurance. Separate earthquake coverage is needed for protection.",
+          "ICON": "fas fa-mountain"
+        },
+        "STRUCTURAL_DAMAGE": {
+          "TITLE": "Structural Damage to the Building",
+          "DESC": "Renters insurance does not cover damage to the building structure. This is the landlord’s responsibility under their property insurance.",
+          "ICON": "fas fa-building"
+        },
+        "ROOMMATE_BELONGINGS": {
+          "TITLE": "Roommate's Belongings",
+          "DESC": "Your policy does not cover your roommate’s belongings unless they are specifically added or endorsed. Each tenant typically needs their own policy.",
+          "ICON": "fas fa-users"
+        },
+        "HIGH_VALUE_LIMITS": {
+          "TITLE": "High-Value Items Beyond Limits",
+          "DESC": "Expensive items like jewelry, art, or collectibles may only be covered up to a sublimit unless scheduled separately for higher coverage.",
+          "ICON": "fas fa-gem"
+        },
+        "PEST_DAMAGE": {
+          "TITLE": "Pest & Bed Bug Damage",
+          "DESC": "Damage caused by pests, insects, or bed bugs is not covered, as it is considered preventable through maintenance.",
+          "ICON": "fas fa-bug"
+        },
+        "MOLD_MILDEW": {
+          "TITLE": "Mold & Mildew Damage",
+          "DESC": "Mold damage is generally not covered unless it results directly from a covered event like a burst pipe.",
+          "ICON": "fas fa-bacteria"
+        },
+        "WEAR_TEAR": {
+          "TITLE": "Normal Wear & Tear",
+          "DESC": "Gradual damage from everyday use, aging, or lack of maintenance is not covered by renters insurance.",
+          "ICON": "fas fa-tools"
+        },
+        "BUSINESS_PROPERTY": {
+          "TITLE": "Business Equipment & Inventory",
+          "DESC": "Business-related property is not covered unless you add a specific endorsement or separate business insurance.",
+          "ICON": "fas fa-briefcase"
+        },
+        "VEHICLE_DAMAGE": {
+          "TITLE": "Vehicle Damage",
+          "DESC": "Damage to your vehicle is not covered under renters insurance and must be claimed through your auto insurance policy.",
+          "ICON": "fas fa-car"
+        },
+        "INTENTIONAL_DAMAGE": {
+          "TITLE": "Intentional Damage or Fraud",
+          "DESC": "Any damage caused intentionally or through fraudulent claims is excluded from coverage.",
+          "ICON": "fas fa-ban"
+        },
+        "POWER_OUTAGE": {
+          "TITLE": "Power Outage & Food Spoilage",
+          "DESC": "Losses from power outages, such as spoiled food, are not covered unless you add an endorsement.",
+          "ICON": "fas fa-bolt"
+        },
+        "SEWER_BACKUP": {
+          "TITLE": "Sewer & Drain Backup",
+          "DESC": "Damage from sewer or drain backups is typically excluded unless additional coverage is purchased.",
+          "ICON": "fas fa-toilet"
+        },
+        "WAR_NUCLEAR": {
+          "TITLE": "War & Nuclear Events",
+          "DESC": "Losses caused by war, terrorism, or nuclear hazards are excluded from standard renters insurance policies.",
+          "ICON": "fas fa-radiation"
+        },
+        "POLICY_LIMITS": {
+          "TITLE": "Losses Beyond Policy Limits",
+          "DESC": "Renters insurance only pays up to your coverage limits. Any losses exceeding those limits must be paid out of pocket.",
+          "ICON": "fas fa-exclamation-circle"
+        }
+      }
+    },
+    "COST": {
+      "TITLE": "How Much Does Renters Insurance Cost in Texas?",
+      "DESC1": "Renters insurance in Texas is generally inexpensive compared with many other types of insurance. On average, renters in Texas pay $13 per month, or roughly $151 per year, for a standard policy that covers personal belongings and liability. Exact costs vary based on your location, the value of your stuff, deductible amounts, and the insurer you choose. Getting multiple quotes often helps you find more affordable renters' insurance options in Texas.",
+      "DESC2": "Compared with other states, Texas renters' insurance costs can be slightly higher or in line with national averages. The national average policy runs about $16 per month, depending on coverage and location. While some states with lower risk or fewer natural disasters may have lower premiums, rates in Texas reflect regional factors such as weather risks and local claim trends. Still, Texas remains a state where you can find cheap renters insurance in Texas and inexpensive renters insurance in Texas with a bit of shopping. "
+    },
+    "RATES": {
+      "CITY": {
+        "TITLE": "Average Texas Homeowners Insurance Rates by Texas City",
+        "DESC": "Homeowners’ insurance rates in Texas can differ greatly from one city to another. Factors such as property values, storm exposure, local construction costs, and regional claim history influence pricing. Reviewing average rates in your city helps homeowners better estimate potential premiums and choose coverage that balances reliable protection with a manageable monthly insurance budget.",
+        "H1": "City",
+        "H2": "Avg. Monthly - Full Coverage",
+        "H3": "Avg. Annual - Full Coverage"
+      },
+      "COMPANIES": {
+        "TITLE": "Average Homeowners Insurance Rates by Insurance Company in Texas",
+        "DESC": "Homeowners’ insurance premiums can vary widely depending on the insurer you choose. In Texas, some companies focus on competitive pricing, while others provide broader coverage options and added service benefits. Comparing multiple providers helps homeowners identify policies that balance reliable protection with reasonable costs for their property and lifestyle needs.",
+        "H1": "Insurance Company",
+        "H2": "Average Annual Premium"
+      },
+      "FOOTER": {
+        "SOURCE": "Source:",
+        "DISCLAIMER_LABEL": "Disclaimer",
+        "LAST_UPDATED": "Last Updated: March 2026",
+        "DISCLAIMER": "The information provided on this page is for general informational purposes only and may not reflect the most current updates. Coverage requirements, rates, and laws are subject to change. Please consult a licensed insurance agent for the most accurate and up-to-date information."
+      }
+    },
+    "FACTORS_IMPACT": {
+      "HEADER": {
+        "TITLE": "Factors That Impact Your Renters Insurance Rates in Texas",
+        "DESC": "Renters insurance rates in Texas can vary based on several factors such as your rental location, personal property value, coverage limits, and risk profile. Insurers also consider your claims history, credit score, and safety features. Understanding these factors helps you find affordable coverage while ensuring your belongings and liability are properly protected."
+      },
+      "LIST": {
+        "LOCATION": {
+          "TITLE": "Location & ZIP Code",
+          "DESC": "Your rental location affects your premium based on crime rates, weather risks, and local insurance demand."
+        },
+        "BUILDING_TYPE": {
+          "TITLE": "Apartment Building Type & Age",
+          "DESC": "Older buildings or certain construction types may lead to higher premiums due to increased risk of damage."
+        },
+        "PROPERTY_VALUE": {
+          "TITLE": "Personal Property Value & Coverage Amount",
+          "DESC": "Higher-value belongings require more coverage, which increases your renters insurance premium."
+        },
+        "LIABILITY_LIMIT": {
+          "TITLE": "Liability Coverage Limit Selected",
+          "DESC": "Higher liability limits provide more protection but also increase your premium."
+        },
+        "DEDUCTIBLE": {
+          "TITLE": "Deductible Amount",
+          "DESC": "Choosing a higher deductible lowers your premium, while a lower deductible increases it but reduces out-of-pocket costs."
+        },
+        "CREDIT_SCORE": {
+          "TITLE": "Credit-Based Insurance Score",
+          "DESC": "A higher credit score can help lower your premium, while a lower score may increase your rates."
+        },
+        "CLAIMS_HISTORY": {
+          "TITLE": "Claims History",
+          "DESC": "Frequent past claims can increase your premium as insurers consider you a higher risk."
+        },
+        "INSURANCE_HISTORY": {
+          "TITLE": "Insurance History / Coverage Lapses",
+          "DESC": "Continuous coverage helps keep premiums low, while gaps in coverage may lead to higher rates."
+        },
+        "FIRE_STATION": {
+          "TITLE": "Proximity to Fire Station",
+          "DESC": "Living closer to a fire station can lower your premium due to faster emergency response times."
+        },
+        "BUILDING_SECURITY": {
+          "TITLE": "Building Security Features",
+          "DESC": "Apartments with security systems, gated access, or surveillance cameras may qualify for lower premiums."
+        },
+        "SAFETY_DEVICES": {
+          "TITLE": "Personal Safety Devices",
+          "DESC": "Smoke detectors, fire extinguishers, and alarm systems reduce risk and may lower your rates."
+        },
+        "RESIDENTS": {
+          "TITLE": "Number of Residents on Policy",
+          "DESC": "More residents on the policy may increase premiums due to higher liability risk."
+        },
+        "SCHEDULED_PROPERTY": {
+          "TITLE": "Scheduled Personal Property Add-Ons",
+          "DESC": "Adding high-value items like jewelry or art increases premiums to ensure full coverage."
+        },
+        "PET_OWNERSHIP": {
+          "TITLE": "Pet Ownership",
+          "DESC": "Certain pets may increase liability risk, leading to higher insurance premiums."
+        },
+        "ROOMMATE": {
+          "TITLE": "Roommate Endorsements",
+          "DESC": "Adding roommates to your policy can increase premiums to extend coverage to their belongings."
+        },
+        "PAYMENT_METHOD": {
+          "TITLE": "Annual vs. Monthly Payments",
+          "DESC": "Paying annually may reduce overall costs, while monthly payments can include additional fees."
+        },
+        "ADD_ONS": {
+          "TITLE": "Coverage Add-Ons Selected",
+          "DESC": "Optional coverages like identity theft protection or water backup increase premiums based on added protection."
+        },
+        "FLOOD_RISK": {
+          "TITLE": "Flood Zone & Natural Disaster Risk",
+          "DESC": "Living in high-risk areas for floods or disasters can increase your premium due to higher potential claims."
+        }
+      }
+    },
+    "DISCOUNT_FACTORS": {
+      "HEADER": {
+        "TITLE": "How to Maximize Your Discounts and Lower Your Renters Insurance Premium",
+        "DESC": "Renters insurance premiums can be reduced by taking advantage of various discounts offered by insurers. Factors like bundling policies, maintaining a clean claims history, and adding safety features to your rental can significantly lower costs. Understanding and applying these discounts helps you get the best value while keeping your belongings and liability protected."
+      },
+      "LIST": {
+        "BUNDLING": {
+          "TITLE": "Multi-Policy / Bundling Discount (Renters + Auto)",
+          "DESC": "Bundling renters and auto insurance with the same provider can lead to significant savings.",
+          "ICON": "fas fa-layer-group"
+        },
+        "CLAIM_FREE": {
+          "TITLE": "Claims-Free Discount",
+          "DESC": "Maintaining a history with no claims shows low risk and can qualify you for reduced premiums.",
+          "ICON": "fas fa-user-shield"
+        },
+        "PAID_FULL": {
+          "TITLE": "Paid-in-Full Discount",
+          "DESC": "Paying your annual premium upfront instead of monthly installments can lower your overall cost.",
+          "ICON": "fas fa-money-bill-wave"
+        },
+        "AUTO_PAY": {
+          "TITLE": "Automatic Payment / EFT Discount",
+          "DESC": "Setting up automatic payments reduces administrative costs and may earn you a discount.",
+          "ICON": "fas fa-credit-card"
+        },
+        "PAPERLESS": {
+          "TITLE": "Paperless Billing Discount",
+          "DESC": "Going paperless helps insurers save on costs and can provide you with a small discount.",
+          "ICON": "fas fa-file-alt"
+        },
+        "LOYALTY": {
+          "TITLE": "Loyalty / Renewal Discount",
+          "DESC": "Staying with the same insurer over time can result in lower renewal premiums.",
+          "ICON": "fas fa-handshake"
+        },
+        "FIRE_SAFETY": {
+          "TITLE": "Smoke & Fire Detector Discount",
+          "DESC": "Installing smoke detectors and fire alarms reduces risk and can qualify you for discounts.",
+          "ICON": "fas fa-fire-extinguisher"
+        },
+        "LOCKS": {
+          "TITLE": "Deadbolt & Security Lock Discount",
+          "DESC": "Secure locks and deadbolts reduce theft risk and may lower your premium.",
+          "ICON": "fas fa-lock"
+        },
+        "SECURITY_SYSTEM": {
+          "TITLE": "Home Security System Discount",
+          "DESC": "A monitored security system can significantly reduce your premium by lowering risk.",
+          "ICON": "fas fa-shield-alt"
+        },
+        "GATED": {
+          "TITLE": "Gated Community Discount",
+          "DESC": "Living in a gated or secured community reduces crime risk and may result in discounts.",
+          "ICON": "fas fa-door-closed"
+        },
+        "NEW_RENTER": {
+          "TITLE": "New Renter Discount",
+          "DESC": "First-time renters may qualify for special discounts offered by insurers.",
+          "ICON": "fas fa-key"
+        },
+        "HIGH_DEDUCTIBLE": {
+          "TITLE": "Higher Deductible Discount",
+          "DESC": "Choosing a higher deductible lowers your monthly premium.",
+          "ICON": "fas fa-shield-alt"
+        },
+        "MILITARY": {
+          "TITLE": "Military or Occupational Discount",
+          "DESC": "Military members and certain professions may qualify for special discounts.",
+          "ICON": "fas fa-medal"
+        },
+        "STUDENT": {
+          "TITLE": "Student Discount",
+          "DESC": "Students living in dorms or rental housing may be eligible for discounted rates.",
+          "ICON": "fas fa-user-graduate"
+        },
+        "GOOD_CREDIT": {
+          "TITLE": "Good Credit Discount",
+          "DESC": "A strong credit score can help lower your renters insurance premium.",
+          "ICON": "fas fa-star"
+        },
+        "NON_SMOKER": {
+          "TITLE": "Non-Smoker Discount",
+          "DESC": "Non-smokers may receive lower premiums due to reduced fire risk.",
+          "ICON": "fas fa-ban-smoking"
+        },
+        "EARLY_SIGNING": {
+          "TITLE": "Early Signing Discount",
+          "DESC": "Purchasing your policy before your move-in date can result in additional savings.",
+          "ICON": "fas fa-clock"
+        },
+        "CONTINUOUS_COVERAGE": {
+          "TITLE": "Continuous Coverage Discount",
+          "DESC": "Maintaining uninterrupted insurance coverage can help you qualify for lower rates.",
+          "ICON": "fas fa-sync-alt"
+        }
+      }
+    },
+    "AGENT_COMPARISON": {
+      "HEADER": {
+        "TITLE": "Independent Insurance Agency vs. Captive Agent: Why Choice Saves You Money",
+        "DESC": "Choosing between an independent insurance agency and a captive agent can directly impact your renters insurance costs and coverage. Captive agents work for a single insurance company and can only offer that company’s policies, which may limit your options and pricing flexibility.",
+        "DESC2": "In contrast, independent insurance agencies work with multiple carriers, allowing renters to compare prices, coverage options, and endorsements across different providers. This flexibility often results in better pricing and more customized protection.",
+        "DESC3": "Independent agents focus on finding the best deal for you — not selling a single company’s product — helping renters save money while getting better coverage."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Feature",
+          "INDEPENDENT": "Independent Agency (A-State)",
+          "CAPTIVE": "Captive Agent"
+        },
+        "LIST": {
+          "CARRIERS": {
+            "FEATURE": "Number of Carriers",
+            "INDEPENDENT": "Multiple — shops 10+ carriers for renters insurance",
+            "CAPTIVE": "One — locked into a single company"
+          },
+          "PRICE_COMPARISON": {
+            "FEATURE": "Price Comparison",
+            "INDEPENDENT": "Compares rates across multiple carriers to find the lowest",
+            "CAPTIVE": "Can only offer one company's rate"
+          },
+          "COVERAGE_OPTIONS": {
+            "FEATURE": "Coverage Options",
+            "INDEPENDENT": "Broader selection of renters coverage types and endorsements",
+            "CAPTIVE": "Limited to what one carrier offers"
+          },
+          "HIGH_VALUE": {
+            "FEATURE": "High-Value Property Coverage",
+            "INDEPENDENT": "Shops carriers with best scheduled personal property limits",
+            "CAPTIVE": "Limited scheduled property options"
+          },
+          "FLOOD": {
+            "FEATURE": "Flood Coverage for Renters",
+            "INDEPENDENT": "Access to flood endorsements and standalone flood policies",
+            "CAPTIVE": "Limited flood options"
+          },
+          "PET": {
+            "FEATURE": "Pet Liability Coverage",
+            "INDEPENDENT": "Finds carriers with broader breed acceptance",
+            "CAPTIVE": "May exclude certain breeds"
+          },
+          "ROOMMATE": {
+            "FEATURE": "Roommate Coverage Options",
+            "INDEPENDENT": "Flexible roommate endorsements across carriers",
+            "CAPTIVE": "Limited roommate options"
+          },
+          "STUDENT": {
+            "FEATURE": "College Student Coverage",
+            "INDEPENDENT": "Access to carriers favorable for student renters",
+            "CAPTIVE": "Limited student renter options"
+          },
+          "IDENTITY": {
+            "FEATURE": "Identity Theft Protection",
+            "INDEPENDENT": "Shops best identity theft coverage options",
+            "CAPTIVE": "Limited identity theft add-ons"
+          },
+          "BUSINESS": {
+            "FEATURE": "Business Equipment Coverage",
+            "INDEPENDENT": "Finds best home-based business endorsements",
+            "CAPTIVE": "Limited business coverage options"
+          },
+          "BUNDLING": {
+            "FEATURE": "Bundling Options",
+            "INDEPENDENT": "Bundles renters with auto, life & more across carriers",
+            "CAPTIVE": "Bundles only within one carrier"
+          },
+          "CUSTOMIZATION": {
+            "FEATURE": "Coverage Customization",
+            "INDEPENDENT": "Tailors policies across multiple carriers",
+            "CAPTIVE": "Limited customization options"
+          },
+          "LOYALTY": {
+            "FEATURE": "Loyalty to You",
+            "INDEPENDENT": "Works for the client — not the insurance company",
+            "CAPTIVE": "Works for the insurance company"
+          },
+          "RENEWAL": {
+            "FEATURE": "Rate Shopping at Renewal",
+            "INDEPENDENT": "Re-shops your rate every renewal",
+            "CAPTIVE": "Locked into same carrier"
+          },
+          "CLAIMS": {
+            "FEATURE": "Claims Advocacy",
+            "INDEPENDENT": "Advocates on your behalf during claims",
+            "CAPTIVE": "Represents insurer’s interests"
+          },
+          "SWITCHING": {
+            "FEATURE": "Switching Carriers",
+            "INDEPENDENT": "Can switch carriers without changing agents",
+            "CAPTIVE": "Must change agent to switch"
+          },
+          "LOCAL": {
+            "FEATURE": "Local Knowledge",
+            "INDEPENDENT": "Texas-based agents with rental market expertise",
+            "CAPTIVE": "May lack local rental insight"
+          },
+          "LANGUAGE": {
+            "FEATURE": "Multilingual Support",
+            "INDEPENDENT": "Offers multilingual support (e.g., Spanish)",
+            "CAPTIVE": "Not always available"
+          }
+        }
+      }
+    },
+    "HIGH_RISK_DRIVER": {
+      "HEADER": {
+        "TITLE": "High-Risk Property? We Can Still Help You"
+      },
+      "CONTENT": {
+        "DESC1": "Even if your home has been labeled “high-risk” or you’ve been turned down by other insurers, A-State Insurance can help. Our team works with multiple carriers to find coverage options that fit your unique property, location, and circumstances, so you don’t have to settle for unaffordable rates.",
+        "DESC2": "We understand that every home and homeowner is different. By comparing policies across trusted insurers, we help Texans secure affordable homeowners insurance in Texas, even when other companies say “no.” Our goal is to provide protection and peace of mind for every property, regardless of its risk profile."
+      }
+    },
+    "LANGUAGE_SUPPORT": {
+      "HEADER": {
+        "TITLE": "Hablamos Español / We Speak Your Language"
+      },
+      "CONTENT": {
+        "DESC1": "At A-State Insurance, we understand that clear communication is key when it comes to insurance. That’s why we offer full support in Spanish, helping Hispanic and Latino homeowners navigate policies, coverage options, and claims with confidence and ease.",
+        "DESC2": "Our bilingual agents guide you through every step, from getting quotes to finalizing your policy. Whether you’re looking for homeowners' insurance in Texas or exploring other coverage options, we ensure you fully understand your protection and feel secure in your decisions."
+      }
+    },
+    "ASTATE_DIFFERENTIATORS": {
+      "HEADER": {
+        "TITLE": "What Makes A-State Insurance Different"
+      },
+      "LIST": {
+        "LICENSED_BROKERS": {
+          "TITLE": "Texas Licensed Brokers",
+          "DESCRIPTION": "Our Texas-licensed brokers compare multiple carriers to find the right coverage at competitive rates, protecting what matters most."
+        },
+        "HISPANIC_LATINO_FRIENDLY": {
+          "TITLE": "Hispanic & Latino Friendly",
+          "DESCRIPTION": "We provide caring, culturally aware service to Hispanic and Latino communities, ensuring insurance options are clear and accessible."
+        },
+        "YEARS_SERVING": {
+          "TITLE": "20+ Years Serving Texans",
+          "DESCRIPTION": "With over 20 years of experience, we help families, homeowners, and business owners secure reliable protection and peace of mind."
+        },
+        "CUSTOM_COVERAGE": {
+          "TITLE": "Custom Coverage Plans",
+          "DESCRIPTION": "Personalized coverage plans are designed around your home, family, and lifestyle to ensure the protection fits your budget and needs."
+        },
+        "ONLINE_LOCAL": {
+          "TITLE": "Online & Local",
+          "DESCRIPTION": "Access expert advice online or visit our office, where friendly agents who know your community can help you make informed decisions."
+        },
+        "MULTILINGUAL_AGENTS": {
+          "TITLE": "Multilingual Agents",
+          "DESCRIPTION": "Our agents speak English, Spanish, and Hindi, guiding you through policies clearly so you understand every coverage option."
+        }
+      }
+    },
+    "INSURANCE_STEPS": {
+      "HEADER": {
+        "TITLE": "Get Covered in 4 Simple Steps"
+      },
+      "STEPS": {
+        "REACH_OUT": {
+          "TITLE": "Reach Out",
+          "DESCRIPTION": "Contact us online, by phone, or visit our office to start your insurance journey."
+        },
+        "GET_ADVICE": {
+          "TITLE": "Get Advice",
+          "DESCRIPTION": "Our experts review your needs and clearly explain the best coverage options."
+        },
+        "PICK_PLAN": {
+          "TITLE": "Pick Your Plan",
+          "DESCRIPTION": "Choose a plan that fits your home, family, and budget with full confidence."
+        },
+        "WE_GOT_YOU": {
+          "TITLE": "We’ve Got You",
+          "DESCRIPTION": "We ensure your coverage is active, protecting what matters most hassle-free."
+        }
+      }
+    },
+    "SWITCH_STEPS": {
+      "HEADER": {
+        "TITLE": "How to Switch Your Homeowners Insurance to A-State Insurance"
+      },
+      "STEPS": {
+        "STEP_1": {
+          "TITLE": "Step 1: Get Your Free Comparison Quote",
+          "DESCRIPTION": "Request a free quote from A-State Insurance to compare multiple carriers, coverage options, and rates so you can see how much you could save."
+        },
+        "STEP_2": {
+          "TITLE": "Step 2: Pick Your Plan and Activate",
+          "DESCRIPTION": "Choose the homeowners' insurance plan that fits your needs, lifestyle, and budget, then activate it easily with guidance from our expert agents."
+        },
+        "STEP_3": {
+          "TITLE": "Step 3: Cancel Your Old Policy (We’ll Help!)",
+          "DESCRIPTION": "Once your new policy is active, we assist you in smoothly cancelling your previous insurance, ensuring continuous coverage without gaps or hassle."
+        }
+      }
+    },
+    "FAQ_LIST": {
+      "HEADER": {
+        "TITLE": "Frequently Asked Questions About Texas Homeowners Insurance"
+      },
+      "QUESTIONS": {
+        "FAQ1": {
+          "QUESTION": "Why is homeowners' insurance so expensive in Texas?",
+          "ANSWER": "Texas faces frequent storms, hurricanes, hail, and flood risks, as well as high property values. These factors increase the potential for claims, driving up homeowners' premiums across the state."
+        },
+        "FAQ2": {
+          "QUESTION": "How can I lower my homeowners' insurance rate in Texas?",
+          "ANSWER": "Bundle policies, increase deductibles, maintain a claims-free record, install security systems, or work with an independent broker to compare carriers for the most affordable homeowners insurance in Texas."
+        },
+        "FAQ3": {
+          "QUESTION": "How long can a homeowner's insurance claim stay open in Texas?",
+          "ANSWER": "Claims duration varies depending on the complexity of the damage, the documentation, and the insurer's response. Simple claims may be resolved in weeks, while major losses, such as storm damage, can take several months to resolve."
+        },
+        "FAQ4": {
+          "QUESTION": "Is homeowners' insurance required by law in Texas?",
+          "ANSWER": "Homeowners insurance is not legally required in Texas, but lenders typically mandate it to protect their investment and ensure homes and belongings are covered against risks."
+        }
+      }
+    },
+    "FREE_QUOTE": {
+      "HEADER": "Get a Free Homeowners Insurance Quote in Texas",
+      "DESCRIPTION": "Secure your home and belongings with a free quote from A-State Insurance, a trusted Texas-licensed broker with 20+ years of experience. We compare multiple top carriers to find the best homeowners insurance tailored to your needs. Enjoy personalized coverage plans, multilingual support, Hispanic & Latino-friendly service, and expert guidance, either online or at our local office. Get peace of mind today!"
     }
   }
 }

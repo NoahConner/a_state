@@ -34,6 +34,7 @@ import { AtvAndUtvInsurance } from './pages/auto-insurance/atv-utv-insurance/atv
 import { TrailerInsurance } from './pages/auto-insurance/trailer-insurance/trailer-insurance';
 import { MexicanCarInsurance } from './pages/auto-insurance/mexican-car-insurance/mexican-car-insurance';
 import { RideshareInsurance } from './pages/auto-insurance/rideshare-insurance/rideshare-insurance';
+import { RentersInsurance } from './pages/home-insurance/renters-insurance/renters-insurance';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -55,7 +56,7 @@ const routes: Routes = [
   { path: 'health-insurance/quote', component: GetHealthQuote },
   { path: 'surety-bonds/quote', component: GetSuretyQuote },
   // { path: 'auto-insurance', component: AutoInsurance },
-  { path: 'homeowners-insurance', component: HomeInsurance },
+  // { path: 'homeowners-insurance', component: HomeInsurance },
   { path: 'commercial-insurance', component: CommercialInsurance },
   { path: 'life-insurance', component: LifeInsurance },
   { path: 'health-insurance', component: HealthInsurance },
@@ -76,6 +77,16 @@ const routes: Routes = [
       { path: 'rideshare-insurance', component: RideshareInsurance },
     ]
   },
+
+  {
+    path: 'homeowners-insurance',
+    children: [
+      { path: '', component: HomeInsurance },
+      { path: 'renters-insurance', component: RentersInsurance },
+
+    ]
+  },
+
 
 
 
@@ -120,7 +131,13 @@ const routes: Routes = [
           { path: 'seguro-de-rideshare', component: RideshareInsurance },
         ]
       },
-      { path: 'seguros-de-vivienda', component: HomeInsurance },
+      {
+        path: 'seguros-de-vivienda',
+        children: [
+          { path: '', component: HomeInsurance },
+          { path: 'seguro-de-renters', component: RentersInsurance },
+        ]
+      },
       { path: 'seguros-comerciales', component: CommercialInsurance },
       { path: 'seguros-de-vida', component: LifeInsurance },
       { path: 'seguros-de-salud', component: HealthInsurance },
@@ -274,5 +291,9 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   rideshareInsurance: {
     en: 'auto-insurance/rideshare-insurance',
     es: 'seguros-de-auto/seguro-de-rideshare'
+  },
+  rentersInsurance: {
+    en: 'homeowners-insurance/renters-insurance',
+    es: 'seguros-de-vivienda/seguro-de-renters'
   }
 };

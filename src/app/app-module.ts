@@ -46,6 +46,7 @@ import { AtvAndUtvInsurance } from './pages/auto-insurance/atv-utv-insurance/atv
 import { TrailerInsurance } from './pages/auto-insurance/trailer-insurance/trailer-insurance';
 import { MexicanCarInsurance } from './pages/auto-insurance/mexican-car-insurance/mexican-car-insurance';
 import { RideshareInsurance } from './pages/auto-insurance/rideshare-insurance/rideshare-insurance';
+import { RentersInsurance } from './pages/home-insurance/renters-insurance/renters-insurance';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import { RideshareInsurance } from './pages/auto-insurance/rideshare-insurance/r
     AtvAndUtvInsurance,
     TrailerInsurance,
     MexicanCarInsurance,
-    RideshareInsurance
+    RideshareInsurance,
+    RentersInsurance
   ],
   imports: [
     BrowserModule,
