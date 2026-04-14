@@ -39,6 +39,7 @@ import { CondoInsurance } from './pages/home-insurance/condo-insurance/condo-ins
 import { ManufacturedMobileHomeInsurance } from './pages/home-insurance/manufactured-mobile-home-insurance/manufactured-mobile-home-insurance';
 import { LandlordInsurance } from './pages/home-insurance/landlord-insurance/landlord-insurance';
 import { EarthquakeInsurance } from './pages/home-insurance/earthquake-insurance/earthquake-insurance';
+import { FloodInsurance } from './pages/home-insurance/flood-insurance/flood-insurance';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -91,6 +92,7 @@ const routes: Routes = [
       { path: 'manufactured-mobile-home-insurance', component: ManufacturedMobileHomeInsurance },
       { path: 'landlord-insurance', component: LandlordInsurance },
       { path: 'earthquake-insurance', component: EarthquakeInsurance },
+      { path: 'flood-insurance', component: FloodInsurance },
 
     ]
   },
@@ -148,6 +150,7 @@ const routes: Routes = [
           { path: 'seguro-de-manufactured-mobile-home', component: ManufacturedMobileHomeInsurance },
           { path: 'seguro-de-landlord', component: LandlordInsurance },
           { path: 'seguro-de-earthquake', component: EarthquakeInsurance },
+          { path: 'seguro-de-flood', component: FloodInsurance },
         ]
       },
       { path: 'seguros-comerciales', component: CommercialInsurance },
@@ -323,5 +326,9 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   earthquakeInsurance: {
     en: 'homeowners-insurance/earthquake-insurance',
     es: 'seguros-de-vivienda/seguro-de-earthquake'
+  },
+  floodInsurance: {
+    en: 'homeowners-insurance/flood-insurance',
+    es: 'seguros-de-vivienda/seguro-de-flood'
   }
 };

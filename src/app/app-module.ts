@@ -51,6 +51,7 @@ import { CondoInsurance } from './pages/home-insurance/condo-insurance/condo-ins
 import { ManufacturedMobileHomeInsurance } from './pages/home-insurance/manufactured-mobile-home-insurance/manufactured-mobile-home-insurance';
 import { LandlordInsurance } from './pages/home-insurance/landlord-insurance/landlord-insurance';
 import { EarthquakeInsurance } from './pages/home-insurance/earthquake-insurance/earthquake-insurance';
+import { FloodInsurance } from './pages/home-insurance/flood-insurance/flood-insurance';
 
 @NgModule({
   declarations: [
@@ -93,6 +94,7 @@ import { EarthquakeInsurance } from './pages/home-insurance/earthquake-insurance
     MexicanCarInsurance,
     RideshareInsurance,
     RentersInsurance,
+    FloodInsurance,
     CondoInsurance,
     ManufacturedMobileHomeInsurance,
     LandlordInsurance,
