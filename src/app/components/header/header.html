@@ -165,12 +165,20 @@
                   }}</a>
               </li>
 
-              <li>
-                <a class="dropdown-item" [routerLink]="getRoute('commercialInsurance')">{{ 'HEADER.COMMERCIAL_INSURANCE'
-                  |
-                  translate
-                  }}</a>
+              <li class="dropdown-submenu">
+                <a class="dropdown-item submenu-toggle" [routerLink]="getRoute('commercialInsurance')">
+                  {{ 'HEADER.COMMERCIAL_INSURANCE' | translate }}
+                </a>
+
+                <ul class="dropdown-menu submenu">
+                  <li>
+                    <a class="dropdown-item" [routerLink]="getRoute('professionalLiabilityInsurance')">
+                      {{ 'HEADER.PROFESSIONAL_LIABILITY_INSURANCE' | translate }}
+                    </a>
+                  </li>
+                </ul>
               </li>
+
               <li>
                 <a class="dropdown-item" [routerLink]="getRoute('healthInsurance')">{{ 'HEADER.HEALTH_INSURANCE'
                   |

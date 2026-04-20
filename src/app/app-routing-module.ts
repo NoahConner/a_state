@@ -40,6 +40,7 @@ import { ManufacturedMobileHomeInsurance } from './pages/home-insurance/manufact
 import { LandlordInsurance } from './pages/home-insurance/landlord-insurance/landlord-insurance';
 import { EarthquakeInsurance } from './pages/home-insurance/earthquake-insurance/earthquake-insurance';
 import { FloodInsurance } from './pages/home-insurance/flood-insurance/flood-insurance';
+import { ProfessionalLiabilityInsurance } from './pages/commercial-insurance/professional-liability-insurance/professional-liability-insurance';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -62,7 +63,7 @@ const routes: Routes = [
   { path: 'surety-bonds/quote', component: GetSuretyQuote },
   // { path: 'auto-insurance', component: AutoInsurance },
   // { path: 'homeowners-insurance', component: HomeInsurance },
-  { path: 'commercial-insurance', component: CommercialInsurance },
+  // { path: 'commercial-insurance', component: CommercialInsurance },
   { path: 'life-insurance', component: LifeInsurance },
   { path: 'health-insurance', component: HealthInsurance },
   { path: 'surety-bonds', component: SuretyBondInsurance },
@@ -96,6 +97,16 @@ const routes: Routes = [
 
     ]
   },
+
+
+  {
+    path: 'commercial-insurance',
+    children: [
+      { path: '', component: CommercialInsurance },
+      { path: 'professional-liability-insurance', component: ProfessionalLiabilityInsurance },
+    ]
+  },
+
 
 
 
@@ -153,7 +164,13 @@ const routes: Routes = [
           { path: 'seguro-de-flood', component: FloodInsurance },
         ]
       },
-      { path: 'seguros-comerciales', component: CommercialInsurance },
+      {
+        path: 'seguros-comerciales',
+        children: [
+          { path: '', component: CommercialInsurance },
+          { path: 'seguro-de-responsabilidad-profesional', component: ProfessionalLiabilityInsurance },
+        ]
+      },
       { path: 'seguros-de-vida', component: LifeInsurance },
       { path: 'seguros-de-salud', component: HealthInsurance },
       { path: 'fianzas', component: SuretyBondInsurance },
@@ -330,5 +347,9 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   floodInsurance: {
     en: 'homeowners-insurance/flood-insurance',
     es: 'seguros-de-vivienda/seguro-de-flood'
-  }
+  },
+  professionalLiabilityInsurance: {
+    en: 'commercial-insurance/professional-liability-insurance',
+    es: 'seguros-comerciales/seguro-de-responsabilidad-profesional'
+  },
 };

@@ -52,6 +52,7 @@ import { ManufacturedMobileHomeInsurance } from './pages/home-insurance/manufact
 import { LandlordInsurance } from './pages/home-insurance/landlord-insurance/landlord-insurance';
 import { EarthquakeInsurance } from './pages/home-insurance/earthquake-insurance/earthquake-insurance';
 import { FloodInsurance } from './pages/home-insurance/flood-insurance/flood-insurance';
+import { ProfessionalLiabilityInsurance } from './pages/commercial-insurance/professional-liability-insurance/professional-liability-insurance';
 
 @NgModule({
   declarations: [
@@ -98,7 +99,8 @@ import { FloodInsurance } from './pages/home-insurance/flood-insurance/flood-ins
     CondoInsurance,
     ManufacturedMobileHomeInsurance,
     LandlordInsurance,
-    EarthquakeInsurance
+    EarthquakeInsurance,
+    ProfessionalLiabilityInsurance,
   ],
   imports: [
     BrowserModule,
