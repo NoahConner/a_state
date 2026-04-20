@@ -179,48 +179,29 @@
     </div>
   </section>
 
-  <section class="insurance-section py-5">
+  <section class="cost-section py-5">
     <div class="container">
-      <div class="header-content mb-5">
-        <h6 class="text-danger fw-bold">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.COVERAGES.OPTIONAL.TITLE' | translate }}
-        </h6>
-        <p class="small text-muted">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.COVERAGES.OPTIONAL.DESC' | translate }}</p>
-      </div>
-      <div id="optionalCoveragesCarousel" class="carousel slide pb-5" data-bs-ride="carousel">
-        <!-- Pagination Dots -->
-        <div class="carousel-indicators custom-dots mb-0">
-          @for (chunk of optionalCoveragesChunks; track $index) {
-          <button type="button" data-bs-target="#optionalCoveragesCarousel" [attr.data-bs-slide-to]="$index"
-            [class.active]="$index === 0" [attr.aria-current]="$index === 0"
-            [attr.aria-label]="'Slide ' + ($index + 1)"></button>
-          }
-        </div>
+      <div class="row">
+        <div class="col-lg-10">
+          <!-- Title -->
+          <h4 class="cost-title mb-4">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.COST.TITLE' | translate }}</h4>
 
-        <!-- Carousel Items -->
-        <div class="carousel-inner">
-          @for (chunk of optionalCoveragesChunks; track $index) {
-          <div class="carousel-item" [class.active]="$index === 0">
-            <div class="row g-4">
-              @for (item of chunk; track item.TITLE) {
-              <div class="col-md-4">
-                <div class="insurance-card optional h-100">
+          <!-- Description Content -->
+          <div class="cost-description">
+            <p class="mb-4">
+              {{ 'PROFESSIONAL_LIABILITY_INSURANCE.COST.DESC1' | translate }}
+            </p>
 
-                  <div class="card-body">
-                    <div class="card-icon"><i [class]="item.ICON"></i></div>
-
-                    <h6 class="mt-2">{{ item.TITLE }}</h6>
-                    <p>{{ item.DESC }}</p>
-                  </div>
-                </div>
-              </div>
-              }
-            </div>
+            <p>
+              {{ 'PROFESSIONAL_LIABILITY_INSURANCE.COST.DESC2' | translate }}
+            </p>
           </div>
-          }
         </div>
       </div>
     </div>
   </section>
+
+
 
 
   <section class="rates-section py-5">
@@ -266,7 +247,8 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p></p>
+          <p>{{ 'PROFESSIONAL_LIABILITY_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">MoneyGeek</a></p>
+
           <p class="last-updated">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
         </div>
         <div class="disclaimer mt-2">
@@ -366,6 +348,28 @@
       </div>
 
 
+    </div>
+  </section>
+
+  <section class="cost-section py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10">
+          <!-- Title -->
+          <h4 class="cost-title mb-4">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.HOW_MUCH_NEED.TITLE' | translate }}</h4>
+
+          <!-- Description Content -->
+          <div class="cost-description">
+            <p class="mb-4">
+              {{ 'PROFESSIONAL_LIABILITY_INSURANCE.HOW_MUCH_NEED.DESC1' | translate }}
+            </p>
+
+            <p>
+              {{ 'PROFESSIONAL_LIABILITY_INSURANCE.HOW_MUCH_NEED.DESC2' | translate }}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -481,68 +485,24 @@
     </div>
   </section>
 
-  <section class="vehicle-types-section ">
-    <div class="container px-4">
-      <h2 class="section-title">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.INDUSTRY_COVERAGE.HEADER.TITLE' | translate }}</h2>
-      <div class="row g-4">
-        @for (type of industryCoverageKeys; track type) {
-        <div class="col-lg-4 col-md-6 col-sm-6">
-          <div class="vehicle-type-card">
-            <div class="icon-wrapper">
-              <i [class]="'PROFESSIONAL_LIABILITY_INSURANCE.INDUSTRY_COVERAGE.LIST.' + type + '.ICON' | translate"></i>
-            </div>
-            <h6>{{ ('PROFESSIONAL_LIABILITY_INSURANCE.INDUSTRY_COVERAGE.LIST.' + type + '.TITLE') | translate }}</h6>
-            <p>{{ ('PROFESSIONAL_LIABILITY_INSURANCE.INDUSTRY_COVERAGE.LIST.' + type + '.DESCRIPTION') | translate }}
-            </p>
-          </div>
-        </div>
-        }
-      </div>
-    </div>
-  </section>
 
-  <div class="texan-choose-image">
-    <div class="container py-5 mt-5">
-      <div class="row mb-5 ">
-        <div class="col-12">
-          <h3 class="heading">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.SHOP_EVERY.HEADER.TITLE' | translate }}</h3>
-        </div>
-      </div>
-
-      <div class="gap-m">
-        <div class="row mb-2" *ngFor="let row of shopEveryCards">
-          <div class="col px-4" *ngFor="let card of row">
-            <div class="shop-every-card feature-card-height">
-              <div class="icon-wrapper">
-                <img [src]="card.icon" alt="Insurance Icon" />
-              </div>
-              <div class="card-content">
-                <h5 class="card-title">{{ card.title }}</h5>
-                <p class="card-text">{{ card.description }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <section class="high-risk-section">
     <div class="container px-4">
-      <h2 class="section-title">{{ 'HOME_INSURANCE.HIGH_RISK_DRIVER.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.HIGH_RISK_ZONE.HEADER.TITLE' | translate }}</h2>
       <div class="intro-text">
-        <p>{{ 'HOME_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC1' | translate }}</p>
-        <p>{{ 'HOME_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC2' | translate }}</p>
+        <p>{{ 'PROFESSIONAL_LIABILITY_INSURANCE.HIGH_RISK_ZONE.CONTENT.DESC1' | translate }}</p>
+        <p>{{ 'PROFESSIONAL_LIABILITY_INSURANCE.HIGH_RISK_ZONE.CONTENT.DESC2' | translate }}</p>
       </div>
     </div>
   </section>
 
   <section class="language-section">
     <div class="container px-4">
-      <h2 class="section-title">{{ 'HOME_INSURANCE.LANGUAGE_SUPPORT.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.LANGUAGE_SUPPORT.HEADER.TITLE' | translate }}</h2>
       <div class="intro-text">
-        <p>{{ 'HOME_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC1' | translate }}</p>
-        <p>{{ 'HOME_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC2' | translate }}</p>
+        <p>{{ 'PROFESSIONAL_LIABILITY_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC1' | translate }}</p>
+        <p>{{ 'PROFESSIONAL_LIABILITY_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC2' | translate }}</p>
 
       </div>
     </div>
@@ -554,7 +514,7 @@
       <div class="row mb-5 text-center">
         <div class="col-6">
           <h3 class="heading">
-            {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.HEADER.TITLE' | translate }}
+            {{ 'PROFESSIONAL_LIABILITY_INSURANCE.ASTATE_DIFFERENTIATORS.HEADER.TITLE' | translate }}
           </h3>
         </div>
       </div>
@@ -568,10 +528,12 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.TITLE' | translate }}
+                  {{ 'PROFESSIONAL_LIABILITY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.TITLE' | translate
+                  }}
                 </h5>
                 <p class="card-text">
-                  {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.DESCRIPTION' | translate }}
+                  {{ 'PROFESSIONAL_LIABILITY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.DESCRIPTION' |
+                  translate }}
                 </p>
               </div>
             </div>
@@ -584,10 +546,12 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.TITLE' | translate }}
+                  {{ 'PROFESSIONAL_LIABILITY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.TITLE' |
+                  translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.DESCRIPTION' | translate }}
+                  {{ 'PROFESSIONAL_LIABILITY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.DESCRIPTION'
+                  | translate }}
                 </p>
               </div>
             </div>
@@ -602,10 +566,11 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.TITLE' | translate }}
+                  {{ 'PROFESSIONAL_LIABILITY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.DESCRIPTION' | translate }}
+                  {{ 'PROFESSIONAL_LIABILITY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.DESCRIPTION' |
+                  translate }}
                 </p>
               </div>
             </div>
@@ -618,10 +583,11 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.TITLE' | translate }}
+                  {{ 'PROFESSIONAL_LIABILITY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.DESCRIPTION' | translate }}
+                  {{ 'PROFESSIONAL_LIABILITY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.DESCRIPTION' |
+                  translate }}
                 </p>
               </div>
             </div>
@@ -636,10 +602,11 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translate }}
+                  {{ 'PROFESSIONAL_LIABILITY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' | translate }}
+                  {{ 'PROFESSIONAL_LIABILITY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' | translate
+                  }}
                 </p>
               </div>
             </div>
@@ -652,10 +619,12 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.TITLE' | translate }}
+                  {{ 'PROFESSIONAL_LIABILITY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.TITLE' |
+                  translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'HOME_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.DESCRIPTION' | translate }}
+                  {{ 'PROFESSIONAL_LIABILITY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.DESCRIPTION' |
+                  translate }}
                 </p>
               </div>
             </div>
@@ -738,32 +707,7 @@
     </div>
   </section>
 
-  <section class="faq-section py-5">
-    <div class="container">
-      <h2 class="faq-title mb-4">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.FAQ_LIST.HEADER.TITLE' | translate }}</h2>
 
-      <div class="accordion accordion-flush" id="faqAccordion">
-
-        @for (item of faqList; track item) {
-        <div class="accordion-item mb-3">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              [attr.data-bs-target]="'#' + item" [attr.aria-controls]="item">
-              {{ 'PROFESSIONAL_LIABILITY_INSURANCE.FAQ_LIST.QUESTIONS.' + item + '.QUESTION' | translate }}
-            </button>
-          </h2>
-
-          <div [id]="item" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-            <div class="accordion-body"
-              [innerHTML]="'PROFESSIONAL_LIABILITY_INSURANCE.FAQ_LIST.QUESTIONS.' + item + '.ANSWER' | translate">
-            </div>
-          </div>
-        </div>
-        }
-
-      </div>
-    </div>
-  </section>
 
   <div class="getCoverd">
     <div class="container">
@@ -791,14 +735,15 @@
           </div>
 
           <div class="inps">
-            <input type="text" [placeholder]="'HOME_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
+            <input type="text" [placeholder]="'PROFESSIONAL_LIABILITY_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
               class="form-control" />
 
-            <input type="number" [placeholder]="'HOME_INSURANCE.BANNER.FORM.PHONE' | translate" class="form-control" />
+            <input type="number" [placeholder]="'PROFESSIONAL_LIABILITY_INSURANCE.BANNER.FORM.PHONE' | translate"
+              class="form-control" />
           </div>
 
           <button class="btn">
-            {{ 'HOME_INSURANCE.BANNER.FORM.BUTTON' | translate }}
+            {{ 'PROFESSIONAL_LIABILITY_INSURANCE.BANNER.FORM.BUTTON' | translate }}
           </button>
         </div>
       </div>

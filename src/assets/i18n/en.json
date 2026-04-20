@@ -17735,107 +17735,107 @@
     "NOT_COVERED": {
       "HEADER": {
         "TITLE": "What Does Professional Liability (E&O) Insurance NOT Cover in Texas?",
-        "DESC": "While professional liability (E&O) insurance offers essential protection for many professional risks, it does not cover everything. It excludes bodily injury, property damage, intentional wrongdoing, cyberattacks, and many other situations. Understanding these exclusions helps you choose the right additional coverage."
+        "DESC": "While professional liability (E&O) insurance offers essential protection for many professional risks, it does not cover everything. It excludes bodily injury, property damage, intentional wrongdoing, cyberattacks, and many other situations, such as worker injuries or contract disputes that fall outside standard duties. Knowing these limits is key to understanding your overall insurance needs."
       },
-      "ITEMS": {
+      "LIST": {
         "BODILY_INJURY": {
-          "TITLE": "Bodily Injury and Property Damage",
-          "DESC": "Not covered under E&O; these are handled by general liability insurance.",
+          "TITLE": "Bodily Injury and Property Damage (Covered by General Liability)",
+          "DESC": "This insurance does not cover bodily injury or property damage claims. These types of incidents are covered by general liability insurance, which protects against physical harm or property damage caused during business operations.",
           "ICON": "fas fa-house-damage"
         },
         "FRAUD": {
           "TITLE": "Intentional Wrongdoing and Fraud",
-          "DESC": "Deliberate dishonest or fraudulent acts are excluded from coverage.",
+          "DESC": "This coverage does not cover intentional acts of wrongdoing or fraud. If you intentionally deceive or commit fraudulent acts, your policy will not provide coverage, as such actions fall outside the scope of professional negligence or mistakes.",
           "ICON": "fas fa-user-secret"
         },
         "CRIMINAL_ACTS": {
           "TITLE": "Criminal Acts and Illegal Activities",
-          "DESC": "Criminal behavior such as theft or embezzlement is not covered.",
+          "DESC": "Criminal acts or illegal activities, such as theft or embezzlement, are excluded from Professional liability insurance. If your business is involved in any criminal activity, this will not provide defense or cover any resulting damages or fines.",
           "ICON": "fas fa-gavel"
         },
         "EMPLOYMENT_DISPUTES": {
-          "TITLE": "Employment Disputes",
-          "DESC": "Claims like discrimination or wrongful termination require EPLI coverage.",
+          "TITLE": "Employment Disputes (Covered by EPLI)",
+          "DESC": "This insurance policy does not cover employment disputes, such as wrongful termination, discrimination, or harassment claims. These issues are typically covered by EPLI, which specifically addresses workplace-related legal issues.",
           "ICON": "fas fa-user-times"
         },
         "WORKER_INJURIES": {
-          "TITLE": "Worker Injuries",
-          "DESC": "Employee injuries are covered under workers' compensation insurance.",
+          "TITLE": "Worker Injuries (Covered by Workers' Compensation)",
+          "DESC": "Injuries to employees, by accidents or occupational hazards, are not covered under E&O insurance. These are typically handled by workers' compensation insurance, which covers medical costs and lost wages for employees injured on the job.",
           "ICON": "fas fa-briefcase-medical"
         },
         "CYBER_ATTACKS": {
-          "TITLE": "Cyber Attacks and Data Breaches",
-          "DESC": "Requires separate cyber liability insurance coverage.",
+          "TITLE": "Cyber Attacks and Data Breaches (Covered by Cyber Liability)",
+          "DESC": "Professional liability insurance does not cover cyberattacks, data breaches, or other technology-related risks. To protect against these threats, it is necessary to address losses resulting from data theft and other digital security issues.",
           "ICON": "fas fa-shield-alt"
         },
         "PATENT": {
           "TITLE": "Patent Infringement",
-          "DESC": "Not included; requires intellectual property insurance.",
+          "DESC": "These types of claims are not covered by professional liability insurance. If your business is accused of infringing on a patent, you will need separate coverage, such as intellectual property insurance, to address such legal matters.",
           "ICON": "fas fa-lightbulb"
         },
         "ASSET_DAMAGE": {
-          "TITLE": "Physical Asset Damage",
-          "DESC": "Covered by commercial property insurance, not E&O.",
+          "TITLE": "Physical Asset Loss or Damage (Covered by Commercial Property)",
+          "DESC": "Damage to physical assets, such as office equipment or inventory, is not covered by E&O insurance. Commercial property insurance covers these types of losses, protecting your business assets from damage due to fire, theft, or other covered events.",
           "ICON": "fas fa-building"
         },
         "PUNITIVE": {
-          "TITLE": "Punitive Damages",
-          "DESC": "Typically excluded as they are meant to punish wrongdoing.",
+          "TITLE": "Punitive Damages (in most cases)",
+          "DESC": "Most of these liability insurance policies do not cover punitive damages, which are awarded in cases of gross negligence. These damages are meant to punish the defendant and are typically excluded from coverage under E&O insurance.",
           "ICON": "fas fa-exclamation-triangle"
         },
         "POLICY_PERIOD": {
-          "TITLE": "Claims Outside Policy Period",
-          "DESC": "Only claims made during the active policy period are covered.",
+          "TITLE": "Claims Made Outside the Policy Period",
+          "DESC": "E&O insurance only covers claims made during the active policy period. Claims made after the policy expires, or during a time when the policy is not in force, will not be covered unless the policy includes external coverages.",
           "ICON": "fas fa-calendar-times"
         },
         "UNREPORTED": {
-          "TITLE": "Unreported Claims",
-          "DESC": "Failure to report claims within the policy period can void coverage.",
+          "TITLE": "Claims Not Reported During the Policy Period",
+          "DESC": "Claims that are not reported during the policy period will not be covered. It's important to notify your insurer of any potential claims as soon as possible, as delays in reporting can result in denial of coverage under your liability insurance.",
           "ICON": "fas fa-bell-slash"
         },
         "CONTRACT": {
-          "TITLE": "Extended Contractual Liability",
-          "DESC": "Liabilities beyond standard professional duty are often excluded.",
+          "TITLE": "Contractual Liability Assumed Beyond Standard Duty of Care",
+          "DESC": "If your contract includes liability clauses that go beyond your standard duty of care, these may not be covered by professional liability insurance. Policies generally do not cover risks assumed voluntarily in contracts that extend beyond typical professional responsibilities.",
           "ICON": "fas fa-file-signature"
         },
         "BANKRUPTCY": {
-          "TITLE": "Business Insolvency or Bankruptcy",
-          "DESC": "Financial failure of a business is not covered.",
+          "TITLE": "Insolvency or Bankruptcy of Your Business",
+          "DESC": "This liability insurance most likely does not cover your business's insolvency or bankruptcy. If your business is financially failing or cannot meet its financial obligations, these issues will not be covered by E&O insurance.",
           "ICON": "fas fa-chart-line-down"
         },
         "WAR": {
           "TITLE": "War and Terrorism",
-          "DESC": "Excluded and usually covered by specialized policies.",
+          "DESC": "Claims arising from acts of war or terrorism are typically excluded from professional liability insurance. These risks are generally covered by specialized policies or government-backed programs designed to address such extreme events.",
           "ICON": "fas fa-fighter-jet"
         },
         "NUCLEAR": {
-          "TITLE": "Nuclear Hazards",
-          "DESC": "Radiation or nuclear-related risks are excluded.",
+          "TITLE": "Nuclear Hazard",
+          "DESC": "Any claims resulting from nuclear hazards, such as radiation exposure or contamination, are excluded from E&O insurance. These types of claims fall under specific coverage or governmental programs designed to address nuclear-related incidents.",
           "ICON": "fas fa-radiation"
         },
         "FINES": {
-          "TITLE": "Government Fines and Penalties",
-          "DESC": "Regulatory fines are not covered by E&O insurance.",
+          "TITLE": "Government Fines and Regulatory Penalties",
+          "DESC": "Government fines, penalties, or other regulatory actions are not covered under professional liability insurance. This policy protects against client claims, not legal penalties or fines imposed by government authorities for non-compliance.",
           "ICON": "fas fa-landmark"
         },
         "PRIOR_CLAIMS": {
-          "TITLE": "Known Prior Claims",
-          "DESC": "Pre-existing known issues before policy start are excluded.",
+          "TITLE": "Claims Arising from Prior Known Circumstances",
+          "DESC": "If you are already aware of an issue or potential claim before your policy starts, it will not be covered under E&O insurance. Any claims arising from pre-existing known circumstances are typically excluded unless specifically addressed with prior acts coverage.",
           "ICON": "fas fa-history"
         },
         "POLLUTION": {
           "TITLE": "Pollution and Environmental Damage",
-          "DESC": "Requires environmental liability insurance.",
+          "DESC": "Professional liability insurance does not cover pollution or environmental damage. These risks are typically covered by separate environmental liability insurance policies, which are designed to address the specific risks involved in pollution.",
           "ICON": "fas fa-leaf"
         },
         "PRODUCT": {
-          "TITLE": "Product Liability Claims",
-          "DESC": "Handled under product liability insurance.",
+          "TITLE": "Product Liability Claims (Covered by Product Liability Insurance)",
+          "DESC": "If your business manufactures products, product liability claims are not covered by professional liability insurance. These claims fall under this insurance, which protects against damage caused by product defects.",
           "ICON": "fas fa-box"
         },
         "ILLEGAL_PROFIT": {
-          "TITLE": "Illegal Personal Profit",
-          "DESC": "Gains from illegal activities are not covered.",
+          "TITLE": "Personal Profit or Advantage Gained Illegally",
+          "DESC": "It does not cover any claims arising from personal profit or advantage gained through illegal activities. If you or your employees engage in illegal activities for personal gain, your insurance will not cover the associated risks or damages.",
           "ICON": "fas fa-money-bill-wave"
         }
       }
@@ -17843,7 +17843,7 @@
     "COST": {
       "TITLE": "How Much Does Professional Liability (E&O) Insurance Cost in Texas?",
       "DESC1": "Professional liability (E&O) insurance costs in Texas vary depending on factors such as business size, industry risk, coverage limits, and claims history. On average, businesses in Texas pay around $71 per month for E&O coverage, which can total approximately $7,000 per year for standard policies. Lower-risk professions, such as consultants or freelancers, may pay less, while high-risk industries like healthcare, legal, and financial services often face higher premiums due to increased exposure to claims.",
-      "DESC2": "Compared to other states, Texas sits close to the national average for professional liability insurance premiums. Across the United States, small businesses typically pay between $40 and $150 per month, depending on industry and risk level. States with higher legal costs or stricter regulations may see higher premiums, while lower-risk regions may offer slightly more affordable coverage."
+      "DESC2": "Compared to other states, Texas tends to sit near the national average for professional liability premiums. Nationwide, small businesses often pay between $40 and $150 per month, though this can vary widely depending on location and industry. Some states with higher legal costs or stricter regulations may see higher average premiums, while others with lower risk profiles may be slightly cheaper."
     },
     "RATES": {
       "INDUSTRY_RATES": {
@@ -18102,15 +18102,6 @@
         }
       }
     },
-    "HIGH_RISK_ZONE": {
-      "HEADER": {
-        "TITLE": "Living in a High-Risk Flood Zone? Here's What You Need to Know"
-      },
-      "CONTENT": {
-        "DESC1": "If you live in a high-risk flood zone, it's crucial to have flood insurance to protect your property from potential water damage. These zones, typically designated as Special Flood Hazard Areas (SFHAs) by FEMA, have a higher probability of flooding each year, especially during heavy rainfall, hurricanes, or snowmelt. Without proper coverage, the financial burden of flood damage can be overwhelming.",
-        "DESC2": "In addition to insurance, it's important to take preventive measures, such as elevating your home, installing flood vents, and ensuring proper drainage. Many high-risk areas also offer flood mitigation programs that may help reduce your premiums. Being proactive and understanding your flood risks can help minimize both the cost and damage of potential flooding events."
-      }
-    },
     "AGENT_COMPARISON": {
       "HEADER": {
         "TITLE": "Independent Insurance Agency vs. Captive Agent: Why Choice Saves You Money",
@@ -18251,7 +18242,7 @@
         }
       }
     },
-    "IT_TECH_INSURANCE": {
+    "HIGH_RISK_ZONE": {
       "HEADER": {
         "TITLE": "IT Professional or Tech Company? Here's What You Need"
       },
