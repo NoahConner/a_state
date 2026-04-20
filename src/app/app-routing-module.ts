@@ -41,6 +41,10 @@ import { LandlordInsurance } from './pages/home-insurance/landlord-insurance/lan
 import { EarthquakeInsurance } from './pages/home-insurance/earthquake-insurance/earthquake-insurance';
 import { FloodInsurance } from './pages/home-insurance/flood-insurance/flood-insurance';
 import { ProfessionalLiabilityInsurance } from './pages/commercial-insurance/professional-liability-insurance/professional-liability-insurance';
+import { GeneralLiabilityInsurance } from './pages/commercial-insurance/general-liability-insurance/general-liability-insurance';
+import { WorkersCompensationInsurance } from './pages/commercial-insurance/workers-compensation-insurance/workers-compensation-insurance';
+import { CommercialPropertyInsurance } from './pages/commercial-insurance/commercial-property-insurance/commercial-property-insurance';
+import { CommercialAutoInsurance } from './pages/commercial-insurance/commercial-auto-insurance/commercial-auto-insurance';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -104,6 +108,10 @@ const routes: Routes = [
     children: [
       { path: '', component: CommercialInsurance },
       { path: 'professional-liability-insurance', component: ProfessionalLiabilityInsurance },
+      { path: 'general-liability-insurance', component: GeneralLiabilityInsurance },
+      { path: 'workers-compensation-insurance', component: WorkersCompensationInsurance },
+      { path: 'commercial-property-insurance', component: CommercialPropertyInsurance },
+      { path: 'commercial-auto-insurance', component: CommercialAutoInsurance },
     ]
   },
 
@@ -169,6 +177,10 @@ const routes: Routes = [
         children: [
           { path: '', component: CommercialInsurance },
           { path: 'seguro-de-responsabilidad-profesional', component: ProfessionalLiabilityInsurance },
+          { path: 'seguro-de-responsabilidad-general', component: GeneralLiabilityInsurance },
+          { path: 'seguro-de-compensacion-de-trabajadores', component: WorkersCompensationInsurance },
+          { path: 'seguro-de-propiedad-comercial', component: CommercialPropertyInsurance },
+          { path: 'seguro-de-auto-comercial', component: CommercialAutoInsurance },
         ]
       },
       { path: 'seguros-de-vida', component: LifeInsurance },
@@ -351,5 +363,21 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   professionalLiabilityInsurance: {
     en: 'commercial-insurance/professional-liability-insurance',
     es: 'seguros-comerciales/seguro-de-responsabilidad-profesional'
+  },
+  generalLiabilityInsurance: {
+    en: 'commercial-insurance/general-liability-insurance',
+    es: 'seguros-comerciales/seguro-de-responsabilidad-general'
+  },
+  workersCompensationInsurance: {
+    en: 'commercial-insurance/workers-compensation-insurance',
+    es: 'seguros-comerciales/seguro-de-compensacion-de-trabajadores'
+  },
+  commercialPropertyInsurance: {
+    en: 'commercial-insurance/commercial-property-insurance',
+    es: 'seguros-comerciales/seguro-de-propiedad-comercial'
+  },
+  commercialAutoInsurance: {
+    en: 'commercial-insurance/commercial-auto-insurance',
+    es: 'seguros-comerciales/seguro-de-auto-comercial'
   },
 };

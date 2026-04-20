@@ -53,6 +53,10 @@ import { LandlordInsurance } from './pages/home-insurance/landlord-insurance/lan
 import { EarthquakeInsurance } from './pages/home-insurance/earthquake-insurance/earthquake-insurance';
 import { FloodInsurance } from './pages/home-insurance/flood-insurance/flood-insurance';
 import { ProfessionalLiabilityInsurance } from './pages/commercial-insurance/professional-liability-insurance/professional-liability-insurance';
+import { GeneralLiabilityInsurance } from './pages/commercial-insurance/general-liability-insurance/general-liability-insurance';
+import { WorkersCompensationInsurance } from './pages/commercial-insurance/workers-compensation-insurance/workers-compensation-insurance';
+import { CommercialPropertyInsurance } from './pages/commercial-insurance/commercial-property-insurance/commercial-property-insurance';
+import { CommercialAutoInsurance } from './pages/commercial-insurance/commercial-auto-insurance/commercial-auto-insurance';
 
 @NgModule({
   declarations: [
@@ -101,6 +105,10 @@ import { ProfessionalLiabilityInsurance } from './pages/commercial-insurance/pro
     LandlordInsurance,
     EarthquakeInsurance,
     ProfessionalLiabilityInsurance,
+    GeneralLiabilityInsurance,
+    WorkersCompensationInsurance,
+    CommercialPropertyInsurance,
+    CommercialAutoInsurance,
   ],
   imports: [
     BrowserModule,

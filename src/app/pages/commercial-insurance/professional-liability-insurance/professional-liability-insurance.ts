@@ -7,76 +7,19 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './professional-liability-insurance.html',
   styleUrl: './professional-liability-insurance.scss',
 })
-export class ProfessionalLiabilityInsurance implements OnInit {
-  optionalCoveragesChunks: any[][] = [];
-  shopEveryCards: any[][] = [];
+export class ProfessionalLiabilityInsurance {
 
 
   constructor(private translate: TranslateService) { }
 
-  ngOnInit() {
-    this.translate.onLangChange.subscribe(() => {
-      this.loadOptionalCoverages();
-      this.loadShopEveryCards();
-    });
-    this.loadOptionalCoverages();
-    this.loadShopEveryCards();
-  }
 
-  loadOptionalCoverages() {
-    this.translate.get('COMMERCIAL_INSURANCE.COVERAGES.OPTIONAL.LIST').subscribe((list: any[]) => {
-      if (Array.isArray(list)) {
-        this.optionalCoveragesChunks = this.chunkArray(list, 3);
-      }
-    });
-  }
-
-
-  loadShopEveryCards() {
-    this.translate.get('COMMERCIAL_INSURANCE.SHOP_EVERY.LIST').subscribe((list: any) => {
-      if (list && typeof list === 'object') {
-        const cardsArray: any[] = Object.keys(list).map(key => ({
-          key,
-          title: list[key].TITLE,
-          description: list[key].DESCRIPTION,
-          icon: this.getIconForKey(key)
-        }));
-        this.shopEveryCards = this.chunkArray(cardsArray, 2); // 2 cards per row
-      }
-    });
-  }
-
-  // Map JSON keys to icons
-  getIconForKey(key: string): string {
-    const icons: any = {
-      PROFESSIONAL_LIABILITY: 'assets/images/commercial-insurance/liability_license.png',
-      GENERAL_LIABILITY: 'assets/images/commercial-insurance/general_liability.png',
-      WORKERS_COMPENSATION: 'assets/images/commercial-insurance/workers.png',
-      COMMERCIAL_PROPERTY: 'assets/images/commercial-insurance/property.png',
-      COMMERCIAL_AUTO: 'assets/images/commercial-insurance/c_i_auto.png',
-      BUSINESS_OWNER_POLICY: 'assets/images/commercial-insurance/bop.png',
-      EPLI: 'assets/images/commercial-insurance/epl.png',
-      CYBER_LIABILITY: 'assets/images/commercial-insurance/cyber.png',
-      BUILDERS_RISK: 'assets/images/commercial-insurance/builders.png',
-      D_O_LIABILITY: 'assets/images/commercial-insurance/do.png'
-    };
-    return icons[key] || 'assets/images/default.png';
-  }
-
-  chunkArray(array: any[], size: number) {
-    const result = [];
-    for (let i = 0; i < array.length; i += size) {
-      result.push(array.slice(i, i + size));
-    }
-    return result;
-  }
   chips = [
-    { name: 'COMMERCIAL_INSURANCE.BANNER.CHIPS.GENERAL_LIABILITY', icon: 'fas fa-car' },
-    { name: 'COMMERCIAL_INSURANCE.BANNER.CHIPS.BUSINESS_OWNERS', icon: 'fas fa-house' },
-    { name: 'COMMERCIAL_INSURANCE.BANNER.CHIPS.COMMERCIAL_AUTO', icon: 'fas fa-building' },
-    { name: 'COMMERCIAL_INSURANCE.BANNER.CHIPS.WORKERS_COMPENSATION', icon: 'fas fa-heart' },
-    { name: 'COMMERCIAL_INSURANCE.BANNER.CHIPS.PROFESSIONAL_LIABILITY', icon: 'fas fa-notes-medical' },
-    { name: 'COMMERCIAL_INSURANCE.BANNER.CHIPS.OTHER', icon: 'fas fa-file-contract' },
+    { name: 'PROFESSIONAL_LIABILITY_INSURANCE.BANNER.CHIPS.TECHNOLOGY', icon: 'fas fa-car' },
+    { name: 'PROFESSIONAL_LIABILITY_INSURANCE.BANNER.CHIPS.MEDICAL', icon: 'fas fa-house' },
+    { name: 'PROFESSIONAL_LIABILITY_INSURANCE.BANNER.CHIPS.REAL_ESTATE', icon: 'fas fa-building' },
+    { name: 'PROFESSIONAL_LIABILITY_INSURANCE.BANNER.CHIPS.LEGAL_MALPRACTICE', icon: 'fas fa-heart' },
+    { name: 'PROFESSIONAL_LIABILITY_INSURANCE.BANNER.CHIPS.FINANCIAL_SERVICES', icon: 'fas fa-notes-medical' },
+    { name: 'PROFESSIONAL_LIABILITY_INSURANCE.BANNER.CHIPS.OTHER', icon: 'fas fa-file-contract' },
   ];
 
   rates = [
