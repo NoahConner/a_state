@@ -4,9 +4,9 @@
       <div class="topSub">
         <div class="topSub2">
           <div class="h1">
-            {{ 'COMMERCIAL_INSURANCE.BANNER.TITLE_LINE1' | translate }} <br />
-            {{ 'COMMERCIAL_INSURANCE.BANNER.TITLE_LINE2' | translate }} <span class="heading-span">{{
-              'COMMERCIAL_INSURANCE.BANNER.TITLE_LINE3' |
+            {{ 'PROFESSIONAL_LIABILITY_INSURANCE.BANNER.TITLE_LINE1' | translate }} <br />
+            {{ 'PROFESSIONAL_LIABILITY_INSURANCE.BANNER.TITLE_LINE2' | translate }} <span class="heading-span">{{
+              'PROFESSIONAL_LIABILITY_INSURANCE.BANNER.TITLE_LINE3' |
               translate }}</span>
           </div>
           <!-- 
@@ -38,15 +38,15 @@
           </div>
 
           <div class="inps">
-            <input type="text" [placeholder]="'COMMERCIAL_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
+            <input type="text" [placeholder]="'PROFESSIONAL_LIABILITY_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
               class="form-control" />
 
-            <input type="number" [placeholder]="'COMMERCIAL_INSURANCE.BANNER.FORM.PHONE' | translate"
+            <input type="number" [placeholder]="'PROFESSIONAL_LIABILITY_INSURANCE.BANNER.FORM.PHONE' | translate"
               class="form-control" />
           </div>
 
           <button class="btn">
-            {{ 'COMMERCIAL_INSURANCE.BANNER.FORM.BUTTON' | translate }}
+            {{ 'PROFESSIONAL_LIABILITY_INSURANCE.BANNER.FORM.BUTTON' | translate }}
           </button>
         </div>
       </div>
@@ -55,23 +55,23 @@
 
   <div class="container my-5">
     <h2 class="section-title mb-4">
-      {{ 'COMMERCIAL_INSURANCE.WHY_DO_YOU_NEED.TITLE' | translate }}
+      {{ 'PROFESSIONAL_LIABILITY_INSURANCE.WHY_DO_YOU_NEED.TITLE' | translate }}
     </h2>
     <p class="section-description mb-4">
-      {{ 'COMMERCIAL_INSURANCE.WHY_DO_YOU_NEED.DESC' | translate }}
+      {{ 'PROFESSIONAL_LIABILITY_INSURANCE.WHY_DO_YOU_NEED.DESC1' | translate }}
     </p>
 
     <p class="section-description mb-4">
-      {{ 'COMMERCIAL_INSURANCE.WHY_DO_YOU_NEED.DESC1' | translate }}
+      {{ 'PROFESSIONAL_LIABILITY_INSURANCE.WHY_DO_YOU_NEED.DESC2' | translate }}
     </p>
 
     <p class="section-sub-title mb-4">
-      {{ 'COMMERCIAL_INSURANCE.WHY_DO_YOU_NEED.SUB_TITLE' | translate }}
+      {{ 'PROFESSIONAL_LIABILITY_INSURANCE.WHY_DO_YOU_NEED.SUB_TITLE' | translate }}
     </p>
 
     <div class="insurance-list">
       <div class="insurance-item"
-        *ngFor="let item of 'COMMERCIAL_INSURANCE.WHY_DO_YOU_NEED.LIST' | translate; let i = index">
+        *ngFor="let item of 'PROFESSIONAL_LIABILITY_INSURANCE.WHY_DO_YOU_NEED.LIST' | translate; let i = index">
 
         <div class="number">0{{ i + 1 }}</div>
 
@@ -89,29 +89,33 @@
     <div class="container-max-800">
 
       <h1 class="main-title">
-        {{ 'COMMERCIAL_INSURANCE.LAWS.TITLE' | translate }}
+        {{ 'PROFESSIONAL_LIABILITY_INSURANCE.PROFESSIONAL_REQUIRED.TITLE' | translate }}
       </h1>
 
       <p class="intro-text">
-        {{ 'COMMERCIAL_INSURANCE.LAWS.INTRO' | translate }}
+        {{ 'PROFESSIONAL_LIABILITY_INSURANCE.PROFESSIONAL_REQUIRED.DESC1' | translate }}
         <br>
         <br>
-        {{ 'COMMERCIAL_INSURANCE.LAWS.DESC' | translate }}
+        {{ 'PROFESSIONAL_LIABILITY_INSURANCE.PROFESSIONAL_REQUIRED.DESC2' | translate }}
+
+      </p>
+
+
+    </div>
+  </section>
+
+  <section class="insurance-laws-section py-5 bg-white">
+    <div class="container-max-800">
+
+      <h1 class="main-title">
+        {{ 'PROFESSIONAL_LIABILITY_INSURANCE.GENERAL_VS_PROFESSIONAL.TITLE' | translate }}
+      </h1>
+
+      <p class="intro-text">
+        {{ 'PROFESSIONAL_LIABILITY_INSURANCE.GENERAL_VS_PROFESSIONAL.DESC1' | translate }}
         <br>
         <br>
-        {{ 'COMMERCIAL_INSURANCE.LAWS.DESC1' | translate }}
-        <br>
-        <br>
-        {{ 'COMMERCIAL_INSURANCE.LAWS.DESC2' | translate }}
-        <br>
-        <br>
-        {{ 'COMMERCIAL_INSURANCE.LAWS.DESC3' | translate }}
-        <br>
-        <br>
-        {{ 'COMMERCIAL_INSURANCE.LAWS.DESC4' | translate }}
-        <br>
-        <br>
-        {{ 'COMMERCIAL_INSURANCE.LAWS.DESC5' | translate }}
+        {{ 'PROFESSIONAL_LIABILITY_INSURANCE.GENERAL_VS_PROFESSIONAL.DESC2' | translate }}
 
       </p>
 
@@ -126,12 +130,13 @@
     <div class="container">
       <!-- Header -->
       <div class="header-content mb-5">
-        <h6 class="text-danger fw-bold">{{ 'COMMERCIAL_INSURANCE.COVERAGES.STANDARD.TITLE' | translate }}</h6>
-        <p class="small text-muted">{{ 'COMMERCIAL_INSURANCE.COVERAGES.STANDARD.DESC' | translate }}</p>
+        <h6 class="text-danger fw-bold">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.COVERAGES.STANDARD.TITLE' | translate }}
+        </h6>
+        <p class="small text-muted">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.COVERAGES.STANDARD.DESC' | translate }}</p>
       </div>
 
       <div class="row g-4 mb-5">
-        @for (item of ('COMMERCIAL_INSURANCE.COVERAGES.STANDARD.LIST' | translate); track item.TITLE) {
+        @for (item of ('PROFESSIONAL_LIABILITY_INSURANCE.COVERAGES.STANDARD.LIST' | translate); track item.TITLE) {
         <div class="col-md-4">
           <div class="insurance-card">
             <div class="card-icon"><i [class]="item.ICON"></i></div>
@@ -151,9 +156,9 @@
 
   <section class="factors-impact-section bg-white">
     <div class="container px-4">
-      <h2 class="section-title">{{ 'COMMERCIAL_INSURANCE.NOT_COVERED.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.NOT_COVERED.HEADER.TITLE' | translate }}</h2>
       <p class="intro-text">
-        {{ 'COMMERCIAL_INSURANCE.NOT_COVERED.HEADER.DESC' | translate }}
+        {{ 'PROFESSIONAL_LIABILITY_INSURANCE.NOT_COVERED.HEADER.DESC' | translate }}
       </p>
 
       <div class="row mt-5">
@@ -161,11 +166,11 @@
         <div class="col-lg-6">
           <div class="factor-item">
             <div class="icon-wrapper">
-              <i [class]="'COMMERCIAL_INSURANCE.NOT_COVERED.LIST.' + key + '.ICON' | translate"></i>
+              <i [class]="'PROFESSIONAL_LIABILITY_INSURANCE.NOT_COVERED.LIST.' + key + '.ICON' | translate"></i>
             </div>
             <div class="factor-content">
-              <h6>{{ ('COMMERCIAL_INSURANCE.NOT_COVERED.LIST.' + key + '.TITLE') | translate }}</h6>
-              <p>{{ ('COMMERCIAL_INSURANCE.NOT_COVERED.LIST.' + key + '.DESC') | translate }}</p>
+              <h6>{{ ('PROFESSIONAL_LIABILITY_INSURANCE.NOT_COVERED.LIST.' + key + '.TITLE') | translate }}</h6>
+              <p>{{ ('PROFESSIONAL_LIABILITY_INSURANCE.NOT_COVERED.LIST.' + key + '.DESC') | translate }}</p>
             </div>
           </div>
         </div>
@@ -177,8 +182,9 @@
   <section class="insurance-section py-5">
     <div class="container">
       <div class="header-content mb-5">
-        <h6 class="text-danger fw-bold">{{ 'COMMERCIAL_INSURANCE.COVERAGES.OPTIONAL.TITLE' | translate }}</h6>
-        <p class="small text-muted">{{ 'COMMERCIAL_INSURANCE.COVERAGES.OPTIONAL.DESC' | translate }}</p>
+        <h6 class="text-danger fw-bold">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.COVERAGES.OPTIONAL.TITLE' | translate }}
+        </h6>
+        <p class="small text-muted">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.COVERAGES.OPTIONAL.DESC' | translate }}</p>
       </div>
       <div id="optionalCoveragesCarousel" class="carousel slide pb-5" data-bs-ride="carousel">
         <!-- Pagination Dots -->
@@ -221,100 +227,22 @@
     <div class="container">
       <!-- Header 1: City -->
       <div class="rates-header mb-4">
-        <h5 class="fw-bold">{{ 'COMMERCIAL_INSURANCE.RATES.CITY.TITLE' | translate }}</h5>
-        <p class="small mb-0">{{ 'COMMERCIAL_INSURANCE.RATES.CITY.DESC' | translate }}</p>
-      </div>
-
-      <!-- Table 1: City -->
-      <div class="rates-table-card p-4">
-        <div class="row g-2 text-center text-white fw-bold mb-2">
-          <div class="col-4">
-            <div class="header-pill bg-danger py-2">{{ 'COMMERCIAL_INSURANCE.RATES.CITY.H1' | translate }}</div>
-          </div>
-          <div class="col-4">
-            <div class="header-pill bg-danger py-2">{{ 'COMMERCIAL_INSURANCE.RATES.CITY.H2' | translate }}</div>
-          </div>
-          <div class="col-4">
-            <div class="header-pill bg-danger py-2">{{ 'COMMERCIAL_INSURANCE.RATES.CITY.H3' | translate }}</div>
-          </div>
-        </div>
-
-        <div class="rates-rows">
-          @for (rate of rates; track rate.business_type; let i = $index) {
-          <div class="row g-2 text-center mb-2 align-items-center">
-            <div class="col-4">
-              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ rate.business_type }}
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ rate.coverage }}
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ rate.required_by }}
-              </div>
-            </div>
-          </div>
-          }
-        </div>
-
-        <!-- Footer Info -->
-        <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p></p>
-          <p class="last-updated">{{ 'COMMERCIAL_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
-        </div>
-        <div class="disclaimer mt-2">
-          <p class="mb-0"><strong>{{ 'COMMERCIAL_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translate }}:</strong> {{
-            'COMMERCIAL_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
-        </div>
-      </div>
-
-
-    </div>
-  </section>
-
-
-  <section class="cost-section py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-10">
-          <!-- Title -->
-          <h4 class="cost-title mb-4">{{ 'COMMERCIAL_INSURANCE.COST.TITLE' | translate }}</h4>
-
-          <!-- Description Content -->
-          <div class="cost-description">
-            <p class="mb-4">
-              {{ 'COMMERCIAL_INSURANCE.COST.DESC1' | translate }}
-            </p>
-
-            <p>
-              {{ 'COMMERCIAL_INSURANCE.COST.DESC2' | translate }}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="rates-section py-5">
-    <div class="container">
-      <!-- Header 1: City -->
-      <div class="rates-header mb-4">
-        <h5 class="fw-bold">{{ 'COMMERCIAL_INSURANCE.RATES.COMPANIES.TITLE' | translate }}</h5>
-        <p class="small mb-0">{{ 'COMMERCIAL_INSURANCE.RATES.COMPANIES.DESC' | translate }}</p>
+        <h5 class="fw-bold">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.RATES.COMPANY_RATES.TITLE' | translate }}</h5>
+        <p class="small mb-0">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.RATES.COMPANY_RATES.DESC' | translate }}</p>
       </div>
 
       <!-- Table 1: City -->
       <div class="rates-table-card p-4">
         <div class="row g-2 text-center text-white fw-bold mb-2">
           <div class="col-6">
-            <div class="header-pill bg-danger py-2">{{ 'COMMERCIAL_INSURANCE.RATES.COMPANIES.H1' | translate }}</div>
+            <div class="header-pill bg-danger py-2">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.RATES.COMPANY_RATES.H1' |
+              translate }}
+            </div>
           </div>
           <div class="col-6">
-            <div class="header-pill bg-danger py-2">{{ 'COMMERCIAL_INSURANCE.RATES.COMPANIES.H2' | translate }}</div>
+            <div class="header-pill bg-danger py-2">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.RATES.COMPANY_RATES.H2' |
+              translate }}
+            </div>
           </div>
         </div>
 
@@ -331,18 +259,109 @@
                 {{ rate.rate }}
               </div>
             </div>
+
           </div>
           }
         </div>
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'COMMERCIAL_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">MoneyGeek</a></p>
-          <p class="last-updated">{{ 'COMMERCIAL_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
+          <p></p>
+          <p class="last-updated">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
         </div>
         <div class="disclaimer mt-2">
-          <p class="mb-0"><strong>{{ 'COMMERCIAL_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translate }}:</strong> {{
-            'COMMERCIAL_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
+          <p class="mb-0"><strong>{{ 'PROFESSIONAL_LIABILITY_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translate
+              }}:</strong> {{
+            'PROFESSIONAL_LIABILITY_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <section class="cost-section py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10">
+          <!-- Title -->
+          <h4 class="cost-title mb-4">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.COST.TITLE' | translate }}</h4>
+
+          <!-- Description Content -->
+          <div class="cost-description">
+            <p class="mb-4">
+              {{ 'PROFESSIONAL_LIABILITY_INSURANCE.COST.DESC1' | translate }}
+            </p>
+
+            <p>
+              {{ 'PROFESSIONAL_LIABILITY_INSURANCE.COST.DESC2' | translate }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rates-section py-5">
+    <div class="container">
+      <!-- Header 1: City -->
+      <div class="rates-header mb-4">
+        <h5 class="fw-bold">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.RATES.INDUSTRY_RATES.TITLE' | translate }}</h5>
+        <p class="small mb-0">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.RATES.INDUSTRY_RATES.DESC' | translate }}</p>
+      </div>
+
+      <!-- Table 1: City -->
+      <div class="rates-table-card p-4">
+        <div class="row g-2 text-center text-white fw-bold mb-2">
+          <div class="col-4">
+            <div class="header-pill bg-danger py-2">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.RATES.INDUSTRY_RATES.H1' |
+              translate
+              }}</div>
+          </div>
+          <div class="col-4">
+            <div class="header-pill bg-danger py-2">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.RATES.INDUSTRY_RATES.H2' |
+              translate
+              }}</div>
+          </div>
+          <div class="col-4">
+            <div class="header-pill bg-danger py-2">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.RATES.INDUSTRY_RATES.H3' |
+              translate
+              }}</div>
+          </div>
+        </div>
+
+        <div class="rates-rows">
+          @for (rate of rates; track rate.industry; let i = $index) {
+          <div class="row g-2 text-center mb-2 align-items-center">
+            <div class="col-4">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ rate.industry }}
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ rate.monthly }}
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ rate.annual }}
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+
+        <!-- Footer Info -->
+        <div class="d-flex justify-content-between mt-4 rates-footer-info">
+          <p>{{ 'PROFESSIONAL_LIABILITY_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">MoneyGeek</a></p>
+          <p class="last-updated">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
+        </div>
+        <div class="disclaimer mt-2">
+          <p class="mb-0"><strong>{{ 'PROFESSIONAL_LIABILITY_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translate
+              }}:</strong> {{
+            'PROFESSIONAL_LIABILITY_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
         </div>
       </div>
 
@@ -352,9 +371,9 @@
 
   <section class="factors-impact-section">
     <div class="container">
-      <h2 class="section-title">{{ 'COMMERCIAL_INSURANCE.FACTORS_IMPACT.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.FACTORS_IMPACT.HEADER.TITLE' | translate }}</h2>
       <p class="intro-text">
-        {{ 'COMMERCIAL_INSURANCE.FACTORS_IMPACT.HEADER.DESC' | translate }}
+        {{ 'PROFESSIONAL_LIABILITY_INSURANCE.FACTORS_IMPACT.HEADER.DESC' | translate }}
       </p>
 
       <div class="row">
@@ -362,8 +381,9 @@
         <div class="col-lg-6">
           <div class="factor-item">
             <div class="factor-content">
-              <p> <strong>{{ ('COMMERCIAL_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }} :</strong>
-                {{ ('COMMERCIAL_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}</p>
+              <p> <strong>{{ ('PROFESSIONAL_LIABILITY_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }}
+                  :</strong>
+                {{ ('PROFESSIONAL_LIABILITY_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}</p>
             </div>
           </div>
         </div>
@@ -374,9 +394,9 @@
 
   <div class="factors-impact-section bg-white">
     <div class="container">
-      <h2 class="section-title">{{'COMMERCIAL_INSURANCE.DISCOUNT_FACTORS.HEADER.TITLE' | translate}}</h2>
+      <h2 class="section-title">{{'PROFESSIONAL_LIABILITY_INSURANCE.DISCOUNT_FACTORS.HEADER.TITLE' | translate}}</h2>
       <p class="intro-text">
-        {{'COMMERCIAL_INSURANCE.DISCOUNT_FACTORS.HEADER.DESC' | translate}}
+        {{'PROFESSIONAL_LIABILITY_INSURANCE.DISCOUNT_FACTORS.HEADER.DESC' | translate}}
       </p>
 
       <div class="row">
@@ -384,14 +404,15 @@
         <div class="col-lg-6">
           <div class="factor-card">
             <div class="factor-content">
-              <p> <strong>{{ ('COMMERCIAL_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translate }} :</strong>
-                {{ ('COMMERCIAL_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translate }}</p>
+              <p> <strong>{{ ('PROFESSIONAL_LIABILITY_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translate }}
+                  :</strong>
+                {{ ('PROFESSIONAL_LIABILITY_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translate }}</p>
 
               <!-- <h6 class="factor-title">
-                {{ ('COMMERCIAL_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }}
+                {{ ('PROFESSIONAL_LIABILITY_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }}
               </h6>
               <p class="factor-desc">
-                {{ ('COMMERCIAL_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}
+                {{ ('PROFESSIONAL_LIABILITY_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}
               </p> -->
             </div>
           </div>
@@ -404,27 +425,30 @@
 
   <section class="rates-section py-5">
     <div class="container container-max-1100 px-4">
-      <h2 class="section-title">{{ 'COMMERCIAL_INSURANCE.AGENT_COMPARISON.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.AGENT_COMPARISON.HEADER.TITLE' | translate }}</h2>
       <div class="intro-text">
-        <p>{{ 'COMMERCIAL_INSURANCE.AGENT_COMPARISON.HEADER.DESC' | translate }}</p>
+        <p>{{ 'PROFESSIONAL_LIABILITY_INSURANCE.AGENT_COMPARISON.HEADER.DESC' | translate }}</p>
       </div>
 
       <!-- Table Container -->
       <div class="rates-table-card p-4 mt-5">
         <div class="row g-2 text-center text-white fw-bold mb-2">
           <div class="col-4">
-            <div class="header-pill bg-danger py-2">{{ 'COMMERCIAL_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.FEATURE' |
+            <div class="header-pill bg-danger py-2">{{
+              'PROFESSIONAL_LIABILITY_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.FEATURE' |
               translate
               }}</div>
           </div>
           <div class="col-4">
-            <div class="header-pill bg-danger py-2">{{ 'COMMERCIAL_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.INDEPENDENT'
+            <div class="header-pill bg-danger py-2">{{
+              'PROFESSIONAL_LIABILITY_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.INDEPENDENT'
               |
               translate
               }}</div>
           </div>
           <div class="col-4">
-            <div class="header-pill bg-danger py-2">{{ 'COMMERCIAL_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.CAPTIVE' |
+            <div class="header-pill bg-danger py-2">{{
+              'PROFESSIONAL_LIABILITY_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.CAPTIVE' |
               translate
               }}</div>
           </div>
@@ -436,17 +460,18 @@
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('COMMERCIAL_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translate }}
+                {{ ('PROFESSIONAL_LIABILITY_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translate }}
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('COMMERCIAL_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translate }}
+                {{ ('PROFESSIONAL_LIABILITY_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translate
+                }}
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('COMMERCIAL_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translate }}
+                {{ ('PROFESSIONAL_LIABILITY_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translate }}
               </div>
             </div>
           </div>
@@ -458,16 +483,17 @@
 
   <section class="vehicle-types-section ">
     <div class="container px-4">
-      <h2 class="section-title">{{ 'COMMERCIAL_INSURANCE.INDUSTRY_COVERAGE.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.INDUSTRY_COVERAGE.HEADER.TITLE' | translate }}</h2>
       <div class="row g-4">
         @for (type of industryCoverageKeys; track type) {
         <div class="col-lg-4 col-md-6 col-sm-6">
           <div class="vehicle-type-card">
             <div class="icon-wrapper">
-              <i [class]="'COMMERCIAL_INSURANCE.INDUSTRY_COVERAGE.LIST.' + type + '.ICON' | translate"></i>
+              <i [class]="'PROFESSIONAL_LIABILITY_INSURANCE.INDUSTRY_COVERAGE.LIST.' + type + '.ICON' | translate"></i>
             </div>
-            <h6>{{ ('COMMERCIAL_INSURANCE.INDUSTRY_COVERAGE.LIST.' + type + '.TITLE') | translate }}</h6>
-            <p>{{ ('COMMERCIAL_INSURANCE.INDUSTRY_COVERAGE.LIST.' + type + '.DESCRIPTION') | translate }}</p>
+            <h6>{{ ('PROFESSIONAL_LIABILITY_INSURANCE.INDUSTRY_COVERAGE.LIST.' + type + '.TITLE') | translate }}</h6>
+            <p>{{ ('PROFESSIONAL_LIABILITY_INSURANCE.INDUSTRY_COVERAGE.LIST.' + type + '.DESCRIPTION') | translate }}
+            </p>
           </div>
         </div>
         }
@@ -479,7 +505,7 @@
     <div class="container py-5 mt-5">
       <div class="row mb-5 ">
         <div class="col-12">
-          <h3 class="heading">{{ 'COMMERCIAL_INSURANCE.SHOP_EVERY.HEADER.TITLE' | translate }}</h3>
+          <h3 class="heading">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.SHOP_EVERY.HEADER.TITLE' | translate }}</h3>
         </div>
       </div>
 
@@ -653,38 +679,39 @@
         </div>
 
         <div class="col-md-6 ps-md-5">
-          <h2 class="section-title mb-5">{{ 'COMMERCIAL_INSURANCE.INSURANCE_STEPS.HEADER.TITLE' | translate }}</h2>
+          <h2 class="section-title mb-5">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.INSURANCE_STEPS.HEADER.TITLE' | translate
+            }}</h2>
 
           <div class="timeline">
             <div class="timeline-item">
               <div class="dot"></div>
               <div class="content">
-                <h3>{{ 'COMMERCIAL_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.TITLE' | translate }}</h3>
-                <p>{{ 'COMMERCIAL_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translate }}</p>
+                <h3>{{ 'PROFESSIONAL_LIABILITY_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.TITLE' | translate }}</h3>
+                <p>{{ 'PROFESSIONAL_LIABILITY_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translate }}</p>
               </div>
             </div>
 
             <div class="timeline-item">
               <div class="dot"></div>
               <div class="content">
-                <h3>{{ 'COMMERCIAL_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.TITLE' | translate }}</h3>
-                <p>{{ 'COMMERCIAL_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.DESCRIPTION' | translate }}</p>
+                <h3>{{ 'PROFESSIONAL_LIABILITY_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.TITLE' | translate }}</h3>
+                <p>{{ 'PROFESSIONAL_LIABILITY_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.DESCRIPTION' | translate }}</p>
               </div>
             </div>
 
             <div class="timeline-item">
               <div class="dot"></div>
               <div class="content">
-                <h3>{{ 'COMMERCIAL_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.TITLE' | translate }}</h3>
-                <p>{{ 'COMMERCIAL_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.DESCRIPTION' | translate }}</p>
+                <h3>{{ 'PROFESSIONAL_LIABILITY_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.TITLE' | translate }}</h3>
+                <p>{{ 'PROFESSIONAL_LIABILITY_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.DESCRIPTION' | translate }}</p>
               </div>
             </div>
 
             <div class="timeline-item">
               <div class="dot"></div>
               <div class="content">
-                <h3>{{ 'COMMERCIAL_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.TITLE' | translate }}</h3>
-                <p>{{ 'COMMERCIAL_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.DESCRIPTION' | translate }}</p>
+                <h3>{{ 'PROFESSIONAL_LIABILITY_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.TITLE' | translate }}</h3>
+                <p>{{ 'PROFESSIONAL_LIABILITY_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.DESCRIPTION' | translate }}</p>
               </div>
             </div>
           </div>
@@ -696,14 +723,14 @@
 
   <section class="switch-steps-section">
     <div class="container px-4">
-      <h2 class="section-title">{{ 'COMMERCIAL_INSURANCE.SWITCH_STEPS.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.SWITCH_STEPS.HEADER.TITLE' | translate }}</h2>
 
       <div class="switch-steps-grid">
         @for (step of switchSteps; track step) {
         <div class="switch-card-wrapper">
           <div class="switch-card">
-            <h6>{{ 'COMMERCIAL_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE' | translate }}</h6>
-            <p>{{ 'COMMERCIAL_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION' | translate }}</p>
+            <h6>{{ 'PROFESSIONAL_LIABILITY_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE' | translate }}</h6>
+            <p>{{ 'PROFESSIONAL_LIABILITY_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION' | translate }}</p>
           </div>
         </div>
         }
@@ -713,7 +740,7 @@
 
   <section class="faq-section py-5">
     <div class="container">
-      <h2 class="faq-title mb-4">{{ 'COMMERCIAL_INSURANCE.FAQ_LIST.HEADER.TITLE' | translate }}</h2>
+      <h2 class="faq-title mb-4">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.FAQ_LIST.HEADER.TITLE' | translate }}</h2>
 
       <div class="accordion accordion-flush" id="faqAccordion">
 
@@ -722,13 +749,13 @@
           <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
               [attr.data-bs-target]="'#' + item" [attr.aria-controls]="item">
-              {{ 'COMMERCIAL_INSURANCE.FAQ_LIST.QUESTIONS.' + item + '.QUESTION' | translate }}
+              {{ 'PROFESSIONAL_LIABILITY_INSURANCE.FAQ_LIST.QUESTIONS.' + item + '.QUESTION' | translate }}
             </button>
           </h2>
 
           <div [id]="item" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
             <div class="accordion-body"
-              [innerHTML]="'COMMERCIAL_INSURANCE.FAQ_LIST.QUESTIONS.' + item + '.ANSWER' | translate">
+              [innerHTML]="'PROFESSIONAL_LIABILITY_INSURANCE.FAQ_LIST.QUESTIONS.' + item + '.ANSWER' | translate">
             </div>
           </div>
         </div>
@@ -743,9 +770,9 @@
       <div class="topSub">
         <div class="topSub2">
           <div class="h1">
-            {{ 'COMMERCIAL_INSURANCE.FREE_QUOTE.HEADER' | translate }}
+            {{ 'PROFESSIONAL_LIABILITY_INSURANCE.FREE_QUOTE.HEADER' | translate }}
           </div>
-          <p class="para">{{ 'COMMERCIAL_INSURANCE.FREE_QUOTE.DESCRIPTION' | translate }}</p>
+          <p class="para">{{ 'PROFESSIONAL_LIABILITY_INSURANCE.FREE_QUOTE.DESCRIPTION' | translate }}</p>
           <div class="selectable mt-4">
             @for (item of chips.slice(0, 3); track item.name) {
             <div class="chip">

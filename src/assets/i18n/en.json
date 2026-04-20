@@ -17593,7 +17593,8 @@
     },
     "WHY_DO_YOU_NEED": {
       "TITLE": "What is Professional Liability (E&O) Insurance and Why Do You Need It?",
-      "DESC": "Professional liability insurance, also known as Errors and Omissions (E&O) insurance, is a type of coverage designed to protect professionals and businesses against claims from clients arising from mistakes or negligence in the services they provide. This insurance helps cover the costs of legal defense and any settlements or judgments arising from these claims. Whether you are offering advice, a service, or an expert opinion, having professional liability insurance can shield you from financial harm resulting from alleged errors or omissions in your work. It is vital for businesses and professionals to have this coverage, especially in industries where even minor mistakes can lead to significant financial losses for clients, such as in medical, legal, or financial fields. Professional liability insurance helps safeguard your reputation and finances, ensuring you can continue your operations without the constant threat of lawsuits hanging over you.",
+      "DESC1": "Professional liability insurance, also known as Errors and Omissions (E&O) insurance, is a type of coverage designed to protect professionals and businesses against claims from clients arising from mistakes or negligence in the services they provide. This insurance helps cover the costs of legal defense and any settlements or judgments arising from these claims. Whether you are offering advice, a service, or an expert opinion, having professional liability insurance can shield you from financial harm resulting from alleged errors or omissions in your work.",
+      "DESC2": "It is vital for businesses and professionals to have this coverage, especially in industries where even minor mistakes can lead to significant financial losses for clients, such as in medical, legal, or financial fields. Professional liability insurance helps safeguard your reputation and finances, ensuring you can continue your operations without the constant threat of lawsuits hanging over you.",
       "SUB_TITLE": "The following are the reasons you need professional liability (E&O) insurance:",
       "LIST": [
         {
@@ -17629,13 +17630,9 @@
       "DESC2": "To protect against these risks, you need professional liability (E&O) insurance. This type of coverage is specifically designed to handle claims related to mistakes, negligence, or omissions in the services you provide. It helps cover legal defense costs, settlements, and judgments. For professionals in fields such as consulting, law, healthcare, and technology, having both general liability and professional liability insurance ensures comprehensive protection for your business."
     },
     "COVERAGES": {
-      "HEADER": {
-        "TITLE": "What Does Professional Liability (E&O) Insurance Cover in Texas?",
-        "DESC": "Professional liability (E&O) insurance in Texas protects businesses and professionals against claims arising from negligence, errors, or omissions in their services. It typically covers legal defense costs, attorney fees, settlements, and judgments related to client disputes. This coverage is essential for safeguarding your business from financial and reputational risks associated with professional mistakes."
-      },
       "STANDARD": {
-        "TITLE": "Standard Coverages (Included in Most Policies)",
-        "DESC": "Most professional liability insurance policies include essential protections against service-related risks, covering legal expenses, client claims, and professional mistakes.",
+        "TITLE": "What Does Professional Liability (E&O) Insurance Cover in Texas?",
+        "DESC": "Professional liability (E&O) insurance in Texas protects businesses and professionals against claims arising from negligence, errors, or omissions in their services. It typically covers legal defense costs, attorney fees, settlements, and judgments related to client disputes. This coverage is essential for safeguarding your business from financial and reputational risks associated with professional mistakes.",
         "LIST": [
           {
             "TITLE": "Negligence and Professional Errors",
@@ -17738,110 +17735,110 @@
     "NOT_COVERED": {
       "HEADER": {
         "TITLE": "What Does Professional Liability (E&O) Insurance NOT Cover in Texas?",
-        "DESC": "While professional liability insurance offers broad protection, it does not cover every type of risk. Certain exclusions apply, and businesses may need additional policies to ensure complete protection."
+        "DESC": "While professional liability (E&O) insurance offers essential protection for many professional risks, it does not cover everything. It excludes bodily injury, property damage, intentional wrongdoing, cyberattacks, and many other situations. Understanding these exclusions helps you choose the right additional coverage."
       },
-      "LIST": [
-        {
+      "ITEMS": {
+        "BODILY_INJURY": {
           "TITLE": "Bodily Injury and Property Damage",
           "DESC": "Not covered under E&O; these are handled by general liability insurance.",
           "ICON": "fas fa-house-damage"
         },
-        {
+        "FRAUD": {
           "TITLE": "Intentional Wrongdoing and Fraud",
           "DESC": "Deliberate dishonest or fraudulent acts are excluded from coverage.",
           "ICON": "fas fa-user-secret"
         },
-        {
+        "CRIMINAL_ACTS": {
           "TITLE": "Criminal Acts and Illegal Activities",
           "DESC": "Criminal behavior such as theft or embezzlement is not covered.",
           "ICON": "fas fa-gavel"
         },
-        {
+        "EMPLOYMENT_DISPUTES": {
           "TITLE": "Employment Disputes",
           "DESC": "Claims like discrimination or wrongful termination require EPLI coverage.",
           "ICON": "fas fa-user-times"
         },
-        {
+        "WORKER_INJURIES": {
           "TITLE": "Worker Injuries",
           "DESC": "Employee injuries are covered under workers' compensation insurance.",
           "ICON": "fas fa-briefcase-medical"
         },
-        {
+        "CYBER_ATTACKS": {
           "TITLE": "Cyber Attacks and Data Breaches",
           "DESC": "Requires separate cyber liability insurance coverage.",
           "ICON": "fas fa-shield-alt"
         },
-        {
+        "PATENT": {
           "TITLE": "Patent Infringement",
           "DESC": "Not included; requires intellectual property insurance.",
           "ICON": "fas fa-lightbulb"
         },
-        {
+        "ASSET_DAMAGE": {
           "TITLE": "Physical Asset Damage",
           "DESC": "Covered by commercial property insurance, not E&O.",
           "ICON": "fas fa-building"
         },
-        {
+        "PUNITIVE": {
           "TITLE": "Punitive Damages",
           "DESC": "Typically excluded as they are meant to punish wrongdoing.",
           "ICON": "fas fa-exclamation-triangle"
         },
-        {
+        "POLICY_PERIOD": {
           "TITLE": "Claims Outside Policy Period",
           "DESC": "Only claims made during the active policy period are covered.",
           "ICON": "fas fa-calendar-times"
         },
-        {
+        "UNREPORTED": {
           "TITLE": "Unreported Claims",
           "DESC": "Failure to report claims within the policy period can void coverage.",
           "ICON": "fas fa-bell-slash"
         },
-        {
+        "CONTRACT": {
           "TITLE": "Extended Contractual Liability",
           "DESC": "Liabilities beyond standard professional duty are often excluded.",
           "ICON": "fas fa-file-signature"
         },
-        {
+        "BANKRUPTCY": {
           "TITLE": "Business Insolvency or Bankruptcy",
           "DESC": "Financial failure of a business is not covered.",
           "ICON": "fas fa-chart-line-down"
         },
-        {
+        "WAR": {
           "TITLE": "War and Terrorism",
           "DESC": "Excluded and usually covered by specialized policies.",
           "ICON": "fas fa-fighter-jet"
         },
-        {
+        "NUCLEAR": {
           "TITLE": "Nuclear Hazards",
           "DESC": "Radiation or nuclear-related risks are excluded.",
           "ICON": "fas fa-radiation"
         },
-        {
+        "FINES": {
           "TITLE": "Government Fines and Penalties",
           "DESC": "Regulatory fines are not covered by E&O insurance.",
           "ICON": "fas fa-landmark"
         },
-        {
+        "PRIOR_CLAIMS": {
           "TITLE": "Known Prior Claims",
           "DESC": "Pre-existing known issues before policy start are excluded.",
           "ICON": "fas fa-history"
         },
-        {
+        "POLLUTION": {
           "TITLE": "Pollution and Environmental Damage",
           "DESC": "Requires environmental liability insurance.",
           "ICON": "fas fa-leaf"
         },
-        {
+        "PRODUCT": {
           "TITLE": "Product Liability Claims",
           "DESC": "Handled under product liability insurance.",
           "ICON": "fas fa-box"
         },
-        {
+        "ILLEGAL_PROFIT": {
           "TITLE": "Illegal Personal Profit",
           "DESC": "Gains from illegal activities are not covered.",
           "ICON": "fas fa-money-bill-wave"
         }
-      ]
+      }
     },
     "COST": {
       "TITLE": "How Much Does Professional Liability (E&O) Insurance Cost in Texas?",
@@ -18254,6 +18251,15 @@
         }
       }
     },
+    "IT_TECH_INSURANCE": {
+      "HEADER": {
+        "TITLE": "IT Professional or Tech Company? Here's What You Need"
+      },
+      "CONTENT": {
+        "DESC1": "As an IT professional or tech company, your services carry unique risks that standard insurance policies may not cover. You need professional liability (E&O) insurance to protect yourself from claims related to technology errors, missed deadlines, or failure to deliver services as promised. Whether you’re providing software development, tech support, or consulting, this coverage is essential in safeguarding your business from costly lawsuits.",
+        "DESC2": "Additionally, if your tech business handles sensitive client data or operates in industries with strict compliance requirements, you may need specialized coverage such as cyber liability insurance. This provides protection against data breaches, cyberattacks, and other digital security threats. Having the right combination of insurance ensures that your tech company can focus on innovation and growth without the fear of devastating legal or financial setbacks."
+      }
+    },
     "LANGUAGE_SUPPORT": {
       "HEADER": {
         "TITLE": "Hablamos Español / We Speak Your Language"
@@ -18337,8 +18343,8 @@
       }
     },
     "FREE_QUOTE": {
-      "HEADER": "Get a Free Flood Insurance Quote in Texas",
-      "DESCRIPTION": "Ready to protect your home from the unexpected? Get a free flood insurance quote today! Whether you're in a high-risk flood zone or want to secure additional coverage, A-State Insurance can help you find the best plan. Our team compares rates from the National Flood Insurance Program (NFIP) and private carriers to provide you with the most affordable options. Contact our team now for a personalized quote and start protecting your home and belongings from flood damage today!"
+      "HEADER": "Get a Free Professional Liability (E&O) Insurance Quote in Texas",
+      "DESCRIPTION": "Looking for professional liability insurance in Texas? A-State Insurance offers coverage options for various industries, including technology, medical, real estate, legal malpractice, and financial services. Getting a quote is simple! Start by filling out the form with your information to receive a free comparison quote. Once you’ve reviewed your options, choose the best plan for your business needs, and we’ll help you activate your coverage. Don't wait, secure the protection you need today."
     }
   }
 }

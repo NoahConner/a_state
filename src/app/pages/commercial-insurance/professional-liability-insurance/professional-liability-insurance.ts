@@ -251,7 +251,7 @@ export class ProfessionalLiabilityInsurance implements OnInit {
     'PRODUCT_LIABILITY',
     'ILLEGAL_PROFITS'
   ];
-  agentComparisonKeys = [
+  agentComparisonData = [
     'CARRIERS',
     'SHOP_RATE',
     'INDUSTRY_OPTIONS',
