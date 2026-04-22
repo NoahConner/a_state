@@ -45,6 +45,10 @@ import { GeneralLiabilityInsurance } from './pages/commercial-insurance/general-
 import { WorkersCompensationInsurance } from './pages/commercial-insurance/workers-compensation-insurance/workers-compensation-insurance';
 import { CommercialPropertyInsurance } from './pages/commercial-insurance/commercial-property-insurance/commercial-property-insurance';
 import { CommercialAutoInsurance } from './pages/commercial-insurance/commercial-auto-insurance/commercial-auto-insurance';
+import { BusinessOwnerInsurance } from './pages/commercial-insurance/business-owner-insurance/business-owner-insurance';
+import { EmploymentPracticesLiabilityInsurance } from './pages/commercial-insurance/employment-practices-liability-insurance/employment-practices-liability-insurance';
+import { CyberLiabilityInsurance } from './pages/commercial-insurance/cyber-liability-insurance/cyber-liability-insurance';
+import { BuildersRiskInsurance } from './pages/commercial-insurance/builders-risk-insurance/builders-risk-insurance';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -112,6 +116,10 @@ const routes: Routes = [
       { path: 'workers-compensation-insurance', component: WorkersCompensationInsurance },
       { path: 'commercial-property-insurance', component: CommercialPropertyInsurance },
       { path: 'commercial-auto-insurance', component: CommercialAutoInsurance },
+      { path: 'business-owners-policy-bop', component: BusinessOwnerInsurance },
+      { path: 'employment-practices-liability-insurance-epli', component: EmploymentPracticesLiabilityInsurance },
+      { path: 'cyber-liability-insurance', component: CyberLiabilityInsurance },
+      { path: 'builders-risk-construction-insurance', component: BuildersRiskInsurance },
     ]
   },
 
@@ -181,6 +189,10 @@ const routes: Routes = [
           { path: 'seguro-de-compensacion-de-trabajadores', component: WorkersCompensationInsurance },
           { path: 'seguro-de-propiedad-comercial', component: CommercialPropertyInsurance },
           { path: 'seguro-de-auto-comercial', component: CommercialAutoInsurance },
+          { path: 'seguro-de-propietarios-de-negocios-bop', component: BusinessOwnerInsurance },
+          { path: 'seguro-de-responsabilidad-de-practicas-laborales-epli', component: EmploymentPracticesLiabilityInsurance },
+          { path: 'seguro-de-responsabilidad-cibernetica', component: CyberLiabilityInsurance },
+          { path: 'seguro-de-construccion-builders-risk', component: BuildersRiskInsurance },
         ]
       },
       { path: 'seguros-de-vida', component: LifeInsurance },
@@ -379,5 +391,21 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   commercialAutoInsurance: {
     en: 'commercial-insurance/commercial-auto-insurance',
     es: 'seguros-comerciales/seguro-de-auto-comercial'
+  },
+  businessOwnerInsurance: {
+    en: 'commercial-insurance/business-owners-policy-bop',
+    es: 'seguros-comerciales/seguro-de-propietarios-de-negocios-bop'
+  },
+  employmentPracticesLiabilityInsurance: {
+    en: 'commercial-insurance/employment-practices-liability-insurance-epli',
+    es: 'seguros-comerciales/seguro-de-responsabilidad-de-practicas-laborales-epli'
+  },
+  cyberLiabilityInsurance: {
+    en: 'commercial-insurance/cyber-liability-insurance',
+    es: 'seguros-comerciales/seguro-de-responsabilidad-cibernetica'
+  },
+  buildersRiskInsurance: {
+    en: 'commercial-insurance/builders-risk-construction-insurance',
+    es: 'seguros-comerciales/seguro-de-construccion-builders-risk'
   },
 };

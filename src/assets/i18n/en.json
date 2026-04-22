@@ -31,6 +31,10 @@
     "WORKERS_COMPENSATION_INSURANCE": "Workers Compensation Insurance",
     "COMMERCIAL_PROPERTY_INSURANCE": "Commercial Property Insurance",
     "COMMERCIAL_AUTO_INSURANCE": "Commercial Auto Insurance",
+    "BUSINESS_OWNER_INSURANCE": "Business Owner Insurance Bop",
+    "EMPLOYMENT_PRACTICES_LIABILITY_INSURANCE": "Employment Practices Liability Insurance Epli",
+    "CYBER_LIABILITY_INSURANCE": "Cyber Liability Insurance",
+    "BUILDERS_RISK_INSURANCE": "Builders Risk Insurance",
     "OFFICE_LOCATOR": "Office Locator",
     "GET_A_QUOTE": "Get a Quote",
     "LANGUAGE": "Language"
@@ -21437,6 +21441,2528 @@
     "FREE_QUOTE": {
       "HEADER": "Get a Free Commercial Auto Insurance Quote in Texas",
       "DESCRIPTION": "Getting a commercial auto insurance quote with A-State Insurance is quick and easy. Start by getting in touch with our team for a free, no-obligation quote. We'll work with you to assess your business needs and provide customized coverage options. Once you've received your quote, our agents at A-State Insurance will guide you through selecting the right plan and activating your policy. Don't wait, protect your business with premium insurance brokers today!"
+    }
+  },
+  "BUSINESS_OWNER_POLICY_INSURANCE": {
+    "BANNER": {
+      "TITLE_LINE1": "Best & Affordable Business Owner’s Policy (BOP) in",
+      "TITLE_LINE2": "Texas — Starting from",
+      "TITLE_LINE3": "$73/Month",
+      "CHIPS": {
+        "STANDARD": "Retail Store",
+        "EMPLOYER_LIABILITY": "Restaurant and Food Service",
+        "OCCUPATIONAL_ACCIDENT": "Office and Professional Services",
+        "CONSTRUCTION": "Contractor and Trades",
+        "PEO": "Technology and IT Business",
+        "OTHER": "Other"
+      },
+      "FORM": {
+        "FULL_NAME": "Full Name",
+        "PHONE": "Phone Number",
+        "BUTTON": "Get Quote"
+      }
+    },
+    "WHY_DO_YOU_NEED": {
+      "TITLE": "What is a Business Owner's Policy (BOP) and Why Do You Need It?",
+      "DESC1": "A Business Owner’s Policy (BOP) is a bundled insurance solution that protects small and mid-sized businesses from common risks under a single plan. Instead of purchasing separate policies, a BOP combines essential coverages like property insurance and general liability into a single, more cost-effective package.",
+      "DESC2": "For business owners, unexpected events such as property damage, lawsuits, or business interruptions can disrupt operations and cause financial strain. A BOP provides a strong foundation of protection, helping you stay focused on running your business with confidence.",
+      "LIST": [
+        {
+          "TITLE": "Property Coverage for Business Assets",
+          "TEXT": "Covers physical assets like buildings, equipment, and inventory against risks such as fire, theft, or damage. Helps businesses recover quickly and continue operations without facing major financial setbacks or delays."
+        },
+        {
+          "TITLE": "General Liability Protection",
+          "TEXT": "Protects your business against claims involving bodily injury, property damage, or legal expenses. This coverage helps manage risks from everyday operations and safeguards your business reputation and financial stability."
+        },
+        {
+          "TITLE": "Business Interruption Coverage",
+          "TEXT": "Provides financial support if your business operations are paused due to covered events. It helps cover lost income, rent, and ongoing expenses while you work toward restoring normal operations."
+        },
+        {
+          "TITLE": "Cost-Effective Bundled Protection",
+          "TEXT": "Combines multiple essential coverages into one policy, often at a lower cost than purchasing them separately. This makes it a practical option for businesses looking for reliable protection within budget."
+        },
+        {
+          "TITLE": "Flexible Coverage for Growing Businesses",
+          "TEXT": "Designed to adapt as your business evolves, allowing adjustments in coverage based on changing risks, operations, or size. Ensures your protection stays relevant as your business continues to grow."
+        }
+      ]
+    },
+    "IS_BOP_REQUIRED": {
+      "TITLE": "Is a Business Owner's Policy Required in Texas?",
+      "DESC1": "A Business Owner’s Policy (BOP) is not legally required in Texas, but having the right insurance coverage is often essential for operating responsibly. While the state may not mandate a BOP specifically, many businesses are still expected to carry certain types of coverage, such as general liability or workers' compensation, depending on their operations and industry requirements.",
+      "DESC2": "In many cases, landlords, lenders, or client contracts may require proof of insurance before you can lease a space, secure funding, or start a project. Working with an experienced Texas insurance broker like A-State Insurance helps you understand what coverage is necessary for your situation and ensures your business stays protected, compliant, and prepared for unexpected risks."
+    },
+    "BOP_VS_GL_COMPARISON": {
+      "HEADER": {
+        "TITLE": "BOP vs. General Liability Insurance: What's the Difference?",
+        "DESC": "A Business Owner's Policy (BOP) combines general liability and property insurance into one plan, covering both legal risks and physical assets. General liability insurance protects only against claims for injuries or property damage to others. A BOP offers broader protection, making it a more complete solution for small businesses seeking both coverage types together."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Feature",
+          "BOP": "Business Owner's Policy (BOP)",
+          "GL": "General Liability Insurance"
+        },
+        "LIST": {
+          "WHAT_IT_IS": {
+            "FEATURE": "What It Is",
+            "BOP": "A bundled policy combining multiple coverages",
+            "GL": "A standalone liability-only policy"
+          },
+          "DESIGNED_FOR": {
+            "FEATURE": "Who It's Designed For",
+            "BOP": "Small to medium-sized businesses",
+            "GL": "Businesses of all sizes"
+          },
+          "GL_COVERAGE": {
+            "FEATURE": "General Liability Coverage",
+            "BOP": "Included",
+            "GL": "Included"
+          },
+          "PROPERTY_COVERAGE": {
+            "FEATURE": "Commercial Property Coverage",
+            "BOP": "Included",
+            "GL": "Not Included"
+          },
+          "BUSINESS_INTERRUPTION": {
+            "FEATURE": "Business Interruption Coverage",
+            "BOP": "Included",
+            "GL": "Not Included"
+          },
+          "EQUIPMENT_BREAKDOWN": {
+            "FEATURE": "Equipment Breakdown Coverage",
+            "BOP": "Often Included",
+            "GL": "Not Included"
+          },
+          "EMPLOYEE_DISHONESTY": {
+            "FEATURE": "Employee Dishonesty Coverage",
+            "BOP": "Often Included",
+            "GL": "Not Included"
+          },
+          "MONEY_SECURITIES": {
+            "FEATURE": "Money and Securities Coverage",
+            "BOP": "Often Included",
+            "GL": "Not Included"
+          },
+          "BODILY_INJURY": {
+            "FEATURE": "Bodily Injury to Third Parties",
+            "BOP": "Included",
+            "GL": "Included"
+          },
+          "PROPERTY_DAMAGE": {
+            "FEATURE": "Property Damage to Third Parties",
+            "BOP": "Included",
+            "GL": "Included"
+          },
+          "PERSONAL_AD_INJURY": {
+            "FEATURE": "Personal and Advertising Injury",
+            "BOP": "Included",
+            "GL": "Included"
+          },
+          "PRODUCTS_COMPLETED": {
+            "FEATURE": "Products and Completed Operations",
+            "BOP": "Included",
+            "GL": "Included"
+          },
+          "TENANT_LEGAL": {
+            "FEATURE": "Tenant Legal Liability",
+            "BOP": "Included",
+            "GL": "Included"
+          },
+          "BUILDING_STRUCTURE": {
+            "FEATURE": "Building and Structure Coverage",
+            "BOP": "Included",
+            "GL": "Not Included"
+          },
+          "BUSINESS_PERSONAL_PROPERTY": {
+            "FEATURE": "Business Personal Property Coverage",
+            "BOP": "Included",
+            "GL": "Not Included"
+          },
+          "INVENTORY_STOCK": {
+            "FEATURE": "Inventory and Stock Coverage",
+            "BOP": "Included",
+            "GL": "Not Included"
+          },
+          "CYBER_LIABILITY": {
+            "FEATURE": "Cyber Liability Coverage",
+            "BOP": "Sometimes Included",
+            "GL": "Not Included"
+          },
+          "COST_VS_SEPARATE": {
+            "FEATURE": "Cost vs. Buying Separately",
+            "BOP": "Lower — bundled discount applies",
+            "GL": "Higher — standalone policy only"
+          },
+          "FLEXIBILITY": {
+            "FEATURE": "Policy Flexibility",
+            "BOP": "Less flexible — bundled coverages",
+            "GL": "More flexible — standalone policy"
+          },
+          "ELIGIBILITY": {
+            "FEATURE": "Eligibility Requirements",
+            "BOP": "Stricter — not all businesses qualify",
+            "GL": "Broader — most businesses qualify"
+          },
+          "BEST_FOR": {
+            "FEATURE": "Best For",
+            "BOP": "Small businesses needing broad coverage",
+            "GL": "Businesses needing liability-only coverage"
+          },
+          "ADD_ON_OPTIONS": {
+            "FEATURE": "Add-On Options",
+            "BOP": "Wide variety of endorsements available",
+            "GL": "Wide variety of endorsements available"
+          },
+          "WORKERS_COMP": {
+            "FEATURE": "Workers' Compensation",
+            "BOP": "Not Included",
+            "GL": "Not Included"
+          },
+          "COMMERCIAL_AUTO": {
+            "FEATURE": "Commercial Auto Coverage",
+            "BOP": "Not Included",
+            "GL": "Not Included"
+          },
+          "PROFESSIONAL_LIABILITY": {
+            "FEATURE": "Professional Liability (E&O)",
+            "BOP": "Not Included",
+            "GL": "Not Included"
+          }
+        }
+      }
+    },
+    "RISKS_OF_NO_COVERAGE": {
+      "TITLE": "What Happens If I Don't Have Workers' Compensation Insurance in Texas?",
+      "DESC1": "If you choose not to carry workers' compensation insurance in Texas, your business faces several risks. Since Texas does not mandate this insurance, employers who opt out are considered 'non-subscribers' and are not protected by the no-fault system. This means that if an employee is injured at work, they can sue the business for damages. Non-subscriber employers may be required to cover medical expenses, lost wages, and additional legal fees from lawsuits, which can quickly escalate into significant financial burdens.",
+      "DESC2": "In addition to the risk of lawsuits, businesses without workers' compensation insurance may also struggle to attract and retain employees. Many workers prefer jobs that offer the security of workers' compensation coverage. Additionally, some industries, such as construction, may require proof of workers' compensation insurance before entering into contracts. Not having this coverage could limit business opportunities and harm your reputation in the marketplace."
+    },
+    "COVERAGES": {
+      "STANDARD": {
+        "TITLE": "What Does a Business Owner's Policy (BOP) Cover in Texas?",
+        "DESC": "A Business Owner’s Policy (BOP) in Texas typically covers property damage, general liability, and business interruption. It helps protect buildings, equipment, and inventory while also covering claims of injury or property damage caused to others. If operations are disrupted by a covered event, it can also replace lost income, helping businesses remain financially stable during recovery periods.",
+        "LIST": [
+          {
+            "TITLE": "General Liability Coverage",
+            "DESC": "Protects your business from claims involving bodily injury, property damage, and legal defense costs. It helps cover lawsuits from operations, ensuring financial protection, stability, and long-term business confidence.",
+            "ICON": "fas fa-shield-alt"
+          },
+          {
+            "TITLE": "Bodily Injury to Third Parties",
+            "DESC": "Helps pay medical expenses and legal costs if a customer or visitor is injured on your business premises, protecting your business from unexpected liability claims.",
+            "ICON": "fas fa-user-injured"
+          },
+          {
+            "TITLE": "Property Damage to Third Parties",
+            "DESC": "Covers costs if your business accidentally damages someone else’s property, including repair or replacement expenses during operations or on-site work.",
+            "ICON": "fas fa-home"
+          },
+          {
+            "TITLE": "Personal and Advertising Injury Coverage",
+            "DESC": "Protects against claims like defamation, copyright issues, or misleading advertising, covering legal defense and settlement costs.",
+            "ICON": "fas fa-bullhorn"
+          },
+          {
+            "TITLE": "Medical Payments to Injured Third Parties",
+            "DESC": "Pays for minor medical expenses regardless of fault, helping resolve small claims quickly and reduce the risk of lawsuits.",
+            "ICON": "fas fa-notes-medical"
+          },
+          {
+            "TITLE": "Products and Completed Operations Coverage",
+            "DESC": "Covers claims arising after a product is sold or a job is completed, including legal costs and settlements for damages caused later.",
+            "ICON": "fas fa-box-open"
+          },
+          {
+            "TITLE": "Tenant Legal Liability (Damage to Rented Premises)",
+            "DESC": "Protects your business if you accidentally damage a rented space due to fire, water, or other covered events.",
+            "ICON": "fas fa-building"
+          },
+          {
+            "TITLE": "Commercial Property Coverage",
+            "DESC": "Protects buildings, equipment, and inventory from risks such as fire, theft, and vandalism, helping businesses recover quickly.",
+            "ICON": "fas fa-warehouse"
+          },
+          {
+            "TITLE": "Building and Structure Coverage",
+            "DESC": "Covers physical structures including walls, roofs, and fixtures, helping pay for repairs or rebuilding after damage.",
+            "ICON": "fas fa-city"
+          },
+          {
+            "TITLE": "Business Personal Property (Furniture, Equipment, Supplies)",
+            "DESC": "Protects movable assets like furniture, machinery, and supplies from damage or theft, ensuring quick replacement.",
+            "ICON": "fas fa-chair"
+          },
+          {
+            "TITLE": "Inventory and Stock Coverage",
+            "DESC": "Covers loss or damage to products stored for sale, helping businesses restock quickly after incidents like fire or theft.",
+            "ICON": "fas fa-boxes"
+          },
+          {
+            "TITLE": "Tenant Improvements and Betterments",
+            "DESC": "Covers upgrades made to rented spaces such as fixtures and flooring, protecting your investment in improvements.",
+            "ICON": "fas fa-tools"
+          },
+          {
+            "TITLE": "Business Interruption / Loss of Income Coverage",
+            "DESC": "Provides financial support if business operations stop due to a covered event, helping replace lost income and pay expenses.",
+            "ICON": "fas fa-chart-line"
+          },
+          {
+            "TITLE": "Extra Expense Coverage",
+            "DESC": "Covers additional costs like temporary relocation or equipment rental to keep your business running during disruptions.",
+            "ICON": "fas fa-coins"
+          },
+          {
+            "TITLE": "Equipment Breakdown Coverage",
+            "DESC": "Protects against sudden breakdown of essential equipment such as HVAC systems, machinery, or computers.",
+            "ICON": "fas fa-cogs"
+          },
+          {
+            "TITLE": "Outdoor Signs and Signage Coverage",
+            "DESC": "Covers repair or replacement of business signage damaged by events like storms, fire, or vandalism.",
+            "ICON": "fas fa-sign"
+          },
+          {
+            "TITLE": "Data Breach and Cyber Liability Coverage",
+            "DESC": "Provides protection against cyberattacks and data breaches, covering recovery costs, legal fees, and reputation management.",
+            "ICON": "fas fa-shield-virus"
+          },
+          {
+            "TITLE": "Money and Securities Coverage",
+            "DESC": "Protects cash, checks, and financial documents from theft, robbery, or destruction.",
+            "ICON": "fas fa-money-bill-wave"
+          },
+          {
+            "TITLE": "Employee Dishonesty Coverage",
+            "DESC": "Covers losses caused by fraudulent or dishonest acts by employees, such as theft or embezzlement.",
+            "ICON": "fas fa-user-secret"
+          }
+        ]
+      }
+    },
+    "NOT_COVERED": {
+      "HEADER": {
+        "TITLE": "What Does a Business Owner’s Policy (BOP) NOT Cover in Texas?",
+        "DESC": "A Business Owner’s Policy (BOP) in Texas does not cover professional mistakes, employee injuries, commercial auto accidents, or certain high-risk liabilities. It also excludes flood and earthquake damage unless added separately. Intentional acts, cyber risks in some cases, and specialized exposures require additional insurance policies for complete protection."
+      },
+      "LIST": {
+        "PROFESSIONAL_ERRORS": {
+          "TITLE": "Professional Errors and Mistakes (E&O Insurance Required)",
+          "DESC": "BOP does not cover professional negligence, errors, or incorrect advice. Errors and omissions (E&O) insurance is required to protect against financial losses from professional liability claims.",
+          "ICON": "fas fa-user-edit"
+        },
+        "EMPLOYEE_INJURIES": {
+          "TITLE": "Employee Injuries and Illnesses (Workers' Compensation Required)",
+          "DESC": "Work-related injuries or illnesses affecting employees are excluded. Workers’ compensation insurance is needed to cover medical expenses, lost wages, and rehabilitation.",
+          "ICON": "fas fa-user-injured"
+        },
+        "EMPLOYMENT_DISPUTES": {
+          "TITLE": "Employment Disputes (EPLI Required)",
+          "DESC": "Claims involving discrimination, harassment, or wrongful termination are not covered. Employment Practices Liability Insurance (EPLI) is required for protection against employee lawsuits.",
+          "ICON": "fas fa-users-cog"
+        },
+        "CYBER_RISKS": {
+          "TITLE": "Cyber Attacks and Data Breaches (Cyber Liability Required)",
+          "DESC": "Cyber risks such as hacking, data theft, and system breaches are typically excluded. Cyber liability insurance covers recovery costs, legal fees, and notification expenses.",
+          "ICON": "fas fa-shield-virus"
+        },
+        "COMMERCIAL_AUTO": {
+          "TITLE": "Commercial Auto Accidents (Commercial Auto Insurance Required)",
+          "DESC": "Vehicles used for business purposes are not covered. Commercial auto insurance is required to protect against accidents and damages involving company vehicles.",
+          "ICON": "fas fa-car-crash"
+        },
+        "FLOOD_DAMAGE": {
+          "TITLE": "Flood Damage (Commercial Flood Insurance Required)",
+          "DESC": "Flood-related property damage is excluded. Separate flood insurance is required to protect buildings, inventory, and equipment from water damage.",
+          "ICON": "fas fa-water"
+        },
+        "EARTHQUAKE_DAMAGE": {
+          "TITLE": "Earthquake Damage (Earthquake Insurance Required)",
+          "DESC": "Damage caused by earthquakes is not included. Businesses need additional coverage for seismic-related losses and structural damage.",
+          "ICON": "fas fa-mountain"
+        },
+        "DIRECTORS_OFFICERS": {
+          "TITLE": "Executive and Management Decisions (D&O Insurance Required)",
+          "DESC": "Claims against directors or executives for business decisions are excluded. Directors and Officers (D&O) insurance provides protection for leadership liability.",
+          "ICON": "fas fa-user-tie"
+        },
+        "EMPLOYEE_BENEFITS": {
+          "TITLE": "Health and Disability Benefits for Employees",
+          "DESC": "Employee medical benefits and disability coverage are not included in a BOP. Group health insurance is required for employee healthcare protection.",
+          "ICON": "fas fa-heartbeat"
+        },
+        "INTENTIONAL_ACTS": {
+          "TITLE": "Intentional Acts and Fraud",
+          "DESC": "Deliberate damage, fraud, or illegal activities are excluded. Insurance only covers accidental and unforeseen losses.",
+          "ICON": "fas fa-user-secret"
+        },
+        "POLLUTION": {
+          "TITLE": "Pollution and Environmental Damage (Environmental Liability Required)",
+          "DESC": "Environmental contamination or pollution is not covered. Businesses handling hazardous materials need environmental liability insurance.",
+          "ICON": "fas fa-smog"
+        },
+        "LIQUOR_LIABILITY": {
+          "TITLE": "Liquor Liability (Unless Added)",
+          "DESC": "Alcohol-related incidents are excluded unless liquor liability coverage is added as an endorsement.",
+          "ICON": "fas fa-wine-glass"
+        },
+        "TOOLS_OFF_PREMISES": {
+          "TITLE": "Contractor Tools and Equipment Off-Premises (Inland Marine Required)",
+          "DESC": "Tools and equipment used off-site are not covered. Inland marine insurance protects assets in transit or at temporary locations.",
+          "ICON": "fas fa-toolbox"
+        },
+        "HIGH_RISK_BUSINESSES": {
+          "TITLE": "Large or High-Risk Businesses",
+          "DESC": "BOP policies are designed for small to mid-sized businesses and may exclude large or high-risk operations requiring customized coverage.",
+          "ICON": "fas fa-industry"
+        },
+        "PRODUCT_RECALL": {
+          "TITLE": "Product Recall Costs (Product Recall Insurance Required)",
+          "DESC": "Costs associated with product recalls are not covered. Product recall insurance helps manage expenses related to defective or unsafe products.",
+          "ICON": "fas fa-undo"
+        },
+        "PUNITIVE_DAMAGES": {
+          "TITLE": "Punitive Damages",
+          "DESC": "Punitive damages imposed by courts are generally excluded as they are considered penalties rather than insurable losses.",
+          "ICON": "fas fa-gavel"
+        },
+        "WAR_TERRORISM": {
+          "TITLE": "War and Terrorism",
+          "DESC": "Losses due to war or terrorism are excluded and require specialized insurance policies for protection.",
+          "ICON": "fas fa-bomb"
+        },
+        "NUCLEAR": {
+          "TITLE": "Nuclear Hazard",
+          "DESC": "Damage from nuclear reactions, radiation, or contamination is excluded due to catastrophic risk levels.",
+          "ICON": "fas fa-radiation"
+        },
+        "GOVERNMENT_ACTION": {
+          "TITLE": "Government Seizure or Demolition",
+          "DESC": "Losses from government actions like confiscation or demolition are not covered under a BOP.",
+          "ICON": "fas fa-landmark"
+        },
+        "EXCEEDING_LIMITS": {
+          "TITLE": "Losses Exceeding Policy Limits (Umbrella Insurance Required)",
+          "DESC": "Damages exceeding BOP coverage limits are not covered. Umbrella insurance provides extended liability protection beyond standard limits.",
+          "ICON": "fas fa-layer-group"
+        }
+      }
+    },
+    "COST": {
+      "TITLE": "How Much Does a Business Owner’s Policy (BOP) Cost in Texas?",
+      "DESC1": "A Business Owner’s Policy (BOP) in Texas typically costs around $73 to $148 per month, depending on factors such as business type, size, industry risk, payroll, and coverage limits. On average, businesses may pay about $877 per year ($73/month), while broader estimates place the cost closer to $1,781 annually ($148/month) for higher coverage or risk profiles.",
+      "DESC2": "On a national level, BOP insurance generally ranges from $52 to $147 per month. Costs vary by state, with Texas falling in the mid-range due to factors like industry risks, property values, and legal environment. High-risk industries tend to pay more, while low-risk, office-based businesses often benefit from lower premiums. Comparing multiple insurers is the best way to find the most cost-effective coverage tailored to your business."
+    },
+    "RATES": {
+      "COMPANY_RATES": {
+        "TITLE": "Average Business Owner’s Policy (BOP) Rates by Insurance Company in Texas",
+        "DESC": "In Texas, the cost of a Business Owner’s Policy (BOP) varies by insurance company, coverage limits, and business risk level. On average, most insurers price BOP coverage for small businesses between $50 and $150 per month, depending on industry and property value. National carriers like Progressive Commercial report an average of about $118 per month ($1,420 per year) for BOP policies.",
+        "H1": "Insurance Company",
+        "H2": "Annual Cost"
+      },
+      "INDUSTRY_RATES": {
+        "TITLE": "Average Business Owner’s Policy (BOP) Rates by Industry in Texas",
+        "DESC": "In Texas, Business Owner’s Policy (BOP) rates vary by industry based on risk, property value, and operations. Low-risk fields like consulting or IT usually pay less, while retail and healthcare fall in the middle range. High-risk industries such as construction, restaurants, and manufacturing pay higher premiums due to greater liability and property exposure in their day-to-day operations.",
+        "H1": "Business Type",
+        "H2": "Estimated Annual BOP Premium        "
+      },
+      "FOOTER": {
+        "SOURCE": "Source:",
+        "DISCLAIMER_LABEL": "Disclaimer",
+        "LAST_UPDATED": "Last Updated: March 2026",
+        "DISCLAIMER": " The information provided on this page is for general informational purposes only and may not reflect the most current updates. Coverage requirements, rates, and laws are subject to change. Please consult a licensed insurance agent for the most accurate and up-to-date information."
+      }
+    },
+    "HOW_MUCH_NEED": {
+      "TITLE": "How Much BOP Coverage Do You Actually Need?",
+      "DESC1": "The right amount of Business Owner’s Policy (BOP) coverage depends on your business size, industry, assets, and overall risk exposure. Businesses should evaluate the value of their property, equipment, and inventory, along with potential liability risks. A small office may only need basic coverage, while higher-risk businesses like restaurants or retail stores typically require higher limits due to increased customer traffic and inventory value.",
+      "DESC2": "Working with an experienced Texas insurance broker can help you accurately assess your risks and avoid being underinsured or overpaying. By comparing multiple insurance carriers, you can customize a BOP policy that fits your operations and provides balanced protection for property damage, liability claims, and business income loss without unnecessary coverage gaps."
+    },
+    "FACTORS_IMPACT": {
+      "HEADER": {
+        "TITLE": "Factors That Impact Your BOP Insurance Rates in Texas",
+        "DESC": "Business Owner’s Policy (BOP) insurance rates in Texas are influenced by several factors, including business type, location, revenue, property value, and number of employees. High-risk industries and businesses with higher exposure to liability or property damage typically pay more, while low-risk businesses benefit from lower premiums. Insurers also evaluate claims history, building condition, and selected coverage limits when determining your final cost."
+      },
+      "LIST": {
+        "INDUSTRY_TYPE": {
+          "TITLE": "Type of Business and Industry",
+          "DESC": "Different industries carry different risk levels, which directly affect BOP pricing based on liability exposure and likelihood of claims."
+        },
+        "BUSINESS_SIZE": {
+          "TITLE": "Size of Your Business (Revenue and Employees)",
+          "DESC": "Higher revenue and more employees increase overall exposure, leading to higher insurance premiums and coverage requirements."
+        },
+        "EMPLOYEES": {
+          "TITLE": "Number of Employees",
+          "DESC": "More employees increase operational risk and liability exposure, which can raise the cost of your BOP policy."
+        },
+        "EXPERIENCE": {
+          "TITLE": "Years in Business / Experience",
+          "DESC": "Established businesses often receive lower rates as insurers view them as more stable and less risky than new businesses."
+        },
+        "LOCATION": {
+          "TITLE": "Location of Your Business",
+          "DESC": "Location affects risk based on crime rates, weather exposure, and local insurance regulations, impacting overall premium costs."
+        },
+        "LOCATIONS_COUNT": {
+          "TITLE": "Number of Business Locations",
+          "DESC": "Operating in multiple locations increases exposure and complexity, resulting in higher insurance costs."
+        },
+        "PREMISES_SIZE": {
+          "TITLE": "Size of Business Premises (Square Footage)",
+          "DESC": "Larger premises increase replacement costs and risk exposure, which can raise insurance premiums."
+        },
+        "OWN_LEASE": {
+          "TITLE": "Ownership vs Leasing of Premises",
+          "DESC": "Owning a building requires more coverage, while leasing may reduce some responsibilities but still impacts policy structure."
+        },
+        "BUILDING_AGE": {
+          "TITLE": "Age and Condition of the Building",
+          "DESC": "Older buildings may have higher risk of damage or maintenance issues, increasing insurance costs."
+        },
+        "CONSTRUCTION_TYPE": {
+          "TITLE": "Construction Type of Building",
+          "DESC": "Buildings made with fire-resistant materials like brick or concrete typically have lower premiums than wood-frame structures."
+        },
+        "ROOF_CONDITION": {
+          "TITLE": "Roof Age, Type, and Condition",
+          "DESC": "Older or poorly maintained roofs increase the risk of damage, leading to higher insurance premiums."
+        },
+        "PRODUCT_SERVICE": {
+          "TITLE": "Type of Products or Services Offered",
+          "DESC": "Higher-risk products or services increase liability exposure and raise the cost of BOP coverage."
+        },
+        "PRODUCT_SALES": {
+          "TITLE": "Selling or Distributing Products",
+          "DESC": "Businesses that sell physical products face additional liability risks, increasing insurance costs."
+        },
+        "ALCOHOL": {
+          "TITLE": "Serving Alcohol",
+          "DESC": "Serving alcohol increases liability risk and often requires additional coverage, raising overall premiums."
+        },
+        "HAZARDOUS": {
+          "TITLE": "Handling Hazardous Materials",
+          "DESC": "Exposure to chemicals or hazardous materials increases risk and requires specialized coverage, impacting cost."
+        },
+        "PROPERTY_VALUE": {
+          "TITLE": "Value of Property and Inventory",
+          "DESC": "Higher property and inventory values increase potential loss exposure, leading to higher premiums."
+        },
+        "SECURITY": {
+          "TITLE": "Security Features",
+          "DESC": "Security systems like alarms and cameras reduce theft risk and may lower insurance costs."
+        },
+        "FIRE_PROTECTION": {
+          "TITLE": "Fire Protection Systems",
+          "DESC": "Sprinklers, alarms, and extinguishers reduce fire risk and can help lower premiums."
+        },
+        "CLAIMS_HISTORY": {
+          "TITLE": "Prior Claims History",
+          "DESC": "Frequent or severe past claims increase perceived risk and result in higher premiums."
+        },
+        "CREDIT": {
+          "TITLE": "Business Credit Score",
+          "DESC": "A strong credit score indicates financial stability and may lead to better insurance rates."
+        },
+        "COVERAGE_LIMIT": {
+          "TITLE": "Coverage Limits Selected",
+          "DESC": "Higher coverage limits increase protection but also raise the cost of your policy."
+        },
+        "DEDUCTIBLE": {
+          "TITLE": "Deductible Amount",
+          "DESC": "Higher deductibles lower premiums, while lower deductibles increase costs but reduce out-of-pocket expenses."
+        },
+        "SUBCONTRACTORS": {
+          "TITLE": "Use of Subcontractors",
+          "DESC": "Using subcontractors can increase liability exposure and may require additional coverage."
+        },
+        "BUNDLING": {
+          "TITLE": "Bundling with Other Policies",
+          "DESC": "Bundling multiple policies can reduce overall insurance costs through discounts."
+        },
+        "CARRIER": {
+          "TITLE": "Insurance Carrier Selection",
+          "DESC": "Different insurers price risk differently, so choosing the right carrier impacts your final premium."
+        }
+      }
+    },
+    "DISCOUNT_FACTORS": {
+      "HEADER": {
+        "TITLE": "How to Maximize Your Discounts and Lower Your BOP Premium",
+        "DESC": "You can reduce your Business Owner’s Policy (BOP) premium in Texas by improving risk factors, maintaining a clean claims history, and choosing the right coverage structure. Insurers reward businesses with strong safety measures, updated buildings, and lower exposure to risk. Installing security systems, fire protection devices, and bundling policies can significantly lower your overall insurance costs."
+      },
+      "LIST": {
+        "BUNDLING": {
+          "TITLE": "Multi-Policy / Bundling Discount",
+          "DESC": "Bundling multiple insurance policies with one carrier can reduce overall costs and unlock valuable multi-policy discounts.",
+          "ICON": "fas fa-layer-group"
+        },
+        "CLAIMS_FREE": {
+          "TITLE": "Claims-Free Discount",
+          "DESC": "A clean claims history shows lower risk, helping your business qualify for reduced premiums and better long-term pricing.",
+          "ICON": "fas fa-user-shield"
+        },
+        "LOYALTY": {
+          "TITLE": "Loyalty Discount",
+          "DESC": "Staying with the same insurer over time can result in loyalty discounts and lower renewal premiums.",
+          "ICON": "fas fa-handshake"
+        },
+        "NEW_BUSINESS": {
+          "TITLE": "New Business Discount",
+          "DESC": "Startups and new businesses may qualify for introductory discounts when beginning coverage.",
+          "ICON": "fas fa-rocket"
+        },
+        "NEW_BUILDING": {
+          "TITLE": "New Building Discount",
+          "DESC": "Newly constructed buildings often qualify for lower premiums due to modern safety standards and reduced risk.",
+          "ICON": "fas fa-building"
+        },
+        "NEW_ROOF": {
+          "TITLE": "New Roof Discount",
+          "DESC": "Recently replaced roofs reduce the risk of leaks and storm damage, helping lower insurance costs.",
+          "ICON": "fas fa-home"
+        },
+        "RENOVATED_BUILDING": {
+          "TITLE": "Recently Renovated Building Discount",
+          "DESC": "Updated systems and renovations reduce overall risk, leading to better insurance pricing.",
+          "ICON": "fas fa-tools"
+        },
+        "FIRE_RESISTIVE": {
+          "TITLE": "Fire-Resistive Construction Discount",
+          "DESC": "Using fire-resistant materials lowers the risk of damage and helps qualify for reduced premiums.",
+          "ICON": "fas fa-fire-extinguisher"
+        },
+        "SPRINKLER": {
+          "TITLE": "Sprinkler System Discount",
+          "DESC": "Fire sprinkler systems help control damage quickly and can significantly reduce insurance costs.",
+          "ICON": "fas fa-tint"
+        },
+        "FIRE_ALARM": {
+          "TITLE": "Fire Alarm and Smoke Detector Discount",
+          "DESC": "Early warning systems reduce fire risk and improve safety ratings, lowering premiums.",
+          "ICON": "fas fa-bell"
+        },
+        "SECURITY_SYSTEM": {
+          "TITLE": "Security System and Surveillance Discount",
+          "DESC": "Security cameras and alarm systems reduce theft risk and help lower insurance premiums.",
+          "ICON": "fas fa-video"
+        },
+        "ACCESS_CONTROL": {
+          "TITLE": "Deadbolt and Access Control Discount",
+          "DESC": "Strong locks and controlled access systems reduce burglary risk and improve insurance rates.",
+          "ICON": "fas fa-lock"
+        },
+        "WIND_MITIGATION": {
+          "TITLE": "Wind Mitigation / Storm Protection Discount",
+          "DESC": "Storm shutters and wind protection systems reduce damage risk and qualify for premium discounts.",
+          "ICON": "fas fa-wind"
+        },
+        "IMPACT_ROOF": {
+          "TITLE": "Impact-Resistant Roof Discount",
+          "DESC": "Impact-resistant roofing materials lower storm damage risk and improve insurance pricing.",
+          "ICON": "fas fa-house-damage"
+        },
+        "SAFETY_TRAINING": {
+          "TITLE": "Safety Training Program Discount",
+          "DESC": "Employee safety programs reduce accidents and help lower liability insurance premiums.",
+          "ICON": "fas fa-user-shield"
+        },
+        "SLIP_FALL": {
+          "TITLE": "Slip and Fall Prevention Program Discount",
+          "DESC": "Preventative safety measures reduce injury claims and improve your risk profile.",
+          "ICON": "fas fa-walking"
+        },
+        "BACKGROUND_CHECK": {
+          "TITLE": "Employee Background Check Discount",
+          "DESC": "Screening employees reduces fraud and misconduct risk, helping secure better rates.",
+          "ICON": "fas fa-id-card"
+        },
+        "HIGHER_DEDUCTIBLE": {
+          "TITLE": "Higher Deductible Discount",
+          "DESC": "Choosing a higher deductible lowers premiums but increases out-of-pocket costs during claims.",
+          "ICON": "fas fa-chart-bar"
+        },
+        "PAY_IN_FULL": {
+          "TITLE": "Pay-in-Full Discount",
+          "DESC": "Paying your premium annually can reduce administrative costs and qualify you for discounts.",
+          "ICON": "fas fa-money-bill-wave"
+        },
+        "AUTO_PAY": {
+          "TITLE": "Auto-Pay Discount",
+          "DESC": "Automatic payments can help qualify for small but consistent insurance discounts.",
+          "ICON": "fas fa-credit-card"
+        },
+        "PAPERLESS": {
+          "TITLE": "Paperless Billing Discount",
+          "DESC": "Switching to digital billing reduces processing costs and may lower your premium slightly.",
+          "ICON": "fas fa-file-alt"
+        },
+        "EARLY_RENEWAL": {
+          "TITLE": "Early Renewal Discount",
+          "DESC": "Renewing your policy early can help secure better rates and avoid coverage gaps.",
+          "ICON": "fas fa-calendar-alt"
+        },
+        "CREDIT_SCORE": {
+          "TITLE": "Good Business Credit Discount",
+          "DESC": "Strong credit indicates financial stability and can result in lower insurance costs.",
+          "ICON": "fas fa-chart-line"
+        },
+        "INDUSTRY_ASSOCIATION": {
+          "TITLE": "Industry Association Membership Discount",
+          "DESC": "Membership in professional organizations may unlock exclusive insurance discounts.",
+          "ICON": "fas fa-id-badge"
+        },
+        "POLICY_REVIEW": {
+          "TITLE": "Annual Policy Review Discount",
+          "DESC": "Regularly reviewing your policy helps identify savings opportunities and optimize coverage.",
+          "ICON": "fas fa-search"
+        }
+      }
+    },
+    "AGENT_COMPARISON": {
+      "HEADER": {
+        "TITLE": "Independent Insurance Agency vs. Captive Agent: Why Choice Saves You Money",
+        "DESC": "An independent insurance agency works with multiple carriers, allowing businesses to compare quotes and choose the best coverage at competitive rates. A captive agent represents only one insurance company, which limits options and pricing flexibility. In Texas, independent brokers like A-State Insurance provide more choices, better coverage options, and potential savings by shopping multiple carriers on behalf of clients."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Feature",
+          "INDEPENDENT": "Independent Agency (A-State)",
+          "CAPTIVE": "Captive Agent"
+        },
+        "LIST": {
+          "CARRIERS": {
+            "FEATURE": "Number of Carriers",
+            "INDEPENDENT": "Multiple (10+)",
+            "CAPTIVE": "One company only"
+          },
+          "SHOP_RATE": {
+            "FEATURE": "Can Shop for the Best Rate",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "No"
+          },
+          "INDUSTRY_OPTIONS": {
+            "FEATURE": "Industry-Specific Coverage Options",
+            "INDEPENDENT": "Wide variety across industries",
+            "CAPTIVE": "Limited to one carrier's options"
+          },
+          "RETAIL": {
+            "FEATURE": "Retail Store Coverage Options",
+            "INDEPENDENT": "Multiple carriers to compare",
+            "CAPTIVE": "One carrier only"
+          },
+          "RESTAURANT": {
+            "FEATURE": "Restaurant and Food Service Coverage Options",
+            "INDEPENDENT": "Multiple carriers to compare",
+            "CAPTIVE": "One carrier only"
+          },
+          "OFFICE": {
+            "FEATURE": "Office and Professional Services Coverage Options",
+            "INDEPENDENT": "Multiple carriers to compare",
+            "CAPTIVE": "One carrier only"
+          },
+          "CONTRACTOR": {
+            "FEATURE": "Contractor and Trades Coverage Options",
+            "INDEPENDENT": "Multiple carriers to compare",
+            "CAPTIVE": "One carrier only"
+          },
+          "TECH": {
+            "FEATURE": "Technology and IT Business Coverage Options",
+            "INDEPENDENT": "Multiple carriers to compare",
+            "CAPTIVE": "One carrier only"
+          },
+          "BUSINESS_INTERRUPTION": {
+            "FEATURE": "Business Interruption Coverage Options",
+            "INDEPENDENT": "Multiple carriers to compare",
+            "CAPTIVE": "One carrier only"
+          },
+          "EQUIPMENT_BREAKDOWN": {
+            "FEATURE": "Equipment Breakdown Coverage Options",
+            "INDEPENDENT": "Multiple carriers to compare",
+            "CAPTIVE": "One carrier only"
+          },
+          "CYBER": {
+            "FEATURE": "Cyber Liability Add-On Options",
+            "INDEPENDENT": "Multiple carriers to compare",
+            "CAPTIVE": "One carrier only"
+          },
+          "LIQUOR": {
+            "FEATURE": "Liquor Liability Add-On Options",
+            "INDEPENDENT": "Multiple carriers to compare",
+            "CAPTIVE": "One carrier only"
+          },
+          "INLAND_MARINE": {
+            "FEATURE": "Inland Marine Coverage Options",
+            "INDEPENDENT": "Multiple carriers to compare",
+            "CAPTIVE": "One carrier only"
+          },
+          "UMBRELLA": {
+            "FEATURE": "Umbrella Insurance Options",
+            "INDEPENDENT": "Multiple carriers to compare",
+            "CAPTIVE": "One carrier only"
+          },
+          "EMPLOYEE_DISHONESTY": {
+            "FEATURE": "Employee Dishonesty Coverage Options",
+            "INDEPENDENT": "Multiple carriers to compare",
+            "CAPTIVE": "One carrier only"
+          },
+          "MONEY_SECURITIES": {
+            "FEATURE": "Money and Securities Coverage Options",
+            "INDEPENDENT": "Multiple carriers to compare",
+            "CAPTIVE": "One carrier only"
+          },
+          "ELIGIBILITY": {
+            "FEATURE": "Coverage Eligibility Knowledge",
+            "INDEPENDENT": "Deep expertise across carriers",
+            "CAPTIVE": "Limited to one carrier's guidelines"
+          },
+          "LIMIT_FLEXIBILITY": {
+            "FEATURE": "Coverage Limit Flexibility",
+            "INDEPENDENT": "High flexibility across carriers",
+            "CAPTIVE": "Limited"
+          },
+          "DEDUCTIBLE_FLEXIBILITY": {
+            "FEATURE": "Deductible Flexibility",
+            "INDEPENDENT": "Multiple options across carriers",
+            "CAPTIVE": "Limited"
+          },
+          "BILINGUAL": {
+            "FEATURE": "Bilingual Support",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "Varies"
+          },
+          "PRICE": {
+            "FEATURE": "Price Competitiveness",
+            "INDEPENDENT": "Higher — due to carrier competition",
+            "CAPTIVE": "Lower — no competition"
+          },
+          "LOYALTY": {
+            "FEATURE": "Loyalty to Client",
+            "INDEPENDENT": "Always",
+            "CAPTIVE": "Loyalty to the company"
+          },
+          "SWITCHING": {
+            "FEATURE": "Switching Carriers Without Changing Agent",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "No"
+          },
+          "DISCOUNTS": {
+            "FEATURE": "Discount Availability",
+            "INDEPENDENT": "Across multiple carriers",
+            "CAPTIVE": "Limited to one carrier's discounts"
+          },
+          "CLAIMS_ADVOCACY": {
+            "FEATURE": "Claims Advocacy",
+            "INDEPENDENT": "Advocates for you",
+            "CAPTIVE": "Represents the insurance company"
+          },
+          "LOCAL_KNOWLEDGE": {
+            "FEATURE": "Local Texas Market Knowledge",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "Varies"
+          },
+          "CUSTOMIZATION": {
+            "FEATURE": "Policy Customization",
+            "INDEPENDENT": "High flexibility",
+            "CAPTIVE": "Limited"
+          }
+        }
+      }
+    },
+    "HIGH_RISK_ZONE": {
+      "HEADER": {
+        "TITLE": "Startup or Small Business? Here's Why a BOP is the Smart Choice"
+      },
+      "CONTENT": {
+        "DESC1": "For startups and small businesses, managing costs while building a strong foundation is critical. A Business Owner’s Policy (BOP) combines essential coverages like general liability and property insurance into one affordable package. Instead of juggling multiple policies, business owners get streamlined protection that covers common risks such as property damage, customer injuries, and basic business interruptions.",
+        "DESC2": "A BOP is especially valuable in the early stages when budgets are tight and risks are unpredictable. It helps protect your physical assets, income, and daily operations without overwhelming costs. With guidance from an experienced Texas insurance broker like A-State Insurance, startups can compare carriers and customize a policy that supports growth while keeping financial protection simple and cost-effective."
+      }
+    },
+    "LANGUAGE_SUPPORT": {
+      "HEADER": {
+        "TITLE": "Hablamos Español / We Speak Your Language"
+      },
+      "CONTENT": {
+        "DESC1": "At A-State Insurance, we understand that clear communication is essential when choosing the right coverage. That’s why we offer services in English, Spanish, and Hindi, ensuring every client fully understands their options and feels confident in their decisions. Our multilingual agents guide you through the process, answering questions and explaining policy details in your preferred language.",
+        "DESC2": "By providing support in multiple languages, we make insurance accessible to Texas families and business owners from diverse backgrounds. Whether discussing auto, home, commercial, or life insurance, our team ensures you receive personalized advice to help you select coverage that fits your needs, lifestyle, and budget, with complete clarity and confidence."
+      }
+    },
+    "ASTATE_DIFFERENTIATORS": {
+      "HEADER": {
+        "TITLE": "What Makes A-State Insurance Different"
+      },
+      "LIST": {
+        "LICENSED_BROKERS": {
+          "TITLE": "Texas Licensed Brokers",
+          "DESCRIPTION": "Our licensed brokers compare multiple carriers to find the best coverage and rates for every Texan’s unique needs."
+        },
+        "HISPANIC_LATINO_FRIENDLY": {
+          "TITLE": "Hispanic & Latino Friendly",
+          "DESCRIPTION": "We provide respectful, culturally aware support to Hispanic and Latino communities, making insurance easy to understand."
+        },
+        "YEARS_SERVING": {
+          "TITLE": "20+ Years Serving Texans",
+          "DESCRIPTION": "With over two decades of experience, we have the knowledge to protect your home, business, and personal well-being."
+        },
+        "CUSTOM_COVERAGE": {
+          "TITLE": "Custom Coverage Plans",
+          "DESCRIPTION": "We tailor insurance plans to your lifestyle, budget, and risks, ensuring comprehensive protection for your needs."
+        },
+        "ONLINE_LOCAL": {
+          "TITLE": "Online & Local",
+          "DESCRIPTION": "Access expert advice online or visit our local Texas office, offering convenient service with a personal touch."
+        },
+        "MULTILINGUAL_AGENTS": {
+          "TITLE": "Multilingual Agents",
+          "DESCRIPTION": "Our professional agents speak English, Spanish, and Hindi, helping you confidently navigate all your insurance options."
+        }
+      }
+    },
+    "INSURANCE_STEPS": {
+      "HEADER": {
+        "TITLE": "Get Covered in 4 Simple Steps"
+      },
+      "STEPS": {
+        "REACH_OUT": {
+          "TITLE": "Step 1 - Reach Out",
+          "DESCRIPTION": "Contact us to start your journey toward the right workers' compensation coverage."
+        },
+        "GET_ADVICE": {
+          "TITLE": "Step 2 - Get Advice",
+          "DESCRIPTION": "Receive expert advice tailored to your business needs and industry requirements."
+        },
+        "PICK_PLAN": {
+          "TITLE": "Step 3 - Pick Your Plan",
+          "DESCRIPTION": "Choose the coverage plan with our professionals that best suits your business and budget."
+        },
+        "WE_GOT_YOU": {
+          "TITLE": "Step 4 - We’ve Got You",
+          "DESCRIPTION": "We’ll take care of the rest, ensuring your coverage is set and your business is protected."
+        }
+      }
+    },
+    "SWITCH_STEPS": {
+      "HEADER": {
+        "TITLE": "How to Switch Your Business Owner’s Policy (BOP) to A-State Insurance"
+      },
+      "STEPS": {
+        "STEP_1": {
+          "TITLE": "Step 1: Get Your Free Comparison Quote",
+          "DESCRIPTION": "We start by collecting your current policy details and business information. Our agents compare top Texas carriers to find better coverage options and potential savings. You receive a clear, no-obligation quote showing how switching can improve your protection."
+        },
+        "STEP_2": {
+          "TITLE": "Step 2: Pick Your Plan and Activate",
+          "DESCRIPTION": "Once you review your options, we help you choose the right Business Owner’s Policy for your business. After selection, we handle activation smoothly so your coverage starts without gaps, ensuring continuous protection for your property and operations."
+        },
+        "STEP_3": {
+          "TITLE": "Step 3: Cancel Your Old Policy (We’ll Help!)",
+          "DESCRIPTION": "Once your new policy is active, we assist you in safely cancelling your old insurance. Our team ensures there are no coverage gaps or penalties, making the transition smooth, stress-free, and fully managed from start to finish."
+        }
+      }
+    },
+    "FREE_QUOTE": {
+      "HEADER": "Get a Free Business Owner’s Policy (BOP) Quote in Texas",
+      "DESCRIPTION": "Getting a free Business Owner’s Policy (BOP) quote with A-State Insurance is simple and designed for Texas business owners who want quick, reliable coverage options. Our licensed agents compare multiple top-rated insurance carriers to find the best protection for your business at competitive rates. You can request a quote online, by phone, or in person, making the process flexible and convenient for businesses of all types. We take time to understand your operations, risks, and budget."
+    }
+  },
+  "EMPLOYMENT_PRACTICES_LIABILITY_INSURANCE": {
+    "BANNER": {
+      "TITLE_LINE1": "Best & Affordable Employment Practices Liability (EPLI) Insurance in",
+      "TITLE_LINE2": "Texas — Starting from",
+      "TITLE_LINE3": "$125/Month",
+      "CHIPS": {
+        "WRONGFUL_TERMINATION": "Wrongful Termination",
+        "SEXUAL_HARASSMENT": "Sexual Harassment",
+        "DISCRIMINATION": "Discrimination",
+        "RETALIATION": "Retaliation",
+        "FAILURE_TO_PROMOTE": "Failure to Promote",
+        "OTHER": "Other"
+      },
+      "FORM": {
+        "FULL_NAME": "Full Name",
+        "PHONE": "Phone Number",
+        "BUTTON": "Get Quote"
+      }
+    },
+    "WHY_DO_YOU_NEED": {
+      "TITLE": "What is Employment Practices Liability (EPLI) Insurance and Why Do You Need It?",
+      "DESC1": "Employment Practices Liability Insurance (EPLI) is a type of business insurance that protects companies from claims made by employees, former employees, or job applicants. These claims usually involve workplace issues such as discrimination, harassment, wrongful termination, or retaliation.",
+      "DESC2": "In simple terms, EPLI helps cover legal costs, settlements, and damages if your business is accused of violating employee rights. For businesses seeking employment practices liability insurance, this coverage is essential given strict employment laws and rising workplace claims.",
+      "SUB_TITLE": "Even well-managed businesses can face employee disputes. Here’s why EPLI coverage is important:",
+      "LIST": [
+        {
+          "TITLE": "Employee Lawsuits Are Increasing",
+          "TEXT": "Workplace-related claims are more common than ever, and even a single complaint can turn into a costly legal case regardless of business size."
+        },
+        {
+          "TITLE": "Legal Costs Can Be Expensive",
+          "TEXT": "Attorney fees, court costs, and settlements can add up quickly. EPLI helps cover these expenses and protects business finances."
+        },
+        {
+          "TITLE": "Protection Against Common Claims",
+          "TEXT": "Covers frequent workplace claims such as wrongful termination, discrimination, harassment, and retaliation."
+        },
+        {
+          "TITLE": "Small Businesses Are Also at Risk",
+          "TEXT": "Any business with employees can face lawsuits, regardless of size, making EPLI essential for protection."
+        },
+        {
+          "TITLE": "Helps Maintain Business Stability",
+          "TEXT": "EPLI helps businesses handle legal disputes while minimizing disruption to operations and protecting reputation."
+        }
+      ]
+    },
+    "IS_EPLI_REQUIRED": {
+      "TITLE": "Is Employment Practices Liability Insurance Required in Texas?",
+      "DESC1": "Employment Practices Liability Insurance (EPLI) is not legally required in Texas. There is no state law that mandates businesses to carry this type of coverage. However, many businesses still choose EPLI to protect themselves from costly employee-related lawsuits.",
+      "DESC2": "Even though it is optional, EPLI is strongly recommended for any business with employees. Claims involving discrimination, harassment, or wrongful termination can lead to significant legal expenses. Since these risks are not covered under general liability insurance, EPLI helps safeguard your business finances and reputation."
+    },
+    "EPLI_VS_GL_COMPARISON": {
+      "HEADER": {
+        "TITLE": "What is the Difference Between Employment Practices Liability Insurance (EPLI) and General Liability Insurance?",
+        "DESC": "Employment Practices Liability Insurance (EPLI) and General Liability Insurance both protect businesses, but they cover different types of risks. EPLI focuses on employee-related claims such as harassment or wrongful termination, while General Liability covers third-party injuries or property damage. Understanding the difference helps businesses choose the right protection for workplace and public-facing risks."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Feature",
+          "EPLI": "EPLI Insurance",
+          "GL": "General Liability Insurance"
+        },
+        "LIST": {
+          "WHAT_IT_COVERS": {
+            "FEATURE": "What It Covers",
+            "EPLI": "Employee claims such as harassment, discrimination, and wrongful termination",
+            "GL": "Third-party bodily injury and property damage"
+          },
+          "WHO_IT_PROTECTS": {
+            "FEATURE": "Who It Protects Against",
+            "EPLI": "Employees, former employees, and job applicants",
+            "GL": "Customers, vendors, and the general public"
+          },
+          "CLAIM_EXAMPLES": {
+            "FEATURE": "Claim Examples",
+            "EPLI": "Wrongful termination, retaliation, harassment",
+            "GL": "Slip and fall, property damage, advertising injury"
+          },
+          "DEFENSE_COSTS": {
+            "FEATURE": "Defense Costs",
+            "EPLI": "Covers legal fees for employment-related lawsuits",
+            "GL": "Covers legal fees for third-party injury or damage claims"
+          },
+          "REQUIRED_BY_LAW": {
+            "FEATURE": "Required by Law",
+            "EPLI": "Not required in Texas",
+            "GL": "Often required by landlords or contracts"
+          },
+          "HR_DISPUTES": {
+            "FEATURE": "Covers HR Disputes",
+            "EPLI": "Yes",
+            "GL": "No"
+          },
+          "PHYSICAL_INJURY": {
+            "FEATURE": "Covers Physical Injuries",
+            "EPLI": "No",
+            "GL": "Yes"
+          },
+          "WHO_NEEDS_IT": {
+            "FEATURE": "Who Needs It",
+            "EPLI": "Any business with employees",
+            "GL": "Nearly every business regardless of size"
+          }
+        }
+      }
+    },
+    "EMPLOYEE_LAWSUIT_RISK": {
+      "TITLE": "Can a Small Business in Texas Really Be Sued by an Employee?",
+      "DESC1": "Yes, a small business in Texas can absolutely be sued by an employee. Even if your company has only a few workers, employees still have legal rights under both state and federal laws. They can file lawsuits for issues such as discrimination, harassment, wrongful termination, or unsafe working conditions.",
+      "DESC2": "While some laws apply only after a certain number of employees, that does not fully protect small businesses. Claims can also come from former employees or job applicants. This makes employment-related legal risk broader than many business owners expect, even for very small companies."
+    },
+    "COVERAGES": {
+      "STANDARD": {
+        "TITLE": "What Does Employment Practices Liability (EPLI) Insurance Cover in Texas?",
+        "DESC": "Employment Practices Liability Insurance (EPLI) in Texas protects businesses against claims related to workplace issues and employee rights. It helps cover legal costs, defense expenses, and compensatory damages arising from employment disputes such as wrongful termination, discrimination, or harassment.",
+        "LIST": [
+          {
+            "TITLE": "Wrongful Termination",
+            "DESC": "Protects against claims alleging an employee was fired unfairly or without proper cause. It helps cover legal defense costs, settlements, and court judgments.",
+            "ICON": "fas fa-user-times"
+          },
+          {
+            "TITLE": "Workplace Harassment",
+            "DESC": "Covers claims involving verbal, physical, or sexual harassment in the workplace. It helps pay legal fees and damages from employee complaints of misconduct or hostile behavior.",
+            "ICON": "fas fa-user-shield"
+          },
+          {
+            "TITLE": "Discrimination",
+            "DESC": "Provides protection against allegations of unfair treatment based on race, gender, age, disability, or other protected classes. It covers legal defense and settlement costs.",
+            "ICON": "fas fa-balance-scale"
+          },
+          {
+            "TITLE": "Retaliation",
+            "DESC": "Covers claims that an employer took adverse action after an employee reported misconduct or exercised legal rights. It helps cover defense costs and potential damages.",
+            "ICON": "fas fa-hand-paper"
+          },
+          {
+            "TITLE": "Failure to Hire or Promote",
+            "DESC": "Protects against claims that a candidate was unfairly denied employment or promotion opportunities. It covers legal expenses and settlement costs.",
+            "ICON": "fas fa-user-plus"
+          },
+          {
+            "TITLE": "Wrongful Discipline or Demotion",
+            "DESC": "Covers claims involving unfair disciplinary actions or unjustified demotions. It helps cover legal defense and damages awarded to employees.",
+            "ICON": "fas fa-user-cog"
+          },
+          {
+            "TITLE": "Breach of Employment Contract",
+            "DESC": "Provides coverage if an employer is accused of violating employment agreement terms. It helps cover legal fees and settlement costs.",
+            "ICON": "fas fa-file-contract"
+          },
+          {
+            "TITLE": "Defamation or Invasion of Privacy",
+            "DESC": "Covers claims involving false statements or improper disclosure of employee information. It helps pay for legal defense and reputational damages.",
+            "ICON": "fas fa-user-secret"
+          },
+          {
+            "TITLE": "Hostile Work Environment",
+            "DESC": "Protects against claims that workplace conditions were abusive, intimidating, or offensive. It helps cover legal costs and damages.",
+            "ICON": "fas fa-exclamation-triangle"
+          },
+          {
+            "TITLE": "Third-Party Employment Claims",
+            "DESC": "Extends coverage to claims made by non-employees such as clients or vendors alleging workplace-related misconduct.",
+            "ICON": "fas fa-users"
+          }
+        ]
+      }
+    },
+    "NOT_COVERED": {
+      "HEADER": {
+        "TITLE": "What Does Employment Practices Liability (EPLI) Insurance NOT Cover in Texas?",
+        "DESC": "Employment Practices Liability Insurance (EPLI) in Texas does not cover every type of workplace-related risk. Certain exclusions apply, including intentional wrongdoing, criminal acts, wage disputes, and regulatory penalties. These risks are typically handled by other insurance policies or legal compliance programs."
+      },
+      "LIST": {
+        "WAGE_HOUR": {
+          "TITLE": "Wage and Hour Violations",
+          "DESC": "Claims involving unpaid wages, overtime disputes, or employee misclassification are excluded. These issues are typically governed by labor laws and require separate compliance or legal protection.",
+          "ICON": "fas fa-money-check-alt"
+        },
+        "BODILY_INJURY_PROPERTY_DAMAGE": {
+          "TITLE": "Bodily Injury and Property Damage",
+          "DESC": "Physical injuries to employees or damage to property are not covered under EPLI. These risks are handled by general liability or workers’ compensation insurance.",
+          "ICON": "fas fa-user-injured"
+        },
+        "WORKERS_COMP": {
+          "TITLE": "Workers' Compensation Claims",
+          "DESC": "Work-related injuries or illnesses are excluded. Workers’ compensation insurance is required to cover medical expenses, lost wages, and rehabilitation benefits.",
+          "ICON": "fas fa-briefcase-medical"
+        },
+        "ERISA": {
+          "TITLE": "ERISA and Employee Benefit Claims",
+          "DESC": "Claims related to employee benefit plans such as health insurance or retirement plans are excluded and typically require fiduciary liability coverage.",
+          "ICON": "fas fa-file-contract"
+        },
+        "CRIMINAL_ACTS": {
+          "TITLE": "Intentional Criminal Acts",
+          "DESC": "Fraud, assault, or other illegal actions committed intentionally are not covered under EPLI policies.",
+          "ICON": "fas fa-user-secret"
+        },
+        "PRIOR_KNOWN_CLAIMS": {
+          "TITLE": "Prior Known Claims or Lawsuits",
+          "DESC": "Any claims or lawsuits known before the policy starts are excluded from coverage.",
+          "ICON": "fas fa-history"
+        },
+        "WARN_ACT": {
+          "TITLE": "WARN Act Violations",
+          "DESC": "Claims related to mass layoffs or business closures under federal notice laws are excluded and require separate legal compliance planning.",
+          "ICON": "fas fa-exclamation-triangle"
+        },
+        "UNEMPLOYMENT": {
+          "TITLE": "Unemployment Insurance Claims",
+          "DESC": "Disputes involving unemployment benefits or eligibility are not covered and are handled through state unemployment systems.",
+          "ICON": "fas fa-user-clock"
+        },
+        "LABOR_RELATIONS": {
+          "TITLE": "Labor Relations and Union Activities",
+          "DESC": "Issues involving unions, collective bargaining, or labor disputes are excluded from EPLI coverage.",
+          "ICON": "fas fa-users-cog"
+        },
+        "CONTRACTUAL_LIABILITY": {
+          "TITLE": "Contractual Liability",
+          "DESC": "Liability arising from breach of contract or failure to meet contractual obligations is generally not covered.",
+          "ICON": "fas fa-file-signature"
+        }
+      }
+    },
+    "COST": {
+      "TITLE": "How Much Does Employment Practices Liability (EPLI) Insurance Cost in Texas?",
+      "DESC1": "The cost of Employment Practices Liability (EPLI) insurance in Texas varies based on business size, industry, number of employees, and risk exposure. On average, small businesses typically pay between $150 and $250 per month, with many policies averaging around $222 per month or approximately $2,600 per year.",
+      "DESC2": "Lower-risk businesses may pay closer to $150 per month, while larger companies or those with higher employee counts can pay significantly more. Compared to states like California or New York, Texas generally has more affordable EPLI rates due to fewer regulatory pressures and lower litigation frequency, making coverage more cost-effective while still providing strong protection."
+    },
+    "HOW_MUCH_NEED": {
+      "TITLE": "How Much Employment Practices Liability (EPLI) Coverage Do You Actually Need?",
+      "DESC1": "The right amount of Employment Practices Liability (EPLI) coverage depends on your business size, number of employees, industry type, and overall risk exposure. Businesses with more employees or higher turnover face greater exposure to workplace claims such as harassment, discrimination, or wrongful termination.",
+      "DESC2": "Small businesses may only need basic EPLI coverage limits, while larger companies or those in high-risk industries may require higher limits for stronger protection. Working with an experienced Texas insurance broker helps you evaluate your risk and choose appropriate coverage without overpaying or leaving gaps in protection."
+    },
+    "FACTORS_IMPACT": {
+      "HEADER": {
+        "TITLE": "Factors That Impact Your Employment Practices Liability (EPLI) Insurance Rates in Texas",
+        "DESC": "EPLI insurance rates in Texas are influenced by several key factors, including business size, industry type, employee count, claims history, and internal HR practices. Insurers assess how likely your business is to face employee-related claims such as harassment, discrimination, or wrongful termination when determining your premium."
+      },
+      "LIST": {
+        "EMPLOYEES": {
+          "TITLE": "Number of Employees",
+          "DESC": "A larger workforce increases exposure to potential employee claims, which can raise EPLI insurance costs."
+        },
+        "INDUSTRY_TYPE": {
+          "TITLE": "Industry Type",
+          "DESC": "High-risk industries with frequent workplace disputes or turnover typically pay higher EPLI premiums."
+        },
+        "CLAIMS_HISTORY": {
+          "TITLE": "Claims History",
+          "DESC": "Previous employment-related claims indicate higher risk, often resulting in increased insurance premiums."
+        },
+        "TURNOVER_RATE": {
+          "TITLE": "Employee Turnover Rate",
+          "DESC": "High turnover can increase disputes and claims, leading insurers to consider the business higher risk."
+        },
+        "HR_POLICIES": {
+          "TITLE": "HR Policies and Procedures",
+          "DESC": "Strong HR systems reduce legal exposure and can help lower EPLI insurance costs."
+        },
+        "TRAINING": {
+          "TITLE": "Anti-Harassment Training Programs",
+          "DESC": "Regular employee training demonstrates proactive risk management and may reduce insurance premiums."
+        },
+        "EMPLOYEE_HANDBOOK": {
+          "TITLE": "Employee Handbook Quality",
+          "DESC": "A clear and well-documented handbook improves compliance and helps reduce workplace disputes."
+        },
+        "DEDUCTIBLE": {
+          "TITLE": "Deductible Amount",
+          "DESC": "Higher deductibles reduce insurer risk and can lower monthly or annual premium costs."
+        },
+        "COVERAGE_LIMIT": {
+          "TITLE": "Coverage Limits Selected",
+          "DESC": "Higher coverage limits increase protection but also raise overall EPLI insurance costs."
+        },
+        "LOCATION": {
+          "TITLE": "Business Location in Texas",
+          "DESC": "Location affects pricing due to local labor laws, litigation trends, and regional risk exposure."
+        },
+        "COMPLIANCE": {
+          "TITLE": "Regulatory Compliance History",
+          "DESC": "Businesses with strong compliance records are viewed as lower risk and may receive better pricing."
+        },
+        "HIRING_PRACTICES": {
+          "TITLE": "Hiring Practices",
+          "DESC": "Structured and fair hiring processes reduce discrimination risks and help lower insurance premiums."
+        }
+      }
+    },
+    "DISCOUNT_FACTORS": {
+      "HEADER": {
+        "TITLE": "How to Maximize Your Discounts and Lower Your EPLI Premium",
+        "DESC": "You can reduce your Employment Practices Liability (EPLI) insurance premium in Texas by improving workplace policies, strengthening HR compliance, and reducing employment-related risks. Insurers reward businesses that implement clear workplace procedures, provide regular employee training, and maintain strong documentation. Choosing the right coverage structure, working with an independent agent, and maintaining a clean claims history can significantly lower your overall EPLI costs."
+      },
+      "LIST": {
+        "ANTI_HARASSMENT_POLICY": {
+          "TITLE": "Implement a Written Anti-Harassment Policy",
+          "DESC": "A clearly documented anti-harassment policy helps define workplace behavior expectations and shows insurers that your business actively manages employment-related risks.",
+          "ICON": "fas fa-user-shield"
+        },
+        "EMPLOYEE_TRAINING": {
+          "TITLE": "Conduct Regular Employee Training",
+          "DESC": "Ongoing training reduces workplace incidents and helps employees understand company policies, improving overall risk management and compliance.",
+          "ICON": "fas fa-chalkboard-teacher"
+        },
+        "EMPLOYEE_HANDBOOK": {
+          "TITLE": "Maintain an Updated Employee Handbook",
+          "DESC": "A current employee handbook ensures compliance with employment laws and clearly defines workplace rules, reducing disputes and misunderstandings.",
+          "ICON": "fas fa-book"
+        },
+        "COMPLAINT_PROCESS": {
+          "TITLE": "Establish an Internal Complaint Procedure",
+          "DESC": "A formal complaint process allows issues to be addressed early, helping prevent escalation into costly employment-related lawsuits.",
+          "ICON": "fas fa-comments"
+        },
+        "TURNOVER_REDUCTION": {
+          "TITLE": "Reduce Employee Turnover Rate",
+          "DESC": "Lower turnover creates workplace stability and reduces the likelihood of employment disputes and claims.",
+          "ICON": "fas fa-users"
+        },
+        "BUNDLING": {
+          "TITLE": "Bundle EPLI with Other Business Policies",
+          "DESC": "Bundling multiple insurance policies can help reduce overall costs and unlock multi-policy discounts.",
+          "ICON": "fas fa-layer-group"
+        },
+        "HIGHER_DEDUCTIBLE": {
+          "TITLE": "Choose a Higher Deductible",
+          "DESC": "A higher deductible reduces insurer risk and can significantly lower your EPLI premium.",
+          "ICON": "fas fa-chart-bar"
+        },
+        "INDEPENDENT_AGENT": {
+          "TITLE": "Work with an Independent Insurance Agent",
+          "DESC": "Independent agents compare multiple carriers to find better pricing and more suitable EPLI coverage options.",
+          "ICON": "fas fa-handshake"
+        },
+        "CLAIMS_HISTORY": {
+          "TITLE": "Maintain a Clean Claims History",
+          "DESC": "A clean claims history signals lower risk to insurers and helps secure more competitive EPLI premium rates.",
+          "ICON": "fas fa-user-check"
+        },
+        "HR_SERVICES_PEO": {
+          "TITLE": "Use a Professional HR Service or PEO",
+          "DESC": "Professional HR services or PEOs improve compliance, reduce administrative errors, and help prevent employment-related claims.",
+          "ICON": "fas fa-building"
+        }
+      }
+    },
+    "AGENT_COMPARISON": {
+      "HEADER": {
+        "TITLE": "Independent Insurance Agency vs. Captive Agent: Why Choice Saves You Money",
+        "DESC": "An independent insurance agency works with multiple carriers, allowing businesses to compare quotes and choose the best coverage at competitive rates. A captive agent represents only one insurance company, which limits options and pricing flexibility. In Texas, independent brokers like A-State Insurance provide more choices, better coverage options, and potential savings by shopping multiple carriers on behalf of clients."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Feature",
+          "INDEPENDENT": "Independent Insurance Agency",
+          "CAPTIVE": "Captive Agent"
+        },
+        "LIST": {
+          "CARRIERS": {
+            "FEATURE": "Carrier Access",
+            "INDEPENDENT": "Works with 10+ EPLI carriers",
+            "CAPTIVE": "Represents one carrier only"
+          },
+          "QUOTE_COMPARISON": {
+            "FEATURE": "Quote Comparison",
+            "INDEPENDENT": "Shops multiple carriers for the best price",
+            "CAPTIVE": "Offers one quote from one carrier"
+          },
+          "COVERAGE_OPTIONS": {
+            "FEATURE": "Coverage Options",
+            "INDEPENDENT": "Wide range of EPLI policy options",
+            "CAPTIVE": "Limited to one carrier's offerings"
+          },
+          "PRICING": {
+            "FEATURE": "Pricing Flexibility",
+            "INDEPENDENT": "More competitive due to market access",
+            "CAPTIVE": "Fixed pricing, no shopping around"
+          },
+          "CONFLICT_OF_INTEREST": {
+            "FEATURE": "Conflict of Interest",
+            "INDEPENDENT": "Works in your best interest",
+            "CAPTIVE": "Works in the carrier's best interest"
+          },
+          "HARD_TO_PLACE": {
+            "FEATURE": "Hard-to-Place Risks",
+            "INDEPENDENT": "Access to admitted and non-admitted markets",
+            "CAPTIVE": "May decline if risk doesn't fit their carrier"
+          },
+          "CUSTOMIZATION": {
+            "FEATURE": "Policy Customization",
+            "INDEPENDENT": "Can tailor EPLI coverage across carriers",
+            "CAPTIVE": "Limited to their carrier's policy structure"
+          },
+          "CLAIMS_ADVOCACY": {
+            "FEATURE": "Claims Advocacy",
+            "INDEPENDENT": "Advocates on your behalf with the carrier",
+            "CAPTIVE": "Represents the carrier's interests"
+          },
+          "RENEWALS": {
+            "FEATURE": "Renewal Options",
+            "INDEPENDENT": "Re-shops the market at every renewal",
+            "CAPTIVE": "Renews with the same carrier only"
+          },
+          "SWITCHING": {
+            "FEATURE": "Switching Carriers",
+            "INDEPENDENT": "Easy transition with no disruption",
+            "CAPTIVE": "Must start over with a new agent"
+          }
+        }
+      }
+    },
+    "HIGH_RISK_ZONE": {
+      "HEADER": {
+        "TITLE": "Restaurant or Food Service Business in Texas? Here's Why You Need EPLI Insurance"
+      },
+      "CONTENT": {
+        "DESC1": "Restaurants and food service businesses in Texas face constant employee interaction, fast-paced environments, and high turnover, all of which increase the risk of workplace claims. Issues like harassment, discrimination, wage disputes, or wrongful termination can arise quickly, even in well-managed teams. With a diverse staff and customer-facing roles, the likelihood of misunderstandings or complaints is higher than in many other industries.",
+        "DESC2": "Having Employment Practices Liability Insurance (EPLI) in Texas helps protect your restaurant from costly legal battles and unexpected claims. Whether it’s a complaint from a current employee, former worker, or even a job applicant, EPLI coverage helps manage legal expenses and potential settlements. This allows restaurant owners to focus on daily operations while staying protected against employee-related risks."
+      }
+    },
+    "LANGUAGE_SUPPORT": {
+      "HEADER": {
+        "TITLE": "Hablamos Español / We Speak Your Language"
+      },
+      "CONTENT": {
+        "DESC1": "At A-State Insurance, we understand that clear communication is essential when choosing the right coverage. That’s why we offer services in English, Spanish, and Hindi, ensuring every client fully understands their options and feels confident in their decisions. Our multilingual agents guide you through the process, answering questions and explaining policy details in your preferred language.",
+        "DESC2": "By providing support in multiple languages, we make insurance accessible to Texas families and business owners from diverse backgrounds. Whether discussing auto, home, commercial, or life insurance, our team ensures you receive personalized advice to help you select coverage that fits your needs, lifestyle, and budget, with complete clarity and confidence."
+      }
+    },
+    "ASTATE_DIFFERENTIATORS": {
+      "HEADER": {
+        "TITLE": "What Makes A-State Insurance Different"
+      },
+      "LIST": {
+        "LICENSED_BROKERS": {
+          "TITLE": "Texas Licensed Brokers",
+          "DESCRIPTION": "Our licensed brokers compare multiple carriers to find the best coverage and rates for every Texan’s unique needs."
+        },
+        "HISPANIC_LATINO_FRIENDLY": {
+          "TITLE": "Hispanic & Latino Friendly",
+          "DESCRIPTION": "We provide respectful, culturally aware support to Hispanic and Latino communities, making insurance easy to understand."
+        },
+        "YEARS_SERVING": {
+          "TITLE": "20+ Years Serving Texans",
+          "DESCRIPTION": "With over two decades of experience, we have the knowledge to protect your home, business, and personal well-being."
+        },
+        "CUSTOM_COVERAGE": {
+          "TITLE": "Custom Coverage Plans",
+          "DESCRIPTION": "We tailor insurance plans to your lifestyle, budget, and risks, ensuring comprehensive protection for your needs."
+        },
+        "ONLINE_LOCAL": {
+          "TITLE": "Online & Local",
+          "DESCRIPTION": "Access expert advice online or visit our local Texas office, offering convenient service with a personal touch."
+        },
+        "MULTILINGUAL_AGENTS": {
+          "TITLE": "Multilingual Agents",
+          "DESCRIPTION": "Our professional agents speak English, Spanish, and Hindi, helping you confidently navigate all your insurance options."
+        }
+      }
+    },
+    "INSURANCE_STEPS": {
+      "HEADER": {
+        "TITLE": "Get Covered in 4 Simple Steps"
+      },
+      "STEPS": {
+        "REACH_OUT": {
+          "TITLE": "Reach Out",
+          "DESCRIPTION": "Contact us to start your journey toward the right workers' compensation coverage."
+        },
+        "GET_ADVICE": {
+          "TITLE": "Get Advice",
+          "DESCRIPTION": "Receive expert advice tailored to your business needs and industry requirements."
+        },
+        "PICK_PLAN": {
+          "TITLE": "Pick Your Plan",
+          "DESCRIPTION": "Choose the coverage plan with our professionals that best suits your business and budget."
+        },
+        "WE_GOT_YOU": {
+          "TITLE": "We’ve Got You",
+          "DESCRIPTION": "We’ll take care of the rest, ensuring your coverage is set and your business is protected."
+        }
+      }
+    },
+    "SWITCH_STEPS": {
+      "HEADER": {
+        "TITLE": "How to Switch Your EPLI Insurance to A-State Insurance"
+      },
+      "STEPS": {
+        "STEP_1": {
+          "TITLE": "Step 1: Get Your Free Comparison Quote",
+          "DESCRIPTION": "We start by collecting your current policy details and business information. Our agents compare top Texas carriers to find better coverage options and potential savings. You receive a clear, no-obligation quote showing how switching can improve your protection."
+        },
+        "STEP_2": {
+          "TITLE": "Step 2: Pick Your Plan and Activate",
+          "DESCRIPTION": "Once you review your options, we help you choose the right Business Owner’s Policy for your business. After selection, we handle activation smoothly so your coverage starts without gaps, ensuring continuous protection for your property and operations."
+        },
+        "STEP_3": {
+          "TITLE": "Step 3: Cancel Your Old Policy (We’ll Help!)",
+          "DESCRIPTION": "Once your new policy is active, we assist you in safely cancelling your old insurance. Our team ensures there are no coverage gaps or penalties, making the transition smooth, stress-free, and fully managed from start to finish."
+        }
+      }
+    },
+    "FREE_QUOTE": {
+      "HEADER": "Get a Free Employment Practices Liability (EPLI) Insurance Quote in Texas",
+      "DESCRIPTION": "Get a free employment practices liability (EPLI) insurance quote in Texas today and protect your business from costly employee insurance claims before they arise. Our experts help you find the right coverage at the best price, tailored to your needs. From wrongful termination to harassment and discrimination, we’ve got you covered. Fill out the form now and connect with our expert team at A-State Insurance to compare options and secure reliable protection with confidence."
+    }
+  },
+  "CYBER_LIABILITY_INSURANCE": {
+    "BANNER": {
+      "TITLE_LINE1": "Best & Affordable Cyber Liability Insurance in",
+      "TITLE_LINE2": "Texas — Starting from",
+      "TITLE_LINE3": "$79/Month",
+      "CHIPS": {
+        "DATA_BREACH": "Data Breach",
+        "RANSOMWARE": "Ransomware and Cyber Extortion",
+        "BUSINESS_INTERRUPTION": "Business Interruption",
+        "NETWORK_SECURITY": "Network Security Liability",
+        "MEDIA_LIABILITY": "Media Liability",
+        "OTHER": "Other"
+      },
+      "FORM": {
+        "FULL_NAME": "Full Name",
+        "PHONE": "Phone Number",
+        "BUTTON": "Get Quote"
+      }
+    },
+    "WHY_DO_YOU_NEED": {
+      "TITLE": "What is Cyber Liability Insurance and Why Do You Need It?",
+      "DESC1": "Cyber liability insurance is a type of business insurance that helps protect companies against financial losses resulting from cyberattacks, data breaches, ransomware, and other digital security incidents. As businesses increasingly rely on technology to store sensitive customer data, payment information, and internal records online, the risk of cyber threats continues to grow. Even a small breach can lead to major expenses, including legal fees, recovery costs, and customer notification requirements.",
+      "DESC2": "For business owners, cyber incidents are no longer rare; they are a real and growing risk. Cyber liability insurance helps cover the cost of responding to an attack, restoring systems, and protecting your business reputation. Whether you run a small business or a growing company, having this coverage ensures that one cyber event does not turn into a financial disaster.",
+      "SUB_TITLE": "Even well-managed businesses can face cyber threats. Here’s why cyber liability coverage is important:",
+      "LIST": [
+        {
+          "TITLE": "First-Party Data Breach Coverage",
+          "TEXT": "Helps your business handle direct costs after a cyber incident, including data recovery, system restoration, and customer notifications."
+        },
+        {
+          "TITLE": "Third-Party Liability Protection",
+          "TEXT": "Covers legal claims made by clients, vendors, or partners affected by a data breach linked to your business."
+        },
+        {
+          "TITLE": "Business Interruption Losses",
+          "TEXT": "Provides financial support when cyber incidents disrupt operations, compensating for lost income during downtime."
+        },
+        {
+          "TITLE": "Cyber Extortion and Ransomware Coverage",
+          "TEXT": "Protects against ransomware attacks and cyber extortion demands, including ransom payments and expert recovery assistance."
+        },
+        {
+          "TITLE": "Legal Fees and Regulatory Costs",
+          "TEXT": "Assists with legal defense costs, regulatory penalties, and compliance requirements after a cyber incident or data breach."
+        }
+      ]
+    },
+    "IS_CYBER_REQUIRED": {
+      "TITLE": "Is Cyber Liability Insurance Required in Texas?",
+      "DESC1": "Cyber Liability Insurance is not legally required in Texas for most businesses. There is currently no state law that mandates companies to carry this type of coverage as part of standard business insurance requirements. However, some businesses may still be required to carry it through contracts, client agreements, or industry compliance standards.",
+      "DESC2": "Even though it is optional, Cyber Liability Insurance is strongly recommended due to the increasing risk of ransomware attacks, phishing scams, and data breaches. Businesses that handle sensitive customer or financial data often use this coverage to protect against financial losses, legal expenses, and operational disruptions."
+    },
+    "CLI_VS_GL_COMPARISON": {
+      "HEADER": {
+        "TITLE": "What is the Difference Between Employment Practices Liability Insurance (EPLI) and General Liability Insurance?",
+        "DESC": "Employment Practices Liability Insurance (EPLI) and General Liability Insurance both protect businesses, but they cover different types of risks. EPLI focuses on employee-related claims such as harassment or wrongful termination, while General Liability covers third-party injuries or property damage. Understanding the difference helps businesses choose the right protection for workplace and public-facing risks."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Feature",
+          "EPLI": "EPLI Insurance",
+          "GL": "General Liability Insurance"
+        },
+        "LIST": {
+          "WHAT_IT_COVERS": {
+            "FEATURE": "What It Covers",
+            "EPLI": "Employee claims such as harassment, discrimination, and wrongful termination",
+            "GL": "Third-party bodily injury and property damage"
+          },
+          "WHO_IT_PROTECTS": {
+            "FEATURE": "Who It Protects Against",
+            "EPLI": "Employees, former employees, and job applicants",
+            "GL": "Customers, vendors, and the general public"
+          },
+          "CLAIM_EXAMPLES": {
+            "FEATURE": "Claim Examples",
+            "EPLI": "Wrongful termination, retaliation, harassment",
+            "GL": "Slip and fall, property damage, advertising injury"
+          },
+          "DEFENSE_COSTS": {
+            "FEATURE": "Defense Costs",
+            "EPLI": "Covers legal fees for employment-related lawsuits",
+            "GL": "Covers legal fees for third-party injury or damage claims"
+          },
+          "REQUIRED_BY_LAW": {
+            "FEATURE": "Required by Law",
+            "EPLI": "Not required in Texas",
+            "GL": "Often required by landlords or contracts"
+          },
+          "HR_DISPUTES": {
+            "FEATURE": "Covers HR Disputes",
+            "EPLI": "Yes",
+            "GL": "No"
+          },
+          "PHYSICAL_INJURY": {
+            "FEATURE": "Covers Physical Injuries",
+            "EPLI": "No",
+            "GL": "Yes"
+          },
+          "DIGITAL_RISKS": {
+            "FEATURE": "Covers Digital Risks",
+            "EPLI": "No",
+            "GL": "No"
+          },
+          "WHO_NEEDS_IT": {
+            "FEATURE": "Who Needs It",
+            "EPLI": "Any business with employees",
+            "GL": "Nearly every business regardless of size"
+          }
+        }
+      }
+    },
+    "CYBER_TARGET_SMALL_BUSINESS": {
+      "TITLE": "Can a Small Business in Texas Really Be a Target for a Cyberattack?",
+      "DESC1": "Yes, small businesses in Texas are often targeted by cybercriminals because they typically have weaker security systems than larger corporations. Hackers view them as easier entry points to access customer data, financial records, and business systems. Many small business owners mistakenly believe they are too small to be noticed, which increases their vulnerability.",
+      "DESC2": "Cyberattacks on small businesses can lead to serious consequences, including financial loss, downtime, and damage to customer trust. Common threats include phishing emails, ransomware attacks, and data breaches. Since most small businesses rely heavily on digital tools and online transactions, they need strong protection and recovery planning to reduce operational and financial disruption."
+    },
+    "COVERAGES": {
+      "STANDARD": {
+        "TITLE": "What Does Cyber Liability Insurance Cover in Texas?",
+        "DESC": "Cyber Liability Insurance in Texas helps protect businesses from financial losses caused by cyberattacks, data breaches, ransomware, and other digital security incidents. It covers recovery costs, legal expenses, system restoration, customer notifications, and business interruption losses to help businesses recover quickly after a cyber event.",
+        "LIST": [
+          {
+            "TITLE": "Data Breach Response",
+            "DESC": "Covers costs related to investigating data breaches, restoring compromised systems, notifying affected customers, and providing credit monitoring services to reduce harm and reputational damage.",
+            "ICON": "fas fa-database"
+          },
+          {
+            "TITLE": "Ransomware and Cyber Extortion",
+            "DESC": "Helps cover ransom payments, negotiation services, forensic experts, and recovery support when cybercriminals lock systems or demand payment to restore access.",
+            "ICON": "fas fa-lock"
+          },
+          {
+            "TITLE": "Business Interruption Losses",
+            "DESC": "Provides financial compensation for lost income when cyber incidents disrupt normal business operations and systems are temporarily unavailable.",
+            "ICON": "fas fa-chart-line"
+          },
+          {
+            "TITLE": "Network Security Liability",
+            "DESC": "Covers claims resulting from unauthorized access, malware infections, or system failures that impact clients, vendors, or partners connected to your business network.",
+            "ICON": "fas fa-network-wired"
+          },
+          {
+            "TITLE": "Privacy Liability",
+            "DESC": "Protects against claims involving improper handling, loss, or unauthorized exposure of sensitive personal data belonging to customers or employees.",
+            "ICON": "fas fa-user-shield"
+          },
+          {
+            "TITLE": "Media Liability",
+            "DESC": "Covers risks such as defamation, copyright infringement, and content-related claims arising from digital marketing, websites, and online communications.",
+            "ICON": "fas fa-bullhorn"
+          },
+          {
+            "TITLE": "Social Engineering and Phishing Fraud",
+            "DESC": "Protects against financial losses caused when employees are tricked into transferring funds or sharing sensitive information through deceptive communications.",
+            "ICON": "fas fa-user-secret"
+          },
+          {
+            "TITLE": "Regulatory Fines and Penalties",
+            "DESC": "Helps cover fines, penalties, and compliance costs imposed after a cyber incident involving violations of data protection or privacy regulations.",
+            "ICON": "fas fa-gavel"
+          },
+          {
+            "TITLE": "Crisis Management and Public Relations",
+            "DESC": "Covers costs for reputation management, public relations services, and communication strategies after a major cyberattack or data breach.",
+            "ICON": "fas fa-bullseye"
+          },
+          {
+            "TITLE": "Cyber Crime and Financial Theft",
+            "DESC": "Provides protection against unauthorized transactions, fraudulent fund transfers, and financial theft resulting from hacking or cyber intrusion.",
+            "ICON": "fas fa-money-check-alt"
+          }
+        ]
+      }
+    },
+    "NOT_COVERED": {
+      "HEADER": {
+        "TITLE": "What Does Cyber Liability Insurance NOT Cover in Texas?",
+        "DESC": "Cyber Liability Insurance in Texas does not cover every type of cyber or technology-related risk. Certain exclusions apply, including intentional illegal acts, prior known incidents, poor security practices, and infrastructure replacement costs. Understanding these exclusions helps businesses identify coverage gaps and add additional protection where needed."
+      },
+      "LIST": {
+        "PRIOR_KNOWN_INCIDENTS": {
+          "TITLE": "Prior Known Cyber Incidents",
+          "DESC": "Cyber Liability Insurance does not cover breaches, attacks, or vulnerabilities that were known before the policy started. Coverage only applies to new and unforeseen cyber events.",
+          "ICON": "fas fa-history"
+        },
+        "BODILY_INJURY_PROPERTY_DAMAGE": {
+          "TITLE": "Bodily Injury and Property Damage",
+          "DESC": "Physical injuries or tangible property damage caused by a cyber incident are not covered. These losses are typically handled under general liability or property insurance policies.",
+          "ICON": "fas fa-user-injured"
+        },
+        "INTENTIONAL_ACTS": {
+          "TITLE": "Intentional or Fraudulent Acts",
+          "DESC": "Deliberate, dishonest, or illegal actions committed by business owners or employees are excluded from coverage.",
+          "ICON": "fas fa-user-secret"
+        },
+        "HARDWARE_INFRASTRUCTURE": {
+          "TITLE": "Infrastructure and Hardware Replacement",
+          "DESC": "Cyber insurance does not cover the cost of replacing or upgrading physical devices such as servers, computers, or networking equipment.",
+          "ICON": "fas fa-server"
+        },
+        "INTELLECTUAL_PROPERTY": {
+          "TITLE": "Intellectual Property Theft",
+          "DESC": "Theft or misuse of intellectual property, including trade secrets, trademarks, and copyrighted materials, is generally excluded.",
+          "ICON": "fas fa-lightbulb"
+        },
+        "CYBER_WARFARE": {
+          "TITLE": "Cyber Warfare and Nation-State Attacks",
+          "DESC": "Losses caused by warlike cyber operations, cyber warfare, or nation-state sponsored attacks are typically excluded from coverage.",
+          "ICON": "fas fa-bomb"
+        },
+        "UNSECURED_SYSTEMS": {
+          "TITLE": "Unsecured or Poorly Protected Systems",
+          "DESC": "Losses resulting from failure to maintain basic cybersecurity standards, such as unencrypted devices or weak security controls, may be excluded.",
+          "ICON": "fas fa-shield-alt"
+        },
+        "THIRD_PARTY_VENDORS": {
+          "TITLE": "Third-Party Vendor Failures",
+          "DESC": "Cyber incidents caused by external vendors or service providers may not be fully covered unless specifically included in the policy.",
+          "ICON": "fas fa-handshake-slash"
+        },
+        "REPUTATIONAL_DAMAGE": {
+          "TITLE": "Reputational Damage and Future Revenue Loss",
+          "DESC": "Long-term reputational harm and projected future revenue losses are generally not directly covered due to difficulty in measurement.",
+          "ICON": "fas fa-chart-line-down"
+        },
+        "INSIDER_FRAUD": {
+          "TITLE": "Employee Theft or Insider Fraud",
+          "DESC": "Losses caused by dishonest employees or internal misuse of systems are typically excluded unless specifically endorsed in the policy.",
+          "ICON": "fas fa-user-shield"
+        }
+      }
+    },
+    "FIRST_VS_THIRD_PARTY_COMPARISON": {
+      "HEADER": {
+        "TITLE": "First-Party vs. Third-Party Cyber Liability Coverage in Texas",
+        "DESC": "Cyber Liability Insurance in Texas is generally divided into First-Party and Third-Party coverage. First-Party coverage protects your business from direct financial losses caused by a cyber incident, while Third-Party coverage protects you if clients, customers, or vendors file claims due to a breach linked to your business. Understanding both helps businesses build complete cyber protection."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Feature",
+          "FIRST_PARTY": "First-Party Cyber Liability",
+          "THIRD_PARTY": "Third-Party Cyber Liability"
+        },
+        "LIST": {
+          "WHAT_IT_COVERS": {
+            "FEATURE": "What It Covers",
+            "FIRST_PARTY": "Direct financial losses from cyberattacks such as data recovery, ransomware response, and business interruption",
+            "THIRD_PARTY": "Claims and lawsuits made by customers, clients, or vendors affected by a cyber incident"
+          },
+          "WHO_IT_PROTECTS": {
+            "FEATURE": "Who It Protects",
+            "FIRST_PARTY": "Your own business and internal systems",
+            "THIRD_PARTY": "External parties such as customers, clients, and vendors"
+          },
+          "CLAIM_EXAMPLES": {
+            "FEATURE": "Claim Examples",
+            "FIRST_PARTY": "Ransomware attacks, system restoration costs, data breach response",
+            "THIRD_PARTY": "Customer lawsuits after data exposure or privacy breaches"
+          },
+          "DEFENSE_COSTS": {
+            "FEATURE": "Defense Costs",
+            "FIRST_PARTY": "Covers internal recovery and remediation costs",
+            "THIRD_PARTY": "Covers legal defense costs when your business is sued by others"
+          },
+          "NOTIFICATION_COSTS": {
+            "FEATURE": "Notification Costs",
+            "FIRST_PARTY": "Covers customer notification and credit monitoring services",
+            "THIRD_PARTY": "Not covered"
+          },
+          "REGULATORY_FINES": {
+            "FEATURE": "Regulatory Fines",
+            "FIRST_PARTY": "Not typically covered",
+            "THIRD_PARTY": "May include coverage for fines and penalties depending on policy terms"
+          },
+          "BUSINESS_INTERRUPTION": {
+            "FEATURE": "Business Interruption",
+            "FIRST_PARTY": "Yes — covers lost income during downtime",
+            "THIRD_PARTY": "Not covered"
+          },
+          "CRISIS_MANAGEMENT": {
+            "FEATURE": "Crisis Management and PR",
+            "FIRST_PARTY": "Covers reputation management and public relations expenses",
+            "THIRD_PARTY": "Not covered"
+          },
+          "CREDIT_MONITORING": {
+            "FEATURE": "Credit Monitoring Services",
+            "FIRST_PARTY": "Covered for affected customers",
+            "THIRD_PARTY": "Not covered"
+          },
+          "WHO_NEEDS_IT": {
+            "FEATURE": "Who Needs It",
+            "FIRST_PARTY": "Any business that stores or processes digital data",
+            "THIRD_PARTY": "Businesses that handle customer, client, or vendor information"
+          }
+        }
+      }
+    },
+    "COST": {
+      "TITLE": "How Much Does Cyber Liability Insurance Cost in Texas?",
+      "DESC1": "The cost of Cyber Liability Insurance in Texas typically ranges from $800 to $2,500 per year for small businesses. Pricing depends on factors such as industry type, revenue, number of employees, and the level of cyber risk exposure. Businesses with stronger security measures and lower data exposure generally pay lower premiums.",
+      "DESC2": "On average, many small Texas businesses pay around $1,000 to $2,500 annually for standard cyber coverage. Compared to the national average of approximately $1,000 to $1,740 per year, Texas pricing is generally close to average, with higher costs seen in heavily regulated states and lower premiums in low-risk regions."
+    },
+    "HOW_MUCH_NEED": {
+      "TITLE": "How Much Cyber Liability Coverage Do You Actually Need?",
+      "DESC1": "The right amount of Cyber Liability Insurance coverage depends on your business size, industry, and the sensitivity of the data you handle. Most small businesses typically start with $500,000 to $1 million in coverage to protect against common risks such as data breaches, ransomware attacks, and system disruptions.",
+      "DESC2": "Businesses with higher exposure—such as those handling financial records, healthcare data, or large volumes of customer information—often require $1 million to $5 million or more in coverage. Many insurers recommend a $1 million per-occurrence limit as a balanced starting point, with higher limits needed for regulated industries or stricter client contract requirements."
+    },
+    "FACTORS_IMPACT": {
+      "HEADER": {
+        "TITLE": "Factors That Impact Your Cyber Liability Insurance Rates in Texas",
+        "DESC": "Cyber liability insurance rates in Texas are influenced by several key factors such as business size, industry type, data sensitivity, cybersecurity controls, and prior cyber incidents. Insurers evaluate how vulnerable your systems are and how much financial exposure a cyberattack could create when determining your premium."
+      },
+      "LIST": {
+        "DATA_VOLUME": {
+          "TITLE": "Type and Volume of Data Stored",
+          "DESC": "Businesses handling large volumes of sensitive customer, payment, or financial data face higher cyber risk exposure, which increases insurance costs."
+        },
+        "INDUSTRY_TYPE": {
+          "TITLE": "Industry Type and Risk Level",
+          "DESC": "High-risk industries such as healthcare, finance, and legal services typically pay higher premiums due to stricter regulations and frequent cyberattacks."
+        },
+        "BUSINESS_SIZE": {
+          "TITLE": "Annual Revenue and Business Size",
+          "DESC": "Larger businesses with higher revenue and more digital activity face greater exposure to cyber risks, resulting in higher premiums."
+        },
+        "CLAIMS_HISTORY": {
+          "TITLE": "Prior Cyber Claims History",
+          "DESC": "A history of data breaches or ransomware attacks increases perceived risk and leads to higher cyber insurance costs."
+        },
+        "CYBERSECURITY": {
+          "TITLE": "Cybersecurity Measures in Place",
+          "DESC": "Strong firewalls, encryption, and security protocols reduce risk exposure and may help lower insurance premiums."
+        },
+        "TRAINING": {
+          "TITLE": "Employee Cybersecurity Training",
+          "DESC": "Regular training reduces human error, such as phishing attacks, and can help lower overall cyber risk and insurance costs."
+        },
+        "MFA": {
+          "TITLE": "Use of Multi-Factor Authentication (MFA)",
+          "DESC": "MFA adds an extra layer of login security, reducing unauthorized access risk and potentially lowering premiums."
+        },
+        "THIRD_PARTY_ACCESS": {
+          "TITLE": "Third-Party Vendor Access",
+          "DESC": "Increased access by vendors or contractors raises exposure to breaches and can increase insurance costs."
+        },
+        "COVERAGE_LIMIT": {
+          "TITLE": "Coverage Limits and Deductible Selected",
+          "DESC": "Higher coverage limits increase premiums, while higher deductibles can help reduce overall insurance costs."
+        },
+        "REMOTE_WORK": {
+          "TITLE": "Remote Work Policies and Practices",
+          "DESC": "Weak remote work security increases cyber risk, while strong policies and secure access controls help reduce premiums."
+        }
+      }
+    },
+    "DISCOUNT_FACTORS": {
+      "HEADER": {
+        "TITLE": "How to Maximize Your Discounts and Lower Your Cyber Liability Insurance Premium",
+        "DESC": "You can reduce your Cyber Liability insurance premium in Texas by strengthening cybersecurity controls, reducing risk exposure, and maintaining strong internal security practices. Insurers reward businesses that implement advanced security tools, provide employee training, maintain updated systems, and demonstrate strong incident response planning. Choosing higher deductibles, bundling policies, and working with an independent broker can also help lower overall costs."
+      },
+      "LIST": {
+        "MFA": {
+          "TITLE": "Implement Multi-Factor Authentication (MFA)",
+          "DESC": "MFA adds an extra layer of login security and significantly reduces the risk of unauthorized access to business systems and accounts.",
+          "ICON": "fas fa-shield-alt"
+        },
+        "EDR": {
+          "TITLE": "Use Endpoint Detection and Response (EDR) Software",
+          "DESC": "EDR tools help detect, investigate, and respond to cyber threats in real time, reducing the likelihood and impact of attacks.",
+          "ICON": "fas fa-laptop-code"
+        },
+        "EMPLOYEE_TRAINING": {
+          "TITLE": "Conduct Regular Employee Cybersecurity Training",
+          "DESC": "Training reduces human error such as phishing clicks and improves overall awareness of cyber risks across the organization.",
+          "ICON": "fas fa-chalkboard-teacher"
+        },
+        "SOFTWARE_UPDATES": {
+          "TITLE": "Keep All Software and Systems Up to Date",
+          "DESC": "Regular updates patch security vulnerabilities and protect systems from known cyber threats and exploits.",
+          "ICON": "fas fa-sync-alt"
+        },
+        "DATA_ENCRYPTION": {
+          "TITLE": "Encrypt All Sensitive Data",
+          "DESC": "Encryption protects sensitive business and customer data from unauthorized access during storage and transmission.",
+          "ICON": "fas fa-lock"
+        },
+        "INCIDENT_RESPONSE": {
+          "TITLE": "Establish a Formal Incident Response Plan",
+          "DESC": "A response plan helps your business quickly identify, contain, and recover from cyberattacks to reduce damage and downtime.",
+          "ICON": "fas fa-bolt"
+        },
+        "DATA_BACKUPS": {
+          "TITLE": "Perform Regular Data Backups",
+          "DESC": "Frequent backups ensure business continuity and allow fast recovery in case of ransomware attacks or data loss.",
+          "ICON": "fas fa-database"
+        },
+        "ACCESS_CONTROL": {
+          "TITLE": "Limit Employee Access to Sensitive Data",
+          "DESC": "Restricting access based on job roles reduces internal exposure and minimizes the risk of data breaches.",
+          "ICON": "fas fa-user-lock"
+        },
+        "BUNDLING": {
+          "TITLE": "Bundle Cyber Liability with Other Business Policies",
+          "DESC": "Bundling insurance policies can reduce overall costs and improve coverage efficiency through multi-policy discounts.",
+          "ICON": "fas fa-layer-group"
+        },
+        "HIGHER_DEDUCTIBLE": {
+          "TITLE": "Choose a Higher Deductible",
+          "DESC": "A higher deductible lowers your premium costs but increases out-of-pocket expenses during a claim.",
+          "ICON": "fas fa-chart-bar"
+        },
+        "INDEPENDENT_AGENT": {
+          "TITLE": "Work with an Independent Insurance Agent",
+          "DESC": "Independent agents compare multiple carriers to find better pricing and more suitable cyber liability coverage options.",
+          "ICON": "fas fa-handshake"
+        },
+        "CLAIMS_HISTORY": {
+          "TITLE": "Maintain a Clean Claims History",
+          "DESC": "A clean claims history signals lower risk to insurers and helps secure more competitive cyber insurance rates.",
+          "ICON": "fas fa-user-check"
+        }
+      }
+    },
+    "AGENT_COMPARISON": {
+      "HEADER": {
+        "TITLE": "Independent Insurance Agency vs. Captive Agent: Why Choice Saves You Money",
+        "DESC": "An independent insurance agency works with multiple carriers, allowing businesses to compare quotes and choose the best coverage at competitive rates. A captive agent represents only one insurance company, which limits options and pricing flexibility. In Texas, independent brokers like A-State Insurance provide more choices, better coverage options, and potential savings by shopping multiple carriers on behalf of clients."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Feature",
+          "INDEPENDENT": "Independent Insurance Agency",
+          "CAPTIVE": "Captive Agent"
+        },
+        "LIST": {
+          "CARRIERS": {
+            "FEATURE": "Carrier Access",
+            "INDEPENDENT": "Works with 10+ Cyber Liability carriers",
+            "CAPTIVE": "Represents one carrier only"
+          },
+          "QUOTE_COMPARISON": {
+            "FEATURE": "Quote Comparison",
+            "INDEPENDENT": "Shops multiple carriers for the best price",
+            "CAPTIVE": "Offers one quote from one carrier"
+          },
+          "COVERAGE_OPTIONS": {
+            "FEATURE": "Coverage Options",
+            "INDEPENDENT": "Wide range of Cyber Liability policy options",
+            "CAPTIVE": "Limited to one carrier's offerings"
+          },
+          "PRICING": {
+            "FEATURE": "Pricing Flexibility",
+            "INDEPENDENT": "More competitive due to market access",
+            "CAPTIVE": "Fixed pricing, no shopping around"
+          },
+          "INDUSTRY_EXPERTISE": {
+            "FEATURE": "Industry Expertise",
+            "INDEPENDENT": "Matches your business risk profile to the right carrier",
+            "CAPTIVE": "Limited to one carrier's appetite"
+          },
+          "CONFLICT_OF_INTEREST": {
+            "FEATURE": "Conflict of Interest",
+            "INDEPENDENT": "Works in your best interest",
+            "CAPTIVE": "Works in the carrier's best interest"
+          },
+          "HARD_TO_PLACE": {
+            "FEATURE": "Hard-to-Place Risks",
+            "INDEPENDENT": "Access to admitted and non-admitted cyber markets",
+            "CAPTIVE": "May decline if the risk doesn't fit their carrier"
+          },
+          "CUSTOMIZATION": {
+            "FEATURE": "Policy Customization",
+            "INDEPENDENT": "Can tailor first-party and third-party coverage across carriers",
+            "CAPTIVE": "Limited to their carrier's policy structure"
+          },
+          "CLAIMS_ADVOCACY": {
+            "FEATURE": "Claims Advocacy",
+            "INDEPENDENT": "Advocates on your behalf during a cyber incident",
+            "CAPTIVE": "Represents the carrier's interests"
+          },
+          "RENEWALS": {
+            "FEATURE": "Renewal Options",
+            "INDEPENDENT": "Re-shops the market at every renewal",
+            "CAPTIVE": "Renews with the same carrier only"
+          },
+          "CYBER_MARKET_KNOWLEDGE": {
+            "FEATURE": "Cyber Market Knowledge",
+            "INDEPENDENT": "Up to date on the rapidly changing cyber insurance market",
+            "CAPTIVE": "Limited to one carrier's product updates"
+          }
+        }
+      }
+    },
+    "HIGH_RISK_ZONE": {
+      "HEADER": {
+        "TITLE": "Healthcare or Medical Practice in Texas? Here's Why You Need Cyber Liability Insurance"
+      },
+      "CONTENT": {
+        "DESC1": "Healthcare and medical practices in Texas handle highly sensitive patient information, including medical records, insurance details, and personal identification data. This makes them a prime target for cybercriminals using ransomware, phishing, and data breach attacks. Even a small security incident can disrupt operations, compromise patient trust, and lead to costly HIPAA compliance violations and legal consequences.",
+        "DESC2": "Cyber Liability Insurance helps medical practices manage these risks by covering costs related to data breaches, system recovery, legal defense, patient notification, and regulatory fines. It ensures healthcare providers can continue focusing on patient care while financial and operational risks from cyber incidents are properly managed and minimized."
+      }
+    },
+    "LANGUAGE_SUPPORT": {
+      "HEADER": {
+        "TITLE": "Hablamos Español / We Speak Your Language"
+      },
+      "CONTENT": {
+        "DESC1": "At A-State Insurance, we understand that clear communication is essential when choosing the right coverage. That’s why we offer services in English, Spanish, and Hindi, ensuring every client fully understands their options and feels confident in their decisions. Our multilingual agents guide you through the process, answering questions and explaining policy details in your preferred language.",
+        "DESC2": "By providing support in multiple languages, we make insurance accessible to Texas families and business owners from diverse backgrounds. Whether discussing auto, home, commercial, or life insurance, our team ensures you receive personalized advice to help you select coverage that fits your needs, lifestyle, and budget, with complete clarity and confidence."
+      }
+    },
+    "ASTATE_DIFFERENTIATORS": {
+      "HEADER": {
+        "TITLE": "What Makes A-State Insurance Different"
+      },
+      "LIST": {
+        "LICENSED_BROKERS": {
+          "TITLE": "Texas Licensed Brokers",
+          "DESCRIPTION": "Our licensed brokers compare multiple carriers to find the best coverage and rates for every Texan’s unique needs."
+        },
+        "HISPANIC_LATINO_FRIENDLY": {
+          "TITLE": "Hispanic & Latino Friendly",
+          "DESCRIPTION": "We provide respectful, culturally aware support to Hispanic and Latino communities, making insurance easy to understand."
+        },
+        "YEARS_SERVING": {
+          "TITLE": "20+ Years Serving Texans",
+          "DESCRIPTION": "With over two decades of experience, we have the knowledge to protect your home, business, and personal well-being."
+        },
+        "CUSTOM_COVERAGE": {
+          "TITLE": "Custom Coverage Plans",
+          "DESCRIPTION": "We tailor insurance plans to your lifestyle, budget, and risks, ensuring comprehensive protection for your needs."
+        },
+        "ONLINE_LOCAL": {
+          "TITLE": "Online & Local",
+          "DESCRIPTION": "Access expert advice online or visit our local Texas office, offering convenient service with a personal touch."
+        },
+        "MULTILINGUAL_AGENTS": {
+          "TITLE": "Multilingual Agents",
+          "DESCRIPTION": "Our professional agents speak English, Spanish, and Hindi, helping you confidently navigate all your insurance options."
+        }
+      }
+    },
+    "INSURANCE_STEPS": {
+      "HEADER": {
+        "TITLE": "Get Covered in 4 Simple Steps"
+      },
+      "STEPS": {
+        "REACH_OUT": {
+          "TITLE": "Reach Out",
+          "DESCRIPTION": "Contact us to start your journey toward the right workers' compensation coverage."
+        },
+        "GET_ADVICE": {
+          "TITLE": "Get Advice",
+          "DESCRIPTION": "Receive expert advice tailored to your business needs and industry requirements."
+        },
+        "PICK_PLAN": {
+          "TITLE": "Pick Your Plan",
+          "DESCRIPTION": "Choose the coverage plan with our professionals that best suits your business and budget."
+        },
+        "WE_GOT_YOU": {
+          "TITLE": "We’ve Got You",
+          "DESCRIPTION": "We’ll take care of the rest, ensuring your coverage is set and your business is protected."
+        }
+      }
+    },
+    "SWITCH_STEPS": {
+      "HEADER": {
+        "TITLE": "How to Switch Your Cyber Liability Insurance to A-State Insurance"
+      },
+      "STEPS": {
+        "STEP_1": {
+          "TITLE": "Step 1: Get Your Free Comparison Quote",
+          "DESCRIPTION": "Request a free cyber liability insurance quote, and we will compare multiple carriers to find the best coverage options and pricing for your business. You’ll receive a clear, no-obligation comparison tailored to your risk profile."
+        },
+        "STEP_2": {
+          "TITLE": "Step 2: Pick Your Plan and Activate",
+          "DESCRIPTION": "Choose the cyber liability insurance plan that best fits your business needs. Our licensed agents help you activate the policy quickly and ensure your coverage starts without delays or gaps in protection."
+        },
+        "STEP_3": {
+          "TITLE": "Step 3: Cancel Your Old Policy (We’ll Help!)",
+          "DESCRIPTION": "Once your new policy is active, we assist you in safely canceling your previous cyber insurance. We make sure there is no coverage gap and the transition is smooth and fully managed."
+        }
+      }
+    },
+    "FREE_QUOTE": {
+      "HEADER": "Get a Free Cyber Liability Insurance Quote in Texas",
+      "DESCRIPTION": "Protecting your business from cyber threats starts with the right coverage. At A-State Insurance, we make it simple to get a free cyber liability insurance quote in Texas tailored to your business needs. Whether you run a small startup, a growing company, or an established enterprise, our licensed Texas brokers compare multiple trusted insurance carriers to find the best coverage options at competitive prices. You don’t have to navigate complex policies alone—our team helps you understand every detail."
+    }
+  },
+  "BUILDERS_RISK_INSURANCE": {
+    "BANNER": {
+      "TITLE_LINE1": "Best & Affordable Builders Risk / Course of Construction Insurance in",
+      "TITLE_LINE2": " Texas — Starting from",
+      "TITLE_LINE3": "$375/Month",
+      "CHIPS": {
+        "NEW_HOME_CONSTRUCTION": "New Home Construction",
+        "COMMERCIAL_CONSTRUCTION": "Commercial Construction",
+        "RENOVATION_REMODELING": "Renovation and Remodeling",
+        "INSTALLATION": "Installation",
+        "VACANT_LAND_LOT": "Vacant Land and Lot",
+        "OTHER": "Other"
+      },
+      "FORM": {
+        "FULL_NAME": "Full Name",
+        "PHONE": "Phone Number",
+        "BUTTON": "Get Quote"
+      }
+    },
+    "WHY_DO_YOU_NEED": {
+      "TITLE": "What is Builders Risk Insurance and Why Do You Need It?",
+      "DESC1": "Builders' risk insurance, also known as course of construction insurance, is a specialized policy that protects buildings and structures during construction, renovation, or installation. It covers physical damage to the project itself, including materials, fixtures, and partially completed work.",
+      "DESC2": "A typical builders' risk insurance policy applies from the start of construction until the project is completed or occupied. It helps property owners, contractors, and developers avoid major financial losses caused by unexpected events during construction.",
+      "SUB_TITLE": "Here are a few reasons why you need builders' risk insurance:",
+      "LIST": [
+        {
+          "TITLE": "Protects Your Financial Investment",
+          "TEXT": "Construction projects involve large investments. Without coverage, even a single incident such as a fire or storm could lead to major out-of-pocket costs. This insurance helps safeguard your money from unexpected damage."
+        },
+        {
+          "TITLE": "Covers Common Construction Risks",
+          "TEXT": "Job sites are exposed and vulnerable. Theft, vandalism, weather damage, and accidents can happen at any stage. Builders' risk insurance ensures your project stays protected from these common risks."
+        },
+        {
+          "TITLE": "Required by Most Lenders",
+          "TEXT": "If your project is financed, lenders usually require a builder's risk policy before approving funds. It ensures their investment is protected while construction is in progress."
+        },
+        {
+          "TITLE": "Keeps Your Project on Schedule",
+          "TEXT": "Damage or loss can significantly delay your project. With proper coverage, repair and replacement costs are handled quickly, helping you avoid long downtime and keep construction moving."
+        },
+        {
+          "TITLE": "Covers Materials Before Installation",
+          "TEXT": "Materials can be damaged or stolen before they’re even installed. Builders' risk insurance protects supplies both on-site and in transit, reducing losses before they become part of the structure."
+        }
+      ]
+    },
+    "IS_BUILDERS_RISK_REQUIRED": {
+      "TITLE": "Is Builders' Risk Insurance Required in Texas?",
+      "DESC1": "Builders' risk insurance is not always strictly required by Texas law, but it is often expected in real-world construction projects. In many cases, either the property owner or contractor must carry coverage to protect the structure during construction, especially as part of standard industry practices or contract agreements.",
+      "DESC2": "However, in practice, most construction projects in Texas still require coverage. Lenders, banks, and project owners commonly make course of construction insurance a condition for financing or starting work. Without it, funding may be denied or projects delayed, since it protects both the investment and the structure against risks such as fire, theft, and weather damage."
+    },
+    "CLI_VS_GL_COMPARISON": {
+      "HEADER": {
+        "TITLE": "What is the Difference Between Builders Risk Insurance and General Liability Insurance?",
+        "DESC": "Builders' risk insurance and general liability insurance both play roles in protecting construction projects, but they cover different risks. Builders' risk insurance focuses on physical damage to the structure, materials, and work in progress. General liability insurance, on the other hand, protects against third-party claims such as injuries or property damage that occur on or around the job site."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Feature",
+          "BUILDERS_RISK": "Builders Risk Insurance",
+          "GL": "General Liability Insurance"
+        },
+        "LIST": {
+          "WHAT_IT_COVERS": {
+            "FEATURE": "What It Covers",
+            "BUILDERS_RISK": "Physical damage to a structure under construction",
+            "GL": "Third-party bodily injury and property damage"
+          },
+          "WHO_IT_PROTECTS": {
+            "FEATURE": "Who It Protects",
+            "BUILDERS_RISK": "Property owner, contractor, and lender",
+            "GL": "Business owner against third-party claims"
+          },
+          "CLAIM_EXAMPLES": {
+            "FEATURE": "Claim Examples",
+            "BUILDERS_RISK": "Fire, theft, vandalism, or storm damage to a project",
+            "GL": "Slip and fall, property damage, and bodily injury on a job site"
+          },
+          "DEFENSE_COSTS": {
+            "FEATURE": "Defense Costs",
+            "BUILDERS_RISK": "Not covered",
+            "GL": "Covers legal fees for third-party lawsuits"
+          },
+          "COVERAGE_PERIOD": {
+            "FEATURE": "Coverage Period",
+            "BUILDERS_RISK": "Temporary — lasts only during construction",
+            "GL": "Ongoing — renews annually"
+          },
+          "MATERIALS_COVERAGE": {
+            "FEATURE": "Covers Materials",
+            "BUILDERS_RISK": "Yes — on-site and in-transit materials",
+            "GL": "No"
+          },
+          "EQUIPMENT_COVERAGE": {
+            "FEATURE": "Covers Equipment",
+            "BUILDERS_RISK": "Limited coverage for installed equipment",
+            "GL": "No"
+          },
+          "THIRD_PARTY_INJURIES": {
+            "FEATURE": "Covers Third-Party Injuries",
+            "BUILDERS_RISK": "No",
+            "GL": "Yes"
+          },
+          "REQUIRED_BY_LENDERS": {
+            "FEATURE": "Required by Lenders",
+            "BUILDERS_RISK": "Yes — most lenders require it for financed projects",
+            "GL": "Not typically required by lenders"
+          },
+          "WHO_NEEDS_IT": {
+            "FEATURE": "Who Needs It",
+            "BUILDERS_RISK": "Property owners, developers, and contractors during construction",
+            "GL": "Every contractor and construction business"
+          }
+        }
+      }
+    },
+    "WHO_IS_RESPONSIBLE_BUILDERS_RISK": {
+      "TITLE": "Who is Responsible for Builders' Risk Insurance — the Owner or the Contractor?",
+      "DESC1": "Responsibility for builders’ risk insurance in Texas depends on the construction contract, not a fixed legal rule. In many projects, the property owner purchases the policy because they have the primary financial interest in the building. However, contractors or developers may also obtain coverage, especially in design-build or turnkey agreements. Standard contracts, such as those from the American Institute of Architects, often specify who must carry the policy.",
+      "DESC2": "In practice, lenders and project agreements usually decide who is responsible. Most financing institutions require a builders' risk policy before releasing funds, ensuring the structure is protected throughout construction. You can review how requirements vary in Texas through resources like the Texas Department of Insurance, which explains general insurance practices and responsibilities for construction-related coverage."
+    },
+    "COVERAGES": {
+      "STANDARD": {
+        "TITLE": "What Does Builders Risk Insurance Cover in Texas?",
+        "DESC": "Builders' risk insurance provides coverage for physical damage to your construction project while it’s in progress. A typical builders' risk insurance policy protects against risks like fire, theft, vandalism, and severe weather. It also covers materials, supplies, and certain temporary structures, helping keep your project financially secure from start to completion.",
+        "LIST": [
+          {
+            "TITLE": "Fire and Smoke Damage",
+            "DESC": "Covers damage caused by fire, smoke, or related incidents during construction. This includes the building structure, partially completed work, and stored materials. It helps you recover repair costs quickly so your project can continue.",
+            "ICON": "fas fa-fire"
+          },
+          {
+            "TITLE": "Theft and Vandalism",
+            "DESC": "Protects your construction site against stolen materials, fixtures, or equipment, as well as intentional damage. Since many sites are exposed, this coverage helps reduce losses and ensures your project stays on track without unexpected disruptions.",
+            "ICON": "fas fa-user-secret"
+          },
+          {
+            "TITLE": "Wind and Hail Damage",
+            "DESC": "Provides protection against damage from strong winds, storms, and hail. It helps cover repairs to roofing, framing, and exposed materials during construction. This is important in Texas, where severe weather can impact projects at any stage.",
+            "ICON": "fas fa-wind"
+          },
+          {
+            "TITLE": "Lightning and Electrical Damage",
+            "DESC": "Covers losses caused by lightning strikes or electrical surges during construction. This includes damage to wiring, installed systems, and structural components. It helps prevent costly repairs and keeps your project timeline on schedule.",
+            "ICON": "fas fa-bolt"
+          },
+          {
+            "TITLE": "Explosion and Collapse",
+            "DESC": "Offers protection for sudden and accidental explosions or structural collapses during construction. Whether caused by gas leaks or other risks, this helps pay for rebuilding and repairs, reducing financial strain and keeping your project moving.",
+            "ICON": "fas fa-building"
+          },
+          {
+            "TITLE": "Water and Flood Damage",
+            "DESC": "Covers damage from water events like burst pipes, heavy rain, or certain flooding incidents if included. It protects unfinished structures and materials from water exposure, helping avoid costly repairs and ensuring your project continues smoothly.",
+            "ICON": "fas fa-water"
+          },
+          {
+            "TITLE": "Materials and Supplies On-Site",
+            "DESC": "Protects building materials and supplies stored at the construction site. If they are damaged by fire, weather, or theft, this coverage helps pay for replacement, ensuring your investment is secure before installation begins.",
+            "ICON": "fas fa-boxes"
+          },
+          {
+            "TITLE": "Materials in Transit",
+            "DESC": "Covers materials during transport to your job site. If items are lost, damaged, or stolen during delivery, this insurance protection helps cover replacement costs and prevents delays in your construction schedule.",
+            "ICON": "fas fa-truck"
+          },
+          {
+            "TITLE": "Temporary Structures and Scaffolding",
+            "DESC": "Provides coverage for temporary structures such as scaffolding, fencing, and construction forms. These items are essential for safety and progress, and this protection ensures they are covered if damaged, lost, or destroyed during the project.",
+            "ICON": "fas fa-tools"
+          },
+          {
+            "TITLE": "Soft Costs and Construction Delays",
+            "DESC": "Helps cover additional expenses caused by covered delays, such as permit fees, loan interest, and design costs. This coverage reduces the financial impact of setbacks and helps keep your overall construction budget under control.",
+            "ICON": "fas fa-clock"
+          }
+        ]
+      }
+    },
+    "NOT_COVERED": {
+      "HEADER": {
+        "TITLE": "What Does Builders Risk Insurance NOT Cover in Texas?",
+        "DESC": "Builders' risk insurance offers strong financial protection, but it does not cover every type of monetary loss. A standard insurance policy excludes risks like faulty workmanship, normal wear and tear, and certain natural disasters unless added by endorsement. Understanding these exclusions helps you avoid coverage gaps and choose additional protection where needed."
+      },
+      "LIST": {
+        "EMPLOYEE_THEFT": {
+          "TITLE": "Employee Theft and Dishonesty",
+          "DESC": "Losses caused by employees stealing materials, funds, or equipment are not covered under a standard builders' risk policy. These risks fall under employee dishonesty or crime insurance, which must be purchased separately to protect against theft."
+        },
+        "MECHANICAL_BREAKDOWN": {
+          "TITLE": "Mechanical Breakdown and Equipment Failure",
+          "DESC": "Damage caused by mechanical breakdown, internal failure, or equipment malfunction is not included. Builders' risk focuses on external risks, so contractors must carry separate equipment breakdown or contractor equipment insurance for protection."
+        },
+        "FAULTY_WORKMANSHIP": {
+          "TITLE": "Faulty Workmanship and Design Errors",
+          "DESC": "Costs related to poor workmanship, defective materials, or design errors are excluded. While resulting damage may be covered, fixing the original mistake is not. Contractors typically handle these costs or rely on professional liability insurance."
+        },
+        "EARTHQUAKE": {
+          "TITLE": "Earthquake and Earth Movement",
+          "DESC": "Damage from earthquakes, landslides, or ground movement is not covered under standard policies. These risks require a special endorsement or separate policy, especially in areas where earth movement poses a higher construction risk."
+        },
+        "FLOOD_DAMAGE": {
+          "TITLE": "Flood Damage (unless endorsed)",
+          "DESC": "Flood damage from rising water, storm surge, or overflow is excluded unless specifically added. Builders' risk policies require a flood endorsement or separate flood insurance to cover water-related risks that could damage the project."
+        },
+        "TOOLS_EQUIPMENT": {
+          "TITLE": "Contractor Tools and Equipment",
+          "DESC": "Contractor-owned tools, machinery, and equipment are not protected under builders' risk insurance. These items require inland marine or contractor equipment coverage to ensure protection against theft, loss, or damage during the project."
+        },
+        "BODILY_INJURY": {
+          "TITLE": "Bodily Injury and Third-Party Liability",
+          "DESC": "Injuries to workers or third parties, along with property damage claims, are not covered. These risks are handled through general liability or workers’ compensation insurance, which are essential for full protection on any job site."
+        },
+        "COMPLETED_STRUCTURES": {
+          "TITLE": "Completed and Occupied Structures",
+          "DESC": "Once a structure is completed or occupied, builders' risk insurance coverage ends. At that point, a standard property insurance policy is needed to protect the building against future risks once construction is finished and the building is in use."
+        },
+        "WAR_GOVERNMENT": {
+          "TITLE": "War and Government Action",
+          "DESC": "Losses caused by war, terrorism, or government action are excluded from coverage. These extreme risks are not covered by standard builders' risk policies and may require specialized insurance if protection is needed."
+        },
+        "NORMAL_WEAR_TEAR": {
+          "TITLE": "Normal Wear and Tear",
+          "DESC": "Gradual wear and tear, aging, or deterioration over time is not covered. Builders' risk insurance is designed for sudden and accidental damage, not ongoing maintenance issues that naturally occur during construction."
+        }
+      }
+    },
+    "COST": {
+      "TITLE": "How Much Does Builders' Risk Insurance Cost in Texas?",
+      "DESC1": "The cost of builders' risk insurance in Texas depends on your project size, type, and risk level, but most policies follow a standard pricing model. On average, builders' risk insurance in Texas policies cost about 1% to 4% of the total construction value. For smaller projects, premiums can start around $375, with typical monthly costs ranging from $100 to $300, while larger projects can reach several thousand dollars for the full policy term.",
+      "DESC2": "Compared with other states, Texas rates are often moderate to slightly lower, especially in inland areas with less exposure to extreme risks. However, projects in coastal or storm-prone regions may see higher premiums due to hurricanes, wind, and hail risks. States like Florida and California typically have higher costs due to hurricane and wildfire exposure, while Texas remains more affordable overall depending on location and project conditions."
+    },
+    "HOW_LONG_LASTS": {
+      "TITLE": "How Long Does Builders Risk Insurance Last?",
+      "DESC1": "Builders' risk insurance is temporary coverage designed to last only for the duration of a construction project. Most policies are written for 3, 6, or 12 months, depending on the expected timeline. The coverage typically begins when construction starts and remains active until the project is completed, occupied, or handed over to the owner.",
+      "DESC2": "If the project takes longer than expected, the policy can usually be extended to avoid coverage gaps. However, once construction is complete or the building is occupied, builders' risk insurance ends, and a standard property insurance policy must take over to protect the completed structure."
+    },
+    "FACTORS_IMPACT": {
+      "HEADER": {
+        "TITLE": "Factors That Impact Your Builders Risk Insurance Rates in Texas",
+        "DESC": "Builders' risk insurance rates in Texas depend on several factors that determine the level of risk involved in a project. Insurers evaluate factors such as project size, total value, construction type, and location. Weather exposure, timeline, contractor experience, and job site security also influence pricing. Understanding these helps you plan ahead and manage your overall insurance costs more effectively."
+      },
+      "LIST": {
+        "PROJECT_TYPE": {
+          "TITLE": "Type of Construction Project",
+          "DESC": "More complex or high-risk projects, such as commercial builds, often lead to higher premiums due to greater exposure and risk."
+        },
+        "PROJECT_VALUE": {
+          "TITLE": "Total Project Value and Budget",
+          "DESC": "Larger budgets mean higher potential losses, so insurers charge more to cover the full value of the construction project."
+        },
+        "MATERIALS_USED": {
+          "TITLE": "Construction Materials Used",
+          "DESC": "Materials like wood raise fire risk, while steel and concrete reduce risk, which can help lower insurance premiums."
+        },
+        "LOCATION": {
+          "TITLE": "Project Location in Texas",
+          "DESC": "Projects in storm-prone or high-crime areas in Texas usually have higher premiums due to increased risk exposure."
+        },
+        "TIMELINE": {
+          "TITLE": "Project Duration and Timeline",
+          "DESC": "Longer construction timelines increase exposure to risks, which can result in higher insurance costs over time."
+        },
+        "CONTRACTOR_EXPERIENCE": {
+          "TITLE": "Builder and Contractor Experience",
+          "DESC": "Experienced contractors lower the chance of errors, helping reduce risk and potentially lowering insurance premiums."
+        },
+        "CLAIMS_HISTORY": {
+          "TITLE": "Prior Claims History",
+          "DESC": "A history of frequent claims signals higher risk, which can lead to increased premiums or stricter policy terms."
+        },
+        "SECURITY": {
+          "TITLE": "Security Measures on Job Site",
+          "DESC": "Security features such as cameras and fencing reduce the risk of theft and damage, helping you qualify for better rates."
+        },
+        "COVERAGE_DEDUCTIBLE": {
+          "TITLE": "Coverage Limits and Deductible Selected",
+          "DESC": "Higher coverage limits increase premiums, while choosing a higher deductible can help reduce overall insurance costs."
+        },
+        "FIRE_PROXIMITY": {
+          "TITLE": "Proximity to Fire Station or Water Source",
+          "DESC": "Being closer to fire stations or water sources lowers risk, which can help reduce your builders' risk insurance rates."
+        }
+      }
+    },
+    "DISCOUNT_FACTORS": {
+      "HEADER": {
+        "TITLE": "How to Maximize Your Discounts and Lower Your Builders Risk Insurance Premium",
+        "DESC": "Lowering your builders' risk insurance premium is possible with smart planning and risk management. Insurers reward projects that show strong safety measures, experienced contractors, and clear timelines. By reducing potential risks and choosing the right coverage options, you can qualify for better pricing and maximize available discounts."
+      },
+      "LIST": {
+        "SECURITY_CAMERAS": {
+          "TITLE": "Install On-Site Security Cameras and Fencing",
+          "DESC": "Adding cameras and fencing helps deter theft and vandalism, reducing risk and improving your chances of lower premiums."
+        },
+        "FIRE_MATERIALS": {
+          "TITLE": "Use Fire-Resistant Construction Materials",
+          "DESC": "Using fire-resistant materials lowers the risk of fire damage, which can help insurers offer better rates and discounts."
+        },
+        "EXPERIENCED_CONTRACTORS": {
+          "TITLE": "Hire Licensed and Experienced Contractors",
+          "DESC": "Hiring qualified professionals reduces construction risks and errors, making your project safer and more attractive to insurers."
+        },
+        "CLAIMS_HISTORY": {
+          "TITLE": "Maintain a Clean Claims History",
+          "DESC": "Fewer past claims show lower risk, helping you qualify for better pricing and more favorable policy terms."
+        },
+        "SAFETY_PLAN": {
+          "TITLE": "Implement a Site Safety and Loss Prevention Plan",
+          "DESC": "A strong safety plan reduces accidents and losses, which can lead to discounts and improved insurance rates."
+        },
+        "MATERIAL_STORAGE": {
+          "TITLE": "Store Materials Securely Off the Ground",
+          "DESC": "Keeping materials elevated and protected prevents damage from water or theft, reducing overall risk exposure."
+        },
+        "ON_TIME_COMPLETION": {
+          "TITLE": "Complete the Project on Schedule",
+          "DESC": "Finishing on time lowers exposure to risks, which can help reduce costs and improve your insurance pricing."
+        },
+        "HIGHER_DEDUCTIBLE": {
+          "TITLE": "Choose a Higher Deductible",
+          "DESC": "A higher deductible lowers your premium since you agree to pay more out of pocket if a claim occurs."
+        },
+        "BUNDLING": {
+          "TITLE": "Bundle Builders Risk with Other Business Policies",
+          "DESC": "Bundling policies can unlock discounts and simplify coverage, helping you save money across multiple insurance needs."
+        },
+        "INDEPENDENT_AGENT": {
+          "TITLE": "Work with an Independent Insurance Agent",
+          "DESC": "An independent agent compares multiple carriers to help you find the best coverage at the most competitive price."
+        }
+      }
+    },
+    "AGENT_COMPARISON": {
+      "HEADER": {
+        "TITLE": "Independent Insurance Agency vs. Captive Agent: Why Choice Saves You Money",
+        "DESC": "Choosing between an independent insurance agency and a captive agent can directly affect your coverage, flexibility, and overall cost. Independent insurance agencies work with multiple insurance carriers, allowing them to compare policies and find the best value for their clients. Captive agents represent only one company, limiting your options, pricing, and customization."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Feature",
+          "INDEPENDENT": "Independent Insurance Agency",
+          "CAPTIVE": "Captive Agent"
+        },
+        "LIST": {
+          "CARRIERS": {
+            "FEATURE": "Carrier Access",
+            "INDEPENDENT": "Works with 10+ Builders Risk carriers",
+            "CAPTIVE": "Represents one carrier only"
+          },
+          "QUOTE_COMPARISON": {
+            "FEATURE": "Quote Comparison",
+            "INDEPENDENT": "Shops multiple carriers for the best price",
+            "CAPTIVE": "Offers one quote from one carrier"
+          },
+          "COVERAGE_OPTIONS": {
+            "FEATURE": "Coverage Options",
+            "INDEPENDENT": "Wide range of Builders Risk policy options",
+            "CAPTIVE": "Limited to one carrier's offerings"
+          },
+          "PRICING": {
+            "FEATURE": "Pricing",
+            "INDEPENDENT": "More competitive due to market access",
+            "CAPTIVE": "Fixed pricing, no shopping around"
+          },
+          "PROJECT_FLEXIBILITY": {
+            "FEATURE": "Project Flexibility",
+            "INDEPENDENT": "Can find coverage for any project type and size",
+            "CAPTIVE": "Limited to one carrier's project appetite"
+          },
+          "HARD_TO_PLACE": {
+            "FEATURE": "Hard-to-Place Risks",
+            "INDEPENDENT": "Access to admitted and non-admitted markets for complex projects",
+            "CAPTIVE": "May decline unusual or high-value projects"
+          },
+          "CUSTOMIZATION": {
+            "FEATURE": "Policy Customization",
+            "INDEPENDENT": "Can tailor coverage for unique construction projects",
+            "CAPTIVE": "Limited to their carrier's policy structure"
+          },
+          "CLAIMS_ADVOCACY": {
+            "FEATURE": "Claims Advocacy",
+            "INDEPENDENT": "Advocates on your behalf during a construction loss",
+            "CAPTIVE": "Represents the carrier's interests"
+          },
+          "RENEWALS": {
+            "FEATURE": "Renewal Options",
+            "INDEPENDENT": "Re-shops the market for every new project",
+            "CAPTIVE": "Renews with the same carrier only"
+          },
+          "MARKET_KNOWLEDGE": {
+            "FEATURE": "Local Market Knowledge",
+            "INDEPENDENT": "Understands Texas construction risks and weather exposures",
+            "CAPTIVE": "Limited to one carrier's product updates"
+          }
+        }
+      }
+    },
+    "HIGH_RISK_ZONE": {
+      "HEADER": {
+        "TITLE": "Residential Home Builder in Texas? Here's Why You Need Builders Risk Insurance"
+      },
+      "CONTENT": {
+        "DESC1": "If you’re a residential home builder in Texas, your project is constantly exposed to risks from the moment construction begins. Open job sites can be damaged by fire, theft, vandalism, or severe weather, all of which can lead to costly delays. A reliable builders' risk insurance policy helps protect your structure, materials, and investment throughout every stage of construction.",
+        "DESC2": "Beyond protection, builders' risk insurance is often required by lenders and project agreements before work can begin. It ensures that if something unexpected occurs, repair and replacement costs are covered, keeping your project on track. For home builders, this coverage provides financial security and peace of mind from foundation to final walkthrough."
+      }
+    },
+    "LANGUAGE_SUPPORT": {
+      "HEADER": {
+        "TITLE": "Hablamos Español / We Speak Your Language"
+      },
+      "CONTENT": {
+        "DESC1": "At A-State Insurance, we understand that clear communication is essential when choosing the right coverage. That’s why we offer services in English, Spanish, and Hindi, ensuring every client fully understands their options and feels confident in their decisions. Our multilingual agents guide you through the process, answering questions and explaining policy details in your preferred language.",
+        "DESC2": "By providing support in multiple languages, we make insurance accessible to Texas families and business owners from diverse backgrounds. Whether discussing auto, home, commercial, or life insurance, our team ensures you receive personalized advice to help you select coverage that fits your needs, lifestyle, and budget, with complete clarity and confidence."
+      }
+    },
+    "ASTATE_DIFFERENTIATORS": {
+      "HEADER": {
+        "TITLE": "What Makes A-State Insurance Different"
+      },
+      "LIST": {
+        "LICENSED_BROKERS": {
+          "TITLE": "Texas Licensed Brokers",
+          "DESCRIPTION": "Our licensed brokers compare multiple carriers to find the best coverage and rates for every Texan’s unique needs."
+        },
+        "HISPANIC_LATINO_FRIENDLY": {
+          "TITLE": "Hispanic & Latino Friendly",
+          "DESCRIPTION": "We provide respectful, culturally aware support to Hispanic and Latino communities, making insurance easy to understand."
+        },
+        "YEARS_SERVING": {
+          "TITLE": "20+ Years Serving Texans",
+          "DESCRIPTION": "With over two decades of experience, we have the knowledge to protect your home, business, and personal well-being."
+        },
+        "CUSTOM_COVERAGE": {
+          "TITLE": "Custom Coverage Plans",
+          "DESCRIPTION": "We tailor insurance plans to your lifestyle, budget, and risks, ensuring comprehensive protection for your needs."
+        },
+        "ONLINE_LOCAL": {
+          "TITLE": "Online & Local",
+          "DESCRIPTION": "Access expert advice online or visit our local Texas office, offering convenient service with a personal touch."
+        },
+        "MULTILINGUAL_AGENTS": {
+          "TITLE": "Multilingual Agents",
+          "DESCRIPTION": "Our professional agents speak English, Spanish, and Hindi, helping you confidently navigate all your insurance options."
+        }
+      }
+    },
+    "INSURANCE_STEPS": {
+      "HEADER": {
+        "TITLE": "Get Covered in 4 Simple Steps"
+      },
+      "STEPS": {
+        "REACH_OUT": {
+          "TITLE": "Reach Out",
+          "DESCRIPTION": "Contact us to start your journey toward the right workers' compensation coverage."
+        },
+        "GET_ADVICE": {
+          "TITLE": "Get Advice",
+          "DESCRIPTION": "Receive expert advice tailored to your business needs and industry requirements."
+        },
+        "PICK_PLAN": {
+          "TITLE": "Pick Your Plan",
+          "DESCRIPTION": "Choose the coverage plan with our professionals that best suits your business and budget."
+        },
+        "WE_GOT_YOU": {
+          "TITLE": "We’ve Got You",
+          "DESCRIPTION": "We’ll take care of the rest, ensuring your coverage is set and your business is protected."
+        }
+      }
+    },
+    "SWITCH_STEPS": {
+      "HEADER": {
+        "TITLE": "How to Switch Your Builders Risk / Course of Construction Insurance to A-State Insurance"
+      },
+      "STEPS": {
+        "STEP_1": {
+          "TITLE": "Step 1: Get Your Free Comparison Quote",
+          "DESCRIPTION": "Get a free comparison quote to see better coverage options and pricing for your current construction project."
+        },
+        "STEP_2": {
+          "TITLE": "Step 2: Pick Your Plan and Activate",
+          "DESCRIPTION": "Choose the plan that fits your project needs, then activate your new policy with a smooth transition."
+        },
+        "STEP_3": {
+          "TITLE": "Step 3: Cancel Your Old Policy (We’ll Help!)",
+          "DESCRIPTION": "We help you properly cancel your old policy, avoiding gaps in coverage or unnecessary penalties."
+        }
+      }
+    },
+    "FREE_QUOTE": {
+      "HEADER": "Get a Free Builders Risk / Course of Construction Insurance Quote in Texas",
+      "DESCRIPTION": "Protecting your construction project starts with the right coverage. At A-State Insurance, we make it simple to get a free builders risk insurance quote in Texas tailored to your project needs. Whether you're working on new home construction, commercial projects, renovations, or vacant land, our licensed Texas brokers compare multiple trusted insurance carriers to find the best coverage options at competitive prices. Our team helps you understand every detail and choose the right protection for your project."
     }
   }
 }

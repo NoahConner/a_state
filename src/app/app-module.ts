@@ -57,6 +57,10 @@ import { GeneralLiabilityInsurance } from './pages/commercial-insurance/general-
 import { WorkersCompensationInsurance } from './pages/commercial-insurance/workers-compensation-insurance/workers-compensation-insurance';
 import { CommercialPropertyInsurance } from './pages/commercial-insurance/commercial-property-insurance/commercial-property-insurance';
 import { CommercialAutoInsurance } from './pages/commercial-insurance/commercial-auto-insurance/commercial-auto-insurance';
+import { BusinessOwnerInsurance } from './pages/commercial-insurance/business-owner-insurance/business-owner-insurance';
+import { EmploymentPracticesLiabilityInsurance } from './pages/commercial-insurance/employment-practices-liability-insurance/employment-practices-liability-insurance';
+import { CyberLiabilityInsurance } from './pages/commercial-insurance/cyber-liability-insurance/cyber-liability-insurance';
+import { BuildersRiskInsurance } from './pages/commercial-insurance/builders-risk-insurance/builders-risk-insurance';
 
 @NgModule({
   declarations: [
@@ -109,6 +113,10 @@ import { CommercialAutoInsurance } from './pages/commercial-insurance/commercial
     WorkersCompensationInsurance,
     CommercialPropertyInsurance,
     CommercialAutoInsurance,
+    BusinessOwnerInsurance,
+    EmploymentPracticesLiabilityInsurance,
+    CyberLiabilityInsurance,
+    BuildersRiskInsurance,
   ],
   imports: [
     BrowserModule,
