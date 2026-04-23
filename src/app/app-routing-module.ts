@@ -49,6 +49,7 @@ import { BusinessOwnerInsurance } from './pages/commercial-insurance/business-ow
 import { EmploymentPracticesLiabilityInsurance } from './pages/commercial-insurance/employment-practices-liability-insurance/employment-practices-liability-insurance';
 import { CyberLiabilityInsurance } from './pages/commercial-insurance/cyber-liability-insurance/cyber-liability-insurance';
 import { BuildersRiskInsurance } from './pages/commercial-insurance/builders-risk-insurance/builders-risk-insurance';
+import { DirectorsOfficersLiabilityInsurance } from './pages/commercial-insurance/directors-officers-liability-insurance/directors-officers-liability-insurance';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -120,6 +121,8 @@ const routes: Routes = [
       { path: 'employment-practices-liability-insurance-epli', component: EmploymentPracticesLiabilityInsurance },
       { path: 'cyber-liability-insurance', component: CyberLiabilityInsurance },
       { path: 'builders-risk-construction-insurance', component: BuildersRiskInsurance },
+      { path: 'directors-officers-liability-insurance-do', component: DirectorsOfficersLiabilityInsurance },
+
     ]
   },
 
@@ -193,6 +196,7 @@ const routes: Routes = [
           { path: 'seguro-de-responsabilidad-de-practicas-laborales-epli', component: EmploymentPracticesLiabilityInsurance },
           { path: 'seguro-de-responsabilidad-cibernetica', component: CyberLiabilityInsurance },
           { path: 'seguro-de-construccion-builders-risk', component: BuildersRiskInsurance },
+          { path: 'seguro-de-responsabilidad-de-directores-y-oficiales-do', component: DirectorsOfficersLiabilityInsurance },
         ]
       },
       { path: 'seguros-de-vida', component: LifeInsurance },
@@ -407,5 +411,9 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   buildersRiskInsurance: {
     en: 'commercial-insurance/builders-risk-construction-insurance',
     es: 'seguros-comerciales/seguro-de-construccion-builders-risk'
+  },
+  directorsOfficersLiabilityInsurance: {
+    en: 'commercial-insurance/directors-officers-liability-insurance-do',
+    es: 'seguros-comerciales/seguro-de-responsabilidad-de-directores-y-oficiales-do'
   },
 };
