@@ -50,6 +50,7 @@ import { EmploymentPracticesLiabilityInsurance } from './pages/commercial-insura
 import { CyberLiabilityInsurance } from './pages/commercial-insurance/cyber-liability-insurance/cyber-liability-insurance';
 import { BuildersRiskInsurance } from './pages/commercial-insurance/builders-risk-insurance/builders-risk-insurance';
 import { DirectorsOfficersLiabilityInsurance } from './pages/commercial-insurance/directors-officers-liability-insurance/directors-officers-liability-insurance';
+import { WholeLifeInsurance } from './pages/life-insurance/whole-life-insurance/whole-life-insurance';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -73,9 +74,16 @@ const routes: Routes = [
   // { path: 'auto-insurance', component: AutoInsurance },
   // { path: 'homeowners-insurance', component: HomeInsurance },
   // { path: 'commercial-insurance', component: CommercialInsurance },
-  { path: 'life-insurance', component: LifeInsurance },
+
   { path: 'health-insurance', component: HealthInsurance },
   { path: 'surety-bonds', component: SuretyBondInsurance },
+  {
+    path: 'life-insurance',
+    children: [
+      { path: '', component: LifeInsurance },
+      { path: 'whole-life-insurance', component: WholeLifeInsurance },
+    ]
+  },
   {
     path: 'auto-insurance',
     children: [
@@ -177,9 +185,9 @@ const routes: Routes = [
           { path: '', component: HomeInsurance },
           { path: 'seguro-de-renters', component: RentersInsurance },
           { path: 'seguros-para-condominios', component: CondoInsurance },
-          { path: 'seguro-de-manufactured-mobile-home', component: ManufacturedMobileHomeInsurance },
-          { path: 'seguro-de-landlord', component: LandlordInsurance },
-          { path: 'seguro-de-earthquake', component: EarthquakeInsurance },
+          { path: 'seguros-para-casas-prefabricadas-y-mo', component: ManufacturedMobileHomeInsurance },
+          { path: 'seguros-para-propietarios', component: LandlordInsurance },
+          { path: 'seguros-contra-terremotos', component: EarthquakeInsurance },
           { path: 'seguro-de-flood', component: FloodInsurance },
         ]
       },
@@ -189,7 +197,7 @@ const routes: Routes = [
           { path: '', component: CommercialInsurance },
           { path: 'seguro-de-responsabilidad-profesional', component: ProfessionalLiabilityInsurance },
           { path: 'seguro-de-responsabilidad-general', component: GeneralLiabilityInsurance },
-          { path: 'seguro-de-compensacion-de-trabajadores', component: WorkersCompensationInsurance },
+          { path: 'seguro-de-compensacion-laboral', component: WorkersCompensationInsurance },
           { path: 'seguro-de-propiedad-comercial', component: CommercialPropertyInsurance },
           { path: 'seguro-de-auto-comercial', component: CommercialAutoInsurance },
           { path: 'seguro-de-propietarios-de-negocios-bop', component: BusinessOwnerInsurance },
@@ -199,7 +207,13 @@ const routes: Routes = [
           { path: 'seguro-de-responsabilidad-de-directores-y-oficiales-do', component: DirectorsOfficersLiabilityInsurance },
         ]
       },
-      { path: 'seguros-de-vida', component: LifeInsurance },
+      {
+        path: 'seguros-de-vida',
+        children: [
+          { path: '', component: LifeInsurance },
+          { path: 'seguro-de-vida-entera', component: WholeLifeInsurance },
+        ]
+      },
       { path: 'seguros-de-salud', component: HealthInsurance },
       { path: 'fianzas', component: SuretyBondInsurance },
       { path: 'nuestras-ubicaciones', component: OurLocations, runGuardsAndResolvers: 'always' },
@@ -362,15 +376,15 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   },
   manufacturedMobileHomeInsurance: {
     en: 'homeowners-insurance/manufactured-mobile-home-insurance',
-    es: 'seguros-de-vivienda/seguro-de-manufactured-mobile-home'
+    es: 'seguros-de-vivienda/seguros-para-casas-prefabricadas-y-mo'
   },
   landlordInsurance: {
     en: 'homeowners-insurance/landlord-insurance',
-    es: 'seguros-de-vivienda/seguro-de-landlord'
+    es: 'seguros-de-vivienda/seguros-para-propietarios'
   },
   earthquakeInsurance: {
     en: 'homeowners-insurance/earthquake-insurance',
-    es: 'seguros-de-vivienda/seguro-de-earthquake'
+    es: 'seguros-de-vivienda/seguros-contra-terremotos'
   },
   floodInsurance: {
     en: 'homeowners-insurance/flood-insurance',
@@ -386,7 +400,7 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   },
   workersCompensationInsurance: {
     en: 'commercial-insurance/workers-compensation-insurance',
-    es: 'seguros-comerciales/seguro-de-compensacion-de-trabajadores'
+    es: 'seguros-comerciales/seguro-de-compensacion-laboral'
   },
   commercialPropertyInsurance: {
     en: 'commercial-insurance/commercial-property-insurance',
@@ -415,5 +429,9 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   directorsOfficersLiabilityInsurance: {
     en: 'commercial-insurance/directors-officers-liability-insurance-do',
     es: 'seguros-comerciales/seguro-de-responsabilidad-de-directores-y-oficiales-do'
+  },
+  wholeLifeInsurance: {
+    en: 'life-insurance/whole-life-insurance',
+    es: 'seguros-de-vida/seguro-de-vida-entera'
   },
 };
