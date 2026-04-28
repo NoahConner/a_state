@@ -37,6 +37,7 @@
     "BUILDERS_RISK_INSURANCE": "Builders Risk Insurance",
     "DIRECTORS_OFFICERS_LIABILITY_INSURANCE": "Directors & Officers (D&O) Liability Insurance",
     "WHOLE_LIFE_INSURANCE": "Whole Life Insurance",
+    "UNIVERSAL_LIFE_INSURANCE": "Universal Life Insurance",
     "OFFICE_LOCATOR": "Office Locator",
     "GET_A_QUOTE": "Get a Quote",
     "LANGUAGE": "Language"
@@ -24583,6 +24584,1224 @@
     "FREE_QUOTE": {
       "HEADER": "Get a Free Directors & Officers (D&O) Liability Insurance Quote in Texas",
       "DESCRIPTION": "Get a free Directors & Officers (D&O) liability insurance quote in Texas with A-State Insurance and compare multiple carriers in one place. Our licensed brokers review your business structure, risk level, and coverage needs to find the most suitable options. Instead of paying more than necessary, you get tailored choices that balance protection and cost. We make the process simple, fast, and transparent so Texas businesses can secure reliable D&O coverage with confidence."
+    }
+  },
+  "WHOLE_LIFE_INSURANCE": {
+    "BANNER": {
+      "TITLE_LINE1": "Best & Affordable Whole Life Insurance in",
+      "TITLE_LINE2": "Texas — Starting from",
+      "TITLE_LINE3": "$27/Month",
+      "CHIPS": {
+        "TRADITIONAL": "Traditional",
+        "GUARANTEED_ISSUE": "Guaranteed Issue",
+        "PARTICIPATING": "Participating",
+        "SINGLE_PREMIUM": "Single Premium",
+        "LIMITED_PAY": "Limited Pay",
+        "OTHER": "Other"
+      },
+      "FORM": {
+        "FULL_NAME": "Full Name",
+        "PHONE": "Phone Number",
+        "BUTTON": "Get Quote"
+      }
+    },
+    "WHY_DO_YOU_NEED": {
+      "TITLE": "What Is Whole Life Insurance and Why Do You Need It?",
+      "DESC": "Whole life insurance is a type of permanent life insurance that provides coverage for your entire lifetime, as long as premiums are paid. Unlike temporary policies, it does not expire after a set term. It also builds cash value over time, making it both a protection tool and a long-term financial asset for policyholders.",
+      "DESC1": "This type of insurance is designed to offer lifelong financial security for your loved ones. It helps ensure your family is protected against financial burdens such as debt, funeral costs, and ongoing living expenses. For many families, it becomes a reliable foundation for long-term planning and peace of mind.",
+      "SUB_TITLE": "Here are the key benefits of whole life insurance:",
+      "LIST": [
+        {
+          "TITLE": "Lifetime Protection and Guaranteed Coverage",
+          "TEXT": "Whole life insurance provides lifelong protection that never expires as long as premiums are paid. Unlike term insurance, it guarantees a death benefit to your loved ones, no matter when you pass away. This stability ensures your family remains financially protected."
+        },
+        {
+          "TITLE": "Fixed Premiums for Predictable Planning",
+          "TEXT": "One of the biggest advantages of whole life insurance is its fixed premiums, which never increase over time. You pay the same amount throughout your life, making budgeting easier and more predictable."
+        },
+        {
+          "TITLE": "Cash Value Growth Over Time",
+          "TEXT": "Whole life insurance builds cash value over time, acting like a financial asset you can access while you're still alive. This value can be used for emergencies, education, or major expenses."
+        },
+        {
+          "TITLE": "Financial Security for Your Family",
+          "TEXT": "Whole life insurance ensures your family receives guaranteed financial support after your passing. It helps cover daily living expenses, debts, and education costs, creating a strong safety net."
+        },
+        {
+          "TITLE": "Tax-Advantaged Benefits and Wealth Transfer",
+          "TEXT": "Whole life insurance offers tax advantages, including a generally tax-free death benefit and tax-deferred cash value growth, helping you transfer wealth efficiently."
+        }
+      ]
+    },
+    "HOW_IT_WORKS": {
+      "TITLE": "Is Whole Life Insurance Worth It in Texas?",
+      "DESC1": "Whole life insurance can be worth it in Texas if you are looking for lifelong protection and long-term financial stability. Unlike term coverage, it never expires as long as premiums are maintained, which means your family is always protected. It also builds cash value over time, which can be useful for emergencies, education, or future financial planning.",
+      "DESC2": "For many Texans, especially those planning for long-term family security, estate planning, or leaving behind guaranteed financial support, whole life insurance offers strong value. However, it is usually more expensive than term insurance, so it works best for people who want both protection and a savings component. Comparing options can help you choose what truly fits your needs and budget."
+    },
+    "COVERAGES": {
+      "STANDARD": {
+        "TITLE": "What Does Whole Life Insurance Cover in Texas?",
+        "DESC": "Whole life insurance provides a guaranteed death benefit that helps your family cover funeral costs, outstanding debts, and living expenses. It also builds cash value over time, which you can borrow against for emergencies, education, or financial needs while you are still alive. It ensures long-term financial protection for your loved ones and peace of mind for future planning.",
+        "LIST": [
+          {
+            "TITLE": "Lifetime Death Benefit Paid to Beneficiaries",
+            "DESC": "Whole life insurance guarantees a fixed death benefit paid to your chosen beneficiaries after your passing. This amount is not affected by market changes and ensures reliable financial support.",
+            "ICON": "fas fa-shield-alt"
+          },
+          {
+            "TITLE": "Death from Natural Causes",
+            "DESC": "Covers death due to natural causes, including aging and health-related conditions, helping families manage financial responsibilities and ongoing expenses.",
+            "ICON": "fas fa-heart"
+          },
+          {
+            "TITLE": "Death from Illness or Disease",
+            "DESC": "Provides a guaranteed payout if death occurs due to illness or long-term medical conditions, ensuring financial stability for your loved ones.",
+            "ICON": "fas fa-notes-medical"
+          },
+          {
+            "TITLE": "Accidental Death",
+            "DESC": "Ensures beneficiaries receive the death benefit even in the case of unexpected accidental death, reducing financial stress during difficult times.",
+            "ICON": "fas fa-car-crash"
+          },
+          {
+            "TITLE": "Death from Heart Attack or Stroke",
+            "DESC": "Covers major medical events such as heart attack or stroke, providing financial protection and support during sudden loss.",
+            "ICON": "fas fa-heartbeat"
+          },
+          {
+            "TITLE": "Death from Cancer",
+            "DESC": "Provides a guaranteed payout if death occurs due to cancer, helping families handle treatment-related costs, debts, and living expenses.",
+            "ICON": "fas fa-ribbon"
+          },
+          {
+            "TITLE": "Cash Value Accumulation Over Time",
+            "DESC": "Builds cash value steadily as premiums are paid. This value can be accessed during your lifetime for loans, emergencies, or financial planning needs.",
+            "ICON": "fas fa-piggy-bank"
+          },
+          {
+            "TITLE": "Policy Loans Against Cash Value",
+            "DESC": "Allows policyholders to borrow against the accumulated cash value without canceling coverage, though unpaid loans may reduce the final benefit.",
+            "ICON": "fas fa-hand-holding-usd"
+          },
+          {
+            "TITLE": "Terminal Illness Accelerated Death Benefit",
+            "DESC": "Provides early access to a portion of the death benefit if diagnosed with a terminal illness, helping cover medical and living expenses.",
+            "ICON": "fas fa-procedures"
+          },
+          {
+            "TITLE": "Death of a Spouse or Child (with applicable riders)",
+            "DESC": "Optional riders can extend coverage to a spouse or child, providing additional financial protection for your family.",
+            "ICON": "fas fa-users"
+          }
+        ]
+      },
+      "TYPES": {
+        "TITLE": "Types of Whole Life Insurance in Texas",
+        "DESC": "Whole life insurance comes in different forms to match various financial goals, budgets, and coverage needs. Understanding these options can help you choose the right policy for long-term protection and financial planning.",
+        "LIST": [
+          {
+            "TITLE": "Traditional Whole Life Insurance",
+            "DESC": "Provides lifetime coverage with fixed premiums, guaranteed death benefits, and steady cash value growth for long-term financial security."
+          },
+          {
+            "TITLE": "Participating Whole Life Insurance",
+            "DESC": "May pay dividends based on the insurer’s performance, which can be used to increase cash value, reduce premiums, or enhance the death benefit."
+          },
+          {
+            "TITLE": "Non-Participating Whole Life Insurance",
+            "DESC": "Offers guaranteed premiums and benefits without dividends, focusing on predictable and stable coverage."
+          },
+          {
+            "TITLE": "Guaranteed Issue Whole Life Insurance",
+            "DESC": "Requires no medical exam or health questions, making it easier to qualify, especially for seniors or those with health conditions."
+          },
+          {
+            "TITLE": "Simplified Issue Whole Life Insurance",
+            "DESC": "Requires minimal health questions and no medical exam, offering faster approval while still providing lifetime coverage."
+          },
+          {
+            "TITLE": "Single Premium Whole Life Insurance",
+            "DESC": "Funded with a one-time lump sum payment, providing immediate lifetime coverage and instant cash value accumulation."
+          },
+          {
+            "TITLE": "Limited Pay Whole Life Insurance",
+            "DESC": "Allows you to pay premiums over a set period (such as 10 or 20 years) while maintaining lifetime coverage afterward."
+          },
+          {
+            "TITLE": "Indexed Whole Life Insurance",
+            "DESC": "Links cash value growth to a market index for potential higher returns while maintaining principal protection and lifetime coverage."
+          },
+          {
+            "TITLE": "Joint Whole Life Insurance",
+            "DESC": "Covers two individuals under one policy, with benefits paid after the first or second death depending on the structure."
+          },
+          {
+            "TITLE": "Burial / Final Expense Whole Life Insurance",
+            "DESC": "Designed to cover funeral and end-of-life expenses, helping reduce financial burden on family members."
+          }
+        ]
+      }
+    },
+    "NOT_COVERED": {
+      "HEADER": {
+        "TITLE": "What Does Whole Life Insurance NOT Cover in Texas?",
+        "DESC": "Whole life insurance in Texas does not cover every situation. It will not pay benefits for exclusions such as fraud, misrepresentation, or suicide within the contestability period. It also does not function as health insurance, meaning medical bills, routine care, or disability income are not included. Coverage applies only to the insured individual and the terms outlined in the policy contract."
+      },
+      "LIST": {
+        "SUICIDE": {
+          "TITLE": "Suicide Within the First Two Years of the Policy",
+          "DESC": "Suicide within the first two years is generally not covered. In most cases, insurers refund only the premiums paid rather than the full death benefit, depending on policy terms.",
+          "ICON": "fas fa-exclamation-circle"
+        },
+        "FRAUD": {
+          "TITLE": "Death Due to Fraud or Misrepresentation on the Application",
+          "DESC": "If false or misleading information is provided on the application, the insurer may deny the claim or cancel the policy and refund premiums in accordance with contract terms.",
+          "ICON": "fas fa-file-contract"
+        },
+        "ILLEGAL_ACTIVITIES": {
+          "TITLE": "Death from Illegal Activities",
+          "DESC": "Deaths resulting from criminal or unlawful activities are not covered. Claims may be denied and coverage may be voided based on policy exclusions.",
+          "ICON": "fas fa-gavel"
+        },
+        "HIGH_RISK": {
+          "TITLE": "Death from High-Risk Hobbies",
+          "DESC": "Deaths from high-risk activities such as skydiving, racing, or extreme sports are typically excluded. Coverage depends on specific policy terms and riders.",
+          "ICON": "fas fa-skull-crossbones"
+        },
+        "AVIATION": {
+          "TITLE": "Death from Aviation (Private Pilot; Varies by Policy)",
+          "DESC": "Deaths related to private aviation or non-commercial flying may not be covered. Coverage depends on the insurer and policy-specific exclusions.",
+          "ICON": "fas fa-plane"
+        },
+        "SUBSTANCE_ABUSE": {
+          "TITLE": "Death from Drug or Alcohol Abuse",
+          "DESC": "Deaths caused by drug or alcohol abuse are typically excluded. Claims involving substance use or intoxication may be denied under policy terms.",
+          "ICON": "fas fa-wine-bottle"
+        },
+        "WAR": {
+          "TITLE": "War or Act of War",
+          "DESC": "Deaths resulting from war or active military combat are generally excluded, though limited coverage may apply depending on the insurer and policy.",
+          "ICON": "fas fa-shield-alt"
+        },
+        "PRE_EXISTING": {
+          "TITLE": "Pre-Existing Conditions Not Disclosed on Application",
+          "DESC": "Undisclosed medical conditions may lead to claim denial. Insurers rely on accurate application details when determining coverage eligibility.",
+          "ICON": "fas fa-notes-medical"
+        },
+        "POLICY_LAPSE": {
+          "TITLE": "Cash Value Losses Due to Policy Lapse",
+          "DESC": "If premiums are not paid, the policy may lapse, resulting in loss of coverage and potentially the accumulated cash value, depending on policy terms.",
+          "ICON": "fas fa-times-circle"
+        },
+        "INVESTMENT": {
+          "TITLE": "Investment Losses (Cash Value Is Not Market-Linked)",
+          "DESC": "Whole life insurance cash value is not tied to market investments, so it does not experience stock market losses. Growth is based on the policy structure and remains stable over time.",
+          "ICON": "fas fa-chart-line"
+        }
+      }
+    },
+    "HOW_MUCH_DO_YOU_NEED": {
+      "TITLE": "How Much Life Insurance Do You Actually Need?",
+      "DESC1": "Determining how much life insurance you need starts with understanding your family’s financial needs if something happens to you. Consider outstanding debts, mortgage or rent, daily living expenses, future education costs for children, and long-term income replacement.",
+      "DESC2": "A practical rule of thumb is 10 -15 times your annual income, but every family is different. Start by listing your obligations and subtracting savings or other resources. This gives you a clear baseline for coverage that truly protects your loved ones without overpaying for unnecessary extras."
+    },
+    "LIFE_INSURANCE_COST": {
+      "TITLE": "How Much Does Whole Life Insurance Cost in Texas?",
+      "DESC1": "Whole life insurance in Texas typically costs more than other types of coverage because it lasts a lifetime and builds cash value. On average, Texans may pay $177 to $282 per month for $250,000 coverage, while higher coverage amounts, such as $500,000, can range from $250 to $750+ per month, depending on age and health. Nationally, similar policies average about $540 per month for $500,000 coverage, showing how age and coverage level significantly affect pricing.",
+      "DESC2": "Compared to other states, Texas rates are fairly close to the U.S. average. For example, Texas averages about $3,099 per year (~$258/month) for standard whole life coverage, while some lower-cost states can be slightly cheaper, and higher-cost states like New Jersey or California can exceed $3,600–$4,100 per year (~$302–$340/month+). Overall, Texas stays near the national midpoint, making it neither the cheapest nor the most expensive state for whole life insurance."
+    },
+    "MINIMUM_COVERAGE": {
+      "TITLE": "Texas Homeowners Insurance Minimum Coverage Requirements",
+      "DESC1": "In Texas, homeowners' insurance is not legally required, but most mortgage lenders mandate coverage to protect their investment. Minimum coverage typically includes protection for the home’s structure, personal belongings, and liability for injuries that occur on the property. This ensures that homeowners are financially protected against common risks such as fire, theft, or storm damage.",
+      "DESC2": "Choosing the right coverage level is important, as underinsuring your home can leave you vulnerable to unexpected costs. A trusted broker like A-State Insurance helps Texans compare multiple policies from top carriers to find home insurance that meets lender requirements while balancing affordability and sufficient protection for their property and family."
+    },
+    "COST": {
+      "TITLE": "How Much Does Commercial Insurance Cost in Texas?",
+      "DESC1": "The cost of commercial insurance in Texas can vary significantly depending on factors such as your business size, industry, and coverage needs. On average, small businesses in Texas can expect to pay between $400 and $1,500 per year for a basic policy that covers general liability and business property. Rates may rise for businesses with more employees, higher risks, or specific industry needs. For example, contractors or healthcare providers might face higher premiums due to the specialized coverage required.",
+      "DESC2": "Compared with the national average, commercial insurance in Texas is generally more affordable. States like California and New York tend to have higher premiums due to increased risks and regulatory requirements. Texas businesses can often find competitive rates, especially when shopping around. To get a more accurate estimate for your business, consider requesting a customized quote tailored to your unique situation."
+    },
+    "RATES": {
+      "AGE": {
+        "TITLE": "Average Whole Life Insurance Rates for Non-Smokers by Age",
+        "DESC1": "Whole life insurance rates for non-smokers in Texas vary by age, gender, and coverage amount. Based on average annual premiums, a 20-year-old male may pay around $2,548 per year, while females pay about $2,260. At age 30, rates increase to $3,662 for men and $3,292 for women. By age 40, premiums rise to $5,524 for men and $4,967 for women. Costs continue climbing with age.",
+        "DESC2": "At 50, men pay approximately $8,749 annually, while women pay $7,782. By age 60, rates reach $14,517 for men and $12,670 for women. At age 70, premiums can go as high as $24,797 for men and $21,766 for women, depending on health and policy details.",
+        "H1": "Age",
+        "H2": "Average Annual Rates for Men",
+        "H3": "Average Annual Rates for Women"
+      },
+      "AGE_SMOKER": {
+        "TITLE": "Average Whole Life Insurance Rates for Smokers by Age",
+        "DESC1": "Whole life insurance rates for smokers are typically higher due to increased health risks and stricter underwriting guidelines. Insurers consider tobacco use a major factor affecting life expectancy, which directly impacts premium costs. Rates also rise with age, making early application important. Choosing healthier habits and reducing tobacco use over time may help improve eligibility.",
+        "H1": "Age",
+        "H2": "Average Annual Rates for Men",
+        "H3": "Average Annual Rates for Women"
+      },
+      "FOOTER": {
+        "SOURCE": "Source:",
+        "DISCLAIMER_LABEL": "Disclaimer",
+        "LAST_UPDATED": "Last Updated: March 2026",
+        "DISCLAIMER": "The information provided on this page is for general informational purposes only and may not reflect the most current updates. Coverage requirements, rates, and laws are subject to change. Please consult a licensed insurance agent for the most accurate and up-to-date information."
+      }
+    },
+    "FACTORS_IMPACT": {
+      "HEADER": {
+        "TITLE": "Factors That Impact Your Whole Life Insurance Rates in Texas",
+        "DESC": "Whole life insurance rates in Texas are influenced by several key factors, including age, health condition, lifestyle habits, coverage amount, and policy type. Younger and healthier applicants usually receive lower premiums, while higher risk profiles lead to increased costs. Understanding these factors helps you choose the right policy and manage your long-term insurance expenses effectively."
+      },
+      "LIST": {
+        "AGE": {
+          "TITLE": "Age at Time of Application",
+          "DESC": "Younger applicants typically receive lower whole life insurance rates, while older applicants pay higher premiums due to increased risk and shorter life expectancy."
+        },
+        "GENDER": {
+          "TITLE": "Gender",
+          "DESC": "Women often pay slightly lower premiums than men because they generally have longer life expectancies."
+        },
+        "HEALTH_HISTORY": {
+          "TITLE": "Health History and Pre-Existing Conditions",
+          "DESC": "Medical history and existing health conditions can increase premiums as insurers evaluate long-term health risks."
+        },
+        "TOBACCO_USE": {
+          "TITLE": "Tobacco and Nicotine Use",
+          "DESC": "Smoking or nicotine use significantly raises premiums due to higher health risks and reduced life expectancy."
+        },
+        "BMI": {
+          "TITLE": "Height and Weight (BMI)",
+          "DESC": "Body Mass Index impacts pricing because extreme weight levels may indicate higher health risks, leading to increased premiums."
+        },
+        "FAMILY_HISTORY": {
+          "TITLE": "Family Medical History",
+          "DESC": "A family history of serious illnesses, such as heart disease or cancer, can increase premiums due to inherited health risks."
+        },
+        "COVERAGE_AMOUNT": {
+          "TITLE": "Coverage Amount (Death Benefit)",
+          "DESC": "Higher coverage amounts result in higher premiums because insurers take on greater financial responsibility."
+        },
+        "POLICY_TYPE": {
+          "TITLE": "Type of Whole Life Policy Selected",
+          "DESC": "Different whole life policy types, including participating or non-participating plans, affect pricing based on benefits like dividends and cash value growth."
+        },
+        "OCCUPATION": {
+          "TITLE": "Occupation",
+          "DESC": "High-risk jobs, such as those in oil and gas or construction, can increase premiums due to a greater likelihood of injury."
+        },
+        "HOBBIES": {
+          "TITLE": "Hobbies and Lifestyle",
+          "DESC": "Risky activities such as aviation, racing, or extreme sports may raise insurance costs due to increased accident risk."
+        },
+        "PAYMENT_STRUCTURE": {
+          "TITLE": "Payment Structure",
+          "DESC": "Options like single premium, limited pay, or lifetime pay affect overall cost, with shorter payment terms requiring higher upfront payments."
+        },
+        "DRIVING_RECORD": {
+          "TITLE": "Driving Record",
+          "DESC": "A history of traffic violations or accidents may increase premiums as it reflects a higher overall risk profile."
+        }
+      }
+    },
+    "DISCOUNT_FACTORS": {
+      "HEADER": {
+        "TITLE": "How to Lower Your Whole Life Insurance Premium in Texas",
+        "DESC": "You can reduce your whole life insurance premium by making smart financial and lifestyle choices. Factors like age, health, coverage selection, and policy structure all impact your costs. By optimizing these elements, you can secure lifelong protection at a more affordable rate."
+      },
+      "LIST": {
+        "EARLY_PURCHASE": {
+          "TITLE": "Buy Coverage Early",
+          "DESC": "Purchasing whole life insurance at a younger age locks in lower premiums and reduces long-term costs due to lower risk."
+        },
+        "NON_SMOKER": {
+          "TITLE": "Quit Tobacco Before Applying",
+          "DESC": "Non-smokers receive significantly lower premiums, so quitting tobacco before applying can greatly reduce your costs."
+        },
+        "RIGHT_COVERAGE": {
+          "TITLE": "Choose the Right Coverage Amount",
+          "DESC": "Selecting only the coverage you truly need helps keep premiums affordable while still protecting your family."
+        },
+        "PAYMENT_STRUCTURE": {
+          "TITLE": "Select the Right Payment Structure",
+          "DESC": "Options like limited pay can reduce long-term costs by allowing you to complete payments earlier while keeping lifetime coverage."
+        },
+        "HEALTH_IMPROVEMENT": {
+          "TITLE": "Improve Your Health Before Applying",
+          "DESC": "Maintaining a healthy weight, controlling blood pressure, and improving overall health can help you qualify for lower premiums."
+        },
+        "MEDICAL_EXAM": {
+          "TITLE": "Choose a Medical Exam Policy",
+          "DESC": "Policies with medical exams often offer lower premiums because insurers can assess your health more accurately."
+        },
+        "PARTICIPATING_POLICY": {
+          "TITLE": "Opt for a Participating Policy",
+          "DESC": "Participating policies may pay dividends that can help offset premiums over time, reducing overall costs."
+        },
+        "COMPARE_CARRIERS": {
+          "TITLE": "Compare Multiple Insurance Carriers",
+          "DESC": "Shopping across multiple insurers helps you find the best rates and policy features tailored to your needs."
+        },
+        "DRIVING_RECORD": {
+          "TITLE": "Maintain a Clean Driving Record",
+          "DESC": "A safe driving history signals lower risk to insurers and can help reduce your insurance premiums."
+        },
+        "REMOVE_RIDERS": {
+          "TITLE": "Remove Unnecessary Riders",
+          "DESC": "Eliminating optional riders you don’t need can lower your premium while keeping essential coverage intact."
+        }
+      }
+    },
+    "AGENT_COMPARISON": {
+      "HEADER": {
+        "TITLE": "Independent Insurance Agency vs. Captive Agent: Why Choice Saves You Money",
+        "DESC": "Independent insurance agencies work with multiple carriers, giving you more options, better price comparisons, and tailored coverage. Captive agents represent only one company, limiting flexibility. Working with an independent agency helps you compare rates, find better value, and choose coverage that truly fits your needs."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Feature",
+          "INDEPENDENT": "Independent Agency (A-State)",
+          "CAPTIVE": "Captive Agent"
+        },
+        "LIST": {
+          "CARRIER_ACCESS": {
+            "FEATURE": "Carrier Access",
+            "INDEPENDENT": "Multiple top-rated life insurance carriers",
+            "CAPTIVE": "Single carrier only"
+          },
+          "QUOTE_COMPARISON": {
+            "FEATURE": "Quote Comparison",
+            "INDEPENDENT": "Compares rates across carriers for you",
+            "CAPTIVE": "One quote from one company"
+          },
+          "UNBIASED_ADVICE": {
+            "FEATURE": "Unbiased Advice",
+            "INDEPENDENT": "Recommends what fits your needs",
+            "CAPTIVE": "Limited to their carrier's products"
+          },
+          "POLICY_OPTIONS": {
+            "FEATURE": "Policy Type Options",
+            "INDEPENDENT": "Wide range of whole life products compared",
+            "CAPTIVE": "Limited to the carrier's product lineup"
+          },
+          "DIVIDEND_OPTIONS": {
+            "FEATURE": "Dividend-Paying Policy Options",
+            "INDEPENDENT": "Multiple participating policies compared",
+            "CAPTIVE": "Single carrier's dividend structure only"
+          },
+          "GUARANTEED_ISSUE": {
+            "FEATURE": "Guaranteed Issue Options",
+            "INDEPENDENT": "Multiple carriers for hard-to-insure applicants",
+            "CAPTIVE": "Limited or may decline coverage"
+          },
+          "CASH_VALUE": {
+            "FEATURE": "Cash Value Comparison",
+            "INDEPENDENT": "Compares growth potential across carriers",
+            "CAPTIVE": "Single carrier structure only"
+          },
+          "ONGOING_SUPPORT": {
+            "FEATURE": "Ongoing Policy Support",
+            "INDEPENDENT": "Reviews and adjusts coverage as life changes",
+            "CAPTIVE": "Varies by agent"
+          },
+          "PRICE": {
+            "FEATURE": "Price Competitiveness",
+            "INDEPENDENT": "Shops the market for the best rate",
+            "CAPTIVE": "Limited to one carrier's pricing"
+          },
+          "BEST_FOR": {
+            "FEATURE": "Best For",
+            "INDEPENDENT": "Most whole life insurance buyers in Texas",
+            "CAPTIVE": "Buyers loyal to a specific brand"
+          }
+        }
+      }
+    },
+    "WHOLE_VS_TERM": {
+      "HEADER": {
+        "TITLE": "Whole Life Insurance vs. Term Life Insurance in Texas",
+        "DESC": "Whole life insurance provides lifelong coverage with fixed premiums and builds cash value over time, making it a long-term financial protection option for families. Term life insurance offers coverage for a specific period, such as 10, 20, or 30 years, and is designed for temporary protection needs, such as income replacement. Whole life focuses on security, while term focuses on affordability."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Factor",
+          "WHOLE_LIFE": "Whole Life Insurance",
+          "TERM_LIFE": "Term Life Insurance"
+        },
+        "LIST": {
+          "COVERAGE_DURATION": {
+            "FEATURE": "Coverage Duration",
+            "WHOLE_LIFE": "Lifetime",
+            "TERM_LIFE": "Fixed term (10, 20, 30 years)"
+          },
+          "PREMIUM_COST": {
+            "FEATURE": "Premium Cost",
+            "WHOLE_LIFE": "Higher",
+            "TERM_LIFE": "Lower"
+          },
+          "CASH_VALUE": {
+            "FEATURE": "Cash Value",
+            "WHOLE_LIFE": "Yes — builds over time",
+            "TERM_LIFE": "No"
+          },
+          "DEATH_BENEFIT": {
+            "FEATURE": "Death Benefit",
+            "WHOLE_LIFE": "Guaranteed payout",
+            "TERM_LIFE": "Paid only if death occurs during the term"
+          },
+          "PREMIUM_FLEXIBILITY": {
+            "FEATURE": "Premium Flexibility",
+            "WHOLE_LIFE": "Fixed",
+            "TERM_LIFE": "Fixed"
+          },
+          "DIVIDEND_ELIGIBILITY": {
+            "FEATURE": "Dividend Eligibility",
+            "WHOLE_LIFE": "Yes (participating policies)",
+            "TERM_LIFE": "No"
+          },
+          "POLICY_LOANS": {
+            "FEATURE": "Policy Loans",
+            "WHOLE_LIFE": "Yes — borrow against cash value",
+            "TERM_LIFE": "No"
+          },
+          "POLICY_COMPLEXITY": {
+            "FEATURE": "Policy Complexity",
+            "WHOLE_LIFE": "More complex",
+            "TERM_LIFE": "Simple"
+          },
+          "BEST_FOR": {
+            "FEATURE": "Best For",
+            "WHOLE_LIFE": "Estate planning, lifelong dependents, wealth transfer",
+            "TERM_LIFE": "Income replacement, mortgage protection, young families"
+          },
+          "IDEAL_BUYER_PROFILE": {
+            "FEATURE": "Ideal Buyer Profile",
+            "WHOLE_LIFE": "Long-term financial planning, older buyers",
+            "TERM_LIFE": "Budget-conscious individuals with temporary coverage needs"
+          }
+        }
+      }
+    },
+    "LIFE_INSURANCE_TYPES": {
+      "HEADER": {
+        "TITLE": "Your One-Stop Shop for Every Type of Life Insurance in Texas"
+      },
+      "LIST": {
+        "TERM_LIFE": {
+          "TITLE": "Term Life Insurance",
+          "DESCRIPTION": "Provides coverage for a set period, offering affordable protection to secure your family’s financial future.",
+          "ICON": "fas fa-hourglass-half"
+        },
+        "WHOLE_LIFE": {
+          "TITLE": "Whole Life Insurance",
+          "DESCRIPTION": "Permanent coverage that includes a cash value component, ensuring lifelong protection and financial growth.",
+          "ICON": "fas fa-coins"
+        },
+        "UNIVERSAL_LIFE": {
+          "TITLE": "Universal Life Insurance",
+          "DESCRIPTION": "Flexible permanent coverage that lets you adjust premiums and death benefits as your financial needs change.",
+          "ICON": "fas fa-adjust"
+        },
+        "FINAL_EXPENSE": {
+          "TITLE": "Final Expense Insurance",
+          "DESCRIPTION": "Covers funeral, burial, and other end-of-life costs, helping your loved ones avoid financial stress.",
+          "ICON": "fas fa-cross"
+        },
+        "VARIABLE_LIFE": {
+          "TITLE": "Variable Life Insurance",
+          "DESCRIPTION": "Permanent coverage with investment options, allowing your policy’s cash value to grow through market performance.",
+          "ICON": "fas fa-chart-line"
+        },
+        "GROUP_LIFE": {
+          "TITLE": "Group Life Insurance",
+          "DESCRIPTION": "Employer-sponsored plans provide coverage for multiple employees, often at lower group rates and with easy enrollment.",
+          "ICON": "fas fa-users"
+        }
+      }
+    },
+    "HIGH_RISK_APPLICANT": {
+      "HEADER": {
+        "TITLE": "Hard to Insure? We Can Still Help You Find Coverage"
+      },
+      "CONTENT": {
+        "DESC1": "If you’ve been denied coverage in the past or struggle to qualify due to health issues, age, or lifestyle factors, you’re not alone. Many Texans face challenges when applying for life insurance, especially with traditional underwriting. The good news is that options still exist, including policies designed for individuals who may not qualify under standard approval criteria.",
+        "DESC2": "At A-State Insurance, we work with multiple carriers to help you explore flexible solutions such as simplified issue and guaranteed coverage options. As an independent broker, we focus on finding realistic paths to protection rather than turning you away. Our goal is to help you secure coverage that supports your family’s future, even if your situation is more complex than average."
+      }
+    },
+    "LANGUAGE_SUPPORT": {
+      "HEADER": {
+        "TITLE": "Hablamos Español / We Speak Your Language"
+      },
+      "CONTENT": {
+        "DESC1": "At A-State Insurance, communication should never be a barrier to protection. That’s why our team proudly offers support in Spanish, English, and Hindi, making it easier for every client in Texas to understand their insurance options clearly. Whether you’re discussing coverage, comparing plans, or asking questions, we make sure everything is explained in a simple and comfortable way.",
+        "DESC2": "We understand the importance of trust when making decisions about your family’s future. Our multilingual agents are here to guide you step by step, ensuring nothing gets lost in translation. From auto to life insurance, we help you feel confident and informed in your preferred language so you can choose the right protection without confusion or stress."
+      }
+    },
+    "ASTATE_DIFFERENTIATORS": {
+      "HEADER": {
+        "TITLE": "What Makes A-State Insurance Different"
+      },
+      "LIST": {
+        "LICENSED_BROKERS": {
+          "TITLE": "Texas Licensed Brokers",
+          "DESCRIPTION": "Fully licensed Texas brokers comparing multiple carriers to find reliable insurance coverage options tailored to your needs."
+        },
+        "HISPANIC_LATINO_FRIENDLY": {
+          "TITLE": "Hispanic & Latino Friendly",
+          "DESCRIPTION": "We proudly support Hispanic and Latino communities in Texas with culturally understanding service and clear insurance guidance."
+        },
+        "YEARS_SERVING": {
+          "TITLE": "20+ Years Serving Texans",
+          "DESCRIPTION": "Over 20 years of experience helping Texans find affordable insurance solutions for families, homes, businesses, and health needs."
+        },
+        "CUSTOM_COVERAGE": {
+          "TITLE": "Custom Coverage Plans",
+          "DESCRIPTION": "We design personalized insurance plans based on your lifestyle, budget, and risk level for better protection and peace of mind."
+        },
+        "ONLINE_LOCAL": {
+          "TITLE": "Online & Local",
+          "DESCRIPTION": "Get insurance help online or visit our local Texas office for personalized support and face-to-face guidance whenever you need."
+        },
+        "MULTILINGUAL_AGENTS": {
+          "TITLE": "Multilingual Agents",
+          "DESCRIPTION": "Our multilingual agents speak English, Spanish, and Hindi to ensure clear communication and easy understanding of all policies."
+        }
+      }
+    },
+    "INSURANCE_STEPS": {
+      "HEADER": {
+        "TITLE": "Get Covered in 4 Simple Steps"
+      },
+      "STEPS": {
+        "REACH_OUT": {
+          "TITLE": "Reach Out",
+          "DESCRIPTION": "Contact A-State Insurance via our online form or visit our office to start your insurance journey today."
+        },
+        "GET_ADVICE": {
+          "TITLE": "Get Advice",
+          "DESCRIPTION": "Our agents review your needs and options clearly so you can make informed insurance decisions."
+        },
+        "PICK_PLAN": {
+          "TITLE": "Pick Your Plan",
+          "DESCRIPTION": "Choose the insurance plan that fits your budget and protection needs with full expert support."
+        },
+        "WE_GOT_YOU": {
+          "TITLE": "We’ve Got You",
+          "DESCRIPTION": "We finalize your coverage, policy, and continue support so you stay protected with confidence."
+        }
+      }
+    },
+    "SWITCH_STEPS": {
+      "HEADER": {
+        "TITLE": "How to Switch Your Whole Life Insurance to A-State Insurance"
+      },
+      "STEPS": {
+        "STEP_1": {
+          "TITLE": "Step 1: Get Your Free Comparison Quote",
+          "DESCRIPTION": "We review your existing whole life policy and compare it with multiple carriers. You receive a clear, no-obligation quote showing better coverage options, potential savings, and improved benefits tailored to your financial goals and family protection needs."
+        },
+        "STEP_2": {
+          "TITLE": "Step 2: Pick Your Plan and Activate",
+          "DESCRIPTION": "After reviewing your options, you choose the whole life insurance plan that best fits your budget and coverage needs. Our team helps finalize your application and quickly activate your new policy, with full support throughout the process."
+        },
+        "STEP_3": {
+          "TITLE": "Step 3: Cancel Your Old Policy (We’ll Help!)",
+          "DESCRIPTION": "Once your new policy is active, we guide you through the safe cancellation of your old insurance. We ensure there are no coverage gaps, coordinate with carriers, and make the entire transition smooth, simple, and stress-free for you."
+        }
+      }
+    },
+    "FREE_QUOTE": {
+      "HEADER": "Get a Free Whole Life Insurance Quote in Texas",
+      "DESCRIPTION": "Getting a free whole life insurance quote in Texas is quick and simple with A-State Insurance. Our licensed brokers compare multiple top-rated carriers to find coverage that fits your budget, lifestyle, and long-term financial goals. You can request a quote online, by phone, or by visiting our local office for personalized support. We focus on making the process clear and stress-free, ensuring you understand every option before making a decision with no obligation and full guidance."
+    }
+  },
+  "UNIVERSAL_LIFE_INSURANCE": {
+    "BANNER": {
+      "TITLE_LINE1": "Best & Affordable Universal Life Insurance in",
+      "TITLE_LINE2": "Texas — Starting from",
+      "TITLE_LINE3": "$54/Month",
+      "CHIPS": {
+        "GUARANTEED": "Guaranteed",
+        "INDEXED": "Indexed",
+        "VARIABLE": "Variable",
+        "FIXED": "Fixed",
+        "SURVIVORSHIP": "Survivorship",
+        "OTHER": "Other"
+      },
+      "FORM": {
+        "FULL_NAME": "Full Name",
+        "PHONE": "Phone Number",
+        "BUTTON": "Get Quote"
+      }
+    },
+    "WHY_DO_YOU_NEED": {
+      "TITLE": "What Is Universal Life Insurance and Why Do You Need It?",
+      "DESC": "Universal life insurance is a type of permanent life insurance that provides lifelong coverage along with a savings component known as cash value. Unlike term policies, it does not expire as long as premiums are maintained. What makes it unique is its flexibility; you can adjust your premium payments and even modify your death benefit within certain limits.",
+      "DESC1": "With universal life insurance policies, part of your premium goes toward the cost of insurance, while the rest builds cash value over time. This cash value can grow based on interest rates or market-linked options, depending on the type of policy you choose. You can also access these funds later through loans or withdrawals if needed.",
+      "SUB_TITLE": "Here are a few reasons why you need universal life insurance:",
+      "LIST": [
+        {
+          "TITLE": "Lifelong Financial Protection",
+          "TEXT": "Universal life insurance ensures your loved ones receive a death benefit no matter when you pass away. This long-term protection helps cover funeral costs, debts, and future financial needs."
+        },
+        {
+          "TITLE": "Flexible Premium Payments",
+          "TEXT": "You are not locked into fixed payments. You can adjust how much you pay and when, as long as the policy remains funded. This flexibility is helpful during changing financial situations."
+        },
+        {
+          "TITLE": "Cash Value Growth Over Time",
+          "TEXT": "A portion of your premium builds cash value that grows over time. This can serve as a financial resource you can use later for emergencies, education, or retirement needs."
+        },
+        {
+          "TITLE": "Adjustable Coverage as Life Changes",
+          "TEXT": "Life events such as marriage, having children, or career growth may change your financial needs. Universal life insurance allows you to increase or decrease your coverage accordingly."
+        },
+        {
+          "TITLE": "Living Benefits and Financial Access",
+          "TEXT": "Many policies include living benefits, such as access to funds in case of serious illness. You can also take policy loans against your cash value without canceling your coverage."
+        }
+      ]
+    },
+    "HOW_IT_WORKS": {
+      "TITLE": "Is Universal Life Insurance Worth It in Texas?",
+      "DESC1": "Universal life insurance can be worth it in Texas if you are looking for long-term protection with flexibility. It offers lifelong coverage, adjustable premiums, and the ability to build cash value over time, which can support future financial needs like retirement or emergencies. This makes it a strong option for individuals who want more control over their policy and evolving financial plans.",
+      "DESC2": "However, it is not the right fit for everyone. Compared to term life insurance, it is more expensive and requires active management to keep the policy funded and avoid lapse. Its value depends on your financial goals, risk tolerance, and ability to maintain contributions over time. For many buyers, universal life insurance is worth it when used as part of a long-term financial strategy, not just basic coverage."
+    },
+    "COVERAGES": {
+      "STANDARD": {
+        "TITLE": "What Does Universal Life Insurance Cover in Texas?",
+        "DESC": "Universal life insurance in Texas offers flexible, lifelong protection while building cash value you can use over time. It covers various causes of death and ensures your beneficiaries receive financial support when it matters most. Many insurance policies also include living benefits, policy loans, and adjustable features that can adapt as your financial goals and needs change.",
+        "LIST": [
+          {
+            "TITLE": "Lifetime Death Benefit Paid to Beneficiaries",
+            "DESC": "Provides a guaranteed payout to your chosen beneficiaries upon your passing. This financial support can help cover funeral costs, debts, daily living expenses, or future needs, offering long-term security and peace of mind for your loved ones.",
+            "ICON": "fas fa-shield-alt"
+          },
+          {
+            "TITLE": "Death from Natural Causes",
+            "DESC": "Covers passing due to natural causes, such as aging, or non-accidental causes. Your beneficiaries receive the death benefit without restrictions, helping ensure financial stability during an already difficult and emotional time.",
+            "ICON": "fas fa-heart"
+          },
+          {
+            "TITLE": "Death from Illness or Disease",
+            "DESC": "Includes coverage for deaths resulting from illnesses or diseases, whether sudden or long-term. The policy ensures your family receives complete financial support to handle medical bills, income loss, and other essential expenses.",
+            "ICON": "fas fa-notes-medical"
+          },
+          {
+            "TITLE": "Accidental Death",
+            "DESC": "Offers coverage in the event of an unexpected accident leading to death. This benefit provides financial protection for your loved ones, helping them cover unexpected expenses and maintain financial stability after a tragic event.",
+            "ICON": "fas fa-car-crash"
+          },
+          {
+            "TITLE": "Death from Heart Attack or Stroke",
+            "DESC": "Provides great coverage if death occurs due to a heart attack or stroke. These common health events are included to ensure your beneficiaries receive the policy payout to support ongoing financial obligations and living costs.",
+            "ICON": "fas fa-heartbeat"
+          },
+          {
+            "TITLE": "Death from Cancer",
+            "DESC": "Includes protection if death is caused by cancer. Whether diagnosed recently or over time, the insurance coverage policy ensures your loved ones receive financial assistance to handle expenses and maintain their quality of life.",
+            "ICON": "fas fa-ribbon"
+          },
+          {
+            "TITLE": "Cash Value Accumulation with Flexible Premium Payments",
+            "DESC": "Builds cash value over time as you pay premiums, allowing flexibility in how much and when you pay within limits. This savings component from this coverage can expand and even be used later for financial needs or opportunities.",
+            "ICON": "fas fa-piggy-bank"
+          },
+          {
+            "TITLE": "Policy Loans Against Cash Value",
+            "DESC": "Allows you to borrow against the accumulated cash value of your policy. These loans can be used for emergencies, education, or other expenses, offering financial flexibility and protection without needing to cancel your coverage.",
+            "ICON": "fas fa-hand-holding-usd"
+          },
+          {
+            "TITLE": "Adjustable Death Benefit Over Time",
+            "DESC": "Gives you the option to increase or decrease your death benefit as your needs change. This flexibility helps align your coverage comprehensively with life events such as marriage, children, or changes in financial responsibilities.",
+            "ICON": "fas fa-chart-line"
+          },
+          {
+            "TITLE": "Terminal Illness Accelerated Death Benefit",
+            "DESC": "Provides access to a portion of your death benefit if diagnosed with a qualifying terminal illness. This insurance policy coverage can help cover medical costs, caregiving, or personal expenses during a critical time in your life.",
+            "ICON": "fas fa-procedures"
+          }
+        ]
+      },
+      "TYPES": {
+        "TITLE": "Types of Universal Life Policies We Insure in Texas",
+        "DESC": "Universal life insurance comes in various forms to match different financial goals, risk tolerances, and coverage needs. Understanding these options can help you choose the right policy for flexible lifetime protection and cash value growth.",
+        "LIST": [
+          {
+            "TITLE": "Guaranteed Universal Life Insurance (GUL)",
+            "DESC": "Provides lifetime coverage with fixed premiums and a focus on a guaranteed death benefit rather than cash value. It is ideal for those who want reliable, no-surprise protection."
+          },
+          {
+            "TITLE": "Indexed Universal Life Insurance (IUL)",
+            "DESC": "Links cash value growth to a market index like the S&P 500, offering potential for higher returns while protecting against market losses. Balances opportunity with downside protection."
+          },
+          {
+            "TITLE": "Variable Universal Life Insurance (VUL)",
+            "DESC": "Allows cash value to be invested in subaccounts, similar to mutual funds. This option offers higher growth potential but comes with greater market risk."
+          },
+          {
+            "TITLE": "Fixed Universal Life Insurance",
+            "DESC": "Offers steady cash value growth based on a fixed interest rate set by the insurer. It provides stability and low risk, making it a good option for predictable accumulation."
+          },
+          {
+            "TITLE": "Survivorship Universal Life Insurance (Second-to-Die)",
+            "DESC": "Covers two individuals under one policy and pays the death benefit after the second insured person passes away. It is commonly used for estate planning and managing tax liabilities."
+          },
+          {
+            "TITLE": "Joint Universal Life Insurance",
+            "DESC": "Provides coverage for two people under a single policy, with a payout triggered after the first death or structured depending on the specific plan and needs."
+          },
+          {
+            "TITLE": "Single Premium Universal Life Insurance",
+            "DESC": "Requires a one-time lump sum payment to fully fund the policy. It eliminates ongoing premiums while still providing lifetime coverage and cash value growth."
+          },
+          {
+            "TITLE": "No-Lapse Guarantee Universal Life Insurance",
+            "DESC": "Ensures the policy remains active even if the cash value drops to zero, provided premium requirements are met. This prevents policy lapse and provides long-term security."
+          },
+          {
+            "TITLE": "Participating Universal Life Insurance",
+            "DESC": "May offer dividends based on the insurer's financial performance, which can be used to increase cash value, reduce premiums, or enhance the death benefit."
+          },
+          {
+            "TITLE": "High Early Cash Value Universal Life Insurance",
+            "DESC": "Focuses on building cash value quickly during the policy's early years. It is designed for those who want faster access to funds for loans or withdrawals."
+          }
+        ]
+      }
+    },
+    "NOT_COVERED": {
+      "HEADER": {
+        "TITLE": "What Does Universal Life Insurance NOT Cover in Texas?",
+        "DESC": "While universal life insurance offers broad protection, it does come with specific exclusions. Certain situations may not be covered, especially during the policy's early years or if terms are violated. Knowing what is not included helps you avoid claim issues, stay compliant with policy rules, and ensure your coverage provides the protection your family expects when it matters most."
+      },
+      "LIST": {
+        "SUICIDE": {
+          "TITLE": "Suicide Within the First Two Years of the Policy",
+          "DESC": "If the insured dies by suicide within the first two policy years, the death benefit is typically not paid. Instead, insurers may refund premiums paid. After this period, coverage usually applies, but this exclusion is standard to prevent misuse.",
+          "ICON": "fas fa-exclamation-circle"
+        },
+        "FRAUD": {
+          "TITLE": "Death Due to Fraud or Misrepresentation on the Application",
+          "DESC": "If false or incomplete information is provided on the application, the insurer may deny the claim. Accuracy about health, lifestyle, and history is essential, as misrepresentation can void the policy and leave beneficiaries without support.",
+          "ICON": "fas fa-file-contract"
+        },
+        "ILLEGAL_ACTIVITIES": {
+          "TITLE": "Death from Illegal Activities",
+          "DESC": "Deaths that occur while committing illegal acts are generally excluded from coverage. If the insured passes away while engaged in unlawful activity, the insurer may deny the claim, as policies are designed to cover only legitimate, lawful circumstances.",
+          "ICON": "fas fa-gavel"
+        },
+        "HIGH_RISK": {
+          "TITLE": "Death from High-Risk Hobbies (skydiving, racing, extreme sports)",
+          "DESC": "Engaging in high-risk hobbies like skydiving, racing, or extreme sports may not be covered unless disclosed and approved. Insurers often exclude these activities or charge higher premiums due to the increased risk involved in such pursuits.",
+          "ICON": "fas fa-skull-crossbones"
+        },
+        "AVIATION": {
+          "TITLE": "Death from Aviation (private pilot; varies by policy)",
+          "DESC": "Deaths resulting from aviation activities, such as piloting a private aircraft, may not be covered unless specifically included. Coverage rules vary by policy, and undisclosed aviation risks can lead to claim denial under standard exclusions.",
+          "ICON": "fas fa-plane"
+        },
+        "SUBSTANCE_ABUSE": {
+          "TITLE": "Death from Drug or Alcohol Abuse",
+          "DESC": "If death is caused by drug overdose or excessive alcohol use, the claim may be denied. Insurers often exclude substance abuse-related deaths, especially when misuse or illegal substances contribute directly to the cause of death.",
+          "ICON": "fas fa-wine-bottle"
+        },
+        "WAR": {
+          "TITLE": "War or Act of War (active military combat; varies by policy)",
+          "DESC": "Deaths occurring during active military combat or acts of war may be excluded, depending on the policy. Coverage terms vary, so individuals in military service should review conditions carefully to understand how war-related risks are handled.",
+          "ICON": "fas fa-shield-alt"
+        },
+        "PRE_EXISTING": {
+          "TITLE": "Pre-Existing Conditions Not Disclosed on Application",
+          "DESC": "If a pre-existing condition is not disclosed during the application process and leads to death, the insurer may deny the claim. Full transparency is required to ensure coverage remains valid and beneficiaries receive the intended payout.",
+          "ICON": "fas fa-notes-medical"
+        },
+        "POLICY_LAPSE": {
+          "TITLE": "Policy Lapse Due to Insufficient Cash Value to Cover Premiums",
+          "DESC": "If the policy lapses due to insufficient cash value or missed premium payments, coverage ends. In such cases, no death benefit is paid, making it important to monitor policy performance and maintain adequate funding over time.",
+          "ICON": "fas fa-times-circle"
+        },
+        "MARKET_LOSSES": {
+          "TITLE": "Market Losses on Cash Value (applies to Variable Universal Life)",
+          "DESC": "In variable policies, cash value is tied to market performance and can decline. Losses in investment value are not protected, meaning policyholders bear the risk, and reduced cash value can impact coverage sustainability and benefits.",
+          "ICON": "fas fa-chart-line"
+        }
+      }
+    },
+    "HOW_MUCH_DO_YOU_NEED": {
+      "TITLE": "How Much Does Universal Life Insurance Cost in Texas?",
+      "DESC1": "The cost of universal life insurance in Texas varies based on age, health, coverage amount, and policy type. On average, a healthy 30-year-old may pay around $40–$50 per month for lower coverage, while more robust policies or older applicants can see premiums rise significantly. For example, a 40-year-old male might pay roughly $180–$350 per month, depending on the policy structure and funding level.",
+      "DESC2": "Compared to other states, pricing for universal life insurance is generally similar because insurers primarily base rates on personal risk factors rather than location. However, Texas may see slightly higher premiums for individuals in high-risk industries or with specific lifestyle factors. Overall, costs remain competitive nationwide, with variations driven more by individual profiles than geography."
+    },
+    "LIFE_INSURANCE_COST": {
+      "TITLE": "How Much Does Whole Life Insurance Cost in Texas?",
+      "DESC1": "Whole life insurance in Texas typically costs more than other types of coverage because it lasts a lifetime and builds cash value. On average, Texans may pay $177 to $282 per month for $250,000 coverage, while higher coverage amounts, such as $500,000, can range from $250 to $750+ per month, depending on age and health. Nationally, similar policies average about $540 per month for $500,000 coverage, showing how age and coverage level significantly affect pricing.",
+      "DESC2": "Compared to other states, Texas rates are fairly close to the U.S. average. For example, Texas averages about $3,099 per year (~$258/month) for standard whole life coverage, while some lower-cost states can be slightly cheaper, and higher-cost states like New Jersey or California can exceed $3,600–$4,100 per year (~$302–$340/month+). Overall, Texas stays near the national midpoint, making it neither the cheapest nor the most expensive state for whole life insurance."
+    },
+    "MINIMUM_COVERAGE": {
+      "TITLE": "Texas Homeowners Insurance Minimum Coverage Requirements",
+      "DESC1": "In Texas, homeowners' insurance is not legally required, but most mortgage lenders mandate coverage to protect their investment. Minimum coverage typically includes protection for the home’s structure, personal belongings, and liability for injuries that occur on the property. This ensures that homeowners are financially protected against common risks such as fire, theft, or storm damage.",
+      "DESC2": "Choosing the right coverage level is important, as underinsuring your home can leave you vulnerable to unexpected costs. A trusted broker like A-State Insurance helps Texans compare multiple policies from top carriers to find home insurance that meets lender requirements while balancing affordability and sufficient protection for their property and family."
+    },
+    "COST": {
+      "TITLE": "How Much Does Commercial Insurance Cost in Texas?",
+      "DESC1": "The cost of commercial insurance in Texas can vary significantly depending on factors such as your business size, industry, and coverage needs. On average, small businesses in Texas can expect to pay between $400 and $1,500 per year for a basic policy that covers general liability and business property. Rates may rise for businesses with more employees, higher risks, or specific industry needs. For example, contractors or healthcare providers might face higher premiums due to the specialized coverage required.",
+      "DESC2": "Compared with the national average, commercial insurance in Texas is generally more affordable. States like California and New York tend to have higher premiums due to increased risks and regulatory requirements. Texas businesses can often find competitive rates, especially when shopping around. To get a more accurate estimate for your business, consider requesting a customized quote tailored to your unique situation."
+    },
+    "RATES": {
+      "AGE": {
+        "TITLE": "Average Universal Life Insurance Rates by Age",
+        "DESC1": "Universal life insurance rates vary by age because insurers calculate premiums based on life expectancy. Younger applicants qualify for lower rates since they are less likely to face serious medical issues. As you age, the likelihood of illness increases, raising costs. Older applicants also have fewer years to build cash value, so higher premiums are required to keep the policy active.",
+        "H1": "Age",
+        "H2": "Female",
+        "H3": "Male"
+      },
+      "FOOTER": {
+        "SOURCE": "Source:",
+        "DISCLAIMER_LABEL": "Disclaimer",
+        "LAST_UPDATED": "Last Updated: March 2026",
+        "DISCLAIMER": " The information provided on this page is for general informational purposes only and may not reflect the most current updates. Coverage requirements, rates, and laws are subject to change. Please consult a licensed insurance agent for the most accurate and up-to-date information."
+      }
+    },
+    "FACTORS_IMPACT": {
+      "HEADER": {
+        "TITLE": "Factors That Impact Your Universal Life Insurance Rates in Texas",
+        "DESC": "Universal life insurance rates in Texas are influenced by a mix of personal and financial factors. Insurers assess your age, health history, and lifestyle choices, as well as the policy's size and cash value features. Broader factors like interest rates and market conditions also affect pricing, making each policy’s cost vary with individual circumstances and long-term goals."
+      },
+      "LIST": {
+        "AGE": {
+          "TITLE": "Age at Time of Application",
+          "DESC": "Younger applicants usually secure lower premiums, while older applicants incur higher premiums due to greater risk."
+        },
+        "GENDER": {
+          "TITLE": "Gender",
+          "DESC": "Women often receive lower rates than men because they statistically live longer and pose a lower risk to insurers."
+        },
+        "HEALTH_HISTORY": {
+          "TITLE": "Health History and Pre-Existing Conditions",
+          "DESC": "Past illnesses or chronic conditions raise premiums, while a clean medical record can help secure better rates."
+        },
+        "TOBACCO_USE": {
+          "TITLE": "Tobacco and Nicotine Use",
+          "DESC": "Smoking or nicotine use significantly increases premiums, as it raises the risk of serious health issues."
+        },
+        "BMI": {
+          "TITLE": "Height and Weight (BMI)",
+          "DESC": "Higher BMI can lead to higher premiums, while a healthy height-to-weight ratio helps lower insurance costs."
+        },
+        "FAMILY_HISTORY": {
+          "TITLE": "Family Medical History",
+          "DESC": "A family history of serious illnesses can increase premiums due to potential inherited health risks."
+        },
+        "COVERAGE_AMOUNT": {
+          "TITLE": "Coverage Amount (Death Benefit)",
+          "DESC": "Higher coverage amounts result in higher premiums, as insurers assume greater financial risk."
+        },
+        "POLICY_TYPE": {
+          "TITLE": "Type of Universal Life Policy Selected (GUL, IUL, VUL)",
+          "DESC": "Different policy types vary in risk and returns, affecting how insurers calculate and price premiums."
+        },
+        "PREMIUM_FLEXIBILITY": {
+          "TITLE": "Premium Payment Flexibility and Frequency",
+          "DESC": "Flexible payment options can affect cost structure, while more frequent payments may slightly increase total cost."
+        },
+        "OCCUPATION": {
+          "TITLE": "Occupation",
+          "DESC": "High-risk jobs in oil and gas, construction, and similar industries common in Texas can raise premiums due to increased risk exposure."
+        },
+        "HOBBIES": {
+          "TITLE": "Hobbies and Lifestyle",
+          "DESC": "Risky hobbies such as extreme sports, aviation, or racing can increase premiums due to greater potential for injury or death."
+        },
+        "CASH_VALUE_STRATEGY": {
+          "TITLE": "Cash Value Growth Strategy Selected",
+          "DESC": "The chosen investment strategy impacts growth and risk, which can influence overall policy cost and long-term value."
+        }
+      }
+    },
+    "DISCOUNT_FACTORS": {
+      "HEADER": {
+        "TITLE": "How to Maximize Your Discounts and Lower Your Universal Life Insurance Premium",
+        "DESC": "Lowering your insurance premium starts with understanding how insurers calculate risk and reward responsible behavior. By maintaining good health, choosing the right coverage level, and taking advantage of available discounts, you can reduce costs over time. Smart policy adjustments and consistent financial habits help you secure better rates while maintaining your long-term protection."
+      },
+      "LIST": {
+        "EARLY_PURCHASE": {
+          "TITLE": "Buy Coverage Early",
+          "DESC": "Applying at a younger age helps lock in lower premiums and reduces long-term insurance premium costs."
+        },
+        "NON_SMOKER": {
+          "TITLE": "Quit Tobacco Before Applying",
+          "DESC": "Quitting tobacco well before applying can significantly lower premiums and improve your chances of approval."
+        },
+        "RIGHT_COVERAGE": {
+          "TITLE": "Choose Only the Coverage Amount You Actually Need",
+          "DESC": "Choosing only the coverage you need prevents overpaying and keeps premiums manageable while still meeting financial goals."
+        },
+        "PREMIUM_FLEXIBILITY": {
+          "TITLE": "Leverage Premium Flexibility",
+          "DESC": "Flexible payments allow you to adjust contributions during hardship, helping you keep coverage active without major strain."
+        },
+        "HEALTH_IMPROVEMENT": {
+          "TITLE": "Improve Your Health Before Applying",
+          "DESC": "Improving your health before applying, such as losing weight or controlling blood pressure, can help you qualify for lower rates."
+        },
+        "MEDICAL_EXAM": {
+          "TITLE": "Choose a Medical Exam Policy Over No-Exam for Better Rates",
+          "DESC": "Opting for a medical exam policy often results in better rates, since insurers can more accurately evaluate your health risk."
+        },
+        "CASH_VALUE_STRATEGY": {
+          "TITLE": "Fund Your Policy Strategically to Maximize Cash Value Growth",
+          "DESC": "Funding your policy strategically can boost cash value growth, improve long-term value, and help offset overall costs."
+        },
+        "COMPARE_CARRIERS": {
+          "TITLE": "Compare Multiple Carriers Through an Independent Agent",
+          "DESC": "Comparing multiple carriers through an agent helps you find better rates and coverage tailored to your financial situation."
+        },
+        "DRIVING_RECORD": {
+          "TITLE": "Maintain a Clean Driving Record",
+          "DESC": "Maintaining a clean driving record shows responsible behavior, which may help reflect positively on overall risk assessment."
+        },
+        "REMOVE_RIDERS": {
+          "TITLE": "Review and Remove Riders You Don't Need",
+          "DESC": "Reviewing and removing riders you don't need helps reduce unnecessary costs and keep your policy efficient and affordable."
+        }
+      }
+    },
+    "AGENT_COMPARISON": {
+      "HEADER": {
+        "TITLE": "Independent Insurance Agency vs. Captive Agent: Why Choice Saves You Money",
+        "DESC": "Choosing between an independent insurance agency and a captive agent can impact your costs and coverage options. Independent agencies work with multiple carriers, allowing them to compare rates and find policies that fit your needs and budget. In contrast, captive agents represent a single company, limiting choices. Having access to multiple options often leads to better coverage solutions."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Feature",
+          "INDEPENDENT": "Independent Agency (A-State)",
+          "CAPTIVE": "Captive Agent"
+        },
+        "LIST": {
+          "CARRIER_ACCESS": {
+            "FEATURE": "Carrier Access",
+            "INDEPENDENT": "Multiple top-rated life insurance carriers",
+            "CAPTIVE": "Single carrier only"
+          },
+          "QUOTE_COMPARISON": {
+            "FEATURE": "Quote Comparison",
+            "INDEPENDENT": "Compares rates across carriers for you",
+            "CAPTIVE": "One quote from one company"
+          },
+          "UNBIASED_ADVICE": {
+            "FEATURE": "Unbiased Advice",
+            "INDEPENDENT": "Yes — recommends what fits your needs",
+            "CAPTIVE": "Limited to their carrier's products"
+          },
+          "POLICY_OPTIONS": {
+            "FEATURE": "Policy Type Options",
+            "INDEPENDENT": "GUL, IUL, VUL and more compared across carriers",
+            "CAPTIVE": "Limited to the carrier's product lineup"
+          },
+          "CASH_VALUE_STRATEGY": {
+            "FEATURE": "Cash Value Strategy Options",
+            "INDEPENDENT": "Multiple growth strategies compared across carriers",
+            "CAPTIVE": "Single carrier's cash value structure only"
+          },
+          "INDEX_INVESTMENT_OPTIONS": {
+            "FEATURE": "Index and Investment Options",
+            "INDEPENDENT": "Multiple IUL/VUL options compared",
+            "CAPTIVE": "Single carrier's options only"
+          },
+          "HARD_TO_INSURE": {
+            "FEATURE": "Hard-to-Insure Buyer Help",
+            "INDEPENDENT": "More solutions across multiple carriers",
+            "CAPTIVE": "May decline or have limited options"
+          },
+          "PREMIUM_FLEXIBILITY": {
+            "FEATURE": "Premium Flexibility Comparison",
+            "INDEPENDENT": "Compared across carriers to find the best structure",
+            "CAPTIVE": "Single carrier's flexibility rules only"
+          },
+          "ONGOING_SUPPORT": {
+            "FEATURE": "Ongoing Policy Review",
+            "INDEPENDENT": "Yes — monitors cash value and adjusts as needed",
+            "CAPTIVE": "Varies"
+          },
+          "PRICE": {
+            "FEATURE": "Price Competitiveness",
+            "INDEPENDENT": "Higher — shops the market for the best rate",
+            "CAPTIVE": "Limited to one carrier's pricing"
+          },
+          "BEST_FOR": {
+            "FEATURE": "Best For",
+            "INDEPENDENT": "Most universal life buyers in Texas",
+            "CAPTIVE": "Buyers loyal to a specific brand"
+          }
+        }
+      }
+    },
+    "UNIVERSAL_VS_WHOLE": {
+      "HEADER": {
+        "TITLE": "Universal Life Insurance vs. Whole Life Insurance in Texas",
+        "DESC": "Universal life insurance and whole life insurance both offer lifelong coverage, but they differ in flexibility and structure. Universal life offers adjustable premiums and death benefits, as well as variable cash value growth. Whole life provides fixed insurance premiums, guaranteed cash value, and predictable returns, making it simpler and more stable for long-term planning."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Factor",
+          "UNIVERSAL_LIFE": "Universal Life Insurance",
+          "WHOLE_LIFE": "Whole Life Insurance"
+        },
+        "LIST": {
+          "COVERAGE_DURATION": {
+            "FEATURE": "Coverage Duration",
+            "UNIVERSAL_LIFE": "Lifetime",
+            "WHOLE_LIFE": "Lifetime"
+          },
+          "PREMIUM_FLEXIBILITY": {
+            "FEATURE": "Premium Flexibility",
+            "UNIVERSAL_LIFE": "Yes — adjustable within limits",
+            "WHOLE_LIFE": "No — fixed premiums"
+          },
+          "DEATH_BENEFIT_FLEXIBILITY": {
+            "FEATURE": "Death Benefit Flexibility",
+            "UNIVERSAL_LIFE": "Yes — can increase or decrease",
+            "WHOLE_LIFE": "No — fixed death benefit"
+          },
+          "CASH_VALUE_ACCUMULATION": {
+            "FEATURE": "Cash Value Accumulation",
+            "UNIVERSAL_LIFE": "Yes",
+            "WHOLE_LIFE": "Yes"
+          },
+          "CASH_VALUE_GROWTH_RATE": {
+            "FEATURE": "Cash Value Growth Rate",
+            "UNIVERSAL_LIFE": "Varies (interest, index, or market-linked)",
+            "WHOLE_LIFE": "Guaranteed fixed rate"
+          },
+          "DIVIDEND_ELIGIBILITY": {
+            "FEATURE": "Dividend Eligibility",
+            "UNIVERSAL_LIFE": "No (most policies)",
+            "WHOLE_LIFE": "Yes (participating policies)"
+          },
+          "POLICY_LOANS": {
+            "FEATURE": "Policy Loans",
+            "UNIVERSAL_LIFE": "Yes — borrow against cash value",
+            "WHOLE_LIFE": "Yes — borrow against cash value"
+          },
+          "RISK_LEVEL": {
+            "FEATURE": "Risk Level",
+            "UNIVERSAL_LIFE": "Moderate to High (VUL exposed to market)",
+            "WHOLE_LIFE": "Low — guaranteed growth"
+          },
+          "POLICY_COMPLEXITY": {
+            "FEATURE": "Policy Complexity",
+            "UNIVERSAL_LIFE": "More complex",
+            "WHOLE_LIFE": "Moderate"
+          },
+          "RISK_OF_LAPSE": {
+            "FEATURE": "Risk of Lapse",
+            "UNIVERSAL_LIFE": "Higher (if cash value depleted)",
+            "WHOLE_LIFE": "Lower"
+          },
+          "BEST_FOR": {
+            "FEATURE": "Best For",
+            "UNIVERSAL_LIFE": "Flexible long-term planning, estate planning",
+            "WHOLE_LIFE": "Predictable lifelong coverage, wealth transfer"
+          },
+          "IDEAL_BUYER_PROFILE": {
+            "FEATURE": "Ideal Buyer Profile",
+            "UNIVERSAL_LIFE": "Financially savvy buyers seeking flexibility",
+            "WHOLE_LIFE": "Conservative buyers seeking guarantees"
+          }
+        }
+      }
+    },
+    "HIGH_RISK_APPLICANT": {
+      "HEADER": {
+        "TITLE": "Hard to Insure? We Can Still Help You Find Coverage"
+      },
+      "CONTENT": {
+        "DESC1": "Getting approved for life insurance can feel challenging if you have health conditions, a risky job, or past coverage denials. Many people assume they have no options, but that is not always the case. With the right guidance, even high-risk applicants can find policies designed to fit their situation and provide meaningful protection.",
+        "DESC2": "Experienced agents can match you with carriers that specialize in higher-risk profiles and offer flexible underwriting and tailored solutions. Whether you have medical concerns, lifestyle risks, or a complex financial background, there are still ways to secure universal life insurance coverage in Texas that protects your family and supports your long-term goals."
+      }
+    },
+    "LANGUAGE_SUPPORT": {
+      "HEADER": {
+        "TITLE": "Hablamos Español / We Speak Your Language"
+      },
+      "CONTENT": {
+        "DESC1": "Language should never be a barrier to getting the help or service you need. Our Spanish-speaking team is here to support you with clear communication and genuine care. Whether you have questions, need guidance, or want to discuss details, you can do so comfortably in Spanish without worrying about misunderstandings.",
+        "DESC2": "We are committed to making every interaction smooth, respectful, and easy to follow, so you feel confident and fully supported from start to finish. Our goal is to ensure every client feels understood, informed, and comfortable while choosing the right protection for their future."
+      }
+    },
+    "ASTATE_DIFFERENTIATORS": {
+      "HEADER": {
+        "TITLE": "What Makes A-State Insurance Different"
+      },
+      "LIST": {
+        "LICENSED_BROKERS": {
+          "TITLE": "Texas Licensed Brokers",
+          "DESCRIPTION": "Licensed in Texas, brokers follow state regulations, ensuring reliable advice and compliant insurance solutions."
+        },
+        "HISPANIC_LATINO_FRIENDLY": {
+          "TITLE": "Hispanic & Latino Friendly",
+          "DESCRIPTION": "A welcoming approach supports Hispanic and Latino clients with culturally aware service and clear communication."
+        },
+        "YEARS_SERVING": {
+          "TITLE": "20+ Years Serving Texans",
+          "DESCRIPTION": "With over two decades of experience, the team understands local needs and evolving insurance challenges well."
+        },
+        "CUSTOM_COVERAGE": {
+          "TITLE": "Custom Coverage Plans",
+          "DESCRIPTION": "Personalized plans are tailored to match individual goals, budgets, and long-term financial protection needs."
+        },
+        "ONLINE_LOCAL": {
+          "TITLE": "Online & Local",
+          "DESCRIPTION": "Services are available both online and locally, giving clients flexible and convenient ways to get support."
+        },
+        "MULTILINGUAL_AGENTS": {
+          "TITLE": "Multilingual Agents",
+          "DESCRIPTION": "Multilingual agents assist clients in multiple languages, making the process easier and more accessible for all."
+        }
+      }
+    },
+    "INSURANCE_STEPS": {
+      "HEADER": {
+        "TITLE": "Get Covered in 4 Simple Steps"
+      },
+      "STEPS": {
+        "REACH_OUT": {
+          "TITLE": "Step 1 - Reach Out",
+          "DESCRIPTION": "Contact the team by phone or online to begin your coverage journey with quick and easy support."
+        },
+        "GET_ADVICE": {
+          "TITLE": "Step 2 - Get Advice",
+          "DESCRIPTION": "Receive clear guidance tailored to your needs, helping you understand options and make informed choices."
+        },
+        "PICK_PLAN": {
+          "TITLE": "Step 3 - Pick Your Plan",
+          "DESCRIPTION": "Select a plan that fits your budget and goals, ensuring the right level of protection for your future."
+        },
+        "WE_GOT_YOU": {
+          "TITLE": "Step 4 - We’ve Got You",
+          "DESCRIPTION": "Enjoy ongoing support and peace of mind knowing your coverage is active and your needs are handled."
+        }
+      }
+    },
+    "SWITCH_STEPS": {
+      "HEADER": {
+        "TITLE": "How to Switch Your Universal Life Insurance to A-State Insurance"
+      },
+      "STEPS": {
+        "STEP_1": {
+          "TITLE": "Step 1: Get Your Free Comparison Quote",
+          "DESCRIPTION": "Request a free comparison quote to review rates, benefits, and savings options as per your needs."
+        },
+        "STEP_2": {
+          "TITLE": "Step 2: Pick Your Plan and Activate",
+          "DESCRIPTION": "Select the plan that fits your goals, then activate coverage quickly with a simple guided process."
+        },
+        "STEP_3": {
+          "TITLE": "Step 3: Cancel Your Old Policy (We’ll Help!)",
+          "DESCRIPTION": "Cancel your old policy with support to ensure a smooth switch without gaps in insurance coverage."
+        }
+      }
+    },
+    "FREE_QUOTE": {
+      "HEADER": "Get a Free Universal Life Insurance Quote in Texas",
+      "DESCRIPTION": "Secure your future with flexible coverage built around your needs and goals. Getting started is quick and simple. Just select your preferred policy type, whether Guaranteed, Indexed, Variable, Fixed, Survivorship, or Other, and fill in your basic details below. Our process is designed to be easy and stress-free, helping you explore options with confidence. Start today with A-State Insurance and receive your personalized quote. Enter your full name or phone number to begin."
     }
   }
 }

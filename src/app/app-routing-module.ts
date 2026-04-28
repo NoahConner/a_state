@@ -51,6 +51,7 @@ import { CyberLiabilityInsurance } from './pages/commercial-insurance/cyber-liab
 import { BuildersRiskInsurance } from './pages/commercial-insurance/builders-risk-insurance/builders-risk-insurance';
 import { DirectorsOfficersLiabilityInsurance } from './pages/commercial-insurance/directors-officers-liability-insurance/directors-officers-liability-insurance';
 import { WholeLifeInsurance } from './pages/life-insurance/whole-life-insurance/whole-life-insurance';
+import { UniversalLifeInsurance } from './pages/life-insurance/universal-life-insurance/universal-life-insurance';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -82,6 +83,7 @@ const routes: Routes = [
     children: [
       { path: '', component: LifeInsurance },
       { path: 'whole-life-insurance', component: WholeLifeInsurance },
+      { path: 'universal-life-insurance', component: UniversalLifeInsurance },
     ]
   },
   {
@@ -212,6 +214,7 @@ const routes: Routes = [
         children: [
           { path: '', component: LifeInsurance },
           { path: 'seguro-de-vida-entera', component: WholeLifeInsurance },
+          { path: 'seguro-de-vida-universal', component: UniversalLifeInsurance },
         ]
       },
       { path: 'seguros-de-salud', component: HealthInsurance },
@@ -433,5 +436,9 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   wholeLifeInsurance: {
     en: 'life-insurance/whole-life-insurance',
     es: 'seguros-de-vida/seguro-de-vida-entera'
+  },
+  universalLifeInsurance: {
+    en: 'life-insurance/universal-life-insurance',
+    es: 'seguros-de-vida/seguro-de-vida-universal'
   },
 };
