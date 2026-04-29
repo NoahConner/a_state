@@ -38,6 +38,7 @@
     "DIRECTORS_OFFICERS_LIABILITY_INSURANCE": "Directors & Officers (D&O) Liability Insurance",
     "WHOLE_LIFE_INSURANCE": "Whole Life Insurance",
     "UNIVERSAL_LIFE_INSURANCE": "Universal Life Insurance",
+    "FINAL_EXPENSE_INSURANCE": "Final Expense Insurance",
     "OFFICE_LOCATOR": "Office Locator",
     "GET_A_QUOTE": "Get a Quote",
     "LANGUAGE": "Language"
@@ -25421,6 +25422,600 @@
           "TITLE": "Market Losses on Cash Value (applies to Variable Universal Life)",
           "DESC": "In variable policies, cash value is tied to market performance and can decline. Losses in investment value are not protected, meaning policyholders bear the risk, and reduced cash value can impact coverage sustainability and benefits.",
           "ICON": "fas fa-chart-line"
+        }
+      }
+    },
+    "HOW_MUCH_DO_YOU_NEED": {
+      "TITLE": "How Much Does Universal Life Insurance Cost in Texas?",
+      "DESC1": "The cost of universal life insurance in Texas varies based on age, health, coverage amount, and policy type. On average, a healthy 30-year-old may pay around $40–$50 per month for lower coverage, while more robust policies or older applicants can see premiums rise significantly. For example, a 40-year-old male might pay roughly $180–$350 per month, depending on the policy structure and funding level.",
+      "DESC2": "Compared to other states, pricing for universal life insurance is generally similar because insurers primarily base rates on personal risk factors rather than location. However, Texas may see slightly higher premiums for individuals in high-risk industries or with specific lifestyle factors. Overall, costs remain competitive nationwide, with variations driven more by individual profiles than geography."
+    },
+    "LIFE_INSURANCE_COST": {
+      "TITLE": "How Much Does Whole Life Insurance Cost in Texas?",
+      "DESC1": "Whole life insurance in Texas typically costs more than other types of coverage because it lasts a lifetime and builds cash value. On average, Texans may pay $177 to $282 per month for $250,000 coverage, while higher coverage amounts, such as $500,000, can range from $250 to $750+ per month, depending on age and health. Nationally, similar policies average about $540 per month for $500,000 coverage, showing how age and coverage level significantly affect pricing.",
+      "DESC2": "Compared to other states, Texas rates are fairly close to the U.S. average. For example, Texas averages about $3,099 per year (~$258/month) for standard whole life coverage, while some lower-cost states can be slightly cheaper, and higher-cost states like New Jersey or California can exceed $3,600–$4,100 per year (~$302–$340/month+). Overall, Texas stays near the national midpoint, making it neither the cheapest nor the most expensive state for whole life insurance."
+    },
+    "MINIMUM_COVERAGE": {
+      "TITLE": "Texas Homeowners Insurance Minimum Coverage Requirements",
+      "DESC1": "In Texas, homeowners' insurance is not legally required, but most mortgage lenders mandate coverage to protect their investment. Minimum coverage typically includes protection for the home’s structure, personal belongings, and liability for injuries that occur on the property. This ensures that homeowners are financially protected against common risks such as fire, theft, or storm damage.",
+      "DESC2": "Choosing the right coverage level is important, as underinsuring your home can leave you vulnerable to unexpected costs. A trusted broker like A-State Insurance helps Texans compare multiple policies from top carriers to find home insurance that meets lender requirements while balancing affordability and sufficient protection for their property and family."
+    },
+    "COST": {
+      "TITLE": "How Much Does Commercial Insurance Cost in Texas?",
+      "DESC1": "The cost of commercial insurance in Texas can vary significantly depending on factors such as your business size, industry, and coverage needs. On average, small businesses in Texas can expect to pay between $400 and $1,500 per year for a basic policy that covers general liability and business property. Rates may rise for businesses with more employees, higher risks, or specific industry needs. For example, contractors or healthcare providers might face higher premiums due to the specialized coverage required.",
+      "DESC2": "Compared with the national average, commercial insurance in Texas is generally more affordable. States like California and New York tend to have higher premiums due to increased risks and regulatory requirements. Texas businesses can often find competitive rates, especially when shopping around. To get a more accurate estimate for your business, consider requesting a customized quote tailored to your unique situation."
+    },
+    "RATES": {
+      "AGE": {
+        "TITLE": "Average Universal Life Insurance Rates by Age",
+        "DESC1": "Universal life insurance rates vary by age because insurers calculate premiums based on life expectancy. Younger applicants qualify for lower rates since they are less likely to face serious medical issues. As you age, the likelihood of illness increases, raising costs. Older applicants also have fewer years to build cash value, so higher premiums are required to keep the policy active.",
+        "H1": "Age",
+        "H2": "Female",
+        "H3": "Male"
+      },
+      "FOOTER": {
+        "SOURCE": "Source:",
+        "DISCLAIMER_LABEL": "Disclaimer",
+        "LAST_UPDATED": "Last Updated: March 2026",
+        "DISCLAIMER": " The information provided on this page is for general informational purposes only and may not reflect the most current updates. Coverage requirements, rates, and laws are subject to change. Please consult a licensed insurance agent for the most accurate and up-to-date information."
+      }
+    },
+    "FACTORS_IMPACT": {
+      "HEADER": {
+        "TITLE": "Factors That Impact Your Universal Life Insurance Rates in Texas",
+        "DESC": "Universal life insurance rates in Texas are influenced by a mix of personal and financial factors. Insurers assess your age, health history, and lifestyle choices, as well as the policy's size and cash value features. Broader factors like interest rates and market conditions also affect pricing, making each policy’s cost vary with individual circumstances and long-term goals."
+      },
+      "LIST": {
+        "AGE": {
+          "TITLE": "Age at Time of Application",
+          "DESC": "Younger applicants usually secure lower premiums, while older applicants incur higher premiums due to greater risk."
+        },
+        "GENDER": {
+          "TITLE": "Gender",
+          "DESC": "Women often receive lower rates than men because they statistically live longer and pose a lower risk to insurers."
+        },
+        "HEALTH_HISTORY": {
+          "TITLE": "Health History and Pre-Existing Conditions",
+          "DESC": "Past illnesses or chronic conditions raise premiums, while a clean medical record can help secure better rates."
+        },
+        "TOBACCO_USE": {
+          "TITLE": "Tobacco and Nicotine Use",
+          "DESC": "Smoking or nicotine use significantly increases premiums, as it raises the risk of serious health issues."
+        },
+        "BMI": {
+          "TITLE": "Height and Weight (BMI)",
+          "DESC": "Higher BMI can lead to higher premiums, while a healthy height-to-weight ratio helps lower insurance costs."
+        },
+        "FAMILY_HISTORY": {
+          "TITLE": "Family Medical History",
+          "DESC": "A family history of serious illnesses can increase premiums due to potential inherited health risks."
+        },
+        "COVERAGE_AMOUNT": {
+          "TITLE": "Coverage Amount (Death Benefit)",
+          "DESC": "Higher coverage amounts result in higher premiums, as insurers assume greater financial risk."
+        },
+        "POLICY_TYPE": {
+          "TITLE": "Type of Universal Life Policy Selected (GUL, IUL, VUL)",
+          "DESC": "Different policy types vary in risk and returns, affecting how insurers calculate and price premiums."
+        },
+        "PREMIUM_FLEXIBILITY": {
+          "TITLE": "Premium Payment Flexibility and Frequency",
+          "DESC": "Flexible payment options can affect cost structure, while more frequent payments may slightly increase total cost."
+        },
+        "OCCUPATION": {
+          "TITLE": "Occupation",
+          "DESC": "High-risk jobs in oil and gas, construction, and similar industries common in Texas can raise premiums due to increased risk exposure."
+        },
+        "HOBBIES": {
+          "TITLE": "Hobbies and Lifestyle",
+          "DESC": "Risky hobbies such as extreme sports, aviation, or racing can increase premiums due to greater potential for injury or death."
+        },
+        "CASH_VALUE_STRATEGY": {
+          "TITLE": "Cash Value Growth Strategy Selected",
+          "DESC": "The chosen investment strategy impacts growth and risk, which can influence overall policy cost and long-term value."
+        }
+      }
+    },
+    "DISCOUNT_FACTORS": {
+      "HEADER": {
+        "TITLE": "How to Maximize Your Discounts and Lower Your Universal Life Insurance Premium",
+        "DESC": "Lowering your insurance premium starts with understanding how insurers calculate risk and reward responsible behavior. By maintaining good health, choosing the right coverage level, and taking advantage of available discounts, you can reduce costs over time. Smart policy adjustments and consistent financial habits help you secure better rates while maintaining your long-term protection."
+      },
+      "LIST": {
+        "EARLY_PURCHASE": {
+          "TITLE": "Buy Coverage Early",
+          "DESC": "Applying at a younger age helps lock in lower premiums and reduces long-term insurance premium costs."
+        },
+        "NON_SMOKER": {
+          "TITLE": "Quit Tobacco Before Applying",
+          "DESC": "Quitting tobacco well before applying can significantly lower premiums and improve your chances of approval."
+        },
+        "RIGHT_COVERAGE": {
+          "TITLE": "Choose Only the Coverage Amount You Actually Need",
+          "DESC": "Choosing only the coverage you need prevents overpaying and keeps premiums manageable while still meeting financial goals."
+        },
+        "PREMIUM_FLEXIBILITY": {
+          "TITLE": "Leverage Premium Flexibility",
+          "DESC": "Flexible payments allow you to adjust contributions during hardship, helping you keep coverage active without major strain."
+        },
+        "HEALTH_IMPROVEMENT": {
+          "TITLE": "Improve Your Health Before Applying",
+          "DESC": "Improving your health before applying, such as losing weight or controlling blood pressure, can help you qualify for lower rates."
+        },
+        "MEDICAL_EXAM": {
+          "TITLE": "Choose a Medical Exam Policy Over No-Exam for Better Rates",
+          "DESC": "Opting for a medical exam policy often results in better rates, since insurers can more accurately evaluate your health risk."
+        },
+        "CASH_VALUE_STRATEGY": {
+          "TITLE": "Fund Your Policy Strategically to Maximize Cash Value Growth",
+          "DESC": "Funding your policy strategically can boost cash value growth, improve long-term value, and help offset overall costs."
+        },
+        "COMPARE_CARRIERS": {
+          "TITLE": "Compare Multiple Carriers Through an Independent Agent",
+          "DESC": "Comparing multiple carriers through an agent helps you find better rates and coverage tailored to your financial situation."
+        },
+        "DRIVING_RECORD": {
+          "TITLE": "Maintain a Clean Driving Record",
+          "DESC": "Maintaining a clean driving record shows responsible behavior, which may help reflect positively on overall risk assessment."
+        },
+        "REMOVE_RIDERS": {
+          "TITLE": "Review and Remove Riders You Don't Need",
+          "DESC": "Reviewing and removing riders you don't need helps reduce unnecessary costs and keep your policy efficient and affordable."
+        }
+      }
+    },
+    "AGENT_COMPARISON": {
+      "HEADER": {
+        "TITLE": "Independent Insurance Agency vs. Captive Agent: Why Choice Saves You Money",
+        "DESC": "Choosing between an independent insurance agency and a captive agent can impact your costs and coverage options. Independent agencies work with multiple carriers, allowing them to compare rates and find policies that fit your needs and budget. In contrast, captive agents represent a single company, limiting choices. Having access to multiple options often leads to better coverage solutions."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Feature",
+          "INDEPENDENT": "Independent Agency (A-State)",
+          "CAPTIVE": "Captive Agent"
+        },
+        "LIST": {
+          "CARRIER_ACCESS": {
+            "FEATURE": "Carrier Access",
+            "INDEPENDENT": "Multiple top-rated life insurance carriers",
+            "CAPTIVE": "Single carrier only"
+          },
+          "QUOTE_COMPARISON": {
+            "FEATURE": "Quote Comparison",
+            "INDEPENDENT": "Compares rates across carriers for you",
+            "CAPTIVE": "One quote from one company"
+          },
+          "UNBIASED_ADVICE": {
+            "FEATURE": "Unbiased Advice",
+            "INDEPENDENT": "Yes — recommends what fits your needs",
+            "CAPTIVE": "Limited to their carrier's products"
+          },
+          "POLICY_OPTIONS": {
+            "FEATURE": "Policy Type Options",
+            "INDEPENDENT": "GUL, IUL, VUL and more compared across carriers",
+            "CAPTIVE": "Limited to the carrier's product lineup"
+          },
+          "CASH_VALUE_STRATEGY": {
+            "FEATURE": "Cash Value Strategy Options",
+            "INDEPENDENT": "Multiple growth strategies compared across carriers",
+            "CAPTIVE": "Single carrier's cash value structure only"
+          },
+          "INDEX_INVESTMENT_OPTIONS": {
+            "FEATURE": "Index and Investment Options",
+            "INDEPENDENT": "Multiple IUL/VUL options compared",
+            "CAPTIVE": "Single carrier's options only"
+          },
+          "HARD_TO_INSURE": {
+            "FEATURE": "Hard-to-Insure Buyer Help",
+            "INDEPENDENT": "More solutions across multiple carriers",
+            "CAPTIVE": "May decline or have limited options"
+          },
+          "PREMIUM_FLEXIBILITY": {
+            "FEATURE": "Premium Flexibility Comparison",
+            "INDEPENDENT": "Compared across carriers to find the best structure",
+            "CAPTIVE": "Single carrier's flexibility rules only"
+          },
+          "ONGOING_SUPPORT": {
+            "FEATURE": "Ongoing Policy Review",
+            "INDEPENDENT": "Yes — monitors cash value and adjusts as needed",
+            "CAPTIVE": "Varies"
+          },
+          "PRICE": {
+            "FEATURE": "Price Competitiveness",
+            "INDEPENDENT": "Higher — shops the market for the best rate",
+            "CAPTIVE": "Limited to one carrier's pricing"
+          },
+          "BEST_FOR": {
+            "FEATURE": "Best For",
+            "INDEPENDENT": "Most universal life buyers in Texas",
+            "CAPTIVE": "Buyers loyal to a specific brand"
+          }
+        }
+      }
+    },
+    "UNIVERSAL_VS_WHOLE": {
+      "HEADER": {
+        "TITLE": "Universal Life Insurance vs. Whole Life Insurance in Texas",
+        "DESC": "Universal life insurance and whole life insurance both offer lifelong coverage, but they differ in flexibility and structure. Universal life offers adjustable premiums and death benefits, as well as variable cash value growth. Whole life provides fixed insurance premiums, guaranteed cash value, and predictable returns, making it simpler and more stable for long-term planning."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Factor",
+          "UNIVERSAL_LIFE": "Universal Life Insurance",
+          "WHOLE_LIFE": "Whole Life Insurance"
+        },
+        "LIST": {
+          "COVERAGE_DURATION": {
+            "FEATURE": "Coverage Duration",
+            "UNIVERSAL_LIFE": "Lifetime",
+            "WHOLE_LIFE": "Lifetime"
+          },
+          "PREMIUM_FLEXIBILITY": {
+            "FEATURE": "Premium Flexibility",
+            "UNIVERSAL_LIFE": "Yes — adjustable within limits",
+            "WHOLE_LIFE": "No — fixed premiums"
+          },
+          "DEATH_BENEFIT_FLEXIBILITY": {
+            "FEATURE": "Death Benefit Flexibility",
+            "UNIVERSAL_LIFE": "Yes — can increase or decrease",
+            "WHOLE_LIFE": "No — fixed death benefit"
+          },
+          "CASH_VALUE_ACCUMULATION": {
+            "FEATURE": "Cash Value Accumulation",
+            "UNIVERSAL_LIFE": "Yes",
+            "WHOLE_LIFE": "Yes"
+          },
+          "CASH_VALUE_GROWTH_RATE": {
+            "FEATURE": "Cash Value Growth Rate",
+            "UNIVERSAL_LIFE": "Varies (interest, index, or market-linked)",
+            "WHOLE_LIFE": "Guaranteed fixed rate"
+          },
+          "DIVIDEND_ELIGIBILITY": {
+            "FEATURE": "Dividend Eligibility",
+            "UNIVERSAL_LIFE": "No (most policies)",
+            "WHOLE_LIFE": "Yes (participating policies)"
+          },
+          "POLICY_LOANS": {
+            "FEATURE": "Policy Loans",
+            "UNIVERSAL_LIFE": "Yes — borrow against cash value",
+            "WHOLE_LIFE": "Yes — borrow against cash value"
+          },
+          "RISK_LEVEL": {
+            "FEATURE": "Risk Level",
+            "UNIVERSAL_LIFE": "Moderate to High (VUL exposed to market)",
+            "WHOLE_LIFE": "Low — guaranteed growth"
+          },
+          "POLICY_COMPLEXITY": {
+            "FEATURE": "Policy Complexity",
+            "UNIVERSAL_LIFE": "More complex",
+            "WHOLE_LIFE": "Moderate"
+          },
+          "RISK_OF_LAPSE": {
+            "FEATURE": "Risk of Lapse",
+            "UNIVERSAL_LIFE": "Higher (if cash value depleted)",
+            "WHOLE_LIFE": "Lower"
+          },
+          "BEST_FOR": {
+            "FEATURE": "Best For",
+            "UNIVERSAL_LIFE": "Flexible long-term planning, estate planning",
+            "WHOLE_LIFE": "Predictable lifelong coverage, wealth transfer"
+          },
+          "IDEAL_BUYER_PROFILE": {
+            "FEATURE": "Ideal Buyer Profile",
+            "UNIVERSAL_LIFE": "Financially savvy buyers seeking flexibility",
+            "WHOLE_LIFE": "Conservative buyers seeking guarantees"
+          }
+        }
+      }
+    },
+    "HIGH_RISK_APPLICANT": {
+      "HEADER": {
+        "TITLE": "Hard to Insure? We Can Still Help You Find Coverage"
+      },
+      "CONTENT": {
+        "DESC1": "Getting approved for life insurance can feel challenging if you have health conditions, a risky job, or past coverage denials. Many people assume they have no options, but that is not always the case. With the right guidance, even high-risk applicants can find policies designed to fit their situation and provide meaningful protection.",
+        "DESC2": "Experienced agents can match you with carriers that specialize in higher-risk profiles and offer flexible underwriting and tailored solutions. Whether you have medical concerns, lifestyle risks, or a complex financial background, there are still ways to secure universal life insurance coverage in Texas that protects your family and supports your long-term goals."
+      }
+    },
+    "LANGUAGE_SUPPORT": {
+      "HEADER": {
+        "TITLE": "Hablamos Español / We Speak Your Language"
+      },
+      "CONTENT": {
+        "DESC1": "Language should never be a barrier to getting the help or service you need. Our Spanish-speaking team is here to support you with clear communication and genuine care. Whether you have questions, need guidance, or want to discuss details, you can do so comfortably in Spanish without worrying about misunderstandings.",
+        "DESC2": "We are committed to making every interaction smooth, respectful, and easy to follow, so you feel confident and fully supported from start to finish. Our goal is to ensure every client feels understood, informed, and comfortable while choosing the right protection for their future."
+      }
+    },
+    "ASTATE_DIFFERENTIATORS": {
+      "HEADER": {
+        "TITLE": "What Makes A-State Insurance Different"
+      },
+      "LIST": {
+        "LICENSED_BROKERS": {
+          "TITLE": "Texas Licensed Brokers",
+          "DESCRIPTION": "Licensed in Texas, brokers follow state regulations, ensuring reliable advice and compliant insurance solutions."
+        },
+        "HISPANIC_LATINO_FRIENDLY": {
+          "TITLE": "Hispanic & Latino Friendly",
+          "DESCRIPTION": "A welcoming approach supports Hispanic and Latino clients with culturally aware service and clear communication."
+        },
+        "YEARS_SERVING": {
+          "TITLE": "20+ Years Serving Texans",
+          "DESCRIPTION": "With over two decades of experience, the team understands local needs and evolving insurance challenges well."
+        },
+        "CUSTOM_COVERAGE": {
+          "TITLE": "Custom Coverage Plans",
+          "DESCRIPTION": "Personalized plans are tailored to match individual goals, budgets, and long-term financial protection needs."
+        },
+        "ONLINE_LOCAL": {
+          "TITLE": "Online & Local",
+          "DESCRIPTION": "Services are available both online and locally, giving clients flexible and convenient ways to get support."
+        },
+        "MULTILINGUAL_AGENTS": {
+          "TITLE": "Multilingual Agents",
+          "DESCRIPTION": "Multilingual agents assist clients in multiple languages, making the process easier and more accessible for all."
+        }
+      }
+    },
+    "INSURANCE_STEPS": {
+      "HEADER": {
+        "TITLE": "Get Covered in 4 Simple Steps"
+      },
+      "STEPS": {
+        "REACH_OUT": {
+          "TITLE": "Step 1 - Reach Out",
+          "DESCRIPTION": "Contact the team by phone or online to begin your coverage journey with quick and easy support."
+        },
+        "GET_ADVICE": {
+          "TITLE": "Step 2 - Get Advice",
+          "DESCRIPTION": "Receive clear guidance tailored to your needs, helping you understand options and make informed choices."
+        },
+        "PICK_PLAN": {
+          "TITLE": "Step 3 - Pick Your Plan",
+          "DESCRIPTION": "Select a plan that fits your budget and goals, ensuring the right level of protection for your future."
+        },
+        "WE_GOT_YOU": {
+          "TITLE": "Step 4 - We’ve Got You",
+          "DESCRIPTION": "Enjoy ongoing support and peace of mind knowing your coverage is active and your needs are handled."
+        }
+      }
+    },
+    "SWITCH_STEPS": {
+      "HEADER": {
+        "TITLE": "How to Switch Your Universal Life Insurance to A-State Insurance"
+      },
+      "STEPS": {
+        "STEP_1": {
+          "TITLE": "Step 1: Get Your Free Comparison Quote",
+          "DESCRIPTION": "Request a free comparison quote to review rates, benefits, and savings options as per your needs."
+        },
+        "STEP_2": {
+          "TITLE": "Step 2: Pick Your Plan and Activate",
+          "DESCRIPTION": "Select the plan that fits your goals, then activate coverage quickly with a simple guided process."
+        },
+        "STEP_3": {
+          "TITLE": "Step 3: Cancel Your Old Policy (We’ll Help!)",
+          "DESCRIPTION": "Cancel your old policy with support to ensure a smooth switch without gaps in insurance coverage."
+        }
+      }
+    },
+    "FREE_QUOTE": {
+      "HEADER": "Get a Free Universal Life Insurance Quote in Texas",
+      "DESCRIPTION": "Secure your future with flexible coverage built around your needs and goals. Getting started is quick and simple. Just select your preferred policy type, whether Guaranteed, Indexed, Variable, Fixed, Survivorship, or Other, and fill in your basic details below. Our process is designed to be easy and stress-free, helping you explore options with confidence. Start today with A-State Insurance and receive your personalized quote. Enter your full name or phone number to begin."
+    }
+  },
+  "FINAL_EXPENSES_INSURANCE": {
+    "BANNER": {
+      "TITLE_LINE1": "Best & Affordable Final Expense Insurance in",
+      "TITLE_LINE2": "Texas — Starting from",
+      "TITLE_LINE3": "$39/Month",
+      "CHIPS": {
+        "SIMPLIFIED_ISSUE": "Simplified Issue Whole Life",
+        "GUARANTEED_ISSUE": "Guaranteed Issue Whole Life",
+        "PRE_NEED": "Pre-Need Funeral",
+        "MODIFIED_BENEFIT": "Modified Benefit Whole Life",
+        "LEVEL_BENEFIT": "Level Benefit Whole Life",
+        "OTHER": "Other"
+      },
+      "FORM": {
+        "FULL_NAME": "Full Name",
+        "PHONE": "Phone Number",
+        "BUTTON": "Get Quote"
+      }
+    },
+    "WHY_DO_YOU_NEED": {
+      "TITLE": "What Is Final Expense Insurance and Why Do You Need It?",
+      "DESC": "Final expense insurance is a simple type of life insurance designed to cover end-of-life costs. It helps pay for funeral services, burial, medical bills, and other remaining expenses. Instead of leaving your loved ones with sudden financial stress, this coverage provides a small but meaningful safety net when it matters most.",
+      "DESC1": "A trusted insurance broker helps you compare options from reliable carriers to find a plan that fits your needs and budget. With clear guidance and multilingual support, you can make informed decisions without confusion, ensuring your family is protected and prepared for the future.",
+      "SUB_TITLE": "Here are a few reasons why you need final expense insurance:",
+      "LIST": [
+        {
+          "TITLE": "Covers Funeral and Burial Costs",
+          "TEXT": "Funeral expenses can add up quickly, often creating unexpected financial pressure on families. Final expense insurance helps cover costs such as burial, cremation, and related services. This ensures your loved ones can focus on honoring your memory rather than worrying about managing immediate expenses during a difficult time."
+        },
+        {
+          "TITLE": "Eases Financial Burden on Family",
+          "TEXT": "Losing a loved one is already emotional, and financial stress only adds to the pain. This coverage helps your family avoid sudden out-of-pocket expenses. It provides peace of mind, knowing your final costs are handled, allowing your family to grieve and support each other without added financial strain."
+        },
+        {
+          "TITLE": "Simple and Easy to Qualify",
+          "TEXT": "Final expense insurance is designed to be accessible. Many plans have simplified applications with fewer health questions and no medical exams. This makes it a practical option for seniors or individuals with health concerns who may find traditional life insurance difficult to obtain or too complicated."
+        },
+        {
+          "TITLE": "Flexible Coverage for Your Needs",
+          "TEXT": "Every person's situation is different. Final expense insurance offers flexible coverage amounts, allowing you to choose what fits your budget and expected costs. Whether you want to cover basic funeral expenses or additional bills, you can find a plan that aligns with your personal financial goals."
+        },
+        {
+          "TITLE": "Peace of Mind for the Future",
+          "TEXT": "Planning ahead brings a sense of control and reassurance. Final expense insurance ensures your wishes are respected and your family is protected. With the right plan in place, you can feel confident knowing that even in your absence, your loved ones will have the support they need."
+        }
+      ]
+    },
+    "HOW_IT_WORKS": {
+      "TITLE": "Is Final Expense Insurance Worth It in Texas?",
+      "DESC1": "Final expense insurance can be worth it in Texas, especially if you don't have savings set aside for funeral or end-of-life costs. Funeral expenses can often reach thousands of dollars, and without coverage, families may have to pay out of pocket. This type of policy provides a dedicated financial cushion, helping loved ones manage immediate expenses during an already difficult time.",
+      "DESC2": "However, it depends on your situation. If you already have strong savings or a larger life insurance policy, you may not need it. But for many Texans—especially seniors or those with health concerns—it offers an accessible, simple way to secure peace of mind, with fixed premiums and easier approval than traditional life insurance."
+    },
+    "COVERAGES": {
+      "STANDARD": {
+        "TITLE": "What Does Final Expense Insurance Cover in Texas?",
+        "DESC": "Final expense insurance in Texas helps cover the essential costs that arise after someone passes away. This typically includes funeral services, burial or cremation, caskets, memorial arrangements, and outstanding medical bills. It can also assist with small debts or fees. As a broker, A-State Insurance helps you compare plans to ensure the coverage fits your needs, budget, and family situation.",
+        "LIST": [
+          {
+            "TITLE": "Funeral and Burial Costs",
+            "DESC": "Final expense insurance helps cover funeral arrangements, including services, viewing, transportation, and burial. These costs can rise quickly, so having coverage ensures your family can honor your wishes without facing financial pressure or stress.",
+            "ICON": "fas fa-church"
+          },
+          {
+            "TITLE": "Cremation Expenses",
+            "DESC": "Cremation may cost less than burial, but it still includes service fees, urns, and arrangements. Final expense insurance helps manage these expenses, allowing the family to plan respectfully and avoid unexpected out-of-pocket costs during an emotional time.",
+            "ICON": "fas fa-fire"
+          },
+          {
+            "TITLE": "Casket and Burial Plot Costs",
+            "DESC": "Caskets and burial plots are often the most expensive parts of a funeral. This coverage helps pay for these essentials, ensuring your family does not struggle with large upfront payments and can make choices that reflect your preferences.",
+            "ICON": "fas fa-box"
+          },
+          {
+            "TITLE": "Medical Bills and Hospital Expenses",
+            "DESC": "End-of-life care often leaves behind medical bills from hospitals, treatments, or medications. Final expense insurance helps cover these remaining costs, easing the burden on loved ones and preventing added financial stress during a difficult period.",
+            "ICON": "fas fa-hospital"
+          },
+          {
+            "TITLE": "Outstanding Debts and Credit Card Balances",
+            "DESC": "Unpaid debts, such as credit card balances or small loans, can become a burden for families. Final expense insurance provides funds to settle these balances, helping protect your loved ones from unexpected financial responsibilities.",
+            "ICON": "fas fa-credit-card"
+          },
+          {
+            "TITLE": "Legal and Estate Settlement Fees",
+            "DESC": "After a loss, legal processes such as probate and estate administration can incur fees. This coverage helps manage those costs, ensuring your family can handle legal matters smoothly without worrying about additional financial strain.",
+            "ICON": "fas fa-gavel"
+          },
+          {
+            "TITLE": "Travel Expenses for Out-of-Town Family Members",
+            "DESC": "Family members may need to travel to attend services. Final expense insurance can help with transportation and lodging costs, allowing loved ones to gather, support each other, and pay respects without financial limitations.",
+            "ICON": "fas fa-plane"
+          },
+          {
+            "TITLE": "Headstone and Memorial Service Costs",
+            "DESC": "Memorial services and headstones are meaningful but can be costly. This insurance helps cover those expenses, allowing families to create a lasting tribute without the pressure of high costs during an emotional time.",
+            "ICON": "fas fa-monument"
+          },
+          {
+            "TITLE": "Death Benefit Paid Directly to Beneficiaries",
+            "DESC": "The policy pays a benefit directly to your chosen beneficiaries. They can use the funds where they are most needed, whether for funeral costs or bills, ensuring quick financial support without delays or complicated claims processes.",
+            "ICON": "fas fa-hand-holding-heart"
+          },
+          {
+            "TITLE": "Terminal Illness Accelerated Death Benefit",
+            "DESC": "Some plans allow early access to funds if diagnosed with a terminal illness. This feature helps cover medical care or personal needs, providing financial relief and support while allowing you to manage important expenses during your lifetime.",
+            "ICON": "fas fa-clock"
+          }
+        ]
+      },
+      "TYPES": {
+        "TITLE": "Types of Final Expense Policies We Insure in Texas",
+        "DESC": "Final expense insurance comes in various forms to match different health situations, budgets, and coverage needs. Understanding these options can help you choose the right policy for end-of-life protection and family peace of mind.",
+        "LIST": [
+          {
+            "TITLE": "Simplified Issue Whole Life Insurance",
+            "DESC": "Quick approval policy with few health questions, no medical exam needed, offering lifelong coverage for final expenses and family protection."
+          },
+          {
+            "TITLE": "Guaranteed Issue Whole Life Insurance",
+            "DESC": "No health questions or exams required. Guaranteed approval for all applicants, ideal for seniors or those with serious health conditions."
+          },
+          {
+            "TITLE": "Pre-Need Funeral Insurance",
+            "DESC": "Arranged with a funeral home to pre-plan services and costs, ensuring your funeral wishes are covered and easing stress for your family."
+          },
+          {
+            "TITLE": "Modified Benefit Whole Life Insurance",
+            "DESC": "Limited coverage in the early years, with full benefits later. Designed for applicants with health issues needing accessible insurance options."
+          },
+          {
+            "TITLE": "Level Benefit Whole Life Insurance",
+            "DESC": "Full coverage begins immediately with no waiting period, ensuring beneficiaries receive the complete payout from day one of the policy."
+          },
+          {
+            "TITLE": "Graded Benefit Whole Life Insurance",
+            "DESC": "Partial benefits in early years, then full coverage later. Helps individuals with health risks still qualify for affordable protection plans."
+          },
+          {
+            "TITLE": "Participating Final Expense Insurance (pays dividends)",
+            "DESC": "Pays possible dividends based on insurer performance, which can reduce premiums or increase benefits while maintaining core final expense coverage."
+          },
+          {
+            "TITLE": "Non-Participating Final Expense Insurance",
+            "DESC": "Fixed premiums with no dividends, offering simple, stable, and predictable coverage focused purely on final expense protection needs."
+          },
+          {
+            "TITLE": "Joint Final Expense Insurance",
+            "DESC": "Covers two people, usually spouses, under one plan. Pays out after the first death, helping the surviving partner manage final expenses easily."
+          },
+          {
+            "TITLE": "Burial Insurance for Seniors Over 80",
+            "DESC": "Designed for seniors over 80 with simplified or guaranteed approval, ensuring funeral costs are covered and easing financial burden for families."
+          }
+        ]
+      }
+    },
+    "NOT_COVERED": {
+      "HEADER": {
+        "TITLE": "What Does Final Expense Insurance NOT Cover in Texas?",
+        "DESC": "Final expense insurance in Texas does not cover large financial obligations like mortgage payments, income replacement, or ongoing living expenses for your family. It is not designed for wealth building or investment purposes. Coverage is limited to end-of-life costs, and policies may include waiting periods, exclusions, or reduced benefits based on health conditions or missed premium payments."
+      },
+      "LIST": {
+        "SUICIDE": {
+          "TITLE": "Suicide Within the First Two Years of the Policy",
+          "DESC": "Most final expense insurance policies include a two-year suicide clause. If death occurs by suicide during this time, the insurer typically refunds premiums instead of paying full benefits. After two years, full coverage is usually paid only.",
+          "ICON": "fas fa-exclamation-circle"
+        },
+        "FRAUD": {
+          "TITLE": "Death Due to Fraud or Misrepresentation on the Application",
+          "DESC": "Final expense insurance claims can be denied if fraud or misrepresentation is found on the application. This includes hiding medical history or providing false details. Insurers require honesty, and incorrect information can void the policy benefit.",
+          "ICON": "fas fa-file-contract"
+        },
+        "ILLEGAL_ACTIVITIES": {
+          "TITLE": "Death from Illegal Activities",
+          "DESC": "Final expense insurance does not pay benefits if the insured dies while involved in illegal activities. This exclusion helps insurers manage risk and ensures policies are not used to support unlawful behavior or criminal situations.",
+          "ICON": "fas fa-gavel"
+        },
+        "SUBSTANCE_ABUSE": {
+          "TITLE": "Death from Drug or Alcohol Abuse",
+          "DESC": "Deaths caused directly by drug or alcohol abuse may not be covered under final expense insurance policies. Insurers may deny claims if substance abuse is determined as the primary cause of death or significantly contributed to the situation.",
+          "ICON": "fas fa-wine-bottle"
+        },
+        "WAR": {
+          "TITLE": "War or Act of War (active military combat; varies by policy)",
+          "DESC": "Final expense insurance policies often exclude deaths caused by war or active military combat. Coverage varies by insurer, and some plans may limit or deny benefits if death occurs during declared or undeclared acts of war or conflict zones apply.",
+          "ICON": "fas fa-shield-alt"
+        },
+        "GRADED_BENEFIT": {
+          "TITLE": "Death During the Graded Benefit Period (full benefit not yet active)",
+          "DESC": "During the graded benefit period, final expense insurance may not pay the full benefit amount if death occurs from natural causes. Instead, beneficiaries may receive a reduced payout or a return of premiums, depending on the policy terms and conditions.",
+          "ICON": "fas fa-hourglass-half"
+        },
+        "PRE_EXISTING": {
+          "TITLE": "Pre-Existing Conditions Not Disclosed on Application",
+          "DESC": "Failure to disclose pre-existing medical conditions on a final expense insurance application can result in claim denial. Insurers rely on accurate health information, and misrepresentation may void coverage or reduce beneficiary payouts.",
+          "ICON": "fas fa-notes-medical"
+        },
+        "HIGH_RISK": {
+          "TITLE": "Death from High-Risk Hobbies (varies by policy)",
+          "DESC": "Some final expense insurance policies exclude deaths resulting from high-risk hobbies such as skydiving, racing, or extreme sports. Coverage varies by insurer, and participation in such activities may affect eligibility or payout terms.",
+          "ICON": "fas fa-skull-crossbones"
+        },
+        "LONG_TERM_CARE": {
+          "TITLE": "Long-Term Care or Nursing Home Costs",
+          "DESC": "Final expense insurance does not cover long-term care or nursing home expenses. It is designed specifically for end-of-life costs such as funerals and small debts, not ongoing medical care or extended living assistance needs for individuals.",
+          "ICON": "fas fa-wheelchair"
+        },
+        "INCOME_REPLACEMENT": {
+          "TITLE": "Income Replacement for Surviving Family Members",
+          "DESC": "Final expense insurance is not designed to replace income for surviving family members. It provides a small lump sum intended for funeral and related costs, not ongoing financial support or long-term household expense coverage.",
+          "ICON": "fas fa-times-circle"
         }
       }
     },

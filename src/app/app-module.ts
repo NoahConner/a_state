@@ -64,6 +64,7 @@ import { BuildersRiskInsurance } from './pages/commercial-insurance/builders-ris
 import { DirectorsOfficersLiabilityInsurance } from './pages/commercial-insurance/directors-officers-liability-insurance/directors-officers-liability-insurance';
 import { WholeLifeInsurance } from './pages/life-insurance/whole-life-insurance/whole-life-insurance';
 import { UniversalLifeInsurance } from './pages/life-insurance/universal-life-insurance/universal-life-insurance';
+import { FinalExpenseInsurance } from './pages/life-insurance/final-expense-insurance/final-expense-insurance';
 
 @NgModule({
   declarations: [
@@ -123,6 +124,7 @@ import { UniversalLifeInsurance } from './pages/life-insurance/universal-life-in
     DirectorsOfficersLiabilityInsurance,
     WholeLifeInsurance,
     UniversalLifeInsurance,
+    FinalExpenseInsurance,
   ],
   imports: [
     BrowserModule,

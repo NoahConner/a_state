@@ -52,6 +52,8 @@ import { BuildersRiskInsurance } from './pages/commercial-insurance/builders-ris
 import { DirectorsOfficersLiabilityInsurance } from './pages/commercial-insurance/directors-officers-liability-insurance/directors-officers-liability-insurance';
 import { WholeLifeInsurance } from './pages/life-insurance/whole-life-insurance/whole-life-insurance';
 import { UniversalLifeInsurance } from './pages/life-insurance/universal-life-insurance/universal-life-insurance';
+import path from 'path';
+import { FinalExpenseInsurance } from './pages/life-insurance/final-expense-insurance/final-expense-insurance';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -84,6 +86,7 @@ const routes: Routes = [
       { path: '', component: LifeInsurance },
       { path: 'whole-life-insurance', component: WholeLifeInsurance },
       { path: 'universal-life-insurance', component: UniversalLifeInsurance },
+      { path: 'final-expense-insurance', component: FinalExpenseInsurance },
     ]
   },
   {
@@ -215,6 +218,8 @@ const routes: Routes = [
           { path: '', component: LifeInsurance },
           { path: 'seguro-de-vida-entera', component: WholeLifeInsurance },
           { path: 'seguro-de-vida-universal', component: UniversalLifeInsurance },
+          { path: 'seguro-de-gastos-finales', component: FinalExpenseInsurance },
+
         ]
       },
       { path: 'seguros-de-salud', component: HealthInsurance },
@@ -440,5 +445,9 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   universalLifeInsurance: {
     en: 'life-insurance/universal-life-insurance',
     es: 'seguros-de-vida/seguro-de-vida-universal'
+  },
+  finalExpenseInsurance: {
+    en: 'life-insurance/final-expense-insurance',
+    es: 'seguros-de-vida/seguro-de-gastos-finales'
   },
 };
