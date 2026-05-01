@@ -20,32 +20,69 @@ export class FinalExpenseInsurance {
     return result;
   }
   chips = [
-    { name: 'WHOLE_LIFE_INSURANCE.BANNER.CHIPS.TRADITIONAL', icon: 'fas fa-car' },
-    { name: 'WHOLE_LIFE_INSURANCE.BANNER.CHIPS.GUARANTEED_ISSUE', icon: 'fas fa-house' },
-    { name: 'WHOLE_LIFE_INSURANCE.BANNER.CHIPS.PARTICIPATING', icon: 'fas fa-building' },
-    { name: 'WHOLE_LIFE_INSURANCE.BANNER.CHIPS.SINGLE_PREMIUM', icon: 'fas fa-heart' },
-    { name: 'WHOLE_LIFE_INSURANCE.BANNER.CHIPS.LIMITED_PAY', icon: 'fas fa-notes-medical' },
-    { name: 'WHOLE_LIFE_INSURANCE.BANNER.CHIPS.OTHER', icon: 'fas fa-file-contract' },
+    { name: 'FINAL_EXPENSES_INSURANCE.BANNER.CHIPS.SIMPLIFIED_ISSUE', icon: 'fas fa-car' },
+    { name: 'FINAL_EXPENSES_INSURANCE.BANNER.CHIPS.GUARANTEED_ISSUE', icon: 'fas fa-house' },
+    { name: 'FINAL_EXPENSES_INSURANCE.BANNER.CHIPS.PRE_NEED', icon: 'fas fa-building' },
+    { name: 'FINAL_EXPENSES_INSURANCE.BANNER.CHIPS.MODIFIED_BENEFIT', icon: 'fas fa-heart' },
+    { name: 'FINAL_EXPENSES_INSURANCE.BANNER.CHIPS.LEVEL_BENEFIT', icon: 'fas fa-notes-medical' },
+    { name: 'FINAL_EXPENSES_INSURANCE.BANNER.CHIPS.OTHER', icon: 'fas fa-file-contract' },
+  ];
+
+  serviceRates = [
+    {
+      serviceType: "Burial Service",
+      cost: "$7,912"
+    },
+    {
+      serviceType: "Direct Burial (No Service)",
+      cost: "$5,204"
+    },
+    {
+      serviceType: "Cremation Service",
+      cost: "$5,890"
+    },
+    {
+      serviceType: "Direct Cremation (No Service)",
+      cost: "$2,117"
+    }
   ];
 
 
 
   ageRates = [
-    { age: 20, men: "$2,548", women: "$2,260" },
-    { age: 30, men: "$3,662", women: "$3,292" },
-    { age: 40, men: "$5,524", women: "$4,967" },
-    { age: 50, men: "$8,749", women: "$7,782" },
-    { age: 60, men: "$14,517", women: "$12,670" },
-    { age: 70, men: "$24,797", women: "$21,766" }
+    { age: 40, fiveThousand: "$12", tenThousand: "$21", twentyFiveThousand: "$47" },
+    { age: 45, fiveThousand: "$13", tenThousand: "$23", twentyFiveThousand: "$52" },
+    { age: 50, fiveThousand: "$14", tenThousand: "$24", twentyFiveThousand: "$55" },
+    { age: 55, fiveThousand: "$15", tenThousand: "$28", twentyFiveThousand: "$64" },
+    { age: 60, fiveThousand: "$18", tenThousand: "$33", twentyFiveThousand: "$76" },
+    { age: 65, fiveThousand: "$22", tenThousand: "$41", twentyFiveThousand: "$97" },
+    { age: 70, fiveThousand: "$28", tenThousand: "$53", twentyFiveThousand: "$127" },
+    { age: 75, fiveThousand: "$37", tenThousand: "$71", twentyFiveThousand: "$172" },
+    { age: 80, fiveThousand: "$50", tenThousand: "$98", twentyFiveThousand: "$241" },
+    { age: 85, fiveThousand: "$68", tenThousand: "$136", twentyFiveThousand: "$335" },
+    { age: 86, fiveThousand: "$87", tenThousand: "$171", twentyFiveThousand: "$423" },
+    { age: 87, fiveThousand: "$105", tenThousand: "$206", twentyFiveThousand: "$510" },
+    { age: 88, fiveThousand: "$121", tenThousand: "$241", twentyFiveThousand: "$596" },
+    { age: 89, fiveThousand: "$131", tenThousand: "$260", twentyFiveThousand: "$651" },
+    { age: 90, fiveThousand: "$150", tenThousand: "$300", twentyFiveThousand: "N/A" }
   ]
+  ageMaleRates = [
+    { age: 40, fiveThousand: "$14", tenThousand: "$25", twentyFiveThousand: "$57" },
+    { age: 45, fiveThousand: "$15", tenThousand: "$27", twentyFiveThousand: "$63" },
+    { age: 50, fiveThousand: "$17", tenThousand: "$31", twentyFiveThousand: "$71" },
+    { age: 55, fiveThousand: "$20", tenThousand: "$36", twentyFiveThousand: "$84" },
+    { age: 60, fiveThousand: "$23", tenThousand: "$43", twentyFiveThousand: "$103" },
+    { age: 65, fiveThousand: "$29", tenThousand: "$54", twentyFiveThousand: "$130" },
+    { age: 70, fiveThousand: "$37", tenThousand: "$70", twentyFiveThousand: "$169" },
+    { age: 75, fiveThousand: "$50", tenThousand: "$97", twentyFiveThousand: "$238" },
+    { age: 80, fiveThousand: "$69", tenThousand: "$135", twentyFiveThousand: "$332" },
+    { age: 85, fiveThousand: "$95", tenThousand: "$178", twentyFiveThousand: "$440" },
+    { age: 86, fiveThousand: "$120", tenThousand: "$236", twentyFiveThousand: "$585" },
+    { age: 87, fiveThousand: "$140", tenThousand: "$277", twentyFiveThousand: "$686" },
+    { age: 88, fiveThousand: "$160", tenThousand: "$317", twentyFiveThousand: "$788" },
+    { age: 89, fiveThousand: "$181", tenThousand: "$357", twentyFiveThousand: "$888" },
+    { age: 90, fiveThousand: "$177", tenThousand: "$354", twentyFiveThousand: "N/A" }
 
-  ageSmokerRates = [
-    { age: 20, men: "$3,325", women: "$2,973" },
-    { age: 30, men: "$4,923", women: "$4,492" },
-    { age: 40, men: "$7,533", women: "$6,915" },
-    { age: 50, men: "$12,371", women: "$11,068" },
-    { age: 60, men: "$21,107", women: "$18,427" },
-    { age: 70, men: "$34,922", women: "$31,798" }
   ]
 
 
@@ -139,13 +176,13 @@ export class FinalExpenseInsurance {
     "HEALTH_HISTORY",
     "TOBACCO_USE",
     "BMI",
-    "FAMILY_HISTORY",
     "COVERAGE_AMOUNT",
     "POLICY_TYPE",
-    "OCCUPATION",
-    "HOBBIES",
-    "PAYMENT_STRUCTURE",
-    "DRIVING_RECORD"
+    "MEDICAL_EXAM",
+    "WAITING_PERIOD",
+    "PRESCRIPTIONS",
+    "HOSPITALIZATION",
+    "LOCATION"
   ];
 
 
@@ -153,14 +190,14 @@ export class FinalExpenseInsurance {
     "EARLY_PURCHASE",
     "NON_SMOKER",
     "RIGHT_COVERAGE",
-    "PAYMENT_STRUCTURE",
+    "POLICY_TYPE",
     "HEALTH_IMPROVEMENT",
-    "MEDICAL_EXAM",
-    "PARTICIPATING_POLICY",
+    "PAYMENT_MODE",
     "COMPARE_CARRIERS",
-    "DRIVING_RECORD",
-    "REMOVE_RIDERS"
+    "NO_EXTRA_RIDERS",
+    "LOCK_RATE"
   ];
+
 
 
   notCoveredKeys = [
@@ -183,27 +220,30 @@ export class FinalExpenseInsurance {
     'QUOTE_COMPARISON',
     'UNBIASED_ADVICE',
     'POLICY_OPTIONS',
-    'DIVIDEND_OPTIONS',
-    'GUARANTEED_ISSUE',
-    'CASH_VALUE',
+    'PRE_EXISTING',
+    'GUARANTEED',
+    'WAITING_PERIOD',
+    'COVERAGE_FLEX',
     'ONGOING_SUPPORT',
     'PRICE',
     'BEST_FOR'
   ];
 
-  factorComparisonKeys = [
-    'COVERAGE_DURATION',
-    'PREMIUM_COST',
-    'CASH_VALUE',
-    'DEATH_BENEFIT',
-    'PREMIUM_FLEXIBILITY',
-    'DIVIDEND_ELIGIBILITY',
-    'POLICY_LOANS',
-    'POLICY_COMPLEXITY',
-    'BEST_FOR',
-    'IDEAL_BUYER_PROFILE'
-  ];
 
+  factorComparisonKeys = [
+    "COVERAGE_DURATION",
+    "PRIMARY_PURPOSE",
+    "COVERAGE_AMOUNT",
+    "PREMIUM_COST",
+    "MEDICAL_EXAM_REQUIRED",
+    "APPROVAL_DIFFICULTY",
+    "CASH_VALUE",
+    "DEATH_BENEFIT",
+    "IDEAL_AGE_RANGE",
+    "PRE_EXISTING_CONDITIONS",
+    "BEST_FOR",
+    "IDEAL_BUYER_PROFILE"
+  ];
 
 
   industryCoverageKeys = [

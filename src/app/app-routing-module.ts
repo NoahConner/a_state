@@ -54,6 +54,7 @@ import { WholeLifeInsurance } from './pages/life-insurance/whole-life-insurance/
 import { UniversalLifeInsurance } from './pages/life-insurance/universal-life-insurance/universal-life-insurance';
 import path from 'path';
 import { FinalExpenseInsurance } from './pages/life-insurance/final-expense-insurance/final-expense-insurance';
+import { TermLifeInsurance } from './pages/life-insurance/term-life-insurance/term-life-insurance';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -87,6 +88,8 @@ const routes: Routes = [
       { path: 'whole-life-insurance', component: WholeLifeInsurance },
       { path: 'universal-life-insurance', component: UniversalLifeInsurance },
       { path: 'final-expense-insurance', component: FinalExpenseInsurance },
+      { path: 'term-life-insurance', component: TermLifeInsurance },
+
     ]
   },
   {
@@ -219,6 +222,7 @@ const routes: Routes = [
           { path: 'seguro-de-vida-entera', component: WholeLifeInsurance },
           { path: 'seguro-de-vida-universal', component: UniversalLifeInsurance },
           { path: 'seguro-de-gastos-finales', component: FinalExpenseInsurance },
+          { path: 'seguro-de-vida-a-término', component: TermLifeInsurance },
 
         ]
       },
@@ -449,5 +453,9 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   finalExpenseInsurance: {
     en: 'life-insurance/final-expense-insurance',
     es: 'seguros-de-vida/seguro-de-gastos-finales'
+  },
+  termLifeInsurance: {
+    en: 'life-insurance/term-life-insurance',
+    es: 'seguros-de-vida/seguro-de-vida-a-término'
   },
 };

@@ -39,6 +39,7 @@
     "WHOLE_LIFE_INSURANCE": "Whole Life Insurance",
     "UNIVERSAL_LIFE_INSURANCE": "Universal Life Insurance",
     "FINAL_EXPENSE_INSURANCE": "Final Expense Insurance",
+    "TERM_LIFE_INSURANCE": "Term Life Insurance",
     "OFFICE_LOCATOR": "Office Locator",
     "GET_A_QUOTE": "Get a Quote",
     "LANGUAGE": "Language"
@@ -26019,34 +26020,36 @@
         }
       }
     },
-    "HOW_MUCH_DO_YOU_NEED": {
-      "TITLE": "How Much Does Universal Life Insurance Cost in Texas?",
-      "DESC1": "The cost of universal life insurance in Texas varies based on age, health, coverage amount, and policy type. On average, a healthy 30-year-old may pay around $40–$50 per month for lower coverage, while more robust policies or older applicants can see premiums rise significantly. For example, a 40-year-old male might pay roughly $180–$350 per month, depending on the policy structure and funding level.",
-      "DESC2": "Compared to other states, pricing for universal life insurance is generally similar because insurers primarily base rates on personal risk factors rather than location. However, Texas may see slightly higher premiums for individuals in high-risk industries or with specific lifestyle factors. Overall, costs remain competitive nationwide, with variations driven more by individual profiles than geography."
-    },
     "LIFE_INSURANCE_COST": {
-      "TITLE": "How Much Does Whole Life Insurance Cost in Texas?",
-      "DESC1": "Whole life insurance in Texas typically costs more than other types of coverage because it lasts a lifetime and builds cash value. On average, Texans may pay $177 to $282 per month for $250,000 coverage, while higher coverage amounts, such as $500,000, can range from $250 to $750+ per month, depending on age and health. Nationally, similar policies average about $540 per month for $500,000 coverage, showing how age and coverage level significantly affect pricing.",
-      "DESC2": "Compared to other states, Texas rates are fairly close to the U.S. average. For example, Texas averages about $3,099 per year (~$258/month) for standard whole life coverage, while some lower-cost states can be slightly cheaper, and higher-cost states like New Jersey or California can exceed $3,600–$4,100 per year (~$302–$340/month+). Overall, Texas stays near the national midpoint, making it neither the cheapest nor the most expensive state for whole life insurance."
-    },
-    "MINIMUM_COVERAGE": {
-      "TITLE": "Texas Homeowners Insurance Minimum Coverage Requirements",
-      "DESC1": "In Texas, homeowners' insurance is not legally required, but most mortgage lenders mandate coverage to protect their investment. Minimum coverage typically includes protection for the home’s structure, personal belongings, and liability for injuries that occur on the property. This ensures that homeowners are financially protected against common risks such as fire, theft, or storm damage.",
-      "DESC2": "Choosing the right coverage level is important, as underinsuring your home can leave you vulnerable to unexpected costs. A trusted broker like A-State Insurance helps Texans compare multiple policies from top carriers to find home insurance that meets lender requirements while balancing affordability and sufficient protection for their property and family."
-    },
-    "COST": {
-      "TITLE": "How Much Does Commercial Insurance Cost in Texas?",
-      "DESC1": "The cost of commercial insurance in Texas can vary significantly depending on factors such as your business size, industry, and coverage needs. On average, small businesses in Texas can expect to pay between $400 and $1,500 per year for a basic policy that covers general liability and business property. Rates may rise for businesses with more employees, higher risks, or specific industry needs. For example, contractors or healthcare providers might face higher premiums due to the specialized coverage required.",
-      "DESC2": "Compared with the national average, commercial insurance in Texas is generally more affordable. States like California and New York tend to have higher premiums due to increased risks and regulatory requirements. Texas businesses can often find competitive rates, especially when shopping around. To get a more accurate estimate for your business, consider requesting a customized quote tailored to your unique situation."
+      "TITLE": "How Much Does Final Expense Insurance Cost in Texas?",
+      "DESC1": "Final expense insurance in Texas is generally affordable, with most individuals paying between $20 and $100 per month depending on age, health, and coverage amount. For example, a typical $10,000 policy for a healthy senior often costs around $40–$60 per month, while older applicants or those with health concerns may pay closer to $80–$100 for the same coverage.",
+      "DESC2": "Compared to other states, final expense insurance rates in Texas are fairly average and can even be slightly lower than in high-cost areas like New York or California. Nationwide, similar policies usually fall within the $40–$60 per month range for $10,000 in coverage, making Texas pricing competitive and consistent with overall industry standards."
     },
     "RATES": {
-      "AGE": {
-        "TITLE": "Average Universal Life Insurance Rates by Age",
-        "DESC1": "Universal life insurance rates vary by age because insurers calculate premiums based on life expectancy. Younger applicants qualify for lower rates since they are less likely to face serious medical issues. As you age, the likelihood of illness increases, raising costs. Older applicants also have fewer years to build cash value, so higher premiums are required to keep the policy active.",
-        "H1": "Age",
-        "H2": "Female",
-        "H3": "Male"
+      "SERVICE_TYPE": {
+        "TITLE": "Average Final Expense Rates by Service Type",
+        "DESC1": "Final expense insurance aligned with actual service costs, which vary by preference and location. A traditional burial service averages around $7,912, while a direct burial without a ceremony costs about $5,204. Cremation with a service averages $5,890, whereas direct cremation without services is significantly lower at approximately $2,117. These cost differences directly influence coverage.",
+        "H1": "Service Type",
+        "H2": "Average Cost"
       },
+      "AGE": {
+        "TITLE": "Average Final Expense Insurance Rates for Females",
+        "DESC1": "Average final expense insurance rates for females in Texas are generally lower than those for males due to longer life expectancy and lower overall risk profiles. Insurance providers assess factors such as age, health condition, lifestyle habits, and coverage amount when determining premiums, but women typically benefit from more favorable pricing across most age groups and policy types.",
+        "H1": "Age",
+        "H2": "$5,000",
+        "H3": "$10,000",
+        "H4": "$25,000"
+      },
+
+       "MALE_AGE": {
+    "TITLE": "Average Final Expense Insurance Rates for Males",
+    "DESC1": "In Texas, male applicants typically pay higher premiums due to increased risk factors and shorter life expectancy. Based on average monthly rates, a 40-year-old may pay $14 for $5,000 coverage, $25 for $10,000, and $57 for $25,000. At age 50, costs rise to $17, $31, and $71, respectively, while at 60, they increase further to $23, $43, and $103.",
+    "H1": "Age",
+    "H2": "$5,000",
+    "H3": "$10,000",
+    "H4": "$25,000"
+  },
+
       "FOOTER": {
         "SOURCE": "Source:",
         "DISCLAIMER_LABEL": "Disclaimer",
@@ -26056,112 +26059,782 @@
     },
     "FACTORS_IMPACT": {
       "HEADER": {
-        "TITLE": "Factors That Impact Your Universal Life Insurance Rates in Texas",
-        "DESC": "Universal life insurance rates in Texas are influenced by a mix of personal and financial factors. Insurers assess your age, health history, and lifestyle choices, as well as the policy's size and cash value features. Broader factors like interest rates and market conditions also affect pricing, making each policy’s cost vary with individual circumstances and long-term goals."
+        "TITLE": "Factors That Impact Your Final Expense Insurance Rates in Texas",
+        "DESC": "Final expense insurance rates in Texas are determined by a combination of personal health, lifestyle, and policy choices. Insurers evaluate risk factors such as age, medical history, and coverage amount, along with the type of policy selected. These variables directly influence how much you pay each month and what kind of benefits or approval terms you qualify for."
       },
       "LIST": {
         "AGE": {
           "TITLE": "Age at Time of Application",
-          "DESC": "Younger applicants usually secure lower premiums, while older applicants incur higher premiums due to greater risk."
+          "DESC": "Older applicants pay higher premiums due to increased risk, while younger applicants benefit from lower rates and easier approval."
         },
         "GENDER": {
           "TITLE": "Gender",
-          "DESC": "Women often receive lower rates than men because they statistically live longer and pose a lower risk to insurers."
+          "DESC": "Women typically receive lower premiums than men because they statistically have longer life expectancies."
         },
         "HEALTH_HISTORY": {
           "TITLE": "Health History and Pre-Existing Conditions",
-          "DESC": "Past illnesses or chronic conditions raise premiums, while a clean medical record can help secure better rates."
+          "DESC": "Chronic illnesses like diabetes or heart disease can raise premiums or limit eligibility depending on severity."
         },
         "TOBACCO_USE": {
           "TITLE": "Tobacco and Nicotine Use",
-          "DESC": "Smoking or nicotine use significantly increases premiums, as it raises the risk of serious health issues."
+          "DESC": "Smokers and nicotine users face significantly higher premiums due to increased health risks and mortality rates."
         },
         "BMI": {
           "TITLE": "Height and Weight (BMI)",
-          "DESC": "Higher BMI can lead to higher premiums, while a healthy height-to-weight ratio helps lower insurance costs."
-        },
-        "FAMILY_HISTORY": {
-          "TITLE": "Family Medical History",
-          "DESC": "A family history of serious illnesses can increase premiums due to potential inherited health risks."
+          "DESC": "A high or low BMI may increase premiums, as it can indicate potential health concerns during underwriting."
         },
         "COVERAGE_AMOUNT": {
-          "TITLE": "Coverage Amount (Death Benefit)",
-          "DESC": "Higher coverage amounts result in higher premiums, as insurers assume greater financial risk."
+          "TITLE": "Coverage Amount Selected",
+          "DESC": "Higher coverage amounts result in higher monthly premiums, while lower coverage keeps costs more manageable."
         },
         "POLICY_TYPE": {
-          "TITLE": "Type of Universal Life Policy Selected (GUL, IUL, VUL)",
-          "DESC": "Different policy types vary in risk and returns, affecting how insurers calculate and price premiums."
+          "TITLE": "Type of Final Expense Policy (Level, Graded, Guaranteed Issue)",
+          "DESC": "Level benefit policies are typically the most affordable, graded plans fall in the middle, and guaranteed issue policies cost the most due to higher risk acceptance."
         },
-        "PREMIUM_FLEXIBILITY": {
-          "TITLE": "Premium Payment Flexibility and Frequency",
-          "DESC": "Flexible payment options can affect cost structure, while more frequent payments may slightly increase total cost."
+        "MEDICAL_EXAM": {
+          "TITLE": "Medical Exam vs. No-Exam Policy",
+          "DESC": "Policies requiring a medical exam often have lower premiums, while no-exam options are easier to obtain but more expensive."
         },
-        "OCCUPATION": {
-          "TITLE": "Occupation",
-          "DESC": "High-risk jobs in oil and gas, construction, and similar industries common in Texas can raise premiums due to increased risk exposure."
+        "WAITING_PERIOD": {
+          "TITLE": "Waiting Period (Graded vs. Immediate Benefit)",
+          "DESC": "Policies with waiting periods may offer easier approval but delay full benefits, whereas immediate coverage typically comes with higher premiums."
         },
-        "HOBBIES": {
-          "TITLE": "Hobbies and Lifestyle",
-          "DESC": "Risky hobbies such as extreme sports, aviation, or racing can increase premiums due to greater potential for injury or death."
+        "PRESCRIPTIONS": {
+          "TITLE": "Prescription Drug History",
+          "DESC": "Frequent or high-dose medication use can increase premiums, as it signals ongoing or serious health conditions."
         },
-        "CASH_VALUE_STRATEGY": {
-          "TITLE": "Cash Value Growth Strategy Selected",
-          "DESC": "The chosen investment strategy impacts growth and risk, which can influence overall policy cost and long-term value."
+        "HOSPITALIZATION": {
+          "TITLE": "Recent Hospitalization or Surgery",
+          "DESC": "Recent medical procedures or hospital stays can raise premiums or restrict eligibility due to short-term health risks."
+        },
+        "LOCATION": {
+          "TITLE": "Geographic Location Within Texas",
+          "DESC": "Rates may vary slightly between urban and rural areas due to differences in healthcare costs and regional risk factors."
         }
       }
     },
     "DISCOUNT_FACTORS": {
       "HEADER": {
-        "TITLE": "How to Maximize Your Discounts and Lower Your Universal Life Insurance Premium",
-        "DESC": "Lowering your insurance premium starts with understanding how insurers calculate risk and reward responsible behavior. By maintaining good health, choosing the right coverage level, and taking advantage of available discounts, you can reduce costs over time. Smart policy adjustments and consistent financial habits help you secure better rates while maintaining your long-term protection."
+        "TITLE": "How to Maximize Your Discounts and Lower Your Final Expense Insurance Premium",
+        "DESC": "Reducing your final expense insurance premium in Texas comes down to managing risk factors and making smart policy choices. By improving your health, selecting the right type of coverage, and comparing insurers, you can significantly lower your monthly costs while still maintaining essential financial protection."
       },
       "LIST": {
         "EARLY_PURCHASE": {
-          "TITLE": "Buy Coverage Early",
-          "DESC": "Applying at a younger age helps lock in lower premiums and reduces long-term insurance premium costs."
+          "TITLE": "Apply Early",
+          "DESC": "Applying at a younger age helps you lock in lower premiums and secure easier approval before health risks increase."
         },
         "NON_SMOKER": {
           "TITLE": "Quit Tobacco Before Applying",
-          "DESC": "Quitting tobacco well before applying can significantly lower premiums and improve your chances of approval."
+          "DESC": "Avoiding tobacco or quitting in advance can significantly reduce your premium and improve your eligibility."
         },
         "RIGHT_COVERAGE": {
           "TITLE": "Choose Only the Coverage Amount You Actually Need",
-          "DESC": "Choosing only the coverage you need prevents overpaying and keeps premiums manageable while still meeting financial goals."
+          "DESC": "Selecting a smaller, appropriate coverage amount keeps your premium affordable while still covering essential final expenses."
         },
-        "PREMIUM_FLEXIBILITY": {
-          "TITLE": "Leverage Premium Flexibility",
-          "DESC": "Flexible payments allow you to adjust contributions during hardship, helping you keep coverage active without major strain."
+        "POLICY_TYPE": {
+          "TITLE": "Choose Level Benefit or Simplified Issue Policies If Eligible",
+          "DESC": "Level benefit and simplified issue policies are typically more affordable than guaranteed issue plans if you meet the health requirements."
         },
         "HEALTH_IMPROVEMENT": {
           "TITLE": "Improve Your Health Before Applying",
-          "DESC": "Improving your health before applying, such as losing weight or controlling blood pressure, can help you qualify for lower rates."
+          "DESC": "Managing conditions like blood pressure or diabetes can help you qualify for better rates and more favorable underwriting."
         },
-        "MEDICAL_EXAM": {
-          "TITLE": "Choose a Medical Exam Policy Over No-Exam for Better Rates",
-          "DESC": "Opting for a medical exam policy often results in better rates, since insurers can more accurately evaluate your health risk."
-        },
-        "CASH_VALUE_STRATEGY": {
-          "TITLE": "Fund Your Policy Strategically to Maximize Cash Value Growth",
-          "DESC": "Funding your policy strategically can boost cash value growth, improve long-term value, and help offset overall costs."
+        "PAYMENT_MODE": {
+          "TITLE": "Opt for Annual Payments When Possible",
+          "DESC": "Paying annually instead of monthly may reduce total costs by avoiding installment fees and small recurring charges."
         },
         "COMPARE_CARRIERS": {
           "TITLE": "Compare Multiple Carriers Through an Independent Agent",
-          "DESC": "Comparing multiple carriers through an agent helps you find better rates and coverage tailored to your financial situation."
+          "DESC": "Different insurers price risk differently, so comparing multiple quotes can help you find the most competitive rate."
         },
-        "DRIVING_RECORD": {
-          "TITLE": "Maintain a Clean Driving Record",
-          "DESC": "Maintaining a clean driving record shows responsible behavior, which may help reflect positively on overall risk assessment."
+        "NO_EXTRA_RIDERS": {
+          "TITLE": "Avoid Unnecessary Riders",
+          "DESC": "Removing optional add-ons you don’t need helps keep your policy simple and your premium lower."
         },
-        "REMOVE_RIDERS": {
-          "TITLE": "Review and Remove Riders You Don't Need",
-          "DESC": "Reviewing and removing riders you don't need helps reduce unnecessary costs and keep your policy efficient and affordable."
+        "LOCK_RATE": {
+          "TITLE": "Lock In Your Rate Early",
+          "DESC": "Securing a policy now prevents higher premiums later as you age or if your health changes."
         }
       }
     },
     "AGENT_COMPARISON": {
       "HEADER": {
         "TITLE": "Independent Insurance Agency vs. Captive Agent: Why Choice Saves You Money",
-        "DESC": "Choosing between an independent insurance agency and a captive agent can impact your costs and coverage options. Independent agencies work with multiple carriers, allowing them to compare rates and find policies that fit your needs and budget. In contrast, captive agents represent a single company, limiting choices. Having access to multiple options often leads to better coverage solutions."
+        "DESC": "When shopping for final expense insurance in Texas, the type of agent you choose can significantly affect your price and coverage options. Independent agencies compare multiple insurance carriers to find the best fit for your needs and budget, while captive agents represent only one company. Having more choices typically leads to better pricing, flexible coverage, and solutions tailored to your situation."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Feature",
+          "INDEPENDENT": "Independent Agency (A-State Insurance)",
+          "CAPTIVE": "Captive Agent"
+        },
+        "LIST": {
+          "CARRIER_ACCESS": {
+            "FEATURE": "Carrier Access",
+            "INDEPENDENT": "Multiple top-rated final expense insurance carriers",
+            "CAPTIVE": "Single carrier only"
+          },
+          "QUOTE_COMPARISON": {
+            "FEATURE": "Quote Comparison",
+            "INDEPENDENT": "Compares rates across multiple insurers",
+            "CAPTIVE": "Provides only one company's quote"
+          },
+          "UNBIASED_ADVICE": {
+            "FEATURE": "Unbiased Advice",
+            "INDEPENDENT": "Yes — recommendations based on your needs",
+            "CAPTIVE": "Limited to one company’s products"
+          },
+          "POLICY_OPTIONS": {
+            "FEATURE": "Policy Type Options",
+            "INDEPENDENT": "Level, graded, and guaranteed issue policies compared",
+            "CAPTIVE": "Limited to the carrier’s offerings"
+          },
+          "PRE_EXISTING": {
+            "FEATURE": "Pre-Existing Condition Options",
+            "INDEPENDENT": "More flexibility with multiple carriers for higher-risk applicants",
+            "CAPTIVE": "May decline or offer limited solutions"
+          },
+          "GUARANTEED": {
+            "FEATURE": "Guaranteed Issue Options",
+            "INDEPENDENT": "Access to multiple no-exam carriers",
+            "CAPTIVE": "Only one company's guaranteed issue option"
+          },
+          "WAITING_PERIOD": {
+            "FEATURE": "Waiting Period Comparison",
+            "INDEPENDENT": "Shops for shorter waiting periods across carriers",
+            "CAPTIVE": "Fixed waiting period based on one carrier"
+          },
+          "COVERAGE_FLEX": {
+            "FEATURE": "Coverage Amount Flexibility",
+            "INDEPENDENT": "Wide range of coverage options available",
+            "CAPTIVE": "Limited to one company's limits"
+          },
+          "ONGOING_SUPPORT": {
+            "FEATURE": "Ongoing Policy Support",
+            "INDEPENDENT": "Yes — ongoing reviews and adjustments",
+            "CAPTIVE": "Varies by agent and company"
+          },
+          "PRICE": {
+            "FEATURE": "Price Competitiveness",
+            "INDEPENDENT": "Higher — compares multiple quotes to find best rate",
+            "CAPTIVE": "Limited pricing from one insurer"
+          },
+          "BEST_FOR": {
+            "FEATURE": "Best For",
+            "INDEPENDENT": "Most final expense insurance buyers in Texas",
+            "CAPTIVE": "Those loyal to a specific insurance brand"
+          }
+        }
+      }
+    },
+    "FINAL_EXPENSE_VS_TERM": {
+      "HEADER": {
+        "TITLE": "Final Expense Insurance vs. Term Life Insurance in Texas",
+        "DESC": "Final expense insurance in Texas is designed to cover end-of-life costs like funerals, burial, and small debts, offering simplified approval and lifelong coverage with smaller benefit amounts. Term life insurance provides much higher coverage for a fixed period but usually requires medical exams. Final expense is easier to qualify for, while term life is focused on income replacement."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Factor",
+          "FINAL_EXPENSE": "Final Expense Insurance",
+          "TERM_LIFE": "Term Life Insurance"
+        },
+        "LIST": {
+          "COVERAGE_DURATION": {
+            "FEATURE": "Coverage Duration",
+            "FINAL_EXPENSE": "Lifetime",
+            "TERM_LIFE": "Fixed term (10, 20, 30 years)"
+          },
+          "PRIMARY_PURPOSE": {
+            "FEATURE": "Primary Purpose",
+            "FINAL_EXPENSE": "Covers end-of-life and funeral costs",
+            "TERM_LIFE": "Income replacement, mortgage protection"
+          },
+          "COVERAGE_AMOUNT": {
+            "FEATURE": "Coverage Amount",
+            "FINAL_EXPENSE": "Small ($5,000 — $50,000)",
+            "TERM_LIFE": "Large ($100,000 — $1,000,000+)"
+          },
+          "PREMIUM_COST": {
+            "FEATURE": "Premium Cost",
+            "FINAL_EXPENSE": "Moderate — higher per dollar of coverage",
+            "TERM_LIFE": "Lower — more coverage for less"
+          },
+          "MEDICAL_EXAM_REQUIRED": {
+            "FEATURE": "Medical Exam Required",
+            "FINAL_EXPENSE": "Rarely — most policies are no-exam",
+            "TERM_LIFE": "Often required for best rates"
+          },
+          "APPROVAL_DIFFICULTY": {
+            "FEATURE": "Approval Difficulty",
+            "FINAL_EXPENSE": "Easy — guaranteed or simplified issue",
+            "TERM_LIFE": "Stricter underwriting"
+          },
+          "CASH_VALUE": {
+            "FEATURE": "Cash Value",
+            "FINAL_EXPENSE": "Yes",
+            "TERM_LIFE": "No"
+          },
+          "DEATH_BENEFIT": {
+            "FEATURE": "Death Benefit",
+            "FINAL_EXPENSE": "Guaranteed lifetime payout",
+            "TERM_LIFE": "Paid only if death occurs during term"
+          },
+          "IDEAL_AGE_RANGE": {
+            "FEATURE": "Ideal Age Range",
+            "FINAL_EXPENSE": "Seniors 50–85",
+            "TERM_LIFE": "Young to middle-aged adults"
+          },
+          "PRE_EXISTING_CONDITIONS": {
+            "FEATURE": "Pre-Existing Conditions",
+            "FINAL_EXPENSE": "Accepted by most policies",
+            "TERM_LIFE": "May result in higher rates or denial"
+          },
+          "BEST_FOR": {
+            "FEATURE": "Best For",
+            "FINAL_EXPENSE": "Seniors covering funeral and final bills",
+            "TERM_LIFE": "Families needing large income protection"
+          },
+          "IDEAL_BUYER_PROFILE": {
+            "FEATURE": "Ideal Buyer Profile",
+            "FINAL_EXPENSE": "Seniors without existing life coverage",
+            "TERM_LIFE": "Budget-conscious buyers with dependents"
+          }
+        }
+      }
+    },
+    "HIGH_RISK_APPLICANT": {
+      "HEADER": {
+        "TITLE": "Hard to Insure? We Can Still Help You Find Coverage"
+      },
+      "CONTENT": {
+        "DESC1": "If you’ve been declined for life insurance in the past due to health conditions, age, or other risk factors, you are not alone. Many Texans face challenges when applying for traditional policies, especially if they have diabetes, heart conditions, or no recent medical history. The good news is that final expense insurance is specifically designed to offer simpler approval options for individuals who may not qualify elsewhere.",
+        "DESC2": "As a Texas insurance broker, A-State Insurance works with multiple carriers specializing in high-risk and guaranteed-issue plans. This means even if your health is not perfect, you can still find coverage to protect your loved ones. We focus on comparing options that fit your situation, so you don’t have to worry about being turned away or left without protection when it matters most."
+      }
+    },
+    "LANGUAGE_SUPPORT": {
+      "HEADER": {
+        "TITLE": "Hablamos Español / We Speak Your Language"
+      },
+      "CONTENT": {
+        "DESC1": "At A-State Insurance, we believe language should never be a barrier when it comes to protecting your family. That’s why our team proudly offers support in English, Spanish, and Hindi, making it easier for you to understand your final expense insurance options clearly. Whether you’re exploring coverage for the first time or reviewing policy details, we explain everything in simple terms so you can make confident decisions.",
+        "DESC2": "Our Spanish-speaking agents are especially focused on helping Hispanic and Latino families across Texas feel comfortable and supported throughout the process. From comparing plans to completing applications, we guide you step by step without confusion or pressure. With A-State Insurance, you get personalized help in the language you prefer, ensuring your loved ones are always protected with the right coverage."
+      }
+    },
+    "ASTATE_DIFFERENTIATORS": {
+      "HEADER": {
+        "TITLE": "What Makes A-State Insurance Different"
+      },
+      "LIST": {
+        "LICENSED_BROKERS": {
+          "TITLE": "Texas Licensed Brokers",
+          "DESCRIPTION": "Fully licensed Texas brokers who compare top carriers and help you choose reliable final expense coverage with expert support."
+        },
+        "HISPANIC_LATINO_FRIENDLY": {
+          "TITLE": "Hispanic & Latino Friendly",
+          "DESCRIPTION": "We proudly support Hispanic and Latino families with culturally aware service and clear guidance in their preferred language."
+        },
+        "YEARS_SERVING": {
+          "TITLE": "20+ Years Serving Texans",
+          "DESCRIPTION": "With over 20 years of experience, we’ve helped Texas families secure trusted insurance coverage with confidence and care."
+        },
+        "CUSTOM_COVERAGE": {
+          "TITLE": "Custom Coverage Plans",
+          "DESCRIPTION": "We tailor insurance plans to your needs, budget, and situation, ensuring the right fit for your final expense protection."
+        },
+        "ONLINE_LOCAL": {
+          "TITLE": "Online & Local",
+          "DESCRIPTION": "Get help online or visit us locally in Texas for personal support, flexible service, and easy insurance assistance anytime."
+        },
+        "MULTILINGUAL_AGENTS": {
+          "TITLE": "Multilingual Agents",
+          "DESCRIPTION": "Our agents speak English, Spanish, and Hindi, making insurance simple, clear, and accessible for every Texan family."
+        }
+      }
+    },
+    "INSURANCE_STEPS": {
+      "HEADER": {
+        "TITLE": "Get Covered in 4 Simple Steps"
+      },
+      "STEPS": {
+        "REACH_OUT": {
+          "TITLE": "Step 1 - Reach Out",
+          "DESCRIPTION": "Contact us online or visit our Texas office to start your insurance journey with ease today."
+        },
+        "GET_ADVICE": {
+          "TITLE": "Step 2 - Get Advice",
+          "DESCRIPTION": "Our experts review your needs and clearly explain the best final expense insurance options."
+        },
+        "PICK_PLAN": {
+          "TITLE": "Step 3 - Pick Your Plan",
+          "DESCRIPTION": "Compare carriers and choose a final plan that fits your budget, health, and long-term protection."
+        },
+        "WE_GOT_YOU": {
+          "TITLE": "Step 4 - We’ve Got You",
+          "DESCRIPTION": "Once approved, your coverage is activated, and we continue supporting you with care and guidance."
+        }
+      }
+    },
+    "SWITCH_STEPS": {
+      "HEADER": {
+        "TITLE": "How to Switch Your Final Expense Insurance to A-State Insurance"
+      },
+      "STEPS": {
+        "STEP_1": {
+          "TITLE": "Step 1: Get Your Free Comparison Quote",
+          "DESCRIPTION": "We start by reviewing your current policy and gathering your details. Our team compares multiple trusted carriers in Texas to find better options. You receive a clear, no-obligation quote that shows improved coverage options, making it easy to make an informed decision."
+        },
+        "STEP_2": {
+          "TITLE": "Step 2: Pick Your Plan and Activate",
+          "DESCRIPTION": "Once you review your options, we help you choose the best final expense plan for your needs and budget. After selection, we handle the paperwork and quickly activate your new policy so you remain continuously protected with no gaps in coverage."
+        },
+        "STEP_3": {
+          "TITLE": "Step 3: Cancel Your Old Policy (We’ll Help!)",
+          "DESCRIPTION": "After your new coverage is active, we assist you in canceling your old policy. Our team ensures the process is smooth and stress-free, helping avoid overlaps or confusion while making sure your transition to A-State Insurance is completely hassle-free and secure."
+        }
+      }
+    },
+    "FREE_QUOTE": {
+      "HEADER": "Get a Free Final Expense Insurance Quote in Texas",
+      "DESCRIPTION": "Getting a free final expense insurance quote in Texas is quick and simple with A-State Insurance. Our licensed brokers compare multiple trusted carriers to find the best coverage for your needs, age, and budget. You don’t need to worry about confusing terms or endless paperwork—we guide you step by step so you can understand your options clearly. Whether you are planning ahead or need immediate protection, we help you explore affordable final-expense plans to protect your family."
+    }
+  },
+  "TERM_LIFE_INSURANCE": {
+    "BANNER": {
+      "TITLE_LINE1": "Best & Affordable Term Life Insurance in",
+      "TITLE_LINE2": "Texas — Starting from",
+      "TITLE_LINE3": "$20/Month",
+      "CHIPS": {
+        "LEVEL": "Level",
+        "RETURN_OF_PREMIUM": "Return of Premium (ROP)",
+        "CONVERTIBLE": "Convertible",
+        "DECREASING": "Decreasing",
+        "RENEWABLE": "Renewable",
+        "OTHER": "Other"
+      },
+      "FORM": {
+        "FULL_NAME": "Full Name",
+        "PHONE": "Phone Number",
+        "BUTTON": "Get Quote"
+      }
+    },
+    "WHY_DO_YOU_NEED": {
+      "TITLE": "What Is Term Life Insurance and Why Do You Need It?",
+      "DESC": "Term life insurance is a type of life insurance that provides coverage for a set period, usually ranging from 10 to 30 years. During this term, if the policyholder passes away, their beneficiaries receive a death benefit. The key feature of term life insurance is that it does not build cash value, unlike whole life insurance. It offers straightforward, affordable protection for a fixed duration. At the end of the term, the coverage ends unless the policy is renewed, converted, or extended.",
+      "DESC1": "",
+      "SUB_TITLE": "Here are the following reasons why you need term life insurance",
+      "LIST": [
+        {
+          "TITLE": "Affordable Coverage",
+          "TEXT": "Term life insurance is typically more affordable than whole life insurance. Lower premiums make it easier for individuals and families to secure financial protection without breaking the bank. It's an excellent option for those who need substantial coverage at a reasonable price."
+        },
+        {
+          "TITLE": "Income Replacement",
+          "TEXT": "If you are the primary breadwinner in your household, term life insurance ensures that your family's financial needs are met in the event of your untimely passing. It provides a lump-sum benefit that can help replace lost income and cover essential expenses such as mortgage payments, childcare, and daily living costs."
+        },
+        {
+          "TITLE": "Mortgage and Debt Protection",
+          "TEXT": "One of the most common reasons for purchasing term life insurance is to cover large debts, such as a mortgage. The death benefit ensures that your family doesn't have to bear the financial burden of your debts, allowing them to remain in the family home without the threat of foreclosure."
+        },
+        {
+          "TITLE": "Protects Against Unexpected Expenses",
+          "TEXT": "In addition to providing financial support for daily living expenses, term life insurance can also cover other unexpected costs, such as funeral expenses or medical bills. This means your family won't have to face additional stress during an already difficult time."
+        },
+        {
+          "TITLE": "Flexible Coverage Options",
+          "TEXT": "Term life insurance is flexible and can be tailored to your needs. You can choose a policy that aligns with your current financial situation, whether you need a short-term policy for a specific financial obligation or a longer-term policy for greater peace of mind. Depending on the provider, you can also add features like a return of premium (ROP) option or convert your policy to permanent coverage later."
+        }
+      ]
+    },
+    "HOW_IT_WORKS": {
+      "TITLE": "Is Term Life Insurance Required in Texas?",
+      "DESC1": "No, term life insurance in Texas isn't legally required. There's no state law that mandates individuals to carry life insurance before buying a home, taking out a loan, or for any other general purpose. Whether you choose a Texas term life insurance policy is up to you and your financial planning goals, not a legal obligation.",
+      "DESC2": "That said, lenders and mortgage companies sometimes strongly encourage you to obtain life insurance to protect their financial interests in your loan. For example, they may recommend coverage that would pay off your debt if you pass away during the loan term. Even then, the choice is yours — you're free to use a traditional term life policy that pays your beneficiaries directly instead."
+    },
+    "COVERAGES": {
+      "STANDARD": {
+        "TITLE": "What Does Term Life Insurance Cover in Texas?",
+        "DESC": "Term life insurance covers a range of events, including death from natural causes, illness, or accidents like heart attacks and cancer. It also covers death while traveling abroad, depending on the policy. Some policies include a terminal illness rider, which allows for an accelerated death benefit if diagnosed with a terminal illness, providing financial support during difficult times.",
+        "LIST": [
+          {
+            "TITLE": "Death from Natural Causes",
+            "DESC": "Term life insurance covers death from natural causes, such as old age or chronic health conditions. These benefits are paid to the beneficiary if the policyholder passes away during the policy term from non-accidental, non-suicidal causes.",
+            "ICON": "fas fa-leaf"
+          },
+          {
+            "TITLE": "Death from Illness or Disease",
+            "DESC": "If the policyholder passes away from an illness or disease, such as cancer or diabetes, term life insurance provides a death benefit to the beneficiaries. Coverage includes a variety of illnesses, but specifics depend on the policy terms.",
+            "ICON": "fas fa-disease"
+          },
+          {
+            "TITLE": "Accidental Death",
+            "DESC": "Accidental death coverage is included in most term life insurance policies. If the policyholder dies due to an accident, such as a car crash or slip-and-fall, the beneficiary will receive the death benefit, helping cover unexpected costs.",
+            "ICON": "fas fa-car-crash"
+          },
+          {
+            "TITLE": "Death from Heart Attack or Stroke",
+            "DESC": "If a policyholder dies from a heart attack or stroke, term life insurance typically covers the death benefit. This includes sudden and unforeseen events like heart attacks or strokes, provided the death occurs within the policy term.",
+            "ICON": "fas fa-heartbeat"
+          },
+          {
+            "TITLE": "Death from Cancer",
+            "DESC": "Term life insurance covers death from cancer, including common forms like lung, breast, and colon cancer. Coverage applies as long as the policyholder passes within the policy period, helping alleviate the financial burden of such a loss.",
+            "ICON": "fas fa-ribbon"
+          },
+          {
+            "TITLE": "Death While Traveling Abroad (varies by policy)",
+            "DESC": "Death while traveling abroad may be covered under a term life insurance policy, though coverage can vary by policy. Some policies exclude foreign travel-related deaths, while others offer coverage for international fatalities.",
+            "ICON": "fas fa-globe"
+          },
+          {
+            "TITLE": "Death During Surgery or Medical Procedures",
+            "DESC": "If the policyholder passes away during surgery or a medical procedure, term life insurance typically provides a death benefit. Coverage applies as long as the cause of death is not related to any exclusions or policy limitations.",
+            "ICON": "fas fa-procedures"
+          },
+          {
+            "TITLE": "Death from Mental Health-Related Causes (after contestability period)",
+            "DESC": "After the contestability period, death from mental health-related causes may be covered by term life insurance. This includes suicide or other conditions related to mental illness, subject to the terms of the policy.",
+            "ICON": "fas fa-brain"
+          },
+          {
+            "TITLE": "Terminal Illness Accelerated Death Benefit",
+            "DESC": "Many term life insurance policies offer a terminal illness accelerated death benefit. If the policyholder is diagnosed with a terminal illness, the death benefit can be accessed to cover medical or end-of-life expenses during the policy.",
+            "ICON": "fas fa-clock"
+          },
+          {
+            "TITLE": "Death of a Spouse or Child (with applicable riders)",
+            "DESC": "Some term life insurance policies offer additional coverage for the death of a spouse or child through riders. These riders provide extra financial support in the event of a tragic loss, helping with funeral costs and other expenses.",
+            "ICON": "fas fa-users"
+          }
+        ]
+      },
+      "TYPES": {
+        "TITLE": "Types of Term Life Policies We Insure in Texas",
+        "DESC": "Term life insurance comes in various forms to match different financial goals, timelines, and coverage needs. Understanding these options can help you choose the right policy for your family's protection and budget.",
+        "LIST": [
+          {
+            "TITLE": "Level Term Life Insurance",
+            "DESC": "This life insurance offers a fixed death benefit and premium, providing predictable coverage at a stable cost throughout the policy duration."
+          },
+          {
+            "TITLE": "Decreasing Term Life Insurance",
+            "DESC": "Decreasing term life insurance features a death benefit that decreases over time and is typically used for specific needs, such as paying off a mortgage."
+          },
+          {
+            "TITLE": "Increasing Term Life Insurance",
+            "DESC": "This insurance provides a death benefit that grows over the term. It's designed to keep pace with inflation, offering more coverage."
+          },
+          {
+            "TITLE": "Renewable Term Life Insurance",
+            "DESC": "This allows the policyholder to renew the policy after the term ends without medical exams. Premiums may increase based on age."
+          },
+          {
+            "TITLE": "Convertible Term Life Insurance",
+            "DESC": "It allows the policyholder to convert their term policy into a whole life policy without requiring a medical exam, providing long-term coverage."
+          },
+          {
+            "TITLE": "Return of Premium (ROP) Term Life Insurance",
+            "DESC": "Offers a refund of premiums paid if the policyholder survives the term, providing the benefit of life insurance with a savings aspect."
+          },
+          {
+            "TITLE": "Group Term Life Insurance",
+            "DESC": "Provides coverage for a group of people, usually through an employer or association. It offers lower premiums but may have limited coverage options."
+          },
+          {
+            "TITLE": "No-Exam Term Life Insurance",
+            "DESC": "Eliminates the medical exam requirement, making it easier to qualify. Premiums are generally higher, and coverage limits may be reduced."
+          },
+          {
+            "TITLE": "Joint Term Life Insurance",
+            "DESC": "Covers two individuals under one policy, typically pays out after the first death, offering a cost-effective solution for couples seeking coverage."
+          },
+          {
+            "TITLE": "Mortgage Protection Term Life Insurance",
+            "DESC": "It pays off a policyholder's mortgage if they pass away during the term, ensuring their home is protected for their family."
+          }
+        ]
+      }
+    },
+    "NOT_COVERED": {
+      "HEADER": {
+        "TITLE": "What Does Term Life Insurance NOT Cover in Texas?",
+        "DESC": "Term life insurance generally does not cover death by suicide within the first two years of the policy, death resulting from fraudulent actions, or illegal activities. High-risk activities like skydiving or private aviation, as well as death after the policy lapses or expires, are typically excluded. Pre-existing conditions not disclosed at the application may also impact coverage."
+      },
+      "LIST": {
+        "SUICIDE": {
+          "TITLE": "Suicide Within the First Two Years of the Policy",
+          "DESC": "Term life insurance policies exclude suicide within the first two years. If the policyholder dies by suicide during this period, the beneficiaries may not receive the death benefit. After the contestability period, the coverage applies.",
+          "ICON": "fas fa-exclamation-circle"
+        },
+        "FRAUD": {
+          "TITLE": "Death Due to Fraud or Misrepresentation on the Application",
+          "DESC": "If the policyholder provides false information or fails to disclose material facts during the application process, term life insurance may not cover a death resulting from such fraud or misrepresentation. Accuracy on the application is crucial to maintain coverage.",
+          "ICON": "fas fa-file-contract"
+        },
+        "ILLEGAL_ACTIVITIES": {
+          "TITLE": "Death from Illegal Activities",
+          "DESC": "Term life insurance generally does not cover deaths resulting from illegal activities, such as committing a crime. If the policyholder dies while engaged in illegal actions, the beneficiary will typically not receive the death benefit.",
+          "ICON": "fas fa-gavel"
+        },
+        "HIGH_RISK_HOBBIES": {
+          "TITLE": "Death from High-Risk Hobbies (skydiving, racing, extreme sports)",
+          "DESC": "Death resulting from high-risk hobbies, like skydiving or extreme sports, may be excluded from term life insurance coverage. Many policies list these activities as exclusions, meaning no benefit is paid if the death occurs during such activities.",
+          "ICON": "fas fa-skull-crossbones"
+        },
+        "AVIATION": {
+          "TITLE": "Death from Aviation (private pilot; varies by policy)",
+          "DESC": "Term life insurance policies often exclude death from aviation accidents if the policyholder is piloting an aircraft. Coverage depends on whether the policyholder is a private or commercial pilot, and some policies offer aviation coverage.",
+          "ICON": "fas fa-plane"
+        },
+        "POLICY_EXPIRATION": {
+          "TITLE": "Death After Policy Expiration",
+          "DESC": "If a term life insurance policy expires, death that occurs after this period will not be covered. It's important to keep track of the policy term and renew it if needed, as death after expiration voids the benefits for beneficiaries.",
+          "ICON": "fas fa-calendar-times"
+        },
+        "POLICY_LAPSE": {
+          "TITLE": "Death After Policy Lapses Due to Non-Payment",
+          "DESC": "If a term life insurance policy lapses due to nonpayment of premiums, the death benefit will not be paid. It's essential to maintain timely payments to keep the coverage active and ensure the policy remains in force.",
+          "ICON": "fas fa-times-circle"
+        },
+        "SUBSTANCE_ABUSE": {
+          "TITLE": "Death from Drug or Alcohol Abuse",
+          "DESC": "Term life insurance may not cover death due to drug or alcohol abuse, especially if the policyholder has a history of substance misuse. Policies may include exclusions for deaths caused by overdose or other substance-related conditions.",
+          "ICON": "fas fa-wine-bottle"
+        },
+        "WAR": {
+          "TITLE": "War or Act of War (active military combat; varies by policy)",
+          "DESC": "Most term life insurance policies exclude death resulting from active military combat or acts of war. Coverage is available under some circumstances, but policyholders should check for exclusions related to military or war-related deaths.",
+          "ICON": "fas fa-shield-alt"
+        },
+        "PRE_EXISTING": {
+          "TITLE": "Pre-Existing Conditions Not Disclosed on Application",
+          "DESC": "Term life insurance may not cover death from pre-existing conditions that were not disclosed during the process. Full disclosure is critical; failing to mention conditions such as heart disease or diabetes could result in claims being denied.",
+          "ICON": "fas fa-notes-medical"
+        }
+      }
+    },
+    "LIFE_INSURANCE_COST": {
+      "TITLE": "How Much Does Term Life Insurance Cost in Texas?",
+      "DESC1": "Term life insurance costs in Texas vary widely based on your age, gender, health, and how much coverage you choose. For many healthy adults, especially nonsmokers, premiums can be quite affordable compared with other types of life insurance. A 20-year term life insurance policy with a $250,000 death benefit typically costs around $39–$45 per month for a 40-year-old male, while a 40-year-old female can expect to pay approximately $33–$40 per month. Rates tend to climb as you get older, and smoking or health conditions will increase the price. Overall, many Texans find term life insurance offers good value for essential financial protection.",
+      "DESC2": "When you compare Texas rates with other states, the cost of term life insurance doesn't differ drastically just because of where you live. Nationwide, the average term life policy can cost around $30 per month for a healthy 30-year-old buying a 20-year, $500,000 plan, which aligns closely with many Texas premiums. Some regional variations exist, but age, health, tobacco use, and coverage amount influence your rate far more than your state of residence. Shopping around and comparing quotes can help you find competitive pricing no matter where you live."
+    },
+    "RATES": {
+ "NON_SMOKER_TERM_AGE": {
+    "TITLE": "Average Term Life Insurance Rates for Non-Smokers by Age",
+    "DESC1": "Term life insurance rates for non-smokers vary by age because younger individuals present a lower risk to insurers. As you age, the likelihood of developing health conditions or facing an early death increases, which is why premiums rise. Insurers adjust their rates to reflect this higher risk, so older policyholders generally pay more for the same coverage compared to younger, healthier individuals.",
+    "H1": "Age",
+    "H2": "Average Annual Rates for Men",
+    "H3": "Average Annual Rates for Women"
+  },
+  "SMOKER_TERM_AGE": {
+    "TITLE": "Average Term Life Insurance Rates for Smokers by Age",
+    "DESC1": "Term life insurance rates for smokers are higher than for non-smokers due to the increased health risks associated with smoking, such as heart disease, lung cancer, and respiratory issues. As smokers age, these risks become more pronounced, leading to even higher premiums. Insurers charge more to account for the greater likelihood of claims, so smokers pay significantly more as they get older.",
+    "H1": "Age",
+    "H2": "Average Annual Rates for Men",
+    "H3": "Average Annual Rates for Women"
+  },
+  "NON_SMOKER_RISK_CLASSES": {
+    "TITLE": "Average Term Life Insurance Rates for Non-Smokers Across Risk Classes",
+    "DESC1": "Rates for non-smokers differ across risk classes because insurers assess individuals based on their overall health and lifestyle. Those in the \"Preferred Plus\" class are considered the healthiest and have lower premiums due to fewer risk factors. \"Preferred\" and \"Standard\" classes reflect higher risk, often due to factors such as weight, medical history, or family health, which lead to higher premiums.",
+    "H1": "Age and Gender",
+    "H2": "Preferred Plus",
+    "H3": "Preferred",
+    "H4": "Standard"
+  },
+  "SMOKER_RISK_CLASSES": {
+    "TITLE": "Average Term Life Insurance Rates for Smokers Across Risk Classes",
+    "DESC1": "For smokers, term life insurance rates vary across risk classes because insurers assess their overall health and smoking habits. Smokers in the \"Preferred\" class have fewer health issues or may have quit smoking recently, resulting in lower premiums. Those in the \"Standard\" class typically face higher rates due to ongoing smoking or other health conditions, reflecting a higher risk to insurers.",
+    "H1": "Age and Gender",
+    "H2": "Preferred",
+    "H3": "Standard"
+  },
+  "TERM_LENGTH_RATES": {
+    "TITLE": "Average Term Life Insurance Rates by Term Length",
+    "DESC1": "The rates differ by term length because longer policies provide coverage for a more extended period, increasing the insurer's risk. With a longer term, the likelihood of the policyholder passing away during the coverage period is higher, so premiums are set accordingly. Shorter terms, such as 10 years, have lower rates because they offer less time for the insurer to pay out the death benefit.",
+    "H1": "Term Length",
+    "H2": "Average Annual Rate for Men",
+    "H3": "Average Annual Rate for Women"
+  },
+  
+      "FOOTER": {
+        "SOURCE": "Source:",
+        "DISCLAIMER_LABEL": "Disclaimer",
+        "LAST_UPDATED": "Last Updated: March 2026",
+        "DISCLAIMER": " The information provided on this page is for general informational purposes only and may not reflect the most current updates. Coverage requirements, rates, and laws are subject to change. Please consult a licensed insurance agent for the most accurate and up-to-date information."
+      }
+    },
+    "TERM_VS_WHOLE": {
+      "HEADER": {
+        "TITLE": "Term Life Insurance vs. Whole Life Insurance in Texas",
+        "DESC": "These are two distinct types of coverage. Term life insurance in Texas offers protection for a set period, typically 10, 20, or 30 years, and is more affordable. It pays out if the policyholder dies within the term. Whole life insurance provides lifelong coverage and includes a cash value component that grows over time but comes with higher premiums. Each type serves different financial needs."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Factor",
+          "TERM_LIFE": "Term Life Insurance",
+          "WHOLE_LIFE": "Whole Life Insurance"
+        },
+        "LIST": {
+          "COVERAGE_DURATION": {
+            "FEATURE": "Coverage Duration",
+            "TERM_LIFE": "Fixed term (10, 20, 30 years)",
+            "WHOLE_LIFE": "Lifetime"
+          },
+          "PREMIUM_COST": {
+            "FEATURE": "Premium Cost",
+            "TERM_LIFE": "Lower",
+            "WHOLE_LIFE": "Higher"
+          },
+          "CASH_VALUE": {
+            "FEATURE": "Cash Value",
+            "TERM_LIFE": "No",
+            "WHOLE_LIFE": "Yes — builds over time"
+          },
+          "DEATH_BENEFIT": {
+            "FEATURE": "Death Benefit",
+            "TERM_LIFE": "Paid only if death occurs during the term",
+            "WHOLE_LIFE": "Guaranteed payout"
+          },
+          "PREMIUM_FLEXIBILITY": {
+            "FEATURE": "Premium Flexibility",
+            "TERM_LIFE": "Fixed",
+            "WHOLE_LIFE": "Fixed or flexible"
+          },
+          "POLICY_COMPLEXITY": {
+            "FEATURE": "Policy Complexity",
+            "TERM_LIFE": "Simple",
+            "WHOLE_LIFE": "More complex"
+          },
+          "CONVERTIBILITY": {
+            "FEATURE": "Convertibility",
+            "TERM_LIFE": "Some policies allow conversion",
+            "WHOLE_LIFE": "N/A"
+          },
+          "BEST_FOR": {
+            "FEATURE": "Best For",
+            "TERM_LIFE": "Income replacement, mortgage protection, and young families",
+            "WHOLE_LIFE": "Estate planning, lifelong dependents, wealth transfer"
+          },
+          "AVAILABILITY_IN_TEXAS": {
+            "FEATURE": "Availability in Texas",
+            "TERM_LIFE": "Widely available",
+            "WHOLE_LIFE": "Widely available"
+          },
+          "IDEAL_BUYER_PROFILE": {
+            "FEATURE": "Ideal Buyer Profile",
+            "TERM_LIFE": "Budget-conscious, temporary coverage needs",
+            "WHOLE_LIFE": "Long-term financial planning"
+          }
+        }
+      }
+    },
+    "FACTORS_IMPACT": {
+      "HEADER": {
+        "TITLE": "Factors That Impact Your Term Life Insurance Rates in Texas",
+        "DESC": "Several factors impact term life insurance rates in Texas. Age, health history, and lifestyle choices like tobacco use are key considerations. Your gender and family medical history also play a role. Additionally, the type of policy, term length, and coverage amount influence your premium. High-risk occupations or hobbies, such as those in construction or aviation, can also raise rates."
+      },
+      "LIST": {
+        "AGE": {
+          "TITLE": "Age",
+          "DESC": "You pay lower premiums at a younger age. As you grow older, premiums increase due to higher health risks."
+        },
+        "GENDER": {
+          "TITLE": "Gender",
+          "DESC": "Men generally face higher premiums due to statistical differences in life expectancy and associated health risks."
+        },
+        "HEALTH_HISTORY": {
+          "TITLE": "Health History and Pre-Existing Conditions",
+          "DESC": "Chronic illnesses or pre-existing conditions can increase premiums, as they signal higher risk for insurers."
+        },
+        "TOBACCO_USE": {
+          "TITLE": "Tobacco and Nicotine Use",
+          "DESC": "Smokers pay significantly higher premiums due to the health risks associated with tobacco and nicotine use."
+        },
+        "BMI": {
+          "TITLE": "Height and Weight (BMI)",
+          "DESC": "A higher BMI can lead to higher premiums due to an increased risk of health issues, such as heart disease."
+        },
+        "FAMILY_HISTORY": {
+          "TITLE": "Family Medical History",
+          "DESC": "A family history of serious conditions like heart disease or cancer may impact your premiums due to inherited health risks."
+        },
+        "OCCUPATION": {
+          "TITLE": "Occupation (high-risk jobs in oil & gas, construction, common in Texas)",
+          "DESC": "High-risk occupations, such as those in oil and gas or construction, may lead to higher premiums due to job-related dangers."
+        },
+        "HOBBIES": {
+          "TITLE": "Hobbies and Lifestyle (extreme sports, aviation)",
+          "DESC": "High-risk hobbies such as skydiving, racing, or aviation can increase premiums due to the elevated risk of accidents."
+        },
+        "COVERAGE_AMOUNT": {
+          "TITLE": "Coverage Amount (Death Benefit)",
+          "DESC": "Higher death benefits result in higher premiums, as the insurer's payout increases with the coverage amount."
+        },
+        "TERM_LENGTH": {
+          "TITLE": "Term Length Selected",
+          "DESC": "Shorter terms typically cost less, while longer terms, like 30 years, come with higher premiums due to extended coverage."
+        },
+        "POLICY_TYPE": {
+          "TITLE": "Type of Policy (medical exam vs. no-exam)",
+          "DESC": "No-medical-exam policies often come with higher premiums as insurers assume more risk without assessing your health upfront."
+        },
+        "DRIVING_RECORD": {
+          "TITLE": "Driving Record",
+          "DESC": "A poor driving record, including accidents or violations, can increase your premiums, as it indicates a higher risk to insurers."
+        }
+      }
+    },
+    "DISCOUNT_FACTORS": {
+      "HEADER": {
+        "TITLE": "How to Maximize Your Discounts and Lower Your Premium",
+        "DESC": "To maximize discounts and lower your premium, consider buying coverage early, quitting tobacco before applying, and selecting only the coverage amount you need. Opt for annual premium payments instead of monthly, maintain a healthy lifestyle, and choose a policy with a medical exam for better rates. Comparing quotes from multiple carriers can also help you find the best deal."
+      },
+      "LIST": {
+        "EARLY_PURCHASE": {
+          "TITLE": "Buy Coverage Early",
+          "DESC": "Purchasing term life insurance at a younger age locks in lower premiums, reducing overall costs throughout the term."
+        },
+        "NON_SMOKER": {
+          "TITLE": "Quit Tobacco Before Applying",
+          "DESC": "Quitting tobacco before applying can significantly lower premiums, as insurers offer lower rates to non-smokers."
+        },
+        "RIGHT_COVERAGE": {
+          "TITLE": "Choose Only the Coverage Amount You Actually Need",
+          "DESC": "Selecting a coverage amount that suits your financial goals prevents you from overpaying for unnecessary coverage."
+        },
+        "TERM_LENGTH": {
+          "TITLE": "Select the Right Term Length",
+          "DESC": "Choose a term length that fits your needs. Shorter terms often have lower premiums, while longer terms cost more."
+        },
+        "PAYMENT_MODE": {
+          "TITLE": "Opt for Annual Premium Payments Instead of Monthly",
+          "DESC": "Paying annually rather than monthly may reduce premiums, as insurers often offer discounts for lump sum payments."
+        },
+        "HEALTH_IMPROVEMENT": {
+          "TITLE": "Improve Your Health Before Applying (lose weight, manage blood pressure)",
+          "DESC": "Doing so can lower your premiums by reducing risk factors."
+        },
+        "MEDICAL_EXAM": {
+          "TITLE": "Choose a Medical Exam Policy Over No-Exam for Better Rates",
+          "DESC": "Policies requiring a medical exam generally offer lower rates, as insurers can better assess your health risks."
+        },
+        "COMPARE_CARRIERS": {
+          "TITLE": "Compare Multiple Carriers Through an Independent Agent",
+          "DESC": "Working with an independent agent helps you compare rates across different carriers, ensuring you get the best deal."
+        },
+        "DRIVING_RECORD": {
+          "TITLE": "Maintain a Clean Driving Record",
+          "DESC": "A clean driving record shows insurers you're a lower risk, helping to keep your premiums lower over time."
+        },
+        "NO_EXTRA_RIDERS": {
+          "TITLE": "Review and Remove Riders You Don't Need",
+          "DESC": "Removing unnecessary riders from your policy can reduce your premium by lowering the overall cost of your coverage."
+        }
+      }
+    },
+    "AGENT_COMPARISON": {
+      "HEADER": {
+        "TITLE": "Independent Insurance Agency vs. Captive Agent: Why Choice Saves You Money",
+        "DESC": "When choosing life insurance, working with an independent insurance agency gives you the advantage of comparing multiple carriers to find the best options. Unlike captive agents, who represent only one insurance company, independent agents like those at A-State Insurance can shop around and recommend policies that best meet your needs, helping you save money while getting the coverage."
       },
       "TABLE": {
         "COLUMNS": {
@@ -26185,34 +26858,29 @@
             "INDEPENDENT": "Yes — recommends what fits your needs",
             "CAPTIVE": "Limited to their carrier's products"
           },
-          "POLICY_OPTIONS": {
-            "FEATURE": "Policy Type Options",
-            "INDEPENDENT": "GUL, IUL, VUL and more compared across carriers",
-            "CAPTIVE": "Limited to the carrier's product lineup"
+          "TERM_LENGTH_OPTIONS": {
+            "FEATURE": "Term Length Options",
+            "INDEPENDENT": "Wide range across carriers",
+            "CAPTIVE": "Limited to carrier offerings"
           },
-          "CASH_VALUE_STRATEGY": {
-            "FEATURE": "Cash Value Strategy Options",
-            "INDEPENDENT": "Multiple growth strategies compared across carriers",
-            "CAPTIVE": "Single carrier's cash value structure only"
-          },
-          "INDEX_INVESTMENT_OPTIONS": {
-            "FEATURE": "Index and Investment Options",
-            "INDEPENDENT": "Multiple IUL/VUL options compared",
+          "NO_EXAM_OPTIONS": {
+            "FEATURE": "No-Exam Policy Options",
+            "INDEPENDENT": "Multiple options compared",
             "CAPTIVE": "Single carrier's options only"
           },
-          "HARD_TO_INSURE": {
-            "FEATURE": "Hard-to-Insure Buyer Help",
+          "HIGH_RISK_HELP": {
+            "FEATURE": "High-Risk Applicant Help",
             "INDEPENDENT": "More solutions across multiple carriers",
             "CAPTIVE": "May decline or have limited options"
           },
-          "PREMIUM_FLEXIBILITY": {
-            "FEATURE": "Premium Flexibility Comparison",
-            "INDEPENDENT": "Compared across carriers to find the best structure",
-            "CAPTIVE": "Single carrier's flexibility rules only"
+          "CONVERTIBILITY": {
+            "FEATURE": "Convertibility Options",
+            "INDEPENDENT": "Compared across carriers",
+            "CAPTIVE": "Single carrier's conversion rules"
           },
           "ONGOING_SUPPORT": {
-            "FEATURE": "Ongoing Policy Review",
-            "INDEPENDENT": "Yes — monitors cash value and adjusts as needed",
+            "FEATURE": "Ongoing Policy Support",
+            "INDEPENDENT": "Yes — reviews and adjusts as life changes",
             "CAPTIVE": "Varies"
           },
           "PRICE": {
@@ -26222,94 +26890,19 @@
           },
           "BEST_FOR": {
             "FEATURE": "Best For",
-            "INDEPENDENT": "Most universal life buyers in Texas",
+            "INDEPENDENT": "Most term life buyers in Texas",
             "CAPTIVE": "Buyers loyal to a specific brand"
-          }
-        }
-      }
-    },
-    "UNIVERSAL_VS_WHOLE": {
-      "HEADER": {
-        "TITLE": "Universal Life Insurance vs. Whole Life Insurance in Texas",
-        "DESC": "Universal life insurance and whole life insurance both offer lifelong coverage, but they differ in flexibility and structure. Universal life offers adjustable premiums and death benefits, as well as variable cash value growth. Whole life provides fixed insurance premiums, guaranteed cash value, and predictable returns, making it simpler and more stable for long-term planning."
-      },
-      "TABLE": {
-        "COLUMNS": {
-          "FEATURE": "Factor",
-          "UNIVERSAL_LIFE": "Universal Life Insurance",
-          "WHOLE_LIFE": "Whole Life Insurance"
-        },
-        "LIST": {
-          "COVERAGE_DURATION": {
-            "FEATURE": "Coverage Duration",
-            "UNIVERSAL_LIFE": "Lifetime",
-            "WHOLE_LIFE": "Lifetime"
-          },
-          "PREMIUM_FLEXIBILITY": {
-            "FEATURE": "Premium Flexibility",
-            "UNIVERSAL_LIFE": "Yes — adjustable within limits",
-            "WHOLE_LIFE": "No — fixed premiums"
-          },
-          "DEATH_BENEFIT_FLEXIBILITY": {
-            "FEATURE": "Death Benefit Flexibility",
-            "UNIVERSAL_LIFE": "Yes — can increase or decrease",
-            "WHOLE_LIFE": "No — fixed death benefit"
-          },
-          "CASH_VALUE_ACCUMULATION": {
-            "FEATURE": "Cash Value Accumulation",
-            "UNIVERSAL_LIFE": "Yes",
-            "WHOLE_LIFE": "Yes"
-          },
-          "CASH_VALUE_GROWTH_RATE": {
-            "FEATURE": "Cash Value Growth Rate",
-            "UNIVERSAL_LIFE": "Varies (interest, index, or market-linked)",
-            "WHOLE_LIFE": "Guaranteed fixed rate"
-          },
-          "DIVIDEND_ELIGIBILITY": {
-            "FEATURE": "Dividend Eligibility",
-            "UNIVERSAL_LIFE": "No (most policies)",
-            "WHOLE_LIFE": "Yes (participating policies)"
-          },
-          "POLICY_LOANS": {
-            "FEATURE": "Policy Loans",
-            "UNIVERSAL_LIFE": "Yes — borrow against cash value",
-            "WHOLE_LIFE": "Yes — borrow against cash value"
-          },
-          "RISK_LEVEL": {
-            "FEATURE": "Risk Level",
-            "UNIVERSAL_LIFE": "Moderate to High (VUL exposed to market)",
-            "WHOLE_LIFE": "Low — guaranteed growth"
-          },
-          "POLICY_COMPLEXITY": {
-            "FEATURE": "Policy Complexity",
-            "UNIVERSAL_LIFE": "More complex",
-            "WHOLE_LIFE": "Moderate"
-          },
-          "RISK_OF_LAPSE": {
-            "FEATURE": "Risk of Lapse",
-            "UNIVERSAL_LIFE": "Higher (if cash value depleted)",
-            "WHOLE_LIFE": "Lower"
-          },
-          "BEST_FOR": {
-            "FEATURE": "Best For",
-            "UNIVERSAL_LIFE": "Flexible long-term planning, estate planning",
-            "WHOLE_LIFE": "Predictable lifelong coverage, wealth transfer"
-          },
-          "IDEAL_BUYER_PROFILE": {
-            "FEATURE": "Ideal Buyer Profile",
-            "UNIVERSAL_LIFE": "Financially savvy buyers seeking flexibility",
-            "WHOLE_LIFE": "Conservative buyers seeking guarantees"
           }
         }
       }
     },
     "HIGH_RISK_APPLICANT": {
       "HEADER": {
-        "TITLE": "Hard to Insure? We Can Still Help You Find Coverage"
+        "TITLE": "High-Risk Applicant? We Can Still Help You Find Coverage"
       },
       "CONTENT": {
-        "DESC1": "Getting approved for life insurance can feel challenging if you have health conditions, a risky job, or past coverage denials. Many people assume they have no options, but that is not always the case. With the right guidance, even high-risk applicants can find policies designed to fit their situation and provide meaningful protection.",
-        "DESC2": "Experienced agents can match you with carriers that specialize in higher-risk profiles and offer flexible underwriting and tailored solutions. Whether you have medical concerns, lifestyle risks, or a complex financial background, there are still ways to secure universal life insurance coverage in Texas that protects your family and supports your long-term goals."
+        "DESC1": "If you're considered a high-risk applicant due to health issues, a hazardous occupation, or a history of certain behaviors, don't worry, you can still find term life insurance in Texas. Many insurance companies specialize in offering coverage to individuals who may have been declined elsewhere. These policies might come with higher premiums, but they provide the protection you need.",
+        "DESC2": "At A-State Insurance, we work with multiple top-rated carriers, ensuring that even high-risk applicants have access to affordable options. We understand that life happens, and we're committed to helping you navigate the insurance market to find the best coverage for your unique situation. Whether you need a standard or specialized plan, we're here to help!"
       }
     },
     "LANGUAGE_SUPPORT": {
@@ -26317,8 +26910,8 @@
         "TITLE": "Hablamos Español / We Speak Your Language"
       },
       "CONTENT": {
-        "DESC1": "Language should never be a barrier to getting the help or service you need. Our Spanish-speaking team is here to support you with clear communication and genuine care. Whether you have questions, need guidance, or want to discuss details, you can do so comfortably in Spanish without worrying about misunderstandings.",
-        "DESC2": "We are committed to making every interaction smooth, respectful, and easy to follow, so you feel confident and fully supported from start to finish. Our goal is to ensure every client feels understood, informed, and comfortable while choosing the right protection for their future."
+        "DESC1": "At A-State Insurance, we are dedicated to serving the Hispanic and Latino communities with personalized, bilingual support. Our team of Spanish-speaking agents is here to help you navigate your life insurance options, ensuring you receive the best coverage and rates. We're committed to making insurance accessible and understandable in your preferred language.",
+        "DESC2": "Whether you're looking for affordable term life insurance, whole life coverage, or final expense plans, A-State Insurance offers tailored solutions designed to fit your budget and long-term goals. We specialize in helping Hispanic and Latino families secure financial protection with flexible policy options, competitive rates, and clear guidance every step of the way."
       }
     },
     "ASTATE_DIFFERENTIATORS": {
@@ -26328,27 +26921,27 @@
       "LIST": {
         "LICENSED_BROKERS": {
           "TITLE": "Texas Licensed Brokers",
-          "DESCRIPTION": "Licensed in Texas, brokers follow state regulations, ensuring reliable advice and compliant insurance solutions."
+          "DESCRIPTION": "Our brokers are fully licensed in Texas, ensuring they provide you with the best, most accurate insurance advice."
         },
         "HISPANIC_LATINO_FRIENDLY": {
           "TITLE": "Hispanic & Latino Friendly",
-          "DESCRIPTION": "A welcoming approach supports Hispanic and Latino clients with culturally aware service and clear communication."
+          "DESCRIPTION": "We're committed to serving Hispanic and Latino communities, offering personalized service in your preferred language."
         },
         "YEARS_SERVING": {
           "TITLE": "20+ Years Serving Texans",
-          "DESCRIPTION": "With over two decades of experience, the team understands local needs and evolving insurance challenges well."
+          "DESCRIPTION": "With over 20 years of experience, we've proudly served Texans, providing expert insurance solutions for all their needs."
         },
         "CUSTOM_COVERAGE": {
           "TITLE": "Custom Coverage Plans",
-          "DESCRIPTION": "Personalized plans are tailored to match individual goals, budgets, and long-term financial protection needs."
+          "DESCRIPTION": "We offer carefully curated, flexible coverage options designed to fit your unique needs."
         },
         "ONLINE_LOCAL": {
           "TITLE": "Online & Local",
-          "DESCRIPTION": "Services are available both online and locally, giving clients flexible and convenient ways to get support."
+          "DESCRIPTION": "Whether you prefer to work online or in person, we offer both options for your convenience."
         },
         "MULTILINGUAL_AGENTS": {
           "TITLE": "Multilingual Agents",
-          "DESCRIPTION": "Multilingual agents assist clients in multiple languages, making the process easier and more accessible for all."
+          "DESCRIPTION": "Our multilingual agents are here to assist you in your preferred language, making insurance easier for everyone."
         }
       }
     },
@@ -26359,44 +26952,44 @@
       "STEPS": {
         "REACH_OUT": {
           "TITLE": "Step 1 - Reach Out",
-          "DESCRIPTION": "Contact the team by phone or online to begin your coverage journey with quick and easy support."
+          "DESCRIPTION": "Contact us to start your journey toward securing the right term life insurance coverage."
         },
         "GET_ADVICE": {
           "TITLE": "Step 2 - Get Advice",
-          "DESCRIPTION": "Receive clear guidance tailored to your needs, helping you understand options and make informed choices."
+          "DESCRIPTION": "Our experts will guide you through your options and help you choose the best coverage."
         },
         "PICK_PLAN": {
           "TITLE": "Step 3 - Pick Your Plan",
-          "DESCRIPTION": "Select a plan that fits your budget and goals, ensuring the right level of protection for your future."
+          "DESCRIPTION": "Choose the plan that fits your needs and budget for peace of mind and protection."
         },
         "WE_GOT_YOU": {
-          "TITLE": "Step 4 - We’ve Got You",
-          "DESCRIPTION": "Enjoy ongoing support and peace of mind knowing your coverage is active and your needs are handled."
+          "TITLE": "Step 4 - We've Got You",
+          "DESCRIPTION": "Once you're covered, our team is here to support you every step of the way."
         }
       }
     },
     "SWITCH_STEPS": {
       "HEADER": {
-        "TITLE": "How to Switch Your Universal Life Insurance to A-State Insurance"
+        "TITLE": "How to Switch Your Term Life Insurance to A-State Insurance"
       },
       "STEPS": {
         "STEP_1": {
           "TITLE": "Step 1: Get Your Free Comparison Quote",
-          "DESCRIPTION": "Request a free comparison quote to review rates, benefits, and savings options as per your needs."
+          "DESCRIPTION": "Start by getting a free, no-obligation quote from multiple top-rated carriers. We'll compare options to ensure you get the best rate, saving you time and money. It only takes a few minutes to get your personalized comparison, so you can make an informed decision."
         },
         "STEP_2": {
           "TITLE": "Step 2: Pick Your Plan and Activate",
-          "DESCRIPTION": "Select the plan that fits your goals, then activate coverage quickly with a simple guided process."
+          "DESCRIPTION": "Once you've reviewed your options, select the plan that best fits your needs and budget. Our team will guide you through the activation process, ensuring your coverage begins right away. You'll have peace of mind knowing you're protected with the right plan."
         },
         "STEP_3": {
-          "TITLE": "Step 3: Cancel Your Old Policy (We’ll Help!)",
-          "DESCRIPTION": "Cancel your old policy with support to ensure a smooth switch without gaps in insurance coverage."
+          "TITLE": "Step 3: Cancel Your Old Policy (We'll Help!)",
+          "DESCRIPTION": "We'll assist you in canceling your old policy to ensure a smooth transition. Our team will handle the details so you can focus on your new coverage. We make the process hassle-free, ensuring that there are no gaps in your protection or unnecessary overlap in payments."
         }
       }
     },
     "FREE_QUOTE": {
-      "HEADER": "Get a Free Universal Life Insurance Quote in Texas",
-      "DESCRIPTION": "Secure your future with flexible coverage built around your needs and goals. Getting started is quick and simple. Just select your preferred policy type, whether Guaranteed, Indexed, Variable, Fixed, Survivorship, or Other, and fill in your basic details below. Our process is designed to be easy and stress-free, helping you explore options with confidence. Start today with A-State Insurance and receive your personalized quote. Enter your full name or phone number to begin."
+      "HEADER": "Get a Free Term Life Insurance Quote in Texas",
+      "DESCRIPTION": "Getting a free term life insurance quote in Texas is simple and quick. Start by providing your basic information, including your full name and phone number, so we can reach out to discuss your options. We'll compare multiple top-rated carriers to find the best rates for you, whether you're interested in level-term, return-of-premium (ROP), convertible, decreasing, or renewable policies. Once we gather your details, you'll receive a personalized quote to help you make an informed decision."
     }
   }
 }
