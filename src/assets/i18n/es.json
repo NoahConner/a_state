@@ -34,6 +34,10 @@
     "BUILDERS_RISK_INSURANCE": "Seguro de riesgo de construcción",
     "DIRECTORS_OFFICERS_LIABILITY_INSURANCE": "Seguro de responsabilidad para directores y ejecutivos (D&O)",
     "WHOLE_LIFE_INSURANCE": "Seguro de vida entera",
+      "UNIVERSAL_LIFE_INSURANCE": "Seguro de Vida Universal",
+  "FINAL_EXPENSE_INSURANCE": "Seguro de Gastos Finales",
+  "TERM_LIFE_INSURANCE": "Seguro de Vida Temporal",
+  "GROUP_LIFE_INSURANCE": "Seguro de Vida Grupal",
     "ABOUT": "Sobre Nosotros",
     "CONTACT": "Contacto",
     "OFFICE_LOCATOR": "Localizador de Oficinas",
@@ -19684,7 +19688,632 @@
       "DESCRIPTION": "Obtener una cotización de seguro de auto comercial con A-State Insurance es rápido y fácil. Comience poniéndose en contacto con nuestro equipo para obtener una cotización gratuita y sin compromiso. Trabajaremos con usted para evaluar las necesidades de su negocio y proporcionar opciones de cobertura personalizadas. Una vez que reciba su cotización, nuestros agentes de A-State Insurance lo guiarán a través de la selección del plan adecuado y la activación de su póliza. ¡No espere, proteja su negocio con corredores de seguros premium hoy mismo!"
     }
   },
-  "FOOTER": {
+
+  "WHOLE_LIFE_INSURANCE": {
+    "BANNER": {
+      "TITLE_LINE1": "El Mejor y Más Asequible Seguro de Vida Entera en",
+      "TITLE_LINE2": "Texas — Desde",
+      "TITLE_LINE3": "$27/Mes",
+      "CHIPS": {
+        "TRADITIONAL": "Tradicional",
+        "GUARANTEED_ISSUE": "Emisión Garantizada",
+        "PARTICIPATING": "Participante",
+        "SINGLE_PREMIUM": "Prima Única",
+        "LIMITED_PAY": "Pago Limitado",
+        "OTHER": "Otro"
+      },
+      "FORM": {
+        "FULL_NAME": "Nombre Completo",
+        "PHONE": "Número de Teléfono",
+        "BUTTON": "Obtener Cotización"
+      }
+    },
+    "WHY_DO_YOU_NEED": {
+      "TITLE": "¿Qué es el Seguro de Vida Entera y Por Qué lo Necesita?",
+      "DESC": "El seguro de vida entera es un tipo de seguro de vida permanente que brinda cobertura durante toda su vida, siempre que se paguen las primas. A diferencia de las pólizas temporales, no vence después de un plazo determinado. También acumula valor en efectivo con el tiempo, lo que lo convierte tanto en una herramienta de protección como en un activo financiero a largo plazo para los asegurados.",
+      "DESC1": "Este tipo de seguro está diseñado para ofrecer seguridad financiera de por vida a sus seres queridos. Ayuda a garantizar que su familia esté protegida contra cargas financieras como deudas, costos funerarios y gastos de manutención continuos. Para muchas familias, se convierte en una base confiable para la planificación a largo plazo y la tranquilidad.",
+      "SUB_TITLE": "Estos son los beneficios clave del seguro de vida entera:",
+      "LIST": [
+        {
+          "TITLE": "Protección de por Vida y Cobertura Garantizada",
+          "TEXT": "El seguro de vida entera brinda protección de por vida que nunca expira, siempre que se paguen las primas. A diferencia del seguro temporal, garantiza un beneficio por fallecimiento a sus seres queridos, sin importar cuándo fallezca. Esta estabilidad asegura que su familia permanezca protegida financieramente."
+        },
+        {
+          "TITLE": "Primas Fijas para una Planificación Predecible",
+          "TEXT": "Una de las mayores ventajas del seguro de vida entera son sus primas fijas, que nunca aumentan con el tiempo. Usted paga la misma cantidad durante toda su vida, lo que facilita y hace más predecible el presupuesto."
+        },
+        {
+          "TITLE": "Crecimiento del Valor en Efectivo con el Tiempo",
+          "TEXT": "El seguro de vida entera acumula valor en efectivo con el tiempo, actuando como un activo financiero al que puede acceder mientras aún está vivo. Este valor puede usarse para emergencias, educación o gastos mayores."
+        },
+        {
+          "TITLE": "Seguridad Financiera para su Familia",
+          "TEXT": "El seguro de vida entera asegura que su familia reciba apoyo financiero garantizado después de su fallecimiento. Ayuda a cubrir los gastos de manutención diarios, deudas y costos educativos, creando una sólida red de seguridad."
+        },
+        {
+          "TITLE": "Beneficios con Ventajas Fiscales y Transferencia de Patrimonio",
+          "TEXT": "El seguro de vida entera ofrece ventajas fiscales, incluyendo un beneficio por fallecimiento generalmente libre de impuestos y un crecimiento del valor en efectivo con impuestos diferidos, lo que ayuda a transferir patrimonio de manera eficiente."
+        }
+      ]
+    },
+    "HOW_IT_WORKS": {
+      "TITLE": "¿Vale la Pena el Seguro de Vida Entera en Texas?",
+      "DESC1": "El seguro de vida entera puede valer la pena en Texas si busca protección de por vida y estabilidad financiera a largo plazo. A diferencia de la cobertura temporal, nunca expira siempre que se mantengan las primas, lo que significa que su familia siempre está protegida. También acumula valor en efectivo con el tiempo, lo que puede ser útil para emergencias, educación o planificación financiera futura.",
+      "DESC2": "Para muchos tejanos, especialmente aquellos que planifican la seguridad familiar a largo plazo, la planificación patrimonial o dejar un apoyo financiero garantizado, el seguro de vida entera ofrece un valor sólido. Sin embargo, suele ser más caro que el seguro temporal, por lo que funciona mejor para personas que desean tanto protección como un componente de ahorro. Comparar opciones puede ayudarle a elegir lo que realmente se adapte a sus necesidades y presupuesto."
+    },
+    "COVERAGES": {
+      "STANDARD": {
+        "TITLE": "¿Qué Cubre el Seguro de Vida Entera en Texas?",
+        "DESC": "El seguro de vida entera proporciona un beneficio por fallecimiento garantizado que ayuda a su familia a cubrir los costos funerarios, las deudas pendientes y los gastos de manutención. También acumula valor en efectivo con el tiempo, contra el cual puede pedir prestado para emergencias, educación o necesidades financieras mientras aún está vivo. Asegura la protección financiera a largo plazo para sus seres queridos y la tranquilidad para la planificación futura.",
+        "LIST": [
+          {
+            "TITLE": "Beneficio por Fallecimiento Vitalicio Pagado a los Beneficiarios",
+            "DESC": "El seguro de vida entera garantiza un beneficio por fallecimiento fijo pagado a los beneficiarios elegidos después de su fallecimiento. Esta cantidad no se ve afectada por los cambios del mercado y asegura un apoyo financiero confiable.",
+            "ICON": "fas fa-shield-alt"
+          },
+          {
+            "TITLE": "Fallecimiento por Causas Naturales",
+            "DESC": "Cubre el fallecimiento por causas naturales, incluyendo el envejecimiento y condiciones relacionadas con la salud, ayudando a las familias a manejar las responsabilidades financieras y los gastos continuos.",
+            "ICON": "fas fa-heart"
+          },
+          {
+            "TITLE": "Fallecimiento por Enfermedad o Dolencia",
+            "DESC": "Proporciona un pago garantizado si el fallecimiento ocurre debido a una enfermedad o condiciones médicas a largo plazo, asegurando la estabilidad financiera de sus seres queridos.",
+            "ICON": "fas fa-notes-medical"
+          },
+          {
+            "TITLE": "Muerte Accidental",
+            "DESC": "Asegura que los beneficiarios reciban el beneficio por fallecimiento incluso en caso de muerte accidental inesperada, reduciendo el estrés financiero durante momentos difíciles.",
+            "ICON": "fas fa-car-crash"
+          },
+          {
+            "TITLE": "Fallecimiento por Ataque Cardíaco o Derrame Cerebral",
+            "DESC": "Cubre eventos médicos mayores como ataques cardíacos o derrames cerebrales, proporcionando protección y apoyo financiero durante una pérdida repentina.",
+            "ICON": "fas fa-heartbeat"
+          },
+          {
+            "TITLE": "Fallecimiento por Cáncer",
+            "DESC": "Proporciona un pago garantizado si el fallecimiento ocurre debido al cáncer, ayudando a las familias a manejar los costos relacionados con el tratamiento, deudas y gastos de manutención.",
+            "ICON": "fas fa-ribbon"
+          },
+          {
+            "TITLE": "Acumulación de Valor en Efectivo con el Tiempo",
+            "DESC": "Acumula valor en efectivo de manera constante a medida que se pagan las primas. Se puede acceder a este valor durante su vida para préstamos, emergencias o necesidades de planificación financiera.",
+            "ICON": "fas fa-piggy-bank"
+          },
+          {
+            "TITLE": "Préstamos de Póliza Contra el Valor en Efectivo",
+            "DESC": "Permite a los asegurados pedir prestado contra el valor en efectivo acumulado sin cancelar la cobertura, aunque los préstamos impagos pueden reducir el beneficio final.",
+            "ICON": "fas fa-hand-holding-usd"
+          },
+          {
+            "TITLE": "Beneficio por Fallecimiento Acelerado por Enfermedad Terminal",
+            "DESC": "Proporciona acceso anticipado a una parte del beneficio por fallecimiento si se le diagnostica una enfermedad terminal, ayudando a cubrir los gastos médicos y de manutención.",
+            "ICON": "fas fa-procedures"
+          },
+          {
+            "TITLE": "Fallecimiento de un Cónyuge o Hijo (con cláusulas adicionales aplicables)",
+            "DESC": "Las cláusulas adicionales opcionales pueden extender la cobertura a un cónyuge o hijo, proporcionando protección financiera adicional para su familia.",
+            "ICON": "fas fa-users"
+          }
+        ]
+      },
+      "TYPES": {
+        "TITLE": "Tipos de Seguro de Vida Entera en Texas",
+        "DESC": "El seguro de vida entera se presenta en diferentes formas para adaptarse a varios objetivos financieros, presupuestos y necesidades de cobertura. Comprender estas opciones puede ayudarle a elegir la póliza adecuada para la protección a largo plazo y la planificación financiera.",
+        "LIST": [
+          {
+            "TITLE": "Seguro de Vida Entera Tradicional",
+            "DESC": "Proporciona cobertura de por vida con primas fijas, beneficios por fallecimiento garantizados y un crecimiento constante del valor en efectivo para la seguridad financiera a largo plazo."
+          },
+          {
+            "TITLE": "Seguro de Vida Entera Participante",
+            "DESC": "Puede pagar dividendos basados en el rendimiento de la aseguradora, que pueden usarse para aumentar el valor en efectivo, reducir las primas o mejorar el beneficio por fallecimiento."
+          },
+          {
+            "TITLE": "Seguro de Vida Entera No Participante",
+            "DESC": "Ofrece primas y beneficios garantizados sin dividendos, enfocándose en una cobertura predecible y estable."
+          },
+          {
+            "TITLE": "Seguro de Vida Entera de Emisión Garantizada",
+            "DESC": "No requiere examen médico ni preguntas de salud, lo que facilita la calificación, especialmente para personas mayores o con condiciones de salud."
+          },
+          {
+            "TITLE": "Seguro de Vida Entera de Emisión Simplificada",
+            "DESC": "Requiere preguntas de salud mínimas y ningún examen médico, ofreciendo una aprobación más rápida mientras brinda cobertura de por vida."
+          },
+          {
+            "TITLE": "Seguro de Vida Entera de Prima Única",
+            "DESC": "Se financia con un pago único de suma global, proporcionando cobertura inmediata de por vida y acumulación instantánea de valor en efectivo."
+          },
+          {
+            "TITLE": "Seguro de Vida Entera de Pago Limitado",
+            "DESC": "Le permite pagar las primas durante un período determinado (como 10 o 20 años) manteniendo la cobertura de por vida posteriormente."
+          },
+          {
+            "TITLE": "Seguro de Vida Entera Indexado",
+            "DESC": "Vincula el crecimiento del valor en efectivo a un índice de mercado para obtener rendimientos potencialmente más altos, manteniendo la protección del capital y la cobertura de por vida."
+          },
+          {
+            "TITLE": "Seguro de Vida Entera Conjunto",
+            "DESC": "Cubre a dos personas bajo una sola póliza, con beneficios pagados después del primer o segundo fallecimiento, dependiendo de la estructura."
+          },
+          {
+            "TITLE": "Seguro de Vida Entera para Gastos Funerarios / Finales",
+            "DESC": "Diseñado para cubrir los gastos funerarios y de fin de vida, ayudando a reducir la carga financiera de los familiares."
+          }
+        ]
+      }
+    },
+    "NOT_COVERED": {
+      "HEADER": {
+        "TITLE": "¿Qué NO Cubre el Seguro de Vida Entera en Texas?",
+        "DESC": "El seguro de vida entera en Texas no cubre todas las situaciones. No pagará beneficios por exclusiones como fraude, tergiversación o suicidio dentro del período de incontestabilidad. Tampoco funciona como seguro de salud, lo que significa que no se incluyen facturas médicas, atención de rutina o ingresos por discapacidad. La cobertura se aplica solo al individuo asegurado y a los términos descritos en el contrato de la póliza."
+      },
+      "LIST": {
+        "SUICIDE": {
+          "TITLE": "Suicidio Dentro de los Primeros Dos Años de la Póliza",
+          "DESC": "El suicidio dentro de los primeros dos años generalmente no está cubierto. En la mayoría de los casos, las aseguradoras solo reembolsan las primas pagadas en lugar del beneficio completo por fallecimiento, dependiendo de los términos de la póliza.",
+          "ICON": "fas fa-exclamation-circle"
+        },
+        "FRAUD": {
+          "TITLE": "Fallecimiento Debido a Fraude o Tergiversación en la Solicitud",
+          "DESC": "Si se proporciona información falsa o engañosa en la solicitud, la aseguradora puede denegar la reclamación o cancelar la póliza y reembolsar las primas de acuerdo con los términos del contrato.",
+          "ICON": "fas fa-file-contract"
+        },
+        "ILLEGAL_ACTIVITIES": {
+          "TITLE": "Fallecimiento por Actividades Ilegales",
+          "DESC": "Los fallecimientos resultantes de actividades delictivas o ilegales no están cubiertos. Las reclamaciones pueden ser denegadas y la cobertura puede ser anulada según las exclusiones de la póliza.",
+          "ICON": "fas fa-gavel"
+        },
+        "HIGH_RISK": {
+          "TITLE": "Fallecimiento por Pasatiempos de Alto Riesgo",
+          "DESC": "Los fallecimientos por actividades de alto riesgo como paracaidismo, carreras o deportes extremos generalmente están excluidos. La cobertura depende de los términos específicos de la póliza y las cláusulas adicionales.",
+          "ICON": "fas fa-skull-crossbones"
+        },
+        "AVIATION": {
+          "TITLE": "Fallecimiento por Aviación (Piloto Privado; Varía Según la Póliza)",
+          "DESC": "Los fallecimientos relacionados con la aviación privada o vuelos no comerciales pueden no estar cubiertos. La cobertura depende de la aseguradora y las exclusiones específicas de la póliza.",
+          "ICON": "fas fa-plane"
+        },
+        "SUBSTANCE_ABUSE": {
+          "TITLE": "Fallecimiento por Abuso de Drogas o Alcohol",
+          "DESC": "Los fallecimientos causados por el abuso de drogas o alcohol generalmente están excluidos. Las reclamaciones que involucren uso de sustancias o intoxicación pueden ser denegadas según los términos de la póliza.",
+          "ICON": "fas fa-wine-bottle"
+        },
+        "WAR": {
+          "TITLE": "Guerra o Acto de Guerra",
+          "DESC": "Los fallecimientos resultantes de guerra o combate militar activo generalmente están excluidos, aunque puede aplicarse cobertura limitada dependiendo de la aseguradora y la póliza.",
+          "ICON": "fas fa-shield-alt"
+        },
+        "PRE_EXISTING": {
+          "TITLE": "Condiciones Preexistentes No Divulgadas en la Solicitud",
+          "DESC": "Las condiciones médicas no divulgadas pueden llevar a la denegación de la reclamación. Las aseguradoras confían en los detalles precisos de la solicitud al determinar la elegibilidad de la cobertura.",
+          "ICON": "fas fa-notes-medical"
+        },
+        "POLICY_LAPSE": {
+          "TITLE": "Pérdidas de Valor en Efectivo Debido a la Caducidad de la Póliza",
+          "DESC": "Si no se pagan las primas, la póliza puede caducar, resultando en la pérdida de cobertura y potencialmente del valor en efectivo acumulado, dependiendo de los términos de la póliza.",
+          "ICON": "fas fa-times-circle"
+        },
+        "INVESTMENT": {
+          "TITLE": "Pérdidas de Inversión (El Valor en Efectivo No Está Vinculado al Mercado)",
+          "DESC": "El valor en efectivo del seguro de vida entera no está vinculado a inversiones de mercado, por lo que no experimenta pérdidas del mercado de valores. El crecimiento se basa en la estructura de la póliza y permanece estable con el tiempo.",
+          "ICON": "fas fa-chart-line"
+        }
+      }
+    },
+    "HOW_MUCH_DO_YOU_NEED": {
+      "TITLE": "¿Cuánto Seguro de Vida Necesita Realmente?",
+      "DESC1": "Determinar cuánto seguro de vida necesita comienza por comprender las necesidades financieras de su familia si algo le sucediera. Considere las deudas pendientes, la hipoteca o el alquiler, los gastos de manutención diarios, los costos educativos futuros para los hijos y el reemplazo de ingresos a largo plazo.",
+      "DESC2": "Una regla general práctica es de 10 a 15 veces su ingreso anual, pero cada familia es diferente. Comience enumerando sus obligaciones y restando los ahorros u otros recursos. Esto le da una base clara para una cobertura que realmente proteja a sus seres queridos sin pagar de más por extras innecesarios."
+    },
+    "LIFE_INSURANCE_COST": {
+      "TITLE": "¿Cuánto Cuesta el Seguro de Vida Entera en Texas?",
+      "DESC1": "El seguro de vida entera en Texas generalmente cuesta más que otros tipos de cobertura porque dura toda la vida y acumula valor en efectivo. En promedio, los tejanos pueden pagar de $177 a $282 por mes por una cobertura de $250,000, mientras que montos de cobertura más altos, como $500,000, pueden oscilar entre $250 y más de $750 por mes, dependiendo de la edad y la salud. A nivel nacional, pólizas similares promedian alrededor de $540 por mes por una cobertura de $500,000, lo que muestra cómo la edad y el nivel de cobertura afectan significativamente el precio.",
+      "DESC2": "En comparación con otros estados, las tarifas de Texas están bastante cerca del promedio de EE. UU. Por ejemplo, Texas promedia alrededor de $3,099 por año (~$258/mes) para la cobertura estándar de vida entera, mientras que algunos estados de menor costo pueden ser ligeramente más baratos, y los estados de mayor costo como Nueva Jersey o California pueden exceder los $3,600–$4,100 por año (~$302–$340/mes+). En general, Texas se mantiene cerca del punto medio nacional, lo que lo convierte en un estado ni el más barato ni el más caro para el seguro de vida entera."
+    },
+    "MINIMUM_COVERAGE": {
+      "TITLE": "Requisitos Mínimos de Cobertura de Seguro de Hogar en Texas",
+      "DESC1": "En Texas, el seguro de hogar no es un requisito legal, pero la mayoría de los prestamistas hipotecarios exigen cobertura para proteger su inversión. La cobertura mínima generalmente incluye protección para la estructura de la vivienda, pertenencias personales y responsabilidad civil por lesiones que ocurran en la propiedad. Esto asegura que los propietarios estén financieramente protegidos contra riesgos comunes como incendios, robos o daños por tormentas.",
+      "DESC2": "Elegir el nivel de cobertura adecuado es importante, ya que asegurar insuficientemente su hogar puede dejarlo vulnerable a costos inesperados. Un corredor de confianza como A-State Insurance ayuda a los tejanos a comparar múltiples pólizas de las principales aseguradoras para encontrar un seguro de hogar que cumpla con los requisitos del prestamista mientras equilibra la asequibilidad y la protección suficiente para su propiedad y familia."
+    },
+    "COST": {
+      "TITLE": "¿Cuánto Cuesta el Seguro Comercial en Texas?",
+      "DESC1": "El costo del seguro comercial en Texas puede variar significativamente dependiendo de factores como el tamaño de su negocio, la industria y las necesidades de cobertura. En promedio, las pequeñas empresas en Texas pueden esperar pagar entre $400 y $1,500 por año por una póliza básica que cubre responsabilidad civil general y propiedad comercial. Las tarifas pueden aumentar para negocios con más empleados, mayores riesgos o necesidades industriales específicas. Por ejemplo, los contratistas o proveedores de atención médica podrían enfrentar primas más altas debido a la cobertura especializada requerida.",
+      "DESC2": "En comparación con el promedio nacional, el seguro comercial en Texas es generalmente más asequible. Estados como California y Nueva York tienden a tener primas más altas debido a mayores riesgos y requisitos regulatorios. Las empresas de Texas a menudo pueden encontrar tarifas competitivas, especialmente al comparar opciones. Para obtener una estimación más precisa para su negocio, considere solicitar una cotización personalizada adaptada a su situación única."
+    },
+    "RATES": {
+      "AGE": {
+        "TITLE": "Tarifas Promedio de Seguro de Vida Entera para No Fumadores por Edad",
+        "DESC1": "Las tarifas de seguro de vida entera para no fumadores en Texas varían según la edad, el sexo y el monto de la cobertura. Según las primas anuales promedio, un hombre de 20 años puede pagar alrededor de $2,548 por año, mientras que las mujeres pagan alrededor de $2,260. A los 30 años, las tarifas aumentan a $3,662 para hombres y $3,292 para mujeres. A los 40 años, las primas suben a $5,524 para hombres y $4,967 para mujeres. Los costos continúan aumentando con la edad.",
+        "DESC2": "A los 50, los hombres pagan aproximadamente $8,749 anualmente, mientras que las mujeres pagan $7,782. A los 60 años, las tarifas alcanzan los $14,517 para hombres y $12,670 para mujeres. A los 70 años, las primas pueden llegar hasta $24,797 para hombres y $21,766 para mujeres, dependiendo de la salud y los detalles de la póliza.",
+        "H1": "Edad",
+        "H2": "Tarifas Anuales Promedio para Hombres",
+        "H3": "Tarifas Anuales Promedio para Mujeres"
+      },
+      "AGE_SMOKER": {
+        "TITLE": "Tarifas Promedio de Seguro de Vida Entera para Fumadores por Edad",
+        "DESC1": "Las tarifas de seguro de vida entera para fumadores suelen ser más altas debido a los mayores riesgos para la salud y pautas de suscripción más estrictas. Las aseguradoras consideran el consumo de tabaco un factor importante que afecta la esperanza de vida, lo que impacta directamente en los costos de las primas. Las tarifas también aumentan con la edad, lo que hace importante presentar la solicitud temprano. Elegir hábitos más saludables y reducir el consumo de tabaco con el tiempo puede ayudar a mejorar la elegibilidad.",
+        "H1": "Edad",
+        "H2": "Tarifas Anuales Promedio para Hombres",
+        "H3": "Tarifas Anuales Promedio para Mujeres"
+      },
+      "FOOTER": {
+        "SOURCE": "Fuente:",
+        "DISCLAIMER_LABEL": "Aviso Legal",
+        "LAST_UPDATED": "Última Actualización: Marzo 2026",
+        "DISCLAIMER": "La información proporcionada en esta página es solo para fines informativos generales y puede no reflejar las actualizaciones más recientes. Los requisitos de cobertura, tarifas y leyes están sujetos a cambios. Consulte a un agente de seguros con licencia para obtener la información más precisa y actualizada."
+      }
+    },
+    "FACTORS_IMPACT": {
+      "HEADER": {
+        "TITLE": "Factores que Impactan sus Tarifas de Seguro de Vida Entera en Texas",
+        "DESC": "Las tarifas de seguro de vida entera en Texas están influenciadas por varios factores clave, incluyendo la edad, el estado de salud, los hábitos de estilo de vida, el monto de cobertura y el tipo de póliza. Los solicitantes más jóvenes y saludables generalmente reciben primas más bajas, mientras que los perfiles de mayor riesgo conllevan costos más altos. Comprender estos factores le ayuda a elegir la póliza adecuada y gestionar sus gastos de seguro a largo plazo de manera efectiva."
+      },
+      "LIST": {
+        "AGE": {
+          "TITLE": "Edad al Momento de la Solicitud",
+          "DESC": "Los solicitantes más jóvenes generalmente reciben tarifas de seguro de vida entera más bajas, mientras que los solicitantes mayores pagan primas más altas debido al mayor riesgo y una esperanza de vida más corta."
+        },
+        "GENDER": {
+          "TITLE": "Sexo",
+          "DESC": "Las mujeres a menudo pagan primas ligeramente más bajas que los hombres porque generalmente tienen una esperanza de vida más larga."
+        },
+        "HEALTH_HISTORY": {
+          "TITLE": "Historial de Salud y Condiciones Preexistentes",
+          "DESC": "El historial médico y las condiciones de salud existentes pueden aumentar las primas, ya que las aseguradoras evalúan los riesgos de salud a largo plazo."
+        },
+        "TOBACCO_USE": {
+          "TITLE": "Consumo de Tabaco y Nicotina",
+          "DESC": "Fumar o el consumo de nicotina aumenta significativamente las primas debido a los mayores riesgos para la salud y la reducción de la esperanza de vida."
+        },
+        "BMI": {
+          "TITLE": "Estatura y Peso (IMC)",
+          "DESC": "El Índice de Masa Corporal impacta el precio porque los niveles de peso extremos pueden indicar mayores riesgos para la salud, lo que lleva a primas más altas."
+        },
+        "FAMILY_HISTORY": {
+          "TITLE": "Historial Médico Familiar",
+          "DESC": "Un historial familiar de enfermedades graves, como enfermedades cardíacas o cáncer, puede aumentar las primas debido a los riesgos de salud hereditarios."
+        },
+        "COVERAGE_AMOUNT": {
+          "TITLE": "Monto de Cobertura (Beneficio por Fallecimiento)",
+          "DESC": "Montos de cobertura más altos resultan en primas más altas porque las aseguradoras asumen una mayor responsabilidad financiera."
+        },
+        "POLICY_TYPE": {
+          "TITLE": "Tipo de Póliza de Vida Entera Seleccionada",
+          "DESC": "Los diferentes tipos de pólizas de vida entera, incluyendo los planes participantes o no participantes, afectan el precio según beneficios como dividendos y crecimiento del valor en efectivo."
+        },
+        "OCCUPATION": {
+          "TITLE": "Ocupación",
+          "DESC": "Los trabajos de alto riesgo, como los del sector de petróleo y gas o la construcción, pueden aumentar las primas debido a una mayor probabilidad de lesiones."
+        },
+        "HOBBIES": {
+          "TITLE": "Pasatiempos y Estilo de Vida",
+          "DESC": "Actividades de riesgo como la aviación, las carreras o los deportes extremos pueden aumentar los costos del seguro debido al mayor riesgo de accidentes."
+        },
+        "PAYMENT_STRUCTURE": {
+          "TITLE": "Estructura de Pago",
+          "DESC": "Opciones como prima única, pago limitado o pago vitalicio afectan el costo total, con plazos de pago más cortos que requieren pagos iniciales más altos."
+        },
+        "DRIVING_RECORD": {
+          "TITLE": "Historial de Conducción",
+          "DESC": "Un historial de infracciones de tráfico o accidentes puede aumentar las primas, ya que refleja un perfil de riesgo general más alto."
+        }
+      }
+    },
+    "DISCOUNT_FACTORS": {
+      "HEADER": {
+        "TITLE": "Cómo Reducir su Prima de Seguro de Vida Entera en Texas",
+        "DESC": "Puede reducir su prima de seguro de vida entera tomando decisiones financieras y de estilo de vida inteligentes. Factores como la edad, la salud, la selección de cobertura y la estructura de la póliza impactan sus costos. Al optimizar estos elementos, puede asegurar protección de por vida a una tarifa más asequible."
+      },
+      "LIST": {
+        "EARLY_PURCHASE": {
+          "TITLE": "Compre Cobertura Temprano",
+          "DESC": "Comprar un seguro de vida entera a una edad más temprana asegura primas más bajas y reduce los costos a largo plazo debido al menor riesgo."
+        },
+        "NON_SMOKER": {
+          "TITLE": "Deje el Tabaco Antes de Solicitar",
+          "DESC": "Los no fumadores reciben primas significativamente más bajas, por lo que dejar el tabaco antes de presentar la solicitud puede reducir considerablemente sus costos."
+        },
+        "RIGHT_COVERAGE": {
+          "TITLE": "Elija el Monto de Cobertura Adecuado",
+          "DESC": "Seleccionar solo la cobertura que realmente necesita ayuda a mantener las primas asequibles mientras protege a su familia."
+        },
+        "PAYMENT_STRUCTURE": {
+          "TITLE": "Seleccione la Estructura de Pago Adecuada",
+          "DESC": "Opciones como el pago limitado pueden reducir los costos a largo plazo al permitirle completar los pagos antes mientras mantiene la cobertura de por vida."
+        },
+        "HEALTH_IMPROVEMENT": {
+          "TITLE": "Mejore su Salud Antes de Solicitar",
+          "DESC": "Mantener un peso saludable, controlar la presión arterial y mejorar la salud general puede ayudarle a calificar para primas más bajas."
+        },
+        "MEDICAL_EXAM": {
+          "TITLE": "Elija una Póliza con Examen Médico",
+          "DESC": "Las pólizas con exámenes médicos a menudo ofrecen primas más bajas porque las aseguradoras pueden evaluar su salud con mayor precisión."
+        },
+        "PARTICIPATING_POLICY": {
+          "TITLE": "Opte por una Póliza Participante",
+          "DESC": "Las pólizas participantes pueden pagar dividendos que pueden ayudar a compensar las primas con el tiempo, reduciendo los costos totales."
+        },
+        "COMPARE_CARRIERS": {
+          "TITLE": "Compare Múltiples Aseguradoras",
+          "DESC": "Comparar entre múltiples aseguradoras le ayuda a encontrar las mejores tarifas y características de póliza adaptadas a sus necesidades."
+        },
+        "DRIVING_RECORD": {
+          "TITLE": "Mantenga un Historial de Conducción Limpio",
+          "DESC": "Un historial de conducción seguro indica menor riesgo para las aseguradoras y puede ayudar a reducir sus primas de seguro."
+        },
+        "REMOVE_RIDERS": {
+          "TITLE": "Elimine Cláusulas Adicionales Innecesarias",
+          "DESC": "Eliminar cláusulas adicionales opcionales que no necesita puede reducir su prima mientras mantiene la cobertura esencial intacta."
+        }
+      }
+    },
+    "AGENT_COMPARISON": {
+      "HEADER": {
+        "TITLE": "Agencia de Seguros Independiente vs. Agente Cautivo: Por Qué Elegir le Ahorra Dinero",
+        "DESC": "Las agencias de seguros independientes trabajan con múltiples aseguradoras, brindándole más opciones, mejores comparaciones de precios y cobertura personalizada. Los agentes cautivos representan solo a una compañía, limitando la flexibilidad. Trabajar con una agencia independiente le ayuda a comparar tarifas, encontrar mejor valor y elegir la cobertura que realmente se adapte a sus necesidades."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Característica",
+          "INDEPENDENT": "Agencia Independiente (A-State)",
+          "CAPTIVE": "Agente Cautivo"
+        },
+        "LIST": {
+          "CARRIER_ACCESS": {
+            "FEATURE": "Acceso a Aseguradoras",
+            "INDEPENDENT": "Múltiples aseguradoras de vida de primer nivel",
+            "CAPTIVE": "Una sola aseguradora"
+          },
+          "QUOTE_COMPARISON": {
+            "FEATURE": "Comparación de Cotizaciones",
+            "INDEPENDENT": "Compara tarifas entre aseguradoras para usted",
+            "CAPTIVE": "Una cotización de una compañía"
+          },
+          "UNBIASED_ADVICE": {
+            "FEATURE": "Asesoramiento Imparcial",
+            "INDEPENDENT": "Recomienda lo que se ajusta a sus necesidades",
+            "CAPTIVE": "Limitado a los productos de su aseguradora"
+          },
+          "POLICY_OPTIONS": {
+            "FEATURE": "Opciones de Tipo de Póliza",
+            "INDEPENDENT": "Amplia gama de productos de vida entera comparados",
+            "CAPTIVE": "Limitado a la línea de productos de la aseguradora"
+          },
+          "DIVIDEND_OPTIONS": {
+            "FEATURE": "Opciones de Pólizas con Dividendos",
+            "INDEPENDENT": "Múltiples pólizas participantes comparadas",
+            "CAPTIVE": "Solo la estructura de dividendos de una aseguradora"
+          },
+          "GUARANTEED_ISSUE": {
+            "FEATURE": "Opciones de Emisión Garantizada",
+            "INDEPENDENT": "Múltiples aseguradoras para solicitantes difíciles de asegurar",
+            "CAPTIVE": "Limitado o puede rechazar la cobertura"
+          },
+          "CASH_VALUE": {
+            "FEATURE": "Comparación de Valor en Efectivo",
+            "INDEPENDENT": "Compara el potencial de crecimiento entre aseguradoras",
+            "CAPTIVE": "Solo la estructura de una aseguradora"
+          },
+          "ONGOING_SUPPORT": {
+            "FEATURE": "Soporte Continuo de Póliza",
+            "INDEPENDENT": "Revisa y ajusta la cobertura a medida que la vida cambia",
+            "CAPTIVE": "Varía según el agente"
+          },
+          "PRICE": {
+            "FEATURE": "Competitividad de Precio",
+            "INDEPENDENT": "Busca en el mercado la mejor tarifa",
+            "CAPTIVE": "Limitado a los precios de una aseguradora"
+          },
+          "BEST_FOR": {
+            "FEATURE": "Ideal Para",
+            "INDEPENDENT": "La mayoría de los compradores de seguro de vida entera en Texas",
+            "CAPTIVE": "Compradores leales a una marca específica"
+          }
+        }
+      }
+    },
+    "WHOLE_VS_TERM": {
+      "HEADER": {
+        "TITLE": "Seguro de Vida Entera vs. Seguro de Vida Temporal en Texas",
+        "DESC": "El seguro de vida entera proporciona cobertura de por vida con primas fijas y acumula valor en efectivo con el tiempo, lo que lo convierte en una opción de protección financiera a largo plazo para las familias. El seguro de vida temporal ofrece cobertura por un período específico, como 10, 20 o 30 años, y está diseñado para necesidades de protección temporales, como el reemplazo de ingresos. La vida entera se enfoca en la seguridad, mientras que la temporal se enfoca en la asequibilidad."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Factor",
+          "WHOLE_LIFE": "Seguro de Vida Entera",
+          "TERM_LIFE": "Seguro de Vida Temporal"
+        },
+        "LIST": {
+          "COVERAGE_DURATION": {
+            "FEATURE": "Duración de la Cobertura",
+            "WHOLE_LIFE": "De por vida",
+            "TERM_LIFE": "Plazo fijo (10, 20, 30 años)"
+          },
+          "PREMIUM_COST": {
+            "FEATURE": "Costo de la Prima",
+            "WHOLE_LIFE": "Más alto",
+            "TERM_LIFE": "Más bajo"
+          },
+          "CASH_VALUE": {
+            "FEATURE": "Valor en Efectivo",
+            "WHOLE_LIFE": "Sí — se acumula con el tiempo",
+            "TERM_LIFE": "No"
+          },
+          "DEATH_BENEFIT": {
+            "FEATURE": "Beneficio por Fallecimiento",
+            "WHOLE_LIFE": "Pago garantizado",
+            "TERM_LIFE": "Se paga solo si el fallecimiento ocurre durante el plazo"
+          },
+          "PREMIUM_FLEXIBILITY": {
+            "FEATURE": "Flexibilidad de Primas",
+            "WHOLE_LIFE": "Fijas",
+            "TERM_LIFE": "Fijas"
+          },
+          "DIVIDEND_ELIGIBILITY": {
+            "FEATURE": "Elegibilidad para Dividendos",
+            "WHOLE_LIFE": "Sí (pólizas participantes)",
+            "TERM_LIFE": "No"
+          },
+          "POLICY_LOANS": {
+            "FEATURE": "Préstamos de Póliza",
+            "WHOLE_LIFE": "Sí — pedir prestado contra el valor en efectivo",
+            "TERM_LIFE": "No"
+          },
+          "POLICY_COMPLEXITY": {
+            "FEATURE": "Complejidad de la Póliza",
+            "WHOLE_LIFE": "Más compleja",
+            "TERM_LIFE": "Simple"
+          },
+          "BEST_FOR": {
+            "FEATURE": "Ideal Para",
+            "WHOLE_LIFE": "Planificación patrimonial, dependientes de por vida, transferencia de riqueza",
+            "TERM_LIFE": "Reemplazo de ingresos, protección de hipoteca, familias jóvenes"
+          },
+          "IDEAL_BUYER_PROFILE": {
+            "FEATURE": "Perfil del Comprador Ideal",
+            "WHOLE_LIFE": "Planificación financiera a largo plazo, compradores mayores",
+            "TERM_LIFE": "Individuos conscientes del presupuesto con necesidades de cobertura temporal"
+          }
+        }
+      }
+    },
+    "LIFE_INSURANCE_TYPES": {
+      "HEADER": {
+        "TITLE": "Su Ventanilla Única para Cada Tipo de Seguro de Vida en Texas"
+      },
+      "LIST": {
+        "TERM_LIFE": {
+          "TITLE": "Seguro de Vida Temporal",
+          "DESCRIPTION": "Proporciona cobertura por un período determinado, ofreciendo protección asequible para asegurar el futuro financiero de su familia.",
+          "ICON": "fas fa-hourglass-half"
+        },
+        "WHOLE_LIFE": {
+          "TITLE": "Seguro de Vida Entera",
+          "DESCRIPTION": "Cobertura permanente que incluye un componente de valor en efectivo, asegurando protección de por vida y crecimiento financiero.",
+          "ICON": "fas fa-coins"
+        },
+        "UNIVERSAL_LIFE": {
+          "TITLE": "Seguro de Vida Universal",
+          "DESCRIPTION": "Cobertura permanente y flexible que le permite ajustar las primas y los beneficios por fallecimiento a medida que cambian sus necesidades financieras.",
+          "ICON": "fas fa-adjust"
+        },
+        "FINAL_EXPENSE": {
+          "TITLE": "Seguro de Gastos Finales",
+          "DESCRIPTION": "Cubre los costos funerarios, de entierro y otros gastos de fin de vida, ayudando a sus seres queridos a evitar el estrés financiero.",
+          "ICON": "fas fa-cross"
+        },
+        "VARIABLE_LIFE": {
+          "TITLE": "Seguro de Vida Variable",
+          "DESCRIPTION": "Cobertura permanente con opciones de inversión, permitiendo que el valor en efectivo de su póliza crezca a través del rendimiento del mercado.",
+          "ICON": "fas fa-chart-line"
+        },
+        "GROUP_LIFE": {
+          "TITLE": "Seguro de Vida Grupal",
+          "DESCRIPTION": "Planes patrocinados por el empleador que brindan cobertura para múltiples empleados, a menudo con tarifas grupales más bajas y fácil inscripción.",
+          "ICON": "fas fa-users"
+        }
+      }
+    },
+    "HIGH_RISK_APPLICANT": {
+      "HEADER": {
+        "TITLE": "¿Difícil de Asegurar? Todavía Podemos Ayudarle a Encontrar Cobertura"
+      },
+      "CONTENT": {
+        "DESC1": "Si le han negado cobertura en el pasado o tiene dificultades para calificar debido a problemas de salud, edad o factores de estilo de vida, no está solo. Muchos tejanos enfrentan desafíos al solicitar un seguro de vida, especialmente con la suscripción tradicional. La buena noticia es que todavía existen opciones, incluyendo pólizas diseñadas para personas que pueden no calificar bajo los criterios de aprobación estándar.",
+        "DESC2": "En A-State Insurance, trabajamos con múltiples aseguradoras para ayudarle a explorar soluciones flexibles como opciones de emisión simplificada y cobertura garantizada. Como corredor independiente, nos enfocamos en encontrar caminos realistas hacia la protección en lugar de rechazarlo. Nuestro objetivo es ayudarle a asegurar una cobertura que respalde el futuro de su familia, incluso si su situación es más compleja que el promedio."
+      }
+    },
+    "LANGUAGE_SUPPORT": {
+      "HEADER": {
+        "TITLE": "Hablamos Español / We Speak Your Language"
+      },
+      "CONTENT": {
+        "DESC1": "En A-State Insurance, la comunicación nunca debe ser una barrera para la protección. Es por eso que nuestro equipo se enorgullece de ofrecer soporte en Español, Inglés e Hindi, facilitando que cada cliente en Texas entienda claramente sus opciones de seguro. Ya sea que esté discutiendo coberturas, comparando planes o haciendo preguntas, nos aseguramos de que todo se explique de manera simple y cómoda.",
+        "DESC2": "Entendemos la importancia de la confianza al tomar decisiones sobre el futuro de su familia. Nuestros agentes multilingües están aquí para guiarle paso a paso, asegurando que nada se pierda en la traducción. Desde seguros de auto hasta de vida, le ayudamos a sentirse seguro e informado en su idioma preferido para que pueda elegir la protección adecuada sin confusión ni estrés."
+      }
+    },
+    "ASTATE_DIFFERENTIATORS": {
+      "HEADER": {
+        "TITLE": "Qué Hace Diferente a A-State Insurance"
+      },
+      "LIST": {
+        "LICENSED_BROKERS": {
+          "TITLE": "Corredores con Licencia en Texas",
+          "DESCRIPTION": "Corredores de Texas completamente licenciados que comparan múltiples aseguradoras para encontrar opciones de cobertura de seguro confiables adaptadas a sus necesidades."
+        },
+        "HISPANIC_LATINO_FRIENDLY": {
+          "TITLE": "Amigable con Hispanos y Latinos",
+          "DESCRIPTION": "Apoyamos con orgullo a las comunidades hispanas y latinas en Texas con un servicio culturalmente comprensivo y orientación de seguros clara."
+        },
+        "YEARS_SERVING": {
+          "TITLE": "Más de 20 Años Sirviendo a los Tejanos",
+          "DESCRIPTION": "Más de 20 años de experiencia ayudando a los tejanos a encontrar soluciones de seguros asequibles para familias, hogares, negocios y necesidades de salud."
+        },
+        "CUSTOM_COVERAGE": {
+          "TITLE": "Planes de Cobertura Personalizados",
+          "DESCRIPTION": "Diseñamos planes de seguro personalizados según su estilo de vida, presupuesto y nivel de riesgo para una mejor protección y tranquilidad."
+        },
+        "ONLINE_LOCAL": {
+          "TITLE": "En Línea y Local",
+          "DESCRIPTION": "Obtenga ayuda con seguros en línea o visite nuestra oficina local en Texas para recibir soporte personalizado y orientación cara a cara cuando lo necesite."
+        },
+        "MULTILINGUAL_AGENTS": {
+          "TITLE": "Agentes Multilingües",
+          "DESCRIPTION": "Nuestros agentes multilingües hablan inglés, español e hindi para garantizar una comunicación clara y una fácil comprensión de todas las pólizas."
+        }
+      }
+    },
+    "INSURANCE_STEPS": {
+      "HEADER": {
+        "TITLE": "Obtenga Cobertura en 4 Simples Pasos"
+      },
+      "STEPS": {
+        "REACH_OUT": {
+          "TITLE": "Contáctenos",
+          "DESCRIPTION": "Comuníquese con A-State Insurance a través de nuestro formulario en línea o visite nuestra oficina para comenzar su viaje de seguro hoy."
+        },
+        "GET_ADVICE": {
+          "TITLE": "Reciba Asesoramiento",
+          "DESCRIPTION": "Nuestros agentes revisan sus necesidades y opciones claramente para que pueda tomar decisiones de seguro informadas."
+        },
+        "PICK_PLAN": {
+          "TITLE": "Elija su Plan",
+          "DESCRIPTION": "Seleccione el plan de seguro que se ajuste a su presupuesto y necesidades de protección con soporte experto completo."
+        },
+        "WE_GOT_YOU": {
+          "TITLE": "Lo Tenemos Cubierto",
+          "DESCRIPTION": "Finalizamos su cobertura y póliza, y continuamos el soporte para que se mantenga protegido con confianza."
+        }
+      }
+    },
+    "SWITCH_STEPS": {
+      "HEADER": {
+        "TITLE": "Cómo Cambiar su Seguro de Vida Entera a A-State Insurance"
+      },
+      "STEPS": {
+        "STEP_1": {
+          "TITLE": "Paso 1: Obtenga su Cotización de Comparación Gratuita",
+          "DESCRIPTION": "Revisamos su póliza de vida entera existente y la comparamos con múltiples aseguradoras. Usted recibe una cotización clara y sin compromiso que muestra mejores opciones de cobertura, ahorros potenciales y beneficios mejorados adaptados a sus metas financieras y necesidades de protección familiar."
+        },
+        "STEP_2": {
+          "TITLE": "Paso 2: Elija su Plan y Actívelo",
+          "DESCRIPTION": "Después de revisar sus opciones, usted elige el plan de seguro de vida entera que mejor se adapte a su presupuesto y necesidades de cobertura. Nuestro equipo le ayuda a finalizar su solicitud y activar rápidamente su nueva póliza, con soporte completo durante todo el proceso."
+        },
+        "STEP_3": {
+          "TITLE": "Paso 3: Cancele su Póliza Antigua (¡Le Ayudamos!)",
+          "DESCRIPTION": "Una vez que su nueva póliza esté activa, le guiamos a través de la cancelación segura de su seguro antiguo. Nos aseguramos de que no haya brechas de cobertura, coordinamos con las aseguradoras y hacemos que toda la transición sea fluida, simple y sin estrés para usted."
+        }
+      }
+    },
+    "FREE_QUOTE": {
+      "HEADER": "Obtenga una Cotización Gratis de Seguro de Vida Entera en Texas",
+      "DESCRIPTION": "Obtener una cotización gratuita de seguro de vida entera en Texas es rápido y simple con A-State Insurance. Nuestros corredores licenciados comparan múltiples aseguradoras de primer nivel para encontrar cobertura que se ajuste a su presupuesto, estilo de vida y metas financieras a largo plazo. Puede solicitar una cotización en línea, por teléfono o visitando nuestra oficina local para recibir soporte personalizado. Nos enfocamos en hacer el proceso claro y sin estrés, asegurando que entienda cada opción antes de tomar una decisión, sin obligación y con orientación completa."
+    }
+  },
+    "FOOTER": {
     "SLOGAN": "Protegemos lo que es importante para ti.",
     "INSURANCE_MENU": [
       {

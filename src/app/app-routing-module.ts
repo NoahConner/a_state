@@ -55,6 +55,7 @@ import { UniversalLifeInsurance } from './pages/life-insurance/universal-life-in
 import path from 'path';
 import { FinalExpenseInsurance } from './pages/life-insurance/final-expense-insurance/final-expense-insurance';
 import { TermLifeInsurance } from './pages/life-insurance/term-life-insurance/term-life-insurance';
+import { GroupLifeInsurance } from './pages/life-insurance/group-life-insurance/group-life-insurance';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -89,6 +90,7 @@ const routes: Routes = [
       { path: 'universal-life-insurance', component: UniversalLifeInsurance },
       { path: 'final-expense-insurance', component: FinalExpenseInsurance },
       { path: 'term-life-insurance', component: TermLifeInsurance },
+      { path: 'group-life-insurance', component: GroupLifeInsurance },
 
     ]
   },
@@ -219,10 +221,11 @@ const routes: Routes = [
         path: 'seguros-de-vida',
         children: [
           { path: '', component: LifeInsurance },
-          { path: 'seguro-de-vida-entera', component: WholeLifeInsurance },
+          { path: 'seguro-de-vida-entero', component: WholeLifeInsurance },
           { path: 'seguro-de-vida-universal', component: UniversalLifeInsurance },
           { path: 'seguro-de-gastos-finales', component: FinalExpenseInsurance },
           { path: 'seguro-de-vida-a-término', component: TermLifeInsurance },
+          { path: 'seguro-de-vida-grupal', component: GroupLifeInsurance },
 
         ]
       },
@@ -444,7 +447,7 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   },
   wholeLifeInsurance: {
     en: 'life-insurance/whole-life-insurance',
-    es: 'seguros-de-vida/seguro-de-vida-entera'
+    es: 'seguros-de-vida/seguro-de-vida-entero'
   },
   universalLifeInsurance: {
     en: 'life-insurance/universal-life-insurance',
@@ -457,5 +460,9 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   termLifeInsurance: {
     en: 'life-insurance/term-life-insurance',
     es: 'seguros-de-vida/seguro-de-vida-a-término'
+  },
+  groupLifeInsurance: {
+    en: 'life-insurance/group-life-insurance',
+    es: 'seguros-de-vida/seguro-de-vida-grupal'
   },
 };
