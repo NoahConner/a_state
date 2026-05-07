@@ -67,6 +67,7 @@ import { UniversalLifeInsurance } from './pages/life-insurance/universal-life-in
 import { FinalExpenseInsurance } from './pages/life-insurance/final-expense-insurance/final-expense-insurance';
 import { TermLifeInsurance } from './pages/life-insurance/term-life-insurance/term-life-insurance';
 import { GroupLifeInsurance } from './pages/life-insurance/group-life-insurance/group-life-insurance';
+import { FamilyHealthInsurance } from './pages/health-insurance/family-health-insurance/family-health-insurance';
 
 @NgModule({
   declarations: [
@@ -128,7 +129,8 @@ import { GroupLifeInsurance } from './pages/life-insurance/group-life-insurance/
     UniversalLifeInsurance,
     FinalExpenseInsurance,
     TermLifeInsurance,
-    GroupLifeInsurance
+    GroupLifeInsurance,
+    FamilyHealthInsurance
   ],
   imports: [
     BrowserModule,

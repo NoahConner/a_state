@@ -56,6 +56,7 @@ import path from 'path';
 import { FinalExpenseInsurance } from './pages/life-insurance/final-expense-insurance/final-expense-insurance';
 import { TermLifeInsurance } from './pages/life-insurance/term-life-insurance/term-life-insurance';
 import { GroupLifeInsurance } from './pages/life-insurance/group-life-insurance/group-life-insurance';
+import { FamilyHealthInsurance } from './pages/health-insurance/family-health-insurance/family-health-insurance';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -80,7 +81,13 @@ const routes: Routes = [
   // { path: 'homeowners-insurance', component: HomeInsurance },
   // { path: 'commercial-insurance', component: CommercialInsurance },
 
-  { path: 'health-insurance', component: HealthInsurance },
+  { path: 'health-insurance',
+    children: [
+      { path: '', component: HealthInsurance },
+      { path: 'family-health-insurance', component: FamilyHealthInsurance },
+    ]
+  },
+
   { path: 'surety-bonds', component: SuretyBondInsurance },
   {
     path: 'life-insurance',
@@ -229,7 +236,12 @@ const routes: Routes = [
 
         ]
       },
-      { path: 'seguros-de-salud', component: HealthInsurance },
+      { path: 'seguros-de-salud',
+        children: [
+          { path: '', component: HealthInsurance },
+          { path: 'family-health-insurance', component: FamilyHealthInsurance },
+        ]
+      },
       { path: 'fianzas', component: SuretyBondInsurance },
       { path: 'nuestras-ubicaciones', component: OurLocations, runGuardsAndResolvers: 'always' },
       { path: 'nuestras-ubicaciones/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
@@ -464,5 +476,9 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   groupLifeInsurance: {
     en: 'life-insurance/group-life-insurance',
     es: 'seguros-de-vida/seguro-de-vida-grupal'
+  },
+  familyHealthInsurance: {
+    en: 'health-insurance/family-health-insurance',
+    es: 'seguros-de-salud/family-health-insurance'
   },
 };

@@ -41,6 +41,7 @@
     "FINAL_EXPENSE_INSURANCE": "Final Expense Insurance",
     "TERM_LIFE_INSURANCE": "Term Life Insurance",
     "GROUP_LIFE_INSURANCE": "Group Life Insurance",
+    "FAMILY_HEALTH_INSURANCE": "Family Health Insurance",
     "OFFICE_LOCATOR": "Office Locator",
     "GET_A_QUOTE": "Get a Quote",
     "LANGUAGE": "Language"
@@ -27284,274 +27285,838 @@
         }
       }
     },
- "FACTORS_IMPACT": {
-    "HEADER": {
-      "TITLE": "Factors That Impact Your Group Life Insurance Rates in Texas",
-      "DESC": "Group life insurance rates in Texas depend on several key factors. These include the size of the employee group, the age and health profile of members, the industry risk level, and the total coverage amount selected. Employers in high-risk industries or with older workforces usually pay more. Additional benefits, history, and plan customization also influence the final premium cost for group life coverage."
-    },
-    "LIST": {
-      "AGE": {
-        "TITLE": "Group Size and Number of Employees",
-        "DESC": "Larger groups reduce per-person cost since risk is spread across more employees, lowering overall premium rates."
-      },
-      "GENDER": {
-        "TITLE": "Average Age of the Group",
-        "DESC": "Older employee groups increase premium costs due to higher mortality risk, while younger groups generally get lower rates."
-      },
-      "HEALTH_HISTORY": {
-        "TITLE": "Gender Composition of the Group",
-        "DESC": "Gender mix slightly affects pricing, as insurers use risk statistics based on male and female mortality trends."
-      },
-      "TOBACCO_USE": {
-        "TITLE": "Industry and Occupation Risk Level (oil & gas, construction, common in Texas)",
-        "DESC": "High-risk jobs like oil, gas, and construction lead to higher premiums due to exposure to workplace hazards."
-      },
-      "BMI": {
-        "TITLE": "Coverage Amount Selected Per Employee",
-        "DESC": "Higher coverage per employee increases the total premium cost, as insurers assume greater payout risk for each insured worker."
-      },
-      "FAMILY_HISTORY": {
-        "TITLE": "Type of Group Life Policy Selected",
-        "DESC": "Term, whole, or voluntary group life policies are priced based on coverage duration, benefits, and the flexibility they offer."
-      },
-      "COVERAGE_AMOUNT": {
-        "TITLE": "Employee Health Profile and Claims History",
-        "DESC": "Healthier groups with fewer past claims usually get lower premiums, while high claim history increases insurance costs overall."
-      },
-      "POLICY_TYPE": {
-        "TITLE": "Tobacco Use Within the Group",
-        "DESC": "High tobacco usage increases group life insurance rates due to greater health risks and higher expected mortality levels."
-      },
-      "PREMIUM_FLEXIBILITY": {
-        "TITLE": "Voluntary vs. Employer-Paid Premium Structure",
-        "DESC": "Employer-paid plans cost more overall, while voluntary plans shift cost to employees, reducing the employer's financial burden."
-      },
-      "OCCUPATION": {
-        "TITLE": "Dependent Coverage Inclusions",
-        "DESC": "Adding spouse or child coverage increases the total premium because insurance extends protection beyond employees."
-      },
-      "HOBBIES": {
-        "TITLE": "Geographic Location of the Business Within Texas",
-        "DESC": "Insurance rates vary slightly depending on local risk levels and business environment conditions."
-      },
-      "CASH_VALUE_STRATEGY": {
-        "TITLE": "Employee Turnover Rate",
-        "DESC": "High turnover increases administrative costs and slightly raises group life insurance premiums overall."
-      }
-    }
-  },
- "DISCOUNT_FACTORS": {
-    "HEADER": {
-      "TITLE": "How to Maximize Your Discounts and Lower Your Premium",
-      "DESC": "To lower group life insurance premiums in Texas, employers can compare multiple carriers through an independent broker, maintain a younger, healthier workforce profile, and choose appropriate coverage limits. Encouraging wellness programs, reducing tobacco use, and selecting voluntary employee-paid options can also help reduce costs. Regularly reviewing policies ensures better rates."
-    },
-    "LIST": {
-      "EARLY_PURCHASE": {
-        "TITLE": "Increase Group Participation",
-        "DESC": "Higher participation spreads risk across more employees, lowering per-person cost and helping reduce overall group premiums."
-      },
-      "NON_SMOKER": {
-        "TITLE": "Offer Voluntary Supplemental Coverage to Reduce Employer Cost",
-        "DESC": "Let employees buy extra coverage themselves, reducing employer burden while still providing strong financial protection options."
-      },
-      "RIGHT_COVERAGE": {
-        "TITLE": "Choose Only the Coverage Amount Your Employees Actually Need",
-        "DESC": "Avoid over-insuring employees by selecting realistic coverage levels that match actual needs and help control premium costs."
-      },
-      "PREMIUM_FLEXIBILITY": {
-        "TITLE": "Implement Wellness Programs to Improve Group Health Profile",
-        "DESC": "Promote healthy habits, fitness, and screenings to improve group health and reduce long-term insurance risk and pricing."
-      },
-      "HEALTH_IMPROVEMENT": {
-        "TITLE": "Bundle Group Life with Other Employee Benefits for Multi-Policy Discounts",
-        "DESC": "Combining insurance policies with one provider can unlock discounts and reduce overall benefits package costs for employers."
-      },
-      "MEDICAL_EXAM": {
-        "TITLE": "Review and Renegotiate Your Plan Annually as Group Size Changes",
-        "DESC": "Annual reviews help adjust coverage and pricing in response to workforce changes, ensuring you always get competitive rates."
-      },
-      "CASH_VALUE_STRATEGY": {
-        "TITLE": "Opt for Annual Premium Payments Instead of Monthly",
-        "DESC": "Paying annually rather than monthly can reduce administrative fees and sometimes qualify you for small carrier discounts."
-      },
-      "COMPARE_CARRIERS": {
-        "TITLE": "Compare Multiple Carriers Through an Independent Agent",
-        "DESC": "Using an independent broker helps you compare insurers and secure the most cost-effective group life insurance rates."
-      },
-      "DRIVING_RECORD": {
-        "TITLE": "Reduce Tobacco Use Within the Group to Lower Overall Rates",
-        "DESC": "Encouraging smoking-cessation programs can improve health ratings and help lower group life insurance premiums."
-      },
-      "REMOVE_RIDERS": {
-        "TITLE": "Review and Remove Riders That Are Underutilized by Employees",
-        "DESC": "Eliminating unused add-ons helps streamline coverage and reduces unnecessary costs in your group life insurance plan."
-      }
-    }
-  },
- "AGENT_COMPARISON": {
-    "HEADER": {
-      "TITLE": "Independent Insurance Agency vs. Captive Agent: Why Choice Saves You Money",
-      "DESC": "An independent insurance agency in Texas works with multiple carriers, giving you access to compare prices, coverage options, and benefits in one place. A captive agent represents only one company, limiting choices and flexibility. With more options, independent agencies often help businesses and individuals find better rates, customized coverage, and long-term savings on group life insurance."
-    },
-    "TABLE": {
-      "COLUMNS": {
-        "FEATURE": "Feature",
-        "INDEPENDENT": "Independent Agency (A-State)",
-        "CAPTIVE": "Captive Agent"
+    "FACTORS_IMPACT": {
+      "HEADER": {
+        "TITLE": "Factors That Impact Your Group Life Insurance Rates in Texas",
+        "DESC": "Group life insurance rates in Texas depend on several key factors. These include the size of the employee group, the age and health profile of members, the industry risk level, and the total coverage amount selected. Employers in high-risk industries or with older workforces usually pay more. Additional benefits, history, and plan customization also influence the final premium cost for group life coverage."
       },
       "LIST": {
-        "CARRIER_ACCESS": {
-          "FEATURE": "Carrier Access",
-          "INDEPENDENT": "Multiple top-rated group life carriers",
-          "CAPTIVE": "Single carrier only"
+        "AGE": {
+          "TITLE": "Group Size and Number of Employees",
+          "DESC": "Larger groups reduce per-person cost since risk is spread across more employees, lowering overall premium rates."
         },
-        "QUOTE_COMPARISON": {
-          "FEATURE": "Quote Comparison",
-          "INDEPENDENT": "Compares rates across carriers for you",
-          "CAPTIVE": "One quote from one company"
+        "GENDER": {
+          "TITLE": "Average Age of the Group",
+          "DESC": "Older employee groups increase premium costs due to higher mortality risk, while younger groups generally get lower rates."
         },
-        "UNBIASED_ADVICE": {
-          "FEATURE": "Unbiased Advice",
-          "INDEPENDENT": "Yes — recommends what fits your business needs",
-          "CAPTIVE": "Limited to their carrier's products"
+        "HEALTH_HISTORY": {
+          "TITLE": "Gender Composition of the Group",
+          "DESC": "Gender mix slightly affects pricing, as insurers use risk statistics based on male and female mortality trends."
         },
-        "POLICY_OPTIONS": {
-          "FEATURE": "Policy Type Options",
-          "INDEPENDENT": "Group term, whole, universal and more compared",
-          "CAPTIVE": "Limited to the carrier's product lineup"
+        "TOBACCO_USE": {
+          "TITLE": "Industry and Occupation Risk Level (oil & gas, construction, common in Texas)",
+          "DESC": "High-risk jobs like oil, gas, and construction lead to higher premiums due to exposure to workplace hazards."
         },
-        "CASH_VALUE_STRATEGY": {
-          "FEATURE": "Group Size Flexibility",
-          "INDEPENDENT": "Multiple carriers compared for small and large groups",
-          "CAPTIVE": "Limited to the carrier's group size requirements"
+        "BMI": {
+          "TITLE": "Coverage Amount Selected Per Employee",
+          "DESC": "Higher coverage per employee increases the total premium cost, as insurers assume greater payout risk for each insured worker."
         },
-        "INDEX_INVESTMENT_OPTIONS": {
-          "FEATURE": "Voluntary Benefit Options",
-          "INDEPENDENT": "Multiple supplemental options compared across carriers",
-          "CAPTIVE": "Single carrier's voluntary options only"
+        "FAMILY_HISTORY": {
+          "TITLE": "Type of Group Life Policy Selected",
+          "DESC": "Term, whole, or voluntary group life policies are priced based on coverage duration, benefits, and the flexibility they offer."
         },
-        "HARD_TO_INSURE": {
-          "FEATURE": "Claims Support",
-          "INDEPENDENT": "Yes — advocates for your employees during claims",
-          "CAPTIVE": "Varies"
+        "COVERAGE_AMOUNT": {
+          "TITLE": "Employee Health Profile and Claims History",
+          "DESC": "Healthier groups with fewer past claims usually get lower premiums, while high claim history increases insurance costs overall."
+        },
+        "POLICY_TYPE": {
+          "TITLE": "Tobacco Use Within the Group",
+          "DESC": "High tobacco usage increases group life insurance rates due to greater health risks and higher expected mortality levels."
         },
         "PREMIUM_FLEXIBILITY": {
-          "FEATURE": "Plan Renewal Negotiation",
-          "INDEPENDENT": "Yes — shops market at renewal to ensure the best rate",
-          "CAPTIVE": "Locked into a single carrier's renewal terms"
+          "TITLE": "Voluntary vs. Employer-Paid Premium Structure",
+          "DESC": "Employer-paid plans cost more overall, while voluntary plans shift cost to employees, reducing the employer's financial burden."
         },
-        "ONGOING_SUPPORT": {
-          "FEATURE": "Ongoing Plan Review",
-          "INDEPENDENT": "Yes — reviews and adjusts as group size changes",
-          "CAPTIVE": "Varies"
+        "OCCUPATION": {
+          "TITLE": "Dependent Coverage Inclusions",
+          "DESC": "Adding spouse or child coverage increases the total premium because insurance extends protection beyond employees."
         },
-        "PRICE": {
-          "FEATURE": "Price Competitiveness",
-          "INDEPENDENT": "Higher — shops the market for the best rate",
-          "CAPTIVE": "Limited to one carrier's pricing"
+        "HOBBIES": {
+          "TITLE": "Geographic Location of the Business Within Texas",
+          "DESC": "Insurance rates vary slightly depending on local risk levels and business environment conditions."
         },
-        "BEST_FOR": {
-          "FEATURE": "Best For",
-          "INDEPENDENT": "Most Texas businesses seeking group life coverage",
-          "CAPTIVE": "Businesses loyal to a specific carrier"
+        "CASH_VALUE_STRATEGY": {
+          "TITLE": "Employee Turnover Rate",
+          "DESC": "High turnover increases administrative costs and slightly raises group life insurance premiums overall."
         }
       }
-    }
-  },
- "HIGH_RISK_APPLICANT": {
-    "HEADER": {
-      "TITLE": "Small Business Owner? We Can Help You Find the Right Group Coverage"
     },
-    "CONTENT": {
-      "DESC1": "Small business owners in Texas often struggle to balance employee benefits with budget limitations. Group life insurance offers an affordable way to provide meaningful protection to your team without the high cost of individual policies. It helps you support your employees' families while strengthening trust and loyalty within your workforce.",
-      "DESC2": "At A-State Insurance, we work with multiple carriers to find group coverage that fits your business size, industry, and goals. Whether you have a small team or a growing company, we simplify the process, compare the best options, and help you choose a plan that protects your employees while keeping costs under control."
-    }
-  },
-  "LANGUAGE_SUPPORT": {
-    "HEADER": {
-      "TITLE": "Hablamos Español / We Speak Your Language"
-    },
-    "CONTENT": {
-      "DESC1": "At A-State Insurance, communication should never be a barrier when it comes to protecting your family or business. That's why our team proudly offers full support in Spanish, English, and Hindi. We make sure every detail of your group life insurance plan is clearly explained so you fully understand your coverage options without confusion or stress.",
-      "DESC2": "Our bilingual and multilingual agents work closely with Texas families and business owners to provide guidance in the language they are most comfortable with. Whether you are reviewing group benefits, comparing policies, or enrolling employees, we ensure the entire process is simple, transparent, and respectful of your cultural and language needs."
-    }
-  },
-  "ASTATE_DIFFERENTIATORS": {
-    "HEADER": {
-      "TITLE": "What Makes A-State Insurance Different"
-    },
-    "LIST": {
-      "LICENSED_BROKERS": {
-        "TITLE": "Texas Licensed Brokers",
-        "DESCRIPTION": "Fully licensed Texas brokers comparing multiple carriers to find affordable and reliable group life insurance coverage for you."
+    "DISCOUNT_FACTORS": {
+      "HEADER": {
+        "TITLE": "How to Maximize Your Discounts and Lower Your Premium",
+        "DESC": "To lower group life insurance premiums in Texas, employers can compare multiple carriers through an independent broker, maintain a younger, healthier workforce profile, and choose appropriate coverage limits. Encouraging wellness programs, reducing tobacco use, and selecting voluntary employee-paid options can also help reduce costs. Regularly reviewing policies ensures better rates."
       },
-      "HISPANIC_LATINO_FRIENDLY": {
-        "TITLE": "Hispanic & Latino Friendly",
-        "DESCRIPTION": "We proudly serve Hispanic and Latino communities in Texas with respectful guidance, support, and culturally aware insurance solutions."
-      },
-      "YEARS_SERVING": {
-        "TITLE": "20+ Years Serving Texans",
-        "DESCRIPTION": "With over 20 years in Texas insurance, we help families and businesses secure trusted group life coverage and financial protection."
-      },
-      "CUSTOM_COVERAGE": {
-        "TITLE": "Custom Coverage Plans",
-        "DESCRIPTION": "We create tailored group life insurance plans based on business size, employee needs, and budget for complete protection."
-      },
-      "ONLINE_LOCAL": {
-        "TITLE": "Online & Local",
-        "DESCRIPTION": "Access insurance support online or visit our Texas office for in-person help, making coverage easy, flexible, and convenient."
-      },
-      "MULTILINGUAL_AGENTS": {
-        "TITLE": "Multilingual Agents",
-        "DESCRIPTION": "Our agents speak English, Spanish, and Hindi, ensuring clear communication and full understanding of every insurance option."
+      "LIST": {
+        "EARLY_PURCHASE": {
+          "TITLE": "Increase Group Participation",
+          "DESC": "Higher participation spreads risk across more employees, lowering per-person cost and helping reduce overall group premiums."
+        },
+        "NON_SMOKER": {
+          "TITLE": "Offer Voluntary Supplemental Coverage to Reduce Employer Cost",
+          "DESC": "Let employees buy extra coverage themselves, reducing employer burden while still providing strong financial protection options."
+        },
+        "RIGHT_COVERAGE": {
+          "TITLE": "Choose Only the Coverage Amount Your Employees Actually Need",
+          "DESC": "Avoid over-insuring employees by selecting realistic coverage levels that match actual needs and help control premium costs."
+        },
+        "PREMIUM_FLEXIBILITY": {
+          "TITLE": "Implement Wellness Programs to Improve Group Health Profile",
+          "DESC": "Promote healthy habits, fitness, and screenings to improve group health and reduce long-term insurance risk and pricing."
+        },
+        "HEALTH_IMPROVEMENT": {
+          "TITLE": "Bundle Group Life with Other Employee Benefits for Multi-Policy Discounts",
+          "DESC": "Combining insurance policies with one provider can unlock discounts and reduce overall benefits package costs for employers."
+        },
+        "MEDICAL_EXAM": {
+          "TITLE": "Review and Renegotiate Your Plan Annually as Group Size Changes",
+          "DESC": "Annual reviews help adjust coverage and pricing in response to workforce changes, ensuring you always get competitive rates."
+        },
+        "CASH_VALUE_STRATEGY": {
+          "TITLE": "Opt for Annual Premium Payments Instead of Monthly",
+          "DESC": "Paying annually rather than monthly can reduce administrative fees and sometimes qualify you for small carrier discounts."
+        },
+        "COMPARE_CARRIERS": {
+          "TITLE": "Compare Multiple Carriers Through an Independent Agent",
+          "DESC": "Using an independent broker helps you compare insurers and secure the most cost-effective group life insurance rates."
+        },
+        "DRIVING_RECORD": {
+          "TITLE": "Reduce Tobacco Use Within the Group to Lower Overall Rates",
+          "DESC": "Encouraging smoking-cessation programs can improve health ratings and help lower group life insurance premiums."
+        },
+        "REMOVE_RIDERS": {
+          "TITLE": "Review and Remove Riders That Are Underutilized by Employees",
+          "DESC": "Eliminating unused add-ons helps streamline coverage and reduces unnecessary costs in your group life insurance plan."
+        }
       }
-    }
-  },
-  "INSURANCE_STEPS": {
-    "HEADER": {
-      "TITLE": "Get Covered in 4 Simple Steps"
     },
-    "STEPS": {
-      "REACH_OUT": {
-        "TITLE": "Step 1 - Reach Out",
-        "DESCRIPTION": "Contact A-State Insurance by phone, online form, or in person to start your group life insurance journey."
+    "AGENT_COMPARISON": {
+      "HEADER": {
+        "TITLE": "Independent Insurance Agency vs. Captive Agent: Why Choice Saves You Money",
+        "DESC": "An independent insurance agency in Texas works with multiple carriers, giving you access to compare prices, coverage options, and benefits in one place. A captive agent represents only one company, limiting choices and flexibility. With more options, independent agencies often help businesses and individuals find better rates, customized coverage, and long-term savings on group life insurance."
       },
-      "GET_ADVICE": {
-        "TITLE": "Step 2 - Get Advice",
-        "DESCRIPTION": "Our Texas experts review your needs and explain the best group life insurance options for your business."
-      },
-      "PICK_PLAN": {
-        "TITLE": "Step 3 - Pick Your Plan",
-        "DESCRIPTION": "Choose the group life insurance plan that fits your budget and long-term protection goals."
-      },
-      "WE_GOT_YOU": {
-        "TITLE": "Step 4 - We've Got You",
-        "DESCRIPTION": "We activate your coverage and support you in ongoing employee and business to stay fully protected."
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Feature",
+          "INDEPENDENT": "Independent Agency (A-State)",
+          "CAPTIVE": "Captive Agent"
+        },
+        "LIST": {
+          "CARRIER_ACCESS": {
+            "FEATURE": "Carrier Access",
+            "INDEPENDENT": "Multiple top-rated group life carriers",
+            "CAPTIVE": "Single carrier only"
+          },
+          "QUOTE_COMPARISON": {
+            "FEATURE": "Quote Comparison",
+            "INDEPENDENT": "Compares rates across carriers for you",
+            "CAPTIVE": "One quote from one company"
+          },
+          "UNBIASED_ADVICE": {
+            "FEATURE": "Unbiased Advice",
+            "INDEPENDENT": "Yes — recommends what fits your business needs",
+            "CAPTIVE": "Limited to their carrier's products"
+          },
+          "POLICY_OPTIONS": {
+            "FEATURE": "Policy Type Options",
+            "INDEPENDENT": "Group term, whole, universal and more compared",
+            "CAPTIVE": "Limited to the carrier's product lineup"
+          },
+          "CASH_VALUE_STRATEGY": {
+            "FEATURE": "Group Size Flexibility",
+            "INDEPENDENT": "Multiple carriers compared for small and large groups",
+            "CAPTIVE": "Limited to the carrier's group size requirements"
+          },
+          "INDEX_INVESTMENT_OPTIONS": {
+            "FEATURE": "Voluntary Benefit Options",
+            "INDEPENDENT": "Multiple supplemental options compared across carriers",
+            "CAPTIVE": "Single carrier's voluntary options only"
+          },
+          "HARD_TO_INSURE": {
+            "FEATURE": "Claims Support",
+            "INDEPENDENT": "Yes — advocates for your employees during claims",
+            "CAPTIVE": "Varies"
+          },
+          "PREMIUM_FLEXIBILITY": {
+            "FEATURE": "Plan Renewal Negotiation",
+            "INDEPENDENT": "Yes — shops market at renewal to ensure the best rate",
+            "CAPTIVE": "Locked into a single carrier's renewal terms"
+          },
+          "ONGOING_SUPPORT": {
+            "FEATURE": "Ongoing Plan Review",
+            "INDEPENDENT": "Yes — reviews and adjusts as group size changes",
+            "CAPTIVE": "Varies"
+          },
+          "PRICE": {
+            "FEATURE": "Price Competitiveness",
+            "INDEPENDENT": "Higher — shops the market for the best rate",
+            "CAPTIVE": "Limited to one carrier's pricing"
+          },
+          "BEST_FOR": {
+            "FEATURE": "Best For",
+            "INDEPENDENT": "Most Texas businesses seeking group life coverage",
+            "CAPTIVE": "Businesses loyal to a specific carrier"
+          }
+        }
       }
-    }
-  },
-  "SWITCH_STEPS": {
-    "HEADER": {
-      "TITLE": "How to Switch Your Group Life Insurance to A-State Insurance"
     },
-    "STEPS": {
-      "STEP_1": {
-        "TITLE": "Step 1: Get Your Free Comparison Quote",
-        "DESCRIPTION": "Start by sharing your current group life insurance details with us. We compare multiple Texas carriers to find better rates and coverage options for your employees. This quick review helps you understand savings, benefits, and improved protection available for your business."
+    "HIGH_RISK_APPLICANT": {
+      "HEADER": {
+        "TITLE": "Small Business Owner? We Can Help You Find the Right Group Coverage"
       },
-      "STEP_2": {
-        "TITLE": "Step 2: Pick Your Plan and Activate",
-        "DESCRIPTION": "Once we present your best options, you choose the group life insurance plan that fits your budget and employee needs. Our team handles setup, enrollment, and activation, ensuring a smooth transition so your business stays protected without delays or confusion."
-      },
-      "STEP_3": {
-        "TITLE": "Step 3: Cancel Your Old Policy (We'll Help!)",
-        "DESCRIPTION": "After your new coverage is active, we assist you in safely canceling your old group life insurance policy. Our agents handle communication with carriers to prevent coverage gaps, making the entire switch process simple, secure, and completely hassle-free for your business."
+      "CONTENT": {
+        "DESC1": "Small business owners in Texas often struggle to balance employee benefits with budget limitations. Group life insurance offers an affordable way to provide meaningful protection to your team without the high cost of individual policies. It helps you support your employees' families while strengthening trust and loyalty within your workforce.",
+        "DESC2": "At A-State Insurance, we work with multiple carriers to find group coverage that fits your business size, industry, and goals. Whether you have a small team or a growing company, we simplify the process, compare the best options, and help you choose a plan that protects your employees while keeping costs under control."
       }
+    },
+    "LANGUAGE_SUPPORT": {
+      "HEADER": {
+        "TITLE": "Hablamos Español / We Speak Your Language"
+      },
+      "CONTENT": {
+        "DESC1": "At A-State Insurance, communication should never be a barrier when it comes to protecting your family or business. That's why our team proudly offers full support in Spanish, English, and Hindi. We make sure every detail of your group life insurance plan is clearly explained so you fully understand your coverage options without confusion or stress.",
+        "DESC2": "Our bilingual and multilingual agents work closely with Texas families and business owners to provide guidance in the language they are most comfortable with. Whether you are reviewing group benefits, comparing policies, or enrolling employees, we ensure the entire process is simple, transparent, and respectful of your cultural and language needs."
+      }
+    },
+    "ASTATE_DIFFERENTIATORS": {
+      "HEADER": {
+        "TITLE": "What Makes A-State Insurance Different"
+      },
+      "LIST": {
+        "LICENSED_BROKERS": {
+          "TITLE": "Texas Licensed Brokers",
+          "DESCRIPTION": "Fully licensed Texas brokers comparing multiple carriers to find affordable and reliable group life insurance coverage for you."
+        },
+        "HISPANIC_LATINO_FRIENDLY": {
+          "TITLE": "Hispanic & Latino Friendly",
+          "DESCRIPTION": "We proudly serve Hispanic and Latino communities in Texas with respectful guidance, support, and culturally aware insurance solutions."
+        },
+        "YEARS_SERVING": {
+          "TITLE": "20+ Years Serving Texans",
+          "DESCRIPTION": "With over 20 years in Texas insurance, we help families and businesses secure trusted group life coverage and financial protection."
+        },
+        "CUSTOM_COVERAGE": {
+          "TITLE": "Custom Coverage Plans",
+          "DESCRIPTION": "We create tailored group life insurance plans based on business size, employee needs, and budget for complete protection."
+        },
+        "ONLINE_LOCAL": {
+          "TITLE": "Online & Local",
+          "DESCRIPTION": "Access insurance support online or visit our Texas office for in-person help, making coverage easy, flexible, and convenient."
+        },
+        "MULTILINGUAL_AGENTS": {
+          "TITLE": "Multilingual Agents",
+          "DESCRIPTION": "Our agents speak English, Spanish, and Hindi, ensuring clear communication and full understanding of every insurance option."
+        }
+      }
+    },
+    "INSURANCE_STEPS": {
+      "HEADER": {
+        "TITLE": "Get Covered in 4 Simple Steps"
+      },
+      "STEPS": {
+        "REACH_OUT": {
+          "TITLE": "Step 1 - Reach Out",
+          "DESCRIPTION": "Contact A-State Insurance by phone, online form, or in person to start your group life insurance journey."
+        },
+        "GET_ADVICE": {
+          "TITLE": "Step 2 - Get Advice",
+          "DESCRIPTION": "Our Texas experts review your needs and explain the best group life insurance options for your business."
+        },
+        "PICK_PLAN": {
+          "TITLE": "Step 3 - Pick Your Plan",
+          "DESCRIPTION": "Choose the group life insurance plan that fits your budget and long-term protection goals."
+        },
+        "WE_GOT_YOU": {
+          "TITLE": "Step 4 - We've Got You",
+          "DESCRIPTION": "We activate your coverage and support you in ongoing employee and business to stay fully protected."
+        }
+      }
+    },
+    "SWITCH_STEPS": {
+      "HEADER": {
+        "TITLE": "How to Switch Your Group Life Insurance to A-State Insurance"
+      },
+      "STEPS": {
+        "STEP_1": {
+          "TITLE": "Step 1: Get Your Free Comparison Quote",
+          "DESCRIPTION": "Start by sharing your current group life insurance details with us. We compare multiple Texas carriers to find better rates and coverage options for your employees. This quick review helps you understand savings, benefits, and improved protection available for your business."
+        },
+        "STEP_2": {
+          "TITLE": "Step 2: Pick Your Plan and Activate",
+          "DESCRIPTION": "Once we present your best options, you choose the group life insurance plan that fits your budget and employee needs. Our team handles setup, enrollment, and activation, ensuring a smooth transition so your business stays protected without delays or confusion."
+        },
+        "STEP_3": {
+          "TITLE": "Step 3: Cancel Your Old Policy (We'll Help!)",
+          "DESCRIPTION": "After your new coverage is active, we assist you in safely canceling your old group life insurance policy. Our agents handle communication with carriers to prevent coverage gaps, making the entire switch process simple, secure, and completely hassle-free for your business."
+        }
+      }
+    },
+    "FREE_QUOTE": {
+      "HEADER": "Get a Free Group Life Insurance Quote in Texas",
+      "DESCRIPTION": "Getting a free group life insurance quote in Texas with A-State Insurance is quick, simple, and completely obligation-free. Our licensed Texas brokers compare multiple top-rated carriers to find the most cost-effective coverage for your business and employees. We focus on understanding your group size, industry type, and coverage needs to recommend the best possible plans. Whether you are a small business or a growing company, we make the process smooth and transparent. You can request online."
     }
   },
-  "FREE_QUOTE": {
-    "HEADER": "Get a Free Group Life Insurance Quote in Texas",
-    "DESCRIPTION": "Getting a free group life insurance quote in Texas with A-State Insurance is quick, simple, and completely obligation-free. Our licensed Texas brokers compare multiple top-rated carriers to find the most cost-effective coverage for your business and employees. We focus on understanding your group size, industry type, and coverage needs to recommend the best possible plans. Whether you are a small business or a growing company, we make the process smooth and transparent. You can request online."
-  }
+  "FAMILY_HEALTH_INSURANCE": {
+    "BANNER": {
+      "TITLE_LINE1": "Best & Affordable Family Health Insurance in",
+      "TITLE_LINE2": "Texas — Starting from",
+      "TITLE_LINE3": "$658/Month",
+      "CHIPS": {
+        "HMO": "Health Maintenance Organization (HMO)",
+        "PPO": "Preferred Provider Organization (PPO)",
+        "EPO": "Exclusive Provider Organization (EPO)",
+        "HDHP_HSA": "High-Deductible Health Plan (HDHP) with HSA",
+        "MEDICAID_CHIP": "Children's Medicaid and CHIP (Texas-specific)",
+        "OTHER": "Other"
+      },
+      "FORM": {
+        "FULL_NAME": "Full Name",
+        "PHONE": "Phone Number",
+        "BUTTON": "Get Quote"
+      }
+    },
+    "WHY_DO_YOU_NEED": {
+      "TITLE": "What Is Family Health Insurance and Why Do You Need It?",
+      "DESC": "Family health insurance is a single policy that covers multiple household members under one plan, making it easier to manage healthcare needs without juggling separate policies for each person. It typically covers doctor visits, hospital stays, prescriptions, and preventive services, helping families stay prepared for both routine care and unexpected medical situations.",
+      "DESC1": "Choosing the right plan means you are not left dealing with rising medical costs alone. With one structured policy in place, families can access timely care while reducing financial stress. It also ensures that every member, from young children to adults, receives consistent medical support, giving you confidence and stability when it matters most.",
+      "SUB_TITLE": "Here are a few reasons why you need family health insurance:",
+      "LIST": [
+        {
+          "TITLE": "One Plan That Covers Every Family Member Under One Simple Policy",
+          "TEXT": "Designed to include multiple members in a single plan, making coverage easier to manage while ensuring everyone in your household has access to essential healthcare benefits when needed."
+        },
+        {
+          "TITLE": "Simplified Way to Manage Healthcare Needs, Claims, and Coverage Details",
+          "TEXT": "Keeps all medical coverage in one place, making it easier to track doctor visits, understand benefits clearly, and handle claims without confusion or unnecessary stress for your family."
+        },
+        {
+          "TITLE": "Protection Against Rising Medical Costs and Unexpected Health Emergencies",
+          "TEXT": "Helps reduce financial pressure by covering major medical expenses, ensuring your family can receive the care they need without worrying about sudden and overwhelming healthcare costs."
+        },
+        {
+          "TITLE": "Access to Preventive Care, Routine Checkups, and Ongoing Medical Support",
+          "TEXT": "Encourages regular health checkups and early diagnosis, helping your family stay healthy while managing long-term medical needs with consistent, reliable healthcare coverage."
+        },
+        {
+          "TITLE": "Peace of Mind Knowing Your Family Is Covered at Every Stage of Life",
+          "TEXT": "Provides reassurance that your loved ones are protected, giving you confidence that no matter what happens, your family’s health and well-being are supported at every step."
+        }
+      ]
+    },
+    "HOW_IT_WORKS": {
+      "TITLE": "Is Family Health Insurance Required in Texas?",
+      "DESC1": "Family health insurance is not legally required in Texas, so there is no state mandate requiring families to carry coverage. Unlike previous federal requirements, there is currently no penalty for being uninsured. This gives residents the flexibility to decide whether or not to enroll in a health insurance plan based on their needs, priorities, and financial situation.",
+      "DESC2": "Even though it is not required, having family health insurance is still a practical and often necessary choice. Medical expenses in Texas can rise quickly, especially during emergencies or ongoing treatments. A reliable plan helps reduce out-of-pocket costs, provides access to timely care, and protects your family from unexpected financial strain when it matters most."
+    },
+    "COVERAGES": {
+      "STANDARD": {
+        "TITLE": "What Does Family Health Insurance Cover in Texas?",
+        "DESC": "Family health insurance in Texas typically covers doctor visits, hospital stays, emergency care, prescriptions, and preventive services like checkups and screenings. Many plans also include maternity care, pediatric services, and mental health support. Coverage can vary by provider, but most policies are designed to support both routine care and unexpected medical needs for every family member.",
+        "LIST": [
+          {
+            "TITLE": "Preventive Care and Wellness Visits for All Family Members",
+            "DESC": "Family health plans often include routine checkups, annual exams, vaccinations, and screenings. These services help detect issues early, support long-term health, and ensure every family member stays on track with preventive care needs.",
+            "ICON": "fas fa-shield-alt"
+          },
+          {
+            "TITLE": "Emergency Room and Urgent Care Services",
+            "DESC": "Coverage typically includes emergency room visits and urgent care when immediate treatment is needed. This ensures your family can get quick medical attention without worrying about high out-of-pocket costs in the event of sudden illness or injury.",
+            "ICON": "fas fa-ambulance"
+          },
+          {
+            "TITLE": "Hospitalization and Inpatient Care",
+            "DESC": "Plans generally cover hospital stays, surgeries, and inpatient treatments. This includes room charges, medical procedures, and necessary care during recovery, helping reduce the financial burden of serious health conditions.",
+            "ICON": "fas fa-hospital"
+          },
+          {
+            "TITLE": "Prescription Drug Coverage",
+            "DESC": "Family insurance plans typically include coverage for prescribed medications. This helps lower the cost of essential drugs, making it easier to manage both short-term illnesses and ongoing health conditions without added financial stress.",
+            "ICON": "fas fa-prescription"
+          },
+          {
+            "TITLE": "Maternity and Newborn Care",
+            "DESC": "Coverage often includes prenatal visits, delivery services, and postnatal care. Newborn care is also included, ensuring both mother and baby receive proper medical attention, support, and monitoring during and after pregnancy.",
+            "ICON": "fas fa-baby"
+          },
+          {
+            "TITLE": "Pediatric Services Including Dental and Vision",
+            "DESC": "Plans may include pediatric care such as regular checkups, immunizations, and developmental screenings. Some policies also offer dental and vision benefits, supporting children's health, growth, and early detection of potential issues.",
+            "ICON": "fas fa-child"
+          },
+          {
+            "TITLE": "Mental Health and Substance Abuse Treatment",
+            "DESC": "Many plans include mental health services such as therapy, counseling, and treatment programs. This support helps individuals manage emotional well-being and access care for substance use challenges when needed.",
+            "ICON": "fas fa-brain"
+          },
+          {
+            "TITLE": "Laboratory Tests and Diagnostic Imaging",
+            "DESC": "Coverage generally includes lab tests, blood work, X-rays, and imaging services. These diagnostic tools help doctors accurately identify conditions and create effective treatment plans for better health outcomes and diagnoses.",
+            "ICON": "fas fa-vial"
+          },
+          {
+            "TITLE": "Chronic Disease Management and Specialist Visits",
+            "DESC": "Plans often support ongoing care for chronic conditions like diabetes or asthma. They also include specialist visits, ensuring patients receive focused treatment and expert guidance for managing long-term health issues effectively.",
+            "ICON": "fas fa-notes-medical"
+          },
+          {
+            "TITLE": "Rehabilitative Services and Therapy",
+            "DESC": "Many policies include rehabilitation services such as physical therapy and recovery support. These services help individuals regain strength, improve mobility, and return to daily activities after injury, illness, or medical treatment.",
+            "ICON": "fas fa-walking"
+          }
+        ]
+      },
+      "TYPES": {
+        "TITLE": "Types of Family Health Plans We Insure in Texas",
+        "DESC": "Family health insurance comes in various forms to match different healthcare needs and budget goals. Understanding these options can help families choose the right coverage for their medical and financial well-being.",
+        "LIST": [
+          {
+            "TITLE": "Health Maintenance Organization (HMO)",
+            "DESC": "HMO plans offer affordable family coverage with a network of doctors. You must choose a primary care physician and get referrals for specialists."
+          },
+          {
+            "TITLE": "Preferred Provider Organization (PPO)",
+            "DESC": "PPO plans give families more flexibility to see doctors in- or out-of-network without referrals, though out-of-network care may cost more."
+          },
+          {
+            "TITLE": "Exclusive Provider Organization (EPO)",
+            "DESC": "EPO plans cover care only within a specific network, except in emergencies, and offer lower premiums while limiting provider choice for families."
+          },
+          {
+            "TITLE": "Point of Service (POS) Plan",
+            "DESC": "POS plans combine HMO and PPO features, requiring referrals for specialists but allowing limited out-of-network care at higher out-of-pocket costs."
+          },
+          {
+            "TITLE": "High-Deductible Health Plan (HDHP) with HSA",
+            "DESC": "HDHP plans have lower monthly premiums but higher deductibles, paired with HSAs to help families save tax-free money for medical expenses."
+          },
+          {
+            "TITLE": "Catastrophic Health Insurance Plan",
+            "DESC": "Catastrophic plans are designed for emergencies and major illnesses, offering low premiums but high deductibles and limited routine coverage."
+          },
+          {
+            "TITLE": "Short-Term Family Health Insurance Plan",
+            "DESC": "Short-term plans provide temporary coverage for families during gaps, offering basic protection for emergencies but limited benefits overall."
+          },
+          {
+            "TITLE": "ACA Marketplace Family Health Insurance Plan",
+            "DESC": "ACA plans provide essential health benefits with income-based subsidies, ensuring families receive standardized coverage and preventive care."
+          },
+          {
+            "TITLE": "Children's Medicaid and CHIP (Texas-specific)",
+            "DESC": "These programs offer low-cost or free health coverage for eligible children, ensuring access to essential medical, dental, and preventive care."
+          },
+          {
+            "TITLE": "Employer-Sponsored Family Health Insurance Plan",
+            "DESC": "Employer-sponsored plans are provided through employers, often sharing costs between the employer and employee, and offer reliable group coverage for families."
+          }
+        ]
+      }
+    },
+    "NOT_COVERED": {
+      "HEADER": {
+        "TITLE": "What Does Family Health Insurance NOT Cover in Texas?",
+        "DESC": "Family health insurance in Texas typically does not cover cosmetic procedures, experimental treatments, or elective services that are not medically necessary. It may also exclude certain alternative therapies, long-term custodial care, and services outside the provider network. Coverage limits, waiting periods, and pre-existing condition rules can vary by plan, so reviewing policy details is important."
+      },
+      "LIST": {
+        "COSMETIC": {
+          "TITLE": "Cosmetic and Elective Procedures",
+          "DESC": "Family health insurance in Texas usually does not cover cosmetic or elective procedures that are not medically necessary, such as plastic surgery for appearance enhancement, optional body improvements, or treatments chosen for non-health reasons.",
+          "ICON": "fas fa-exclamation-circle"
+        },
+        "EXPERIMENTAL": {
+          "TITLE": "Experimental or Investigational Treatments",
+          "DESC": "Most family health insurance plans exclude experimental or investigational treatments that are not widely approved. These services are still under research and are not considered proven or standard medical care by healthcare providers.",
+          "ICON": "fas fa-flask"
+        },
+        "LONG_TERM_CARE": {
+          "TITLE": "Long-Term Care and Custodial Care",
+          "DESC": "Long-term custodial care, such as assistance with activities of daily living in nursing homes or assisted living facilities, is typically not covered. Family health insurance primarily covers medical treatment rather than ongoing personal care services.",
+          "ICON": "fas fa-home"
+        },
+        "ADULT_DENTAL_VISION": {
+          "TITLE": "Adult Dental and Vision (unless added as a rider)",
+          "DESC": "Basic family health insurance usually does not include adult dental and vision care unless they are specifically added as optional riders. Routine eye exams, glasses, or dental treatments for adults often require separate coverage or additional plan upgrades.",
+          "ICON": "fas fa-tooth"
+        },
+        "HEARING_AIDS": {
+          "TITLE": "Hearing Aids and Hearing Care (varies by plan)",
+          "DESC": "Coverage for hearing aids and hearing care is often limited or excluded in many family health insurance plans. Some policies may offer partial benefits, but most require additional coverage or special approval depending on the insurance provider.",
+          "ICON": "fas fa-deaf"
+        },
+        "OUT_OF_NETWORK": {
+          "TITLE": "Out-of-Network Services (HMO and EPO plans)",
+          "DESC": "Many HMO and EPO family health insurance plans do not cover out-of-network services unless it is a medical emergency. Receiving care outside the approved provider network can lead to higher costs or no coverage, depending on plan rules and restrictions.",
+          "ICON": "fas fa-hospital-user"
+        },
+        "PRE_START_DATE": {
+          "TITLE": "Services Received Before Coverage Start Date",
+          "DESC": "Medical services received before your family health insurance policy begins are not covered under any circumstances. Pre-existing treatments or past medical expenses are excluded, so coverage applies only after the policy's official start date.",
+          "ICON": "fas fa-calendar-times"
+        },
+        "WEIGHT_LOSS": {
+          "TITLE": "Weight Loss Programs and Bariatric Surgery (varies by plan)",
+          "DESC": "Weight loss programs and bariatric surgery are not always covered and depend on medical necessity and plan approval. Many insurers require strict guidelines, documentation, and pre-authorization before offering any financial support for these services.",
+          "ICON": "fas fa-weight-scale"
+        },
+        "ALTERNATIVE_MEDICINE": {
+          "TITLE": "Alternative Medicine (acupuncture, chiropractic; varies by plan)",
+          "DESC": "Alternative medicine, such as acupuncture, chiropractic care, or holistic treatments, is often not included in standard family health insurance plans. Some providers may offer partial coverage, but benefits vary widely depending on policy terms and insurer.",
+          "ICON": "fas fa-leaf"
+        },
+        "ADULT_CHILDREN_OVER_26": {
+          "TITLE": "Non-Dependent Adult Children Over Age 26",
+          "DESC": "Family health insurance typically does not cover children over 26 who are not considered dependents. Once they reach this age limit, they must obtain their own health insurance plan to continue medical coverage and benefits.",
+          "ICON": "fas fa-user-times"
+        }
+      }
+    },
+    "HEALTH_INSURANCE_COST": {
+      "TITLE": "How Much Does Family Health Insurance Cost in Texas?",
+      "DESC1": "Family health insurance in Texas typically costs between $1,200 to $2,000 per month for a family plan, depending on age, coverage level, location, and subsidies. According to market data, the average family premium is around $1,320 per month before tax credits, with lower-cost Bronze plans starting at around $480 and higher Gold or Platinum plans reaching $2,000–$3,000 per month. However, many families do not pay the full amount due to ACA subsidies, which can significantly reduce monthly costs based on household income.",
+      "DESC2": "Compared with other states, Texas is close to the U.S. average for health insurance costs, but still slightly higher than some states with stronger subsidy effects or lower healthcare pricing pressures. Nationally, benchmark monthly premiums start from $521 for ACA plans, averaging around the mid-$600s per month for individuals, meaning Texas families often face higher combined household costs due to family size and coverage needs. Overall, Texas remains a moderately high-cost state, but competition among insurers helps keep pricing more balanced than in the most expensive states."
+    },
+    "FAMILY_VS_INDIVIDUAL": {
+      "HEADER": {
+        "TITLE": "Family Health Insurance vs. Individual Health Insurance in Texas",
+        "DESC": "Family health insurance covers multiple members under one plan, making it easier to manage and often more cost-effective for households. Individual health insurance covers only one person, offering more personalized control but requiring separate policies. Family plans simplify billing and coordination, while individual plans may offer flexibility but can become more expensive overall."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Factor",
+          "FAMILY": "Family Health Insurance",
+          "INDIVIDUAL": "Individual Health Insurance"
+        },
+        "LIST": {
+          "WHO_COVERED": {
+            "FEATURE": "Who Is Covered",
+            "FAMILY": "Entire family under one plan",
+            "INDIVIDUAL": "Single individual only"
+          },
+          "PREMIUM_COST": {
+            "FEATURE": "Premium Cost",
+            "FAMILY": "Higher — covers multiple members",
+            "INDIVIDUAL": "Lower — single person only"
+          },
+          "COST_PER_MEMBER": {
+            "FEATURE": "Cost Per Member",
+            "FAMILY": "Lower — spread across the family",
+            "INDIVIDUAL": "Higher — single person bears full cost"
+          },
+          "DEDUCTIBLE": {
+            "FEATURE": "Deductible Structure",
+            "FAMILY": "Individual and family deductible limits",
+            "INDIVIDUAL": "Single deductible only"
+          },
+          "OUT_OF_POCKET_MAX": {
+            "FEATURE": "Out-of-Pocket Maximum",
+            "FAMILY": "Individual and family maximums",
+            "INDIVIDUAL": "Single maximum only"
+          },
+          "ACA_SUBSIDY": {
+            "FEATURE": "ACA Subsidy Eligibility",
+            "FAMILY": "Yes — based on household income and size",
+            "INDIVIDUAL": "Yes — based on individual income"
+          },
+          "DEPENDENT_COVERAGE": {
+            "FEATURE": "Dependent Coverage",
+            "FAMILY": "Yes — spouse and children up to age 26",
+            "INDIVIDUAL": "Limited — dependents added separately"
+          },
+          "PLAN_CUSTOMIZATION": {
+            "FEATURE": "Plan Customization",
+            "FAMILY": "Limited — one plan covers all members",
+            "INDIVIDUAL": "Higher — tailored to individual needs"
+          },
+          "PEDIATRIC_BENEFITS": {
+            "FEATURE": "Pediatric Benefits",
+            "FAMILY": "Included — dental and vision for children",
+            "INDIVIDUAL": "Not applicable for single adults"
+          },
+          "NETWORK_FLEXIBILITY": {
+            "FEATURE": "Network Flexibility",
+            "FAMILY": "Varies by plan type",
+            "INDIVIDUAL": "Varies by plan type"
+          },
+          "BEST_FOR": {
+            "FEATURE": "Best For",
+            "FAMILY": "Families with children or multiple dependents",
+            "INDIVIDUAL": "Single adults without dependents"
+          },
+          "IDEAL_BUYER_PROFILE": {
+            "FEATURE": "Ideal Buyer Profile",
+            "FAMILY": "Married couples, growing families, parents",
+            "INDIVIDUAL": "Self-employed individuals, single adults"
+          }
+        }
+      }
+    },
+    "FACTORS_IMPACT": {
+      "HEADER": {
+        "TITLE": "Factors That Impact Your Family Health Insurance Rates in Texas",
+        "DESC": "Family health insurance rates in Texas depend on several factors, including family members' ages, location, coverage type, and the number of dependents. Tobacco use, medical history, and chosen deductible also affect premiums. Plans with wider networks usually cost more. Government subsidies and employer contributions can also significantly reduce the overall monthly insurance cost for families."
+      },
+      "LIST": {
+        "FAMILY_SIZE": {
+          "TITLE": "Number of Family Members Covered",
+          "DESC": "The more family members included in the plan, the higher the overall premium, as coverage increases with each additional dependent."
+        },
+        "AGE": {
+          "TITLE": "Ages of All Family Members",
+          "DESC": "Older family members generally have higher insurance rates due to greater healthcare utilization and higher medical risk than younger dependents."
+        },
+        "LOCATION": {
+          "TITLE": "Geographic Location",
+          "DESC": "Insurance costs vary by city or county, with urban areas often having higher premiums than smaller or rural areas."
+        },
+        "TOBACCO_USE": {
+          "TITLE": "Tobacco Use by Any Family Member",
+          "DESC": "If any covered member uses tobacco, insurance rates increase due to higher health risks and potential future medical treatment costs."
+        },
+        "PLAN_TYPE": {
+          "TITLE": "Plan Type Selected (HMO, PPO, EPO, HDHP)",
+          "DESC": "Different plan types affect pricing: PPOs typically cost more due to their flexibility, while HMOs and HDHPs are usually more affordable."
+        },
+        "METAL_TIER": {
+          "TITLE": "Metal Tier Selected (Bronze, Silver, Gold, Platinum)",
+          "DESC": "Higher metal tiers, such as Gold or Platinum, offer better coverage but come with higher monthly premiums than Bronze or Silver plans."
+        },
+        "DEDUCTIBLE": {
+          "TITLE": "Deductible and Out-of-Pocket Maximum",
+          "DESC": "Lower deductibles and out-of-pocket limits usually increase monthly premiums, while higher deductibles reduce upfront monthly insurance costs."
+        },
+        "NETWORK_SIZE": {
+          "TITLE": "Network Size and Provider Availability",
+          "DESC": "Plans with larger doctor networks and more provider options typically cost more than restricted network plans with fewer healthcare choices."
+        },
+        "HOUSEHOLD_INCOME": {
+          "TITLE": "Household Income Level (affects ACA subsidy eligibility)",
+          "DESC": "Lower household income may qualify for ACA subsidies, which can significantly reduce monthly premiums and overall family health insurance costs."
+        },
+        "EMPLOYER_COVERAGE": {
+          "TITLE": "Employer Coverage Availability (affects marketplace eligibility)",
+          "DESC": "If employer-sponsored insurance is available, marketplace subsidy eligibility may be reduced, which can affect overall plan affordability and options."
+        },
+        "ENROLLMENT_PERIOD": {
+          "TITLE": "Special Enrollment Period vs. Open Enrollment Timing",
+          "DESC": "Applying during a special enrollment period may limit options, whereas open enrollment offers full plan selection and sometimes better pricing."
+        },
+        "PRE_EXISTING": {
+          "TITLE": "Pre-Existing Conditions of Any Family Member",
+          "DESC": "While ACA plans cover pre-existing conditions, they can still influence plan choice and expected healthcare usage within family coverage."
+        }
+      }
+    },
+    "DISCOUNT_FACTORS": {
+      "HEADER": {
+        "TITLE": "How to Maximize Your Discounts and Lower Your Premium",
+        "DESC": "To lower your family health insurance premium in Texas, compare multiple plans through a licensed broker, choose higher deductibles if affordable, and apply for ACA subsidies based on income. Using in-network providers, bundling coverage, and avoiding unnecessary add-ons can also reduce costs. Maintaining a healthy lifestyle and enrolling during open periods may help secure better savings."
+      },
+      "LIST": {
+        "ACA_SUBSIDY": {
+          "TITLE": "Check Your Household ACA Subsidy Eligibility",
+          "DESC": "Check if your household income qualifies for ACA subsidies, which can significantly reduce your monthly family health insurance premiums."
+        },
+        "HIGHER_DEDUCTIBLE": {
+          "TITLE": "Choose a Higher Deductible Plan to Lower Your Monthly Premium",
+          "DESC": "Selecting a higher-deductible plan can lower your monthly premium but requires you to pay more out of pocket before coverage starts."
+        },
+        "HMO_EPO": {
+          "TITLE": "Select an HMO or EPO Plan Over a PPO for Lower Family Premiums",
+          "DESC": "HMO and EPO plans usually cost less than PPOs and offer lower premiums, but limit provider choices to a specific network."
+        },
+        "HSA": {
+          "TITLE": "Open a Health Savings Account (HSA) with an HDHP to Reduce Taxable Income",
+          "DESC": "An HSA with a high-deductible plan allows tax-free savings for medical expenses, helping reduce overall taxable income and healthcare costs."
+        },
+        "QUIT_TOBACCO": {
+          "TITLE": "Quit Tobacco",
+          "DESC": "Quitting tobacco use can significantly lower insurance premiums, as insurers charge higher rates for individuals with higher health risks."
+        },
+        "OPEN_ENROLLMENT": {
+          "TITLE": "Enroll All Family Members During Open Enrollment to Avoid Limited Options",
+          "DESC": "Enrolling during open enrollment ensures full plan access, better pricing options, and avoids limited coverage or higher special enrollment costs."
+        },
+        "CHIP_MEDICAID": {
+          "TITLE": "Check CHIP and Medicaid Eligibility for Children to Reduce Overall Family Cost",
+          "DESC": "Eligible families can enroll children in CHIP or Medicaid, reducing overall insurance expenses while ensuring essential pediatric coverage."
+        },
+        "SINGLE_PLAN": {
+          "TITLE": "Add All Dependents to One Family Plan Instead of Purchasing Separate Policies",
+          "DESC": "Combining all dependents into one family plan is usually more cost-effective than buying separate individual policies for each member."
+        },
+        "COMPARE_CARRIERS": {
+          "TITLE": "Compare Multiple Carriers Through an Independent Agent",
+          "DESC": "Using an independent broker helps compare multiple insurance carriers, ensuring you find the best coverage at the most affordable rate."
+        },
+        "ANNUAL_REVIEW": {
+          "TITLE": "Review Your Family Plan Annually at Renewal",
+          "DESC": "Reviewing your plan yearly helps identify better options, adjust coverage needs, and take advantage of new discounts or lower-cost plans."
+        }
+      }
+    },
+    "AGENT_COMPARISON": {
+      "HEADER": {
+        "TITLE": "Independent Insurance Agency vs. Captive Agent: Why Choice Saves You Money",
+        "DESC": "An independent insurance agency works with multiple carriers, allowing families in Texas to compare rates, coverage options, and discounts in one place. This flexibility often leads to better pricing and more tailored protection. In contrast, captive agents represent only one insurance company, limiting choices and potentially increasing costs since they cannot shop across competing providers."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Feature",
+          "INDEPENDENT": "Independent Agency (A-State)",
+          "CAPTIVE": "Captive Agent"
+        },
+        "LIST": {
+          "CARRIER_ACCESS": {
+            "FEATURE": "Carrier Access",
+            "INDEPENDENT": "Multiple top-rated health insurance carriers",
+            "CAPTIVE": "Single carrier only"
+          },
+          "QUOTE_COMPARISON": {
+            "FEATURE": "Quote Comparison",
+            "INDEPENDENT": "Compares rates across carriers for you",
+            "CAPTIVE": "One quote from one company"
+          },
+          "UNBIASED_ADVICE": {
+            "FEATURE": "Unbiased Advice",
+            "INDEPENDENT": "Yes — recommends what fits your family's needs",
+            "CAPTIVE": "Limited to their carrier's products"
+          },
+          "PLAN_OPTIONS": {
+            "FEATURE": "Plan Type Options",
+            "INDEPENDENT": "HMO, PPO, EPO, HDHP, and more compared",
+            "CAPTIVE": "Limited to the carrier's plan lineup"
+          },
+          "ACA_SUBSIDY_GUIDANCE": {
+            "FEATURE": "ACA Subsidy Guidance",
+            "INDEPENDENT": "Yes — helps maximize household subsidy eligibility",
+            "CAPTIVE": "Limited to the carrier's subsidy options"
+          },
+          "CHIP_MEDICAID_GUIDANCE": {
+            "FEATURE": "CHIP and Medicaid Guidance",
+            "INDEPENDENT": "Yes — identifies children who may qualify",
+            "CAPTIVE": "Limited or no guidance offered"
+          },
+          "NETWORK_COMPARISON": {
+            "FEATURE": "Network Comparison",
+            "INDEPENDENT": "Compares provider networks across carriers for all family members",
+            "CAPTIVE": "Single carrier's network only"
+          },
+          "PEDIATRIC_COVERAGE": {
+            "FEATURE": "Pediatric Coverage Comparison",
+            "INDEPENDENT": "Compared across carriers for the best dental and vision options",
+            "CAPTIVE": "Single carrier's pediatric options only"
+          },
+          "ONGOING_SUPPORT": {
+            "FEATURE": "Ongoing Plan Review",
+            "INDEPENDENT": "Yes — reviews and adjusts at renewal as family grows",
+            "CAPTIVE": "Varies"
+          },
+          "PRICE": {
+            "FEATURE": "Price Competitiveness",
+            "INDEPENDENT": "Higher — shops the market for the best family rate",
+            "CAPTIVE": "Limited to one carrier's pricing"
+          },
+          "BEST_FOR": {
+            "FEATURE": "Best For",
+            "INDEPENDENT": "Most Texas families seeking comprehensive health coverage",
+            "CAPTIVE": "Families loyal to a specific carrier"
+          }
+        }
+      }
+    },
+    "GROWING_FAMILY": {
+      "HEADER": {
+        "TITLE": "Growing Family? We Can Help You Find the Right Coverage"
+      },
+      "CONTENT": {
+        "DESC1": "As your family grows, your health insurance needs become more important and more complex. Adding a new child, spouse, or dependent means your current coverage may no longer fully protect everyone. From pediatric care to maternity support and routine checkups, a growing household requires a plan that adapts to changing medical needs without causing financial stress.",
+        "DESC2": "We help Texas families find coverage that fits every stage of life. Whether you are expecting a baby, adopting, or expanding your household, we compare multiple plans to ensure you get the right balance of cost and protection. Our goal is to make sure your growing family stays fully covered with reliable, affordable, and easy-to-manage health insurance."
+      }
+    },
+    "LANGUAGE_SUPPORT": {
+      "HEADER": {
+        "TITLE": "Hablamos Español / We Speak Your Language"
+      },
+      "CONTENT": {
+        "DESC1": "We understand that clear communication is essential when it comes to your family's health coverage. That's why our team is fully equipped to assist you in both English and Spanish, ensuring you can ask questions, understand your options, and make confident decisions without any language barriers. We make the insurance process simple, respectful, and easy to follow for every family we serve.",
+        "DESC2": "Whether you prefer Spanish or English, our licensed agents take the time to explain every detail of your plan, including benefits, costs, and coverage options. We are committed to helping Hispanic and Latino families in Texas feel comfortable and fully informed at every step. No confusion, no pressure—just honest guidance in the language you understand best."
+      }
+    },
+    "ASTATE_DIFFERENTIATORS": {
+      "HEADER": {
+        "TITLE": "What Makes A-State Insurance Different"
+      },
+      "LIST": {
+        "LICENSED_BROKERS": {
+          "TITLE": "Texas Licensed Brokers",
+          "DESCRIPTION": "A-State Insurance is fully licensed in Texas, ensuring trusted guidance, compliance, and access to reliable insurance carriers statewide."
+        },
+        "HISPANIC_LATINO_FRIENDLY": {
+          "TITLE": "Hispanic & Latino Friendly",
+          "DESCRIPTION": "We proudly serve Hispanic and Latino communities with culturally respectful support, making insurance clear, simple, and easy to understand."
+        },
+        "YEARS_SERVING": {
+          "TITLE": "20+ Years Serving Texans",
+          "DESCRIPTION": "With over two decades of experience, we have helped Texas families find dependable insurance coverage tailored to their unique needs."
+        },
+        "CUSTOM_COVERAGE": {
+          "TITLE": "Custom Coverage Plans",
+          "DESCRIPTION": "We design personalized insurance solutions tailored to your family size, budget, and health needs, providing better protection and peace of mind."
+        },
+        "ONLINE_LOCAL": {
+          "TITLE": "Online & Local",
+          "DESCRIPTION": "Get insurance support online or visit our local Texas office for in-person help, offering flexible, convenient service anytime."
+        },
+        "MULTILINGUAL_AGENTS": {
+          "TITLE": "Multilingual Agents",
+          "DESCRIPTION": "Our agents speak English, Spanish, and Hindi, ensuring every family understands their coverage clearly without language barriers or confusion."
+        }
+      }
+    },
+    "INSURANCE_STEPS": {
+      "HEADER": {
+        "TITLE": "Get Covered in 4 Simple Steps"
+      },
+      "STEPS": {
+        "REACH_OUT": {
+          "TITLE": "Step 1 - Reach Out",
+          "DESCRIPTION": "Contact A-State Insurance by phone or online form, or visit us in Texas to start your family health insurance journey today."
+        },
+        "GET_ADVICE": {
+          "TITLE": "Step 2 - Get Advice",
+          "DESCRIPTION": "Our licensed agents review your family's needs and explain coverage options clearly so you can make informed insurance decisions."
+        },
+        "PICK_PLAN": {
+          "TITLE": "Step 3 - Pick Your Plan",
+          "DESCRIPTION": "Compare available health insurance plans and choose the one that best fits your budget, family size, and medical coverage needs."
+        },
+        "WE_GOT_YOU": {
+          "TITLE": "Step 4 - We've Got You",
+          "DESCRIPTION": "Once enrolled, we ensure your coverage is active, and your family is protected with ongoing support whenever you need assistance."
+        }
+      }
+    },
+    "SWITCH_STEPS": {
+      "HEADER": {
+        "TITLE": "How to Switch Your Family Health Insurance to A-State Insurance"
+      },
+      "STEPS": {
+        "STEP_1": {
+          "TITLE": "Step 1: Get Your Free Comparison Quote",
+          "DESCRIPTION": "Start by requesting a free comparison quote from A-State Insurance. Our team reviews your current coverage, family needs, and budget, then compares multiple Texas insurance carriers to find better options. This step is fast, simple, and completely free for all families."
+        },
+        "STEP_2": {
+          "TITLE": "Step 2: Pick Your Plan and Activate",
+          "DESCRIPTION": "Once we present your options, you can choose the family health insurance plan that best fits your needs. Our licensed agents help you clearly understand benefits, costs, and coverage. After selection, we quickly activate your new policy so your family is protected without delays."
+        },
+        "STEP_3": {
+          "TITLE": "Step 3: Cancel Your Old Policy (We'll Help!)",
+          "DESCRIPTION": "Once your new coverage is active, we will assist you in smoothly canceling your old insurance policy. Our team ensures there are no coverage gaps or penalties during the transition. We handle the details so you can switch confidently and stay fully protected throughout the process."
+        }
+      }
+    },
+    "FREE_QUOTE": {
+      "HEADER": "Get a Free Family Health Insurance Quote in Texas",
+      "DESCRIPTION": "Getting a free family health insurance quote in Texas with A-State Insurance is quick, simple, and completely personalized to your needs. Our licensed agents review your household size, budget, and medical requirements, then compare multiple top-rated insurance carriers across Texas. This helps you see options side by side so you can choose coverage that truly fits your family. We focus on making the process stress-free by explaining everything, including costs, benefits, and coverage details."
+    }
   }
 }
