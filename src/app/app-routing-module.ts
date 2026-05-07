@@ -57,6 +57,10 @@ import { FinalExpenseInsurance } from './pages/life-insurance/final-expense-insu
 import { TermLifeInsurance } from './pages/life-insurance/term-life-insurance/term-life-insurance';
 import { GroupLifeInsurance } from './pages/life-insurance/group-life-insurance/group-life-insurance';
 import { FamilyHealthInsurance } from './pages/health-insurance/family-health-insurance/family-health-insurance';
+import { SmallBusinessHealthInsurance } from './pages/health-insurance/small-business-health-insurance/small-business-health-insurance';
+import { MedicareSupplementInsurance } from './pages/health-insurance/medicare-supplement-insurance/medicare-supplement-insurance';
+import { DentalVisionInsurance } from './pages/health-insurance/dental-vision-insurance/dental-vision-insurance';
+import { ShortTermHealthInsurance } from './pages/health-insurance/short-term-health-insurance/short-term-health-insurance';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -85,6 +89,10 @@ const routes: Routes = [
     children: [
       { path: '', component: HealthInsurance },
       { path: 'family-health-insurance', component: FamilyHealthInsurance },
+      { path: 'small-business-health-insurance', component: SmallBusinessHealthInsurance },
+      { path: 'medicare-supplement-medigap-insurance', component: MedicareSupplementInsurance },
+      { path: 'dental-vision-insurance', component: DentalVisionInsurance },
+      { path: 'short-term-health-insurance', component: ShortTermHealthInsurance },
     ]
   },
 
@@ -240,6 +248,10 @@ const routes: Routes = [
         children: [
           { path: '', component: HealthInsurance },
           { path: 'family-health-insurance', component: FamilyHealthInsurance },
+          { path: 'small-business-health-insurance', component: SmallBusinessHealthInsurance },
+          { path: 'medicare-supplement-medigap-insurance', component: MedicareSupplementInsurance },
+          { path: 'dental-vision-insurance', component: DentalVisionInsurance },
+          { path: 'short-term-health-insurance', component: ShortTermHealthInsurance },
         ]
       },
       { path: 'fianzas', component: SuretyBondInsurance },
@@ -481,4 +493,20 @@ export const routeTranslations: Record<string, Record<string, string>> = {
     en: 'health-insurance/family-health-insurance',
     es: 'seguros-de-salud/family-health-insurance'
   },
+  smallBusinessHealthInsurance: {
+    en: 'health-insurance/small-business-health-insurance',
+    es: 'seguros-de-salud/small-business-health-insurance'
+  },
+  medicareSupplementInsurance: {
+    en: 'health-insurance/medicare-supplement-medigap-insurance',
+    es: 'seguros-de-salud/medicare-supplement-medigap-insurance'
+  },
+  dentalVisionInsurance: {
+    en: 'health-insurance/dental-vision-insurance',
+    es: 'seguros-de-salud/dental-vision-insurance'
+  },
+  shortTermHealthInsurance: {
+    en: 'health-insurance/short-term-health-insurance',
+    es: 'seguros-de-salud/short-term-health-insurance'
+  }
 };
