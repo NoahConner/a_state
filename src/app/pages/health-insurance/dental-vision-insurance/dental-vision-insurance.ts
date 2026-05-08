@@ -19,13 +19,14 @@ export class DentalVisionInsurance {
     }
     return result;
   }
+  
   chips = [
-    { name: 'FAMILY_HEALTH_INSURANCE.BANNER.CHIPS.HMO', icon: 'fas fa-car' },
-    { name: 'FAMILY_HEALTH_INSURANCE.BANNER.CHIPS.PPO', icon: 'fas fa-house' },
-    { name: 'FAMILY_HEALTH_INSURANCE.BANNER.CHIPS.EPO', icon: 'fas fa-building' },
-    { name: 'FAMILY_HEALTH_INSURANCE.BANNER.CHIPS.HDHP_HSA', icon: 'fas fa-heart' },
-    { name: 'FAMILY_HEALTH_INSURANCE.BANNER.CHIPS.MEDICAID_CHIP', icon: 'fas fa-notes-medical' },
-    { name: 'FAMILY_HEALTH_INSURANCE.BANNER.CHIPS.OTHER', icon: 'fas fa-file-contract' },
+    { name: 'DENTAL_VISION_INSURANCE.BANNER.CHIPS.DHMO', icon: 'fas fa-car' },
+    { name: 'DENTAL_VISION_INSURANCE.BANNER.CHIPS.DPPO', icon: 'fas fa-house' },
+    { name: 'DENTAL_VISION_INSURANCE.BANNER.CHIPS.DENTAL_INDEMNITY', icon: 'fas fa-building' },
+    { name: 'DENTAL_VISION_INSURANCE.BANNER.CHIPS.VHMO', icon: 'fas fa-heart' },
+    { name: 'DENTAL_VISION_INSURANCE.BANNER.CHIPS.VPPO', icon: 'fas fa-notes-medical' },
+    { name: 'DENTAL_VISION_INSURANCE.BANNER.CHIPS.OTHER', icon: 'fas fa-file-contract' },
   ];
 
 
@@ -42,84 +43,89 @@ export class DentalVisionInsurance {
 
 
   impactFactorsKeys = [
-    'FAMILY_SIZE',
     'AGE',
-    'LOCATION',
-    'TOBACCO_USE',
+    'FAMILY_MEMBERS',
     'PLAN_TYPE',
-    'METAL_TIER',
+    'ANNUAL_MAX',
     'DEDUCTIBLE',
+    'WAITING_PERIOD',
+    'ORTHODONTIC',
+    'LOCATION',
+    'STANDALONE',
+    'VISION_FREQUENCY',
     'NETWORK_SIZE',
-    'HOUSEHOLD_INCOME',
-    'EMPLOYER_COVERAGE',
-    'ENROLLMENT_PERIOD',
-    'PRE_EXISTING'
+    'EMPLOYER_VS_INDIVIDUAL'
   ];
-
-
-  discountKeys = [
-    'ACA_SUBSIDY',
-    'HIGHER_DEDUCTIBLE',
-    'HMO_EPO',
-    'HSA',
-    'QUIT_TOBACCO',
-    'OPEN_ENROLLMENT',
-    'CHIP_MEDICAID',
-    'SINGLE_PLAN',
-    'COMPARE_CARRIERS',
-    'ANNUAL_REVIEW'
-  ];
-
-
-
-
-
-  notCoveredKeys = [
-    'COSMETIC',
-    'EXPERIMENTAL',
-    'LONG_TERM_CARE',
-    'ADULT_DENTAL_VISION',
-    'HEARING_AIDS',
-    'OUT_OF_NETWORK',
-    'PRE_START_DATE',
-    'WEIGHT_LOSS',
-    'ALTERNATIVE_MEDICINE',
-    'ADULT_CHILDREN_OVER_26'
-  ];
-
-  agentComparisonData = [
-      'CARRIER_ACCESS',
-      'QUOTE_COMPARISON',
-      'UNBIASED_ADVICE',
-      'PLAN_OPTIONS',
-      'ACA_SUBSIDY_GUIDANCE',
-      'CHIP_MEDICAID_GUIDANCE',
-      'NETWORK_COMPARISON',
-      'PEDIATRIC_COVERAGE',
-      'ONGOING_SUPPORT',
-      'PRICE',
-      'BEST_FOR'
-  ];
-
-
-  factorComparisonKeys = [
-    'WHO_COVERED',
-    'PREMIUM_COST',
-    'COST_PER_MEMBER',
-    'DEDUCTIBLE',
-    'OUT_OF_POCKET_MAX',
-    'ACA_SUBSIDY',
-    'DEPENDENT_COVERAGE',
-    'PLAN_CUSTOMIZATION',
-    'PEDIATRIC_BENEFITS',
-    'NETWORK_FLEXIBILITY',
-    'BEST_FOR',
-    'IDEAL_BUYER_PROFILE'
-  ];
-
 
  
 
+
+  discountKeys = [
+   'BUNDLE',
+    'DHMO',
+    'DEDUCTIBLE',
+    'RIDERS',
+    'OPEN_ENROLLMENT',
+    'DISCOUNT_PLAN',
+    'ANNUAL_MAX',
+    'COMPARE',
+    'FAMILY',
+    'REVIEW'
+  ];
+
+
+  notCoveredKeys = [
+    'COSMETIC_DENTAL',
+    'DENTAL_IMPLANTS',
+    'PRE_EXISTING_DENTAL',
+    'EXPERIMENTAL_DENTAL',
+    'NEGLECT_INJURIES',
+    'LASIK',
+    'NON_PRESCRIPTION_SUNGLASSES',
+    'COSMETIC_CONTACTS',
+    'VISION_THERAPY',
+    'TWO_PAIRS_GLASSES'
+  ];
+
+
+  agentComparisonData = [
+    'CARRIER_ACCESS',
+    'QUOTE_COMPARISON',
+    'UNBIASED_ADVICE',
+    'PLAN_OPTIONS',
+    'BUNDLING',
+    'ORTHODONTIC',
+    'NETWORK',
+    'WAITING_PERIOD',
+    'ONGOING_REVIEW',
+    'PRICE',
+    'BEST_FOR'
+  ];
+
+ 
+  factorComparisonKeys = [
+    'HOW_IT_WORKS',
+    'FLEXIBILITY',
+    'COVERAGE_DEPTH',
+    'ANNUAL_MAX',
+    'NETWORK',
+    'ORTHODONTIC',
+    'PREMIUM',
+    'PORTABILITY',
+    'CARRIER_CHOICE',
+    'WAITING_PERIODS',
+    'BEST_FOR',
+    'IDEAL_BUYER'
+  ];
+
+  dentalPlanRates = [
+    'INDIVIDUAL',
+    'FAMILY',
+    'DHMO',
+    'PPO'
+  ]
+
+ 
 
   industryCoverageKeys = [
     'CONSTRUCTION_TRADES',
