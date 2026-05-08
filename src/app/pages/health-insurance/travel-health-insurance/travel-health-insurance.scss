@@ -1,0 +1,1608 @@
+.topBanner {
+  background-image: url('/assets/images/commercial-insurance/commercial-banner.png');
+  height: 38.5rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+
+  .container {
+    height: 100%;
+
+    .topSub {
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 4rem;
+
+      .topSub2 {
+        .h1 {
+          font-weight: 700;
+          color: #fff;
+          font-size: 3rem;
+
+          .heading-span {
+            color: #fff22e;
+          }
+        }
+
+        .selectable {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 10px;
+
+          .chip {
+            background-color: #ffffffa1;
+            border-radius: 8px;
+    width: 190px;
+    height: 63px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.5s all ease-in-out;
+
+            &:hover {
+              background-color: #fff22e;
+              color: #000;
+            }
+          }
+        }
+
+        .inps {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 10px;
+          margin: 1rem 0;
+          width: 60%;
+        }
+
+        button {
+          font-family: 'Afacad', sans-serif;
+          font-size: 16px;
+          font-weight: 700 !important;
+          padding: 10px 24px;
+          border-radius: 8px !important;
+          transition: 0.5s all ease-in-out;
+          background-color: #fff22e;
+          color: #ca2b28;
+          box-shadow:
+            rgba(0, 0, 0, 0.07) 0px 1px 2px,
+            rgba(0, 0, 0, 0.07) 0px 2px 4px,
+            rgba(0, 0, 0, 0.07) 0px 4px 8px,
+            rgba(0, 0, 0, 0.07) 0px 8px 16px,
+            rgba(0, 0, 0, 0.07) 0px 16px 32px,
+            rgba(0, 0, 0, 0.07) 0px 32px 64px;
+          border: 0;
+
+          &:hover {
+            background-color: #ca2b28;
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.bg-pink {
+  background-color: #FFF9F9 !important;
+}
+
+.bg-gray {
+  background-color: #F2F2F2 !important;
+}
+
+
+.footUpper {
+  height: 130px;
+  width: 100%;
+  background-color: #ca2b28;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+  .left {
+    width: 55%;
+    height: 100%;
+  }
+
+  .right {
+    height: 100%;
+    background-color: #e62e2a;
+    width: 50%;
+  }
+
+  .clipp {
+    position: absolute;
+    clip-path: polygon(67% 0, 100% 0, 100% 99%, 20% 100%);
+    height: 130px;
+    width: 130px;
+    background-color: #e62e2a;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .contain {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+
+    .col-lg-6 {
+      display: flex;
+      align-items: center;
+
+      .icon {
+        height: 80%;
+        width: fit-content;
+      }
+
+      .h4 {
+        font-weight: 700;
+        color: #fff;
+        font-size: 42px;
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+.getCoverd {
+  background-image: url('/assets/images/commercial-insurance/commercial-insurance-quote-banner.png');
+  height: 38.5rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 50px;
+
+  .container {
+    height: 100%;
+    max-width: 900px;
+
+
+    .topSub {
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 4rem;
+
+      .topSub2 {
+        .h1 {
+          color: #fff;
+          font-size: 19px;
+          margin-bottom: 10px;
+        }
+
+        .para {
+          color: #ffffffe4;
+          font-size: 13px;
+        }
+
+        .selectable {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 10px;
+
+          .chip {
+            background-color: #ffffffa1;
+            border-radius: 8px;
+  width: 190px;
+    height: 63px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.5s all ease-in-out;
+
+            &:hover {
+              background-color: #fff22e;
+              color: #000;
+            }
+          }
+        }
+
+        .inps {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 10px;
+          margin: 1rem 0;
+          width: 60%;
+        }
+
+        button {
+          font-family: 'Afacad', sans-serif;
+          font-size: 16px;
+          font-weight: 700 !important;
+          padding: 10px 24px;
+          border-radius: 8px !important;
+          transition: 0.5s all ease-in-out;
+          background-color: #fff22e;
+          color: #ca2b28;
+          box-shadow:
+            rgba(0, 0, 0, 0.07) 0px 1px 2px,
+            rgba(0, 0, 0, 0.07) 0px 2px 4px,
+            rgba(0, 0, 0, 0.07) 0px 4px 8px,
+            rgba(0, 0, 0, 0.07) 0px 8px 16px,
+            rgba(0, 0, 0, 0.07) 0px 16px 32px,
+            rgba(0, 0, 0, 0.07) 0px 32px 64px;
+          border: 0;
+
+          &:hover {
+            background-color: #ca2b28;
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// 1. Insurance List Section (Numbered Items)
+.section-title {
+  color: #CA2B28;
+  font-weight: 800;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-description {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+}
+
+.section-sub-title {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 700;
+  color: #000000;
+  font-size: 18px;
+}
+
+.insurance-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 900px;
+  margin: 0 auto;
+
+  .insurance-item {
+    display: flex;
+    align-items: stretch;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #CA2B28;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    .number {
+      background-color: #ffff33;
+      color: #000000;
+      font-weight: 500;
+      font-size: 31px;
+      width: 107px;
+      border-radius: 1px 12px 12px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .content {
+      background-color: #CA2B28;
+      color: #FFFFFF;
+      padding: 12px 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h5 {
+        font-weight: 500;
+        font-size: 21px;
+        padding: 5px;
+        margin-left: 16px;
+        margin-bottom: 0;
+      }
+
+      p {
+        margin: 0;
+        font-size: 16px;
+        line-height: 23px;
+        opacity: 0.9;
+        margin-left: 21px;
+      }
+    }
+  }
+
+
+}
+
+// 2. Insurance Laws Section (Bullet Points)
+.insurance-laws-section {
+  color: #222222;
+  line-height: 1.5;
+  background-color: #F0F1F2;
+
+  .container-max-800 {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .main-title {
+    font-weight: 700;
+    color: #CA2B28;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+
+    .accent-text {
+      color: #CA2B28;
+      font-weight: 400;
+    }
+  }
+
+  .intro-text {
+    font-size: 0.9rem;
+    margin-bottom: 2.5rem;
+
+    .text-link {
+      color: inherit;
+      text-decoration: underline;
+
+      &:hover {
+        color: #CA2B28;
+      }
+    }
+  }
+
+  .section-subtitle {
+    font-weight: 700;
+    color: #000000;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+}
+
+// 3. How It Work Section (Numbered Items)
+.how-it-work {
+  background-color: #FFF9F9;
+
+  .container {
+    max-width: 900px;
+  }
+
+  .how-it-work-title {
+    color: #CA2B28;
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+
+  .how-it-work-description {
+    p {
+      color: #282828;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      max-width: 950px; // Keeps the text from spanning too wide on desktop
+    }
+  }
+}
+
+// 4. How Much Do You Need Section (Numbered Items)
+.how-much-do-you-need {
+  .container {
+    max-width: 900px;
+  }
+
+  .how-much-do-you-need-title {
+    color: #CA2B28;
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+
+  .how-much-do-you-need-description {
+    p {
+      color: #282828;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      max-width: 950px; // Keeps the text from spanning too wide on desktop
+    }
+  }
+}
+
+.insurance-table-section {
+
+
+  .container-max-800 {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+
+  .table-main-title {
+    color: #CA2B28;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  .table-intro-text,
+  .disclaimer-text {
+    font-size: 16px;
+    color: #222222;
+    line-height: 1.6;
+  }
+
+  .table-coverage-title {
+    font-size: 17px;
+    color: #CA2B28;
+    font-weight: 700;
+
+
+  }
+
+  .custom-insurance-table {
+    .header-box {
+      background-color: #CA2B28;
+      color: #FFFFFF;
+      padding: 15px;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .content-box {
+      border-radius: 8px;
+      padding: 20px;
+      font-size: 0.9rem;
+      min-height: 120px;
+    }
+
+    .side-label {
+      background-color: #F0F1F2;
+      color: #222222;
+      font-size: 0.85rem;
+    }
+
+    .pink-bg {
+      background-color: #FAC1BF;
+      color: #222222;
+    }
+
+    .border-end-white {
+      border-right: 2px solid #FFFFFF;
+    }
+  }
+
+  .source-meta {
+    font-size: 0.9rem;
+
+    p {
+      color: #CA2B28;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+
+    a {
+      color: #CA2B28;
+
+    }
+
+
+    .last-updated {
+      color: #222222;
+      opacity: 0.6;
+    }
+  }
+
+  .insurance-coverage-title {
+    font-size: 23px;
+    font-weight: 700;
+    color: #222;
+  }
+
+  .insurance-coverage-intro-text {
+    max-width: 700px;
+    color: #666;
+    font-size: 14px;
+  }
+
+  .coverage-card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 30px 25px;
+    text-align: center;
+    height: 100%;
+    transition: 0.3s ease;
+    box-shadow: 0 10px 30px rgba(255, 210, 210, 0.5);
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 25px;
+      object-fit: contain;
+    }
+
+    h3 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #666;
+      margin: 0;
+      line-height: 1.6;
+    }
+  }
+
+
+}
+
+
+
+.insurance-section {
+  background-color: #FFF9F9;
+
+  .container {
+    max-width: 900px;
+  }
+
+  .header-content {
+    max-width: 900px;
+
+    h6 {
+      color: #CA2B28;
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    h6 {
+      color: #ca2b28;
+    }
+  }
+
+  .custom-dots {
+    position: absolute;
+    bottom: -40px;
+
+    button {
+      width: 12px !important;
+      height: 12px !important;
+      border-radius: 50% !important;
+      background-color: #ddd !important;
+      border: none !important;
+      margin: 0 6px !important;
+      transition: all 0.3s ease !important;
+      opacity: 0.5 !important;
+
+      &.active {
+        background-color: #ca2b28 !important;
+        width: 30px !important;
+        border-radius: 10px !important;
+        opacity: 1 !important;
+      }
+
+      &:hover {
+        opacity: 0.8 !important;
+      }
+    }
+  }
+
+  .carousel-item {
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  .optional-header {
+    font-size: 18px;
+    font-weight: 700;
+    color: #191919;
+  }
+
+  .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #191919;
+  }
+
+  .insurance-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    padding: 20px;
+    border-radius: 16px;
+
+    border: 1px solid #f8d7d7;
+
+    box-shadow: 0 10px 15px rgba(248, 215, 215, 1);
+    transition: all 0.25s ease;
+
+    height: 100%;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    .card-icon {
+      flex-shrink: 0;
+
+      i {
+        color: #e53935; // strong red like Figma
+        font-size: 18px;
+        margin-top: 3px;
+      }
+    }
+
+    .card-body {
+      padding: 0;
+
+      h6 {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 6px;
+        color: #1f1f1f;
+      }
+
+      p {
+        font-size: 13px;
+        line-height: 1.6;
+        color: #555;
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+
+.home-insurance-types {
+  background-color: #FFF0F0;
+  font-family: 'Arial', sans-serif;
+  padding: 3rem 0;
+
+  .setup {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .home-insurance-types .section-title {
+    color: #CA2B28;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 900px;
+  }
+
+  .policy-timeline {
+    position: relative;
+    padding: 20px 0;
+  }
+
+  .policy-card {
+    padding: 30px 40px;
+    border-radius: 20px;
+    /* Exact red glow effect using rgba(202, 43, 40, 0.15) */
+    box-shadow: 0 10px 40px rgba(255, 4, 0, 0.15);
+    transition: transform 0.3s ease;
+  }
+
+  .policy-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .policy-card h6 {
+    color: #333;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+  }
+
+  .policy-card p {
+    color: #666;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+}
+
+
+
+.minimum-coverage-section {
+  margin-top: 10px;
+
+  .container {
+    max-width: 900px;
+  }
+
+  .minimum-coverage-title {
+    color: #CA2B28;
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+
+  .minimum-coverage-description {
+    p {
+      color: #282828;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      max-width: 950px; // Keeps the text from spanning too wide on desktop
+    }
+  }
+}
+
+
+
+.cost-section {
+  background-color: #FFEFEE;
+  margin-top: 10px;
+
+  .container {
+    max-width: 900px;
+  }
+
+  .cost-title {
+    color: #CA2B28;
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+
+  .cost-description {
+    p {
+      color: #282828;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      max-width: 950px; // Keeps the text from spanning too wide on desktop
+    }
+  }
+}
+
+
+.rates-section {
+
+
+  .container {
+    max-width: 900px;
+  }
+
+  .rates-header {
+    max-width: 800px;
+    margin: 1px auto;
+
+    h5 {
+      font-size: 1.1rem;
+      color: #CA2B28;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #272424;
+    }
+  }
+
+  .rates-table-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(255, 210, 210, 0.8);
+    border: 1px solid #fdf2f2;
+  }
+
+  .header-pill {
+    background-color: #CA2B28 !important;
+    border-radius: 8px;
+    font-size: 0.85rem;
+  }
+
+  .data-pill-color-1 {
+    background-color: #FFDCDB;
+  }
+
+
+  .data-pill-color-2 {
+    background-color: #FAC1BF;
+  }
+
+  .data-pill {
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 0.85rem;
+    color: #444;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rates-footer-info {
+    font-size: 0.9rem;
+
+    p {
+      color: #CA2B28;
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+
+    a {
+      color: #CA2B28;
+
+    }
+
+
+    .last-updated {
+      color: #222222;
+      opacity: 0.6;
+    }
+  }
+
+  .category-pill {
+    background-color: #FFF22F;
+    color: #000;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2px;
+  }
+
+  .disclaimer {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+
+    p {
+      font-size: 16px;
+      line-height: 1.4;
+      color: #272424;
+    }
+  }
+}
+
+.factors-impact-section {
+  padding: 80px 0;
+  background-color: #F3F3F3;
+
+  &.bg-white {
+    background-color: #fff;
+  }
+
+  .container {
+    max-width: 900px;
+  }
+
+  .section-title {
+    color: #CA2B28;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+  }
+
+  .intro-text {
+    font-size: 13.5px;
+    line-height: 1.8;
+    color: #222;
+    margin-bottom: 60px;
+    max-width: 1000px;
+  }
+
+  .factor-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+
+    .icon-wrapper {
+      min-width: 40px;
+      color: #CA2B28;
+      font-size: 26px;
+      line-height: 1;
+      padding-top: 2px;
+    }
+
+    .factor-content {
+      h6 {
+        font-size: 16.5px;
+        font-weight: 700;
+        color: #000;
+        margin-bottom: 5px;
+        line-height: 1.2;
+      }
+
+      p {
+        font-size: 13.5px;
+        line-height: 1.6;
+        color: #222222;
+        margin-bottom: 0;
+        width: 15rem;
+      }
+    }
+  }
+
+  .factor-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.252);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 80%;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      background: #CA2B28;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .factor-content {
+      h6.factor-title {
+        font-size: 16.5px;
+        font-weight: 700;
+        color: #000;
+        margin-bottom: 8px;
+        line-height: 1.2;
+      }
+
+      p.factor-desc {
+        font-size: 13.5px;
+        line-height: 1.6;
+        color: #222;
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+@media (max-width: 576px) {
+  .insurance-item {
+    flex-direction: column;
+
+    .number {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .topBanner {
+    height: 30rem;
+
+    .container {
+      .topSub {
+        padding-bottom: 3rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .topBanner {
+    background-position: center;
+
+    .container {
+      .topSub {
+        padding-bottom: 0rem;
+        align-items: center;
+        justify-content: center;
+
+        .topSub2 {
+          text-align: center;
+
+          .h1 {
+            font-size: 32px;
+            text-align: center;
+          }
+
+          .selectable {
+            justify-content: center;
+          }
+
+          .inps {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+
+  .footUpper {
+    height: 270px;
+    flex-direction: column;
+
+    .left {
+      width: 100%;
+    }
+
+    .right {
+      width: 100%;
+    }
+
+    .clipp {
+      display: none;
+    }
+
+    .contain {
+      .col-lg-6 {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+
+        .icon {
+          transform: translateY(-15px);
+        }
+
+        .h4 {
+          font-size: 40px;
+          margin: 0;
+          transform: translateY(10px);
+        }
+      }
+    }
+  }
+}
+
+// New Coverage Section styles
+
+
+@media only screen and (max-width: 430px) {
+  .topBanner {
+    .container {
+      .topSub {
+        .topSub2 {
+          .h1 {
+            font-size: 26px;
+            margin-bottom: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.vehicle-types-section {
+  padding: 80px 0;
+  background-color: #FFF6F5;
+
+  .container {
+    max-width: 900px;
+  }
+
+  .section-title {
+    color: #CA2B28;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    text-align: left;
+  }
+}
+
+.vehicle-type-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 35px 20px;
+  height: 100%;
+  min-height: 280px; // Gives the taller appearance from the screenshot
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 15px 50px rgba(255, 210, 210, 0.8);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(253, 242, 242, 0.8);
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(255, 180, 180, 1);
+  }
+
+  .icon-wrapper {
+    margin-bottom: 15px;
+
+    i {
+      font-size: 24px;
+      color: #CA2B28;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &:hover .icon-wrapper i {
+    transform: scale(1.1);
+  }
+
+  h6 {
+    color: #151515;
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  p {
+    color: #151515;
+    font-size: 14.5px;
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 400;
+  }
+}
+
+.language-section {
+  background-color: #F3EFEF !important;
+}
+
+.high-risk-section,
+.language-section {
+  padding: 80px 0;
+  background-color: #FFEBEB;
+
+  .container {
+    max-width: 900px;
+  }
+
+  .section-title {
+    color: #CA2B28;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+
+  .intro-text p {
+    color: #272424;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.switch-steps-section {
+  padding: 100px 0 150px;
+  background-color: #fff;
+
+  .container {
+    max-width: 900px;
+  }
+
+  .section-title {
+    color: #CA2B28;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    text-align: left;
+  }
+
+  .switch-steps-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    gap: 30px;
+  }
+
+  .switch-card-wrapper {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+
+    &:nth-child(2) {
+      margin-top: 68px;
+    }
+
+    &:nth-child(3) {
+      margin-top: 136px;
+    }
+
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      display: block;
+      background: url('/assets/images/auto-insurance-arrow.png') no-repeat center center;
+      background-size: contain;
+      width: 127px;
+      height: 39px;
+      top: 1px;
+      right: -149px;
+      z-index: 1;
+    }
+
+    &:nth-child(2)::after {
+      top: 9px;
+      right: -158px;
+
+    }
+  }
+
+  @media (max-width: 991px) {
+    .switch-card-wrapper::after {
+      display: none !important;
+    }
+
+    .switch-steps-grid {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .switch-card-wrapper {
+      margin-top: 0 !important; // Remove stagger on mobile
+    }
+  }
+
+  .switch-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 35px 25px;
+    box-shadow: 0 10px 50px rgba(255, 210, 210, 0.5);
+    transition: all 0.4s ease;
+    height: 100%;
+    border: 1px solid rgba(255, 230, 230, 0.5);
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 70px rgba(255, 180, 180, 0.8);
+    }
+
+    h6 {
+      color: #CA2B28;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 25px;
+      line-height: 1.4;
+    }
+
+    p {
+      color: #333;
+      font-size: 14px;
+      line-height: 1.7;
+      margin: 0;
+      font-weight: 400;
+    }
+  }
+}
+
+.faq-section {
+  max-width: 900px;
+  margin: 0 auto;
+
+  .faq-title {
+    color: #CA2B28;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  .accordion-item {
+    border: none;
+    background: transparent;
+
+    .accordion-button {
+      background-color: #EFEFEF;
+      color: #222;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 12px !important; // Rounded bars
+      padding: 1.5rem 2rem;
+      box-shadow: none;
+
+      // Custom Plus (+) Icon
+      &::after {
+        background-image: none;
+        content: '+';
+        font-size: 2rem;
+        font-weight: 300;
+        color: #666;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: none; // Disable default rotation
+        transition: transform 0.3s ease;
+      }
+
+      &:not(.collapsed) {
+        background-color: #EFEFEF; // Keep gray when open
+        color: #222;
+        box-shadow: none;
+
+        &::after {
+          transform: rotate(45deg); // Turns + into x when open
+        }
+      }
+
+      &:focus {
+        border-color: transparent;
+        box-shadow: none;
+      }
+    }
+
+    .accordion-body {
+      background-color: transparent;
+      padding: 1.5rem 2rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #444;
+
+      ul {
+        list-style-type: disc;
+        margin-top: 10px;
+        padding-left: 20px;
+
+        li {
+          margin-bottom: 8px;
+          color: #444;
+
+          strong {
+            color: #CA2B28;
+          }
+        }
+      }
+    }
+  }
+}
+
+.insurance-steps {
+  max-width: 900px;
+  margin: 0 auto;
+
+  .image-container {
+    height: 100%;
+    min-height: 400px;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+    }
+
+  }
+
+  .section-title {
+    color: #ca2b28;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 30px;
+
+    // Vertical line
+    &::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 10px;
+      bottom: 10px;
+      width: 1px;
+      background-color: #CA2B28;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.4rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .dot {
+        position: absolute;
+        left: -30px;
+        top: 6px;
+        width: 14px;
+        height: 14px;
+        background-color: #ca2b28;
+        border-radius: 50%;
+        border: 3px solid rgba(#ca2b28, 0.2); // Soft outer ring
+        z-index: 2;
+      }
+
+      .content {
+        h3 {
+          font-size: 1.1rem;
+          font-weight: 800;
+          margin-bottom: 0.5rem;
+          color: #222;
+        }
+
+        p {
+          font-size: 0.9rem;
+          color: #222;
+          line-height: 1.6;
+
+          a {
+            color: inherit;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.feature-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  position: relative;
+  padding: 21px 37px 10px 41px;
+  height: 100%;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.238);
+  transition: all 0.25s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  }
+
+  .icon-wrapper {
+    position: absolute;
+    top: -5px;
+    left: -30px;
+    width: 65px;
+    height: 64px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px solid rgba(212, 0, 0, 0.6);
+    z-index: 2;
+
+    img {
+      height: 25px;
+      width: 25px;
+    }
+  }
+
+  .card-content {
+    .card-title {
+      font-size: 20px;
+      font-weight: 500;
+      color: #414141;
+      margin-bottom: 0.7rem;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 5px;
+        margin-top: 6px;
+        background: linear-gradient(90deg,
+            #ca2b28 0%,
+            #ca2b28 89%,
+            transparent 70%,
+            transparent 92%,
+            #ca2b28 80%,
+            #ca2b28 100%);
+        border-radius: 3px;
+      }
+    }
+
+    .card-text {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #555;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.heading {
+  color: #ca2b28;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.texan-choose-image {
+
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.gap-m .row {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2.5rem;
+  row-gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.gap-m .col {
+  flex: 0 0 calc(50% - 1.25rem);
+  max-width: calc(50% - 1.25rem);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.feature-card-height {
+  // height: 170px;
+  height: 100%;
+}
+
+
+// End Why Texan Choose Us Section Styles
+
+@media (max-width: 991px) {
+  .switch-steps-section {
+    padding: 60px 0;
+  }
+
+  .switch-steps-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .switch-card-wrapper {
+    max-width: 450px;
+    margin-top: 0 !important;
+  }
+
+  .connector-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .home-insurance-types .policy-card {
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+
+  /* Resetting Bootstrap zigzag behavior for mobile */
+  .home-insurance-types .row {
+    justify-content: center !important;
+  }
+
+  .home-insurance-types .col-lg-7 {
+    width: 100%;
+  }
+}

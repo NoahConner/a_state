@@ -191,6 +191,11 @@
                       {{ 'HEADER.GROUP_LIFE_INSURANCE' | translate }}
                     </a>
                   </li>
+                  <li>
+                    <a class="dropdown-item" [routerLink]="getRoute('variableLifeInsurance')">
+                      {{ 'HEADER.VARIABLE_LIFE_INSURANCE' | translate }}
+                    </a>
+                  </li>
                 </ul>
               </li>
 
@@ -284,6 +289,21 @@
                       {{ 'HEADER.SHORT_TERM_HEALTH_INSURANCE' | translate }}
                     </a>
                   </li>
+                  <li>
+                    <a class="dropdown-item" [routerLink]="getRoute('individualHealthInsurance')">
+                      {{ 'HEADER.INDIVIDUAL_HEALTH_INSURANCE' | translate }}
+                    </a>
+                    </li>
+                    <li>
+                    <a class="dropdown-item" [routerLink]="getRoute('employerGroupHealthInsurance')">
+                      {{ 'HEADER.EMPLOYER_GROUP_HEALTH_INSURANCE' | translate }}
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" [routerLink]="getRoute('travelHealthInsurance')">
+                      {{ 'HEADER.TRAVEL_HEALTH_INSURANCE' | translate }}
+                    </a>
+                    </li>
                 </ul>
               </li>
 

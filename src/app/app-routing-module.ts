@@ -61,6 +61,10 @@ import { SmallBusinessHealthInsurance } from './pages/health-insurance/small-bus
 import { MedicareSupplementInsurance } from './pages/health-insurance/medicare-supplement-insurance/medicare-supplement-insurance';
 import { DentalVisionInsurance } from './pages/health-insurance/dental-vision-insurance/dental-vision-insurance';
 import { ShortTermHealthInsurance } from './pages/health-insurance/short-term-health-insurance/short-term-health-insurance';
+import { VariableLifeInsurance } from './pages/life-insurance/variable-life-insurance/variable-life-insurance';
+import { IndividualHealthInsurance } from './pages/health-insurance/individual-health-insurance/individual-health-insurance';
+import { EmployerGroupHealthInsurance } from './pages/health-insurance/employer-group-health-insurance/employer-group-health-insurance';
+import { TravelHealthInsurance } from './pages/health-insurance/travel-health-insurance/travel-health-insurance';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -93,6 +97,9 @@ const routes: Routes = [
       { path: 'medicare-supplement-medigap-insurance', component: MedicareSupplementInsurance },
       { path: 'dental-vision-insurance', component: DentalVisionInsurance },
       { path: 'short-term-health-insurance', component: ShortTermHealthInsurance },
+      { path: 'individual-health-insurance', component: IndividualHealthInsurance },
+      { path: 'employer-group-health-insurance', component: EmployerGroupHealthInsurance },
+      { path: 'travel-health-insurance', component: TravelHealthInsurance },
     ]
   },
 
@@ -106,6 +113,7 @@ const routes: Routes = [
       { path: 'final-expense-insurance', component: FinalExpenseInsurance },
       { path: 'term-life-insurance', component: TermLifeInsurance },
       { path: 'group-life-insurance', component: GroupLifeInsurance },
+      { path: 'variable-life-insurance', component: VariableLifeInsurance },
 
     ]
   },
@@ -241,6 +249,7 @@ const routes: Routes = [
           { path: 'seguro-de-gastos-finales', component: FinalExpenseInsurance },
           { path: 'seguro-de-vida-a-término', component: TermLifeInsurance },
           { path: 'seguro-de-vida-grupal', component: GroupLifeInsurance },
+          { path: 'seguro-de-vida-variable', component: VariableLifeInsurance },
 
         ]
       },
@@ -252,6 +261,8 @@ const routes: Routes = [
           { path: 'medicare-supplement-medigap-insurance', component: MedicareSupplementInsurance },
           { path: 'dental-vision-insurance', component: DentalVisionInsurance },
           { path: 'short-term-health-insurance', component: ShortTermHealthInsurance },
+          { path: 'individual-health-insurance', component: IndividualHealthInsurance },
+          { path: 'employer-group-health-insurance', component: EmployerGroupHealthInsurance },
         ]
       },
       { path: 'fianzas', component: SuretyBondInsurance },
@@ -508,5 +519,21 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   shortTermHealthInsurance: {
     en: 'health-insurance/short-term-health-insurance',
     es: 'seguros-de-salud/short-term-health-insurance'
-  }
+  },
+  variableLifeInsurance: {
+    en: 'life-insurance/variable-life-insurance',
+    es: 'seguros-de-vida/seguro-de-vida-variable'
+  },
+  individualHealthInsurance: {
+    en: 'health-insurance/individual-health-insurance',
+    es: 'seguros-de-salud/individual-health-insurance'
+  },
+  employerGroupHealthInsurance: {
+    en: 'health-insurance/employer-group-health-insurance',
+    es: 'seguros-de-salud/employer-group-health-insurance'
+  },
+  travelHealthInsurance: {
+    en: 'health-insurance/travel-health-insurance',
+    es: 'seguros-de-salud/travel-health-insurance'
+  },
 };

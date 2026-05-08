@@ -72,6 +72,10 @@ import { SmallBusinessHealthInsurance } from './pages/health-insurance/small-bus
 import { MedicareSupplementInsurance } from './pages/health-insurance/medicare-supplement-insurance/medicare-supplement-insurance';
 import { DentalVisionInsurance } from './pages/health-insurance/dental-vision-insurance/dental-vision-insurance';
 import { ShortTermHealthInsurance } from './pages/health-insurance/short-term-health-insurance/short-term-health-insurance';
+import { VariableLifeInsurance } from './pages/life-insurance/variable-life-insurance/variable-life-insurance';
+import { IndividualHealthInsurance } from './pages/health-insurance/individual-health-insurance/individual-health-insurance';
+import { EmployerGroupHealthInsurance } from './pages/health-insurance/employer-group-health-insurance/employer-group-health-insurance';
+import { TravelHealthInsurance } from './pages/health-insurance/travel-health-insurance/travel-health-insurance';
 
 @NgModule({
   declarations: [
@@ -138,7 +142,11 @@ import { ShortTermHealthInsurance } from './pages/health-insurance/short-term-he
     SmallBusinessHealthInsurance,
     MedicareSupplementInsurance,
     ShortTermHealthInsurance,
-    DentalVisionInsurance
+    DentalVisionInsurance,
+    VariableLifeInsurance,
+    IndividualHealthInsurance,
+    EmployerGroupHealthInsurance,
+    TravelHealthInsurance,
   ],
   imports: [
     BrowserModule,
