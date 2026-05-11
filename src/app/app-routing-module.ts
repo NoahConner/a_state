@@ -89,7 +89,8 @@ const routes: Routes = [
   // { path: 'homeowners-insurance', component: HomeInsurance },
   // { path: 'commercial-insurance', component: CommercialInsurance },
 
-  { path: 'health-insurance',
+  {
+    path: 'health-insurance',
     children: [
       { path: '', component: HealthInsurance },
       { path: 'family-health-insurance', component: FamilyHealthInsurance },
@@ -253,16 +254,19 @@ const routes: Routes = [
 
         ]
       },
-      { path: 'seguros-de-salud',
+      {
+        path: 'seguros-de-salud',
         children: [
           { path: '', component: HealthInsurance },
-          { path: 'family-health-insurance', component: FamilyHealthInsurance },
-          { path: 'small-business-health-insurance', component: SmallBusinessHealthInsurance },
-          { path: 'medicare-supplement-medigap-insurance', component: MedicareSupplementInsurance },
-          { path: 'dental-vision-insurance', component: DentalVisionInsurance },
-          { path: 'short-term-health-insurance', component: ShortTermHealthInsurance },
-          { path: 'individual-health-insurance', component: IndividualHealthInsurance },
-          { path: 'employer-group-health-insurance', component: EmployerGroupHealthInsurance },
+          { path: 'seguro-de-salud-familiar', component: FamilyHealthInsurance },
+          { path: 'seguro-de-salud-a-corto-plazo', component: SmallBusinessHealthInsurance },
+          { path: 'seguro-medicare-suplementario-medigap', component: MedicareSupplementInsurance },
+          { path: 'seguro-dental-y-de-vision', component: DentalVisionInsurance },
+          { path: 'seguro-de-salud-a-corto-plazo', component: ShortTermHealthInsurance },
+          { path: 'seguro-de-salud-individual', component: IndividualHealthInsurance },
+          { path: 'seguro-de-salud-para-empleadores-y-grupos', component: EmployerGroupHealthInsurance },
+          { path: 'travel-health-insurance', component: TravelHealthInsurance },
+
         ]
       },
       { path: 'fianzas', component: SuretyBondInsurance },
@@ -502,23 +506,23 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   },
   familyHealthInsurance: {
     en: 'health-insurance/family-health-insurance',
-    es: 'seguros-de-salud/family-health-insurance'
+    es: 'seguros-de-salud/seguro-de-salud-familiar'
   },
   smallBusinessHealthInsurance: {
     en: 'health-insurance/small-business-health-insurance',
-    es: 'seguros-de-salud/small-business-health-insurance'
+    es: 'seguros-de-salud/seguro-de-salud-a-corto-plazo'
   },
   medicareSupplementInsurance: {
     en: 'health-insurance/medicare-supplement-medigap-insurance',
-    es: 'seguros-de-salud/medicare-supplement-medigap-insurance'
+    es: 'seguros-de-salud/seguro-medicare-suplementario-medigap'
   },
   dentalVisionInsurance: {
     en: 'health-insurance/dental-vision-insurance',
-    es: 'seguros-de-salud/dental-vision-insurance'
+    es: 'seguros-de-salud/seguro-dental-y-de-vision'
   },
   shortTermHealthInsurance: {
     en: 'health-insurance/short-term-health-insurance',
-    es: 'seguros-de-salud/short-term-health-insurance'
+    es: 'seguros-de-salud/seguro-de-salud-a-corto-plazo'
   },
   variableLifeInsurance: {
     en: 'life-insurance/variable-life-insurance',
@@ -526,11 +530,11 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   },
   individualHealthInsurance: {
     en: 'health-insurance/individual-health-insurance',
-    es: 'seguros-de-salud/individual-health-insurance'
+    es: 'seguros-de-salud/seguro-de-salud-individual'
   },
   employerGroupHealthInsurance: {
     en: 'health-insurance/employer-group-health-insurance',
-    es: 'seguros-de-salud/employer-group-health-insurance'
+    es: 'seguros-de-salud/seguro-de-salud-para-empleadores-y-grupos'
   },
   travelHealthInsurance: {
     en: 'health-insurance/travel-health-insurance',
