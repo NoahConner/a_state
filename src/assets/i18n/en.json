@@ -9,7 +9,7 @@
     "LIFE_INSURANCE": "Life Insurance",
     "COMMERCIAL_INSURANCE": "Commercial Insurance",
     "HEALTH_INSURANCE": "Health Insurance",
-    "SURETY_BOND_INSURANCE": "Surety Bond Insurance",
+    "SURETY_BOND_INSURANCE": "Surety Bonds",
     "RV_MOTORHOME_INSURANCE": "RV & Motorhome Insurance",
     "BOAT_INSURANCE": "Boat Insurance",
     "MOTORCYCLE_INSURANCE": "Motorcycle Insurance",
@@ -1678,97 +1678,258 @@
       {
         "TITLE": "Auto Insurance",
         "ITEMS": [
-          "Motorcycle",
-          "Car",
-          "Boat",
-          "RV & Motorhome",
-          "Classic Car",
-          "Commercial Auto",
-          "SR-22",
-          "ATV & UTV",
-          "Trailer",
-          "Mexican Car",
-          "Rideshare"
+          {
+            "KEY": "carInsurance",
+            "LABEL": "Car"
+          },
+          {
+            "KEY": "motorcycleInsurance",
+            "LABEL": "Motorcycle"
+          },
+          {
+            "KEY": "boatInsurance",
+            "LABEL": "Boat"
+          },
+          {
+            "KEY": "rvInsurance",
+            "LABEL": "RV & Motorhome"
+          },
+          {
+            "KEY": "classicCarInsurance",
+            "LABEL": "Classic Car"
+          },
+          {
+            "KEY": "commercialAutoInsurance",
+            "LABEL": "Commercial Auto"
+          },
+          {
+            "KEY": "sr22Insurance",
+            "LABEL": "SR-22"
+          },
+          {
+            "KEY": "atvAndUtvInsurance",
+            "LABEL": "ATV & UTV"
+          },
+          {
+            "KEY": "trailerInsurance",
+            "LABEL": "Trailer"
+          },
+          {
+            "KEY": "mexicanCarInsurance",
+            "LABEL": "Mexican Car"
+          },
+          {
+            "KEY": "rideshareInsurance",
+            "LABEL": "Rideshare"
+          }
         ]
       },
       {
         "TITLE": "Homeowners Insurance",
         "ITEMS": [
-          "Renters",
-          "Condo",
-          "Commercial Property",
-          "Manufactured Home / Mobile Home",
-          "Landlord",
-          "Flood",
-          "Earthquake"
+          {
+            "KEY": "rentersInsurance",
+            "LABEL": "Renters"
+          },
+          {
+            "KEY": "condoInsurance",
+            "LABEL": "Condo"
+          },
+          {
+            "KEY": "mobileHomeInsurance",
+            "LABEL": "Mobile Home"
+          },
+          {
+            "KEY": "landlordInsurance",
+            "LABEL": "Landlord"
+          },
+          {
+            "KEY": "floodInsurance",
+            "LABEL": "Flood"
+          },
+          {
+            "KEY": "earthquakeInsurance",
+            "LABEL": "Earthquake"
+          }
         ]
       },
       {
         "TITLE": "Commercial Insurance",
         "ITEMS": [
-          "Professional Liability (E&O)",
-          "General Liability",
-          "Workers’ Compensation",
-          "Commercial Property",
-          "Commercial Auto",
-          "Business Owner’s Policy (BOP)",
-          "Employment Practices Liability (EPLI)",
-          "Cyber Liability",
-          "Builders Risk / Course of Construction",
-          "Directors & Officers (D&O) Liability"
+          {
+            "KEY": "professionalLiabilityInsurance",
+            "LABEL": "Professional Liability (E&O)"
+          },
+          {
+            "KEY": "generalLiabilityInsurance",
+            "LABEL": "General Liability"
+          },
+          {
+            "KEY": "workersCompensationInsurance",
+            "LABEL": "Workers' Compensation"
+          },
+          {
+            "KEY": "commercialPropertyInsurance",
+            "LABEL": "Commercial Property"
+          },
+          {
+            "KEY": "commercialAutoInsurance",
+            "LABEL": "Commercial Auto"
+          },
+          {
+            "KEY": "businessOwnerInsurance",
+            "LABEL": "Business Owner's Policy (BOP)"
+          },
+          {
+            "KEY": "employmentPracticesLiabilityInsurance",
+            "LABEL": "Employment Practices Liability (EPLI)"
+          },
+          {
+            "KEY": "cyberLiabilityInsurance",
+            "LABEL": "Cyber Liability"
+          },
+          {
+            "KEY": "buildersRiskInsurance",
+            "LABEL": "Builders Risk / Course of Construction"
+          },
+          {
+            "KEY": "directorsOfficersLiabilityInsurance",
+            "LABEL": "Directors & Officers (D&O) Liability"
+          }
         ]
       },
       {
         "TITLE": "Life Insurance",
         "ITEMS": [
-          "Term Life",
-          "Whole Life",
-          "Universal Life",
-          "Final Expense",
-          "Variable Life",
-          "Group Life"
+          {
+            "KEY": "termLifeInsurance",
+            "LABEL": "Term Life"
+          },
+          {
+            "KEY": "wholeLifeInsurance",
+            "LABEL": "Whole Life"
+          },
+          {
+            "KEY": "universalLifeInsurance",
+            "LABEL": "Universal Life"
+          },
+          {
+            "KEY": "finalExpenseInsurance",
+            "LABEL": "Final Expense"
+          },
+          {
+            "KEY": "variableLifeInsurance",
+            "LABEL": "Variable Life"
+          },
+          {
+            "KEY": "groupLifeInsurance",
+            "LABEL": "Group Life"
+          }
         ]
       },
       {
         "TITLE": "Health Insurance",
         "ITEMS": [
-          "Individual Health",
-          "Family Health",
-          "Small Business Health",
-          "Employer & Group Health",
-          "Travel Health",
-          "Medicare Supplement / Medigap",
-          "Short-Term Health",
-          "Dental & Vision",
-          "ACA / Marketplace Plans"
+          {
+            "KEY": "individualHealthInsurance",
+            "LABEL": "Individual Health"
+          },
+          {
+            "KEY": "familyHealthInsurance",
+            "LABEL": "Family Health"
+          },
+          {
+            "KEY": "smallBusinessHealthInsurance",
+            "LABEL": "Small Business Health"
+          },
+          {
+            "KEY": "employerGroupHealthInsurance",
+            "LABEL": "Employer & Group Health"
+          },
+          {
+            "KEY": "travelHealthInsurance",
+            "LABEL": "Travel Health"
+          },
+          {
+            "KEY": "medicareSupplementInsurance",
+            "LABEL": "Medicare Supplement / Medigap"
+          },
+          {
+            "KEY": "shortTermHealthInsurance",
+            "LABEL": "Short-Term Health"
+          },
+          {
+            "KEY": "dentalVisionInsurance",
+            "LABEL": "Dental & Vision"
+          },
+          {
+            "KEY": "acaMarketplacePlansInsurance",
+            "LABEL": "ACA / Marketplace Plans"
+          }
         ]
       },
       {
         "TITLE": "Surety Bonds",
         "ITEMS": [
-          "Performance Bonds / Payment",
-          "Commercial Surety",
-          "Bid",
-          "Notary"
+          {
+            "KEY": "",
+            "LABEL": "Performance Bonds / Payment"
+          },
+          {
+            "KEY": "",
+            "LABEL": "Commercial Surety"
+          },
+          {
+            "KEY": "",
+            "LABEL": "Bid"
+          },
+          {
+            "KEY": "",
+            "LABEL": "Notary"
+          }
         ]
       },
       {
         "TITLE": "Additional Insurance",
         "ITEMS": [
-          "Pet",
-          "Title",
-          "Title Transfer"
+          {
+            "KEY": "",
+            "LABEL": "Pet"
+          },
+          {
+            "KEY": "",
+            "LABEL": "Title"
+          },
+          {
+            "KEY": "",
+            "LABEL": "Title Transfer"
+          }
         ]
       }
     ],
     "QUICK_LINKS": {
       "TITLE": "Quick Links",
       "LINKS": [
-        "Home",
-        "About Us",
-        "Insurance Service",
-        "Contact Us",
-        "Get a Quote"
+        {
+          "KEY": "/",
+          "LABEL": "Home"
+        },
+        {
+          "KEY": "about",
+          "LABEL": "About Us"
+        },
+        {
+          "KEY": "insuranceServices",
+          "LABEL": "Insurance Service"
+        },
+        {
+          "KEY": "contact",
+          "LABEL": "Contact Us"
+        },
+        {
+          "KEY": "getAQuote",
+          "LABEL": "Get a Quote"
+        }
       ]
     },
     "CONTACT": {
@@ -1805,7 +1966,6 @@
       "HOURS": "Mon – Sat: 9AM – 7PM Sunday: Closed",
       "EMAIL": "info@astateins.com",
       "PHONE": [
-        "(713) 357-7771",
         "(713) 357-7771"
       ]
     },

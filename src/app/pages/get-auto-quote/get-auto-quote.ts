@@ -118,6 +118,10 @@ export class GetAutoQuote {
 
     if (this.currentStep < this.totalSteps) {
       this.currentStep++;
+    } else if (this.currentStep === this.totalSteps) {
+      setTimeout(() => {
+        document.querySelector('.quote-summary-container')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 0);
     }
   }
 
@@ -132,6 +136,9 @@ export class GetAutoQuote {
       return;
     }
     this.currentStep = step;
+    setTimeout(() => {
+      document.querySelector('.quote-wrapper')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 0);
   }
 
   private validateStep(step: number): boolean {

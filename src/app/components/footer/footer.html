@@ -1,10 +1,10 @@
 <div class="footerMain">
   <div class="container">
     <div class="fupper row">
-      <div class="col" *ngFor="let section of 'FOOTER.INSURANCE_MENU' | translate | keyvalue">
-        <div class="head1">{{ section.value.TITLE }}</div>
-        <div class="subH" *ngFor="let item of section.value.ITEMS">
-          <a href="#">{{ item }}</a>
+      <div class="col" *ngFor="let section of 'FOOTER.INSURANCE_MENU' | translate">
+        <div class="head1">{{ section.TITLE }}</div>
+        <div class="subH" *ngFor="let item of section.ITEMS">
+          <a [routerLink]="getRoute(item.KEY)">{{ item.LABEL }}</a>
         </div>
       </div>
     </div>
@@ -40,7 +40,7 @@
         <div class="col-lg-6 offset-lg-3">
           <div class="homeNav">
             <div class="subupH" *ngFor="let link of 'FOOTER.QUICK_LINKS.LINKS' | translate">
-              <a href="#">{{ link }}</a>
+              <a [routerLink]="getRoute(link.KEY)">{{ link.LABEL }}</a>
             </div>
           </div>
         </div>
@@ -132,7 +132,7 @@
                 <a href="#" class="uph">10547 S Post Oak Rd Houston Tx 77035</a>
               </div>
             </div>
-
+            <!-- 
             <div class="col-lg-3 col-sm-6">
               <div class="uuper">
                 <div class="icon">
@@ -144,7 +144,7 @@
                 <div class="icon"></div>
                 <a href="#" class="uph">9421 Cullen Blvd ste B Houston TX 77051</a>
               </div>
-            </div>
+            </div> -->
 
             <div class="col-lg-3 col-sm-6">
               <div class="uuper">
@@ -204,8 +204,12 @@
       </div>
       <div class="block1">
         <div class="imagess">
-          <img src="/assets/images/insta.png" alt="Instagram" />
-          <img src="/assets/images/fb.png" alt="Facebook" />
+          <a href="https://www.instagram.com/astateinsurance/" target="_blank" rel="noopener noreferrer">
+            <img src="assets/images/Instagram.png" alt="Instagram" />
+          </a>
+          <a href="https://www.facebook.com/astateinsurancetx" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/images/fb.png" alt="Facebook" />
+          </a>
         </div>
         <div class="b1">
           <div class="icn">

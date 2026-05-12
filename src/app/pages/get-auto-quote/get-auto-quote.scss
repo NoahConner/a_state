@@ -18,7 +18,7 @@
         margin-bottom: 5rem;
       }
 
-      .heroDesc{
+      .heroDesc {
         font-size: 1.2rem;
         color: #fff;
         font-weight: 400;
@@ -105,22 +105,24 @@
       font-size: 35px;
     }
 
-    .vehicle-title{
-        color: #CA2B28;
+    .vehicle-title {
+      color: #CA2B28;
       font-weight: 600;
     }
-    .add-vehicle{
-        color: #CA2B28;
+
+    .add-vehicle {
+      color: #CA2B28;
       font-weight: 600;
+      cursor: pointer;
 
 
     }
 
     .remove-vehicle {
-  cursor: pointer;
-  font-size: 1.2rem;
-  margin-left: 10px;
-}
+      cursor: pointer;
+      font-size: 1.2rem;
+      margin-left: 10px;
+    }
 
   }
 
