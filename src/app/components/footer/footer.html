@@ -2,9 +2,9 @@
   <div class="container">
     <div class="fupper row">
       <div class="col" *ngFor="let section of 'FOOTER.INSURANCE_MENU' | translate">
-        <div class="head1">{{ section.TITLE }}</div>
+        <div class="head1">{{ section.TITLE | translate }}</div>
         <div class="subH" *ngFor="let item of section.ITEMS">
-          <a [routerLink]="getRoute(item.KEY)">{{ item.LABEL }}</a>
+          <a [routerLink]="getRoute(item.KEY)">{{ item.LABEL | translate }}</a>
         </div>
       </div>
     </div>

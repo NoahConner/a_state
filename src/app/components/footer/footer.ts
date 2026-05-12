@@ -9,7 +9,7 @@ import { routeTranslations } from '../../app-routing-module';
   styleUrl: './footer.scss',
 })
 export class Footer {
-  constructor(public languageService: Language) {}
+  constructor(public languageService: Language) { }
   currentLang: 'en' | 'es' = 'es';
 
   changeLang(lang: string) {
@@ -23,6 +23,10 @@ export class Footer {
 
     if (!slug) return ['/']; // fallback to homepage
 
-    return lang === 'en' ? [slug] : [lang, slug];
+    const segments = slug.split('/');
+
+    return lang === 'en'
+      ? ['/', ...segments]
+      : ['/', lang, ...segments];
   }
 }

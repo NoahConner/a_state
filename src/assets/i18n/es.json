@@ -27684,97 +27684,258 @@
       {
         "TITLE": "Seguro de Auto",
         "ITEMS": [
-          "Motocicleta",
-          "Coche",
-          "Barco",
-          "RV y Casa Rodante",
-          "Coche Clásico",
-          "Auto Comercial",
-          "SR-22",
-          "ATV y UTV",
-          "Remolque",
-          "Coche Mexicano",
-          "Rideshare"
+          {
+            "KEY": "carInsurance",
+            "LABEL": "Coche"
+          },
+          {
+            "KEY": "motorcycleInsurance",
+            "LABEL": "Motocicleta"
+          },
+          {
+            "KEY": "boatInsurance",
+            "LABEL": "Barco"
+          },
+          {
+            "KEY": "rvInsurance",
+            "LABEL": "RV y Casa Rodante"
+          },
+          {
+            "KEY": "classicCarInsurance",
+            "LABEL": "Coche Clásico"
+          },
+          {
+            "KEY": "commercialAutoInsurance",
+            "LABEL": "Auto Comercial"
+          },
+          {
+            "KEY": "sr22Insurance",
+            "LABEL": "SR-22"
+          },
+          {
+            "KEY": "atvAndUtvInsurance",
+            "LABEL": "ATV y UTV"
+          },
+          {
+            "KEY": "trailerInsurance",
+            "LABEL": "Remolque"
+          },
+          {
+            "KEY": "mexicanCarInsurance",
+            "LABEL": "Coche Mexicano"
+          },
+          {
+            "KEY": "rideshareInsurance",
+            "LABEL": "Rideshare"
+          }
         ]
       },
       {
         "TITLE": "Seguro de Hogar",
         "ITEMS": [
-          "Inquilinos",
-          "Condominio",
-          "Propiedad Comercial",
-          "Casa Manufacturada / Móvil",
-          "Propietario",
-          "Inundación",
-          "Terremoto"
+          {
+            "KEY": "rentersInsurance",
+            "LABEL": "Inquilinos"
+          },
+          {
+            "KEY": "condoInsurance",
+            "LABEL": "Condominio"
+          },
+          {
+            "KEY": "mobileHomeInsurance",
+            "LABEL": "Casa Manufacturada / Móvil"
+          },
+          {
+            "KEY": "landlordInsurance",
+            "LABEL": "Propietario"
+          },
+          {
+            "KEY": "floodInsurance",
+            "LABEL": "Inundación"
+          },
+          {
+            "KEY": "earthquakeInsurance",
+            "LABEL": "Terremoto"
+          }
         ]
       },
       {
         "TITLE": "Seguro Comercial",
         "ITEMS": [
-          "Responsabilidad Profesional (E&O)",
-          "Responsabilidad General",
-          "Compensación de Trabajadores",
-          "Propiedad Comercial",
-          "Auto Comercial",
-          "Póliza de Propietario de Negocio (BOP)",
-          "Responsabilidad Laboral (EPLI)",
-          "Responsabilidad Cibernética",
-          "Riesgo de Constructores / Curso de Construcción",
-          "Responsabilidad de Directores y Ejecutivos (D&O)"
+          {
+            "KEY": "professionalLiabilityInsurance",
+            "LABEL": "Responsabilidad Profesional (E&O)"
+          },
+          {
+            "KEY": "generalLiabilityInsurance",
+            "LABEL": "Responsabilidad General"
+          },
+          {
+            "KEY": "workersCompensationInsurance",
+            "LABEL": "Compensación de Trabajadores"
+          },
+          {
+            "KEY": "commercialPropertyInsurance",
+            "LABEL": "Propiedad Comercial"
+          },
+          {
+            "KEY": "commercialAutoInsurance",
+            "LABEL": "Auto Comercial"
+          },
+          {
+            "KEY": "businessOwnerInsurance",
+            "LABEL": "Póliza de Propietario de Negocio (BOP)"
+          },
+          {
+            "KEY": "employmentPracticesLiabilityInsurance",
+            "LABEL": "Responsabilidad Laboral (EPLI)"
+          },
+          {
+            "KEY": "cyberLiabilityInsurance",
+            "LABEL": "Responsabilidad Cibernética"
+          },
+          {
+            "KEY": "buildersRiskInsurance",
+            "LABEL": "Riesgo de Constructores / Curso de Construcción"
+          },
+          {
+            "KEY": "directorsOfficersLiabilityInsurance",
+            "LABEL": "Responsabilidad de Directores y Ejecutivos (D&O)"
+          }
         ]
       },
       {
         "TITLE": "Seguro de Vida",
         "ITEMS": [
-          "Vida a Término",
-          "Vida Entera",
-          "Vida Universal",
-          "Gastos Finales",
-          "Vida Variable",
-          "Vida Grupal"
+          {
+            "KEY": "termLifeInsurance",
+            "LABEL": "Vida a Término"
+          },
+          {
+            "KEY": "wholeLifeInsurance",
+            "LABEL": "Vida Entera"
+          },
+          {
+            "KEY": "universalLifeInsurance",
+            "LABEL": "Vida Universal"
+          },
+          {
+            "KEY": "finalExpenseInsurance",
+            "LABEL": "Gastos Finales"
+          },
+          {
+            "KEY": "variableLifeInsurance",
+            "LABEL": "Vida Variable"
+          },
+          {
+            "KEY": "groupLifeInsurance",
+            "LABEL": "Vida Grupal"
+          }
         ]
       },
       {
         "TITLE": "Seguro de Salud",
         "ITEMS": [
-          "Salud Individual",
-          "Salud Familiar",
-          "Salud para Pequeñas Empresas",
-          "Salud para Empleadores y Grupos",
-          "Salud de Viaje",
-          "Suplemento Medicare / Medigap",
-          "Salud a Corto Plazo",
-          "Dental y Visión",
-          "Planes ACA / Marketplace"
+          {
+            "KEY": "individualHealthInsurance",
+            "LABEL": "Salud Individual"
+          },
+          {
+            "KEY": "familyHealthInsurance",
+            "LABEL": "Salud Familiar"
+          },
+          {
+            "KEY": "smallBusinessHealthInsurance",
+            "LABEL": "Salud para Pequeñas Empresas"
+          },
+          {
+            "KEY": "employerGroupHealthInsurance",
+            "LABEL": "Salud para Empleadores y Grupos"
+          },
+          {
+            "KEY": "travelHealthInsurance",
+            "LABEL": "Salud de Viaje"
+          },
+          {
+            "KEY": "medicareSupplementInsurance",
+            "LABEL": "Suplemento Medicare / Medigap"
+          },
+          {
+            "KEY": "shortTermHealthInsurance",
+            "LABEL": "Salud a Corto Plazo"
+          },
+          {
+            "KEY": "dentalVisionInsurance",
+            "LABEL": "Dental y Visión"
+          },
+          {
+            "KEY": "acaMarketplacePlansInsurance",
+            "LABEL": "Planes ACA / Marketplace"
+          }
         ]
       },
       {
         "TITLE": "Fianzas",
         "ITEMS": [
-          "Fianzas de Cumplimiento / Pago",
-          "Fianza Comercial",
-          "Oferta",
-          "Notaría"
+          {
+            "KEY": "",
+            "LABEL": "Fianzas de Cumplimiento / Pago"
+          },
+          {
+            "KEY": "",
+            "LABEL": "Fianza Comercial"
+          },
+          {
+            "KEY": "",
+            "LABEL": "Oferta"
+          },
+          {
+            "KEY": "",
+            "LABEL": "Notaría"
+          }
         ]
       },
       {
         "TITLE": "Seguros Adicionales",
         "ITEMS": [
-          "Mascotas",
-          "Título",
-          "Transferencia de Título"
+          {
+            "KEY": "",
+            "LABEL": "Mascotas"
+          },
+          {
+            "KEY": "",
+            "LABEL": "Título"
+          },
+          {
+            "KEY": "",
+            "LABEL": "Transferencia de Título"
+          }
         ]
       }
     ],
     "QUICK_LINKS": {
-      "TITLE": "Enlaces Rápidos",
+      "TITLE": "Quick Links",
       "LINKS": [
-        "Inicio",
-        "Sobre Nosotros",
-        "Servicios de Seguro",
-        "Contacto",
-        "Obtener Cotización"
+        {
+          "KEY": "/",
+          "LABEL": "Home"
+        },
+        {
+          "KEY": "about",
+          "LABEL": "About Us"
+        },
+        {
+          "KEY": "insuranceServices",
+          "LABEL": "Insurance Service"
+        },
+        {
+          "KEY": "contact",
+          "LABEL": "Contact Us"
+        },
+        {
+          "KEY": "getAQuote",
+          "LABEL": "Get a Quote"
+        }
       ]
     },
     "CONTACT": {
@@ -27811,7 +27972,6 @@
       "HOURS": "Lun – Sáb: 9AM – 7PM Dom: Cerrado",
       "EMAIL": "info@astateins.com",
       "PHONE": [
-        "(713) 357-7771",
         "(713) 357-7771"
       ]
     },
