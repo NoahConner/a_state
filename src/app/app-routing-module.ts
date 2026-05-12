@@ -65,6 +65,7 @@ import { VariableLifeInsurance } from './pages/life-insurance/variable-life-insu
 import { IndividualHealthInsurance } from './pages/health-insurance/individual-health-insurance/individual-health-insurance';
 import { EmployerGroupHealthInsurance } from './pages/health-insurance/employer-group-health-insurance/employer-group-health-insurance';
 import { TravelHealthInsurance } from './pages/health-insurance/travel-health-insurance/travel-health-insurance';
+import { AcaMarketplacePlansInsurance } from './pages/health-insurance/aca-marketplace-plans-insurance/aca-marketplace-plans-insurance';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -101,6 +102,7 @@ const routes: Routes = [
       { path: 'individual-health-insurance', component: IndividualHealthInsurance },
       { path: 'employer-group-health-insurance', component: EmployerGroupHealthInsurance },
       { path: 'travel-health-insurance', component: TravelHealthInsurance },
+      { path: 'aca-marketplace-plans', component: AcaMarketplacePlansInsurance },
     ]
   },
 
@@ -248,7 +250,7 @@ const routes: Routes = [
           { path: 'seguro-de-vida-entero', component: WholeLifeInsurance },
           { path: 'seguro-de-vida-universal', component: UniversalLifeInsurance },
           { path: 'seguro-de-gastos-finales', component: FinalExpenseInsurance },
-          { path: 'seguro-de-vida-a-término', component: TermLifeInsurance },
+          { path: 'seguro-de-vida-a-plazo', component: TermLifeInsurance },
           { path: 'seguro-de-vida-grupal', component: GroupLifeInsurance },
           { path: 'seguro-de-vida-variable', component: VariableLifeInsurance },
 
@@ -259,13 +261,14 @@ const routes: Routes = [
         children: [
           { path: '', component: HealthInsurance },
           { path: 'seguro-de-salud-familiar', component: FamilyHealthInsurance },
-          { path: 'seguro-de-salud-a-corto-plazo', component: SmallBusinessHealthInsurance },
+          { path: 'seguro-de-salud-para-pequenos-negocios', component: SmallBusinessHealthInsurance },
           { path: 'seguro-medicare-suplementario-medigap', component: MedicareSupplementInsurance },
           { path: 'seguro-dental-y-de-vision', component: DentalVisionInsurance },
           { path: 'seguro-de-salud-a-corto-plazo', component: ShortTermHealthInsurance },
           { path: 'seguro-de-salud-individual', component: IndividualHealthInsurance },
           { path: 'seguro-de-salud-para-empleadores-y-grupos', component: EmployerGroupHealthInsurance },
-          { path: 'travel-health-insurance', component: TravelHealthInsurance },
+          { path: 'seguro-de-salud-para-viajes', component: TravelHealthInsurance },
+          { path: 'planes-aca-mercado-de-seguros', component: AcaMarketplacePlansInsurance },
 
         ]
       },
@@ -498,7 +501,7 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   },
   termLifeInsurance: {
     en: 'life-insurance/term-life-insurance',
-    es: 'seguros-de-vida/seguro-de-vida-a-término'
+    es: 'seguros-de-vida/seguro-de-vida-a-plazo'
   },
   groupLifeInsurance: {
     en: 'life-insurance/group-life-insurance',
@@ -510,7 +513,7 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   },
   smallBusinessHealthInsurance: {
     en: 'health-insurance/small-business-health-insurance',
-    es: 'seguros-de-salud/seguro-de-salud-a-corto-plazo'
+    es: 'seguros-de-salud/seguro-de-salud-para-pequenos-negocios'
   },
   medicareSupplementInsurance: {
     en: 'health-insurance/medicare-supplement-medigap-insurance',
@@ -538,6 +541,10 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   },
   travelHealthInsurance: {
     en: 'health-insurance/travel-health-insurance',
-    es: 'seguros-de-salud/travel-health-insurance'
+    es: 'seguros-de-salud/seguro-de-salud-para-viajes'
+  },
+  acaMarketplacePlansInsurance: {
+    en: 'health-insurance/aca-marketplace-plans',
+    es: 'seguros-de-salud/planes-aca-mercado-de-seguros'
   },
 };

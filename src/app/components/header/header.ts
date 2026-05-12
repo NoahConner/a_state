@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Language } from '../../services/language';
 import { routeTranslations } from '../../app-routing-module';
 
@@ -8,12 +8,17 @@ import { routeTranslations } from '../../app-routing-module';
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
-export class Header {
+export class Header implements OnInit {
   constructor(public languageService: Language) { }
   currentLang: 'en' | 'es' = 'es';
 
+  ngOnInit() {
+    this.currentLang = this.languageService.getCurrentLanguage() as 'en' | 'es';
+  }
+
   changeLang(lang: string) {
     this.languageService.setLanguage(lang);
+    this.currentLang = lang as 'en' | 'es';
   }
 
   getRoute(page: string): string[] {

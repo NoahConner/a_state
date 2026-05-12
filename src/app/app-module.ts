@@ -76,6 +76,7 @@ import { VariableLifeInsurance } from './pages/life-insurance/variable-life-insu
 import { IndividualHealthInsurance } from './pages/health-insurance/individual-health-insurance/individual-health-insurance';
 import { EmployerGroupHealthInsurance } from './pages/health-insurance/employer-group-health-insurance/employer-group-health-insurance';
 import { TravelHealthInsurance } from './pages/health-insurance/travel-health-insurance/travel-health-insurance';
+import { AcaMarketplacePlansInsurance } from './pages/health-insurance/aca-marketplace-plans-insurance/aca-marketplace-plans-insurance';
 
 @NgModule({
   declarations: [
@@ -147,6 +148,7 @@ import { TravelHealthInsurance } from './pages/health-insurance/travel-health-in
     IndividualHealthInsurance,
     EmployerGroupHealthInsurance,
     TravelHealthInsurance,
+    AcaMarketplacePlansInsurance,
   ],
   imports: [
     BrowserModule,

@@ -49,8 +49,9 @@
     "VARIABLE_LIFE_INSURANCE": "Variable Life Insurance",
     "INDIVIDUAL_HEALTH_INSURANCE": "Individual Health Insurance",
     "EMPLOYER_GROUP_HEALTH_INSURANCE": "Employer Group Health Insurance",
-      "TRAVEL_HEALTH_INSURANCE": "Travel Health Insurance",
-    "OFFICE_LOCATOR": "Office Locator",
+    "TRAVEL_HEALTH_INSURANCE": "Travel Health Insurance",
+    "ACA_MARKETPLACE_PLANS_INSURANCE": "ACA Marketplace Plans",
+    "OFFICE_LOCATOR": "OfficeLocator",
     "GET_A_QUOTE": "Get a Quote",
     "LANGUAGE": "Language"
   },
@@ -30337,37 +30338,37 @@
         "DESC2": "Our Spanish-speaking agents are here to guide you through the entire process, from comparing plans to choosing the right coverage for your needs. Whether you are looking for individual, family, or employer-based options, we make sure you fully understand your benefits without confusion or stress, so you can protect your health with confidence."
       }
     },
- "ASTATE_DIFFERENTIATORS": {
-    "HEADER": {
-      "TITLE": "What Makes A-State Insurance Different"
-    },
-    "LIST": {
-      "LICENSED_BROKERS": {
-        "TITLE": "Texas Licensed Brokers",
-        "DESCRIPTION": "Our Texas-licensed brokers compare top insurance carriers to find the best dental coverage options at competitive rates."
+    "ASTATE_DIFFERENTIATORS": {
+      "HEADER": {
+        "TITLE": "What Makes A-State Insurance Different"
       },
-      "HISPANIC_LATINO_FRIENDLY": {
-        "TITLE": "Hispanic & Latino Friendly",
-        "DESCRIPTION": "We proudly serve Hispanic and Latino communities with clear, respectful guidance in their preferred language."
-      },
-      "YEARS_SERVING": {
-        "TITLE": "20+ Years Serving Texans",
-        "DESCRIPTION": "With over 20 years of experience, we understand Texas families' insurance needs and help them find reliable, affordable."
-      },
-      "CUSTOM_COVERAGE": {
-        "TITLE": "Custom Coverage Plans",
-        "DESCRIPTION": "We create customized dental and vision plans based on your budget, lifestyle, and health needs for better protection."
-      },
-      "ONLINE_LOCAL": {
-        "TITLE": "Online & Local",
-        "DESCRIPTION": "Get help online or visit our local office for personalized support and flexible access to insurance guidance."
-      },
-      "MULTILINGUAL_AGENTS": {
-        "TITLE": "Multilingual Agents",
-        "DESCRIPTION": "Our multilingual agents speak English, Spanish, and Hindi, ensuring clear communication and easy understanding."
+      "LIST": {
+        "LICENSED_BROKERS": {
+          "TITLE": "Texas Licensed Brokers",
+          "DESCRIPTION": "Our Texas-licensed brokers compare top insurance carriers to find the best dental coverage options at competitive rates."
+        },
+        "HISPANIC_LATINO_FRIENDLY": {
+          "TITLE": "Hispanic & Latino Friendly",
+          "DESCRIPTION": "We proudly serve Hispanic and Latino communities with clear, respectful guidance in their preferred language."
+        },
+        "YEARS_SERVING": {
+          "TITLE": "20+ Years Serving Texans",
+          "DESCRIPTION": "With over 20 years of experience, we understand Texas families' insurance needs and help them find reliable, affordable."
+        },
+        "CUSTOM_COVERAGE": {
+          "TITLE": "Custom Coverage Plans",
+          "DESCRIPTION": "We create customized dental and vision plans based on your budget, lifestyle, and health needs for better protection."
+        },
+        "ONLINE_LOCAL": {
+          "TITLE": "Online & Local",
+          "DESCRIPTION": "Get help online or visit our local office for personalized support and flexible access to insurance guidance."
+        },
+        "MULTILINGUAL_AGENTS": {
+          "TITLE": "Multilingual Agents",
+          "DESCRIPTION": "Our multilingual agents speak English, Spanish, and Hindi, ensuring clear communication and easy understanding."
+        }
       }
-    }
-  },
+    },
     "INSURANCE_STEPS": {
       "HEADER": {
         "TITLE": "Get Covered in 4 Simple Steps"
@@ -30979,7 +30980,7 @@
       "DESCRIPTION": "Getting started is simple and takes just a minute. Enter your full name and phone number so our licensed A-State Insurance advisors can connect with you. Select the policy type that fits your needs, such as whole, universal, or variable options. Once submitted, A-State Insurance experts compare multiple top carriers and prepare tailored quotes for you. You'll get clear guidance, honest advice, and help choosing the right coverage with no pressure, just smart, informed decisions."
     }
   },
-   "INDIVIDUAL_HEALTH_INSURANCE": {
+  "INDIVIDUAL_HEALTH_INSURANCE": {
     "BANNER": {
       "TITLE_LINE1": "Best & Affordable Individual Health Insurance in",
       "TITLE_LINE2": "Texas — Starting from",
@@ -31543,7 +31544,7 @@
       "DESCRIPTION": "Getting a free individual health insurance quote in Texas is easy with A-State Insurance. Start by providing your name and phone number, and our team will reach out to offer guidance. We'll help you explore various plans, including Health Maintenance Organization, Preferred Provider Organization, Exclusive Provider Organization, High-Deductible Health Plan with HSA, and more. Once you choose the plan, we'll guide you through the activation process. Contact us today to get your free quote!"
     }
   },
-   "EMPLOYER_GROUP_HEALTH_INSURANCE": {
+  "EMPLOYER_GROUP_HEALTH_INSURANCE": {
     "BANNER": {
       "TITLE_LINE1": "Best & Affordable Employer & Group Health Insurance in",
       "TITLE_LINE2": "Texas — Starting from",
@@ -32669,6 +32670,619 @@
     "FREE_QUOTE": {
       "HEADER": "Get a Free Travel Health Insurance Quote in Texas",
       "DESCRIPTION": "Get your free travel health insurance quote in Texas today by simply following a few steps. First, choose the type of coverage that suits your needs: Single-Trip, Multi-Trip (Annual), Long-Stay (Expatriate), Group, or Medical Evacuation and Repatriation. Then, fill out the form with your full name and phone number. Once submitted, our team will contact you promptly to provide your quote and help you find the best plan tailored to your travel needs. Start today and travel with confidence!"
+    }
+  },
+  "ACA_MARKETPLACE": {
+    "BANNER": {
+      "TITLE_LINE1": "Best & Affordable ACA / Marketplace Plans in",
+      "TITLE_LINE2": "Texas",
+      "TITLE_LINE3": "",
+      "CHIPS": {
+        "BRONZE": "Bronze Plan",
+        "SILVER": "Silver Plan",
+        "GOLD": "Gold Plan",
+        "PLATINUM": "Platinum Plan",
+        "CATASTROPHIC": "Catastrophic Plan",
+        "OTHER": "Other"
+      },
+      "FORM": {
+        "FULL_NAME": "Full Name",
+        "PHONE": "Phone Number",
+        "BUTTON": "Get Quote"
+      }
+    },
+    "WHY_DO_YOU_NEED": {
+      "TITLE": "What Is ACA / Marketplace Health Insurance and Why Do You Need It?",
+      "DESC": "ACA / Marketplace health insurance is a type of health coverage created under the Affordable Care Act to help individuals and families buy insurance that meets minimum federal coverage standards. These plans are available during Open Enrollment or Special Enrollment periods and can include subsidies (tax credits) to reduce monthly premiums and out-of-pocket costs, depending on household income. These plans are widely used because they offer flexible options across different budget levels and health needs.",
+      "DESC1": "",
+      "SUB_TITLE": "Below are the key reasons why ACA Marketplace coverage is important:",
+      "LIST": [
+        {
+          "TITLE": "Protection from High Medical Costs",
+          "TEXT": "Healthcare expenses in the U.S. can be extremely high without insurance. ACA Marketplace plans help protect you financially by covering a large portion of hospital bills, emergency care, and medical treatments."
+        },
+        {
+          "TITLE": "Coverage for Essential Health Services",
+          "TEXT": "These plans include a wide range of essential benefits such as doctor visits, emergency care, hospitalization, prescription drugs, maternity care, mental health services, and preventive screenings."
+        },
+        {
+          "TITLE": "Access to Financial Assistance (Subsidies)",
+          "TEXT": "Many individuals and families qualify for income-based subsidies that significantly lower monthly premiums and reduce overall healthcare costs, making coverage more affordable."
+        },
+        {
+          "TITLE": "Guaranteed Coverage for Pre-Existing Conditions",
+          "TEXT": "ACA plans cannot deny coverage or charge higher premiums based on pre-existing health conditions, ensuring fair access to insurance for everyone."
+        },
+        {
+          "TITLE": "Preventive Care at Low or No Cost",
+          "TEXT": "Most ACA plans cover preventive services like vaccinations, annual checkups, and screenings at little to no cost, helping you stay healthy and avoid serious medical issues in the future."
+        }
+      ]
+    },
+    "HOW_IT_WORKS": {
+      "TITLE": "Why Are So Many Texans Still Uninsured — and What Can the ACA Do About It?",
+      "DESC1": "Many Texans remain uninsured due to a combination of factors, including high private insurance costs, lack of employer-sponsored coverage, and limited awareness of available financial assistance. Texas also has one of the highest uninsured rates in the country, partly because it did not expand Medicaid under the Affordable Care Act. As a result, many low- and middle-income individuals fall into a \"coverage gap,\" where they earn too much to qualify for Medicaid but still cannot afford standard private health insurance.",
+      "DESC2": "The ACA Marketplace helps address this issue by offering structured health insurance plans with income-based subsidies that can significantly reduce monthly premiums. Through options like ACA marketplace plans in Texas, eligible individuals and families can access affordable coverage that includes essential health benefits and protections for pre-existing conditions. This makes it possible for more Texans to secure reliable healthcare coverage, even if they don't have access to employer insurance or Medicaid."
+    },
+    "COVERAGES": {
+      "STANDARD": {
+        "TITLE": "What Does ACA / Marketplace Health Insurance Cover in Texas?",
+        "DESC": "ACA / Marketplace health insurance plans in Texas are designed to provide medical coverage for individuals and families. These plans include essential health benefits required under federal law, helping protect you from high healthcare costs while giving access to preventive care, emergency services, prescriptions, maternity care, mental health treatment, and many other medical services.",
+        "LIST": [
+          {
+            "TITLE": "Doctor Visits and Preventive Care",
+            "DESC": "ACA plans help cover routine checkups, wellness exams, vaccinations, and annual screenings. You can also visit primary care doctors and specialists for ongoing health concerns, helping detect illnesses early and maintain better long-term health.",
+            "ICON": "fas fa-stethoscope"
+          },
+          {
+            "TITLE": "Emergency and Urgent Care Services",
+            "DESC": "Coverage includes emergency room visits, ambulance services, and urgent care treatment for sudden illnesses or injuries. These services help reduce major out-of-pocket costs when immediate medical attention is needed, day or night.",
+            "ICON": "fas fa-ambulance"
+          },
+          {
+            "TITLE": "Hospital and Inpatient Care",
+            "DESC": "Plans help pay for surgeries, overnight hospital stays, inpatient treatment, and related medical services. Coverage may include room charges, nursing care, physician services, and recovery support after a serious illness or medical procedure.",
+            "ICON": "fas fa-hospital"
+          },
+          {
+            "TITLE": "Prescription Drug Coverage",
+            "DESC": "Most plans include coverage for generic and brand-name medications prescribed by your doctor. Prescription benefits help lower the cost of essential medicines used to manage chronic conditions, infections, and many other ongoing health needs.",
+            "ICON": "fas fa-prescription"
+          },
+          {
+            "TITLE": "Mental Health and Substance Use Treatment",
+            "DESC": "Coverage includes counseling, therapy, psychiatric care, and treatment programs for substance use disorders. These benefits support individuals dealing with anxiety, depression, addiction, stress-related conditions, and behavioral health issues.",
+            "ICON": "fas fa-brain"
+          },
+          {
+            "TITLE": "Maternity and Newborn Care",
+            "DESC": "Plans help cover prenatal visits, labor, delivery, postpartum care, and newborn health services. This coverage supports both mother and baby throughout pregnancy and after birth, helping families better manage important healthcare expenses.",
+            "ICON": "fas fa-baby"
+          },
+          {
+            "TITLE": "Pediatric Services Including Dental and Vision",
+            "DESC": "Children enrolled in ACA plans can receive medical care, vaccinations, routine checkups, and developmental services. Many plans also include pediatric dental and vision benefits to support healthy growth, learning, and long-term wellness needs.",
+            "ICON": "fas fa-child"
+          },
+          {
+            "TITLE": "Lab Tests, Imaging, and Diagnostic Services",
+            "DESC": "Coverage includes blood work, X-rays, MRIs, CT scans, ultrasounds, and other diagnostic testing ordered by your doctor. These services help identify medical conditions early so treatment can begin quickly and health risks can be reduced.",
+            "ICON": "fas fa-x-ray"
+          },
+          {
+            "TITLE": "Rehabilitative and Habilitative Services",
+            "DESC": "Plans may cover physical therapy, occupational therapy, speech therapy, and medical equipment needed after illness or injury. These services help individuals regain daily functioning, mobility, independence, and essential life skills over time.",
+            "ICON": "fas fa-wheelchair"
+          }
+        ]
+      },
+      "TYPES": {
+        "TITLE": "Types of ACA / Marketplace Plans in Texas",
+        "DESC": "",
+        "LIST": [
+          {
+            "TITLE": "Bronze Plans",
+            "DESC": "Lower monthly premiums with higher deductibles. Best for healthy individuals needing basic protection and emergency coverage."
+          },
+          {
+            "TITLE": "Silver Plans",
+            "DESC": "Balanced monthly insurance premiums and out-of-pocket costs. Popular for subsidy eligibility and cost-sharing reduction benefits."
+          },
+          {
+            "TITLE": "Gold Plans",
+            "DESC": "Higher monthly insurance premiums with lower deductibles and copays. Ideal for people needing regular medical care and prescriptions."
+          },
+          {
+            "TITLE": "Platinum Plans",
+            "DESC": "Highest monthly premiums but lowest out-of-pocket expenses. Good for individuals expecting frequent healthcare services yearly."
+          },
+          {
+            "TITLE": "Catastrophic Plans",
+            "DESC": "Designed for young adults or hardship exemptions. Offers low premiums with high deductibles and emergency protection coverage."
+          },
+          {
+            "TITLE": "HMO Marketplace Plans",
+            "DESC": "Requires using in-network doctors and referrals for specialists. Usually offers lower monthly premiums and overall healthcare costs."
+          },
+          {
+            "TITLE": "PPO Marketplace Plans",
+            "DESC": "Provides flexibility to visit out-of-network providers without referrals. Monthly premiums and costs are usually higher overall."
+          },
+          {
+            "TITLE": "EPO Marketplace Plans",
+            "DESC": "Covers services only within the provider network, except emergencies. No referrals are usually needed for specialist appointments."
+          },
+          {
+            "TITLE": "POS Marketplace Plans",
+            "DESC": "Combines features of HMO and PPO plans. Members can use out-of-network care with referrals while keeping their in-network costs lower."
+          }
+        ]
+      }
+    },
+    "NOT_COVERED": {
+      "HEADER": {
+        "TITLE": "What Does ACA / Marketplace Plans NOT Cover in Texas?",
+        "DESC": "ACA / Marketplace plans in Texas cover many essential healthcare services, but certain treatments and services are usually excluded or only partially covered. Limitations can vary by carrier and plan type. Understanding what is not included helps you avoid unexpected medical expenses and choose additional coverage if needed for specific healthcare needs or specialized treatments."
+      },
+      "LIST": {
+        "ADULT_DENTAL_VISION": {
+          "TITLE": "Adult Dental and Vision Care",
+          "DESC": "Most ACA plans do not include routine adult dental cleanings, fillings, eye exams, glasses, or contact lenses. Separate dental or vision insurance may be needed to fully cover these healthcare expenses for adults.",
+          "ICON": "fas fa-tooth"
+        },
+        "COSMETIC": {
+          "TITLE": "Cosmetic Procedures and Elective Surgery",
+          "DESC": "Procedures performed mainly for appearance improvement are usually not covered under ACA plans. Treatments such as facelifts, cosmetic injections, and elective surgeries without medical necessity are commonly excluded from benefits.",
+          "ICON": "fas fa-exclamation-circle"
+        },
+        "LONG_TERM_CARE": {
+          "TITLE": "Long-Term Care and Custodial Services",
+          "DESC": "ACA plans generally do not pay for extended nursing home stays, assisted living, or custodial care services. Help with daily living activities like bathing, eating, and dressing is usually not included under standard coverage.",
+          "ICON": "fas fa-home"
+        },
+        "WEIGHT_LOSS": {
+          "TITLE": "Weight Loss Programs and Bariatric Surgery (in most plans)",
+          "DESC": "Many plans do not cover gym memberships, commercial weight loss programs, or bariatric surgery unless medically necessary. Coverage rules vary by carrier and may require prior approval and strict health qualifications first.",
+          "ICON": "fas fa-weight-scale"
+        },
+        "INFERTILITY": {
+          "TITLE": "Infertility Treatments and Surrogacy",
+          "DESC": "Services related to fertility treatments, in vitro fertilization, and surrogacy arrangements are often excluded from ACA coverage. Some limited diagnostic testing may be covered, but advanced reproductive procedures usually are not.",
+          "ICON": "fas fa-flask"
+        },
+        "HEARING_AIDS": {
+          "TITLE": "Hearing Aids and Routine Hearing Exams",
+          "DESC": "Routine hearing tests for adults and hearing aid devices are commonly excluded from many ACA Marketplace plans. Coverage for hearing-related services may be limited unless required due to a specific medical condition or injury.",
+          "ICON": "fas fa-ear-listen"
+        },
+        "ALTERNATIVE_MEDICINE": {
+          "TITLE": "Acupuncture and Alternative Medicine (in most plans)",
+          "DESC": "Alternative treatments such as acupuncture, naturopathy, herbal therapy, and holistic care are not commonly covered under most ACA plans. Some insurers may offer limited benefits through optional supplemental coverage plans.",
+          "ICON": "fas fa-leaf"
+        },
+        "OUT_OF_NETWORK": {
+          "TITLE": "Out-of-Network Care (on HMO and EPO plans)",
+          "DESC": "HMO and EPO insurance coverage plans usually require members to use doctors and hospitals within the approved network. Non-emergency care received outside the network may not be covered, leaving patients responsible for the full cost.",
+          "ICON": "fas fa-globe"
+        },
+        "TRANSPORTATION": {
+          "TITLE": "Non-Emergency Medical Transportation",
+          "DESC": "Transportation services for routine medical visits are generally not included in standard ACA Marketplace plans. Coverage for rides to doctor appointments may only be available through Medicaid or certain specialized healthcare programs.",
+          "ICON": "fas fa-car"
+        },
+        "EXPERIMENTAL": {
+          "TITLE": "Experimental or Investigational Treatments",
+          "DESC": "Treatments considered experimental or not yet approved by medical standards are usually excluded from coverage plans. Insurance companies may deny payment for procedures, drugs, or therapies lacking proven clinical effectiveness.",
+          "ICON": "fas fa-microscope"
+        }
+      }
+    },
+    "HEALTH_INSURANCE_COST": {
+      "TITLE": "How Much Do ACA / Marketplace Plans Cost in Texas?",
+      "DESC1": "ACA/Marketplace plans in Texas typically vary based on age, income, location, and the metal tier selected. On average, monthly premiums start at around $350 for Bronze plans and can reach $550 for Gold or higher coverage levels before subsidies. Many Texans qualify for federal tax credits, which can significantly reduce these costs depending on household income and eligibility factors.",
+      "DESC2": "Texas ACA rates are generally close to the national average but can be slightly higher than in some states due to regional pricing, insurer competition, and healthcare costs. For example, benchmark silver plan premiums in Texas average around $600 per month, which is comparable to several Southern states but higher than in lower-cost states like California or Pennsylvania. Overall, Texas remains a mid-to-high cost state for Marketplace coverage, but subsidies play a major role in making plans affordable for most eligible households."
+    },
+    "RATES_BY_TIER": {
+      "HEADER": {
+        "TITLE": "Average ACA / Marketplace Rates by Plan Type (Metal Tier) in Texas",
+        "DESC": "ACA/Marketplace plan rates in Texas vary by metal tier because each plan covers healthcare costs differently. Bronze plans usually have lower monthly premiums but higher deductibles, while Gold and Platinum plans cost more monthly and reduce out-of-pocket expenses. Rates are also affected by coverage levels, provider networks, prescription benefits, and expected medical usage."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "PLAN_TIER": "Plan Tier",
+          "MONTHLY_PREMIUM": "Monthly Premium",
+          "DEDUCTIBLE": "Deductible",
+          "OUT_OF_POCKET_MAX": "Out-of-Pocket Max"
+        },
+        "LIST": {
+          "BRONZE": {
+            "PLAN_TIER": "Bronze",
+            "MONTHLY_PREMIUM": "$360–$420",
+            "DEDUCTIBLE": "$7,500",
+            "OUT_OF_POCKET_MAX": "$9,450"
+          },
+          "SILVER": {
+            "PLAN_TIER": "Silver",
+            "MONTHLY_PREMIUM": "$480–$540",
+            "DEDUCTIBLE": "$4,000",
+            "OUT_OF_POCKET_MAX": "$8,900"
+          },
+          "GOLD": {
+            "PLAN_TIER": "Gold",
+            "MONTHLY_PREMIUM": "$560–$620",
+            "DEDUCTIBLE": "$1,500",
+            "OUT_OF_POCKET_MAX": "$6,500"
+          }
+        }
+      },
+      "SOURCE": "Source:",
+      "LAST_UPDATED": "Last Updated: March 2026",
+      "DISCLAIMER_LABEL": "Disclaimer:",
+      "DISCLAIMER_TEXT": "The information provided on this page is for general informational purposes only and may not reflect the most current updates. Coverage requirements, rates, and laws are subject to change. Please consult a licensed insurance agent for the most accurate and up-to-date information."
+    },
+    "FAMILY_VS_INDIVIDUAL": {
+      "HEADER": {
+        "TITLE": "ACA / Marketplace Plan vs. Other Health Insurance Options in Texas",
+        "DESC": "ACA / Marketplace plans offer comprehensive health coverage with essential benefits, subsidy eligibility, and protection for pre-existing conditions. Compared to employer plans, Medicaid, Medicare, and short-term insurance, ACA plans provide flexible options for individuals and families who need reliable healthcare coverage without relying on employer-sponsored or government program eligibility."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Factor",
+          "ACA_MARKETPLACE": "ACA Marketplace Plan",
+          "EMPLOYER_GROUP": "Employer Group Plan",
+          "MEDICAID": "Medicaid",
+          "MEDICARE": "Medicare",
+          "SHORT_TERM": "Short-Term Health Plan"
+        },
+        "LIST": {
+          "WHO_FOR": {
+            "FEATURE": "Who it's for",
+            "ACA_MARKETPLACE": "Individuals & families",
+            "EMPLOYER_GROUP": "W-2 employees",
+            "MEDICAID": "Low-income individuals & families",
+            "MEDICARE": "Adults 65+ or disabled",
+            "SHORT_TERM": "Temporary gap coverage"
+          },
+          "PREMIUM_SUBSIDY": {
+            "FEATURE": "Premium subsidy available",
+            "ACA_MARKETPLACE": "Yes",
+            "EMPLOYER_GROUP": "No",
+            "MEDICAID": "No",
+            "MEDICARE": "No",
+            "SHORT_TERM": "No"
+          },
+          "PRE_EXISTING": {
+            "FEATURE": "Pre-existing conditions covered",
+            "ACA_MARKETPLACE": "Yes",
+            "EMPLOYER_GROUP": "Yes",
+            "MEDICAID": "Yes",
+            "MEDICARE": "Yes",
+            "SHORT_TERM": "No"
+          },
+          "ESSENTIAL_BENEFITS": {
+            "FEATURE": "Essential health benefits required",
+            "ACA_MARKETPLACE": "Yes",
+            "EMPLOYER_GROUP": "Yes",
+            "MEDICAID": "Yes",
+            "MEDICARE": "Yes",
+            "SHORT_TERM": "No"
+          },
+          "COST_REDUCTION": {
+            "FEATURE": "Income-based cost reduction",
+            "ACA_MARKETPLACE": "Yes",
+            "EMPLOYER_GROUP": "No",
+            "MEDICAID": "Yes",
+            "MEDICARE": "Partial",
+            "SHORT_TERM": "No"
+          },
+          "ENROLLMENT": {
+            "FEATURE": "Enrollment period required",
+            "ACA_MARKETPLACE": "Yes",
+            "EMPLOYER_GROUP": "Yes",
+            "MEDICAID": "No (rolling)",
+            "MEDICARE": "Yes",
+            "SHORT_TERM": "No (anytime)"
+          },
+          "EMPLOYER_CONTRIBUTION": {
+            "FEATURE": "Employer contributes to the premium",
+            "ACA_MARKETPLACE": "No",
+            "EMPLOYER_GROUP": "Yes",
+            "MEDICAID": "No",
+            "MEDICARE": "No",
+            "SHORT_TERM": "No"
+          },
+          "DRUG_COVERAGE": {
+            "FEATURE": "Prescription drug coverage",
+            "ACA_MARKETPLACE": "Yes",
+            "EMPLOYER_GROUP": "Varies",
+            "MEDICAID": "Yes",
+            "MEDICARE": "Part D only",
+            "SHORT_TERM": "Rarely"
+          },
+          "MENTAL_HEALTH": {
+            "FEATURE": "Mental health coverage is required",
+            "ACA_MARKETPLACE": "Yes",
+            "EMPLOYER_GROUP": "Yes",
+            "MEDICAID": "Yes",
+            "MEDICARE": "Yes",
+            "SHORT_TERM": "No"
+          },
+          "TEXAS_AVAILABILITY": {
+            "FEATURE": "Texas availability",
+            "ACA_MARKETPLACE": "Statewide",
+            "EMPLOYER_GROUP": "Employer-dependent",
+            "MEDICAID": "Income-qualified",
+            "MEDICARE": "Age/disability-qualified",
+            "SHORT_TERM": "Statewide"
+          }
+        }
+      }
+    },
+    "FACTORS_IMPACT": {
+      "HEADER": {
+        "TITLE": "Factors That Impact Your ACA / Marketplace Plans Rates in Texas",
+        "DESC": "ACA / Marketplace plan rates in Texas are influenced by several key factors that determine your monthly premium and overall cost. These include your age, household income, family size, tobacco use, location within Texas, chosen metal tier, and plan type. Subsidy eligibility and annual income changes can also significantly increase or reduce what you pay each month for coverage."
+      },
+      "LIST": {
+        "AGE": {
+          "TITLE": "Age",
+          "DESC": "Older applicants usually pay higher ACA premiums since age directly impacts health risk and insurance pricing."
+        },
+        "INCOME": {
+          "TITLE": "Household Income and Subsidy Eligibility",
+          "DESC": "Income determines subsidy amount, directly affecting monthly ACA premium coverage costs and savings."
+        },
+        "HOUSEHOLD_SIZE": {
+          "TITLE": "Household Size",
+          "DESC": "More family members can increase subsidy eligibility and affect overall plan costs in marketplace plans."
+        },
+        "METAL_TIER": {
+          "TITLE": "Plan Metal Tier Selected",
+          "DESC": "Bronze, Silver, Gold, or Platinum tiers change premiums and out-of-pocket costs based on coverage level."
+        },
+        "PLAN_TYPE": {
+          "TITLE": "Plan Type (HMO, PPO, EPO, POS)",
+          "DESC": "Insurance plan structure affects network flexibility, referrals, and monthly premium pricing differences."
+        },
+        "TOBACCO": {
+          "TITLE": "Tobacco Use",
+          "DESC": "Tobacco users often pay higher premiums due to increased health risks and insurance cost adjustments."
+        },
+        "COUNTY": {
+          "TITLE": "County of Residence",
+          "DESC": "Location affects coverage pricing, as healthcare costs and insurer networks vary across counties."
+        },
+        "ENROLLED_COUNT": {
+          "TITLE": "Number of People Enrolled on the Plan",
+          "DESC": "Adding more family members increases total cost, but can improve subsidy eligibility and overall ACA Marketplace savings."
+        },
+        "AVAILABLE_CARRIERS": {
+          "TITLE": "Available Carriers in Your Region",
+          "DESC": "Insurance companies differ by region, offering varied pricing, provider networks, benefits, and plans."
+        },
+        "INCOME_CHANGES": {
+          "TITLE": "Annual Income Changes That Affect Your Tax Credit",
+          "DESC": "Any change in income can adjust your ACA subsidy amount, increasing or decreasing your monthly premium and total costs."
+        }
+      }
+    },
+    "DISCOUNT_FACTORS": {
+      "HEADER": {
+        "TITLE": "How to Maximize Your Subsidies and Lower Your Monthly Premium",
+        "DESC": "Maximizing ACA / Marketplace savings in Texas depends on how accurately you report income and choose the right plan. Subsidies are based on household income, so updating your details can help reduce your premiums. Selecting Silver plans may unlock cost-sharing reductions, while comparing carriers, choosing HMO options, and adding eligible dependents can further lower your monthly healthcare costs."
+      },
+      "LIST": {
+        "REPORT_INCOME": {
+          "TITLE": "Report Your Income Accurately to Get the Right Tax Credit",
+          "DESC": "Report exact household income to ensure correct ACA subsidy eligibility and avoid repayment issues later."
+        },
+        "SILVER_PLAN": {
+          "TITLE": "Choose a Silver Plan to Unlock Cost-Sharing Reductions (CSR)",
+          "DESC": "Silver plans may qualify for CSR benefits, lowering deductibles, copays, and overall healthcare costs for eligible households."
+        },
+        "ADD_DEPENDENTS": {
+          "TITLE": "Add Dependents to Your Plan to Reduce Per-Person Cost",
+          "DESC": "Including dependents can increase subsidy eligibility and may lower per-person costs through adjusted size calculations."
+        },
+        "SUBSIDY_CLIFF": {
+          "TITLE": "Avoid the \"Subsidy Cliff\"",
+          "DESC": "Keep income within eligible ACA ranges to avoid a sudden loss of tax credits, which can sharply increase monthly premiums."
+        },
+        "HMO_EPO": {
+          "TITLE": "Select an HMO or EPO Plan for Lower Monthly Premiums",
+          "DESC": "HMO and EPO plans usually offer lower premiums by limiting provider networks and requiring in-network care only."
+        },
+        "HIGH_DEDUCTIBLE": {
+          "TITLE": "Choose a Higher Deductible Plan If You're Generally Healthy",
+          "DESC": "Higher deductible plans reduce monthly premiums and work best if you rarely need frequent medical services or prescriptions."
+        },
+        "PREVENTIVE_CARE": {
+          "TITLE": "Take Advantage of Free Preventive Care to Avoid Larger Bills",
+          "DESC": "Use the included preventive services, such as checkups and screenings, to detect issues early and reduce future healthcare expenses."
+        },
+        "UPDATE_APP": {
+          "TITLE": "Update Your Application When Your Income or Household Changes",
+          "DESC": "Report any changes to your income or household immediately to keep your subsidies accurate and avoid coverage or tax issues later."
+        },
+        "COMPARE_CARRIERS": {
+          "TITLE": "Compare All Available Carriers in Your County",
+          "DESC": "Different insurers offer different rates and networks, so comparing carriers helps you find better coverage at lower costs."
+        },
+        "INDEPENDENT_AGENT": {
+          "TITLE": "Work with an Independent Agent to Find the Best Plan for Your Budget",
+          "DESC": "Independent agents compare multiple ACA options to find the most affordable plan with the best benefits for your needs."
+        }
+      }
+    },
+    "AGENT_COMPARISON": {
+      "HEADER": {
+        "TITLE": "Independent Insurance Agency vs. Captive Agent: Why Choice Saves You Money",
+        "DESC": "An independent insurance agency gives Texans access to multiple carriers, helping them compare ACA/Marketplace plans and find better rates that fit their budget and needs. In contrast, a captive agent works with only one company, limiting options. Independent agents can better match subsidies, coverage levels, and networks, often saving money by offering more flexible health insurance choices overall."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Feature",
+          "INDEPENDENT": "A-State Insurance (Independent Agent)",
+          "CAPTIVE": "Captive/Single-Carrier Agent"
+        },
+        "LIST": {
+          "COMPARES_CARRIERS": {
+            "FEATURE": "Compares multiple carriers",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "No"
+          },
+          "SHOPS_TIERS": {
+            "FEATURE": "Shops all metal tiers across carriers",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "No"
+          },
+          "SUBSIDY_ASSIST": {
+            "FEATURE": "Subsidy and tax credit calculation assistance",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "Limited"
+          },
+          "CSR_EXPLAIN": {
+            "FEATURE": "Explains cost-sharing reductions (CSR)",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "Limited"
+          },
+          "LOWEST_PREMIUM": {
+            "FEATURE": "Identifies the lowest premium for your income level",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "No"
+          },
+          "BILINGUAL": {
+            "FEATURE": "Bilingual enrollment assistance",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "Varies"
+          },
+          "LOCAL_EXPERTISE": {
+            "FEATURE": "Local Texas expertise",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "Varies"
+          },
+          "SPECIAL_ENROLLMENT": {
+            "FEATURE": "Helps during Special Enrollment Periods",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "Limited"
+          },
+          "ONGOING_SUPPORT": {
+            "FEATURE": "Ongoing support after enrollment",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "Limited"
+          },
+          "COVERAGE_GAP": {
+            "FEATURE": "Explains the Texas coverage gap",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "Rarely"
+          },
+          "INCOME_CHANGE_UPDATE": {
+            "FEATURE": "Updates your plan when income changes",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "No"
+          },
+          "COST_TO_YOU": {
+            "FEATURE": "Cost to you",
+            "INDEPENDENT": "Free",
+            "CAPTIVE": "Free"
+          }
+        }
+      }
+    },
+    "GROWING_FAMILY": {
+      "HEADER": {
+        "TITLE": "Lost Your Job or Coverage? Here's What the ACA Allows in Texas"
+      },
+      "CONTENT": {
+        "DESC1": "Losing your job or health coverage in Texas does not mean you have to go without insurance. Under the ACA, a loss of employer coverage qualifies you for a Special Enrollment Period, allowing you to sign up for a Marketplace plan outside the regular enrollment window. This ensures you can quickly secure health coverage without waiting for Open Enrollment.",
+        "DESC2": "During this time, you may also qualify for subsidies based on your income, helping reduce monthly premiums and out-of-pocket costs. ACA plans also guarantee coverage for pre-existing conditions, so you can maintain continuous protection even after losing job-based insurance."
+      }
+    },
+    "LANGUAGE_SUPPORT": {
+      "HEADER": {
+        "TITLE": "Hablamos Español / We Speak Your Language"
+      },
+      "CONTENT": {
+        "DESC1": "At A-State Insurance, we understand that clear communication is essential when it comes to your health coverage. That's why our team proudly offers full bilingual support for Spanish and English speakers. From explaining ACA/Marketplace plans to helping you compare options and complete enrollment, we ensure you fully understand every step of the process without confusion or language barriers.",
+        "DESC2": "Hablamos Español means you are never alone when choosing your health insurance in Texas. Our licensed agents are here to answer your questions, explain subsidies, and guide you through plan options in a language you're most comfortable with. Whether you're enrolling for the first time or switching plans, we make the process simple, clear, and stress-free for you and your family."
+      }
+    },
+    "ASTATE_DIFFERENTIATORS": {
+      "HEADER": {
+        "TITLE": "What Makes A-State Insurance Different"
+      },
+      "LIST": {
+        "LICENSED_BROKERS": {
+          "TITLE": "Texas Licensed Brokers",
+          "DESCRIPTION": "Fully licensed in Texas, ensuring trusted guidance, compliant advice, and accurate ACA Marketplace enrollment support always."
+        },
+        "HISPANIC_LATINO_FRIENDLY": {
+          "TITLE": "Hispanic & Latino Friendly",
+          "DESCRIPTION": "Focused on serving Hispanic and Latino families with culturally aware guidance, making insurance simple and understandable."
+        },
+        "YEARS_SERVING": {
+          "TITLE": "20+ Years Serving Texans",
+          "DESCRIPTION": "Over two decades of experience helping Texans find affordable health coverage tailored to different needs and budgets."
+        },
+        "CUSTOM_COVERAGE": {
+          "TITLE": "Custom Coverage Plans",
+          "DESCRIPTION": "We compare multiple ACA options to design personalized coverage that matches your health needs and financial situation."
+        },
+        "ONLINE_LOCAL": {
+          "TITLE": "Online & Local",
+          "DESCRIPTION": "Get help online or in person, giving you flexible access to support whenever you need assistance with your coverage."
+        },
+        "MULTILINGUAL_AGENTS": {
+          "TITLE": "Multilingual Agents",
+          "DESCRIPTION": "Our team speaks multiple languages to ensure clear communication and easy understanding of your health insurance options."
+        }
+      }
+    },
+    "INSURANCE_STEPS": {
+      "HEADER": {
+        "TITLE": "Get Covered in 4 Simple Steps"
+      },
+      "STEPS": {
+        "REACH_OUT": {
+          "TITLE": "Step 1 - Reach Out",
+          "DESCRIPTION": "Contact us to start your ACA Marketplace journey and share your basic health insurance needs."
+        },
+        "GET_ADVICE": {
+          "TITLE": "Step 2 - Get Advice",
+          "DESCRIPTION": "We review your options, subsidies, and help you understand the plans available for your situation."
+        },
+        "PICK_PLAN": {
+          "TITLE": "Step 3 - Pick Your Plan",
+          "DESCRIPTION": "Compare ACA plans and choose coverage that fits your budget, doctors, and healthcare requirements."
+        },
+        "WE_GOT_YOU": {
+          "TITLE": "Step 4 - We've Got You",
+          "DESCRIPTION": "We complete your enrollment and provide ongoing support for claims, updates, and plan changes."
+        }
+      }
+    },
+    "SWITCH_STEPS": {
+      "HEADER": {
+        "TITLE": "How to Switch Your ACA / Marketplace Plans to A-State Insurance"
+      },
+      "STEPS": {
+        "STEP_1": {
+          "TITLE": "Step 1: Get Your Free Comparison Quote",
+          "DESCRIPTION": "Start by contacting A-State Insurance to get a free ACA / Marketplace plan comparison in Texas. We review your income, household, and needs to find subsidies and affordable coverage options tailored to your situation."
+        },
+        "STEP_2": {
+          "TITLE": "Step 2: Pick Your Plan and Activate",
+          "DESCRIPTION": "We help you compare ACA plans, including costs, benefits, and networks. Once you choose the best option, we guide you through enrollment and activate your coverage quickly and correctly with full support at every step."
+        },
+        "STEP_3": {
+          "TITLE": "Step 3: Cancel Your Old Policy (We'll Help!)",
+          "DESCRIPTION": "Once your new ACA plan is active, we will help you safely cancel your previous insurance. This ensures no coverage gaps or double payments while smoothly transitioning your health insurance in Texas."
+        }
+      }
+    },
+    "FREE_QUOTE": {
+      "HEADER": "Get a Free ACA / Marketplace Plans Quote in Texas",
+      "DESCRIPTION": "To get a free ACA / Marketplace plan quote in Texas, simply select your preferred plan type, such as Bronze, Silver, Gold, Platinum, Catastrophic, or Other, and fill out the form with your full name and phone number. Once submitted, our licensed agents will review your details, check subsidy eligibility, and compare available Marketplace options. We will then contact you to explain your best coverage choices, estimated costs, and help you enroll in the right plan based on your budget and needs."
     }
   }
 }
