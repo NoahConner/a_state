@@ -67,6 +67,9 @@ import { EmployerGroupHealthInsurance } from './pages/health-insurance/employer-
 import { TravelHealthInsurance } from './pages/health-insurance/travel-health-insurance/travel-health-insurance';
 import { AcaMarketplacePlansInsurance } from './pages/health-insurance/aca-marketplace-plans-insurance/aca-marketplace-plans-insurance';
 import { PerformanceBondsPaymentBonds } from './pages/surety-bond-insurance/performance-bonds-payment-bonds/performance-bonds-payment-bonds';
+import { CommercialSuretyBonds } from './pages/surety-bond-insurance/commercial-surety-bonds /commercial-surety-bonds';
+import { BidBonds } from './pages/surety-bond-insurance/bid-bonds/bid-bonds';
+import { NotaryBonds } from './pages/surety-bond-insurance/notary-bonds/notary-bonds';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -112,6 +115,9 @@ const routes: Routes = [
     children: [
       { path: '', component: SuretyBondInsurance },
       { path: 'performance-bonds-payment-bonds', component: PerformanceBondsPaymentBonds },
+      { path: 'commercial-surety-bonds', component: CommercialSuretyBonds },
+      { path: 'bid-bonds', component: BidBonds },
+      { path: 'notary-bonds', component: NotaryBonds },
     ]
    },
   {
@@ -279,10 +285,13 @@ const routes: Routes = [
 
         ]
       },
-      { path: 'fianzas', component: SuretyBondInsurance,
+      { path: 'fianzas',
         children: [
           { path: '', component: SuretyBondInsurance },
           { path: 'fianzas-de-cumplimiento-y-pago', component: PerformanceBondsPaymentBonds },
+          { path: 'fianzas-comerciales', component: CommercialSuretyBonds },
+          { path: 'fianzas-de-licitacion', component: BidBonds },
+          { path: 'fianzas-notariales', component: NotaryBonds },
         ]
       },
       { path: 'nuestras-ubicaciones', component: OurLocations, runGuardsAndResolvers: 'always' },
@@ -562,5 +571,17 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   performanceBondsPaymentBonds: {
     en: 'surety-bonds/performance-bonds-payment-bonds',
     es: 'fianzas/fianzas-de-cumplimiento-y-pago'
-  }
+  },
+  commercialSuretyBonds: {
+    en: 'surety-bonds/commercial-surety-bonds',
+    es: 'fianzas/fianzas-comerciales'
+  },
+  bidBonds: {
+    en: 'surety-bonds/bid-bonds',
+    es: 'fianzas/fianzas-de-licitacion'
+  },
+  notaryBonds: {
+    en: 'surety-bonds/notary-bonds',
+    es: 'fianzas/fianzas-notariales'
+  },
 };

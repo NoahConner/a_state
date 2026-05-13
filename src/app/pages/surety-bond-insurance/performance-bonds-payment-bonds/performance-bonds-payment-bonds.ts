@@ -20,107 +20,88 @@ export class PerformanceBondsPaymentBonds {
     return result;
   }
   chips = [
-    { name: 'ACA_MARKETPLACE.BANNER.CHIPS.BRONZE', icon: 'fas fa-car' },
-    { name: 'ACA_MARKETPLACE.BANNER.CHIPS.SILVER', icon: 'fas fa-house' },
-    { name: 'ACA_MARKETPLACE.BANNER.CHIPS.GOLD', icon: 'fas fa-building' },
-    { name: 'ACA_MARKETPLACE.BANNER.CHIPS.PLATINUM', icon: 'fas fa-heart' },
-    { name: 'ACA_MARKETPLACE.BANNER.CHIPS.CATASTROPHIC', icon: 'fas fa-notes-medical' },
-    { name: 'ACA_MARKETPLACE.BANNER.CHIPS.OTHER', icon: 'fas fa-file-contract' },
+    { name: 'BOND_MARKETPLACE.BANNER.CHIPS.FEDERAL', icon: 'fas fa-car' },
+    { name: 'BOND_MARKETPLACE.BANNER.CHIPS.STATE_MUNICIPAL', icon: 'fas fa-house' },
+    { name: 'BOND_MARKETPLACE.BANNER.CHIPS.SUBDIVISION', icon: 'fas fa-building' },
+    { name: 'BOND_MARKETPLACE.BANNER.CHIPS.SITE_IMPROVEMENT', icon: 'fas fa-heart' },
+    { name: 'BOND_MARKETPLACE.BANNER.CHIPS.SUPPLY_MATERIAL', icon: 'fas fa-notes-medical' },
+    { name: 'BOND_MARKETPLACE.BANNER.CHIPS.OTHER', icon: 'fas fa-file-contract' },
   ];
-
-
-
-  ageRates = [
-    { age: 30, men: "$489.60", women: "$589.21" },
-    { age: 40, men: "$695.60", women: "$820.63" },
-    { age: 50, men: "$1,036.40", women: "$1,228.79" },
-    { age: 60, men: "$1,606.71", women: "$1,969.73" },
-    { age: 70, men: "$2,804.58", women: "$3,371.75" }
-  ];
-
 
 
   impactFactorsKeys = [
-    'AGE',
-    'INCOME',
-    'HOUSEHOLD_SIZE',
-    'METAL_TIER',
-    'PLAN_TYPE',
-    'TOBACCO',
-    'COUNTY',
-    'ENROLLED_COUNT',
-    'AVAILABLE_CARRIERS',
-    'INCOME_CHANGES'
+    'CONTRACT_SIZE',
+    'CREDIT_SCORE',
+    'EXPERIENCE',
+    'FINANCIAL_STRENGTH',
+    'PROJECT_TYPE',
+    'PUBLIC_VS_PRIVATE',
+    'CLAIMS_HISTORY',
+    'LIQUIDITY',
+    'COMPLEXITY',
+    'UNDERWRITING'
   ];
 
-
+ 
   discountKeys = [
-    'REPORT_INCOME',
-    'SILVER_PLAN',
-    'ADD_DEPENDENTS',
-    'SUBSIDY_CLIFF',
-    'HMO_EPO',
-    'HIGH_DEDUCTIBLE',
-    'PREVENTIVE_CARE',
-    'UPDATE_APP',
-    'COMPARE_CARRIERS',
-    'INDEPENDENT_AGENT'
+'CREDIT',
+'FINANCIALS',
+'TRACK_RECORD',
+'CASH_RESERVES',
+'CLAIMS_HISTORY',
+'RELATIONSHIP',
+'LICENSE',
+'INDEPENDENT_AGENT',
+'BUNDLE',
+'SPECIALIST'
   ];
-
 
 
   notCoveredKeys = [
-    'ADULT_DENTAL_VISION',
-    'COSMETIC',
-    'LONG_TERM_CARE',
-    'WEIGHT_LOSS',
-    'INFERTILITY',
-    'HEARING_AIDS',
-    'ALTERNATIVE_MEDICINE',
-    'OUT_OF_NETWORK',
-    'TRANSPORTATION',
-    'EXPERIMENTAL'
+    'NEGLIGENCE',
+    'WORKER_INJURY',
+    'THIRD_PARTY_DAMAGE',
+    'THEFT',
+    'DESIGN_ERRORS',
+    'CHANGE_ORDERS',
+    'FORCE_MAJEURE',
+    'ENVIRONMENTAL',
+    'DELAY_PENALTIES',
+    'SUBCONTRACTOR_DISPUTES'
   ];
 
-
+  
   agentComparisonData = [
-    'COMPARES_CARRIERS',
-    'SHOPS_TIERS',
-    'SUBSIDY_ASSIST',
-    'CSR_EXPLAIN',
-    'LOWEST_PREMIUM',
+    'ACCESS_MULTIPLE',
+    'SHOPS_LOWEST',
+    'IMPERFECT_CREDIT',
+    'LITTLE_MILLER',
+    'LARGE_PROJECTS',
     'BILINGUAL',
     'LOCAL_EXPERTISE',
-    'SPECIAL_ENROLLMENT',
-    'ONGOING_SUPPORT',
-    'COVERAGE_GAP',
-    'INCOME_CHANGE_UPDATE',
+    'CLAIMS_SUPPORT',
+    'BID_TO_FINAL',
+    'CAPACITY_REVIEW',
     'COST_TO_YOU',
+    'LONG_TERM'
   ];
-
-
 
   factorComparisonKeys = [
-    'WHO_FOR',
-    'PREMIUM_SUBSIDY',
-    'PRE_EXISTING',
-    'ESSENTIAL_BENEFITS',
-    'COST_REDUCTION',
-    'ENROLLMENT',
-    'EMPLOYER_CONTRIBUTION',
-    'DRUG_COVERAGE',
-    'MENTAL_HEALTH',
-    'TEXAS_AVAILABILITY'
+  'WHO_PROTECTS',
+  'WHEN_REQUIRED',
+  'GUARANTEES',
+  'PUBLIC_PROJECTS',
+  'PRIVATE_PROJECTS',
+  'TRIGGERED_BY',
+  'COVERAGE_DURATION',
+  'COST_RANGE',
+  'LITTLE_MILLER',
+  'ISSUED_BY'
   ];
 
 
 
-  ratesKeys = [
-    'BRONZE',
-    'SILVER',
-    'GOLD',
-  ]
-
+  
 
   switchSteps = [
     'STEP_1',

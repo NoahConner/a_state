@@ -4,9 +4,9 @@
       <div class="topSub">
         <div class="topSub2">
           <div class="h1">
-            {{ 'BOND_MARKETPLACE.BANNER.TITLE_LINE1' | translate }} <br />
-            {{ 'BOND_MARKETPLACE.BANNER.TITLE_LINE2' | translate }} <span class="heading-span">{{
-              'BOND_MARKETPLACE.BANNER.TITLE_LINE3' |
+            {{ 'NOTARY_BONDS.BANNER.TITLE_LINE1' | translate }} <br />
+            {{ 'NOTARY_BONDS.BANNER.TITLE_LINE2' | translate }} <span class="heading-span">{{
+              'NOTARY_BONDS.BANNER.TITLE_LINE3' |
               translate }}</span>
           </div>
           <!-- 
@@ -38,14 +38,14 @@
           </div>
 
           <div class="inps">
-            <input type="text" [placeholder]="'BOND_MARKETPLACE.BANNER.FORM.FULL_NAME' | translate"
+            <input type="text" [placeholder]="'NOTARY_BONDS.BANNER.FORM.FULL_NAME' | translate"
               class="form-control" />
 
-            <input type="number" [placeholder]="'BOND_MARKETPLACE.BANNER.FORM.PHONE' | translate" class="form-control" />
+            <input type="number" [placeholder]="'NOTARY_BONDS.BANNER.FORM.PHONE' | translate" class="form-control" />
           </div>
 
           <button class="btn" routerLink="/get-a-quote">
-            {{ 'BOND_MARKETPLACE.BANNER.FORM.BUTTON' | translate }}
+            {{ 'NOTARY_BONDS.BANNER.FORM.BUTTON' | translate }}
           </button>
         </div>
       </div>
@@ -54,24 +54,24 @@
 
   <div class="container my-5">
     <h2 class="section-title mb-4">
-      {{ 'BOND_MARKETPLACE.WHY_DO_YOU_NEED.TITLE' | translate }}
+      {{ 'NOTARY_BONDS.WHY_DO_YOU_NEED.TITLE' | translate }}
     </h2>
     <p class="section-description mb-4">
-      {{ 'BOND_MARKETPLACE.WHY_DO_YOU_NEED.DESC' | translate }}
+      {{ 'NOTARY_BONDS.WHY_DO_YOU_NEED.DESC' | translate }}
     </p>
 
     <p class="section-description mb-4">
-      {{ 'BOND_MARKETPLACE.WHY_DO_YOU_NEED.DESC1' | translate }}
+      {{ 'NOTARY_BONDS.WHY_DO_YOU_NEED.DESC1' | translate }}
     </p>
 
     <p class="section-sub-title mb-4">
-      {{ 'BOND_MARKETPLACE.WHY_DO_YOU_NEED.SUB_TITLE' | translate }}
+      {{ 'NOTARY_BONDS.WHY_DO_YOU_NEED.SUB_TITLE' | translate }}
     </p>
 
 
     <div class="insurance-list">
       <div class="insurance-item"
-        *ngFor="let item of 'BOND_MARKETPLACE.WHY_DO_YOU_NEED.LIST' | translate; let i = index">
+        *ngFor="let item of 'NOTARY_BONDS.WHY_DO_YOU_NEED.LIST' | translate; let i = index">
 
         <div class="number">0{{ i + 1 }}</div>
 
@@ -89,14 +89,14 @@
     <div class="container-max-800">
 
       <h1 class="main-title">
-        {{ 'BOND_MARKETPLACE.HOW_IT_WORKS.TITLE' | translate }}
+        {{ 'NOTARY_BONDS.HOW_IT_WORKS.TITLE' | translate }}
       </h1>
 
       <p class="intro-text">
-        {{ 'BOND_MARKETPLACE.HOW_IT_WORKS.DESC1' | translate }}
+        {{ 'NOTARY_BONDS.HOW_IT_WORKS.DESC1' | translate }}
         <br>
         <br>
-        {{ 'BOND_MARKETPLACE.HOW_IT_WORKS.DESC2' | translate }}
+        {{ 'NOTARY_BONDS.HOW_IT_WORKS.DESC2' | translate }}
 
       </p>
 
@@ -110,13 +110,13 @@
     <div class="container">
       <!-- Header -->
       <div class="header-content mb-5">
-        <h6 class="text-danger fw-bold">{{ 'BOND_MARKETPLACE.COVERAGES.STANDARD.TITLE' | translate }}
+        <h6 class="text-danger fw-bold">{{ 'NOTARY_BONDS.COVERAGES.STANDARD.TITLE' | translate }}
         </h6>
-        <p class="small text-muted">{{ 'BOND_MARKETPLACE.COVERAGES.STANDARD.DESC' | translate }}</p>
+        <p class="small text-muted">{{ 'NOTARY_BONDS.COVERAGES.STANDARD.DESC' | translate }}</p>
       </div>
 
       <div class="row g-4 mb-5">
-        @for (item of ('BOND_MARKETPLACE.COVERAGES.STANDARD.LIST' | translate); track item.TITLE) {
+        @for (item of ('NOTARY_BONDS.COVERAGES.STANDARD.LIST' | translate); track item.TITLE) {
         <div class="col-md-4">
           <div class="insurance-card">
             <div class="card-icon"><i [class]="item.ICON"></i></div>
@@ -136,9 +136,9 @@
 
   <section class="factors-impact-section bg-white">
     <div class="container px-4">
-      <h2 class="section-title">{{ 'BOND_MARKETPLACE.NOT_COVERED.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'NOTARY_BONDS.NOT_COVERED.HEADER.TITLE' | translate }}</h2>
       <p class="intro-text">
-        {{ 'BOND_MARKETPLACE.NOT_COVERED.HEADER.DESC' | translate }}
+        {{ 'NOTARY_BONDS.NOT_COVERED.HEADER.DESC' | translate }}
       </p>
 
       <div class="row mt-5">
@@ -146,11 +146,11 @@
         <div class="col-lg-6">
           <div class="factor-item">
             <div class="icon-wrapper">
-              <i [class]="'BOND_MARKETPLACE.NOT_COVERED.LIST.' + key + '.ICON' | translate"></i>
+              <i [class]="'NOTARY_BONDS.NOT_COVERED.LIST.' + key + '.ICON' | translate"></i>
             </div>
             <div class="factor-content">
-              <h6>{{ ('BOND_MARKETPLACE.NOT_COVERED.LIST.' + key + '.TITLE') | translate }}</h6>
-              <p>{{ ('BOND_MARKETPLACE.NOT_COVERED.LIST.' + key + '.DESC') | translate }}</p>
+              <h6>{{ ('NOTARY_BONDS.NOT_COVERED.LIST.' + key + '.TITLE') | translate }}</h6>
+              <p>{{ ('NOTARY_BONDS.NOT_COVERED.LIST.' + key + '.DESC') | translate }}</p>
             </div>
           </div>
         </div>
@@ -163,13 +163,13 @@
     <div class="container">
       <!-- Header -->
       <div class="header-content mb-5">
-        <h6 class="text-danger fw-bold">{{ 'BOND_MARKETPLACE.COVERAGES.TYPES.TITLE' | translate }}
+        <h6 class="text-danger fw-bold">{{ 'NOTARY_BONDS.COVERAGES.TYPES.TITLE' | translate }}
         </h6>
-        <p class="small text-muted">{{ 'BOND_MARKETPLACE.COVERAGES.TYPES.DESC' | translate }}</p>
+        <p class="small text-muted">{{ 'NOTARY_BONDS.COVERAGES.TYPES.DESC' | translate }}</p>
       </div>
 
       <div class="row g-4 mb-5">
-        @for (item of ('BOND_MARKETPLACE.COVERAGES.TYPES.LIST' | translate); track item.TITLE) {
+        @for (item of ('NOTARY_BONDS.COVERAGES.TYPES.LIST' | translate); track item.TITLE) {
         <div class="col-md-4">
           <div class="insurance-card">
             <div class="card-icon"><i [class]="item.ICON"></i></div>
@@ -192,16 +192,16 @@
       <div class="row">
         <div class="col-lg-10">
           <!-- Title -->
-          <h4 class="cost-title mb-4">{{ 'BOND_MARKETPLACE.HEALTH_INSURANCE_COST.TITLE' | translate }}</h4>
+          <h4 class="cost-title mb-4">{{ 'NOTARY_BONDS.HEALTH_INSURANCE_COST.TITLE' | translate }}</h4>
 
           <!-- Description Content -->
           <div class="cost-description">
             <p class="mb-4">
-              {{ 'BOND_MARKETPLACE.HEALTH_INSURANCE_COST.DESC1' | translate }}
+              {{ 'NOTARY_BONDS.HEALTH_INSURANCE_COST.DESC1' | translate }}
             </p>
 
             <p>
-              {{ 'BOND_MARKETPLACE.HEALTH_INSURANCE_COST.DESC2' | translate }}
+              {{ 'NOTARY_BONDS.HEALTH_INSURANCE_COST.DESC2' | translate }}
             </p>
           </div>
         </div>
@@ -217,89 +217,57 @@
 
   <section class="rates-section py-5">
     <div class="container container-max-1100 px-4">
-      <h2 class="section-title">{{ 'BOND_MARKETPLACE.FAMILY_VS_INDIVIDUAL.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'NOTARY_BONDS.FAMILY_VS_INDIVIDUAL.HEADER.TITLE' | translate }}</h2>
       <div class="intro-text">
-        <p>{{ 'BOND_MARKETPLACE.FAMILY_VS_INDIVIDUAL.HEADER.DESC' | translate }}</p>
+        <p>{{ 'NOTARY_BONDS.FAMILY_VS_INDIVIDUAL.HEADER.DESC' | translate }}</p>
       </div>
 
       <!-- Table Container -->
       <div class="rates-table-card p-4 mt-5">
         <div class="row g-2 text-center text-white fw-bold mb-2">
-          <div class="col-2">
+          <div class="col-4">
             <div class="header-pill bg-danger py-2">{{
-              'BOND_MARKETPLACE.FAMILY_VS_INDIVIDUAL.TABLE.COLUMNS.FEATURE' |
+              'NOTARY_BONDS.FAMILY_VS_INDIVIDUAL.TABLE.COLUMNS.FEATURE' |
               translate
               }}</div>
           </div>
-          <div class="col-2">
+          <div class="col-4">
             <div class="header-pill bg-danger py-2">{{
-              'BOND_MARKETPLACE.FAMILY_VS_INDIVIDUAL.TABLE.COLUMNS.PERFORMANCE'
+              'NOTARY_BONDS.FAMILY_VS_INDIVIDUAL.TABLE.COLUMNS.NOTARY_EANDO'
               |
               translate
               }}</div>
           </div>
-          <div class="col-2">
+          <div class="col-4">
             <div class="header-pill bg-danger py-2">{{
-              'BOND_MARKETPLACE.FAMILY_VS_INDIVIDUAL.TABLE.COLUMNS.PAYMENT' |
+              'NOTARY_BONDS.FAMILY_VS_INDIVIDUAL.TABLE.COLUMNS.NOTARY_EANDO' |
               translate
               }}</div>
           </div>
-          <div class="col-2">
-            <div class="header-pill bg-danger py-2">{{
-              'BOND_MARKETPLACE.FAMILY_VS_INDIVIDUAL.TABLE.COLUMNS.BID' |
-              translate
-              }}</div>
-          </div>
-          <div class="col-2">
-            <div class="header-pill bg-danger py-2">{{
-              'BOND_MARKETPLACE.FAMILY_VS_INDIVIDUAL.TABLE.COLUMNS.MAINTENANCE' |
-              translate
-              }}</div>
-          </div>
-
-          <div class="col-2">
-            <div class="header-pill bg-danger py-2">{{
-              'BOND_MARKETPLACE.FAMILY_VS_INDIVIDUAL.TABLE.COLUMNS.LICENSE' |
-              translate
-              }}</div>
-          </div>
+        
         </div>
 
         <!-- Data Rows -->
         <div class="rates-rows">
           @for (item of factorComparisonKeys; track item; let i = $index) {
           <div class="row g-2 text-center mb-2 align-items-center">
-            <div class="col-2">
+            <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('BOND_MARKETPLACE.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.FEATURE') | translate }}
+                {{ ('NOTARY_BONDS.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.FEATURE') | translate }}
               </div>
             </div>
-            <div class="col-2">
+            <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('BOND_MARKETPLACE.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.PERFORMANCE') | translate
+                {{ ('NOTARY_BONDS.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.NOTARY_EANDO') | translate
                 }}
               </div>
             </div>
-            <div class="col-2">
+            <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('BOND_MARKETPLACE.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.PAYMENT') | translate }}
+                {{ ('NOTARY_BONDS.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.NOTARY_EANDO') | translate }}
               </div>
             </div>
-            <div class="col-2">
-              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('BOND_MARKETPLACE.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.BID') | translate }}
-              </div>
-            </div>
-            <div class="col-2">
-              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('BOND_MARKETPLACE.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.MAINTENANCE') | translate }}
-              </div>
-            </div>
-            <div class="col-2">
-              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('BOND_MARKETPLACE.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.LICENSE') | translate }}
-              </div>
-            </div>
+        
           </div>
           }
         </div>
@@ -311,9 +279,9 @@
 
   <section class="factors-impact-section">
     <div class="container">
-      <h2 class="section-title">{{ 'BOND_MARKETPLACE.FACTORS_IMPACT.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'NOTARY_BONDS.FACTORS_IMPACT.HEADER.TITLE' | translate }}</h2>
       <p class="intro-text">
-        {{ 'BOND_MARKETPLACE.FACTORS_IMPACT.HEADER.DESC' | translate }}
+        {{ 'NOTARY_BONDS.FACTORS_IMPACT.HEADER.DESC' | translate }}
       </p>
 
       <div class="row">
@@ -321,9 +289,9 @@
         <div class="col-lg-6">
           <div class="factor-item">
             <div class="factor-content">
-              <p> <strong>{{ ('BOND_MARKETPLACE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }}
+              <p> <strong>{{ ('NOTARY_BONDS.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }}
                   :</strong>
-                {{ ('BOND_MARKETPLACE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}</p>
+                {{ ('NOTARY_BONDS.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}</p>
             </div>
           </div>
         </div>
@@ -334,9 +302,9 @@
 
   <div class="factors-impact-section bg-white">
     <div class="container">
-      <h2 class="section-title">{{'BOND_MARKETPLACE.DISCOUNT_FACTORS.HEADER.TITLE' | translate}}</h2>
+      <h2 class="section-title">{{'NOTARY_BONDS.DISCOUNT_FACTORS.HEADER.TITLE' | translate}}</h2>
       <p class="intro-text">
-        {{'BOND_MARKETPLACE.DISCOUNT_FACTORS.HEADER.DESC' | translate}}
+        {{'NOTARY_BONDS.DISCOUNT_FACTORS.HEADER.DESC' | translate}}
       </p>
 
       <div class="row">
@@ -344,15 +312,15 @@
         <div class="col-lg-6">
           <div class="factor-card">
             <div class="factor-content">
-              <p> <strong>{{ ('BOND_MARKETPLACE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translate }}
+              <p> <strong>{{ ('NOTARY_BONDS.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translate }}
                   :</strong>
-                {{ ('BOND_MARKETPLACE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translate }}</p>
+                {{ ('NOTARY_BONDS.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translate }}</p>
 
               <!-- <h6 class="factor-title">
-                {{ ('BOND_MARKETPLACE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }}
+                {{ ('NOTARY_BONDS.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }}
               </h6>
               <p class="factor-desc">
-                {{ ('BOND_MARKETPLACE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}
+                {{ ('NOTARY_BONDS.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}
               </p> -->
             </div>
           </div>
@@ -365,9 +333,9 @@
 
   <section class="rates-section py-5">
     <div class="container container-max-1100 px-4">
-      <h2 class="section-title">{{ 'BOND_MARKETPLACE.AGENT_COMPARISON.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'NOTARY_BONDS.AGENT_COMPARISON.HEADER.TITLE' | translate }}</h2>
       <div class="intro-text">
-        <p>{{ 'BOND_MARKETPLACE.AGENT_COMPARISON.HEADER.DESC' | translate }}</p>
+        <p>{{ 'NOTARY_BONDS.AGENT_COMPARISON.HEADER.DESC' | translate }}</p>
       </div>
 
       <!-- Table Container -->
@@ -375,20 +343,20 @@
         <div class="row g-2 text-center text-white fw-bold mb-2">
           <div class="col-4">
             <div class="header-pill bg-danger py-2">{{
-              'BOND_MARKETPLACE.AGENT_COMPARISON.TABLE.COLUMNS.FEATURE' |
+              'NOTARY_BONDS.AGENT_COMPARISON.TABLE.COLUMNS.FEATURE' |
               translate
               }}</div>
           </div>
           <div class="col-4">
             <div class="header-pill bg-danger py-2">{{
-              'BOND_MARKETPLACE.AGENT_COMPARISON.TABLE.COLUMNS.INDEPENDENT'
+              'NOTARY_BONDS.AGENT_COMPARISON.TABLE.COLUMNS.INDEPENDENT'
               |
               translate
               }}</div>
           </div>
           <div class="col-4">
             <div class="header-pill bg-danger py-2">{{
-              'BOND_MARKETPLACE.AGENT_COMPARISON.TABLE.COLUMNS.CAPTIVE' |
+              'NOTARY_BONDS.AGENT_COMPARISON.TABLE.COLUMNS.CAPTIVE' |
               translate
               }}</div>
           </div>
@@ -400,18 +368,18 @@
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('BOND_MARKETPLACE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translate }}
+                {{ ('NOTARY_BONDS.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translate }}
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('BOND_MARKETPLACE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translate
+                {{ ('NOTARY_BONDS.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translate
                 }}
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('BOND_MARKETPLACE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translate }}
+                {{ ('NOTARY_BONDS.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translate }}
               </div>
             </div>
           </div>
@@ -426,20 +394,20 @@
 
   <section class="high-risk-section">
     <div class="container px-4">
-      <h2 class="section-title">{{ 'BOND_MARKETPLACE.GROWING_FAMILY.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'NOTARY_BONDS.GROWING_FAMILY.HEADER.TITLE' | translate }}</h2>
       <div class="intro-text">
-        <p>{{ 'BOND_MARKETPLACE.GROWING_FAMILY.CONTENT.DESC1' | translate }}</p>
-        <p>{{ 'BOND_MARKETPLACE.GROWING_FAMILY.CONTENT.DESC2' | translate }}</p>
+        <p>{{ 'NOTARY_BONDS.GROWING_FAMILY.CONTENT.DESC1' | translate }}</p>
+        <p>{{ 'NOTARY_BONDS.GROWING_FAMILY.CONTENT.DESC2' | translate }}</p>
       </div>
     </div>
   </section>
 
   <section class="language-section">
     <div class="container px-4">
-      <h2 class="section-title">{{ 'BOND_MARKETPLACE.LANGUAGE_SUPPORT.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'NOTARY_BONDS.LANGUAGE_SUPPORT.HEADER.TITLE' | translate }}</h2>
       <div class="intro-text">
-        <p>{{ 'BOND_MARKETPLACE.LANGUAGE_SUPPORT.CONTENT.DESC1' | translate }}</p>
-        <p>{{ 'BOND_MARKETPLACE.LANGUAGE_SUPPORT.CONTENT.DESC2' | translate }}</p>
+        <p>{{ 'NOTARY_BONDS.LANGUAGE_SUPPORT.CONTENT.DESC1' | translate }}</p>
+        <p>{{ 'NOTARY_BONDS.LANGUAGE_SUPPORT.CONTENT.DESC2' | translate }}</p>
 
       </div>
     </div>
@@ -451,7 +419,7 @@
       <div class="row mb-5 text-center">
         <div class="col-6">
           <h3 class="heading">
-            {{ 'BOND_MARKETPLACE.ASTATE_DIFFERENTIATORS.HEADER.TITLE' | translate }}
+            {{ 'NOTARY_BONDS.ASTATE_DIFFERENTIATORS.HEADER.TITLE' | translate }}
           </h3>
         </div>
       </div>
@@ -465,11 +433,11 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'BOND_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.TITLE' | translate
+                  {{ 'NOTARY_BONDS.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.TITLE' | translate
                   }}
                 </h5>
                 <p class="card-text">
-                  {{ 'BOND_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.DESCRIPTION' |
+                  {{ 'NOTARY_BONDS.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.DESCRIPTION' |
                   translate }}
                 </p>
               </div>
@@ -483,11 +451,11 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'BOND_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.TITLE' |
+                  {{ 'NOTARY_BONDS.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.TITLE' |
                   translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'BOND_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.DESCRIPTION'
+                  {{ 'NOTARY_BONDS.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.DESCRIPTION'
                   | translate }}
                 </p>
               </div>
@@ -503,10 +471,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'BOND_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.TITLE' | translate }}
+                  {{ 'NOTARY_BONDS.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'BOND_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.DESCRIPTION' |
+                  {{ 'NOTARY_BONDS.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.DESCRIPTION' |
                   translate }}
                 </p>
               </div>
@@ -520,10 +488,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'BOND_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.TITLE' | translate }}
+                  {{ 'NOTARY_BONDS.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'BOND_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.DESCRIPTION' |
+                  {{ 'NOTARY_BONDS.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.DESCRIPTION' |
                   translate }}
                 </p>
               </div>
@@ -539,10 +507,10 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'BOND_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translate }}
+                  {{ 'NOTARY_BONDS.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'BOND_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' | translate
+                  {{ 'NOTARY_BONDS.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' | translate
                   }}
                 </p>
               </div>
@@ -556,11 +524,11 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title">
-                  {{ 'BOND_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.TITLE' |
+                  {{ 'NOTARY_BONDS.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.TITLE' |
                   translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'BOND_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.DESCRIPTION' |
+                  {{ 'NOTARY_BONDS.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.DESCRIPTION' |
                   translate }}
                 </p>
               </div>
@@ -585,39 +553,39 @@
         </div>
 
         <div class="col-md-6 ps-md-5">
-          <h2 class="section-title mb-5">{{ 'BOND_MARKETPLACE.INSURANCE_STEPS.HEADER.TITLE' | translate
+          <h2 class="section-title mb-5">{{ 'NOTARY_BONDS.INSURANCE_STEPS.HEADER.TITLE' | translate
             }}</h2>
 
           <div class="timeline">
             <div class="timeline-item">
               <div class="dot"></div>
               <div class="content">
-                <h3>{{ 'BOND_MARKETPLACE.INSURANCE_STEPS.STEPS.REACH_OUT.TITLE' | translate }}</h3>
-                <p>{{ 'BOND_MARKETPLACE.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translate }}</p>
+                <h3>{{ 'NOTARY_BONDS.INSURANCE_STEPS.STEPS.REACH_OUT.TITLE' | translate }}</h3>
+                <p>{{ 'NOTARY_BONDS.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translate }}</p>
               </div>
             </div>
 
             <div class="timeline-item">
               <div class="dot"></div>
               <div class="content">
-                <h3>{{ 'BOND_MARKETPLACE.INSURANCE_STEPS.STEPS.GET_ADVICE.TITLE' | translate }}</h3>
-                <p>{{ 'BOND_MARKETPLACE.INSURANCE_STEPS.STEPS.GET_ADVICE.DESCRIPTION' | translate }}</p>
+                <h3>{{ 'NOTARY_BONDS.INSURANCE_STEPS.STEPS.GET_ADVICE.TITLE' | translate }}</h3>
+                <p>{{ 'NOTARY_BONDS.INSURANCE_STEPS.STEPS.GET_ADVICE.DESCRIPTION' | translate }}</p>
               </div>
             </div>
 
             <div class="timeline-item">
               <div class="dot"></div>
               <div class="content">
-                <h3>{{ 'BOND_MARKETPLACE.INSURANCE_STEPS.STEPS.PICK_PLAN.TITLE' | translate }}</h3>
-                <p>{{ 'BOND_MARKETPLACE.INSURANCE_STEPS.STEPS.PICK_PLAN.DESCRIPTION' | translate }}</p>
+                <h3>{{ 'NOTARY_BONDS.INSURANCE_STEPS.STEPS.PICK_PLAN.TITLE' | translate }}</h3>
+                <p>{{ 'NOTARY_BONDS.INSURANCE_STEPS.STEPS.PICK_PLAN.DESCRIPTION' | translate }}</p>
               </div>
             </div>
 
             <div class="timeline-item">
               <div class="dot"></div>
               <div class="content">
-                <h3>{{ 'BOND_MARKETPLACE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.TITLE' | translate }}</h3>
-                <p>{{ 'BOND_MARKETPLACE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.DESCRIPTION' | translate }}</p>
+                <h3>{{ 'NOTARY_BONDS.INSURANCE_STEPS.STEPS.WE_GOT_YOU.TITLE' | translate }}</h3>
+                <p>{{ 'NOTARY_BONDS.INSURANCE_STEPS.STEPS.WE_GOT_YOU.DESCRIPTION' | translate }}</p>
               </div>
             </div>
           </div>
@@ -629,14 +597,14 @@
 
   <section class="switch-steps-section">
     <div class="container px-4">
-      <h2 class="section-title">{{ 'BOND_MARKETPLACE.SWITCH_STEPS.HEADER.TITLE' | translate }}</h2>
+      <h2 class="section-title">{{ 'NOTARY_BONDS.SWITCH_STEPS.HEADER.TITLE' | translate }}</h2>
 
       <div class="switch-steps-grid">
         @for (step of switchSteps; track step) {
         <div class="switch-card-wrapper">
           <div class="switch-card">
-            <h6>{{ 'BOND_MARKETPLACE.SWITCH_STEPS.STEPS.' + step + '.TITLE' | translate }}</h6>
-            <p>{{ 'BOND_MARKETPLACE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION' | translate }}</p>
+            <h6>{{ 'NOTARY_BONDS.SWITCH_STEPS.STEPS.' + step + '.TITLE' | translate }}</h6>
+            <p>{{ 'NOTARY_BONDS.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION' | translate }}</p>
           </div>
         </div>
         }
@@ -651,9 +619,9 @@
       <div class="topSub">
         <div class="topSub2">
           <div class="h1">
-            {{ 'BOND_MARKETPLACE.FREE_QUOTE.HEADER' | translate }}
+            {{ 'NOTARY_BONDS.FREE_QUOTE.HEADER' | translate }}
           </div>
-          <p class="para">{{ 'BOND_MARKETPLACE.FREE_QUOTE.DESCRIPTION' | translate }}</p>
+          <p class="para">{{ 'NOTARY_BONDS.FREE_QUOTE.DESCRIPTION' | translate }}</p>
           <div class="selectable mt-4">
             @for (item of chips.slice(0, 3); track item.name) {
             <div class="chip">
@@ -672,14 +640,14 @@
           </div>
 
           <div class="inps">
-            <input type="text" [placeholder]="'BOND_MARKETPLACE.BANNER.FORM.FULL_NAME' | translate"
+            <input type="text" [placeholder]="'NOTARY_BONDS.BANNER.FORM.FULL_NAME' | translate"
               class="form-control" />
 
-            <input type="number" [placeholder]="'BOND_MARKETPLACE.BANNER.FORM.PHONE' | translate" class="form-control" />
+            <input type="number" [placeholder]="'NOTARY_BONDS.BANNER.FORM.PHONE' | translate" class="form-control" />
           </div>
 
           <button class="btn" routerLink="/get-a-quote">
-            {{ 'BOND_MARKETPLACE.BANNER.FORM.BUTTON' | translate }}
+            {{ 'NOTARY_BONDS.BANNER.FORM.BUTTON' | translate }}
           </button>
         </div>
       </div>

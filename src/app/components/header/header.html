@@ -313,7 +313,7 @@
                 </ul>
               </li>
 
-                 <li class="dropdown-submenu">
+              <li class="dropdown-submenu">
                 <a class="dropdown-item submenu-toggle" [routerLink]="getRoute('suretyBondInsurance')">
                   {{ 'HEADER.SURETY_BOND_INSURANCE' | translate }}
                 </a>
@@ -323,7 +323,22 @@
                     <a class="dropdown-item" [routerLink]="getRoute('performanceBondsPaymentBonds')">
                       {{ 'HEADER.PERFORMANCE_PAYMENT_BONDS' | translate }}
                     </a>
-                  </li>  
+                  </li>
+                  <li>
+                    <a class="dropdown-item" [routerLink]="getRoute('commercialSuretyBonds')">
+                      {{ 'HEADER.COMMERCIAL_SURETY_BONDS' | translate }}
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" [routerLink]="getRoute('bidBonds')">
+                      {{ 'HEADER.BID_BONDS' | translate }}
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" [routerLink]="getRoute('notaryBonds')">
+                      {{ 'HEADER.NOTARY_BONDS' | translate }}
+                    </a>
+                  </li>
                 </ul>
               </li>
 
