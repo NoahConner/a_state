@@ -77,6 +77,7 @@ import { IndividualHealthInsurance } from './pages/health-insurance/individual-h
 import { EmployerGroupHealthInsurance } from './pages/health-insurance/employer-group-health-insurance/employer-group-health-insurance';
 import { TravelHealthInsurance } from './pages/health-insurance/travel-health-insurance/travel-health-insurance';
 import { AcaMarketplacePlansInsurance } from './pages/health-insurance/aca-marketplace-plans-insurance/aca-marketplace-plans-insurance';
+import { PerformanceBondsPaymentBonds } from './pages/surety-bond-insurance/performance-bonds-payment-bonds/performance-bonds-payment-bonds';
 
 @NgModule({
   declarations: [
@@ -149,6 +150,7 @@ import { AcaMarketplacePlansInsurance } from './pages/health-insurance/aca-marke
     EmployerGroupHealthInsurance,
     TravelHealthInsurance,
     AcaMarketplacePlansInsurance,
+    PerformanceBondsPaymentBonds
   ],
   imports: [
     BrowserModule,

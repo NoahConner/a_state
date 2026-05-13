@@ -66,6 +66,7 @@ import { IndividualHealthInsurance } from './pages/health-insurance/individual-h
 import { EmployerGroupHealthInsurance } from './pages/health-insurance/employer-group-health-insurance/employer-group-health-insurance';
 import { TravelHealthInsurance } from './pages/health-insurance/travel-health-insurance/travel-health-insurance';
 import { AcaMarketplacePlansInsurance } from './pages/health-insurance/aca-marketplace-plans-insurance/aca-marketplace-plans-insurance';
+import { PerformanceBondsPaymentBonds } from './pages/surety-bond-insurance/performance-bonds-payment-bonds/performance-bonds-payment-bonds';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -106,7 +107,13 @@ const routes: Routes = [
     ]
   },
 
-  { path: 'surety-bonds', component: SuretyBondInsurance },
+  { 
+    path: 'surety-bonds',
+    children: [
+      { path: '', component: SuretyBondInsurance },
+      { path: 'performance-bonds-payment-bonds', component: PerformanceBondsPaymentBonds },
+    ]
+   },
   {
     path: 'life-insurance',
     children: [
@@ -272,7 +279,12 @@ const routes: Routes = [
 
         ]
       },
-      { path: 'fianzas', component: SuretyBondInsurance },
+      { path: 'fianzas', component: SuretyBondInsurance,
+        children: [
+          { path: '', component: SuretyBondInsurance },
+          { path: 'fianzas-de-cumplimiento-y-pago', component: PerformanceBondsPaymentBonds },
+        ]
+      },
       { path: 'nuestras-ubicaciones', component: OurLocations, runGuardsAndResolvers: 'always' },
       { path: 'nuestras-ubicaciones/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
     ],
@@ -547,4 +559,8 @@ export const routeTranslations: Record<string, Record<string, string>> = {
     en: 'health-insurance/aca-marketplace-plans',
     es: 'seguros-de-salud/planes-aca-mercado-de-seguros'
   },
+  performanceBondsPaymentBonds: {
+    en: 'surety-bonds/performance-bonds-payment-bonds',
+    es: 'fianzas/fianzas-de-cumplimiento-y-pago'
+  }
 };
