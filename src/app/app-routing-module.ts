@@ -67,9 +67,9 @@ import { EmployerGroupHealthInsurance } from './pages/health-insurance/employer-
 import { TravelHealthInsurance } from './pages/health-insurance/travel-health-insurance/travel-health-insurance';
 import { AcaMarketplacePlansInsurance } from './pages/health-insurance/aca-marketplace-plans-insurance/aca-marketplace-plans-insurance';
 import { PerformanceBondsPaymentBonds } from './pages/surety-bond-insurance/performance-bonds-payment-bonds/performance-bonds-payment-bonds';
-import { CommercialSuretyBonds } from './pages/surety-bond-insurance/commercial-surety-bonds /commercial-surety-bonds';
 import { BidBonds } from './pages/surety-bond-insurance/bid-bonds/bid-bonds';
 import { NotaryBonds } from './pages/surety-bond-insurance/notary-bonds/notary-bonds';
+import { CommercialSuretyBonds } from './pages/surety-bond-insurance/commercial-surety-bonds/commercial-surety-bonds';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -110,7 +110,7 @@ const routes: Routes = [
     ]
   },
 
-  { 
+  {
     path: 'surety-bonds',
     children: [
       { path: '', component: SuretyBondInsurance },
@@ -119,7 +119,7 @@ const routes: Routes = [
       { path: 'bid-bonds', component: BidBonds },
       { path: 'notary-bonds', component: NotaryBonds },
     ]
-   },
+  },
   {
     path: 'life-insurance',
     children: [
@@ -285,7 +285,8 @@ const routes: Routes = [
 
         ]
       },
-      { path: 'fianzas',
+      {
+        path: 'fianzas',
         children: [
           { path: '', component: SuretyBondInsurance },
           { path: 'fianzas-de-cumplimiento-y-pago', component: PerformanceBondsPaymentBonds },

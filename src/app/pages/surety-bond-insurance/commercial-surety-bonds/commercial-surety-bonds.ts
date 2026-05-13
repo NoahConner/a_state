@@ -42,7 +42,7 @@ export class CommercialSuretyBonds {
     'BOND_TERM',
     'UNDERWRITING'
   ];
-  
+
 
   discountKeys = [
     'CREDIT',
