@@ -1,3 +1,4 @@
+import { Language } from '../../../services/language';
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -8,6 +9,8 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './manufactured-mobile-home-insurance.scss',
 })
 export class ManufacturedMobileHomeInsurance {
+  constructor(public languageService: Language) {}
+
 
 
   chips = [
@@ -190,4 +193,8 @@ export class ManufacturedMobileHomeInsurance {
 
 
 
+
+  getRoute(page: string) {
+    return this.languageService.getRoute(page);
+  }
 }

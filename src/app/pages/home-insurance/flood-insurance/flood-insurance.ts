@@ -1,3 +1,4 @@
+import { Language } from '../../../services/language';
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -8,6 +9,8 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './flood-insurance.scss',
 })
 export class FloodInsurance {
+  constructor(public languageService: Language) {}
+
 
 
 
@@ -205,4 +208,8 @@ export class FloodInsurance {
     'FAQ4',
   ];
 
+
+  getRoute(page: string) {
+    return this.languageService.getRoute(page);
+  }
 }

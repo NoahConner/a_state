@@ -1,3 +1,4 @@
+import { Language } from '../../../services/language';
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -14,7 +15,7 @@ export class Sr22Insurance {
   sr22VsFr44Data: any[] = [];
 
 
-  constructor(private translate: TranslateService) { }
+  constructor(public languageService: Language, private translate: TranslateService) { }
 
   ngOnInit() {
     const data = this.translate.instant('SR22_INSURANCE.RATES.COMPANY_RATES.LIST');
@@ -187,4 +188,8 @@ export class Sr22Insurance {
     'FAQ7',
     'FAQ8',
   ];
+
+  getRoute(page: string) {
+    return this.languageService.getRoute(page);
+  }
 }

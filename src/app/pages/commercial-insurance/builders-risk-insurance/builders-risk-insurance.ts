@@ -1,3 +1,4 @@
+import { Language } from '../../../services/language';
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -10,7 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class BuildersRiskInsurance {
 
 
-  constructor(private translate: TranslateService) { }
+  constructor(public languageService: Language, private translate: TranslateService) { }
 
 
   chunkArray(array: any[], size: number) {
@@ -134,4 +135,8 @@ export class BuildersRiskInsurance {
     'FAQ2',
   ];
 
+
+  getRoute(page: string) {
+    return this.languageService.getRoute(page);
+  }
 }

@@ -99,4 +99,20 @@ export class Language {
   getCurrentLanguage() {
     return this.translate.currentLang;
   }
+
+  getRoute(page: string): string[] {
+    const lang = this.getCurrentLanguage();
+
+    const slug =
+      routeTranslations[page]?.[lang] ||
+      routeTranslations[page]?.['en'];
+
+    if (!slug) return ['/'];
+
+    const segments = slug.split('/');
+
+    return lang === 'en'
+      ? ['/', ...segments]
+      : ['/', lang, ...segments];
+  }
 }

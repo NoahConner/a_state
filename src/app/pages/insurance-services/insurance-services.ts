@@ -1,3 +1,4 @@
+import { Language } from '../../services/language';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './insurance-services.scss',
 })
 export class InsuranceServices {
+  constructor(public languageService: Language) {}
+
   chips = [
     { name: 'HOME.BANNER.CHIPS.AUTO', icon: 'fas fa-car' },
     { name: 'HOME.BANNER.CHIPS.HOMEOWNERS', icon: 'fas fa-house' },
@@ -15,4 +18,8 @@ export class InsuranceServices {
     { name: 'HOME.BANNER.CHIPS.HEALTH', icon: 'fas fa-notes-medical' },
     { name: 'HOME.BANNER.CHIPS.SURETY', icon: 'fas fa-file-contract' },
   ];
+
+  getRoute(page: string) {
+    return this.languageService.getRoute(page);
+  }
 }

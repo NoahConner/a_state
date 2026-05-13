@@ -1,3 +1,4 @@
+import { Language } from '../../../services/language';
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -10,7 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class RvInsurance {
   optionalCoveragesChunks: any[][] = [];
 
-  constructor(private translate: TranslateService) { }
+  constructor(public languageService: Language, private translate: TranslateService) { }
 
   ngOnInit() {
     this.translate.onLangChange.subscribe(() => {
@@ -158,4 +159,8 @@ export class RvInsurance {
     'FAQ7',
     'FAQ8',
   ];
+
+  getRoute(page: string) {
+    return this.languageService.getRoute(page);
+  }
 }

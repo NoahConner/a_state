@@ -1,3 +1,4 @@
+import { Language } from '../../services/language';
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -12,7 +13,7 @@ export class SuretyBondInsurance implements OnInit {
   whoRequiresChunks: any[][] = [];
 
 
-  constructor(private translate: TranslateService) { }
+  constructor(public languageService: Language, private translate: TranslateService) { }
 
   ngOnInit() {
     this.translate.onLangChange.subscribe(() => {
@@ -164,4 +165,8 @@ export class SuretyBondInsurance implements OnInit {
     'FAQ4',
   ];
 
+
+  getRoute(page: string) {
+    return this.languageService.getRoute(page);
+  }
 }

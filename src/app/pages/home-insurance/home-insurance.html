@@ -44,7 +44,7 @@
             <input type="number" [placeholder]="'HOME_INSURANCE.BANNER.FORM.PHONE' | translate" class="form-control" />
           </div>
 
-          <button class="btn" routerLink="/get-a-quote">
+          <button class="btn" [routerLink]="getRoute('getAQuote')">
             {{ 'HOME_INSURANCE.BANNER.FORM.BUTTON' | translate }}
           </button>
         </div>
@@ -770,7 +770,7 @@
             <input type="number" [placeholder]="'HOME_INSURANCE.BANNER.FORM.PHONE' | translate" class="form-control" />
           </div>
 
-          <button class="btn" routerLink="/get-a-quote">
+          <button class="btn" [routerLink]="getRoute('getAQuote')">
             {{ 'HOME_INSURANCE.BANNER.FORM.BUTTON' | translate }}
           </button>
         </div>

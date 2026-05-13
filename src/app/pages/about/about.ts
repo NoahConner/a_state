@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Language } from '../../services/language';
 
 @Component({
   selector: 'app-about',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './about.scss',
 })
 export class About {
+  constructor(public languageService: Language) { }
+
   chips = [
     { name: 'HOME.BANNER.CHIPS.AUTO', icon: 'fas fa-car' },
     { name: 'HOME.BANNER.CHIPS.HOMEOWNERS', icon: 'fas fa-house' },
@@ -15,4 +18,8 @@ export class About {
     { name: 'HOME.BANNER.CHIPS.HEALTH', icon: 'fas fa-notes-medical' },
     { name: 'HOME.BANNER.CHIPS.SURETY', icon: 'fas fa-file-contract' },
   ];
+
+  getRoute(page: string) {
+    return this.languageService.getRoute(page);
+  }
 }

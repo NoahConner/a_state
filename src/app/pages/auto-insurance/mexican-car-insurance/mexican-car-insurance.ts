@@ -1,3 +1,4 @@
+import { Language } from '../../../services/language';
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -10,7 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class MexicanCarInsurance {
   optionalCoveragesChunks: any[][] = [];
 
-  constructor(private translate: TranslateService) { }
+  constructor(public languageService: Language, private translate: TranslateService) { }
 
 
 
@@ -134,4 +135,8 @@ export class MexicanCarInsurance {
   ];
 
 
+
+  getRoute(page: string) {
+    return this.languageService.getRoute(page);
+  }
 }

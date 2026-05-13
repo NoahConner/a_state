@@ -85,4 +85,8 @@ export class LocationDetail implements OnInit {
       },
     });
   }
+
+  getRoute(page: string) {
+    return this.languageService.getRoute(page);
+  }
 }
