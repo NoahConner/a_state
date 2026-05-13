@@ -55,6 +55,10 @@
     "COMMERCIAL_SURETY_BONDS": "Commercial Surety Bonds",
     "BID_BONDS": "Bid Bonds",
     "NOTARY_BONDS": "Notary Bonds",
+    "ADDITIONAL_INSURANCE": "Additional Insurance",
+    "PET_INSURANCE": "Pet Insurance",
+    "TITLE_INSURANCE": "Title Insurance",
+    "TITLE_TRANSFER": "Title Transfer",
     "OFFICE_LOCATOR": "OfficeLocator",
     "GET_A_QUOTE": "Get a Quote",
     "LANGUAGE": "Language"
@@ -1876,19 +1880,19 @@
         "TITLE": "Surety Bonds",
         "ITEMS": [
           {
-            "KEY": "",
+            "KEY": "performanceBondsPaymentBonds",
             "LABEL": "Performance Bonds / Payment"
           },
           {
-            "KEY": "",
+            "KEY": "commercialSuretyBonds",
             "LABEL": "Commercial Surety"
           },
           {
-            "KEY": "",
+            "KEY": "bidBonds",
             "LABEL": "Bid"
           },
           {
-            "KEY": "",
+            "KEY": "notaryBonds",
             "LABEL": "Notary"
           }
         ]
@@ -1901,11 +1905,11 @@
             "LABEL": "Pet"
           },
           {
-            "KEY": "",
+            "KEY": "titleInsurance",
             "LABEL": "Title"
           },
           {
-            "KEY": "",
+            "KEY": "titleTransfer",
             "LABEL": "Title Transfer"
           }
         ]
@@ -34609,7 +34613,6 @@
       "DESCRIPTION": "Getting a free commercial surety bond quote from A-State Insurance is a simple way to compare your current coverage with better pricing and more suitable options. Businesses can submit basic details such as bond type, amount, credit profile, and industry to receive personalized estimates from multiple surety providers. This helps identify potential savings and ensures you are not overpaying for required licensing or contract bonds. A free quote also allows business owners to understand what factors are impacting their current rates and explore better alternatives."
     }
   },
-
   "BID_BONDS": {
     "BANNER": {
       "TITLE_LINE1": "Best & Affordable Bid Bonds in",
@@ -35165,8 +35168,7 @@
       "DESCRIPTION": "Getting a free bid bond quote in Texas is simple and fast with A-State Insurance. Start by selecting your project type, so we can match you with the right surety options. Then fill in your Full Name and Phone Number in the quote form. Once submitted, our team reviews your details, compares multiple Texas surety markets, and contacts you to discuss the best bid bond options for your needs. You'll receive guidance on pricing, requirements, and approval steps to secure your bid bond."
     }
   },
-
-   "NOTARY_BONDS": {
+  "NOTARY_BONDS": {
     "BANNER": {
       "TITLE_LINE1": "Best & Affordable Notary Bonds in",
       "TITLE_LINE2": "Texas",
@@ -35696,6 +35698,1088 @@
     "FREE_QUOTE": {
       "HEADER": "Get a Free Notary Bonds Quote in Texas",
       "DESCRIPTION": "Getting a free notary bond quote in Texas with A-State Insurance is quick, simple, and designed to save you time. You only need to provide basic details, and our licensed Texas brokers will compare multiple carriers to find the best available rate for your notary bond. This helps you avoid overpaying while ensuring full compliance with state requirements and smooth approval for your commission. Once you submit your information, our team reviews your eligibility and provides better options."
+    }
+  },
+  "TITLE_INSURANCE": {
+    "BANNER": {
+      "TITLE_LINE1": "Best & Affordable Title Insurance in",
+      "TITLE_LINE2": "Texas",
+      "TITLE_LINE3": "",
+      "CHIPS": {
+        "PUBLIC_CONSTRUCTION": "Owner's",
+        "PRIVATE_CONSTRUCTION": "Lender's (Loan Policy)",
+        "FEDERAL_PROJECT": "Enhanced Owner's",
+        "STATE_MUNICIPAL": "Leasehold",
+        "SUBCONTRACTOR": "Construction Loan",
+        "OTHER": "Other"
+      },
+      "FORM": {
+        "FULL_NAME": "Full Name",
+        "PHONE": "Phone Number",
+        "BUTTON": "Get Quote"
+      }
+    },
+    "WHY_DO_YOU_NEED": {
+      "TITLE": "What Is Title Insurance and Why Do You Need It?",
+      "DESC": "Title insurance protects homebuyers and lenders from financial loss due to problems with a property’s ownership history. It ensures the property has a clear legal title before the purchase is finalized.",
+      "DESC1": "Buying a property without title insurance can expose you to hidden claims, unpaid liens, or ownership disputes. It gives peace of mind by protecting your investment from unexpected legal issues.",
+      "SUB_TITLE": "Here are a few reasons why you might need title insurance:",
+      "LIST": [
+        {
+          "TITLE": "Protection from Ownership Disputes",
+          "TEXT": "Title insurance protects you from legal claims or disputes over property ownership that may arise after purchase."
+        },
+        {
+          "TITLE": "Coverage for Hidden Liens",
+          "TEXT": "It safeguards you against unpaid debts, taxes, or liens linked to previous owners of the property."
+        },
+        {
+          "TITLE": "Ensures Clear Ownership",
+          "TEXT": "Title insurance verifies and secures your legal right to fully own the property without unexpected issues."
+        },
+        {
+          "TITLE": "Financial Protection",
+          "TEXT": "It helps cover financial losses caused by title defects or legal challenges related to the property."
+        },
+        {
+          "TITLE": "Peace of Mind",
+          "TEXT": "With title insurance, you can confidently invest in your property knowing your ownership is protected."
+        }
+      ]
+    },
+    "HOW_IT_WORKS": {
+      "TITLE": "What Can Go Wrong With a Property Title in Texas?",
+      "DESC1": "Even after a property purchase, issues can surface in the title history that were not clearly visible during the transaction. In Texas, common problems include unpaid property taxes, contractor liens, recording errors, or missing signatures on past deeds. These issues can call into question who legally owns the property and may create unexpected financial or legal responsibilities for the new owner.",
+      "DESC2": "More serious complications can arise from disputes over inheritance, unknown heirs claiming ownership, or even fraud in past transfers. Without proper protection, resolving these issues can be costly and time-consuming. That is why many buyers rely on title insurance to help safeguard their ownership rights and avoid unexpected challenges after closing."
+    },
+    "COVERAGES": {
+      "STANDARD": {
+        "TITLE": "What Does Title Insurance Cover in Texas?",
+        "DESC": "Title insurance in Texas protects against financial loss from problems with a property’s title history. It covers issues like unpaid liens, clerical errors in public records, fraud, forgery, and disputes over ownership or inheritance claims. It also helps resolve hidden defects that could affect your legal rights. It ensures peace of mind for buyers and lenders in Texas.",
+        "LIST": [
+          {
+            "TITLE": "Unknown Liens and Encumbrances on the Property",
+            "DESC": "Title insurance protects from unknown liens or financial claims attached to the property from previous owners, including unpaid debts, contractor fees, or legal judgments that were not disclosed during purchase and could affect ownership rights.",
+            "ICON": "fas fa-file-invoice-dollar"
+          },
+          {
+            "TITLE": "Forged or Fraudulent Deeds and Signatures",
+            "DESC": "Coverage protects against losses arising from forged or fraudulent signatures on property deeds or transfer documents. If someone illegally transfers ownership without proper authority, title insurance helps defend your ownership financial interest.",
+            "ICON": "fas fa-fingerprint"
+          },
+          {
+            "TITLE": "Errors and Omissions in Public Records",
+            "DESC": "Mistakes in public records, such as misspelled names, incorrect property descriptions, or filing errors, impact ownership rights. Title insurance covers losses and legal disputes resulting from these administrative or recording inaccuracies in documents.",
+            "ICON": "fas fa-file-signature"
+          },
+          {
+            "TITLE": "Undisclosed or Missing Heirs Claiming Ownership",
+            "DESC": "If unknown heirs of previous owners claim rights to the property after purchase, title insurance helps protect you. It covers legal defense costs and potential losses arising from inheritance disputes or unexpected ownership challenges.",
+            "ICON": "fas fa-users"
+          },
+          {
+            "TITLE": "Boundary and Survey Disputes",
+            "DESC": "Disputes over property boundaries or incorrect survey details can lead to conflicts with neighbors or loss of land. Title insurance helps cover legal costs and losses arising from inaccurate surveys or overlapping property lines affecting ownership.",
+            "ICON": "fas fa-draw-polygon"
+          },
+          {
+            "TITLE": "Unpaid Property Taxes From Previous Owners",
+            "DESC": "If previous owners failed to pay property taxes, those debts may transfer to you after purchase. Title insurance protects against financial responsibility for unpaid taxes, ensuring you are not held liable for past obligations linked to the property.",
+            "ICON": "fas fa-file-invoice"
+          },
+          {
+            "TITLE": "Illegal Deeds Signed Under Duress or Incapacity",
+            "DESC": "Title insurance covers situations in which prior property transfers were made under pressure, through fraud, or due to mental incapacity. If a deed is later declared invalid, it protects ownership rights and helps cover related legal defense and financial losses.",
+            "ICON": "fas fa-gavel"
+          },
+          {
+            "TITLE": "Easements and Access Rights Not Disclosed at Closing",
+            "DESC": "Undisclosed easements or access rights may allow others to use parts of your property, limiting control or value. Title insurance helps protect against financial loss and legal issues arising from undisclosed agreements that affect property use.",
+            "ICON": "fas fa-road"
+          },
+          {
+            "TITLE": "Title Defects That Existed Before Your Purchase",
+            "DESC": "Pre-existing title defects such as unresolved claims, incorrect ownership history, or missing documentation can surface after purchase. Title insurance protects you from financial loss and legal disputes linked to issues that existed before ownership transfer.",
+            "ICON": "fas fa-exclamation-triangle"
+          },
+          {
+            "TITLE": "Legal Defense Costs if Your Title Is Challenged",
+            "DESC": "If someone challenges your ownership rights, title insurance covers legal defense costs and potential financial losses. It protects you against costly litigation and helps secure your rightful ownership of the property.",
+            "ICON": "fas fa-shield-alt"
+          }
+        ]
+      },
+      "TYPES": {
+        "TITLE": "Types of Title Insurance Policies in Texas",
+        "DESC": "",
+        "LIST": [
+          {
+            "TITLE": "Owner's Title Insurance Policy",
+            "DESC": "An owner's title insurance policy protects the buyer’s ownership rights from title defects, liens, or disputes existing before the purchase is completed."
+          },
+          {
+            "TITLE": "Lender's Title Insurance Policy (Loan Policy)",
+            "DESC": "Lender's title insurance policy (loan policy) protects the mortgage lender’s interest only if title issues or ownership disputes arise after closing."
+          },
+          {
+            "TITLE": "Enhanced Owner's Title Insurance Policy",
+            "DESC": "Enhanced owner's title insurance policy offers expanded coverage, protecting against additional risks like zoning issues and certain hidden defects."
+          },
+          {
+            "TITLE": "Leasehold Title Insurance Policy",
+            "DESC": "Leasehold title insurance policy protects tenants or leaseholders, covering title issues affecting long-term leased property rights and agreements."
+          },
+          {
+            "TITLE": "Construction Loan Title Insurance Policy",
+            "DESC": "A construction loan title insurance policy protects lenders during property construction, covering title defects or claims that arise only while building."
+          },
+          {
+            "TITLE": "Refinance Title Insurance Policy",
+            "DESC": "Refinance title insurance protects homeowners when refinancing, ensuring the new loan has a clear title and no hidden legal issues in the coverage."
+          },
+          {
+            "TITLE": "Commercial Title Insurance Policy",
+            "DESC": "Commercial title insurance policy protects business properties, ensuring ownership clarity and covering risks tied to commercial real estate deals."
+          },
+          {
+            "TITLE": "Vacant Land Title Insurance Policy",
+            "DESC": "Vacant land title insurance policy protects buyers purchasing undeveloped land, covering title issues that may affect future property development."
+          },
+          {
+            "TITLE": "Simultaneous Issue Title Insurance Policy",
+            "DESC": "Simultaneous issue title insurance policy is issued with lender and owner policies together, reducing cost and ensuring both parties are protected."
+          }
+        ]
+      }
+    },
+    "NOT_COVERED": {
+      "HEADER": {
+        "TITLE": "What Does Title Insurance NOT Cover in Texas?",
+        "DESC": "Title insurance in Texas does not cover issues that arise after the policy is issued, such as new liens, zoning violations, or environmental hazards. It also excludes property condition problems, structural defects, or maintenance issues. Additionally, it does not protect against government actions, fraud occurring after purchase, or disputes not related to the title history."
+      },
+      "LIST": {
+        "POOR_WORKMANSHIP": {
+          "TITLE": "Title Defects Created After the Policy Issue Date",
+          "DESC": "Title insurance does not cover defects or issues that arise after the policy is issued. Any new claims, ownership changes, or legal problems occurring post-purchase are excluded, leaving the buyer responsible for protecting future risks and changes.",
+          "ICON": "fas fa-calendar-plus"
+        },
+        "NON_PAYMENT_SUBS": {
+          "TITLE": "Zoning Violations and Land Use Restrictions",
+          "DESC": "Title insurance does not protect against zoning violations or land use restrictions imposed by local authorities. If a property is used in ways that violate zoning laws or future restrictions arise, those issues are excluded from coverage entirely.",
+          "ICON": "fas fa-building"
+        },
+        "WORKER_INJURY": {
+          "TITLE": "Environmental Hazards and Contamination",
+          "DESC": "Environmental hazards such as soil contamination, hazardous waste, or pollution are not covered by title insurance. Any cleanup costs or health risks associated with environmental conditions remain the property owner's responsibility under the law.",
+          "ICON": "fas fa-leaf"
+        },
+        "THIRD_PARTY_DAMAGE": {
+          "TITLE": "Physical Damage to the Property",
+          "DESC": "Title insurance does not cover physical damage to the property, such as fire, flood, storms, or structural deterioration. These risks fall under homeowners' insurance, not title protection, leaving maintenance and repairs covered entirely under the owner's policy.",
+          "ICON": "fas fa-house-damage"
+        },
+        "EQUIPMENT_THEFT": {
+          "TITLE": "Homeowner Association (HOA) Disputes and Violations",
+          "DESC": "Title insurance does not cover Homeowner Association disputes, fees, or rule violations. Any penalties, assessments, or conflicts with HOA regulations must be handled directly by the property owner, without insurance coverage.",
+          "ICON": "fas fa-users-cog"
+        },
+        "DESIGN_ERRORS": {
+          "TITLE": "Unpermitted Construction or Building Code Violations",
+          "DESC": "Title insurance does not cover unpermitted construction or building code violations on the property. Any fines, corrections, or compliance costs required by local authorities must be handled by the owner without insurance coverage.",
+          "ICON": "fas fa-hard-hat"
+        },
+        "FORCE_MAJEURE": {
+          "TITLE": "Eminent Domain and Government Takings",
+          "DESC": "Title insurance does not protect against eminent domain or government takings of private property for public use. Any compensation or legal process is handled by government authorities and is not covered directly under the title insurance policy.",
+          "ICON": "fas fa-landmark"
+        },
+        "CHANGE_ORDERS": {
+          "TITLE": "Defects Known to the Buyer Before Closing",
+          "DESC": "Title insurance does not cover defects that the buyer already knew about before closing the purchase. Any pre-disclosed issues or agreed conditions are excluded from protection under the insurance policy terms and agreements that are fully in place.",
+          "ICON": "fas fa-eye-slash"
+        },
+        "CONTRACTOR_INSOLVENCY": {
+          "TITLE": "Mechanic's Liens Filed After the Policy Date",
+          "DESC": "Title insurance does not cover mechanics’ liens or claims filed after the policy's effective date. Any work-related debts or contractor claims arising after issuance are excluded from protection under the policy but are fully included.",
+          "ICON": "fas fa-tools"
+        },
+        "ENVIRONMENTAL": {
+          "TITLE": "Losses Caused by the Policyholder's Own Actions",
+          "DESC": "Title insurance does not cover losses caused by the policyholder’s own actions, negligence, or illegal activity. Any damage, fraud, or violations committed by the owner are excluded from coverage under the insurance policy terms and conditions.",
+          "ICON": "fas fa-ban"
+        }
+      }
+    },
+    "HEALTH_INSURANCE_COST": {
+      "TITLE": "How Much Does Title Insurance Cost in Texas?",
+      "DESC1": "Title insurance cost in Texas is regulated by the Texas Department of Insurance, meaning every licensed provider follows the same base premium schedule. According to Neuhaus Realty Group, a standard owner’s title insurance policy in Texas typically ranges from $832 to $4,162 for a $485,000 home, depending on the property's value and the rate tier applied.",
+      "DESC2": "Compared with other states, Texas pricing is more structured because rates are government-regulated, so there is no price shopping among companies. Nationally, title insurance generally costs around 0.5% to 1% of the home’s purchase price, which can translate to roughly $2,000–$4,000 on a $400,000 home, depending on state rules and risk factors. In many states, prices vary by insurer, but in Texas, costs remain consistent and predictable across providers."
+    },
+    "FAMILY_VS_INDIVIDUAL": {
+      "HEADER": {
+        "TITLE": "Title Insurance vs. Other Ways to Protect Your Property in Texas",
+        "DESC": "Title insurance protects buyers from past ownership issues like liens, fraud, or disputes, ensuring clear property rights. Other methods, such as surveys, warranties, and legal checks, offer some protection but may not cover hidden risks. In Texas, title insurance provides stronger financial security compared to limited legal safeguards or post-purchase protections available through other options."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Factor",
+          "BID": "Owner's Title Insurance",
+          "PERFORMANCE": "Lender's Title Insurance",
+          "PAYMENT": "Home Warranty",
+          "MAINTENANCE": "Homeowners Insurance",
+          "LICENSE": "Property Survey"
+        },
+        "LIST": {
+          "WHO_PROTECTS": {
+            "FEATURE": "Who it protects",
+            "BID": "Homebuyer",
+            "PERFORMANCE": "Lender only",
+            "PAYMENT": "Homeowner",
+            "MAINTENANCE": "Homeowner",
+            "LICENSE": "Homebuyer"
+          },
+          "WHEN_REQUIRED": {
+            "FEATURE": "One-time or recurring cost",
+            "BID": "One-time premium",
+            "PERFORMANCE": "One-time premium",
+            "PAYMENT": "Annual fee",
+            "MAINTENANCE": "Annual premium",
+            "LICENSE": "One-time fee"
+          },
+          "GUARANTEES": {
+            "FEATURE": "Covers title defects and fraud",
+            "BID": "Yes",
+            "PERFORMANCE": "Yes",
+            "PAYMENT": "No",
+            "MAINTENANCE": "No",
+            "LICENSE": "Partially"
+          },
+          "PUBLIC_PROJECTS": {
+            "FEATURE": "Covers physical damage to property",
+            "BID": "No",
+            "PERFORMANCE": "No",
+            "PAYMENT": "Limited",
+            "MAINTENANCE": "Yes",
+            "LICENSE": "No"
+          },
+          "PRIVATE_PROJECTS": {
+            "FEATURE": "Covers legal defense costs",
+            "BID": "Yes",
+            "PERFORMANCE": "Yes",
+            "PAYMENT": "No",
+            "MAINTENANCE": "Sometimes",
+            "LICENSE": "No"
+          },
+          "TRIGGERED_BY": {
+            "FEATURE": "Required by the lender",
+            "BID": "No (optional)",
+            "PERFORMANCE": "Yes",
+            "PAYMENT": "No",
+            "MAINTENANCE": "Yes",
+            "LICENSE": "Sometimes"
+          },
+          "COVERAGE_DURATION": {
+            "FEATURE": "Covers pre-existing issues",
+            "BID": "Yes",
+            "PERFORMANCE": "Yes",
+            "PAYMENT": "No",
+            "MAINTENANCE": "No",
+            "LICENSE": "No"
+          },
+          "COST_RANGE": {
+            "FEATURE": "Covers boundary disputes",
+            "BID": "Yes",
+            "PERFORMANCE": "Limited",
+            "PAYMENT": "No",
+            "MAINTENANCE": "No",
+            "LICENSE": "Yes"
+          },
+          "LITTLE_MILLER": {
+            "FEATURE": "Coverage duration",
+            "BID": "Lifetime of ownership",
+            "PERFORMANCE": "Until the loan is paid off",
+            "PAYMENT": "Annual (renewable)",
+            "MAINTENANCE": "Annual (renewable)",
+            "LICENSE": "One-time snapshot"
+          },
+          "ISSUED_BY": {
+            "FEATURE": "Required at closing in Texas",
+            "BID": "Optional",
+            "PERFORMANCE": "Yes",
+            "PAYMENT": "No",
+            "MAINTENANCE": "Yes",
+            "LICENSE": "Sometimes"
+          }
+        }
+      }
+    },
+    "FACTORS_IMPACT": {
+      "HEADER": {
+        "TITLE": "Factors That Impact Your Title Insurance Rates in Texas",
+        "DESC": "Title insurance rates in Texas are influenced by several factors, including the property’s purchase price, location, and type of ownership. Higher property values usually result in higher premiums. Additional costs may come from endorsements, lender requirements, and refinance transactions. The insurer’s standard rate chart also plays a role, but Texas's regulated pricing ensures consistency."
+      },
+      "LIST": {
+        "BID_AMOUNT": {
+          "TITLE": "Purchase Price and Property Value",
+          "DESC": "Higher purchase prices and property values increase title insurance premiums because risk exposure and coverage amount rise."
+        },
+        "CREDIT_SCORE": {
+          "TITLE": "Type of Policy Selected (Owner's vs. Lender's)",
+          "DESC": "Different policy types, such as owner’s or lender’s insurance, affect costs due to varying coverage scopes and risk levels."
+        },
+        "PROJECT_TYPE": {
+          "TITLE": "Whether Owner's and Lender's Policies Are Issued Simultaneously",
+          "DESC": "Issuing owner’s and lender’s policies together can reduce total cost because insurers process them in one transaction."
+        },
+        "PUBLIC_VS_PRIVATE": {
+          "TITLE": "Location and County of the Property",
+          "DESC": "County and location influence title insurance rates due to local regulations and recorded property risks."
+        },
+        "FINANCIAL_STRENGTH": {
+          "TITLE": "Age and History of the Property",
+          "DESC": "Older properties with long transaction histories may have more title issues, increasing search complexity and cost."
+        },
+        "EXPERIENCE": {
+          "TITLE": "Whether the Property Is Residential or Commercial",
+          "DESC": "Residential properties usually cost less for title insurance than commercial ones due to simpler ownership structures."
+        },
+        "CLAIMS_HISTORY": {
+          "TITLE": "Complexity of the Title Search",
+          "DESC": "Complex title searches require reviewing multiple records, increasing the time cost due to potential ownership discrepancies."
+        },
+        "COMPLEXITY": {
+          "TITLE": "Number of Prior Owners and Transactions",
+          "DESC": "More previous owners and transactions increase title complexity, raising search effort and potential for hidden claims."
+        },
+        "OUTSTANDING_BONDS": {
+          "TITLE": "Presence of Liens, Easements, or Encumbrances",
+          "DESC": "Liens, easements, or encumbrances increase title risk and require deeper review, which can raise insurance costs overall."
+        },
+        "UNDERWRITING": {
+          "TITLE": "Title Insurance Company Underwriting Guidelines",
+          "DESC": "Each insurer’s underwriting guidelines affect pricing based on risk assessment, property history, and coverage rules."
+        }
+      }
+    },
+    "DISCOUNT_FACTORS": {
+      "HEADER": {
+        "TITLE": "How to Lower Your Title Insurance Cost in Texas",
+        "DESC": "You can lower title insurance costs in Texas by comparing multiple licensed providers since rates are regulated, but fees may vary. Bundling the owner’s and lender’s policies together can reduce overall expense. Choosing a property with a clean title history also helps avoid extra charges. Working with an experienced broker ensures you get the best available rate and avoid unnecessary add-ons."
+      },
+      "LIST": {
+        "CREDIT": {
+          "TITLE": "Request a Simultaneous Issue Rate When Buying Owner's and Lender's Policies Together",
+          "DESC": "Buying owner’s and lender’s policies together may qualify for a simultaneous issue rate, significantly reducing the total title insurance cost."
+        },
+        "FINANCIALS": {
+          "TITLE": "Ask About Reissue Rates if the Property Was Recently Insured",
+          "DESC": "If the property was recently insured, reissue rates may apply, helping you save money on title insurance premiums during the closing process."
+        },
+        "TRACK_RECORD": {
+          "TITLE": "Compare Title Insurance Companies — Rates Are Regulated, but Fees Vary",
+          "DESC": "Title insurance rates are regulated, but companies may charge different service fees, affecting your overall closing costs."
+        },
+        "CASH_RESERVES": {
+          "TITLE": "Negotiate Closing Costs With Your Title Company",
+          "DESC": "Some closing costs and administrative fees may be negotiable with your title company, helping reduce your total transaction expenses."
+        },
+        "CLAIMS_HISTORY": {
+          "TITLE": "Choose an Independent Agent Who Works With Multiple Title Insurers",
+          "DESC": "Independent agents can compare multiple insurers, helping you find better pricing options and more competitive title insurance coverage rates."
+        },
+        "START_SMALL": {
+          "TITLE": "Review the Title Commitment Carefully to Avoid Unnecessary Endorsements",
+          "DESC": "Carefully reviewing your title commitment helps avoid paying for unnecessary endorsements or added coverage you may not actually need."
+        },
+        "BUNDLE": {
+          "TITLE": "Clear Any Known Liens or Encumbrances Before Closing",
+          "DESC": "Paying off known liens or encumbrances before closing can reduce title risk and prevent additional costs during insurance processing stages."
+        },
+        "INDEPENDENT_AGENT": {
+          "TITLE": "Ask About Discounts for New Construction or New Subdivisions",
+          "DESC": "New construction or subdivision properties may qualify for discounts, reducing title insurance costs due to lower historical ownership risk."
+        },
+        "RELATIONSHIP": {
+          "TITLE": "Bundle Title Insurance With Other Policies",
+          "DESC": "Bundling title insurance with other policies can help streamline coverage and potentially reduce overall insurance costs."
+        },
+        "SPECIALIST": {
+          "TITLE": "Work with a Title Specialist Who Understands Property Law",
+          "DESC": "A title specialist ensures accurate handling of legal requirements, reducing errors, delays, and unnecessary insurance expenses."
+        }
+      }
+    },
+    "AGENT_COMPARISON": {
+      "HEADER": {
+        "TITLE": "Independent Insurance Agency vs. Captive Agent: Why Choice Saves You Money",
+        "DESC": "Independent insurance agencies in Texas work with multiple carriers, giving you more options and better pricing compared to captive agents who represent only one company. This flexibility allows brokers to compare rates, coverage, and discounts to find the most cost-effective solution. In contrast, agents are limited to one insurer’s pricing, which can increase your overall insurance costs."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Feature",
+          "INDEPENDENT": "A-State Insurance (Independent Agent)",
+          "CAPTIVE": "Captive/Single-Carrier Agent"
+        },
+        "LIST": {
+          "ACCESS_MULTIPLE": {
+            "FEATURE": "Access to multiple title insurance carriers",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "No"
+          },
+          "SHOPS_LOWEST": {
+            "FEATURE": "Shops for the lowest title insurance rate",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "No"
+          },
+          "IMPERFECT_CREDIT": {
+            "FEATURE": "Explains owner's vs. lender's policy differences",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "Limited"
+          },
+          "LITTLE_MILLER": {
+            "FEATURE": "Identifies simultaneous issue rate opportunities",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "Limited"
+          },
+          "TIGHT_DEADLINES": {
+            "FEATURE": "Understands Texas property law and the closing process",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "Varies"
+          },
+          "BILINGUAL": {
+            "FEATURE": "Bilingual title insurance assistance",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "Varies"
+          },
+          "LOCAL_EXPERTISE": {
+            "FEATURE": "Helps clear title defects before closing",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "Limited"
+          },
+          "TRANSITION_BONDS": {
+            "FEATURE": "Coordinates with lenders and real estate agents",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "Limited"
+          },
+          "ALL_PROJECT_TYPES": {
+            "FEATURE": "Supports residential and commercial transactions",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "Limited"
+          },
+          "GROWTH_REVIEW": {
+            "FEATURE": "Reviews endorsements to avoid unnecessary costs",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "No"
+          },
+          "COST_TO_YOU": {
+            "FEATURE": "Cost to you",
+            "INDEPENDENT": "Free",
+            "CAPTIVE": "Free"
+          },
+          "LONG_TERM": {
+            "FEATURE": "Long-term support for future property transactions",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "No"
+          }
+        }
+      }
+    },
+    "GROWING_FAMILY": {
+      "HEADER": {
+        "TITLE": "Buying a Home in Texas? Here's What You Need to Know About Title Insurance"
+      },
+      "CONTENT": {
+        "DESC1": "When buying a home in Texas, title insurance is a key part of the closing process that protects your ownership rights. It ensures the property you are purchasing has a clear legal history without hidden claims, unpaid liens, or ownership disputes. Even after careful inspections and legal checks, issues from the past can still surface, which is why title insurance is required or strongly recommended in most transactions.",
+        "DESC2": "In Texas, both lenders and buyers often obtain title insurance to safeguard their interests. While the lender’s policy protects the mortgage provider, the owner’s policy protects you as the homeowner. This coverage provides peace of mind by covering legal defense costs and financial losses if a title issue arises after closing, helping you secure your investment with confidence."
+      }
+    },
+    "LANGUAGE_SUPPORT": {
+      "HEADER": {
+        "TITLE": "Hablamos Español / We Speak Your Language"
+      },
+      "CONTENT": {
+        "DESC1": "We believe communication should never be a barrier when protecting your future. That’s why we proudly offer services in Spanish, English, and Hindi, ensuring every client fully understands their insurance options. Our multilingual team takes time to explain coverage details clearly so you can make confident decisions without confusion or stress.",
+        "DESC2": "We understand the importance of serving Texas’s diverse communities, especially Hispanic and Latino families who deserve trusted and accessible guidance. Whether you are buying insurance for your home, car, business, or life protection, our agents are here to support you in your preferred language every step of the way with care and respect."
+      }
+    },
+    "ASTATE_DIFFERENTIATORS": {
+      "HEADER": {
+        "TITLE": "What Makes A-State Insurance Different"
+      },
+      "LIST": {
+        "LICENSED_BROKERS": {
+          "TITLE": "Texas Licensed Brokers",
+          "DESCRIPTION": "A-State Insurance is fully licensed, providing trusted guidance, legal compliance, and reliable insurance solutions statewide."
+        },
+        "HISPANIC_LATINO_FRIENDLY": {
+          "TITLE": "Hispanic & Latino Friendly",
+          "DESCRIPTION": "We proudly serve Hispanic and Latino communities with respectful support, cultural understanding, and clear communication."
+        },
+        "YEARS_SERVING": {
+          "TITLE": "20+ Years Serving Texans",
+          "DESCRIPTION": "With over 20 years of experience, A-State Insurance has helped Texans protect homes, cars, businesses, and families."
+        },
+        "CUSTOM_COVERAGE": {
+          "TITLE": "Custom Coverage Plans",
+          "DESCRIPTION": "We create custom insurance plans based on your needs, lifestyle, and budget, ensuring personalized protection."
+        },
+        "ONLINE_LOCAL": {
+          "TITLE": "Online & Local",
+          "DESCRIPTION": "Get insurance help online or visit our Texas office for in-person support, offering flexible service options for convenience."
+        },
+        "MULTILINGUAL_AGENTS": {
+          "TITLE": "Multilingual Agents",
+          "DESCRIPTION": "Our multilingual agents speak English, Spanish, and Hindi, helping clients understand policies so they can make confident decisions."
+        }
+      }
+    },
+    "INSURANCE_STEPS": {
+      "HEADER": {
+        "TITLE": "Get Your Title Insurance in 4 Simple Steps"
+      },
+      "STEPS": {
+        "REACH_OUT": {
+          "TITLE": "Step 1 - Reach Out",
+          "DESCRIPTION": "Contact A-State Insurance by phone, online, or visit us to start your title insurance journey today easily."
+        },
+        "GET_ADVICE": {
+          "TITLE": "Step 2 - Get Advice",
+          "DESCRIPTION": "Our experts review your property needs and guide you with the best insurance options available for protection."
+        },
+        "PICK_PLAN": {
+          "TITLE": "Step 3 - Pick Your Plan",
+          "DESCRIPTION": "Choose a title insurance plan that fits your budget and ensures complete coverage for your property investment."
+        },
+        "WE_GOT_YOU": {
+          "TITLE": "Step 4 - We’ve Got You",
+          "DESCRIPTION": "Once selected, we activate your coverage quickly and ensure your property is fully protected without delays."
+        }
+      }
+    },
+    "SWITCH_STEPS": {
+      "HEADER": {
+        "TITLE": "How to Switch Your Title Insurance to A-State Insurance"
+      },
+      "STEPS": {
+        "STEP_1": {
+          "TITLE": "Step 1: Get Your Free Comparison Quote",
+          "DESCRIPTION": "Start by requesting a free quote from A-State Insurance. Our team reviews your current title insurance policy and compares multiple options to identify better coverage, lower costs, and improved benefits for your property."
+        },
+        "STEP_2": {
+          "TITLE": "Step 2: Pick Your Plan and Activate",
+          "DESCRIPTION": "Once you receive your comparison results, choose the plan that best fits your needs. Our agents explain every detail clearly, then activate your new title insurance policy quickly so your coverage starts without delays or confusion."
+        },
+        "STEP_3": {
+          "TITLE": "Step 3: Cancel Your Old Policy (We’ll Help!)",
+          "DESCRIPTION": "After your new policy is active, we assist you in cancelling your previous title insurance. Our team ensures a smooth transition, handling communication with your old provider so you avoid gaps in coverage or unnecessary complications."
+        }
+      }
+    },
+    "FREE_QUOTE": {
+      "HEADER": "Get a Free Title Insurance Quote in Texas",
+      "DESCRIPTION": "Get a free title insurance quote in Texas with A-State Insurance and protect your property with confidence. Our licensed Texas broker compares multiple trusted carriers to find the best coverage at the most competitive rates for your specific property needs. Whether you are buying, refinancing, or investing in real estate, we simplify the process and guide you step by step. You can request your quote online, by phone, or in person. We ensure transparency, fast responses, and personalized support."
+    }
+  },
+  "TITLE_TRANSFER": {
+    "BANNER": {
+      "TITLE_LINE1": "Best & Affordable Title Transfer in",
+      "TITLE_LINE2": "Texas",
+      "TITLE_LINE3": "",
+      "CHIPS": {
+        "REAL_ESTATE": "Real Estate (Sale or Purchase)",
+        "VEHICLE": "Vehicle",
+        "GIFT": "Gift",
+        "INHERITANCE": "Inheritance (Probate or Affidavit of Heirship)",
+        "QUITCLAIM": "Quitclaim Deed",
+        "OTHER": "Other"
+      },
+      "FORM": {
+        "FULL_NAME": "Full Name",
+        "PHONE": "Phone Number",
+        "BUTTON": "Get Quote"
+      }
+    },
+    "WHY_DO_YOU_NEED": {
+      "TITLE": "What Is a Title Transfer and Why Does It Matter?",
+      "DESC": "A title transfer is the formal legal procedure that updates ownership records to reflect a new owner. This involves submitting the required documents, verifying the transfer's legitimacy, and recording the change with the relevant authority (such as the county clerk for property transfers or the DMV for vehicle transfers).",
+      "DESC1": "Without a proper title transfer, you may face ownership disputes, fines, or difficulty selling the asset later. It is the only way to ensure your legal right to property or a vehicle is recognized.",
+      "SUB_TITLE": "Here’s why title transfer matters:",
+      "LIST": [
+        {
+          "TITLE": "Establishes Legal Ownership",
+          "TEXT": "A title transfer legally proves who owns the property or asset. Without it, disputes can arise over who has the rightful claim."
+        },
+        {
+          "TITLE": "Protects Buyers and Sellers",
+          "TEXT": "It protects both parties in a transaction. Buyers gain confirmed ownership, and sellers are released from future liability."
+        },
+        {
+          "TITLE": "Prevents Legal Disputes",
+          "TEXT": "Proper documentation reduces the risk of family disputes, fraud, or third-party claims over the same property or asset."
+        },
+        {
+          "TITLE": "Required by Law for Most Transfers",
+          "TEXT": "Ownership changes—whether real estate or vehicles—must be officially recorded to be valid and recognized by government authorities."
+        },
+        {
+          "TITLE": "Ensures Smooth Future Transactions",
+          "TEXT": "A properly transferred title makes it easier to sell, refinance, or transfer the property again in the future without delays or legal complications."
+        }
+      ]
+    },
+    "WHEN_DO_YOU_NEED": {
+      "TITLE": "When Do You Need a Title Transfer in Texas?",
+      "DESC": "You need a title transfer in Texas whenever ownership of a property or asset legally changes hands. This commonly happens when buying or selling real estate, purchasing or selling a vehicle, receiving property as a gift, or inheriting assets through probate or an affidavit of heirship. It is also required in situations like divorce settlements, adding or removing a co-owner, or transferring property into a trust or business entity. In each of these cases, the title must be updated so the new ownership is officially recorded with the appropriate Texas authority.",
+      "DESC1": "A title transfer in Texas is especially important any time there is a change in legal responsibility or financial interest tied to the asset. Even if the agreement between parties is informal or within family members, the transfer still needs to be documented to avoid future disputes, tax issues, or ownership conflicts. Without completing this process, the previous owner may still be held liable, and the new owner may not have full legal rights to the property or vehicle."
+    },
+    "HOW_IT_WORKS": {
+      "TITLE": "How Does the Title Transfer Process Work in Texas?",
+      "DESC1": "The title transfer process in Texas begins by gathering the required documents for the type of transfer, such as a deed for real estate or a title certificate for a vehicle. Both parties usually need to complete and sign the appropriate forms, provide valid identification, and ensure any existing liens or loans on the property are properly addressed. In real estate cases, a title search is often conducted to confirm clear ownership before the transfer can proceed. For vehicles, the odometer disclosure and bill of sale may also be required depending on the situation.",
+      "DESC2": "Once the paperwork is ready, it must be submitted to the correct authority—typically the county clerk’s office for property or the Texas Department of Motor Vehicles for vehicles. Recording fees and applicable taxes are paid at this stage, and the documents are officially processed. After approval, the ownership records are updated to reflect the new owner. This completes the title transfer process in Texas, making the change of ownership legally valid and recognized by the state."
+    },
+    "COVERAGES": {
+      "TYPES": {
+        "TITLE": "Types of Title Transfers in Texas",
+        "LIST": [
+          {
+            "TITLE": "Real Estate Title Transfer (Sale or Purchase)",
+            "DESC": "Used when ownership of property changes through buying or selling, ensuring legal record updates with county authorities for legality.",
+            "ICON": "fas fa-home"
+          },
+          {
+            "TITLE": "Vehicle Title Transfer",
+            "DESC": "Required when ownership of a vehicle changes hands, updating official records to reflect the new registered owner correctly.",
+            "ICON": "fas fa-car"
+          },
+          {
+            "TITLE": "Gift Title Transfer",
+            "DESC": "Used when property or assets are given without payment, requiring legal documentation to record new ownership with the authorities.",
+            "ICON": "fas fa-gift"
+          },
+          {
+            "TITLE": "Inheritance Title Transfer (Probate or Affidavit of Heirship)",
+            "DESC": "Used to pass ownership after death through legal heirs, ensuring property is recorded under the rightful successors officially.",
+            "ICON": "fas fa-file-alt"
+          },
+          {
+            "TITLE": "Quitclaim Deed Title Transfer",
+            "DESC": "Transfers whatever interest a person has in property without guarantees, often used for quick or family-based changes.",
+            "ICON": "fas fa-file-signature"
+          },
+          {
+            "TITLE": "Divorce Settlement Title Transfer",
+            "DESC": "Used when property is divided between spouses after divorce, updating ownership records according to the settlement agreement legally.",
+            "ICON": "fas fa-gavel"
+          },
+          {
+            "TITLE": "Trust Title Transfer",
+            "DESC": "Moves ownership of property into or out of a trust for estate planning and asset protection purposes under the legal structure of TX.",
+            "ICON": "fas fa-landmark"
+          },
+          {
+            "TITLE": "Business Entity Title Transfer",
+            "DESC": "Transfers ownership interests when a company changes structure or ownership, ensuring proper legal registration updates and compliance.",
+            "ICON": "fas fa-building"
+          },
+          {
+            "TITLE": "Tax Deed Title Transfer",
+            "DESC": "Occurs when property is transferred after a tax sale for unpaid taxes, thereby changing legal ownership to the buyer through the court process.",
+            "ICON": "fas fa-chart-line"
+          }
+        ]
+      }
+    },
+    "HEALTH_INSURANCE_COST": {
+      "TITLE": "How Much Does a Title Transfer Cost in Texas?",
+      "DESC1": "The cost of a title transfer in Texas typically starts with a base title application fee of about $28 to $33, depending on the county where the transaction is processed. In addition, most transfers include a $4.75 state processing fee, and for vehicle-related transfers, a 6.25% motor vehicle sales tax is applied based on the purchase price or the standard vehicle value. Some situations may also include small county or registration-related charges, making the total cost vary depending on the type and complexity of the transfer.",
+      "DESC2": "Compared to other states, Texas is generally considered moderate in cost because its base title fee is relatively low and fixed, but the overall total can increase significantly due to sales tax and county add-ons. Some states charge higher flat transfer fees or additional mandatory service fees, while others may have lower base fees but higher hidden administrative costs. This is why the final amount for a title transfer in Texas can feel different depending on where and how the transaction is completed."
+    },
+    "FAMILY_VS_INDIVIDUAL": {
+      "HEADER": {
+        "TITLE": "Title Transfer vs. Other Property Ownership Changes in Texas",
+        "DESC": "In Texas, property ownership can change through several legal methods, and each serves a different purpose depending on the situation. A title transfer is the most common way to officially transfer ownership during a sale or purchase, but other options, such as quitclaim deeds, warranty deeds, and affidavits of heirship, are also used for specific needs, such as inheritance, divorce, or limited changes in ownership."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Factor",
+          "TITLE_TRANSFER": "Title Transfer",
+          "QUITCLAIM": "Quitclaim Deed",
+          "WARRANTY": "Warranty Deed",
+          "DEED_OF_TRUST": "Deed of Trust",
+          "AFFIDAVIT": "Affidavit of Heirship"
+        },
+        "LIST": {
+          "WHAT_IT_DOES": {
+            "FEATURE": "What it does",
+            "TITLE_TRANSFER": "Transfers full ownership from one party to another",
+            "QUITCLAIM": "Transfers whatever interest the grantor has",
+            "WARRANTY": "Transfers ownership with full title guarantee",
+            "DEED_OF_TRUST": "Secures a loan using property as collateral",
+            "AFFIDAVIT": "Establishes inheritance without probate"
+          },
+          "TITLE_GUARANTEE": {
+            "FEATURE": "Title guarantee provided",
+            "TITLE_TRANSFER": "Yes",
+            "QUITCLAIM": "No",
+            "WARRANTY": "Yes",
+            "DEED_OF_TRUST": "No",
+            "AFFIDAVIT": "Limited"
+          },
+          "REQUIRES_TITLE_SEARCH": {
+            "FEATURE": "Requires title search",
+            "TITLE_TRANSFER": "Yes",
+            "QUITCLAIM": "No",
+            "WARRANTY": "Yes",
+            "DEED_OF_TRUST": "Yes",
+            "AFFIDAVIT": "Recommended"
+          },
+          "USED_IN_HOME_SALES": {
+            "FEATURE": "Used in home sales",
+            "TITLE_TRANSFER": "Yes",
+            "QUITCLAIM": "Rarely",
+            "WARRANTY": "Yes",
+            "DEED_OF_TRUST": "Yes",
+            "AFFIDAVIT": "No"
+          },
+          "USED_IN_DIVORCE": {
+            "FEATURE": "Used in divorce settlements",
+            "TITLE_TRANSFER": "Yes",
+            "QUITCLAIM": "Yes",
+            "WARRANTY": "Sometimes",
+            "DEED_OF_TRUST": "No",
+            "AFFIDAVIT": "No"
+          },
+          "USED_IN_INHERITANCE": {
+            "FEATURE": "Used in inheritance cases",
+            "TITLE_TRANSFER": "Yes",
+            "QUITCLAIM": "No",
+            "WARRANTY": "No",
+            "DEED_OF_TRUST": "No",
+            "AFFIDAVIT": "Yes"
+          },
+          "LENDER_APPROVAL": {
+            "FEATURE": "Lender approval required",
+            "TITLE_TRANSFER": "Sometimes",
+            "QUITCLAIM": "Sometimes",
+            "WARRANTY": "Sometimes",
+            "DEED_OF_TRUST": "Yes",
+            "AFFIDAVIT": "No"
+          },
+          "TITLE_INSURANCE_RECOMMENDED": {
+            "FEATURE": "Title insurance recommended",
+            "TITLE_TRANSFER": "Yes",
+            "QUITCLAIM": "Yes",
+            "WARRANTY": "Yes",
+            "DEED_OF_TRUST": "Yes",
+            "AFFIDAVIT": "Yes"
+          },
+          "FILING_REQUIRED": {
+            "FEATURE": "Filing required with the county",
+            "TITLE_TRANSFER": "Yes",
+            "QUITCLAIM": "Yes",
+            "WARRANTY": "Yes",
+            "DEED_OF_TRUST": "Yes",
+            "AFFIDAVIT": "Yes"
+          },
+          "LEGAL_COMPLEXITY": {
+            "FEATURE": "Legal complexity",
+            "TITLE_TRANSFER": "Moderate",
+            "QUITCLAIM": "Low",
+            "WARRANTY": "Moderate",
+            "DEED_OF_TRUST": "High",
+            "AFFIDAVIT": "Moderate"
+          }
+        }
+      }
+    },
+    "FACTORS_IMPACT": {
+      "HEADER": {
+        "TITLE": "Factors That Impact Your Title Transfer Rates in Texas",
+        "DESC": "Title transfer rates in Texas are not fixed and can vary based on several key factors that affect the overall cost. The type of transfer, property value, county location, and whether a title search or insurance is required all play a major role. Additional factors such as liens, legal complexity, and the use of professionals can increase or reduce the total amount you pay."
+      },
+      "LIST": {
+        "TYPE_OF_TRANSFER": {
+          "TITLE": "Type of Title Transfer (Real Estate, Vehicle, Gift, Inheritance)",
+          "DESC": "Cost varies by transfer type; real estate transfers are usually higher than vehicle or gift transfers."
+        },
+        "BID_AMOUNT": {
+          "TITLE": "Property Value and Purchase Price",
+          "DESC": "A higher property value increases taxes and fees because most charges are calculated as a percentage of the property's value."
+        },
+        "CREDIT_SCORE": {
+          "TITLE": "County of the Property",
+          "DESC": "Each county sets its own recording and processing fees, resulting in cost differences across counties."
+        },
+        "PROJECT_TYPE": {
+          "TITLE": "Whether a Title Search Is Required",
+          "DESC": "Title searches add an extra cost but help verify ownership and uncover legal issues before the transfer is completed."
+        },
+        "PUBLIC_VS_PRIVATE": {
+          "TITLE": "Complexity of the Ownership History",
+          "DESC": "Complicated ownership records or disputes potentially increase processing time and professional service fees."
+        },
+        "FINANCIAL_STRENGTH": {
+          "TITLE": "Whether an Attorney or Title Company is Used",
+          "DESC": "Using professionals adds service fees but ensures legal accuracy and a smoother transfer process handling."
+        },
+        "OUTSTANDING_LIENS": {
+          "TITLE": "Outstanding Liens or Encumbrances on the Property",
+          "DESC": "Existing debts must be cleared or resolved transparently, which can significantly increase total transfer costs."
+        },
+        "TITLE_INSURANCE": {
+          "TITLE": "Whether Title Insurance Is Purchased at Transfer",
+          "DESC": "Title insurance adds cost but protects against future ownership disputes and hidden claims."
+        },
+        "RECORDING_FEES": {
+          "TITLE": "Recording Fees Set by the County Clerk",
+          "DESC": "Mandatory filing fees or costs vary by county and are required to officially record the change in ownership."
+        },
+        "STATE_TAXES": {
+          "TITLE": "State and Local Transfer Taxes and Fees",
+          "DESC": "Government-imposed taxes and charges apply based on the transaction type and property value at the time of transfer."
+        }
+      }
+    },
+    "DISCOUNT_FACTORS": {
+      "HEADER": {
+        "TITLE": "How to Minimize Your Title Transfer Costs in Texas",
+        "DESC": "Minimizing title transfer costs in Texas is possible by planning the process and using the right strategies. Since fees can vary based on services, property type, and documentation requirements, small decisions make a big difference in total cost. Choosing the right title company, avoiding unnecessary services, clearing liens early, and bundling services like title insurance can reduce expenses."
+      },
+      "LIST": {
+        "SIMULTANEOUS_RATE": {
+          "TITLE": "Use a Simultaneous Issue Rate When Combining Title Transfer With Title Insurance",
+          "DESC": "Bundling title transfer with insurance can lower total costs using a discounted simultaneous issue rate from providers."
+        },
+        "CREDIT": {
+          "TITLE": "Clear Any Outstanding Liens or Encumbrances Before the Transfer",
+          "DESC": "Clearing debts early avoids delays, extra legal work, and additional processing fees during the title transfer process."
+        },
+        "FINANCIALS": {
+          "TITLE": "Compare Title Companies — Fees Vary Even When Rates Are Regulated",
+          "DESC": "Comparing companies helps you find lower service fees, since administrative charges vary even under regulated pricing structures."
+        },
+        "TRACK_RECORD": {
+          "TITLE": "Ask About Discounts for Cash Transactions With No Lender Involvement",
+          "DESC": "Cash purchases often qualify for reduced fees because lender documentation and verification steps are not required."
+        },
+        "CASH_RESERVES": {
+          "TITLE": "Use an Affidavit of Heirship to Avoid Costly Probate When Possible",
+          "DESC": "This legal option simplifies inheritance transfers and helps avoid expensive, time-consuming probate proceedings."
+        },
+        "CLAIMS_HISTORY": {
+          "TITLE": "Bundle Title Transfer Services With Title Insurance",
+          "DESC": "Bundling services reduces overall expenses while ensuring smoother processing and complete protection coverage."
+        },
+        "FILE_PROMPTLY": {
+          "TITLE": "File Documents Promptly to Avoid Late Fees and Penalties",
+          "DESC": "Timely filing prevents unnecessary penalties, avoids delays, and ensures faster official recording of ownership changes."
+        },
+        "START_SMALL": {
+          "TITLE": "Verify All Property Information Upfront to Avoid Costly Corrections",
+          "DESC": "Accurate details from the start help prevent re-filing fees and additional costs caused by documentation errors."
+        },
+        "LOCAL_SPECIALIST": {
+          "TITLE": "Work with a Local Title Specialist to Avoid Unnecessary Fees",
+          "DESC": "Local experts understand county-specific rules and help avoid extra charges and unnecessary processing steps."
+        },
+        "INDEPENDENT_AGENT": {
+          "TITLE": "Use an Independent Agent Who Understands County-Specific Requirements",
+          "DESC": "Independent agents help navigate local requirements efficiently and recommend cost-saving transfer strategies."
+        }
+      }
+    },
+    "AGENT_COMPARISON": {
+      "HEADER": {
+        "TITLE": "Independent Insurance Agency vs. Captive Agent: Why Choice Saves You Money",
+        "DESC": "Choosing between an independent insurance agency and a captive agent can impact both cost and flexibility when handling a title transfer in Texas. Independent agents work with multiple providers, allowing them to compare rates and find cost-effective options. In contrast, captive agents represent only one company, which limits choices and may result in higher costs or fewer coverage options."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Feature",
+          "INDEPENDENT": "A-State Insurance (Independent Agent)",
+          "CAPTIVE": "Captive/Single-Carrier Agent"
+        },
+        "LIST": {
+          "ACCESS_MULTIPLE": {
+            "FEATURE": "Access to multiple title companies",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "No"
+          },
+          "SHOPS_LOWEST": {
+            "FEATURE": "Shops for the lowest title transfer fees",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "No"
+          },
+          "HANDLES_ALL_TYPES": {
+            "FEATURE": "Handles all types of title transfers",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "Limited"
+          },
+          "COUNTY_REQUIREMENTS": {
+            "FEATURE": "Understands Texas county-specific filing requirements",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "Varies"
+          },
+          "COORDINATES": {
+            "FEATURE": "Coordinates with lenders, attorneys, and real estate agents",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "Limited"
+          },
+          "BILINGUAL": {
+            "FEATURE": "Bilingual title transfer assistance",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "Varies"
+          },
+          "CLEARS_LIENS": {
+            "FEATURE": "Helps clear liens and encumbrances before transfer",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "Limited"
+          },
+          "BUNDLES": {
+            "FEATURE": "Bundles title transfer with title insurance",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "Limited"
+          },
+          "SUPPORTS_TRANSACTIONS": {
+            "FEATURE": "Supports residential and commercial transactions",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "Limited"
+          },
+          "GUIDES_HEIRS": {
+            "FEATURE": "Guides heirs through inheritance title transfers",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "Limited"
+          },
+          "COST_TO_YOU": {
+            "FEATURE": "Cost to you",
+            "INDEPENDENT": "Free",
+            "CAPTIVE": "Free"
+          },
+          "LONG_TERM_SUPPORT": {
+            "FEATURE": "Long-term support for future property transactions",
+            "INDEPENDENT": "Yes",
+            "CAPTIVE": "No"
+          }
+        }
+      }
+    },
+    "GROWING_FAMILY": {
+      "HEADER": {
+        "TITLE": "Buying or Selling Property in Texas? Here's What You Need to Know About Title Transfers"
+      },
+      "CONTENT": {
+        "DESC1": "Buying or selling property in Texas involves more than just agreeing on a price; it requires a proper title transfer to make the change in ownership legally valid. Whether you are purchasing a home, selling land, or transferring property within a family, the title must be officially updated with the county records. This process ensures that the new owner is recognized by law and that the seller is released from future responsibility related to the property.",
+        "DESC2": "A smooth transaction depends on completing the title transfer correctly and on time. Buyers should ensure the title is clear of liens or legal issues, while sellers must provide accurate documentation to avoid delays. Working with professionals can help simplify the process and prevent costly mistakes. A properly handled transfer not only protects both parties but also ensures long-term security and clarity in property ownership."
+      }
+    },
+    "LANGUAGE_SUPPORT": {
+      "HEADER": {
+        "TITLE": "Hablamos Español / We Speak Your Language"
+      },
+      "CONTENT": {
+        "DESC1": "At A-State Insurance, we proudly serve Texas's diverse communities with clear and accessible communication in both English and Spanish. We understand that handling a title transfer can feel complicated, especially when dealing with legal terms and county requirements. That's why our bilingual support team is here to guide you through every step of the process, making sure nothing gets lost in translation and every detail is fully understood.",
+        "DESC2": "Our Spanish-speaking agents are experienced in assisting clients with real estate, vehicle, inheritance, and other types of title transfers across Texas. Whether you are buying, selling, or transferring property within your family, we make the process easier by explaining everything in simple, familiar language. We believe language should never be a barrier to securing your property rights or completing your title transfer in Texas, so you can proceed smoothly and confidently."
+      }
+    },
+    "ASTATE_DIFFERENTIATORS": {
+      "HEADER": {
+        "TITLE": "What Makes A-State Insurance Different"
+      },
+      "LIST": {
+        "LICENSED_BROKERS": {
+          "TITLE": "Texas Licensed Brokers",
+          "DESCRIPTION": "Fully licensed in Texas, ensuring compliant, trusted, and legally accurate insurance and title transfer services statewide."
+        },
+        "HISPANIC_LATINO_FRIENDLY": {
+          "TITLE": "Hispanic & Latino Friendly",
+          "DESCRIPTION": "Dedicated to serving Hispanic and Latino clients with culturally aware support and clear communication in every step."
+        },
+        "YEARS_SERVING": {
+          "TITLE": "20+ Years Serving Texans",
+          "DESCRIPTION": "Two decades of experience helping Texans with insurance and title-related needs across all property types."
+        },
+        "CUSTOM_COVERAGE": {
+          "TITLE": "Custom Coverage Plans",
+          "DESCRIPTION": "Tailored solutions designed to match each client's specific insurance and title transfer requirements affordably."
+        },
+        "ONLINE_LOCAL": {
+          "TITLE": "Online & Local",
+          "DESCRIPTION": "Offers both digital convenience and local Texas support for faster, easier, and more accessible service options."
+        },
+        "MULTILINGUAL_AGENTS": {
+          "TITLE": "Multilingual Agents",
+          "DESCRIPTION": "Skilled agents who speak multiple languages make complex processes simple and understandable for all clients."
+        }
+      }
+    },
+    "INSURANCE_STEPS": {
+      "HEADER": {
+        "TITLE": "Get Your Title Transfer Started in 4 Simple Steps"
+      },
+      "STEPS": {
+        "REACH_OUT": {
+          "TITLE": "Step 1 - Reach Out",
+          "DESCRIPTION": "Contact A-State Insurance by phone or online to start your title transfer process today."
+        },
+        "GET_ADVICE": {
+          "TITLE": "Step 2 - Get Advice",
+          "DESCRIPTION": "Our experts review your property type and explain the required documents for your specific transfer."
+        },
+        "PICK_PLAN": {
+          "TITLE": "Step 3 - Pick Your Plan",
+          "DESCRIPTION": "Choose a service bundle that fits your budget and ensures compliance with Texas law."
+        },
+        "WE_GOT_YOU": {
+          "TITLE": "Step 4 - We've Got You",
+          "DESCRIPTION": "We finalize the filing and ensure your ownership change is recorded without delays."
+        }
+      }
+    },
+    "PET_INSURANCE_STEPS": {
+      "HEADER": {
+        "TITLE": "Get Your Pet Covered in 4 Simple Steps"
+      },
+      "STEPS": {
+        "STEP_1": {
+          "TITLE": "Step 1 - Reach Out",
+          "DESCRIPTION": "Contact A-State Insurance by phone or online to start your pet insurance quote process easily today."
+        },
+        "STEP_2": {
+          "TITLE": "Step 2 - Get Advice",
+          "DESCRIPTION": "Our experts review your needs and explain the best pet coverage options available for your situation."
+        },
+        "STEP_3": {
+          "TITLE": "Step 3 - Pick Your Plan",
+          "DESCRIPTION": "Choose a pet insurance plan that fits your budget, coverage needs, and long-term protection goals."
+        },
+        "STEP_4": {
+          "TITLE": "Step 4 - We've Got You",
+          "DESCRIPTION": "We finalize your plan and provide ongoing support so your pet stays protected, hassle-free."
+        }
+      }
+    },
+    "SWITCH_STEPS": {
+      "HEADER": {
+        "TITLE": "How to Switch Your Title Transfer Service to A-State Insurance"
+      },
+      "STEPS": {
+        "STEP_1": {
+          "TITLE": "Step 1: Get Your Free Comparison Quote",
+          "DESCRIPTION": "Start by reaching out to A-State Insurance to request a free comparison quote for your title transfer needs. We review your current situation, check applicable fees, and compare available options in Texas so you can clearly understand potential savings and better service alternatives."
+        },
+        "STEP_2": {
+          "TITLE": "Step 2: Pick Your Plan and Activate",
+          "DESCRIPTION": "Once you review your options, choose the plan that best fits your property transfer requirements. Our team helps you select the most cost-effective and compliant solution, then quickly activates your service."
+        },
+        "STEP_3": {
+          "TITLE": "Step 3: Cancel Your Old Policy (We'll Help!)",
+          "DESCRIPTION": "After switching, we assist you in properly canceling your previous arrangement to avoid duplicate charges or confusion. Our team guides you through any required paperwork and ensures a clean transition."
+        }
+      }
+    },
+    "FREE_QUOTE": {
+      "HEADER": "Get a Free Title Transfer Quote in Texas",
+      "DESCRIPTION": "Getting a free title transfer quote in Texas is quick and simple. First, choose the type of transfer you need: real estate, vehicle, gift, inheritance, quitclaim deed, or other. Then enter your full name and phone number so our team can review your request. Once submitted, we assess your details, check Texas requirements, and calculate estimated fees based on your situation. You receive a clear breakdown of costs and options, helping you plan your title transfer in Texas process without surprises."
     }
   }
 }

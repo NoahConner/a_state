@@ -81,6 +81,8 @@ import { PerformanceBondsPaymentBonds } from './pages/surety-bond-insurance/perf
 import { BidBonds } from './pages/surety-bond-insurance/bid-bonds/bid-bonds';
 import { NotaryBonds } from './pages/surety-bond-insurance/notary-bonds/notary-bonds';
 import { CommercialSuretyBonds } from './pages/surety-bond-insurance/commercial-surety-bonds/commercial-surety-bonds';
+import { TitleInsurance } from './pages/additional_insurance/title-insurance/title-insurance';
+import { TitleTransfer } from './pages/additional_insurance/title-transfer/title-transfer';
 
 @NgModule({
   declarations: [
@@ -156,7 +158,9 @@ import { CommercialSuretyBonds } from './pages/surety-bond-insurance/commercial-
     PerformanceBondsPaymentBonds,
     CommercialSuretyBonds,
     BidBonds,
-    NotaryBonds
+    NotaryBonds,
+    TitleInsurance,
+    TitleTransfer
   ],
   imports: [
     BrowserModule,

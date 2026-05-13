@@ -70,6 +70,8 @@ import { PerformanceBondsPaymentBonds } from './pages/surety-bond-insurance/perf
 import { BidBonds } from './pages/surety-bond-insurance/bid-bonds/bid-bonds';
 import { NotaryBonds } from './pages/surety-bond-insurance/notary-bonds/notary-bonds';
 import { CommercialSuretyBonds } from './pages/surety-bond-insurance/commercial-surety-bonds/commercial-surety-bonds';
+import { TitleInsurance } from './pages/additional_insurance/title-insurance/title-insurance';
+import { TitleTransfer } from './pages/additional_insurance/title-transfer/title-transfer';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -90,6 +92,8 @@ const routes: Routes = [
   { path: 'life-insurance/quote', component: GetLifeQuote },
   { path: 'health-insurance/quote', component: GetHealthQuote },
   { path: 'surety-bonds/quote', component: GetSuretyQuote },
+  { path: 'title-insurance', component: TitleInsurance },
+  { path: 'title-transfer', component: TitleTransfer },
   // { path: 'auto-insurance', component: AutoInsurance },
   // { path: 'homeowners-insurance', component: HomeInsurance },
   // { path: 'commercial-insurance', component: CommercialInsurance },
@@ -120,6 +124,7 @@ const routes: Routes = [
       { path: 'notary-bonds', component: NotaryBonds },
     ]
   },
+
   {
     path: 'life-insurance',
     children: [
@@ -204,6 +209,7 @@ const routes: Routes = [
       { path: 'terminos-y-condiciones', component: Terms },
       { path: 'carreras', component: Careers },
       { path: 'gracias', component: Thankyou },
+
       { path: 'obtener-una-cotizacion', component: GetAQuote },
       { path: 'solicitar-una-cotizacion-personalizada', component: GetCustomQuote },
       { path: 'seguros-de-auto/cotizacion', component: GetAutoQuote },
@@ -212,6 +218,7 @@ const routes: Routes = [
       { path: 'seguros-de-vida/cotizacion', component: GetLifeQuote },
       { path: 'seguros-de-salud/cotizacion', component: GetHealthQuote },
       { path: 'fianzas/cotizacion', component: GetSuretyQuote },
+
       {
         path: 'seguros-de-auto',
         children: [
@@ -297,6 +304,8 @@ const routes: Routes = [
       },
       { path: 'nuestras-ubicaciones', component: OurLocations, runGuardsAndResolvers: 'always' },
       { path: 'nuestras-ubicaciones/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
+      { path: 'seguro-de-titulo', component: TitleInsurance },
+      { path: 'traspaso-de-titulo', component: TitleTransfer },
     ],
   },
 
@@ -584,5 +593,13 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   notaryBonds: {
     en: 'surety-bonds/notary-bonds',
     es: 'fianzas/fianzas-notariales'
+  },
+  titleInsurance: {
+    en: 'title-insurance',
+    es: 'seguro-de-titulo'
+  },
+  titleTransfer: {
+    en: 'title-transfer',
+    es: 'traspaso-de-titulo'
   },
 };

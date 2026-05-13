@@ -342,6 +342,30 @@
                 </ul>
               </li>
 
+              <li class="dropdown-submenu">
+                <a class="dropdown-item submenu-toggle">
+                  {{ 'HEADER.ADDITIONAL_INSURANCE' | translate }}
+                </a>
+
+                <ul class="dropdown-menu submenu">
+                  <li>
+                    <a class="dropdown-item" [routerLink]="getRoute('performanceBondsPaymentBonds')">
+                      {{ 'HEADER.PET_INSURANCE' | translate }}
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" [routerLink]="getRoute('titleInsurance')">
+                      {{ 'HEADER.TITLE_INSURANCE' | translate }}
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" [routerLink]="getRoute('titleTransfer')">
+                      {{ 'HEADER.TITLE_TRANSFER' | translate }}
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
             </ul>
           </li>
 
