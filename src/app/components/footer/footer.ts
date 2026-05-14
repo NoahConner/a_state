@@ -10,20 +10,28 @@ import { routeTranslations } from '../../app-routing-module';
 })
 export class Footer {
   constructor(public languageService: Language) { }
-  currentLang: 'en' | 'es' = 'es';
+  
+  get currentLang() {
+    return this.languageService.getCurrentLanguage();
+  }
 
   changeLang(lang: string) {
     this.languageService.setLanguage(lang);
   }
 
-  getRoute(page: string): string[] {
+  getRoute(page: string, id?: string): any[] {
     const lang = this.languageService.getCurrentLanguage();
 
     const slug = routeTranslations[page]?.[lang] || routeTranslations[page]?.['en'];
 
     if (!slug) return ['/']; // fallback to homepage
 
-    const segments = slug.split('/');
+    let resolvedSlug = slug;
+    if (id) {
+      resolvedSlug = slug.replace(':id', id);
+    }
+
+    const segments = resolvedSlug.split('/').filter(s => s !== '');
 
     return lang === 'en'
       ? ['/', ...segments]
