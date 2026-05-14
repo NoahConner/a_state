@@ -49,3 +49,76 @@ img {
   transform: translateY(-2px) !important;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1) !important;
 }
+
+/* Responsive Top Banner Styles */
+@media only screen and (max-width: 820px) {
+  .topBanner {
+    height: auto !important;
+    min-height: 30rem;
+    padding: 4rem 0;
+
+    .container {
+      .topSub {
+        padding-bottom: 2rem;
+        align-items: center;
+        height: auto !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .topBanner {
+    background-position: center;
+    min-height: 25rem;
+
+    .container {
+      .topSub {
+        padding-bottom: 1rem;
+        align-items: center;
+        justify-content: center;
+
+        .topSub2 {
+          text-align: center;
+
+          .h1 {
+            font-size: 32px !important;
+            line-height: 1.2;
+            text-align: center;
+          }
+
+          .selectable {
+            justify-content: center;
+            margin-top: 1rem !important;
+          }
+
+          .inps {
+            width: 100% !important;
+            flex-direction: column;
+            gap: 10px;
+          }
+
+          button {
+            width: 100%;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .topBanner {
+    .container {
+      .topSub {
+        .topSub2 {
+          .h1 {
+            font-size: 26px !important;
+            margin-bottom: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}

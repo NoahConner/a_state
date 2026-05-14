@@ -23,7 +23,7 @@
             data-bs-parent="#accordionExample">
             <div class="accordion-body">
               <div class="subH" *ngFor="let item of section.value.ITEMS">
-                <a href="#">{{ item }}</a>
+                <a [routerLink]="getRoute(item.KEY)">{{ item.LABEL | translate }}</a>
               </div>
             </div>
           </div>
@@ -73,7 +73,8 @@
               </div>
               <div class="lower">
                 <div class="icon"></div>
-                <a [routerLink]="getRoute('ourLocations/:id', '11503-southwest-fwy-b-houston-tx-77031')" class="uph">11503 Southwest Fwy B, Houston, TX 77031
+                <a [routerLink]="getRoute('ourLocations/:id', '11503-southwest-fwy-b-houston-tx-77031')"
+                  class="uph">11503 Southwest Fwy B, Houston, TX 77031
                 </a>
               </div>
             </div>
@@ -87,7 +88,8 @@
               </div>
               <div class="lower">
                 <div class="icon"></div>
-                <a [routerLink]="getRoute('ourLocations/:id', '5712-antoine-dr-houston-tx-77091-es')" class="uph">5712 Antoine Dr, Houston, TX 77091</a>
+                <a [routerLink]="getRoute('ourLocations/:id', '5712-antoine-dr-houston-tx-77091-es')" class="uph">5712
+                  Antoine Dr, Houston, TX 77091</a>
               </div>
             </div>
 
@@ -100,7 +102,8 @@
               </div>
               <div class="lower">
                 <div class="icon"></div>
-                <a [routerLink]="getRoute('ourLocations/:id', '5206-airline-dr-g-houston-tx-77022')" class="uph">5206 Airline Dr G, Houston, TX 77022</a>
+                <a [routerLink]="getRoute('ourLocations/:id', '5206-airline-dr-g-houston-tx-77022')" class="uph">5206
+                  Airline Dr G, Houston, TX 77022</a>
               </div>
             </div>
 
@@ -113,7 +116,8 @@
               </div>
               <div class="lower">
                 <div class="icon"></div>
-                <a [routerLink]="getRoute('ourLocations/:id', '707-shotwell-st-a-houston-tx-77020')" class="uph">707 Shotwell St, Suit A, Houston, TX 77020</a>
+                <a [routerLink]="getRoute('ourLocations/:id', '707-shotwell-st-a-houston-tx-77020')" class="uph">707
+                  Shotwell St, Suit A, Houston, TX 77020</a>
               </div>
             </div>
           </div>
@@ -130,7 +134,8 @@
               </div>
               <div class="lower">
                 <div class="icon"></div>
-                <a [routerLink]="getRoute('ourLocations/:id', '10547-s-post-oak-rd-houston-tx-77035')" class="uph">10547 S Post Oak Rd, Houston, TX 77035</a>
+                <a [routerLink]="getRoute('ourLocations/:id', '10547-s-post-oak-rd-houston-tx-77035')" class="uph">10547
+                  S Post Oak Rd, Houston, TX 77035</a>
               </div>
             </div>
             <!-- 
@@ -219,8 +224,8 @@
             <i class="fas fa-envelope"></i>
           </div>
           <div class="he"><a href="mailto:save@astateinsurance.com">
-            {{ 'FOOTER.CONTACT.EMAIL' | translate }}
-          </a></div>
+              {{ 'FOOTER.CONTACT.EMAIL' | translate }}
+            </a></div>
         </div>
       </div>
     </div>
