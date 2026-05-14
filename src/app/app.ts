@@ -21,6 +21,7 @@ export class App {
 
   ngOnInit() {
     this.initMetaOnRouteChange();
+    this.initScrollToTopOnRouteChange();
   }
 
   private initMetaOnRouteChange() {
@@ -49,6 +50,15 @@ export class App {
         }
       });
   }
+
+  private initScrollToTopOnRouteChange() {
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(() => {
+        window.scrollTo(0, 0);
+      });
+  }
+  
 
   private updateMetaForCurrentRoute() {
     let route = this.activatedRoute;
