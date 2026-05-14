@@ -493,7 +493,7 @@
             <div class="icon-wrapper">
               <i [class]="'HOME_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.ICON' | translate"></i>
             </div>
-            <h6>{{ ('HOME_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.TITLE') | translate }}</h6>
+            <h6 style="cursor: pointer;" [routerLink]="getRoute(('HOME_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.ROUTE') | translate)">{{ ('HOME_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.TITLE') | translate }}</h6>
             <p>{{ ('HOME_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.DESCRIPTION') | translate }}</p>
           </div>
         </div>

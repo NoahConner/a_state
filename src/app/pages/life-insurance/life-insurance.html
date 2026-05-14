@@ -464,7 +464,7 @@
             <div class="icon-wrapper">
               <i [class]="'LIFE_INSURANCE.LIFE_INSURANCE_TYPES.LIST.' + type + '.ICON' | translate"></i>
             </div>
-            <h6>{{ ('LIFE_INSURANCE.LIFE_INSURANCE_TYPES.LIST.' + type + '.TITLE') | translate }}</h6>
+            <h6 style="cursor: pointer;" [routerLink]="getRoute(('LIFE_INSURANCE.LIFE_INSURANCE_TYPES.LIST.' + type + '.ROUTE') | translate)">{{ ('LIFE_INSURANCE.LIFE_INSURANCE_TYPES.LIST.' + type + '.TITLE') | translate }}</h6>
             <p>{{ ('LIFE_INSURANCE.LIFE_INSURANCE_TYPES.LIST.' + type + '.DESCRIPTION') | translate }}</p>
           </div>
         </div>

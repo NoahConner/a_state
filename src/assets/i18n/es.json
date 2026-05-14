@@ -1866,57 +1866,68 @@
         "CAR": {
           "TITLE": "Seguro de Auto",
           "DESCRIPTION": "Encuentra seguro de auto asequible para conductores diarios. Compara múltiples aseguradoras para obtener la mejor cobertura y tarifas competitivas para tu vehículo.",
-          "ICON": "fas fa-car"
+          "ICON": "fas fa-car",
+          "ROUTE": "carInsurance"
         },
         "MOTORCYCLE": {
           "TITLE": "Seguro de Motocicleta",
           "DESCRIPTION": "Protege tu motocicleta con cobertura flexible. Ayudamos a los conductores a comparar opciones para encontrar seguro económico sin sacrificar la protección.",
-          "ICON": "fas fa-motorcycle"
+          "ICON": "fas fa-motorcycle",
+          "ROUTE": "motorcycleInsurance"
         },
         "BOAT": {
           "TITLE": "Seguro de Barco",
           "DESCRIPTION": "Mantén tu barco protegido en lagos y aguas costeras con cobertura confiable que protege contra accidentes, robos y daños inesperados.",
-          "ICON": "fas fa-ship"
+          "ICON": "fas fa-ship",
+          "ROUTE": "boatInsurance"
         },
         "RV_MOTORHOME": {
           "TITLE": "Seguro de RV y Casa Rodante",
           "DESCRIPTION": "Disfruta del camino abierto con seguro para RV y casas rodantes diseñado para viajeros. Obtén protección confiable, ya sea que uses tu RV ocasionalmente o a tiempo completo.",
-          "ICON": "fas fa-bus"
+          "ICON": "fas fa-bus",
+          "ROUTE": "rvInsurance"
         },
         "CLASSIC_CAR": {
           "TITLE": "Seguro de Auto Clásico",
           "DESCRIPTION": "Protege tu preciado clásico con pólizas especializadas para vehículos coleccionables, asegurando protección del valor adecuado y cobertura personalizada.",
-          "ICON": "fas fa-car-side"
+          "ICON": "fas fa-car-side",
+          "ROUTE": "classicCarInsurance"
         },
         "COMMERCIAL_AUTO": {
           "TITLE": "Seguro Comercial de Vehículos",
           "DESCRIPTION": "Las empresas pueden obtener seguro comercial confiable para vehículos de la compañía, protegiendo a conductores, carga y operaciones en la carretera.",
-          "ICON": "fas fa-truck"
+          "ICON": "fas fa-truck",
+          "ROUTE": "commercialAutoInsurance"
         },
         "SR22": {
           "TITLE": "Seguro SR-22",
           "DESCRIPTION": "¿Necesitas seguro SR-22 después de una suspensión de licencia o infracción? Ayudamos a conductores de alto riesgo a encontrar cobertura asequible y volver a la carretera legalmente.",
-          "ICON": "fas fa-file-invoice"
+          "ICON": "fas fa-file-invoice",
+          "ROUTE": "sr22Insurance"
         },
         "ATV_UTV": {
           "TITLE": "Seguro de ATV y UTV",
           "DESCRIPTION": "Conduce con confianza con cobertura de ATV y UTV que protege contra accidentes, robos y responsabilidad mientras exploras senderos.",
-          "ICON": "fas fa-motorcycle"
+          "ICON": "fas fa-motorcycle",
+          "ROUTE": "atvAndUtvInsurance"
         },
         "MEXICAN_CAR": {
           "TITLE": "Seguro de Auto para México",
           "DESCRIPTION": "¿Planeas conducir a México? El seguro de auto mexicano proporciona la cobertura de responsabilidad requerida para viajar con confianza a través de la frontera.",
-          "ICON": "fas fa-car"
+          "ICON": "fas fa-car",
+          "ROUTE": "mexicanCarInsurance"
         },
         "RIDESHARE": {
           "TITLE": "Seguro para Conducción Compartida",
           "DESCRIPTION": "¿Conduces para Uber o Lyft? El seguro para conducción compartida cubre los vacíos entre pólizas personales y comerciales, manteniendo a los conductores protegidos mientras trabajan.",
-          "ICON": "fas fa-user-friends"
+          "ICON": "fas fa-user-friends",
+          "ROUTE": "rideshareInsurance"
         },
         "TRAILER": {
           "TITLE": "Seguro de Remolque",
           "DESCRIPTION": "Protege tu remolque con cobertura que protege contra daños, robos y responsabilidad mientras remolcas equipos, botes o vehículos recreativos.",
-          "ICON": "fas fa-trailer"
+          "ICON": "fas fa-trailer",
+          "ROUTE": "trailerInsurance"
         }
       }
     },
@@ -2604,37 +2615,44 @@
         "RENTERS": {
           "TITLE": "Seguro para Inquilinos",
           "DESCRIPTION": "Protege sus pertenencias personales, responsabilidad civil y costos de vivienda temporal si su casa de alquiler se daña o se vuelve inhabitable.",
-          "ICON": "fas fa-building"
+          "ICON": "fas fa-building",
+          "ROUTE": "rentersInsurance"
         },
         "CONDO": {
           "TITLE": "Seguro para Condominios",
           "DESCRIPTION": "Cubre el interior de su unidad, sus bienes personales y responsabilidad civil, complementando la póliza maestra de la asociación de condominios para una protección completa.",
-          "ICON": "fas fa-city"
+          "ICON": "fas fa-city",
+          "ROUTE": "condoInsurance"
         },
         "COMMERCIAL_PROPERTY": {
           "TITLE": "Seguro de Propiedad Comercial",
           "DESCRIPTION": "Protege la propiedad, equipo e inventario de su negocio frente a riesgos como incendio, robo y tormentas, ayudando a los propietarios a recuperarse rápidamente.",
-          "ICON": "fas fa-warehouse"
+          "ICON": "fas fa-warehouse",
+          "ROUTE": "commercialPropertyInsurance"
         },
         "MANUFACTURED_HOME": {
           "TITLE": "Seguro para Casas Móviles o Manufacturadas",
           "DESCRIPTION": "Cobertura adaptada para casas móviles o manufacturadas, incluyendo la estructura, bienes personales y protección de responsabilidad para necesidades de propiedad únicas.",
-          "ICON": "fas fa-home"
+          "ICON": "fas fa-home",
+          "ROUTE": "manufacturedMobileHomeInsurance"
         },
         "LANDLORD": {
           "TITLE": "Seguro para Propietarios / Caseros",
           "DESCRIPTION": "Protege propiedades de alquiler, estructuras y exposición a responsabilidad, incluyendo pérdida de ingresos por alquiler debido a daños cubiertos o incidentes relacionados con inquilinos.",
-          "ICON": "fas fa-key"
+          "ICON": "fas fa-key",
+          "ROUTE": "landlordInsurance"
         },
         "FLOOD": {
           "TITLE": "Seguro contra Inundaciones",
           "DESCRIPTION": "Proporciona protección frente a daños por agua relacionados con inundaciones en áreas propensas a lluvias intensas, crecidas repentinas o ríos desbordados.",
-          "ICON": "fas fa-water"
+          "ICON": "fas fa-water",
+          "ROUTE": "floodInsurance"
         },
         "EARTHQUAKE": {
           "TITLE": "Seguro contra Terremotos",
           "DESCRIPTION": "Cubre daños estructurales y pérdidas de bienes personales causados por actividad sísmica, ayudando a los propietarios a prepararse para eventos raros pero potencialmente costosos.",
-          "ICON": "fas fa-mountain"
+          "ICON": "fas fa-mountain",
+          "ROUTE": "earthquakeInsurance"
         }
       }
     },
@@ -3241,32 +3259,38 @@
         "TERM_LIFE": {
           "TITLE": "Seguro de Vida Temporal",
           "DESCRIPTION": "Ofrece cobertura por un período determinado, brindando protección asequible para asegurar el futuro financiero de su familia.",
-          "ICON": "fas fa-hourglass-half"
+          "ICON": "fas fa-hourglass-half",
+          "ROUTE": "termLifeInsurance"
         },
         "WHOLE_LIFE": {
           "TITLE": "Seguro de Vida Entera",
           "DESCRIPTION": "Cobertura permanente que incluye un componente de valor en efectivo, garantizando protección de por vida y crecimiento financiero.",
-          "ICON": "fas fa-coins"
+          "ICON": "fas fa-coins",
+          "ROUTE": "wholeLifeInsurance"
         },
         "UNIVERSAL_LIFE": {
           "TITLE": "Seguro de Vida Universal",
           "DESCRIPTION": "Cobertura permanente flexible que le permite ajustar primas y beneficios por fallecimiento según cambien sus necesidades financieras.",
-          "ICON": "fas fa-adjust"
+          "ICON": "fas fa-adjust",
+          "ROUTE": "universalLifeInsurance"
         },
         "FINAL_EXPENSE": {
           "TITLE": "Seguro de Gastos Finales",
           "DESCRIPTION": "Cubre funerales, entierros y otros costos de fin de vida, ayudando a sus seres queridos a evitar estrés financiero.",
-          "ICON": "fas fa-cross"
+          "ICON": "fas fa-cross",
+          "ROUTE": "finalExpenseInsurance"
         },
         "VARIABLE_LIFE": {
           "TITLE": "Seguro de Vida Variable",
           "DESCRIPTION": "Cobertura permanente con opciones de inversión, permitiendo que el valor en efectivo de su póliza crezca según el desempeño del mercado.",
-          "ICON": "fas fa-chart-line"
+          "ICON": "fas fa-chart-line",
+          "ROUTE": "variableLifeInsurance"
         },
         "GROUP_LIFE": {
           "TITLE": "Seguro de Vida Grupal",
           "DESCRIPTION": "Planes patrocinados por empleadores que ofrecen cobertura para múltiples empleados, generalmente con tarifas grupales más bajas y fácil inscripción.",
-          "ICON": "fas fa-users"
+          "ICON": "fas fa-users",
+          "ROUTE": "groupLifeInsurance"
         }
       }
     },
@@ -4002,43 +4026,53 @@
       "LIST": {
         "PROFESSIONAL_LIABILITY": {
           "TITLE": "Seguro de Responsabilidad Profesional (E&O)",
-          "DESCRIPTION": "Protege tu negocio de reclamaciones por negligencia o errores en servicios profesionales, cubriendo honorarios legales y daños de manera integral."
+          "DESCRIPTION": "Protege tu negocio de reclamaciones por negligencia o errores en servicios profesionales, cubriendo honorarios legales y daños de manera integral.",
+          "ROUTE": "professionalLiabilityInsurance"
         },
         "GENERAL_LIABILITY": {
           "TITLE": "Seguro de Responsabilidad General",
-          "DESCRIPTION": "Cubre lesiones corporales a terceros, daños a la propiedad y reclamaciones por lesiones en la publicidad, protegiendo tu negocio de posibles demandas."
+          "DESCRIPTION": "Cubre lesiones corporales a terceros, daños a la propiedad y reclamaciones por lesiones en la publicidad, protegiendo tu negocio de posibles demandas.",
+          "ROUTE": "generalLiabilityInsurance"
         },
         "WORKERS_COMPENSATION": {
           "TITLE": "Seguro de Compensación de Trabajadores",
-          "DESCRIPTION": "Cubre los costos médicos y los salarios perdidos para empleados lesionados en el trabajo, asegurando protección financiera tanto para trabajadores como para empleadores."
+          "DESCRIPTION": "Cubre los costos médicos y los salarios perdidos para empleados lesionados en el trabajo, asegurando protección financiera tanto para trabajadores como para empleadores.",
+          "ROUTE": "workersCompensationInsurance"
         },
         "COMMERCIAL_PROPERTY": {
           "TITLE": "Seguro de Propiedad Comercial",
-          "DESCRIPTION": "Protege los activos de tu negocio, como edificios, equipos e inventario, contra daños o pérdidas debido a eventos como incendios o robos."
+          "DESCRIPTION": "Protege los activos de tu negocio, como edificios, equipos e inventario, contra daños o pérdidas debido a eventos como incendios o robos.",
+          "ROUTE": "commercialPropertyInsurance"
         },
         "COMMERCIAL_AUTO": {
           "TITLE": "Seguro de Auto Comercial",
-          "DESCRIPTION": "Cubre los vehículos utilizados para fines comerciales, protegiendo tu empresa de accidentes, robos o daños a los vehículos de tu negocio."
+          "DESCRIPTION": "Cubre los vehículos utilizados para fines comerciales, protegiendo tu empresa de accidentes, robos o daños a los vehículos de tu negocio.",
+          "ROUTE": "commercialAutoInsurance"
         },
         "BUSINESS_OWNER_POLICY": {
           "TITLE": "Póliza para Propietarios de Negocios (BOP)",
-          "DESCRIPTION": "Combina coberturas esenciales, como responsabilidad general y seguro de propiedad, en una única póliza económica para pequeñas empresas."
+          "DESCRIPTION": "Combina coberturas esenciales, como responsabilidad general y seguro de propiedad, en una única póliza económica para pequeñas empresas.",
+          "ROUTE": "businessOwnerInsurance"
         },
         "EPLI": {
           "TITLE": "Seguro de Responsabilidad por Prácticas Laborales (EPLI)",
-          "DESCRIPTION": "Protege tu negocio de reclamaciones por mala conducta de los empleados, incluidas demandas por discriminación, acoso y despido injustificado."
+          "DESCRIPTION": "Protege tu negocio de reclamaciones por mala conducta de los empleados, incluidas demandas por discriminación, acoso y despido injustificado.",
+          "ROUTE": "employmentPracticesLiabilityInsurance"
         },
         "CYBER_LIABILITY": {
           "TITLE": "Seguro de Responsabilidad Cibernética",
-          "DESCRIPTION": "Cubre las pérdidas financieras y los costos de recuperación causados por ciberataques, violaciones de datos y otros riesgos cibernéticos para tu negocio."
+          "DESCRIPTION": "Cubre las pérdidas financieras y los costos de recuperación causados por ciberataques, violaciones de datos y otros riesgos cibernéticos para tu negocio.",
+          "ROUTE": "cyberLiabilityInsurance"
         },
         "BUILDERS_RISK": {
           "TITLE": "Seguro de Riesgo para Constructores / Curso de Construcción",
-          "DESCRIPTION": "Cubre las pérdidas financieras en proyectos de construcción o edificios en obra, protegiendo materiales, equipos y propiedad durante la construcción."
+          "DESCRIPTION": "Cubre las pérdidas financieras en proyectos de construcción o edificios en obra, protegiendo materiales, equipos y propiedad durante la construcción.",
+          "ROUTE": "buildersRiskInsurance"
         },
         "D_O_LIABILITY": {
           "TITLE": "Seguro de Responsabilidad para Directores y Ejecutivos (D&O)",
-          "DESCRIPTION": "Protege a los líderes empresariales de la responsabilidad personal relacionada con sus decisiones de gestión, cubriendo honorarios legales y reclamaciones en su contra."
+          "DESCRIPTION": "Protege a los líderes empresariales de la responsabilidad personal relacionada con sus decisiones de gestión, cubriendo honorarios legales y reclamaciones en su contra.",
+          "ROUTE": "directorsOfficersLiabilityInsurance"
         }
       }
     },
@@ -4729,47 +4763,56 @@
         "INDIVIDUAL": {
           "TITLE": "Seguro de Salud Individual",
           "DESCRIPTION": "Obtén una cobertura personalizada adaptada a tus necesidades y presupuesto, con beneficios esenciales para individuos que buscan protección.",
-          "ICON": "fas fa-user"
+          "ICON": "fas fa-user",
+          "ROUTE": "individualHealthInsurance"
         },
         "FAMILY": {
           "TITLE": "Seguro de Salud Familiar",
           "DESCRIPTION": "Cubre a toda tu familia con un plan de salud asequible que incluye atención médica, preventiva y más para todos los miembros de la familia.",
-          "ICON": "fas fa-home"
+          "ICON": "fas fa-home",
+          "ROUTE": "familyHealthInsurance"
         },
         "SMALL_BUSINESS": {
           "TITLE": "Seguro de Salud para Pequeñas Empresas",
           "DESCRIPTION": "Proporciona a tus empleados un seguro de salud que se ajuste al presupuesto de tu pequeña empresa, ofreciendo planes grupales completos.",
-          "ICON": "fas fa-briefcase"
+          "ICON": "fas fa-briefcase",
+          "ROUTE": "smallBusinessHealthInsurance"
         },
         "EMPLOYER_GROUP": {
           "TITLE": "Seguro de Salud para Empleadores y Grupos",
           "DESCRIPTION": "Ofrece a los empleados un beneficio valioso con planes de seguro de salud grupales, brindando acceso a atención esencial a un costo competitivo.",
-          "ICON": "fas fa-building"
+          "ICON": "fas fa-building",
+          "ROUTE": "employerGroupHealthInsurance"
         },
         "TRAVEL": {
           "TITLE": "Seguro de Salud para Viajes",
           "DESCRIPTION": "Asegúrate de estar cubierto para gastos médicos inesperados mientras viajas al extranjero con planes que brindan atención de emergencia.",
-          "ICON": "fas fa-plane"
+          "ICON": "fas fa-plane",
+          "ROUTE": "travelHealthInsurance"
         },
         "MEDICARE_SUPP": {
           "TITLE": "Seguro Suplementario de Medicare / Medigap",
           "DESCRIPTION": "Cubre los vacíos del Medicare original con un seguro Medigap, ayudando con los costos de bolsillo como copagos, deducibles y coinsurance.",
-          "ICON": "fas fa-hand-holding-medical"
+          "ICON": "fas fa-hand-holding-medical",
+          "ROUTE": "medicareSupplementInsurance"
         },
         "SHORT_TERM": {
           "TITLE": "Seguro de Salud a Corto Plazo",
           "DESCRIPTION": "Ideal para aquellos en transición, el seguro de salud a corto plazo ofrece cobertura temporal para individuos entre trabajos o con necesidad de protección rápida.",
-          "ICON": "fas fa-clock"
+          "ICON": "fas fa-clock",
+          "ROUTE": "shortTermHealthInsurance"
         },
         "DENTAL_VISION": {
           "TITLE": "Seguro Dental y de la Vista",
           "DESCRIPTION": "Plan de salud mejorado con cobertura dental y de la vista, incluyendo atención preventiva, tratamientos y descuentos en exámenes oculares.",
-          "ICON": "fas fa-tooth"
+          "ICON": "fas fa-tooth",
+          "ROUTE": "dentalVisionInsurance"
         },
         "ACA_MARKETPLACE": {
           "TITLE": "Planes ACA / Mercado",
           "DESCRIPTION": "Planes asequibles del Mercado ACA, con opciones para subsidios de primas basados en tus ingresos, ofreciendo cobertura completa.",
-          "ICON": "fas fa-shopping-cart"
+          "ICON": "fas fa-shopping-cart",
+          "ROUTE": "acaMarketplacePlansInsurance"
         }
       }
     },
@@ -5461,22 +5504,26 @@
         "PERFORMANCE_PAYMENT": {
           "TITLE": "Fianzas de Cumplimiento / Fianzas de Pago",
           "DESCRIPTION": "Las fianzas de cumplimiento y pago protegen a los propietarios de proyectos y subcontratistas, asegurando que los contratistas completen el trabajo y paguen a proveedores y empleados.",
-          "ICON": "fas fa-hard-hat"
+          "ICON": "fas fa-hard-hat",
+          "ROUTE": "performanceBondsPaymentBonds"
         },
         "COMMERCIAL": {
           "TITLE": "Fianzas Comerciales",
           "DESCRIPTION": "Las fianzas comerciales garantizan que los negocios cumplan con leyes, normas de licencias y obligaciones contractuales requeridas por reguladores o clientes.",
-          "ICON": "fas fa-briefcase"
+          "ICON": "fas fa-briefcase",
+          "ROUTE": "commercialSuretyBonds"
         },
         "BID_BONDS": {
           "TITLE": "Fianzas de Licitación",
           "DESCRIPTION": "Las fianzas de licitación aseguran que los contratistas que ganen una licitación acepten el contrato y proporcionen las fianzas de cumplimiento y pago requeridas.",
-          "ICON": "fas fa-gavel"
+          "ICON": "fas fa-gavel",
+          "ROUTE": "bidBonds"
         },
         "NOTARY": {
           "TITLE": "Fianzas de Notario",
           "DESCRIPTION": "Las fianzas de notario protegen al público contra pérdidas financieras causadas por errores o mala conducta de un notario comisionado durante sus funciones oficiales.",
-          "ICON": "fas fa-stamp"
+          "ICON": "fas fa-stamp",
+          "ROUTE": "notaryBonds"
         }
       }
     },

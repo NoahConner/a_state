@@ -491,7 +491,7 @@
                 <img [src]="card.icon" alt="Insurance Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">{{ card.title }}</h5>
+                <h5 class="card-title" style="cursor: pointer;" [routerLink]="getRoute(card.route)">{{ card.title }}</h5>
                 <p class="card-text">{{ card.description }}</p>
               </div>
             </div>

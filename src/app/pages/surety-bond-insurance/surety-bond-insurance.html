@@ -380,7 +380,7 @@
             <div class="icon-wrapper">
               <i [class]="'SURETY_INSURANCE.SURETY_BOND_TYPES.LIST.' + type + '.ICON' | translate"></i>
             </div>
-            <h6>{{ ('SURETY_INSURANCE.SURETY_BOND_TYPES.LIST.' + type + '.TITLE') | translate }}</h6>
+            <h6 style="cursor: pointer;" [routerLink]="getRoute(('SURETY_INSURANCE.SURETY_BOND_TYPES.LIST.' + type + '.ROUTE') | translate)">{{ ('SURETY_INSURANCE.SURETY_BOND_TYPES.LIST.' + type + '.TITLE') | translate }}</h6>
             <p>{{ ('SURETY_INSURANCE.SURETY_BOND_TYPES.LIST.' + type + '.DESCRIPTION') | translate }}</p>
           </div>
         </div>

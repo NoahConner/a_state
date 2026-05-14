@@ -40,7 +40,8 @@ export class CommercialInsurance implements OnInit {
           key,
           title: list[key].TITLE,
           description: list[key].DESCRIPTION,
-          icon: this.getIconForKey(key)
+          icon: this.getIconForKey(key),
+          route: list[key].ROUTE
         }));
         this.shopEveryCards = this.chunkArray(cardsArray, 2); // 2 cards per row
       }

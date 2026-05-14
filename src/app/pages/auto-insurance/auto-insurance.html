@@ -753,7 +753,7 @@
             <div class="icon-wrapper">
               <i [class]="'AUTO_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.ICON' | translate"></i>
             </div>
-            <h6>{{ ('AUTO_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.TITLE') | translate }}</h6>
+            <h6 style="cursor: pointer;" [routerLink]="getRoute(('AUTO_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.ROUTE') | translate)">{{ ('AUTO_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.TITLE') | translate }}</h6>
             <p>{{ ('AUTO_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.DESCRIPTION') | translate }}</p>
           </div>
         </div>

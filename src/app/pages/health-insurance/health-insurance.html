@@ -493,7 +493,7 @@
             <div class="icon-wrapper">
               <i [class]="'HEALTH_INSURANCE.HEALTH_INSURANCE_TYPES.LIST.' + type + '.ICON' | translate"></i>
             </div>
-            <h6>{{ ('HEALTH_INSURANCE.HEALTH_INSURANCE_TYPES.LIST.' + type + '.TITLE') | translate }}</h6>
+            <h6 style="cursor: pointer;" [routerLink]="getRoute(('HEALTH_INSURANCE.HEALTH_INSURANCE_TYPES.LIST.' + type + '.ROUTE') | translate)">{{ ('HEALTH_INSURANCE.HEALTH_INSURANCE_TYPES.LIST.' + type + '.TITLE') | translate }}</h6>
             <p>{{ ('HEALTH_INSURANCE.HEALTH_INSURANCE_TYPES.LIST.' + type + '.DESCRIPTION') | translate }}</p>
           </div>
         </div>

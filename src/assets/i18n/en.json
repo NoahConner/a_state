@@ -2487,57 +2487,68 @@
         "CAR": {
           "TITLE": "Car Insurance",
           "DESCRIPTION": "Find affordable auto insurance for everyday drivers. Compare multiple carriers to secure the best coverage and competitive rates for your vehicle.",
-          "ICON": "fas fa-car"
+          "ICON": "fas fa-car",
+          "ROUTE": "carInsurance"
         },
         "MOTORCYCLE": {
           "TITLE": "Motorcycle Insurance",
           "DESCRIPTION": "Protect your bike with flexible motorcycle coverage. We help riders compare options to find cheap vehicle insurance without sacrificing protection.",
-          "ICON": "fas fa-motorcycle"
+          "ICON": "fas fa-motorcycle",
+          "ROUTE": "motorcycleInsurance"
         },
         "BOAT": {
           "TITLE": "Boat Insurance",
           "DESCRIPTION": "Keep your boat protected on lakes and coastal waters with reliable coverage that protects against accidents, theft, and unexpected damage.",
-          "ICON": "fas fa-ship"
+          "ICON": "fas fa-ship",
+          "ROUTE": "boatInsurance"
         },
         "RV_MOTORHOME": {
           "TITLE": "RV & Motorhome Insurance",
           "DESCRIPTION": "Enjoy the open road with RV and motorhome insurance designed for travelers. Get reliable protection whether you use your RV occasionally or full-time.",
-          "ICON": "fas fa-bus"
+          "ICON": "fas fa-bus",
+          "ROUTE": "rvInsurance"
         },
         "CLASSIC_CAR": {
           "TITLE": "Classic Car Insurance",
           "DESCRIPTION": "Protect your prized classic with specialized policies designed for collectible vehicles, ensuring proper value protection and tailored coverage.",
-          "ICON": "fas fa-car-side"
+          "ICON": "fas fa-car-side",
+          "ROUTE": "classicCarInsurance"
         },
         "COMMERCIAL_AUTO": {
           "TITLE": "Commercial Auto Insurance",
           "DESCRIPTION": "Businesses can secure dependable commercial auto insurance for company vehicles, protecting drivers, cargo, and operations on the road.",
-          "ICON": "fas fa-truck"
+          "ICON": "fas fa-truck",
+          "ROUTE": "commercialAutoInsurance"
         },
         "SR22": {
           "TITLE": "SR-22 Insurance",
           "DESCRIPTION": "Need SR-22 insurance after a license suspension or violation? We help high-risk drivers find affordable coverage and get back on the road legally.",
-          "ICON": "fas fa-file-invoice"
+          "ICON": "fas fa-file-invoice",
+          "ROUTE": "sr22Insurance"
         },
         "ATV_UTV": {
           "TITLE": "ATV & UTV Insurance",
           "DESCRIPTION": "Ride confidently with ATV and UTV coverage that protects against accidents, theft, and liability while exploring trails.",
-          "ICON": "fas fa-motorcycle"
+          "ICON": "fas fa-motorcycle",
+          "ROUTE": "atvAndUtvInsurance"
         },
         "MEXICAN_CAR": {
           "TITLE": "Mexican Car Insurance",
           "DESCRIPTION": "Planning to drive into Mexico? Mexican auto insurance provides the required liability protection so you can travel confidently across the border.",
-          "ICON": "fas fa-car"
+          "ICON": "fas fa-car",
+          "ROUTE": "mexicanCarInsurance"
         },
         "RIDESHARE": {
           "TITLE": "Rideshare Insurance",
           "DESCRIPTION": "Drive for Uber or Lyft? Rideshare insurance fills coverage gaps between personal & commercial policies, keeping drivers protected while working.",
-          "ICON": "fas fa-user-friends"
+          "ICON": "fas fa-user-friends",
+          "ROUTE": "rideshareInsurance"
         },
         "TRAILER": {
           "TITLE": "Trailer Insurance",
           "DESCRIPTION": "Safeguard your trailer with coverage that protects against damage, theft, and liability while towing equipment, boats, or recreational vehicles.",
-          "ICON": "fas fa-trailer"
+          "ICON": "fas fa-trailer",
+          "ROUTE": "trailerInsurance"
         }
       }
     },
@@ -3225,37 +3236,44 @@
         "RENTERS": {
           "TITLE": "Renter’s Insurance",
           "DESCRIPTION": "Protects your personal belongings, liability, and temporary living costs if your rental home is damaged or becomes uninhabitable.",
-          "ICON": "fas fa-building"
+          "ICON": "fas fa-building",
+          "ROUTE": "rentersInsurance"
         },
         "CONDO": {
           "TITLE": "Condo Insurance",
           "DESCRIPTION": "Covers your unit’s interior, personal property, and liability, complementing the condo association’s master policy for full protection.",
-          "ICON": "fas fa-city"
+          "ICON": "fas fa-city",
+          "ROUTE": "condoInsurance"
         },
         "COMMERCIAL_PROPERTY": {
           "TITLE": "Commercial Property Insurance",
           "DESCRIPTION": "Safeguards business property, equipment, and inventory against risks such as fire, theft, and storms, helping business owners recover quickly.",
-          "ICON": "fas fa-warehouse"
+          "ICON": "fas fa-warehouse",
+          "ROUTE": "commercialPropertyInsurance"
         },
         "MANUFACTURED_HOME": {
           "TITLE": "Manufactured Home / Mobile Home Insurance",
           "DESCRIPTION": "Tailored coverage for mobile or manufactured homes, including structure, personal belongings, and liability protection for unique property needs.",
-          "ICON": "fas fa-home"
+          "ICON": "fas fa-home",
+          "ROUTE": "manufacturedMobileHomeInsurance"
         },
         "LANDLORD": {
           "TITLE": "Landlord Insurance",
           "DESCRIPTION": "Protects rental properties, structures, and liability exposure, including loss of rental income from covered damage or tenant-related incidents.",
-          "ICON": "fas fa-key"
+          "ICON": "fas fa-key",
+          "ROUTE": "landlordInsurance"
         },
         "FLOOD": {
           "TITLE": "Flood Insurance",
           "DESCRIPTION": "Provides protection against flood-related water damage in areas prone to heavy rain, flash floods, or rising waterways.",
-          "ICON": "fas fa-water"
+          "ICON": "fas fa-water",
+          "ROUTE": "floodInsurance"
         },
         "EARTHQUAKE": {
           "TITLE": "Earthquake Insurance",
           "DESCRIPTION": "Covers structural damage and personal property losses caused by seismic activity, helping homeowners prepare for rare but costly events.",
-          "ICON": "fas fa-mountain"
+          "ICON": "fas fa-mountain",
+          "ROUTE": "earthquakeInsurance"
         }
       }
     },
@@ -4000,43 +4018,53 @@
       "LIST": {
         "PROFESSIONAL_LIABILITY": {
           "TITLE": "Professional Liability (E&O) Insurance",
-          "DESCRIPTION": "Protects your business from claims of negligence or mistakes in professional services, covering legal fees and damages comprehensively."
+          "DESCRIPTION": "Protects your business from claims of negligence or mistakes in professional services, covering legal fees and damages comprehensively.",
+          "ROUTE": "professionalLiabilityInsurance"
         },
         "GENERAL_LIABILITY": {
           "TITLE": "General Liability Insurance",
-          "DESCRIPTION": "Covers third-party bodily injury, property damage, and advertising injury claims, safeguarding your business from potential lawsuits."
+          "DESCRIPTION": "Covers third-party bodily injury, property damage, and advertising injury claims, safeguarding your business from potential lawsuits.",
+          "ROUTE": "generalLiabilityInsurance"
         },
         "WORKERS_COMPENSATION": {
           "TITLE": "Workers’ Compensation Insurance",
-          "DESCRIPTION": "Covers medical costs and lost wages for employees injured on the job, ensuring financial protection for both workers and employers."
+          "DESCRIPTION": "Covers medical costs and lost wages for employees injured on the job, ensuring financial protection for both workers and employers.",
+          "ROUTE": "workersCompensationInsurance"
         },
         "COMMERCIAL_PROPERTY": {
           "TITLE": "Commercial Property Insurance",
-          "DESCRIPTION": "Protects your business assets, such as buildings, equipment, and inventory, against damage or loss from events like fire or theft."
+          "DESCRIPTION": "Protects your business assets, such as buildings, equipment, and inventory, against damage or loss from events like fire or theft.",
+          "ROUTE": "commercialPropertyInsurance"
         },
         "COMMERCIAL_AUTO": {
           "TITLE": "Commercial Auto Insurance",
-          "DESCRIPTION": "Covers vehicles used for business purposes, protecting your company against accidents, theft, or damage to your business vehicles."
+          "DESCRIPTION": "Covers vehicles used for business purposes, protecting your company against accidents, theft, or damage to your business vehicles.",
+          "ROUTE": "commercialAutoInsurance"
         },
         "BUSINESS_OWNER_POLICY": {
           "TITLE": "Business Owner’s Policy (BOP)",
-          "DESCRIPTION": "Combines essential coverage, such as general liability and property insurance, into a single, cost-effective policy for small businesses."
+          "DESCRIPTION": "Combines essential coverage, such as general liability and property insurance, into a single, cost-effective policy for small businesses.",
+          "ROUTE": "businessOwnerInsurance"
         },
         "EPLI": {
           "TITLE": "Employment Practices Liability (EPLI) Insurance",
-          "DESCRIPTION": "Protects your business from claims of employee misconduct, including discrimination, harassment, and wrongful termination lawsuits."
+          "DESCRIPTION": "Protects your business from claims of employee misconduct, including discrimination, harassment, and wrongful termination lawsuits.",
+          "ROUTE": "employmentPracticesLiabilityInsurance"
         },
         "CYBER_LIABILITY": {
           "TITLE": "Cyber Liability Insurance",
-          "DESCRIPTION": "Covers financial losses and recovery costs caused by cyberattacks, data breaches, and other cyber-related risks to your business."
+          "DESCRIPTION": "Covers financial losses and recovery costs caused by cyberattacks, data breaches, and other cyber-related risks to your business.",
+          "ROUTE": "cyberLiabilityInsurance"
         },
         "BUILDERS_RISK": {
           "TITLE": "Builders Risk / Course of Construction Insurance",
-          "DESCRIPTION": "Covers financial losses to construction projects or buildings under construction, protecting materials, equipment, and property during the build."
+          "DESCRIPTION": "Covers financial losses to construction projects or buildings under construction, protecting materials, equipment, and property during the build.",
+          "ROUTE": "buildersRiskInsurance"
         },
         "D_O_LIABILITY": {
           "TITLE": "Directors & Officers (D&O) Liability Insurance",
-          "DESCRIPTION": "Protects business leaders from personal liability related to their management decisions, covering legal fees and claims against them."
+          "DESCRIPTION": "Protects business leaders from personal liability related to their management decisions, covering legal fees and claims against them.",
+          "ROUTE": "directorsOfficersLiabilityInsurance"
         }
       }
     },
@@ -4645,32 +4673,38 @@
         "TERM_LIFE": {
           "TITLE": "Term Life Insurance",
           "DESCRIPTION": "Provides coverage for a set period, offering affordable protection to secure your family’s financial future.",
-          "ICON": "fas fa-hourglass-half"
+          "ICON": "fas fa-hourglass-half",
+          "ROUTE": "termLifeInsurance"
         },
         "WHOLE_LIFE": {
           "TITLE": "Whole Life Insurance",
           "DESCRIPTION": "Permanent coverage that includes a cash value component, ensuring lifelong protection and financial growth.",
-          "ICON": "fas fa-coins"
+          "ICON": "fas fa-coins",
+          "ROUTE": "wholeLifeInsurance"
         },
         "UNIVERSAL_LIFE": {
           "TITLE": "Universal Life Insurance",
           "DESCRIPTION": "Flexible permanent coverage that lets you adjust premiums and death benefits as your financial needs change.",
-          "ICON": "fas fa-adjust"
+          "ICON": "fas fa-adjust",
+          "ROUTE": "universalLifeInsurance"
         },
         "FINAL_EXPENSE": {
           "TITLE": "Final Expense Insurance",
           "DESCRIPTION": "Covers funeral, burial, and other end-of-life costs, helping your loved ones avoid financial stress.",
-          "ICON": "fas fa-cross"
+          "ICON": "fas fa-cross",
+          "ROUTE": "finalExpenseInsurance"
         },
         "VARIABLE_LIFE": {
           "TITLE": "Variable Life Insurance",
           "DESCRIPTION": "Permanent coverage with investment options, allowing your policy’s cash value to grow through market performance.",
-          "ICON": "fas fa-chart-line"
+          "ICON": "fas fa-chart-line",
+          "ROUTE": "variableLifeInsurance"
         },
         "GROUP_LIFE": {
           "TITLE": "Group Life Insurance",
           "DESCRIPTION": "Employer-sponsored plans provide coverage for multiple employees, often at lower group rates and with easy enrollment.",
-          "ICON": "fas fa-users"
+          "ICON": "fas fa-users",
+          "ROUTE": "groupLifeInsurance"
         }
       }
     },
@@ -5369,47 +5403,56 @@
         "INDIVIDUAL": {
           "TITLE": "Individual Health Insurance",
           "DESCRIPTION": "Get personalized coverage tailored to your needs and budget, with essential benefits for individuals seeking protection.",
-          "ICON": "fas fa-user"
+          "ICON": "fas fa-user",
+          "ROUTE": "individualHealthInsurance"
         },
         "FAMILY": {
           "TITLE": "Family Health Insurance",
           "DESCRIPTION": "Cover your entire family with an affordable health plan that includes medical, preventive care, and more for all family members.",
-          "ICON": "fas fa-home"
+          "ICON": "fas fa-home",
+          "ROUTE": "familyHealthInsurance"
         },
         "SMALL_BUSINESS": {
           "TITLE": "Small Business Health Insurance",
           "DESCRIPTION": "Provide your employees with health insurance that fits your budget, offering group plans that are both affordable and comprehensive.",
-          "ICON": "fas fa-briefcase"
+          "ICON": "fas fa-briefcase",
+          "ROUTE": "smallBusinessHealthInsurance"
         },
         "EMPLOYER_GROUP": {
           "TITLE": "Employer & Group Health Insurance",
           "DESCRIPTION": "Offer employees a valuable benefit with group health insurance plans, providing access to essential care at a competitive cost.",
-          "ICON": "fas fa-building"
+          "ICON": "fas fa-building",
+          "ROUTE": "employerGroupHealthInsurance"
         },
         "TRAVEL": {
           "TITLE": "Travel Health Insurance",
           "DESCRIPTION": "Ensure you're covered for unexpected medical expenses while traveling abroad with plans that provide emergency care and assistance.",
-          "ICON": "fas fa-plane"
+          "ICON": "fas fa-plane",
+          "ROUTE": "travelHealthInsurance"
         },
         "MEDICARE_SUPP": {
           "TITLE": "Medicare Supplement / Medigap",
           "DESCRIPTION": "Cover the gaps in original Medicare, helping with out-of-pocket costs like copayments, deductibles, and coinsurance.",
-          "ICON": "fas fa-hand-holding-medical"
+          "ICON": "fas fa-hand-holding-medical",
+          "ROUTE": "medicareSupplementInsurance"
         },
         "SHORT_TERM": {
           "TITLE": "Short-Term Health Insurance",
           "DESCRIPTION": "Ideal for those in transition, offering temporary coverage for individuals between jobs or in need of quick protection.",
-          "ICON": "fas fa-clock"
+          "ICON": "fas fa-clock",
+          "ROUTE": "shortTermHealthInsurance"
         },
         "DENTAL_VISION": {
           "TITLE": "Dental & Vision Insurance",
           "DESCRIPTION": "Improved health plan with dental and vision coverage, including preventive care, treatments, and eye exam discounts.",
-          "ICON": "fas fa-tooth"
+          "ICON": "fas fa-tooth",
+          "ROUTE": "dentalVisionInsurance"
         },
         "ACA_MARKETPLACE": {
           "TITLE": "ACA / Marketplace Plans",
           "DESCRIPTION": "Affordable ACA Marketplace plans with options for premium subsidies based on your income, offering comprehensive coverage.",
-          "ICON": "fas fa-shopping-cart"
+          "ICON": "fas fa-shopping-cart",
+          "ROUTE": "acaMarketplacePlansInsurance"
         }
       }
     },
@@ -6101,22 +6144,26 @@
         "PERFORMANCE_PAYMENT": {
           "TITLE": "Performance & Payment Bonds",
           "DESCRIPTION": "Protect project owners and subcontractors by ensuring contractors complete work and pay suppliers and laborers.",
-          "ICON": "fas fa-hard-hat"
+          "ICON": "fas fa-hard-hat",
+          "ROUTE": "performanceBondsPaymentBonds"
         },
         "COMMERCIAL": {
           "TITLE": "Commercial Surety Bonds",
           "DESCRIPTION": "Guarantee that businesses comply with laws, licensing requirements, and contractual obligations imposed by regulators.",
-          "ICON": "fas fa-briefcase"
+          "ICON": "fas fa-briefcase",
+          "ROUTE": "commercialSuretyBonds"
         },
         "BID_BONDS": {
           "TITLE": "Bid Bonds",
           "DESCRIPTION": "Guarantee that contractors who win a project bid will accept the contract and provide the required follow-up bonds.",
-          "ICON": "fas fa-gavel"
+          "ICON": "fas fa-gavel",
+          "ROUTE": "bidBonds"
         },
         "NOTARY": {
           "TITLE": "Notary Bonds",
           "DESCRIPTION": "Protect the public from financial loss caused by mistakes or misconduct by a commissioned notary during official duties.",
-          "ICON": "fas fa-stamp"
+          "ICON": "fas fa-stamp",
+          "ROUTE": "notaryBonds"
         }
       }
     },
