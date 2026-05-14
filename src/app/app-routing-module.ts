@@ -72,6 +72,7 @@ import { NotaryBonds } from './pages/surety-bond-insurance/notary-bonds/notary-b
 import { CommercialSuretyBonds } from './pages/surety-bond-insurance/commercial-surety-bonds/commercial-surety-bonds';
 import { TitleInsurance } from './pages/additional_insurance/title-insurance/title-insurance';
 import { TitleTransfer } from './pages/additional_insurance/title-transfer/title-transfer';
+import { PetInsurance } from './pages/additional_insurance/pet-insurance/pet-insurance';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -94,6 +95,7 @@ const routes: Routes = [
   { path: 'surety-bonds/quote', component: GetSuretyQuote },
   { path: 'title-insurance', component: TitleInsurance },
   { path: 'title-transfer', component: TitleTransfer },
+  { path: 'pet-insurance', component: PetInsurance },
   // { path: 'auto-insurance', component: AutoInsurance },
   // { path: 'homeowners-insurance', component: HomeInsurance },
   // { path: 'commercial-insurance', component: CommercialInsurance },
@@ -306,6 +308,8 @@ const routes: Routes = [
       { path: 'nuestras-ubicaciones/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
       { path: 'seguro-de-titulo', component: TitleInsurance },
       { path: 'traspaso-de-titulo', component: TitleTransfer },
+      { path: 'seguro-para-mascotas', component: PetInsurance },
+
     ],
   },
 
@@ -601,5 +605,9 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   titleTransfer: {
     en: 'title-transfer',
     es: 'traspaso-de-titulo'
+  },
+  petInsurance: {
+    en: 'pet-insurance',
+    es: 'seguro-para-mascotas'
   },
 };

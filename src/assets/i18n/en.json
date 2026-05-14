@@ -1901,7 +1901,7 @@
         "TITLE": "Additional Insurance",
         "ITEMS": [
           {
-            "KEY": "",
+            "KEY": "petInsurance",
             "LABEL": "Pet"
           },
           {
@@ -36997,138 +36997,1230 @@
       "DESC1": "Pet insurance in Texas typically costs around $56 per month for dogs and $24 per month for cats, depending on breed, age, coverage level, and deductible choices. On average, pet owners pay about $49 per month for standard accident and illness coverage, while comprehensive plans with wellness benefits can cost more.",
       "DESC2": "Compared to other states, Texas is generally more affordable than coastal areas like New York, California, and Massachusetts, where veterinary costs and premiums are higher. However, it is slightly above some lower-cost states in the Midwest and South. Overall, Texas sits in a mid-range pricing category, making it a relatively balanced state for affordable pet insurance options."
     },
-    "RATES_BY_TIER": {
-      "HEADER": {
-        "TITLE": "Average ACA / Marketplace Rates by Plan Type (Metal Tier) in Texas",
-        "DESC": "ACA/Marketplace plan rates in Texas vary by metal tier because each plan covers healthcare costs differently. Bronze plans usually have lower monthly premiums but higher deductibles, while Gold and Platinum plans cost more monthly and reduce out-of-pocket expenses. Rates are also affected by coverage levels, provider networks, prescription benefits, and expected medical usage."
-      },
-      "TABLE": {
-        "COLUMNS": {
-          "PLAN_TIER": "Plan Tier",
-          "MONTHLY_PREMIUM": "Monthly Premium",
-          "DEDUCTIBLE": "Deductible",
-          "OUT_OF_POCKET_MAX": "Out-of-Pocket Max"
+    "COMPARE": {
+      "RATES_BY_COMPANY": {
+        "HEADER": {
+          "TITLE": "Average Pet Insurance Rates by Insurance Company in Texas",
+          "DESC": "Insurance rates differ between companies in Texas because each insurer uses its own underwriting rules, risk models, and pricing strategies to estimate a pet's likelihood of making claims. Factors like breed risk, age, location, and coverage level are weighted differently, which creates price variation even for similar pets. Some companies offer lower coverage, while others offer broader benefits."
         },
-        "LIST": {
-          "BRONZE": {
-            "PLAN_TIER": "Bronze",
-            "MONTHLY_PREMIUM": "$360–$420",
-            "DEDUCTIBLE": "$7,500",
-            "OUT_OF_POCKET_MAX": "$9,450"
+        "TABLE": {
+          "COLUMNS": {
+            "INSURANCE_COMPANY": "Insurance Company",
+            "MONTHLY_PRICE": "Monthly Price"
           },
-          "SILVER": {
-            "PLAN_TIER": "Silver",
-            "MONTHLY_PREMIUM": "$480–$540",
-            "DEDUCTIBLE": "$4,000",
-            "OUT_OF_POCKET_MAX": "$8,900"
-          },
-          "GOLD": {
-            "PLAN_TIER": "Gold",
-            "MONTHLY_PREMIUM": "$560–$620",
-            "DEDUCTIBLE": "$1,500",
-            "OUT_OF_POCKET_MAX": "$6,500"
+          "LIST": {
+            "ASPCA": {
+              "INSURANCE_COMPANY": "ASPCA",
+              "MONTHLY_PRICE": "$20"
+            },
+            "SPOT": {
+              "INSURANCE_COMPANY": "Spot",
+              "MONTHLY_PRICE": "$22"
+            },
+            "PRUDENT_PET": {
+              "INSURANCE_COMPANY": "Prudent Pet",
+              "MONTHLY_PRICE": "$27"
+            },
+            "LEMONADE": {
+              "INSURANCE_COMPANY": "Lemonade",
+              "MONTHLY_PRICE": "$31"
+            },
+            "HEALTHY_PAWS": {
+              "INSURANCE_COMPANY": "Healthy Paws",
+              "MONTHLY_PRICE": "$42"
+            },
+            "PETS_BEST": {
+              "INSURANCE_COMPANY": "Pets Best",
+              "MONTHLY_PRICE": "$50"
+            },
+            "PUMPKIN": {
+              "INSURANCE_COMPANY": "Pumpkin",
+              "MONTHLY_PRICE": "$63"
+            }
           }
         }
       },
-      "SOURCE": "Source:",
-      "LAST_UPDATED": "Last Updated: March 2026",
-      "DISCLAIMER_LABEL": "Disclaimer:",
-      "DISCLAIMER_TEXT": "The information provided on this page is for general informational purposes only and may not reflect the most current updates. Coverage requirements, rates, and laws are subject to change. Please consult a licensed insurance agent for the most accurate and up-to-date information."
+      "RATES_BY_BREED": {
+        "HEADER": {
+          "TITLE": "Average Pet Insurance Rates by Dog Breed in Texas",
+          "DESC": "Insurance rates differ by dog breed because insurers assess each breed's genetic health risks, size, and history of veterinary claims when calculating premiums. Certain breeds are more prone to conditions like hip dysplasia, heart disease, or breathing issues, which increases the costs of claims. Larger or high-risk breeds lead to higher expected vet bills, so their insurance rates are higher."
+        },
+        "TABLE": {
+          "COLUMNS": {
+            "BREED": "Breed",
+            "MONTHLY_RATE": "Average Monthly Rate",
+            "ANNUAL_RATE": "Average Annual Rate"
+          },
+          "LIST": {
+            "AFFENPINSCHER": {
+              "BREED": "Affenpinscher",
+              "MONTHLY_RATE": "$53",
+              "ANNUAL_RATE": "$637"
+            },
+            "AFGHAN_HOUND": {
+              "BREED": "Afghan Hound",
+              "MONTHLY_RATE": "$63",
+              "ANNUAL_RATE": "$758"
+            },
+            "AIREDALE_TERRIER": {
+              "BREED": "Airedale Terrier",
+              "MONTHLY_RATE": "$67",
+              "ANNUAL_RATE": "$800"
+            },
+            "AKITA": {
+              "BREED": "Akita",
+              "MONTHLY_RATE": "$65",
+              "ANNUAL_RATE": "$776"
+            },
+            "ALASKAN_HUSKY": {
+              "BREED": "Alaskan Husky",
+              "MONTHLY_RATE": "$55",
+              "ANNUAL_RATE": "$654"
+            },
+            "ALASKAN_MALAMUTE": {
+              "BREED": "Alaskan Malamute",
+              "MONTHLY_RATE": "$64",
+              "ANNUAL_RATE": "$773"
+            },
+            "AMERICAN_BULLDOG": {
+              "BREED": "American Bulldog",
+              "MONTHLY_RATE": "$85",
+              "ANNUAL_RATE": "$1,017"
+            },
+            "AMERICAN_BULLY": {
+              "BREED": "American Bully",
+              "MONTHLY_RATE": "$88",
+              "ANNUAL_RATE": "$1,051"
+            },
+            "AMERICAN_ESKIMO": {
+              "BREED": "American Eskimo",
+              "MONTHLY_RATE": "$45",
+              "ANNUAL_RATE": "$537"
+            },
+            "AMERICAN_FOXHOUND": {
+              "BREED": "American Foxhound",
+              "MONTHLY_RATE": "$51",
+              "ANNUAL_RATE": "$618"
+            },
+            "AMERICAN_HAIRLESS_TERRIER": {
+              "BREED": "American Hairless Terrier",
+              "MONTHLY_RATE": "$47",
+              "ANNUAL_RATE": "$561"
+            },
+            "AMERICAN_STAFFORDSHIRE_TERRIER": {
+              "BREED": "American Staffordshire Terrier",
+              "MONTHLY_RATE": "$68",
+              "ANNUAL_RATE": "$814"
+            },
+            "AUSTRALIAN_CATTLE_DOG": {
+              "BREED": "Australian Cattle Dog",
+              "MONTHLY_RATE": "$50",
+              "ANNUAL_RATE": "$602"
+            },
+            "AUSTRALIAN_KELPIE": {
+              "BREED": "Australian Kelpie",
+              "MONTHLY_RATE": "$54",
+              "ANNUAL_RATE": "$653"
+            },
+            "AUSTRALIAN_SHEPHERD": {
+              "BREED": "Australian Shepherd",
+              "MONTHLY_RATE": "$43",
+              "ANNUAL_RATE": "$516"
+            },
+            "AUSTRALIAN_SILKY_TERRIER": {
+              "BREED": "Australian Silky Terrier",
+              "MONTHLY_RATE": "$40",
+              "ANNUAL_RATE": "$484"
+            },
+            "AUSTRALIAN_TERRIER": {
+              "BREED": "Australian Terrier",
+              "MONTHLY_RATE": "$47",
+              "ANNUAL_RATE": "$569"
+            },
+            "BASENJI": {
+              "BREED": "Basenji",
+              "MONTHLY_RATE": "$44",
+              "ANNUAL_RATE": "$525"
+            },
+            "BASSET_FAUVE_DE_BRETAGNE": {
+              "BREED": "Basset Fauve de Bretagne",
+              "MONTHLY_RATE": "$65",
+              "ANNUAL_RATE": "$781"
+            },
+            "BASSET_HOUND": {
+              "BREED": "Basset Hound",
+              "MONTHLY_RATE": "$72",
+              "ANNUAL_RATE": "$859"
+            },
+            "BEAGLE": {
+              "BREED": "Beagle",
+              "MONTHLY_RATE": "$54",
+              "ANNUAL_RATE": "$645"
+            },
+            "BEARDED_COLLIE": {
+              "BREED": "Bearded Collie",
+              "MONTHLY_RATE": "$49",
+              "ANNUAL_RATE": "$590"
+            },
+            "BELGIAN_SHEPHERD_MALINOIS": {
+              "BREED": "Belgian Shepherd Malinois",
+              "MONTHLY_RATE": "$57",
+              "ANNUAL_RATE": "$689"
+            },
+            "BERNESE_MOUNTAIN_DOG": {
+              "BREED": "Bernese Mountain Dog",
+              "MONTHLY_RATE": "$112",
+              "ANNUAL_RATE": "$1,347"
+            },
+            "BICHON_FRISE": {
+              "BREED": "Bichon Frise",
+              "MONTHLY_RATE": "$49",
+              "ANNUAL_RATE": "$585"
+            },
+            "BLOODHOUND": {
+              "BREED": "Bloodhound",
+              "MONTHLY_RATE": "$85",
+              "ANNUAL_RATE": "$1,016"
+            },
+            "BORDER_COLLIE": {
+              "BREED": "Border Collie",
+              "MONTHLY_RATE": "$45",
+              "ANNUAL_RATE": "$543"
+            },
+            "BORDER_TERRIER": {
+              "BREED": "Border Terrier",
+              "MONTHLY_RATE": "$48",
+              "ANNUAL_RATE": "$575"
+            },
+            "BORZOI": {
+              "BREED": "Borzoi",
+              "MONTHLY_RATE": "$73",
+              "ANNUAL_RATE": "$870"
+            },
+            "BOSTON_TERRIER": {
+              "BREED": "Boston Terrier",
+              "MONTHLY_RATE": "$52",
+              "ANNUAL_RATE": "$620"
+            },
+            "BOXER": {
+              "BREED": "Boxer",
+              "MONTHLY_RATE": "$83",
+              "ANNUAL_RATE": "$994"
+            },
+            "BRACCO_ITALIANO": {
+              "BREED": "Bracco Italiano",
+              "MONTHLY_RATE": "$63",
+              "ANNUAL_RATE": "$755"
+            },
+            "BRIARD": {
+              "BREED": "Briard",
+              "MONTHLY_RATE": "$61",
+              "ANNUAL_RATE": "$738"
+            },
+            "BRUSSELS_GRIFFON": {
+              "BREED": "Brussels Griffon",
+              "MONTHLY_RATE": "$49",
+              "ANNUAL_RATE": "$593"
+            },
+            "BULL_MASTIFF": {
+              "BREED": "Bull Mastiff",
+              "MONTHLY_RATE": "$122",
+              "ANNUAL_RATE": "$1,464"
+            },
+            "BULL_TERRIER": {
+              "BREED": "Bull Terrier",
+              "MONTHLY_RATE": "$70",
+              "ANNUAL_RATE": "$846"
+            },
+            "CAIRN_TERRIER": {
+              "BREED": "Cairn Terrier",
+              "MONTHLY_RATE": "$52",
+              "ANNUAL_RATE": "$622"
+            },
+            "CANE_CORSO": {
+              "BREED": "Cane Corso",
+              "MONTHLY_RATE": "$95",
+              "ANNUAL_RATE": "$1,135"
+            },
+            "CAUCASIAN_SHEPHERD_DOG": {
+              "BREED": "Caucasian Shepherd Dog",
+              "MONTHLY_RATE": "$70",
+              "ANNUAL_RATE": "$839"
+            },
+            "CAVACHON": {
+              "BREED": "Cavachon",
+              "MONTHLY_RATE": "$44",
+              "ANNUAL_RATE": "$533"
+            },
+            "CAVALIER_KING_CHARLES_SPANIEL": {
+              "BREED": "Cavalier King Charles Spaniel",
+              "MONTHLY_RATE": "$56",
+              "ANNUAL_RATE": "$667"
+            },
+            "CAVAPOO": {
+              "BREED": "Cavapoo",
+              "MONTHLY_RATE": "$42",
+              "ANNUAL_RATE": "$506"
+            },
+            "CENTRAL_ASIAN_SHEPHERD_DOG": {
+              "BREED": "Central Asian Shepherd Dog",
+              "MONTHLY_RATE": "$76",
+              "ANNUAL_RATE": "$914"
+            },
+            "CHIHUAHUA": {
+              "BREED": "Chihuahua",
+              "MONTHLY_RATE": "$34",
+              "ANNUAL_RATE": "$413"
+            },
+            "CHOW_CHOW": {
+              "BREED": "Chow Chow",
+              "MONTHLY_RATE": "$61",
+              "ANNUAL_RATE": "$732"
+            },
+            "CLUMBER_SPANIEL": {
+              "BREED": "Clumber Spaniel",
+              "MONTHLY_RATE": "$66",
+              "ANNUAL_RATE": "$793"
+            },
+            "COCKAPOO": {
+              "BREED": "Cockapoo",
+              "MONTHLY_RATE": "$41",
+              "ANNUAL_RATE": "$494"
+            },
+            "COCKER_SPANIEL": {
+              "BREED": "Cocker spaniel",
+              "MONTHLY_RATE": "$59",
+              "ANNUAL_RATE": "$709"
+            },
+            "COLLIE": {
+              "BREED": "Collie",
+              "MONTHLY_RATE": "$52",
+              "ANNUAL_RATE": "$626"
+            },
+            "CORGI": {
+              "BREED": "Corgi",
+              "MONTHLY_RATE": "$61",
+              "ANNUAL_RATE": "$733"
+            },
+            "COTON_DE_TULEAR": {
+              "BREED": "Coton De Tulear",
+              "MONTHLY_RATE": "$44",
+              "ANNUAL_RATE": "$529"
+            },
+            "DACHSHUND": {
+              "BREED": "Dachshund",
+              "MONTHLY_RATE": "$44",
+              "ANNUAL_RATE": "$529"
+            },
+            "DALMATIAN": {
+              "BREED": "Dalmatian",
+              "MONTHLY_RATE": "$71",
+              "ANNUAL_RATE": "$852"
+            },
+            "DINGO": {
+              "BREED": "Dingo",
+              "MONTHLY_RATE": "$43",
+              "ANNUAL_RATE": "$521"
+            },
+            "DOBERMAN_PINSCHER": {
+              "BREED": "Doberman Pinscher",
+              "MONTHLY_RATE": "$112",
+              "ANNUAL_RATE": "$1,345"
+            },
+            "DOGUE_DE_BORDEAUX": {
+              "BREED": "Dogue de Bordeaux",
+              "MONTHLY_RATE": "$114",
+              "ANNUAL_RATE": "$1,363"
+            },
+            "ENGLISH_BULLDOG": {
+              "BREED": "English Bulldog",
+              "MONTHLY_RATE": "$104",
+              "ANNUAL_RATE": "$1,248"
+            },
+            "ENGLISH_FOXHOUND": {
+              "BREED": "English Foxhound",
+              "MONTHLY_RATE": "$50",
+              "ANNUAL_RATE": "$606"
+            },
+            "ENGLISH_MASTIFF": {
+              "BREED": "English Mastiff",
+              "MONTHLY_RATE": "$100",
+              "ANNUAL_RATE": "$1,200"
+            },
+            "ENGLISH_POINTER": {
+              "BREED": "English Pointer",
+              "MONTHLY_RATE": "$61",
+              "ANNUAL_RATE": "$737"
+            },
+            "ENGLISH_SETTER": {
+              "BREED": "English Setter",
+              "MONTHLY_RATE": "$60",
+              "ANNUAL_RATE": "$715"
+            },
+            "ENGLISH_SPRINGER_SPANIEL": {
+              "BREED": "English Springer Spaniel",
+              "MONTHLY_RATE": "$55",
+              "ANNUAL_RATE": "$660"
+            },
+            "ENGLISH_TOY_TERRIER": {
+              "BREED": "English Toy Terrier",
+              "MONTHLY_RATE": "$45",
+              "ANNUAL_RATE": "$535"
+            },
+            "ESTRELA_MOUNTAIN_DOG": {
+              "BREED": "Estrela Mountain Dog",
+              "MONTHLY_RATE": "$71",
+              "ANNUAL_RATE": "$857"
+            },
+            "FIELD_SPANIEL": {
+              "BREED": "Field Spaniel",
+              "MONTHLY_RATE": "$57",
+              "ANNUAL_RATE": "$680"
+            },
+            "FINNISH_LAPPHUND": {
+              "BREED": "Finnish Lapphund",
+              "MONTHLY_RATE": "$52",
+              "ANNUAL_RATE": "$622"
+            },
+            "FOX_TERRIER": {
+              "BREED": "Fox Terrier",
+              "MONTHLY_RATE": "$46",
+              "ANNUAL_RATE": "$549"
+            },
+            "FOXHOUND": {
+              "BREED": "Foxhound",
+              "MONTHLY_RATE": "$53",
+              "ANNUAL_RATE": "$640"
+            },
+            "FRENCH_BULLDOG": {
+              "BREED": "French Bulldog",
+              "MONTHLY_RATE": "$94",
+              "ANNUAL_RATE": "$1,124"
+            },
+            "GERMAN_PINSCHER": {
+              "BREED": "German Pinscher",
+              "MONTHLY_RATE": "$48",
+              "ANNUAL_RATE": "$582"
+            },
+            "GERMAN_SHEPHERD": {
+              "BREED": "German Shepherd",
+              "MONTHLY_RATE": "$60",
+              "ANNUAL_RATE": "$726"
+            },
+            "GERMAN_SHORTHAIRED_POINTER": {
+              "BREED": "German Shorthaired Pointer",
+              "MONTHLY_RATE": "$56",
+              "ANNUAL_RATE": "$671"
+            },
+            "GERMAN_SPITZ": {
+              "BREED": "German Spitz",
+              "MONTHLY_RATE": "$47",
+              "ANNUAL_RATE": "$566"
+            },
+            "GOLDEN_RETRIEVER": {
+              "BREED": "Golden Retriever",
+              "MONTHLY_RATE": "$63",
+              "ANNUAL_RATE": "$759"
+            },
+            "GOLDENDOODLE": {
+              "BREED": "Goldendoodle",
+              "MONTHLY_RATE": "$48",
+              "ANNUAL_RATE": "$577"
+            },
+            "GORDON_SETTER": {
+              "BREED": "Gordon Setter",
+              "MONTHLY_RATE": "$73",
+              "ANNUAL_RATE": "$878"
+            },
+            "GREAT_DANE": {
+              "BREED": "Great Dane",
+              "MONTHLY_RATE": "$102",
+              "ANNUAL_RATE": "$1,229"
+            },
+            "GREAT_PYRENEES": {
+              "BREED": "Great Pyrenees",
+              "MONTHLY_RATE": "$69",
+              "ANNUAL_RATE": "$830"
+            },
+            "GREYHOUND": {
+              "BREED": "Greyhound",
+              "MONTHLY_RATE": "$68",
+              "ANNUAL_RATE": "$816"
+            },
+            "GROODLE": {
+              "BREED": "Groodle",
+              "MONTHLY_RATE": "$48",
+              "ANNUAL_RATE": "$575"
+            },
+            "HARRIER": {
+              "BREED": "Harrier",
+              "MONTHLY_RATE": "$57",
+              "ANNUAL_RATE": "$686"
+            },
+            "HAVANESE": {
+              "BREED": "Havanese",
+              "MONTHLY_RATE": "$41",
+              "ANNUAL_RATE": "$491"
+            },
+            "HUNGARIAN_VIZSLA": {
+              "BREED": "Hungarian Vizsla",
+              "MONTHLY_RATE": "$65",
+              "ANNUAL_RATE": "$780"
+            },
+            "HUSKY": {
+              "BREED": "Husky",
+              "MONTHLY_RATE": "$44",
+              "ANNUAL_RATE": "$531"
+            },
+            "ICELANDIC_SHEEPDOG": {
+              "BREED": "Icelandic Sheepdog",
+              "MONTHLY_RATE": "$53",
+              "ANNUAL_RATE": "$630"
+            },
+            "IRISH_SETTER": {
+              "BREED": "Irish Setter",
+              "MONTHLY_RATE": "$65",
+              "ANNUAL_RATE": "$777"
+            },
+            "IRISH_TERRIER": {
+              "BREED": "Irish Terrier",
+              "MONTHLY_RATE": "$52",
+              "ANNUAL_RATE": "$628"
+            },
+            "ITALIAN_GREYHOUND": {
+              "BREED": "Italian Greyhound",
+              "MONTHLY_RATE": "$51",
+              "ANNUAL_RATE": "$617"
+            },
+            "ITALIAN_SPINONE": {
+              "BREED": "Italian Spinone",
+              "MONTHLY_RATE": "$60",
+              "ANNUAL_RATE": "$715"
+            },
+            "JACK_RUSSELL_TERRIER": {
+              "BREED": "Jack Russell Terrier",
+              "MONTHLY_RATE": "$39",
+              "ANNUAL_RATE": "$468"
+            },
+            "JAPANESE_CHIN": {
+              "BREED": "Japanese Chin",
+              "MONTHLY_RATE": "$44",
+              "ANNUAL_RATE": "$529"
+            },
+            "JAPANESE_SPITZ": {
+              "BREED": "Japanese Spitz",
+              "MONTHLY_RATE": "$46",
+              "ANNUAL_RATE": "$550"
+            },
+            "KANGAL_SHEPHERD_DOG": {
+              "BREED": "Kangal Shepherd Dog",
+              "MONTHLY_RATE": "$76",
+              "ANNUAL_RATE": "$916"
+            },
+            "KEESHOND": {
+              "BREED": "Keeshond",
+              "MONTHLY_RATE": "$53",
+              "ANNUAL_RATE": "$639"
+            },
+            "KOMONDOR": {
+              "BREED": "Komondor",
+              "MONTHLY_RATE": "$69",
+              "ANNUAL_RATE": "$833"
+            },
+            "LABRADOODLE": {
+              "BREED": "Labradoodle",
+              "MONTHLY_RATE": "$48",
+              "ANNUAL_RATE": "$580"
+            },
+            "LABRADOR_RETRIEVER": {
+              "BREED": "Labrador Retriever",
+              "MONTHLY_RATE": "$64",
+              "ANNUAL_RATE": "$767"
+            },
+            "LHASA_APSO": {
+              "BREED": "Lhasa Apso",
+              "MONTHLY_RATE": "$44",
+              "ANNUAL_RATE": "$526"
+            },
+            "LURCHER": {
+              "BREED": "Lurcher",
+              "MONTHLY_RATE": "$71",
+              "ANNUAL_RATE": "$850"
+            },
+            "MALTESE": {
+              "BREED": "Maltese",
+              "MONTHLY_RATE": "$43",
+              "ANNUAL_RATE": "$512"
+            },
+            "MALTIPOO": {
+              "BREED": "Maltipoo",
+              "MONTHLY_RATE": "$38",
+              "ANNUAL_RATE": "$461"
+            },
+            "MINIATURE_BULL_TERRIER": {
+              "BREED": "Miniature Bull Terrier",
+              "MONTHLY_RATE": "$71",
+              "ANNUAL_RATE": "$858"
+            },
+            "MINIATURE_DACHSHUND": {
+              "BREED": "Miniature Dachshund",
+              "MONTHLY_RATE": "$48",
+              "ANNUAL_RATE": "$574"
+            },
+            "MINIATURE_FOX_TERRIER": {
+              "BREED": "Miniature Fox Terrier",
+              "MONTHLY_RATE": "$50",
+              "ANNUAL_RATE": "$598"
+            },
+            "MINIATURE_PINSCHER": {
+              "BREED": "Miniature Pinscher",
+              "MONTHLY_RATE": "$46",
+              "ANNUAL_RATE": "$554"
+            },
+            "MINIATURE_POODLE": {
+              "BREED": "Miniature Poodle",
+              "MONTHLY_RATE": "$42",
+              "ANNUAL_RATE": "$498"
+            },
+            "MINIATURE_SCHNAUZER": {
+              "BREED": "Miniature Schnauzer",
+              "MONTHLY_RATE": "$49",
+              "ANNUAL_RATE": "$582"
+            },
+            "MORKIE": {
+              "BREED": "Morkie",
+              "MONTHLY_RATE": "$40",
+              "ANNUAL_RATE": "$481"
+            },
+            "NEWFOUNDLAND": {
+              "BREED": "Newfoundland",
+              "MONTHLY_RATE": "$95",
+              "ANNUAL_RATE": "$1,142"
+            },
+            "NORFOLK_TERRIER": {
+              "BREED": "Norfolk Terrier",
+              "MONTHLY_RATE": "$51",
+              "ANNUAL_RATE": "$616"
+            },
+            "NORWEGIAN_ELKHOUND": {
+              "BREED": "Norwegian Elkhound",
+              "MONTHLY_RATE": "$52",
+              "ANNUAL_RATE": "$624"
+            },
+            "NORWICH_TERRIER": {
+              "BREED": "Norwich Terrier",
+              "MONTHLY_RATE": "$49",
+              "ANNUAL_RATE": "$583"
+            },
+            "OLD_ENGLISH_SHEEPDOG": {
+              "BREED": "Old English Sheepdog",
+              "MONTHLY_RATE": "$65",
+              "ANNUAL_RATE": "$782"
+            },
+            "OLDE_ENGLISH_BULLDOGGE": {
+              "BREED": "Olde English Bulldogge",
+              "MONTHLY_RATE": "$125",
+              "ANNUAL_RATE": "$1,502"
+            },
+            "PAPILLON": {
+              "BREED": "Papillon",
+              "MONTHLY_RATE": "$41",
+              "ANNUAL_RATE": "$494"
+            },
+            "PEKINGESE": {
+              "BREED": "Pekingese",
+              "MONTHLY_RATE": "$46",
+              "ANNUAL_RATE": "$550"
+            },
+            "PEMBROKE_WELSH_CORGI": {
+              "BREED": "Pembroke Welsh Corgi",
+              "MONTHLY_RATE": "$55",
+              "ANNUAL_RATE": "$658"
+            },
+            "PERUVIAN_HAIRLESS_DOG": {
+              "BREED": "Peruvian Hairless Dog",
+              "MONTHLY_RATE": "$44",
+              "ANNUAL_RATE": "$525"
+            },
+            "PETIT_BASSET_GRIFFON_VENDEEN": {
+              "BREED": "Petit Basset Griffon Vendeen",
+              "MONTHLY_RATE": "$56",
+              "ANNUAL_RATE": "$671"
+            },
+            "PITBULL": {
+              "BREED": "Pitbull",
+              "MONTHLY_RATE": "$66",
+              "ANNUAL_RATE": "$787"
+            },
+            "POINTER": {
+              "BREED": "Pointer",
+              "MONTHLY_RATE": "$53",
+              "ANNUAL_RATE": "$634"
+            },
+            "POMERANIAN": {
+              "BREED": "Pomeranian",
+              "MONTHLY_RATE": "$44",
+              "ANNUAL_RATE": "$532"
+            },
+            "PORTUGUESE_WATER_DOG": {
+              "BREED": "Portuguese Water Dog",
+              "MONTHLY_RATE": "$62",
+              "ANNUAL_RATE": "$743"
+            },
+            "PUG": {
+              "BREED": "Pug",
+              "MONTHLY_RATE": "$57",
+              "ANNUAL_RATE": "$678"
+            },
+            "PUGGLE": {
+              "BREED": "Puggle",
+              "MONTHLY_RATE": "$44",
+              "ANNUAL_RATE": "$523"
+            },
+            "PULI": {
+              "BREED": "Puli",
+              "MONTHLY_RATE": "$58",
+              "ANNUAL_RATE": "$700"
+            },
+            "RHODESIAN_RIDGEBACK": {
+              "BREED": "Rhodesian Ridgeback",
+              "MONTHLY_RATE": "$70",
+              "ANNUAL_RATE": "$838"
+            },
+            "ROTTWEILER": {
+              "BREED": "Rottweiler",
+              "MONTHLY_RATE": "$98",
+              "ANNUAL_RATE": "$1,174"
+            },
+            "ROUGH_COLLIE": {
+              "BREED": "Rough Collie",
+              "MONTHLY_RATE": "$64",
+              "ANNUAL_RATE": "$770"
+            },
+            "SAINT_BERNARD": {
+              "BREED": "Saint Bernard",
+              "MONTHLY_RATE": "$107",
+              "ANNUAL_RATE": "$1,286"
+            },
+            "SALUKI": {
+              "BREED": "Saluki",
+              "MONTHLY_RATE": "$58",
+              "ANNUAL_RATE": "$700"
+            },
+            "SAMOYED": {
+              "BREED": "Samoyed",
+              "MONTHLY_RATE": "$57",
+              "ANNUAL_RATE": "$679"
+            },
+            "SCHNOODLE": {
+              "BREED": "Schnoodle",
+              "MONTHLY_RATE": "$44",
+              "ANNUAL_RATE": "$528"
+            },
+            "SCOTTISH_DEERHOUND": {
+              "BREED": "Scottish Deerhound",
+              "MONTHLY_RATE": "$88",
+              "ANNUAL_RATE": "$1,050"
+            },
+            "SCOTTISH_TERRIER": {
+              "BREED": "Scottish Terrier",
+              "MONTHLY_RATE": "$59",
+              "ANNUAL_RATE": "$708"
+            },
+            "SHAR_PEI": {
+              "BREED": "Shar Pei",
+              "MONTHLY_RATE": "$92",
+              "ANNUAL_RATE": "$1,103"
+            },
+            "SHETLAND_SHEEPDOG": {
+              "BREED": "Shetland Sheepdog",
+              "MONTHLY_RATE": "$46",
+              "ANNUAL_RATE": "$554"
+            },
+            "SHIBA_INU": {
+              "BREED": "Shiba Inu",
+              "MONTHLY_RATE": "$41",
+              "ANNUAL_RATE": "$495"
+            },
+            "SHIH_TZU": {
+              "BREED": "Shih Tzu",
+              "MONTHLY_RATE": "$38",
+              "ANNUAL_RATE": "$457"
+            },
+            "SIBERIAN_HUSKY": {
+              "BREED": "Siberian Husky",
+              "MONTHLY_RATE": "$50",
+              "ANNUAL_RATE": "$598"
+            },
+            "SMOOTH_COLLIE": {
+              "BREED": "Smooth Collie",
+              "MONTHLY_RATE": "$57",
+              "ANNUAL_RATE": "$680"
+            },
+            "SOFT_COATED_WHEATEN_TERRIER": {
+              "BREED": "Soft Coated Wheaten Terrier",
+              "MONTHLY_RATE": "$58",
+              "ANNUAL_RATE": "$699"
+            },
+            "STAFFORDSHIRE_BULL_TERRIER": {
+              "BREED": "Staffordshire Bull Terrier",
+              "MONTHLY_RATE": "$61",
+              "ANNUAL_RATE": "$735"
+            },
+            "STANDARD_POODLE": {
+              "BREED": "Standard Poodle",
+              "MONTHLY_RATE": "$61",
+              "ANNUAL_RATE": "$729"
+            },
+            "STANDARD_SCHNAUZER": {
+              "BREED": "Standard Schnauzer",
+              "MONTHLY_RATE": "$54",
+              "ANNUAL_RATE": "$643"
+            },
+            "TIBETAN_MASTIFF": {
+              "BREED": "Tibetan Mastiff",
+              "MONTHLY_RATE": "$93",
+              "ANNUAL_RATE": "$1,121"
+            },
+            "TIBETAN_TERRIER": {
+              "BREED": "Tibetan Terrier",
+              "MONTHLY_RATE": "$58",
+              "ANNUAL_RATE": "$695"
+            },
+            "TOY_POODLE": {
+              "BREED": "Toy Poodle",
+              "MONTHLY_RATE": "$44",
+              "ANNUAL_RATE": "$523"
+            },
+            "VIZSLA": {
+              "BREED": "Vizsla",
+              "MONTHLY_RATE": "$57",
+              "ANNUAL_RATE": "$688"
+            },
+            "WEIMARANER": {
+              "BREED": "Weimaraner",
+              "MONTHLY_RATE": "$72",
+              "ANNUAL_RATE": "$865"
+            },
+            "WELSH_CORGI_CARDIGAN": {
+              "BREED": "Welsh Corgi Cardigan",
+              "MONTHLY_RATE": "$53",
+              "ANNUAL_RATE": "$632"
+            },
+            "WELSH_SPRINGER_SPANIEL": {
+              "BREED": "Welsh Springer Spaniel",
+              "MONTHLY_RATE": "$47",
+              "ANNUAL_RATE": "$566"
+            },
+            "WELSH_TERRIER": {
+              "BREED": "Welsh Terrier",
+              "MONTHLY_RATE": "$55",
+              "ANNUAL_RATE": "$665"
+            },
+            "WEST_HIGHLAND_WHITE_TERRIER": {
+              "BREED": "West Highland White Terrier",
+              "MONTHLY_RATE": "$48",
+              "ANNUAL_RATE": "$578"
+            },
+            "WHIPPET": {
+              "BREED": "Whippet",
+              "MONTHLY_RATE": "$52",
+              "ANNUAL_RATE": "$624"
+            },
+            "WIRE_FOX_TERRIER": {
+              "BREED": "Wire Fox Terrier",
+              "MONTHLY_RATE": "$54",
+              "ANNUAL_RATE": "$651"
+            },
+            "YORKSHIRE_TERRIER": {
+              "BREED": "Yorkshire terrier",
+              "MONTHLY_RATE": "$42",
+              "ANNUAL_RATE": "$503"
+            }
+          }
+        }
+      },
+      "RATES_BY_CAT_BREED": {
+        "HEADER": {
+          "TITLE": "Average Pet Insurance Rates by Cat Breed in Texas",
+          "DESC": "Insurance rates for cat breeds in Texas differ primarily because insurers assess genetic health risks, hereditary diseases, and medical histories associated with each breed. Some breeds, like Maine Coons, and Bengals, are more prone to conditions such as heart disease or respiratory problems, which increase expected vet costs. Mixed or low-risk breeds have fewer claims, leading to lower premiums."
+        },
+        "TABLE": {
+          "COLUMNS": {
+            "BREED": "Breed",
+            "MONTHLY_RATE": "Average Monthly Rate",
+            "ANNUAL_RATE": "Average Annual Rate"
+          },
+          "LIST": {
+            "ABYSSINIAN": {
+              "BREED": "Abyssinian",
+              "MONTHLY_RATE": "$43",
+              "ANNUAL_RATE": "$518"
+            },
+            "AUSTRALIAN_MIST": {
+              "BREED": "Australian Mist",
+              "MONTHLY_RATE": "$48",
+              "ANNUAL_RATE": "$579"
+            },
+            "BALINESE": {
+              "BREED": "Balinese",
+              "MONTHLY_RATE": "$40",
+              "ANNUAL_RATE": "$481"
+            },
+            "BENGAL": {
+              "BREED": "Bengal",
+              "MONTHLY_RATE": "$37",
+              "ANNUAL_RATE": "$448"
+            },
+            "BIRMAN": {
+              "BREED": "Birman",
+              "MONTHLY_RATE": "$35",
+              "ANNUAL_RATE": "$423"
+            },
+            "BOMBAY": {
+              "BREED": "Bombay",
+              "MONTHLY_RATE": "$31",
+              "ANNUAL_RATE": "$372"
+            },
+            "BRITISH_LONGHAIR": {
+              "BREED": "British Longhair",
+              "MONTHLY_RATE": "$34",
+              "ANNUAL_RATE": "$407"
+            },
+            "BRITISH_SHORTHAIR": {
+              "BREED": "British Shorthair",
+              "MONTHLY_RATE": "$39",
+              "ANNUAL_RATE": "$473"
+            },
+            "BURMESE": {
+              "BREED": "Burmese",
+              "MONTHLY_RATE": "$36",
+              "ANNUAL_RATE": "$435"
+            },
+            "CHINCHILLA": {
+              "BREED": "Chinchilla",
+              "MONTHLY_RATE": "$35",
+              "ANNUAL_RATE": "$416"
+            },
+            "CORNISH_REX": {
+              "BREED": "Cornish Rex",
+              "MONTHLY_RATE": "$38",
+              "ANNUAL_RATE": "$458"
+            },
+            "DEVON_REX": {
+              "BREED": "Devon Rex",
+              "MONTHLY_RATE": "$35",
+              "ANNUAL_RATE": "$424"
+            },
+            "DOMESTIC_SHORTHAIR": {
+              "BREED": "Domestic Shorthair",
+              "MONTHLY_RATE": "$31",
+              "ANNUAL_RATE": "$377"
+            },
+            "EXOTIC_SHORTHAIR": {
+              "BREED": "Exotic Shorthair",
+              "MONTHLY_RATE": "$43",
+              "ANNUAL_RATE": "$515"
+            },
+            "HIMALAYAN": {
+              "BREED": "Himalayan",
+              "MONTHLY_RATE": "$37",
+              "ANNUAL_RATE": "$445"
+            },
+            "MAINE_COON": {
+              "BREED": "Maine Coon",
+              "MONTHLY_RATE": "$41",
+              "ANNUAL_RATE": "$490"
+            },
+            "MUNCHKIN": {
+              "BREED": "Munchkin",
+              "MONTHLY_RATE": "$36",
+              "ANNUAL_RATE": "$430"
+            },
+            "NORWEGIAN_FOREST_CAT": {
+              "BREED": "Norwegian Forest cat",
+              "MONTHLY_RATE": "$34",
+              "ANNUAL_RATE": "$409"
+            },
+            "PERSIAN": {
+              "BREED": "Persian",
+              "MONTHLY_RATE": "$39",
+              "ANNUAL_RATE": "$472"
+            },
+            "RAGDOLL": {
+              "BREED": "Ragdoll",
+              "MONTHLY_RATE": "$35",
+              "ANNUAL_RATE": "$420"
+            },
+            "RUSSIAN_BLUE": {
+              "BREED": "Russian Blue",
+              "MONTHLY_RATE": "$33",
+              "ANNUAL_RATE": "$395"
+            },
+            "SAVANNAH": {
+              "BREED": "Savannah",
+              "MONTHLY_RATE": "$41",
+              "ANNUAL_RATE": "$489"
+            },
+            "SCOTTISH_FOLD": {
+              "BREED": "Scottish Fold",
+              "MONTHLY_RATE": "$38",
+              "ANNUAL_RATE": "$453"
+            },
+            "SERENGETI": {
+              "BREED": "Serengeti",
+              "MONTHLY_RATE": "$43",
+              "ANNUAL_RATE": "$516"
+            },
+            "SIAMESE": {
+              "BREED": "Siamese",
+              "MONTHLY_RATE": "$32",
+              "ANNUAL_RATE": "$384"
+            },
+            "SIBERIAN": {
+              "BREED": "Siberian",
+              "MONTHLY_RATE": "$39",
+              "ANNUAL_RATE": "$473"
+            },
+            "SNOWSHOE": {
+              "BREED": "Snowshoe",
+              "MONTHLY_RATE": "$37",
+              "ANNUAL_RATE": "$439"
+            },
+            "SPHYNX": {
+              "BREED": "Sphynx",
+              "MONTHLY_RATE": "$43",
+              "ANNUAL_RATE": "$511"
+            },
+            "TONKINESE": {
+              "BREED": "Tonkinese",
+              "MONTHLY_RATE": "$34",
+              "ANNUAL_RATE": "$409"
+            }
+          }
+        }
+      },
+      "RATES_BY_AGE": {
+        "HEADER": {
+          "TITLE": "Average Pet Insurance Rates by Age in Texas",
+          "DESC": "Pet insurance rates in Texas increase with age because older pets are statistically more likely to develop illnesses and chronic conditions and to require frequent veterinary care. As pets move from young to senior stages, insurers adjust premiums to reflect higher claim risks and rising treatment costs. Younger pets are cheaper because they are healthier and less likely to need expensive procedures."
+        },
+        "TABLE": {
+          "COLUMNS": {
+            "AGE": "Age",
+            "MONTHLY_RATE": "Average Monthly Rate",
+            "ANNUAL_RATE": "Average Annual Rate"
+          },
+          "LIST": {
+            "UNDER_1": {
+              "AGE": "Under 1",
+              "MONTHLY_RATE": "$33",
+              "ANNUAL_RATE": "$394"
+            },
+            "AGE_1": {
+              "AGE": "1",
+              "MONTHLY_RATE": "$32",
+              "ANNUAL_RATE": "$386"
+            },
+            "AGE_2": {
+              "AGE": "2",
+              "MONTHLY_RATE": "$33",
+              "ANNUAL_RATE": "$390"
+            },
+            "AGE_3": {
+              "AGE": "3",
+              "MONTHLY_RATE": "$34",
+              "ANNUAL_RATE": "$405"
+            },
+            "AGE_4": {
+              "AGE": "4",
+              "MONTHLY_RATE": "$37",
+              "ANNUAL_RATE": "$446"
+            },
+            "AGE_5": {
+              "AGE": "5",
+              "MONTHLY_RATE": "$42",
+              "ANNUAL_RATE": "$498"
+            },
+            "AGE_6": {
+              "AGE": "6",
+              "MONTHLY_RATE": "$47",
+              "ANNUAL_RATE": "$569"
+            },
+            "AGE_7": {
+              "AGE": "7",
+              "MONTHLY_RATE": "$54",
+              "ANNUAL_RATE": "$642"
+            },
+            "AGE_8": {
+              "AGE": "8",
+              "MONTHLY_RATE": "$60",
+              "ANNUAL_RATE": "$720"
+            },
+            "AGE_9": {
+              "AGE": "9",
+              "MONTHLY_RATE": "$67",
+              "ANNUAL_RATE": "$806"
+            },
+            "AGE_10": {
+              "AGE": "10",
+              "MONTHLY_RATE": "$83",
+              "ANNUAL_RATE": "$999"
+            },
+            "AGE_11": {
+              "AGE": "11",
+              "MONTHLY_RATE": "$97",
+              "ANNUAL_RATE": "$1,159"
+            },
+            "AGE_12": {
+              "AGE": "12",
+              "MONTHLY_RATE": "$111",
+              "ANNUAL_RATE": "$1,332"
+            },
+            "AGE_13": {
+              "AGE": "13",
+              "MONTHLY_RATE": "$120",
+              "ANNUAL_RATE": "$1,445"
+            },
+            "AGE_14": {
+              "AGE": "14",
+              "MONTHLY_RATE": "$135",
+              "ANNUAL_RATE": "$1,615"
+            },
+            "AGE_15": {
+              "AGE": "15",
+              "MONTHLY_RATE": "$153",
+              "ANNUAL_RATE": "$1,830"
+            },
+            "AGE_16": {
+              "AGE": "16",
+              "MONTHLY_RATE": "$145",
+              "ANNUAL_RATE": "$1,739"
+            },
+            "AGE_17": {
+              "AGE": "17",
+              "MONTHLY_RATE": "$145",
+              "ANNUAL_RATE": "$1,739"
+            },
+            "AGE_18": {
+              "AGE": "18",
+              "MONTHLY_RATE": "$145",
+              "ANNUAL_RATE": "$1,739"
+            },
+            "AGE_19": {
+              "AGE": "19",
+              "MONTHLY_RATE": "$145",
+              "ANNUAL_RATE": "$1,739"
+            },
+            "AGE_20": {
+              "AGE": "20",
+              "MONTHLY_RATE": "$145",
+              "ANNUAL_RATE": "$1,739"
+            }
+          }
+        }
+      },
+      "FOOTER": {
+        "SOURCE": "Source:",
+        "LAST_UPDATED": "Last Updated: March 2026",
+        "DISCLAIMER_LABEL": "Disclaimer:",
+        "DISCLAIMER": "The information provided on this page is for general informational purposes only and may not reflect the most current updates. Coverage requirements, rates, and laws are subject to change. Please consult a licensed insurance agent for the most accurate and up-to-date information."
+      }
     },
-    "FAMILY_VS_INDIVIDUAL": {
+    "PET_VS_OTHER_VET_CARE": {
       "HEADER": {
-        "TITLE": "ACA / Marketplace Plan vs. Other Health Insurance Options in Texas",
-        "DESC": "ACA / Marketplace plans offer comprehensive health coverage with essential benefits, subsidy eligibility, and protection for pre-existing conditions. Compared to employer plans, Medicaid, Medicare, and short-term insurance, ACA plans provide flexible options for individuals and families who need reliable healthcare coverage without relying on employer-sponsored or government program eligibility."
+        "TITLE": "Pet Insurance vs. Other Ways to Pay for Vet Care in Texas",
+        "DESC": "Pet owners in Texas have several ways to manage veterinary expenses, including pet insurance, wellness plans, savings accounts, and financing options such as CareCredit. Pet insurance helps cover unexpected accidents and illnesses, while wellness plans focus on routine care. Savings give flexibility but require discipline, and financing spreads costs over time but may include interest."
       },
       "TABLE": {
         "COLUMNS": {
           "FEATURE": "Factor",
-          "ACA_MARKETPLACE": "ACA Marketplace Plan",
-          "EMPLOYER_GROUP": "Employer Group Plan",
-          "MEDICAID": "Medicaid",
-          "MEDICARE": "Medicare",
-          "SHORT_TERM": "Short-Term Health Plan"
+          "PET_INSURANCE": "Pet Insurance",
+          "WELLNESS_PLAN": "Pet Wellness Plan",
+          "CARECREDIT": "CareCredit / Vet Financing",
+          "SAVINGS": "Pet Savings Account",
+          "NO_COVERAGE": "No Coverage"
         },
         "LIST": {
-          "WHO_FOR": {
-            "FEATURE": "Who it's for",
-            "ACA_MARKETPLACE": "Individuals & families",
-            "EMPLOYER_GROUP": "W-2 employees",
-            "MEDICAID": "Low-income individuals & families",
-            "MEDICARE": "Adults 65+ or disabled",
-            "SHORT_TERM": "Temporary gap coverage"
+          "ACCIDENTS_EMERGENCIES": {
+            "FEATURE": "Covers accidents and emergencies",
+            "PET_INSURANCE": "Yes",
+            "WELLNESS_PLAN": "No",
+            "CARECREDIT": "Depends on credit limit",
+            "SAVINGS": "Depends on savings",
+            "NO_COVERAGE": "Out of pocket"
           },
-          "PREMIUM_SUBSIDY": {
-            "FEATURE": "Premium subsidy available",
-            "ACA_MARKETPLACE": "Yes",
-            "EMPLOYER_GROUP": "No",
-            "MEDICAID": "No",
-            "MEDICARE": "No",
-            "SHORT_TERM": "No"
+          "ILLNESSES_CHRONIC": {
+            "FEATURE": "Covers illnesses and chronic conditions",
+            "PET_INSURANCE": "Yes",
+            "WELLNESS_PLAN": "No",
+            "CARECREDIT": "Depends on credit limit",
+            "SAVINGS": "Depends on savings",
+            "NO_COVERAGE": "Out of pocket"
           },
-          "PRE_EXISTING": {
+          "ROUTINE_PREVENTIVE": {
+            "FEATURE": "Covers routine and preventive care",
+            "PET_INSURANCE": "On comprehensive plans",
+            "WELLNESS_PLAN": "Yes",
+            "CARECREDIT": "No",
+            "SAVINGS": "Depends on savings",
+            "NO_COVERAGE": "Out of pocket"
+          },
+          "MONTHLY_COST": {
+            "FEATURE": "Monthly cost",
+            "PET_INSURANCE": "$20–$100+",
+            "WELLNESS_PLAN": "$20–$60",
+            "CARECREDIT": "No monthly fee",
+            "SAVINGS": "Self-funded",
+            "NO_COVERAGE": "None"
+          },
+          "REQUIRES_REPAYMENT": {
+            "FEATURE": "Requires repayment",
+            "PET_INSURANCE": "No",
+            "WELLNESS_PLAN": "No",
+            "CARECREDIT": "Yes (with interest)",
+            "SAVINGS": "No",
+            "NO_COVERAGE": "No"
+          },
+          "PRE_EXISTING_COVERED": {
             "FEATURE": "Pre-existing conditions covered",
-            "ACA_MARKETPLACE": "Yes",
-            "EMPLOYER_GROUP": "Yes",
-            "MEDICAID": "Yes",
-            "MEDICARE": "Yes",
-            "SHORT_TERM": "No"
+            "PET_INSURANCE": "No",
+            "WELLNESS_PLAN": "Yes (routine only)",
+            "CARECREDIT": "Yes",
+            "SAVINGS": "Yes",
+            "NO_COVERAGE": "Yes"
           },
-          "ESSENTIAL_BENEFITS": {
-            "FEATURE": "Essential health benefits required",
-            "ACA_MARKETPLACE": "Yes",
-            "EMPLOYER_GROUP": "Yes",
-            "MEDICAID": "Yes",
-            "MEDICARE": "Yes",
-            "SHORT_TERM": "No"
+          "COVERAGE_LIMIT": {
+            "FEATURE": "Coverage limit",
+            "PET_INSURANCE": "Annual or lifetime max",
+            "WELLNESS_PLAN": "Defined benefit only",
+            "CARECREDIT": "Credit limit",
+            "SAVINGS": "Balance available",
+            "NO_COVERAGE": "Unlimited exposure"
           },
-          "COST_REDUCTION": {
-            "FEATURE": "Income-based cost reduction",
-            "ACA_MARKETPLACE": "Yes",
-            "EMPLOYER_GROUP": "No",
-            "MEDICAID": "Yes",
-            "MEDICARE": "Partial",
-            "SHORT_TERM": "No"
+          "WAITING_PERIOD": {
+            "FEATURE": "Waiting period",
+            "PET_INSURANCE": "Yes",
+            "WELLNESS_PLAN": "No",
+            "CARECREDIT": "No",
+            "SAVINGS": "No",
+            "NO_COVERAGE": "No"
           },
-          "ENROLLMENT": {
-            "FEATURE": "Enrollment period required",
-            "ACA_MARKETPLACE": "Yes",
-            "EMPLOYER_GROUP": "Yes",
-            "MEDICAID": "No (rolling)",
-            "MEDICARE": "Yes",
-            "SHORT_TERM": "No (anytime)"
+          "BEST_FOR": {
+            "FEATURE": "Best for",
+            "PET_INSURANCE": "Unexpected large vet bills",
+            "WELLNESS_PLAN": "Routine care only",
+            "CARECREDIT": "Short-term financing",
+            "SAVINGS": "Disciplined savers",
+            "NO_COVERAGE": "Healthy young pets only"
           },
-          "EMPLOYER_CONTRIBUTION": {
-            "FEATURE": "Employer contributes to the premium",
-            "ACA_MARKETPLACE": "No",
-            "EMPLOYER_GROUP": "Yes",
-            "MEDICAID": "No",
-            "MEDICARE": "No",
-            "SHORT_TERM": "No"
-          },
-          "DRUG_COVERAGE": {
-            "FEATURE": "Prescription drug coverage",
-            "ACA_MARKETPLACE": "Yes",
-            "EMPLOYER_GROUP": "Varies",
-            "MEDICAID": "Yes",
-            "MEDICARE": "Part D only",
-            "SHORT_TERM": "Rarely"
-          },
-          "MENTAL_HEALTH": {
-            "FEATURE": "Mental health coverage is required",
-            "ACA_MARKETPLACE": "Yes",
-            "EMPLOYER_GROUP": "Yes",
-            "MEDICAID": "Yes",
-            "MEDICARE": "Yes",
-            "SHORT_TERM": "No"
-          },
-          "TEXAS_AVAILABILITY": {
-            "FEATURE": "Texas availability",
-            "ACA_MARKETPLACE": "Statewide",
-            "EMPLOYER_GROUP": "Employer-dependent",
-            "MEDICAID": "Income-qualified",
-            "MEDICARE": "Age/disability-qualified",
-            "SHORT_TERM": "Statewide"
+          "PEACE_OF_MIND": {
+            "FEATURE": "Peace of mind for a major illness",
+            "PET_INSURANCE": "Yes",
+            "WELLNESS_PLAN": "No",
+            "CARECREDIT": "Limited",
+            "SAVINGS": "Limited",
+            "NO_COVERAGE": "No"
           }
         }
       }

@@ -83,6 +83,7 @@ import { NotaryBonds } from './pages/surety-bond-insurance/notary-bonds/notary-b
 import { CommercialSuretyBonds } from './pages/surety-bond-insurance/commercial-surety-bonds/commercial-surety-bonds';
 import { TitleInsurance } from './pages/additional_insurance/title-insurance/title-insurance';
 import { TitleTransfer } from './pages/additional_insurance/title-transfer/title-transfer';
+import { PetInsurance } from './pages/additional_insurance/pet-insurance/pet-insurance';
 
 @NgModule({
   declarations: [
@@ -160,7 +161,8 @@ import { TitleTransfer } from './pages/additional_insurance/title-transfer/title
     BidBonds,
     NotaryBonds,
     TitleInsurance,
-    TitleTransfer
+    TitleTransfer,
+    PetInsurance
   ],
   imports: [
     BrowserModule,

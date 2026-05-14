@@ -1,0 +1,964 @@
+<div class="homeMain">
+  <div class="topBanner">
+    <div class="container">
+      <div class="topSub">
+        <div class="topSub2">
+          <div class="h1">
+            {{ 'PET_INSURANCE.BANNER.TITLE_LINE1' | translate }} <br />
+            {{ 'PET_INSURANCE.BANNER.TITLE_LINE2' | translate }} <span class="heading-span">{{
+              'PET_INSURANCE.BANNER.TITLE_LINE3' |
+              translate }}</span>
+          </div>
+          <!-- 
+          <div class="selectable">
+            
+            @for (item of chips; track item.name) {
+            <div class="chip">
+              <i class="{{ item.icon }}"></i>
+              <span>{{ item.name | translate }}</span>
+            </div>
+            }
+          </div> -->
+
+          <div class="selectable mt-4">
+            @for (item of chips.slice(0, 3); track item.name) {
+            <div class="chip">
+              <i class="{{ item?.icon }}"></i>
+              <span>{{ item?.name | translate }}</span>
+            </div>
+            }
+          </div>
+          <div class="selectable mt-2">
+            @for (item of chips.slice(3, 6); track item.name) {
+            <div class="chip">
+              <i class="{{ item?.icon }}"></i>
+              <span>{{ item?.name | translate }}</span>
+            </div>
+            }
+          </div>
+
+          <div class="inps">
+            <input type="text" [placeholder]="'PET_INSURANCE.BANNER.FORM.FULL_NAME' | translate" class="form-control" />
+
+            <input type="number" [placeholder]="'PET_INSURANCE.BANNER.FORM.PHONE' | translate" class="form-control" />
+          </div>
+
+          <button class="btn" [routerLink]="getRoute('getAQuote')">
+            {{ 'PET_INSURANCE.BANNER.FORM.BUTTON' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <h2 class="section-title mb-4">
+      {{ 'PET_INSURANCE.WHY_DO_YOU_NEED.TITLE' | translate }}
+    </h2>
+    <p class="section-description mb-4">
+      {{ 'PET_INSURANCE.WHY_DO_YOU_NEED.DESC' | translate }}
+    </p>
+
+    <p class="section-description mb-4">
+      {{ 'PET_INSURANCE.WHY_DO_YOU_NEED.DESC1' | translate }}
+    </p>
+
+    <p class="section-sub-title mb-4">
+      {{ 'PET_INSURANCE.WHY_DO_YOU_NEED.SUB_TITLE' | translate }}
+    </p>
+
+
+    <div class="insurance-list">
+      <div class="insurance-item" *ngFor="let item of 'PET_INSURANCE.WHY_DO_YOU_NEED.LIST' | translate; let i = index">
+
+        <div class="number">0{{ i + 1 }}</div>
+
+        <div class="content">
+          <h5>{{ item.TITLE }}</h5>
+          <p>{{ item.TEXT }}</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <section class="insurance-laws-section py-5">
+    <div class="container-max-800">
+
+      <h1 class="main-title">
+        {{ 'PET_INSURANCE.HOW_IT_WORKS.TITLE' | translate }}
+      </h1>
+
+      <p class="intro-text">
+        {{ 'PET_INSURANCE.HOW_IT_WORKS.DESC1' | translate }}
+        <br>
+        <br>
+        {{ 'PET_INSURANCE.HOW_IT_WORKS.DESC2' | translate }}
+
+      </p>
+
+
+    </div>
+  </section>
+
+
+
+  <section class="insurance-section py-5">
+    <div class="container">
+      <!-- Header -->
+      <div class="header-content mb-5">
+        <h6 class="text-danger fw-bold">{{ 'PET_INSURANCE.COVERAGES.STANDARD.TITLE' | translate }}
+        </h6>
+        <p class="small text-muted">{{ 'PET_INSURANCE.COVERAGES.STANDARD.DESC' | translate }}</p>
+      </div>
+
+      <div class="row g-4 mb-5">
+        @for (item of ('PET_INSURANCE.COVERAGES.STANDARD.LIST' | translate); track item.TITLE) {
+        <div class="col-md-4">
+          <div class="insurance-card">
+            <div class="card-icon"><i [class]="item.ICON"></i></div>
+            <div class="card-body">
+              <h6>{{ item.TITLE }}</h6>
+              <p>{{ item.DESC }}</p>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+
+      <!-- Optional Coverages Carousel -->
+
+    </div>
+  </section>
+
+  <section class="factors-impact-section bg-white">
+    <div class="container px-4">
+      <h2 class="section-title">{{ 'PET_INSURANCE.NOT_COVERED.HEADER.TITLE' | translate }}</h2>
+      <p class="intro-text">
+        {{ 'PET_INSURANCE.NOT_COVERED.HEADER.DESC' | translate }}
+      </p>
+
+      <div class="row mt-5">
+        @for (key of notCoveredKeys; track key) {
+        <div class="col-lg-6">
+          <div class="factor-item">
+            <div class="icon-wrapper">
+              <i [class]="'PET_INSURANCE.NOT_COVERED.LIST.' + key + '.ICON' | translate"></i>
+            </div>
+            <div class="factor-content">
+              <h6>{{ ('PET_INSURANCE.NOT_COVERED.LIST.' + key + '.TITLE') | translate }}</h6>
+              <p>{{ ('PET_INSURANCE.NOT_COVERED.LIST.' + key + '.DESC') | translate }}</p>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="insurance-section py-5">
+    <div class="container">
+      <!-- Header -->
+      <div class="header-content mb-5">
+        <h6 class="text-danger fw-bold">{{ 'PET_INSURANCE.COVERAGES.TYPES.TITLE' | translate }}
+        </h6>
+        <p class="small text-muted">{{ 'PET_INSURANCE.COVERAGES.TYPES.DESC' | translate }}</p>
+      </div>
+
+      <div class="row g-4 mb-5">
+        @for (item of ('PET_INSURANCE.COVERAGES.TYPES.LIST' | translate); track item.TITLE) {
+        <div class="col-md-4">
+          <div class="insurance-card">
+            <div class="card-icon"><i [class]="item.ICON"></i></div>
+            <div class="card-body">
+              <h6>{{ item.TITLE }}</h6>
+              <p>{{ item.DESC }}</p>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+
+      <!-- Optional Coverages Carousel -->
+
+    </div>
+  </section>
+
+  <section class="cost-section py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10">
+          <!-- Title -->
+          <h4 class="cost-title mb-4">{{ 'PET_INSURANCE.HEALTH_INSURANCE_COST.TITLE' | translate }}</h4>
+
+          <!-- Description Content -->
+          <div class="cost-description">
+            <p class="mb-4">
+              {{ 'PET_INSURANCE.HEALTH_INSURANCE_COST.DESC1' | translate }}
+            </p>
+
+            <p>
+              {{ 'PET_INSURANCE.HEALTH_INSURANCE_COST.DESC2' | translate }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <section class="rates-section py-5">
+    <div class="container container-max-1100 px-4">
+      <h2 class="section-title">{{ 'PET_INSURANCE.COMPARE.RATES_BY_COMPANY.HEADER.TITLE' | translate }}</h2>
+      <div class="intro-text">
+        <p>{{ 'PET_INSURANCE.COMPARE.RATES_BY_COMPANY.HEADER.DESC' | translate }}</p>
+      </div>
+
+      <!-- Table Container -->
+      <div class="rates-table-card p-4 mt-5">
+        <div class="row g-2 text-center text-white fw-bold mb-2">
+          <div class="col-6">
+            <div class="header-pill bg-danger py-2">{{
+              'PET_INSURANCE.COMPARE.RATES_BY_COMPANY.TABLE.COLUMNS.INSURANCE_COMPANY' |
+              translate
+              }}</div>
+          </div>
+          <div class="col-6">
+            <div class="header-pill bg-danger py-2">{{
+              'PET_INSURANCE.COMPARE.RATES_BY_COMPANY.TABLE.COLUMNS.MONTHLY_PRICE'
+              |
+              translate
+              }}</div>
+          </div>
+        </div>
+
+        <!-- Data Rows -->
+        <div class="rates-rows">
+          @for (item of ratesCompanyKeys; track item; let i = $index) {
+          <div class="row g-2 text-center mb-2 align-items-center">
+            <div class="col-6">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ ('PET_INSURANCE.COMPARE.RATES_BY_COMPANY.TABLE.LIST.' + item + '.INSURANCE_COMPANY') | translate }}
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ ('PET_INSURANCE.COMPARE.RATES_BY_COMPANY.TABLE.LIST.' + item + '.MONTHLY_PRICE') | translate }}
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+
+        <div class="d-flex justify-content-between mt-4 rates-footer-info">
+          <p>{{ 'PET_INSURANCE.COMPARE.FOOTER.SOURCE' | translate }} <a href="#" target="_blank">Insurify</a></p>
+          <p class="last-updated">{{ 'PET_INSURANCE.COMPARE.FOOTER.LAST_UPDATED' | translate }}</p>
+        </div>
+        <div class="disclaimer mt-2">
+          <p class="mb-0"><strong>Disclaimer:</strong> {{ 'PET_INSURANCE.COMPARE.FOOTER.DISCLAIMER' | translate }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="py-5"></div>
+
+    <div class="container container-max-1100 px-4">
+      <h2 class="section-title">{{ 'PET_INSURANCE.COMPARE.RATES_BY_BREED.HEADER.TITLE' | translate }}</h2>
+      <div class="intro-text">
+        <p>{{ 'PET_INSURANCE.COMPARE.RATES_BY_BREED.HEADER.DESC' | translate }}</p>
+      </div>
+
+      <!-- Table Container -->
+      <div class="rates-table-card p-4 mt-5">
+        <div class="row g-2 text-center text-white fw-bold mb-2">
+          <div class="col-4">
+            <div class="header-pill bg-danger py-2">{{
+              'PET_INSURANCE.COMPARE.RATES_BY_BREED.TABLE.COLUMNS.BREED' |
+              translate
+              }}</div>
+          </div>
+          <div class="col-4">
+            <div class="header-pill bg-danger py-2">{{
+              'PET_INSURANCE.COMPARE.RATES_BY_BREED.TABLE.COLUMNS.MONTHLY_RATE'
+              |
+              translate
+              }}</div>
+          </div>
+          <div class="col-4">
+            <div class="header-pill bg-danger py-2">{{
+              'PET_INSURANCE.COMPARE.RATES_BY_BREED.TABLE.COLUMNS.ANNUAL_RATE' |
+              translate
+              }}</div>
+          </div>
+
+        </div>
+
+        <!-- Data Rows -->
+        <div class="rates-rows">
+          @for (item of dogsBreedRate; track item; let i = $index) {
+          <div class="row g-2 text-center mb-2 align-items-center">
+            <div class="col-4">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ ('PET_INSURANCE.COMPARE.RATES_BY_BREED.TABLE.LIST.' + item + '.BREED') | translate }}
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ ('PET_INSURANCE.COMPARE.RATES_BY_BREED.TABLE.LIST.' + item + '.MONTHLY_RATE') | translate }}
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ ('PET_INSURANCE.COMPARE.RATES_BY_BREED.TABLE.LIST.' + item + '.ANNUAL_RATE') | translate }}
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+
+        <div class="d-flex justify-content-between mt-4 rates-footer-info">
+          <p>{{ 'PET_INSURANCE.COMPARE.FOOTER.SOURCE' | translate }} <a href="#" target="_blank">MoneyGeek</a></p>
+          <p class="last-updated">{{ 'PET_INSURANCE.COMPARE.FOOTER.LAST_UPDATED' | translate }}</p>
+        </div>
+        <div class="disclaimer mt-2">
+          <p class="mb-0"><strong>Disclaimer:</strong> {{ 'PET_INSURANCE.COMPARE.FOOTER.DISCLAIMER' | translate }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="py-5"></div>
+
+    <div class="container container-max-1100 px-4">
+      <h2 class="section-title">{{ 'PET_INSURANCE.COMPARE.RATES_BY_CAT_BREED.HEADER.TITLE' | translate }}</h2>
+      <div class="intro-text">
+        <p>{{ 'PET_INSURANCE.COMPARE.RATES_BY_CAT_BREED.HEADER.DESC' | translate }}</p>
+      </div>
+
+      <!-- Table Container -->
+      <div class="rates-table-card p-4 mt-5">
+        <div class="row g-2 text-center text-white fw-bold mb-2">
+          <div class="col-4">
+            <div class="header-pill bg-danger py-2">{{
+              'PET_INSURANCE.COMPARE.RATES_BY_CAT_BREED.TABLE.COLUMNS.BREED' |
+              translate
+              }}</div>
+          </div>
+          <div class="col-4">
+            <div class="header-pill bg-danger py-2">{{
+              'PET_INSURANCE.COMPARE.RATES_BY_CAT_BREED.TABLE.COLUMNS.MONTHLY_RATE'
+              |
+              translate
+              }}</div>
+          </div>
+          <div class="col-4">
+            <div class="header-pill bg-danger py-2">{{
+              'PET_INSURANCE.COMPARE.RATES_BY_CAT_BREED.TABLE.COLUMNS.ANNUAL_RATE' |
+              translate
+              }}</div>
+          </div>
+
+        </div>
+
+        <!-- Data Rows -->
+        <div class="rates-rows">
+          @for (item of catBreedRate; track item; let i = $index) {
+          <div class="row g-2 text-center mb-2 align-items-center">
+            <div class="col-4">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ ('PET_INSURANCE.COMPARE.RATES_BY_CAT_BREED.TABLE.LIST.' + item + '.BREED') | translate }}
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ ('PET_INSURANCE.COMPARE.RATES_BY_CAT_BREED.TABLE.LIST.' + item + '.MONTHLY_RATE') | translate }}
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ ('PET_INSURANCE.COMPARE.RATES_BY_CAT_BREED.TABLE.LIST.' + item + '.ANNUAL_RATE') | translate }}
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+
+        <div class="d-flex justify-content-between mt-4 rates-footer-info">
+          <p>{{ 'PET_INSURANCE.COMPARE.FOOTER.SOURCE' | translate }} <a href="#" target="_blank">MoneyGeek</a></p>
+          <p class="last-updated">{{ 'PET_INSURANCE.COMPARE.FOOTER.LAST_UPDATED' | translate }}</p>
+        </div>
+        <div class="disclaimer mt-2">
+          <p class="mb-0"><strong>Disclaimer:</strong> {{ 'PET_INSURANCE.COMPARE.FOOTER.DISCLAIMER' | translate }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="py-5"></div>
+
+    <div class="container container-max-1100 px-4">
+      <h2 class="section-title">{{ 'PET_INSURANCE.COMPARE.RATES_BY_AGE.HEADER.TITLE' | translate }}</h2>
+      <div class="intro-text">
+        <p>{{ 'PET_INSURANCE.COMPARE.RATES_BY_AGE.HEADER.DESC' | translate }}</p>
+      </div>
+
+      <!-- Table Container -->
+      <div class="rates-table-card p-4 mt-5">
+        <div class="row g-2 text-center text-white fw-bold mb-2">
+          <div class="col-4">
+            <div class="header-pill bg-danger py-2">{{
+              'PET_INSURANCE.COMPARE.RATES_BY_AGE.TABLE.COLUMNS.AGE' |
+              translate
+              }}</div>
+          </div>
+          <div class="col-4">
+            <div class="header-pill bg-danger py-2">{{
+              'PET_INSURANCE.COMPARE.RATES_BY_AGE.TABLE.COLUMNS.MONTHLY_RATE'
+              |
+              translate
+              }}</div>
+          </div>
+          <div class="col-4">
+            <div class="header-pill bg-danger py-2">{{
+              'PET_INSURANCE.COMPARE.RATES_BY_AGE.TABLE.COLUMNS.ANNUAL_RATE' |
+              translate
+              }}</div>
+          </div>
+
+        </div>
+
+        <!-- Data Rows -->
+        <div class="rates-rows">
+          @for (item of ageBreedRate; track item; let i = $index) {
+          <div class="row g-2 text-center mb-2 align-items-center">
+            <div class="col-4">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ ('PET_INSURANCE.COMPARE.RATES_BY_AGE.TABLE.LIST.' + item + '.AGE') | translate }}
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ ('PET_INSURANCE.COMPARE.RATES_BY_AGE.TABLE.LIST.' + item + '.MONTHLY_RATE') | translate }}
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ ('PET_INSURANCE.COMPARE.RATES_BY_AGE.TABLE.LIST.' + item + '.ANNUAL_RATE') | translate }}
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+
+        <div class="d-flex justify-content-between mt-4 rates-footer-info">
+          <p>{{ 'PET_INSURANCE.COMPARE.FOOTER.SOURCE' | translate }} <a href="#" target="_blank">MoneyGeek</a></p>
+          <p class="last-updated">{{ 'PET_INSURANCE.COMPARE.FOOTER.LAST_UPDATED' | translate }}</p>
+        </div>
+        <div class="disclaimer mt-2">
+          <p class="mb-0"><strong>Disclaimer:</strong> {{ 'PET_INSURANCE.COMPARE.FOOTER.DISCLAIMER' | translate }}</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+    <section class="rates-section py-5">
+    <div class="container container-max-1100 px-4">
+      <h2 class="section-title">{{ 'PET_INSURANCE.PET_VS_OTHER_VET_CARE.HEADER.TITLE' | translate }}</h2>
+      <div class="intro-text">
+        <p>{{ 'PET_INSURANCE.PET_VS_OTHER_VET_CARE.HEADER.DESC' | translate }}</p>
+      </div>
+
+      <!-- Table Container -->
+      <div class="rates-table-card p-4 mt-5">
+        <div class="row g-2 text-center text-white fw-bold mb-2">
+          <div class="col-2">
+            <div class="header-pill bg-danger py-2">{{
+              'PET_INSURANCE.PET_VS_OTHER_VET_CARE.TABLE.COLUMNS.FEATURE' |
+              translate
+              }}</div>
+          </div>
+          <div class="col-2">
+            <div class="header-pill bg-danger py-2">{{
+              'PET_INSURANCE.PET_VS_OTHER_VET_CARE.TABLE.COLUMNS.PET_INSURANCE'
+              |
+              translate
+              }}</div>
+          </div>
+          <div class="col-2">
+            <div class="header-pill bg-danger py-2">{{
+              'PET_INSURANCE.PET_VS_OTHER_VET_CARE.TABLE.COLUMNS.WELLNESS_PLAN' |
+              translate
+              }}</div>
+          </div>
+          <div class="col-2">
+            <div class="header-pill bg-danger py-2">{{
+              'PET_INSURANCE.PET_VS_OTHER_VET_CARE.TABLE.COLUMNS.CARECREDIT' |
+              translate
+              }}</div>
+          </div>
+          <div class="col-2">
+            <div class="header-pill bg-danger py-2">{{
+              'PET_INSURANCE.PET_VS_OTHER_VET_CARE.TABLE.COLUMNS.SAVINGS' |
+              translate
+              }}</div>
+          </div>
+
+          <div class="col-2">
+            <div class="header-pill bg-danger py-2">{{
+              'PET_INSURANCE.PET_VS_OTHER_VET_CARE.TABLE.COLUMNS.NO_COVERAGE' |
+              translate
+              }}</div>
+          </div>
+        </div>
+
+        <!-- Data Rows -->
+        <div class="rates-rows">
+          @for (item of factorComparisonKeys; track item; let i = $index) {
+          <div class="row g-2 text-center mb-2 align-items-center">
+            <div class="col-2">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ ('PET_INSURANCE.PET_VS_OTHER_VET_CARE.TABLE.LIST.' + item + '.FEATURE') | translate }}
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ ('PET_INSURANCE.PET_VS_OTHER_VET_CARE.TABLE.LIST.' + item + '.PET_INSURANCE') | translate
+                }}
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ ('PET_INSURANCE.PET_VS_OTHER_VET_CARE.TABLE.LIST.' + item + '.WELLNESS_PLAN') | translate }}
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ ('PET_INSURANCE.PET_VS_OTHER_VET_CARE.TABLE.LIST.' + item + '.CARECREDIT') | translate }}
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ ('PET_INSURANCE.PET_VS_OTHER_VET_CARE.TABLE.LIST.' + item + '.SAVINGS') | translate }}
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ ('PET_INSURANCE.PET_VS_OTHER_VET_CARE.TABLE.LIST.' + item + '.NO_COVERAGE') | translate }}
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <section class="factors-impact-section">
+    <div class="container">
+      <h2 class="section-title">{{ 'PET_INSURANCE.FACTORS_IMPACT.HEADER.TITLE' | translate }}</h2>
+      <p class="intro-text">
+        {{ 'PET_INSURANCE.FACTORS_IMPACT.HEADER.DESC' | translate }}
+      </p>
+
+      <div class="row">
+        @for (key of impactFactorsKeys; track key) {
+        <div class="col-lg-6">
+          <div class="factor-item">
+            <div class="factor-content">
+              <p> <strong>{{ ('PET_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }}
+                  :</strong>
+                {{ ('PET_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}</p>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <div class="factors-impact-section bg-white">
+    <div class="container">
+      <h2 class="section-title">{{'PET_INSURANCE.DISCOUNT_FACTORS.HEADER.TITLE' | translate}}</h2>
+      <p class="intro-text">
+        {{'PET_INSURANCE.DISCOUNT_FACTORS.HEADER.DESC' | translate}}
+      </p>
+
+      <div class="row">
+        @for (key of discountKeys; track key) {
+        <div class="col-lg-6">
+          <div class="factor-card">
+            <div class="factor-content">
+              <p> <strong>{{ ('PET_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translate }}
+                  :</strong>
+                {{ ('PET_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translate }}</p>
+
+              <!-- <h6 class="factor-title">
+                {{ ('PET_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }}
+              </h6>
+              <p class="factor-desc">
+                {{ ('PET_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}
+              </p> -->
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+
+
+  <section class="rates-section py-5">
+    <div class="container container-max-1100 px-4">
+      <h2 class="section-title">{{ 'PET_INSURANCE.AGENT_COMPARISON.HEADER.TITLE' | translate }}</h2>
+      <div class="intro-text">
+        <p>{{ 'PET_INSURANCE.AGENT_COMPARISON.HEADER.DESC' | translate }}</p>
+      </div>
+
+      <!-- Table Container -->
+      <div class="rates-table-card p-4 mt-5">
+        <div class="row g-2 text-center text-white fw-bold mb-2">
+          <div class="col-4">
+            <div class="header-pill bg-danger py-2">{{
+              'PET_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.FEATURE' |
+              translate
+              }}</div>
+          </div>
+          <div class="col-4">
+            <div class="header-pill bg-danger py-2">{{
+              'PET_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.INDEPENDENT'
+              |
+              translate
+              }}</div>
+          </div>
+          <div class="col-4">
+            <div class="header-pill bg-danger py-2">{{
+              'PET_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.CAPTIVE' |
+              translate
+              }}</div>
+          </div>
+        </div>
+
+        <!-- Data Rows -->
+        <div class="rates-rows">
+          @for (item of agentComparisonData; track item; let i = $index) {
+          <div class="row g-2 text-center mb-2 align-items-center">
+            <div class="col-4">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ ('PET_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translate }}
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ ('PET_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translate
+                }}
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
+                {{ ('PET_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translate }}
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <section class="high-risk-section">
+    <div class="container px-4">
+      <h2 class="section-title">{{ 'PET_INSURANCE.GROWING_FAMILY.HEADER.TITLE' | translate }}</h2>
+      <div class="intro-text">
+        <p>{{ 'PET_INSURANCE.GROWING_FAMILY.CONTENT.DESC1' | translate }}</p>
+        <p>{{ 'PET_INSURANCE.GROWING_FAMILY.CONTENT.DESC2' | translate }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="language-section">
+    <div class="container px-4">
+      <h2 class="section-title">{{ 'PET_INSURANCE.LANGUAGE_SUPPORT.HEADER.TITLE' | translate }}</h2>
+      <div class="intro-text">
+        <p>{{ 'PET_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC1' | translate }}</p>
+        <p>{{ 'PET_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC2' | translate }}</p>
+
+      </div>
+    </div>
+  </section>
+
+
+  <div class="texan-choose-image">
+    <div class="container py-5 mt-5">
+      <div class="row mb-5 text-center">
+        <div class="col-6">
+          <h3 class="heading">
+            {{ 'PET_INSURANCE.ASTATE_DIFFERENTIATORS.HEADER.TITLE' | translate }}
+          </h3>
+        </div>
+      </div>
+      <div class="gap-m">
+        <!-- card start -->
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/carbon_license.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'PET_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.TITLE' | translate
+                  }}
+                </h5>
+                <p class="card-text">
+                  {{ 'PET_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.DESCRIPTION' |
+                  translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/Heart.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'PET_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.TITLE' |
+                  translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'PET_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.DESCRIPTION'
+                  | translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/calendar.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'PET_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'PET_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.DESCRIPTION' |
+                  translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/price.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'PET_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'PET_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.DESCRIPTION' |
+                  translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/wifi.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'PET_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'PET_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' | translate
+                  }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/agents.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">
+                  {{ 'PET_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.TITLE' |
+                  translate }}
+                </h5>
+                <p class="card-text">
+                  {{ 'PET_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.DESCRIPTION' |
+                  translate }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- card end -->
+      </div>
+    </div>
+  </div>
+
+  <section class="insurance-steps py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <div class="image-container rounded-4 overflow-hidden position-relative">
+            <img src="assets/images/commercial-insurance/commercial-step-banner.png" alt="Texas Flag"
+              class="img-fluid w-100">
+            <div class="red-overlay"></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 ps-md-5">
+          <h2 class="section-title mb-5">{{ 'PET_INSURANCE.INSURANCE_STEPS.HEADER.TITLE' | translate
+            }}</h2>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="dot"></div>
+              <div class="content">
+                <h3>{{ 'PET_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.TITLE' | translate }}</h3>
+                <p>{{ 'PET_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translate }}</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="dot"></div>
+              <div class="content">
+                <h3>{{ 'PET_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.TITLE' | translate }}</h3>
+                <p>{{ 'PET_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.DESCRIPTION' | translate }}</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="dot"></div>
+              <div class="content">
+                <h3>{{ 'PET_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.TITLE' | translate }}</h3>
+                <p>{{ 'PET_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.DESCRIPTION' | translate }}</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="dot"></div>
+              <div class="content">
+                <h3>{{ 'PET_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.TITLE' | translate }}</h3>
+                <p>{{ 'PET_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.DESCRIPTION' | translate }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="switch-steps-section">
+    <div class="container px-4">
+      <h2 class="section-title">{{ 'PET_INSURANCE.SWITCH_STEPS.HEADER.TITLE' | translate }}</h2>
+
+      <div class="switch-steps-grid">
+        @for (step of switchSteps; track step) {
+        <div class="switch-card-wrapper">
+          <div class="switch-card">
+            <h6>{{ 'PET_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE' | translate }}</h6>
+            <p>{{ 'PET_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION' | translate }}</p>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+
+
+
+  <div class="getCoverd">
+    <div class="container">
+      <div class="topSub">
+        <div class="topSub2">
+          <div class="h1">
+            {{ 'PET_INSURANCE.FREE_QUOTE.HEADER' | translate }}
+          </div>
+          <p class="para">{{ 'PET_INSURANCE.FREE_QUOTE.DESCRIPTION' | translate }}</p>
+          <div class="selectable mt-4">
+            @for (item of chips.slice(0, 3); track item.name) {
+            <div class="chip">
+              <i class="{{ item?.icon }}"></i>
+              <span>{{ item?.name | translate }}</span>
+            </div>
+            }
+          </div>
+          <div class="selectable mt-2">
+            @for (item of chips.slice(3, 6); track item.name) {
+            <div class="chip">
+              <i class="{{ item?.icon }}"></i>
+              <span>{{ item?.name | translate }}</span>
+            </div>
+            }
+          </div>
+
+          <div class="inps">
+            <input type="text" [placeholder]="'PET_INSURANCE.BANNER.FORM.FULL_NAME' | translate" class="form-control" />
+
+            <input type="number" [placeholder]="'PET_INSURANCE.BANNER.FORM.PHONE' | translate" class="form-control" />
+          </div>
+
+          <button class="btn" [routerLink]="getRoute('getAQuote')">
+            {{ 'PET_INSURANCE.BANNER.FORM.BUTTON' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- footuper -->
+  <div class="footUpper">
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="clipp"></div>
+    <div class="contain">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="icon">
+              <img src="/assets/images/logo.png" alt="User menu" />
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="h4">{{ 'FOOTER.SLOGAN' | translate }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  -->
+</div>
