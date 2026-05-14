@@ -204,6 +204,7 @@ const routes: Routes = [
   {
     path: 'es',
     children: [
+      { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
       { path: 'contacto', component: Contact },
       { path: 'servicios-de-seguros', component: InsuranceServices },
       { path: 'sobre-nosotros', component: About },

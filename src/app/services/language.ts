@@ -12,6 +12,7 @@ import { filter } from 'rxjs/operators';
 export class Language {
   availableLangs = ['en', 'es'];
   private isBrowser: boolean;
+
   getLanguageChange(): Observable<LangChangeEvent> {
     return this.translate.onLangChange;
   }
@@ -75,12 +76,32 @@ export class Language {
       currentSlug = segments.join('/');
     }
 
+    // Handle home page case
+    if (!currentSlug || currentSlug === '/') {
+      if (lang === 'en') {
+        this.router.navigate(['/']);
+      } else {
+        this.router.navigate(['/es']);
+      }
+      localStorage.setItem('lang', lang);
+      document.documentElement.lang = lang;
+      return;
+    }
+
     const routeKey = Object.keys(routeTranslations).find(
       (key) => routeTranslations[key][currentLang] === currentSlug,
     );
 
     if (!routeKey) {
-      return; // prevent fallback to /
+      // If no matching route key found, just change language prefix
+      if (lang === 'en') {
+        this.router.navigate(['/' + currentSlug]);
+      } else {
+        this.router.navigate(['/es', ...currentSlug.split('/')]);
+      }
+      localStorage.setItem('lang', lang);
+      document.documentElement.lang = lang;
+      return;
     }
 
     const newSlug = routeTranslations[routeKey][lang];
