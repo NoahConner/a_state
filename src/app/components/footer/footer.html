@@ -219,7 +219,9 @@
         <div class="left">24/7 Customer support</div>
         <div class="right">
           <div class="opp" *ngFor="let phone of 'FOOTER.CONTACT.PHONE' | translate">
-            {{ phone }}
+            <a href="tel:7133577771">
+              {{ phone }}
+            </a>
           </div>
         </div>
       </div>
@@ -236,7 +238,9 @@
           <div class="icn">
             <i class="fas fa-envelope"></i>
           </div>
-          <div class="he">{{ 'FOOTER.CONTACT.EMAIL' | translate }}</div>
+          <div class="he"><a href="mailto:save@astateinsurance.com">
+            {{ 'FOOTER.CONTACT.EMAIL' | translate }}
+          </a></div>
         </div>
       </div>
     </div>
