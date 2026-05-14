@@ -9,8 +9,9 @@ import { routeTranslations } from '../../app-routing-module';
   styleUrl: './header.scss',
 })
 export class Header implements OnInit {
-  constructor(public languageService: Language) { }
+  constructor(public languageService: Language) {}
   currentLang: 'en' | 'es' = 'es';
+  openMenu: string | null = null;
 
   ngOnInit() {
     this.currentLang = this.languageService.getCurrentLanguage() as 'en' | 'es';
@@ -24,16 +25,16 @@ export class Header implements OnInit {
   getRoute(page: string): string[] {
     const lang = this.languageService.getCurrentLanguage();
 
-    const slug =
-      routeTranslations[page]?.[lang] ||
-      routeTranslations[page]?.['en'];
+    const slug = routeTranslations[page]?.[lang] || routeTranslations[page]?.['en'];
 
     if (!slug) return ['/'];
 
     const segments = slug.split('/');
 
-    return lang === 'en'
-      ? ['/', ...segments]
-      : ['/', lang, ...segments];
+    return lang === 'en' ? ['/', ...segments] : ['/', lang, ...segments];
+  }
+
+  toggleMenu(key: string) {
+    this.openMenu = this.openMenu === key ? null : key;
   }
 }
