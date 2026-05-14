@@ -54,7 +54,7 @@
                 <div class="col-md-4">
                   <label class="form-label">{{ 'GET_AUTO_QUOTE.STEPPER.STEP1.FIELDS.ZIPCODE' | translate
                     }}<span>*</span></label>
-                  <input type="text" class="form-control" placeholder="+1 265 789 8900" formControlName="zip_code"
+                  <input type="text" class="form-control" placeholder="12345" formControlName="zip_code"
                     [class.is-invalid]="autoQuoteForm.get('zip_code')?.invalid && autoQuoteForm.get('zip_code')?.touched" />
                   <div class="invalid-feedback"
                     *ngIf="autoQuoteForm.get('zip_code')?.invalid && autoQuoteForm.get('zip_code')?.touched">
