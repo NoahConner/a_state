@@ -26,17 +26,9 @@
           </div>
 
           <div class="inps">
-            <input
-              type="text"
-              [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate"
-              class="form-control"
-            />
+            <input type="text" [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate" class="form-control" />
 
-            <input
-              type="number"
-              [placeholder]="'HOME.BANNER.FORM.PHONE' | translate"
-              class="form-control"
-            />
+            <input type="number" [placeholder]="'HOME.BANNER.FORM.PHONE' | translate" class="form-control" />
           </div>
 
           <button class="btn" [routerLink]="getRoute('getAQuote')">
@@ -80,7 +72,7 @@
                 </p>
                 <p>
                   <img src="/assets/images/detailMail.png" alt="" />{{
-                    loc.detailPage?.session1?.contact?.email
+                  loc.detailPage?.session1?.contact?.email
                   }}
                 </p>
               </div>
@@ -127,7 +119,7 @@
                 <button class="btn btn-yellow">
                   {{ loc.detailPage?.session1?.ctaButtons[0] }}
                 </button>
-                <button class="btn btn-yellow">
+                <button class="btn btn-yellow" [routerLink]="getRoute('getAQuote')">
                   {{ loc.detailPage?.session1?.ctaButtons[1] }}
                 </button>
                 <button class="btn btn-red">{{ loc.detailPage?.session1?.ctaButtons[2] }}</button>

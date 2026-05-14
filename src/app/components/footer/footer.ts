@@ -9,12 +9,25 @@ import { routeTranslations } from '../../app-routing-module';
   styleUrl: './footer.scss',
 })
 export class Footer {
+  currentLang: string = '';
+
   constructor(public languageService: Language) { }
-  currentLang: 'en' | 'es' = 'es';
 
   changeLang(lang: string) {
     this.languageService.setLanguage(lang);
   }
+
+  ngOnInit(): void {
+    let currentLang = this.languageService.getCurrentLanguage();
+    this.currentLang = currentLang;
+    this.languageService.getLanguageChange().subscribe((lang: any) => {
+      this.currentLang = lang.lang;
+    });
+  }
+
+
+
+
 
   getRoute(page: string): string[] {
     const lang = this.languageService.getCurrentLanguage();
