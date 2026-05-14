@@ -227,33 +227,33 @@ const routes: Routes = [
           { path: '', component: AutoInsurance },
           { path: 'seguro-de-carro', component: CarInsurance },
           { path: 'seguro-de-motocicleta', component: MotorcycleInsurance },
-          { path: 'seguro-de-barco', component: BoatInsurance },
+          { path: 'seguro-de-bote', component: BoatInsurance },
           { path: 'seguro-de-rv-y-motorhome', component: RvInsurance },
           { path: 'seguro-de-auto-clasico', component: ClassicCarInsurance },
-          { path: 'seguro-de-sr-22', component: Sr22Insurance },
-          { path: 'seguro-de-atv-utv', component: AtvAndUtvInsurance },
-          { path: 'seguro-de-trailer', component: TrailerInsurance },
-          { path: 'seguro-de-carro-mexicano', component: MexicanCarInsurance },
-          { path: 'seguro-de-rideshare', component: RideshareInsurance },
+          { path: 'seguro-sr-22', component: Sr22Insurance },
+          { path: 'seguro-para-atv-y-utv', component: AtvAndUtvInsurance },
+          { path: 'seguro-de-remolque', component: TrailerInsurance },
+          { path: 'seguro-de-auto-en-mexico', component: MexicanCarInsurance },
+          { path: 'seguro-para-rideshare', component: RideshareInsurance },
         ]
       },
       {
         path: 'seguros-de-vivienda',
         children: [
           { path: '', component: HomeInsurance },
-          { path: 'seguro-de-renters', component: RentersInsurance },
+          { path: 'seguros-para-inquilinos', component: RentersInsurance },
           { path: 'seguros-para-condominios', component: CondoInsurance },
-          { path: 'seguros-para-casas-prefabricadas-y-mo', component: ManufacturedMobileHomeInsurance },
+          { path: 'seguros-para-casas-prefabricadas-y-movil', component: ManufacturedMobileHomeInsurance },
           { path: 'seguros-para-propietarios', component: LandlordInsurance },
           { path: 'seguros-contra-terremotos', component: EarthquakeInsurance },
-          { path: 'seguro-de-flood', component: FloodInsurance },
+          { path: 'seguros-contra-inundaciones', component: FloodInsurance },
         ]
       },
       {
         path: 'seguros-comerciales',
         children: [
           { path: '', component: CommercialInsurance },
-          { path: 'seguro-de-responsabilidad-profesional', component: ProfessionalLiabilityInsurance },
+          { path: 'seguro-de-responsabilidad-profesional-eo', component: ProfessionalLiabilityInsurance },
           { path: 'seguro-de-responsabilidad-general', component: GeneralLiabilityInsurance },
           { path: 'seguro-de-compensacion-laboral', component: WorkersCompensationInsurance },
           { path: 'seguro-de-propiedad-comercial', component: CommercialPropertyInsurance },
@@ -261,7 +261,7 @@ const routes: Routes = [
           { path: 'seguro-de-propietarios-de-negocios-bop', component: BusinessOwnerInsurance },
           { path: 'seguro-de-responsabilidad-de-practicas-laborales-epli', component: EmploymentPracticesLiabilityInsurance },
           { path: 'seguro-de-responsabilidad-cibernetica', component: CyberLiabilityInsurance },
-          { path: 'seguro-de-construccion-builders-risk', component: BuildersRiskInsurance },
+          { path: 'seguro-contra-riesgos-de-construccion', component: BuildersRiskInsurance },
           { path: 'seguro-de-responsabilidad-de-directores-y-oficiales-do', component: DirectorsOfficersLiabilityInsurance },
         ]
       },
@@ -428,7 +428,7 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   },
   boatInsurance: {
     en: 'auto-insurance/boat-insurance',
-    es: 'seguros-de-auto/seguro-de-barco'
+    es: 'seguros-de-auto/seguro-de-bote'
   },
   rvInsurance: {
     en: 'auto-insurance/rv-motorhome-insurance',
@@ -440,27 +440,27 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   },
   sr22Insurance: {
     en: 'auto-insurance/sr-22-insurance',
-    es: 'seguros-de-auto/seguro-de-sr-22'
+    es: 'seguros-de-auto/seguro-sr-22'
   },
   atvAndUtvInsurance: {
     en: 'auto-insurance/atv-utv-insurance',
-    es: 'seguros-de-auto/seguro-de-atv-utv'
+    es: 'seguros-de-auto/seguro-para-atv-y-utv'
   },
   trailerInsurance: {
     en: 'auto-insurance/trailer-insurance',
-    es: 'seguros-de-auto/seguro-de-trailer'
+    es: 'seguros-de-auto/seguro-de-remolque'
   },
   mexicanCarInsurance: {
     en: 'auto-insurance/mexican-car-insurance',
-    es: 'seguros-de-auto/seguro-de-carro-mexicano'
+    es: 'seguros-de-auto/seguro-de-auto-en-mexico'
   },
   rideshareInsurance: {
     en: 'auto-insurance/rideshare-insurance',
-    es: 'seguros-de-auto/seguro-de-rideshare'
+    es: 'seguros-de-auto/seguro-para-rideshare'
   },
   rentersInsurance: {
     en: 'homeowners-insurance/renters-insurance',
-    es: 'seguros-de-vivienda/seguro-de-renters'
+    es: 'seguros-de-vivienda/seguros-para-inquilinos'
   },
   condoInsurance: {
     en: 'homeowners-insurance/condo-insurance',
@@ -468,7 +468,7 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   },
   manufacturedMobileHomeInsurance: {
     en: 'homeowners-insurance/manufactured-mobile-home-insurance',
-    es: 'seguros-de-vivienda/seguros-para-casas-prefabricadas-y-mo'
+    es: 'seguros-de-vivienda/seguros-para-casas-prefabricadas-y-movil'
   },
   landlordInsurance: {
     en: 'homeowners-insurance/landlord-insurance',
@@ -480,11 +480,11 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   },
   floodInsurance: {
     en: 'homeowners-insurance/flood-insurance',
-    es: 'seguros-de-vivienda/seguro-de-flood'
+    es: 'seguros-de-vivienda/seguros-contra-inundaciones'
   },
   professionalLiabilityInsurance: {
     en: 'commercial-insurance/professional-liability-insurance',
-    es: 'seguros-comerciales/seguro-de-responsabilidad-profesional'
+    es: 'seguros-comerciales/seguro-de-responsabilidad-profesional-eo'
   },
   generalLiabilityInsurance: {
     en: 'commercial-insurance/general-liability-insurance',
@@ -516,7 +516,7 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   },
   buildersRiskInsurance: {
     en: 'commercial-insurance/builders-risk-construction-insurance',
-    es: 'seguros-comerciales/seguro-de-construccion-builders-risk'
+    es: 'seguros-comerciales/seguro-contra-riesgos-de-construccion'
   },
   directorsOfficersLiabilityInsurance: {
     en: 'commercial-insurance/directors-officers-liability-insurance-do',
