@@ -68,6 +68,16 @@
 .headerMain {
   .navbar-brand {
     height: 90px;
+    display: flex;
+    align-items: center;
+
+    img {
+      height: auto !important;
+      max-height: 65px;
+      width: auto !important;
+      object-fit: contain;
+      transition: all 0.3s ease;
+    }
   }
 
   .nav-item.dropdown:hover .dropdown-menu {
@@ -376,6 +386,13 @@
 
     .navbar-brand {
       height: 60px;
+      display: flex;
+      align-items: center;
+
+      img {
+        max-height: 45px !important;
+        width: auto !important;
+      }
     }
   }
 }
