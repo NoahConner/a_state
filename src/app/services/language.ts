@@ -64,7 +64,11 @@ export class Language {
 
     if (!this.isBrowser) return;
 
-    const segments = this.router.url.split('/').filter(Boolean);
+    const currentUrl = this.router.url === '/' && window.location.pathname !== '/'
+      ? window.location.pathname
+      : this.router.url;
+
+    const segments = currentUrl.split('/').filter(Boolean);
 
     let currentLang = 'en';
     let currentSlug = '';
@@ -76,7 +80,6 @@ export class Language {
       currentSlug = segments.join('/');
     }
 
-    // Handle home page case
     if (!currentSlug || currentSlug === '/') {
       if (lang === 'en') {
         this.router.navigate(['/']);
@@ -93,7 +96,6 @@ export class Language {
     );
 
     if (!routeKey) {
-      // If no matching route key found, just change language prefix
       if (lang === 'en') {
         this.router.navigate(['/' + currentSlug]);
       } else {
@@ -108,9 +110,9 @@ export class Language {
     const newSegments = newSlug.split('/');
 
     if (lang === 'en') {
-      this.router.navigate(newSegments);
+      this.router.navigate(['/', ...newSegments]);
     } else {
-      this.router.navigate(['es', ...newSegments]);
+      this.router.navigate(['/es', ...newSegments]);
     }
 
     localStorage.setItem('lang', lang);

@@ -67,10 +67,7 @@
           <h2 class="section-title">{{ 'HOME.INSURANCE_SOLUTIONS.TITLE' | translate }}</h2>
 
           <div class="ptag text-light">
-            A-State Insurance offers customized insurance coverage for homes, vehicles, health,
-            life, businesses, and bonds. With multilingual support, multiple carrier options, and
-            personalized guidance, we make choosing the right plan simple, reliable, and stress-free
-            for everyone. Trust us to protect what matters most to you and your family.
+            {{'HOME.INSURANCE_SOLUTIONS.DESC1' | translate}}
           </div>
         </div>
       </div>
@@ -83,7 +80,7 @@
                 <!-- <i class="fas fa-car"></i> -->
               </div>
               <div class="card-content">
-                <h5 class="solution-title">
+                <h5 class="solution-title" [routerLink]="getRoute('autoInsurance')">
                   {{ 'HOME.INSURANCE_SOLUTIONS.AUTO.TITLE' | translate }}
                 </h5>
 
@@ -102,7 +99,7 @@
                 <img src="../assets/images/house.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="solution-title">
+                <h5 class="solution-title" [routerLink]="getRoute('homeInsurance')">
                   {{ 'HOME.INSURANCE_SOLUTIONS.HOME.TITLE' | translate }}
                 </h5>
 
@@ -121,7 +118,7 @@
                 <img src="../assets/images/commercial.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="solution-title">
+                <h5 class="solution-title" [routerLink]="getRoute('commercialInsurance')">
                   {{ 'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.TITLE' | translate }}
                 </h5>
 
@@ -140,7 +137,7 @@
                 <img src="../assets/images/life.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="solution-title">
+                <h5 class="solution-title" [routerLink]="getRoute('lifeInsurance')">
                   {{ 'HOME.INSURANCE_SOLUTIONS.LIFE.TITLE' | translate }}
                 </h5>
 
@@ -159,7 +156,7 @@
                 <img src="../assets/images/health.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="solution-title">
+                <h5 class="solution-title" [routerLink]="getRoute('healthInsurance')">
                   {{ 'HOME.INSURANCE_SOLUTIONS.HEALTH.TITLE' | translate }}
                 </h5>
 
@@ -178,7 +175,7 @@
                 <img src="../assets/images/secure.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="solution-title">
+                <h5 class="solution-title" [routerLink]="getRoute('suretyBondInsurance')">
                   {{ 'HOME.INSURANCE_SOLUTIONS.SURETY.TITLE' | translate }}
                 </h5>
 

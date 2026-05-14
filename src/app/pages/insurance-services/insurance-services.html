@@ -52,7 +52,7 @@
       <div class="row mb-5 text-center">
         <!-- Changed col-12 to col-lg-8 to make the text area narrower and centered -->
         <div class="col-12 col-md-9 mt-3 mx-auto main-content">
-          <h4 class="insurance-heading-2">
+          <h4 class="insurance-heading-2" [routerLink]="getRoute('autoInsurance')">
             {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HEADING_2' | translate }}
           </h4>
           <!-- Added a class to target specifically -->
@@ -71,7 +71,7 @@
                 <img src="../assets/images/iconoir_car.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('carInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD1.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -87,7 +87,7 @@
                 <img src="../assets/images/pepicons.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('motorcycleInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD2.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -105,7 +105,7 @@
                 <img src="../assets/images/hugeicons_boat.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('boatInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD3.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -121,7 +121,7 @@
                 <img src="../assets/images/fluent.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('rvInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD4.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -139,7 +139,7 @@
                 <img src="../assets/images/clarity_car.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('classicCarInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD5.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -173,7 +173,7 @@
                 <img src="../assets/images/material.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('sr22Insurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD7.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -189,7 +189,7 @@
                 <img src="../assets/images/carbon_ibm.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('atvAndUtvInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD8.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -207,7 +207,7 @@
                 <img src="../assets/images/ph_truck.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('trailerInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD9.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -223,7 +223,7 @@
                 <img src="../assets/images/mingcute.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('mexicanCarInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD10.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -241,7 +241,7 @@
                 <img src="../assets/images/hugeicons_uber.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('rideshareInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.CARD11.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -264,7 +264,7 @@
       <div class="row mb-5 text-center">
         <!-- Changed col-12 to col-lg-8 to make the text area narrower and centered -->
         <div class="col-12 col-md-10 mt-3 mx-auto main-content">
-          <h4 class="insurance-heading-2">
+          <h4 class="insurance-heading-2" [routerLink]="getRoute('homeInsurance')">
             {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.HEADING' | translate }}
           </h4>
           <!-- Added a class to target specifically -->
@@ -298,7 +298,7 @@
                 <img src="../assets/images/hugeicons_property-new.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('landlordInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD2.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -316,7 +316,7 @@
                 <img src="../assets/images/prime_building.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('condoInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD3.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -332,7 +332,7 @@
                 <img src="../assets/images/fe_home.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('earthquakeInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD4.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -350,7 +350,7 @@
                 <img src="../assets/images/streamline-sharp_necktie.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('manufacturedMobileHomeInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD5.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -366,7 +366,7 @@
                 <img src="../assets/images/proicons_food.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('rentersInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD6.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -384,11 +384,11 @@
                 <img src="../assets/images/carbon_earthquake.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
-                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD5.TITLE' | translate }}
+                <h5 class="card-title" [routerLink]="getRoute('floodInsurance')">
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD7.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
-                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD5.DESC' | translate }}
+                  {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD7.DESC' | translate }}
                 </p>
               </div>
             </div>
@@ -406,7 +406,7 @@
       <div class="row mb-5 text-center">
         <!-- Changed col-12 to col-lg-8 to make the text area narrower and centered -->
         <div class="col-12 col-md-10 mt-3 mx-auto main-content">
-          <h4 class="insurance-heading-2">
+          <h4 class="insurance-heading-2" [routerLink]="getRoute('commercialInsurance')">
             {{ 'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.HEADING' | translate }}
           </h4>
           <!-- Added a class to target specifically -->
@@ -425,7 +425,7 @@
                 <img src="../assets/images/c_iconoir_car.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('professionalLiabilityInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD1.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -441,7 +441,7 @@
                 <img src="../assets/images/c_pepicons-pencil_motorcycle.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('generalLiabilityInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD2.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -459,7 +459,7 @@
                 <img src="../assets/images/c_hugeicons_boat.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('workersCompensationInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD3.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -475,7 +475,7 @@
                 <img src="../assets/images/c_ri_building-4-line.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('commercialPropertyInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD4.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -493,7 +493,7 @@
                 <img src="../assets/images/c_hugeicons_truck.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('commercialAutoInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD5.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -509,7 +509,7 @@
                 <img src="../assets/images/c_streamline-ultimate_human-resources-businessman.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('businessOwnerInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD6.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -527,7 +527,7 @@
                 <img src="../assets/images/c_clarity_employee-line.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('employmentPracticesLiabilityInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD7.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -543,7 +543,7 @@
                 <img src="../assets/images/c_gala_secure.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('cyberLiabilityInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD8.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -561,7 +561,7 @@
                 <img src="../assets/images/c_emojione-monotone_building-construction.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('buildersRiskInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD9.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -577,7 +577,7 @@
                 <img src="../assets/images/c_pepicons-pencil_people.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('directorsOfficersLiabilityInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD10.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -617,7 +617,7 @@
                 <img src="../assets/images/healthicons_life-science-outline.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('termLifeInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD1.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -633,7 +633,7 @@
                 <img src="../assets/images/ri_heart-line.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('wholeLifeInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD2.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -651,7 +651,7 @@
                 <img src="../assets/images/iconoir_lifebelt.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('universalLifeInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD3.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -667,7 +667,7 @@
                 <img src="../assets/images/solar_bill-linear.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('finalExpenseInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD4.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -685,7 +685,7 @@
                 <img src="../assets/images/la_hands-helping.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('variableLifeInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD5.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -701,7 +701,7 @@
                 <img src="../assets/images/ri_group-line.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('groupLifeInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD6.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -722,7 +722,7 @@
       <div class="row mb-5 text-center">
         <!-- Changed col-12 to col-lg-8 to make the text area narrower and centered -->
         <div class="col-12 col-md-9 mt-3 mx-auto main-content">
-          <h4 class="insurance-heading-2">
+          <h4 class="insurance-heading-2" [routerLink]="getRoute('healthInsurance')">
             {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.HEADING' | translate }}
           </h4>
           <!-- Added a class to target specifically -->
@@ -741,7 +741,7 @@
                 <img src="../assets/images/streamline-plump_insurance-hand.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('individualHealthInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD1.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -757,7 +757,7 @@
                 <img src="../assets/images/famicons_logo-family.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('familyHealthInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD2.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -775,7 +775,7 @@
                 <img src="../assets/images/streamline-cyber_business-laptop-1.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('smallBusinessHealthInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD3.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -791,7 +791,7 @@
                 <img src="../assets/images/fluent_group-20-regular.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('employerGroupHealthInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD4.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -809,7 +809,7 @@
                 <img src="../assets/images/material-symbols-light_travel-explore-rounded.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('travelHealthInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD5.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -825,7 +825,7 @@
                 <img src="../assets/images/fluent-mdl2_medical.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('medicareSupplementInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD6.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -843,7 +843,7 @@
                 <img src="../assets/images/clarity_employee-line.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('shortTermHealthInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD7.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -859,7 +859,7 @@
                 <img src="../assets/images/hugeicons_dental-tooth.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('dentalVisionInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD8.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -877,7 +877,7 @@
                 <img src="../assets/images/emojione-monotone_building-construction.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
+                <h5 class="card-title" [routerLink]="getRoute('acaMarketplacePlansInsurance')">
                   {{ 'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD9.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
@@ -901,7 +901,7 @@
     <div class="container">
       <div class="row mb-5 text-center">
         <div class="col-10  mt-5 mx-auto surety-content">
-          <h4>
+          <h4 [routerLink]="getRoute('suretyBondInsurance')">
             {{ 'INSURANCE_SERVICES.SURETY.HEADING' | translate }}
           </h4>
           <!-- Added a class to target specifically -->
@@ -916,7 +916,8 @@
           <div class="col-sm-3">
             <div class="card surtey-card">
               <div class="card-body">
-                <h5 class="card-title"> {{ 'INSURANCE_SERVICES.SURETY.CARD1.TITLE' | translate }}</h5>
+                <h5 class="card-title" [routerLink]="getRoute('performanceBondsPaymentBonds')"> {{
+                  'INSURANCE_SERVICES.SURETY.CARD1.TITLE' | translate }}</h5>
                 <p class="card-text">{{ 'INSURANCE_SERVICES.SURETY.CARD1.DESC' | translate }}</p>
               </div>
             </div>
@@ -924,7 +925,8 @@
           <div class="col-sm-3">
             <div class="card surtey-card">
               <div class="card-body">
-                <h5 class="card-title"> {{ 'INSURANCE_SERVICES.SURETY.CARD2.TITLE' | translate }}</h5>
+                <h5 class="card-title" [routerLink]="getRoute('commercialSuretyBonds')"> {{
+                  'INSURANCE_SERVICES.SURETY.CARD2.TITLE' | translate }}</h5>
                 <p class="card-text">{{ 'INSURANCE_SERVICES.SURETY.CARD2.DESC' | translate }}</p>
               </div>
             </div>
@@ -933,7 +935,8 @@
           <div class="col-sm-3">
             <div class="card surtey-card">
               <div class="card-body">
-                <h5 class="card-title"> {{ 'INSURANCE_SERVICES.SURETY.CARD3.TITLE' | translate }}</h5>
+                <h5 class="card-title" [routerLink]="getRoute('bidBonds')"> {{ 'INSURANCE_SERVICES.SURETY.CARD3.TITLE' |
+                  translate }}</h5>
                 <p class="card-text">{{ 'INSURANCE_SERVICES.SURETY.CARD3.DESC' | translate }}</p>
               </div>
             </div>
@@ -942,7 +945,8 @@
           <div class="col-sm-3">
             <div class="card surtey-card">
               <div class="card-body">
-                <h5 class="card-title"> {{ 'INSURANCE_SERVICES.SURETY.CARD4.TITLE' | translate }}</h5>
+                <h5 class="card-title" [routerLink]="getRoute('notaryBonds')"> {{
+                  'INSURANCE_SERVICES.SURETY.CARD4.TITLE' | translate }}</h5>
                 <p class="card-text">{{ 'INSURANCE_SERVICES.SURETY.CARD4.DESC' | translate }}</p>
               </div>
             </div>
@@ -974,7 +978,8 @@
               <img src="assets/images/streamline-plump_pet-paw.png" alt="Pet Insurance">
             </div>
             <div class="card-body p-0 inner-content-custom">
-              <h3 class="mb-1">{{ 'INSURANCE_SERVICES.ADDITIONAL.CARD1.TITLE' | translate }}</h3>
+              <h3 class="mb-1" [routerLink]="getRoute('petInsurance')">{{ 'INSURANCE_SERVICES.ADDITIONAL.CARD1.TITLE' |
+                translate }}</h3>
               <div class="title-line bg-yellow mb-2"></div>
               <p class=" mb-0">{{ 'INSURANCE_SERVICES.ADDITIONAL.CARD1.DESC' | translate }}</p>
             </div>
@@ -985,7 +990,8 @@
               <img src="assets/images/pajamas_title.png" alt="Pet Insurance">
             </div>
             <div class="card-body p-0 inner-content-custom">
-              <h3 class="mb-1">{{ 'INSURANCE_SERVICES.ADDITIONAL.CARD2.TITLE' | translate }}</h3>
+              <h3 class="mb-1" [routerLink]="getRoute('titleInsurance')">{{ 'INSURANCE_SERVICES.ADDITIONAL.CARD2.TITLE'
+                | translate }}</h3>
               <div class="title-line bg-red mb-2"></div>
               <p class=" mb-0">{{ 'INSURANCE_SERVICES.ADDITIONAL.CARD2.DESC' | translate }}</p>
             </div>
@@ -997,7 +1003,8 @@
               <img src="assets/images/tabler_transfer.png" alt="Pet Insurance">
             </div>
             <div class="card-body p-0 inner-content-custom">
-              <h3 class="mb-1">{{ 'INSURANCE_SERVICES.ADDITIONAL.CARD3.TITLE' | translate }}</h3>
+              <h3 class="mb-1" [routerLink]="getRoute('titleTransfer')">{{ 'INSURANCE_SERVICES.ADDITIONAL.CARD3.TITLE' |
+                translate }}</h3>
               <div class="title-line bg-red mb-2"></div>
               <p class=" mb-0">{{ 'INSURANCE_SERVICES.ADDITIONAL.CARD3.DESC' | translate }}</p>
             </div>
@@ -1182,7 +1189,8 @@
             <input type="text" [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate" class="form-control" />
             <input type="number" [placeholder]="'HOME.BANNER.FORM.PHONE' | translate" class="form-control" />
           </div>
-          <button class="btn" [routerLink]="getRoute('getAQuote')">{{ 'HOME.COVERDBANNER.FORM.BUTTON' | translate }}</button>
+          <button class="btn" [routerLink]="getRoute('getAQuote')">{{ 'HOME.COVERDBANNER.FORM.BUTTON' | translate
+            }}</button>
         </div>
       </div>
     </div>

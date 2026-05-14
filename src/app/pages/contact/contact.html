@@ -117,10 +117,12 @@
           <div class="reach-card">
             <div class="card-top">
               <img src="assets/images/contact-location.png" alt="" />
-              <h5>{{ 'CONTACT.REACH-INSURANCE.CARD4.TITLE' | translate }}</h5>
+              <h5>{{ 'CONTACT.REACH-INSURANCE.CARD4.TITLE' | translate }}
+              </h5>
             </div>
             <p>
-              <span class="underline">{{ 'CONTACT.REACH-INSURANCE.CARD4.DESC' | translate }}</span>
+              <span class="underline" [routerLink]="getRoute('ourLocations')">{{ 'CONTACT.REACH-INSURANCE.CARD4.DESC' |
+                translate }}</span>
               {{ 'CONTACT.REACH-INSURANCE.CARD4.DESC1' | translate }}
             </p>
           </div>

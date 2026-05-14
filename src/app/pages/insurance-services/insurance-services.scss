@@ -307,6 +307,8 @@
     .card-title {
       font-size: 26.5px;
       font-weight: 500;
+      cursor: pointer;
+
       font-family: 'Afacad', sans-serif;
       color: #ffffff;
       margin-bottom: 0.9rem;
@@ -348,6 +350,7 @@
   color: #ca2b28;
   font-size: 40px;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .main-content p {
@@ -487,6 +490,7 @@
   font-size: 34px;
   font-weight: bold;
   font-family: 'Afacad';
+  cursor: pointer;
 }
 
 .surety-content p {
@@ -520,6 +524,9 @@
     margin-bottom: 25px;
     position: relative;
     padding-bottom: 15px;
+    cursor: pointer;
+
+
 
     &::after {
       content: '';
@@ -582,6 +589,7 @@
   }
 
 
+
   .additional-content p {
     font-size: 17px;
     font-family: 'Afacad', sans-serif;
@@ -593,6 +601,7 @@
     color: #101010;
     font-weight: 600;
     font-family: 'Afacad', sans-serif;
+    cursor: pointer;
   }
 
 
