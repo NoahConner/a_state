@@ -88,7 +88,7 @@
       </h1>
 
       <p class="intro-text">
-        {{ 'AUTO_INSURANCE.LAWS.INTRO' | translate }} <a href="#" class="text-link"> {{ 'AUTO_INSURANCE.LAWS.INTRO_LINK'
+        {{ 'AUTO_INSURANCE.LAWS.INTRO' | translate }} <a href="https://www.tdi.texas.gov/pubs/consumer/cb020.html" class="text-link"> {{ 'AUTO_INSURANCE.LAWS.INTRO_LINK'
           | translate }}</a>.
       </p>
 
@@ -767,7 +767,7 @@
       <h2 class="section-title">{{ 'AUTO_INSURANCE.HIGH_RISK_DRIVER.HEADER.TITLE' | translate }}</h2>
       <div class="intro-text">
         <p>{{ 'AUTO_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC1' | translate }}</p>
-        <p>{{ 'AUTO_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC2' | translate }}</p>
+        <p [innerHtml]="('AUTO_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC2' | translate)"></p>
         <p>{{ 'AUTO_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC3' | translate }}</p>
       </div>
     </div>
@@ -876,6 +876,8 @@
                   {{ 'AUTO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translate }}
                 </h5>
                 <p class="card-text">
+                  <a [routerLink]="getRoute('getAQuote')">{{ 'AUTO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.LINK' | translate }}</a>
+
                   {{ 'AUTO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' | translate }}
                 </p>
               </div>
@@ -922,7 +924,9 @@
               <div class="dot"></div>
               <div class="content">
                 <h3>{{ 'AUTO_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.TITLE' | translate }}</h3>
-                <p>{{ 'AUTO_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translate }}</p>
+                <p>
+                  <a [routerLink]="getRoute('contact')">{{ 'AUTO_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.LINK' | translate }}</a>
+                  {{ 'AUTO_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translate }}</p>
               </div>
             </div>
 
@@ -1007,7 +1011,11 @@
           <div class="h1">
             {{ 'AUTO_INSURANCE.FREE_QUOTE.HEADER' | translate }}
           </div>
-          <p class="para">{{ 'AUTO_INSURANCE.FREE_QUOTE.DESCRIPTION' | translate }}</p>
+          <p class="para">
+            {{ 'AUTO_INSURANCE.FREE_QUOTE.DESCRIPTION_PART1' | translate }}
+            <a style="color: inherit;" [routerLink]="getRoute('getAutoQuote')">{{ 'AUTO_INSURANCE.FREE_QUOTE.LINK_TEXT' | translate }}</a>
+            {{ 'AUTO_INSURANCE.FREE_QUOTE.DESCRIPTION_PART2' | translate }}
+          </p>
           <div class="selectable mt-4">
             @for (item of chips.slice(0, 3); track item.name) {
             <div class="chip">
