@@ -742,7 +742,7 @@
     },
     "AGENCY": {
       "MAIN_TITLE": "La Ventaja de la Agencia: Donde Tu Trabajo Importa",
-      "DESCRIPTION": "La mayoría de los trabajos de seguros hacen que te sientas solo un número en una enorme máquina corporativa. En A-State Insurance, hacemos las cosas de manera diferente. Como agencia y corredor especializado, no estamos atados a un único guion de \"empresa\". Somos emprendedores que representamos primero a nuestros clientes. Esto significa que tienes la libertad de encontrar las mejores soluciones en Seguros de Auto, Hogar, Comercial y Vida, en lugar de estar obligado a vender un producto único para todos."
+      "DESCRIPTION": "La mayoría de los trabajos de seguros hacen que te sientas solo un número en una enorme máquina corporativa. En <a href='/es' class='inline-link'>A-State Insurance</a>, hacemos las cosas de manera diferente. Como agencia y corredor especializado, no estamos atados a un único guion de \"empresa\". Somos emprendedores que representamos primero a nuestros clientes. Esto significa que tienes la libertad de encontrar las mejores soluciones en Seguros de Auto, Hogar, Comercial y Vida, en lugar de estar obligado a vender un producto único para todos."
     },
     "THREE_PILLARS": {
       "TITLE": "Nuestros Tres Pilares",
@@ -919,15 +919,7 @@
       "STEP2": {
         "TITLE": "Personaliza tu Cobertura",
         "DESC": "¿Qué estás buscando? (Selecciona todo lo que aplique)",
-        "OPTIONS": [
-          "Auto",
-          "Hogar",
-          "Comercial",
-          "Vida",
-          "Salud",
-          "Fianzas",
-          "Paquete y Ahorra"
-        ],
+        "OPTIONS": ["Auto", "Hogar", "Comercial", "Vida", "Salud", "Fianzas", "Paquete y Ahorra"],
         "DESC1": "¿No ves tu póliza en la lista? Dinos lo que necesitas a continuación:"
       },
       "STEP3": {
@@ -938,17 +930,9 @@
       "STEP4": {
         "TITLE": "Preferencias de Contacto",
         "DESC": "¿Cómo te gustaría ser contactado?",
-        "OPTIONS": [
-          "Teléfono",
-          "Mensaje de texto",
-          "Correo electrónico"
-        ],
+        "OPTIONS": ["Teléfono", "Mensaje de texto", "Correo electrónico"],
         "DESC1": "Mejor hora para contactarte:",
-        "TIME_OPTIONS": [
-          "Mañana",
-          "Tarde",
-          "Noche"
-        ]
+        "TIME_OPTIONS": ["Mañana", "Tarde", "Noche"]
       },
       "STEP5": {
         "TITLE": "Revisa tu Solicitud de Cotización Personalizada"
@@ -1038,23 +1022,11 @@
       "STEP5": {
         "TITLE": "Preferencias de Contacto",
         "LANGUAGE_TITLE": "Idioma Preferido:",
-        "LANGUAGE_OPTIONS": [
-          "Inglés",
-          "Español",
-          "Hindi"
-        ],
+        "LANGUAGE_OPTIONS": ["Inglés", "Español", "Hindi"],
         "CONTACT_TITLE": "¿Cómo debemos comunicarnos con usted?",
-        "CONTACT_OPTIONS": [
-          "Llamada Telefónica",
-          "Mensaje de Texto",
-          "Correo Electrónico"
-        ],
+        "CONTACT_OPTIONS": ["Llamada Telefónica", "Mensaje de Texto", "Correo Electrónico"],
         "TIME_TITLE": "Mejor Hora para Contactar:",
-        "TIME_OPTIONS": [
-          "Mañana (8 AM - 12 PM)",
-          "Tarde (12 PM - 5 PM)",
-          "Noche (5 PM - 8 PM)"
-        ]
+        "TIME_OPTIONS": ["Mañana (8 AM - 12 PM)", "Tarde (12 PM - 5 PM)", "Noche (5 PM - 8 PM)"]
       }
     },
     "QUOTE_SUMMARY": {
@@ -1153,10 +1125,7 @@
       "STEP4": {
         "TITLE": "Historial y Combinación",
         "INSURED_TITLE": "Estado Actual del Seguro de Hogar",
-        "INSURED_OPTIONS": [
-          "Actualmente Asegurado",
-          "No Asegurado"
-        ],
+        "INSURED_OPTIONS": ["Actualmente Asegurado", "No Asegurado"],
         "BUNDLE_TITLE": "¿Desea combinar sus pólizas para ahorrar más?",
         "BUNDLE_OPTIONS": [
           "¡Sí! Quiero el descuento por combinar Hogar + Auto.",
@@ -1172,23 +1141,11 @@
           "PHONE": "Número de Teléfono"
         },
         "LANGUAGE_TITLE": "Idioma Preferido",
-        "LANGUAGE_OPTIONS": [
-          "Inglés",
-          "Español",
-          "Hindi"
-        ],
+        "LANGUAGE_OPTIONS": ["Inglés", "Español", "Hindi"],
         "CONTACT_TITLE": "¿Cómo debemos comunicarnos con usted?",
-        "CONTACT_OPTIONS": [
-          "Llamada Telefónica",
-          "Mensaje de Texto",
-          "Correo Electrónico"
-        ],
+        "CONTACT_OPTIONS": ["Llamada Telefónica", "Mensaje de Texto", "Correo Electrónico"],
         "TIME_TITLE": "Mejor Hora para Contactar",
-        "TIME_OPTIONS": [
-          "Mañana (8 AM - 12 PM)",
-          "Tarde (12 PM - 5 PM)",
-          "Noche (5 PM - 8 PM)"
-        ]
+        "TIME_OPTIONS": ["Mañana (8 AM - 12 PM)", "Tarde (12 PM - 5 PM)", "Noche (5 PM - 8 PM)"]
       }
     },
     "QUOTE_SUMMARY": {
@@ -1265,27 +1222,11 @@
         "TITLE": "Escala de Operaciones",
         "FIELDS": {
           "YEARS_IN_BUSINESS": "Años en el Negocio",
-          "YEARS_OPTIONS": [
-            "Nuevo Negocio",
-            "1-5 años",
-            "6-10 años",
-            "10+ años"
-          ],
+          "YEARS_OPTIONS": ["Nuevo Negocio", "1-5 años", "6-10 años", "10+ años"],
           "NUMBER_OF_EMPLOYEES": "Número de Empleados",
-          "EMPLOYEES_OPTIONS": [
-            "1-10",
-            "11-50",
-            "51-200",
-            "200+"
-          ],
+          "EMPLOYEES_OPTIONS": ["1-10", "11-50", "51-200", "200+"],
           "ANNUAL_REVENUE": "Ingresos Anuales Estimados",
-          "REVENUE_OPTIONS": [
-            "Menos de $100k",
-            "$100k - $500k",
-            "$500k - $1M",
-            "$1M - $5M",
-            "$5M+"
-          ]
+          "REVENUE_OPTIONS": ["Menos de $100k", "$100k - $500k", "$500k - $1M", "$1M - $5M", "$5M+"]
         }
       },
       "STEP3": {
@@ -1312,17 +1253,9 @@
           "PHONE_NUMBER": "Número de Teléfono*"
         },
         "LANGUAGE_TITLE": "Idioma Preferido",
-        "LANGUAGE_OPTIONS": [
-          "Inglés",
-          "Español",
-          "Hindi"
-        ],
+        "LANGUAGE_OPTIONS": ["Inglés", "Español", "Hindi"],
         "TIME_TITLE": "Mejor Hora para Contactar",
-        "TIME_OPTIONS": [
-          "Mañana",
-          "Tarde",
-          "Noche"
-        ]
+        "TIME_OPTIONS": ["Mañana", "Tarde", "Noche"]
       }
     },
     "QUOTE_SUMMARY": {
@@ -36331,9 +36264,7 @@
       ],
       "HOURS": "Lun – Sáb: 9AM – 7PM Dom: Cerrado",
       "EMAIL": "save@astateinsurance.com",
-      "PHONE": [
-        "(713) 357-7771"
-      ]
+      "PHONE": ["(713) 357-7771"]
     },
     "POLICIES": {
       "PRIVACY": "Política de Privacidad",
