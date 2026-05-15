@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: "http://localhost/a_state_backend/api",
+  baseUrl: "https://api.astateinsurance.com/a-state-backend/api",
 };

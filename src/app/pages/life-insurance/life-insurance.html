@@ -140,7 +140,7 @@
     <div class="container">
       <h1 class="how-much-do-you-need-title">{{ 'LIFE_INSURANCE.HOW_MUCH_DO_YOU_NEED.TITLE' | translate }}</h1>
       <div class="how-much-do-you-need-description">
-        <p>{{ 'LIFE_INSURANCE.HOW_MUCH_DO_YOU_NEED.DESC1' | translate }}</p>
+        <p [innerHTML]="'LIFE_INSURANCE.HOW_MUCH_DO_YOU_NEED.DESC1' | translate"></p>
         <p>{{ 'LIFE_INSURANCE.HOW_MUCH_DO_YOU_NEED.DESC2' | translate }}</p>
       </div>
     </div>
@@ -220,7 +220,7 @@
       <h1 class="how-much-do-you-need-title">{{ 'LIFE_INSURANCE.LIFE_INSURANCE_COST.TITLE' | translate }}</h1>
       <div class="how-much-do-you-need-description">
         <p>{{ 'LIFE_INSURANCE.LIFE_INSURANCE_COST.DESC1' | translate }}</p>
-        <p>{{ 'LIFE_INSURANCE.LIFE_INSURANCE_COST.DESC2' | translate }}</p>
+        <p [innerHTML]="'LIFE_INSURANCE.LIFE_INSURANCE_COST.DESC2' | translate"></p>
         <p>{{ 'LIFE_INSURANCE.LIFE_INSURANCE_COST.DESC3' | translate }}</p>
       </div>
     </div>

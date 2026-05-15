@@ -92,7 +92,7 @@
         {{ 'HEALTH_INSURANCE.LAWS.DESC' | translate }}
         <br>
         <br>
-        {{ 'HEALTH_INSURANCE.LAWS.DESC1' | translate }}
+        <span [innerHTML]="'HEALTH_INSURANCE.LAWS.DESC1' | translate"></span>
         <br>
         <br>
         {{ 'HEALTH_INSURANCE.LAWS.DESC2' | translate }}
@@ -241,7 +241,7 @@
     <div class="container">
       <h1 class="how-much-do-you-need-title">{{ 'HEALTH_INSURANCE.HEALTH_INSURANCE_COST.TITLE' | translate }}</h1>
       <div class="how-much-do-you-need-description">
-        <p>{{ 'HEALTH_INSURANCE.HEALTH_INSURANCE_COST.DESC1' | translate }}</p>
+        <p [innerHtml]="'HEALTH_INSURANCE.HEALTH_INSURANCE_COST.DESC1' | translate"></p>
         <p>{{ 'HEALTH_INSURANCE.HEALTH_INSURANCE_COST.DESC2' | translate }}</p>
       </div>
     </div>

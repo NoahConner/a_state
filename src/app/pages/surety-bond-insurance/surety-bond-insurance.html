@@ -119,7 +119,7 @@
           <!-- Description Content -->
           <div class="how-it-work-description">
             <p class="mb-4">
-              {{ 'SURETY_INSURANCE.HOW_IT_WORKS.DESC1' | translate }}
+              <span [innerHTML]="'SURETY_INSURANCE.HOW_IT_WORKS.DESC1' | translate"></span>
 
               <br>
               <br>
@@ -168,7 +168,7 @@
                   <div class="card-body">
                     <div class="card-icon"><i [class]="item.ICON"></i></div>
 
-                    <h6 class="mt-2">{{ item.TITLE }}</h6>
+                    <h6  class="mt-2" [innerHTML]="item.TITLE | translate"></h6>
                     <p>{{ item.DESC }}</p>
                   </div>
                 </div>
@@ -257,7 +257,7 @@
     <div class="container">
       <h1 class="how-much-do-you-need-title">{{ 'SURETY_INSURANCE.SURETY_BOND_COST.TITLE' | translate }}</h1>
       <div class="how-much-do-you-need-description">
-        <p>{{ 'SURETY_INSURANCE.SURETY_BOND_COST.DESC1' | translate }}</p>
+        <p [innerHTML]="'SURETY_INSURANCE.SURETY_BOND_COST.DESC1' | translate"></p>
         <p>{{ 'SURETY_INSURANCE.SURETY_BOND_COST.DESC2' | translate }}</p>
       </div>
     </div>
