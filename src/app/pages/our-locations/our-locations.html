@@ -91,7 +91,14 @@
         <div class="col-md-4 feature-col">
           <h3 class="feature-title">{{ 'OUR_LOCATION.SESSION2.CARD1.TITLE' | translate }}</h3>
           <p class="feature-text">
-            {{ 'OUR_LOCATION.SESSION2.CARD1.DESCRIPTION' | translate }}
+            {{ 'OUR_LOCATION.SESSION2.CARD1.DESCRIPTION_PART1' | translate }}
+            <a [routerLink]="getRoute('autoInsurance')">{{ 'HOME.BANNER.CHIPS.AUTO' | translate }}</a>,
+            <a [routerLink]="getRoute('homeInsurance')">{{ 'HOME.BANNER.CHIPS.HOMEOWNERS' | translate }}</a>,
+            <a [routerLink]="getRoute('commercialInsurance')">{{ 'HOME.BANNER.CHIPS.COMMERCIAL' | translate }}</a>,
+            <a [routerLink]="getRoute('lifeInsurance')">{{ 'HOME.BANNER.CHIPS.LIFE' | translate }}</a>,
+            {{ 'OUR_LOCATION.SESSION2.CARD1.DESCRIPTION_PART2' | translate }}
+            <a [routerLink]="getRoute('healthInsurance')">{{ 'HOME.BANNER.CHIPS.HEALTH' | translate }}</a>
+            {{ 'OUR_LOCATION.SESSION2.CARD1.DESCRIPTION_PART3' | translate }}
           </p>
         </div>
 

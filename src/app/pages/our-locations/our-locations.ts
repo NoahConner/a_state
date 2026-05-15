@@ -4,7 +4,6 @@ import { catchError, finalize } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Language } from '../../services/language';
-import { routeTranslations } from '../../app-routing-module';
 
 interface Location {
   id: string;
@@ -62,13 +61,7 @@ export class OurLocations implements OnInit {
     }
   
     getRoute(page: string): string[] {
-      const lang = this.languageService.getCurrentLanguage();
-  
-      const slug = routeTranslations[page]?.[lang] || routeTranslations[page]?.['en'];
-  
-      if (!slug) return ['/']; // fallback to homepage
-  
-      return lang === 'en' ? [slug] : [lang, slug];
+      return this.languageService.getRoute(page);
     }
 
   getLocations(lang: any) {
