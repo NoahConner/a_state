@@ -88,10 +88,9 @@
 
       <p class="intro-text">
         {{ 'HOME_INSURANCE.LAWS.INTRO' | translate }}
-        <br>
-        {{ 'HOME_INSURANCE.LAWS.INTRO1' | translate }}
-
       </p>
+      <p [innerHTML]="'HOME_INSURANCE.LAWS.INTRO1' | translate"></p>
+
 
 
 
@@ -241,9 +240,8 @@
 
           <!-- Description Content -->
           <div class="minimum-coverage-description">
-            <p class="mb-4">
-              {{ 'HOME_INSURANCE.MINIMUM_COVERAGE.DESC1' | translate }}
-            </p>
+            <p class="mb-4" [innerHTML]="'HOME_INSURANCE.MINIMUM_COVERAGE.DESC1' | translate"></p>
+             
 
             <p>
               {{ 'HOME_INSURANCE.MINIMUM_COVERAGE.DESC2' | translate }}
@@ -267,9 +265,7 @@
               {{ 'HOME_INSURANCE.COST.DESC1' | translate }}
             </p>
 
-            <p>
-              {{ 'HOME_INSURANCE.COST.DESC2' | translate }}
-            </p>
+            <p [innerHTML]="'HOME_INSURANCE.COST.DESC2' | translate"></p>
           </div>
         </div>
       </div>
