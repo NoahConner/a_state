@@ -13,7 +13,7 @@
             <div class="chip">
               <i class="{{ item?.icon }}"></i>
               <span>{{ item?.name | translate }}</span>
-            </div>
+            </div>  
             }
           </div>
           <div class="selectable mt-2">
@@ -64,16 +64,21 @@
 
                 <p>
                   <img src="/assets/images/detailLocation.png" alt="" />
-                  {{ loc.detailPage?.session1?.contact?.address }}
+                  <a href="{{ loc?.link }}" target="_blank" rel="noopener noreferrer">
+                    {{ loc.detailPage?.session1?.contact?.address }}
+                  </a>
                 </p>
                 <p>
                   <img src="/assets/images/phone.png" alt="" />
-                  {{ loc.detailPage?.session1?.contact?.phone }}
+                  <a style="color: inherit; text-decoration: underline;     margin-left: 3px;" href="tel:{{ loc.detailPage?.session1?.contact?.phone }}">
+                    {{ loc.detailPage?.session1?.contact?.phone }}
+                  </a>
                 </p>
                 <p>
-                  <img src="/assets/images/detailMail.png" alt="" />{{
-                  loc.detailPage?.session1?.contact?.email
-                  }}
+                  <img src="/assets/images/detailMail.png" alt="" />
+                  <a style="color: inherit; text-decoration: underline;     margin-left: 3px;" href="mailto:{{ loc.detailPage?.session1?.contact?.email }}">
+                    {{ loc.detailPage?.session1?.contact?.email }}
+                  </a>
                 </p>
               </div>
 
@@ -116,13 +121,15 @@
               </div>
 
               <div class="btn-group-custom mt-4">
-                <button class="btn btn-yellow">
+                <a class="btn btn-yellow"  href="{{ loc?.directionsLink }}" target="_blank" rel="noopener noreferrer">
                   {{ loc.detailPage?.session1?.ctaButtons[0] }}
-                </button>
+                </a>
                 <button class="btn btn-yellow" [routerLink]="getRoute('getAQuote')">
                   {{ loc.detailPage?.session1?.ctaButtons[1] }}
                 </button>
-                <button class="btn btn-red">{{ loc.detailPage?.session1?.ctaButtons[2] }}</button>
+                <a href class="btn btn-red" href="tel:{{ loc.detailPage?.session1?.contact?.phone }}">
+                  {{ loc.detailPage?.session1?.ctaButtons[2] }}
+                </a>
               </div>
             </div>
           </div>
@@ -216,7 +223,7 @@
 
                 <!-- CONTENT -->
                 <div class="card-content">
-                  <h5 class="solution-title">
+                  <h5 class="solution-title" [routerLink]="getRoute(item.route)">
                     {{ item.name }}
                   </h5>
 
@@ -231,7 +238,7 @@
       </ng-container>
       <div class="row mt-5 text-center">
         <div class="col-12">
-          <button class="btn btn-see-all">
+          <button class="btn btn-see-all" [routerLink]="getRoute('insuranceServices')">
             {{ 'HOME.INSURANCE_SOLUTIONS.SEE_ALL' | translate }}
           </button>
         </div>
