@@ -58,12 +58,12 @@ export class MotorcycleInsurance {
   ];
 
   companyRates = [
-    { company: "Dairyland", monthly: "$22" },
-    { company: "Progressive", monthly: "$26" },
-    { company: "Harley-Davidson", monthly: "$27" },
-    { company: "Allstate", monthly: "$46" },
-    { company: "Geico", monthly: "$63" },
-    { company: "Nationwide", monthly: "$84" }
+    { company: "<a href='https://www.dairylandinsurance.com/' target='_blank'>Dairyland</a>", monthly: "$22" },
+    { company: "<a href='https://www.progressive.com/' target='_blank'>Progressive</a>", monthly: "$26" },
+    { company: "<a href='https://www.harley-davidson.com/ap/en/index.html' target='_blank'>Harley-Davidson</a>", monthly: "$27" },
+    { company: "<a href='https://www.allstate.com/' target='_blank'>Allstate</a>", monthly: "$46" },
+    { company: "<a href='https://www.geico.com/' target='_blank'>Geico</a>", monthly: "$63" },
+    { company: "<a href='https://www.nationwide.com/' target='_blank'>Nationwide</a>", monthly: "$84" }
   ]
 
 

@@ -98,7 +98,7 @@
             </h1>
 
             <p class="intro-text">
-                {{ 'MOTORCYCLE_INSURANCE.LAWS.INTRO1' | translate }}
+                <span [innerHTML]="'MOTORCYCLE_INSURANCE.LAWS.INTRO1' | translate"></span>
 
                 <br>
                 <br>
@@ -260,8 +260,8 @@
                     <div class="row g-2 text-center mb-2 align-items-center">
                         <div class="col-6">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
-                                [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ rate.company }}
+                                [class.data-pill-color-1]="i % 2 !== 0" [innerHTML]="rate.company">
+                                
                             </div>
                         </div>
                         <div class="col-6">
