@@ -17,9 +17,13 @@
         <h1 class="main-title">
           {{ 'CAREERS.AGENCY.MAIN_TITLE' | translate }}
         </h1>
-        <p class="section-text">
+        <!-- <p class="section-text">
           {{ 'CAREERS.AGENCY.DESCRIPTION' | translate }}
-        </p>
+        </p> -->
+        <p
+          class="section-text"
+          [innerHTML]="'CAREERS.AGENCY.DESCRIPTION' | translateHtml | async"
+        ></p>
       </div>
     </div>
 

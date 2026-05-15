@@ -495,7 +495,7 @@
         "DESC": "Communicate easily with knowledgeable agents who speak English, Spanish, and Hindi for clear, stress-free support."
       }
     },
-      "COVERDBANNER": {
+    "COVERDBANNER": {
       "TITLE": "Protect What’s Yours in Texas",
       "DESC": "At A-State Insurance, we make protecting your home, car, business, or family simple and worry-free. Our experts compare multiple carriers to find coverage that fits your life perfectly. With clear guidance, multilingual support, and personalized seProtecting your future starts with one simple step. Reach out today by calling, emailing, texting, filling out our online form, or visiting our office in person. Our team is ready to understand your needs and guide you toward the right coverage. Choose from auto, homeowners, commercial, life, health, or surety bonds, and get a plan that fits your lifestyle and budget. ",
       "DESC_1": "Share your full name and phone number, request a quote, and let A-State Insurance handle the rest with fast, reliable service you can trust.",
@@ -755,7 +755,7 @@
     },
     "AGENCY": {
       "MAIN_TITLE": "The Agency Advantage: Where Your Work Matters",
-      "DESCRIPTION": "Most insurance jobs feel like you're just a number in a massive corporate machine. At A-State Insurance, we do things differently. As a specialized agency and broker, we aren't tied to a single \"company\" script. We are entrepreneurs who represent our clients first. This means you have the freedom to find the best solutions across Auto, Home, Commercial, and Life insurance, rather than being forced to sell a one-size-fits-all product."
+      "DESCRIPTION": "Most insurance jobs feel like you're just a number in a massive corporate machine. At <a href='/' class='inline-link'>A-State Insurance</a>, we do things differently. As a specialized agency and broker, we aren't tied to a single \"company\" script. We are entrepreneurs who represent our clients first. This means you have the freedom to find the best solutions across Auto, Home, Commercial, and Life insurance, rather than being forced to sell a one-size-fits-all product."
     },
     "THREE_PILLARS": {
       "TITLE": "Our Three Pillars",
@@ -951,17 +951,9 @@
       "STEP4": {
         "TITLE": "Contact Preferences",
         "DESC": "How would you like to be contacted?",
-        "OPTIONS": [
-          "Phone",
-          "Text Message",
-          "Email"
-        ],
+        "OPTIONS": ["Phone", "Text Message", "Email"],
         "DESC1": "Best time to reach you:",
-        "TIME_OPTIONS": [
-          "Morning",
-          "Afternoon",
-          "Evening"
-        ]
+        "TIME_OPTIONS": ["Morning", "Afternoon", "Evening"]
       },
       "STEP5": {
         "TITLE": "Review Your Custom Quote Request"
@@ -1051,17 +1043,9 @@
       "STEP5": {
         "TITLE": "Contact Preferences",
         "LANGUAGE_TITLE": "Preferred Language:",
-        "LANGUAGE_OPTIONS": [
-          "English",
-          "Spanish",
-          "Hindi"
-        ],
+        "LANGUAGE_OPTIONS": ["English", "Spanish", "Hindi"],
         "CONTACT_TITLE": "How should we reach you?",
-        "CONTACT_OPTIONS": [
-          "Phone Call",
-          "Text Message",
-          "Email"
-        ],
+        "CONTACT_OPTIONS": ["Phone Call", "Text Message", "Email"],
         "TIME_TITLE": "Best Time to Connect:",
         "TIME_OPTIONS": [
           "Morning (8 AM - 12 PM)",
@@ -1166,10 +1150,7 @@
       "STEP4": {
         "TITLE": "History and Bundling",
         "INSURED_TITLE": "Current Home Insurance Status",
-        "INSURED_OPTIONS": [
-          "Currently Insured",
-          "Not Insured"
-        ],
+        "INSURED_OPTIONS": ["Currently Insured", "Not Insured"],
         "BUNDLE_TITLE": "Do you want to bundle your policies to save more?",
         "BUNDLE_OPTIONS": [
           "Yes! I want a Home + Auto bundle discount.",
@@ -1185,17 +1166,9 @@
           "PHONE": "Phone Number"
         },
         "LANGUAGE_TITLE": "Preferred Language",
-        "LANGUAGE_OPTIONS": [
-          "English",
-          "Spanish",
-          "Hindi"
-        ],
+        "LANGUAGE_OPTIONS": ["English", "Spanish", "Hindi"],
         "CONTACT_TITLE": "How should we reach you?",
-        "CONTACT_OPTIONS": [
-          "Phone Call",
-          "Text Message",
-          "Email"
-        ],
+        "CONTACT_OPTIONS": ["Phone Call", "Text Message", "Email"],
         "TIME_TITLE": "Best Time to Connect",
         "TIME_OPTIONS": [
           "Morning (8 AM - 12 PM)",
@@ -1278,27 +1251,11 @@
         "TITLE": "Scale of Operations",
         "FIELDS": {
           "YEARS_IN_BUSINESS": "Years in Business",
-          "YEARS_OPTIONS": [
-            "New Venture",
-            "1-5 years",
-            "6-10 years",
-            "10+ years"
-          ],
+          "YEARS_OPTIONS": ["New Venture", "1-5 years", "6-10 years", "10+ years"],
           "NUMBER_OF_EMPLOYEES": "Number of Employees",
-          "EMPLOYEES_OPTIONS": [
-            "1-10",
-            "11-50",
-            "51-200",
-            "200+"
-          ],
+          "EMPLOYEES_OPTIONS": ["1-10", "11-50", "51-200", "200+"],
           "ANNUAL_REVENUE": "Estimated Annual Revenue",
-          "REVENUE_OPTIONS": [
-            "Under $100k",
-            "$100k - $500k",
-            "$500k - $1M",
-            "$1M - $5M",
-            "$5M+"
-          ]
+          "REVENUE_OPTIONS": ["Under $100k", "$100k - $500k", "$500k - $1M", "$1M - $5M", "$5M+"]
         }
       },
       "STEP3": {
@@ -1325,17 +1282,9 @@
           "PHONE_NUMBER": "Phone Number*"
         },
         "LANGUAGE_TITLE": "Preferred Language",
-        "LANGUAGE_OPTIONS": [
-          "English",
-          "Spanish",
-          "Hindi"
-        ],
+        "LANGUAGE_OPTIONS": ["English", "Spanish", "Hindi"],
         "TIME_TITLE": "Best Time to Connect",
-        "TIME_OPTIONS": [
-          "Morning",
-          "Afternoon",
-          "Evening"
-        ]
+        "TIME_OPTIONS": ["Morning", "Afternoon", "Evening"]
       }
     },
     "QUOTE_SUMMARY": {
@@ -1406,15 +1355,8 @@
           "TOBACCO_USE": "Do you use tobacco or nicotine products?",
           "HEALTH_STATUS": "How would you describe your general health?"
         },
-        "TOBACCO_OPTIONS": [
-          "Yes",
-          "No"
-        ],
-        "HEALTH_OPTIONS": [
-          "Excellent",
-          "Good",
-          "Fair"
-        ]
+        "TOBACCO_OPTIONS": ["Yes", "No"],
+        "HEALTH_OPTIONS": ["Excellent", "Good", "Fair"]
       },
       "STEP3": {
         "TITLE": "Coverage Needs",
@@ -1436,17 +1378,9 @@
       "STEP4": {
         "TITLE": "Contact Details and Preferences",
         "LANGUAGE_TITLE": "Preferred Language for your Quote",
-        "LANGUAGE_OPTIONS": [
-          "English",
-          "Spanish",
-          "Hindi"
-        ],
+        "LANGUAGE_OPTIONS": ["English", "Spanish", "Hindi"],
         "CONTACT_TITLE": "Best Way to Reach You",
-        "CONTACT_OPTIONS": [
-          "Call",
-          "Text Message",
-          "Email"
-        ],
+        "CONTACT_OPTIONS": ["Call", "Text Message", "Email"],
         "TIME_TITLE": "Best Time to Connect",
         "TIME_OPTIONS": [
           "Morning (8 AM - 12 PM)",
@@ -1509,12 +1443,7 @@
       "STEP1": {
         "TITLE": "Coverage Type",
         "COVERAGE_TITLE": "Who needs coverage?",
-        "COVERAGE_OPTIONS": [
-          "Just Me",
-          "Me + Spouse",
-          "Me + Children",
-          "My Whole Family"
-        ],
+        "COVERAGE_OPTIONS": ["Just Me", "Me + Spouse", "Me + Children", "My Whole Family"],
         "FIELDS": {
           "ZIPCODE": "Zip Code"
         }
@@ -1534,10 +1463,7 @@
           "$60,000 – $100,000",
           "Over $100,000"
         ],
-        "TOBACCO_OPTIONS": [
-          "Yes",
-          "No"
-        ]
+        "TOBACCO_OPTIONS": ["Yes", "No"]
       },
       "STEP3": {
         "TITLE": "Contact & Language Preference",
@@ -1548,16 +1474,8 @@
           "LANGUAGE": "Preferred Language for your Quote",
           "BEST_TIME": "Best time to call?"
         },
-        "LANGUAGE_OPTIONS": [
-          "English",
-          "Spanish",
-          "Hindi"
-        ],
-        "TIME_OPTIONS": [
-          "Morning",
-          "Afternoon",
-          "Evening"
-        ]
+        "LANGUAGE_OPTIONS": ["English", "Spanish", "Hindi"],
+        "TIME_OPTIONS": ["Morning", "Afternoon", "Evening"]
       }
     },
     "QUOTE_SUMMARY": {
@@ -1622,12 +1540,7 @@
         "TITLE": "Quick Underwriting",
         "FIELDS": {
           "CREDIT_SCORE_TITLE": "Estimated Credit Score: Crucial Explain that checking this won’t hurt their credit score.",
-          "CREDIT_SCORE_TITLE_OPTION": [
-            "Excellent",
-            "Good",
-            "Fair",
-            "Poor"
-          ],
+          "CREDIT_SCORE_TITLE_OPTION": ["Excellent", "Good", "Fair", "Poor"],
           "YEARS_IN_BUSINESS": "Years in Business"
         }
       },
@@ -1635,17 +1548,9 @@
         "TITLE": "Contact & Language Preference",
         "FIELDS": {
           "LANGUAGE": "Preferred Language for your Quote",
-          "LANGUAGE_OPTIONS": [
-            "English",
-            "Spanish",
-            "Hindi"
-          ],
+          "LANGUAGE_OPTIONS": ["English", "Spanish", "Hindi"],
           "BEST_TIME": "Best time to call?",
-          "TIME_OPTIONS": [
-            "Morning",
-            "Afternoon",
-            "Evening"
-          ]
+          "TIME_OPTIONS": ["Morning", "Afternoon", "Evening"]
         }
       }
     },
@@ -38538,9 +38443,7 @@
       ],
       "HOURS": "Mon – Sat: 9AM – 7PM Sunday: Closed",
       "EMAIL": "save@astateinsurance.com",
-      "PHONE": [
-        "(713) 357-7771"
-      ]
+      "PHONE": ["(713) 357-7771"]
     },
     "POLICIES": {
       "PRIVACY": "Privacy Policy",

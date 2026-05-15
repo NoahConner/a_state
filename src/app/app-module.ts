@@ -84,6 +84,8 @@ import { CommercialSuretyBonds } from './pages/surety-bond-insurance/commercial-
 import { TitleInsurance } from './pages/additional_insurance/title-insurance/title-insurance';
 import { TitleTransfer } from './pages/additional_insurance/title-transfer/title-transfer';
 import { PetInsurance } from './pages/additional_insurance/pet-insurance/pet-insurance';
+import { TranslateHtmlPipe } from './services/translate-html.pipe';
+import { AsyncPipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -162,7 +164,7 @@ import { PetInsurance } from './pages/additional_insurance/pet-insurance/pet-ins
     NotaryBonds,
     TitleInsurance,
     TitleTransfer,
-    PetInsurance
+    PetInsurance,
   ],
   imports: [
     BrowserModule,
@@ -170,8 +172,8 @@ import { PetInsurance } from './pages/additional_insurance/pet-insurance/pet-ins
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
-
-
+    AsyncPipe,
+    TranslateHtmlPipe,
     // ✅ Required for NgModule apps
     TranslateModule.forRoot({
       defaultLanguage: 'en',
@@ -189,4 +191,4 @@ import { PetInsurance } from './pages/additional_insurance/pet-insurance/pet-ins
   ],
   bootstrap: [App],
 })
-export class AppModule { }
+export class AppModule {}
