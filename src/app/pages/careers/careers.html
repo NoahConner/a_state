@@ -2,8 +2,8 @@
   <div class="topBanner">
     <div class="container">
       <h1 class="banner-title">
-        {{ 'CAREERS.BANNER.TITLE_LINE1' | translate }} <br />
-        {{ 'CAREERS.BANNER.TITLE_LINE2' | translate }}
+        <span [innerHTML]="'CAREERS.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
+        <span [innerHTML]="'CAREERS.BANNER.TITLE_LINE2' | translateHtml | async"></span>
       </h1>
     </div>
   </div>
@@ -44,7 +44,7 @@
       <div class="col-lg-10">
         <h2 class="culture-title" [innerHTML]="'CAREERS.CULTURE.TITLE' | translateHtml | async"></h2>
 
-        <blockquote class="culture-quote">"{{ 'CAREERS.CULTURE.QUOTE' | translate }}"</blockquote>
+        <blockquote class="culture-quote">"<span [innerHTML]="'CAREERS.CULTURE.QUOTE' | translateHtml | async"></span>"</blockquote>
 
         <p class="section-text" [innerHTML]="'CAREERS.CULTURE.DESCRIPTION' | translateHtml | async"></p>
       </div>
@@ -72,8 +72,8 @@
     <div class="row mt-5">
       <div class="col-lg-8">
         <h2 class="section-heading-form">
-          {{ 'CAREERS.FORM.TITLE_LINE1' | translate }} <br />
-          {{ 'CAREERS.FORM.TITLE_LINE2' | translate }}
+          <span [innerHTML]="'CAREERS.FORM.TITLE_LINE1' | translateHtml | async"></span> <br />
+          <span [innerHTML]="'CAREERS.FORM.TITLE_LINE2' | translateHtml | async"></span>
         </h2>
 
         <form class="mt-4">

@@ -4,33 +4,33 @@
       <div class="topSub">
         <div class="topSub2">
           <div class="h1">
-            {{ 'CYBER_LIABILITY_INSURANCE.BANNER.TITLE_LINE1' | translate }} <br />
-            {{ 'CYBER_LIABILITY_INSURANCE.BANNER.TITLE_LINE2' | translate }} <span class="heading-span" [innerHTML]="'CYBER_LIABILITY_INSURANCE.BANNER.TITLE_LINE3' | translateHtml | async"></span>
+            <span [innerHTML]="'CYBER_LIABILITY_INSURANCE.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
+            <span [innerHTML]="'CYBER_LIABILITY_INSURANCE.BANNER.TITLE_LINE2' | translateHtml | async"></span> <span class="heading-span" [innerHTML]="'CYBER_LIABILITY_INSURANCE.BANNER.TITLE_LINE3' | translateHtml | async"></span>
           </div>
           <!-- 
           <div class="selectable">
             
             @for (item of chips; track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item.icon }}"></i>
-              <span>{{ item.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div> -->
 
           <div class="selectable mt-4">
             @for (item of chips.slice(0, 3); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
           <div class="selectable mt-2">
             @for (item of chips.slice(3, 6); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
@@ -82,10 +82,10 @@
       <h1 class="main-title" [innerHTML]="'CYBER_LIABILITY_INSURANCE.IS_CYBER_REQUIRED.TITLE' | translateHtml | async"></h1>
 
       <p class="intro-text">
-        {{ 'CYBER_LIABILITY_INSURANCE.IS_CYBER_REQUIRED.DESC1' | translate }}
+        <span [innerHTML]="'CYBER_LIABILITY_INSURANCE.IS_CYBER_REQUIRED.DESC1' | translateHtml | async"></span>
         <br>
         <br>
-        {{ 'CYBER_LIABILITY_INSURANCE.IS_CYBER_REQUIRED.DESC2' | translate }}
+        <span [innerHTML]="'CYBER_LIABILITY_INSURANCE.IS_CYBER_REQUIRED.DESC2' | translateHtml | async"></span>
 
       </p>
 
@@ -120,22 +120,17 @@
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('CYBER_LIABILITY_INSURANCE.CLI_VS_GL_COMPARISON.TABLE.LIST.' + item + '.FEATURE') |
-                translate
-                }}
+                <span [innerHTML]="('CYBER_LIABILITY_INSURANCE.CLI_VS_GL_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('CYBER_LIABILITY_INSURANCE.CLI_VS_GL_COMPARISON.TABLE.LIST.' + item + '.EPLI') |
-                translate
-                }}
+                <span [innerHTML]="('CYBER_LIABILITY_INSURANCE.CLI_VS_GL_COMPARISON.TABLE.LIST.' + item + '.EPLI') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('CYBER_LIABILITY_INSURANCE.CLI_VS_GL_COMPARISON.TABLE.LIST.' + item + '.GL') |
-                translate }}
+                <span [innerHTML]="('CYBER_LIABILITY_INSURANCE.CLI_VS_GL_COMPARISON.TABLE.LIST.' + item + '.GL') | translateHtml | async"></span>
               </div>
             </div>
           </div>
@@ -189,8 +184,8 @@
               <i [class]="'CYBER_LIABILITY_INSURANCE.NOT_COVERED.LIST.' + key + '.ICON' | translate"></i>
             </div>
             <div class="factor-content">
-              <h6>{{ ('CYBER_LIABILITY_INSURANCE.NOT_COVERED.LIST.' + key + '.TITLE') | translate }}</h6>
-              <p>{{ ('CYBER_LIABILITY_INSURANCE.NOT_COVERED.LIST.' + key + '.DESC') | translate }}</p>
+              <h6><span [innerHTML]="('CYBER_LIABILITY_INSURANCE.NOT_COVERED.LIST.' + key + '.TITLE') | translateHtml | async"></span></h6>
+              <p><span [innerHTML]="('CYBER_LIABILITY_INSURANCE.NOT_COVERED.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
             </div>
           </div>
         </div>
@@ -226,22 +221,17 @@
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('CYBER_LIABILITY_INSURANCE.FIRST_VS_THIRD_PARTY_COMPARISON.TABLE.LIST.' + item + '.FEATURE') |
-                translate
-                }}
+                <span [innerHTML]="('CYBER_LIABILITY_INSURANCE.FIRST_VS_THIRD_PARTY_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('CYBER_LIABILITY_INSURANCE.FIRST_VS_THIRD_PARTY_COMPARISON.TABLE.LIST.' + item + '.FIRST_PARTY') |
-                translate
-                }}
+                <span [innerHTML]="('CYBER_LIABILITY_INSURANCE.FIRST_VS_THIRD_PARTY_COMPARISON.TABLE.LIST.' + item + '.FIRST_PARTY') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('CYBER_LIABILITY_INSURANCE.FIRST_VS_THIRD_PARTY_COMPARISON.TABLE.LIST.' + item + '.THIRD_PARTY') |
-                translate }}
+                <span [innerHTML]="('CYBER_LIABILITY_INSURANCE.FIRST_VS_THIRD_PARTY_COMPARISON.TABLE.LIST.' + item + '.THIRD_PARTY') | translateHtml | async"></span>
               </div>
             </div>
           </div>
@@ -299,10 +289,9 @@
         <div class="col-lg-6">
           <div class="factor-item">
             <div class="factor-content">
-              <p> <strong>{{ ('CYBER_LIABILITY_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') |
-                  translate }}
+              <p> <strong><span [innerHTML]="('CYBER_LIABILITY_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translateHtml | async"></span>
                   :</strong>
-                {{ ('CYBER_LIABILITY_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}</p>
+                <span [innerHTML]="('CYBER_LIABILITY_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
             </div>
           </div>
         </div>
@@ -321,17 +310,16 @@
         <div class="col-lg-6">
           <div class="factor-card">
             <div class="factor-content">
-              <p> <strong>{{ ('CYBER_LIABILITY_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') |
-                  translate }}
+              <p> <strong><span [innerHTML]="('CYBER_LIABILITY_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translateHtml | async"></span>
                   :</strong>
-                {{ ('CYBER_LIABILITY_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translate }}
+                <span [innerHTML]="('CYBER_LIABILITY_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translateHtml | async"></span>
               </p>
 
               <!-- <h6 class="factor-title">
-                {{ ('CYBER_LIABILITY_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }}
+                <span [innerHTML]="('CYBER_LIABILITY_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translateHtml | async"></span>
               </h6>
               <p class="factor-desc">
-                {{ ('CYBER_LIABILITY_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}
+                <span [innerHTML]="('CYBER_LIABILITY_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translateHtml | async"></span>
               </p> -->
             </div>
           </div>
@@ -369,21 +357,17 @@
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('CYBER_LIABILITY_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') |
-                translate }}
+                <span [innerHTML]="('CYBER_LIABILITY_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('CYBER_LIABILITY_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') |
-                translate
-                }}
+                <span [innerHTML]="('CYBER_LIABILITY_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('CYBER_LIABILITY_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') |
-                translate }}
+                <span [innerHTML]="('CYBER_LIABILITY_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translateHtml | async"></span>
               </div>
             </div>
           </div>
@@ -570,8 +554,8 @@
         @for (step of switchSteps; track step) {
         <div class="switch-card-wrapper">
           <div class="switch-card">
-            <h6>{{ 'CYBER_LIABILITY_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE' | translate }}</h6>
-            <p>{{ 'CYBER_LIABILITY_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION' | translate }}
+            <h6><span [innerHTML]="('CYBER_LIABILITY_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE') | translateHtml | async"></span></h6>
+            <p><span [innerHTML]="('CYBER_LIABILITY_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION') | translateHtml | async"></span>
             </p>
           </div>
         </div>
@@ -590,17 +574,17 @@
           <p class="para" [innerHTML]="'CYBER_LIABILITY_INSURANCE.FREE_QUOTE.DESCRIPTION' | translateHtml | async"></p>
           <div class="selectable mt-4">
             @for (item of chips.slice(0, 3); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
           <div class="selectable mt-2">
             @for (item of chips.slice(3, 6); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>

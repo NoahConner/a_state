@@ -4,33 +4,33 @@
       <div class="topSub">
         <div class="topSub2">
           <div class="h1">
-            {{ 'FLOOD_INSURANCE.BANNER.TITLE_LINE1' | translate }} <br />
-            {{ 'FLOOD_INSURANCE.BANNER.TITLE_LINE2' | translate }} <span class="heading-span" [innerHTML]="'FLOOD_INSURANCE.BANNER.TITLE_LINE3' | translateHtml | async"></span>
+            <span [innerHTML]="'FLOOD_INSURANCE.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
+            <span [innerHTML]="'FLOOD_INSURANCE.BANNER.TITLE_LINE2' | translateHtml | async"></span> <span class="heading-span" [innerHTML]="'FLOOD_INSURANCE.BANNER.TITLE_LINE3' | translateHtml | async"></span>
           </div>
           <!-- 
           <div class="selectable">
             
             @for (item of chips; track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item.icon }}"></i>
-              <span>{{ item.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div> -->
 
           <div class="selectable mt-4">
             @for (item of chips.slice(0, 3); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
           <div class="selectable mt-2">
             @for (item of chips.slice(3, 6); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
@@ -78,10 +78,10 @@
       <h1 class="main-title" [innerHTML]="'FLOOD_INSURANCE.FLOOD_REQUIRED.TITLE' | translateHtml | async"></h1>
 
       <p class="intro-text">
-        {{ 'FLOOD_INSURANCE.FLOOD_REQUIRED.DESC1' | translate }}
+        <span [innerHTML]="'FLOOD_INSURANCE.FLOOD_REQUIRED.DESC1' | translateHtml | async"></span>
         <br>
         <br>
-        {{ 'FLOOD_INSURANCE.FLOOD_REQUIRED.DESC2' | translate }}
+        <span [innerHTML]="'FLOOD_INSURANCE.FLOOD_REQUIRED.DESC2' | translateHtml | async"></span>
 
       </p>
     </div>
@@ -93,10 +93,10 @@
       <h1 class="main-title" [innerHTML]="'FLOOD_INSURANCE.HOMEOWNERS_VS_FLOOD.TITLE' | translateHtml | async"></h1>
 
       <p class="intro-text">
-        {{ 'FLOOD_INSURANCE.HOMEOWNERS_VS_FLOOD.DESC1' | translate }}
+        <span [innerHTML]="'FLOOD_INSURANCE.HOMEOWNERS_VS_FLOOD.DESC1' | translateHtml | async"></span>
         <br>
         <br>
-        {{ 'FLOOD_INSURANCE.HOMEOWNERS_VS_FLOOD.DESC2' | translate }}
+        <span [innerHTML]="'FLOOD_INSURANCE.HOMEOWNERS_VS_FLOOD.DESC2' | translateHtml | async"></span>
 
       </p>
     </div>
@@ -146,8 +146,8 @@
               <i [class]="'FLOOD_INSURANCE.NOT_COVERED.LIST.' + key + '.ICON' | translate"></i>
             </div>
             <div class="factor-content">
-              <h6>{{ ('FLOOD_INSURANCE.NOT_COVERED.LIST.' + key + '.TITLE') | translate }}</h6>
-              <p>{{ ('FLOOD_INSURANCE.NOT_COVERED.LIST.' + key + '.DESC') | translate }}</p>
+              <h6><span [innerHTML]="('FLOOD_INSURANCE.NOT_COVERED.LIST.' + key + '.TITLE') | translateHtml | async"></span></h6>
+              <p><span [innerHTML]="('FLOOD_INSURANCE.NOT_COVERED.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
             </div>
           </div>
         </div>
@@ -160,10 +160,10 @@
     <div class=" container">
       <div class="rates-header mb-4">
         <h5 class="fw-bold" [innerHTML]="'FLOOD_INSURANCE.RATES.NFIP.TITLE' | translateHtml | async"></h5>
-        <p class="small mb-0">{{ 'FLOOD_INSURANCE.RATES.NFIP.DESC1' | translate }}
+        <p class="small mb-0"><span [innerHTML]="'FLOOD_INSURANCE.RATES.NFIP.DESC1' | translateHtml | async"></span>
           <br>
           <br>
-          {{ 'FLOOD_INSURANCE.RATES.NFIP.DESC2' | translate }}
+          <span [innerHTML]="'FLOOD_INSURANCE.RATES.NFIP.DESC2' | translateHtml | async"></span>
         </p>
       </div>
 
@@ -212,12 +212,11 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'FLOOD_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">NerdWallet</a></p>
+          <p><span [innerHTML]="'FLOOD_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#">NerdWallet</a></p>
           <p class="last-updated" [innerHTML]="'FLOOD_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
         <div class="disclaimer mt-2">
-          <p class="mb-0"><strong>{{ 'FLOOD_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translate }}:</strong> {{
-            'FLOOD_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
+          <p class="mb-0"><strong><span [innerHTML]="'FLOOD_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translateHtml | async"></span>:</strong> <span [innerHTML]="'FLOOD_INSURANCE.RATES.FOOTER.DISCLAIMER' | translateHtml | async"></span></p>
         </div>
       </div>
     </div>
@@ -281,12 +280,11 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'FLOOD_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">Hippo</a></p>
+          <p><span [innerHTML]="'FLOOD_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#">Hippo</a></p>
           <p class="last-updated" [innerHTML]="'FLOOD_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
         <div class="disclaimer mt-2">
-          <p class="mb-0"><strong>{{ 'FLOOD_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translate }}:</strong> {{
-            'FLOOD_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
+          <p class="mb-0"><strong><span [innerHTML]="'FLOOD_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translateHtml | async"></span>:</strong> <span [innerHTML]="'FLOOD_INSURANCE.RATES.FOOTER.DISCLAIMER' | translateHtml | async"></span></p>
         </div>
       </div>
 
@@ -335,12 +333,11 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'FLOOD_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">LendingTree</a></p>
+          <p><span [innerHTML]="'FLOOD_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#">LendingTree</a></p>
           <p class="last-updated" [innerHTML]="'FLOOD_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
         <div class="disclaimer mt-2">
-          <p class="mb-0"><strong>{{ 'FLOOD_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translate }}:</strong> {{
-            'FLOOD_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
+          <p class="mb-0"><strong><span [innerHTML]="'FLOOD_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translateHtml | async"></span>:</strong> <span [innerHTML]="'FLOOD_INSURANCE.RATES.FOOTER.DISCLAIMER' | translateHtml | async"></span></p>
         </div>
       </div>
     </div>
@@ -374,8 +371,8 @@
         <div class="col-lg-6">
           <div class="factor-item">
             <div class="factor-content">
-              <p> <strong>{{ ('FLOOD_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }} :</strong>
-                {{ ('FLOOD_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}</p>
+              <p> <strong><span [innerHTML]="('FLOOD_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translateHtml | async"></span> :</strong>
+                <span [innerHTML]="('FLOOD_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
             </div>
           </div>
         </div>
@@ -397,8 +394,8 @@
               <i [class]="'FLOOD_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.ICON' | translate"></i>
             </div>
             <div class="factor-content">
-              <h6>{{ ('FLOOD_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translate }}</h6>
-              <p>{{ ('FLOOD_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translate }}</p>
+              <h6><span [innerHTML]="('FLOOD_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translateHtml | async"></span></h6>
+              <p><span [innerHTML]="('FLOOD_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
             </div>
           </div>
         </div>
@@ -434,17 +431,17 @@
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('FLOOD_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translate }}
+                <span [innerHTML]="('FLOOD_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('FLOOD_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translate }}
+                <span [innerHTML]="('FLOOD_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('FLOOD_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translate }}
+                <span [innerHTML]="('FLOOD_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translateHtml | async"></span>
               </div>
             </div>
           </div>
@@ -629,8 +626,8 @@
         @for (step of switchSteps; track step) {
         <div class="switch-card-wrapper">
           <div class="switch-card">
-            <h6>{{ 'FLOOD_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE' | translate }}</h6>
-            <p>{{ 'FLOOD_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION' | translate }}</p>
+            <h6><span [innerHTML]="('FLOOD_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE') | translateHtml | async"></span></h6>
+            <p><span [innerHTML]="('FLOOD_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION') | translateHtml | async"></span></p>
           </div>
         </div>
         }
@@ -646,17 +643,17 @@
           <p class="para" [innerHTML]="'FLOOD_INSURANCE.FREE_QUOTE.DESCRIPTION' | translateHtml | async"></p>
           <div class="selectable mt-4">
             @for (item of chips.slice(0, 3); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
           <div class="selectable mt-2">
             @for (item of chips.slice(3, 6); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>

@@ -4,33 +4,33 @@
       <div class="topSub">
         <div class="topSub2">
           <div class="h1">
-            {{ 'FINAL_EXPENSES_INSURANCE.BANNER.TITLE_LINE1' | translate }} <br />
-            {{ 'FINAL_EXPENSES_INSURANCE.BANNER.TITLE_LINE2' | translate }} <span class="heading-span" [innerHTML]="'FINAL_EXPENSES_INSURANCE.BANNER.TITLE_LINE3' | translateHtml | async"></span>
+            <span [innerHTML]="'FINAL_EXPENSES_INSURANCE.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
+            <span [innerHTML]="'FINAL_EXPENSES_INSURANCE.BANNER.TITLE_LINE2' | translateHtml | async"></span> <span class="heading-span" [innerHTML]="'FINAL_EXPENSES_INSURANCE.BANNER.TITLE_LINE3' | translateHtml | async"></span>
           </div>
           <!-- 
           <div class="selectable">
             
             @for (item of chips; track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item.icon }}"></i>
-              <span>{{ item.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div> -->
 
           <div class="selectable mt-4">
             @for (item of chips.slice(0, 3); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
           <div class="selectable mt-2">
             @for (item of chips.slice(3, 6); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
@@ -82,10 +82,10 @@
       <h1 class="main-title" [innerHTML]="'FINAL_EXPENSES_INSURANCE.HOW_IT_WORKS.TITLE' | translateHtml | async"></h1>
 
       <p class="intro-text">
-        {{ 'FINAL_EXPENSES_INSURANCE.HOW_IT_WORKS.DESC1' | translate }}
+        <span [innerHTML]="'FINAL_EXPENSES_INSURANCE.HOW_IT_WORKS.DESC1' | translateHtml | async"></span>
         <br>
         <br>
-        {{ 'FINAL_EXPENSES_INSURANCE.HOW_IT_WORKS.DESC2' | translate }}
+        <span [innerHTML]="'FINAL_EXPENSES_INSURANCE.HOW_IT_WORKS.DESC2' | translateHtml | async"></span>
 
       </p>
 
@@ -135,8 +135,8 @@
               <i [class]="'FINAL_EXPENSES_INSURANCE.NOT_COVERED.LIST.' + key + '.ICON' | translate"></i>
             </div>
             <div class="factor-content">
-              <h6>{{ ('FINAL_EXPENSES_INSURANCE.NOT_COVERED.LIST.' + key + '.TITLE') | translate }}</h6>
-              <p>{{ ('FINAL_EXPENSES_INSURANCE.NOT_COVERED.LIST.' + key + '.DESC') | translate }}</p>
+              <h6><span [innerHTML]="('FINAL_EXPENSES_INSURANCE.NOT_COVERED.LIST.' + key + '.TITLE') | translateHtml | async"></span></h6>
+              <p><span [innerHTML]="('FINAL_EXPENSES_INSURANCE.NOT_COVERED.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
             </div>
           </div>
         </div>
@@ -233,14 +233,12 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'FINAL_EXPENSES_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">Choice Mutual</a></p>
+          <p><span [innerHTML]="'FINAL_EXPENSES_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#">Choice Mutual</a></p>
 
           <p class="last-updated" [innerHTML]="'FINAL_EXPENSES_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
         <div class="disclaimer mt-2">
-          <p class="mb-0"><strong>{{ 'FINAL_EXPENSES_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translate
-              }}:</strong> {{
-            'FINAL_EXPENSES_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
+          <p class="mb-0"><strong><span [innerHTML]="'FINAL_EXPENSES_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translateHtml | async"></span>:</strong> <span [innerHTML]="'FINAL_EXPENSES_INSURANCE.RATES.FOOTER.DISCLAIMER' | translateHtml | async"></span></p>
         </div>
       </div>
 
@@ -297,14 +295,12 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'FINAL_EXPENSES_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">Choice Mutual</a></p>
+          <p><span [innerHTML]="'FINAL_EXPENSES_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#">Choice Mutual</a></p>
 
           <p class="last-updated" [innerHTML]="'FINAL_EXPENSES_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
         <div class="disclaimer mt-2">
-          <p class="mb-0"><strong>{{ 'FINAL_EXPENSES_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translate
-              }}:</strong> {{
-            'FINAL_EXPENSES_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
+          <p class="mb-0"><strong><span [innerHTML]="'FINAL_EXPENSES_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translateHtml | async"></span>:</strong> <span [innerHTML]="'FINAL_EXPENSES_INSURANCE.RATES.FOOTER.DISCLAIMER' | translateHtml | async"></span></p>
         </div>
       </div>
 
@@ -361,14 +357,12 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'FINAL_EXPENSES_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">Choice Mutual</a></p>
+          <p><span [innerHTML]="'FINAL_EXPENSES_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#">Choice Mutual</a></p>
 
           <p class="last-updated" [innerHTML]="'FINAL_EXPENSES_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
         <div class="disclaimer mt-2">
-          <p class="mb-0"><strong>{{ 'FINAL_EXPENSES_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translate
-              }}:</strong> {{
-            'FINAL_EXPENSES_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
+          <p class="mb-0"><strong><span [innerHTML]="'FINAL_EXPENSES_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translateHtml | async"></span>:</strong> <span [innerHTML]="'FINAL_EXPENSES_INSURANCE.RATES.FOOTER.DISCLAIMER' | translateHtml | async"></span></p>
         </div>
       </div>
 
@@ -403,18 +397,17 @@
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('FINAL_EXPENSES_INSURANCE.FINAL_EXPENSE_VS_TERM.TABLE.LIST.' + item + '.FEATURE') | translate }}
+                <span [innerHTML]="('FINAL_EXPENSES_INSURANCE.FINAL_EXPENSE_VS_TERM.TABLE.LIST.' + item + '.FEATURE') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('FINAL_EXPENSES_INSURANCE.FINAL_EXPENSE_VS_TERM.TABLE.LIST.' + item + '.FINAL_EXPENSE') | translate
-                }}
+                <span [innerHTML]="('FINAL_EXPENSES_INSURANCE.FINAL_EXPENSE_VS_TERM.TABLE.LIST.' + item + '.FINAL_EXPENSE') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('FINAL_EXPENSES_INSURANCE.FINAL_EXPENSE_VS_TERM.TABLE.LIST.' + item + '.TERM_LIFE') | translate }}
+                <span [innerHTML]="('FINAL_EXPENSES_INSURANCE.FINAL_EXPENSE_VS_TERM.TABLE.LIST.' + item + '.TERM_LIFE') | translateHtml | async"></span>
               </div>
             </div>
           </div>
@@ -436,9 +429,9 @@
         <div class="col-lg-6">
           <div class="factor-item">
             <div class="factor-content">
-              <p> <strong>{{ ('FINAL_EXPENSES_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }}
+              <p> <strong><span [innerHTML]="('FINAL_EXPENSES_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translateHtml | async"></span>
                   :</strong>
-                {{ ('FINAL_EXPENSES_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}</p>
+                <span [innerHTML]="('FINAL_EXPENSES_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
             </div>
           </div>
         </div>
@@ -457,15 +450,15 @@
         <div class="col-lg-6">
           <div class="factor-card">
             <div class="factor-content">
-              <p> <strong>{{ ('FINAL_EXPENSES_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translate }}
+              <p> <strong><span [innerHTML]="('FINAL_EXPENSES_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translateHtml | async"></span>
                   :</strong>
-                {{ ('FINAL_EXPENSES_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translate }}</p>
+                <span [innerHTML]="('FINAL_EXPENSES_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
 
               <!-- <h6 class="factor-title">
-                {{ ('FINAL_EXPENSES_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }}
+                <span [innerHTML]="('FINAL_EXPENSES_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translateHtml | async"></span>
               </h6>
               <p class="factor-desc">
-                {{ ('FINAL_EXPENSES_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}
+                <span [innerHTML]="('FINAL_EXPENSES_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translateHtml | async"></span>
               </p> -->
             </div>
           </div>
@@ -503,18 +496,17 @@
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('FINAL_EXPENSES_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translate }}
+                <span [innerHTML]="('FINAL_EXPENSES_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('FINAL_EXPENSES_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translate
-                }}
+                <span [innerHTML]="('FINAL_EXPENSES_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('FINAL_EXPENSES_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translate }}
+                <span [innerHTML]="('FINAL_EXPENSES_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translateHtml | async"></span>
               </div>
             </div>
           </div>
@@ -702,8 +694,8 @@
         @for (step of switchSteps; track step) {
         <div class="switch-card-wrapper">
           <div class="switch-card">
-            <h6>{{ 'FINAL_EXPENSES_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE' | translate }}</h6>
-            <p>{{ 'FINAL_EXPENSES_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION' | translate }}</p>
+            <h6><span [innerHTML]="('FINAL_EXPENSES_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE') | translateHtml | async"></span></h6>
+            <p><span [innerHTML]="('FINAL_EXPENSES_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION') | translateHtml | async"></span></p>
           </div>
         </div>
         }
@@ -721,17 +713,17 @@
           <p class="para" [innerHTML]="'FINAL_EXPENSES_INSURANCE.FREE_QUOTE.DESCRIPTION' | translateHtml | async"></p>
           <div class="selectable mt-4">
             @for (item of chips.slice(0, 3); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
           <div class="selectable mt-2">
             @for (item of chips.slice(3, 6); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>

@@ -4,33 +4,33 @@
       <div class="topSub">
         <div class="topSub2">
           <div class="h1">
-            {{ 'AUTO_INSURANCE.BANNER.TITLE_LINE1' | translate }} <br />
-            {{ 'AUTO_INSURANCE.BANNER.TITLE_LINE2' | translate }} <span class="heading-span" [innerHTML]="'AUTO_INSURANCE.BANNER.TITLE_LINE3' | translateHtml | async"></span>
+            <span [innerHTML]="'AUTO_INSURANCE.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
+            <span [innerHTML]="'AUTO_INSURANCE.BANNER.TITLE_LINE2' | translateHtml | async"></span> <span class="heading-span" [innerHTML]="'AUTO_INSURANCE.BANNER.TITLE_LINE3' | translateHtml | async"></span>
           </div>
           <!-- 
           <div class="selectable">
             
             @for (item of chips; track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item.icon }}"></i>
-              <span>{{ item.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div> -->
 
           <div class="selectable mt-4">
             @for (item of chips.slice(0, 3); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
           <div class="selectable mt-2">
             @for (item of chips.slice(3, 6); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
@@ -75,11 +75,11 @@
     <div class="container-max-800">
 
       <h1 class="main-title">
-        {{ 'AUTO_INSURANCE.LAWS.TITLE' | translate }}<span class="accent-text" [innerHTML]="'AUTO_INSURANCE.LAWS.ACCENT_TEXT' | translateHtml | async"></span>
+        <span [innerHTML]="'AUTO_INSURANCE.LAWS.TITLE' | translateHtml | async"></span><span class="accent-text" [innerHTML]="'AUTO_INSURANCE.LAWS.ACCENT_TEXT' | translateHtml | async"></span>
       </h1>
 
       <p class="intro-text">
-        {{ 'AUTO_INSURANCE.LAWS.INTRO' | translate }} <a href="https://www.tdi.texas.gov/pubs/consumer/cb020.html" class="text-link" [innerHTML]="'AUTO_INSURANCE.LAWS.INTRO_LINK' | translateHtml | async"></a>.
+        <span [innerHTML]="'AUTO_INSURANCE.LAWS.INTRO' | translateHtml | async"></span> <a href="https://www.tdi.texas.gov/pubs/consumer/cb020.html" class="text-link" [innerHTML]="'AUTO_INSURANCE.LAWS.INTRO_LINK' | translateHtml | async"></a>.
       </p>
 
       <h2 class="section-subtitle" [innerHTML]="'AUTO_INSURANCE.LAWS.SUBTITLE' | translateHtml | async"></h2>
@@ -175,15 +175,13 @@
       </div>
 
       <div class="d-flex justify-content-between align-items-center mt-4 source-meta">
-        <p class="mb-0">{{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.SOURCE' | translate }} <a href="https://shamiehlaw.com/" rel="nofollow"
+        <p class="mb-0"><span [innerHTML]="'AUTO_INSURANCE.MIN_REQUIREMENTS.SOURCE' | translateHtml | async"></span> <a href="https://shamiehlaw.com/" rel="nofollow"
             target="_blank" [innerHTML]="'AUTO_INSURANCE.MIN_REQUIREMENTS.SOURCE_LINK' | translateHtml | async"></a></p>
         <p class="mb-0 text-muted" [innerHTML]="'AUTO_INSURANCE.MIN_REQUIREMENTS.LAST_UPDATED' | translateHtml | async"></p>
       </div>
 
       <div class="disclaimer-text mt-4">
-        <strong>{{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.DISCLAIMER_LABEL' | translate }}:</strong> {{
-        'AUTO_INSURANCE.MIN_REQUIREMENTS.DISCLAIMER' |
-        translate }}
+        <strong><span [innerHTML]="'AUTO_INSURANCE.MIN_REQUIREMENTS.DISCLAIMER_LABEL' | translateHtml | async"></span>:</strong> <span [innerHTML]="'AUTO_INSURANCE.MIN_REQUIREMENTS.DISCLAIMER' | translateHtml | async"></span>
       </div>
 
       <h3 class="table-coverage-title mt-5" [innerHTML]="'AUTO_INSURANCE.MIN_REQUIREMENTS.FULL_COVERAGE_TITLE' | translateHtml | async"></h3>
@@ -357,11 +355,11 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'AUTO_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="https://www.bankrate.com/insurance/car/average-cost-of-car-insurance-in-texas/#car-insurance-rates-by-city" rel="nofollow">Bankrate</a></p>
+          <p><span [innerHTML]="'AUTO_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="https://www.bankrate.com/insurance/car/average-cost-of-car-insurance-in-texas/#car-insurance-rates-by-city" rel="nofollow">Bankrate</a></p>
           <p class="last-updated" [innerHTML]="'AUTO_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
         <div class="disclaimer mt-2">
-          <p class="mb-0"><strong>Disclaimer:</strong> {{ 'AUTO_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
+          <p class="mb-0"><strong>Disclaimer:</strong> <span [innerHTML]="'AUTO_INSURANCE.RATES.FOOTER.DISCLAIMER' | translateHtml | async"></span></p>
         </div>
       </div>
 
@@ -411,11 +409,11 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'AUTO_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="https://insurify.com/car-insurance/texas/" rel="nofollow">Insurify</a></p>
+          <p><span [innerHTML]="'AUTO_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="https://insurify.com/car-insurance/texas/" rel="nofollow">Insurify</a></p>
           <p class="last-updated" [innerHTML]="'AUTO_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
         <div class="disclaimer mt-2">
-          <p class="mb-0"><strong>Disclaimer:</strong> {{ 'AUTO_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
+          <p class="mb-0"><strong>Disclaimer:</strong> <span [innerHTML]="'AUTO_INSURANCE.RATES.FOOTER.DISCLAIMER' | translateHtml | async"></span></p>
         </div>
       </div>
 
@@ -482,12 +480,12 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'AUTO_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="https://www.finder.com/"
+          <p><span [innerHTML]="'AUTO_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="https://www.finder.com/"
               rel="nofollow">Finder</a></p>
           <p class="last-updated" [innerHTML]="'AUTO_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
         <div class="disclaimer mt-2">
-          <p class="mb-0"><strong>Disclaimer:</strong> {{ 'AUTO_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
+          <p class="mb-0"><strong>Disclaimer:</strong> <span [innerHTML]="'AUTO_INSURANCE.RATES.FOOTER.DISCLAIMER' | translateHtml | async"></span></p>
         </div>
       </div>
 
@@ -537,12 +535,12 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'AUTO_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="https://insurify.com/car-insurance/texas/average-cost/#rates-by-history"
+          <p><span [innerHTML]="'AUTO_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="https://insurify.com/car-insurance/texas/average-cost/#rates-by-history"
               rel="nofollow">Insurify</a></p>
           <p class="last-updated" [innerHTML]="'AUTO_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
         <div class="disclaimer mt-2">
-          <p class="mb-0"><strong>Disclaimer:</strong> {{ 'AUTO_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
+          <p class="mb-0"><strong>Disclaimer:</strong> <span [innerHTML]="'AUTO_INSURANCE.RATES.FOOTER.DISCLAIMER' | translateHtml | async"></span></p>
         </div>
       </div>
 
@@ -592,12 +590,12 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'AUTO_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="https://smartinsureme.com/what-does-auto-insurance-cover-in-texas-minimum-vs-full-coverage/"
+          <p><span [innerHTML]="'AUTO_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="https://smartinsureme.com/what-does-auto-insurance-cover-in-texas-minimum-vs-full-coverage/"
               rel="nofollow">Smart Insurance</a></p>
           <p class="last-updated" [innerHTML]="'AUTO_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
         <div class="disclaimer mt-2">
-          <p class="mb-0"><strong>Disclaimer:</strong> {{ 'AUTO_INSURANCE.RATES.FOOTER.DISCLAIMER' | translate }}</p>
+          <p class="mb-0"><strong>Disclaimer:</strong> <span [innerHTML]="'AUTO_INSURANCE.RATES.FOOTER.DISCLAIMER' | translateHtml | async"></span></p>
         </div>
       </div>
     </div>
@@ -616,8 +614,8 @@
               <i [class]="'AUTO_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.ICON' | translate"></i>
             </div>
             <div class="factor-content">
-              <h6>{{ ('AUTO_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }}</h6>
-              <p>{{ ('AUTO_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}</p>
+              <h6><span [innerHTML]="('AUTO_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translateHtml | async"></span></h6>
+              <p><span [innerHTML]="('AUTO_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
             </div>
           </div>
         </div>
@@ -639,8 +637,8 @@
               <i [class]="'AUTO_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.ICON' | translate"></i>
             </div>
             <div class="factor-content">
-              <h6>{{ ('AUTO_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translate }}</h6>
-              <p>{{ ('AUTO_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translate }}</p>
+              <h6><span [innerHTML]="('AUTO_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translateHtml | async"></span></h6>
+              <p><span [innerHTML]="('AUTO_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
             </div>
           </div>
         </div>
@@ -678,17 +676,17 @@
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('AUTO_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translate }}
+                <span [innerHTML]="('AUTO_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('AUTO_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translate }}
+                <span [innerHTML]="('AUTO_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('AUTO_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translate }}
+                <span [innerHTML]="('AUTO_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translateHtml | async"></span>
               </div>
             </div>
           </div>
@@ -708,8 +706,8 @@
             <div class="icon-wrapper">
               <i [class]="'AUTO_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.ICON' | translate"></i>
             </div>
-            <h6 style="cursor: pointer;" [routerLink]="getRoute(('AUTO_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.ROUTE') | translate)">{{ ('AUTO_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.TITLE') | translate }}</h6>
-            <p>{{ ('AUTO_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.DESCRIPTION') | translate }}</p>
+            <h6 style="cursor: pointer;" [routerLink]="getRoute(('AUTO_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.ROUTE') | translate)"><span [innerHTML]="('AUTO_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.TITLE') | translateHtml | async"></span></h6>
+            <p><span [innerHTML]="('AUTO_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.DESCRIPTION') | translateHtml | async"></span></p>
           </div>
         </div>
         }
@@ -813,7 +811,7 @@
                 <p class="card-text">
                   <a [routerLink]="getRoute('getAQuote')" [innerHTML]="'AUTO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.LINK' | translateHtml | async"></a>
 
-                  {{ 'AUTO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' | translate }}
+                  <span [innerHTML]="'AUTO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' | translateHtml | async"></span>
                 </p>
               </div>
             </div>
@@ -857,7 +855,7 @@
                 <h3 [innerHTML]="'AUTO_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.TITLE' | translateHtml | async"></h3>
                 <p>
                   <a [routerLink]="getRoute('contact')" [innerHTML]="'AUTO_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.LINK' | translateHtml | async"></a>
-                  {{ 'AUTO_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translate }}</p>
+                  <span [innerHTML]="'AUTO_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translateHtml | async"></span></p>
               </div>
             </div>
 
@@ -899,8 +897,8 @@
         @for (step of switchSteps; track step) {
         <div class="switch-card-wrapper">
           <div class="switch-card">
-            <h6>{{ 'AUTO_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE' | translate }}</h6>
-            <p>{{ 'AUTO_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION' | translate }}</p>
+            <h6><span [innerHTML]="('AUTO_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE') | translateHtml | async"></span></h6>
+            <p><span [innerHTML]="('AUTO_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION') | translateHtml | async"></span></p>
           </div>
         </div>
         }
@@ -941,23 +939,23 @@
         <div class="topSub2">
           <div class="h1" [innerHTML]="'AUTO_INSURANCE.FREE_QUOTE.HEADER' | translateHtml | async"></div>
           <p class="para">
-            {{ 'AUTO_INSURANCE.FREE_QUOTE.DESCRIPTION_PART1' | translate }}
+            <span [innerHTML]="'AUTO_INSURANCE.FREE_QUOTE.DESCRIPTION_PART1' | translateHtml | async"></span>
             <a style="color: inherit;" [routerLink]="getRoute('getAutoQuote')" [innerHTML]="'AUTO_INSURANCE.FREE_QUOTE.LINK_TEXT' | translateHtml | async"></a>
-            {{ 'AUTO_INSURANCE.FREE_QUOTE.DESCRIPTION_PART2' | translate }}
+            <span [innerHTML]="'AUTO_INSURANCE.FREE_QUOTE.DESCRIPTION_PART2' | translateHtml | async"></span>
           </p>
           <div class="selectable mt-4">
             @for (item of chips.slice(0, 3); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
           <div class="selectable mt-2">
             @for (item of chips.slice(3, 6); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>

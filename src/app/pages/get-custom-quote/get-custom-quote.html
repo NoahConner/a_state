@@ -1,7 +1,7 @@
 <div class="quoteMain">
   <div class="topBanner">
     <div class="container">
-      <div class="h1">{{ 'GET_CUSTOM_QUOTE.HEADING' | translate }}
+      <div class="h1"><span [innerHTML]="'GET_CUSTOM_QUOTE.HEADING' | translateHtml | async"></span>
         <p class="heroDesc" [innerHTML]="'GET_CUSTOM_QUOTE.DESCRIPTION' | translateHtml | async"></p>
       </div>
     </div>
@@ -38,8 +38,7 @@
             <div class="form-content-border">
                 <div class="row gy-3 mb-3">
                   <div class="col-md-4">
-                    <label class="form-label">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.FULL_NAME' | translate
-                      }}<span>*</span></label>
+                    <label class="form-label"><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.FULL_NAME' | translateHtml | async"></span><span>*</span></label>
                     <input type="text"
                            formControlName="name"
                            [class.is-invalid]="customQuoteForm.get('name')?.invalid && customQuoteForm.get('name')?.touched"
@@ -48,8 +47,7 @@
                     <div class="invalid-feedback" *ngIf="customQuoteForm.get('name')?.invalid && customQuoteForm.get('name')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                   </div>
                   <div class="col-md-4">
-                    <label class="form-label">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.PHONE' | translate
-                      }}<span>*</span></label>
+                    <label class="form-label"><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.PHONE' | translateHtml | async"></span><span>*</span></label>
                     <input type="text" 
                            formControlName="phone_number"
                            [class.is-invalid]="customQuoteForm.get('phone_number')?.invalid && customQuoteForm.get('phone_number')?.touched"
@@ -61,8 +59,7 @@
 
                 <div class="row gy-3">
                   <div class="col-md-4">
-                    <label class="form-label">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.EMAIL' | translate
-                      }}<span>*</span></label>
+                    <label class="form-label"><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.EMAIL' | translateHtml | async"></span><span>*</span></label>
                     <input type="email" 
                            formControlName="email"
                            [class.is-invalid]="customQuoteForm.get('email')?.invalid && customQuoteForm.get('email')?.touched"
@@ -72,8 +69,7 @@
                     <div class="invalid-feedback" *ngIf="customQuoteForm.get('email')?.invalid && customQuoteForm.get('email')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.EMAIL' | translateHtml | async"></div>
                   </div>
                   <div class="col-md-4">
-                    <label class="form-label">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.PREFERRED_LANGUAGE' | translate
-                      }}<span>*</span></label>
+                    <label class="form-label"><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.PREFERRED_LANGUAGE' | translateHtml | async"></span><span>*</span></label>
                     <input type="text" 
                            formControlName="preferred_language"
                            [class.is-invalid]="customQuoteForm.get('preferred_language')?.invalid && customQuoteForm.get('preferred_language')?.touched"
@@ -84,8 +80,7 @@
                 </div>
                 <div class="row gy-3 mt-1">
                   <div class="col-md-8">
-                    <label class="form-label">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.FULL_ADDRESS' | translate
-                      }}<span>*</span></label>
+                    <label class="form-label"><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.FULL_ADDRESS' | translateHtml | async"></span><span>*</span></label>
                     <input type="text" 
                            formControlName="full_address"
                            [class.is-invalid]="customQuoteForm.get('full_address')?.invalid && customQuoteForm.get('full_address')?.touched"
@@ -167,7 +162,7 @@
             <div class="form-content-border">
                 <div class="row gy-3 mt-1">
                   <div class="col-md-8">
-                    <label class="form-label">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL1' | translate }}<span>*</span></label>
+                    <label class="form-label"><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL1' | translateHtml | async"></span><span>*</span></label>
                     <input type="text" 
                            formControlName="currently_insured"
                            [class.is-invalid]="customQuoteForm.get('currently_insured')?.invalid && customQuoteForm.get('currently_insured')?.touched"
@@ -179,7 +174,7 @@
 
                 <div class="row gy-3 mt-4">
                   <div class="col-md-8">
-                    <label class="form-label">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL2' | translate }}<span>*</span></label>
+                    <label class="form-label"><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL2' | translateHtml | async"></span><span>*</span></label>
                     <input type="text" 
                            formControlName="current_insurance_provider"
                            [class.is-invalid]="customQuoteForm.get('current_insurance_provider')?.invalid && customQuoteForm.get('current_insurance_provider')?.touched"
@@ -205,7 +200,7 @@
 
             <div class="form-content-border">
                 <div class="selection-group">
-                  <h4 class="selection-heading">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP4.DESC' | translate }}<span>*</span></h4>
+                  <h4 class="selection-heading"><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP4.DESC' | translateHtml | async"></span><span>*</span></h4>
 
                   <div class="coverage-options">
                     <div class="form-check" *ngFor="let option of contactOptions">
@@ -219,7 +214,7 @@
                 </div>
 
                 <div class="selection-group mt-4">
-                  <h4 class="selection-heading">{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP4.DESC1' | translate }}<span>*</span></h4>
+                  <h4 class="selection-heading"><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP4.DESC1' | translateHtml | async"></span><span>*</span></h4>
 
                   <div class="coverage-options">
                     <div class="form-check" *ngFor="let option of reachOptions">
@@ -250,8 +245,7 @@
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0" [innerHTML]="'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD1.TITLE' | translateHtml | async"></h5>
-            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(1)"><i class="bi bi-pencil-square"></i> {{
-              'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD1.EDIT' | translate }}</a>
+            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(1)"><i class="bi bi-pencil-square"></i> <span [innerHTML]="'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD1.EDIT' | translateHtml | async"></span></a>
           </div>
           <ul class="list-unstyled mb-0">
             <li>Name: {{ customQuoteForm.get('name')?.value }}</li>
@@ -265,8 +259,7 @@
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0" [innerHTML]="'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD2.TITLE' | translateHtml | async"></h5>
-            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(2)"><i class="bi bi-pencil-square"></i> {{
-              'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD2.EDIT' | translate }}</a>
+            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(2)"><i class="bi bi-pencil-square"></i> <span [innerHTML]="'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD2.EDIT' | translateHtml | async"></span></a>
           </div>
           <ul class="list-unstyled mb-0">
             <li><strong [innerHTML]="'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD2.OPTION' | translateHtml | async"></strong>
@@ -287,24 +280,22 @@
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0" [innerHTML]="'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD3.TITLE' | translateHtml | async"></h5>
-            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(3)"><i class="bi bi-pencil-square"></i> {{
-              'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD3.EDIT' | translate }}</a>
+            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(3)"><i class="bi bi-pencil-square"></i> <span [innerHTML]="'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD3.EDIT' | translateHtml | async"></span></a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL1' | translate }}:</strong> {{ customQuoteForm.get('currently_insured')?.value }}</li>
-            <li><strong>{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL2' | translate }}:</strong> {{ customQuoteForm.get('current_insurance_provider')?.value }}</li>
+            <li><strong><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL1' | translateHtml | async"></span>:</strong> {{ customQuoteForm.get('currently_insured')?.value }}</li>
+            <li><strong><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL2' | translateHtml | async"></span>:</strong> {{ customQuoteForm.get('current_insurance_provider')?.value }}</li>
           </ul>
         </div>
 
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0" [innerHTML]="'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD4.TITLE' | translateHtml | async"></h5>
-            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(4)"><i class="bi bi-pencil-square"></i> {{
-              'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD4.EDIT' | translate }}</a>
+            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(4)"><i class="bi bi-pencil-square"></i> <span [innerHTML]="'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD4.EDIT' | translateHtml | async"></span></a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP4.DESC' | translate }}:</strong> {{ customQuoteForm.get('preferred_contact_method')?.value }}</li>
-            <li><strong>{{ 'GET_CUSTOM_QUOTE.STEPPER.STEP4.DESC1' | translate }}:</strong> {{ customQuoteForm.get('best_time_to_reach')?.value }}</li>
+            <li><strong><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP4.DESC' | translateHtml | async"></span>:</strong> {{ customQuoteForm.get('preferred_contact_method')?.value }}</li>
+            <li><strong><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP4.DESC1' | translateHtml | async"></span>:</strong> {{ customQuoteForm.get('best_time_to_reach')?.value }}</li>
           </ul>
         </div>
 

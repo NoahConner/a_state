@@ -4,33 +4,33 @@
       <div class="topSub">
         <div class="topSub2">
           <div class="h1">
-            {{ 'ACA_MARKETPLACE.BANNER.TITLE_LINE1' | translate }} <br />
-            {{ 'ACA_MARKETPLACE.BANNER.TITLE_LINE2' | translate }} <span class="heading-span" [innerHTML]="'ACA_MARKETPLACE.BANNER.TITLE_LINE3' | translateHtml | async"></span>
+            <span [innerHTML]="'ACA_MARKETPLACE.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
+            <span [innerHTML]="'ACA_MARKETPLACE.BANNER.TITLE_LINE2' | translateHtml | async"></span> <span class="heading-span" [innerHTML]="'ACA_MARKETPLACE.BANNER.TITLE_LINE3' | translateHtml | async"></span>
           </div>
           <!-- 
           <div class="selectable">
             
             @for (item of chips; track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item.icon }}"></i>
-              <span>{{ item.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div> -->
 
           <div class="selectable mt-4">
             @for (item of chips.slice(0, 3); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
           <div class="selectable mt-2">
             @for (item of chips.slice(3, 6); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
@@ -81,10 +81,10 @@
       <h1 class="main-title" [innerHTML]="'ACA_MARKETPLACE.HOW_IT_WORKS.TITLE' | translateHtml | async"></h1>
 
       <p class="intro-text">
-        {{ 'ACA_MARKETPLACE.HOW_IT_WORKS.DESC1' | translate }}
+        <span [innerHTML]="'ACA_MARKETPLACE.HOW_IT_WORKS.DESC1' | translateHtml | async"></span>
         <br>
         <br>
-        {{ 'ACA_MARKETPLACE.HOW_IT_WORKS.DESC2' | translate }}
+        <span [innerHTML]="'ACA_MARKETPLACE.HOW_IT_WORKS.DESC2' | translateHtml | async"></span>
 
       </p>
 
@@ -134,8 +134,8 @@
               <i [class]="'ACA_MARKETPLACE.NOT_COVERED.LIST.' + key + '.ICON' | translate"></i>
             </div>
             <div class="factor-content">
-              <h6>{{ ('ACA_MARKETPLACE.NOT_COVERED.LIST.' + key + '.TITLE') | translate }}</h6>
-              <p>{{ ('ACA_MARKETPLACE.NOT_COVERED.LIST.' + key + '.DESC') | translate }}</p>
+              <h6><span [innerHTML]="('ACA_MARKETPLACE.NOT_COVERED.LIST.' + key + '.TITLE') | translateHtml | async"></span></h6>
+              <p><span [innerHTML]="('ACA_MARKETPLACE.NOT_COVERED.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
             </div>
           </div>
         </div>
@@ -223,23 +223,22 @@
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-3">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('ACA_MARKETPLACE.RATES_BY_TIER.TABLE.LIST.' + item + '.PLAN_TIER') | translate }}
+                <span [innerHTML]="('ACA_MARKETPLACE.RATES_BY_TIER.TABLE.LIST.' + item + '.PLAN_TIER') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-3">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('ACA_MARKETPLACE.RATES_BY_TIER.TABLE.LIST.' + item + '.MONTHLY_PREMIUM') | translate
-                }}
+                <span [innerHTML]="('ACA_MARKETPLACE.RATES_BY_TIER.TABLE.LIST.' + item + '.MONTHLY_PREMIUM') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-3">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('ACA_MARKETPLACE.RATES_BY_TIER.TABLE.LIST.' + item + '.DEDUCTIBLE') | translate }}
+                <span [innerHTML]="('ACA_MARKETPLACE.RATES_BY_TIER.TABLE.LIST.' + item + '.DEDUCTIBLE') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-3">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('ACA_MARKETPLACE.RATES_BY_TIER.TABLE.LIST.' + item + '.OUT_OF_POCKET_MAX') | translate }}
+                <span [innerHTML]="('ACA_MARKETPLACE.RATES_BY_TIER.TABLE.LIST.' + item + '.OUT_OF_POCKET_MAX') | translateHtml | async"></span>
               </div>
             </div>
           </div>
@@ -247,13 +246,11 @@
         </div>
 
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'ACA_MARKETPLACE.RATES_BY_TIER.SOURCE' | translate }} <a href="#"> Vista Health Solutions</a></p>
+          <p><span [innerHTML]="'ACA_MARKETPLACE.RATES_BY_TIER.SOURCE' | translateHtml | async"></span> <a href="#"> Vista Health Solutions</a></p>
           <p class="last-updated" [innerHTML]="'ACA_MARKETPLACE.RATES_BY_TIER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
         <div class="disclaimer mt-2">
-          <p class="mb-0"><strong [innerHTML]="'ACA_MARKETPLACE.RATES_BY_TIER.DISCLAIMER_LABEL' | translateHtml | async"></strong> {{ 'ACA_MARKETPLACE.RATES_BY_TIER.DISCLAIMER_TEXT' |
-            translate
-            }}</p>
+          <p class="mb-0"><strong [innerHTML]="'ACA_MARKETPLACE.RATES_BY_TIER.DISCLAIMER_LABEL' | translateHtml | async"></strong> <span [innerHTML]="'ACA_MARKETPLACE.RATES_BY_TIER.DISCLAIMER_TEXT' | translateHtml | async"></span></p>
         </div>
       </div>
     </div>
@@ -296,33 +293,32 @@
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-2">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('ACA_MARKETPLACE.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.FEATURE') | translate }}
+                <span [innerHTML]="('ACA_MARKETPLACE.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.FEATURE') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-2">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('ACA_MARKETPLACE.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.ACA_MARKETPLACE') | translate
-                }}
+                <span [innerHTML]="('ACA_MARKETPLACE.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.ACA_MARKETPLACE') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-2">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('ACA_MARKETPLACE.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.EMPLOYER_GROUP') | translate }}
+                <span [innerHTML]="('ACA_MARKETPLACE.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.EMPLOYER_GROUP') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-2">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('ACA_MARKETPLACE.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.MEDICAID') | translate }}
+                <span [innerHTML]="('ACA_MARKETPLACE.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.MEDICAID') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-2">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('ACA_MARKETPLACE.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.MEDICARE') | translate }}
+                <span [innerHTML]="('ACA_MARKETPLACE.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.MEDICARE') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-2">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('ACA_MARKETPLACE.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.SHORT_TERM') | translate }}
+                <span [innerHTML]="('ACA_MARKETPLACE.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.SHORT_TERM') | translateHtml | async"></span>
               </div>
             </div>
           </div>
@@ -344,9 +340,9 @@
         <div class="col-lg-6">
           <div class="factor-item">
             <div class="factor-content">
-              <p> <strong>{{ ('ACA_MARKETPLACE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }}
+              <p> <strong><span [innerHTML]="('ACA_MARKETPLACE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translateHtml | async"></span>
                   :</strong>
-                {{ ('ACA_MARKETPLACE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}</p>
+                <span [innerHTML]="('ACA_MARKETPLACE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
             </div>
           </div>
         </div>
@@ -365,15 +361,15 @@
         <div class="col-lg-6">
           <div class="factor-card">
             <div class="factor-content">
-              <p> <strong>{{ ('ACA_MARKETPLACE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translate }}
+              <p> <strong><span [innerHTML]="('ACA_MARKETPLACE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translateHtml | async"></span>
                   :</strong>
-                {{ ('ACA_MARKETPLACE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translate }}</p>
+                <span [innerHTML]="('ACA_MARKETPLACE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
 
               <!-- <h6 class="factor-title">
-                {{ ('ACA_MARKETPLACE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }}
+                <span [innerHTML]="('ACA_MARKETPLACE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translateHtml | async"></span>
               </h6>
               <p class="factor-desc">
-                {{ ('ACA_MARKETPLACE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}
+                <span [innerHTML]="('ACA_MARKETPLACE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translateHtml | async"></span>
               </p> -->
             </div>
           </div>
@@ -411,18 +407,17 @@
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('ACA_MARKETPLACE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translate }}
+                <span [innerHTML]="('ACA_MARKETPLACE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('ACA_MARKETPLACE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translate
-                }}
+                <span [innerHTML]="('ACA_MARKETPLACE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('ACA_MARKETPLACE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translate }}
+                <span [innerHTML]="('ACA_MARKETPLACE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translateHtml | async"></span>
               </div>
             </div>
           </div>
@@ -610,8 +605,8 @@
         @for (step of switchSteps; track step) {
         <div class="switch-card-wrapper">
           <div class="switch-card">
-            <h6>{{ 'ACA_MARKETPLACE.SWITCH_STEPS.STEPS.' + step + '.TITLE' | translate }}</h6>
-            <p>{{ 'ACA_MARKETPLACE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION' | translate }}</p>
+            <h6><span [innerHTML]="('ACA_MARKETPLACE.SWITCH_STEPS.STEPS.' + step + '.TITLE') | translateHtml | async"></span></h6>
+            <p><span [innerHTML]="('ACA_MARKETPLACE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION') | translateHtml | async"></span></p>
           </div>
         </div>
         }
@@ -629,17 +624,17 @@
           <p class="para" [innerHTML]="'ACA_MARKETPLACE.FREE_QUOTE.DESCRIPTION' | translateHtml | async"></p>
           <div class="selectable mt-4">
             @for (item of chips.slice(0, 3); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
           <div class="selectable mt-2">
             @for (item of chips.slice(3, 6); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>

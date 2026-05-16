@@ -2,8 +2,8 @@
   <div class="topBanner">
     <div class="container">
       <div class="h1">
-        {{ titleLine1 | translate }} <br />
-        {{ titleLine2 | translate }}
+        <span [innerHTML]="titleLine1 | translateHtml | async"></span> <br />
+        <span [innerHTML]="titleLine2 | translateHtml | async"></span>
       </div>
     </div>
   </div>
@@ -12,7 +12,7 @@
 <section class="thank-you-section py-5">
   <div class="container">
     <p>
-      {{ description | translate }}
+      <span [innerHTML]="description | translateHtml | async"></span>
     </p>
 
     <button class="btn send-btn" [routerLink]="type === 'career' ? '/careers' : '/'">

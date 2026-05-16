@@ -83,14 +83,14 @@
         <div class="col-md-4 feature-col">
           <h3 class="feature-title" [innerHTML]="'OUR_LOCATION.SESSION2.CARD1.TITLE' | translateHtml | async"></h3>
           <p class="feature-text">
-            {{ 'OUR_LOCATION.SESSION2.CARD1.DESCRIPTION_PART1' | translate }}
+            <span [innerHTML]="'OUR_LOCATION.SESSION2.CARD1.DESCRIPTION_PART1' | translateHtml | async"></span>
             <a [routerLink]="getRoute('autoInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.AUTO' | translateHtml | async"></a>,
             <a [routerLink]="getRoute('homeInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.HOMEOWNERS' | translateHtml | async"></a>,
             <a [routerLink]="getRoute('commercialInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.COMMERCIAL' | translateHtml | async"></a>,
             <a [routerLink]="getRoute('lifeInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.LIFE' | translateHtml | async"></a>,
-            {{ 'OUR_LOCATION.SESSION2.CARD1.DESCRIPTION_PART2' | translate }}
+            <span [innerHTML]="'OUR_LOCATION.SESSION2.CARD1.DESCRIPTION_PART2' | translateHtml | async"></span>
             <a [routerLink]="getRoute('healthInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.HEALTH' | translateHtml | async"></a>
-            {{ 'OUR_LOCATION.SESSION2.CARD1.DESCRIPTION_PART3' | translate }}
+            <span [innerHTML]="'OUR_LOCATION.SESSION2.CARD1.DESCRIPTION_PART3' | translateHtml | async"></span>
           </p>
         </div>
 
@@ -119,17 +119,17 @@
 
           <div class="selectable mt-5">
             @for (item of chips.slice(0, 3); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
           <div class="selectable mt-2">
             @for (item of chips.slice(3, 6); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
