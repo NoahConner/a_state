@@ -129,7 +129,7 @@
             gap: 20px;
 
             .bar {
-              height: -webkit-fill-available;
+              height: 260px;
               background-color: #fff;
               width: 10px;
             }
@@ -374,13 +374,15 @@
         width: 14rem;
         height: 5px;
         margin-top: 8px;
-        background: linear-gradient(90deg,
-            #ca2b28 0%,
-            #ca2b28 89%,
-            transparent 70%,
-            transparent 92%,
-            #ca2b28 80%,
-            #ca2b28 100%);
+        background: linear-gradient(
+          90deg,
+          #ca2b28 0%,
+          #ca2b28 89%,
+          transparent 70%,
+          transparent 92%,
+          #ca2b28 80%,
+          #ca2b28 100%
+        );
         border-radius: 3px;
       }
     }

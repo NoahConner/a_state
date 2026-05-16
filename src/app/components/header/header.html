@@ -689,7 +689,6 @@
           </div>
 
           <div class="sm-divider"></div>
-          
 
           <a class="sm-plain-link" [routerLink]="getRoute('about')">{{
             'HEADER.ABOUT' | translate
@@ -702,6 +701,18 @@
           }}</a>
 
           <div class="sm-divider"></div>
+
+          <!-- Language -->
+          <div class="sm-item" (click)="toggleMenu('language')">
+            <i class="fas fa-language sm-icon"></i>
+            <span class="sm-label">{{ currentLang.toUpperCase() }}</span>
+            <i class="fas fa-chevron-right sm-chevron" [class.open]="openMenu === 'language'"></i>
+          </div>
+          <div class="sm-sub" [class.open]="openMenu === 'language'">
+            <a class="sm-sub-item" (click)="changeLang('en'); $event.preventDefault()">English</a>
+            <a class="sm-sub-item" (click)="changeLang('es'); $event.preventDefault()">Español</a>
+          </div>
+
           <div class="sm-cta-wrap">
             <a [routerLink]="getRoute('getAQuote')" class="sm-cta">{{
               'HEADER.GET_A_QUOTE' | translate
