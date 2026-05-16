@@ -92,16 +92,16 @@ export class CommercialInsurance implements OnInit {
     { business_type: "Government Contract Holders", coverage: "General Liability + Workers Comp", required_by: "Contract Requirement" }
   ];
   companyRates = [
-    { company: "The Hartford", rate: "$85" },
-    { company: "Thimble", rate: "$94" },
-    { company: "Simply Business", rate: "$98" },
-    { company: "Progressive Commercial", rate: "$100" },
-    { company: "ERGO NEXT", rate: "$101" },
-    { company: "Nationwide", rate: "$102" },
-    { company: "Coverdash", rate: "$102" },
-    { company: "biBERK", rate: "$105" },
-    { company: "Hiscox", rate: "$109" },
-    { company: "Chubb", rate: "$118" }
+    { company: "<a href='https://www.thehartford.com/' rel='nofollow' target='_blank'>The Hartford</a>", rate: "$85" },
+    { company: "<a href='https://www.thimble.com/' rel='nofollow' target='_blank'>Thimble</a>", rate: "$94" },
+    { company: "<a href='https://www.simplybusiness.com/' rel='nofollow' target='_blank'>Simply Business</a>", rate: "$98" },
+    { company: "<a href='https://www.progressivecommercial.com/' rel='nofollow' target='_blank'>Progressive Commercial</a>", rate: "$100" },
+    { company: "<a href='https://www.nextinsurance.com/' rel='nofollow' target='_blank'>ERGO NEXT</a>", rate: "$101" },
+    { company: "<a href='https://www.nationwide.com/' rel='nofollow' target='_blank'>Nationwide</a>", rate: "$102" },
+    { company: "<a href='https://www.coverdash.com' rel='nofollow' target='_blank'>Coverdash</a>", rate: "$102" },
+    { company: "<a href='https://www.biberk.com' rel='nofollow' target='_blank'>biBERK</a>", rate: "$105" },
+    { company: "<a href='https://www.hiscox.com' rel='nofollow' target='_blank'>Hiscox</a>", rate: "$109" },
+    { company: "<a href='https://www.chubb.com' rel='nofollow' target='_blank'>Chubb</a>", rate: "$118" }
   ];
 
 
