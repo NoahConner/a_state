@@ -57,44 +57,61 @@ export class CarInsurance {
     { city: "Lubbock", monthly: "$209", annual: "$2,508" }
   ];
 
+  notCoveredKeys = [
+    "INTENTIONAL_DAMAGE",
+    "WEAR_TEAR",
+    "PERSONAL_BELONGINGS",
+    "RIDESHARE",
+    "BUSINESS_USE",
+    "RACING",
+    "FLOOD_WEATHER",
+    "THEFT",
+    "NO_LICENSE",
+    "MEDICAL_LIMITS",
+    "LIABILITY_ONLY",
+    "UNLISTED_DRIVERS",
+    "OUT_OF_COUNTRY",
+    "GAP"
+  ];
+
   carRates = [
     {
-      company: "State Farm",
+      company: "<a href='https://www.statefarm.com/' target='_blank' rel='nofollow'>State Farm</a>",
       minCoverageMonthly: "$41",
       fullCoverageMonthly: "$93",
       minCoverageAnnual: "$497",
       fullCoverageAnnual: "$1,118"
     },
     {
-      company: "Geico",
+      company: "<a href='https://www.geico.com/' target='_blank' rel='nofollow'>Geico</a>",
       minCoverageMonthly: "$54",
       fullCoverageMonthly: "$112",
       minCoverageAnnual: "$651",
       fullCoverageAnnual: "$1,341"
     },
     {
-      company: "Mercury Insurance",
+      company: "<a href='https://www.mercuryinsurance.com/' target='_blank' rel='nofollow'>Mercury Insurance</a>",
       minCoverageMonthly: "$54",
       fullCoverageMonthly: "$133",
       minCoverageAnnual: "$648",
       fullCoverageAnnual: "$1,594"
     },
     {
-      company: "AAA",
+      company: "<a href='https://www.aaa.com/' target='_blank' rel='nofollow'>AAA</a>",
       minCoverageMonthly: "$63",
       fullCoverageMonthly: "$126",
       minCoverageAnnual: "$762",
       fullCoverageAnnual: "$1,513"
     },
     {
-      company: "Germania Insurance",
+      company: "<a href='https://www.germaniainsurance.com/' target='_blank' rel='nofollow'>Germania Insurance</a>",
       minCoverageMonthly: "$72",
       fullCoverageMonthly: "$143",
       minCoverageAnnual: "$868",
       fullCoverageAnnual: "$1,715"
     },
     {
-      company: "Progressive",
+      company: "<a href='https://www.progressive.com/' target='_blank' rel='nofollow'>Progressive</a>",
       minCoverageMonthly: "$87",
       fullCoverageMonthly: "$149",
       minCoverageAnnual: "$1,048",

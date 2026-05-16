@@ -951,9 +951,17 @@
       "STEP4": {
         "TITLE": "Contact Preferences",
         "DESC": "How would you like to be contacted?",
-        "OPTIONS": ["Phone", "Text Message", "Email"],
+        "OPTIONS": [
+          "Phone",
+          "Text Message",
+          "Email"
+        ],
         "DESC1": "Best time to reach you:",
-        "TIME_OPTIONS": ["Morning", "Afternoon", "Evening"]
+        "TIME_OPTIONS": [
+          "Morning",
+          "Afternoon",
+          "Evening"
+        ]
       },
       "STEP5": {
         "TITLE": "Review Your Custom Quote Request"
@@ -1043,9 +1051,17 @@
       "STEP5": {
         "TITLE": "Contact Preferences",
         "LANGUAGE_TITLE": "Preferred Language:",
-        "LANGUAGE_OPTIONS": ["English", "Spanish", "Hindi"],
+        "LANGUAGE_OPTIONS": [
+          "English",
+          "Spanish",
+          "Hindi"
+        ],
         "CONTACT_TITLE": "How should we reach you?",
-        "CONTACT_OPTIONS": ["Phone Call", "Text Message", "Email"],
+        "CONTACT_OPTIONS": [
+          "Phone Call",
+          "Text Message",
+          "Email"
+        ],
         "TIME_TITLE": "Best Time to Connect:",
         "TIME_OPTIONS": [
           "Morning (8 AM - 12 PM)",
@@ -1150,7 +1166,10 @@
       "STEP4": {
         "TITLE": "History and Bundling",
         "INSURED_TITLE": "Current Home Insurance Status",
-        "INSURED_OPTIONS": ["Currently Insured", "Not Insured"],
+        "INSURED_OPTIONS": [
+          "Currently Insured",
+          "Not Insured"
+        ],
         "BUNDLE_TITLE": "Do you want to bundle your policies to save more?",
         "BUNDLE_OPTIONS": [
           "Yes! I want a Home + Auto bundle discount.",
@@ -1166,9 +1185,17 @@
           "PHONE": "Phone Number"
         },
         "LANGUAGE_TITLE": "Preferred Language",
-        "LANGUAGE_OPTIONS": ["English", "Spanish", "Hindi"],
+        "LANGUAGE_OPTIONS": [
+          "English",
+          "Spanish",
+          "Hindi"
+        ],
         "CONTACT_TITLE": "How should we reach you?",
-        "CONTACT_OPTIONS": ["Phone Call", "Text Message", "Email"],
+        "CONTACT_OPTIONS": [
+          "Phone Call",
+          "Text Message",
+          "Email"
+        ],
         "TIME_TITLE": "Best Time to Connect",
         "TIME_OPTIONS": [
           "Morning (8 AM - 12 PM)",
@@ -1251,11 +1278,27 @@
         "TITLE": "Scale of Operations",
         "FIELDS": {
           "YEARS_IN_BUSINESS": "Years in Business",
-          "YEARS_OPTIONS": ["New Venture", "1-5 years", "6-10 years", "10+ years"],
+          "YEARS_OPTIONS": [
+            "New Venture",
+            "1-5 years",
+            "6-10 years",
+            "10+ years"
+          ],
           "NUMBER_OF_EMPLOYEES": "Number of Employees",
-          "EMPLOYEES_OPTIONS": ["1-10", "11-50", "51-200", "200+"],
+          "EMPLOYEES_OPTIONS": [
+            "1-10",
+            "11-50",
+            "51-200",
+            "200+"
+          ],
           "ANNUAL_REVENUE": "Estimated Annual Revenue",
-          "REVENUE_OPTIONS": ["Under $100k", "$100k - $500k", "$500k - $1M", "$1M - $5M", "$5M+"]
+          "REVENUE_OPTIONS": [
+            "Under $100k",
+            "$100k - $500k",
+            "$500k - $1M",
+            "$1M - $5M",
+            "$5M+"
+          ]
         }
       },
       "STEP3": {
@@ -1282,9 +1325,17 @@
           "PHONE_NUMBER": "Phone Number*"
         },
         "LANGUAGE_TITLE": "Preferred Language",
-        "LANGUAGE_OPTIONS": ["English", "Spanish", "Hindi"],
+        "LANGUAGE_OPTIONS": [
+          "English",
+          "Spanish",
+          "Hindi"
+        ],
         "TIME_TITLE": "Best Time to Connect",
-        "TIME_OPTIONS": ["Morning", "Afternoon", "Evening"]
+        "TIME_OPTIONS": [
+          "Morning",
+          "Afternoon",
+          "Evening"
+        ]
       }
     },
     "QUOTE_SUMMARY": {
@@ -1355,8 +1406,15 @@
           "TOBACCO_USE": "Do you use tobacco or nicotine products?",
           "HEALTH_STATUS": "How would you describe your general health?"
         },
-        "TOBACCO_OPTIONS": ["Yes", "No"],
-        "HEALTH_OPTIONS": ["Excellent", "Good", "Fair"]
+        "TOBACCO_OPTIONS": [
+          "Yes",
+          "No"
+        ],
+        "HEALTH_OPTIONS": [
+          "Excellent",
+          "Good",
+          "Fair"
+        ]
       },
       "STEP3": {
         "TITLE": "Coverage Needs",
@@ -1378,9 +1436,17 @@
       "STEP4": {
         "TITLE": "Contact Details and Preferences",
         "LANGUAGE_TITLE": "Preferred Language for your Quote",
-        "LANGUAGE_OPTIONS": ["English", "Spanish", "Hindi"],
+        "LANGUAGE_OPTIONS": [
+          "English",
+          "Spanish",
+          "Hindi"
+        ],
         "CONTACT_TITLE": "Best Way to Reach You",
-        "CONTACT_OPTIONS": ["Call", "Text Message", "Email"],
+        "CONTACT_OPTIONS": [
+          "Call",
+          "Text Message",
+          "Email"
+        ],
         "TIME_TITLE": "Best Time to Connect",
         "TIME_OPTIONS": [
           "Morning (8 AM - 12 PM)",
@@ -1443,7 +1509,12 @@
       "STEP1": {
         "TITLE": "Coverage Type",
         "COVERAGE_TITLE": "Who needs coverage?",
-        "COVERAGE_OPTIONS": ["Just Me", "Me + Spouse", "Me + Children", "My Whole Family"],
+        "COVERAGE_OPTIONS": [
+          "Just Me",
+          "Me + Spouse",
+          "Me + Children",
+          "My Whole Family"
+        ],
         "FIELDS": {
           "ZIPCODE": "Zip Code"
         }
@@ -1463,7 +1534,10 @@
           "$60,000 – $100,000",
           "Over $100,000"
         ],
-        "TOBACCO_OPTIONS": ["Yes", "No"]
+        "TOBACCO_OPTIONS": [
+          "Yes",
+          "No"
+        ]
       },
       "STEP3": {
         "TITLE": "Contact & Language Preference",
@@ -1474,8 +1548,16 @@
           "LANGUAGE": "Preferred Language for your Quote",
           "BEST_TIME": "Best time to call?"
         },
-        "LANGUAGE_OPTIONS": ["English", "Spanish", "Hindi"],
-        "TIME_OPTIONS": ["Morning", "Afternoon", "Evening"]
+        "LANGUAGE_OPTIONS": [
+          "English",
+          "Spanish",
+          "Hindi"
+        ],
+        "TIME_OPTIONS": [
+          "Morning",
+          "Afternoon",
+          "Evening"
+        ]
       }
     },
     "QUOTE_SUMMARY": {
@@ -1540,7 +1622,12 @@
         "TITLE": "Quick Underwriting",
         "FIELDS": {
           "CREDIT_SCORE_TITLE": "Estimated Credit Score: Crucial Explain that checking this won’t hurt their credit score.",
-          "CREDIT_SCORE_TITLE_OPTION": ["Excellent", "Good", "Fair", "Poor"],
+          "CREDIT_SCORE_TITLE_OPTION": [
+            "Excellent",
+            "Good",
+            "Fair",
+            "Poor"
+          ],
           "YEARS_IN_BUSINESS": "Years in Business"
         }
       },
@@ -1548,9 +1635,17 @@
         "TITLE": "Contact & Language Preference",
         "FIELDS": {
           "LANGUAGE": "Preferred Language for your Quote",
-          "LANGUAGE_OPTIONS": ["English", "Spanish", "Hindi"],
+          "LANGUAGE_OPTIONS": [
+            "English",
+            "Spanish",
+            "Hindi"
+          ],
           "BEST_TIME": "Best time to call?",
-          "TIME_OPTIONS": ["Morning", "Afternoon", "Evening"]
+          "TIME_OPTIONS": [
+            "Morning",
+            "Afternoon",
+            "Evening"
+          ]
         }
       }
     },
@@ -6022,9 +6117,87 @@
         ]
       }
     },
+    "NOT_COVERED": {
+      "HEADER": {
+        "TITLE": "What Car Insurance Does NOT Cover in Texas",
+        "DESC": "Car insurance doesn’t cover every situation. Exclusions can include intentional damage, normal wear and tear, mechanical breakdowns, and personal items inside your car. Additionally, activities such as racing without a license or use for business without commercial coverage are not covered. Knowing these exclusions helps you understand what extra coverage you may need for complete protection."
+      },
+      "LIST": {
+        "INTENTIONAL_DAMAGE": {
+          "TITLE": "Intentional Damage or Fraud",
+          "DESC": "Car insurance will not cover damages resulting from intentional acts or fraudulent claims. If you deliberately cause harm to your vehicle or misrepresent information to your insurer, you may be denied coverage and face legal consequences.",
+          "ICON": "fas fa-gavel"
+        },
+        "WEAR_TEAR": {
+          "TITLE": "Normal Wear & Tear & Mechanical Breakdown",
+          "DESC": "Routine maintenance issues and mechanical breakdowns are not covered by car insurance. These types of issues, such as worn-out tires or engine failure, fall under regular vehicle upkeep, which is your responsibility, not the insurer's.",
+          "ICON": "fas fa-tools"
+        },
+        "PERSONAL_BELONGINGS": {
+          "TITLE": "Personal Belongings Inside the Vehicle",
+          "DESC": "Personal items inside your car, such as electronics, bags, or clothing, are not covered by most car insurance policies. To protect your belongings, consider adding renters' insurance or another form of coverage for your personal property.",
+          "ICON": "fas fa-mobile-alt"
+        },
+        "RIDESHARE": {
+          "TITLE": "Rideshare Driving Without Proper Coverage",
+          "DESC": "If you're using your car for ridesharing services like Uber or Lyft and don't have the proper rideshare coverage, your personal insurance won't protect you in case of an accident. Always ensure your insurance includes rideshare coverage.",
+          "ICON": "fas fa-taxi"
+        },
+        "BUSINESS_USE": {
+          "TITLE": "Business Use Without Commercial Auto Coverage",
+          "DESC": "If you use your vehicle for business purposes, such as deliveries or transporting goods, standard car insurance won't cover those activities. You need a commercial auto policy to ensure your business use is adequately protected.",
+          "ICON": "fas fa-briefcase"
+        },
+        "RACING": {
+          "TITLE": "Racing & Track Events",
+          "DESC": "Car insurance policies do not cover damages sustained during racing or track events. If you're involved in competitive racing or other high-risk activities, specialized coverage or exclusions will apply, and standard policies will not protect you.",
+          "ICON": "fas fa-flag-checkered"
+        },
+        "FLOOD_WEATHER": {
+          "TITLE": "Flood & Weather Damage (Without Comprehensive)",
+          "DESC": "Without comprehensive coverage, your car insurance won't cover flood damage, hail, or other weather-related incidents. This type of coverage is optional but crucial if you want to protect your vehicle from non-collision damage.",
+          "ICON": "fas fa-cloud-rain"
+        },
+        "THEFT": {
+          "TITLE": "Theft (Without Comprehensive Coverage)",
+          "DESC": "If your car is stolen and you don't have comprehensive coverage, your insurance won't cover the loss. Comprehensive coverage is necessary to protect your vehicle from theft, vandalism, or damage caused by events like natural disasters.",
+          "ICON": "fas fa-user-secret"
+        },
+        "NO_LICENSE": {
+          "TITLE": "Driving Without a Valid License",
+          "DESC": "If you're caught driving without a valid license, your car insurance may not cover damages or liabilities resulting from an accident. A valid driver's license is required to maintain car insurance coverage for complete protection.",
+          "ICON": "fas fa-id-card"
+        },
+        "MEDICAL_LIMITS": {
+          "TITLE": "Medical Bills Beyond PIP / MedPay Limits",
+          "DESC": "Personal Injury Protection (PIP) or Medical Payments (MedPay) only covers medical expenses up to a certain limit. Any medical costs beyond these limits are not covered by your car insurance policy and must be paid out-of-pocket or through other means.",
+          "ICON": "fas fa-bandaid"
+        },
+        "LIABILITY_ONLY": {
+          "TITLE": "Damage to Your Own Car (Liability Only Policies)",
+          "DESC": "Liability-only policies do not cover damage to your own vehicle. If you're involved in an accident, a liability insurance policy will cover the damage to other vehicles or property but will not pay for repairs to your own car.",
+          "ICON": "fas fa-car-crash"
+        },
+        "UNLISTED_DRIVERS": {
+          "TITLE": "Unlisted Drivers in Your Household",
+          "DESC": "If someone not listed on your policy drives your car and causes an accident, your insurance may not cover the damages. It's important to ensure that all drivers in your household are added to your car insurance policy to guarantee full protection.",
+          "ICON": "fas fa-users"
+        },
+        "OUT_OF_COUNTRY": {
+          "TITLE": "Out-of-Country Driving (Except Mexico With Endorsement)",
+          "DESC": "Car insurance typically does not cover driving outside the United States, except in Mexico, where a specific endorsement is required. If you plan to drive abroad, you'll need additional coverage or a policy tailored for international travel.",
+          "ICON": "fas fa-globe-americas"
+        },
+        "GAP": {
+          "TITLE": "Gap Between Car Value & Loan Balance (Without Gap Insurance)",
+          "DESC": "If your car is totaled and you owe more on your loan than it's worth, gap insurance is necessary to cover the difference. Without it, your regular policy will only pay the vehicle's market value, leaving you to pay the remaining loan balance.",
+          "ICON": "fas fa-chart-line"
+        }
+      }
+    },
     "COST": {
       "TITLE": "How Much Does Car Insurance Cost in Texas?",
-      "DESC1": "The average cost of car insurance in Texas varies depending on factors such as your age, driving history, and the type of coverage you choose. On average, Texas drivers pay $1,500–$2,000 per year for full coverage and $600 per year for minimum coverage. Rates can be higher in larger cities or for drivers with a history of accidents or violations.",
+      "DESC1": "The average cost of car insurance in Texas varies depending on factors such as your age, driving history, and the type of coverage you choose. On average, Texas drivers pay <a class='inline-link' href='https://www.prontoinsurance.com/blog/average-cost-auto-insurance-texas/#:~:text=Texas's%20average%20auto%20insurance%20rates,see%20premiums%20exceed%20$2%2C500%20annually.' rel='nofollow'> $1,500–$2,000 per year for full coverage and $600 per year for minimum coverage. </a> Rates can be higher in larger cities or for drivers with a history of accidents or violations.",
       "DESC2": "Compared with other states, Texas car insurance rates tend to be higher than the national average. For example, the national average for full coverage is around $1,300 annually, making Texas rates about 15% higher. This is due to factors such as higher accident rates, weather-related risks, and population density, which can affect insurance costs."
     },
     "RATES": {
@@ -6163,7 +6336,7 @@
       "LIST": {
         "BUNDLING": {
           "TITLE": "Bundling Discount (Auto + Home)",
-          "DESC": "Save by bundling your auto and home insurance with the same provider. Insurers offer a discount for multi-policy customers.",
+          "DESC": "Save by bundling your auto and <a class='inline-link' href='/homeowners-insurance'> home insurance </a> with the same provider. Insurers offer a discount for multi-policy customers.",
           "ICON": "fas fa-house-user"
         },
         "MULTI_CAR": {
@@ -6442,9 +6615,7 @@
         "TITLE": "Hablamos Español / We Speak Your Language"
       },
       "CONTENT": {
-        "DESC1": "At <a class='inline-link' href='/' target='_blank'>A-State Insurance</a>, we are proud to offer services in Spanish for our Spanish-speaking customers. We understand how important it is to receive personalized attention in your language. Our team is ready to guide you through your options, explain Texas insurance requirements, and help you find the top auto insurance that fits your budget.",
-        "DESC2": "Instead of dealing with automated phone systems or confusing paperwork, you can speak directly with a local agent who takes the time to answer your questions and help you choose the right protection—all in Spanish.",
-        "DESC3": "Our multilingual team assists customers in Spanish, English, and Hindi, making it easier for families and drivers from different backgrounds to understand their coverage and secure reliable vehicle insurance in Texas."
+        "DESC1": "At <a class='inline-link' href='/' target='_blank'>A-State Insurance</a>, we are proud to offer services in Spanish for our Spanish-speaking customers. We understand how important it is to receive personalized attention in your language, especially when it comes to matters as important as your <a class='inline-link' href='/auto-insurance'> auto insurance. </a>Our team of agents is available to help you with quotes, questions, and coverage options — all in Spanish. No matter your situation, we are here to provide the assistance you need."
       }
     },
     "ASTATE_DIFFERENTIATORS": {
@@ -6717,9 +6888,88 @@
         ]
       }
     },
+
+    "NOT_COVERED": {
+  "HEADER": {
+    "TITLE": "What Motorcycle Insurance Does NOT Cover in Texas",
+    "DESC": "Motorcycle insurance in Texas does not cover intentional damage, fraud, racing, or riding without a valid M-class license. It excludes normal wear and tear, personal belongings, custom parts beyond standard limits, floods, theft without comprehensive coverage, business use, out-of-country riding, and accidents caused under the influence of drugs or alcohol."
+  },
+  "LIST": {
+    "INTENTIONAL_DAMAGE": {
+      "TITLE": "Intentional Damage or Fraud",
+      "DESC": "Motorcycle insurance does not cover damage caused intentionally by the rider or fraudulent claims. Deliberate acts, vandalism by the insured, or misrepresented accidents are excluded, protecting insurers from abuse while encouraging responsibility.",
+      "ICON": "fas fa-gavel"
+    },
+    "WEAR_TEAR": {
+      "TITLE": "Normal Wear & Tear & Mechanical Breakdown",
+      "DESC": "Policies don't cover routine wear, aging, or mechanical failures due to lack of maintenance. Regular parts replacement, engine wear, or mechanical breakdowns are the rider's responsibility and require proper upkeep to prevent accidents.",
+      "ICON": "fas fa-tools"
+    },
+    "RACING": {
+      "TITLE": "Racing & Track Events",
+      "DESC": "Damage from racing, competitive events, or track riding is excluded. Standard policies focus on street and everyday use, so participating in races without specialized coverage risks denial of claims for accidents or damages occurring on tracks.",
+      "ICON": "fas fa-flag-checkered"
+    },
+    "NO_LICENSE": {
+      "TITLE": "Riding Without a Valid Motorcycle License (M-Class)",
+      "DESC": "If you ride without a valid motorcycle license, claims may be denied. Insurance requires a proper M-class license to operate legally, ensuring riders are trained, compliant, and eligible for financial protection in the event of an accident.",
+      "ICON": "fas fa-id-card"
+    },
+    "PERSONAL_BELONGINGS": {
+      "TITLE": "Personal Belongings & Riding Gear (Without Endorsement)",
+      "DESC": "Standard insurance usually excludes personal items such as clothing, electronics, and helmets. To protect these, you need an added endorsement. Without it, losses or theft of personal gear won't be reimbursed, leaving riders financially responsible.",
+      "ICON": "fas fa-mobile-alt"
+    },
+    "LIABILITY_ONLY": {
+      "TITLE": "Damage to Your Own Bike (Liability Only Policies)",
+      "DESC": "Liability-only coverage doesn't cover damage to your motorcycle. Repairs or replacement after collisions, accidents, or theft are your responsibility. For full protection, collision or comprehensive coverage is necessary to safeguard your bike.",
+      "ICON": "fas fa-motorcycle"
+    },
+    "FLOOD_WEATHER": {
+      "TITLE": "Flood & Weather Damage (Without Comprehensive)",
+      "DESC": "Floods, hail, and storm damage aren't covered under basic liability policies. Comprehensive insurance is required to protect your motorcycle against natural events, ensuring repairs or replacement without financial strain after weather-related incidents.",
+      "ICON": "fas fa-cloud-rain"
+    },
+    "THEFT": {
+      "TITLE": "Theft (Without Comprehensive Coverage)",
+      "DESC": "Standard liability policies don't cover theft. To safeguard your motorcycle from theft, comprehensive coverage is necessary. Without it, stolen bikes or parts are your responsibility, leaving you vulnerable to total-loss costs.",
+      "ICON": "fas fa-user-secret"
+    },
+    "UNLISTED_RIDERS": {
+      "TITLE": "Unlisted Riders on Your Policy",
+      "DESC": "Insurance only protects riders listed on your policy. If someone not named on your policy operates your bike and gets injured or causes damage, claims may be denied. Always add occasional or authorized riders to ensure coverage.",
+      "ICON": "fas fa-users"
+    },
+    "BUSINESS_USE": {
+      "TITLE": "Business Use Without Commercial Coverage",
+      "DESC": "Using your motorcycle for business purposes without commercial coverage can void claims. Standard policies cover personal use only, so business deliveries, commuting for work, or paid transport require special endorsements to remain fully insured.",
+      "ICON": "fas fa-briefcase"
+    },
+    "OUT_OF_COUNTRY": {
+      "TITLE": "Out-of-Country Riding (Except Mexico With Endorsement)",
+      "DESC": "Motorcycle insurance typically does not cover riding outside the United States, except in Mexico where a specific endorsement is required. If you plan to ride abroad, you'll need additional coverage or a policy tailored for international travel.",
+      "ICON": "fas fa-globe-americas"
+    },
+    "GAP": {
+      "TITLE": "Gap Between Bike Value & Loan Balance (Without Gap Coverage)",
+      "DESC": "If your motorcycle is totaled, basic coverage pays only actual cash value, not your remaining loan balance. Gap coverage bridges this difference, ensuring you aren't left paying a loan for a bike you can't use.",
+      "ICON": "fas fa-chart-line"
+    },
+    "DUI": {
+      "TITLE": "Riding Under the Influence",
+      "DESC": "Insurance won't cover accidents caused while under the influence of alcohol or drugs. Claims may be denied, and legal consequences could apply. Safe, sober riding ensures claims are valid and financial protection remains intact.",
+      "ICON": "fas fa-wine-bottle"
+    },
+    "CUSTOM_PARTS": {
+      "TITLE": "Custom Parts Beyond Standard Limits (Without Endorsement)",
+      "DESC": "Upgraded or aftermarket parts exceeding standard coverage limits are not protected unless you add an endorsement. Without it, damage or theft of custom components won't be reimbursed, leaving riders responsible for costly repairs or replacements.",
+      "ICON": "fas fa-wrench"
+    }
+  }
+},
     "COST": {
       "TITLE": "How Much Does Motorcycle Insurance Cost in Texas?",
-      "DESC1": "Motorcycle insurance costs in Texas typically start at around $25 per month for minimum liability coverage on a standard bike. For full coverage, including collision and comprehensive protection, most riders pay about $85 per month. Factors like age, bike type, riding history, and location can affect premiums.",
+      "DESC1": "Motorcycle insurance costs in Texas typically start at  <a href='https://www.dairylandinsurance.com/motorcycle/texas-insurance-requirements#:~:text=The%20cost%20of%20a%20motorcycle,on%20these%20already%20competitive%20rates:' rel='nofollow' class='inline-link'>around $25 per month </a> for minimum liability coverage on a standard bike. For full coverage, including collision and comprehensive protection, most riders pay about $85 per month. Factors like age, bike type, riding history, and location can affect premiums.",
       "DESC2": "Compared with other states, Texas rates are generally competitive. Riders in California or New York often pay higher premiums for similar coverage, while states like Florida or Arizona may offer slightly lower costs. Comparing motorcycle insurance in Texas with that of other states helps owners understand regional differences and make informed decisions when choosing a policy."
     },
     "RATES": {
@@ -6855,7 +7105,7 @@
       "LIST": {
         "BUNDLING": {
           "TITLE": "Multi-Policy / Bundling Discount (Motorcycle + Auto or Home)",
-          "DESC": "Save by bundling your motorcycle insurance with auto or home policies, reducing overall premiums with combined coverage.",
+          "DESC": "Save by bundling your motorcycle insurance with <a href='/auto-insurance' class='inline-link'> auto </a> or  <a href='/homeowners-insurance' class='inline-link'>home</a> policies, reducing overall premiums with combined coverage.",
           "ICON": "fas fa-house-user"
         },
         "MULTI_MOTORCYCLE": {
@@ -7183,7 +7433,7 @@
       "STEPS": {
         "REACH_OUT": {
           "TITLE": "Step 1 - Reach Out",
-          "DESCRIPTION": "Contact our team to start your application and get quick, friendly guidance from the beginning.",
+          "DESCRIPTION": "<a href='/contact-us' class='inline-link'>Contact our team </a> to start your application and get quick, friendly guidance from the beginning.",
           "ICON": "fas fa-phone-alt"
         },
         "GET_ADVICE": {
@@ -7210,17 +7460,17 @@
       "STEPS": {
         "STEP_1": {
           "TITLE": "Step 1: Get Your Free Comparison Quote",
-          "DESCRIPTION": "Have your current \"Declarations Page\" ready. A-State Insurance will compare your existing coverage with 10+ top Texas carriers to find a lower rate that offers the same or better protection.",
+          "DESCRIPTION": "Start by <a href='/get-a-quote' class='inline-link'>requesting a free quote </a> to compare multiple motorcycle insurance options side by side. We review your details and show clear pricing over the phone, helping you choose with no hidden fees.",
           "ICON": "fas fa-file-invoice-dollar"
         },
         "STEP_2": {
           "TITLE": "Step 2: Pick Your Plan and Activate",
-          "DESCRIPTION": "Switching is simple! You can complete the entire process online or over the phone. Our agents speak English, Spanish, and Hindi to ensure you fully understand every detail before signing.",
+          "DESCRIPTION": "Once you review your options, choose the plan that fits your needs. Our team guides you through activation, ensuring all documents are correct so your coverage starts quickly without delays.",
           "ICON": "fas fa-file-signature"
         },
         "STEP_3": {
           "TITLE": "Step 3: Cancel Your Old Policy (We’ll Help!)",
-          "DESCRIPTION": "Never cancel your old policy until your new A-State coverage is active to avoid a \"coverage lapse.\" Most Texas insurers refund any \"unused\" premium, so we’ll guide you through the process.",
+          "DESCRIPTION": "After your new policy is active, we will help you cancel your old insurance. We coordinate the process to avoid coverage gaps, keeping you protected while making the switch smooth and stress-free.",
           "ICON": "fas fa-times-circle"
         }
       }
@@ -7277,7 +7527,7 @@
     },
     "FREE_QUOTE": {
       "HEADER": "Get a Free Motorcycle Insurance Quote in Texass",
-      "DESCRIPTION": "Getting a free motorcycle insurance quote in Texas is fast and simple. At <a class='inline-link' href='/' target='_blank'>A-State Insurance</a>, we compare multiple providers to find coverage that fits your bike, riding habits, and budget. Our experts guide you through each option, ensuring you understand every detail before deciding. Whether you ride a cruiser, sportbike, or touring motorcycle, our team tailors quotes to your needs. With transparent rates and personalized recommendations, you can secure protection for yourself, your passengers, and your bike. Requesting your quote takes minutes, giving you peace of mind and confidence on the road."
+      "DESCRIPTION": "Getting a free motorcycle insurance quote in Texas is fast and simple. At <a class='inline-link white' href='/' target='_blank'>A-State Insurance</a>, we compare multiple providers to find coverage that fits your bike, riding habits, and budget. Our experts guide you through each option, ensuring you understand every detail before deciding. Whether you ride a cruiser, sportbike, or touring motorcycle, our team tailors quotes to your needs. With transparent rates and personalized recommendations, you can secure protection for yourself, your passengers, and your bike. Requesting your quote takes minutes, giving you peace of mind and confidence on the road."
     }
   },
   "BOAT_INSURANCE": {
@@ -7971,7 +8221,7 @@
       "TITLE": "Is RV & Motorhome Insurance Required in Texas?",
       "INTRO1": "Technically, RV and motorhome insurance is  <a class='inline-link' href='https://www.tdi.texas.gov/tips/rv-insurance-coverage.html' target='_blank'> not legally required. </a>  in Texas the same way standard auto insurance is. If your vehicle is registered as an RV or motorhome, the state may not mandate coverage beyond basic liability for driving on public roads. However, relying solely on minimal liability leaves you exposed to major financial risk if accidents, theft, or damage occur.",
       "INTRO2": "RelyingMost RV owners still choose to carry dedicated insurance because the practical consequences of being uninsured can be severe. Without proper coverage, repairs, medical costs, or replacement of personal belongings inside your RV can quickly become expensive. Having motorhome insurance in Texas ensures you’re protected on highways, in campgrounds, and during long-term travel, giving peace of mind and safeguarding your investment against the unexpected."
-        },
+    },
     "COVERAGES": {
       "HEADER": {
         "TITLE": "What Does RV & Motorhome Insurance Cover in Texas?",
@@ -38443,7 +38693,9 @@
       ],
       "HOURS": "Mon – Sat: 9AM – 7PM Sunday: Closed",
       "EMAIL": "save@astateinsurance.com",
-      "PHONE": ["(713) 357-7771"]
+      "PHONE": [
+        "(713) 357-7771"
+      ]
     },
     "POLICIES": {
       "PRIVACY": "Privacy Policy",

@@ -5710,9 +5710,88 @@
         ]
       }
     },
+
+    "NOT_COVERED": {
+  "HEADER": {
+    "TITLE": "¿Qué No Cubre el Seguro de Auto en Texas?",
+    "DESC": "El seguro de auto no cubre todas las situaciones. Las exclusiones pueden incluir daños intencionales, desgaste normal, fallas mecánicas y artículos personales dentro de tu auto. Además, actividades como las carreras sin licencia o el uso para negocios sin cobertura comercial no están cubiertas. Conocer estas exclusiones te ayuda a entender qué cobertura adicional podrías necesitar para una protección completa."
+  },
+  "LIST": {
+    "INTENTIONAL_DAMAGE": {
+      "TITLE": "Daños Intencionales o Fraude",
+      "DESC": "El seguro de auto no cubrirá los daños resultantes de actos intencionales o reclamaciones fraudulentas. Si causas deliberadamente daño a tu vehículo o proporcionas información falsa a tu aseguradora, podrías ser denegado de la cobertura y enfrentar consecuencias legales.",
+      "ICON": "fas fa-gavel"
+    },
+    "WEAR_TEAR": {
+      "TITLE": "Desgaste Normal y Fallas Mecánicas",
+      "DESC": "Los problemas de mantenimiento rutinario y las fallas mecánicas no están cubiertos por el seguro de auto. Estos tipos de problemas, como neumáticos desgastados o fallos del motor, pertenecen al mantenimiento regular del vehículo, lo cual es tu responsabilidad, no la de la aseguradora.",
+      "ICON": "fas fa-tools"
+    },
+    "PERSONAL_BELONGINGS": {
+      "TITLE": "Pertenencias Personales Dentro del Vehículo",
+      "DESC": "Los artículos personales dentro de tu auto, como electrónicos, bolsos o ropa, no están cubiertos por la mayoría de las pólizas de seguro de auto. Para proteger tus pertenencias, considera agregar un seguro de inquilinos u otra forma de cobertura para tus bienes personales.",
+      "ICON": "fas fa-mobile-alt"
+    },
+    "RIDESHARE": {
+      "TITLE": "Conducir para Transporte Compartido Sin la Cobertura Adecuada",
+      "DESC": "Si usas tu auto para servicios de transporte compartido como Uber o Lyft y no tienes la cobertura adecuada, tu seguro personal no te protegerá en caso de un accidente. Asegúrate siempre de que tu seguro incluya cobertura para transporte compartido.",
+      "ICON": "fas fa-taxi"
+    },
+    "BUSINESS_USE": {
+      "TITLE": "Uso Comercial Sin Cobertura de Auto Comercial",
+      "DESC": "Si usas tu vehículo para fines comerciales, como entregas o transporte de mercancías, el seguro de auto estándar no cubrirá esas actividades. Necesitarás una póliza de seguro comercial para garantizar que tu uso comercial esté adecuadamente protegido.",
+      "ICON": "fas fa-briefcase"
+    },
+    "RACING": {
+      "TITLE": "Carreras y Eventos en Circuitos",
+      "DESC": "Las pólizas de seguro de auto no cubren los daños sufridos durante carreras o eventos en circuitos. Si estás involucrado en carreras competitivas u otras actividades de alto riesgo, se aplicarán coberturas especializadas o exclusiones, y las pólizas estándar no te protegerán.",
+      "ICON": "fas fa-flag-checkered"
+    },
+    "FLOOD_WEATHER": {
+      "TITLE": "Daños por Inundación y Clima (Sin Cobertura Integral)",
+      "DESC": "Sin cobertura integral, tu seguro de auto no cubrirá los daños por inundaciones, granizo u otros incidentes relacionados con el clima. Este tipo de cobertura es opcional, pero crucial si deseas proteger tu vehículo de daños no causados por colisiones.",
+      "ICON": "fas fa-cloud-rain"
+    },
+    "THEFT": {
+      "TITLE": "Robo (Sin Cobertura Integral)",
+      "DESC": "Si tu auto es robado y no tienes cobertura integral, tu seguro no cubrirá la pérdida. La cobertura integral es necesaria para proteger tu vehículo contra robos, vandalismo o daños causados por eventos como desastres naturales.",
+      "ICON": "fas fa-user-secret"
+    },
+    "NO_LICENSE": {
+      "TITLE": "Conducir Sin una Licencia Válida",
+      "DESC": "Si te sorprenden conduciendo sin una licencia válida, tu seguro de auto podría no cubrir los daños o responsabilidades resultantes de un accidente. Se requiere una licencia de conducir válida para mantener la cobertura de seguro de auto y tener una protección completa.",
+      "ICON": "fas fa-id-card"
+    },
+    "MEDICAL_LIMITS": {
+      "TITLE": "Facturas Médicas Más Allá de los Límites de PIP / MedPay",
+      "DESC": "La Protección contra Lesiones Personales (PIP) o los Pagos Médicos (MedPay) solo cubren los gastos médicos hasta un cierto límite. Cualquier costo médico que supere estos límites no está cubierto por tu póliza de seguro de auto y debe ser pagado de tu bolsillo o a través de otros medios.",
+      "ICON": "fas fa-bandaid"
+    },
+    "LIABILITY_ONLY": {
+      "TITLE": "Daños a Tu Propio Auto (Pólizas Solo de Responsabilidad)",
+      "DESC": "Las pólizas solo de responsabilidad no cubren daños a tu propio vehículo. Si estás involucrado en un accidente, una póliza de seguro de responsabilidad cubrirá los daños a otros vehículos o propiedades, pero no pagará por las reparaciones de tu propio auto.",
+      "ICON": "fas fa-car-crash"
+    },
+    "UNLISTED_DRIVERS": {
+      "TITLE": "Conductores No Listados en Tu Hogar",
+      "DESC": "Si alguien que no está listado en tu póliza conduce tu auto y causa un accidente, tu seguro podría no cubrir los daños. Es importante asegurarse de que todos los conductores de tu hogar estén agregados a tu póliza de seguro de auto para garantizar una protección completa.",
+      "ICON": "fas fa-users"
+    },
+    "OUT_OF_COUNTRY": {
+      "TITLE": "Conducir Fuera del País (Excepto México con Endoso)",
+      "DESC": "El seguro de auto típicamente no cubre la conducción fuera de los Estados Unidos, excepto en México, donde se requiere un endoso específico. Si planeas conducir en el extranjero, necesitarás una cobertura adicional o una póliza adaptada para viajes internacionales.",
+      "ICON": "fas fa-globe-americas"
+    },
+    "GAP": {
+      "TITLE": "Brecha Entre el Valor del Auto y el Saldo del Préstamo (Sin Seguro de Brecha)",
+      "DESC": "Si tu auto se daña totalmente y debes más en tu préstamo que lo que vale el auto, el seguro de brecha es necesario para cubrir la diferencia. Sin él, tu póliza regular solo pagará el valor de mercado del vehículo, dejándote con el saldo restante del préstamo.",
+      "ICON": "fas fa-chart-line"
+    }
+  }
+},
     "COST": {
       "TITLE": "¿Cuánto Cuesta el Seguro de Auto en Texas?",
-      "DESC1": "El costo promedio del seguro de auto en Texas varía según factores como tu edad, historial de manejo y el tipo de cobertura que elijas. En promedio, los conductores de Texas pagan alrededor de $1,500 – $2,000 al año por cobertura total y $600 al año por cobertura mínima. Las tarifas pueden ser más altas en ciudades grandes o para conductores con historial de accidentes o violaciones.",
+      "DESC1": "El costo promedio del seguro de auto en Texas varía según factores como tu edad, historial de manejo y el tipo de cobertura que elijas. En promedio, los conductores de Texas pagan <a class='inline-link' href='https://www.prontoinsurance.com/blog/average-cost-auto-insurance-texas/#:~:text=Texas's%20average%20auto%20insurance%20rates,see%20premiums%20exceed%20$2%2C500%20annually.' rel='nofollow'> $1,500–$2,000 al año por cobertura total y $600 al año por cobertura mínima. </a> Las tarifas pueden ser más altas en ciudades grandes o para conductores con historial de accidentes o violaciones.",
       "DESC2": "Comparado con otros estados, las tarifas de seguro de auto en Texas tienden a ser más altas que el promedio nacional. Por ejemplo, el promedio nacional para cobertura total es de alrededor de $1,300 anuales, lo que hace que las tarifas de Texas sean aproximadamente un 15% más altas. Esto se debe a factores como mayores tasas de accidentes, riesgos relacionados con el clima y la densidad poblacional, que pueden afectar los costos del seguro."
     },
     "RATES": {
@@ -5851,7 +5930,7 @@
       "LIST": {
         "BUNDLING": {
           "TITLE": "Descuento por Combinación (Auto + Casa)",
-          "DESC": "Ahorra combinando tu seguro de auto y hogar con el mismo proveedor. Las aseguradoras ofrecen un descuento a los clientes con múltiples pólizas.",
+          "DESC": "Ahorra combinando tu seguro de auto y <a class='inline-link' href='/es/seguros-de-vivienda'>hogar</a> con el mismo proveedor. Las aseguradoras ofrecen un descuento a los clientes con múltiples pólizas.",
           "ICON": "fas fa-house-user"
         },
         "MULTI_CAR": {
@@ -6121,7 +6200,7 @@
       },
       "CONTENT": {
         "DESC1": "Si has sido señalado como un conductor de alto riesgo debido a un requisito de SR-22, DUI o licencia suspendida, no estás solo. Muchos conductores se encuentran en esta situación y se preocupan por ser rechazados por las compañías de seguros.",
-        "DESC2": "En Seguros A-State, entendemos que la vida sucede y estamos aquí para ayudarte a volver a la carretera. Trabajamos con conductores en estas situaciones todos los días. Nuestro objetivo es ayudarte a encontrar un seguro de auto asequible en Texas, incluso si otras compañías te han rechazado.",
+        "DESC2": "En <a class='inline-link' href='/' target='_blank'>Seguros A-State</a>, entendemos que la vida sucede y estamos aquí para ayudarte a volver a la carretera. Trabajamos con conductores en estas situaciones todos los días. Nuestro objetivo es ayudarte a encontrar un seguro de auto asequible en Texas, incluso si otras compañías te han rechazado.",
         "DESC3": "Estas situaciones a menudo hacen más difícil encontrar un seguro de auto barato, pero no lo hacen imposible. Trabajamos con múltiples aseguradoras que se especializan en cubrir conductores de alto riesgo, ofreciendo opciones que se adaptan a tus necesidades y presupuesto."
       }
     },
@@ -6130,7 +6209,7 @@
         "TITLE": "Hablamos Español / We Speak Your Language"
       },
       "CONTENT": {
-        "DESC1": "En Seguros A-State, nos enorgullece ofrecer servicios en español para nuestros clientes de habla hispana. Sabemos lo importante que es recibir atención personalizada en tu idioma, especialmente cuando se trata de asuntos tan importantes como tu seguro de auto. Nuestro equipo de agentes está disponible para ayudarte con cotizaciones, preguntas y opciones de cobertura, todo en español.",
+        "DESC1": "En <a class='inline-link' href='/' target='_blank'>Seguros A-State</a>, nos enorgullece ofrecer servicios en español para nuestros clientes de habla hispana. Sabemos lo importante que es recibir atención personalizada en tu idioma, especialmente cuando se trata de asuntos tan importantes como tu <a class='inline-link' href='/es/seguros-de-auto'>seguro de auto</a>. Nuestro equipo de agentes está disponible para ayudarte con cotizaciones, preguntas y opciones de cobertura, todo en español.",
         "DESC2": "En lugar de lidiar con sistemas telefónicos automáticos o papeleo confuso, puedes hablar directamente con un agente local que se toma el tiempo para responder tus preguntas y ayudarte a elegir la protección correcta, todo en español.",
         "DESC3": "Nuestro equipo multilingüe asiste a los clientes en español, inglés e hindi, lo que facilita que familias y conductores de diferentes orígenes comprendan su cobertura y obtengan un seguro de auto confiable en Texas."
       }
@@ -6405,9 +6484,87 @@
         ]
       }
     },
+    "NOT_COVERED": {
+  "HEADER": {
+    "TITLE": "¿Qué No Cubre El Seguro De Motocicleta En Texas?",
+    "DESC": "El seguro de motocicleta en Texas no cubre daños intencionales, fraude, carreras ni la conducción sin una licencia válida de clase M. Excluye el desgaste normal, pertenencias personales, piezas personalizadas que excedan los límites estándar, inundaciones, robo sin cobertura integral, uso comercial, conducción fuera del país y accidentes causados bajo la influencia de drogas o alcohol."
+  },
+  "LIST": {
+    "INTENTIONAL_DAMAGE": {
+      "TITLE": "Daño Intencional O Fraude",
+      "DESC": "El seguro de motocicleta no cubre daños causados intencionalmente por el conductor ni reclamaciones fraudulentas. Los actos deliberados, el vandalismo por parte del asegurado o los accidentes mal representados están excluidos, protegiendo a las aseguradoras contra abusos y fomentando la responsabilidad.",
+      "ICON": "fas fa-gavel"
+    },
+    "WEAR_TEAR": {
+      "TITLE": "Desgaste Normal Y Fallas Mecánicas",
+      "DESC": "Las pólizas no cubren el desgaste habitual, el envejecimiento ni las fallas mecánicas por falta de mantenimiento. El reemplazo de piezas, el desgaste del motor o las averías mecánicas son responsabilidad del conductor y requieren un mantenimiento adecuado para prevenir accidentes.",
+      "ICON": "fas fa-tools"
+    },
+    "RACING": {
+      "TITLE": "Carreras Y Eventos En Pista",
+      "DESC": "Los daños derivados de carreras, eventos competitivos o conducción en pista están excluidos. Las pólizas estándar se enfocan en el uso diario en carretera, por lo que participar en carreras sin cobertura especializada puede resultar en la negación de reclamaciones por accidentes o daños ocurridos en pistas.",
+      "ICON": "fas fa-flag-checkered"
+    },
+    "NO_LICENSE": {
+      "TITLE": "Conducción Sin Licencia Válida De Motocicleta (Clase M)",
+      "DESC": "Si conduces sin una licencia válida de motocicleta, las reclamaciones pueden ser rechazadas. El seguro exige una licencia adecuada de clase M para operar legalmente, garantizando que los conductores estén capacitados, cumplan con la normativa y sean elegibles para protección financiera en caso de accidente.",
+      "ICON": "fas fa-id-card"
+    },
+    "PERSONAL_BELONGINGS": {
+      "TITLE": "Pertenencias Personales Y Equipo De Conducción (Sin Endoso)",
+      "DESC": "El seguro estándar generalmente excluye artículos personales como ropa, dispositivos electrónicos y cascos. Para protegerlos, necesitas agregar un endoso. Sin él, las pérdidas o el robo de equipo personal no serán reembolsados, dejando al conductor responsable económicamente.",
+      "ICON": "fas fa-mobile-alt"
+    },
+    "LIABILITY_ONLY": {
+      "TITLE": "Daños A Tu Propia Motocicleta (Pólizas Solo De Responsabilidad Civil)",
+      "DESC": "La cobertura únicamente de responsabilidad civil no cubre los daños a tu motocicleta. Las reparaciones o el reemplazo después de colisiones, accidentes o robos son tu responsabilidad. Para una protección completa, se requiere cobertura por colisión o integral para proteger tu motocicleta.",
+      "ICON": "fas fa-motorcycle"
+    },
+    "FLOOD_WEATHER": {
+      "TITLE": "Daños Por Inundación Y Clima (Sin Cobertura Integral)",
+      "DESC": "Las inundaciones, el granizo y los daños por tormentas no están cubiertos bajo pólizas básicas de responsabilidad civil. Se requiere cobertura integral para proteger tu motocicleta contra eventos naturales, garantizando reparaciones o reemplazo sin afectar tus finanzas tras incidentes climáticos.",
+      "ICON": "fas fa-cloud-rain"
+    },
+    "THEFT": {
+      "TITLE": "Robo (Sin Cobertura Integral)",
+      "DESC": "Las pólizas estándar de responsabilidad civil no cubren el robo. Para proteger tu motocicleta contra robos, es necesaria la cobertura integral. Sin ella, las motocicletas o piezas robadas serán tu responsabilidad, exponiéndote a pérdidas totales.",
+      "ICON": "fas fa-user-secret"
+    },
+    "UNLISTED_RIDERS": {
+      "TITLE": "Conductores No Incluidos En Tu Póliza",
+      "DESC": "El seguro solo protege a los conductores incluidos en tu póliza. Si alguien no autorizado conduce tu motocicleta y sufre lesiones o causa daños, las reclamaciones pueden ser rechazadas. Siempre añade conductores ocasionales o autorizados para asegurar la cobertura.",
+      "ICON": "fas fa-users"
+    },
+    "BUSINESS_USE": {
+      "TITLE": "Uso Comercial Sin Cobertura Comercial",
+      "DESC": "Utilizar tu motocicleta con fines comerciales sin cobertura comercial puede invalidar las reclamaciones. Las pólizas estándar solo cubren uso personal, por lo que entregas, desplazamientos laborales o transporte remunerado requieren endosos especiales para mantener la cobertura completa.",
+      "ICON": "fas fa-briefcase"
+    },
+    "OUT_OF_COUNTRY": {
+      "TITLE": "Conducción Fuera Del País (Excepto México Con Endoso)",
+      "DESC": "Conducir fuera del país generalmente no está cubierto, excepto en México si cuentas con un endoso adicional. Sin esta extensión, los daños o accidentes ocurridos en el extranjero no estarán cubiertos, dejando al conductor responsable de todos los costos.",
+      "ICON": "fas fa-globe-americas"
+    },
+    "GAP": {
+      "TITLE": "Diferencia Entre El Valor De La Motocicleta Y El Saldo Del Préstamo (Sin Cobertura De Brecha)",
+      "DESC": "Si tu motocicleta se considera pérdida total, la cobertura básica solo paga el valor real en efectivo, no el saldo restante del préstamo. La cobertura de brecha cubre esta diferencia, evitando que tengas que seguir pagando por una motocicleta que ya no puedes usar.",
+      "ICON": "fas fa-chart-line"
+    },
+    "DUI": {
+      "TITLE": "Conducción Bajo La Influencia",
+      "DESC": "El seguro no cubre accidentes causados bajo la influencia de alcohol o drogas. Las reclamaciones pueden ser rechazadas y pueden aplicarse consecuencias legales. Conducir de manera segura y sobria garantiza que la cobertura se mantenga válida.",
+      "ICON": "fas fa-wine-bottle"
+    },
+    "CUSTOM_PARTS": {
+      "TITLE": "Piezas Personalizadas Que Exceden Los Límites Estándar (Sin Endoso)",
+      "DESC": "Las piezas mejoradas o de posventa que exceden los límites estándar de cobertura no están protegidas a menos que agregues un endoso. Sin él, los daños o el robo de componentes personalizados no serán reembolsados, dejando al conductor responsable de los costos de reparación o reemplazo.",
+      "ICON": "fas fa-wrench"
+    }
+  }
+},
     "COST": {
       "TITLE": "¿Cuánto Cuesta el Seguro de Motocicleta en Texas?",
-      "DESC1": "Los costos del seguro de motocicleta en Texas típicamente comienzan alrededor de $25 por mes para la cobertura de responsabilidad civil mínima en una moto estándar. Para cobertura completa, que incluye protección contra colisión e integral, la mayoría de los motociclistas pagan alrededor de $85 por mes. Factores como la edad, el tipo de moto, el historial de conducción y la ubicación pueden afectar las primas.",
+      "DESC1": "Los costos del seguro de motocicleta en Texas típicamente comienzan <a href='https://www.dairylandinsurance.com/motorcycle/texas-insurance-requirements#:~:text=The%20cost%20of%20a%20motorcycle,on%20these%20already%20competitive%20rates:' rel='nofollow' class='inline-link'>alrededor de $25 por mes</a> para la cobertura de responsabilidad civil mínima en una moto estándar. Para cobertura completa, que incluye protección contra colisión e integral, la mayoría de los motociclistas pagan alrededor de $85 por mes. Factores como la edad, el tipo de moto, el historial de conducción y la ubicación pueden afectar las primas.",
       "DESC2": "En comparación con otros estados, las tarifas de Texas son generalmente competitivas. Los motociclistas en California o Nueva York a menudo pagan primas más altas por una cobertura similar, mientras que estados como Florida o Arizona pueden ofrecer costos ligeramente más bajos. Comparar el seguro de motocicleta en Texas con el de otros estados ayuda a los propietarios a comprender las diferencias regionales y tomar decisiones informadas al elegir una póliza."
     },
     "RATES": {
@@ -6543,7 +6700,7 @@
       "LIST": {
         "BUNDLING": {
           "TITLE": "Descuento por Múltiples Pólizas / Combinación (Moto + Auto o Hogar)",
-          "DESC": "Ahorra combinando tu seguro de moto con pólizas de auto o hogar, reduciendo las primas generales con cobertura combinada.",
+          "DESC": "Ahorra combinando tu seguro de moto con pólizas de <a href='/es/seguros-de-auto' class='inline-link'>auto</a> o <a href='/es/seguros-de-vivienda' class='inline-link'>hogar</a>, reduciendo las primas generales con cobertura combinada.",
           "ICON": "fas fa-house-user"
         },
         "MULTI_MOTORCYCLE": {
@@ -6871,7 +7028,7 @@
       "STEPS": {
         "REACH_OUT": {
           "TITLE": "Paso 1 - Comunícate",
-          "DESCRIPTION": "Contacta a nuestro equipo para iniciar tu solicitud y obtener orientación rápida y amable desde el principio.",
+          "DESCRIPTION": "<a href='/es/contacto' class='inline-link'>Contacta a nuestro equipo</a> para iniciar tu solicitud y obtener orientación rápida y amable desde el principio.",
           "ICON": "fas fa-phone-alt"
         },
         "GET_ADVICE": {
@@ -6898,7 +7055,7 @@
       "STEPS": {
         "STEP_1": {
           "TITLE": "Paso 1: Obtén tu Cotización Comparativa Gratuita",
-          "DESCRIPTION": "Ten lista tu \"Página de Declaraciones\" actual. A-State Insurance comparará tu cobertura existente con más de 10 de las mejores aseguradoras de Texas para encontrar una tarifa más baja que ofrezca la misma o mejor protección.",
+          "DESCRIPTION": "Comienza <a href='/es/obtener-una-cotizacion' class='inline-link'>solicitando una cotización gratuita</a> para comparar varias opciones de seguro de motocicleta lado a lado. Revisamos tus datos y mostramos precios claros por teléfono, ayudándote a elegir sin cargos ocultos.",
           "ICON": "fas fa-file-invoice-dollar"
         },
         "STEP_2": {
@@ -6965,7 +7122,7 @@
     },
     "FREE_QUOTE": {
       "HEADER": "Obtén una Cotización Gratuita de Seguro de Motocicleta en Texas",
-      "DESCRIPTION": "Obtener una cotización gratuita de seguro de motocicleta en Texas es rápido y sencillo. En A-State Insurance, comparamos múltiples proveedores para encontrar una cobertura que se ajuste a tu moto, hábitos de conducción y presupuesto. Nuestros expertos te guían a través de cada opción, asegurándose de que entiendas cada detalle antes de decidirte. Ya sea que conduzcas una cruiser, una moto deportiva o una motocicleta de turismo, nuestro equipo adapta las cotizaciones a tus necesidades. Con tarifas transparentes y recomendaciones personalizadas, puedes asegurar protección para ti, tus pasajeros y tu moto. Solicitar tu cotización toma minutos, brindándote tranquilidad y confianza en la carretera."
+      "DESCRIPTION": "Obtener una cotización gratuita de seguro de motocicleta en Texas es rápido y sencillo. En <a class='inline-link white' href='/' target='_blank'>A-State Insurance</a>, comparamos múltiples proveedores para encontrar una cobertura que se ajuste a tu moto, hábitos de conducción y presupuesto. Nuestros expertos te guían a través de cada opción, asegurándose de que entiendas cada detalle antes de decidirte. Ya sea que conduzcas una cruiser, una moto deportiva o una motocicleta de turismo, nuestro equipo adapta las cotizaciones a tus necesidades. Con tarifas transparentes y recomendaciones personalizadas, puedes asegurar protección para ti, tus pasajeros y tu moto. Solicitar tu cotización toma minutos, brindándote tranquilidad y confianza en la carretera."
     }
   },
   "BOAT_INSURANCE": {

@@ -178,6 +178,29 @@
         </div>
     </section>
 
+      <section class="factors-impact-section bg-white">
+    <div class="container px-4">
+      <h2 class="section-title" [innerHTML]="'CAR_INSURANCE.NOT_COVERED.HEADER.TITLE' | translateHtml | async"></h2>
+      <p class="intro-text" [innerHTML]="'CAR_INSURANCE.NOT_COVERED.HEADER.DESC' | translateHtml | async"></p>
+
+      <div class="row mt-5">
+        @for (key of notCoveredKeys; track key) {
+        <div class="col-lg-6">
+          <div class="factor-item">
+            <div class="icon-wrapper">
+              <i [class]="'CAR_INSURANCE.NOT_COVERED.LIST.' + key + '.ICON' | translate"></i>
+            </div>
+            <div class="factor-content">
+              <h6><span [innerHTML]="('CAR_INSURANCE.NOT_COVERED.LIST.' + key + '.TITLE') | translateHtml | async"></span></h6>
+              <p><span [innerHTML]="('CAR_INSURANCE.NOT_COVERED.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+
     <section class="cost-section py-5">
         <div class="container">
             <div class="row">
@@ -245,7 +268,7 @@
 
                 <!-- Footer Info -->
                 <div class="d-flex justify-content-between mt-4 rates-footer-info">
-                    <p><span [innerHTML]="'CAR_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#">Insurify</a></p>
+                    <p><span [innerHTML]="'CAR_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="https://insurify.com/car-insurance/texas/average-cost/#rates-by-city" rel='nofollow'>Insurify</a></p>
                     <p class="last-updated" [innerHTML]="'CAR_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
                 </div>
                 <div class="disclaimer mt-2">
@@ -286,8 +309,7 @@
                     <div class="row g-2 text-center mb-2 align-items-center">
                         <div class="col-2">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
-                                [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ rate.company }}
+                                [class.data-pill-color-1]="i % 2 !== 0" [innerHTML]="rate.company">
                             </div>
                         </div>
                         <div class="col-3">
@@ -320,7 +342,7 @@
 
                 <!-- Footer Info -->
                 <div class="d-flex justify-content-between mt-4 rates-footer-info">
-                    <p><span [innerHTML]="'CAR_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#">MoneyGeek</a></p>
+                    <p><span [innerHTML]="'CAR_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="https://www.moneygeek.com/insurance/auto/average-cost-car-insurance-texas/#cheapest-companies" rel="nofollow">MoneyGeek</a></p>
                     <p class="last-updated" [innerHTML]="'CAR_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
                 </div>
                 <div class="disclaimer mt-2">
@@ -395,7 +417,7 @@
 
                 <!-- Footer Info -->
                 <div class="d-flex justify-content-between mt-4 rates-footer-info">
-                    <p><span [innerHTML]="'CAR_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#">MoneyGeek</a></p>
+                    <p><span [innerHTML]="'CAR_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="https://www.moneygeek.com/insurance/auto/average-cost-car-insurance-texas/#cost-by-vehicle" rel="nofollow">MoneyGeek</a></p>
                     <p class="last-updated" [innerHTML]="'CAR_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
                 </div>
                 <div class="disclaimer mt-2">
@@ -441,7 +463,7 @@
 
                 <!-- Footer Info -->
                 <div class="d-flex justify-content-between mt-4 rates-footer-info">
-                    <p><span [innerHTML]="'CAR_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#">MoneyGeek</a></p>
+                    <p><span [innerHTML]="'CAR_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="https://insurify.com/car-insurance/texas/average-cost/#rates-by-history" rel="nofollow">MoneyGeek</a></p>
                     <p class="last-updated" [innerHTML]="'CAR_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
                 </div>
                 <div class="disclaimer mt-2">
@@ -498,7 +520,7 @@
                 <!-- Footer Info -->
                 <div class="d-flex justify-content-between mt-4 rates-footer-info">
                     <p><span [innerHTML]="'CAR_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="https://smartinsurance.com/"
-                            target="_blank">Smart Insurance</a></p>
+                            target="_blank" rel="nofollow">Smart Insurance</a></p>
                     <p class="last-updated" [innerHTML]="'CAR_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
                 </div>
                 <div class="disclaimer mt-2">
@@ -642,9 +664,6 @@
             <h2 class="section-title" [innerHTML]="'CAR_INSURANCE.LANGUAGE_SUPPORT.HEADER.TITLE' | translateHtml | async"></h2>
             <div class="intro-text">
                 <p [innerHTML]="'CAR_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC1' | translateHtml | async"></p>
-                <p [innerHTML]="'CAR_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC2' | translateHtml | async"></p>
-                <p [innerHTML]="'CAR_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC3' | translateHtml | async"></p>
-
             </div>
         </div>
     </section>

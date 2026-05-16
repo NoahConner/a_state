@@ -67,6 +67,22 @@ export class MotorcycleInsurance {
   ]
 
 
+  notCoveredKeys = [
+    "INTENTIONAL_DAMAGE",
+    "WEAR_TEAR",
+    "RACING",
+    "NO_LICENSE",
+    "PERSONAL_BELONGINGS",
+    "LIABILITY_ONLY",
+    "FLOOD_WEATHER",
+    "THEFT",
+    "UNLISTED_RIDERS",
+    "BUSINESS_USE",
+    "OUT_OF_COUNTRY",
+    "GAP",
+    "DUI",
+    "CUSTOM_PARTS"
+  ];
 
   coverageComparison = [
     { category: "Minimum Liability Coverage", monthly: "$12", annual: "$124" },
