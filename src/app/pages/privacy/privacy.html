@@ -1,35 +1,21 @@
 <div class="privacyMain">
   <div class="topBanner">
     <div class="container">
-      <div class="h1">
-        {{ 'PRIVACY.HEADING' | translate }}
-      </div>
+      <div class="h1" [innerHTML]="'PRIVACY.HEADING' | translateHtml | async"></div>
     </div>
   </div>
 </div>
 
 <section class="privacy-section py-5">
   <div class="container">
-    <h2 class="section-title">
-      {{ 'PRIVACY.INTRODUCTION.TITLE' | translate }}
-    </h2>
-    <p>
-      {{ 'PRIVACY.INTRODUCTION.DESCRIPTION' | translate }}
-    </p>
-    <p class="effective-date">
-      {{ 'PRIVACY.INTRODUCTION.EFFECTIVE_DATE' | translate }}
-    </p>
+    <h2 class="section-title" [innerHTML]="'PRIVACY.INTRODUCTION.TITLE' | translateHtml | async"></h2>
+    <p [innerHTML]="'PRIVACY.INTRODUCTION.DESCRIPTION' | translateHtml | async"></p>
+    <p class="effective-date" [innerHTML]="'PRIVACY.INTRODUCTION.EFFECTIVE_DATE' | translateHtml | async"></p>
 
-    <h2 class="section-title mt-5">
-      {{ 'PRIVACY.INFORMATION_COLLECT.TITLE' | translate }}
-    </h2>
+    <h2 class="section-title mt-5" [innerHTML]="'PRIVACY.INFORMATION_COLLECT.TITLE' | translateHtml | async"></h2>
 
-    <h5 class="sub-title">
-      {{ 'PRIVACY.INFORMATION_COLLECT.PERSONAL_TITLE' | translate }}
-    </h5>
-    <p>
-      {{ 'PRIVACY.INFORMATION_COLLECT.PERSONAL_DESC' | translate }}
-    </p>
+    <h5 class="sub-title" [innerHTML]="'PRIVACY.INFORMATION_COLLECT.PERSONAL_TITLE' | translateHtml | async"></h5>
+    <p [innerHTML]="'PRIVACY.INFORMATION_COLLECT.PERSONAL_DESC' | translateHtml | async"></p>
 
     <ol>
       <li *ngFor="let item of personalList">
@@ -37,112 +23,62 @@
       </li>
     </ol>
 
-    <p>
-      {{ 'PRIVACY.INFORMATION_COLLECT.PERSONAL_NOTE' | translate }}
-    </p>
+    <p [innerHTML]="'PRIVACY.INFORMATION_COLLECT.PERSONAL_NOTE' | translateHtml | async"></p>
 
-    <h5 class="sub-title mt-4">
-      {{ 'PRIVACY.INFORMATION_COLLECT.AUTO_TITLE' | translate }}
-    </h5>
-    <p>
-      {{ 'PRIVACY.INFORMATION_COLLECT.AUTO_DESC' | translate }}
-    </p>
+    <h5 class="sub-title mt-4" [innerHTML]="'PRIVACY.INFORMATION_COLLECT.AUTO_TITLE' | translateHtml | async"></h5>
+    <p [innerHTML]="'PRIVACY.INFORMATION_COLLECT.AUTO_DESC' | translateHtml | async"></p>
 
     <ol>
       <li *ngFor="let item of AUTO_LIST">{{ item | translate }}</li>
     </ol>
-    <p>
-      {{ 'PRIVACY.INFORMATION_COLLECT.AUTO_NOTE' | translate }}
-    </p>
+    <p [innerHTML]="'PRIVACY.INFORMATION_COLLECT.AUTO_NOTE' | translateHtml | async"></p>
 
-    <h2 class="section-title mt-5">
-      {{ 'PRIVACY.HOW_COLLECT.TITLE' | translate }}
-    </h2>
-    <p>
-      {{ 'PRIVACY.HOW_COLLECT.DESCRIPTION' | translate }}
-    </p>
+    <h2 class="section-title mt-5" [innerHTML]="'PRIVACY.HOW_COLLECT.TITLE' | translateHtml | async"></h2>
+    <p [innerHTML]="'PRIVACY.HOW_COLLECT.DESCRIPTION' | translateHtml | async"></p>
 
-    <h2 class="section-title mt-5">
-      {{ 'PRIVACY.HOW_USE.TITLE' | translate }}
-    </h2>
-    <p>
-      {{ 'PRIVACY.HOW_USE.DESCRIPTION' | translate }}
-    </p>
+    <h2 class="section-title mt-5" [innerHTML]="'PRIVACY.HOW_USE.TITLE' | translateHtml | async"></h2>
+    <p [innerHTML]="'PRIVACY.HOW_USE.DESCRIPTION' | translateHtml | async"></p>
 
-    <h2 class="section-title mt-5">
-      {{ 'PRIVACY.COOKIES.TITLE' | translate }}
-    </h2>
-    <p>
-      {{ 'PRIVACY.COOKIES.DESCRIPTION' | translate }}
-    </p>
+    <h2 class="section-title mt-5" [innerHTML]="'PRIVACY.COOKIES.TITLE' | translateHtml | async"></h2>
+    <p [innerHTML]="'PRIVACY.COOKIES.DESCRIPTION' | translateHtml | async"></p>
 
-    <h2 class="section-title mt-5">
-      {{ 'PRIVACY.SHARING.TITLE' | translate }}
-    </h2>
-    <p>
-      {{ 'PRIVACY.SHARING.DESCRIPTION' | translate }}
-    </p>
+    <h2 class="section-title mt-5" [innerHTML]="'PRIVACY.SHARING.TITLE' | translateHtml | async"></h2>
+    <p [innerHTML]="'PRIVACY.SHARING.DESCRIPTION' | translateHtml | async"></p>
 
-    <h2 class="section-title mt-5">
-      {{ 'PRIVACY.SECURITY.TITLE' | translate }}
-    </h2>
-    <p>
-      {{ 'PRIVACY.SECURITY.DESCRIPTION' | translate }}
-    </p>
+    <h2 class="section-title mt-5" [innerHTML]="'PRIVACY.SECURITY.TITLE' | translateHtml | async"></h2>
+    <p [innerHTML]="'PRIVACY.SECURITY.DESCRIPTION' | translateHtml | async"></p>
 
-    <h2 class="section-title mt-5">
-      {{ 'PRIVACY.RIGHTS.TITLE' | translate }}
-    </h2>
-    <p>
-      {{ 'PRIVACY.RIGHTS.DESCRIPTION' | translate }}
-    </p>
+    <h2 class="section-title mt-5" [innerHTML]="'PRIVACY.RIGHTS.TITLE' | translateHtml | async"></h2>
+    <p [innerHTML]="'PRIVACY.RIGHTS.DESCRIPTION' | translateHtml | async"></p>
 
-    <h2 class="section-title mt-5">
-      {{ 'PRIVACY.THIRD_PARTY.TITLE' | translate }}
-    </h2>
-    <p>
-      {{ 'PRIVACY.THIRD_PARTY.DESCRIPTION' | translate }}
-    </p>
+    <h2 class="section-title mt-5" [innerHTML]="'PRIVACY.THIRD_PARTY.TITLE' | translateHtml | async"></h2>
+    <p [innerHTML]="'PRIVACY.THIRD_PARTY.DESCRIPTION' | translateHtml | async"></p>
 
-    <h2 class="section-title mt-5">
-      {{ 'PRIVACY.CHILDREN.TITLE' | translate }}
-    </h2>
-    <p>
-      {{ 'PRIVACY.CHILDREN.DESCRIPTION' | translate }}
-    </p>
+    <h2 class="section-title mt-5" [innerHTML]="'PRIVACY.CHILDREN.TITLE' | translateHtml | async"></h2>
+    <p [innerHTML]="'PRIVACY.CHILDREN.DESCRIPTION' | translateHtml | async"></p>
 
-    <h2 class="section-title mt-5">
-      {{ 'PRIVACY.UPDATES.TITLE' | translate }}
-    </h2>
-    <p>
-      {{ 'PRIVACY.UPDATES.DESCRIPTION' | translate }}
-    </p>
+    <h2 class="section-title mt-5" [innerHTML]="'PRIVACY.UPDATES.TITLE' | translateHtml | async"></h2>
+    <p [innerHTML]="'PRIVACY.UPDATES.DESCRIPTION' | translateHtml | async"></p>
 
-    <h2 class="section-title mt-5">
-      {{ 'PRIVACY.CONTACT.TITLE' | translate }}
-    </h2>
-    <p>
-      {{ 'PRIVACY.CONTACT.DESCRIPTION' | translate }}
-    </p>
+    <h2 class="section-title mt-5" [innerHTML]="'PRIVACY.CONTACT.TITLE' | translateHtml | async"></h2>
+    <p [innerHTML]="'PRIVACY.CONTACT.DESCRIPTION' | translateHtml | async"></p>
 
     <div class="contact-info">
       <p>
-        <strong>{{ 'PRIVACY.CONTACT.PHONE' | translate }}</strong>
+        <strong [innerHTML]="'PRIVACY.CONTACT.PHONE' | translateHtml | async"></strong>
         <a href="tel:7133577771">(713) 357-7771</a>
       </p>
       <p>
-        <strong>{{ 'PRIVACY.CONTACT.EMAIL' | translate }}</strong>
+        <strong [innerHTML]="'PRIVACY.CONTACT.EMAIL' | translateHtml | async"></strong>
         <a href="mailto:save@astateinsurance.com">
           save@astateinsurance.com
         </a>
       </p>
       <p>
-        <strong>{{ 'PRIVACY.CONTACT.ADDRESS' | translate }}</strong>
+        <strong [innerHTML]="'PRIVACY.CONTACT.ADDRESS' | translateHtml | async"></strong>
         707 Shotwell St, Houston, TX 77020, United States
       </p>
-      <p class="highlight">
-        {{ 'PRIVACY.CONTACT.FOOTER' | translate }}
-      </p>
+      <p class="highlight" [innerHTML]="'PRIVACY.CONTACT.FOOTER' | translateHtml | async"></p>
     </div>
   </div>
 </section>
@@ -160,7 +96,7 @@
           </div>
         </div>
         <div class="col-lg-6 col-sm-6 col-xs-12">
-          <div class="h4">{{ 'FOOTER.SLOGAN' | translate }}</div>
+          <div class="h4" [innerHTML]="'FOOTER.SLOGAN' | translateHtml | async"></div>
         </div>
       </div>
     </div>

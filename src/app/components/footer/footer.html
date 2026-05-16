@@ -32,7 +32,7 @@
     </div>
 
     <div class="upperLink">
-      <div class="uph">{{ 'FOOTER.QUICK_LINKS.TITLE' | translate }}</div>
+      <div class="uph" [innerHTML]="'FOOTER.QUICK_LINKS.TITLE' | translateHtml | async"></div>
     </div>
 
     <div class="subUppers">
@@ -176,9 +176,7 @@
             <img src="/assets/images/policy.png" alt="" />
           </div>
           <div class="he">
-            <a [routerLink]="getRoute('privacyPolicy')">{{
-              'FOOTER.POLICIES.PRIVACY' | translate
-              }}</a>
+            <a [routerLink]="getRoute('privacyPolicy')" [innerHTML]="'FOOTER.POLICIES.PRIVACY' | translateHtml | async"></a>
           </div>
         </div>
         <div class="b1">
@@ -186,8 +184,7 @@
             <img src="/assets/images/terms.png" alt="" />
           </div>
           <div class="he">
-            <a [routerLink]="getRoute('termsAndConditions')">
-              {{ 'FOOTER.POLICIES.TERMS' | translate }}</a>
+            <a [routerLink]="getRoute('termsAndConditions')" [innerHTML]="'FOOTER.POLICIES.TERMS' | translateHtml | async"></a>
           </div>
         </div>
 
@@ -196,7 +193,7 @@
             <img src="/assets/images/terms.png" alt="" />
           </div>
           <div class="he">
-            <a [routerLink]="getRoute('careers')"> {{ 'FOOTER.POLICIES.CAREERS' | translate }}</a>
+            <a [routerLink]="getRoute('careers')" [innerHTML]="'FOOTER.POLICIES.CAREERS' | translateHtml | async"></a>
           </div>
         </div>
       </div>
@@ -223,13 +220,11 @@
           <div class="icn">
             <i class="fas fa-envelope"></i>
           </div>
-          <div class="he"><a href="mailto:save@astateinsurance.com">
-              {{ 'FOOTER.CONTACT.EMAIL' | translate }}
-            </a></div>
+          <div class="he"><a href="mailto:save@astateinsurance.com" [innerHTML]="'FOOTER.CONTACT.EMAIL' | translateHtml | async"></a></div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="laster">{{ 'FOOTER.COPYRIGHT' | translate }}</div>
+<div class="laster" [innerHTML]="'FOOTER.COPYRIGHT' | translateHtml | async"></div>

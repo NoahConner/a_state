@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="col-lg-6 col-sm-6 col-xs-12">
-          <div class="h4">{{ 'FOOTER.SLOGAN' | translate }}</div>
+          <div class="h4" [innerHTML]="'FOOTER.SLOGAN' | translateHtml | async"></div>
         </div>
       </div>
     </div>

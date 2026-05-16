@@ -14,12 +14,8 @@
     <!-- Header -->
     <div class="row">
       <div class="col-lg-10">
-        <h1 class="main-title">
-          {{ 'CAREERS.AGENCY.MAIN_TITLE' | translate }}
-        </h1>
-        <!-- <p class="section-text">
-          {{ 'CAREERS.AGENCY.DESCRIPTION' | translate }}
-        </p> -->
+        <h1 class="main-title" [innerHTML]="'CAREERS.AGENCY.MAIN_TITLE' | translateHtml | async"></h1>
+        <!-- <p class="section-text" [innerHTML]="'CAREERS.AGENCY.DESCRIPTION' | translateHtml | async"></p> -->
         <p
           class="section-text"
           [innerHTML]="'CAREERS.AGENCY.DESCRIPTION' | translateHtml | async"
@@ -30,79 +26,45 @@
     <!-- Three Pillars -->
     <div class="row mt-5">
       <div class="col-lg-10">
-        <h2 class="section-heading">
-          {{ 'CAREERS.THREE_PILLARS.TITLE' | translate }}
-        </h2>
+        <h2 class="section-heading" [innerHTML]="'CAREERS.THREE_PILLARS.TITLE' | translateHtml | async"></h2>
 
-        <h5 class="pillar-title">
-          {{ 'CAREERS.THREE_PILLARS.PILLAR1.TITLE' | translate }}
-        </h5>
-        <p class="section-text">
-          {{ 'CAREERS.THREE_PILLARS.PILLAR1.DESCRIPTION' | translate }}
-        </p>
+        <h5 class="pillar-title" [innerHTML]="'CAREERS.THREE_PILLARS.PILLAR1.TITLE' | translateHtml | async"></h5>
+        <p class="section-text" [innerHTML]="'CAREERS.THREE_PILLARS.PILLAR1.DESCRIPTION' | translateHtml | async"></p>
 
-        <h5 class="pillar-title">
-          {{ 'CAREERS.THREE_PILLARS.PILLAR2.TITLE' | translate }}
-        </h5>
-        <p class="section-text">
-          {{ 'CAREERS.THREE_PILLARS.PILLAR2.DESCRIPTION' | translate }}
-        </p>
+        <h5 class="pillar-title" [innerHTML]="'CAREERS.THREE_PILLARS.PILLAR2.TITLE' | translateHtml | async"></h5>
+        <p class="section-text" [innerHTML]="'CAREERS.THREE_PILLARS.PILLAR2.DESCRIPTION' | translateHtml | async"></p>
 
-        <h5 class="pillar-title">
-          {{ 'CAREERS.THREE_PILLARS.PILLAR3.TITLE' | translate }}
-        </h5>
-        <p class="section-text">
-          {{ 'CAREERS.THREE_PILLARS.PILLAR3.DESCRIPTION' | translate }}
-        </p>
+        <h5 class="pillar-title" [innerHTML]="'CAREERS.THREE_PILLARS.PILLAR3.TITLE' | translateHtml | async"></h5>
+        <p class="section-text" [innerHTML]="'CAREERS.THREE_PILLARS.PILLAR3.DESCRIPTION' | translateHtml | async"></p>
       </div>
     </div>
 
     <!-- Culture Section -->
     <div class="row mt-5">
       <div class="col-lg-10">
-        <h2 class="culture-title">
-          {{ 'CAREERS.CULTURE.TITLE' | translate }}
-        </h2>
+        <h2 class="culture-title" [innerHTML]="'CAREERS.CULTURE.TITLE' | translateHtml | async"></h2>
 
         <blockquote class="culture-quote">"{{ 'CAREERS.CULTURE.QUOTE' | translate }}"</blockquote>
 
-        <p class="section-text">
-          {{ 'CAREERS.CULTURE.DESCRIPTION' | translate }}
-        </p>
+        <p class="section-text" [innerHTML]="'CAREERS.CULTURE.DESCRIPTION' | translateHtml | async"></p>
       </div>
     </div>
 
     <!-- What We Stand For -->
     <div class="row mt-5">
       <div class="col-lg-10">
-        <h2 class="section-heading">
-          {{ 'CAREERS.STAND_FOR.TITLE' | translate }}
-        </h2>
+        <h2 class="section-heading" [innerHTML]="'CAREERS.STAND_FOR.TITLE' | translateHtml | async"></h2>
 
-        <p class="section-text">
-          {{ 'CAREERS.STAND_FOR.DESCRIPTION' | translate }}
-        </p>
+        <p class="section-text" [innerHTML]="'CAREERS.STAND_FOR.DESCRIPTION' | translateHtml | async"></p>
 
-        <h5 class="pillar-title">
-          {{ 'CAREERS.STAND_FOR.GROWTH.TITLE' | translate }}
-        </h5>
-        <p class="section-text">
-          {{ 'CAREERS.STAND_FOR.GROWTH.DESCRIPTION' | translate }}
-        </p>
+        <h5 class="pillar-title" [innerHTML]="'CAREERS.STAND_FOR.GROWTH.TITLE' | translateHtml | async"></h5>
+        <p class="section-text" [innerHTML]="'CAREERS.STAND_FOR.GROWTH.DESCRIPTION' | translateHtml | async"></p>
 
-        <h5 class="pillar-title">
-          {{ 'CAREERS.STAND_FOR.FLEXIBILITY.TITLE' | translate }}
-        </h5>
-        <p class="section-text">
-          {{ 'CAREERS.STAND_FOR.FLEXIBILITY.DESCRIPTION' | translate }}
-        </p>
+        <h5 class="pillar-title" [innerHTML]="'CAREERS.STAND_FOR.FLEXIBILITY.TITLE' | translateHtml | async"></h5>
+        <p class="section-text" [innerHTML]="'CAREERS.STAND_FOR.FLEXIBILITY.DESCRIPTION' | translateHtml | async"></p>
 
-        <h5 class="pillar-title">
-          {{ 'CAREERS.STAND_FOR.MISSION.TITLE' | translate }}
-        </h5>
-        <p class="section-text">
-          {{ 'CAREERS.STAND_FOR.MISSION.DESCRIPTION' | translate }}
-        </p>
+        <h5 class="pillar-title" [innerHTML]="'CAREERS.STAND_FOR.MISSION.TITLE' | translateHtml | async"></h5>
+        <p class="section-text" [innerHTML]="'CAREERS.STAND_FOR.MISSION.DESCRIPTION' | translateHtml | async"></p>
       </div>
     </div>
 
@@ -187,9 +149,7 @@
           </div>
         </div>
         <div class="col-lg-6 col-sm-6 col-xs-12">
-          <div class="h4">
-            {{ 'FOOTER.SLOGAN' | translate }}
-          </div>
+          <div class="h4" [innerHTML]="'FOOTER.SLOGAN' | translateHtml | async"></div>
         </div>
       </div>
     </div>

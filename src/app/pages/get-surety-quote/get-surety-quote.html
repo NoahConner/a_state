@@ -2,7 +2,7 @@
   <div class="topBanner">
     <div class="container">
       <div class="h1">{{ 'SURETY_BOND_QUOTE.HEADING' | translate }}
-        <p class="heroDesc">{{ 'SURETY_BOND_QUOTE.DESCRIPTION' | translate }}</p>
+        <p class="heroDesc" [innerHTML]="'SURETY_BOND_QUOTE.DESCRIPTION' | translateHtml | async"></p>
       </div>
     </div>
   </div>
@@ -12,19 +12,19 @@
       <div class="d-flex justify-content-between align-items-center stepper">
         <div class="step" [class.active]="currentStep === 1">
           <div class="circle"><img src="/assets/images/quote-step-1.png" alt="" /></div>
-          <p>{{ 'SURETY_BOND_QUOTE.STEPPER.STEP1.TITLE' | translate }}</p>
+          <p [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP1.TITLE' | translateHtml | async"></p>
         </div>
         <div class="step" [class.active]="currentStep === 2">
           <div class="circle"><img src="/assets/images/quote-step-2.png" alt="" /></div>
-          <p>{{ 'SURETY_BOND_QUOTE.STEPPER.STEP2.TITLE' | translate }}</p>
+          <p [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP2.TITLE' | translateHtml | async"></p>
         </div>
         <div class="step" [class.active]="currentStep === 3">
           <div class="circle"><img src="/assets/images/quote-step-3.png" alt="" /></div>
-          <p>{{ 'SURETY_BOND_QUOTE.STEPPER.STEP3.TITLE' | translate }}</p>
+          <p [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP3.TITLE' | translateHtml | async"></p>
         </div>
         <div class="step" [class.active]="currentStep === 4">
           <div class="circle"><img src="/assets/images/quote-step-4.png" alt="" /></div>
-          <p>{{ 'SURETY_BOND_QUOTE.STEPPER.STEP4.TITLE' | translate }}</p>
+          <p [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP4.TITLE' | translateHtml | async"></p>
         </div>
 
       </div>
@@ -34,7 +34,7 @@
       <div class="steps-for-custom-quote">
         <div class="container" *ngIf="currentStep === 1">
           <div class="form-wrapper">
-            <h2 class="form-title">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP1.TITLE' | translate }}</h2>
+            <h2 class="form-title" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP1.TITLE' | translateHtml | async"></h2>
 
             <div class="form-content-border">
               <div class="row gy-3 mb-2">
@@ -45,9 +45,7 @@
                     [class.is-invalid]="suretyQuoteForm.get('full_name')?.invalid && suretyQuoteForm.get('full_name')?.touched"
                     class="form-control" placeholder="John Doe" />
                   <div class="invalid-feedback"
-                    *ngIf="suretyQuoteForm.get('full_name')?.invalid && suretyQuoteForm.get('full_name')?.touched">
-                    {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
-                  </div>
+                    *ngIf="suretyQuoteForm.get('full_name')?.invalid && suretyQuoteForm.get('full_name')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>
                 <div class="col-md-4">
                   <label class="form-label">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP1.FIELDS.EMAIL' | translate
@@ -56,9 +54,7 @@
                     [class.is-invalid]="suretyQuoteForm.get('email_address')?.invalid && suretyQuoteForm.get('email_address')?.touched"
                     class="form-control" id="email_address" placeholder="johndoe@email.com" />
                   <div class="invalid-feedback"
-                    *ngIf="suretyQuoteForm.get('email_address')?.invalid && suretyQuoteForm.get('email_address')?.touched">
-                    {{ 'GET_AUTO_QUOTE.ERRORS.EMAIL' | translate }}
-                  </div>
+                    *ngIf="suretyQuoteForm.get('email_address')?.invalid && suretyQuoteForm.get('email_address')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.EMAIL' | translateHtml | async"></div>
                 </div>
               </div>
 
@@ -70,9 +66,7 @@
                     [class.is-invalid]="suretyQuoteForm.get('phone_number')?.invalid && suretyQuoteForm.get('phone_number')?.touched"
                     class="form-control" placeholder="+1 234 567 8900" />
                   <div class="invalid-feedback"
-                    *ngIf="suretyQuoteForm.get('phone_number')?.invalid && suretyQuoteForm.get('phone_number')?.touched">
-                    {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
-                  </div>
+                    *ngIf="suretyQuoteForm.get('phone_number')?.invalid && suretyQuoteForm.get('phone_number')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>
               </div>
 
@@ -86,7 +80,7 @@
 
         <div class="container mb-4 mt-4" *ngIf="currentStep === 2">
           <div class="form-wrapper">
-            <h2 class="form-title">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP2.TITLE' | translate }}</h2>
+            <h2 class="form-title" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP2.TITLE' | translateHtml | async"></h2>
 
             <div class="form-content-border">
               <div class="row gy-3 mb-3">
@@ -97,37 +91,29 @@
                     [class.is-invalid]="suretyQuoteForm.get('bond_type')?.invalid && suretyQuoteForm.get('bond_type')?.touched"
                     class="form-control" placeholder="" />
                   <div class="invalid-feedback"
-                    *ngIf="suretyQuoteForm.get('bond_type')?.invalid && suretyQuoteForm.get('bond_type')?.touched">
-                    {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
-                  </div>
+                    *ngIf="suretyQuoteForm.get('bond_type')?.invalid && suretyQuoteForm.get('bond_type')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>
               </div>
 
               <div class="row gy-3 mb-3">
                 <div class="col-md-8">
-                  <label class="form-label">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP2.FIELDS.BOND_AMOUNT' | translate
-                    }}</label>
+                  <label class="form-label" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP2.FIELDS.BOND_AMOUNT' | translateHtml | async"></label>
                   <input type="text" formControlName="bond_amount"
                     [class.is-invalid]="suretyQuoteForm.get('bond_amount')?.invalid && suretyQuoteForm.get('bond_amount')?.touched"
                     class="form-control" placeholder="" />
                   <div class="invalid-feedback"
-                    *ngIf="suretyQuoteForm.get('bond_amount')?.invalid && suretyQuoteForm.get('bond_amount')?.touched">
-                    {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
-                  </div>
+                    *ngIf="suretyQuoteForm.get('bond_amount')?.invalid && suretyQuoteForm.get('bond_amount')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>
               </div>
 
               <div class="row gy-3 mb-3">
                 <div class="col-md-8">
-                  <label class="form-label">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP2.FIELDS.OBLIGEE_NAME' | translate
-                    }}</label>
+                  <label class="form-label" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP2.FIELDS.OBLIGEE_NAME' | translateHtml | async"></label>
                   <input type="text" formControlName="obligee_name"
                     [class.is-invalid]="suretyQuoteForm.get('obligee_name')?.invalid && suretyQuoteForm.get('obligee_name')?.touched"
                     class="form-control" placeholder="" />
                   <div class="invalid-feedback"
-                    *ngIf="suretyQuoteForm.get('obligee_name')?.invalid && suretyQuoteForm.get('obligee_name')?.touched">
-                    {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
-                  </div>
+                    *ngIf="suretyQuoteForm.get('obligee_name')?.invalid && suretyQuoteForm.get('obligee_name')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>
               </div>
 
@@ -144,14 +130,12 @@
 
         <div class="container mb-4" *ngIf="currentStep === 3">
           <div class="form-wrapper">
-            <h2 class="form-title">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP3.TITLE' | translate }}</h2>
+            <h2 class="form-title" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP3.TITLE' | translateHtml | async"></h2>
 
             <div class="form-content-border">
               <div class="row gy-3 mt-2">
                 <div class="selection-group">
-                  <h4 class="selection-heading">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP3.FIELDS.CREDIT_SCORE_TITLE' |
-                    translate }}
-                  </h4>
+                  <h4 class="selection-heading" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP3.FIELDS.CREDIT_SCORE_TITLE' | translateHtml | async"></h4>
 
                   <div class="coverage-options">
                     <div class="form-check"
@@ -164,24 +148,19 @@
                       </label>
                     </div>
                     <div class="invalid-feedback d-block"
-                      *ngIf="suretyQuoteForm.get('estimated_credit_score')?.invalid && suretyQuoteForm.get('estimated_credit_score')?.touched">
-                      {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
-                    </div>
+                      *ngIf="suretyQuoteForm.get('estimated_credit_score')?.invalid && suretyQuoteForm.get('estimated_credit_score')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                   </div>
                 </div>
               </div>
 
               <div class="row gy-3 mb-3 mt-4">
                 <div class="col-md-8">
-                  <label class="form-label">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP3.FIELDS.YEARS_IN_BUSINESS' | translate
-                    }}</label>
+                  <label class="form-label" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP3.FIELDS.YEARS_IN_BUSINESS' | translateHtml | async"></label>
                   <input type="text" formControlName="years_in_business"
                     [class.is-invalid]="suretyQuoteForm.get('years_in_business')?.invalid && suretyQuoteForm.get('years_in_business')?.touched"
                     class="form-control" placeholder="" />
                   <div class="invalid-feedback"
-                    *ngIf="suretyQuoteForm.get('years_in_business')?.invalid && suretyQuoteForm.get('years_in_business')?.touched">
-                    {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
-                  </div>
+                    *ngIf="suretyQuoteForm.get('years_in_business')?.invalid && suretyQuoteForm.get('years_in_business')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>
               </div>
               <div class="d-flex gap-3 mt-4">
@@ -197,13 +176,12 @@
 
         <div class="container mt-4 mb-4" *ngIf="currentStep === 4">
           <div class="form-wrapper">
-            <h2 class="form-title">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP4.TITLE' | translate }}</h2>
+            <h2 class="form-title" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP4.TITLE' | translateHtml | async"></h2>
 
             <div class="form-content-border">
               <div class="row gy-3 mb-3">
                 <div class="col-md-8">
-                  <label class="form-label">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP4.FIELDS.LANGUAGE' | translate
-                    }}</label>
+                  <label class="form-label" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP4.FIELDS.LANGUAGE' | translateHtml | async"></label>
                   <select class="form-select" formControlName="preferred_language"
                     [class.is-invalid]="suretyQuoteForm.get('preferred_language')?.invalid && suretyQuoteForm.get('preferred_language')?.touched">
                     <option
@@ -211,25 +189,20 @@
                       [value]="option">{{ option }}</option>
                   </select>
                   <div class="invalid-feedback"
-                    *ngIf="suretyQuoteForm.get('preferred_language')?.invalid && suretyQuoteForm.get('preferred_language')?.touched">
-                    {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
-                  </div>
+                    *ngIf="suretyQuoteForm.get('preferred_language')?.invalid && suretyQuoteForm.get('preferred_language')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>
               </div>
 
               <div class="row gy-3 mb-3">
                 <div class="col-md-8">
-                  <label class="form-label">{{ 'SURETY_BOND_QUOTE.STEPPER.STEP4.FIELDS.BEST_TIME' | translate
-                    }}</label>
+                  <label class="form-label" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP4.FIELDS.BEST_TIME' | translateHtml | async"></label>
                   <select class="form-select" formControlName="best_time_to_call"
                     [class.is-invalid]="suretyQuoteForm.get('best_time_to_call')?.invalid && suretyQuoteForm.get('best_time_to_call')?.touched">
                     <option *ngFor="let option of ('SURETY_BOND_QUOTE.STEPPER.STEP4.FIELDS.TIME_OPTIONS' | translate)"
                       [value]="option">{{ option }}</option>
                   </select>
                   <div class="invalid-feedback"
-                    *ngIf="suretyQuoteForm.get('best_time_to_call')?.invalid && suretyQuoteForm.get('best_time_to_call')?.touched">
-                    {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
-                  </div>
+                    *ngIf="suretyQuoteForm.get('best_time_to_call')?.invalid && suretyQuoteForm.get('best_time_to_call')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>
               </div>
 
@@ -248,47 +221,44 @@
 
     <div class="quote-summary-container p-4 p-md-5 mt-5">
       <div class="container max-width-700">
-        <h2 class="text-center mb-4 section-title">{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.MAIN_TITLE' | translate }}
-        </h2>
-        <p class="text-center mb-4">{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.MAIN_DESC' | translate }}</p>
+        <h2 class="text-center mb-4 section-title" [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.MAIN_TITLE' | translateHtml | async"></h2>
+        <p class="text-center mb-4" [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.MAIN_DESC' | translateHtml | async"></p>
 
-        <h2 class="text-center mb-4 section-title">{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.SUMMARY_TITLE' | translate }}
-        </h2>
+        <h2 class="text-center mb-4 section-title" [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.SUMMARY_TITLE' | translateHtml | async"></h2>
 
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="m-0">{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD1.TITLE' | translate }}</h5>
+            <h5 class="m-0" [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD1.TITLE' | translateHtml | async"></h5>
             <a href="javascript:void(0)" class="edit-link" (click)="goToStep(1)"><i class="bi bi-pencil-square"></i> {{
               'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD1.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.NAME' | translate
-                }}</strong>: {{ suretyQuoteForm.get('full_name')?.value }}
+            <li><strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.NAME' | translateHtml | async"></strong>: {{ suretyQuoteForm.get('full_name')?.value }}
             </li>
-            <li><strong>{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.PHONE' | translate }}</strong>:
+            <li><strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.PHONE' | translateHtml | async"></strong>:
               {{ suretyQuoteForm.get('phone_number')?.value }}
             </li>
-            <li><strong>{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.EMAIL' | translate }}</strong>:
+            <li><strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.EMAIL' | translateHtml | async"></strong>:
               {{ suretyQuoteForm.get('email_address')?.value }}</li>
           </ul>
         </div>
 
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="m-0">{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD2.TITLE' | translate }}</h5>
+            <h5 class="m-0" [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD2.TITLE' | translateHtml | async"></h5>
             <a href="javascript:void(0)" class="edit-link" (click)="goToStep(2)"><i class="bi bi-pencil-square"></i> {{
               'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD2.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.BOND_TYPE' | translate }}</strong>:
+            <li><strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.BOND_TYPE' | translateHtml | async"></strong>:
               {{ suretyQuoteForm.get('bond_type')?.value }}</li>
             <li>
-              <strong>{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.BOND_AMOUNT' | translate }}</strong>:
+              <strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.BOND_AMOUNT' | translateHtml | async"></strong>:
               {{ suretyQuoteForm.get('bond_amount')?.value }}
             </li>
 
             <li>
-              <strong>{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.OBLIGEE' | translate }}</strong>:
+              <strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.OBLIGEE' | translateHtml | async"></strong>:
               {{ suretyQuoteForm.get('obligee_name')?.value }}
             </li>
           </ul>
@@ -296,14 +266,14 @@
 
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="m-0">{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD3.TITLE' | translate }}</h5>
+            <h5 class="m-0" [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD3.TITLE' | translateHtml | async"></h5>
             <a href="javascript:void(0)" class="edit-link" (click)="goToStep(3)"><i class="bi bi-pencil-square"></i> {{
               'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD3.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.CREDIT_SCORE' | translate }}</strong>:
+            <li><strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.CREDIT_SCORE' | translateHtml | async"></strong>:
               {{ suretyQuoteForm.get('estimated_credit_score')?.value }}</li>
-            <li><strong>{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.YEARS_IN_BUSINESS' | translate }}</strong>: {{
+            <li><strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.YEARS_IN_BUSINESS' | translateHtml | async"></strong>: {{
               suretyQuoteForm.get('years_in_business')?.value }}
             </li>
           </ul>
@@ -311,14 +281,14 @@
 
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="m-0">{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD4.TITLE' | translate }}</h5>
+            <h5 class="m-0" [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD4.TITLE' | translateHtml | async"></h5>
             <a href="javascript:void(0)" class="edit-link" (click)="goToStep(4)"><i class="bi bi-pencil-square"></i> {{
               'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD4.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.LANGUAGE' | translate }}</strong>:
+            <li><strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.LANGUAGE' | translateHtml | async"></strong>:
               {{ suretyQuoteForm.get('preferred_language')?.value }}</li>
-            <li><strong>{{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.BEST_TIME' | translate }}</strong>:
+            <li><strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.BEST_TIME' | translateHtml | async"></strong>:
               {{ suretyQuoteForm.get('best_time_to_call')?.value }}</li>
           </ul>
         </div>
@@ -328,9 +298,7 @@
           <div class="form-check mb-4">
             <input class="form-check-input terms-check" type="checkbox" id="termsCheck"
               (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
-            <label class="form-check-label terms-check-label small" for="termsCheck">
-              {{ 'SURETY_BOND_QUOTE.QUOTE_SUMMARY.DISCLAIMER' | translate }}
-            </label>
+            <label class="form-check-label terms-check-label small" for="termsCheck" [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.DISCLAIMER' | translateHtml | async"></label>
           </div>
           <button class="btn btn-submit" (click)="sendSuretyQuote()" [disabled]="loading || !termsAccepted">
             <span *ngIf="loading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
@@ -355,7 +323,7 @@
             </div>
           </div>
           <div class="col-lg-6 col-sm-6 col-xs-12">
-            <div class="h4">{{ 'FOOTER.SLOGAN' | translate }}</div>
+            <div class="h4" [innerHTML]="'FOOTER.SLOGAN' | translateHtml | async"></div>
           </div>
         </div>
       </div>

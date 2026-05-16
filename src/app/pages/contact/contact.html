@@ -3,7 +3,7 @@
     <div class="container">
       <div class="h1">
         {{ 'CONTACT.HEADING' | translate }} <br />
-        <strong> {{ 'CONTACT.HEADINGSTRONG' | translate }}</strong>
+        <strong [innerHTML]="'CONTACT.HEADINGSTRONG' | translateHtml | async"></strong>
       </div>
     </div>
   </div>
@@ -21,7 +21,7 @@
         <!-- Right Form -->
         <div class="col-lg-6">
           <div class="contact-form-wrapper">
-            <h2 class="contact-title">{{ 'CONTACT.CONTACT-INSURANCE.HEADING' | translate }}</h2>
+            <h2 class="contact-title" [innerHTML]="'CONTACT.CONTACT-INSURANCE.HEADING' | translateHtml | async"></h2>
 
             <form class="mt-4">
               <div class="row g-3">
@@ -42,7 +42,7 @@
 
                 <div class="col-md-6">
                   <select class="form-select custom-input">
-                    <option selected>{{ 'CONTACT.CONTACT-INSURANCE.FEILD4' | translate }}</option>
+                    <option selected [innerHTML]="'CONTACT.CONTACT-INSURANCE.FEILD4' | translateHtml | async"></option>
                   </select>
                 </div>
 
@@ -66,7 +66,7 @@
 
   <section class="reach-section py-5">
     <div class="container text-center">
-      <h2 class="section-title mb-5">{{ 'CONTACT.REACH-INSURANCE.HEADING' | translate }}</h2>
+      <h2 class="section-title mb-5" [innerHTML]="'CONTACT.REACH-INSURANCE.HEADING' | translateHtml | async"></h2>
 
       <div class="row justify-content-center g-4">
         <div class="col-md-6 col-lg-5">
@@ -74,10 +74,10 @@
             <div class="card-top">
               <img src="assets/images/message.png" alt="" />
 
-              <h5>{{ 'CONTACT.REACH-INSURANCE.CARD1.TITLE' | translate }}</h5>
+              <h5 [innerHTML]="'CONTACT.REACH-INSURANCE.CARD1.TITLE' | translateHtml | async"></h5>
             </div>
             <p>
-              {{ 'CONTACT.REACH-INSURANCE.CARD1.DESC' | translate }} <span>(713) 357-7771</span>
+              <span [innerHTML]="'CONTACT.REACH-INSURANCE.CARD1.DESC' | translateHtml | async"></span> <span>(713) 357-7771</span>
             </p>
           </div>
         </div>
@@ -87,10 +87,10 @@
           <div class="reach-card">
             <div class="card-top">
               <img src="assets/images/call.png" alt="" />
-              <h5>{{ 'CONTACT.REACH-INSURANCE.CARD2.TITLE' | translate }}</h5>
+              <h5 [innerHTML]="'CONTACT.REACH-INSURANCE.CARD2.TITLE' | translateHtml | async"></h5>
             </div>
             <p>
-              {{ 'CONTACT.REACH-INSURANCE.CARD2.DESC' | translate }}
+              <span [innerHTML]="'CONTACT.REACH-INSURANCE.CARD2.DESC' | translateHtml | async"></span>
               <span class="underline"><a href="tel:7133577771">(713) 357-7771</a></span>
             </p>
           </div>
@@ -101,10 +101,10 @@
           <div class="reach-card">
             <div class="card-top">
               <img src="assets/images/email.png" alt="" />
-              <h5>{{ 'CONTACT.REACH-INSURANCE.CARD3.TITLE' | translate }}</h5>
+              <h5 [innerHTML]="'CONTACT.REACH-INSURANCE.CARD3.TITLE' | translateHtml | async"></h5>
             </div>
             <p>
-              {{ 'CONTACT.REACH-INSURANCE.CARD3.DESC' | translate }}
+              <span [innerHTML]="'CONTACT.REACH-INSURANCE.CARD3.DESC' | translateHtml | async"></span>
               <a href="mailto:save@astateinsurance.com">
                 <span class="underline">save@astateinsurance.com</span>
               </a>
@@ -117,29 +117,28 @@
           <div class="reach-card">
             <div class="card-top">
               <img src="assets/images/contact-location.png" alt="" />
-              <h5>{{ 'CONTACT.REACH-INSURANCE.CARD4.TITLE' | translate }}
+              <h5 [innerHTML]="'CONTACT.REACH-INSURANCE.CARD4.TITLE' | translateHtml | async">
               </h5>
             </div>
-            <p>
-              <span class="underline" [routerLink]="getRoute('ourLocations')">{{ 'CONTACT.REACH-INSURANCE.CARD4.DESC' |
-                translate }}</span>
-              {{ 'CONTACT.REACH-INSURANCE.CARD4.DESC1' | translate }}
+              <p>
+              <span class="underline" [routerLink]="getRoute('ourLocations')" [innerHTML]="'CONTACT.REACH-INSURANCE.CARD4.DESC' | translateHtml | async"></span>
+              <span [innerHTML]="'CONTACT.REACH-INSURANCE.CARD4.DESC1' | translateHtml | async"></span>
             </p>
           </div>
         </div>
       </div>
 
       <!-- Hours -->
-      <div class="hours mt-5">
+        <div class="hours mt-5">
         <img src="assets/images/tabler_clock.png" alt="" />
-        <span>{{ 'CONTACT.REACH-INSURANCE.DESC' | translate }}</span>
+        <span [innerHTML]="'CONTACT.REACH-INSURANCE.DESC' | translateHtml | async"></span>
       </div>
     </div>
   </section>
 
   <section class="connect-section">
     <div class="container text-center">
-      <h2 class="connect-title">{{ 'CONTACT.CONNECTTITLE' | translate }}</h2>
+      <h2 class="connect-title" [innerHTML]="'CONTACT.CONNECTTITLE' | translateHtml | async"></h2>
 
       <div class="social-wrapper">
         <a href="https://www.instagram.com/astateinsurance/" target="_blank" class="social-box">
@@ -167,7 +166,7 @@
             </div>
           </div>
           <div class="col-lg-6 col-sm-6 col-xs-12">
-            <div class="h4">{{ 'FOOTER.SLOGAN' | translate }}</div>
+            <div class="h4" [innerHTML]="'FOOTER.SLOGAN' | translateHtml | async"></div>
           </div>
         </div>
       </div>

@@ -1,21 +1,17 @@
 <div class="locationMain">
   <div class="topBanner">
     <div class="container">
-      <div class="h1">{{ 'OUR_LOCATION.HEADING' | translate }}</div>
+      <div class="h1" [innerHTML]="'OUR_LOCATION.HEADING' | translateHtml | async"></div>
     </div>
   </div>
 
   <section class="neighborhood-section">
     <div class="container text-center">
-      <h2 class="title">{{ 'OUR_LOCATION.SESSION1.TITLE' | translate }}</h2>
+      <h2 class="title" [innerHTML]="'OUR_LOCATION.SESSION1.TITLE' | translateHtml | async"></h2>
 
-      <p class="desc">
-        {{ 'OUR_LOCATION.SESSION1.DEC1' | translate }}
-      </p>
+      <p class="desc" [innerHTML]="'OUR_LOCATION.SESSION1.DEC1' | translateHtml | async"></p>
 
-      <p class="desc">
-        {{ 'OUR_LOCATION.SESSION1.DEC2' | translate }}
-      </p>
+      <p class="desc" [innerHTML]="'OUR_LOCATION.SESSION1.DEC2' | translateHtml | async"></p>
 
       <div class="location-card shadow" *ngFor="let loc of locations">
         <div class="map">
@@ -74,14 +70,10 @@
     <div class="container">
       <!-- Header -->
       <div class="text-center mb-5">
-        <h2 class="section-title">{{ 'OUR_LOCATION.SESSION2.TITLE' | translate }}</h2>
+        <h2 class="section-title" [innerHTML]="'OUR_LOCATION.SESSION2.TITLE' | translateHtml | async"></h2>
         <div class="header-desc mx-auto">
-          <p>
-            {{ 'OUR_LOCATION.SESSION2.DEC1' | translate }}
-          </p>
-          <p>
-            {{ 'OUR_LOCATION.SESSION2.DEC2' | translate }}
-          </p>
+          <p [innerHTML]="'OUR_LOCATION.SESSION2.DEC1' | translateHtml | async"></p>
+          <p [innerHTML]="'OUR_LOCATION.SESSION2.DEC2' | translateHtml | async"></p>
         </div>
       </div>
 
@@ -89,33 +81,29 @@
       <div class="row feature-row">
         <!-- Feature 1 -->
         <div class="col-md-4 feature-col">
-          <h3 class="feature-title">{{ 'OUR_LOCATION.SESSION2.CARD1.TITLE' | translate }}</h3>
+          <h3 class="feature-title" [innerHTML]="'OUR_LOCATION.SESSION2.CARD1.TITLE' | translateHtml | async"></h3>
           <p class="feature-text">
             {{ 'OUR_LOCATION.SESSION2.CARD1.DESCRIPTION_PART1' | translate }}
-            <a [routerLink]="getRoute('autoInsurance')">{{ 'HOME.BANNER.CHIPS.AUTO' | translate }}</a>,
-            <a [routerLink]="getRoute('homeInsurance')">{{ 'HOME.BANNER.CHIPS.HOMEOWNERS' | translate }}</a>,
-            <a [routerLink]="getRoute('commercialInsurance')">{{ 'HOME.BANNER.CHIPS.COMMERCIAL' | translate }}</a>,
-            <a [routerLink]="getRoute('lifeInsurance')">{{ 'HOME.BANNER.CHIPS.LIFE' | translate }}</a>,
+            <a [routerLink]="getRoute('autoInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.AUTO' | translateHtml | async"></a>,
+            <a [routerLink]="getRoute('homeInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.HOMEOWNERS' | translateHtml | async"></a>,
+            <a [routerLink]="getRoute('commercialInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.COMMERCIAL' | translateHtml | async"></a>,
+            <a [routerLink]="getRoute('lifeInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.LIFE' | translateHtml | async"></a>,
             {{ 'OUR_LOCATION.SESSION2.CARD1.DESCRIPTION_PART2' | translate }}
-            <a [routerLink]="getRoute('healthInsurance')">{{ 'HOME.BANNER.CHIPS.HEALTH' | translate }}</a>
+            <a [routerLink]="getRoute('healthInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.HEALTH' | translateHtml | async"></a>
             {{ 'OUR_LOCATION.SESSION2.CARD1.DESCRIPTION_PART3' | translate }}
           </p>
         </div>
 
         <!-- Feature 2 -->
         <div class="col-md-4 feature-col">
-          <h3 class="feature-title">{{ 'OUR_LOCATION.SESSION2.CARD2.TITLE' | translate }}</h3>
-          <p class="feature-text">
-            {{ 'OUR_LOCATION.SESSION2.CARD2.DESCRIPTION' | translate }}
-          </p>
+          <h3 class="feature-title" [innerHTML]="'OUR_LOCATION.SESSION2.CARD2.TITLE' | translateHtml | async"></h3>
+          <p class="feature-text" [innerHTML]="'OUR_LOCATION.SESSION2.CARD2.DESCRIPTION' | translateHtml | async"></p>
         </div>
 
         <!-- Feature 3 -->
         <div class="col-md-4 feature-col no-border">
-          <h3 class="feature-title">{{ 'OUR_LOCATION.SESSION2.CARD3.TITLE' | translate }}</h3>
-          <p class="feature-text">
-            {{ 'OUR_LOCATION.SESSION2.CARD3.DESCRIPTION' | translate }}
-          </p>
+          <h3 class="feature-title" [innerHTML]="'OUR_LOCATION.SESSION2.CARD3.TITLE' | translateHtml | async"></h3>
+          <p class="feature-text" [innerHTML]="'OUR_LOCATION.SESSION2.CARD3.DESCRIPTION' | translateHtml | async"></p>
         </div>
       </div>
     </div>
@@ -126,12 +114,8 @@
     <div class="container">
       <div class="topSub">
         <div class="topSub2">
-          <div class="h1">
-            {{ 'OUR_LOCATION.SESSION3.TITLE' | translate }}
-          </div>
-          <p class="paragraph">
-            {{ 'OUR_LOCATION.SESSION3.DEC1' | translate }}
-          </p>
+          <div class="h1" [innerHTML]="'OUR_LOCATION.SESSION3.TITLE' | translateHtml | async"></div>
+          <p class="paragraph" [innerHTML]="'OUR_LOCATION.SESSION3.DEC1' | translateHtml | async"></p>
 
           <div class="selectable mt-5">
             @for (item of chips.slice(0, 3); track item.name) {
@@ -173,7 +157,7 @@
             </div>
           </div>
           <div class="col-lg-6 col-sm-6 col-xs-12">
-            <div class="h4">{{ 'FOOTER.SLOGAN' | translate }}</div>
+            <div class="h4" [innerHTML]="'FOOTER.SLOGAN' | translateHtml | async"></div>
           </div>
         </div>
       </div>

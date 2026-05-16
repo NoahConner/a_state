@@ -57,40 +57,33 @@
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-semibold">
           <!-- Insurance Services dropdown -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" [routerLink]="getRoute('insuranceServices')">
-              {{ 'HEADER.INSURANCE_SERVICES' | translate }}
+            <a class="nav-link dropdown-toggle" [routerLink]="getRoute('insuranceServices')" [innerHTML]="'HEADER.INSURANCE_SERVICES' | translateHtml | async">
             </a>
             <ul class="dropdown-menu">
               <li class="dropdown-submenu">
-                <a class="dropdown-item submenu-toggle" [routerLink]="getRoute('autoInsurance')">
-                  {{ 'HEADER.AUTO_INSURANCE' | translate }}
+                <a class="dropdown-item submenu-toggle" [routerLink]="getRoute('autoInsurance')" [innerHTML]="'HEADER.AUTO_INSURANCE' | translateHtml | async">
                 </a>
 
                 <ul class="dropdown-menu submenu">
                   <li>
-                    <a class="dropdown-item" [routerLink]="getRoute('carInsurance')">
-                      {{ 'HEADER.CAR_INSURANCE' | translate }}
+                    <a class="dropdown-item" [routerLink]="getRoute('carInsurance')" [innerHTML]="'HEADER.CAR_INSURANCE' | translateHtml | async">
                     </a>
                   </li>
 
                   <li>
-                    <a class="dropdown-item" [routerLink]="getRoute('motorcycleInsurance')">
-                      {{ 'HEADER.MOTORCYCLE_INSURANCE' | translate }}
+                    <a class="dropdown-item" [routerLink]="getRoute('motorcycleInsurance')" [innerHTML]="'HEADER.MOTORCYCLE_INSURANCE' | translateHtml | async">
                     </a>
                   </li>
                   <li>
-                    <a class="dropdown-item" [routerLink]="getRoute('boatInsurance')">
-                      {{ 'HEADER.BOAT_INSURANCE' | translate }}
+                    <a class="dropdown-item" [routerLink]="getRoute('boatInsurance')" [innerHTML]="'HEADER.BOAT_INSURANCE' | translateHtml | async">
                     </a>
                   </li>
                   <li>
-                    <a class="dropdown-item" [routerLink]="getRoute('rvInsurance')">
-                      {{ 'HEADER.RV_MOTORHOME_INSURANCE' | translate }}
+                    <a class="dropdown-item" [routerLink]="getRoute('rvInsurance')" [innerHTML]="'HEADER.RV_MOTORHOME_INSURANCE' | translateHtml | async">
                     </a>
                   </li>
                   <li>
-                    <a class="dropdown-item" [routerLink]="getRoute('classicCarInsurance')">
-                      {{ 'HEADER.CLASSIC_CAR_INSURANCE' | translate }}
+                    <a class="dropdown-item" [routerLink]="getRoute('classicCarInsurance')" [innerHTML]="'HEADER.CLASSIC_CAR_INSURANCE' | translateHtml | async">
                     </a>
                   </li>
                   <li>
@@ -109,13 +102,11 @@
                     </a>
                   </li>
                   <li>
-                    <a class="dropdown-item" [routerLink]="getRoute('mexicanCarInsurance')">
-                      {{ 'HEADER.MEXICAN_CAR_INSURANCE' | translate }}
+                    <a class="dropdown-item" [routerLink]="getRoute('mexicanCarInsurance')" [innerHTML]="'HEADER.MEXICAN_CAR_INSURANCE' | translateHtml | async">
                     </a>
                   </li>
                   <li>
-                    <a class="dropdown-item" [routerLink]="getRoute('rideshareInsurance')">
-                      {{ 'HEADER.RIDESHARE_INSURANCE' | translate }}
+                    <a class="dropdown-item" [routerLink]="getRoute('rideshareInsurance')" [innerHTML]="'HEADER.RIDESHARE_INSURANCE' | translateHtml | async">
                     </a>
                   </li>
                 </ul>

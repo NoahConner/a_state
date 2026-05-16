@@ -57,7 +57,7 @@
         <div class="col-12">
           <h3 class="heading">
             {{ 'HOME.WHY_CHOOSE.HEADING' | translate }}
-            <strong> {{ 'HOME.WHY_CHOOSE.HEADING_STRONG' | translate }} </strong>
+            <strong [innerHTML]="'HOME.WHY_CHOOSE.HEADING_STRONG' | translateHtml | async"></strong>
           </h3>
         </div>
       </div>
@@ -70,12 +70,8 @@
                 <img src="../assets/images/carbon_license.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
-                  {{ 'HOME.WHY_CHOOSE.CARD1.TITLE' | translate }}
-                </h5>
-                <p class="card-text">
-                  {{ 'HOME.WHY_CHOOSE.CARD1.DESC' | translate }}
-                </p>
+                <h5 class="card-title" [innerHTML]="'HOME.WHY_CHOOSE.CARD1.TITLE' | translateHtml | async"></h5>
+                <p class="card-text" [innerHTML]="'HOME.WHY_CHOOSE.CARD1.DESC' | translateHtml | async"></p>
               </div>
             </div>
           </div>
@@ -86,12 +82,8 @@
                 <img src="../assets/images/Heart.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
-                  {{ 'HOME.WHY_CHOOSE.CARD2.TITLE' | translate }}
-                </h5>
-                <p class="card-text">
-                  {{ 'HOME.WHY_CHOOSE.CARD2.DESC' | translate }}
-                </p>
+                <h5 class="card-title" [innerHTML]="'HOME.WHY_CHOOSE.CARD2.TITLE' | translateHtml | async"></h5>
+                <p class="card-text" [innerHTML]="'HOME.WHY_CHOOSE.CARD2.DESC' | translateHtml | async"></p>
               </div>
             </div>
           </div>
@@ -104,12 +96,8 @@
                 <img src="../assets/images/calendar.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
-                  {{ 'HOME.WHY_CHOOSE.CARD3.TITLE' | translate }}
-                </h5>
-                <p class="card-text">
-                  {{ 'HOME.WHY_CHOOSE.CARD3.DESC' | translate }}
-                </p>
+                <h5 class="card-title" [innerHTML]="'HOME.WHY_CHOOSE.CARD3.TITLE' | translateHtml | async"></h5>
+                <p class="card-text" [innerHTML]="'HOME.WHY_CHOOSE.CARD3.DESC' | translateHtml | async"></p>
               </div>
             </div>
           </div>
@@ -120,12 +108,8 @@
                 <img src="../assets/images/price.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
-                  {{ 'HOME.WHY_CHOOSE.CARD4.TITLE' | translate }}
-                </h5>
-                <p class="card-text">
-                  {{ 'HOME.WHY_CHOOSE.CARD4.DESC' | translate }}
-                </p>
+                <h5 class="card-title" [innerHTML]="'HOME.WHY_CHOOSE.CARD4.TITLE' | translateHtml | async"></h5>
+                <p class="card-text" [innerHTML]="'HOME.WHY_CHOOSE.CARD4.DESC' | translateHtml | async"></p>
               </div>
             </div>
           </div>
@@ -138,12 +122,8 @@
                 <img src="../assets/images/wifi.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
-                  {{ 'HOME.WHY_CHOOSE.CARD5.TITLE' | translate }}
-                </h5>
-                <p class="card-text">
-                  {{ 'HOME.WHY_CHOOSE.CARD5.DESC' | translate }}
-                </p>
+                <h5 class="card-title" [innerHTML]="'HOME.WHY_CHOOSE.CARD5.TITLE' | translateHtml | async"></h5>
+                <p class="card-text" [innerHTML]="'HOME.WHY_CHOOSE.CARD5.DESC' | translateHtml | async"></p>
               </div>
             </div>
           </div>
@@ -154,12 +134,8 @@
                 <img src="../assets/images/agents.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title">
-                  {{ 'HOME.WHY_CHOOSE.CARD6.TITLE' | translate }}
-                </h5>
-                <p class="card-text">
-                  {{ 'HOME.WHY_CHOOSE.CARD6.DESC' | translate }}
-                </p>
+                <h5 class="card-title" [innerHTML]="'HOME.WHY_CHOOSE.CARD6.TITLE' | translateHtml | async"></h5>
+                <p class="card-text" [innerHTML]="'HOME.WHY_CHOOSE.CARD6.DESC' | translateHtml | async"></p>
               </div>
             </div>
           </div>
@@ -176,9 +152,7 @@
     <div class="container position-relative">
       <div class="row mb-5 text-center">
         <div class="col-12">
-          <h2 class="section-title">
-            {{ 'HOME.INSURANCE_SOLUTIONS.TITLE' | translate }}
-          </h2>
+          <h2 class="section-title" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.TITLE' | translateHtml | async"></h2>
         </div>
       </div>
       <div class="row g-4">
@@ -190,12 +164,8 @@
                 <!-- <i class="fas fa-car"></i> -->
               </div>
               <div class="card-content">
-                <h5 class="solution-title" [routerLink]="getRoute('autoInsurance')">
-                  {{ 'HOME.INSURANCE_SOLUTIONS.AUTO.TITLE' | translate }}
-                </h5>
-                <p class="solution-text">
-                  {{ 'HOME.INSURANCE_SOLUTIONS.AUTO.DESC' | translate }}
-                </p>
+                <h5 class="solution-title" [routerLink]="getRoute('autoInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.AUTO.TITLE' | translateHtml | async"></h5>
+                <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.AUTO.DESC' | translateHtml | async"></p>
               </div>
             </div>
           </div>
@@ -208,13 +178,9 @@
                 <img src="../assets/images/house.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="solution-title" [routerLink]="getRoute('homeInsurance')">
-                  {{ 'HOME.INSURANCE_SOLUTIONS.HOME.TITLE' | translate }}
-                </h5>
+                <h5 class="solution-title" [routerLink]="getRoute('homeInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HOME.TITLE' | translateHtml | async"></h5>
 
-                <p class="solution-text">
-                  {{ 'HOME.INSURANCE_SOLUTIONS.HOME.DESC' | translate }}
-                </p>
+                <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HOME.DESC' | translateHtml | async"></p>
               </div>
             </div>
           </div>
@@ -227,13 +193,9 @@
                 <img src="../assets/images/commercial.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="solution-title" [routerLink]="getRoute('commercialInsurance')">
-                  {{ 'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.TITLE' | translate }}
-                </h5>
+                <h5 class="solution-title" [routerLink]="getRoute('commercialInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.TITLE' | translateHtml | async"></h5>
 
-                <p class="solution-text">
-                  {{ 'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.DESC' | translate }}
-                </p>
+                <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.DESC' | translateHtml | async"></p>
               </div>
             </div>
           </div>
@@ -246,13 +208,9 @@
                 <img src="../assets/images/life.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="solution-title" [routerLink]="getRoute('lifeInsurance')">
-                  {{ 'HOME.INSURANCE_SOLUTIONS.LIFE.TITLE' | translate }}
-                </h5>
+                <h5 class="solution-title" [routerLink]="getRoute('lifeInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.LIFE.TITLE' | translateHtml | async"></h5>
 
-                <p class="solution-text">
-                  {{ 'HOME.INSURANCE_SOLUTIONS.LIFE.DESC' | translate }}
-                </p>
+                <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.LIFE.DESC' | translateHtml | async"></p>
               </div>
             </div>
           </div>
@@ -265,13 +223,9 @@
                 <img src="../assets/images/health.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="solution-title" [routerLink]="getRoute('healthInsurance')">
-                  {{ 'HOME.INSURANCE_SOLUTIONS.HEALTH.TITLE' | translate }}
-                </h5>
+                <h5 class="solution-title" [routerLink]="getRoute('healthInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HEALTH.TITLE' | translateHtml | async"></h5>
 
-                <p class="solution-text">
-                  {{ 'HOME.INSURANCE_SOLUTIONS.HEALTH.DESC' | translate }}
-                </p>
+                <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HEALTH.DESC' | translateHtml | async"></p>
               </div>
             </div>
           </div>
@@ -284,13 +238,9 @@
                 <img src="../assets/images/secure.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="solution-title" [routerLink]="getRoute('suretyBondInsurance')">
-                  {{ 'HOME.INSURANCE_SOLUTIONS.SURETY.TITLE' | translate }}
-                </h5>
+                <h5 class="solution-title" [routerLink]="getRoute('suretyBondInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.SURETY.TITLE' | translateHtml | async"></h5>
 
-                <p class="solution-text">
-                  {{ 'HOME.INSURANCE_SOLUTIONS.SURETY.DESC' | translate }}
-                </p>
+                <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.SURETY.DESC' | translateHtml | async"></p>
               </div>
             </div>
           </div>
@@ -319,15 +269,11 @@
                   {{ 'HOME.EVERY_STORY.TITLE_LINE1' | translate }} <br />
                   {{ 'HOME.EVERY_STORY.TITLE_LINE2' | translate }}
                 </div>
-                <p>
-                  {{ 'HOME.EVERY_STORY.PARA1' | translate }}
-                </p>
+                <p [innerHTML]="'HOME.EVERY_STORY.PARA1' | translateHtml | async"></p>
 
                 <br />
 
-                <p>
-                  {{ 'HOME.EVERY_STORY.PARA2' | translate }}
-                </p>
+                <p [innerHTML]="'HOME.EVERY_STORY.PARA2' | translateHtml | async"></p>
               </div>
             </div>
           </div>
@@ -344,7 +290,7 @@
     <div class="container">
       <h5 class="text-center mb-5 heading">
         {{ 'HOME.WORKING_PROCESS.TITLE_LINE1' | translate }}
-        <strong>{{ 'HOME.WORKING_PROCESS.TITLE_STRONG' | translate }}</strong>
+        <strong [innerHTML]="'HOME.WORKING_PROCESS.TITLE_STRONG' | translateHtml | async"></strong>
         {{ 'HOME.WORKING_PROCESS.TITLE_LINE2' | translate }}
       </h5>
 
@@ -355,48 +301,32 @@
           <div class="d-flex align-items-center mb-4 insurance-card p-3">
             <div class="step-number">01</div>
             <div class="ms-4 working-heading">
-              <h5 class="fw-bold mb-1">
-                {{ 'HOME.WORKING_PROCESS.STEP1.TITLE' | translate }}
-              </h5>
-              <p class="text-muted mb-0 small">
-                {{ 'HOME.WORKING_PROCESS.STEP1.DESC' | translate }}
-              </p>
+              <h5 class="fw-bold mb-1" [innerHTML]="'HOME.WORKING_PROCESS.STEP1.TITLE' | translateHtml | async"></h5>
+              <p class="text-muted mb-0 small" [innerHTML]="'HOME.WORKING_PROCESS.STEP1.DESC' | translateHtml | async"></p>
             </div>
           </div>
 
           <div class="d-flex align-items-center mb-4 insurance-card p-3">
             <div class="step-number">02</div>
             <div class="ms-4 working-heading">
-              <h5 class="fw-bold mb-1">
-                {{ 'HOME.WORKING_PROCESS.STEP2.TITLE' | translate }}
-              </h5>
-              <p class="text-muted mb-0 small">
-                {{ 'HOME.WORKING_PROCESS.STEP2.DESC' | translate }}
-              </p>
+              <h5 class="fw-bold mb-1" [innerHTML]="'HOME.WORKING_PROCESS.STEP2.TITLE' | translateHtml | async"></h5>
+              <p class="text-muted mb-0 small" [innerHTML]="'HOME.WORKING_PROCESS.STEP2.DESC' | translateHtml | async"></p>
             </div>
           </div>
 
           <div class="d-flex align-items-center mb-4 insurance-card p-3">
             <div class="step-number">03</div>
             <div class="ms-4 working-heading">
-              <h5 class="fw-bold mb-1">
-                {{ 'HOME.WORKING_PROCESS.STEP3.TITLE' | translate }}
-              </h5>
-              <p class="text-muted mb-0 small">
-                {{ 'HOME.WORKING_PROCESS.STEP3.DESC' | translate }}
-              </p>
+              <h5 class="fw-bold mb-1" [innerHTML]="'HOME.WORKING_PROCESS.STEP3.TITLE' | translateHtml | async"></h5>
+              <p class="text-muted mb-0 small" [innerHTML]="'HOME.WORKING_PROCESS.STEP3.DESC' | translateHtml | async"></p>
             </div>
           </div>
 
           <div class="d-flex align-items-center insurance-card p-3">
             <div class="step-number">04</div>
             <div class="ms-4 working-heading">
-              <h5 class="fw-bold mb-1">
-                {{ 'HOME.WORKING_PROCESS.STEP4.TITLE' | translate }}
-              </h5>
-              <p class="text-muted mb-0 small">
-                {{ 'HOME.WORKING_PROCESS.STEP4.DESC' | translate }}
-              </p>
+              <h5 class="fw-bold mb-1" [innerHTML]="'HOME.WORKING_PROCESS.STEP4.TITLE' | translateHtml | async"></h5>
+              <p class="text-muted mb-0 small" [innerHTML]="'HOME.WORKING_PROCESS.STEP4.DESC' | translateHtml | async"></p>
             </div>
           </div>
         </div>
@@ -412,7 +342,7 @@
     <div class="container">
       <div class="topSub">
         <div class="topSub2">
-          <div class="h1">{{ 'HOME.COVERDBANNER.TITLE' | translate }}</div>
+          <div class="h1" [innerHTML]="'HOME.COVERDBANNER.TITLE' | translateHtml | async"></div>
           <div class="selectable mt-5">
             @for (item of chips.slice(0, 3); track item.name) {
             <div class="chip">
@@ -454,7 +384,7 @@
             </div>
           </div>
           <div class="col-lg-6 col-sm-6 col-xs-12">
-            <div class="h4">{{ 'FOOTER.SLOGAN' | translate }}</div>
+            <div class="h4" [innerHTML]="'FOOTER.SLOGAN' | translateHtml | async"></div>
           </div>
         </div>
       </div>

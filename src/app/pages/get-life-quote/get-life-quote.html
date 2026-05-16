@@ -2,7 +2,7 @@
   <div class="topBanner">
     <div class="container">
       <div class="h1">{{ 'GET_LIFE_QUOTE.HEADING' | translate }}
-        <p class="heroDesc">{{ 'GET_LIFE_QUOTE.DESCRIPTION' | translate }}</p>
+        <p class="heroDesc" [innerHTML]="'GET_LIFE_QUOTE.DESCRIPTION' | translateHtml | async"></p>
       </div>
     </div>
   </div>
@@ -12,19 +12,19 @@
       <div class="d-flex justify-content-between align-items-center stepper">
         <div class="step" [class.active]="currentStep === 1">
           <div class="circle"><img src="/assets/images/quote-step-1.png" alt="" /></div>
-          <p>{{ 'GET_LIFE_QUOTE.STEPPER.STEP1.TITLE' | translate }}</p>
+          <p [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP1.TITLE' | translateHtml | async"></p>
         </div>
         <div class="step" [class.active]="currentStep === 2">
           <div class="circle"><img src="/assets/images/quote-step-2.png" alt="" /></div>
-          <p>{{ 'GET_LIFE_QUOTE.STEPPER.STEP2.TITLE' | translate }}</p>
+          <p [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP2.TITLE' | translateHtml | async"></p>
         </div>
         <div class="step" [class.active]="currentStep === 3">
           <div class="circle"><img src="/assets/images/quote-step-3.png" alt="" /></div>
-          <p>{{ 'GET_LIFE_QUOTE.STEPPER.STEP3.TITLE' | translate }}</p>
+          <p [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP3.TITLE' | translateHtml | async"></p>
         </div>
         <div class="step" [class.active]="currentStep === 4">
           <div class="circle"><img src="/assets/images/quote-step-4.png" alt="" /></div>
-          <p>{{ 'GET_LIFE_QUOTE.STEPPER.STEP4.TITLE' | translate }}</p>
+          <p [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP4.TITLE' | translateHtml | async"></p>
         </div>
 
       </div>
@@ -34,7 +34,7 @@
       <div class="steps-for-custom-quote">
         <div class="container" *ngIf="currentStep === 1">
           <div class="form-wrapper">
-            <h2 class="form-title">{{ 'GET_LIFE_QUOTE.STEPPER.STEP1.TITLE' | translate }}</h2>
+            <h2 class="form-title" [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP1.TITLE' | translateHtml | async"></h2>
 
             <div class="form-content-border">
               <div class="row gy-3 mb-2">
@@ -45,9 +45,7 @@
                     [class.is-invalid]="lifeQuoteForm.get('full_name')?.invalid && lifeQuoteForm.get('full_name')?.touched"
                     class="form-control" placeholder="John Doe" />
                   <div class="invalid-feedback"
-                    *ngIf="lifeQuoteForm.get('full_name')?.invalid && lifeQuoteForm.get('full_name')?.touched">
-                    {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
-                  </div>
+                    *ngIf="lifeQuoteForm.get('full_name')?.invalid && lifeQuoteForm.get('full_name')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>
                 <div class="col-md-4">
                   <label class="form-label">{{ 'GET_LIFE_QUOTE.STEPPER.STEP1.FIELDS.EMAIL' | translate
@@ -56,9 +54,7 @@
                     [class.is-invalid]="lifeQuoteForm.get('email_address')?.invalid && lifeQuoteForm.get('email_address')?.touched"
                     class="form-control" id="email_address" placeholder="johndoe@email.com" />
                   <div class="invalid-feedback"
-                    *ngIf="lifeQuoteForm.get('email_address')?.invalid && lifeQuoteForm.get('email_address')?.touched">
-                    {{ 'GET_AUTO_QUOTE.ERRORS.EMAIL' | translate }}
-                  </div>
+                    *ngIf="lifeQuoteForm.get('email_address')?.invalid && lifeQuoteForm.get('email_address')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.EMAIL' | translateHtml | async"></div>
                 </div>
               </div>
 
@@ -70,9 +66,7 @@
                     [class.is-invalid]="lifeQuoteForm.get('phone_number')?.invalid && lifeQuoteForm.get('phone_number')?.touched"
                     class="form-control" placeholder="+1 234 567 8900" />
                   <div class="invalid-feedback"
-                    *ngIf="lifeQuoteForm.get('phone_number')?.invalid && lifeQuoteForm.get('phone_number')?.touched">
-                    {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
-                  </div>
+                    *ngIf="lifeQuoteForm.get('phone_number')?.invalid && lifeQuoteForm.get('phone_number')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>
                 <div class="col-md-4">
                   <label class="form-label">{{ 'GET_LIFE_QUOTE.STEPPER.STEP1.FIELDS.GENDER' | translate
@@ -84,9 +78,7 @@
                     <option value="Other">Other</option>
                   </select>
                   <div class="invalid-feedback"
-                    *ngIf="lifeQuoteForm.get('gender')?.invalid && lifeQuoteForm.get('gender')?.touched">
-                    {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
-                  </div>
+                    *ngIf="lifeQuoteForm.get('gender')?.invalid && lifeQuoteForm.get('gender')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>
               </div>
 
@@ -98,9 +90,7 @@
                     [class.is-invalid]="lifeQuoteForm.get('date_of_birth')?.invalid && lifeQuoteForm.get('date_of_birth')?.touched"
                     class="form-control" />
                   <div class="invalid-feedback"
-                    *ngIf="lifeQuoteForm.get('date_of_birth')?.invalid && lifeQuoteForm.get('date_of_birth')?.touched">
-                    {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
-                  </div>
+                    *ngIf="lifeQuoteForm.get('date_of_birth')?.invalid && lifeQuoteForm.get('date_of_birth')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>
                 <div class="col-md-4">
                   <label class="form-label">{{ 'GET_LIFE_QUOTE.STEPPER.STEP1.FIELDS.ZIPCODE' | translate
@@ -109,9 +99,7 @@
                     [class.is-invalid]="lifeQuoteForm.get('zip_code')?.invalid && lifeQuoteForm.get('zip_code')?.touched"
                     class="form-control" placeholder="10001" />
                   <div class="invalid-feedback"
-                    *ngIf="lifeQuoteForm.get('zip_code')?.invalid && lifeQuoteForm.get('zip_code')?.touched">
-                    {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
-                  </div>
+                    *ngIf="lifeQuoteForm.get('zip_code')?.invalid && lifeQuoteForm.get('zip_code')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>
               </div>
               <div class="d-flex gap-3 mt-4">
@@ -124,13 +112,12 @@
 
         <div class="container mb-4 mt-4" *ngIf="currentStep === 2">
           <div class="form-wrapper">
-            <h2 class="form-title">{{ 'GET_LIFE_QUOTE.STEPPER.STEP2.TITLE' | translate }}</h2>
+            <h2 class="form-title" [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP2.TITLE' | translateHtml | async"></h2>
 
             <div class="form-content-border">
               <div class="row gy-3 mt-2">
                 <div class="selection-group">
-                  <h4 class="selection-heading">{{ 'GET_LIFE_QUOTE.STEPPER.STEP2.FIELDS.TOBACCO_USE' | translate }}
-                  </h4>
+                  <h4 class="selection-heading" [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP2.FIELDS.TOBACCO_USE' | translateHtml | async"></h4>
 
                   <div class="coverage-options">
                     <div class="form-check"
@@ -143,17 +130,14 @@
                       </label>
                     </div>
                     <div class="invalid-feedback d-block"
-                      *ngIf="lifeQuoteForm.get('uses_tobacco')?.invalid && lifeQuoteForm.get('uses_tobacco')?.touched">
-                      {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
-                    </div>
+                      *ngIf="lifeQuoteForm.get('uses_tobacco')?.invalid && lifeQuoteForm.get('uses_tobacco')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                   </div>
                 </div>
               </div>
 
               <div class="row gy-3 mt-2">
                 <div class="selection-group">
-                  <h4 class="selection-heading">{{ 'GET_LIFE_QUOTE.STEPPER.STEP2.FIELDS.HEALTH_STATUS' | translate }}
-                  </h4>
+                  <h4 class="selection-heading" [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP2.FIELDS.HEALTH_STATUS' | translateHtml | async"></h4>
 
                   <div class="coverage-options">
                     <div class="form-check"
@@ -166,9 +150,7 @@
                       </label>
                     </div>
                     <div class="invalid-feedback d-block"
-                      *ngIf="lifeQuoteForm.get('general_health')?.invalid && lifeQuoteForm.get('general_health')?.touched">
-                      {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
-                    </div>
+                      *ngIf="lifeQuoteForm.get('general_health')?.invalid && lifeQuoteForm.get('general_health')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                   </div>
                 </div>
               </div>
@@ -185,13 +167,12 @@
 
         <div class="container mb-4" *ngIf="currentStep === 3">
           <div class="form-wrapper">
-            <h2 class="form-title">{{ 'GET_LIFE_QUOTE.STEPPER.STEP3.TITLE' | translate }}</h2>
+            <h2 class="form-title" [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP3.TITLE' | translateHtml | async"></h2>
 
             <div class="form-content-border">
               <div class="row gy-3 mt-2">
                 <div class="selection-group">
-                  <h4 class="selection-heading">{{ 'GET_LIFE_QUOTE.STEPPER.STEP3.COVERAGE_TITLE' | translate }}
-                  </h4>
+                  <h4 class="selection-heading" [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP3.COVERAGE_TITLE' | translateHtml | async"></h4>
 
                   <div class="coverage-options">
                     <div class="form-check"
@@ -204,16 +185,14 @@
                       </label>
                     </div>
                     <div class="invalid-feedback d-block"
-                      *ngIf="lifeQuoteForm.get('coverage_amount')?.invalid && lifeQuoteForm.get('coverage_amount')?.touched">
-                      {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
-                    </div>
+                      *ngIf="lifeQuoteForm.get('coverage_amount')?.invalid && lifeQuoteForm.get('coverage_amount')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                   </div>
                 </div>
               </div>
 
               <div class="row gy-3 mt-2">
                 <div class="selection-group">
-                  <h4 class="selection-heading">{{ 'GET_LIFE_QUOTE.STEPPER.STEP3.BUNDLE_TITLE' | translate }}</h4>
+                  <h4 class="selection-heading" [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP3.BUNDLE_TITLE' | translateHtml | async"></h4>
 
                   <div class="coverage-options">
                     <div class="form-check"
@@ -226,9 +205,7 @@
                       </label>
                     </div>
                     <div class="invalid-feedback d-block"
-                      *ngIf="lifeQuoteForm.get('bundle_option')?.invalid && lifeQuoteForm.get('bundle_option')?.touched">
-                      {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
-                    </div>
+                      *ngIf="lifeQuoteForm.get('bundle_option')?.invalid && lifeQuoteForm.get('bundle_option')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                   </div>
                 </div>
               </div>
@@ -247,45 +224,39 @@
 
         <div class="container mt-4 mb-4" *ngIf="currentStep === 4">
           <div class="form-wrapper">
-            <h2 class="form-title">{{ 'GET_LIFE_QUOTE.STEPPER.STEP4.TITLE' | translate }}</h2>
+            <h2 class="form-title" [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP4.TITLE' | translateHtml | async"></h2>
 
             <div class="form-content-border">
               <div class="row gy-3 mb-3">
                 <div class="col-md-8">
-                  <label class="form-label">{{ 'GET_LIFE_QUOTE.STEPPER.STEP4.LANGUAGE_TITLE' | translate
-                    }}</label>
+                  <label class="form-label" [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP4.LANGUAGE_TITLE' | translateHtml | async"></label>
                   <select class="form-select" formControlName="preferred_language"
                     [class.is-invalid]="lifeQuoteForm.get('preferred_language')?.invalid && lifeQuoteForm.get('preferred_language')?.touched">
                     <option *ngFor="let option of ('GET_LIFE_QUOTE.STEPPER.STEP4.LANGUAGE_OPTIONS' | translate)"
                       [value]="option">{{ option }}</option>
                   </select>
                   <div class="invalid-feedback"
-                    *ngIf="lifeQuoteForm.get('preferred_language')?.invalid && lifeQuoteForm.get('preferred_language')?.touched">
-                    {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
-                  </div>
+                    *ngIf="lifeQuoteForm.get('preferred_language')?.invalid && lifeQuoteForm.get('preferred_language')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>
 
               </div>
 
               <div class="row gy-3 mb-3">
                 <div class="col-md-8">
-                  <label class="form-label">{{ 'GET_LIFE_QUOTE.STEPPER.STEP4.CONTACT_TITLE' | translate
-                    }}</label>
+                  <label class="form-label" [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP4.CONTACT_TITLE' | translateHtml | async"></label>
                   <select class="form-select" formControlName="contact_method"
                     [class.is-invalid]="lifeQuoteForm.get('contact_method')?.invalid && lifeQuoteForm.get('contact_method')?.touched">
                     <option *ngFor="let option of ('GET_LIFE_QUOTE.STEPPER.STEP4.CONTACT_OPTIONS' | translate)"
                       [value]="option">{{ option }}</option>
                   </select>
                   <div class="invalid-feedback"
-                    *ngIf="lifeQuoteForm.get('contact_method')?.invalid && lifeQuoteForm.get('contact_method')?.touched">
-                    {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
-                  </div>
+                    *ngIf="lifeQuoteForm.get('contact_method')?.invalid && lifeQuoteForm.get('contact_method')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>
 
               </div>
 
               <div class="selection-group mb-3">
-                <h4 class="selection-heading">{{ 'GET_LIFE_QUOTE.STEPPER.STEP4.TIME_TITLE' | translate }}</h4>
+                <h4 class="selection-heading" [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP4.TIME_TITLE' | translateHtml | async"></h4>
 
                 <div class="coverage-options">
                   <div class="form-check"
@@ -298,9 +269,7 @@
                     </label>
                   </div>
                   <div class="invalid-feedback d-block"
-                    *ngIf="lifeQuoteForm.get('best_time_to_connect')?.invalid && lifeQuoteForm.get('best_time_to_connect')?.touched">
-                    {{ 'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translate }}
-                  </div>
+                    *ngIf="lifeQuoteForm.get('best_time_to_connect')?.invalid && lifeQuoteForm.get('best_time_to_connect')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>
               </div>
 
@@ -321,34 +290,32 @@
 
     <div class="quote-summary-container p-4 p-md-5 mt-5">
       <div class="container max-width-700">
-        <h2 class="text-center mb-4 section-title">{{ 'GET_LIFE_QUOTE.QUOTE_SUMMARY.MAIN_TITLE' | translate }}
-        </h2>
-        <p class="text-center mb-4">{{ 'GET_LIFE_QUOTE.QUOTE_SUMMARY.MAIN_DESC' | translate }}</p>
+        <h2 class="text-center mb-4 section-title" [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.MAIN_TITLE' | translateHtml | async"></h2>
+        <p class="text-center mb-4" [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.MAIN_DESC' | translateHtml | async"></p>
 
-        <h2 class="text-center mb-4 section-title">{{ 'GET_LIFE_QUOTE.QUOTE_SUMMARY.SUMMARY_TITLE' | translate }}</h2>
+        <h2 class="text-center mb-4 section-title" [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.SUMMARY_TITLE' | translateHtml | async"></h2>
 
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="m-0">{{ 'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD1.TITLE' | translate }}</h5>
+            <h5 class="m-0" [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD1.TITLE' | translateHtml | async"></h5>
             <a href="javascript:void(0)" class="edit-link" (click)="goToStep(1)"><i class="bi bi-pencil-square"></i> {{
               'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD1.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.FULL_NAME' | translate
-                }}</strong>: {{ lifeQuoteForm.get('full_name')?.value }}
+            <li><strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.FULL_NAME' | translateHtml | async"></strong>: {{ lifeQuoteForm.get('full_name')?.value }}
             </li>
-            <li><strong>{{ 'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.EMAIL' | translate }}</strong>:
+            <li><strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.EMAIL' | translateHtml | async"></strong>:
               {{ lifeQuoteForm.get('email_address')?.value }}</li>
-            <li><strong>{{ 'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.PHONE' | translate }}</strong>:
+            <li><strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.PHONE' | translateHtml | async"></strong>:
               {{ lifeQuoteForm.get('phone_number')?.value }}
             </li>
-            <li><strong>{{ 'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.GENDER' | translate }}</strong>:
+            <li><strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.GENDER' | translateHtml | async"></strong>:
               {{ lifeQuoteForm.get('gender')?.value }}
             </li>
-            <li><strong>{{ 'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.DOB' | translate }}</strong>:
+            <li><strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.DOB' | translateHtml | async"></strong>:
               {{ lifeQuoteForm.get('date_of_birth')?.value }}
             </li>
-            <li><strong>{{ 'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.ZIP' | translate }}</strong>:
+            <li><strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.ZIP' | translateHtml | async"></strong>:
               {{ lifeQuoteForm.get('zip_code')?.value }}
             </li>
           </ul>
@@ -356,15 +323,15 @@
 
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="m-0">{{ 'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD2.TITLE' | translate }}</h5>
+            <h5 class="m-0" [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD2.TITLE' | translateHtml | async"></h5>
             <a href="javascript:void(0)" class="edit-link" (click)="goToStep(2)"><i class="bi bi-pencil-square"></i> {{
               'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD2.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.TOBACCO' | translate }}</strong>:
+            <li><strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.TOBACCO' | translateHtml | async"></strong>:
               {{ lifeQuoteForm.get('uses_tobacco')?.value }}</li>
             <li>
-              <strong>{{ 'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.HEALTH' | translate }}</strong>:
+              <strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.HEALTH' | translateHtml | async"></strong>:
               {{ lifeQuoteForm.get('general_health')?.value }}
             </li>
           </ul>
@@ -372,14 +339,14 @@
 
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="m-0">{{ 'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD3.TITLE' | translate }}</h5>
+            <h5 class="m-0" [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD3.TITLE' | translateHtml | async"></h5>
             <a href="javascript:void(0)" class="edit-link" (click)="goToStep(3)"><i class="bi bi-pencil-square"></i> {{
               'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD3.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.COVERAGE_AMOUNT' | translate }}</strong>:
+            <li><strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.COVERAGE_AMOUNT' | translateHtml | async"></strong>:
               {{ lifeQuoteForm.get('coverage_amount')?.value || 'None' }}</li>
-            <li><strong>{{ 'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.BUNDLE_SAVE' | translate }}</strong>: {{
+            <li><strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.BUNDLE_SAVE' | translateHtml | async"></strong>: {{
               lifeQuoteForm.get('bundle_option')?.value || 'None' }}
             </li>
 
@@ -388,17 +355,17 @@
 
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="m-0">{{ 'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD4.TITLE' | translate }}</h5>
+            <h5 class="m-0" [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD4.TITLE' | translateHtml | async"></h5>
             <a href="javascript:void(0)" class="edit-link" (click)="goToStep(4)"><i class="bi bi-pencil-square"></i> {{
               'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD4.EDIT' | translate }}</a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong>{{ 'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.LANGUAGE' | translate }}</strong>:
+            <li><strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.LANGUAGE' | translateHtml | async"></strong>:
               {{ lifeQuoteForm.get('preferred_language')?.value }}</li>
-            <li><strong>{{ 'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.CONTACT_METHOD' | translate }}</strong>:
+            <li><strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.CONTACT_METHOD' | translateHtml | async"></strong>:
               {{ lifeQuoteForm.get('contact_method')?.value }}
             </li>
-            <li><strong>{{ 'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.BEST_TIME' | translate }}</strong>:
+            <li><strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.BEST_TIME' | translateHtml | async"></strong>:
               {{ lifeQuoteForm.get('best_time_to_connect')?.value }}</li>
           </ul>
         </div>
@@ -408,9 +375,7 @@
           <div class="form-check mb-4">
             <input class="form-check-input terms-check" type="checkbox" id="termsCheck"
               (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
-            <label class="form-check-label terms-check-label small" for="termsCheck">
-              {{ 'GET_LIFE_QUOTE.QUOTE_SUMMARY.DISCLAIMER' | translate }}
-            </label>
+            <label class="form-check-label terms-check-label small" for="termsCheck" [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.DISCLAIMER' | translateHtml | async"></label>
           </div>
           <button class="btn btn-submit" (click)="sendLifeQuote()" [disabled]="loading || !termsAccepted">
             <span *ngIf="loading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
@@ -435,7 +400,7 @@
             </div>
           </div>
           <div class="col-lg-6 col-sm-6 col-xs-12">
-            <div class="h4">{{ 'FOOTER.SLOGAN' | translate }}</div>
+            <div class="h4" [innerHTML]="'FOOTER.SLOGAN' | translateHtml | async"></div>
           </div>
         </div>
       </div>

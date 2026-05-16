@@ -5,9 +5,7 @@
                 <div class="topSub2">
                     <div class="h1">
                         {{ 'RV_INSURANCE.BANNER.TITLE_LINE1' | translate }} <br />
-                        {{ 'RV_INSURANCE.BANNER.TITLE_LINE2' | translate }} <span class="heading-span">{{
-                            'RV_INSURANCE.BANNER.TITLE_LINE3' |
-                            translate }}</span>
+                        {{ 'RV_INSURANCE.BANNER.TITLE_LINE2' | translate }} <span class="heading-span" [innerHTML]="'RV_INSURANCE.BANNER.TITLE_LINE3' | translateHtml | async"></span>
                     </div>
                     <!-- 
           <div class="selectable">
@@ -54,9 +52,7 @@
     </div>
 
     <div class="container my-5">
-        <h2 class="section-title mb-4">
-            {{ 'RV_INSURANCE.WHY_DO_YOU_NEED.TITLE' | translate }}
-        </h2>
+        <h2 class="section-title mb-4" [innerHTML]="'RV_INSURANCE.WHY_DO_YOU_NEED.TITLE' | translateHtml | async"></h2>
         <p class="section-description mb-4">
             {{ 'RV_INSURANCE.WHY_DO_YOU_NEED.DESC1' | translate }}
 
@@ -71,9 +67,7 @@
             {{ 'RV_INSURANCE.WHY_DO_YOU_NEED.DESC3' | translate }}
         </p>
 
-        <p class="section-sub-title mb-4">
-            {{ 'RV_INSURANCE.WHY_DO_YOU_NEED.SUB_TITLE' | translate }}
-        </p>
+        <p class="section-sub-title mb-4" [innerHTML]="'RV_INSURANCE.WHY_DO_YOU_NEED.SUB_TITLE' | translateHtml | async"></p>
 
         <div class="insurance-list">
             <div class="insurance-item"
@@ -94,12 +88,10 @@
     <section class="insurance-laws-section py-5">
         <div class="container-max-800">
 
-            <h1 class="main-title">
-                {{ 'RV_INSURANCE.LAWS.TITLE' | translate }}
-            </h1>
+            <h1 class="main-title" [innerHTML]="'RV_INSURANCE.LAWS.TITLE' | translateHtml | async"></h1>
 
             <p class="intro-text" [innerHtml]="'RV_INSURANCE.LAWS.INTRO1' | translate"></p>
-            <p class="intro-text">{{ 'RV_INSURANCE.LAWS.INTRO2' | translate }} </p>
+            <p class="intro-text" [innerHTML]="'RV_INSURANCE.LAWS.INTRO2' | translateHtml | async"></p>
 
       
         </div>
@@ -110,8 +102,8 @@
         <div class="container">
             <!-- Header -->
             <div class="header-content mb-5">
-                <h6 class="text-danger fw-bold">{{ 'RV_INSURANCE.COVERAGES.HEADER.TITLE' | translate }}</h6>
-                <p class="small text-muted">{{ 'RV_INSURANCE.COVERAGES.HEADER.DESC' | translate }}</p>
+                <h6 class="text-danger fw-bold" [innerHTML]="'RV_INSURANCE.COVERAGES.HEADER.TITLE' | translateHtml | async"></h6>
+                <p class="small text-muted" [innerHTML]="'RV_INSURANCE.COVERAGES.HEADER.DESC' | translateHtml | async"></p>
             </div>
 
             <div class="row g-4 mb-5">
@@ -136,17 +128,13 @@
             <div class="row">
                 <div class="col-lg-10">
                     <!-- Title -->
-                    <h4 class="cost-title mb-4">{{ 'RV_INSURANCE.COST.TITLE' | translate }}</h4>
+                    <h4 class="cost-title mb-4" [innerHTML]="'RV_INSURANCE.COST.TITLE' | translateHtml | async"></h4>
 
                     <!-- Description Content -->
                     <div class="cost-description">
-                        <p class="mb-4">
-                            {{ 'RV_INSURANCE.COST.DESC1' | translate }}
-                        </p>
+                        <p class="mb-4" [innerHTML]="'RV_INSURANCE.COST.DESC1' | translateHtml | async"></p>
 
-                        <p>
-                            {{ 'RV_INSURANCE.COST.DESC2' | translate }}
-                        </p>
+                        <p [innerHTML]="'RV_INSURANCE.COST.DESC2' | translateHtml | async"></p>
                     </div>
                 </div>
             </div>
@@ -156,10 +144,8 @@
 
     <section class="factors-impact-section">
         <div class="container">
-            <h2 class="section-title">{{ 'RV_INSURANCE.FACTORS_IMPACT.HEADER.TITLE' | translate }}</h2>
-            <p class="intro-text">
-                {{ 'RV_INSURANCE.FACTORS_IMPACT.HEADER.DESC' | translate }}
-            </p>
+            <h2 class="section-title" [innerHTML]="'RV_INSURANCE.FACTORS_IMPACT.HEADER.TITLE' | translateHtml | async"></h2>
+            <p class="intro-text" [innerHTML]="'RV_INSURANCE.FACTORS_IMPACT.HEADER.DESC' | translateHtml | async"></p>
 
             <div class="row">
                 @for (key of impactFactorsKeys; track key) {
@@ -181,10 +167,8 @@
 
     <section class="factors-impact-section bg-white">
         <div class="container px-4">
-            <h2 class="section-title">{{ 'RV_INSURANCE.DISCOUNT_FACTORS.HEADER.TITLE' | translate }}</h2>
-            <p class="intro-text">
-                {{ 'RV_INSURANCE.DISCOUNT_FACTORS.HEADER.DESC' | translate }}
-            </p>
+            <h2 class="section-title" [innerHTML]="'RV_INSURANCE.DISCOUNT_FACTORS.HEADER.TITLE' | translateHtml | async"></h2>
+            <p class="intro-text" [innerHTML]="'RV_INSURANCE.DISCOUNT_FACTORS.HEADER.DESC' | translateHtml | async"></p>
 
             <div class="row mt-5">
                 @for (key of discountKeys; track key) {
@@ -206,34 +190,24 @@
 
     <section class="rates-section bg-pink py-5">
         <div class="container container-max-1100 px-4">
-            <h2 class="section-title">{{ 'RV_INSURANCE.AGENT_COMPARISON.HEADER.TITLE' | translate }}</h2>
+            <h2 class="section-title" [innerHTML]="'RV_INSURANCE.AGENT_COMPARISON.HEADER.TITLE' | translateHtml | async"></h2>
             <div class="intro-text">
-                <p>{{ 'RV_INSURANCE.AGENT_COMPARISON.HEADER.DESC' | translate }}</p>
-                <p>{{ 'RV_INSURANCE.AGENT_COMPARISON.HEADER.DESC2' | translate }}</p>
-                <p>{{ 'RV_INSURANCE.AGENT_COMPARISON.HEADER.DESC3' | translate }}
-                </p>
+                <p [innerHTML]="'RV_INSURANCE.AGENT_COMPARISON.HEADER.DESC' | translateHtml | async"></p>
+                <p [innerHTML]="'RV_INSURANCE.AGENT_COMPARISON.HEADER.DESC2' | translateHtml | async"></p>
+                <p [innerHTML]="'RV_INSURANCE.AGENT_COMPARISON.HEADER.DESC3' | translateHtml | async"></p>
             </div>
 
             <!-- Table Container -->
             <div class="rates-table-card p-4 mt-5">
                 <div class="row g-2 text-center text-white fw-bold mb-2">
                     <div class="col-4">
-                        <div class="header-pill bg-danger py-2">{{
-                            'RV_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.FEATURE' |
-                            translate
-                            }}</div>
+                        <div class="header-pill bg-danger py-2" [innerHTML]="'RV_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.FEATURE' | translateHtml | async"></div>
                     </div>
                     <div class="col-4">
-                        <div class="header-pill bg-danger py-2">{{
-                            'RV_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.INDEPENDENT' |
-                            translate
-                            }}</div>
+                        <div class="header-pill bg-danger py-2" [innerHTML]="'RV_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.INDEPENDENT' | translateHtml | async"></div>
                     </div>
                     <div class="col-4">
-                        <div class="header-pill bg-danger py-2">{{
-                            'RV_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.CAPTIVE' |
-                            translate
-                            }}</div>
+                        <div class="header-pill bg-danger py-2" [innerHTML]="'RV_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.CAPTIVE' | translateHtml | async"></div>
                     </div>
                 </div>
 
@@ -269,7 +243,7 @@
 
     <section class="vehicle-types-section">
         <div class="container px-4">
-            <h2 class="section-title">{{ 'RV_INSURANCE.VEHICLE_INSURANCE_TYPES.HEADER.TITLE' | translate }}</h2>
+            <h2 class="section-title" [innerHTML]="'RV_INSURANCE.VEHICLE_INSURANCE_TYPES.HEADER.TITLE' | translateHtml | async"></h2>
             <div class="row g-4">
                 @for (type of vehicleInsuranceTypes; track type) {
                 <div class="col-lg-4 col-md-6 col-sm-6">
@@ -289,22 +263,22 @@
 
     <section class="high-risk-section">
         <div class="container px-4">
-            <h2 class="section-title">{{ 'RV_INSURANCE.HIGH_RISK_DRIVER.HEADER.TITLE' | translate }}</h2>
+            <h2 class="section-title" [innerHTML]="'RV_INSURANCE.HIGH_RISK_DRIVER.HEADER.TITLE' | translateHtml | async"></h2>
             <div class="intro-text">
-                <p>{{ 'RV_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC1' | translate }}</p>
-                <p>{{ 'RV_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC2' | translate }}</p>
-                <p>{{ 'RV_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC3' | translate }}</p>
+                <p [innerHTML]="'RV_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC1' | translateHtml | async"></p>
+                <p [innerHTML]="'RV_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC2' | translateHtml | async"></p>
+                <p [innerHTML]="'RV_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC3' | translateHtml | async"></p>
             </div>
         </div>
     </section>
 
     <section class="language-section">
         <div class="container px-4">
-            <h2 class="section-title">{{ 'RV_INSURANCE.LANGUAGE_SUPPORT.HEADER.TITLE' | translate }}</h2>
+            <h2 class="section-title" [innerHTML]="'RV_INSURANCE.LANGUAGE_SUPPORT.HEADER.TITLE' | translateHtml | async"></h2>
             <div class="intro-text">
-                <p>{{ 'RV_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC1' | translate }}</p>
-                <p>{{ 'RV_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC2' | translate }}</p>
-                <p>{{ 'RV_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC3' | translate }}</p>
+                <p [innerHTML]="'RV_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC1' | translateHtml | async"></p>
+                <p [innerHTML]="'RV_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC2' | translateHtml | async"></p>
+                <p [innerHTML]="'RV_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC3' | translateHtml | async"></p>
 
             </div>
         </div>
@@ -315,9 +289,7 @@
         <div class="container py-5 mt-5">
             <div class="row mb-5 text-center">
                 <div class="col-6">
-                    <h3 class="heading">
-                        {{ 'RV_INSURANCE.ASTATE_DIFFERENTIATORS.HEADER.TITLE' | translate }}
-                    </h3>
+                    <h3 class="heading" [innerHTML]="'RV_INSURANCE.ASTATE_DIFFERENTIATORS.HEADER.TITLE' | translateHtml | async"></h3>
                 </div>
             </div>
             <div class="gap-m">
@@ -329,14 +301,8 @@
                                 <img src="../assets/images/carbon_license.png" alt="Car Icon" />
                             </div>
                             <div class="card-content">
-                                <h5 class="card-title">
-                                    {{ 'RV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.TITLE' | translate
-                                    }}
-                                </h5>
-                                <p class="card-text">
-                                    {{ 'RV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.DESCRIPTION' |
-                                    translate }}
-                                </p>
+                                <h5 class="card-title" [innerHTML]="'RV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.TITLE' | translateHtml | async"></h5>
+                                <p class="card-text" [innerHTML]="'RV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.DESCRIPTION' | translateHtml | async"></p>
                             </div>
                         </div>
                     </div>
@@ -347,14 +313,8 @@
                                 <img src="../assets/images/Heart.png" alt="Car Icon" />
                             </div>
                             <div class="card-content">
-                                <h5 class="card-title">
-                                    {{ 'RV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.TITLE' |
-                                    translate }}
-                                </h5>
-                                <p class="card-text">
-                                    {{ 'RV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.DESCRIPTION'
-                                    | translate }}
-                                </p>
+                                <h5 class="card-title" [innerHTML]="'RV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.TITLE' | translateHtml | async"></h5>
+                                <p class="card-text" [innerHTML]="'RV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.DESCRIPTION' | translateHtml | async"></p>
                             </div>
                         </div>
                     </div>
@@ -367,13 +327,8 @@
                                 <img src="../assets/images/calendar.png" alt="Car Icon" />
                             </div>
                             <div class="card-content">
-                                <h5 class="card-title">
-                                    {{ 'RV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.TITLE' | translate }}
-                                </h5>
-                                <p class="card-text">
-                                    {{ 'RV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.DESCRIPTION' |
-                                    translate }}
-                                </p>
+                                <h5 class="card-title" [innerHTML]="'RV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.TITLE' | translateHtml | async"></h5>
+                                <p class="card-text" [innerHTML]="'RV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.DESCRIPTION' | translateHtml | async"></p>
                             </div>
                         </div>
                     </div>
@@ -384,13 +339,8 @@
                                 <img src="../assets/images/price.png" alt="Car Icon" />
                             </div>
                             <div class="card-content">
-                                <h5 class="card-title">
-                                    {{ 'RV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.TITLE' | translate }}
-                                </h5>
-                                <p class="card-text">
-                                    {{ 'RV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.DESCRIPTION' |
-                                    translate }}
-                                </p>
+                                <h5 class="card-title" [innerHTML]="'RV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.TITLE' | translateHtml | async"></h5>
+                                <p class="card-text" [innerHTML]="'RV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.DESCRIPTION' | translateHtml | async"></p>
                             </div>
                         </div>
                     </div>
@@ -403,13 +353,8 @@
                                 <img src="../assets/images/wifi.png" alt="Car Icon" />
                             </div>
                             <div class="card-content">
-                                <h5 class="card-title">
-                                    {{ 'RV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translate }}
-                                </h5>
-                                <p class="card-text">
-                                    {{ 'RV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' | translate
-                                    }}
-                                </p>
+                                <h5 class="card-title" [innerHTML]="'RV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translateHtml | async"></h5>
+                                <p class="card-text" [innerHTML]="'RV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' | translateHtml | async"></p>
                             </div>
                         </div>
                     </div>
@@ -420,14 +365,8 @@
                                 <img src="../assets/images/agents.png" alt="Car Icon" />
                             </div>
                             <div class="card-content">
-                                <h5 class="card-title">
-                                    {{ 'RV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.TITLE' |
-                                    translate }}
-                                </h5>
-                                <p class="card-text">
-                                    {{ 'RV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.DESCRIPTION' |
-                                    translate }}
-                                </p>
+                                <h5 class="card-title" [innerHTML]="'RV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.TITLE' | translateHtml | async"></h5>
+                                <p class="card-text" [innerHTML]="'RV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.DESCRIPTION' | translateHtml | async"></p>
                             </div>
                         </div>
                     </div>
@@ -450,38 +389,38 @@
                 </div>
 
                 <div class="col-md-6 ps-md-5">
-                    <h2 class="section-title mb-5">{{ 'RV_INSURANCE.INSURANCE_STEPS.HEADER.TITLE' | translate }}</h2>
+                    <h2 class="section-title mb-5" [innerHTML]="'RV_INSURANCE.INSURANCE_STEPS.HEADER.TITLE' | translateHtml | async"></h2>
 
                     <div class="timeline">
                         <div class="timeline-item">
                             <div class="dot"></div>
                             <div class="content">
-                                <h3>{{ 'RV_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.TITLE' | translate }}</h3>
-                                <p>{{ 'RV_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translate }}</p>
+                                <h3 [innerHTML]="'RV_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.TITLE' | translateHtml | async"></h3>
+                                <p [innerHTML]="'RV_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translateHtml | async"></p>
                             </div>
                         </div>
 
                         <div class="timeline-item">
                             <div class="dot"></div>
                             <div class="content">
-                                <h3>{{ 'RV_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.TITLE' | translate }}</h3>
-                                <p>{{ 'RV_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.DESCRIPTION' | translate }}</p>
+                                <h3 [innerHTML]="'RV_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.TITLE' | translateHtml | async"></h3>
+                                <p [innerHTML]="'RV_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.DESCRIPTION' | translateHtml | async"></p>
                             </div>
                         </div>
 
                         <div class="timeline-item">
                             <div class="dot"></div>
                             <div class="content">
-                                <h3>{{ 'RV_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.TITLE' | translate }}</h3>
-                                <p>{{ 'RV_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.DESCRIPTION' | translate }}</p>
+                                <h3 [innerHTML]="'RV_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.TITLE' | translateHtml | async"></h3>
+                                <p [innerHTML]="'RV_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.DESCRIPTION' | translateHtml | async"></p>
                             </div>
                         </div>
 
                         <div class="timeline-item">
                             <div class="dot"></div>
                             <div class="content">
-                                <h3>{{ 'RV_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.TITLE' | translate }}</h3>
-                                <p>{{ 'RV_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.DESCRIPTION' | translate }}</p>
+                                <h3 [innerHTML]="'RV_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.TITLE' | translateHtml | async"></h3>
+                                <p [innerHTML]="'RV_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.DESCRIPTION' | translateHtml | async"></p>
                             </div>
                         </div>
                     </div>
@@ -493,7 +432,7 @@
 
     <section class="switch-steps-section">
         <div class="container px-4">
-            <h2 class="section-title">{{ 'RV_INSURANCE.SWITCH_STEPS.HEADER.TITLE' | translate }}</h2>
+            <h2 class="section-title" [innerHTML]="'RV_INSURANCE.SWITCH_STEPS.HEADER.TITLE' | translateHtml | async"></h2>
 
             <div class="switch-steps-grid">
                 @for (step of switchSteps; track step) {
@@ -512,10 +451,8 @@
         <div class="container">
             <div class="topSub">
                 <div class="topSub2">
-                    <div class="h1">
-                        {{ 'RV_INSURANCE.FREE_QUOTE.HEADER' | translate }}
-                    </div>
-                    <p class="para">{{ 'RV_INSURANCE.FREE_QUOTE.DESCRIPTION' | translate }}</p>
+                    <div class="h1" [innerHTML]="'RV_INSURANCE.FREE_QUOTE.HEADER' | translateHtml | async"></div>
+                    <p class="para" [innerHTML]="'RV_INSURANCE.FREE_QUOTE.DESCRIPTION' | translateHtml | async"></p>
                     <div class="selectable mt-4">
                         @for (item of chips.slice(0, 3); track item.name) {
                         <div class="chip">
@@ -565,7 +502,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-6 col-xs-12">
-                        <div class="h4">{{ 'FOOTER.SLOGAN' | translate }}</div>
+                        <div class="h4" [innerHTML]="'FOOTER.SLOGAN' | translateHtml | async"></div>
                     </div>
                 </div>
             </div>
