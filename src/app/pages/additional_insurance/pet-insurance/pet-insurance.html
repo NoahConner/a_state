@@ -4,33 +4,33 @@
       <div class="topSub">
         <div class="topSub2">
           <div class="h1">
-            {{ 'PET_INSURANCE.BANNER.TITLE_LINE1' | translate }} <br />
-            {{ 'PET_INSURANCE.BANNER.TITLE_LINE2' | translate }} <span class="heading-span" [innerHTML]="'PET_INSURANCE.BANNER.TITLE_LINE3' | translateHtml | async"></span>
+            <span [innerHTML]="'PET_INSURANCE.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
+            <span [innerHTML]="'PET_INSURANCE.BANNER.TITLE_LINE2' | translateHtml | async"></span> <span class="heading-span" [innerHTML]="'PET_INSURANCE.BANNER.TITLE_LINE3' | translateHtml | async"></span>
           </div>
           <!-- 
           <div class="selectable">
             
             @for (item of chips; track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item.icon }}"></i>
-              <span>{{ item.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div> -->
 
           <div class="selectable mt-4">
             @for (item of chips.slice(0, 3); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
           <div class="selectable mt-2">
             @for (item of chips.slice(3, 6); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
@@ -79,10 +79,10 @@
       <h1 class="main-title" [innerHTML]="'PET_INSURANCE.HOW_IT_WORKS.TITLE' | translateHtml | async"></h1>
 
       <p class="intro-text">
-        {{ 'PET_INSURANCE.HOW_IT_WORKS.DESC1' | translate }}
+        <span [innerHTML]="'PET_INSURANCE.HOW_IT_WORKS.DESC1' | translateHtml | async"></span>
         <br>
         <br>
-        {{ 'PET_INSURANCE.HOW_IT_WORKS.DESC2' | translate }}
+        <span [innerHTML]="'PET_INSURANCE.HOW_IT_WORKS.DESC2' | translateHtml | async"></span>
 
       </p>
 
@@ -132,8 +132,8 @@
               <i [class]="'PET_INSURANCE.NOT_COVERED.LIST.' + key + '.ICON' | translate"></i>
             </div>
             <div class="factor-content">
-              <h6>{{ ('PET_INSURANCE.NOT_COVERED.LIST.' + key + '.TITLE') | translate }}</h6>
-              <p>{{ ('PET_INSURANCE.NOT_COVERED.LIST.' + key + '.DESC') | translate }}</p>
+              <h6><span [innerHTML]="('PET_INSURANCE.NOT_COVERED.LIST.' + key + '.TITLE') | translateHtml | async"></span></h6>
+              <p><span [innerHTML]="('PET_INSURANCE.NOT_COVERED.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
             </div>
           </div>
         </div>
@@ -217,12 +217,12 @@
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-6">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('PET_INSURANCE.COMPARE.RATES_BY_COMPANY.TABLE.LIST.' + item + '.INSURANCE_COMPANY') | translate }}
+                <span [innerHTML]="('PET_INSURANCE.COMPARE.RATES_BY_COMPANY.TABLE.LIST.' + item + '.INSURANCE_COMPANY') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-6">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('PET_INSURANCE.COMPARE.RATES_BY_COMPANY.TABLE.LIST.' + item + '.MONTHLY_PRICE') | translate }}
+                <span [innerHTML]="('PET_INSURANCE.COMPARE.RATES_BY_COMPANY.TABLE.LIST.' + item + '.MONTHLY_PRICE') | translateHtml | async"></span>
               </div>
             </div>
           </div>
@@ -230,11 +230,11 @@
         </div>
 
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'PET_INSURANCE.COMPARE.FOOTER.SOURCE' | translate }} <a href="#" target="_blank">Insurify</a></p>
+          <p><span [innerHTML]="'PET_INSURANCE.COMPARE.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#" target="_blank">Insurify</a></p>
           <p class="last-updated" [innerHTML]="'PET_INSURANCE.COMPARE.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
         <div class="disclaimer mt-2">
-          <p class="mb-0"><strong>Disclaimer:</strong> {{ 'PET_INSURANCE.COMPARE.FOOTER.DISCLAIMER' | translate }}</p>
+          <p class="mb-0"><strong>Disclaimer:</strong> <span [innerHTML]="'PET_INSURANCE.COMPARE.FOOTER.DISCLAIMER' | translateHtml | async"></span></p>
         </div>
       </div>
     </div>
@@ -268,17 +268,17 @@
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('PET_INSURANCE.COMPARE.RATES_BY_BREED.TABLE.LIST.' + item + '.BREED') | translate }}
+                <span [innerHTML]="('PET_INSURANCE.COMPARE.RATES_BY_BREED.TABLE.LIST.' + item + '.BREED') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('PET_INSURANCE.COMPARE.RATES_BY_BREED.TABLE.LIST.' + item + '.MONTHLY_RATE') | translate }}
+                <span [innerHTML]="('PET_INSURANCE.COMPARE.RATES_BY_BREED.TABLE.LIST.' + item + '.MONTHLY_RATE') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('PET_INSURANCE.COMPARE.RATES_BY_BREED.TABLE.LIST.' + item + '.ANNUAL_RATE') | translate }}
+                <span [innerHTML]="('PET_INSURANCE.COMPARE.RATES_BY_BREED.TABLE.LIST.' + item + '.ANNUAL_RATE') | translateHtml | async"></span>
               </div>
             </div>
           </div>
@@ -286,11 +286,11 @@
         </div>
 
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'PET_INSURANCE.COMPARE.FOOTER.SOURCE' | translate }} <a href="#" target="_blank">MoneyGeek</a></p>
+          <p><span [innerHTML]="'PET_INSURANCE.COMPARE.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#" target="_blank">MoneyGeek</a></p>
           <p class="last-updated" [innerHTML]="'PET_INSURANCE.COMPARE.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
         <div class="disclaimer mt-2">
-          <p class="mb-0"><strong>Disclaimer:</strong> {{ 'PET_INSURANCE.COMPARE.FOOTER.DISCLAIMER' | translate }}</p>
+          <p class="mb-0"><strong>Disclaimer:</strong> <span [innerHTML]="'PET_INSURANCE.COMPARE.FOOTER.DISCLAIMER' | translateHtml | async"></span></p>
         </div>
       </div>
     </div>
@@ -324,17 +324,17 @@
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('PET_INSURANCE.COMPARE.RATES_BY_CAT_BREED.TABLE.LIST.' + item + '.BREED') | translate }}
+                <span [innerHTML]="('PET_INSURANCE.COMPARE.RATES_BY_CAT_BREED.TABLE.LIST.' + item + '.BREED') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('PET_INSURANCE.COMPARE.RATES_BY_CAT_BREED.TABLE.LIST.' + item + '.MONTHLY_RATE') | translate }}
+                <span [innerHTML]="('PET_INSURANCE.COMPARE.RATES_BY_CAT_BREED.TABLE.LIST.' + item + '.MONTHLY_RATE') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('PET_INSURANCE.COMPARE.RATES_BY_CAT_BREED.TABLE.LIST.' + item + '.ANNUAL_RATE') | translate }}
+                <span [innerHTML]="('PET_INSURANCE.COMPARE.RATES_BY_CAT_BREED.TABLE.LIST.' + item + '.ANNUAL_RATE') | translateHtml | async"></span>
               </div>
             </div>
           </div>
@@ -342,11 +342,11 @@
         </div>
 
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'PET_INSURANCE.COMPARE.FOOTER.SOURCE' | translate }} <a href="#" target="_blank">MoneyGeek</a></p>
+          <p><span [innerHTML]="'PET_INSURANCE.COMPARE.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#" target="_blank">MoneyGeek</a></p>
           <p class="last-updated" [innerHTML]="'PET_INSURANCE.COMPARE.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
         <div class="disclaimer mt-2">
-          <p class="mb-0"><strong>Disclaimer:</strong> {{ 'PET_INSURANCE.COMPARE.FOOTER.DISCLAIMER' | translate }}</p>
+          <p class="mb-0"><strong>Disclaimer:</strong> <span [innerHTML]="'PET_INSURANCE.COMPARE.FOOTER.DISCLAIMER' | translateHtml | async"></span></p>
         </div>
       </div>
     </div>
@@ -380,17 +380,17 @@
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('PET_INSURANCE.COMPARE.RATES_BY_AGE.TABLE.LIST.' + item + '.AGE') | translate }}
+                <span [innerHTML]="('PET_INSURANCE.COMPARE.RATES_BY_AGE.TABLE.LIST.' + item + '.AGE') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('PET_INSURANCE.COMPARE.RATES_BY_AGE.TABLE.LIST.' + item + '.MONTHLY_RATE') | translate }}
+                <span [innerHTML]="('PET_INSURANCE.COMPARE.RATES_BY_AGE.TABLE.LIST.' + item + '.MONTHLY_RATE') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('PET_INSURANCE.COMPARE.RATES_BY_AGE.TABLE.LIST.' + item + '.ANNUAL_RATE') | translate }}
+                <span [innerHTML]="('PET_INSURANCE.COMPARE.RATES_BY_AGE.TABLE.LIST.' + item + '.ANNUAL_RATE') | translateHtml | async"></span>
               </div>
             </div>
           </div>
@@ -398,11 +398,11 @@
         </div>
 
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'PET_INSURANCE.COMPARE.FOOTER.SOURCE' | translate }} <a href="#" target="_blank">MoneyGeek</a></p>
+          <p><span [innerHTML]="'PET_INSURANCE.COMPARE.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#" target="_blank">MoneyGeek</a></p>
           <p class="last-updated" [innerHTML]="'PET_INSURANCE.COMPARE.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
         <div class="disclaimer mt-2">
-          <p class="mb-0"><strong>Disclaimer:</strong> {{ 'PET_INSURANCE.COMPARE.FOOTER.DISCLAIMER' | translate }}</p>
+          <p class="mb-0"><strong>Disclaimer:</strong> <span [innerHTML]="'PET_INSURANCE.COMPARE.FOOTER.DISCLAIMER' | translateHtml | async"></span></p>
         </div>
       </div>
     </div>
@@ -446,33 +446,32 @@
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-2">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('PET_INSURANCE.PET_VS_OTHER_VET_CARE.TABLE.LIST.' + item + '.FEATURE') | translate }}
+                <span [innerHTML]="('PET_INSURANCE.PET_VS_OTHER_VET_CARE.TABLE.LIST.' + item + '.FEATURE') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-2">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('PET_INSURANCE.PET_VS_OTHER_VET_CARE.TABLE.LIST.' + item + '.PET_INSURANCE') | translate
-                }}
+                <span [innerHTML]="('PET_INSURANCE.PET_VS_OTHER_VET_CARE.TABLE.LIST.' + item + '.PET_INSURANCE') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-2">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('PET_INSURANCE.PET_VS_OTHER_VET_CARE.TABLE.LIST.' + item + '.WELLNESS_PLAN') | translate }}
+                <span [innerHTML]="('PET_INSURANCE.PET_VS_OTHER_VET_CARE.TABLE.LIST.' + item + '.WELLNESS_PLAN') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-2">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('PET_INSURANCE.PET_VS_OTHER_VET_CARE.TABLE.LIST.' + item + '.CARECREDIT') | translate }}
+                <span [innerHTML]="('PET_INSURANCE.PET_VS_OTHER_VET_CARE.TABLE.LIST.' + item + '.CARECREDIT') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-2">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('PET_INSURANCE.PET_VS_OTHER_VET_CARE.TABLE.LIST.' + item + '.SAVINGS') | translate }}
+                <span [innerHTML]="('PET_INSURANCE.PET_VS_OTHER_VET_CARE.TABLE.LIST.' + item + '.SAVINGS') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-2">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('PET_INSURANCE.PET_VS_OTHER_VET_CARE.TABLE.LIST.' + item + '.NO_COVERAGE') | translate }}
+                <span [innerHTML]="('PET_INSURANCE.PET_VS_OTHER_VET_CARE.TABLE.LIST.' + item + '.NO_COVERAGE') | translateHtml | async"></span>
               </div>
             </div>
           </div>
@@ -496,9 +495,9 @@
         <div class="col-lg-6">
           <div class="factor-item">
             <div class="factor-content">
-              <p> <strong>{{ ('PET_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }}
+              <p> <strong><span [innerHTML]="('PET_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translateHtml | async"></span>
                   :</strong>
-                {{ ('PET_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}</p>
+                <span [innerHTML]="('PET_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
             </div>
           </div>
         </div>
@@ -517,15 +516,15 @@
         <div class="col-lg-6">
           <div class="factor-card">
             <div class="factor-content">
-              <p> <strong>{{ ('PET_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translate }}
+              <p> <strong><span [innerHTML]="('PET_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translateHtml | async"></span>
                   :</strong>
-                {{ ('PET_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translate }}</p>
+                <span [innerHTML]="('PET_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
 
               <!-- <h6 class="factor-title">
-                {{ ('PET_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }}
+                <span [innerHTML]="('PET_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translateHtml | async"></span>
               </h6>
               <p class="factor-desc">
-                {{ ('PET_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}
+                <span [innerHTML]="('PET_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translateHtml | async"></span>
               </p> -->
             </div>
           </div>
@@ -563,18 +562,17 @@
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('PET_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translate }}
+                <span [innerHTML]="('PET_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('PET_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translate
-                }}
+                <span [innerHTML]="('PET_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translateHtml | async"></span>
               </div>
             </div>
             <div class="col-4">
               <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ ('PET_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translate }}
+                <span [innerHTML]="('PET_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translateHtml | async"></span>
               </div>
             </div>
           </div>
@@ -762,8 +760,8 @@
         @for (step of switchSteps; track step) {
         <div class="switch-card-wrapper">
           <div class="switch-card">
-            <h6>{{ 'PET_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE' | translate }}</h6>
-            <p>{{ 'PET_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION' | translate }}</p>
+            <h6><span [innerHTML]="('PET_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE') | translateHtml | async"></span></h6>
+            <p><span [innerHTML]="('PET_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION') | translateHtml | async"></span></p>
           </div>
         </div>
         }
@@ -781,17 +779,17 @@
           <p class="para" [innerHTML]="'PET_INSURANCE.FREE_QUOTE.DESCRIPTION' | translateHtml | async"></p>
           <div class="selectable mt-4">
             @for (item of chips.slice(0, 3); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
           <div class="selectable mt-2">
             @for (item of chips.slice(3, 6); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>

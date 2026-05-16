@@ -1,7 +1,7 @@
 <div class="quoteMain">
   <div class="topBanner">
     <div class="container">
-      <div class="h1">{{ 'GET_HEALTH_QUOTE.HEADING' | translate }}
+      <div class="h1"><span [innerHTML]="'GET_HEALTH_QUOTE.HEADING' | translateHtml | async"></span>
         <p class="heroDesc" [innerHTML]="'GET_HEALTH_QUOTE.DESCRIPTION' | translateHtml | async"></p>
       </div>
     </div>
@@ -51,8 +51,7 @@
                   </div>
                 </div>
                 <div class="col-md-4 mt-3">
-                  <label class="form-label">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP1.FIELDS.ZIPCODE' | translate
-                    }}<span>*</span></label>
+                  <label class="form-label"><span [innerHTML]="'GET_HEALTH_QUOTE.STEPPER.STEP1.FIELDS.ZIPCODE' | translateHtml | async"></span><span>*</span></label>
                   <input type="text" formControlName="zip_code"
                     [class.is-invalid]="healthQuoteForm.get('zip_code')?.invalid && healthQuoteForm.get('zip_code')?.touched"
                     class="form-control" placeholder="3232" />
@@ -74,8 +73,7 @@
 
             <div class="form-content-border">
               <div class="col-md-4">
-                <label class="form-label">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP2.FIELDS.HOUSEHOLD_SIZE' | translate
-                  }}<span>*</span></label>
+                <label class="form-label"><span [innerHTML]="'GET_HEALTH_QUOTE.STEPPER.STEP2.FIELDS.HOUSEHOLD_SIZE' | translateHtml | async"></span><span>*</span></label>
                 <input type="text" formControlName="household_size"
                   [class.is-invalid]="healthQuoteForm.get('household_size')?.invalid && healthQuoteForm.get('household_size')?.touched"
                   class="form-control" placeholder="1" />
@@ -85,7 +83,7 @@
 
               <div class="row gy-3 mt-4">
                 <div class="selection-group">
-                  <h4 class="selection-heading">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP2.FIELDS.ANNUAL_INCOME' | translate }}
+                  <h4 class="selection-heading"><span [innerHTML]="'GET_HEALTH_QUOTE.STEPPER.STEP2.FIELDS.ANNUAL_INCOME' | translateHtml | async"></span>
                     <span class="note-heading" [innerHTML]="'GET_HEALTH_QUOTE.STEPPER.STEP2.FIELDS.ANNUAL_INCOME_NOTE' | translateHtml | async"></span>
                   </h4>
 
@@ -141,8 +139,7 @@
             <div class="form-content-border">
               <div class="row gy-3 mb-2">
                 <div class="col-md-4">
-                  <label class="form-label">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP3.FIELDS.FULL_NAME' | translate
-                    }}<span>*</span></label>
+                  <label class="form-label"><span [innerHTML]="'GET_HEALTH_QUOTE.STEPPER.STEP3.FIELDS.FULL_NAME' | translateHtml | async"></span><span>*</span></label>
                   <input type="text" formControlName="full_name"
                     [class.is-invalid]="healthQuoteForm.get('full_name')?.invalid && healthQuoteForm.get('full_name')?.touched"
                     class="form-control" placeholder="John Doe" />
@@ -150,8 +147,7 @@
                     *ngIf="healthQuoteForm.get('full_name')?.invalid && healthQuoteForm.get('full_name')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>
                 <div class="col-md-4">
-                  <label class="form-label">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP3.FIELDS.EMAIL' | translate
-                    }}<span>*</span></label>
+                  <label class="form-label"><span [innerHTML]="'GET_HEALTH_QUOTE.STEPPER.STEP3.FIELDS.EMAIL' | translateHtml | async"></span><span>*</span></label>
                   <input type="email" formControlName="email_address"
                     [class.is-invalid]="healthQuoteForm.get('email_address')?.invalid && healthQuoteForm.get('email_address')?.touched"
                     class="form-control" id="email_address" placeholder="johndoe@email.com" />
@@ -161,8 +157,7 @@
               </div>
               <div class="row gy-3 mb-3">
                 <div class="col-md-4">
-                  <label class="form-label">{{ 'GET_HEALTH_QUOTE.STEPPER.STEP3.FIELDS.PHONE' | translate
-                    }}<span>*</span></label>
+                  <label class="form-label"><span [innerHTML]="'GET_HEALTH_QUOTE.STEPPER.STEP3.FIELDS.PHONE' | translateHtml | async"></span><span>*</span></label>
                   <input type="text" formControlName="phone_number"
                     [class.is-invalid]="healthQuoteForm.get('phone_number')?.invalid && healthQuoteForm.get('phone_number')?.touched"
                     class="form-control" placeholder="+1 234 567 8900" />
@@ -217,8 +212,7 @@
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0" [innerHTML]="'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD1.TITLE' | translateHtml | async"></h5>
-            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(1)"><i class="bi bi-pencil-square"></i> {{
-              'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD1.EDIT' | translate }}</a>
+            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(1)"><i class="bi bi-pencil-square"></i> <span [innerHTML]="'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD1.EDIT' | translateHtml | async"></span></a>
           </div>
           <ul class="list-unstyled mb-0">
             <li><strong [innerHTML]="'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.COVERAGE_FOR' | translateHtml | async"></strong>: {{ healthQuoteForm.get('who_needs_coverage')?.value || 'None' }}
@@ -232,8 +226,7 @@
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0" [innerHTML]="'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD2.TITLE' | translateHtml | async"></h5>
-            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(2)"><i class="bi bi-pencil-square"></i> {{
-              'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD2.EDIT' | translate }}</a>
+            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(2)"><i class="bi bi-pencil-square"></i> <span [innerHTML]="'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD2.EDIT' | translateHtml | async"></span></a>
           </div>
           <ul class="list-unstyled mb-0">
             <li><strong [innerHTML]="'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.HOUSEHOLD_SIZE' | translateHtml | async"></strong>:
@@ -253,8 +246,7 @@
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0" [innerHTML]="'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD3.TITLE' | translateHtml | async"></h5>
-            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(3)"><i class="bi bi-pencil-square"></i> {{
-              'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD3.EDIT' | translate }}</a>
+            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(3)"><i class="bi bi-pencil-square"></i> <span [innerHTML]="'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD3.EDIT' | translateHtml | async"></span></a>
           </div>
           <ul class="list-unstyled mb-0">
             <li><strong [innerHTML]="'GET_HEALTH_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.FULL_NAME' | translateHtml | async"></strong>:

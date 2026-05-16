@@ -4,33 +4,33 @@
             <div class="topSub">
                 <div class="topSub2">
                     <div class="h1">
-                        {{ 'COMMERCIAL_SURETY_BONDS.BANNER.TITLE_LINE1' | translate }} <br />
-                        {{ 'COMMERCIAL_SURETY_BONDS.BANNER.TITLE_LINE2' | translate }} <span class="heading-span" [innerHTML]="'COMMERCIAL_SURETY_BONDS.BANNER.TITLE_LINE3' | translateHtml | async"></span>
+                        <span [innerHTML]="'COMMERCIAL_SURETY_BONDS.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
+                        <span [innerHTML]="'COMMERCIAL_SURETY_BONDS.BANNER.TITLE_LINE2' | translateHtml | async"></span> <span class="heading-span" [innerHTML]="'COMMERCIAL_SURETY_BONDS.BANNER.TITLE_LINE3' | translateHtml | async"></span>
                     </div>
                     <!-- 
           <div class="selectable">
             
             @for (item of chips; track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item.icon }}"></i>
-              <span>{{ item.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div> -->
 
                     <div class="selectable mt-4">
                         @for (item of chips.slice(0, 3); track item.name) {
-                        <div class="chip">
+                        <div class="chip" *ngIf="item.name">
                             <i class="{{ item?.icon }}"></i>
-                            <span>{{ item?.name | translate }}</span>
+                            <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
                         </div>
                         }
                     </div>
                     <div class="selectable mt-2">
                         @for (item of chips.slice(3, 6); track item.name) {
-                        <div class="chip">
+                        <div class="chip" *ngIf="item.name">
                             <i class="{{ item?.icon }}"></i>
-                            <span>{{ item?.name | translate }}</span>
+                            <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
                         </div>
                         }
                     </div>
@@ -82,10 +82,10 @@
             <h1 class="main-title" [innerHTML]="'COMMERCIAL_SURETY_BONDS.HOW_IT_WORKS.TITLE' | translateHtml | async"></h1>
 
             <p class="intro-text">
-                {{ 'COMMERCIAL_SURETY_BONDS.HOW_IT_WORKS.DESC1' | translate }}
+                <span [innerHTML]="'COMMERCIAL_SURETY_BONDS.HOW_IT_WORKS.DESC1' | translateHtml | async"></span>
                 <br>
                 <br>
-                {{ 'COMMERCIAL_SURETY_BONDS.HOW_IT_WORKS.DESC2' | translate }}
+                <span [innerHTML]="'COMMERCIAL_SURETY_BONDS.HOW_IT_WORKS.DESC2' | translateHtml | async"></span>
 
             </p>
 
@@ -135,8 +135,8 @@
                             <i [class]="'COMMERCIAL_SURETY_BONDS.NOT_COVERED.LIST.' + key + '.ICON' | translate"></i>
                         </div>
                         <div class="factor-content">
-                            <h6>{{ ('COMMERCIAL_SURETY_BONDS.NOT_COVERED.LIST.' + key + '.TITLE') | translate }}</h6>
-                            <p>{{ ('COMMERCIAL_SURETY_BONDS.NOT_COVERED.LIST.' + key + '.DESC') | translate }}</p>
+                            <h6><span [innerHTML]="('COMMERCIAL_SURETY_BONDS.NOT_COVERED.LIST.' + key + '.TITLE') | translateHtml | async"></span></h6>
+                            <p><span [innerHTML]="('COMMERCIAL_SURETY_BONDS.NOT_COVERED.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
                         </div>
                     </div>
                 </div>
@@ -234,44 +234,40 @@
                         <div class="col-2">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ ('COMMERCIAL_SURETY_BONDS.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.FEATURE') |
-                                translate }}
+                                <span [innerHTML]="('COMMERCIAL_SURETY_BONDS.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.FEATURE') | translateHtml | async"></span>
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ ('COMMERCIAL_SURETY_BONDS.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item +
-                                '.COMMERCIAL_SURETY') | translate
-                                }}
+                                <span [innerHTML]="(('COMMERCIAL_SURETY_BONDS.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item +
+                                '.COMMERCIAL_SURETY')) | translateHtml | async"></span>
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ ('COMMERCIAL_SURETY_BONDS.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item +
-                                '.GENERAL_LIABILITY') | translate }}
+                                <span [innerHTML]="(('COMMERCIAL_SURETY_BONDS.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item +
+                                '.GENERAL_LIABILITY')) | translateHtml | async"></span>
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ ('COMMERCIAL_SURETY_BONDS.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.FIDELITY') |
-                                translate }}
+                                <span [innerHTML]="('COMMERCIAL_SURETY_BONDS.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.FIDELITY') | translateHtml | async"></span>
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ ('COMMERCIAL_SURETY_BONDS.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item +
-                                '.PROFESSIONAL_LIABILITY') | translate }}
+                                <span [innerHTML]="(('COMMERCIAL_SURETY_BONDS.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item +
+                                '.PROFESSIONAL_LIABILITY')) | translateHtml | async"></span>
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ ('COMMERCIAL_SURETY_BONDS.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.BOP') |
-                                translate }}
+                                <span [innerHTML]="('COMMERCIAL_SURETY_BONDS.FAMILY_VS_INDIVIDUAL.TABLE.LIST.' + item + '.BOP') | translateHtml | async"></span>
                             </div>
                         </div>
                     </div>
@@ -293,10 +289,9 @@
                 <div class="col-lg-6">
                     <div class="factor-item">
                         <div class="factor-content">
-                            <p> <strong>{{ ('COMMERCIAL_SURETY_BONDS.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate
-                                    }}
+                            <p> <strong><span [innerHTML]="('COMMERCIAL_SURETY_BONDS.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translateHtml | async"></span>
                                     :</strong>
-                                {{ ('COMMERCIAL_SURETY_BONDS.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}</p>
+                                <span [innerHTML]="('COMMERCIAL_SURETY_BONDS.FACTORS_IMPACT.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
                         </div>
                     </div>
                 </div>
@@ -315,16 +310,15 @@
                 <div class="col-lg-6">
                     <div class="factor-card">
                         <div class="factor-content">
-                            <p> <strong>{{ ('COMMERCIAL_SURETY_BONDS.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') |
-                                    translate }}
+                            <p> <strong><span [innerHTML]="('COMMERCIAL_SURETY_BONDS.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translateHtml | async"></span>
                                     :</strong>
-                                {{ ('COMMERCIAL_SURETY_BONDS.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translate }}</p>
+                                <span [innerHTML]="('COMMERCIAL_SURETY_BONDS.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
 
                             <!-- <h6 class="factor-title">
-                {{ ('COMMERCIAL_SURETY_BONDS.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }}
+                <span [innerHTML]="('COMMERCIAL_SURETY_BONDS.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translateHtml | async"></span>
               </h6>
               <p class="factor-desc">
-                {{ ('COMMERCIAL_SURETY_BONDS.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}
+                <span [innerHTML]="('COMMERCIAL_SURETY_BONDS.FACTORS_IMPACT.LIST.' + key + '.DESC') | translateHtml | async"></span>
               </p> -->
                         </div>
                     </div>
@@ -363,23 +357,19 @@
                         <div class="col-4">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ ('COMMERCIAL_SURETY_BONDS.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') |
-                                translate }}
+                                <span [innerHTML]="('COMMERCIAL_SURETY_BONDS.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translateHtml | async"></span>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ ('COMMERCIAL_SURETY_BONDS.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') |
-                                translate
-                                }}
+                                <span [innerHTML]="('COMMERCIAL_SURETY_BONDS.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translateHtml | async"></span>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ ('COMMERCIAL_SURETY_BONDS.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') |
-                                translate }}
+                                <span [innerHTML]="('COMMERCIAL_SURETY_BONDS.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translateHtml | async"></span>
                             </div>
                         </div>
                     </div>
@@ -567,8 +557,8 @@
                 @for (step of switchSteps; track step) {
                 <div class="switch-card-wrapper">
                     <div class="switch-card">
-                        <h6>{{ 'COMMERCIAL_SURETY_BONDS.SWITCH_STEPS.STEPS.' + step + '.TITLE' | translate }}</h6>
-                        <p>{{ 'COMMERCIAL_SURETY_BONDS.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION' | translate }}</p>
+                        <h6><span [innerHTML]="('COMMERCIAL_SURETY_BONDS.SWITCH_STEPS.STEPS.' + step + '.TITLE') | translateHtml | async"></span></h6>
+                        <p><span [innerHTML]="('COMMERCIAL_SURETY_BONDS.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION') | translateHtml | async"></span></p>
                     </div>
                 </div>
                 }
@@ -586,17 +576,17 @@
                     <p class="para" [innerHTML]="'COMMERCIAL_SURETY_BONDS.FREE_QUOTE.DESCRIPTION' | translateHtml | async"></p>
                     <div class="selectable mt-4">
                         @for (item of chips.slice(0, 3); track item.name) {
-                        <div class="chip">
+                        <div class="chip" *ngIf="item.name">
                             <i class="{{ item?.icon }}"></i>
-                            <span>{{ item?.name | translate }}</span>
+                            <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
                         </div>
                         }
                     </div>
                     <div class="selectable mt-2">
                         @for (item of chips.slice(3, 6); track item.name) {
-                        <div class="chip">
+                        <div class="chip" *ngIf="item.name">
                             <i class="{{ item?.icon }}"></i>
-                            <span>{{ item?.name | translate }}</span>
+                            <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
                         </div>
                         }
                     </div>

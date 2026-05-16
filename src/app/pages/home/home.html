@@ -4,33 +4,33 @@
       <div class="topSub">
         <div class="topSub2">
           <div class="h1">
-            {{ 'HOME.BANNER.TITLE_LINE1' | translate }} <br />
-            {{ 'HOME.BANNER.TITLE_LINE2' | translate }}
+            <span [innerHTML]="'HOME.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
+            <span [innerHTML]="'HOME.BANNER.TITLE_LINE2' | translateHtml | async"></span>
           </div>
           <!-- 
           <div class="selectable">
             
             @for (item of chips; track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item.icon }}"></i>
-              <span>{{ item.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div> -->
 
           <div class="selectable mt-5">
             @for (item of chips.slice(0, 3); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
           <div class="selectable mt-2">
             @for (item of chips.slice(3, 6); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
@@ -56,7 +56,7 @@
       <div class="row mb-5 text-center">
         <div class="col-12">
           <h3 class="heading">
-            {{ 'HOME.WHY_CHOOSE.HEADING' | translate }}
+            <span [innerHTML]="'HOME.WHY_CHOOSE.HEADING' | translateHtml | async"></span>
             <strong [innerHTML]="'HOME.WHY_CHOOSE.HEADING_STRONG' | translateHtml | async"></strong>
           </h3>
         </div>
@@ -266,8 +266,8 @@
               <div class="bar"></div>
               <div class="text">
                 <div class="h4">
-                  {{ 'HOME.EVERY_STORY.TITLE_LINE1' | translate }} <br />
-                  {{ 'HOME.EVERY_STORY.TITLE_LINE2' | translate }}
+                  <span [innerHTML]="'HOME.EVERY_STORY.TITLE_LINE1' | translateHtml | async"></span> <br />
+                  <span [innerHTML]="'HOME.EVERY_STORY.TITLE_LINE2' | translateHtml | async"></span>
                 </div>
                 <p [innerHTML]="'HOME.EVERY_STORY.PARA1' | translateHtml | async"></p>
 
@@ -289,9 +289,9 @@
 
     <div class="container">
       <h5 class="text-center mb-5 heading">
-        {{ 'HOME.WORKING_PROCESS.TITLE_LINE1' | translate }}
+        <span [innerHTML]="'HOME.WORKING_PROCESS.TITLE_LINE1' | translateHtml | async"></span>
         <strong [innerHTML]="'HOME.WORKING_PROCESS.TITLE_STRONG' | translateHtml | async"></strong>
-        {{ 'HOME.WORKING_PROCESS.TITLE_LINE2' | translate }}
+        <span [innerHTML]="'HOME.WORKING_PROCESS.TITLE_LINE2' | translateHtml | async"></span>
       </h5>
 
       <div class="row justify-content-center">
@@ -345,17 +345,17 @@
           <div class="h1" [innerHTML]="'HOME.COVERDBANNER.TITLE' | translateHtml | async"></div>
           <div class="selectable mt-5">
             @for (item of chips.slice(0, 3); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
           <div class="selectable mt-2">
             @for (item of chips.slice(3, 6); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>

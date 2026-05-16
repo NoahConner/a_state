@@ -4,23 +4,23 @@
       <div class="topSub">
         <div class="topSub2">
           <div class="h1">
-            {{ 'INSURANCE_SERVICES.BANNER.TITLE_LINE1' | translate }} <br />
-            {{ 'INSURANCE_SERVICES.BANNER.TITLE_LINE2' | translate }}
+            <span [innerHTML]="'INSURANCE_SERVICES.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
+            <span [innerHTML]="'INSURANCE_SERVICES.BANNER.TITLE_LINE2' | translateHtml | async"></span>
           </div>
 
           <div class="selectable mt-5">
             @for (item of chips.slice(0, 3); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
           <div class="selectable mt-2">
             @for (item of chips.slice(3, 6); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
@@ -821,7 +821,7 @@
 
         <div class="col-lg-6 mt-5">
           <div class="content-inner ">
-            <h4 class="section-title mb-5">{{ 'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.HEADING' | translate }}<br>
+            <h4 class="section-title mb-5"><span [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.HEADING' | translateHtml | async"></span><br>
               <strong [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.HEADING2' | translateHtml | async"></strong>
             </h4>
 
@@ -894,9 +894,9 @@
 
     <div class="container">
       <h5 class="text-center mb-5 heading">
-        {{ 'HOME.WORKING_PROCESS.TITLE_LINE1' | translate }}
+        <span [innerHTML]="'HOME.WORKING_PROCESS.TITLE_LINE1' | translateHtml | async"></span>
         <strong [innerHTML]="'HOME.WORKING_PROCESS.TITLE_STRONG' | translateHtml | async"></strong>
-        {{ 'HOME.WORKING_PROCESS.TITLE_LINE2' | translate }}
+        <span [innerHTML]="'HOME.WORKING_PROCESS.TITLE_LINE2' | translateHtml | async"></span>
       </h5>
 
       <div class="row justify-content-center">
@@ -948,17 +948,17 @@
           <div class="h1" [innerHTML]="'HOME.COVERDBANNER.TITLE' | translateHtml | async"></div>
           <div class="selectable mt-5">
             @for (item of chips.slice(0, 3); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>
           <div class="selectable mt-2">
             @for (item of chips.slice(3, 6); track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
-              <span>{{ item?.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div>

@@ -10,17 +10,17 @@
   <div class="container">
     <div class="terms-block" *ngFor="let section of termsSections">
       <h2 class="terms-heading">
-        {{ section.title | translate }}
+        <span [innerHTML]="section.title | translateHtml | async"></span>
       </h2>
 
       <p *ngFor="let paragraph of section.paragraphs">
-        {{ paragraph | translate }}
+        <span [innerHTML]="paragraph | translateHtml | async"></span>
       </p>
 
       <!-- Bullet Points Support -->
       <ul *ngIf="section.points">
         <li *ngFor="let point of section.points">
-          {{ point | translate }}
+          <span [innerHTML]="point | translateHtml | async"></span>
         </li>
       </ul>
     </div>

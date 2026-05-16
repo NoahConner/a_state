@@ -2,7 +2,7 @@
   <div class="topBanner">
     <div class="container">
       <div class="h1">
-        {{ 'CONTACT.HEADING' | translate }} <br />
+        <span [innerHTML]="'CONTACT.HEADING' | translateHtml | async"></span> <br />
         <strong [innerHTML]="'CONTACT.HEADINGSTRONG' | translateHtml | async"></strong>
       </div>
     </div>

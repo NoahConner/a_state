@@ -4,33 +4,33 @@
             <div class="topSub">
                 <div class="topSub2">
                     <div class="h1">
-                        {{ 'BOAT_INSURANCE.BANNER.TITLE_LINE1' | translate }} <br />
-                        {{ 'BOAT_INSURANCE.BANNER.TITLE_LINE2' | translate }} <span class="heading-span" [innerHTML]="'BOAT_INSURANCE.BANNER.TITLE_LINE3' | translateHtml | async"></span>
+                        <span [innerHTML]="'BOAT_INSURANCE.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
+                        <span [innerHTML]="'BOAT_INSURANCE.BANNER.TITLE_LINE2' | translateHtml | async"></span> <span class="heading-span" [innerHTML]="'BOAT_INSURANCE.BANNER.TITLE_LINE3' | translateHtml | async"></span>
                     </div>
                     <!-- 
           <div class="selectable">
             
             @for (item of chips; track item.name) {
-            <div class="chip">
+            <div class="chip" *ngIf="item.name">
               <i class="{{ item.icon }}"></i>
-              <span>{{ item.name | translate }}</span>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
             }
           </div> -->
 
                     <div class="selectable mt-4">
                         @for (item of chips.slice(0, 3); track item.name) {
-                        <div class="chip">
+                        <div class="chip" *ngIf="item.name">
                             <i class="{{ item?.icon }}"></i>
-                            <span>{{ item?.name | translate }}</span>
+                            <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
                         </div>
                         }
                     </div>
                     <div class="selectable mt-2">
                         @for (item of chips.slice(3, 6); track item.name) {
-                        <div class="chip">
+                        <div class="chip" *ngIf="item.name">
                             <i class="{{ item?.icon }}"></i>
-                            <span>{{ item?.name | translate }}</span>
+                            <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
                         </div>
                         }
                     </div>
@@ -83,12 +83,12 @@
 
                 <br>
                 <br>
-                {{ 'BOAT_INSURANCE.LAWS.INTRO2' | translate }}
+                <span [innerHTML]="'BOAT_INSURANCE.LAWS.INTRO2' | translateHtml | async"></span>
 
                 <br>
                 <br>
 
-                {{ 'BOAT_INSURANCE.LAWS.INTRO3' | translate }}
+                <span [innerHTML]="'BOAT_INSURANCE.LAWS.INTRO3' | translateHtml | async"></span>
 
             </p>
 
@@ -154,8 +154,8 @@
                             <i [class]="'BOAT_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.ICON' | translate"></i>
                         </div>
                         <div class="factor-content">
-                            <h6>{{ ('BOAT_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translate }}</h6>
-                            <p>{{ ('BOAT_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translate }}</p>
+                            <h6><span [innerHTML]="('BOAT_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translateHtml | async"></span></h6>
+                            <p><span [innerHTML]="('BOAT_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
                         </div>
                     </div>
                 </div>
@@ -177,8 +177,8 @@
                             <i [class]="'BOAT_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.ICON' | translate"></i>
                         </div>
                         <div class="factor-content">
-                            <h6>{{ ('BOAT_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translate }}</h6>
-                            <p>{{ ('BOAT_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translate }}</p>
+                            <h6><span [innerHTML]="('BOAT_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translateHtml | async"></span></h6>
+                            <p><span [innerHTML]="('BOAT_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
                         </div>
                     </div>
                 </div>
@@ -217,20 +217,19 @@
                         <div class="col-4">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ ('BOAT_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translate }}
+                                <span [innerHTML]="('BOAT_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translateHtml | async"></span>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ ('BOAT_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translate
-                                }}
+                                <span [innerHTML]="('BOAT_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translateHtml | async"></span>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ ('BOAT_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translate }}
+                                <span [innerHTML]="('BOAT_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translateHtml | async"></span>
                             </div>
                         </div>
                     </div>
@@ -251,8 +250,8 @@
                             <i
                                 [class]="'BOAT_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.ICON' | translate"></i>
                         </div>
-                        <h6>{{ ('BOAT_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.TITLE') | translate }}</h6>
-                        <p>{{ ('BOAT_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.DESCRIPTION') | translate }}
+                        <h6><span [innerHTML]="('BOAT_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.TITLE') | translateHtml | async"></span></h6>
+                        <p><span [innerHTML]="('BOAT_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.DESCRIPTION') | translateHtml | async"></span>
                         </p>
                     </div>
                 </div>
@@ -437,8 +436,8 @@
                 @for (step of switchSteps; track step) {
                 <div class="switch-card-wrapper">
                     <div class="switch-card">
-                        <h6>{{ 'BOAT_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE' | translate }}</h6>
-                        <p>{{ 'BOAT_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION' | translate }}</p>
+                        <h6><span [innerHTML]="('BOAT_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE') | translateHtml | async"></span></h6>
+                        <p><span [innerHTML]="('BOAT_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION') | translateHtml | async"></span></p>
                     </div>
                 </div>
                 }
@@ -455,17 +454,17 @@
                     <p class="para" [innerHTML]="'BOAT_INSURANCE.FREE_QUOTE.DESCRIPTION' | translateHtml | async"></p>
                     <div class="selectable mt-4">
                         @for (item of chips.slice(0, 3); track item.name) {
-                        <div class="chip">
+                        <div class="chip" *ngIf="item.name">
                             <i class="{{ item?.icon }}"></i>
-                            <span>{{ item?.name | translate }}</span>
+                            <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
                         </div>
                         }
                     </div>
                     <div class="selectable mt-2">
                         @for (item of chips.slice(3, 6); track item.name) {
-                        <div class="chip">
+                        <div class="chip" *ngIf="item.name">
                             <i class="{{ item?.icon }}"></i>
-                            <span>{{ item?.name | translate }}</span>
+                            <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
                         </div>
                         }
                     </div>

@@ -19,7 +19,7 @@
 
     <ol>
       <li *ngFor="let item of personalList">
-        {{ item | translate }}
+        <span [innerHTML]="item | translateHtml | async"></span>
       </li>
     </ol>
 
@@ -29,7 +29,7 @@
     <p [innerHTML]="'PRIVACY.INFORMATION_COLLECT.AUTO_DESC' | translateHtml | async"></p>
 
     <ol>
-      <li *ngFor="let item of AUTO_LIST">{{ item | translate }}</li>
+      <li *ngFor="let item of AUTO_LIST"><span [innerHTML]="item | translateHtml | async"></span></li>
     </ol>
     <p [innerHTML]="'PRIVACY.INFORMATION_COLLECT.AUTO_NOTE' | translateHtml | async"></p>
 
