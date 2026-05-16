@@ -201,7 +201,7 @@
       </div>
 
       <div class="d-flex justify-content-between align-items-center mt-4 source-meta">
-        <p class="mb-0">{{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.SOURCE' | translate }} <a href="https://shamiehlaw.com/"
+        <p class="mb-0">{{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.SOURCE' | translate }} <a href="https://shamiehlaw.com/" rel="nofollow"
             target="_blank">{{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.SOURCE_LINK' | translate }}</a></p>
         <p class="mb-0 text-muted">{{ 'AUTO_INSURANCE.MIN_REQUIREMENTS.LAST_UPDATED' | translate }}</p>
       </div>
@@ -332,8 +332,7 @@
 
           <!-- Description Content -->
           <div class="cost-description">
-            <p class="mb-4">
-              {{ 'AUTO_INSURANCE.COST.DESC1' | translate }}
+            <p class="mb-4 " [innerHtml]="('AUTO_INSURANCE.COST.DESC1' | translate)">
             </p>
 
             <p>
@@ -391,7 +390,7 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'AUTO_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">Bankrate</a></p>
+          <p>{{ 'AUTO_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="https://www.bankrate.com/insurance/car/average-cost-of-car-insurance-in-texas/#car-insurance-rates-by-city" rel="nofollow">Bankrate</a></p>
           <p class="last-updated">{{ 'AUTO_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
         </div>
         <div class="disclaimer mt-2">
@@ -425,8 +424,8 @@
           @for (rate of companyRates; track rate.company; let i = $index) {
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-6">
-              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ rate.company }}
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0" [innerHtml]="rate.company">
+                
               </div>
             </div>
             <div class="col-3">
@@ -445,7 +444,7 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'AUTO_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="#">Insurify</a></p>
+          <p>{{ 'AUTO_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="https://insurify.com/car-insurance/texas/" rel="nofollow">Insurify</a></p>
           <p class="last-updated">{{ 'AUTO_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
         </div>
         <div class="disclaimer mt-2">
@@ -517,7 +516,7 @@
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
           <p>{{ 'AUTO_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="https://www.finder.com/"
-              target="_blank">Finder</a></p>
+              rel="nofollow">Finder</a></p>
           <p class="last-updated">{{ 'AUTO_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
         </div>
         <div class="disclaimer mt-2">
@@ -571,8 +570,8 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'AUTO_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="https://insurify.com/"
-              target="_blank">Insurify</a></p>
+          <p>{{ 'AUTO_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="https://insurify.com/car-insurance/texas/average-cost/#rates-by-history"
+              rel="nofollow">Insurify</a></p>
           <p class="last-updated">{{ 'AUTO_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
         </div>
         <div class="disclaimer mt-2">
@@ -626,8 +625,8 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p>{{ 'AUTO_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="https://smartinsurance.com/"
-              target="_blank">Smart Insurance</a></p>
+          <p>{{ 'AUTO_INSURANCE.RATES.FOOTER.SOURCE' | translate }} <a href="https://smartinsureme.com/what-does-auto-insurance-cover-in-texas-minimum-vs-full-coverage/"
+              rel="nofollow">Smart Insurance</a></p>
           <p class="last-updated">{{ 'AUTO_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translate }}</p>
         </div>
         <div class="disclaimer mt-2">

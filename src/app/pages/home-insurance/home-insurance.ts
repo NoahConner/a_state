@@ -69,14 +69,14 @@ export class HomeInsurance implements OnInit {
   ];
 
   companyRates = [
-    { carrier: 'USAA', monthly: '$442' },
-    { carrier: 'Framers', monthly: '$218' },
-    { carrier: 'Travelers', monthly: '$329' },
-    { carrier: 'Foremost', monthly: '$207' },
-    { carrier: 'Nationwide', monthly: '$341' },
-    { carrier: 'State Farm', monthly: '$167' },
-    { carrier: 'Allstate', monthly: '$338' },
-    { carrier: 'Chubb', monthly: '$515' }
+    { carrier: '<a href="https://www.usaa.com/" target="_blank" rel="nofollow">USAA</a>', monthly: '$442' },
+    { carrier: '<a href="https://www.framers.com/" target="_blank" rel="nofollow">Framers</a>', monthly: '$218' },
+    { carrier: '<a href="https://www.travelers.com/" target="_blank" rel="nofollow">Travelers</a>', monthly: '$329' },
+    { carrier: '<a href="https://www.foremost.com/" target="_blank" rel="nofollow">Foremost</a>', monthly: '$207' },
+    { carrier: '<a href="https://www.nationwide.com/" target="_blank" rel="nofollow">Nationwide</a>', monthly: '$341' },
+    { carrier: '<a href="https://www.statefarm.com/" target="_blank" rel="nofollow">State Farm</a>', monthly: '$167' },
+    { carrier: '<a href="https://www.allstate.com/" target="_blank" rel="nofollow">Allstate</a>', monthly: '$338' },
+    { carrier: '<a href="https://www.chubb.com/" target="_blank" rel="nofollow">Chubb</a>', monthly: '$515' }
   ];
 
 
