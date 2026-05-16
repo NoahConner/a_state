@@ -158,8 +158,8 @@
           <div class="insurance-card">
             <div class="card-icon"><i [class]="item.ICON"></i></div>
             <div class="card-body">
-              <h6>{{ item.TITLE }}</h6>
-              <p>{{ item.DESC }}</p>
+              <h6 [innerHTML]="item.TITLE | translateHtml | async"></h6>
+              <p [innerHTML]="item.DESC | translateHtml | async"></p>
             </div>
           </div>
         </div>
