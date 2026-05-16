@@ -56,13 +56,13 @@ export class HealthInsurance implements OnInit {
     { age: "60", bronze: "$900", silver: "$1,246", gold: "$1,110" }
   ];
   providerRates = [
-    { company: "Christus Health Plan", monthly: "$553", annual: "$6,636" },
-    { company: "Sendero Health Plans", monthly: "$612", annual: "$7,344" },
-    { company: "Community Health Choice", monthly: "$616", annual: "$7,392" },
-    { company: "Imperial Insurance Companies", monthly: "$618", annual: "$7,416" },
-    { company: "Community First", monthly: "$658", annual: "$7,896" },
-    { company: "UnitedHealthcare", monthly: "$662", annual: "$7,944" },
-    { company: "Wellcare Health", monthly: "$666", annual: "$7,992" }
+    { company: "<a href='https://www.christushealthplan.org/' target='_blank' rel='nofollow'>Christus Health Plan</a>", monthly: "$553", annual: "$6,636" },
+    { company: "<a href='https://senderohealth.com/' target='_blank' rel='nofollow'>Sendero Health Plans</a>", monthly: "$612", annual: "$7,344" },
+    { company: "<a href='https://www.communityhealthchoice.org/' target='_blank' rel='nofollow'>Community Health Choice</a>", monthly: "$616", annual: "$7,392" },
+    { company: "<a href='https://exchange.imperialhealthplan.com/texas/' target='_blank' rel='nofollow'>Imperial Insurance Companies</a>", monthly: "$618", annual: "$7,416" },
+    { company: "<a href='https://communityfirsthealthplans.com/' target='_blank' rel='nofollow'>Community First</a>", monthly: "$658", annual: "$7,896" },
+    { company: "<a href='https://www.uhc.com/' target='_blank' rel='nofollow'>UnitedHealthcare</a>", monthly: "$662", annual: "$7,944" },
+    { company: "<a href='https://www.wellcare.com/' target='_blank' rel='nofollow'>Wellcare Health</a>", monthly: "$666", annual: "$7,992" }
   ];
 
 

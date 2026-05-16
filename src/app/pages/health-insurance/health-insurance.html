@@ -266,8 +266,7 @@
           @for (item of providerRates; track item.company; let i = $index) {
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-4">
-              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ item.company }}
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0" [innerHTML]="item.company">
               </div>
             </div>
             <div class="col-4">
@@ -286,7 +285,7 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p><span [innerHTML]="'HEALTH_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#">MoneyGeek</a></p>
+          <p><span [innerHTML]="'HEALTH_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="https://www.moneygeek.com/insurance/health/cheap-health-insurance-texas/#cheapest-overall" rel="nofollow" target="_blank">MoneyGeek</a></p>
 
           <p class="last-updated" [innerHTML]="'HEALTH_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
@@ -353,7 +352,7 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p><span [innerHTML]="'HEALTH_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#">Salusion</a></p>
+          <p><span [innerHTML]="'HEALTH_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="https://salusion.com/learning-center/texas-health-insurance-snapshot-2025/" target="_blank" rel="nofollow">Salusion</a></p>
 
           <p class="last-updated" [innerHTML]="'HEALTH_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
