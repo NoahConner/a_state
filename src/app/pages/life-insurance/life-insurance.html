@@ -235,8 +235,7 @@
           @for (item of companyRates; track item.company; let i = $index) {
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-4">
-              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ item.company }}
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0" [innerHTML]="item.company">
               </div>
             </div>
             <div class="col-4">
@@ -255,7 +254,7 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p><span [innerHTML]="'LIFE_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#">Forbes</a></p>
+          <p><span [innerHTML]="'LIFE_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="https://www.forbes.com/advisor/life-insurance/best-life-insurance-texas/#what-is-the-average-cost-of-life-insurance-for-companies-in-texas" rel="nofollow" target="_blank">Forbes</a></p>
 
           <p class="last-updated" [innerHTML]="'LIFE_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
@@ -314,7 +313,7 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p><span [innerHTML]="'LIFE_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#"> The Baylon Agency</a></p>
+          <p><span [innerHTML]="'LIFE_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="https://www.baylonagency.com/blog/what-is-the-average-life-insurance-rate-in-texas" rel="nofollow" target="_blank"> The Baylon Agency</a></p>
 
           <p class="last-updated" [innerHTML]="'LIFE_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
@@ -452,10 +451,10 @@
 
   <section class="language-section">
     <div class="container px-4">
-      <h2 class="section-title" [innerHTML]="'HOME_INSURANCE.LANGUAGE_SUPPORT.HEADER.TITLE' | translateHtml | async"></h2>
+      <h2 class="section-title" [innerHTML]="'LIFE_INSURANCE.LANGUAGE_SUPPORT.HEADER.TITLE' | translateHtml | async"></h2>
       <div class="intro-text">
-        <p [innerHTML]="'HOME_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC1' | translateHtml | async"></p>
-        <p [innerHTML]="'HOME_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC2' | translateHtml | async"></p>
+        <p [innerHTML]="'LIFE_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC1' | translateHtml | async"></p>
+        <p [innerHTML]="'LIFE_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC2' | translateHtml | async"></p>
 
       </div>
     </div>

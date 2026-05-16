@@ -57,16 +57,16 @@ export class LifeInsurance implements OnInit {
     { age_group: "65+", term_life: "$100 – $150", whole_life: "$300 – $500" }
   ];
   companyRates = [
-    { company: "Banner/Legal & General", female: "$101.11/yr", male: "$139.99/yr" },
-    { company: "Symetra", female: "$101.13/yr", male: "$114.90/yr" },
-    { company: "Pacific Life", female: "$101.80/yr", male: "$114.91/yr" },
-    { company: "Corebridge Financial (formerly AIG)", female: "$101.90/yr", male: "$115.60/yr" },
-    { company: "Penn Mutual", female: "$101.90/yr", male: "$115.63/yr" },
-    { company: "Transamerica", female: "$102.50/yr", male: "$117.50/yr" },
-    { company: "Protective", female: "$104.15/yr", male: "$115.85/yr" },
-    { company: "Midland National", female: "$112.50/yr", male: "$125.00/yr" },
-    { company: "SBLI", female: "$112.81/yr", male: "$131.38/yr" },
-    { company: "Nationwide", female: "$132.50/yr", male: "$155.00/yr" }
+    { company: "<a href='https://www.bannerlife.com/' rel='nofollow' target='_blank'>Banner/Legal & General</a>", female: "$101.11/yr", male: "$139.99/yr" },
+    { company: "<a href='https://www.symetra.com/' rel='nofollow' target='_blank'>Symetra</a>", female: "$101.13/yr", male: "$114.90/yr" },
+    { company: "<a href='https://www.pacificlife.com/' rel='nofollow' target='_blank'>Pacific Life</a>", female: "$101.80/yr", male: "$114.91/yr" },
+    { company: "<a href='https://www.corebridgefinancial.com/' rel='nofollow' target='_blank'>Corebridge Financial (formerly AIG)</a>", female: "$101.90/yr", male: "$115.60/yr" },
+    { company: "<a href='https://www.pennmutual.com/' rel='nofollow' target='_blank'>Penn Mutual</a>", female: "$101.90/yr", male: "$115.63/yr" },
+    { company: "<a href='https://www.transamerica.com/' rel='nofollow' target='_blank'>Transamerica</a>", female: "$102.50/yr", male: "$117.50/yr" },
+    { company: "<a href='https://www protective.com/' rel='nofollow' target='_blank'>Protective</a>", female: "$104.15/yr", male: "$115.85/yr" },
+    { company: "<a href='https://www.midlandnational.com/' rel='nofollow' target='_blank'>Midland National</a>", female: "$112.50/yr", male: "$125.00/yr" },
+    { company: "<a href='https://www.sbli.com/' rel='nofollow' target='_blank'>SBLI</a>", female: "$112.81/yr", male: "$131.38/yr" },
+    { company: "<a href='https://www.nationwide.com/' rel='nofollow' target='_blank'>Nationwide</a>", female: "$132.50/yr", male: "$155.00/yr" }
   ];
 
 
