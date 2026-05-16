@@ -56,6 +56,9 @@ img {
   color: #000000;
   font-weight: 700;
 }
+.inline-link.whiteTxt{
+  color: #ffffff !important;
+}
 .data-pill a {
   color: inherit !important;
   text-decoration: none !important;
@@ -68,6 +71,14 @@ img {
         height: 100px !important;
         width: 80px !important;
       }
+    }
+  }
+}
+
+.selectable {
+  .chip{
+    i{
+      width: 30px;
     }
   }
 }

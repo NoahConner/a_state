@@ -95,7 +95,7 @@
         {{ 'TITLE_TRANSFER.HOW_IT_WORKS.DESC1' | translate }}
         <br>
         <br>
-        {{ 'TITLE_TRANSFER.HOW_IT_WORKS.DESC2' | translate }}
+        <span [innerHTML]="'TITLE_TRANSFER.HOW_IT_WORKS.DESC2' | translateHtml | async"></span>
 
       </p>
 
@@ -140,8 +140,7 @@
 
           <!-- Description Content -->
           <div class="cost-description">
-            <p class="mb-4">
-              {{ 'TITLE_TRANSFER.HEALTH_INSURANCE_COST.DESC1' | translate }}
+            <p class="mb-4" [innerHTML]="'TITLE_TRANSFER.HEALTH_INSURANCE_COST.DESC1' | translateHtml | async">
             </p>
 
             <p>
@@ -372,7 +371,7 @@
     <div class="container px-4">
       <h2 class="section-title">{{ 'TITLE_TRANSFER.GROWING_FAMILY.HEADER.TITLE' | translate }}</h2>
       <div class="intro-text">
-        <p>{{ 'TITLE_TRANSFER.GROWING_FAMILY.CONTENT.DESC1' | translate }}</p>
+        <p [innerHTML]="'TITLE_TRANSFER.GROWING_FAMILY.CONTENT.DESC1' | translateHtml | async"></p>
         <p>{{ 'TITLE_TRANSFER.GROWING_FAMILY.CONTENT.DESC2' | translate }}</p>
       </div>
     </div>
@@ -382,7 +381,7 @@
     <div class="container px-4">
       <h2 class="section-title">{{ 'TITLE_TRANSFER.LANGUAGE_SUPPORT.HEADER.TITLE' | translate }}</h2>
       <div class="intro-text">
-        <p>{{ 'TITLE_TRANSFER.LANGUAGE_SUPPORT.CONTENT.DESC1' | translate }}</p>
+        <p [innerHTML]="'TITLE_TRANSFER.LANGUAGE_SUPPORT.CONTENT.DESC1' | translateHtml | async"></p>
         <p>{{ 'TITLE_TRANSFER.LANGUAGE_SUPPORT.CONTENT.DESC2' | translate }}</p>
 
       </div>
@@ -537,7 +536,7 @@
               <div class="dot"></div>
               <div class="content">
                 <h3>{{ 'TITLE_TRANSFER.INSURANCE_STEPS.STEPS.REACH_OUT.TITLE' | translate }}</h3>
-                <p>{{ 'TITLE_TRANSFER.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translate }}</p>
+                <p [innerHTML]="'TITLE_TRANSFER.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translateHtml | async"></p>
               </div>
             </div>
 
@@ -545,7 +544,7 @@
               <div class="dot"></div>
               <div class="content">
                 <h3>{{ 'TITLE_TRANSFER.INSURANCE_STEPS.STEPS.GET_ADVICE.TITLE' | translate }}</h3>
-                <p>{{ 'TITLE_TRANSFER.INSURANCE_STEPS.STEPS.GET_ADVICE.DESCRIPTION' | translate }}</p>
+                <p [innerHTML]="'TITLE_TRANSFER.INSURANCE_STEPS.STEPS.GET_ADVICE.DESCRIPTION' | translateHtml | async"></p>
               </div>
             </div>
 
@@ -553,7 +552,7 @@
               <div class="dot"></div>
               <div class="content">
                 <h3>{{ 'TITLE_TRANSFER.INSURANCE_STEPS.STEPS.PICK_PLAN.TITLE' | translate }}</h3>
-                <p>{{ 'TITLE_TRANSFER.INSURANCE_STEPS.STEPS.PICK_PLAN.DESCRIPTION' | translate }}</p>
+                <p [innerHTML]="'TITLE_TRANSFER.INSURANCE_STEPS.STEPS.PICK_PLAN.DESCRIPTION' | translateHtml | async"></p>
               </div>
             </div>
 
@@ -597,7 +596,7 @@
           <div class="h1">
             {{ 'TITLE_TRANSFER.FREE_QUOTE.HEADER' | translate }}
           </div>
-          <p class="para">{{ 'TITLE_TRANSFER.FREE_QUOTE.DESCRIPTION' | translate }}</p>
+          <p class="para" [innerHTML]="'TITLE_TRANSFER.FREE_QUOTE.DESCRIPTION' | translateHtml | async"></p>
           <div class="selectable mt-4">
             @for (item of chips.slice(0, 3); track item.name) {
             <div class="chip">
