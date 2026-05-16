@@ -6888,85 +6888,84 @@
         ]
       }
     },
-
     "NOT_COVERED": {
-  "HEADER": {
-    "TITLE": "What Motorcycle Insurance Does NOT Cover in Texas",
-    "DESC": "Motorcycle insurance in Texas does not cover intentional damage, fraud, racing, or riding without a valid M-class license. It excludes normal wear and tear, personal belongings, custom parts beyond standard limits, floods, theft without comprehensive coverage, business use, out-of-country riding, and accidents caused under the influence of drugs or alcohol."
-  },
-  "LIST": {
-    "INTENTIONAL_DAMAGE": {
-      "TITLE": "Intentional Damage or Fraud",
-      "DESC": "Motorcycle insurance does not cover damage caused intentionally by the rider or fraudulent claims. Deliberate acts, vandalism by the insured, or misrepresented accidents are excluded, protecting insurers from abuse while encouraging responsibility.",
-      "ICON": "fas fa-gavel"
+      "HEADER": {
+        "TITLE": "What Motorcycle Insurance Does NOT Cover in Texas",
+        "DESC": "Motorcycle insurance in Texas does not cover intentional damage, fraud, racing, or riding without a valid M-class license. It excludes normal wear and tear, personal belongings, custom parts beyond standard limits, floods, theft without comprehensive coverage, business use, out-of-country riding, and accidents caused under the influence of drugs or alcohol."
+      },
+      "LIST": {
+        "INTENTIONAL_DAMAGE": {
+          "TITLE": "Intentional Damage or Fraud",
+          "DESC": "Motorcycle insurance does not cover damage caused intentionally by the rider or fraudulent claims. Deliberate acts, vandalism by the insured, or misrepresented accidents are excluded, protecting insurers from abuse while encouraging responsibility.",
+          "ICON": "fas fa-gavel"
+        },
+        "WEAR_TEAR": {
+          "TITLE": "Normal Wear & Tear & Mechanical Breakdown",
+          "DESC": "Policies don't cover routine wear, aging, or mechanical failures due to lack of maintenance. Regular parts replacement, engine wear, or mechanical breakdowns are the rider's responsibility and require proper upkeep to prevent accidents.",
+          "ICON": "fas fa-tools"
+        },
+        "RACING": {
+          "TITLE": "Racing & Track Events",
+          "DESC": "Damage from racing, competitive events, or track riding is excluded. Standard policies focus on street and everyday use, so participating in races without specialized coverage risks denial of claims for accidents or damages occurring on tracks.",
+          "ICON": "fas fa-flag-checkered"
+        },
+        "NO_LICENSE": {
+          "TITLE": "Riding Without a Valid Motorcycle License (M-Class)",
+          "DESC": "If you ride without a valid motorcycle license, claims may be denied. Insurance requires a proper M-class license to operate legally, ensuring riders are trained, compliant, and eligible for financial protection in the event of an accident.",
+          "ICON": "fas fa-id-card"
+        },
+        "PERSONAL_BELONGINGS": {
+          "TITLE": "Personal Belongings & Riding Gear (Without Endorsement)",
+          "DESC": "Standard insurance usually excludes personal items such as clothing, electronics, and helmets. To protect these, you need an added endorsement. Without it, losses or theft of personal gear won't be reimbursed, leaving riders financially responsible.",
+          "ICON": "fas fa-mobile-alt"
+        },
+        "LIABILITY_ONLY": {
+          "TITLE": "Damage to Your Own Bike (Liability Only Policies)",
+          "DESC": "Liability-only coverage doesn't cover damage to your motorcycle. Repairs or replacement after collisions, accidents, or theft are your responsibility. For full protection, collision or comprehensive coverage is necessary to safeguard your bike.",
+          "ICON": "fas fa-motorcycle"
+        },
+        "FLOOD_WEATHER": {
+          "TITLE": "Flood & Weather Damage (Without Comprehensive)",
+          "DESC": "Floods, hail, and storm damage aren't covered under basic liability policies. Comprehensive insurance is required to protect your motorcycle against natural events, ensuring repairs or replacement without financial strain after weather-related incidents.",
+          "ICON": "fas fa-cloud-rain"
+        },
+        "THEFT": {
+          "TITLE": "Theft (Without Comprehensive Coverage)",
+          "DESC": "Standard liability policies don't cover theft. To safeguard your motorcycle from theft, comprehensive coverage is necessary. Without it, stolen bikes or parts are your responsibility, leaving you vulnerable to total-loss costs.",
+          "ICON": "fas fa-user-secret"
+        },
+        "UNLISTED_RIDERS": {
+          "TITLE": "Unlisted Riders on Your Policy",
+          "DESC": "Insurance only protects riders listed on your policy. If someone not named on your policy operates your bike and gets injured or causes damage, claims may be denied. Always add occasional or authorized riders to ensure coverage.",
+          "ICON": "fas fa-users"
+        },
+        "BUSINESS_USE": {
+          "TITLE": "Business Use Without Commercial Coverage",
+          "DESC": "Using your motorcycle for business purposes without commercial coverage can void claims. Standard policies cover personal use only, so business deliveries, commuting for work, or paid transport require special endorsements to remain fully insured.",
+          "ICON": "fas fa-briefcase"
+        },
+        "OUT_OF_COUNTRY": {
+          "TITLE": "Out-of-Country Riding (Except Mexico With Endorsement)",
+          "DESC": "Motorcycle insurance typically does not cover riding outside the United States, except in Mexico where a specific endorsement is required. If you plan to ride abroad, you'll need additional coverage or a policy tailored for international travel.",
+          "ICON": "fas fa-globe-americas"
+        },
+        "GAP": {
+          "TITLE": "Gap Between Bike Value & Loan Balance (Without Gap Coverage)",
+          "DESC": "If your motorcycle is totaled, basic coverage pays only actual cash value, not your remaining loan balance. Gap coverage bridges this difference, ensuring you aren't left paying a loan for a bike you can't use.",
+          "ICON": "fas fa-chart-line"
+        },
+        "DUI": {
+          "TITLE": "Riding Under the Influence",
+          "DESC": "Insurance won't cover accidents caused while under the influence of alcohol or drugs. Claims may be denied, and legal consequences could apply. Safe, sober riding ensures claims are valid and financial protection remains intact.",
+          "ICON": "fas fa-wine-bottle"
+        },
+        "CUSTOM_PARTS": {
+          "TITLE": "Custom Parts Beyond Standard Limits (Without Endorsement)",
+          "DESC": "Upgraded or aftermarket parts exceeding standard coverage limits are not protected unless you add an endorsement. Without it, damage or theft of custom components won't be reimbursed, leaving riders responsible for costly repairs or replacements.",
+          "ICON": "fas fa-wrench"
+        }
+      }
     },
-    "WEAR_TEAR": {
-      "TITLE": "Normal Wear & Tear & Mechanical Breakdown",
-      "DESC": "Policies don't cover routine wear, aging, or mechanical failures due to lack of maintenance. Regular parts replacement, engine wear, or mechanical breakdowns are the rider's responsibility and require proper upkeep to prevent accidents.",
-      "ICON": "fas fa-tools"
-    },
-    "RACING": {
-      "TITLE": "Racing & Track Events",
-      "DESC": "Damage from racing, competitive events, or track riding is excluded. Standard policies focus on street and everyday use, so participating in races without specialized coverage risks denial of claims for accidents or damages occurring on tracks.",
-      "ICON": "fas fa-flag-checkered"
-    },
-    "NO_LICENSE": {
-      "TITLE": "Riding Without a Valid Motorcycle License (M-Class)",
-      "DESC": "If you ride without a valid motorcycle license, claims may be denied. Insurance requires a proper M-class license to operate legally, ensuring riders are trained, compliant, and eligible for financial protection in the event of an accident.",
-      "ICON": "fas fa-id-card"
-    },
-    "PERSONAL_BELONGINGS": {
-      "TITLE": "Personal Belongings & Riding Gear (Without Endorsement)",
-      "DESC": "Standard insurance usually excludes personal items such as clothing, electronics, and helmets. To protect these, you need an added endorsement. Without it, losses or theft of personal gear won't be reimbursed, leaving riders financially responsible.",
-      "ICON": "fas fa-mobile-alt"
-    },
-    "LIABILITY_ONLY": {
-      "TITLE": "Damage to Your Own Bike (Liability Only Policies)",
-      "DESC": "Liability-only coverage doesn't cover damage to your motorcycle. Repairs or replacement after collisions, accidents, or theft are your responsibility. For full protection, collision or comprehensive coverage is necessary to safeguard your bike.",
-      "ICON": "fas fa-motorcycle"
-    },
-    "FLOOD_WEATHER": {
-      "TITLE": "Flood & Weather Damage (Without Comprehensive)",
-      "DESC": "Floods, hail, and storm damage aren't covered under basic liability policies. Comprehensive insurance is required to protect your motorcycle against natural events, ensuring repairs or replacement without financial strain after weather-related incidents.",
-      "ICON": "fas fa-cloud-rain"
-    },
-    "THEFT": {
-      "TITLE": "Theft (Without Comprehensive Coverage)",
-      "DESC": "Standard liability policies don't cover theft. To safeguard your motorcycle from theft, comprehensive coverage is necessary. Without it, stolen bikes or parts are your responsibility, leaving you vulnerable to total-loss costs.",
-      "ICON": "fas fa-user-secret"
-    },
-    "UNLISTED_RIDERS": {
-      "TITLE": "Unlisted Riders on Your Policy",
-      "DESC": "Insurance only protects riders listed on your policy. If someone not named on your policy operates your bike and gets injured or causes damage, claims may be denied. Always add occasional or authorized riders to ensure coverage.",
-      "ICON": "fas fa-users"
-    },
-    "BUSINESS_USE": {
-      "TITLE": "Business Use Without Commercial Coverage",
-      "DESC": "Using your motorcycle for business purposes without commercial coverage can void claims. Standard policies cover personal use only, so business deliveries, commuting for work, or paid transport require special endorsements to remain fully insured.",
-      "ICON": "fas fa-briefcase"
-    },
-    "OUT_OF_COUNTRY": {
-      "TITLE": "Out-of-Country Riding (Except Mexico With Endorsement)",
-      "DESC": "Motorcycle insurance typically does not cover riding outside the United States, except in Mexico where a specific endorsement is required. If you plan to ride abroad, you'll need additional coverage or a policy tailored for international travel.",
-      "ICON": "fas fa-globe-americas"
-    },
-    "GAP": {
-      "TITLE": "Gap Between Bike Value & Loan Balance (Without Gap Coverage)",
-      "DESC": "If your motorcycle is totaled, basic coverage pays only actual cash value, not your remaining loan balance. Gap coverage bridges this difference, ensuring you aren't left paying a loan for a bike you can't use.",
-      "ICON": "fas fa-chart-line"
-    },
-    "DUI": {
-      "TITLE": "Riding Under the Influence",
-      "DESC": "Insurance won't cover accidents caused while under the influence of alcohol or drugs. Claims may be denied, and legal consequences could apply. Safe, sober riding ensures claims are valid and financial protection remains intact.",
-      "ICON": "fas fa-wine-bottle"
-    },
-    "CUSTOM_PARTS": {
-      "TITLE": "Custom Parts Beyond Standard Limits (Without Endorsement)",
-      "DESC": "Upgraded or aftermarket parts exceeding standard coverage limits are not protected unless you add an endorsement. Without it, damage or theft of custom components won't be reimbursed, leaving riders responsible for costly repairs or replacements.",
-      "ICON": "fas fa-wrench"
-    }
-  }
-},
     "COST": {
       "TITLE": "How Much Does Motorcycle Insurance Cost in Texas?",
       "DESC1": "Motorcycle insurance costs in Texas typically start at  <a href='https://www.dairylandinsurance.com/motorcycle/texas-insurance-requirements#:~:text=The%20cost%20of%20a%20motorcycle,on%20these%20already%20competitive%20rates:' rel='nofollow' class='inline-link'>around $25 per month </a> for minimum liability coverage on a standard bike. For full coverage, including collision and comprehensive protection, most riders pay about $85 per month. Factors like age, bike type, riding history, and location can affect premiums.",
@@ -7668,9 +7667,92 @@
         ]
       }
     },
+    "NOT_COVERED": {
+      "HEADER": {
+        "TITLE": "What Boat Insurance Does NOT Cover in Texas",
+        "DESC": "Boat insurance in Texas does not cover normal wear and tear, mechanical breakdowns, intentional damage, or operating under the influence. It excludes gradual deterioration, racing, unlisted operators, flooding from named storms (without endorsement), fishing in restricted waters, personal belongings beyond limits, trailers without separate coverage, poor maintenance, commercial use without proper coverage, out-of-country waters, war & nuclear events, and pets or animals on board."
+      },
+      "LIST": {
+        "WEAR_TEAR": {
+          "TITLE": "Normal Wear & Tear & Mechanical Breakdown",
+          "DESC": "Boat insurance coverage does not cover the cost of normal wear and tear or mechanical breakdowns. Issues like engine failure, routine repairs, or deteriorating parts are not included and are the responsibility of the boat owner.",
+          "ICON": "fas fa-tools"
+        },
+        "GRADUAL_DETERIORATION": {
+          "TITLE": "Gradual Deterioration & Corrosion",
+          "DESC": "Gradual deterioration and corrosion are common over time but are not covered by boat insurance. Damage caused by rust, algal growth, or other slow forms of wear resulting from exposure to water is excluded. Proper maintenance can help prevent such issues.",
+          "ICON": "fas fa-water"
+        },
+        "RACING": {
+          "TITLE": "Racing & Speed Contests",
+          "DESC": "Boat insurance will not cover incidents that occur while participating in racing, speed contests, or other competitive events. If your boat is used in such activities, you'll need specialized coverage, which is not included in standard policies.",
+          "ICON": "fas fa-flag-checkered"
+        },
+        "INTENTIONAL_DAMAGE": {
+          "TITLE": "Intentional Damage or Fraud",
+          "DESC": "If damage is caused intentionally or through fraudulent actions, it is not covered. Insurers will not pay for repairs or losses resulting from deliberate destruction or fraudulent claims. Always ensure your claims are legitimate to avoid denial.",
+          "ICON": "fas fa-gavel"
+        },
+        "DUI": {
+          "TITLE": "Operating Under the Influence",
+          "DESC": "Boat insurance does not cover accidents that happen while the operator is drunk or drugged. Boating under the influence is both illegal and dangerous. Always operate your boat responsibly to ensure you're covered in case of an incident.",
+          "ICON": "fas fa-wine-bottle"
+        },
+        "UNLISTED_OPERATORS": {
+          "TITLE": "Unlisted Operators on Your Policy",
+          "DESC": "If someone who is not listed on your policy operates your boat and an accident occurs, their actions may not be covered. It's important to add all regular boat operators to your policy to ensure everyone is protected in the event of a claim.",
+          "ICON": "fas fa-users"
+        },
+        "FLOOD_NAMED_STORMS": {
+          "TITLE": "Flooding From Named Storms (Without Endorsement)",
+          "DESC": "Standard boat insurance typically does not cover flooding caused by named storms, such as hurricanes, without an added endorsement. If you live in an area prone to severe weather, you may need additional coverage to protect your boat.",
+          "ICON": "fas fa-hurricane"
+        },
+        "RESTRICTED_WATERS": {
+          "TITLE": "Fishing in Restricted or Prohibited Waters",
+          "DESC": "Fishing in restricted or prohibited waters is not covered by your boat insurance. Make sure to follow local regulations and guidelines for boating and fishing to avoid policy exclusions. Operating in restricted areas could lead to denied claims.",
+          "ICON": "fas fa-fish"
+        },
+        "PERSONAL_BELONGINGS": {
+          "TITLE": "Personal Belongings Beyond Coverage Limits",
+          "DESC": "Boat insurance often has limits on personal belongings, such as fishing gear, electronics, and other onboard items. Any high-value personal items beyond the policy's coverage limit may not be reimbursed if lost, damaged, or stolen.",
+          "ICON": "fas fa-mobile-alt"
+        },
+        "TRAILER": {
+          "TITLE": "Trailers (Without Separate Trailer Coverage)",
+          "DESC": "Your standard boat insurance typically does not cover damage to or theft of your boat trailer unless you add separate trailer coverage. If your trailer is stolen, damaged, or needs repairs, a separate policy or endorsement is required.",
+          "ICON": "fas fa-trailer"
+        },
+        "POOR_MAINTENANCE": {
+          "TITLE": "Consequential Damage From Poor Maintenance",
+          "DESC": "Boat insurance does not cover damage caused by poor maintenance or neglect. If your boat suffers from issues such as engine failure, rust, or other preventable problems caused by neglect, the repairs or replacements will not be covered.",
+          "ICON": "fas fa-clipboard-list"
+        },
+        "BUSINESS_USE": {
+          "TITLE": "Commercial Use Without Proper Coverage",
+          "DESC": "Using your boat for commercial purposes without proper coverage is not included in standard boat insurance. Whether for business use, rental, or charter, commercial activities require specialized policies or endorsements.",
+          "ICON": "fas fa-briefcase"
+        },
+        "OUT_OF_COUNTRY": {
+          "TITLE": "Out-of-Country Waters (Without Endorsement)",
+          "DESC": "Boating in foreign waters is typically not covered under your standard boat insurance policy. If you plan to operate your boat internationally, you will need to add an endorsement or a separate policy to ensure you're covered in the event of an incident.",
+          "ICON": "fas fa-globe-americas"
+        },
+        "WAR_NUCLEAR": {
+          "TITLE": "War & Nuclear Exclusions",
+          "DESC": "Boat insurance excludes coverage for damages caused by acts of war or nuclear events. These scenarios are considered extreme risks and are not covered under standard policies. Always review your policy's exclusions to understand what's not covered.",
+          "ICON": "fas fa-radiation"
+        },
+        "PETS": {
+          "TITLE": "Pets & Animals on Board",
+          "DESC": "It generally does not cover injuries or damages involving pets or animals on board. If your pet is injured or causes damage while on the boat, these incidents are excluded from coverage. Always take precautions to ensure the safety of pets.",
+          "ICON": "fas fa-paw"
+        }
+      }
+    },
     "COST": {
       "TITLE": "How Much Does Boat Insurance Cost in Texas?",
-      "DESC1": "The cost of boat insurance in Texas typically starts at around $349 per year, depending on factors such as the type of boat, its value, and where it's stored. For example, a small fishing boat may cost less to insure, while larger or higher-value boats, such as yachts or offshore vessels, may have higher premiums. On average, Texas boat owners can expect to pay anywhere between $300 and $1,500 annually for comprehensive coverage.",
+      "DESC1": "The cost of boat insurance in Texas typically starts at <a href='https://pelican-insurance.com/how-much-is-boat-insurance-in-texas/' rel='nofollow' class='inline-link'> around $349 per year, </a> depending on factors such as the type of boat, its value, and where it's stored. For example, a small fishing boat may cost less to insure, while larger or higher-value boats, such as yachts or offshore vessels, may have higher premiums. On average, Texas boat owners can expect to pay anywhere <a href='https://www.suncoastinsurance.com/blog/boat-insurance-in-texas' rel='nofollow'  class='inline-link'> between $300 and $1,500 annually </a> for comprehensive coverage.",
       "DESC2": "When comparing Texas rates with those of other states, the costs are fairly competitive. States like California and Florida, where boating is more prevalent and the risk of damage or accidents is higher, tend to have higher premiums. In contrast, states with less boating activity or fewer waterway risks may see lower rates. Overall, Texas offers affordable boat insurance options, particularly with the diverse range of boats insured and the relatively low risk of severe weather damage compared to coastal areas."
     },
     "FACTORS_IMPACT": {
@@ -7774,12 +7856,12 @@
     "DISCOUNT_FACTORS": {
       "HEADER": {
         "TITLE": "How to Maximize Your Discounts and Lower Your Boat Insurance Premium",
-        "DESC": "At <a class='inline-link' href='/' target='_blank'>A-State Insurance</a>, we believe in helping you save on your boat insurance. There are several ways to maximize discounts and lower your premium. From bundling policies like boat and auto insurance to completing a boating safety course, we offer a range of options to help reduce your rates. Our agents will guide you through the available discounts to ensure you get the best deal for your coverage."
+        "DESC": "At <a class='inline-link' href='/' target='_blank'>A-State Insurance</a>, we believe in helping you save on your boat insurance. There are several ways to maximize discounts and lower your premium. From bundling policies like boat and <a href='/auto-insurance' class='inline-link'> auto insurance </a> to completing a boating safety course, we offer a range of options to help reduce your rates. Our agents will guide you through the available discounts to ensure you get the best deal for your coverage."
       },
       "LIST": {
         "BUNDLING": {
           "TITLE": "Multi-Policy / Bundling Discount (Boat + Auto or Home)",
-          "DESC": "Save more when you bundle your boat insurance with auto or home insurance, and get a better rate on both.",
+          "DESC": "Save more when you bundle your boat insurance with auto or <a href='/homeowners-insurance' class='inline-link'> home insurance, </a> and get a better rate on both.",
           "ICON": "fas fa-house-user"
         },
         "SAFETY_COURSE": {
@@ -8122,22 +8204,22 @@
       "STEPS": {
         "REACH_OUT": {
           "TITLE": "Step 1 - Reach Out",
-          "DESCRIPTION": "Contact our team to start your boat insurance application and get quick, friendly guidance from the beginning.",
+          "DESCRIPTION": "<a href='contact-us' class='inline-link'>Contact us </a> today by filling out the form or calling to get started with your free quote.",
           "ICON": "fas fa-phone-alt"
         },
         "GET_ADVICE": {
           "TITLE": "Step 2 - Get Advice",
-          "DESCRIPTION": "Our experts review your boating needs and clearly explain your options so you can choose the right coverage for your vessel.",
+          "DESCRIPTION": "Our experienced agents will provide expert advice to help you pick the right coverage for your boat.",
           "ICON": "fas fa-comments"
         },
         "PICK_PLAN": {
           "TITLE": "Step 3 - Pick Your Plan",
-          "DESCRIPTION": "Select the boat insurance plan that fits your budget, vessel type, and protection goals with full confidence.",
+          "DESCRIPTION": "Review your options and select the insurance plan that best suits your needs and budget.",
           "ICON": "fas fa-check-circle"
         },
         "WE_GOT_YOU": {
           "TITLE": "Step 4 - We’ve Got You",
-          "DESCRIPTION": "We handle the paperwork and finalize your boat policy, ensuring fast approval and smooth activation of coverage.",
+          "DESCRIPTION": "Once you’re covered, we’ll be here for you whenever you need assistance with your policy.",
           "ICON": "fas fa-shield-alt"
         }
       }
@@ -8166,7 +8248,7 @@
     },
     "FREE_QUOTE": {
       "HEADER": "Get a Free Boat Insurance Quote in Texas",
-      "DESCRIPTION": "At <a class='inline-link' href='/' target='_blank'>A-State Insurance</a>, we make it easy to get the right coverage for your boat. Simply fill out the form with your details, and one of our experienced Texas-based agents will reach out to provide you with a free, personalized boat insurance quote. Whether you own a fishing boat, jet ski, pontoon, or sailboat, we'll help you find affordable coverage. We work with multiple carriers to ensure you get the best price without compromising on quality. Get started today, fill out the form now!"
+      "DESCRIPTION": "At <a class='inline-link white' href='/' target='_blank'>A-State Insurance</a>, we make it easy to get the right coverage for your boat. Simply fill out the form with your details, and one of our experienced Texas-based agents will reach out to provide you with a free, personalized boat insurance quote. Whether you own a fishing boat, jet ski, pontoon, or sailboat, we'll help you find affordable coverage. We work with multiple carriers to ensure you get the best price without compromising on quality. Get started today, fill out the form now!"
     }
   },
   "RV_INSURANCE": {

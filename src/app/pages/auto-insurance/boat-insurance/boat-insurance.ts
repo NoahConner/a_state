@@ -56,6 +56,23 @@ export class BoatInsurance {
 
 
 
+  notCoveredKeys = [
+    "WEAR_TEAR",
+    "GRADUAL_DETERIORATION",
+    "RACING",
+    "INTENTIONAL_DAMAGE",
+    "DUI",
+    "UNLISTED_OPERATORS",
+    "FLOOD_NAMED_STORMS",
+    "RESTRICTED_WATERS",
+    "PERSONAL_BELONGINGS",
+    "TRAILER",
+    "POOR_MAINTENANCE",
+    "BUSINESS_USE",
+    "OUT_OF_COUNTRY",
+    "WAR_NUCLEAR",
+    "PETS"
+  ]
   discountKeys = [
     "BUNDLING",
     "SAFETY_COURSE",

@@ -919,7 +919,15 @@
       "STEP2": {
         "TITLE": "Personaliza tu Cobertura",
         "DESC": "¿Qué estás buscando? (Selecciona todo lo que aplique)",
-        "OPTIONS": ["Auto", "Hogar", "Comercial", "Vida", "Salud", "Fianzas", "Paquete y Ahorra"],
+        "OPTIONS": [
+          "Auto",
+          "Hogar",
+          "Comercial",
+          "Vida",
+          "Salud",
+          "Fianzas",
+          "Paquete y Ahorra"
+        ],
         "DESC1": "¿No ves tu póliza en la lista? Dinos lo que necesitas a continuación:"
       },
       "STEP3": {
@@ -930,9 +938,17 @@
       "STEP4": {
         "TITLE": "Preferencias de Contacto",
         "DESC": "¿Cómo te gustaría ser contactado?",
-        "OPTIONS": ["Teléfono", "Mensaje de texto", "Correo electrónico"],
+        "OPTIONS": [
+          "Teléfono",
+          "Mensaje de texto",
+          "Correo electrónico"
+        ],
         "DESC1": "Mejor hora para contactarte:",
-        "TIME_OPTIONS": ["Mañana", "Tarde", "Noche"]
+        "TIME_OPTIONS": [
+          "Mañana",
+          "Tarde",
+          "Noche"
+        ]
       },
       "STEP5": {
         "TITLE": "Revisa tu Solicitud de Cotización Personalizada"
@@ -1022,11 +1038,23 @@
       "STEP5": {
         "TITLE": "Preferencias de Contacto",
         "LANGUAGE_TITLE": "Idioma Preferido:",
-        "LANGUAGE_OPTIONS": ["Inglés", "Español", "Hindi"],
+        "LANGUAGE_OPTIONS": [
+          "Inglés",
+          "Español",
+          "Hindi"
+        ],
         "CONTACT_TITLE": "¿Cómo debemos comunicarnos con usted?",
-        "CONTACT_OPTIONS": ["Llamada Telefónica", "Mensaje de Texto", "Correo Electrónico"],
+        "CONTACT_OPTIONS": [
+          "Llamada Telefónica",
+          "Mensaje de Texto",
+          "Correo Electrónico"
+        ],
         "TIME_TITLE": "Mejor Hora para Contactar:",
-        "TIME_OPTIONS": ["Mañana (8 AM - 12 PM)", "Tarde (12 PM - 5 PM)", "Noche (5 PM - 8 PM)"]
+        "TIME_OPTIONS": [
+          "Mañana (8 AM - 12 PM)",
+          "Tarde (12 PM - 5 PM)",
+          "Noche (5 PM - 8 PM)"
+        ]
       }
     },
     "QUOTE_SUMMARY": {
@@ -1125,7 +1153,10 @@
       "STEP4": {
         "TITLE": "Historial y Combinación",
         "INSURED_TITLE": "Estado Actual del Seguro de Hogar",
-        "INSURED_OPTIONS": ["Actualmente Asegurado", "No Asegurado"],
+        "INSURED_OPTIONS": [
+          "Actualmente Asegurado",
+          "No Asegurado"
+        ],
         "BUNDLE_TITLE": "¿Desea combinar sus pólizas para ahorrar más?",
         "BUNDLE_OPTIONS": [
           "¡Sí! Quiero el descuento por combinar Hogar + Auto.",
@@ -1141,11 +1172,23 @@
           "PHONE": "Número de Teléfono"
         },
         "LANGUAGE_TITLE": "Idioma Preferido",
-        "LANGUAGE_OPTIONS": ["Inglés", "Español", "Hindi"],
+        "LANGUAGE_OPTIONS": [
+          "Inglés",
+          "Español",
+          "Hindi"
+        ],
         "CONTACT_TITLE": "¿Cómo debemos comunicarnos con usted?",
-        "CONTACT_OPTIONS": ["Llamada Telefónica", "Mensaje de Texto", "Correo Electrónico"],
+        "CONTACT_OPTIONS": [
+          "Llamada Telefónica",
+          "Mensaje de Texto",
+          "Correo Electrónico"
+        ],
         "TIME_TITLE": "Mejor Hora para Contactar",
-        "TIME_OPTIONS": ["Mañana (8 AM - 12 PM)", "Tarde (12 PM - 5 PM)", "Noche (5 PM - 8 PM)"]
+        "TIME_OPTIONS": [
+          "Mañana (8 AM - 12 PM)",
+          "Tarde (12 PM - 5 PM)",
+          "Noche (5 PM - 8 PM)"
+        ]
       }
     },
     "QUOTE_SUMMARY": {
@@ -1222,11 +1265,27 @@
         "TITLE": "Escala de Operaciones",
         "FIELDS": {
           "YEARS_IN_BUSINESS": "Años en el Negocio",
-          "YEARS_OPTIONS": ["Nuevo Negocio", "1-5 años", "6-10 años", "10+ años"],
+          "YEARS_OPTIONS": [
+            "Nuevo Negocio",
+            "1-5 años",
+            "6-10 años",
+            "10+ años"
+          ],
           "NUMBER_OF_EMPLOYEES": "Número de Empleados",
-          "EMPLOYEES_OPTIONS": ["1-10", "11-50", "51-200", "200+"],
+          "EMPLOYEES_OPTIONS": [
+            "1-10",
+            "11-50",
+            "51-200",
+            "200+"
+          ],
           "ANNUAL_REVENUE": "Ingresos Anuales Estimados",
-          "REVENUE_OPTIONS": ["Menos de $100k", "$100k - $500k", "$500k - $1M", "$1M - $5M", "$5M+"]
+          "REVENUE_OPTIONS": [
+            "Menos de $100k",
+            "$100k - $500k",
+            "$500k - $1M",
+            "$1M - $5M",
+            "$5M+"
+          ]
         }
       },
       "STEP3": {
@@ -1253,9 +1312,17 @@
           "PHONE_NUMBER": "Número de Teléfono*"
         },
         "LANGUAGE_TITLE": "Idioma Preferido",
-        "LANGUAGE_OPTIONS": ["Inglés", "Español", "Hindi"],
+        "LANGUAGE_OPTIONS": [
+          "Inglés",
+          "Español",
+          "Hindi"
+        ],
         "TIME_TITLE": "Mejor Hora para Contactar",
-        "TIME_OPTIONS": ["Mañana", "Tarde", "Noche"]
+        "TIME_OPTIONS": [
+          "Mañana",
+          "Tarde",
+          "Noche"
+        ]
       }
     },
     "QUOTE_SUMMARY": {
@@ -5710,85 +5777,84 @@
         ]
       }
     },
-
     "NOT_COVERED": {
-  "HEADER": {
-    "TITLE": "¿Qué No Cubre el Seguro de Auto en Texas?",
-    "DESC": "El seguro de auto no cubre todas las situaciones. Las exclusiones pueden incluir daños intencionales, desgaste normal, fallas mecánicas y artículos personales dentro de tu auto. Además, actividades como las carreras sin licencia o el uso para negocios sin cobertura comercial no están cubiertas. Conocer estas exclusiones te ayuda a entender qué cobertura adicional podrías necesitar para una protección completa."
-  },
-  "LIST": {
-    "INTENTIONAL_DAMAGE": {
-      "TITLE": "Daños Intencionales o Fraude",
-      "DESC": "El seguro de auto no cubrirá los daños resultantes de actos intencionales o reclamaciones fraudulentas. Si causas deliberadamente daño a tu vehículo o proporcionas información falsa a tu aseguradora, podrías ser denegado de la cobertura y enfrentar consecuencias legales.",
-      "ICON": "fas fa-gavel"
+      "HEADER": {
+        "TITLE": "¿Qué No Cubre el Seguro de Auto en Texas?",
+        "DESC": "El seguro de auto no cubre todas las situaciones. Las exclusiones pueden incluir daños intencionales, desgaste normal, fallas mecánicas y artículos personales dentro de tu auto. Además, actividades como las carreras sin licencia o el uso para negocios sin cobertura comercial no están cubiertas. Conocer estas exclusiones te ayuda a entender qué cobertura adicional podrías necesitar para una protección completa."
+      },
+      "LIST": {
+        "INTENTIONAL_DAMAGE": {
+          "TITLE": "Daños Intencionales o Fraude",
+          "DESC": "El seguro de auto no cubrirá los daños resultantes de actos intencionales o reclamaciones fraudulentas. Si causas deliberadamente daño a tu vehículo o proporcionas información falsa a tu aseguradora, podrías ser denegado de la cobertura y enfrentar consecuencias legales.",
+          "ICON": "fas fa-gavel"
+        },
+        "WEAR_TEAR": {
+          "TITLE": "Desgaste Normal y Fallas Mecánicas",
+          "DESC": "Los problemas de mantenimiento rutinario y las fallas mecánicas no están cubiertos por el seguro de auto. Estos tipos de problemas, como neumáticos desgastados o fallos del motor, pertenecen al mantenimiento regular del vehículo, lo cual es tu responsabilidad, no la de la aseguradora.",
+          "ICON": "fas fa-tools"
+        },
+        "PERSONAL_BELONGINGS": {
+          "TITLE": "Pertenencias Personales Dentro del Vehículo",
+          "DESC": "Los artículos personales dentro de tu auto, como electrónicos, bolsos o ropa, no están cubiertos por la mayoría de las pólizas de seguro de auto. Para proteger tus pertenencias, considera agregar un seguro de inquilinos u otra forma de cobertura para tus bienes personales.",
+          "ICON": "fas fa-mobile-alt"
+        },
+        "RIDESHARE": {
+          "TITLE": "Conducir para Transporte Compartido Sin la Cobertura Adecuada",
+          "DESC": "Si usas tu auto para servicios de transporte compartido como Uber o Lyft y no tienes la cobertura adecuada, tu seguro personal no te protegerá en caso de un accidente. Asegúrate siempre de que tu seguro incluya cobertura para transporte compartido.",
+          "ICON": "fas fa-taxi"
+        },
+        "BUSINESS_USE": {
+          "TITLE": "Uso Comercial Sin Cobertura de Auto Comercial",
+          "DESC": "Si usas tu vehículo para fines comerciales, como entregas o transporte de mercancías, el seguro de auto estándar no cubrirá esas actividades. Necesitarás una póliza de seguro comercial para garantizar que tu uso comercial esté adecuadamente protegido.",
+          "ICON": "fas fa-briefcase"
+        },
+        "RACING": {
+          "TITLE": "Carreras y Eventos en Circuitos",
+          "DESC": "Las pólizas de seguro de auto no cubren los daños sufridos durante carreras o eventos en circuitos. Si estás involucrado en carreras competitivas u otras actividades de alto riesgo, se aplicarán coberturas especializadas o exclusiones, y las pólizas estándar no te protegerán.",
+          "ICON": "fas fa-flag-checkered"
+        },
+        "FLOOD_WEATHER": {
+          "TITLE": "Daños por Inundación y Clima (Sin Cobertura Integral)",
+          "DESC": "Sin cobertura integral, tu seguro de auto no cubrirá los daños por inundaciones, granizo u otros incidentes relacionados con el clima. Este tipo de cobertura es opcional, pero crucial si deseas proteger tu vehículo de daños no causados por colisiones.",
+          "ICON": "fas fa-cloud-rain"
+        },
+        "THEFT": {
+          "TITLE": "Robo (Sin Cobertura Integral)",
+          "DESC": "Si tu auto es robado y no tienes cobertura integral, tu seguro no cubrirá la pérdida. La cobertura integral es necesaria para proteger tu vehículo contra robos, vandalismo o daños causados por eventos como desastres naturales.",
+          "ICON": "fas fa-user-secret"
+        },
+        "NO_LICENSE": {
+          "TITLE": "Conducir Sin una Licencia Válida",
+          "DESC": "Si te sorprenden conduciendo sin una licencia válida, tu seguro de auto podría no cubrir los daños o responsabilidades resultantes de un accidente. Se requiere una licencia de conducir válida para mantener la cobertura de seguro de auto y tener una protección completa.",
+          "ICON": "fas fa-id-card"
+        },
+        "MEDICAL_LIMITS": {
+          "TITLE": "Facturas Médicas Más Allá de los Límites de PIP / MedPay",
+          "DESC": "La Protección contra Lesiones Personales (PIP) o los Pagos Médicos (MedPay) solo cubren los gastos médicos hasta un cierto límite. Cualquier costo médico que supere estos límites no está cubierto por tu póliza de seguro de auto y debe ser pagado de tu bolsillo o a través de otros medios.",
+          "ICON": "fas fa-bandaid"
+        },
+        "LIABILITY_ONLY": {
+          "TITLE": "Daños a Tu Propio Auto (Pólizas Solo de Responsabilidad)",
+          "DESC": "Las pólizas solo de responsabilidad no cubren daños a tu propio vehículo. Si estás involucrado en un accidente, una póliza de seguro de responsabilidad cubrirá los daños a otros vehículos o propiedades, pero no pagará por las reparaciones de tu propio auto.",
+          "ICON": "fas fa-car-crash"
+        },
+        "UNLISTED_DRIVERS": {
+          "TITLE": "Conductores No Listados en Tu Hogar",
+          "DESC": "Si alguien que no está listado en tu póliza conduce tu auto y causa un accidente, tu seguro podría no cubrir los daños. Es importante asegurarse de que todos los conductores de tu hogar estén agregados a tu póliza de seguro de auto para garantizar una protección completa.",
+          "ICON": "fas fa-users"
+        },
+        "OUT_OF_COUNTRY": {
+          "TITLE": "Conducir Fuera del País (Excepto México con Endoso)",
+          "DESC": "El seguro de auto típicamente no cubre la conducción fuera de los Estados Unidos, excepto en México, donde se requiere un endoso específico. Si planeas conducir en el extranjero, necesitarás una cobertura adicional o una póliza adaptada para viajes internacionales.",
+          "ICON": "fas fa-globe-americas"
+        },
+        "GAP": {
+          "TITLE": "Brecha Entre el Valor del Auto y el Saldo del Préstamo (Sin Seguro de Brecha)",
+          "DESC": "Si tu auto se daña totalmente y debes más en tu préstamo que lo que vale el auto, el seguro de brecha es necesario para cubrir la diferencia. Sin él, tu póliza regular solo pagará el valor de mercado del vehículo, dejándote con el saldo restante del préstamo.",
+          "ICON": "fas fa-chart-line"
+        }
+      }
     },
-    "WEAR_TEAR": {
-      "TITLE": "Desgaste Normal y Fallas Mecánicas",
-      "DESC": "Los problemas de mantenimiento rutinario y las fallas mecánicas no están cubiertos por el seguro de auto. Estos tipos de problemas, como neumáticos desgastados o fallos del motor, pertenecen al mantenimiento regular del vehículo, lo cual es tu responsabilidad, no la de la aseguradora.",
-      "ICON": "fas fa-tools"
-    },
-    "PERSONAL_BELONGINGS": {
-      "TITLE": "Pertenencias Personales Dentro del Vehículo",
-      "DESC": "Los artículos personales dentro de tu auto, como electrónicos, bolsos o ropa, no están cubiertos por la mayoría de las pólizas de seguro de auto. Para proteger tus pertenencias, considera agregar un seguro de inquilinos u otra forma de cobertura para tus bienes personales.",
-      "ICON": "fas fa-mobile-alt"
-    },
-    "RIDESHARE": {
-      "TITLE": "Conducir para Transporte Compartido Sin la Cobertura Adecuada",
-      "DESC": "Si usas tu auto para servicios de transporte compartido como Uber o Lyft y no tienes la cobertura adecuada, tu seguro personal no te protegerá en caso de un accidente. Asegúrate siempre de que tu seguro incluya cobertura para transporte compartido.",
-      "ICON": "fas fa-taxi"
-    },
-    "BUSINESS_USE": {
-      "TITLE": "Uso Comercial Sin Cobertura de Auto Comercial",
-      "DESC": "Si usas tu vehículo para fines comerciales, como entregas o transporte de mercancías, el seguro de auto estándar no cubrirá esas actividades. Necesitarás una póliza de seguro comercial para garantizar que tu uso comercial esté adecuadamente protegido.",
-      "ICON": "fas fa-briefcase"
-    },
-    "RACING": {
-      "TITLE": "Carreras y Eventos en Circuitos",
-      "DESC": "Las pólizas de seguro de auto no cubren los daños sufridos durante carreras o eventos en circuitos. Si estás involucrado en carreras competitivas u otras actividades de alto riesgo, se aplicarán coberturas especializadas o exclusiones, y las pólizas estándar no te protegerán.",
-      "ICON": "fas fa-flag-checkered"
-    },
-    "FLOOD_WEATHER": {
-      "TITLE": "Daños por Inundación y Clima (Sin Cobertura Integral)",
-      "DESC": "Sin cobertura integral, tu seguro de auto no cubrirá los daños por inundaciones, granizo u otros incidentes relacionados con el clima. Este tipo de cobertura es opcional, pero crucial si deseas proteger tu vehículo de daños no causados por colisiones.",
-      "ICON": "fas fa-cloud-rain"
-    },
-    "THEFT": {
-      "TITLE": "Robo (Sin Cobertura Integral)",
-      "DESC": "Si tu auto es robado y no tienes cobertura integral, tu seguro no cubrirá la pérdida. La cobertura integral es necesaria para proteger tu vehículo contra robos, vandalismo o daños causados por eventos como desastres naturales.",
-      "ICON": "fas fa-user-secret"
-    },
-    "NO_LICENSE": {
-      "TITLE": "Conducir Sin una Licencia Válida",
-      "DESC": "Si te sorprenden conduciendo sin una licencia válida, tu seguro de auto podría no cubrir los daños o responsabilidades resultantes de un accidente. Se requiere una licencia de conducir válida para mantener la cobertura de seguro de auto y tener una protección completa.",
-      "ICON": "fas fa-id-card"
-    },
-    "MEDICAL_LIMITS": {
-      "TITLE": "Facturas Médicas Más Allá de los Límites de PIP / MedPay",
-      "DESC": "La Protección contra Lesiones Personales (PIP) o los Pagos Médicos (MedPay) solo cubren los gastos médicos hasta un cierto límite. Cualquier costo médico que supere estos límites no está cubierto por tu póliza de seguro de auto y debe ser pagado de tu bolsillo o a través de otros medios.",
-      "ICON": "fas fa-bandaid"
-    },
-    "LIABILITY_ONLY": {
-      "TITLE": "Daños a Tu Propio Auto (Pólizas Solo de Responsabilidad)",
-      "DESC": "Las pólizas solo de responsabilidad no cubren daños a tu propio vehículo. Si estás involucrado en un accidente, una póliza de seguro de responsabilidad cubrirá los daños a otros vehículos o propiedades, pero no pagará por las reparaciones de tu propio auto.",
-      "ICON": "fas fa-car-crash"
-    },
-    "UNLISTED_DRIVERS": {
-      "TITLE": "Conductores No Listados en Tu Hogar",
-      "DESC": "Si alguien que no está listado en tu póliza conduce tu auto y causa un accidente, tu seguro podría no cubrir los daños. Es importante asegurarse de que todos los conductores de tu hogar estén agregados a tu póliza de seguro de auto para garantizar una protección completa.",
-      "ICON": "fas fa-users"
-    },
-    "OUT_OF_COUNTRY": {
-      "TITLE": "Conducir Fuera del País (Excepto México con Endoso)",
-      "DESC": "El seguro de auto típicamente no cubre la conducción fuera de los Estados Unidos, excepto en México, donde se requiere un endoso específico. Si planeas conducir en el extranjero, necesitarás una cobertura adicional o una póliza adaptada para viajes internacionales.",
-      "ICON": "fas fa-globe-americas"
-    },
-    "GAP": {
-      "TITLE": "Brecha Entre el Valor del Auto y el Saldo del Préstamo (Sin Seguro de Brecha)",
-      "DESC": "Si tu auto se daña totalmente y debes más en tu préstamo que lo que vale el auto, el seguro de brecha es necesario para cubrir la diferencia. Sin él, tu póliza regular solo pagará el valor de mercado del vehículo, dejándote con el saldo restante del préstamo.",
-      "ICON": "fas fa-chart-line"
-    }
-  }
-},
     "COST": {
       "TITLE": "¿Cuánto Cuesta el Seguro de Auto en Texas?",
       "DESC1": "El costo promedio del seguro de auto en Texas varía según factores como tu edad, historial de manejo y el tipo de cobertura que elijas. En promedio, los conductores de Texas pagan <a class='inline-link' href='https://www.prontoinsurance.com/blog/average-cost-auto-insurance-texas/#:~:text=Texas's%20average%20auto%20insurance%20rates,see%20premiums%20exceed%20$2%2C500%20annually.' rel='nofollow'> $1,500–$2,000 al año por cobertura total y $600 al año por cobertura mínima. </a> Las tarifas pueden ser más altas en ciudades grandes o para conductores con historial de accidentes o violaciones.",
@@ -6485,83 +6551,83 @@
       }
     },
     "NOT_COVERED": {
-  "HEADER": {
-    "TITLE": "¿Qué No Cubre El Seguro De Motocicleta En Texas?",
-    "DESC": "El seguro de motocicleta en Texas no cubre daños intencionales, fraude, carreras ni la conducción sin una licencia válida de clase M. Excluye el desgaste normal, pertenencias personales, piezas personalizadas que excedan los límites estándar, inundaciones, robo sin cobertura integral, uso comercial, conducción fuera del país y accidentes causados bajo la influencia de drogas o alcohol."
-  },
-  "LIST": {
-    "INTENTIONAL_DAMAGE": {
-      "TITLE": "Daño Intencional O Fraude",
-      "DESC": "El seguro de motocicleta no cubre daños causados intencionalmente por el conductor ni reclamaciones fraudulentas. Los actos deliberados, el vandalismo por parte del asegurado o los accidentes mal representados están excluidos, protegiendo a las aseguradoras contra abusos y fomentando la responsabilidad.",
-      "ICON": "fas fa-gavel"
+      "HEADER": {
+        "TITLE": "¿Qué No Cubre El Seguro De Motocicleta En Texas?",
+        "DESC": "El seguro de motocicleta en Texas no cubre daños intencionales, fraude, carreras ni la conducción sin una licencia válida de clase M. Excluye el desgaste normal, pertenencias personales, piezas personalizadas que excedan los límites estándar, inundaciones, robo sin cobertura integral, uso comercial, conducción fuera del país y accidentes causados bajo la influencia de drogas o alcohol."
+      },
+      "LIST": {
+        "INTENTIONAL_DAMAGE": {
+          "TITLE": "Daño Intencional O Fraude",
+          "DESC": "El seguro de motocicleta no cubre daños causados intencionalmente por el conductor ni reclamaciones fraudulentas. Los actos deliberados, el vandalismo por parte del asegurado o los accidentes mal representados están excluidos, protegiendo a las aseguradoras contra abusos y fomentando la responsabilidad.",
+          "ICON": "fas fa-gavel"
+        },
+        "WEAR_TEAR": {
+          "TITLE": "Desgaste Normal Y Fallas Mecánicas",
+          "DESC": "Las pólizas no cubren el desgaste habitual, el envejecimiento ni las fallas mecánicas por falta de mantenimiento. El reemplazo de piezas, el desgaste del motor o las averías mecánicas son responsabilidad del conductor y requieren un mantenimiento adecuado para prevenir accidentes.",
+          "ICON": "fas fa-tools"
+        },
+        "RACING": {
+          "TITLE": "Carreras Y Eventos En Pista",
+          "DESC": "Los daños derivados de carreras, eventos competitivos o conducción en pista están excluidos. Las pólizas estándar se enfocan en el uso diario en carretera, por lo que participar en carreras sin cobertura especializada puede resultar en la negación de reclamaciones por accidentes o daños ocurridos en pistas.",
+          "ICON": "fas fa-flag-checkered"
+        },
+        "NO_LICENSE": {
+          "TITLE": "Conducción Sin Licencia Válida De Motocicleta (Clase M)",
+          "DESC": "Si conduces sin una licencia válida de motocicleta, las reclamaciones pueden ser rechazadas. El seguro exige una licencia adecuada de clase M para operar legalmente, garantizando que los conductores estén capacitados, cumplan con la normativa y sean elegibles para protección financiera en caso de accidente.",
+          "ICON": "fas fa-id-card"
+        },
+        "PERSONAL_BELONGINGS": {
+          "TITLE": "Pertenencias Personales Y Equipo De Conducción (Sin Endoso)",
+          "DESC": "El seguro estándar generalmente excluye artículos personales como ropa, dispositivos electrónicos y cascos. Para protegerlos, necesitas agregar un endoso. Sin él, las pérdidas o el robo de equipo personal no serán reembolsados, dejando al conductor responsable económicamente.",
+          "ICON": "fas fa-mobile-alt"
+        },
+        "LIABILITY_ONLY": {
+          "TITLE": "Daños A Tu Propia Motocicleta (Pólizas Solo De Responsabilidad Civil)",
+          "DESC": "La cobertura únicamente de responsabilidad civil no cubre los daños a tu motocicleta. Las reparaciones o el reemplazo después de colisiones, accidentes o robos son tu responsabilidad. Para una protección completa, se requiere cobertura por colisión o integral para proteger tu motocicleta.",
+          "ICON": "fas fa-motorcycle"
+        },
+        "FLOOD_WEATHER": {
+          "TITLE": "Daños Por Inundación Y Clima (Sin Cobertura Integral)",
+          "DESC": "Las inundaciones, el granizo y los daños por tormentas no están cubiertos bajo pólizas básicas de responsabilidad civil. Se requiere cobertura integral para proteger tu motocicleta contra eventos naturales, garantizando reparaciones o reemplazo sin afectar tus finanzas tras incidentes climáticos.",
+          "ICON": "fas fa-cloud-rain"
+        },
+        "THEFT": {
+          "TITLE": "Robo (Sin Cobertura Integral)",
+          "DESC": "Las pólizas estándar de responsabilidad civil no cubren el robo. Para proteger tu motocicleta contra robos, es necesaria la cobertura integral. Sin ella, las motocicletas o piezas robadas serán tu responsabilidad, exponiéndote a pérdidas totales.",
+          "ICON": "fas fa-user-secret"
+        },
+        "UNLISTED_RIDERS": {
+          "TITLE": "Conductores No Incluidos En Tu Póliza",
+          "DESC": "El seguro solo protege a los conductores incluidos en tu póliza. Si alguien no autorizado conduce tu motocicleta y sufre lesiones o causa daños, las reclamaciones pueden ser rechazadas. Siempre añade conductores ocasionales o autorizados para asegurar la cobertura.",
+          "ICON": "fas fa-users"
+        },
+        "BUSINESS_USE": {
+          "TITLE": "Uso Comercial Sin Cobertura Comercial",
+          "DESC": "Utilizar tu motocicleta con fines comerciales sin cobertura comercial puede invalidar las reclamaciones. Las pólizas estándar solo cubren uso personal, por lo que entregas, desplazamientos laborales o transporte remunerado requieren endosos especiales para mantener la cobertura completa.",
+          "ICON": "fas fa-briefcase"
+        },
+        "OUT_OF_COUNTRY": {
+          "TITLE": "Conducción Fuera Del País (Excepto México Con Endoso)",
+          "DESC": "Conducir fuera del país generalmente no está cubierto, excepto en México si cuentas con un endoso adicional. Sin esta extensión, los daños o accidentes ocurridos en el extranjero no estarán cubiertos, dejando al conductor responsable de todos los costos.",
+          "ICON": "fas fa-globe-americas"
+        },
+        "GAP": {
+          "TITLE": "Diferencia Entre El Valor De La Motocicleta Y El Saldo Del Préstamo (Sin Cobertura De Brecha)",
+          "DESC": "Si tu motocicleta se considera pérdida total, la cobertura básica solo paga el valor real en efectivo, no el saldo restante del préstamo. La cobertura de brecha cubre esta diferencia, evitando que tengas que seguir pagando por una motocicleta que ya no puedes usar.",
+          "ICON": "fas fa-chart-line"
+        },
+        "DUI": {
+          "TITLE": "Conducción Bajo La Influencia",
+          "DESC": "El seguro no cubre accidentes causados bajo la influencia de alcohol o drogas. Las reclamaciones pueden ser rechazadas y pueden aplicarse consecuencias legales. Conducir de manera segura y sobria garantiza que la cobertura se mantenga válida.",
+          "ICON": "fas fa-wine-bottle"
+        },
+        "CUSTOM_PARTS": {
+          "TITLE": "Piezas Personalizadas Que Exceden Los Límites Estándar (Sin Endoso)",
+          "DESC": "Las piezas mejoradas o de posventa que exceden los límites estándar de cobertura no están protegidas a menos que agregues un endoso. Sin él, los daños o el robo de componentes personalizados no serán reembolsados, dejando al conductor responsable de los costos de reparación o reemplazo.",
+          "ICON": "fas fa-wrench"
+        }
+      }
     },
-    "WEAR_TEAR": {
-      "TITLE": "Desgaste Normal Y Fallas Mecánicas",
-      "DESC": "Las pólizas no cubren el desgaste habitual, el envejecimiento ni las fallas mecánicas por falta de mantenimiento. El reemplazo de piezas, el desgaste del motor o las averías mecánicas son responsabilidad del conductor y requieren un mantenimiento adecuado para prevenir accidentes.",
-      "ICON": "fas fa-tools"
-    },
-    "RACING": {
-      "TITLE": "Carreras Y Eventos En Pista",
-      "DESC": "Los daños derivados de carreras, eventos competitivos o conducción en pista están excluidos. Las pólizas estándar se enfocan en el uso diario en carretera, por lo que participar en carreras sin cobertura especializada puede resultar en la negación de reclamaciones por accidentes o daños ocurridos en pistas.",
-      "ICON": "fas fa-flag-checkered"
-    },
-    "NO_LICENSE": {
-      "TITLE": "Conducción Sin Licencia Válida De Motocicleta (Clase M)",
-      "DESC": "Si conduces sin una licencia válida de motocicleta, las reclamaciones pueden ser rechazadas. El seguro exige una licencia adecuada de clase M para operar legalmente, garantizando que los conductores estén capacitados, cumplan con la normativa y sean elegibles para protección financiera en caso de accidente.",
-      "ICON": "fas fa-id-card"
-    },
-    "PERSONAL_BELONGINGS": {
-      "TITLE": "Pertenencias Personales Y Equipo De Conducción (Sin Endoso)",
-      "DESC": "El seguro estándar generalmente excluye artículos personales como ropa, dispositivos electrónicos y cascos. Para protegerlos, necesitas agregar un endoso. Sin él, las pérdidas o el robo de equipo personal no serán reembolsados, dejando al conductor responsable económicamente.",
-      "ICON": "fas fa-mobile-alt"
-    },
-    "LIABILITY_ONLY": {
-      "TITLE": "Daños A Tu Propia Motocicleta (Pólizas Solo De Responsabilidad Civil)",
-      "DESC": "La cobertura únicamente de responsabilidad civil no cubre los daños a tu motocicleta. Las reparaciones o el reemplazo después de colisiones, accidentes o robos son tu responsabilidad. Para una protección completa, se requiere cobertura por colisión o integral para proteger tu motocicleta.",
-      "ICON": "fas fa-motorcycle"
-    },
-    "FLOOD_WEATHER": {
-      "TITLE": "Daños Por Inundación Y Clima (Sin Cobertura Integral)",
-      "DESC": "Las inundaciones, el granizo y los daños por tormentas no están cubiertos bajo pólizas básicas de responsabilidad civil. Se requiere cobertura integral para proteger tu motocicleta contra eventos naturales, garantizando reparaciones o reemplazo sin afectar tus finanzas tras incidentes climáticos.",
-      "ICON": "fas fa-cloud-rain"
-    },
-    "THEFT": {
-      "TITLE": "Robo (Sin Cobertura Integral)",
-      "DESC": "Las pólizas estándar de responsabilidad civil no cubren el robo. Para proteger tu motocicleta contra robos, es necesaria la cobertura integral. Sin ella, las motocicletas o piezas robadas serán tu responsabilidad, exponiéndote a pérdidas totales.",
-      "ICON": "fas fa-user-secret"
-    },
-    "UNLISTED_RIDERS": {
-      "TITLE": "Conductores No Incluidos En Tu Póliza",
-      "DESC": "El seguro solo protege a los conductores incluidos en tu póliza. Si alguien no autorizado conduce tu motocicleta y sufre lesiones o causa daños, las reclamaciones pueden ser rechazadas. Siempre añade conductores ocasionales o autorizados para asegurar la cobertura.",
-      "ICON": "fas fa-users"
-    },
-    "BUSINESS_USE": {
-      "TITLE": "Uso Comercial Sin Cobertura Comercial",
-      "DESC": "Utilizar tu motocicleta con fines comerciales sin cobertura comercial puede invalidar las reclamaciones. Las pólizas estándar solo cubren uso personal, por lo que entregas, desplazamientos laborales o transporte remunerado requieren endosos especiales para mantener la cobertura completa.",
-      "ICON": "fas fa-briefcase"
-    },
-    "OUT_OF_COUNTRY": {
-      "TITLE": "Conducción Fuera Del País (Excepto México Con Endoso)",
-      "DESC": "Conducir fuera del país generalmente no está cubierto, excepto en México si cuentas con un endoso adicional. Sin esta extensión, los daños o accidentes ocurridos en el extranjero no estarán cubiertos, dejando al conductor responsable de todos los costos.",
-      "ICON": "fas fa-globe-americas"
-    },
-    "GAP": {
-      "TITLE": "Diferencia Entre El Valor De La Motocicleta Y El Saldo Del Préstamo (Sin Cobertura De Brecha)",
-      "DESC": "Si tu motocicleta se considera pérdida total, la cobertura básica solo paga el valor real en efectivo, no el saldo restante del préstamo. La cobertura de brecha cubre esta diferencia, evitando que tengas que seguir pagando por una motocicleta que ya no puedes usar.",
-      "ICON": "fas fa-chart-line"
-    },
-    "DUI": {
-      "TITLE": "Conducción Bajo La Influencia",
-      "DESC": "El seguro no cubre accidentes causados bajo la influencia de alcohol o drogas. Las reclamaciones pueden ser rechazadas y pueden aplicarse consecuencias legales. Conducir de manera segura y sobria garantiza que la cobertura se mantenga válida.",
-      "ICON": "fas fa-wine-bottle"
-    },
-    "CUSTOM_PARTS": {
-      "TITLE": "Piezas Personalizadas Que Exceden Los Límites Estándar (Sin Endoso)",
-      "DESC": "Las piezas mejoradas o de posventa que exceden los límites estándar de cobertura no están protegidas a menos que agregues un endoso. Sin él, los daños o el robo de componentes personalizados no serán reembolsados, dejando al conductor responsable de los costos de reparación o reemplazo.",
-      "ICON": "fas fa-wrench"
-    }
-  }
-},
     "COST": {
       "TITLE": "¿Cuánto Cuesta el Seguro de Motocicleta en Texas?",
       "DESC1": "Los costos del seguro de motocicleta en Texas típicamente comienzan <a href='https://www.dairylandinsurance.com/motorcycle/texas-insurance-requirements#:~:text=The%20cost%20of%20a%20motorcycle,on%20these%20already%20competitive%20rates:' rel='nofollow' class='inline-link'>alrededor de $25 por mes</a> para la cobertura de responsabilidad civil mínima en una moto estándar. Para cobertura completa, que incluye protección contra colisión e integral, la mayoría de los motociclistas pagan alrededor de $85 por mes. Factores como la edad, el tipo de moto, el historial de conducción y la ubicación pueden afectar las primas.",
@@ -7263,9 +7329,92 @@
         ]
       }
     },
+    "NOT_COVERED": {
+      "HEADER": {
+        "TITLE": "¿Qué No Cubre El Seguro De Barco En Texas?",
+        "DESC": "Aunque el seguro de barco proporciona una cobertura extensa, hay algunas exclusiones. Comúnmente, no cubre el desgaste normal, las averías mecánicas o los daños intencionales. Además, ciertas situaciones, como las inundaciones causadas por tormentas nombradas (sin un endoso) o el operar el barco bajo los efectos del alcohol o drogas, no están incluidas. Es importante conocer estas exclusiones para asegurarse de estar protegido."
+      },
+      "LIST": {
+        "WEAR_TEAR": {
+          "TITLE": "Desgaste Normal Y Averías Mecánicas",
+          "DESC": "El seguro de barco no cubre el costo del desgaste normal ni de las averías mecánicas. Problemas como fallos en el motor, reparaciones rutinarias o partes deterioradas no están incluidos y son responsabilidad del propietario del barco.",
+          "ICON": "fas fa-tools"
+        },
+        "GRADUAL_DETERIORATION": {
+          "TITLE": "Deterioro Gradual Y Corrosión",
+          "DESC": "El deterioro gradual y la corrosión son comunes con el tiempo, pero no están cubiertos por el seguro de barco. Los daños causados por la oxidación, el crecimiento de algas u otras formas lentas de desgaste debido a la exposición al agua están excluidos. Un mantenimiento adecuado puede ayudar a prevenir estos problemas.",
+          "ICON": "fas fa-water"
+        },
+        "RACING": {
+          "TITLE": "Carreras Y Competencias De Velocidad",
+          "DESC": "El seguro de barco no cubrirá los incidentes que ocurran mientras participas en carreras, competencias de velocidad u otros eventos competitivos. Si tu barco se usa en tales actividades, necesitarás una cobertura especializada, que no está incluida en las pólizas estándar.",
+          "ICON": "fas fa-flag-checkered"
+        },
+        "INTENTIONAL_DAMAGE": {
+          "TITLE": "Daños Intencionales O Fraude",
+          "DESC": "Si el daño se causa de manera intencional o a través de acciones fraudulentas, no estará cubierto. Las aseguradoras no pagarán por reparaciones o pérdidas resultantes de destrucción deliberada o reclamos fraudulentos. Asegúrate siempre de que tus reclamos sean legítimos para evitar un rechazo.",
+          "ICON": "fas fa-gavel"
+        },
+        "DUI": {
+          "TITLE": "Operación Bajo Los Efectos Del Alcohol O Drogas",
+          "DESC": "El seguro de barco no cubre accidentes que ocurran mientras el operador está bajo los efectos del alcohol o las drogas. Navegar bajo la influencia es ilegal y peligroso. Siempre opera tu barco de manera responsable para asegurarte de estar cubierto en caso de un incidente.",
+          "ICON": "fas fa-wine-bottle"
+        },
+        "UNLISTED_OPERATORS": {
+          "TITLE": "Operadores No Listados En Tu Póliza",
+          "DESC": "Si alguien que no está incluido en tu póliza opera tu barco y ocurre un accidente, sus acciones pueden no estar cubiertas. Es importante añadir a todos los operadores habituales de tu barco a la póliza para asegurarte de que todos estén protegidos en caso de un reclamo.",
+          "ICON": "fas fa-users"
+        },
+        "FLOOD_NAMED_STORMS": {
+          "TITLE": "Inundaciones Causadas Por Tormentas Nombradas (Sin Endoso)",
+          "DESC": "El seguro estándar de barco típicamente no cubre inundaciones causadas por tormentas nombradas, como huracanes, sin un endoso adicional. Si vives en una zona propensa a clima severo, es posible que necesites cobertura adicional para proteger tu barco.",
+          "ICON": "fas fa-hurricane"
+        },
+        "RESTRICTED_WATERS": {
+          "TITLE": "Pesca En Aguas Restringidas O Prohibidas",
+          "DESC": "La pesca en aguas restringidas o prohibidas no está cubierta por tu seguro de barco. Asegúrate de seguir las regulaciones locales y las pautas para navegar y pescar para evitar exclusiones en la póliza. Operar en áreas restringidas podría llevar a rechazos de reclamos.",
+          "ICON": "fas fa-fish"
+        },
+        "PERSONAL_BELONGINGS": {
+          "TITLE": "Pertenencias Personales Fuera de Los Límites de Cobertura",
+          "DESC": "El seguro de barco a menudo tiene límites en las pertenencias personales, como equipo de pesca, electrónicos y otros artículos a bordo. Cualquier artículo personal de alto valor que esté fuera del límite de cobertura de la póliza puede no ser reembolsado si se pierde, daña o es robado.",
+          "ICON": "fas fa-mobile-alt"
+        },
+        "TRAILER": {
+          "TITLE": "Remolques (Sin Cobertura Separada Para Remolques)",
+          "DESC": "Tu seguro estándar de barco generalmente no cubre los daños o el robo de tu remolque a menos que añadas una cobertura separada para el remolque. Si tu remolque es robado, dañado o necesita reparaciones, se requiere una póliza separada o un endoso.",
+          "ICON": "fas fa-trailer"
+        },
+        "POOR_MAINTENANCE": {
+          "TITLE": "Daños Consecuentes Por Mantenimiento Deficiente",
+          "DESC": "El seguro de barco no cubre daños causados por un mantenimiento deficiente o negligencia. Si tu barco sufre problemas como fallos en el motor, óxido u otros problemas prevenibles por negligencia, las reparaciones o reemplazos no estarán cubiertos.",
+          "ICON": "fas fa-clipboard-list"
+        },
+        "BUSINESS_USE": {
+          "TITLE": "Uso Comercial Sin Cobertura Adecuada",
+          "DESC": "El uso de tu barco para fines comerciales sin la cobertura adecuada no está incluido en el seguro estándar de barco. Ya sea para uso comercial, alquiler o chárter, las actividades comerciales requieren pólizas o endosos especializados.",
+          "ICON": "fas fa-briefcase"
+        },
+        "OUT_OF_COUNTRY": {
+          "TITLE": "Aguas Fuera Del País (Sin Endoso)",
+          "DESC": "Navegar en aguas extranjeras generalmente no está cubierto bajo tu póliza estándar de seguro de barco. Si planeas operar tu barco internacionalmente, necesitarás añadir un endoso o una póliza separada para asegurarte de estar cubierto en caso de un incidente.",
+          "ICON": "fas fa-globe-americas"
+        },
+        "WAR_NUCLEAR": {
+          "TITLE": "Exclusiones Por Guerra Y Eventos Nucleares",
+          "DESC": "El seguro de barco excluye la cobertura por daños causados por actos de guerra o eventos nucleares. Estos escenarios se consideran riesgos extremos y no están cubiertos bajo las pólizas estándar. Siempre revisa las exclusiones de tu póliza para entender lo que no está cubierto.",
+          "ICON": "fas fa-radiation"
+        },
+        "PETS": {
+          "TITLE": "Mascotas Y Animales A Bordo",
+          "DESC": "Generalmente, no cubre lesiones o daños que involucren mascotas o animales a bordo. Si tu mascota se lesiona o causa daños mientras está en el barco, estos incidentes quedan excluidos de la cobertura. Siempre toma precauciones para asegurar la seguridad de las mascotas.",
+          "ICON": "fas fa-paw"
+        }
+      }
+    },
     "COST": {
       "TITLE": "¿Cuánto Cuesta el Seguro de Bote en Texas?",
-      "DESC1": "El costo del seguro de bote en Texas típicamente comienza alrededor de $349 por año, dependiendo de factores como el tipo de bote, su valor y dónde se almacena. Por ejemplo, un bote de pesca pequeño puede costar menos de asegurar, mientras que botes más grandes o de mayor valor, como yates o embarcaciones de alta mar, pueden tener primas más altas. En promedio, los propietarios de botes en Texas pueden esperar pagar entre $300 y $1,500 anualmente por cobertura completa.",
+      "DESC1": "El costo del seguro de bote en Texas típicamente comienza <a href='https://pelican-insurance.com/how-much-is-boat-insurance-in-texas/' rel='nofollow' class='inline-link'>alrededor de $349 por año</a>, dependiendo de factores como el tipo de bote, su valor y dónde se almacena. Por ejemplo, un bote de pesca pequeño puede costar menos de asegurar, mientras que botes más grandes o de mayor valor, como yates o embarcaciones de alta mar, pueden tener primas más altas. En promedio, los propietarios de botes en Texas pueden esperar pagar <a href='https://www.suncoastinsurance.com/blog/boat-insurance-in-texas' rel='nofollow' class='inline-link'>entre $300 y $1,500 anualmente</a> por cobertura completa.",
       "DESC2": "Al comparar las tarifas de Texas con las de otros estados, los costos son bastante competitivos. Estados como California y Florida, donde la navegación es más frecuente y el riesgo de daños o accidentes es mayor, tienden a tener primas más altas. En contraste, los estados con menos actividad de navegación o menores riesgos en vías fluviales pueden tener tarifas más bajas. En general, Texas ofrece opciones de seguro de bote asequibles, particularmente con la diversa gama de botes asegurados y el riesgo relativamente bajo de daños por clima severo en comparación con las áreas costeras."
     },
     "FACTORS_IMPACT": {
@@ -7369,12 +7518,12 @@
     "DISCOUNT_FACTORS": {
       "HEADER": {
         "TITLE": "Cómo Maximizar tus Descuentos y Reducir tu Prima de Seguro de Bote",
-        "DESC": "En A-State Insurance, creemos en ayudarte a ahorrar en tu seguro de bote. Hay varias maneras de maximizar los descuentos y reducir tu prima. Desde combinar pólizas como seguro de bote y auto hasta completar un curso de seguridad náutica, ofrecemos una gama de opciones para ayudar a reducir tus tarifas. Nuestros agentes te guiarán a través de los descuentos disponibles para asegurar que obtengas la mejor oferta para tu cobertura."
+        "DESC": "En <a class='inline-link' href='/' target='_blank'>A-State Insurance</a>, creemos en ayudarte a ahorrar en tu seguro de bote. Hay varias maneras de maximizar los descuentos y reducir tu prima. Desde combinar pólizas como seguro de bote y <a href='/es/seguros-de-auto' class='inline-link'>seguro de auto</a> hasta completar un curso de seguridad náutica, ofrecemos una gama de opciones para ayudar a reducir tus tarifas. Nuestros agentes te guiarán a través de los descuentos disponibles para asegurar que obtengas la mejor oferta para tu cobertura."
       },
       "LIST": {
         "BUNDLING": {
           "TITLE": "Descuento por Múltiples Pólizas / Combinación (Bote + Auto o Hogar)",
-          "DESC": "Ahorra más cuando combinas tu seguro de bote con el seguro de auto o hogar, y obtén una mejor tarifa en ambos.",
+          "DESC": "Ahorra más cuando combinas tu seguro de bote con el seguro de auto o <a href='/es/seguros-de-vivienda' class='inline-link'>seguro de hogar</a>, y obtén una mejor tarifa en ambos.",
           "ICON": "fas fa-house-user"
         },
         "SAFETY_COURSE": {
@@ -7658,7 +7807,7 @@
         "TITLE": "¿Propietario de Bote de Alto Riesgo? Nosotros Podemos Ayudarte"
       },
       "CONTENT": {
-        "DESC1": "Si te han rechazado o te han cotizado una tarifa inasequible en otro lugar, no te preocupes, estamos aquí para ayudarte. En A-State Insurance, nos especializamos en trabajar con propietarios de botes de alto riesgo.",
+        "DESC1": "Si te han rechazado o te han cotizado una tarifa inasequible en otro lugar, no te preocupes, estamos aquí para ayudarte. En <a class='inline-link' href='/' target='_blank'>A-State Insurance</a>, nos especializamos en trabajar con propietarios de botes de alto riesgo.",
         "DESC2": "Ya sea debido al tipo de tu embarcación, área de navegación, historial de reclamos o perfil del operador, tenemos acceso a mercados marinos no estándar que pueden ofrecerte la cobertura que necesitas.",
         "DESC3": "Mereces una protección confiable a un precio justo. Permítenos ayudarte a obtener la cobertura de seguro de bote que mereces, sin importar tu situación."
       }
@@ -7668,7 +7817,7 @@
         "TITLE": "Hablamos Español / Hablamos tu Idioma"
       },
       "CONTENT": {
-        "DESC1": "En A-State Insurance, entendemos que la comunicación clara es clave para brindar el mejor servicio. Es por eso que ofrecemos soporte tanto en inglés como en español para todas tus necesidades de seguro de bote.",
+        "DESC1": "En <a class='inline-link' href='/' target='_blank'>A-State Insurance</a>, entendemos que la comunicación clara es clave para brindar el mejor servicio. Es por eso que ofrecemos soporte tanto en inglés como en español para todas tus necesidades de seguro de bote.",
         "DESC2": "Nuestros agentes dedicados te ayudan a comprender las opciones de cobertura, los requisitos y los precios, asegurando que el idioma nunca sea una barrera para obtener un seguro.",
         "DESC3": "Ya sea que prefieras hablar en inglés o español, estamos comprometidos a hacer que tu experiencia con el seguro de bote sea fácil, clara y sin estrés. ¡Estamos aquí para ayudarte!"
       }
@@ -7715,25 +7864,31 @@
         "TITLE": "Obtén Cobertura en 4 Pasos Simples"
       },
       "STEPS": {
-        "REACH_OUT": {
-          "TITLE": "Paso 1 - Comunícate",
-          "DESCRIPTION": "Contacta a nuestro equipo para iniciar tu solicitud de seguro de bote y obtener orientación rápida y amable desde el principio.",
-          "ICON": "fas fa-phone-alt"
+        "HEADER": {
+          "TITLE": "Cómo Obtener Cobertura En 4 Pasos Sencillos",
+          "DESC": ""
         },
-        "GET_ADVICE": {
-          "TITLE": "Paso 2 - Recibe Asesoramiento",
-          "DESCRIPTION": "Nuestros expertos revisan tus necesidades de navegación y explican claramente tus opciones para que puedas elegir la cobertura adecuada para tu embarcación.",
-          "ICON": "fas fa-comments"
-        },
-        "PICK_PLAN": {
-          "TITLE": "Paso 3 - Elige tu Plan",
-          "DESCRIPTION": "Selecciona el plan de seguro de bote que se ajuste a tu presupuesto, tipo de embarcación y objetivos de protección con total confianza.",
-          "ICON": "fas fa-check-circle"
-        },
-        "WE_GOT_YOU": {
-          "TITLE": "Paso 4 - Estás Cubierto",
-          "DESCRIPTION": "Nos encargamos del papeleo y finalizamos tu póliza de bote, asegurando una aprobación rápida y una activación sin problemas de la cobertura.",
-          "ICON": "fas fa-shield-alt"
+        "LIST": {
+          "REACH_OUT": {
+            "TITLE": "Paso 1 - Contáctanos",
+            "DESCRIPTION": "<a href='/es/contacto' class='inline-link'>Contáctanos </a> hoy llenando el formulario o llamando para comenzar con tu cotización gratuita.",
+            "ICON": "fas fa-phone-alt"
+          },
+          "GET_ADVICE": {
+            "TITLE": "Paso 2 - Recibe Asesoría",
+            "DESCRIPTION": "Nuestros agentes experimentados te brindarán asesoría experta para ayudarte a elegir la cobertura adecuada para tu barco.",
+            "ICON": "fas fa-comments"
+          },
+          "PICK_PLAN": {
+            "TITLE": "Paso 3 - Elige Tu Plan",
+            "DESCRIPTION": "Revisa tus opciones y selecciona el plan de seguro que mejor se adapte a tus necesidades y presupuesto.",
+            "ICON": "fas fa-check-circle"
+          },
+          "WE_GOT_YOU": {
+            "TITLE": "Paso 4 - Estamos Aquí Para Ti",
+            "DESCRIPTION": "Una vez que estés cubierto, estaremos aquí para ayudarte cada vez que necesites asistencia con tu póliza.",
+            "ICON": "fas fa-shield-alt"
+          }
         }
       }
     },
@@ -7761,7 +7916,7 @@
     },
     "FREE_QUOTE": {
       "HEADER": "Obtén una Cotización Gratuita de Seguro de Bote en Texas",
-      "DESCRIPTION": "En A-State Insurance, facilitamos la obtención de la cobertura adecuada para tu bote. Simplemente completa el formulario con tus datos, y uno de nuestros experimentados agentes con sede en Texas se comunicará contigo para proporcionarte una cotización de seguro de bote gratuita y personalizada. Ya sea que tengas un bote de pesca, moto acuática, pontón o velero, te ayudaremos a encontrar una cobertura asequible. Trabajamos con múltiples aseguradoras para asegurar que obtengas el mejor precio sin comprometer la calidad. ¡Comienza hoy, completa el formulario ahora!"
+      "DESCRIPTION": "En <a class='inline-link white' href='/' target='_blank'>A-State Insurance</a>, facilitamos la obtención de la cobertura adecuada para tu bote. Simplemente completa el formulario con tus datos, y uno de nuestros experimentados agentes con sede en Texas se comunicará contigo para proporcionarte una cotización de seguro de bote gratuita y personalizada. Ya sea que tengas un bote de pesca, moto acuática, pontón o velero, te ayudaremos a encontrar una cobertura asequible. Trabajamos con múltiples aseguradoras para asegurar que obtengas el mejor precio sin comprometer la calidad. ¡Comienza hoy, completa el formulario ahora!"
     }
   },
   "RV_INSURANCE": {
@@ -7816,7 +7971,7 @@
       "TITLE": "¿Es Obligatorio el Seguro de RV y Autocaravana en Texas?",
       "INTRO1": "Técnicamente, el seguro de RV y autocaravana <a class='inline-link' href='https://www.tdi.texas.gov/tips/rv-insurance-coverage.html' target='_blank'> no es legalmente obligatorio. </a> en Texas de la misma manera que el seguro de auto estándar. Si tu vehículo está registrado como RV o autocaravana, es posible que el estado no exija cobertura más allá de la responsabilidad civil básica para circular por vías públicas. Sin embargo, depender únicamente de una responsabilidad mínima te deja expuesto a un gran riesgo financiero si ocurren accidentes, robo o daños.",
       "INTRO2": "La mayoría de los propietarios de RV aún eligen contratar un seguro dedicado porque las consecuencias prácticas de no estar asegurado pueden ser graves. Sin la cobertura adecuada, las reparaciones, costos médicos o el reemplazo de pertenencias personales dentro de tu RV pueden volverse rápidamente muy costosos. Contar con un seguro de casa rodante en Texas garantiza que estés protegido en autopistas, campamentos y durante viajes prolongados, brindando tranquilidad y protegiendo tu inversión frente a lo inesperado."
-        },
+    },
     "COVERAGES": {
       "HEADER": {
         "TITLE": "¿Qué Cubre el Seguro de RV y Autocaravana en Texas?",
@@ -36420,7 +36575,9 @@
       ],
       "HOURS": "Lun – Sáb: 9AM – 7PM Dom: Cerrado",
       "EMAIL": "save@astateinsurance.com",
-      "PHONE": ["(713) 357-7771"]
+      "PHONE": [
+        "(713) 357-7771"
+      ]
     },
     "POLICIES": {
       "PRIVACY": "Política de Privacidad",

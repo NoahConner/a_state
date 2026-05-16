@@ -120,6 +120,29 @@
         </div>
     </section>
 
+         <section class="factors-impact-section bg-white">
+    <div class="container px-4">
+      <h2 class="section-title" [innerHTML]="'BOAT_INSURANCE.NOT_COVERED.HEADER.TITLE' | translateHtml | async"></h2>
+      <p class="intro-text" [innerHTML]="'BOAT_INSURANCE.NOT_COVERED.HEADER.DESC' | translateHtml | async"></p>
+
+      <div class="row mt-5">
+        @for (key of notCoveredKeys; track key) {
+        <div class="col-lg-6">
+          <div class="factor-item">
+            <div class="icon-wrapper">
+              <i [class]="'BOAT_INSURANCE.NOT_COVERED.LIST.' + key + '.ICON' | translate"></i>
+            </div>
+            <div class="factor-content">
+              <h6><span [innerHTML]="('BOAT_INSURANCE.NOT_COVERED.LIST.' + key + '.TITLE') | translateHtml | async"></span></h6>
+              <p><span [innerHTML]="('BOAT_INSURANCE.NOT_COVERED.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+
 
     <section class="cost-section py-5">
         <div class="container">
