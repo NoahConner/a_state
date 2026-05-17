@@ -38,12 +38,12 @@ export class RentersInsurance {
     { city: 'Lubbock', monthly: '$21', annual: '$249' },
   ];
   companyRates = [
-    { carrier: 'USAA', monthly: '$121' },
-    { carrier: 'State Farm', monthly: '$143' },
-    { carrier: 'Lemonade', monthly: '$155' },
-    { carrier: 'Mercury', monthly: '$167' },
-    { carrier: 'Progressive', monthly: '$177' },
-    { carrier: 'Travelers', monthly: '$204' }
+    { carrier: '<a href="https://www.usaa.com/" rel="nofollow">USAA</a>', monthly: '$121' },
+    { carrier: '<a href="https://www.statefarm.com/" rel="nofollow">State Farm', monthly: '$143' },
+    { carrier: '<a href="https://www.lemonade.com/" rel="nofollow">Lemonade', monthly: '$155' },
+    { carrier: '<a href="https://www.mercuryinsurance.com/" rel="nofollow">Mercury', monthly: '$167' },
+    { carrier: '<a href="https://www.progressive.com/" rel="nofollow">Progressive</a>', monthly: '$177' },
+    { carrier: '<a href="https://www.travelers.com/" rel="nofollow">Travelers</a>', monthly: '$204' }
   ];
 
 

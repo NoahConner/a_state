@@ -224,7 +224,7 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p><span [innerHTML]="'RENTERS_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#">NerdWallet</a></p>
+          <p><span [innerHTML]="'RENTERS_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="https://www.nerdwallet.com/insurance/renters/renters-insurance-texas#average-cost-by-city" rel="nofollow">NerdWallet</a></p>
           <p class="last-updated" [innerHTML]="'RENTERS_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
         <div class="disclaimer mt-2">
@@ -254,8 +254,7 @@
           @for (rate of companyRates; track rate.carrier; let i = $index) {
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-4">
-              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ rate.carrier }}
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0" [innerHtml]="rate.carrier">
               </div>
             </div>
             <div class="col-8">
@@ -269,11 +268,29 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p><span [innerHTML]="'RENTERS_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#">NerdWallet</a></p>
+          <p><span [innerHTML]="'RENTERS_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="https://www.nerdwallet.com/insurance/renters/renters-insurance-texas#cheapest-companies" rel="nofollow">NerdWallet</a></p>
           <p class="last-updated" [innerHTML]="'RENTERS_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
         <div class="disclaimer mt-2">
           <p class="mb-0"><strong><span [innerHTML]="'RENTERS_INSURANCE.RATES.FOOTER.DISCLAIMER_LABEL' | translateHtml | async"></span>:</strong> <span [innerHTML]="'RENTERS_INSURANCE.RATES.FOOTER.DISCLAIMER' | translateHtml | async"></span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section class="cost-section py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10">
+          <!-- Title -->
+          <h4 class="cost-title mb-4" [innerHTML]="'RENTERS_INSURANCE.HOW_MUCH_RENTERS.TITLE' | translateHtml | async"></h4>
+
+          <!-- Description Content -->
+          <div class="cost-description">
+            <p class="mb-4" [innerHTML]="'RENTERS_INSURANCE.HOW_MUCH_RENTERS.DESC1' | translateHtml | async"></p>
+
+            <p [innerHTML]="'RENTERS_INSURANCE.HOW_MUCH_RENTERS.DESC2' | translateHtml | async"></p>
+          </div>
         </div>
       </div>
     </div>
@@ -374,10 +391,10 @@
 
   <section class="high-risk-section bg-white">
     <div class="container px-4">
-      <h2 class="section-title" [innerHTML]="'RENTERS_INSURANCE.HIGH_RISK_DRIVER.HEADER.TITLE' | translateHtml | async"></h2>
+      <h2 class="section-title" [innerHTML]="'RENTERS_INSURANCE.HIGH_VALUE_PERSONAL_PROPERTY.HEADER.TITLE' | translateHtml | async"></h2>
       <div class="intro-text">
-        <p [innerHTML]="'RENTERS_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC1' | translateHtml | async"></p>
-        <p [innerHTML]="'RENTERS_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC2' | translateHtml | async"></p>
+        <p [innerHTML]="'RENTERS_INSURANCE.HIGH_VALUE_PERSONAL_PROPERTY.CONTENT.DESC1' | translateHtml | async"></p>
+        <p [innerHTML]="'RENTERS_INSURANCE.HIGH_VALUE_PERSONAL_PROPERTY.CONTENT.DESC2' | translateHtml | async"></p>
       </div>
     </div>
   </section>
