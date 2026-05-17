@@ -146,6 +146,24 @@ export class ClassicCarInsurance {
     "APPRAISAL_DOCUMENTATION"
   ];
 
+
+notCoveredKeys = [
+  'DAILY_COMMUTING',
+  'EXCEEDING_MILEAGE',
+  'RACING',
+  'INTENTIONAL_DAMAGE',
+  'WEAR_TEAR',
+  'RUST_CORROSION',
+  'IMPROPER_STORAGE',
+  'UNLISTED_DRIVERS',
+  'DUI',
+  'NOT_MEETING_CRITERIA',
+  'COMMERCIAL_USE',
+  'RIDE_SHARE',
+  'MODIFICATIONS',
+  'DIMINISHED_VALUE',
+  'WAR_NUCLEAR'
+]
   discountKeys = [
     "MULTI_VEHICLE",
     "MULTI_POLICY",
@@ -217,19 +235,23 @@ export class ClassicCarInsurance {
     "RECOMMENDED_FOR_CLASSIC_CARS"
   ];
 
-  vehicleInsuranceTypes = [
-    "SEDANS",
-    "SUVS_CROSSOVERS",
-    "TRUCKS_PICKUPS",
-    "SPORTS_PERFORMANCE",
-    "EVS",
-    "HYBRIDS",
-    "MINIVANS_VANS",
-    "MODIFIED_CUSTOM",
-    "CLASSIC_CAR",
-    "COMMERCIAL_AUTO",
-    "SR22"
-  ];
+vehicleInsuranceTypes = [
+  "MUSCLE_CARS",
+  "VINTAGE_ANTIQUE",
+  "CLASSIC_TRUCKS",
+  "CLASSIC_SPORTS",
+  "HOT_RODS",
+  "CUSTOM_MODIFIED",
+  "EUROPEAN_IMPORT",
+  "LUXURY_PRESTIGE",
+  "AMERICAN_CARS",
+  "BARN_FINDS",
+  "RACE_CARS",
+  "REPLICA_KIT",
+  "CLASSIC_CONVERTIBLES",
+  "STATION_WAGONS",
+  "CLASSIC_VANS_BUSES"
+]
 
 
   switchSteps = [

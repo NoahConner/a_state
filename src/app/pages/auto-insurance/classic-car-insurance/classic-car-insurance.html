@@ -130,12 +130,12 @@
         <div class="container">
             <!-- Header -->
             <div class="header-content mb-5">
-                <h6 class="text-danger fw-bold" [innerHTML]="'BOAT_INSURANCE.COVERAGES.HEADER.TITLE' | translateHtml | async"></h6>
-                <p class="small text-muted" [innerHTML]="'BOAT_INSURANCE.COVERAGES.HEADER.DESC' | translateHtml | async"></p>
+                <h6 class="text-danger fw-bold" [innerHTML]="'CLASSIC_CAR_INSURANCE.COVERAGES.HEADER.TITLE' | translateHtml | async"></h6>
+                <p class="small text-muted" [innerHTML]="'CLASSIC_CAR_INSURANCE.COVERAGES.HEADER.DESC' | translateHtml | async"></p>
             </div>
 
             <div class="row g-4 mb-5">
-                @for (item of ('BOAT_INSURANCE.COVERAGES.STANDARD.LIST' | translate); track item.TITLE) {
+                @for (item of ('CLASSIC_CAR_INSURANCE.COVERAGES.STANDARD.LIST' | translate); track item.TITLE) {
                 <div class="col-md-4">
                     <div class="insurance-card">
                         <div class="card-icon"><i [class]="item.ICON"></i></div>
@@ -150,6 +150,34 @@
         </div>
     </section>
 
+
+        <section class="factors-impact-section bg-white">
+        <div class="container px-4">
+            <h2 class="section-title" [innerHTML]="'CLASSIC_CAR_INSURANCE.NOT_COVERED.HEADER.TITLE' | translateHtml | async">
+            </h2>
+            <p class="intro-text" [innerHTML]="'CLASSIC_CAR_INSURANCE.NOT_COVERED.HEADER.DESC' | translateHtml | async"></p>
+
+            <div class="row mt-5">
+                @for (key of notCoveredKeys; track key) {
+                <div class="col-lg-6">
+                    <div class="factor-item">
+                        <div class="icon-wrapper">
+                            <i [class]="'CLASSIC_CAR_INSURANCE.NOT_COVERED.LIST.' + key + '.ICON' | translate"></i>
+                        </div>
+                        <div class="factor-content">
+                            <h6><span
+                                    [innerHTML]="('CLASSIC_CAR_INSURANCE.NOT_COVERED.LIST.' + key + '.TITLE') | translateHtml | async"></span>
+                            </h6>
+                            <p><span
+                                    [innerHTML]="('CLASSIC_CAR_INSURANCE.NOT_COVERED.LIST.' + key + '.DESC') | translateHtml | async"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
 
     <section class="cost-section py-5">
         <div class="container">
@@ -345,7 +373,6 @@
             <div class="intro-text">
                 <p [innerHTML]="'CLASSIC_CAR_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC1' | translateHtml | async"></p>
                 <p [innerHTML]="'CLASSIC_CAR_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC2' | translateHtml | async"></p>
-                <p [innerHTML]="'CLASSIC_CAR_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC3' | translateHtml | async"></p>
             </div>
         </div>
     </section>
@@ -356,7 +383,6 @@
             <div class="intro-text">
                 <p [innerHTML]="'CLASSIC_CAR_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC1' | translateHtml | async"></p>
                 <p [innerHTML]="'CLASSIC_CAR_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC2' | translateHtml | async"></p>
-                <p [innerHTML]="'CLASSIC_CAR_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC3' | translateHtml | async"></p>
 
             </div>
         </div>

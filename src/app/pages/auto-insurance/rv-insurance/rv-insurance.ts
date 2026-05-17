@@ -112,6 +112,26 @@ export class RvInsurance {
     'MULTILINGUAL_SUPPORT'
   ]
 
+  notCoveredKeys = [
+    'WEAR_TEAR',
+    'GRADUAL_DETERIORATION',
+    'MOLD_MILDEW',
+    'PEST_DAMAGE',
+    'FLOOD_NAMED_STORMS',
+    'PERSONAL_BELONGINGS',
+    'RACING',
+    'INTENTIONAL_DAMAGE',
+    'DUI',
+    'UNLISTED_DRIVERS',
+    'COMMERCIAL_USE',
+    'FULL_TIME_LIVING',
+    'TOWED_VEHICLES',
+    'OUT_OF_COUNTRY',
+    'PERMANENT_CAMPSITES',
+    'BUSINESS_USE_RV',
+    'WAR_NUCLEAR'
+  ]
+
   vehicleInsuranceTypes = [
     "CRUISERS",
     "SPORTBIKES",
