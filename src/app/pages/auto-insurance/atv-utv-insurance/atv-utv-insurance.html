@@ -5,7 +5,9 @@
                 <div class="topSub2">
                     <div class="h1">
                         <span [innerHTML]="'ATV_INSURANCE.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
-                        <span [innerHTML]="'ATV_INSURANCE.BANNER.TITLE_LINE2' | translateHtml | async"></span> <span class="heading-span" [innerHTML]="'ATV_INSURANCE.BANNER.TITLE_LINE3' | translateHtml | async"></span>
+                        <span [innerHTML]="'ATV_INSURANCE.BANNER.TITLE_LINE2' | translateHtml | async"></span> <span
+                            class="heading-span"
+                            [innerHTML]="'ATV_INSURANCE.BANNER.TITLE_LINE3' | translateHtml | async"></span>
                     </div>
                     <!-- 
           <div class="selectable">
@@ -65,7 +67,8 @@
             <span [innerHTML]="'ATV_INSURANCE.WHY_DO_YOU_NEED.DESC3' | translateHtml | async"></span>
         </p>
 
-        <p class="section-sub-title mb-4" [innerHTML]="'ATV_INSURANCE.WHY_DO_YOU_NEED.SUB_TITLE' | translateHtml | async"></p>
+        <p class="section-sub-title mb-4"
+            [innerHTML]="'ATV_INSURANCE.WHY_DO_YOU_NEED.SUB_TITLE' | translateHtml | async"></p>
 
         <div class="insurance-list">
             <div class="insurance-item"
@@ -110,8 +113,10 @@
         <div class="container">
             <!-- Header -->
             <div class="header-content mb-5">
-                <h6 class="text-danger fw-bold" [innerHTML]="'ATV_INSURANCE.COVERAGES.HEADER.TITLE' | translateHtml | async"></h6>
-                <p class="small text-muted" [innerHTML]="'ATV_INSURANCE.COVERAGES.HEADER.DESC' | translateHtml | async"></p>
+                <h6 class="text-danger fw-bold"
+                    [innerHTML]="'ATV_INSURANCE.COVERAGES.HEADER.TITLE' | translateHtml | async"></h6>
+                <p class="small text-muted" [innerHTML]="'ATV_INSURANCE.COVERAGES.HEADER.DESC' | translateHtml | async">
+                </p>
             </div>
 
             <div class="row g-4 mb-5">
@@ -122,6 +127,34 @@
                         <div class="card-body">
                             <h6>{{ item.TITLE }}</h6>
                             <p>{{ item.DESC }}</p>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="factors-impact-section bg-white">
+        <div class="container px-4">
+            <h2 class="section-title" [innerHTML]="'ATV_INSURANCE.NOT_COVERED.HEADER.TITLE' | translateHtml | async">
+            </h2>
+            <p class="intro-text" [innerHTML]="'ATV_INSURANCE.NOT_COVERED.HEADER.DESC' | translateHtml | async"></p>
+
+            <div class="row mt-5">
+                @for (key of notCoveredKeys; track key) {
+                <div class="col-lg-6">
+                    <div class="factor-item">
+                        <div class="icon-wrapper">
+                            <i [class]="'ATV_INSURANCE.NOT_COVERED.LIST.' + key + '.ICON' | translate"></i>
+                        </div>
+                        <div class="factor-content">
+                            <h6><span
+                                    [innerHTML]="('ATV_INSURANCE.NOT_COVERED.LIST.' + key + '.TITLE') | translateHtml | async"></span>
+                            </h6>
+                            <p><span
+                                    [innerHTML]="('ATV_INSURANCE.NOT_COVERED.LIST.' + key + '.DESC') | translateHtml | async"></span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -151,20 +184,25 @@
     <section class="rates-section py-5">
         <div class="container">
             <div class="rates-header mb-4">
-                <h5 class="fw-bold" [innerHTML]="'ATV_INSURANCE.RATES.AVERAGE_RATES.TITLE' | translateHtml | async"></h5>
-                <p class="small mb-0" [innerHTML]="'ATV_INSURANCE.RATES.AVERAGE_RATES.DESC' | translateHtml | async"></p>
+                <h5 class="fw-bold" [innerHTML]="'ATV_INSURANCE.RATES.AVERAGE_RATES.TITLE' | translateHtml | async">
+                </h5>
+                <p class="small mb-0" [innerHTML]="'ATV_INSURANCE.RATES.AVERAGE_RATES.DESC' | translateHtml | async">
+                </p>
             </div>
 
             <div class="rates-table-card p-4">
                 <div class="row g-2 text-center text-white fw-bold mb-2">
                     <div class="col-6">
-                        <div class="header-pill bg-danger py-2" [innerHTML]="'ATV_INSURANCE.RATES.AVERAGE_RATES.H1' | translateHtml | async"></div>
+                        <div class="header-pill bg-danger py-2"
+                            [innerHTML]="'ATV_INSURANCE.RATES.AVERAGE_RATES.H1' | translateHtml | async"></div>
                     </div>
                     <div class="col-3">
-                        <div class="header-pill bg-danger py-2" [innerHTML]="'ATV_INSURANCE.RATES.AVERAGE_RATES.H2' | translateHtml | async"></div>
+                        <div class="header-pill bg-danger py-2"
+                            [innerHTML]="'ATV_INSURANCE.RATES.AVERAGE_RATES.H2' | translateHtml | async"></div>
                     </div>
                     <div class="col-3">
-                        <div class="header-pill bg-danger py-2" [innerHTML]="'ATV_INSURANCE.RATES.AVERAGE_RATES.H3' | translateHtml | async"></div>
+                        <div class="header-pill bg-danger py-2"
+                            [innerHTML]="'ATV_INSURANCE.RATES.AVERAGE_RATES.H3' | translateHtml | async"></div>
                     </div>
                 </div>
 
@@ -173,8 +211,7 @@
                     <div class="row g-2 text-center mb-2 align-items-center">
                         <div class="col-6">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
-                                [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ rate.carrier }}
+                                [class.data-pill-color-1]="i % 2 !== 0" [innerHtml]="rate.carrier">
                             </div>
                         </div>
                         <div class="col-3">
@@ -194,11 +231,14 @@
                 </div>
 
                 <div class="d-flex justify-content-between mt-4 rates-footer-info">
-                    <p><span [innerHTML]="'ATV_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#">ValuePenguin</a></p>
-                    <p class="last-updated" [innerHTML]="'ATV_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
+                    <p><span [innerHTML]="'ATV_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a
+                            href="https://www.valuepenguin.com/atv-insurance-coverage-cost-and-discounts" rel="nofollow">ValuePenguin</a></p>
+                    <p class="last-updated"
+                        [innerHTML]="'ATV_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
                 </div>
                 <div class="disclaimer mt-2">
-                    <p class="mb-0"><strong>Disclaimer:</strong> <span [innerHTML]="'ATV_INSURANCE.RATES.FOOTER.DISCLAIMER' | translateHtml | async"></span></p>
+                    <p class="mb-0"><strong>Disclaimer:</strong> <span
+                            [innerHTML]="'ATV_INSURANCE.RATES.FOOTER.DISCLAIMER' | translateHtml | async"></span></p>
                 </div>
             </div>
         </div>
@@ -206,7 +246,8 @@
 
     <section class="factors-impact-section">
         <div class="container">
-            <h2 class="section-title" [innerHTML]="'ATV_INSURANCE.FACTORS_IMPACT.HEADER.TITLE' | translateHtml | async"></h2>
+            <h2 class="section-title" [innerHTML]="'ATV_INSURANCE.FACTORS_IMPACT.HEADER.TITLE' | translateHtml | async">
+            </h2>
             <p class="intro-text" [innerHTML]="'ATV_INSURANCE.FACTORS_IMPACT.HEADER.DESC' | translateHtml | async"></p>
 
             <div class="row">
@@ -217,8 +258,12 @@
                             <i [class]="'ATV_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.ICON' | translate"></i>
                         </div>
                         <div class="factor-content">
-                            <h6><span [innerHTML]="('ATV_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translateHtml | async"></span></h6>
-                            <p><span [innerHTML]="('ATV_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
+                            <h6><span
+                                    [innerHTML]="('ATV_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translateHtml | async"></span>
+                            </h6>
+                            <p><span
+                                    [innerHTML]="('ATV_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translateHtml | async"></span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -229,8 +274,10 @@
 
     <section class="factors-impact-section bg-white">
         <div class="container px-4">
-            <h2 class="section-title" [innerHTML]="'ATV_INSURANCE.DISCOUNT_FACTORS.HEADER.TITLE' | translateHtml | async"></h2>
-            <p class="intro-text" [innerHTML]="'ATV_INSURANCE.DISCOUNT_FACTORS.HEADER.DESC' | translateHtml | async"></p>
+            <h2 class="section-title"
+                [innerHTML]="'ATV_INSURANCE.DISCOUNT_FACTORS.HEADER.TITLE' | translateHtml | async"></h2>
+            <p class="intro-text" [innerHTML]="'ATV_INSURANCE.DISCOUNT_FACTORS.HEADER.DESC' | translateHtml | async">
+            </p>
 
             <div class="row mt-5">
                 @for (key of discountKeys; track key) {
@@ -240,8 +287,12 @@
                             <i [class]="'ATV_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.ICON' | translate"></i>
                         </div>
                         <div class="factor-content">
-                            <h6><span [innerHTML]="('ATV_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translateHtml | async"></span></h6>
-                            <p><span [innerHTML]="('ATV_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
+                            <h6><span
+                                    [innerHTML]="('ATV_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translateHtml | async"></span>
+                            </h6>
+                            <p><span
+                                    [innerHTML]="('ATV_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translateHtml | async"></span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -252,24 +303,29 @@
 
     <section class="rates-section bg-pink py-5">
         <div class="container container-max-1100 px-4">
-            <h2 class="section-title" [innerHTML]="'ATV_INSURANCE.AGENT_COMPARISON.HEADER.TITLE' | translateHtml | async"></h2>
+            <h2 class="section-title"
+                [innerHTML]="'ATV_INSURANCE.AGENT_COMPARISON.HEADER.TITLE' | translateHtml | async"></h2>
             <div class="intro-text">
                 <p [innerHTML]="'ATV_INSURANCE.AGENT_COMPARISON.HEADER.DESC' | translateHtml | async"></p>
-                <p [innerHTML]="'ATV_INSURANCE.AGENT_COMPARISON.HEADER.DESC2' | translateHtml | async"></p>
-                <p [innerHTML]="'ATV_INSURANCE.AGENT_COMPARISON.HEADER.DESC3' | translateHtml | async"></p>
             </div>
 
             <!-- Table Container -->
             <div class="rates-table-card p-4 mt-5">
                 <div class="row g-2 text-center text-white fw-bold mb-2">
                     <div class="col-4">
-                        <div class="header-pill bg-danger py-2" [innerHTML]="'ATV_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.FEATURE' | translateHtml | async"></div>
+                        <div class="header-pill bg-danger py-2"
+                            [innerHTML]="'ATV_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.FEATURE' | translateHtml | async">
+                        </div>
                     </div>
                     <div class="col-4">
-                        <div class="header-pill bg-danger py-2" [innerHTML]="'ATV_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.INDEPENDENT' | translateHtml | async"></div>
+                        <div class="header-pill bg-danger py-2"
+                            [innerHTML]="'ATV_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.INDEPENDENT' | translateHtml | async">
+                        </div>
                     </div>
                     <div class="col-4">
-                        <div class="header-pill bg-danger py-2" [innerHTML]="'ATV_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.CAPTIVE' | translateHtml | async"></div>
+                        <div class="header-pill bg-danger py-2"
+                            [innerHTML]="'ATV_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.CAPTIVE' | translateHtml | async">
+                        </div>
                     </div>
                 </div>
 
@@ -280,19 +336,22 @@
                         <div class="col-4">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                <span [innerHTML]="('ATV_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translateHtml | async"></span>
+                                <span
+                                    [innerHTML]="('ATV_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translateHtml | async"></span>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                <span [innerHTML]="('ATV_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translateHtml | async"></span>
+                                <span
+                                    [innerHTML]="('ATV_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translateHtml | async"></span>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                <span [innerHTML]="('ATV_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translateHtml | async"></span>
+                                <span
+                                    [innerHTML]="('ATV_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translateHtml | async"></span>
                             </div>
                         </div>
                     </div>
@@ -304,7 +363,8 @@
 
     <section class="vehicle-types-section">
         <div class="container px-4">
-            <h2 class="section-title" [innerHTML]="'ATV_INSURANCE.VEHICLE_INSURANCE_TYPES.HEADER.TITLE' | translateHtml | async"></h2>
+            <h2 class="section-title"
+                [innerHTML]="'ATV_INSURANCE.VEHICLE_INSURANCE_TYPES.HEADER.TITLE' | translateHtml | async"></h2>
             <div class="row g-4">
                 @for (type of vehicleInsuranceTypes; track type) {
                 <div class="col-lg-4 col-md-6 col-sm-6">
@@ -312,8 +372,11 @@
                         <div class="icon-wrapper">
                             <i [class]="'ATV_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.ICON' | translate"></i>
                         </div>
-                        <h6><span [innerHTML]="('ATV_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.TITLE') | translateHtml | async"></span></h6>
-                        <p><span [innerHTML]="('ATV_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.DESCRIPTION') | translateHtml | async"></span>
+                        <h6><span
+                                [innerHTML]="('ATV_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.TITLE') | translateHtml | async"></span>
+                        </h6>
+                        <p><span
+                                [innerHTML]="('ATV_INSURANCE.VEHICLE_INSURANCE_TYPES.LIST.' + type + '.DESCRIPTION') | translateHtml | async"></span>
                         </p>
                     </div>
                 </div>
@@ -324,22 +387,20 @@
 
     <section class="high-risk-section">
         <div class="container px-4">
-            <h2 class="section-title" [innerHTML]="'ATV_INSURANCE.HIGH_RISK_DRIVER.HEADER.TITLE' | translateHtml | async"></h2>
+            <h2 class="section-title"
+                [innerHTML]="'ATV_INSURANCE.HIGH_RISK_DRIVER.HEADER.TITLE' | translateHtml | async"></h2>
             <div class="intro-text">
                 <p [innerHTML]="'ATV_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC1' | translateHtml | async"></p>
-                <p [innerHTML]="'ATV_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC2' | translateHtml | async"></p>
-                <p [innerHTML]="'ATV_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC3' | translateHtml | async"></p>
             </div>
         </div>
     </section>
 
     <section class="language-section">
         <div class="container px-4">
-            <h2 class="section-title" [innerHTML]="'ATV_INSURANCE.LANGUAGE_SUPPORT.HEADER.TITLE' | translateHtml | async"></h2>
+            <h2 class="section-title"
+                [innerHTML]="'ATV_INSURANCE.LANGUAGE_SUPPORT.HEADER.TITLE' | translateHtml | async"></h2>
             <div class="intro-text">
                 <p [innerHTML]="'ATV_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC1' | translateHtml | async"></p>
-                <p [innerHTML]="'ATV_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC2' | translateHtml | async"></p>
-                <p [innerHTML]="'ATV_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC3' | translateHtml | async"></p>
 
             </div>
         </div>
@@ -350,7 +411,8 @@
         <div class="container py-5 mt-5">
             <div class="row mb-5 text-center">
                 <div class="col-6">
-                    <h3 class="heading" [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.HEADER.TITLE' | translateHtml | async"></h3>
+                    <h3 class="heading"
+                        [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.HEADER.TITLE' | translateHtml | async"></h3>
                 </div>
             </div>
             <div class="gap-m">
@@ -362,8 +424,12 @@
                                 <img src="../assets/images/carbon_license.png" alt="Car Icon" />
                             </div>
                             <div class="card-content">
-                                <h5 class="card-title" [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.TITLE' | translateHtml | async"></h5>
-                                <p class="card-text" [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.DESCRIPTION' | translateHtml | async"></p>
+                                <h5 class="card-title"
+                                    [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.TITLE' | translateHtml | async">
+                                </h5>
+                                <p class="card-text"
+                                    [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.DESCRIPTION' | translateHtml | async">
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -374,8 +440,12 @@
                                 <img src="../assets/images/Heart.png" alt="Car Icon" />
                             </div>
                             <div class="card-content">
-                                <h5 class="card-title" [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.TITLE' | translateHtml | async"></h5>
-                                <p class="card-text" [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.DESCRIPTION' | translateHtml | async"></p>
+                                <h5 class="card-title"
+                                    [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.TITLE' | translateHtml | async">
+                                </h5>
+                                <p class="card-text"
+                                    [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.DESCRIPTION' | translateHtml | async">
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -388,8 +458,12 @@
                                 <img src="../assets/images/calendar.png" alt="Car Icon" />
                             </div>
                             <div class="card-content">
-                                <h5 class="card-title" [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.TITLE' | translateHtml | async"></h5>
-                                <p class="card-text" [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.DESCRIPTION' | translateHtml | async"></p>
+                                <h5 class="card-title"
+                                    [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.TITLE' | translateHtml | async">
+                                </h5>
+                                <p class="card-text"
+                                    [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.DESCRIPTION' | translateHtml | async">
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -400,8 +474,12 @@
                                 <img src="../assets/images/price.png" alt="Car Icon" />
                             </div>
                             <div class="card-content">
-                                <h5 class="card-title" [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.TITLE' | translateHtml | async"></h5>
-                                <p class="card-text" [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.DESCRIPTION' | translateHtml | async"></p>
+                                <h5 class="card-title"
+                                    [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.TITLE' | translateHtml | async">
+                                </h5>
+                                <p class="card-text"
+                                    [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.DESCRIPTION' | translateHtml | async">
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -414,8 +492,12 @@
                                 <img src="../assets/images/wifi.png" alt="Car Icon" />
                             </div>
                             <div class="card-content">
-                                <h5 class="card-title" [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translateHtml | async"></h5>
-                                <p class="card-text" [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' | translateHtml | async"></p>
+                                <h5 class="card-title"
+                                    [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translateHtml | async">
+                                </h5>
+                                <p class="card-text"
+                                    [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' | translateHtml | async">
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -426,8 +508,12 @@
                                 <img src="../assets/images/agents.png" alt="Car Icon" />
                             </div>
                             <div class="card-content">
-                                <h5 class="card-title" [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.TITLE' | translateHtml | async"></h5>
-                                <p class="card-text" [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.DESCRIPTION' | translateHtml | async"></p>
+                                <h5 class="card-title"
+                                    [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.TITLE' | translateHtml | async">
+                                </h5>
+                                <p class="card-text"
+                                    [innerHTML]="'ATV_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.DESCRIPTION' | translateHtml | async">
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -450,38 +536,55 @@
                 </div>
 
                 <div class="col-md-6 ps-md-5">
-                    <h2 class="section-title mb-5" [innerHTML]="'ATV_INSURANCE.INSURANCE_STEPS.HEADER.TITLE' | translateHtml | async"></h2>
+                    <h2 class="section-title mb-5"
+                        [innerHTML]="'ATV_INSURANCE.INSURANCE_STEPS.HEADER.TITLE' | translateHtml | async"></h2>
 
                     <div class="timeline">
                         <div class="timeline-item">
                             <div class="dot"></div>
                             <div class="content">
-                                <h3 [innerHTML]="'ATV_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.TITLE' | translateHtml | async"></h3>
-                                <p [innerHTML]="'ATV_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translateHtml | async"></p>
+                                <h3
+                                    [innerHTML]="'ATV_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.TITLE' | translateHtml | async">
+                                </h3>
+                                <p
+                                    [innerHTML]="'ATV_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translateHtml | async">
+                                </p>
                             </div>
                         </div>
 
                         <div class="timeline-item">
                             <div class="dot"></div>
                             <div class="content">
-                                <h3 [innerHTML]="'ATV_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.TITLE' | translateHtml | async"></h3>
-                                <p [innerHTML]="'ATV_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.DESCRIPTION' | translateHtml | async"></p>
+                                <h3
+                                    [innerHTML]="'ATV_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.TITLE' | translateHtml | async">
+                                </h3>
+                                <p
+                                    [innerHTML]="'ATV_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.DESCRIPTION' | translateHtml | async">
+                                </p>
                             </div>
                         </div>
 
                         <div class="timeline-item">
                             <div class="dot"></div>
                             <div class="content">
-                                <h3 [innerHTML]="'ATV_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.TITLE' | translateHtml | async"></h3>
-                                <p [innerHTML]="'ATV_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.DESCRIPTION' | translateHtml | async"></p>
+                                <h3
+                                    [innerHTML]="'ATV_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.TITLE' | translateHtml | async">
+                                </h3>
+                                <p
+                                    [innerHTML]="'ATV_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.DESCRIPTION' | translateHtml | async">
+                                </p>
                             </div>
                         </div>
 
                         <div class="timeline-item">
                             <div class="dot"></div>
                             <div class="content">
-                                <h3 [innerHTML]="'ATV_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.TITLE' | translateHtml | async"></h3>
-                                <p [innerHTML]="'ATV_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.DESCRIPTION' | translateHtml | async"></p>
+                                <h3
+                                    [innerHTML]="'ATV_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.TITLE' | translateHtml | async">
+                                </h3>
+                                <p
+                                    [innerHTML]="'ATV_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.DESCRIPTION' | translateHtml | async">
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -493,14 +596,19 @@
 
     <section class="switch-steps-section">
         <div class="container px-4">
-            <h2 class="section-title" [innerHTML]="'ATV_INSURANCE.SWITCH_STEPS.HEADER.TITLE' | translateHtml | async"></h2>
+            <h2 class="section-title" [innerHTML]="'ATV_INSURANCE.SWITCH_STEPS.HEADER.TITLE' | translateHtml | async">
+            </h2>
 
             <div class="switch-steps-grid">
                 @for (step of switchSteps; track step) {
                 <div class="switch-card-wrapper">
                     <div class="switch-card">
-                        <h6><span [innerHTML]="('ATV_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE') | translateHtml | async"></span></h6>
-                        <p><span [innerHTML]="('ATV_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION') | translateHtml | async"></span></p>
+                        <h6><span
+                                [innerHTML]="('ATV_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE') | translateHtml | async"></span>
+                        </h6>
+                        <p><span
+                                [innerHTML]="('ATV_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION') | translateHtml | async"></span>
+                        </p>
                     </div>
                 </div>
                 }

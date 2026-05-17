@@ -45,14 +45,30 @@ export class AtvAndUtvInsurance {
   ];
 
   rates = [
-    { carrier: 'Markel', monthly: '$61', annual: '$352' },
-    { carrier: 'Geico', monthly: '$70', annual: '$421' },
-    { carrier: 'Progressive', monthly: '$75', annual: '$188' },
-    { carrier: 'Dairyland', monthly: '$106', annual: '$165' },
-    { carrier: 'Allstate', monthly: '$126', annual: '$510' },
+    { carrier: '<a href="https://www.markel.com/" rel="nofollow">Markel</a>', monthly: '$61', annual: '$352' },
+    { carrier: '<a href="https://www.geico.com/" rel="nofollow">Geico</a>', monthly: '$70', annual: '$421' },
+    { carrier: '<a href="https://www.geico.com/" rel="nofollow">Progressive</a>', monthly: '$75', annual: '$188' },
+    { carrier: '<a href="https://www.geico.com/" rel="nofollow">Dairyland</a>', monthly: '$106', annual: '$165' },
+    { carrier: '<a href="https://www.geico.com/" rel="nofollow">Allstate</a>', monthly: '$126', annual: '$510' },
   ];
 
-
+notCoveredKeys = [
+  'STREET_USE',
+  'RACING',
+  'INTENTIONAL_DAMAGE',
+  'WEAR_TEAR',
+  'DUI',
+  'UNLISTED_RIDERS',
+  'PERSONAL_BELONGINGS',
+  'RESTRICTED_LAND',
+  'COMMERCIAL_USE',
+  'YOUTH_RIDERS',
+  'THEFT',
+  'FLOOD_WEATHER',
+  'TOWING_TRANSPORT',
+  'MODIFICATIONS',
+  'WAR_NUCLEAR'
+]
 
   impactFactorsKeys = [
     "VEHICLE_TYPE",

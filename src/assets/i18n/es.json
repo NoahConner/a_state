@@ -9653,7 +9653,7 @@
     },
     "LAWS": {
       "TITLE": "¿Es Obligatorio el Seguro de ATV y UTV en Texas?",
-      "INTRO1": "En Texas, el seguro de ATV y UTV no siempre es obligatorio, pero hay situaciones específicas en las que se requiere. Si tu vehículo es legal para circular en la calle o se usa en vías públicas, debes tener cobertura de responsabilidad civil para cumplir con las leyes estatales.",
+      "INTRO1": "En Texas, el seguro de ATV y UTV <a href='https://rolloinsurance.com/recreation-insurance/atv/' rel='nofollow' class='inline-link'>no siempre es obligatorio,</a> pero hay situaciones específicas en las que se requiere. Si tu vehículo es legal para circular en la calle o se usa en vías públicas, debes tener cobertura de responsabilidad civil para cumplir con las leyes estatales.",
       "INTRO2": "Incluso si no estás legalmente obligado a tener seguro en todas las situaciones, tener cobertura es altamente recomendado. Sin ella, podrías enfrentar riesgos financieros y legales significativos si te ves involucrado en un accidente, incluyendo facturas médicas, daños a la propiedad y honorarios legales.",
       "INTRO3": "Operar un ATV o UTV sin el seguro adecuado puede resultar en multas, sanciones o incluso el embargo del vehículo. Además, en caso de un accidente o roto, tendrías que cubrir el costo total de reparaciones, reemplazo y gastos médicos de tu bolsillo.",
       "INTRO4": "No arriesgues. Protégete a ti mismo, a tus pasajeros y a tu vehículo obteniendo la cobertura de seguro adecuada. No se trata solo de cumplir con la ley; se trata de proteger tu futuro financiero y tu tranquilidad cada vez que sales al sendero."
@@ -9743,9 +9743,92 @@
         ]
       }
     },
+    "NOT_COVERED": {
+      "HEADER": {
+        "TITLE": "¿Qué no Cubre el Seguro de ATV y UTV en Texas?",
+        "DESC": "Aunque el seguro de ATV y UTV en Texas ofrece una protección esencial, existen ciertas exclusiones. Los elementos comúnmente excluidos incluyen actividades de carreras, daños intencionales y fallos mecánicos. Además, el seguro normalmente no cubre robos a menos que tengas cobertura integral, ni daños por inundaciones o condiciones climáticas sin protección. Es importante conocer estas limitaciones al seleccionar tu póliza."
+      },
+      "LIST": {
+        "STREET_USE": {
+          "TITLE": "Uso en Carreteras y Vías Públicas (Sin Endoso Legal para Circulación)",
+          "DESC": "Operar un ATV o UTV en vías públicas sin el endoso legal adecuado no está cubierto. Si planeas usar tu vehículo en la calle, debes tener las actualizaciones y endosos legales necesarios para asegurar cobertura para su uso en la vía pública.",
+          "ICON": "fas fa-road"
+        },
+        "RACING": {
+          "TITLE": "Carreras y Eventos Competitivos Todoterreno",
+          "DESC": "El seguro no cubre vehículos utilizados en carreras o eventos competitivos todoterreno. Si participas en estas actividades, necesitarás una cobertura especializada diseñada para el uso competitivo, ya que las pólizas estándar excluyen la cobertura para escenarios de alto riesgo.",
+          "ICON": "fas fa-flag-checkered"
+        },
+        "INTENTIONAL_DAMAGE": {
+          "TITLE": "Daños Intencionales o Fraude",
+          "DESC": "Los daños causados de manera intencional o debido a acciones fraudulentas no están cubiertos por el seguro. Si tu ATV o UTV se daña de manera intencional o mediante medios deshonestos, tu póliza no cubrirá las reparaciones ni el reemplazo, y tu reclamación podría ser rechazada.",
+          "ICON": "fas fa-gavel"
+        },
+        "WEAR_TEAR": {
+          "TITLE": "Desgaste Normal y Fallos Mecánicos",
+          "DESC": "El desgaste normal y los fallos mecánicos no están cubiertos bajo el seguro estándar de ATV o UTV. Los problemas de mantenimiento regular y los problemas relacionados con la edad del vehículo quedan fuera del alcance de la cobertura del seguro y requieren una cobertura o reparaciones por separado.",
+          "ICON": "fas fa-tools"
+        },
+        "DUI": {
+          "TITLE": "Operación Bajo la Influencia",
+          "DESC": "Operar un ATV o UTV bajo los efectos del alcohol o las drogas no está cubierto. Si estás involucrado en un accidente mientras estás intoxicado, tu póliza de seguro probablemente será anulada, dejándote financieramente responsable de los daños y costos médicos.",
+          "ICON": "fas fa-wine-bottle"
+        },
+        "UNLISTED_RIDERS": {
+          "TITLE": "Conductores No Registrados en Tu Póliza",
+          "DESC": "Si alguien no registrado en tu póliza opera tu ATV o UTV, sus acciones pueden no estar cubiertas en caso de un accidente. Asegúrate de que todos los conductores estén correctamente registrados en tu póliza de seguro para garantizar cobertura durante las actividades todoterreno.",
+          "ICON": "fas fa-users"
+        },
+        "PERSONAL_BELONGINGS": {
+          "TITLE": "Pertenencias Personales Más Allá de los Límites de Cobertura",
+          "DESC": "Los artículos personales llevados en tu ATV o UTV, como bolsas o electrónicos, generalmente no están cubiertos por las pólizas estándar. Si estos artículos se dañan o son robados, es posible que necesites un seguro separado para proteger tus pertenencias más allá del vehículo mismo.",
+          "ICON": "fas fa-mobile-alt"
+        },
+        "RESTRICTED_LAND": {
+          "TITLE": "Conducir en Terrenos Restringidos o Prohibidos",
+          "DESC": "Conducir tu ATV o UTV en terrenos restringidos o prohibidos no está cubierto por el seguro. Si te atrapan conduciendo en áreas no autorizadas o zonas ilegales, podrías ser responsable de multas, sanciones o reparaciones debido a cualquier accidente o daño resultante.",
+          "ICON": "fas fa-ban"
+        },
+        "COMMERCIAL_USE": {
+          "TITLE": "Uso Comercial Sin Cobertura Adecuada",
+          "DESC": "Si estás utilizando tu ATV o UTV con fines comerciales sin la cobertura adecuada, como para trabajo agrícola o de negocios, tu póliza no cubrirá accidentes o daños. Necesitarás un seguro específico para uso comercial para asegurarte de estar completamente protegido.",
+          "ICON": "fas fa-briefcase"
+        },
+        "YOUTH_RIDERS": {
+          "TITLE": "Conductores Juveniles Sin Endoso de Cobertura Adecuado",
+          "DESC": "Los conductores juveniles pueden no estar cubiertos a menos que tu póliza incluya un endoso adecuado para operadores jóvenes. Para proteger a los conductores niños o adolescentes, debes agregar un endoso de conductor juvenil a tu póliza, ya que la cobertura estándar puede no aplicarse.",
+          "ICON": "fas fa-child"
+        },
+        "THEFT": {
+          "TITLE": "Robo (Sin Cobertura Integral)",
+          "DESC": "El robo no está cubierto a menos que tengas cobertura integral incluida en tu póliza. Si tu ATV o UTV es robado y solo tienes cobertura de responsabilidad o colisión, no serás compensado por la pérdida de tu vehículo o sus partes.",
+          "ICON": "fas fa-user-secret"
+        },
+        "FLOOD_WEATHER": {
+          "TITLE": "Daños por Inundaciones y Clima (Sin Cobertura Integral)",
+          "DESC": "Los daños por inundaciones o condiciones climáticas no están cubiertos a menos que tengas cobertura integral. Sin esta cobertura, tu seguro no pagará por las reparaciones a tu ATV o UTV en caso de daños por tormentas, inundaciones u otros incidentes relacionados con el clima.",
+          "ICON": "fas fa-cloud-rain"
+        },
+        "TOWING_TRANSPORT": {
+          "TITLE": "Remolque y Transporte (Sin Cobertura para Remolque)",
+          "DESC": "El remolque y transporte de tu ATV o UTV no están cubiertos a menos que tengas una cobertura específica para remolques. Si tu vehículo se daña mientras es transportado, tu seguro regular no cubrirá los costos de transporte ni los daños sufridos durante el remolque.",
+          "ICON": "fas fa-trailer"
+        },
+        "MODIFICATIONS": {
+          "TITLE": "Modificaciones Más Allá del Valor Declarado del Vehículo",
+          "DESC": "Las modificaciones realizadas a tu ATV o UTV que excedan el valor declarado del vehículo pueden no estar cubiertas. El seguro generalmente cubre las modificaciones solo hasta el valor declarado del vehículo. Las personalizaciones necesitan un endoso especial.",
+          "ICON": "fas fa-wrench"
+        },
+        "WAR_NUCLEAR": {
+          "TITLE": "Exclusiones por Guerra y Eventos Nucleares",
+          "DESC": "Los daños causados por la guerra, el terrorismo o eventos nucleares no están cubiertos por el seguro estándar de ATV o UTV. Las pólizas generalmente excluyen estos escenarios extremos debido a la naturaleza catastrófica de tales eventos, dejándote sin protección bajo condiciones normales.",
+          "ICON": "fas fa-radiation"
+        }
+      }
+    },
     "COST": {
       "TITLE": "¿Cuánto Cuesta el Seguro de ATV y UTV en Texas?",
-      "DESC1": "El seguro de ATV y UTV en Texas típicamente oscila entre $100 y $500 por año, dependiendo de factores como el tipo de vehículo, el nivel de cobertura y el historial de conducción del conductor. Las primas pueden variar según la aseguradora y las opciones de cobertura específicas que elijas.",
+      "DESC1": "El seguro de ATV y UTV en Texas típicamente oscila entre <a href='https://rolloinsurance.com/recreation-insurance/atv/' rel='nofollow' class='inline-link'>$100 y $500 por año,</a> dependiendo de factores como el tipo de vehículo, el nivel de cobertura y el historial de conducción del conductor. Las primas pueden variar según la aseguradora y las opciones de cobertura específicas que elijas.",
       "DESC2": "En comparación con otros estados, Texas generalmente ofrece tarifas competitivas. Sin embargo, los costos pueden ser más altos en áreas con más actividad off-road o mayor riesgo de accidentes, mientras que los estados con menos senderos y menor frecuencia de reclamos pueden tener primas más bajas."
     },
     "RATES": {
@@ -9878,7 +9961,7 @@
       "LIST": {
         "BUNDLING": {
           "TITLE": "Descuento por Múltiples Pólizas / Combinación (ATV + Auto o Hogar)",
-          "DESC": "Combina tu seguro de ATV o UTV con el seguro de auto o hogar para ahorrar en ambas pólizas y obtener tarifas con descuento.",
+          "DESC": "Combina tu seguro de ATV o UTV con el seguro de <a href='/es/seguros-de-auto' class='inline-link'>auto</a> o <a class='inline-link' href='/es/seguros-de-vivienda'>hogar</a> para ahorrar en ambas pólizas y obtener tarifas con descuento.",
           "ICON": "fas fa-house-user"
         },
         "MULTI_VEHICLE": {
@@ -9981,7 +10064,7 @@
     "AGENT_COMPARISON": {
       "HEADER": {
         "TITLE": "Agencia de Seguros Independiente vs. Agente Cautivo: Por Qué la Elección te Ahorra Dinero",
-        "DESC": "Elegir entre una agencia de seguros independiente y un agente cautivo puede afectar significativamente tus tarifas de seguro de ATV y UTV. Los agentes independientes trabajan con múltiples aseguradoras para encontrar la mejor cobertura y precio, mientras que los agentes cautivos están limitados a una sola compañía. Más opciones a través de una agencia independiente pueden ayudarte a obtener mejores ofertas y ahorrar dinero en las primas.",
+        "DESC": "Al elegir seguro de ATV y UTV, una agencia independiente como <a href='/' class='inline-link'>A-State Insurance</a> ofrece más flexibilidad que un agente cautivo. Los agentes independientes trabajan con múltiples aseguradoras para encontrar la mejor cobertura y precio, mientras que los agentes cautivos están limitados a una sola compañía. Más opciones a través de una agencia independiente pueden ayudarte a obtener mejores ofertas y ahorrar dinero en las primas.",
         "DESC2": "Las tarifas de seguros fluctúan frecuentemente debido a factores como tendencias de reclamos, costos de reparación y demanda estacional. Los agentes cautivos están restringidos a un solo proveedor, mientras que los agentes independientes pueden cotizar en múltiples aseguradoras, manteniendo tus tarifas competitivas.",
         "DESC3": "Comprender la diferencia asegura que obtengas la cobertura adecuada para ATV y UTV al mejor precio sin sacrificar el servicio."
       },
@@ -10236,7 +10319,7 @@
       "STEPS": {
         "REACH_OUT": {
           "TITLE": "Comunícate",
-          "DESCRIPTION": "Llama, envía un mensaje o visítanos en línea para iniciar tu solicitud de seguro de ATV y UTV con apoyo rápido y amable.",
+          "DESCRIPTION": "<a class='inline-link' href='/es/contacto'>Contáctanos</a> hoy para iniciar tu solicitud de seguro de ATV y UTV con apoyo rápido y amable.",
           "ICON": "fas fa-phone-alt"
         },
         "GET_ADVICE": {
