@@ -464,16 +464,13 @@
 
       <aside class="sidebar">
         <nav class="sidebar__menu">
-          <!-- <a routerLink="/">Home</a>
-  <a routerLink="/how-it-work">How it Works</a>
-  <a routerLink="/explore-stores">Explore Stores</a> -->
 
           <div class="sm-section-label">{{ 'HEADER.INSURANCE_SERVICES' | translate }}</div>
 
           <!-- Auto Insurance -->
           <div class="sm-item" (click)="toggleMenu('auto')">
             <i class="fas fa-car sm-icon"></i>
-            <span class="sm-label">{{ 'HEADER.AUTO_INSURANCE' | translate }}</span>
+            <a class="sm-label" [routerLink]="getRoute('autoInsurance')">{{ 'HEADER.AUTO_INSURANCE' | translate }}</a>
             <i class="fas fa-chevron-right sm-chevron" [class.open]="openMenu === 'auto'"></i>
           </div>
           <div class="sm-sub" [class.open]="openMenu === 'auto'">
@@ -512,7 +509,7 @@
           <!-- Home Insurance -->
           <div class="sm-item" (click)="toggleMenu('home')">
             <i class="fas fa-home sm-icon"></i>
-            <span class="sm-label">{{ 'HEADER.HOME_INSURANCE' | translate }}</span>
+            <a [routerLink]="getRoute('homeInsurance')" class="sm-label">{{ 'HEADER.HOME_INSURANCE' | translate }}</a>
             <i class="fas fa-chevron-right sm-chevron" [class.open]="openMenu === 'home'"></i>
           </div>
           <div class="sm-sub" [class.open]="openMenu === 'home'">
@@ -539,7 +536,7 @@
           <!-- Life Insurance -->
           <div class="sm-item" (click)="toggleMenu('life')">
             <i class="fas fa-heartbeat sm-icon"></i>
-            <span class="sm-label">{{ 'HEADER.LIFE_INSURANCE' | translate }}</span>
+            <a [routerLink]="getRoute('lifeInsurance')" class="sm-label">{{ 'HEADER.LIFE_INSURANCE' | translate }}</a>
             <i class="fas fa-chevron-right sm-chevron" [class.open]="openMenu === 'life'"></i>
           </div>
           <div class="sm-sub" [class.open]="openMenu === 'life'">
@@ -566,7 +563,7 @@
           <!-- Commercial Insurance -->
           <div class="sm-item" (click)="toggleMenu('commercial')">
             <i class="fas fa-building sm-icon"></i>
-            <span class="sm-label">{{ 'HEADER.COMMERCIAL_INSURANCE' | translate }}</span>
+            <a [routerLink]="getRoute('commercialInsurance')" class="sm-label">{{ 'HEADER.COMMERCIAL_INSURANCE' | translate }}</a>
             <i class="fas fa-chevron-right sm-chevron" [class.open]="openMenu === 'commercial'"></i>
           </div>
           <div class="sm-sub" [class.open]="openMenu === 'commercial'">
@@ -607,7 +604,7 @@
           <!-- Health Insurance -->
           <div class="sm-item" (click)="toggleMenu('health')">
             <i class="fas fa-stethoscope sm-icon"></i>
-            <span class="sm-label">{{ 'HEADER.HEALTH_INSURANCE' | translate }}</span>
+            <a [routerLink]="getRoute('healthInsurance')" class="sm-label">{{ 'HEADER.HEALTH_INSURANCE' | translate }}</a>
             <i class="fas fa-chevron-right sm-chevron" [class.open]="openMenu === 'health'"></i>
           </div>
           <div class="sm-sub" [class.open]="openMenu === 'health'">
@@ -643,7 +640,7 @@
           <!-- Surety Bond -->
           <div class="sm-item" (click)="toggleMenu('surety')">
             <i class="fas fa-file-contract sm-icon"></i>
-            <span class="sm-label">{{ 'HEADER.SURETY_BOND_INSURANCE' | translate }}</span>
+            <a [routerLink]="getRoute('suretyBondInsurance')" class="sm-label">{{ 'HEADER.SURETY_BOND_INSURANCE' | translate }}</a>
             <i class="fas fa-chevron-right sm-chevron" [class.open]="openMenu === 'surety'"></i>
           </div>
           <div class="sm-sub" [class.open]="openMenu === 'surety'">
@@ -664,7 +661,7 @@
           <!-- Additional Insurance -->
           <div class="sm-item" (click)="toggleMenu('additional')">
             <i class="fas fa-ellipsis-h sm-icon"></i>
-            <span class="sm-label">{{ 'HEADER.ADDITIONAL_INSURANCE' | translate }}</span>
+            <a href="javascript:void(0)" class="sm-label">{{ 'HEADER.ADDITIONAL_INSURANCE' | translate }}</a>
             <i class="fas fa-chevron-right sm-chevron" [class.open]="openMenu === 'additional'"></i>
           </div>
           <div class="sm-sub" [class.open]="openMenu === 'additional'">
