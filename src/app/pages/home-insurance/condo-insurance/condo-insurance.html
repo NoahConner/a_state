@@ -70,7 +70,7 @@
 
         <div class="content">
           <h5>{{ item.TITLE }}</h5>
-          <p>{{ item.TEXT }}</p>
+          <p [innerHtml]="item.TEXT "></p>
         </div>
 
       </div>
@@ -229,7 +229,7 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p><span [innerHTML]="'CONDO_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#">Insurance.com</a></p>
+          <p><span [innerHTML]="'CONDO_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="https://www.insure.com/condo-insurance/texas-condo-insurance-cost/#Condo_insurance_cost_by_city_in_Texas" class="inline-link" rel="nofollow">Insure.com</a></p>
           <p class="last-updated" [innerHTML]="'CONDO_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
         <div class="disclaimer mt-2">
@@ -262,8 +262,9 @@
           @for (rate of companyRates; track rate.carrier; let i = $index) {
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-4">
-              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ rate.carrier }}
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0"[innerHtml]="
+                 rate.carrier
+              ">
               </div>
             </div>
             <div class="col-4">
@@ -282,7 +283,7 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p><span [innerHTML]="'CONDO_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#">Insurance.com</a></p>
+          <p><span [innerHTML]="'CONDO_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="https://www.insurance.com/home-and-renters-insurance/best-condo-insurance-in-texas/#Condo_insurance_rates_by_company_in_Texas" rel="nofollow">Insurance.com</a></p>
           <p class="last-updated" [innerHTML]="'CONDO_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
         <div class="disclaimer mt-2">

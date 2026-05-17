@@ -37,12 +37,12 @@ export class CondoInsurance {
   ];
 
   companyRates = [
-    { carrier: 'Farmers', monthly: '$52', annual: '$619' },
-    { carrier: 'Allstate', monthly: '$67', annual: '$808' },
-    { carrier: 'State Farm', monthly: '$73', annual: '$874' },
-    { carrier: 'Nationwide', monthly: '$100', annual: '$1,203' },
-    { carrier: 'Progressive', monthly: '$119', annual: '$1,427' },
-    { carrier: 'USAA', monthly: '$95', annual: '$1,137' }
+    { carrier: '<a href="https://www.farmers.com/" rel="nofollow">Farmers</a>', monthly: '$52', annual: '$619' },
+    { carrier: '<a href="https://www.allstate.com/" rel="nofollow">Allstate</a>', monthly: '$67', annual: '$808' },
+    { carrier: '<a href="https://www.insurancequotede.com/" rel="nofollow">AllstateState Farm</a>', monthly: '$73', annual: '$874' },
+    { carrier: '<a href="https://www.nationwide.com/" rel="nofollow">Nationwide</a>', monthly: '$100', annual: '$1,203' },
+    { carrier: '<a href="https://www.progressive.com/" rel="nofollow">Progressive</a>', monthly: '$119', annual: '$1,427' },
+    { carrier: '<a href="https://www.usaa.com/?akredirect=true" rel="nofollow">USAA</a>', monthly: '$95', annual: '$1,137' }
   ];
   impactFactorsKeys = [
     'LOCATION',
