@@ -97,9 +97,9 @@ const routes: Routes = [
   { path: 'life-insurance/quote', component: GetLifeQuote, data: { metaPage: 'getLifeQuote' } },
   { path: 'health-insurance/quote', component: GetHealthQuote, data: { metaPage: 'getHealthQuote' } },
   { path: 'surety-bonds/quote', component: GetSuretyQuote, data: { metaPage: 'getSuretyQuote' } },
-  { path: 'title-insurance', component: TitleInsurance },
-  { path: 'title-transfer', component: TitleTransfer },
-  { path: 'pet-insurance', component: PetInsurance },
+  { path: 'title-insurance', component: TitleInsurance, data: { metaPage: 'titleInsurance' } },
+  { path: 'title-transfer', component: TitleTransfer, data: { metaPage: 'titleTransfer' } },
+  { path: 'pet-insurance', component: PetInsurance, data: { metaPage: 'petInsurance' } },
   // { path: 'auto-insurance', component: AutoInsurance },
   // { path: 'homeowners-insurance', component: HomeInsurance },
   // { path: 'commercial-insurance', component: CommercialInsurance },
@@ -123,11 +123,11 @@ const routes: Routes = [
   {
     path: 'surety-bonds',
     children: [
-      { path: '', component: SuretyBondInsurance },
-      { path: 'performance-bonds-payment-bonds', component: PerformanceBondsPaymentBonds },
-      { path: 'commercial-surety-bonds', component: CommercialSuretyBonds },
-      { path: 'bid-bonds', component: BidBonds },
-      { path: 'notary-bonds', component: NotaryBonds },
+      { path: '', component: SuretyBondInsurance, data: { metaPage: 'suretyBonds' } },
+      { path: 'performance-bonds-payment-bonds', component: PerformanceBondsPaymentBonds, data: { metaPage: 'performanceBondsPaymentBonds' } },
+      { path: 'commercial-surety-bonds', component: CommercialSuretyBonds, data: { metaPage: 'commercialSuretyBonds' } },
+      { path: 'bid-bonds', component: BidBonds, data: { metaPage: 'bidBonds' } },
+      { path: 'notary-bonds', component: NotaryBonds, data: { metaPage: 'notaryBonds' } },
     ]
   },
 
@@ -302,11 +302,11 @@ const routes: Routes = [
       {
         path: 'fianzas',
         children: [
-          { path: '', component: SuretyBondInsurance },
-          { path: 'fianzas-de-cumplimiento-y-pago', component: PerformanceBondsPaymentBonds },
-          { path: 'fianzas-comerciales', component: CommercialSuretyBonds },
-          { path: 'fianzas-de-licitacion', component: BidBonds },
-          { path: 'fianzas-notariales', component: NotaryBonds },
+          { path: '', component: SuretyBondInsurance, data: { metaPage: 'suretyBonds' } },
+          { path: 'fianzas-de-cumplimiento-y-pago', component: PerformanceBondsPaymentBonds, data: { metaPage: 'performanceBondsPaymentBonds' } },
+          { path: 'fianzas-comerciales', component: CommercialSuretyBonds, data: { metaPage: 'commercialSuretyBonds' } },
+          { path: 'fianzas-de-licitacion', component: BidBonds, data: { metaPage: 'bidBonds' } },
+          { path: 'fianzas-notariales', component: NotaryBonds, data: { metaPage: 'notaryBonds' } },
         ]
       },
       { path: 'nuestras-ubicaciones', component: OurLocations, runGuardsAndResolvers: 'always', data: { metaPage: 'ourLocations' } },
@@ -316,9 +316,9 @@ const routes: Routes = [
       { path: 'nuestras-ubicaciones/5712-antoine-dr-houston-tx-77091', component: LocationDetail, runGuardsAndResolvers: 'always', data: { metaPage: 'location_5712-antoine-dr-houston-tx-77091' } },
       { path: 'nuestras-ubicaciones/5206-airline-dr-g-houston-tx-77022', component: LocationDetail, runGuardsAndResolvers: 'always', data: { metaPage: 'location_5206-airline-dr-g-houston-tx-77022' } },
       { path: 'nuestras-ubicaciones/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
-      { path: 'seguro-de-titulo', component: TitleInsurance },
-      { path: 'traspaso-de-titulo', component: TitleTransfer },
-      { path: 'seguro-para-mascotas', component: PetInsurance },
+      { path: 'seguro-de-titulo', component: TitleInsurance, data: { metaPage: 'titleInsurance' } },
+      { path: 'traspaso-de-titulo', component: TitleTransfer, data: { metaPage: 'titleTransfer' } },
+      { path: 'seguro-para-mascotas', component: PetInsurance, data: { metaPage: 'petInsurance' } },
 
     ],
   },
