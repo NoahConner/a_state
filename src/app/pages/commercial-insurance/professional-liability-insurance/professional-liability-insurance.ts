@@ -104,18 +104,49 @@ export class ProfessionalLiabilityInsurance {
     { industry: "Wholesale", monthly: "$61", annual: "$733" },
     { industry: "Window Cleaning", monthly: "$63", annual: "$751" }
   ];
-  companyRates = [
-    { company: "ERGO NEXT", rate: "$73" },
-    { company: "The Hartford", rate: "$72" },
-    { company: "Simply Business", rate: "$77" },
-    { company: "Coverdash", rate: "$78" },
-    { company: "Nationwide", rate: "$83" },
-    { company: "biBERK", rate: "$80" },
-    { company: "Progressive Commercial", rate: "$76" },
-    { company: "Hiscox", rate: "$78" },
-    { company: "Chubb", rate: "$89" },
-    { company: "Thimble", rate: "$76" }
-  ];
+  
+ companyRates = [
+  { 
+    company: "<a href='https://www.ergonext.com/' rel='nofollow' target='_blank'>ERGO NEXT</a>", 
+    rate: "$73" 
+  },
+  { 
+    company: "<a href='https://www.thehartford.com/' rel='nofollow' target='_blank'>The Hartford</a>", 
+    rate: "$72" 
+  },
+  { 
+    company: "<a href='https://www.simplybusiness.com/' rel='nofollow' target='_blank'>Simply Business</a>", 
+    rate: "$77" 
+  },
+  { 
+    company: "<a href='https://www.coverdash.com/' rel='nofollow' target='_blank'>Coverdash</a>", 
+    rate: "$78" 
+  },
+  { 
+    company: "<a href='https://www.nationwide.com/' rel='nofollow' target='_blank'>Nationwide</a>", 
+    rate: "$83" 
+  },
+  { 
+    company: "<a href='https://www.biberk.com/' rel='nofollow' target='_blank'>biBERK</a>", 
+    rate: "$80" 
+  },
+  { 
+    company: "<a href='https://www.progressivecommercial.com/' rel='nofollow' target='_blank'>Progressive Commercial</a>", 
+    rate: "$76" 
+  },
+  { 
+    company: "<a href='https://www.hiscox.com/' rel='nofollow' target='_blank'>Hiscox</a>", 
+    rate: "$78" 
+  },
+  { 
+    company: "<a href='https://www.chubb.com/' rel='nofollow' target='_blank'>Chubb</a>", 
+    rate: "$89" 
+  },
+  { 
+    company: "<a href='https://www.thimble.com/' rel='nofollow' target='_blank'>Thimble</a>", 
+    rate: "$76" 
+  }
+];
 
 
 
