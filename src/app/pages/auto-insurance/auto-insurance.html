@@ -742,7 +742,7 @@
   <div class="texan-choose-image">
     <div class="container py-5 mt-5">
       <div class="row mb-5 text-center">
-        <div class="col-6">
+        <div class="col-12 col-md-6 mx-auto">
           <h3 class="heading" [innerHTML]="'AUTO_INSURANCE.ASTATE_DIFFERENTIATORS.HEADER.TITLE' | translateHtml | async"></h3>
         </div>
       </div>
@@ -808,10 +808,7 @@
               </div>
               <div class="card-content">
                 <h5 class="card-title" [innerHTML]="'AUTO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translateHtml | async"></h5>
-                <p class="card-text">
-                  <a [routerLink]="getRoute('getAQuote')" [innerHTML]="'AUTO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.LINK' | translateHtml | async"></a>
-
-                  <span [innerHTML]="'AUTO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' | translateHtml | async"></span>
+                <p class="card-text" [innerHTML]="'AUTO_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' | translateHtml | async">
                 </p>
               </div>
             </div>
