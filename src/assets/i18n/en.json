@@ -12382,18 +12382,89 @@
       }
     },
     "NOT_COVERED": {
-      "TITLE": "What Does Rideshare Insurance NOT Cover in Texas?",
-      "LIST": [
-        "Intentional damage or fraud",
-        "Driving under the influence",
-        "Unlisted drivers using your vehicle",
-        "Personal belongings inside the car",
-        "Normal wear and tear or mechanical breakdown",
-        "Unauthorized rideshare activity",
-        "Driving without a valid license",
-        "Racing or reckless driving"
-      ]
+      "HEADER": {
+        "TITLE": "What Does Rideshare Insurance NOT Cover in Texas?",
+        "DESC": "Rideshare insurance in Texas does not cover intentional damage, personal belongings inside your vehicle, or accidents that happen while driving for non-approved purposes. It also may exclude coverage for unauthorized drivers, high-risk modifications, or incidents caused by impaired driving. Knowing these limitations helps drivers avoid gaps and stay fully protected."
+      },
+      "LIST": {
+        "PERSONAL_USE_ACCIDENTS": {
+          "TITLE": "Personal Use Accidents on a Commercial-Only Policy",
+          "DESC": "Accidents that happen while driving for personal reasons on a commercial-only rideshare policy are not covered. This means insurance applies only to approved rideshare activities, leaving drivers responsible for costs incurred during personal trips.",
+          "ICON": "fas fa-user"
+        },
+        "INTENTIONAL_DAMAGE": {
+          "TITLE": "Intentional Damage or Fraud",
+          "DESC": "Rideshare insurance will not pay for damages caused intentionally or through fraudulent actions. Any claims from deliberate harm to your vehicle or false reporting can be denied, protecting insurers from abuse and drivers from policy misuse.",
+          "ICON": "fas fa-gavel"
+        },
+        "WEAR_TEAR": {
+          "TITLE": "Normal Wear & Tear & Mechanical Breakdown",
+          "DESC": "Regular wear, mechanical failures, or maintenance issues are not covered. Rideshare insurance focuses on accident and liability protection, not routine repairs or replacement of worn parts, ensuring coverage only applies to covered incidents.",
+          "ICON": "fas fa-tools"
+        },
+        "DUI": {
+          "TITLE": "Driving Under the Influence",
+          "DESC": "Any accident occurring while driving under the influence of alcohol or drugs is excluded. Policies will not cover damages or liability resulting from impaired driving, emphasizing the safe and legal operation of your vehicle at all times.",
+          "ICON": "fas fa-wine-bottle"
+        },
+        "UNLISTED_DRIVERS": {
+          "TITLE": "Unlisted Drivers Operating Your Vehicle",
+          "DESC": "Unlisted drivers operating your vehicle insurance does not cover accidents caused by drivers not listed on your policy. If an unapproved person uses your vehicle, any damages or liability arising from their actions will fall on you personally.",
+          "ICON": "fas fa-id-card"
+        },
+        "PASSENGER_INJURIES_BEYOND_LIMITS": {
+          "TITLE": "Passengers Injured Beyond Platform Coverage Limits",
+          "DESC": "If a passenger is injured and their medical expenses exceed the platform or policy limits, rideshare insurance may not cover the remaining costs. Drivers are responsible for ensuring coverage fits potential passenger risks.",
+          "ICON": "fas fa-users"
+        },
+        "PERSONAL_BELONGINGS": {
+          "TITLE": "Personal Belongings & Property Inside the Vehicle",
+          "DESC": "Items inside your car, such as bags, electronics, or personal property, are not covered. Insurance protects the vehicle and passengers, but personal belongings lost or damaged during rideshare trips are the driver's responsibility.",
+          "ICON": "fas fa-box"
+        },
+        "RACING_RECKLESS": {
+          "TITLE": "Racing & Reckless Driving",
+          "DESC": "Any accidents resulting from racing, aggressive maneuvers, or reckless driving are excluded. Racing driver policies protect only drivers operating safely and legally, encouraging responsible behavior while earning through rideshare apps.",
+          "ICON": "fas fa-flag-checkered"
+        },
+        "NO_VALID_LICENSE": {
+          "TITLE": "Driving Without a Valid License",
+          "DESC": "If an accident occurs while operating a vehicle without a valid driver's license, insurance will not cover damages. Maintaining a valid license is essential for both legal compliance and eligibility for rideshare insurance coverage.",
+          "ICON": "fas fa-id-card"
+        },
+        "UNAPPROVED_VEHICLES": {
+          "TITLE": "Vehicles Not Approved by the Rideshare Platform",
+          "DESC": "Vehicles that do not meet platform requirements or are unapproved are not covered. Using an unlisted vehicle or one not approved by the rideshare platform voids coverage, leaving the driver financially liable for accidents or damages.",
+          "ICON": "fas fa-car"
+        },
+        "COMMERCIAL_DELIVERY": {
+          "TITLE": "Commercial Delivery Without Proper Endorsement",
+          "DESC": "Deliveries made without the proper insurance endorsement or coverage are excluded. Drivers must ensure policies include delivery activities, such as grocery services, to avoid gaps in the protection of commercial delivery without proper endorsement.",
+          "ICON": "fas fa-box-open"
+        },
+        "UNAUTHORIZED_PLATFORM_USE": {
+          "TITLE": "Accidents During Unauthorized Platform Use",
+          "DESC": "Accidents that occur while using a rideshare app for unauthorized purposes, such as personal errands or unapproved services, are not covered. Insurance only applies during officially sanctioned rideshare operations.",
+          "ICON": "fas fa-ban"
+        },
+        "GAP_COVERAGE": {
+          "TITLE": "Gap Between Vehicle Value & Loan Balance (Without Gap Coverage)",
+          "DESC": "If your vehicle is totaled or severely damaged, and your loan or lease balance exceeds the car's actual market value, the difference will not be covered without gap insurance. Drivers are responsible for paying the remaining balance out of pocket.",
+          "ICON": "fas fa-chart-line"
+        },
+        "MEXICO_DRIVING": {
+          "TITLE": "Driving in Mexico Without Mexican Insurance",
+          "DESC": "Rideshare insurance does not extend into Mexico. If an accident occurs while driving there without proper Mexican insurance, you are fully liable for damages, medical bills, and legal costs. Additional coverage is required to stay protected.",
+          "ICON": "fas fa-map-marked-alt"
+        },
+        "WAR_NUCLEAR": {
+          "TITLE": "War & Nuclear Exclusions",
+          "DESC": "Rideshare insurance policies do not cover damages or liability resulting from war, acts of terrorism, or nuclear incidents. Any catastrophic events outside normal driving risks are excluded, leaving drivers responsible for losses.",
+          "ICON": "fas fa-radiation"
+        }
+      }
     },
+
     "DRIVING_PERIODS": {
       "TITLE": "Understanding the 3 Rideshare Driving Periods — and What Each Covers",
       "INTRO": "Rideshare driving in Texas is divided into three main periods, each with different coverage rules that determine how and when insurance applies.",
@@ -12414,34 +12485,88 @@
     },
     "COST": {
       "TITLE": "How Much Does Rideshare Insurance Cost in Texas?",
-      "DESC1": "Rideshare insurance in Texas typically increases your auto insurance premium because it fills coverage gaps that personal policies do not cover. On average, drivers pay about $172 per month for a base auto policy and approximately $51 per month to add rideshare coverage.",
-      "DESC2": "This brings the total average monthly cost to around $223, depending on factors such as your driving history, vehicle type, location, and chosen coverage level. These figures reflect what many Texas drivers pay to stay fully protected while driving for rideshare platforms.",
-      "DESC3": "Compared to other states, Texas rideshare insurance costs are generally higher than the national average. While drivers nationwide may pay around $34 per month for rideshare coverage, Texas drivers typically pay closer to $52 per month. This makes it especially important to compare multiple insurers to find the best combination of price and protection."
+      "DESC1": "Rideshare insurance in Texas typically increases your auto insurance premium because it fills gaps that personal policies don’t cover. According to recent data, Texas drivers pay about $172 per month for a base policy and about $51 per month to add rideshare coverage, for an average of about $223 per month when you include the endorsement cost. These figures can vary by carrier, driving history, and coverage level, but they give a clear picture of what many Texans pay to stay protected while driving for Uber or Lyft.",
+      "DESC2": "Compared to other states, Texas tends to be above the national average for adding rideshare coverage. Nationally, drivers often see an increase of around $34 per month when adding this type of coverage, whereas Texas drivers pay closer to $52 per month for similar protections. This means rideshare insurance in Texas can be costlier than in many other states, highlighting the value of comparing multiple insurers to find the best price for your specific needs and profile"
     },
     "COMPANY_RATES": {
-      "TITLE": "Average Rideshare Insurance Rates by Company in Texas",
-      "LIST": [
-        {
-          "COMPANY": "State Farm",
-          "PRICE": "$87/month"
+      "HEADER": {
+        "TITLE": "Average Rideshare Insurance Rates by Insurance Company in Texas",
+        "DESC": "In Texas, rideshare insurance premiums vary widely depending on the insurer and coverage you choose. According to <a href='https://www.compare.com/auto-insurance/by-state/texas/texas-rideshare-insurance' class='inline-link'> recent data, </a> State Farm riders with a rideshare endorsement see average total monthly premiums near $87, while GEICO's start around $96 per month. Other companies like Allstate average about $123 monthly, and USAA is around $156 per month, reflecting typical insurer pricing."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "COMPANY": "Insurance Company",
+          "FULL_COVERAGE": "Average Monthly Quote (Full Coverage + Rideshare)",
+          "LIABILITY_ONLY": "Average Monthly Quote (Liability Coverage + Rideshare)"
         },
-        {
-          "COMPANY": "GEICO",
-          "PRICE": "$96/month"
-        },
-        {
-          "COMPANY": "Allstate",
-          "PRICE": "$123/month"
-        },
-        {
-          "COMPANY": "USAA",
-          "PRICE": "$156/month"
-        },
-        {
-          "COMPANY": "Progressive",
-          "PRICE": "$235/month"
+        "LIST": {
+          "STATE_FARM": {
+            "COMPANY": "<a href='https://www.statefarm.com/' rel='nofollow' class='inline-link'>State Farm</a>",
+            "FULL_COVERAGE": "$87",
+            "LIABILITY_ONLY": "$51"
+          },
+          "GEICO": {
+            "COMPANY": "<a href='https://www.geico.com/' rel='nofollow' class='inline-link'>GEICO</a>",
+            "FULL_COVERAGE": "$96",
+            "LIABILITY_ONLY": "$56"
+          },
+          "ALLSTATE": {
+            "COMPANY": "<a href='https://www.allstate.com/' rel='nofollow' class='inline-link'>Allstate</a>",
+            "FULL_COVERAGE": "$123",
+            "LIABILITY_ONLY": "$72"
+          },
+          "MILE_AUTO": {
+            "COMPANY": "<a href='https://www.mileauto.com/' rel='nofollow' class='inline-link'>Mile Auto</a>",
+            "FULL_COVERAGE": "$154",
+            "LIABILITY_ONLY": "$74"
+          },
+          "USAA": {
+            "COMPANY": "<a href='https://www.usaa.com/' rel='nofollow' class='inline-link'>USAA</a>",
+            "FULL_COVERAGE": "$156",
+            "LIABILITY_ONLY": "$92"
+          },
+          "MERCURY": {
+            "COMPANY": "<a href='https://www.mercuryinsurance.com/' rel='nofollow' class='inline-link'>Mercury</a>",
+            "FULL_COVERAGE": "$194",
+            "LIABILITY_ONLY": "$116"
+          },
+          "CLEARCOVER": {
+            "COMPANY": "<a href='https://www.clearcover.com/' rel='nofollow' class='inline-link'>Clearcover</a>",
+            "FULL_COVERAGE": "$194",
+            "LIABILITY_ONLY": "$154"
+          },
+          "HUGO": {
+            "COMPANY": "<a href='https://www.withhugo.com/' rel='nofollow' class='inline-link'>Hugo</a>",
+            "FULL_COVERAGE": "$197",
+            "LIABILITY_ONLY": "$78"
+          },
+          "NATIONWIDE": {
+            "COMPANY": "<a href='https://www.nationwide.com/' rel='nofollow' class='inline-link'>Nationwide</a>",
+            "FULL_COVERAGE": "$224",
+            "LIABILITY_ONLY": "$115"
+          },
+          "SAFECO": {
+            "COMPANY": "<a href='https://www.safeco.com/' rel='nofollow' class='inline-link'>Safeco</a>",
+            "FULL_COVERAGE": "$235",
+            "LIABILITY_ONLY": "$115"
+          },
+          "PROGRESSIVE": {
+            "COMPANY": "<a href='https://www.progressive.com/' rel='nofollow' class='inline-link'>Progressive</a>",
+            "FULL_COVERAGE": "$235",
+            "LIABILITY_ONLY": "$134"
+          },
+          "MIDVALE_HOME_AUTO": {
+            "COMPANY": "<a href='https://midvaleinsurance.com/' rel='nofollow' class='inline-link'>Midvale Home & Auto</a>",
+            "FULL_COVERAGE": "$245",
+            "LIABILITY_ONLY": "$134"
+          }
         }
-      ]
+      },
+      "FOOTER": {
+        "SOURCE": "Source:",
+        "LAST_UPDATED": "Last Updated: March 2026",
+        "DISCLAIMER": "The information provided on this page is for general informational purposes only and may not reflect the most current updates. Coverage requirements, rates, and laws are subject to change. Please consult a licensed insurance agent for the most accurate and up-to-date information."
+      }
     },
     "FACTORS_IMPACT": {
       "HEADER": {
@@ -12549,7 +12674,7 @@
       "LIST": {
         "BUNDLING": {
           "TITLE": "Multi-Policy / Bundling Discount (Rideshare + Home or Renters)",
-          "DESC": "Bundling rideshare insurance with home or renters coverage can reduce premiums while providing broader protection.",
+          "DESC": "Bundling rideshare insurance with <a href='/homeowners-insurance' class='inline-link'> home </a> or <a href='/homeowners-insurance/renters-insurance' class='inline-link'>renters coverage can reduce premiums while providing broader protection.",
           "ICON": "fas fa-house-user"
         },
         "SAFE_DRIVER": {
@@ -12852,7 +12977,7 @@
     },
     "FREE_QUOTE": {
       "HEADER": "Get a Free Rideshare Insurance Quote in Texas",
-      "DESCRIPTION": "Get your free rideshare insurance quote in Texas today and see how affordable the right coverage can be for your needs as a driver. Our brokers compare top carriers, tailored to your driving history, vehicle, and platform use. Whether you drive for Uber, Lyft, or delivery apps, we help you find options that protect you at every stage of driving. No obligation, simple process, expert support every step. Contact us now to start your free quote and expert guidance."
+      "DESCRIPTION": "Get your free rideshare insurance quote in Texas today and see how affordable the right coverage can be for your needs as a driver. Our brokers compare top carriers, tailored to your driving history, vehicle, and platform use. Whether you drive for Uber, Lyft, or delivery apps, we help you find options that protect you at every stage of driving. No obligation, simple process, expert support every step. <a href='/contact-us' class='inline-link'> Contact us now </a> to start your free quote and expert guidance."
     }
   },
   "SR22_INSURANCE": {
@@ -25830,7 +25955,7 @@
       "DESCRIPTION": "Getting a free whole life insurance quote in Texas is quick and simple with <a class='inline-link' href='/' target='_blank'>A-State Insurance</a>. Our licensed brokers compare multiple top-rated carriers to find coverage that fits your budget, lifestyle, and long-term financial goals. You can request a quote online, by phone, or by visiting our local office for personalized support. We focus on making the process clear and stress-free, ensuring you understand every option before making a decision with no obligation and full guidance."
     }
   },
-"UNIVERSAL_LIFE_INSURANCE": {
+  "UNIVERSAL_LIFE_INSURANCE": {
     "BANNER": {
       "TITLE_LINE1": "Best & Affordable Universal Life Insurance in",
       "TITLE_LINE2": "Texas — Starting from",

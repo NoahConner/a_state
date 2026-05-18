@@ -146,6 +146,35 @@
         </div>
     </section>
 
+    <section class="factors-impact-section bg-white">
+        <div class="container px-4">
+            <h2 class="section-title"
+                [innerHTML]="'RIDESHARE_INSURANCE.NOT_COVERED.HEADER.TITLE' | translateHtml | async"></h2>
+            <p class="intro-text" [innerHTML]="'RIDESHARE_INSURANCE.NOT_COVERED.HEADER.DESC' | translateHtml | async">
+            </p>
+
+            <div class="row mt-5">
+                @for (key of notCoveredKeys; track key) {
+                <div class="col-lg-6">
+                    <div class="factor-item">
+                        <div class="icon-wrapper">
+                            <i [class]="'RIDESHARE_INSURANCE.NOT_COVERED.LIST.' + key + '.ICON' | translate"></i>
+                        </div>
+                        <div class="factor-content">
+                            <h6><span
+                                    [innerHTML]="('RIDESHARE_INSURANCE.NOT_COVERED.LIST.' + key + '.TITLE') | translateHtml | async"></span>
+                            </h6>
+                            <p><span
+                                    [innerHTML]="('RIDESHARE_INSURANCE.NOT_COVERED.LIST.' + key + '.DESC') | translateHtml | async"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
+
 
     <section class="insurance-section py-5 ">
         <div class="container">
@@ -190,6 +219,79 @@
 
                         <p [innerHTML]="'RIDESHARE_INSURANCE.COST.DESC2' | translateHtml | async"></p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="rates-section py-5">
+        <div class="container container-max-1100 px-4">
+            <h2 class="section-title"
+                [innerHTML]="'RIDESHARE_INSURANCE.COMPANY_RATES.HEADER.TITLE' | translateHtml | async"></h2>
+            <div class="intro-text">
+                <p [innerHTML]="'RIDESHARE_INSURANCE.COMPANY_RATES.HEADER.DESC' | translateHtml | async"></p>
+            </div>
+
+            <!-- Table Container -->
+            <div class="rates-table-card p-4 mt-5">
+                <div class="row g-2 text-center text-white fw-bold mb-2">
+                    <div class="col-4">
+                        <div class="header-pill bg-danger py-2"
+                            [innerHTML]="'RIDESHARE_INSURANCE.COMPANY_RATES.TABLE.COLUMNS.COMPANY' | translateHtml | async">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="header-pill bg-danger py-2"
+                            [innerHTML]="'RIDESHARE_INSURANCE.COMPANY_RATES.TABLE.COLUMNS.FULL_COVERAGE' | translateHtml | async">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="header-pill bg-danger py-2"
+                            [innerHTML]="'RIDESHARE_INSURANCE.COMPANY_RATES.TABLE.COLUMNS.LIABILITY_ONLY' | translateHtml | async">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Rows -->
+                <div class="rates-rows">
+                    @for (item of companyRates; track item; let i = $index) {
+                    <div class="row g-2 text-center mb-2 align-items-center">
+                        <div class="col-4">
+                            <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
+                                [class.data-pill-color-1]="i % 2 !== 0">
+                                <span
+                                    [innerHTML]="('RIDESHARE_INSURANCE.COMPANY_RATES.TABLE.LIST.' + item + '.COMPANY') | translateHtml | async"></span>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
+                                [class.data-pill-color-1]="i % 2 !== 0">
+                                <span
+                                    [innerHTML]="('RIDESHARE_INSURANCE.COMPANY_RATES.TABLE.LIST.' + item + '.FULL_COVERAGE') | translateHtml | async"></span>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
+                                [class.data-pill-color-1]="i % 2 !== 0">
+                                <span
+                                    [innerHTML]="('RIDESHARE_INSURANCE.COMPANY_RATES.TABLE.LIST.' + item + '.LIABILITY_ONLY') | translateHtml | async"></span>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+
+                <div class="d-flex justify-content-between mt-4 rates-footer-info">
+                    <p><span [innerHTML]="'RIDESHARE_INSURANCE.COMPANY_RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a
+                            href="https://insurify.com/car-insurance/texas/rideshare-insurance/#rideshare-insurance-cost"
+                            rel="nofollow" target="_blank">Insurify</a></p>
+                    <p class="last-updated"
+                        [innerHTML]="'RIDESHARE_INSURANCE.COMPANY_RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
+                </div>
+                <div class="disclaimer mt-2">
+                    <p class="mb-0"><strong>Disclaimer:</strong> <span
+                            [innerHTML]="'RIDESHARE_INSURANCE.COMPANY_RATES.FOOTER.DISCLAIMER' | translateHtml | async"></span></p>
                 </div>
             </div>
         </div>

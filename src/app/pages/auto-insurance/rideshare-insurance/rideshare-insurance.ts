@@ -24,6 +24,23 @@ export class RideshareInsurance {
   ];
 
 
+  notCoveredKeys=[
+     "PERSONAL_USE_ACCIDENTS",
+    "INTENTIONAL_DAMAGE",
+    "WEAR_TEAR",
+    "DUI",
+    "UNLISTED_DRIVERS",
+    "PASSENGER_INJURIES_BEYOND_LIMITS",
+    "PERSONAL_BELONGINGS",
+    "RACING_RECKLESS",
+    "NO_VALID_LICENSE",
+    "UNAPPROVED_VEHICLES",
+    "COMMERCIAL_DELIVERY",
+    "UNAUTHORIZED_PLATFORM_USE",
+    "GAP_COVERAGE",
+    "MEXICO_DRIVING",
+    "WAR_NUCLEAR"
+  ];
 
   impactFactorsKeys = [
   "RIDESHARE_PLATFORM_TYPE",
@@ -87,6 +104,20 @@ export class RideshareInsurance {
   "MULTILINGUAL_SUPPORT"
 ];
 
+companyRates = [
+  "STATE_FARM",
+  "GEICO",
+  "ALLSTATE",
+  "MILE_AUTO",
+  "USAA",
+  "MERCURY",
+  "CLEARCOVER",
+  "HUGO",
+  "NATIONWIDE",
+  "SAFECO",
+  "PROGRESSIVE",
+  "MIDVALE_HOME_AUTO"
+];
 
   switchSteps = [
     'STEP_1',
