@@ -10414,13 +10414,13 @@
     },
     "LAWS": {
       "TITLE": "¿Es Obligatorio el Seguro de Auto para México por Ley?",
-      "INTRO1": "Sí, el seguro de auto para México es obligatorio por ley para todos los conductores en México, ya sean residentes o visitantes de EE. UU. o Canadá. Si conduces en México, debes tener un seguro de auto mexicano vigente. Esto incluye tanto a residentes como a turistas que cruzan la frontera, independientemente de la duración de su estancia o el tipo de vehículo que conducen.",
+      "INTRO1": "Sí, el seguro de auto para México <a class='inline-link' href='https://www.mexperience.com/transport/auto-insurance/'>es obligatorio por ley para todos los conductores en México,</a> ya sean residentes o visitantes de EE. UU. o Canadá. Si conduces en México, debes tener un seguro de auto mexicano vigente. Esto incluye tanto a residentes como a turistas que cruzan la frontera, independientemente de la duración de su estancia o el tipo de vehículo que conducen.",
       "INTRO2": "No cumplir con esta ley puede tener consecuencias graves, que incluyen multas, el embargo de su vehículo o incluso tiempo en la cárcel en caso de un accidente. Las autoridades mexicanas no reconocen las pólizas de seguro de EE. UU. o Canadá, por lo que confiar en su cobertura existente es riesgoso y podría dejarlo expuesto a riesgos financieros y legales significativos.",
       "INTRO3": "Cada vez que conduces sin un seguro de auto mexicano, estás arriesgando tu seguridad, finanzas y situación legal. En caso de accidente, podrías ser personalmente responsable por daños y lesiones, lo que podría costarte miles de dólares. Si te detienen sin el seguro adecuado, no solo enfrentarás posibles multas, sino que también se te podría negar la cobertura por cualquier daño o reclamación. Por lo tanto, al planificar su viaje a México, asegúrese de tener el seguro adecuado. No es solo un requisito legal; es una parte crucial para protegerse y garantizar una experiencia segura y sin estrés mientras conduce en un país extranjero."
     },
     "COVER_IN_MEXICO": {
       "TITLE": "¿Me Cubre Mi Seguro de Auto de EE. UU. en México?",
-      "INTRO1": "En la mayoría de los casos, su seguro de auto de EE. UU. no lo cubre en México. Si bien algunas pólizas de EE. UU. pueden ofrecer cobertura limitada para conducir en México, generalmente se extiende solo a áreas cercanas a la frontera y a menudo viene con estrictas limitaciones en los tipos y montos de cobertura. Además, el nivel de protección puede no cumplir con los requisitos legales mexicanos. Para obtener cobertura completa y tranquilidad, es esencial comprar un seguro de auto mexicano que cumpla con las leyes locales.",
+      "INTRO1": "En la mayoría de los casos, su seguro de auto de EE. UU. <a class='inline-link' href='https://www.bajabound.com/info/uscoverage.php' rel='nofollow'>no lo cubre en México.</a> Si bien algunas pólizas de EE. UU. pueden ofrecer cobertura limitada para conducir en México, generalmente se extiende solo a áreas cercanas a la frontera y a menudo viene con estrictas limitaciones en los tipos y montos de cobertura. Además, el nivel de protección puede no cumplir con los requisitos legales mexicanos. Para obtener cobertura completa y tranquilidad, es esencial comprar un seguro de auto mexicano que cumpla con las leyes locales.",
       "INTRO2": "Incluso si su seguro de EE. UU. ofrece cierta cobertura, no es un sustituto del seguro de auto mexicano obligatorio que necesita cuando viaja a México. En caso de accidente, es posible que su seguro de EE. UU. no sea reconocido, dejándolo personalmente responsable por daños, lesiones y honorarios legales. Para evitar arriesgar su seguridad y finanzas, se recomienda obtener un seguro de auto mexicano separado y dedicado antes de conducir en el país."
     },
     "COVERAGES": {
@@ -10508,10 +10508,93 @@
         ]
       }
     },
+    "NOT_COVERED": {
+      "HEADER": {
+        "TITLE": "¿Qué No Cubre el Seguro de Auto Mexicano?",
+        "DESC": "Aunque el seguro de auto mexicano ofrece una protección integral, existen ciertas exclusiones. Estas incluyen daños causados por acciones intencionales, conducir bajo los efectos del alcohol o drogas, o usar tu vehículo para fines comerciales sin la cobertura adecuada. También es importante señalar que las pólizas estándar no cubren pertenencias personales dentro de tu vehículo ni daños preexistentes."
+      },
+      "LIST": {
+        "BEYOND_TERRITORY": {
+          "TITLE": "Conducir Fuera de las Áreas de Cobertura Especificadas en México",
+          "DESC": "Si conduces fuera de las áreas de cobertura especificadas en México, tu seguro no se aplicará. Esto significa que cualquier incidente fuera de estas regiones no estará cubierto, dejándote con costosos gastos de tu bolsillo en caso de un accidente o daño.",
+          "ICON": "fas fa-map-marked-alt"
+        },
+        "RACING": {
+          "TITLE": "Carreras y Uso Fuera de Carretera en México",
+          "DESC": "Participar en carreras o actividades fuera de carretera está excluido de la cobertura estándar del seguro de auto mexicano. Ya sea en pistas o terrenos accidentados, cualquier accidente que ocurra durante tales actividades no estará cubierto por la póliza, dejándote responsable de los daños.",
+          "ICON": "fas fa-flag-checkered"
+        },
+        "INTENTIONAL_DAMAGE": {
+          "TITLE": "Daños Intencionales o Fraude",
+          "DESC": "Los daños causados de forma intencional o mediante acciones fraudulentas no están cubiertos por el seguro de auto mexicano. Cualquier intento de engañar al asegurador o de dañar intencionalmente tu vehículo resultará en la negación de la reclamación y posibles repercusiones legales.",
+          "ICON": "fas fa-gavel"
+        },
+        "WEAR_TEAR": {
+          "TITLE": "Desgaste Normal y Averías Mecánicas",
+          "DESC": "Las pólizas de seguro no cubren los costos de mantenimiento rutinario, desgaste normal o averías mecánicas. Si tu vehículo sufre problemas como desgaste de llantas o fallas en el motor que no son resultado de un accidente, deberás encargarte de las reparaciones.",
+          "ICON": "fas fa-tools"
+        },
+        "DUI": {
+          "TITLE": "Conducir Bajo los Efectos del Alcohol o Drogas en México",
+          "DESC": "Si te arrestan por conducir bajo los efectos del alcohol o drogas (DUI) en México, tu cobertura de seguro quedará anulada. Los incidentes relacionados con DUI están explícitamente excluidos, y enfrentarás tanto sanciones legales como la responsabilidad financiera por cualquier daño causado.",
+          "ICON": "fas fa-wine-bottle"
+        },
+        "UNLISTED_DRIVERS": {
+          "TITLE": "Conductores no Listados en tu Póliza",
+          "DESC": "Solo los conductores listados en tu póliza de seguro de auto mexicano están cubiertos. Si una persona que no está en la póliza maneja el vehículo y causa un accidente, el seguro no cubrirá los daños, dejándote responsable de todo el costo del incidente.",
+          "ICON": "fas fa-users"
+        },
+        "PERSONAL_BELONGINGS": {
+          "TITLE": "Pertenencias Personales y Carga Dentro del Vehículo",
+          "DESC": "Generalmente, el seguro de auto mexicano no cubre las pertenencias personales ni la carga dentro de tu vehículo. Si los artículos son robados o dañados mientras viajas por México, necesitarás un seguro de viaje separado para proteger tus artículos personales y posesiones.",
+          "ICON": "fas fa-suitcase"
+        },
+        "COMMERCIAL_USE": {
+          "TITLE": "Uso Comercial Sin la Cobertura Adecuada",
+          "DESC": "Usar tu vehículo para fines comerciales sin la cobertura de seguro adecuada anulará tu seguro de auto mexicano. Ya sea que transportes mercancías o operes un vehículo de negocios, debes asegurar un seguro comercial especializado.",
+          "ICON": "fas fa-briefcase"
+        },
+        "UNPAVED_ROADS": {
+          "TITLE": "Conducir por Caminos No Pavimentados o Restringidos",
+          "DESC": "Si conduces por caminos no pavimentados o restringidos en México, tu cobertura de seguro podría no ser válida. Estas áreas presentan mayores riesgos, y los accidentes que ocurran mientras conduces en tales caminos generalmente quedan excluidos de tu póliza.",
+          "ICON": "fas fa-road"
+        },
+        "PRE_EXISTING_DAMAGE": {
+          "TITLE": "Daños Preexistentes Antes de Cruzar la Frontera",
+          "DESC": "Los daños que ocurran antes de cruzar la frontera hacia México no estarán cubiertos por tu seguro de auto mexicano. Asegúrate de que tu vehículo sea inspeccionado completamente y esté en buenas condiciones, ya que los problemas preexistentes no estarán protegidos una vez que ingreses a México.",
+          "ICON": "fas fa-clipboard-check"
+        },
+        "UNLISTED_VEHICLES": {
+          "TITLE": "Vehículos No Listados en la Póliza",
+          "DESC": "Para estar cubierto en México, tu vehículo debe estar listado en tu póliza de seguro. Si conduces un automóvil que no esté especificado, no estará cubierto en caso de un accidente, así que asegúrate de agregar todos los vehículos a tu póliza antes de viajar.",
+          "ICON": "fas fa-car"
+        },
+        "WAR_CIVIL_UNREST": {
+          "TITLE": "Exclusiones por Guerra y Disturbios Civiles",
+          "DESC": "El seguro de auto mexicano excluye la cobertura de incidentes derivados de la guerra o disturbios civiles. Si te encuentras en una zona afectada por inestabilidad política o violencia, tu póliza no aplicará, dejándote sin protección.",
+          "ICON": "fas fa-radiation"
+        },
+        "HIGH_RISK_ZONES": {
+          "TITLE": "Conducir en Zonas de Alto Riesgo Según el Aviso de Viaje",
+          "DESC": "La cobertura del seguro se anula si conduces por zonas marcadas como de alto riesgo según el aviso de viaje. Estas regiones, señaladas por las agencias de viajes debido a preocupaciones de seguridad, están excluidas de tu póliza, por lo que es importante evitarlas o buscar otra cobertura.",
+          "ICON": "fas fa-exclamation-triangle"
+        },
+        "POLICY_LAPSE": {
+          "TITLE": "Vencimiento de la Póliza Durante tu Viaje a México",
+          "DESC": "Si tu póliza de seguro de auto mexicano vence durante tu viaje, ya no será válida. Asegúrate siempre de que tu cobertura de seguro permanezca activa durante toda tu estancia para evitar conducir sin protección, lo cual podría exponerte a riesgos.",
+          "ICON": "fas fa-calendar-times"
+        },
+        "US_SIDE_ACCIDENTS": {
+          "TITLE": "Accidentes en el Lado de EE. UU. con la Misma Póliza",
+          "DESC": "Cualquier accidente que ocurra en el lado de EE. UU. de la frontera no estará cubierto por tu seguro de auto mexicano. Para incidentes que sucedan en EE. UU., deberás confiar en tu seguro de auto de EE. UU., ya que tu cobertura mexicana no se extenderá más allá de la frontera.",
+          "ICON": "fas fa-border-all"
+        }
+      }
+    },
     "COST": {
       "TITLE": "¿Cuánto Cuesta el Seguro de Auto para México?",
-      "DESC1": "En Texas, las tarifas del seguro de auto para México tienden a ser competitivas, especialmente para pólizas de corto plazo compradas antes de su viaje. Las tarifas diarias pueden oscilar entre aproximadamente $2 y $40 por día, dependiendo de su vehículo, fechas de viaje, duración de la estancia y el nivel de cobertura que elija. Los planes de solo responsabilidad civil suelen estar en el extremo inferior, mientras que la cobertura amplia con robo y colisión costará más. Las pólizas también se pueden comprar por plazos más largos, como planes de 6 meses o anuales, para reducir su costo por día.",
-      "DESC2": "Cuando compara las tarifas de Texas con las de otros estados, las tarifas del seguro mexicano se mantienen relativamente similares porque el precio se basa en los detalles de la póliza más que en primas a nivel estatal. A diferencia de las tarifas estándar de seguros de EE. UU., que varían ampliamente según el estado debido a factores locales, el precio del seguro mexicano se centra en la duración del viaje y las coberturas que elija. Los tejanos a menudo pagan tarifas similares a las de otros conductores de estados fronterizos, mientras que las pólizas de largo plazo o anuales pueden reducir el costo promedio por día en comparación con estancias cortas."
+      "DESC1": "En Texas, las tarifas del seguro de auto para México tienden a ser competitivas, especialmente para pólizas de corto plazo compradas antes de su viaje. Las tarifas diarias pueden oscilar entre aproximadamente <a href='https://www.mexpro.com/blog/how-much-mexico-car-insurance-per-day/' class='inline-link'>$2 y $40 por día,</a> dependiendo de su vehículo, fechas de viaje, duración de la estancia y el nivel de cobertura que elija. Los planes de solo responsabilidad civil suelen estar en el extremo inferior, mientras que la cobertura amplia con robo y colisión costará más. Las pólizas también se pueden comprar por plazos más largos, como planes de 6 meses o anuales, para reducir su costo por día.",
+      "DESC2": "Cuando compara las tarifas de Texas con las de otros estados, las tarifas del seguro mexicano se mantienen relativamente similares porque el precio se basa en los detalles de la póliza más que en primas a nivel estatal. A diferencia de las <a href='https://astateinsurance.com/auto-insurance/' class='inline-link'>tarifas estándar de seguros de EE. UU.,</a> que varían ampliamente según el estado debido a factores locales, el precio del seguro mexicano se centra en la duración del viaje y las coberturas que elija. Los tejanos a menudo pagan tarifas similares a las de otros conductores de estados fronterizos, mientras que las pólizas de largo plazo o anuales pueden reducir el costo promedio por día en comparación con estancias cortas."
     },
     "RATES": {
       "CITIES_RATE": {
@@ -10837,7 +10920,7 @@
       },
       "LIST": {
         "PERSONAL_CARS_SEDANS": {
-          "TITLE": "Autos Personales y Sedanes",
+          "TITLE": "<a class='inline-link' href='/es/seguros-de-auto/seguro-de-carro'>Autos Personales y Sedanes</a>",
           "DESCRIPTION": "Cubrimos todo tipo de autos personales y sedanes, asegurando que esté completamente protegido mientras conduce en México con opciones amplias o de responsabilidad civil.",
           "ICON": "fas fa-car"
         },
@@ -10857,27 +10940,27 @@
           "ICON": "fas fa-shuttle-van"
         },
         "MOTORCYCLES_SCOOTERS": {
-          "TITLE": "Motocicletas y Scooters",
+          "TITLE": "<a class='inline-link' href='/es/seguros-de-auto/seguro-de-motocicleta'>Motocicletas y Scooters</a>",
           "DESCRIPTION": "Las motocicletas y scooters están incluidas en nuestras opciones de cobertura, asegurando que esté protegido sobre dos ruedas mientras navega por las calles de México.",
           "ICON": "fas fa-motorcycle"
         },
         "RVS_MOTORHOMES": {
-          "TITLE": "RVs y Autocaravanas",
+          "TITLE": "<a class='inline-link' href='/es/seguros-de-auto/seguro-de-rv-autocaravana'>RVs y Autocaravanas</a>",
           "DESCRIPTION": "Si viaja en una RV o autocaravana, lo tenemos cubierto con un seguro que protege su vehículo y su viaje a través de México.",
           "ICON": "fas fa-bus"
         },
         "TRAVEL_TRAILERS_FIFTH_WHEELS": {
-          "TITLE": "Remolques de Viaje y Quinta Rueda",
+          "TITLE": "<a class='inline-link' href='/es/seguros-de-auto/seguro-de-remolque'>Remolques de Viaje y Quinta Rueda</a>",
           "DESCRIPTION": "Nuestras pólizas cubren remolques de viaje y quinta rueda, ofreciéndole tranquilidad al remolcar su trailer o casa rodante en su aventura mexicana.",
           "ICON": "fas fa-trailer"
         },
         "COMMERCIAL_TRUCKS_VANS": {
-          "TITLE": "Camiones y Furgonetas Comerciales",
+          "TITLE": "<a class='inline-link' href='/es/seguros-comerciales/seguro-de-auto-comercial'>Camiones y Furgonetas Comerciales</a>",
           "DESCRIPTION": "Los vehículos comerciales también están cubiertos, ya sea para negocios o transporte, asegurando que su camión o furgoneta comercial esté protegido en las carreteras mexicanas.",
           "ICON": "fas fa-industry"
         },
         "CLASSIC_VINTAGE_CARS": {
-          "TITLE": "Autos Clásicos y Antiguos",
+          "TITLE": "<a href='/es/seguros-de-auto/seguro-de-auto-clasico' class='inline-link'>Autos Clásicos y Antiguos</a>",
           "DESCRIPTION": "Los autos clásicos y antiguos se pueden asegurar con pólizas especiales diseñadas para preservar el valor y la condición de su vehículo preciado mientras está en México.",
           "ICON": "fas fa-car-classic"
         },
@@ -10902,7 +10985,7 @@
           "ICON": "fas fa-car-rear"
         },
         "ATV_UTV_OFFROAD": {
-          "TITLE": "ATV y UTV (Uso Todo Terreno)",
+          "TITLE": "<a class='inline-link' href='/es/seguros-de-auto/seguro-de-atv-utv'>ATV y UTV (Uso Todo Terreno)</a>",
           "DESCRIPTION": "Los ATV y UTV están incluidos en nuestras pólizas, asegurando que esté cubierto para aventuras todo terreno y exploración al aire libre en México.",
           "ICON": "fas fa-tractor"
         },
@@ -10918,20 +11001,17 @@
         "TITLE": "¿Conduciendo a México por Primera Vez? Esto es lo que Necesita Saber"
       },
       "CONTENT": {
-        "DESC1": "Conducir a México por primera vez puede ser intimidante, pero con un poco de planificación, se sentirá seguro y preparado. Asegúrese de tener los documentos correctos: pasaporte vigente, licencia de conducir, registro del vehículo y el seguro de auto mexicano requerido.",
-        "DESC2": "Dependiendo de qué tan lejos vaya más allá de la frontera, es posible que necesite un permiso de importación temporal de vehículo y un permiso de visitante. Compre su seguro de auto para México antes de su viaje para estar cubierto desde el momento en que cruce.",
-        "DESC3": "Las carreteras y las condiciones de conducción pueden sentirse diferentes; encontrará topes, cuotas y señales de tráfico cambiantes. Planifique su ruta, quédese en las carreteras principales si es posible y conduzca durante el día.",
-        "DESC4": "Con la preparación y cobertura adecuadas, su primera conducción a México puede ser tranquila, segura y agradable."
+        "DESC1": "Conducir a México por primera vez puede sentirse intimidante, pero con un poco de planificación, te sentirás confiado y listo. Antes de ir, asegúrate de tener los documentos correctos: un pasaporte válido, tu licencia de conducir, la matrícula del vehículo y el seguro de auto mexicano requerido que cumpla con los estándares legales. Dependiendo de qué tan lejos del borde vayas, también podrías necesitar un permiso de importación del vehículo y un permiso de visitante.",
+        "DESC2": "Una vez que tengas tus documentos en orden, compra el seguro de auto mexicano antes de tu viaje para estar cubierto desde el momento que cruces la frontera. Generalmente, el seguro de EE. UU. no es reconocido en México, y necesitarás una póliza separada para la responsabilidad legal y tranquilidad en la carretera. Las carreteras y las condiciones de manejo pueden sentirse diferentes; encontrarás topes (badenes), casetas de cobro (cuotas) y señales de tránsito cambiantes, así que planifica tu ruta, quédate en las carreteras principales si es posible, y conduce durante el día. Con la preparación y cobertura adecuadas, tu primer viaje a México será tranquilo, seguro y agradable."
       }
     },
     "LANGUAGE_SUPPORT": {
       "HEADER": {
-        "TITLE": "Hablamos Español"
+        "TITLE": "Hablamos Español / We Speak Your Language"
       },
       "CONTENT": {
-        "DESC1": "Sabemos que hablar su idioma puede marcar la diferencia cuando compra un seguro de auto para México o maneja una reclamación en México. Es por eso que ofrecemos soporte completo en español y asistencia bilingüe durante todo el proceso, desde obtener su cotización hasta manejar ayuda en carretera o problemas legales.",
-        "DESC2": "Tener agentes de habla hispana significa que puede hacer preguntas, entender su cobertura y obtener respuestas claras sin barreras idiomáticas.",
-        "DESC3": "Muchas aseguradoras también brindan apoyo bilingüe para reclamaciones para que sea comprendido y apoyado en cada paso del camino."
+        "DESC1": "Sabemos que hablar su idioma puede marcar la diferencia cuando compra un seguro de auto para México o maneja una reclamación en México. Es por eso que ofrecemos soporte completo en español ySabemos que hablar tu idioma puede hacer toda la diferencia cuando compras un seguro de auto mexicano o cuando manejas una reclamación en México. Es por eso que ofrecemos soporte completo en español y asistencia bilingüe durante todo el proceso, desde obtener tu cotización hasta manejar asistencia en carretera o problemas legales. Tener agentes que hablan español significa que puedes hacer preguntas, entender tu cobertura y recibir respuestas claras sin barreras idiomáticas.",
+        "DESC2": "Muchos aseguradores también brindan soporte bilingüe para reclamaciones, así que serás comprendido y respaldado en cada paso del proceso."
       }
     },
     "ASTATE_DIFFERENTIATORS": {
@@ -10978,7 +11058,7 @@
       "STEPS": {
         "REACH_OUT": {
           "TITLE": "Paso 1 - Comuníquese",
-          "DESCRIPTION": "Contáctenos para comenzar su cotización gratuita y hacer cualquier pregunta sobre las opciones de cobertura.",
+          "DESCRIPTION": "<a href='/es/contacto' class='inline-link' target='_blank'>Contáctenos</a> para comenzar su cotización gratuita y hacer cualquier pregunta sobre las opciones de cobertura.",
           "ICON": "fas fa-phone-alt"
         },
         "GET_ADVICE": {
@@ -11723,114 +11803,114 @@
         }
       }
     },
-  "HIGH_RISK_DRIVER": {
-    "HEADER": {
-      "TITLE": "¿Es Usted Un Propietario De Remolque De Alto Riesgo? Podemos Ayudarle"
-    },
-    "CONTENT": {
+    "HIGH_RISK_DRIVER": {
+      "HEADER": {
+        "TITLE": "¿Es Usted Un Propietario De Remolque De Alto Riesgo? Podemos Ayudarle"
+      },
+      "CONTENT": {
         "DESC1": "Si ha enfrentado desafíos como un requisito de SR-22, DUI o una licencia suspendida, conseguir un seguro para su remolque puede parecer imposible. En <a href='/' class='inline-link'>Seguros A-State,</a> nos especializamos en ayudar a propietarios de remolques de alto riesgo en Texas a obtener cobertura, incluso cuando otras aseguradoras han dicho que no. Entendemos su situación única y ofrecemos soluciones adaptadas a sus necesidades, brindándole tranquilidad en la carretera.",
-      "DESC2": "Nuestro equipo trabaja directamente con conductores con historiales no estándar, asegurando que no quede sin protección. Desde presentaciones de SR-22 hasta pólizas para quienes tienen infracciones pasadas, lo guiamos en cada paso. No tiene que arriesgarse a conducir sin seguro; nuestros expertos hacen que la cobertura sea accesible, confiable y asequible, sin importar su historial."
-    }
-  },
-  "LANGUAGE_SUPPORT": {
-    "HEADER": {
-      "TITLE": "Hablamos Español / We Speak Your Language"
-    },
-    "CONTENT": {
-      "DESC1": "En Seguros A-State, reconocemos que el idioma nunca debe ser una barrera para entender sus opciones de seguro para remolques. Nuestros agentes de habla hispana ofrecen orientación clara y apoyo personalizado, asegurando que comprenda completamente los detalles de la cobertura, beneficios y exclusiones. Ya sea que sea comprador por primera vez o esté renovando su póliza, hacemos que el proceso sea sencillo y libre de estrés.",
-      "DESC2": "También ofrecemos soporte multilingüe en inglés e hindi, creando un entorno inclusivo para todos los propietarios de remolques en Texas. Al hablar su idioma, generamos confianza y seguridad, ayudándole a tomar decisiones informadas sobre su seguro de remolque. Cada pregunta se responde con claridad, para que se sienta protegido y seguro en cada viaje."
-    }
-  },
-  "ASTATE_DIFFERENTIATORS": {
-    "HEADER": {
-      "TITLE": "Qué Hace Diferente A Seguros A-State"
-    },
-    "LIST": {
-      "LICENSED_BROKERS": {
-        "TITLE": "Corredores Licenciados En Texas",
-        "DESCRIPTION": "Nuestros corredores están completamente licenciados en Texas, garantizando orientación experta y soluciones de seguro de remolques confiables y cumpliendo con la normativa.",
-        "ICON": "fas fa-certificate"
-      },
-      "HISPANIC_LATINO_FRIENDLY": {
-        "TITLE": "Atención Amigable Para Hispanos Y Latinos",
-        "DESCRIPTION": "Nos enorgullece servir a las comunidades hispanas y latinas, ofreciendo apoyo culturalmente consciente, respetuoso y personalizado.",
-        "ICON": "fas fa-users"
-      },
-      "YEARS_SERVING": {
-        "TITLE": "Más De 20 Años Sirviendo A Texans",
-        "DESCRIPTION": "Con más de dos décadas de experiencia, hemos protegido a familias, negocios y remolques en Texas con asesoramiento de seguro confiable.",
-        "ICON": "fas fa-calendar-check"
-      },
-      "CUSTOM_COVERAGE": {
-        "TITLE": "Planes De Cobertura Personalizados",
-        "DESCRIPTION": "Opciones de cobertura a medida garantizan que su remolque esté protegido según sus necesidades, uso y presupuesto únicos.",
-        "ICON": "fas fa-shield-alt"
-      },
-      "ONLINE_LOCAL": {
-        "TITLE": "En Línea Y Local",
-        "DESCRIPTION": "Obtenga asesoramiento experto cómodamente en línea o visite nuestra oficina local en Texas para soporte personalizado cara a cara.",
-        "ICON": "fas fa-laptop-house"
-      },
-      "MULTILINGUAL_AGENTS": {
-        "TITLE": "Agentes Multilingües",
-        "DESCRIPTION": "Nuestros agentes profesionales hablan inglés, español e hindi, ayudándole a comprender la cobertura de manera clara y segura.",
-        "ICON": "fas fa-language"
+        "DESC2": "Nuestro equipo trabaja directamente con conductores con historiales no estándar, asegurando que no quede sin protección. Desde presentaciones de SR-22 hasta pólizas para quienes tienen infracciones pasadas, lo guiamos en cada paso. No tiene que arriesgarse a conducir sin seguro; nuestros expertos hacen que la cobertura sea accesible, confiable y asequible, sin importar su historial."
       }
-    }
-  },
-  "INSURANCE_STEPS": {
-    "HEADER": {
-      "TITLE": "Cúbrase En 4 Pasos Simples"
     },
-    "STEPS": {
-      "REACH_OUT": {
-        "TITLE": "Paso 1 - Contáctenos",
+    "LANGUAGE_SUPPORT": {
+      "HEADER": {
+        "TITLE": "Hablamos Español / We Speak Your Language"
+      },
+      "CONTENT": {
+        "DESC1": "En Seguros A-State, reconocemos que el idioma nunca debe ser una barrera para entender sus opciones de seguro para remolques. Nuestros agentes de habla hispana ofrecen orientación clara y apoyo personalizado, asegurando que comprenda completamente los detalles de la cobertura, beneficios y exclusiones. Ya sea que sea comprador por primera vez o esté renovando su póliza, hacemos que el proceso sea sencillo y libre de estrés.",
+        "DESC2": "También ofrecemos soporte multilingüe en inglés e hindi, creando un entorno inclusivo para todos los propietarios de remolques en Texas. Al hablar su idioma, generamos confianza y seguridad, ayudándole a tomar decisiones informadas sobre su seguro de remolque. Cada pregunta se responde con claridad, para que se sienta protegido y seguro en cada viaje."
+      }
+    },
+    "ASTATE_DIFFERENTIATORS": {
+      "HEADER": {
+        "TITLE": "Qué Hace Diferente A Seguros A-State"
+      },
+      "LIST": {
+        "LICENSED_BROKERS": {
+          "TITLE": "Corredores Licenciados En Texas",
+          "DESCRIPTION": "Nuestros corredores están completamente licenciados en Texas, garantizando orientación experta y soluciones de seguro de remolques confiables y cumpliendo con la normativa.",
+          "ICON": "fas fa-certificate"
+        },
+        "HISPANIC_LATINO_FRIENDLY": {
+          "TITLE": "Atención Amigable Para Hispanos Y Latinos",
+          "DESCRIPTION": "Nos enorgullece servir a las comunidades hispanas y latinas, ofreciendo apoyo culturalmente consciente, respetuoso y personalizado.",
+          "ICON": "fas fa-users"
+        },
+        "YEARS_SERVING": {
+          "TITLE": "Más De 20 Años Sirviendo A Texans",
+          "DESCRIPTION": "Con más de dos décadas de experiencia, hemos protegido a familias, negocios y remolques en Texas con asesoramiento de seguro confiable.",
+          "ICON": "fas fa-calendar-check"
+        },
+        "CUSTOM_COVERAGE": {
+          "TITLE": "Planes De Cobertura Personalizados",
+          "DESCRIPTION": "Opciones de cobertura a medida garantizan que su remolque esté protegido según sus necesidades, uso y presupuesto únicos.",
+          "ICON": "fas fa-shield-alt"
+        },
+        "ONLINE_LOCAL": {
+          "TITLE": "En Línea Y Local",
+          "DESCRIPTION": "Obtenga asesoramiento experto cómodamente en línea o visite nuestra oficina local en Texas para soporte personalizado cara a cara.",
+          "ICON": "fas fa-laptop-house"
+        },
+        "MULTILINGUAL_AGENTS": {
+          "TITLE": "Agentes Multilingües",
+          "DESCRIPTION": "Nuestros agentes profesionales hablan inglés, español e hindi, ayudándole a comprender la cobertura de manera clara y segura.",
+          "ICON": "fas fa-language"
+        }
+      }
+    },
+    "INSURANCE_STEPS": {
+      "HEADER": {
+        "TITLE": "Cúbrase En 4 Pasos Simples"
+      },
+      "STEPS": {
+        "REACH_OUT": {
+          "TITLE": "Paso 1 - Contáctenos",
           "DESCRIPTION": "<a class='inline-link' href='/es/contacto'>Comuníquese con nosotros</a> por teléfono o en línea para comenzar su proceso de seguro de remolque de manera fácil y clara.",
-        "ICON": "fas fa-phone-alt"
-      },
-      "GET_ADVICE": {
-        "TITLE": "Paso 2 - Reciba Asesoramiento",
-        "DESCRIPTION": "Nuestros agentes revisan sus necesidades y explican las opciones de cobertura para que pueda tomar decisiones informadas.",
-        "ICON": "fas fa-comments"
-      },
-      "PICK_PLAN": {
-        "TITLE": "Paso 3 - Elija Su Plan",
-        "DESCRIPTION": "Seleccione el plan de seguro para remolque que se ajuste a su presupuesto, uso y requisitos de protección.",
-        "ICON": "fas fa-check-circle"
-      },
-      "WE_GOT_YOU": {
-        "TITLE": "Paso 4 - Nosotros Lo Cubrimos",
-        "DESCRIPTION": "Activamos su cobertura y brindamos soporte continuo para mantener su remolque completamente protegido.",
-        "ICON": "fas fa-shield-alt"
+          "ICON": "fas fa-phone-alt"
+        },
+        "GET_ADVICE": {
+          "TITLE": "Paso 2 - Reciba Asesoramiento",
+          "DESCRIPTION": "Nuestros agentes revisan sus necesidades y explican las opciones de cobertura para que pueda tomar decisiones informadas.",
+          "ICON": "fas fa-comments"
+        },
+        "PICK_PLAN": {
+          "TITLE": "Paso 3 - Elija Su Plan",
+          "DESCRIPTION": "Seleccione el plan de seguro para remolque que se ajuste a su presupuesto, uso y requisitos de protección.",
+          "ICON": "fas fa-check-circle"
+        },
+        "WE_GOT_YOU": {
+          "TITLE": "Paso 4 - Nosotros Lo Cubrimos",
+          "DESCRIPTION": "Activamos su cobertura y brindamos soporte continuo para mantener su remolque completamente protegido.",
+          "ICON": "fas fa-shield-alt"
+        }
       }
-    }
-  },
-  "SWITCH_STEPS": {
-    "HEADER": {
-      "TITLE": "Cómo Cambiar Su Fianza A Seguros A-State"
     },
-    "STEPS": {
-      "STEP_1": {
-        "TITLE": "Paso 1: Obtenga Su Cotización Comparativa Gratis",
-        "DESCRIPTION": "Comuníquese con Seguros A-State por teléfono, correo electrónico o mediante nuestro formulario en línea. Nuestro equipo escucha atentamente sus necesidades de seguro de remolque y le brinda orientación inicial. Hacemos que sea fácil comenzar su proceso de cobertura, asegurándonos de que comprenda el procedimiento y se sienta seguro al dar el primer paso.",
-        "ICON": "fas fa-file-invoice-dollar"
+    "SWITCH_STEPS": {
+      "HEADER": {
+        "TITLE": "Cómo Cambiar Su Fianza A Seguros A-State"
       },
-      "STEP_2": {
-        "TITLE": "Paso 2: Elija Su Plan Y Actívelo",
-        "DESCRIPTION": "Nuestros agentes analizan el tipo de remolque, su uso y los requisitos de cobertura. Explican cada opción de manera clara, destacando beneficios, límites y costos. Recibirá recomendaciones personalizadas que le ayudarán a tomar decisiones informadas sobre su seguro de remolque. Nuestro objetivo es que se sienta seguro al seleccionar la cobertura adecuada para sus necesidades.",
-        "ICON": "fas fa-file-signature"
-      },
-      "STEP_3": {
-        "TITLE": "Paso 3: Cancele Su Póliza Antigua (¡Le Ayudamos!)",
-        "DESCRIPTION": "Después de revisar sus opciones, elija el plan que mejor se ajuste a su presupuesto, estilo de vida y necesidades de protección del remolque. Nuestro equipo ayuda a comparar niveles de cobertura, deducibles y endosos especiales. Nos aseguramos de que comprenda lo que está incluido para que su remolque y carga estén completamente protegidos, sin sorpresas posteriores.",
-        "ICON": "fas fa-times-circle"
+      "STEPS": {
+        "STEP_1": {
+          "TITLE": "Paso 1: Obtenga Su Cotización Comparativa Gratis",
+          "DESCRIPTION": "Comuníquese con Seguros A-State por teléfono, correo electrónico o mediante nuestro formulario en línea. Nuestro equipo escucha atentamente sus necesidades de seguro de remolque y le brinda orientación inicial. Hacemos que sea fácil comenzar su proceso de cobertura, asegurándonos de que comprenda el procedimiento y se sienta seguro al dar el primer paso.",
+          "ICON": "fas fa-file-invoice-dollar"
+        },
+        "STEP_2": {
+          "TITLE": "Paso 2: Elija Su Plan Y Actívelo",
+          "DESCRIPTION": "Nuestros agentes analizan el tipo de remolque, su uso y los requisitos de cobertura. Explican cada opción de manera clara, destacando beneficios, límites y costos. Recibirá recomendaciones personalizadas que le ayudarán a tomar decisiones informadas sobre su seguro de remolque. Nuestro objetivo es que se sienta seguro al seleccionar la cobertura adecuada para sus necesidades.",
+          "ICON": "fas fa-file-signature"
+        },
+        "STEP_3": {
+          "TITLE": "Paso 3: Cancele Su Póliza Antigua (¡Le Ayudamos!)",
+          "DESCRIPTION": "Después de revisar sus opciones, elija el plan que mejor se ajuste a su presupuesto, estilo de vida y necesidades de protección del remolque. Nuestro equipo ayuda a comparar niveles de cobertura, deducibles y endosos especiales. Nos aseguramos de que comprenda lo que está incluido para que su remolque y carga estén completamente protegidos, sin sorpresas posteriores.",
+          "ICON": "fas fa-times-circle"
+        }
       }
-    }
-  },
-  "FREE_QUOTE": {
-    "HEADER": "Obtenga Una Cotización Gratis de Seguro para Remolques en Texas",
+    },
+    "FREE_QUOTE": {
+      "HEADER": "Obtenga Una Cotización Gratis de Seguro para Remolques en Texas",
       "DESCRIPTION": "Proteger su remolque en Texas es fácil con Seguros A-State. Obtenga hoy una <a href='/es/obtener-una-cotizacion' class='inline-link'>cotización gratuita y sin compromiso</a> proporcionando algunos detalles sobre su remolque, uso y necesidades de cobertura. Nuestros agentes licenciados comparan las principales aseguradoras para encontrar el mejor plan que se ajuste a su presupuesto. Ya sea un remolque de utilidad, para caballos o refrigerado, personalizamos la cobertura para mantener su remolque y carga seguros en la carretera, en almacenamiento y durante el transporte, brindándole tranquilidad y confianza total."
-  }
+    }
   },
   "RIDESHARE_INSURANCE": {
     "BANNER": {

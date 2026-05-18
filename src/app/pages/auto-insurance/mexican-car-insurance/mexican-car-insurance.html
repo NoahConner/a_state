@@ -136,6 +136,33 @@
         </div>
     </section>
 
+        <section class="factors-impact-section bg-white">
+        <div class="container px-4">
+            <h2 class="section-title" [innerHTML]="'MEXICAN_INSURANCE.NOT_COVERED.HEADER.TITLE' | translateHtml | async">
+            </h2>
+            <p class="intro-text" [innerHTML]="'MEXICAN_INSURANCE.NOT_COVERED.HEADER.DESC' | translateHtml | async"></p>
+
+            <div class="row mt-5">
+                @for (key of notCoveredKeys; track key) {
+                <div class="col-lg-6">
+                    <div class="factor-item">
+                        <div class="icon-wrapper">
+                            <i [class]="'MEXICAN_INSURANCE.NOT_COVERED.LIST.' + key + '.ICON' | translate"></i>
+                        </div>
+                        <div class="factor-content">
+                            <h6><span
+                                    [innerHTML]="('MEXICAN_INSURANCE.NOT_COVERED.LIST.' + key + '.TITLE') | translateHtml | async"></span>
+                            </h6>
+                            <p><span
+                                    [innerHTML]="('MEXICAN_INSURANCE.NOT_COVERED.LIST.' + key + '.DESC') | translateHtml | async"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
     <section class="cost-section py-5">
         <div class="container">
             <div class="row">
@@ -231,7 +258,7 @@
 
                 <!-- Footer Info -->
                 <div class="d-flex justify-content-between mt-4 rates-footer-info">
-                    <p><span [innerHTML]="'MEXICAN_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span>: <a href="#"> AutoInsurance.com</a></p>
+                    <p><span [innerHTML]="'MEXICAN_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span>: <a href="https://www.autoinsurance.com/articles/car-insurance-cost-mexico/" rel="nofollow"> AutoInsurance.com</a></p>
                     <p class="last-updated" [innerHTML]="'MEXICAN_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
                 </div>
                 <div class="disclaimer mt-2">
@@ -293,8 +320,6 @@
             <h2 class="section-title" [innerHTML]="'MEXICAN_INSURANCE.AGENT_COMPARISON.HEADER.TITLE' | translateHtml | async"></h2>
             <div class="intro-text">
                 <p [innerHTML]="'MEXICAN_INSURANCE.AGENT_COMPARISON.HEADER.DESC' | translateHtml | async"></p>
-                <p [innerHTML]="'MEXICAN_INSURANCE.AGENT_COMPARISON.HEADER.DESC2' | translateHtml | async"></p>
-                <p [innerHTML]="'MEXICAN_INSURANCE.AGENT_COMPARISON.HEADER.DESC3' | translateHtml | async"></p>
             </div>
 
             <!-- Table Container -->
@@ -367,7 +392,6 @@
             <div class="intro-text">
                 <p [innerHTML]="'MEXICAN_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC1' | translateHtml | async"></p>
                 <p [innerHTML]="'MEXICAN_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC2' | translateHtml | async"></p>
-                <p [innerHTML]="'MEXICAN_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC3' | translateHtml | async"></p>
             </div>
         </div>
     </section>
@@ -378,7 +402,6 @@
             <div class="intro-text">
                 <p [innerHTML]="'MEXICAN_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC1' | translateHtml | async"></p>
                 <p [innerHTML]="'MEXICAN_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC2' | translateHtml | async"></p>
-                <p [innerHTML]="'MEXICAN_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC3' | translateHtml | async"></p>
 
             </div>
         </div>
