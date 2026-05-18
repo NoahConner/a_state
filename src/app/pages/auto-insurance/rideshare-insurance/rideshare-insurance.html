@@ -4,8 +4,11 @@
             <div class="topSub">
                 <div class="topSub2">
                     <div class="h1">
-                        <span [innerHTML]="'RIDESHARE_INSURANCE.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
-                        <span [innerHTML]="'RIDESHARE_INSURANCE.BANNER.TITLE_LINE2' | translateHtml | async"></span> <span class="heading-span" [innerHTML]="'RIDESHARE_INSURANCE.BANNER.TITLE_LINE3' | translateHtml | async"></span>
+                        <span [innerHTML]="'RIDESHARE_INSURANCE.BANNER.TITLE_LINE1' | translateHtml | async"></span>
+                        <br />
+                        <span [innerHTML]="'RIDESHARE_INSURANCE.BANNER.TITLE_LINE2' | translateHtml | async"></span>
+                        <span class="heading-span"
+                            [innerHTML]="'RIDESHARE_INSURANCE.BANNER.TITLE_LINE3' | translateHtml | async"></span>
                     </div>
                     <!-- 
           <div class="selectable">
@@ -52,7 +55,8 @@
     </div>
 
     <div class="container my-5">
-        <h2 class="section-title mb-4" [innerHTML]="'RIDESHARE_INSURANCE.WHY_DO_YOU_NEED.TITLE' | translateHtml | async"></h2>
+        <h2 class="section-title mb-4"
+            [innerHTML]="'RIDESHARE_INSURANCE.WHY_DO_YOU_NEED.TITLE' | translateHtml | async"></h2>
         <p class="section-description mb-4">
             <span [innerHTML]="'RIDESHARE_INSURANCE.WHY_DO_YOU_NEED.DESC1' | translateHtml | async"></span>
             <br>
@@ -60,7 +64,8 @@
             <span [innerHTML]="'RIDESHARE_INSURANCE.WHY_DO_YOU_NEED.DESC2' | translateHtml | async"></span>
         </p>
 
-        <p class="section-sub-title mb-4" [innerHTML]="'RIDESHARE_INSURANCE.WHY_DO_YOU_NEED.SUB_TITLE' | translateHtml | async"></p>
+        <p class="section-sub-title mb-4"
+            [innerHTML]="'RIDESHARE_INSURANCE.WHY_DO_YOU_NEED.SUB_TITLE' | translateHtml | async"></p>
 
         <div class="insurance-list">
             <div class="insurance-item"
@@ -95,13 +100,34 @@
         </div>
     </section>
 
+    <section class="insurance-laws-section py-5">
+        <div class="container-max-800">
+
+            <h1 class="main-title" [innerHTML]="'RIDESHARE_INSURANCE.COVERAGE_GAP.TITLE' | translateHtml | async"></h1>
+
+            <p class="intro-text">
+                <span [innerHTML]="'RIDESHARE_INSURANCE.COVERAGE_GAP.DESC1' | translateHtml | async"></span>
+
+                <br>
+                <br>
+                <span [innerHTML]="'RIDESHARE_INSURANCE.COVERAGE_GAP.DESC2' | translateHtml | async"></span>
+
+            </p>
+
+        </div>
+    </section>
+
+
+
 
     <section class="insurance-section py-5 bg-white">
         <div class="container">
             <!-- Header -->
             <div class="header-content mb-5">
-                <h6 class="text-danger fw-bold" [innerHTML]="'RIDESHARE_INSURANCE.COVERAGES.HEADER.TITLE' | translateHtml | async"></h6>
-                <p class="small text-muted" [innerHTML]="'RIDESHARE_INSURANCE.COVERAGES.HEADER.DESC' | translateHtml | async"></p>
+                <h6 class="text-danger fw-bold"
+                    [innerHTML]="'RIDESHARE_INSURANCE.COVERAGES.HEADER.TITLE' | translateHtml | async"></h6>
+                <p class="small text-muted"
+                    [innerHTML]="'RIDESHARE_INSURANCE.COVERAGES.HEADER.DESC' | translateHtml | async"></p>
             </div>
 
             <div class="row g-4 mb-5">
@@ -121,12 +147,14 @@
     </section>
 
 
-     <section class="insurance-section py-5 ">
+    <section class="insurance-section py-5 ">
         <div class="container">
             <!-- Header -->
             <div class="header-content mb-5">
-                <h6 class="text-danger fw-bold" [innerHTML]="'RIDESHARE_INSURANCE.DRIVING_PERIODS.TITLE' | translateHtml | async"></h6>
-                <p class="small text-muted" [innerHTML]="'RIDESHARE_INSURANCE.DRIVING_PERIODS.INTRO' | translateHtml | async"></p>
+                <h6 class="text-danger fw-bold"
+                    [innerHTML]="'RIDESHARE_INSURANCE.DRIVING_PERIODS.TITLE' | translateHtml | async"></h6>
+                <p class="small text-muted"
+                    [innerHTML]="'RIDESHARE_INSURANCE.DRIVING_PERIODS.INTRO' | translateHtml | async"></p>
             </div>
 
             <div class="row g-4 mb-5">
@@ -153,7 +181,8 @@
             <div class="row">
                 <div class="col-lg-10">
                     <!-- Title -->
-                    <h4 class="cost-title mb-4" [innerHTML]="'RIDESHARE_INSURANCE.COST.TITLE' | translateHtml | async"></h4>
+                    <h4 class="cost-title mb-4" [innerHTML]="'RIDESHARE_INSURANCE.COST.TITLE' | translateHtml | async">
+                    </h4>
 
                     <!-- Description Content -->
                     <div class="cost-description">
@@ -172,8 +201,10 @@
 
     <section class="factors-impact-section">
         <div class="container">
-            <h2 class="section-title" [innerHTML]="'RIDESHARE_INSURANCE.FACTORS_IMPACT.HEADER.TITLE' | translateHtml | async"></h2>
-            <p class="intro-text" [innerHTML]="'RIDESHARE_INSURANCE.FACTORS_IMPACT.HEADER.DESC' | translateHtml | async"></p>
+            <h2 class="section-title"
+                [innerHTML]="'RIDESHARE_INSURANCE.FACTORS_IMPACT.HEADER.TITLE' | translateHtml | async"></h2>
+            <p class="intro-text"
+                [innerHTML]="'RIDESHARE_INSURANCE.FACTORS_IMPACT.HEADER.DESC' | translateHtml | async"></p>
 
             <div class="row">
                 @for (key of impactFactorsKeys; track key) {
@@ -183,8 +214,12 @@
                             <i [class]="'RIDESHARE_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.ICON' | translate"></i>
                         </div>
                         <div class="factor-content">
-                            <h6><span [innerHTML]="('RIDESHARE_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translateHtml | async"></span></h6>
-                            <p><span [innerHTML]="('RIDESHARE_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
+                            <h6><span
+                                    [innerHTML]="('RIDESHARE_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translateHtml | async"></span>
+                            </h6>
+                            <p><span
+                                    [innerHTML]="('RIDESHARE_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.DESC') | translateHtml | async"></span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -195,8 +230,10 @@
 
     <section class="factors-impact-section bg-white">
         <div class="container px-4">
-            <h2 class="section-title" [innerHTML]="'RIDESHARE_INSURANCE.DISCOUNT_FACTORS.HEADER.TITLE' | translateHtml | async"></h2>
-            <p class="intro-text" [innerHTML]="'RIDESHARE_INSURANCE.DISCOUNT_FACTORS.HEADER.DESC' | translateHtml | async"></p>
+            <h2 class="section-title"
+                [innerHTML]="'RIDESHARE_INSURANCE.DISCOUNT_FACTORS.HEADER.TITLE' | translateHtml | async"></h2>
+            <p class="intro-text"
+                [innerHTML]="'RIDESHARE_INSURANCE.DISCOUNT_FACTORS.HEADER.DESC' | translateHtml | async"></p>
 
             <div class="row mt-5">
                 @for (key of discountKeys; track key) {
@@ -206,8 +243,12 @@
                             <i [class]="'RIDESHARE_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.ICON' | translate"></i>
                         </div>
                         <div class="factor-content">
-                            <h6><span [innerHTML]="('RIDESHARE_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translateHtml | async"></span></h6>
-                            <p><span [innerHTML]="('RIDESHARE_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
+                            <h6><span
+                                    [innerHTML]="('RIDESHARE_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translateHtml | async"></span>
+                            </h6>
+                            <p><span
+                                    [innerHTML]="('RIDESHARE_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translateHtml | async"></span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -218,7 +259,8 @@
 
     <section class="rates-section py-5">
         <div class="container container-max-1100 px-4">
-            <h2 class="section-title" [innerHTML]="'RIDESHARE_INSURANCE.AGENT_COMPARISON.HEADER.TITLE' | translateHtml | async"></h2>
+            <h2 class="section-title"
+                [innerHTML]="'RIDESHARE_INSURANCE.AGENT_COMPARISON.HEADER.TITLE' | translateHtml | async"></h2>
             <div class="intro-text">
                 <p [innerHTML]="'RIDESHARE_INSURANCE.AGENT_COMPARISON.HEADER.DESC' | translateHtml | async"></p>
                 <p [innerHTML]="'RIDESHARE_INSURANCE.AGENT_COMPARISON.HEADER.DESC2' | translateHtml | async"></p>
@@ -229,13 +271,19 @@
             <div class="rates-table-card p-4 mt-5">
                 <div class="row g-2 text-center text-white fw-bold mb-2">
                     <div class="col-4">
-                        <div class="header-pill bg-danger py-2" [innerHTML]="'RIDESHARE_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.FEATURE' | translateHtml | async"></div>
+                        <div class="header-pill bg-danger py-2"
+                            [innerHTML]="'RIDESHARE_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.FEATURE' | translateHtml | async">
+                        </div>
                     </div>
                     <div class="col-4">
-                        <div class="header-pill bg-danger py-2" [innerHTML]="'RIDESHARE_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.INDEPENDENT' | translateHtml | async"></div>
+                        <div class="header-pill bg-danger py-2"
+                            [innerHTML]="'RIDESHARE_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.INDEPENDENT' | translateHtml | async">
+                        </div>
                     </div>
                     <div class="col-4">
-                        <div class="header-pill bg-danger py-2" [innerHTML]="'RIDESHARE_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.CAPTIVE' | translateHtml | async"></div>
+                        <div class="header-pill bg-danger py-2"
+                            [innerHTML]="'RIDESHARE_INSURANCE.AGENT_COMPARISON.TABLE.COLUMNS.CAPTIVE' | translateHtml | async">
+                        </div>
                     </div>
                 </div>
 
@@ -246,19 +294,22 @@
                         <div class="col-4">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                <span [innerHTML]="('RIDESHARE_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translateHtml | async"></span>
+                                <span
+                                    [innerHTML]="('RIDESHARE_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.FEATURE') | translateHtml | async"></span>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                <span [innerHTML]="('RIDESHARE_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translateHtml | async"></span>
+                                <span
+                                    [innerHTML]="('RIDESHARE_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.INDEPENDENT') | translateHtml | async"></span>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
                                 [class.data-pill-color-1]="i % 2 !== 0">
-                                <span [innerHTML]="('RIDESHARE_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translateHtml | async"></span>
+                                <span
+                                    [innerHTML]="('RIDESHARE_INSURANCE.AGENT_COMPARISON.TABLE.LIST.' + item + '.CAPTIVE') | translateHtml | async"></span>
                             </div>
                         </div>
                     </div>
@@ -272,7 +323,8 @@
 
     <section class="high-risk-section">
         <div class="container px-4">
-            <h2 class="section-title" [innerHTML]="'RIDESHARE_INSURANCE.HIGH_RISK_DRIVER.HEADER.TITLE' | translateHtml | async"></h2>
+            <h2 class="section-title"
+                [innerHTML]="'RIDESHARE_INSURANCE.HIGH_RISK_DRIVER.HEADER.TITLE' | translateHtml | async"></h2>
             <div class="intro-text">
                 <p [innerHTML]="'RIDESHARE_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC1' | translateHtml | async"></p>
                 <p [innerHTML]="'RIDESHARE_INSURANCE.HIGH_RISK_DRIVER.CONTENT.DESC2' | translateHtml | async"></p>
@@ -282,7 +334,8 @@
 
     <section class="language-section">
         <div class="container px-4">
-            <h2 class="section-title" [innerHTML]="'RIDESHARE_INSURANCE.LANGUAGE_SUPPORT.HEADER.TITLE' | translateHtml | async"></h2>
+            <h2 class="section-title"
+                [innerHTML]="'RIDESHARE_INSURANCE.LANGUAGE_SUPPORT.HEADER.TITLE' | translateHtml | async"></h2>
             <div class="intro-text">
                 <p [innerHTML]="'RIDESHARE_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC1' | translateHtml | async"></p>
                 <p [innerHTML]="'RIDESHARE_INSURANCE.LANGUAGE_SUPPORT.CONTENT.DESC2' | translateHtml | async"></p>
@@ -296,7 +349,9 @@
         <div class="container py-5 mt-5">
             <div class="row mb-5 text-center">
                 <div class="col-6">
-                    <h3 class="heading" [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.HEADER.TITLE' | translateHtml | async"></h3>
+                    <h3 class="heading"
+                        [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.HEADER.TITLE' | translateHtml | async">
+                    </h3>
                 </div>
             </div>
             <div class="gap-m">
@@ -308,8 +363,12 @@
                                 <img src="../assets/images/carbon_license.png" alt="Car Icon" />
                             </div>
                             <div class="card-content">
-                                <h5 class="card-title" [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.TITLE' | translateHtml | async"></h5>
-                                <p class="card-text" [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.DESCRIPTION' | translateHtml | async"></p>
+                                <h5 class="card-title"
+                                    [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.TITLE' | translateHtml | async">
+                                </h5>
+                                <p class="card-text"
+                                    [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.DESCRIPTION' | translateHtml | async">
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -320,8 +379,12 @@
                                 <img src="../assets/images/Heart.png" alt="Car Icon" />
                             </div>
                             <div class="card-content">
-                                <h5 class="card-title" [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.TITLE' | translateHtml | async"></h5>
-                                <p class="card-text" [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.DESCRIPTION' | translateHtml | async"></p>
+                                <h5 class="card-title"
+                                    [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.TITLE' | translateHtml | async">
+                                </h5>
+                                <p class="card-text"
+                                    [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.DESCRIPTION' | translateHtml | async">
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -334,8 +397,12 @@
                                 <img src="../assets/images/calendar.png" alt="Car Icon" />
                             </div>
                             <div class="card-content">
-                                <h5 class="card-title" [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.TITLE' | translateHtml | async"></h5>
-                                <p class="card-text" [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.DESCRIPTION' | translateHtml | async"></p>
+                                <h5 class="card-title"
+                                    [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.TITLE' | translateHtml | async">
+                                </h5>
+                                <p class="card-text"
+                                    [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.DESCRIPTION' | translateHtml | async">
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -346,8 +413,12 @@
                                 <img src="../assets/images/price.png" alt="Car Icon" />
                             </div>
                             <div class="card-content">
-                                <h5 class="card-title" [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.TITLE' | translateHtml | async"></h5>
-                                <p class="card-text" [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.DESCRIPTION' | translateHtml | async"></p>
+                                <h5 class="card-title"
+                                    [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.TITLE' | translateHtml | async">
+                                </h5>
+                                <p class="card-text"
+                                    [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.DESCRIPTION' | translateHtml | async">
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -360,8 +431,12 @@
                                 <img src="../assets/images/wifi.png" alt="Car Icon" />
                             </div>
                             <div class="card-content">
-                                <h5 class="card-title" [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translateHtml | async"></h5>
-                                <p class="card-text" [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' | translateHtml | async"></p>
+                                <h5 class="card-title"
+                                    [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translateHtml | async">
+                                </h5>
+                                <p class="card-text"
+                                    [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' | translateHtml | async">
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -372,8 +447,12 @@
                                 <img src="../assets/images/agents.png" alt="Car Icon" />
                             </div>
                             <div class="card-content">
-                                <h5 class="card-title" [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.TITLE' | translateHtml | async"></h5>
-                                <p class="card-text" [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.DESCRIPTION' | translateHtml | async"></p>
+                                <h5 class="card-title"
+                                    [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.TITLE' | translateHtml | async">
+                                </h5>
+                                <p class="card-text"
+                                    [innerHTML]="'RIDESHARE_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.DESCRIPTION' | translateHtml | async">
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -396,38 +475,55 @@
                 </div>
 
                 <div class="col-md-6 ps-md-5">
-                    <h2 class="section-title mb-5" [innerHTML]="'RIDESHARE_INSURANCE.INSURANCE_STEPS.HEADER.TITLE' | translateHtml | async"></h2>
+                    <h2 class="section-title mb-5"
+                        [innerHTML]="'RIDESHARE_INSURANCE.INSURANCE_STEPS.HEADER.TITLE' | translateHtml | async"></h2>
 
                     <div class="timeline">
                         <div class="timeline-item">
                             <div class="dot"></div>
                             <div class="content">
-                                <h3 [innerHTML]="'RIDESHARE_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.TITLE' | translateHtml | async"></h3>
-                                <p [innerHTML]="'RIDESHARE_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translateHtml | async"></p>
+                                <h3
+                                    [innerHTML]="'RIDESHARE_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.TITLE' | translateHtml | async">
+                                </h3>
+                                <p
+                                    [innerHTML]="'RIDESHARE_INSURANCE.INSURANCE_STEPS.STEPS.REACH_OUT.DESCRIPTION' | translateHtml | async">
+                                </p>
                             </div>
                         </div>
 
                         <div class="timeline-item">
                             <div class="dot"></div>
                             <div class="content">
-                                <h3 [innerHTML]="'RIDESHARE_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.TITLE' | translateHtml | async"></h3>
-                                <p [innerHTML]="'RIDESHARE_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.DESCRIPTION' | translateHtml | async"></p>
+                                <h3
+                                    [innerHTML]="'RIDESHARE_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.TITLE' | translateHtml | async">
+                                </h3>
+                                <p
+                                    [innerHTML]="'RIDESHARE_INSURANCE.INSURANCE_STEPS.STEPS.GET_ADVICE.DESCRIPTION' | translateHtml | async">
+                                </p>
                             </div>
                         </div>
 
                         <div class="timeline-item">
                             <div class="dot"></div>
                             <div class="content">
-                                <h3 [innerHTML]="'RIDESHARE_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.TITLE' | translateHtml | async"></h3>
-                                <p [innerHTML]="'RIDESHARE_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.DESCRIPTION' | translateHtml | async"></p>
+                                <h3
+                                    [innerHTML]="'RIDESHARE_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.TITLE' | translateHtml | async">
+                                </h3>
+                                <p
+                                    [innerHTML]="'RIDESHARE_INSURANCE.INSURANCE_STEPS.STEPS.PICK_PLAN.DESCRIPTION' | translateHtml | async">
+                                </p>
                             </div>
                         </div>
 
                         <div class="timeline-item">
                             <div class="dot"></div>
                             <div class="content">
-                                <h3 [innerHTML]="'RIDESHARE_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.TITLE' | translateHtml | async"></h3>
-                                <p [innerHTML]="'RIDESHARE_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.DESCRIPTION' | translateHtml | async"></p>
+                                <h3
+                                    [innerHTML]="'RIDESHARE_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.TITLE' | translateHtml | async">
+                                </h3>
+                                <p
+                                    [innerHTML]="'RIDESHARE_INSURANCE.INSURANCE_STEPS.STEPS.WE_GOT_YOU.DESCRIPTION' | translateHtml | async">
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -439,14 +535,19 @@
 
     <section class="switch-steps-section">
         <div class="container px-4">
-            <h2 class="section-title" [innerHTML]="'RIDESHARE_INSURANCE.SWITCH_STEPS.HEADER.TITLE' | translateHtml | async"></h2>
+            <h2 class="section-title"
+                [innerHTML]="'RIDESHARE_INSURANCE.SWITCH_STEPS.HEADER.TITLE' | translateHtml | async"></h2>
 
             <div class="switch-steps-grid">
                 @for (step of switchSteps; track step) {
                 <div class="switch-card-wrapper">
                     <div class="switch-card">
-                        <h6><span [innerHTML]="('RIDESHARE_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE') | translateHtml | async"></span></h6>
-                        <p><span [innerHTML]="('RIDESHARE_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION') | translateHtml | async"></span></p>
+                        <h6><span
+                                [innerHTML]="('RIDESHARE_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE') | translateHtml | async"></span>
+                        </h6>
+                        <p><span
+                                [innerHTML]="('RIDESHARE_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION') | translateHtml | async"></span>
+                        </p>
                     </div>
                 </div>
                 }
@@ -459,7 +560,8 @@
             <div class="topSub">
                 <div class="topSub2">
                     <div class="h1" [innerHTML]="'RIDESHARE_INSURANCE.FREE_QUOTE.HEADER' | translateHtml | async"></div>
-                    <p class="para" [innerHTML]="'RIDESHARE_INSURANCE.FREE_QUOTE.DESCRIPTION' | translateHtml | async"></p>
+                    <p class="para" [innerHTML]="'RIDESHARE_INSURANCE.FREE_QUOTE.DESCRIPTION' | translateHtml | async">
+                    </p>
                     <div class="selectable mt-4">
                         @for (item of chips.slice(0, 3); track item.name) {
                         <div class="chip" *ngIf="item.name">
