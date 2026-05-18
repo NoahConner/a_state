@@ -267,8 +267,7 @@
                     <div class="row g-2 text-center mb-2 align-items-center">
                         <div class="col-6">
                             <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0"
-                                [class.data-pill-color-1]="i % 2 !== 0">
-                                {{ rate.company }}
+                                [class.data-pill-color-1]="i % 2 !== 0" [innerHtml]="rate.company">
                             </div>
                         </div>
                         <div class="col-3">
@@ -289,7 +288,7 @@
 
                 <!-- Footer Info -->
                 <div class="d-flex justify-content-between mt-4 rates-footer-info">
-                    <p><span [innerHTML]="'SR22_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#">Insurify</a></p>
+                    <p><span [innerHTML]="'SR22_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="https://insurify.com/car-insurance/texas/sr-22-car-insurance/#cheapest-companies" target="_blank" class="inline-link" rel="nofollow">Insurify</a></p>
                     <p class="last-updated" [innerHTML]="'SR22_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
                 </div>
                 <div class="disclaimer mt-2">
@@ -347,7 +346,7 @@
 
                 <!-- Footer Info -->
                 <div class="d-flex justify-content-between mt-4 rates-footer-info">
-                    <p><span [innerHTML]="'SR22_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#">MoneyGeek</a></p>
+                    <p><span [innerHTML]="'SR22_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="https://www.moneygeek.com/insurance/auto/sr22-car-insurance-texas/#cheapest-overall" target="_blank" rel="nofollow" class="inline-link">MoneyGeek</a></p>
                     <p class="last-updated" [innerHTML]="'SR22_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
                 </div>
                 <div class="disclaimer mt-2">
