@@ -107,7 +107,7 @@ export class ProfessionalLiabilityInsurance {
   
  companyRates = [
   { 
-    company: "<a href='https://www.ergonext.com/' rel='nofollow' target='_blank'>ERGO NEXT</a>", 
+    company: "<a href='https://www.nextinsurance.com/' rel='nofollow' target='_blank'>ERGO NEXT</a>", 
     rate: "$73" 
   },
   { 
@@ -115,7 +115,7 @@ export class ProfessionalLiabilityInsurance {
     rate: "$72" 
   },
   { 
-    company: "<a href='https://www.simplybusiness.com/' rel='nofollow' target='_blank'>Simply Business</a>", 
+    company: "<a href='https://www.simplybusiness.com/business-insurance/' rel='nofollow' target='_blank'>Simply Business</a>", 
     rate: "$77" 
   },
   { 
