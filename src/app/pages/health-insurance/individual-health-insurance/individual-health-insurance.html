@@ -159,7 +159,7 @@
           <div class="insurance-card">
             <div class="card-icon"><i [class]="item.ICON"></i></div>
             <div class="card-body">
-              <h6>{{ item.TITLE }}</h6>
+              <h6 [innerHtml]="item.TITLE"></h6>
               <p>{{ item.DESC }}</p>
             </div>
           </div>
