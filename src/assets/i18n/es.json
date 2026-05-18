@@ -10414,13 +10414,13 @@
     },
     "LAWS": {
       "TITLE": "¿Es Obligatorio el Seguro de Auto para México por Ley?",
-      "INTRO1": "Sí, el seguro de auto para México es obligatorio por ley para todos los conductores en México, ya sean residentes o visitantes de EE. UU. o Canadá. Si conduces en México, debes tener un seguro de auto mexicano vigente. Esto incluye tanto a residentes como a turistas que cruzan la frontera, independientemente de la duración de su estancia o el tipo de vehículo que conducen.",
+      "INTRO1": "Sí, el seguro de auto para México <a class='inline-link' href='https://www.mexperience.com/transport/auto-insurance/'>es obligatorio por ley para todos los conductores en México,</a> ya sean residentes o visitantes de EE. UU. o Canadá. Si conduces en México, debes tener un seguro de auto mexicano vigente. Esto incluye tanto a residentes como a turistas que cruzan la frontera, independientemente de la duración de su estancia o el tipo de vehículo que conducen.",
       "INTRO2": "No cumplir con esta ley puede tener consecuencias graves, que incluyen multas, el embargo de su vehículo o incluso tiempo en la cárcel en caso de un accidente. Las autoridades mexicanas no reconocen las pólizas de seguro de EE. UU. o Canadá, por lo que confiar en su cobertura existente es riesgoso y podría dejarlo expuesto a riesgos financieros y legales significativos.",
       "INTRO3": "Cada vez que conduces sin un seguro de auto mexicano, estás arriesgando tu seguridad, finanzas y situación legal. En caso de accidente, podrías ser personalmente responsable por daños y lesiones, lo que podría costarte miles de dólares. Si te detienen sin el seguro adecuado, no solo enfrentarás posibles multas, sino que también se te podría negar la cobertura por cualquier daño o reclamación. Por lo tanto, al planificar su viaje a México, asegúrese de tener el seguro adecuado. No es solo un requisito legal; es una parte crucial para protegerse y garantizar una experiencia segura y sin estrés mientras conduce en un país extranjero."
     },
     "COVER_IN_MEXICO": {
       "TITLE": "¿Me Cubre Mi Seguro de Auto de EE. UU. en México?",
-      "INTRO1": "En la mayoría de los casos, su seguro de auto de EE. UU. no lo cubre en México. Si bien algunas pólizas de EE. UU. pueden ofrecer cobertura limitada para conducir en México, generalmente se extiende solo a áreas cercanas a la frontera y a menudo viene con estrictas limitaciones en los tipos y montos de cobertura. Además, el nivel de protección puede no cumplir con los requisitos legales mexicanos. Para obtener cobertura completa y tranquilidad, es esencial comprar un seguro de auto mexicano que cumpla con las leyes locales.",
+      "INTRO1": "En la mayoría de los casos, su seguro de auto de EE. UU. <a class='inline-link' href='https://www.bajabound.com/info/uscoverage.php' rel='nofollow'>no lo cubre en México.</a> Si bien algunas pólizas de EE. UU. pueden ofrecer cobertura limitada para conducir en México, generalmente se extiende solo a áreas cercanas a la frontera y a menudo viene con estrictas limitaciones en los tipos y montos de cobertura. Además, el nivel de protección puede no cumplir con los requisitos legales mexicanos. Para obtener cobertura completa y tranquilidad, es esencial comprar un seguro de auto mexicano que cumpla con las leyes locales.",
       "INTRO2": "Incluso si su seguro de EE. UU. ofrece cierta cobertura, no es un sustituto del seguro de auto mexicano obligatorio que necesita cuando viaja a México. En caso de accidente, es posible que su seguro de EE. UU. no sea reconocido, dejándolo personalmente responsable por daños, lesiones y honorarios legales. Para evitar arriesgar su seguridad y finanzas, se recomienda obtener un seguro de auto mexicano separado y dedicado antes de conducir en el país."
     },
     "COVERAGES": {
@@ -10508,10 +10508,93 @@
         ]
       }
     },
+    "NOT_COVERED": {
+      "HEADER": {
+        "TITLE": "¿Qué No Cubre el Seguro de Auto Mexicano?",
+        "DESC": "Aunque el seguro de auto mexicano ofrece una protección integral, existen ciertas exclusiones. Estas incluyen daños causados por acciones intencionales, conducir bajo los efectos del alcohol o drogas, o usar tu vehículo para fines comerciales sin la cobertura adecuada. También es importante señalar que las pólizas estándar no cubren pertenencias personales dentro de tu vehículo ni daños preexistentes."
+      },
+      "LIST": {
+        "BEYOND_TERRITORY": {
+          "TITLE": "Conducir Fuera de las Áreas de Cobertura Especificadas en México",
+          "DESC": "Si conduces fuera de las áreas de cobertura especificadas en México, tu seguro no se aplicará. Esto significa que cualquier incidente fuera de estas regiones no estará cubierto, dejándote con costosos gastos de tu bolsillo en caso de un accidente o daño.",
+          "ICON": "fas fa-map-marked-alt"
+        },
+        "RACING": {
+          "TITLE": "Carreras y Uso Fuera de Carretera en México",
+          "DESC": "Participar en carreras o actividades fuera de carretera está excluido de la cobertura estándar del seguro de auto mexicano. Ya sea en pistas o terrenos accidentados, cualquier accidente que ocurra durante tales actividades no estará cubierto por la póliza, dejándote responsable de los daños.",
+          "ICON": "fas fa-flag-checkered"
+        },
+        "INTENTIONAL_DAMAGE": {
+          "TITLE": "Daños Intencionales o Fraude",
+          "DESC": "Los daños causados de forma intencional o mediante acciones fraudulentas no están cubiertos por el seguro de auto mexicano. Cualquier intento de engañar al asegurador o de dañar intencionalmente tu vehículo resultará en la negación de la reclamación y posibles repercusiones legales.",
+          "ICON": "fas fa-gavel"
+        },
+        "WEAR_TEAR": {
+          "TITLE": "Desgaste Normal y Averías Mecánicas",
+          "DESC": "Las pólizas de seguro no cubren los costos de mantenimiento rutinario, desgaste normal o averías mecánicas. Si tu vehículo sufre problemas como desgaste de llantas o fallas en el motor que no son resultado de un accidente, deberás encargarte de las reparaciones.",
+          "ICON": "fas fa-tools"
+        },
+        "DUI": {
+          "TITLE": "Conducir Bajo los Efectos del Alcohol o Drogas en México",
+          "DESC": "Si te arrestan por conducir bajo los efectos del alcohol o drogas (DUI) en México, tu cobertura de seguro quedará anulada. Los incidentes relacionados con DUI están explícitamente excluidos, y enfrentarás tanto sanciones legales como la responsabilidad financiera por cualquier daño causado.",
+          "ICON": "fas fa-wine-bottle"
+        },
+        "UNLISTED_DRIVERS": {
+          "TITLE": "Conductores no Listados en tu Póliza",
+          "DESC": "Solo los conductores listados en tu póliza de seguro de auto mexicano están cubiertos. Si una persona que no está en la póliza maneja el vehículo y causa un accidente, el seguro no cubrirá los daños, dejándote responsable de todo el costo del incidente.",
+          "ICON": "fas fa-users"
+        },
+        "PERSONAL_BELONGINGS": {
+          "TITLE": "Pertenencias Personales y Carga Dentro del Vehículo",
+          "DESC": "Generalmente, el seguro de auto mexicano no cubre las pertenencias personales ni la carga dentro de tu vehículo. Si los artículos son robados o dañados mientras viajas por México, necesitarás un seguro de viaje separado para proteger tus artículos personales y posesiones.",
+          "ICON": "fas fa-suitcase"
+        },
+        "COMMERCIAL_USE": {
+          "TITLE": "Uso Comercial Sin la Cobertura Adecuada",
+          "DESC": "Usar tu vehículo para fines comerciales sin la cobertura de seguro adecuada anulará tu seguro de auto mexicano. Ya sea que transportes mercancías o operes un vehículo de negocios, debes asegurar un seguro comercial especializado.",
+          "ICON": "fas fa-briefcase"
+        },
+        "UNPAVED_ROADS": {
+          "TITLE": "Conducir por Caminos No Pavimentados o Restringidos",
+          "DESC": "Si conduces por caminos no pavimentados o restringidos en México, tu cobertura de seguro podría no ser válida. Estas áreas presentan mayores riesgos, y los accidentes que ocurran mientras conduces en tales caminos generalmente quedan excluidos de tu póliza.",
+          "ICON": "fas fa-road"
+        },
+        "PRE_EXISTING_DAMAGE": {
+          "TITLE": "Daños Preexistentes Antes de Cruzar la Frontera",
+          "DESC": "Los daños que ocurran antes de cruzar la frontera hacia México no estarán cubiertos por tu seguro de auto mexicano. Asegúrate de que tu vehículo sea inspeccionado completamente y esté en buenas condiciones, ya que los problemas preexistentes no estarán protegidos una vez que ingreses a México.",
+          "ICON": "fas fa-clipboard-check"
+        },
+        "UNLISTED_VEHICLES": {
+          "TITLE": "Vehículos No Listados en la Póliza",
+          "DESC": "Para estar cubierto en México, tu vehículo debe estar listado en tu póliza de seguro. Si conduces un automóvil que no esté especificado, no estará cubierto en caso de un accidente, así que asegúrate de agregar todos los vehículos a tu póliza antes de viajar.",
+          "ICON": "fas fa-car"
+        },
+        "WAR_CIVIL_UNREST": {
+          "TITLE": "Exclusiones por Guerra y Disturbios Civiles",
+          "DESC": "El seguro de auto mexicano excluye la cobertura de incidentes derivados de la guerra o disturbios civiles. Si te encuentras en una zona afectada por inestabilidad política o violencia, tu póliza no aplicará, dejándote sin protección.",
+          "ICON": "fas fa-radiation"
+        },
+        "HIGH_RISK_ZONES": {
+          "TITLE": "Conducir en Zonas de Alto Riesgo Según el Aviso de Viaje",
+          "DESC": "La cobertura del seguro se anula si conduces por zonas marcadas como de alto riesgo según el aviso de viaje. Estas regiones, señaladas por las agencias de viajes debido a preocupaciones de seguridad, están excluidas de tu póliza, por lo que es importante evitarlas o buscar otra cobertura.",
+          "ICON": "fas fa-exclamation-triangle"
+        },
+        "POLICY_LAPSE": {
+          "TITLE": "Vencimiento de la Póliza Durante tu Viaje a México",
+          "DESC": "Si tu póliza de seguro de auto mexicano vence durante tu viaje, ya no será válida. Asegúrate siempre de que tu cobertura de seguro permanezca activa durante toda tu estancia para evitar conducir sin protección, lo cual podría exponerte a riesgos.",
+          "ICON": "fas fa-calendar-times"
+        },
+        "US_SIDE_ACCIDENTS": {
+          "TITLE": "Accidentes en el Lado de EE. UU. con la Misma Póliza",
+          "DESC": "Cualquier accidente que ocurra en el lado de EE. UU. de la frontera no estará cubierto por tu seguro de auto mexicano. Para incidentes que sucedan en EE. UU., deberás confiar en tu seguro de auto de EE. UU., ya que tu cobertura mexicana no se extenderá más allá de la frontera.",
+          "ICON": "fas fa-border-all"
+        }
+      }
+    },
     "COST": {
       "TITLE": "¿Cuánto Cuesta el Seguro de Auto para México?",
-      "DESC1": "En Texas, las tarifas del seguro de auto para México tienden a ser competitivas, especialmente para pólizas de corto plazo compradas antes de su viaje. Las tarifas diarias pueden oscilar entre aproximadamente $2 y $40 por día, dependiendo de su vehículo, fechas de viaje, duración de la estancia y el nivel de cobertura que elija. Los planes de solo responsabilidad civil suelen estar en el extremo inferior, mientras que la cobertura amplia con robo y colisión costará más. Las pólizas también se pueden comprar por plazos más largos, como planes de 6 meses o anuales, para reducir su costo por día.",
-      "DESC2": "Cuando compara las tarifas de Texas con las de otros estados, las tarifas del seguro mexicano se mantienen relativamente similares porque el precio se basa en los detalles de la póliza más que en primas a nivel estatal. A diferencia de las tarifas estándar de seguros de EE. UU., que varían ampliamente según el estado debido a factores locales, el precio del seguro mexicano se centra en la duración del viaje y las coberturas que elija. Los tejanos a menudo pagan tarifas similares a las de otros conductores de estados fronterizos, mientras que las pólizas de largo plazo o anuales pueden reducir el costo promedio por día en comparación con estancias cortas."
+      "DESC1": "En Texas, las tarifas del seguro de auto para México tienden a ser competitivas, especialmente para pólizas de corto plazo compradas antes de su viaje. Las tarifas diarias pueden oscilar entre aproximadamente <a href='https://www.mexpro.com/blog/how-much-mexico-car-insurance-per-day/' class='inline-link'>$2 y $40 por día,</a> dependiendo de su vehículo, fechas de viaje, duración de la estancia y el nivel de cobertura que elija. Los planes de solo responsabilidad civil suelen estar en el extremo inferior, mientras que la cobertura amplia con robo y colisión costará más. Las pólizas también se pueden comprar por plazos más largos, como planes de 6 meses o anuales, para reducir su costo por día.",
+      "DESC2": "Cuando compara las tarifas de Texas con las de otros estados, las tarifas del seguro mexicano se mantienen relativamente similares porque el precio se basa en los detalles de la póliza más que en primas a nivel estatal. A diferencia de las <a href='https://astateinsurance.com/auto-insurance/' class='inline-link'>tarifas estándar de seguros de EE. UU.,</a> que varían ampliamente según el estado debido a factores locales, el precio del seguro mexicano se centra en la duración del viaje y las coberturas que elija. Los tejanos a menudo pagan tarifas similares a las de otros conductores de estados fronterizos, mientras que las pólizas de largo plazo o anuales pueden reducir el costo promedio por día en comparación con estancias cortas."
     },
     "RATES": {
       "CITIES_RATE": {
@@ -10837,7 +10920,7 @@
       },
       "LIST": {
         "PERSONAL_CARS_SEDANS": {
-          "TITLE": "Autos Personales y Sedanes",
+          "TITLE": "<a class='inline-link' href='/es/seguros-de-auto/seguro-de-carro'>Autos Personales y Sedanes</a>",
           "DESCRIPTION": "Cubrimos todo tipo de autos personales y sedanes, asegurando que esté completamente protegido mientras conduce en México con opciones amplias o de responsabilidad civil.",
           "ICON": "fas fa-car"
         },
@@ -10857,27 +10940,27 @@
           "ICON": "fas fa-shuttle-van"
         },
         "MOTORCYCLES_SCOOTERS": {
-          "TITLE": "Motocicletas y Scooters",
+          "TITLE": "<a class='inline-link' href='/es/seguros-de-auto/seguro-de-motocicleta'>Motocicletas y Scooters</a>",
           "DESCRIPTION": "Las motocicletas y scooters están incluidas en nuestras opciones de cobertura, asegurando que esté protegido sobre dos ruedas mientras navega por las calles de México.",
           "ICON": "fas fa-motorcycle"
         },
         "RVS_MOTORHOMES": {
-          "TITLE": "RVs y Autocaravanas",
+          "TITLE": "<a class='inline-link' href='/es/seguros-de-auto/seguro-de-rv-autocaravana'>RVs y Autocaravanas</a>",
           "DESCRIPTION": "Si viaja en una RV o autocaravana, lo tenemos cubierto con un seguro que protege su vehículo y su viaje a través de México.",
           "ICON": "fas fa-bus"
         },
         "TRAVEL_TRAILERS_FIFTH_WHEELS": {
-          "TITLE": "Remolques de Viaje y Quinta Rueda",
+          "TITLE": "<a class='inline-link' href='/es/seguros-de-auto/seguro-de-remolque'>Remolques de Viaje y Quinta Rueda</a>",
           "DESCRIPTION": "Nuestras pólizas cubren remolques de viaje y quinta rueda, ofreciéndole tranquilidad al remolcar su trailer o casa rodante en su aventura mexicana.",
           "ICON": "fas fa-trailer"
         },
         "COMMERCIAL_TRUCKS_VANS": {
-          "TITLE": "Camiones y Furgonetas Comerciales",
+          "TITLE": "<a class='inline-link' href='/es/seguros-comerciales/seguro-de-auto-comercial'>Camiones y Furgonetas Comerciales</a>",
           "DESCRIPTION": "Los vehículos comerciales también están cubiertos, ya sea para negocios o transporte, asegurando que su camión o furgoneta comercial esté protegido en las carreteras mexicanas.",
           "ICON": "fas fa-industry"
         },
         "CLASSIC_VINTAGE_CARS": {
-          "TITLE": "Autos Clásicos y Antiguos",
+          "TITLE": "<a href='/es/seguros-de-auto/seguro-de-auto-clasico' class='inline-link'>Autos Clásicos y Antiguos</a>",
           "DESCRIPTION": "Los autos clásicos y antiguos se pueden asegurar con pólizas especiales diseñadas para preservar el valor y la condición de su vehículo preciado mientras está en México.",
           "ICON": "fas fa-car-classic"
         },
@@ -10902,7 +10985,7 @@
           "ICON": "fas fa-car-rear"
         },
         "ATV_UTV_OFFROAD": {
-          "TITLE": "ATV y UTV (Uso Todo Terreno)",
+          "TITLE": "<a class='inline-link' href='/es/seguros-de-auto/seguro-de-atv-utv'>ATV y UTV (Uso Todo Terreno)</a>",
           "DESCRIPTION": "Los ATV y UTV están incluidos en nuestras pólizas, asegurando que esté cubierto para aventuras todo terreno y exploración al aire libre en México.",
           "ICON": "fas fa-tractor"
         },
@@ -10918,20 +11001,17 @@
         "TITLE": "¿Conduciendo a México por Primera Vez? Esto es lo que Necesita Saber"
       },
       "CONTENT": {
-        "DESC1": "Conducir a México por primera vez puede ser intimidante, pero con un poco de planificación, se sentirá seguro y preparado. Asegúrese de tener los documentos correctos: pasaporte vigente, licencia de conducir, registro del vehículo y el seguro de auto mexicano requerido.",
-        "DESC2": "Dependiendo de qué tan lejos vaya más allá de la frontera, es posible que necesite un permiso de importación temporal de vehículo y un permiso de visitante. Compre su seguro de auto para México antes de su viaje para estar cubierto desde el momento en que cruce.",
-        "DESC3": "Las carreteras y las condiciones de conducción pueden sentirse diferentes; encontrará topes, cuotas y señales de tráfico cambiantes. Planifique su ruta, quédese en las carreteras principales si es posible y conduzca durante el día.",
-        "DESC4": "Con la preparación y cobertura adecuadas, su primera conducción a México puede ser tranquila, segura y agradable."
+        "DESC1": "Conducir a México por primera vez puede sentirse intimidante, pero con un poco de planificación, te sentirás confiado y listo. Antes de ir, asegúrate de tener los documentos correctos: un pasaporte válido, tu licencia de conducir, la matrícula del vehículo y el seguro de auto mexicano requerido que cumpla con los estándares legales. Dependiendo de qué tan lejos del borde vayas, también podrías necesitar un permiso de importación del vehículo y un permiso de visitante.",
+        "DESC2": "Una vez que tengas tus documentos en orden, compra el seguro de auto mexicano antes de tu viaje para estar cubierto desde el momento que cruces la frontera. Generalmente, el seguro de EE. UU. no es reconocido en México, y necesitarás una póliza separada para la responsabilidad legal y tranquilidad en la carretera. Las carreteras y las condiciones de manejo pueden sentirse diferentes; encontrarás topes (badenes), casetas de cobro (cuotas) y señales de tránsito cambiantes, así que planifica tu ruta, quédate en las carreteras principales si es posible, y conduce durante el día. Con la preparación y cobertura adecuadas, tu primer viaje a México será tranquilo, seguro y agradable."
       }
     },
     "LANGUAGE_SUPPORT": {
       "HEADER": {
-        "TITLE": "Hablamos Español"
+        "TITLE": "Hablamos Español / We Speak Your Language"
       },
       "CONTENT": {
-        "DESC1": "Sabemos que hablar su idioma puede marcar la diferencia cuando compra un seguro de auto para México o maneja una reclamación en México. Es por eso que ofrecemos soporte completo en español y asistencia bilingüe durante todo el proceso, desde obtener su cotización hasta manejar ayuda en carretera o problemas legales.",
-        "DESC2": "Tener agentes de habla hispana significa que puede hacer preguntas, entender su cobertura y obtener respuestas claras sin barreras idiomáticas.",
-        "DESC3": "Muchas aseguradoras también brindan apoyo bilingüe para reclamaciones para que sea comprendido y apoyado en cada paso del camino."
+        "DESC1": "Sabemos que hablar su idioma puede marcar la diferencia cuando compra un seguro de auto para México o maneja una reclamación en México. Es por eso que ofrecemos soporte completo en español ySabemos que hablar tu idioma puede hacer toda la diferencia cuando compras un seguro de auto mexicano o cuando manejas una reclamación en México. Es por eso que ofrecemos soporte completo en español y asistencia bilingüe durante todo el proceso, desde obtener tu cotización hasta manejar asistencia en carretera o problemas legales. Tener agentes que hablan español significa que puedes hacer preguntas, entender tu cobertura y recibir respuestas claras sin barreras idiomáticas.",
+        "DESC2": "Muchos aseguradores también brindan soporte bilingüe para reclamaciones, así que serás comprendido y respaldado en cada paso del proceso."
       }
     },
     "ASTATE_DIFFERENTIATORS": {
@@ -10978,7 +11058,7 @@
       "STEPS": {
         "REACH_OUT": {
           "TITLE": "Paso 1 - Comuníquese",
-          "DESCRIPTION": "Contáctenos para comenzar su cotización gratuita y hacer cualquier pregunta sobre las opciones de cobertura.",
+          "DESCRIPTION": "<a href='/es/contacto' class='inline-link' target='_blank'>Contáctenos</a> para comenzar su cotización gratuita y hacer cualquier pregunta sobre las opciones de cobertura.",
           "ICON": "fas fa-phone-alt"
         },
         "GET_ADVICE": {
@@ -11046,7 +11126,7 @@
     },
     "WHY_DO_YOU_NEED": {
       "TITLE": "¿Qué es el seguro para remolques y por qué lo necesita?",
-      "DESC1": "El seguro para remolques está diseñado para proteger unidades no motorizadas como remolques de utilidad, viaje y carga contra daños inesperados, robo y riesgos de responsabilidad civil. A diferencia de la cobertura de auto estándar, se enfoca en el remolque mismo y su contenido. Con el seguro para remolques, los propietarios pueden proteger su inversión ya sea que el remolque esté en uso, estacionado o en almacenamiento.",
+      "DESC1": "El seguro para remolques está diseñado para proteger unidades no motorizadas como remolques de utilidad, viaje y carga contra daños inesperados, robo y riesgos de responsabilidad civil. A diferencia de la <a href='/es/seguros-de-auto' class='inline-link'>cobertura de auto estándar,</a> se enfoca en el remolque mismo y su contenido. Con el seguro para remolques, los propietarios pueden proteger su inversión ya sea que el remolque esté en uso, estacionado o en almacenamiento.",
       "DESC2": "Muchas personas asumen que su póliza de auto cubre completamente su remolque, pero esa protección suele ser limitada. Sin la cobertura adecuada, los costos de reparación, reclamaciones de responsabilidad civil o pérdidas pueden acumularse rápidamente. Tener un seguro dedicado para remolques asegura que esté protegido en situaciones reales, desde accidentes de tránsito hasta daños en sitios de trabajo o campamentos.",
       "SUB_TITLE": "El seguro para remolques es esencial por varias razones, incluyendo:",
       "LIST": [
@@ -11074,7 +11154,7 @@
     },
     "LAWS": {
       "TITLE": "¿Es obligatorio el seguro para remolques en Texas?",
-      "INTRO1": "En Texas, el seguro para remolques no siempre es un requisito legal si su remolque no es motorizado y se usa para fines personales. En muchos casos, la responsabilidad civil básica puede extenderse desde el vehículo de remolque. Sin embargo, esta cobertura limitada a menudo no protege el remolque mismo contra daños, robo u otros riesgos del mundo real.",
+      "INTRO1": "En Texas, el seguro para remolques <a href='https://smartinsureme.com/travel-trailer-insurance-requirements-in-texas-complete-2026-guide/' rel='nofollow' class='inline-link'>no siempre es un requisito legal</a> si su remolque no es motorizado y se usa para fines personales. En muchos casos, la responsabilidad civil básica puede extenderse desde el vehículo de remolque. Sin embargo, esta cobertura limitada a menudo no protege el remolque mismo contra daños, robo u otros riesgos del mundo real.",
       "INTRO2": "Depender solo de una cobertura mínima puede dejarlo expuesto a graves consecuencias financieras. Si su remolque se daña en un accidente, es robado o causa daños a la propiedad, usted puede ser responsable del costo total. Estas situaciones pueden ocurrir rápidamente, especialmente en carreteras concurridas o durante el transporte de larga distancia.",
       "INTRO3": "Incluso cuando no es requerido por ley, tener un seguro dedicado para remolques es una decisión práctica. Ayuda a cerrar brechas de cobertura, protege su inversión y asegura que no esté tomando riesgos innecesarios cada vez que su remolque está en la carretera o estacionado en un sitio de trabajo o campamento."
     },
@@ -11162,6 +11242,89 @@
             "ICON": "fas fa-box"
           }
         ]
+      }
+    },
+    "NOT_COVERED": {
+      "HEADER": {
+        "TITLE": "¿Qué NO Cubre el Seguro Para Remolques en Texas?",
+        "DESC": "El seguro para remolques en Texas no cubre el desgaste normal, fallas mecánicas, deterioro gradual ni daños causados por negligencia. Tampoco incluye daños por moho, humedad, plagas o roedores, actos intencionales, uso en carreras, incidentes relacionados con DUI, conductores no autorizados, uso comercial sin la cobertura adecuada ni viajes fuera de las áreas aprobadas sin endosos como el de México."
+      },
+      "LIST": {
+        "CARGO_CONTENTS": {
+          "TITLE": "Carga Y Contenido Dentro Del Remolque",
+          "DESC": "El seguro para remolques generalmente no cubre pertenencias personales, herramientas o carga dentro del remolque más allá de los límites de la póliza. Los daños, robos o pérdidas pueden no ser reembolsados sin coberturas adicionales o endosos específicos.",
+          "ICON": "fas fa-box"
+        },
+        "WEAR_TEAR": {
+          "TITLE": "Desgaste Normal Y Fallas Mecánicas",
+          "DESC": "El desgaste por uso, fallas mecánicas y el envejecimiento de las piezas no están cubiertos. El seguro se enfoca en daños accidentales o externos, no en problemas derivados del uso continuo o del paso del tiempo.",
+          "ICON": "fas fa-tools"
+        },
+        "INTENTIONAL_DAMAGE": {
+          "TITLE": "Daños Intencionales O Fraude",
+          "DESC": "Cualquier daño causado intencionalmente por el propietario o reclamaciones fraudulentas están excluidos. Las pólizas no cubren pérdidas derivadas de actos deliberados o intentos de engañar a la aseguradora.",
+          "ICON": "fas fa-gavel"
+        },
+        "THEFT_ITEMS": {
+          "TITLE": "Robo De Artículos Dentro Del Remolque",
+          "DESC": "El seguro generalmente no cubre objetos personales robados dentro del remolque. Sin un endoso específico de carga o contenido, artículos como herramientas, equipos o accesorios recreativos no estarán protegidos.",
+          "ICON": "fas fa-user-secret"
+        },
+        "FLOOD_WEATHER": {
+          "TITLE": "Daños Por Inundaciones Y Clima (Sin Cobertura Integral)",
+          "DESC": "Los daños causados por inundaciones, tormentas fuertes, granizo, rayos u otros eventos climáticos severos no están cubiertos sin una cobertura integral o endosos especializados.",
+          "ICON": "fas fa-cloud-rain"
+        },
+        "THEFT_TRAILER": {
+          "TITLE": "Robo Del Remolque (Sin Cobertura Integral)",
+          "DESC": "Si el remolque es robado y no cuenta con cobertura integral, la póliza no reembolsará la pérdida. Se requiere esta cobertura para garantizar reparación o reemplazo.",
+          "ICON": "fas fa-trailer"
+        },
+        "DETACHED_UNATTENDED": {
+          "TITLE": "Daños Cuando El Remolque Está Desenganchado Y Sin Supervisión",
+          "DESC": "Los daños ocurridos cuando el remolque está desenganchado, estacionado o sin supervisión pueden no estar cubiertos bajo pólizas estándar. Se pueden requerir endosos adicionales para estas situaciones.",
+          "ICON": "fas fa-parking"
+        },
+        "RACING": {
+          "TITLE": "Uso En Carreras O Competencias",
+          "DESC": "Los remolques utilizados en carreras o competencias están excluidos. Las pólizas estándar solo cubren uso personal o recreativo, por lo que los daños durante estos eventos no serán reembolsados.",
+          "ICON": "fas fa-flag-checkered"
+        },
+        "COMMERCIAL_USE": {
+          "TITLE": "Uso Comercial Sin Cobertura Adecuada",
+          "DESC": "El uso comercial sin un seguro adecuado anula la cobertura estándar. Las pérdidas o responsabilidades derivadas de actividades comerciales no están cubiertas sin una póliza específica.",
+          "ICON": "fas fa-briefcase"
+        },
+        "OVERLOADING": {
+          "TITLE": "Sobrecarga Y Carga Incorrecta",
+          "DESC": "Los daños causados por sobrecarga o carga inadecuada están excluidos. El seguro no cubre fallas estructurales ni accidentes derivados de exceder límites de peso o asegurar mal la carga.",
+          "ICON": "fas fa-weight-hanging"
+        },
+        "FAULTY_WORKMANSHIP": {
+          "TITLE": "Defectos De Fabricación Y Mano De Obra Deficiente",
+          "DESC": "El seguro no cubre defectos de fabricación, reparaciones deficientes ni materiales defectuosos. Estos problemas son responsabilidad del propietario.",
+          "ICON": "fas fa-wrench"
+        },
+        "UNLISTED_TRAILERS": {
+          "TITLE": "Remolques No Incluidos En La Póliza",
+          "DESC": "Los remolques no listados en la póliza no están cubiertos. Solo las unidades registradas y aprobadas reciben protección.",
+          "ICON": "fas fa-clipboard-list"
+        },
+        "TOWING_VEHICLE": {
+          "TITLE": "Daños Al Vehículo De Remolque",
+          "DESC": "El seguro para remolques no cubre el vehículo que lo remolca. Estos daños deben cubrirse con una póliza de auto separada.",
+          "ICON": "fas fa-truck-pickup"
+        },
+        "WAR_NUCLEAR": {
+          "TITLE": "Exclusiones Por Guerra Y Riesgo Nuclear",
+          "DESC": "Los daños causados por guerra, terrorismo o eventos nucleares están excluidos. Estas situaciones extraordinarias no están cubiertas por las pólizas estándar.",
+          "ICON": "fas fa-radiation"
+        },
+        "PERMANENT_DWELLING": {
+          "TITLE": "Remolque Usado Como Vivienda Permanente",
+          "DESC": "Si el remolque se utiliza como vivienda permanente, la cobertura estándar queda anulada. Este uso requiere pólizas especializadas o endosos adicionales.",
+          "ICON": "fas fa-home"
+        }
       }
     },
     "COST": {
@@ -11296,7 +11459,7 @@
       "LIST": {
         "BUNDLING": {
           "TITLE": "Descuento por múltiples pólizas / agrupación (remolque + auto o hogar)",
-          "DESC": "Ahorre en primas combinando el seguro de remolque con pólizas de auto o hogar bajo una misma aseguradora para un descuento por agrupación.",
+          "DESC": "Ahorre en primas combinando el seguro de remolque con pólizas de auto o <a class='inline-link' href='/es/seguros-de-vivienda'>hogar</a> bajo una misma aseguradora para un descuento por agrupación.",
           "ICON": "fas fa-house-user"
         },
         "MULTI_TRAILER": {
@@ -11642,12 +11805,11 @@
     },
     "HIGH_RISK_DRIVER": {
       "HEADER": {
-        "TITLE": "¿Propietario de remolque de alto riesgo? Aún podemos ayudarle"
+        "TITLE": "¿Es Usted Un Propietario De Remolque De Alto Riesgo? Podemos Ayudarle"
       },
       "CONTENT": {
-        "DESC1": "Los propietarios de remolques de alto riesgo en Texas a menudo enfrentan desafíos después de un DUI, requisito de SR-22, suspensión de licencia o reclamaciones pasadas. Si bien muchas aseguradoras pueden rechazar estos perfiles, la cobertura aún es posible a través de nuestro enfoque especializado.",
-        "DESC2": "Ya sea que necesite presentar un SR-22, cobertura después de violaciones o seguro no estándar para remolques, nuestro equipo lo guía a través de cada paso. Comparamos múltiples proveedores para asegurar tarifas justas y protección confiable mientras garantizamos que cumpla con los requisitos de Texas.",
-        "DESC3": "Entendemos su situación y trabajamos para encontrar una cobertura que se ajuste a su presupuesto sin estrés ni demoras innecesarias. No será juzgado ni rechazado: le ayudamos a asegurarse legalmente, con confianza y con la protección que necesita."
+        "DESC1": "Si ha enfrentado desafíos como un requisito de SR-22, DUI o una licencia suspendida, conseguir un seguro para su remolque puede parecer imposible. En <a href='/' class='inline-link'>Seguros A-State,</a> nos especializamos en ayudar a propietarios de remolques de alto riesgo en Texas a obtener cobertura, incluso cuando otras aseguradoras han dicho que no. Entendemos su situación única y ofrecemos soluciones adaptadas a sus necesidades, brindándole tranquilidad en la carretera.",
+        "DESC2": "Nuestro equipo trabaja directamente con conductores con historiales no estándar, asegurando que no quede sin protección. Desde presentaciones de SR-22 hasta pólizas para quienes tienen infracciones pasadas, lo guiamos en cada paso. No tiene que arriesgarse a conducir sin seguro; nuestros expertos hacen que la cobertura sea accesible, confiable y asequible, sin importar su historial."
       }
     },
     "LANGUAGE_SUPPORT": {
@@ -11655,100 +11817,99 @@
         "TITLE": "Hablamos Español / We Speak Your Language"
       },
       "CONTENT": {
-        "DESC1": "La comunicación clara es importante al elegir un seguro para remolques. Es por eso que ofrecemos con orgullo soporte en inglés, español y hindi. Nuestro equipo bilingüe le ayuda a entender las opciones de cobertura, requisitos y precios sin confusiones.",
-        "DESC2": "El idioma nunca debe ser una barrera para obtener un seguro. Ya sea que haga preguntas, revise pólizas o complete solicitudes, lo guiamos en el idioma con el que se sienta más cómodo.",
-        "DESC3": "Nuestro objetivo es hacer que todo el proceso sea simple, claro y sin estrés de principio a fin, para que pueda tomar decisiones seguras sobre su seguro de remolque en Texas."
+        "DESC1": "En Seguros A-State, reconocemos que el idioma nunca debe ser una barrera para entender sus opciones de seguro para remolques. Nuestros agentes de habla hispana ofrecen orientación clara y apoyo personalizado, asegurando que comprenda completamente los detalles de la cobertura, beneficios y exclusiones. Ya sea que sea comprador por primera vez o esté renovando su póliza, hacemos que el proceso sea sencillo y libre de estrés.",
+        "DESC2": "También ofrecemos soporte multilingüe en inglés e hindi, creando un entorno inclusivo para todos los propietarios de remolques en Texas. Al hablar su idioma, generamos confianza y seguridad, ayudándole a tomar decisiones informadas sobre su seguro de remolque. Cada pregunta se responde con claridad, para que se sienta protegido y seguro en cada viaje."
       }
     },
     "ASTATE_DIFFERENTIATORS": {
       "HEADER": {
-        "TITLE": "Qué hace diferente a A-State Insurance"
+        "TITLE": "Qué Hace Diferente A Seguros A-State"
       },
       "LIST": {
         "LICENSED_BROKERS": {
-          "TITLE": "Corredores autorizados en Texas",
-          "DESCRIPTION": "Nuestros corredores están completamente autorizados en Texas, asegurando que esté trabajando con profesionales que conocen las leyes de seguros estatales y le ayudan a encontrar la cobertura adecuada.",
+          "TITLE": "Corredores Licenciados En Texas",
+          "DESCRIPTION": "Nuestros corredores están completamente licenciados en Texas, garantizando orientación experta y soluciones de seguro de remolques confiables y cumpliendo con la normativa.",
           "ICON": "fas fa-certificate"
         },
         "HISPANIC_LATINO_FRIENDLY": {
-          "TITLE": "Amigable con la comunidad hispana y latina",
-          "DESCRIPTION": "Servimos con orgullo a las comunidades hispana y latina, ofreciendo servicios personalizados en español para garantizar una comunicación clara y apoyo.",
+          "TITLE": "Atención Amigable Para Hispanos Y Latinos",
+          "DESCRIPTION": "Nos enorgullece servir a las comunidades hispanas y latinas, ofreciendo apoyo culturalmente consciente, respetuoso y personalizado.",
           "ICON": "fas fa-users"
         },
         "YEARS_SERVING": {
-          "TITLE": "Más de 20 años sirviendo a los tejanos",
-          "DESCRIPTION": "Con más de 20 años de experiencia, A-State Insurance ha sido un socio confiable para conductores, motociclistas y propietarios de RV en Texas, proporcionando cobertura confiable y asequible desde el primer día.",
+          "TITLE": "Más De 20 Años Sirviendo A Texans",
+          "DESCRIPTION": "Con más de dos décadas de experiencia, hemos protegido a familias, negocios y remolques en Texas con asesoramiento de seguro confiable.",
           "ICON": "fas fa-calendar-check"
         },
         "CUSTOM_COVERAGE": {
-          "TITLE": "Planes de cobertura personalizados",
-          "DESCRIPTION": "Creamos planes de seguro para vehículos y RV personalizados según sus necesidades específicas, asegurando que obtenga la protección que desea a un precio que puede pagar.",
+          "TITLE": "Planes De Cobertura Personalizados",
+          "DESCRIPTION": "Opciones de cobertura a medida garantizan que su remolque esté protegido según sus necesidades, uso y presupuesto únicos.",
           "ICON": "fas fa-shield-alt"
         },
         "ONLINE_LOCAL": {
-          "TITLE": "En línea y local",
-          "DESCRIPTION": "A-State Insurance ofrece cotizaciones digitales rápidas y el toque personal de agentes locales con sede en Texas para un apoyo personalizado.",
+          "TITLE": "En Línea Y Local",
+          "DESCRIPTION": "Obtenga asesoramiento experto cómodamente en línea o visite nuestra oficina local en Texas para soporte personalizado cara a cara.",
           "ICON": "fas fa-laptop-house"
         },
         "MULTILINGUAL_AGENTS": {
-          "TITLE": "Agentes multilingües",
-          "DESCRIPTION": "Nuestros agentes multilingües hablan inglés, español y hindi, asegurando una comunicación clara y confianza para clientes de todos los orígenes.",
+          "TITLE": "Agentes Multilingües",
+          "DESCRIPTION": "Nuestros agentes profesionales hablan inglés, español e hindi, ayudándole a comprender la cobertura de manera clara y segura.",
           "ICON": "fas fa-language"
         }
       }
     },
     "INSURANCE_STEPS": {
       "HEADER": {
-        "TITLE": "Obtenga cobertura en 4 pasos sencillos"
+        "TITLE": "Cúbrase En 4 Pasos Simples"
       },
       "STEPS": {
         "REACH_OUT": {
-          "TITLE": "Comuníquese",
-          "DESCRIPTION": "Llame, envíe un mensaje o visítenos en línea para comenzar su solicitud de seguro con un apoyo rápido y amable.",
+          "TITLE": "Paso 1 - Contáctenos",
+          "DESCRIPTION": "<a class='inline-link' href='/es/contacto'>Comuníquese con nosotros</a> por teléfono o en línea para comenzar su proceso de seguro de remolque de manera fácil y clara.",
           "ICON": "fas fa-phone-alt"
         },
         "GET_ADVICE": {
-          "TITLE": "Obtenga asesoría",
-          "DESCRIPTION": "Nuestros expertos revisan sus necesidades y explican las opciones claramente para que pueda tomar decisiones de cobertura con confianza.",
+          "TITLE": "Paso 2 - Reciba Asesoramiento",
+          "DESCRIPTION": "Nuestros agentes revisan sus necesidades y explican las opciones de cobertura para que pueda tomar decisiones informadas.",
           "ICON": "fas fa-comments"
         },
         "PICK_PLAN": {
-          "TITLE": "Elija su plan",
-          "DESCRIPTION": "Seleccione la cobertura que se ajuste a su presupuesto, estilo de vida y objetivos de protección con total confianza.",
+          "TITLE": "Paso 3 - Elija Su Plan",
+          "DESCRIPTION": "Seleccione el plan de seguro para remolque que se ajuste a su presupuesto, uso y requisitos de protección.",
           "ICON": "fas fa-check-circle"
         },
         "WE_GOT_YOU": {
-          "TITLE": "Está cubierto",
-          "DESCRIPTION": "Nos encargamos del papeleo y finalizamos su póliza, asegurando una activación sin problemas y tranquilidad.",
+          "TITLE": "Paso 4 - Nosotros Lo Cubrimos",
+          "DESCRIPTION": "Activamos su cobertura y brindamos soporte continuo para mantener su remolque completamente protegido.",
           "ICON": "fas fa-shield-alt"
         }
       }
     },
     "SWITCH_STEPS": {
       "HEADER": {
-        "TITLE": "Cómo cambiar su seguro a A-State Insurance"
+        "TITLE": "Cómo Cambiar Su Fianza A Seguros A-State"
       },
       "STEPS": {
         "STEP_1": {
-          "TITLE": "Paso 1: Obtenga su cotización comparativa gratuita",
-          "DESCRIPTION": "Tenga a mano los detalles de su póliza actual. A-State Insurance comparará su cobertura existente con más de 10 de las mejores aseguradoras de Texas para encontrar una tarifa más baja que brinde la misma o mejor protección, ya sea para motocicletas o RVs.",
+          "TITLE": "Paso 1: Obtenga Su Cotización Comparativa Gratis",
+          "DESCRIPTION": "Comuníquese con Seguros A-State por teléfono, correo electrónico o mediante nuestro formulario en línea. Nuestro equipo escucha atentamente sus necesidades de seguro de remolque y le brinda orientación inicial. Hacemos que sea fácil comenzar su proceso de cobertura, asegurándonos de que comprenda el procedimiento y se sienta seguro al dar el primer paso.",
           "ICON": "fas fa-file-invoice-dollar"
         },
         "STEP_2": {
-          "TITLE": "Paso 2: Elija su plan y actívelo",
-          "DESCRIPTION": "¡Cambiar es sencillo! Complete el proceso en línea o por teléfono. Nuestros agentes hablan inglés, español y hindi, ayudándole a entender cada detalle antes de activar su nueva cobertura para motocicleta, RV o autocaravana.",
+          "TITLE": "Paso 2: Elija Su Plan Y Actívelo",
+          "DESCRIPTION": "Nuestros agentes analizan el tipo de remolque, su uso y los requisitos de cobertura. Explican cada opción de manera clara, destacando beneficios, límites y costos. Recibirá recomendaciones personalizadas que le ayudarán a tomar decisiones informadas sobre su seguro de remolque. Nuestro objetivo es que se sienta seguro al seleccionar la cobertura adecuada para sus necesidades.",
           "ICON": "fas fa-file-signature"
         },
         "STEP_3": {
-          "TITLE": "Paso 3: Cancele su póliza anterior (¡Nosotros le ayudamos!)",
-          "DESCRIPTION": "Nunca cancele su póliza anterior hasta que su nueva cobertura de A-State esté activa para evitar una laguna en la cobertura. Le guiaremos a través de la cancelación adecuada, y la mayoría de las aseguradoras de Texas reembolsan las primas no utilizadas para un cambio sin problemas y sin estrés.",
+          "TITLE": "Paso 3: Cancele Su Póliza Antigua (¡Le Ayudamos!)",
+          "DESCRIPTION": "Después de revisar sus opciones, elija el plan que mejor se ajuste a su presupuesto, estilo de vida y necesidades de protección del remolque. Nuestro equipo ayuda a comparar niveles de cobertura, deducibles y endosos especiales. Nos aseguramos de que comprenda lo que está incluido para que su remolque y carga estén completamente protegidos, sin sorpresas posteriores.",
           "ICON": "fas fa-times-circle"
         }
       }
     },
     "FREE_QUOTE": {
-      "HEADER": "Obtenga una cotización gratuita de seguro para remolques en Texas",
-      "DESCRIPTION": "Proteger su remolque en Texas es fácil con A-State Insurance. Obtenga una cotización gratuita sin compromiso hoy compartiendo algunos detalles sobre su remolque, uso y necesidades de cobertura. Nuestros agentes autorizados comparan las mejores aseguradoras para encontrar el mejor plan para su presupuesto. Ya sea un remolque de utilidad, caballos o refrigerado, adaptamos la cobertura para mantener su remolque y carga seguros en la carretera, en almacenamiento y durante el transporte, brindándole tranquilidad y confianza totales."
+      "HEADER": "Obtenga Una Cotización Gratis de Seguro para Remolques en Texas",
+      "DESCRIPTION": "Proteger su remolque en Texas es fácil con Seguros A-State. Obtenga hoy una <a href='/es/obtener-una-cotizacion' class='inline-link'>cotización gratuita y sin compromiso</a> proporcionando algunos detalles sobre su remolque, uso y necesidades de cobertura. Nuestros agentes licenciados comparan las principales aseguradoras para encontrar el mejor plan que se ajuste a su presupuesto. Ya sea un remolque de utilidad, para caballos o refrigerado, personalizamos la cobertura para mantener su remolque y carga seguros en la carretera, en almacenamiento y durante el transporte, brindándole tranquilidad y confianza total."
     }
   },
   "RIDESHARE_INSURANCE": {
@@ -16041,8 +16202,6 @@
       "DESCRIPTION": "Obtenga una <a href='/es/obtener-una-cotizacion' class='inline-link'>cotización gratuita de seguro para arrendadores en Texas</a> hoy y descubra lo sencillo que es proteger completamente su propiedad de alquiler. A-State Insurance compara múltiples aseguradoras principales para encontrar la mejor cobertura a precios competitivos. Ya sea que posea una vivienda unifamiliar, un condominio o un edificio de múltiples unidades, nuestros corredores con licencia en Texas lo guían a través de opciones personalizadas para la vivienda, responsabilidad civil, ingresos por alquiler perdidos y protecciones adicionales, brindándole confianza, tranquilidad y seguridad total."
     }
   },
-
-
   "FLOOD_INSURANCE": {
     "BANNER": {
       "TITLE_LINE1": "Mejor y Más Barato Seguro de Inundación en",
@@ -21671,6 +21830,600 @@
     "FREE_QUOTE": {
       "HEADER": "Obtenga una Cotización Gratis de Seguro de Vida Entera en Texas",
       "DESCRIPTION": "Obtener una <a href='/es/obtener-una-cotizacion' class='inline-link' target='_blank'>cotización gratuita</a> de seguro de vida entera en Texas es rápido y simple con A-State Insurance. Nuestros corredores licenciados comparan múltiples aseguradoras de primer nivel para encontrar cobertura que se ajuste a su presupuesto, estilo de vida y metas financieras a largo plazo. Puede solicitar una cotización en línea, por teléfono o visitando nuestra oficina local para recibir soporte personalizado. Nos enfocamos en hacer el proceso claro y sin estrés, asegurando que entienda cada opción antes de tomar una decisión, sin obligación y con orientación completa."
+    }
+  },
+    "UNIVERSAL_LIFE_INSURANCE": {
+    "BANNER": {
+      "TITLE_LINE1": "El Mejor y Más Asequible Seguro de Vida Universal en",
+      "TITLE_LINE2": "Texas — Desde",
+      "TITLE_LINE3": "$54/Mes",
+      "CHIPS": {
+        "GUARANTEED": "Garantizado",
+        "INDEXED": "Indexado",
+        "VARIABLE": "Variable",
+        "FIXED": "Fijo",
+        "SURVIVORSHIP": "Supervivencia",
+        "OTHER": "Otro"
+      },
+      "FORM": {
+        "FULL_NAME": "Nombre Completo",
+        "PHONE": "Número de Teléfono",
+        "BUTTON": "Obtener Cotización"
+      }
+    },
+    "WHY_DO_YOU_NEED": {
+      "TITLE": "¿Qué es el Seguro de Vida Universal y Por Qué lo Necesita?",
+      "DESC": "El seguro de vida universal es un tipo de seguro de vida permanente que proporciona cobertura de por vida junto con un componente de ahorro conocido como valor en efectivo. A diferencia de las pólizas temporales, no vence siempre que se mantengan las primas. Lo que lo hace único es su flexibilidad; puede ajustar sus pagos de primas e incluso modificar su beneficio por fallecimiento dentro de ciertos límites.",
+      "DESC1": "Con las pólizas de seguro de vida universal, parte de su prima se destina al costo del seguro, mientras que el resto acumula valor en efectivo con el tiempo. Este valor en efectivo puede crecer según las tasas de interés u opciones vinculadas al mercado, dependiendo del tipo de póliza que elija. También puede acceder a estos fondos más adelante a través de préstamos o retiros si es necesario.",
+      "SUB_TITLE": "Aquí hay algunas razones por las que necesita un seguro de vida universal:",
+      "LIST": [
+        {
+          "TITLE": "Protección Financiera de por Vida",
+          "TEXT": "El seguro de vida universal asegura que sus seres queridos reciban un beneficio por fallecimiento sin importar cuándo fallezca. Esta protección a largo plazo ayuda a cubrir costos funerarios, deudas y necesidades financieras futuras."
+        },
+        {
+          "TITLE": "Pagos de Primas Flexibles",
+          "TEXT": "No está atado a pagos fijos. Puede ajustar cuánto paga y cuándo, siempre que la póliza se mantenga financiada. Esta flexibilidad es útil durante situaciones financieras cambiantes."
+        },
+        {
+          "TITLE": "Crecimiento del Valor en Efectivo con el Tiempo",
+          "TEXT": "Una parte de su prima acumula valor en efectivo que crece con el tiempo. Esto puede servir como un recurso financiero que puede usar más adelante para emergencias, educación o necesidades de jubilación."
+        },
+        {
+          "TITLE": "Cobertura Ajustable a Medida que la Vida Cambia",
+          "TEXT": "Eventos de la vida como el matrimonio, tener hijos o el crecimiento profesional pueden cambiar sus necesidades financieras. El seguro de vida universal le permite aumentar o disminuir su cobertura según corresponda."
+        },
+        {
+          "TITLE": "Beneficios en Vida y Acceso Financiero",
+          "TEXT": "Muchas pólizas incluyen beneficios en vida, como acceso a fondos en caso de enfermedad grave. También puede tomar préstamos de póliza contra su valor en efectivo sin cancelar su cobertura."
+        }
+      ]
+    },
+    "HOW_IT_WORKS": {
+      "TITLE": "¿Vale la Pena el Seguro de Vida Universal en Texas?",
+      "DESC1": "El seguro de vida universal puede valer la pena en Texas si busca protección a largo plazo con flexibilidad. Ofrece cobertura de por vida, primas ajustables y la capacidad de acumular valor en efectivo con el tiempo, lo que puede respaldar necesidades financieras futuras como la jubilación o emergencias. Esto lo convierte en una opción sólida para personas que desean más control sobre su póliza y planes financieros en evolución.",
+      "DESC2": "Sin embargo, no es la opción adecuada para todos. En comparación con el seguro de vida temporal, es más caro y requiere una gestión activa para mantener la póliza financiada y evitar su caducidad. Su valor depende de sus objetivos financieros, tolerancia al riesgo y capacidad para mantener las contribuciones a lo largo del tiempo. Para muchos compradores, el seguro de vida universal vale la pena cuando se usa como parte de una estrategia financiera a largo plazo, no solo como cobertura básica."
+    },
+    "COVERAGES": {
+      "STANDARD": {
+        "TITLE": "¿Qué Cubre el Seguro de Vida Universal en Texas?",
+        "DESC": "El seguro de vida universal en Texas ofrece protección flexible de por vida mientras acumula valor en efectivo que puede usar con el tiempo. Cubre varias causas de fallecimiento y asegura que sus beneficiarios reciban apoyo financiero cuando más importa. Muchas pólizas de seguro también incluyen beneficios en vida, préstamos de póliza y características ajustables que pueden adaptarse a medida que cambian sus metas y necesidades financieras.",
+        "LIST": [
+          {
+            "TITLE": "Beneficio por Fallecimiento Vitalicio Pagado a los Beneficiarios",
+            "DESC": "Proporciona un pago garantizado a los beneficiarios elegidos tras su fallecimiento. Este apoyo financiero puede ayudar a cubrir costos funerarios, deudas, gastos de manutención diarios o necesidades futuras, ofreciendo seguridad a largo plazo y tranquilidad para sus seres queridos.",
+            "ICON": "fas fa-shield-alt"
+          },
+          {
+            "TITLE": "Fallecimiento por Causas Naturales",
+            "DESC": "Cubre el fallecimiento por causas naturales, como el envejecimiento o causas no accidentales. Sus beneficiarios reciben el beneficio por fallecimiento sin restricciones, ayudando a asegurar la estabilidad financiera durante un momento ya difícil y emotivo.",
+            "ICON": "fas fa-heart"
+          },
+          {
+            "TITLE": "Fallecimiento por Enfermedad o Dolencia",
+            "DESC": "Incluye cobertura para fallecimientos resultantes de enfermedades o dolencias, ya sean repentinas o de larga duración. La póliza asegura que su familia reciba apoyo financiero completo para manejar facturas médicas, pérdida de ingresos y otros gastos esenciales.",
+            "ICON": "fas fa-notes-medical"
+          },
+          {
+            "TITLE": "Muerte Accidental",
+            "DESC": "Ofrece cobertura en caso de un accidente inesperado que conduzca al fallecimiento. Este beneficio proporciona protección financiera para sus seres queridos, ayudándoles a cubrir gastos inesperados y mantener la estabilidad financiera después de un evento trágico.",
+            "ICON": "fas fa-car-crash"
+          },
+          {
+            "TITLE": "Fallecimiento por Ataque Cardíaco o Derrame Cerebral",
+            "DESC": "Proporciona una excelente cobertura si el fallecimiento ocurre debido a un ataque cardíaco o derrame cerebral. Estos eventos de salud comunes están incluidos para asegurar que sus beneficiarios reciban el pago de la póliza para respaldar las obligaciones financieras y los costos de vida continuos.",
+            "ICON": "fas fa-heartbeat"
+          },
+          {
+            "TITLE": "Fallecimiento por Cáncer",
+            "DESC": "Incluye protección si el fallecimiento es causado por cáncer. Ya sea diagnosticado recientemente o con el tiempo, la póliza de cobertura de seguro asegura que sus seres queridos reciban asistencia financiera para manejar gastos y mantener su calidad de vida.",
+            "ICON": "fas fa-ribbon"
+          },
+          {
+            "TITLE": "Acumulación de Valor en Efectivo con Pagos de Primas Flexibles",
+            "DESC": "Acumula valor en efectivo con el tiempo a medida que paga las primas, permitiendo flexibilidad en cuánto y cuándo paga dentro de los límites. Este componente de ahorro de esta cobertura puede expandirse e incluso usarse más adelante para necesidades u oportunidades financieras.",
+            "ICON": "fas fa-piggy-bank"
+          },
+          {
+            "TITLE": "Préstamos de Póliza Contra el Valor en Efectivo",
+            "DESC": "Le permite pedir prestado contra el valor en efectivo acumulado de su póliza. Estos préstamos pueden usarse para emergencias, educación u otros gastos, ofreciendo flexibilidad y protección financiera sin necesidad de cancelar su cobertura.",
+            "ICON": "fas fa-hand-holding-usd"
+          },
+          {
+            "TITLE": "Beneficio por Fallecimiento Ajustable con el Tiempo",
+            "DESC": "Le da la opción de aumentar o disminuir su beneficio por fallecimiento a medida que cambian sus necesidades. Esta flexibilidad ayuda a alinear su cobertura de manera integral con eventos de la vida como matrimonio, hijos o cambios en las responsabilidades financieras.",
+            "ICON": "fas fa-chart-line"
+          },
+          {
+            "TITLE": "Beneficio por Fallecimiento Acelerado por Enfermedad Terminal",
+            "DESC": "Proporciona acceso a una parte de su beneficio por fallecimiento si se le diagnostica una enfermedad terminal calificada. Esta cobertura de póliza de seguro puede ayudar a cubrir costos médicos, cuidados o gastos personales durante un momento crítico en su vida.",
+            "ICON": "fas fa-procedures"
+          }
+        ]
+      },
+      "TYPES": {
+        "TITLE": "Tipos de Pólizas de Vida Universal que Aseguramos en Texas",
+        "DESC": "El seguro de vida universal se presenta en varias formas para adaptarse a diferentes objetivos financieros, tolerancias al riesgo y necesidades de cobertura. Comprender estas opciones puede ayudarle a elegir la póliza adecuada para una protección flexible de por vida y el crecimiento del valor en efectivo.",
+        "LIST": [
+          {
+            "TITLE": "Seguro de Vida Universal Garantizado (GUL)",
+            "DESC": "Proporciona cobertura de por vida con primas fijas y un enfoque en un beneficio por fallecimiento garantizado en lugar del valor en efectivo. Es ideal para quienes desean una protección confiable y sin sorpresas."
+          },
+          {
+            "TITLE": "Seguro de Vida Universal Indexado (IUL)",
+            "DESC": "Vincula el crecimiento del valor en efectivo a un índice de mercado como el S&P 500, ofreciendo potencial para mayores rendimientos mientras protege contra pérdidas del mercado. Equilibra la oportunidad con la protección contra caídas."
+          },
+          {
+            "TITLE": "Seguro de Vida Universal Variable (VUL)",
+            "DESC": "Permite que el valor en efectivo se invierta en subcuentas, similares a los fondos mutuos. Esta opción ofrece un mayor potencial de crecimiento pero conlleva un mayor riesgo de mercado."
+          },
+          {
+            "TITLE": "Seguro de Vida Universal Fijo",
+            "DESC": "Ofrece un crecimiento constante del valor en efectivo basado en una tasa de interés fija establecida por la aseguradora. Proporciona estabilidad y bajo riesgo, siendo una buena opción para la acumulación predecible."
+          },
+          {
+            "TITLE": "Seguro de Vida Universal de Supervivencia (Segundo en Fallecer)",
+            "DESC": "Cubre a dos personas bajo una sola póliza y paga el beneficio por fallecimiento después de que fallece la segunda persona asegurada. Se usa comúnmente para la planificación patrimonial y la gestión de obligaciones fiscales."
+          },
+          {
+            "TITLE": "Seguro de Vida Universal Conjunto",
+            "DESC": "Proporciona cobertura para dos personas bajo una sola póliza, con un pago activado después del primer fallecimiento o estructurado según el plan y las necesidades específicas."
+          },
+          {
+            "TITLE": "Seguro de Vida Universal de Prima Única",
+            "DESC": "Requiere un pago único de suma global para financiar completamente la póliza. Elimina las primas continuas mientras proporciona cobertura de por vida y crecimiento del valor en efectivo."
+          },
+          {
+            "TITLE": "Seguro de Vida Universal con Garantía de No Caducidad",
+            "DESC": "Asegura que la póliza permanezca activa incluso si el valor en efectivo cae a cero, siempre que se cumplan los requisitos de primas. Esto previene la caducidad de la póliza y proporciona seguridad a largo plazo."
+          },
+          {
+            "TITLE": "Seguro de Vida Universal Participante",
+            "DESC": "Puede ofrecer dividendos basados en el rendimiento financiero de la aseguradora, que pueden usarse para aumentar el valor en efectivo, reducir las primas o mejorar el beneficio por fallecimiento."
+          },
+          {
+            "TITLE": "Seguro de Vida Universal con Alto Valor en Efectivo Temprano",
+            "DESC": "Se enfoca en acumular valor en efectivo rápidamente durante los primeros años de la póliza. Está diseñado para quienes desean un acceso más rápido a los fondos para préstamos o retiros."
+          }
+        ]
+      }
+    },
+    "NOT_COVERED": {
+      "HEADER": {
+        "TITLE": "¿Qué NO Cubre el Seguro de Vida Universal en Texas?",
+        "DESC": "Si bien el seguro de vida universal ofrece una amplia protección, tiene exclusiones específicas. Ciertas situaciones pueden no estar cubiertas, especialmente durante los primeros años de la póliza o si se violan los términos. Saber lo que no está incluido le ayuda a evitar problemas con las reclamaciones, cumplir con las reglas de la póliza y asegurar que su cobertura brinde la protección que su familia espera cuando más importa."
+      },
+      "LIST": {
+        "SUICIDE": {
+          "TITLE": "Suicidio Dentro de los Primeros Dos Años de la Póliza",
+          "DESC": "Si el asegurado fallece por suicidio dentro de los primeros dos años de la póliza, el beneficio por fallecimiento generalmente no se paga. En su lugar, las aseguradoras pueden reembolsar las primas pagadas. Después de este período, la cobertura generalmente se aplica, pero esta exclusión es estándar para prevenir el uso indebido.",
+          "ICON": "fas fa-exclamation-circle"
+        },
+        "FRAUD": {
+          "TITLE": "Fallecimiento Debido a Fraude o Tergiversación en la Solicitud",
+          "DESC": "Si se proporciona información falsa o incompleta en la solicitud, la aseguradora puede denegar la reclamación. La precisión sobre la salud, el estilo de vida y el historial es esencial, ya que la tergiversación puede anular la póliza y dejar a los beneficiarios sin apoyo.",
+          "ICON": "fas fa-file-contract"
+        },
+        "ILLEGAL_ACTIVITIES": {
+          "TITLE": "Fallecimiento por Actividades Ilegales",
+          "DESC": "Los fallecimientos que ocurren mientras se cometen actos ilegales generalmente están excluidos de la cobertura. Si el asegurado fallece mientras participa en actividades ilícitas, la aseguradora puede denegar la reclamación, ya que las pólizas están diseñadas para cubrir solo circunstancias legítimas y lícitas.",
+          "ICON": "fas fa-gavel"
+        },
+        "HIGH_RISK": {
+          "TITLE": "Fallecimiento por Pasatiempos de Alto Riesgo (paracaidismo, carreras, deportes extremos)",
+          "DESC": "Participar en pasatiempos de alto riesgo como paracaidismo, carreras o deportes extremos puede no estar cubierto a menos que se divulgue y apruebe. Las aseguradoras a menudo excluyen estas actividades o cobran primas más altas debido al mayor riesgo involucrado en tales actividades.",
+          "ICON": "fas fa-skull-crossbones"
+        },
+        "AVIATION": {
+          "TITLE": "Fallecimiento por Aviación (piloto privado; varía según la póliza)",
+          "DESC": "Los fallecimientos resultantes de actividades de aviación, como pilotar una aeronave privada, pueden no estar cubiertos a menos que se incluyan específicamente. Las reglas de cobertura varían según la póliza, y los riesgos de aviación no divulgados pueden llevar a la denegación de la reclamación bajo exclusiones estándar.",
+          "ICON": "fas fa-plane"
+        },
+        "SUBSTANCE_ABUSE": {
+          "TITLE": "Fallecimiento por Abuso de Drogas o Alcohol",
+          "DESC": "Si el fallecimiento es causado por una sobredosis de drogas o el uso excesivo de alcohol, la reclamación puede ser denegada. Las aseguradoras a menudo excluyen las muertes relacionadas con el abuso de sustancias, especialmente cuando el uso indebido o las sustancias ilegales contribuyen directamente a la causa del fallecimiento.",
+          "ICON": "fas fa-wine-bottle"
+        },
+        "WAR": {
+          "TITLE": "Guerra o Acto de Guerra (combate militar activo; varía según la póliza)",
+          "DESC": "Los fallecimientos que ocurren durante el combate militar activo o actos de guerra pueden estar excluidos, dependiendo de la póliza. Los términos de cobertura varían, por lo que las personas en servicio militar deben revisar las condiciones cuidadosamente para comprender cómo se manejan los riesgos relacionados con la guerra.",
+          "ICON": "fas fa-shield-alt"
+        },
+        "PRE_EXISTING": {
+          "TITLE": "Condiciones Preexistentes No Divulgadas en la Solicitud",
+          "DESC": "Si una condición preexistente no se divulga durante el proceso de solicitud y conduce al fallecimiento, la aseguradora puede denegar la reclamación. Se requiere total transparencia para garantizar que la cobertura siga siendo válida y los beneficiarios reciban el pago previsto.",
+          "ICON": "fas fa-notes-medical"
+        },
+        "POLICY_LAPSE": {
+          "TITLE": "Caducidad de la Póliza por Valor en Efectivo Insuficiente para Cubrir las Primas",
+          "DESC": "Si la póliza caduca debido a un valor en efectivo insuficiente o pagos de primas omitidos, la cobertura termina. En tales casos, no se paga ningún beneficio por fallecimiento, por lo que es importante monitorear el rendimiento de la póliza y mantener una financiación adecuada a lo largo del tiempo.",
+          "ICON": "fas fa-times-circle"
+        },
+        "MARKET_LOSSES": {
+          "TITLE": "Pérdidas de Mercado en el Valor en Efectivo (se aplica al Seguro de Vida Universal Variable)",
+          "DESC": "En las pólizas variables, el valor en efectivo está vinculado al rendimiento del mercado y puede disminuir. Las pérdidas en el valor de la inversión no están protegidas, lo que significa que los asegurados asumen el riesgo, y un valor en efectivo reducido puede afectar la sostenibilidad de la cobertura y los beneficios.",
+          "ICON": "fas fa-chart-line"
+        }
+      }
+    },
+    "HOW_MUCH_DO_YOU_NEED": {
+      "TITLE": "¿Cuánto Cuesta el Seguro de Vida Universal en Texas?",
+      "DESC1": "El costo del seguro de vida universal en Texas varía según la edad, la salud, el monto de la cobertura y el tipo de póliza. En promedio, una persona sana de 30 años puede pagar alrededor de $40–$50 por mes por una cobertura baja, mientras que las pólizas más robustas o los solicitantes mayores pueden ver primas que aumentan significativamente. Por ejemplo, un hombre de 40 años podría pagar aproximadamente $180–$350 por mes, dependiendo de la estructura de la póliza y el nivel de financiación.",
+      "DESC2": "En comparación con otros estados, el precio del seguro de vida universal es generalmente similar porque las aseguradoras basan las tarifas principalmente en factores de riesgo personales en lugar de la ubicación. Sin embargo, Texas puede ver primas ligeramente más altas para personas en industrias de alto riesgo o con factores de estilo de vida específicos. En general, los costos siguen siendo competitivos a nivel nacional, con variaciones impulsadas más por perfiles individuales que por la geografía."
+    },
+    "LIFE_INSURANCE_COST": {
+      "TITLE": "¿Cuánto Cuesta el Seguro de Vida Entera en Texas?",
+      "DESC1": "El seguro de vida entera en Texas generalmente cuesta más que otros tipos de cobertura porque dura toda la vida y acumula valor en efectivo. En promedio, los tejanos pueden pagar de $177 a $282 por mes por una cobertura de $250,000, mientras que montos de cobertura más altos, como $500,000, pueden oscilar entre $250 y más de $750 por mes, dependiendo de la edad y la salud. A nivel nacional, pólizas similares promedian alrededor de $540 por mes por una cobertura de $500,000, lo que muestra cómo la edad y el nivel de cobertura afectan significativamente el precio.",
+      "DESC2": "En comparación con otros estados, las tarifas de Texas están bastante cerca del promedio de EE. UU. Por ejemplo, Texas promedia alrededor de $3,099 por año (~$258/mes) para la cobertura estándar de vida entera, mientras que algunos estados de menor costo pueden ser ligeramente más baratos, y los estados de mayor costo como Nueva Jersey o California pueden exceder los $3,600–$4,100 por año (~$302–$340/mes+). En general, Texas se mantiene cerca del punto medio nacional, lo que lo convierte en un estado ni el más barato ni el más caro para el seguro de vida entera."
+    },
+    "MINIMUM_COVERAGE": {
+      "TITLE": "Requisitos Mínimos de Cobertura de Seguro de Hogar en Texas",
+      "DESC1": "En Texas, el seguro de hogar no es un requisito legal, pero la mayoría de los prestamistas hipotecarios exigen cobertura para proteger su inversión. La cobertura mínima generalmente incluye protección para la estructura de la vivienda, pertenencias personales y responsabilidad civil por lesiones que ocurran en la propiedad. Esto asegura que los propietarios estén financieramente protegidos contra riesgos comunes como incendios, robos o daños por tormentas.",
+      "DESC2": "Elegir el nivel de cobertura adecuado es importante, ya que asegurar insuficientemente su hogar puede dejarlo vulnerable a costos inesperados. Un corredor de confianza como A-State Insurance ayuda a los tejanos a comparar múltiples pólizas de las principales aseguradoras para encontrar un seguro de hogar que cumpla con los requisitos del prestamista mientras equilibra la asequibilidad y la protección suficiente para su propiedad y familia."
+    },
+    "COST": {
+      "TITLE": "¿Cuánto Cuesta el Seguro Comercial en Texas?",
+      "DESC1": "El costo del seguro comercial en Texas puede variar significativamente dependiendo de factores como el tamaño de su negocio, la industria y las necesidades de cobertura. En promedio, las pequeñas empresas en Texas pueden esperar pagar entre $400 y $1,500 por año por una póliza básica que cubre responsabilidad civil general y propiedad comercial. Las tarifas pueden aumentar para negocios con más empleados, mayores riesgos o necesidades industriales específicas. Por ejemplo, los contratistas o proveedores de atención médica podrían enfrentar primas más altas debido a la cobertura especializada requerida.",
+      "DESC2": "En comparación con el promedio nacional, el seguro comercial en Texas es generalmente más asequible. Estados como California y Nueva York tienden a tener primas más altas debido a mayores riesgos y requisitos regulatorios. Las empresas de Texas a menudo pueden encontrar tarifas competitivas, especialmente al comparar opciones. Para obtener una estimación más precisa para su negocio, considere solicitar una cotización personalizada adaptada a su situación única."
+    },
+    "RATES": {
+      "AGE": {
+        "TITLE": "Tarifas Promedio de Seguro de Vida Universal por Edad",
+        "DESC1": "Las tarifas del seguro de vida universal varían según la edad porque las aseguradoras calculan las primas basándose en la esperanza de vida. Los solicitantes más jóvenes califican para tarifas más bajas, ya que es menos probable que enfrenten problemas médicos graves. A medida que envejece, la probabilidad de enfermedad aumenta, elevando los costos. Los solicitantes mayores también tienen menos años para acumular valor en efectivo, por lo que se requieren primas más altas para mantener la póliza activa.",
+        "H1": "Edad",
+        "H2": "Mujer",
+        "H3": "Hombre"
+      },
+      "FOOTER": {
+        "SOURCE": "Fuente:",
+        "DISCLAIMER_LABEL": "Aviso Legal",
+        "LAST_UPDATED": "Última Actualización: Marzo 2026",
+        "DISCLAIMER": "La información proporcionada en esta página es solo para fines informativos generales y puede no reflejar las actualizaciones más recientes. Los requisitos de cobertura, tarifas y leyes están sujetos a cambios. Consulte a un agente de seguros con licencia para obtener la información más precisa y actualizada."
+      }
+    },
+    "FACTORS_IMPACT": {
+      "HEADER": {
+        "TITLE": "Factores que Impactan sus Tarifas de Seguro de Vida Universal en Texas",
+        "DESC": "Las tarifas del seguro de vida universal en Texas están influenciadas por una combinación de factores personales y financieros. Las aseguradoras evalúan su edad, historial de salud y elecciones de estilo de vida, así como el tamaño de la póliza y las características del valor en efectivo. Factores más amplios como las tasas de interés y las condiciones del mercado también afectan el precio, haciendo que el costo de cada póliza varíe según las circunstancias individuales y los objetivos a largo plazo."
+      },
+      "LIST": {
+        "AGE": {
+          "TITLE": "Edad al Momento de la Solicitud",
+          "DESC": "Los solicitantes más jóvenes generalmente obtienen primas más bajas, mientras que los solicitantes mayores incurren en primas más altas debido al mayor riesgo."
+        },
+        "GENDER": {
+          "TITLE": "Sexo",
+          "DESC": "Las mujeres a menudo reciben tarifas más bajas que los hombres porque estadísticamente viven más y representan un menor riesgo para las aseguradoras."
+        },
+        "HEALTH_HISTORY": {
+          "TITLE": "Historial de Salud y Condiciones Preexistentes",
+          "DESC": "Enfermedades pasadas o condiciones crónicas aumentan las primas, mientras que un historial médico limpio puede ayudar a obtener mejores tarifas."
+        },
+        "TOBACCO_USE": {
+          "TITLE": "Consumo de Tabaco y Nicotina",
+          "DESC": "Fumar o el consumo de nicotina aumenta significativamente las primas, ya que eleva el riesgo de problemas de salud graves."
+        },
+        "BMI": {
+          "TITLE": "Estatura y Peso (IMC)",
+          "DESC": "Un IMC más alto puede llevar a primas más altas, mientras que una relación estatura-peso saludable ayuda a reducir los costos del seguro."
+        },
+        "FAMILY_HISTORY": {
+          "TITLE": "Historial Médico Familiar",
+          "DESC": "Un historial familiar de enfermedades graves puede aumentar las primas debido a posibles riesgos de salud hereditarios."
+        },
+        "COVERAGE_AMOUNT": {
+          "TITLE": "Monto de Cobertura (Beneficio por Fallecimiento)",
+          "DESC": "Montos de cobertura más altos resultan en primas más altas, ya que las aseguradoras asumen un mayor riesgo financiero."
+        },
+        "POLICY_TYPE": {
+          "TITLE": "Tipo de Póliza de Vida Universal Seleccionada (GUL, IUL, VUL)",
+          "DESC": "Los diferentes tipos de póliza varían en riesgo y rendimientos, afectando cómo las aseguradoras calculan y fijan el precio de las primas."
+        },
+        "PREMIUM_FLEXIBILITY": {
+          "TITLE": "Flexibilidad y Frecuencia de Pago de Primas",
+          "DESC": "Las opciones de pago flexibles pueden afectar la estructura de costos, mientras que los pagos más frecuentes pueden aumentar ligeramente el costo total."
+        },
+        "OCCUPATION": {
+          "TITLE": "Ocupación",
+          "DESC": "Los trabajos de alto riesgo en petróleo y gas, construcción e industrias similares comunes en Texas pueden aumentar las primas debido a una mayor exposición al riesgo."
+        },
+        "HOBBIES": {
+          "TITLE": "Pasatiempos y Estilo de Vida",
+          "DESC": "Los pasatiempos de riesgo como los deportes extremos, la aviación o las carreras pueden aumentar las primas debido a un mayor potencial de lesiones o muerte."
+        },
+        "CASH_VALUE_STRATEGY": {
+          "TITLE": "Estrategia de Crecimiento del Valor en Efectivo Seleccionada",
+          "DESC": "La estrategia de inversión elegida impacta el crecimiento y el riesgo, lo que puede influir en el costo total de la póliza y el valor a largo plazo."
+        }
+      }
+    },
+    "DISCOUNT_FACTORS": {
+      "HEADER": {
+        "TITLE": "Cómo Maximizar sus Descuentos y Reducir su Prima de Seguro de Vida Universal",
+        "DESC": "Reducir su prima de seguro comienza por comprender cómo las aseguradoras calculan el riesgo y recompensan el comportamiento responsable. Al mantener una buena salud, elegir el nivel de cobertura adecuado y aprovechar los descuentos disponibles, puede reducir los costos con el tiempo. Los ajustes inteligentes de la póliza y los hábitos financieros consistentes le ayudan a obtener mejores tarifas mientras mantiene su protección a largo plazo."
+      },
+      "LIST": {
+        "EARLY_PURCHASE": {
+          "TITLE": "Compre Cobertura Temprano",
+          "DESC": "Solicitar a una edad más temprana ayuda a asegurar primas más bajas y reduce los costos de la prima del seguro a largo plazo."
+        },
+        "NON_SMOKER": {
+          "TITLE": "Deje el Tabaco Antes de Solicitar",
+          "DESC": "Dejar el tabaco mucho antes de presentar la solicitud puede reducir significativamente las primas y mejorar sus posibilidades de aprobación."
+        },
+        "RIGHT_COVERAGE": {
+          "TITLE": "Elija Solo el Monto de Cobertura que Realmente Necesita",
+          "DESC": "Elegir solo la cobertura que necesita evita pagar de más y mantiene las primas manejables mientras cumple con los objetivos financieros."
+        },
+        "PREMIUM_FLEXIBILITY": {
+          "TITLE": "Aproveche la Flexibilidad de las Primas",
+          "DESC": "Los pagos flexibles le permiten ajustar las contribuciones durante dificultades, ayudándole a mantener la cobertura activa sin mayor tensión."
+        },
+        "HEALTH_IMPROVEMENT": {
+          "TITLE": "Mejore su Salud Antes de Solicitar",
+          "DESC": "Mejorar su salud antes de presentar la solicitud, como perder peso o controlar la presión arterial, puede ayudarle a calificar para tarifas más bajas."
+        },
+        "MEDICAL_EXAM": {
+          "TITLE": "Elija una Póliza con Examen Médico en lugar de Sin Examen para Obtener Mejores Tarifas",
+          "DESC": "Optar por una póliza con examen médico a menudo resulta en mejores tarifas, ya que las aseguradoras pueden evaluar con mayor precisión su riesgo de salud."
+        },
+        "CASH_VALUE_STRATEGY": {
+          "TITLE": "Financie su Póliza Estratégicamente para Maximizar el Crecimiento del Valor en Efectivo",
+          "DESC": "Financiar su póliza estratégicamente puede impulsar el crecimiento del valor en efectivo, mejorar el valor a largo plazo y ayudar a compensar los costos generales."
+        },
+        "COMPARE_CARRIERS": {
+          "TITLE": "Compare Múltiples Aseguradoras a Través de un Agente Independiente",
+          "DESC": "Comparar múltiples aseguradoras a través de un agente le ayuda a encontrar mejores tarifas y cobertura adaptada a su situación financiera."
+        },
+        "DRIVING_RECORD": {
+          "TITLE": "Mantenga un Historial de Conducción Limpio",
+          "DESC": "Mantener un historial de conducción limpio muestra un comportamiento responsable, lo que puede ayudar a reflejarse positivamente en la evaluación general de riesgos."
+        },
+        "REMOVE_RIDERS": {
+          "TITLE": "Revise y Elimine las Cláusulas Adicionales que No Necesita",
+          "DESC": "Revisar y eliminar las cláusulas adicionales que no necesita ayuda a reducir costos innecesarios y mantener su póliza eficiente y asequible."
+        }
+      }
+    },
+    "AGENT_COMPARISON": {
+      "HEADER": {
+        "TITLE": "Agencia de Seguros Independiente vs. Agente Cautivo: Por Qué Elegir le Ahorra Dinero",
+        "DESC": "Elegir entre una agencia de seguros independiente y un agente cautivo puede afectar sus costos y opciones de cobertura. Las agencias independientes trabajan con múltiples aseguradoras, lo que les permite comparar tarifas y encontrar pólizas que se ajusten a sus necesidades y presupuesto. En contraste, los agentes cautivos representan a una sola compañía, limitando las opciones. Tener acceso a múltiples opciones a menudo conduce a mejores soluciones de cobertura."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Característica",
+          "INDEPENDENT": "Agencia Independiente (A-State)",
+          "CAPTIVE": "Agente Cautivo"
+        },
+        "LIST": {
+          "CARRIER_ACCESS": {
+            "FEATURE": "Acceso a Aseguradoras",
+            "INDEPENDENT": "Múltiples aseguradoras de vida de primer nivel",
+            "CAPTIVE": "Una sola aseguradora"
+          },
+          "QUOTE_COMPARISON": {
+            "FEATURE": "Comparación de Cotizaciones",
+            "INDEPENDENT": "Compara tarifas entre aseguradoras para usted",
+            "CAPTIVE": "Una cotización de una compañía"
+          },
+          "UNBIASED_ADVICE": {
+            "FEATURE": "Asesoramiento Imparcial",
+            "INDEPENDENT": "Sí — recomienda lo que se ajusta a sus necesidades",
+            "CAPTIVE": "Limitado a los productos de su aseguradora"
+          },
+          "POLICY_OPTIONS": {
+            "FEATURE": "Opciones de Tipo de Póliza",
+            "INDEPENDENT": "GUL, IUL, VUL y más comparados entre aseguradoras",
+            "CAPTIVE": "Limitado a la línea de productos de la aseguradora"
+          },
+          "CASH_VALUE_STRATEGY": {
+            "FEATURE": "Opciones de Estrategia de Valor en Efectivo",
+            "INDEPENDENT": "Múltiples estrategias de crecimiento comparadas entre aseguradoras",
+            "CAPTIVE": "Solo la estructura de valor en efectivo de una aseguradora"
+          },
+          "INDEX_INVESTMENT_OPTIONS": {
+            "FEATURE": "Opciones de Índices e Inversiones",
+            "INDEPENDENT": "Múltiples opciones IUL/VUL comparadas",
+            "CAPTIVE": "Solo las opciones de una aseguradora"
+          },
+          "HARD_TO_INSURE": {
+            "FEATURE": "Ayuda para Compradores Difíciles de Asegurar",
+            "INDEPENDENT": "Más soluciones a través de múltiples aseguradoras",
+            "CAPTIVE": "Puede rechazar o tener opciones limitadas"
+          },
+          "PREMIUM_FLEXIBILITY": {
+            "FEATURE": "Comparación de Flexibilidad de Primas",
+            "INDEPENDENT": "Comparada entre aseguradoras para encontrar la mejor estructura",
+            "CAPTIVE": "Solo las reglas de flexibilidad de una aseguradora"
+          },
+          "ONGOING_SUPPORT": {
+            "FEATURE": "Revisión Continua de la Póliza",
+            "INDEPENDENT": "Sí — monitorea el valor en efectivo y ajusta según sea necesario",
+            "CAPTIVE": "Varía"
+          },
+          "PRICE": {
+            "FEATURE": "Competitividad de Precio",
+            "INDEPENDENT": "Mayor — busca en el mercado la mejor tarifa",
+            "CAPTIVE": "Limitado a los precios de una aseguradora"
+          },
+          "BEST_FOR": {
+            "FEATURE": "Ideal Para",
+            "INDEPENDENT": "La mayoría de los compradores de vida universal en Texas",
+            "CAPTIVE": "Compradores leales a una marca específica"
+          }
+        }
+      }
+    },
+    "UNIVERSAL_VS_WHOLE": {
+      "HEADER": {
+        "TITLE": "Seguro de Vida Universal vs. Seguro de Vida Entera en Texas",
+        "DESC": "El seguro de vida universal y el seguro de vida entera ofrecen cobertura de por vida, pero difieren en flexibilidad y estructura. La vida universal ofrece primas y beneficios por fallecimiento ajustables, así como un crecimiento variable del valor en efectivo. La vida entera proporciona primas de seguro fijas, valor en efectivo garantizado y rendimientos predecibles, haciéndolo más simple y estable para la planificación a largo plazo."
+      },
+      "TABLE": {
+        "COLUMNS": {
+          "FEATURE": "Factor",
+          "UNIVERSAL_LIFE": "Seguro de Vida Universal",
+          "WHOLE_LIFE": "Seguro de Vida Entera"
+        },
+        "LIST": {
+          "COVERAGE_DURATION": {
+            "FEATURE": "Duración de la Cobertura",
+            "UNIVERSAL_LIFE": "De por vida",
+            "WHOLE_LIFE": "De por vida"
+          },
+          "PREMIUM_FLEXIBILITY": {
+            "FEATURE": "Flexibilidad de Primas",
+            "UNIVERSAL_LIFE": "Sí — ajustable dentro de límites",
+            "WHOLE_LIFE": "No — primas fijas"
+          },
+          "DEATH_BENEFIT_FLEXIBILITY": {
+            "FEATURE": "Flexibilidad del Beneficio por Fallecimiento",
+            "UNIVERSAL_LIFE": "Sí — puede aumentar o disminuir",
+            "WHOLE_LIFE": "No — beneficio por fallecimiento fijo"
+          },
+          "CASH_VALUE_ACCUMULATION": {
+            "FEATURE": "Acumulación de Valor en Efectivo",
+            "UNIVERSAL_LIFE": "Sí",
+            "WHOLE_LIFE": "Sí"
+          },
+          "CASH_VALUE_GROWTH_RATE": {
+            "FEATURE": "Tasa de Crecimiento del Valor en Efectivo",
+            "UNIVERSAL_LIFE": "Varía (interés, índice o vinculado al mercado)",
+            "WHOLE_LIFE": "Tasa fija garantizada"
+          },
+          "DIVIDEND_ELIGIBILITY": {
+            "FEATURE": "Elegibilidad para Dividendos",
+            "UNIVERSAL_LIFE": "No (la mayoría de las pólizas)",
+            "WHOLE_LIFE": "Sí (pólizas participantes)"
+          },
+          "POLICY_LOANS": {
+            "FEATURE": "Préstamos de Póliza",
+            "UNIVERSAL_LIFE": "Sí — pedir prestado contra el valor en efectivo",
+            "WHOLE_LIFE": "Sí — pedir prestado contra el valor en efectivo"
+          },
+          "RISK_LEVEL": {
+            "FEATURE": "Nivel de Riesgo",
+            "UNIVERSAL_LIFE": "Moderado a Alto (VUL expuesto al mercado)",
+            "WHOLE_LIFE": "Bajo — crecimiento garantizado"
+          },
+          "POLICY_COMPLEXITY": {
+            "FEATURE": "Complejidad de la Póliza",
+            "UNIVERSAL_LIFE": "Más compleja",
+            "WHOLE_LIFE": "Moderada"
+          },
+          "RISK_OF_LAPSE": {
+            "FEATURE": "Riesgo de Caducidad",
+            "UNIVERSAL_LIFE": "Mayor (si se agota el valor en efectivo)",
+            "WHOLE_LIFE": "Menor"
+          },
+          "BEST_FOR": {
+            "FEATURE": "Ideal Para",
+            "UNIVERSAL_LIFE": "Planificación flexible a largo plazo, planificación patrimonial",
+            "WHOLE_LIFE": "Cobertura predecible de por vida, transferencia de riqueza"
+          },
+          "IDEAL_BUYER_PROFILE": {
+            "FEATURE": "Perfil del Comprador Ideal",
+            "UNIVERSAL_LIFE": "Compradores con conocimientos financieros que buscan flexibilidad",
+            "WHOLE_LIFE": "Compradores conservadores que buscan garantías"
+          }
+        }
+      }
+    },
+    "HIGH_RISK_APPLICANT": {
+      "HEADER": {
+        "TITLE": "¿Difícil de Asegurar? Todavía Podemos Ayudarle a Encontrar Cobertura"
+      },
+      "CONTENT": {
+        "DESC1": "Obtener la aprobación para un seguro de vida puede parecer un desafío si tiene condiciones de salud, un trabajo de riesgo o denegaciones de cobertura anteriores. Muchas personas asumen que no tienen opciones, pero ese no es siempre el caso. Con la orientación adecuada, incluso los solicitantes de alto riesgo pueden encontrar pólizas diseñadas para adaptarse a su situación y brindar una protección significativa.",
+        "DESC2": "Los agentes experimentados pueden conectarle con aseguradoras que se especializan en perfiles de mayor riesgo y ofrecen suscripción flexible y soluciones a medida. Ya sea que tenga preocupaciones médicas, riesgos de estilo de vida o un historial financiero complejo, todavía hay formas de asegurar una cobertura de seguro de vida universal en Texas que proteja a su familia y respalde sus objetivos a largo plazo."
+      }
+    },
+    "LANGUAGE_SUPPORT": {
+      "HEADER": {
+        "TITLE": "Hablamos Español / We Speak Your Language"
+      },
+      "CONTENT": {
+        "DESC1": "El idioma nunca debe ser una barrera para obtener la ayuda o el servicio que necesita. Nuestro equipo de habla hispana está aquí para apoyarle con una comunicación clara y un cuidado genuino. Ya sea que tenga preguntas, necesite orientación o quiera discutir detalles, puede hacerlo cómodamente en español sin preocuparse por malentendidos.",
+        "DESC2": "Estamos comprometidos a hacer que cada interacción sea fluida, respetuosa y fácil de seguir, para que se sienta seguro y completamente apoyado de principio a fin. Nuestro objetivo es asegurar que cada cliente se sienta comprendido, informado y cómodo al elegir la protección adecuada para su futuro."
+      }
+    },
+    "ASTATE_DIFFERENTIATORS": {
+      "HEADER": {
+        "TITLE": "Qué Hace Diferente a A-State Insurance"
+      },
+      "LIST": {
+        "LICENSED_BROKERS": {
+          "TITLE": "Corredores con Licencia en Texas",
+          "DESCRIPTION": "Con licencia en Texas, los corredores siguen las regulaciones estatales, asegurando un asesoramiento confiable y soluciones de seguros conformes."
+        },
+        "HISPANIC_LATINO_FRIENDLY": {
+          "TITLE": "Amigable con Hispanos y Latinos",
+          "DESCRIPTION": "Un enfoque acogedor apoya a los clientes hispanos y latinos con un servicio culturalmente consciente y una comunicación clara."
+        },
+        "YEARS_SERVING": {
+          "TITLE": "Más de 20 Años Sirviendo a los Tejanos",
+          "DESCRIPTION": "Con más de dos décadas de experiencia, el equipo comprende bien las necesidades locales y los cambiantes desafíos de seguros."
+        },
+        "CUSTOM_COVERAGE": {
+          "TITLE": "Planes de Cobertura Personalizados",
+          "DESCRIPTION": "Los planes personalizados se adaptan para satisfacer metas individuales, presupuestos y necesidades de protección financiera a largo plazo."
+        },
+        "ONLINE_LOCAL": {
+          "TITLE": "En Línea y Local",
+          "DESCRIPTION": "Los servicios están disponibles tanto en línea como localmente, brindando a los clientes formas flexibles y convenientes de obtener soporte."
+        },
+        "MULTILINGUAL_AGENTS": {
+          "TITLE": "Agentes Multilingües",
+          "DESCRIPTION": "Los agentes multilingües ayudan a los clientes en varios idiomas, haciendo el proceso más fácil y accesible para todos."
+        }
+      }
+    },
+    "INSURANCE_STEPS": {
+      "HEADER": {
+        "TITLE": "Obtenga Cobertura en 4 Simples Pasos"
+      },
+      "STEPS": {
+        "REACH_OUT": {
+          "TITLE": "Paso 1 - Contáctenos",
+          "DESCRIPTION": "Comuníquese con el equipo por teléfono o en línea para comenzar su viaje de cobertura con soporte rápido y fácil."
+        },
+        "GET_ADVICE": {
+          "TITLE": "Paso 2 - Reciba Asesoramiento",
+          "DESCRIPTION": "Reciba orientación clara adaptada a sus necesidades, ayudándole a entender las opciones y tomar decisiones informadas."
+        },
+        "PICK_PLAN": {
+          "TITLE": "Paso 3 - Elija su Plan",
+          "DESCRIPTION": "Seleccione un plan que se ajuste a su presupuesto y metas, asegurando el nivel adecuado de protección para su futuro."
+        },
+        "WE_GOT_YOU": {
+          "TITLE": "Paso 4 - Lo Tenemos Cubierto",
+          "DESCRIPTION": "Disfrute de soporte continuo y tranquilidad sabiendo que su cobertura está activa y sus necesidades están siendo atendidas."
+        }
+      }
+    },
+    "SWITCH_STEPS": {
+      "HEADER": {
+        "TITLE": "Cómo Cambiar su Seguro de Vida Universal a A-State Insurance"
+      },
+      "STEPS": {
+        "STEP_1": {
+          "TITLE": "Paso 1: Obtenga su Cotización de Comparación Gratuita",
+          "DESCRIPTION": "Solicite una cotización de comparación gratuita para revisar tarifas, beneficios y opciones de ahorro según sus necesidades."
+        },
+        "STEP_2": {
+          "TITLE": "Paso 2: Elija su Plan y Actívelo",
+          "DESCRIPTION": "Seleccione el plan que se ajuste a sus metas, luego active la cobertura rápidamente con un proceso guiado simple."
+        },
+        "STEP_3": {
+          "TITLE": "Paso 3: Cancele su Póliza Antigua (¡Le Ayudamos!)",
+          "DESCRIPTION": "Cancele su póliza antigua con soporte para asegurar una transición fluida sin brechas en la cobertura del seguro."
+        }
+      }
+    },
+    "FREE_QUOTE": {
+      "HEADER": "Obtenga una Cotización Gratis de Seguro de Vida Universal en Texas",
+      "DESCRIPTION": "Asegure su futuro con una cobertura flexible construida en torno a sus necesidades y metas. Comenzar es rápido y simple. Simplemente seleccione su tipo de póliza preferido, ya sea Garantizado, Indexado, Variable, Fijo, Supervivencia u Otro, y complete sus datos básicos a continuación. Nuestro proceso está diseñado para ser fácil y sin estrés, ayudándole a explorar opciones con confianza. Comience hoy con A-State Insurance y reciba su cotización personalizada. Ingrese su nombre completo o número de teléfono para comenzar."
     }
   },
   "FINAL_EXPENSES_INSURANCE": {

@@ -128,6 +128,24 @@ export class MexicanCarInsurance {
     "BUS_CHARTER_VEHICLES"
   ];
 
+  notCoveredKeys = [
+    'BEYOND_TERRITORY',
+    'RACING',
+    'INTENTIONAL_DAMAGE',
+    'WEAR_TEAR',
+    'DUI',
+    'UNLISTED_DRIVERS',
+    'PERSONAL_BELONGINGS',
+    'COMMERCIAL_USE',
+    'UNPAVED_ROADS',
+    'PRE_EXISTING_DAMAGE',
+    'UNLISTED_VEHICLES',
+    'WAR_CIVIL_UNREST',
+    'HIGH_RISK_ZONES',
+    'POLICY_LAPSE',
+    'US_SIDE_ACCIDENTS',
+  ]
+
   switchSteps = [
     'STEP_1',
     'STEP_2',
