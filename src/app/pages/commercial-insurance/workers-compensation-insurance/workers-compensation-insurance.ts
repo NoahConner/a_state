@@ -32,18 +32,58 @@ export class WorkersCompensationInsurance {
 
 
 
-  companyRates = [
-    { company: "The Hartford", monthly: "$70", annual: "$834" },
-    { company: "ERGO NEXT", monthly: "$70", annual: "$836" },
-    { company: "Thimble", monthly: "$71", annual: "$851" },
-    { company: "Progressive Commercial", monthly: "$72", annual: "$859" },
-    { company: "Hiscox", monthly: "$72", annual: "$865" },
-    { company: "Simply Business", monthly: "$72", annual: "$868" },
-    { company: "Coverdash", monthly: "$73", annual: "$880" },
-    { company: "biBERK", monthly: "$75", annual: "$904" },
-    { company: "Nationwide", monthly: "$82", annual: "$982" },
-    { company: "Chubb", monthly: "$85", annual: "$1,025" }
-  ];
+ companyRates = [
+  { 
+    company: "<a href='https://www.thehartford.com/' class='inline-link' rel='nofollow' target='_blank'>The Hartford</a>", 
+    monthly: "$70", 
+    annual: "$834" 
+  },
+  { 
+    company: "<a href='https://www.nextinsurance.com/' class='inline-link' rel='nofollow' target='_blank'>ERGO NEXT</a>", 
+    monthly: "$70", 
+    annual: "$836" 
+  },
+  { 
+    company: "<a href='https://www.thimble.com/' class='inline-link' rel='nofollow' target='_blank'>Thimble</a>", 
+    monthly: "$71", 
+    annual: "$851" 
+  },
+  { 
+    company: "<a href='https://www.progressivecommercial.com/' class='inline-link' rel='nofollow' target='_blank'>Progressive Commercial</a>", 
+    monthly: "$72", 
+    annual: "$859" 
+  },
+  { 
+    company: "<a href='https://www.hiscox.com/' class='inline-link' rel='nofollow' target='_blank'>Hiscox</a>", 
+    monthly: "$72", 
+    annual: "$865" 
+  },
+  { 
+    company: "<a href='https://www.simplybusiness.co.uk/' class='inline-link' rel='nofollow' target='_blank'>Simply Business</a>", 
+    monthly: "$72", 
+    annual: "$868" 
+  },
+  { 
+    company: "<a href='https://www.coverdash.com/' class='inline-link' rel='nofollow' target='_blank'>Coverdash</a>", 
+    monthly: "$73", 
+    annual: "$880" 
+  },
+  { 
+    company: "<a href='https://www.biberk.com/' class='inline-link' rel='nofollow' target='_blank'>biBERK</a>", 
+    monthly: "$75", 
+    annual: "$904" 
+  },
+  { 
+    company: "<a href='https://www.nationwide.com/' class='inline-link' rel='nofollow' target='_blank'>Nationwide</a>", 
+    monthly: "$82", 
+    annual: "$982" 
+  },
+  { 
+    company: "<a href='https://www.chubb.com/' class='inline-link' rel='nofollow' target='_blank'>Chubb</a>", 
+    monthly: "$85", 
+    annual: "$1,025" 
+  }
+];
   industryRates = [
     { industry: "Accountants", monthly: "$21", annual: "$247" },
     { industry: "Ad Agency", monthly: "$16", annual: "$193" },
