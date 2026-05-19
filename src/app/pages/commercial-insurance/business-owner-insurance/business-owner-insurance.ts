@@ -34,10 +34,10 @@ export class BusinessOwnerInsurance {
 
 
   companyRates = [
-    { company: "The Hartford", annual: "$1,019" },
-    { company: "Progressive", annual: "$1,351" },
-    { company: "Huckleberry", annual: "$864" },
-    { company: "Thimble", annual: "$725" }
+    { company: "<a href='https://www.thehartford.com/' target='_blank' rel='nofollow'>The Hartford</a>", annual: "$1,019" },
+    { company: "<a href='https://www.progressive.com/' target='_blank' rel='nofollow'>Progressive</a>", annual: "$1,351" },
+    { company: "<a href='https://huckleberry.com/' target='_blank' rel='nofollow'>Huckleberry</a>", annual: "$864" },
+    { company: "<a href='https://www.thimble.com/' target='_blank' rel='nofollow'>Thimble</a>", annual: "$725" }
   ];
   industryRates = [
     { industry: "Home-based consultant or freelancer", annual: "$500 – $750" },

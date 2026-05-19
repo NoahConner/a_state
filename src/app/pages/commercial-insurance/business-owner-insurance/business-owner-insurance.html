@@ -236,8 +236,7 @@
           @for (rate of companyRates; track rate.company; let i = $index) {
           <div class="row g-2 text-center mb-2 align-items-center">
             <div class="col-6">
-              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0">
-                {{ rate.company }}
+              <div class="data-pill" [class.data-pill-color-2]="i % 2 === 0" [class.data-pill-color-1]="i % 2 !== 0" [innerHtml]="rate.company">
               </div>
             </div>
             <div class="col-6">
@@ -253,7 +252,7 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p><span [innerHTML]="'BUSINESS_OWNER_POLICY_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#">Insurance.com</a></p>
+          <p><span [innerHTML]="'BUSINESS_OWNER_POLICY_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="https://www.insurance.com/small-business/bop-insurance/how-much-is-bop-insurance-in-texas/#Companies_that_offer_BOP_insurance_in_Texas" rel="nofollow" target="_blank">Insurance.com</a></p>
 
           <p class="last-updated" [innerHTML]="'BUSINESS_OWNER_POLICY_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
         </div>
@@ -302,7 +301,7 @@
 
         <!-- Footer Info -->
         <div class="d-flex justify-content-between mt-4 rates-footer-info">
-          <p><span [innerHTML]="'BUSINESS_OWNER_POLICY_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="#"> The Agent's Office</a>
+          <p><span [innerHTML]="'BUSINESS_OWNER_POLICY_INSURANCE.RATES.FOOTER.SOURCE' | translateHtml | async"></span> <a href="https://theagentsoffice.com/business-owners-policy-bop-texas/" target="_blank" rel="nofollow"> The Agent's Office</a>
           </p>
 
           <p class="last-updated" [innerHTML]="'BUSINESS_OWNER_POLICY_INSURANCE.RATES.FOOTER.LAST_UPDATED' | translateHtml | async"></p>
