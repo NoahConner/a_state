@@ -38,7 +38,7 @@
           <div class="inps">
             <input type="text" [placeholder]="'PET_INSURANCE.BANNER.FORM.FULL_NAME' | translate" class="form-control" />
 
-            <input type="number" [placeholder]="'PET_INSURANCE.BANNER.FORM.PHONE' | translate" class="form-control" />
+            <input type="tel" appPhoneFormat [placeholder]="'PET_INSURANCE.BANNER.FORM.PHONE' | translate" class="form-control" />
           </div>
 
           <button class="btn" [routerLink]="getRoute('getAQuote')">
@@ -797,7 +797,7 @@
           <div class="inps">
             <input type="text" [placeholder]="'PET_INSURANCE.BANNER.FORM.FULL_NAME' | translate" class="form-control" />
 
-            <input type="number" [placeholder]="'PET_INSURANCE.BANNER.FORM.PHONE' | translate" class="form-control" />
+            <input type="tel" appPhoneFormat [placeholder]="'PET_INSURANCE.BANNER.FORM.PHONE' | translate" class="form-control" />
           </div>
 
           <button class="btn" [routerLink]="getRoute('getAQuote')">
