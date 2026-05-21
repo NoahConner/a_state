@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { HttpService } from '../../services/http.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
@@ -24,6 +25,7 @@ export class GetSuretyQuote {
 
   constructor(
     private fb: FormBuilder,
+    private route: ActivatedRoute,
     private http: HttpService,
     private translate: TranslateService
   ) { }
@@ -54,6 +56,18 @@ export class GetSuretyQuote {
       .subscribe((res: string[]) => {
         this.timeOptions = res;
       });
+
+    this.applyPrefillFromQueryParams();
+  }
+
+  private applyPrefillFromQueryParams() {
+    const fullName = this.route.snapshot.queryParamMap.get('fullName')?.trim();
+    const phone = this.route.snapshot.queryParamMap.get('phone')?.trim();
+
+    this.suretyQuoteForm.patchValue({
+      full_name: fullName || '',
+      phone_number: phone || '',
+    });
   }
 
   nextStep() {

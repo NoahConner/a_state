@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray, FormControl } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { HttpService } from '../../services/http.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
@@ -24,6 +25,7 @@ export class GetAutoQuote {
 
   constructor(
     private fb: FormBuilder,
+    private route: ActivatedRoute,
     private http: HttpService,
     private translate: TranslateService
   ) { }
@@ -47,6 +49,7 @@ export class GetAutoQuote {
 
     this.addVehicle();
     this.addDriver();
+    this.applyPrefillFromQueryParams();
 
     this.translate.get('GET_AUTO_QUOTE.STEPPER.STEP5.CONTACT_OPTIONS')
       .subscribe((res: string[]) => {
@@ -57,6 +60,16 @@ export class GetAutoQuote {
       .subscribe((res: string[]) => {
         this.timeOptions = res;
       });
+  }
+
+  private applyPrefillFromQueryParams() {
+    const fullName = this.route.snapshot.queryParamMap.get('fullName')?.trim();
+    const phone = this.route.snapshot.queryParamMap.get('phone')?.trim();
+
+    this.autoQuoteForm.patchValue({
+      first_name: fullName || '',
+      phone_number: phone || '',
+    });
   }
 
   get vehicles(): FormArray {
@@ -221,4 +234,3 @@ export class GetAutoQuote {
     this.termsAccepted = false;
   }
 }
-
