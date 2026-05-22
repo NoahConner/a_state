@@ -78,6 +78,11 @@
                     <a class="dropdown-item" [routerLink]="getRoute('boatInsurance')" [innerHTML]="'HEADER.BOAT_INSURANCE' | translateHtml | async">
                     </a>
                   </li>
+                   <li>
+                    <a class="dropdown-item" [routerLink]="getRoute('commercialAutoInsurance')">
+                      {{ 'HEADER.COMMERCIAL_AUTO_INSURANCE' | translate }}
+                    </a>
+                  </li>
                   <li>
                     <a class="dropdown-item" [routerLink]="getRoute('rvInsurance')" [innerHTML]="'HEADER.RV_MOTORHOME_INSURANCE' | translateHtml | async">
                     </a>
@@ -489,6 +494,9 @@
             <a class="sm-sub-item" [routerLink]="getRoute('classicCarInsurance')">{{
               'HEADER.CLASSIC_CAR_INSURANCE' | translate
             }}</a>
+                    <a class="sm-sub-item" [routerLink]="getRoute('commercialAutoInsurance')">
+                      {{ 'HEADER.COMMERCIAL_AUTO_INSURANCE' | translate }}
+                    </a>
             <a class="sm-sub-item" [routerLink]="getRoute('sr22Insurance')">{{
               'HEADER.SR22_INSURANCE' | translate
             }}</a>
