@@ -64,8 +64,12 @@ export class PhoneFormatDirective implements OnInit, OnDestroy {
   private formatPhone(rawValue: string): string {
     const digits = rawValue.replace(/\D/g, '').slice(0, 10);
 
+    if (!digits.length) {
+      return '';
+    }
+
     if (digits.length <= 3) {
-      return digits;
+      return `(${digits}`;
     }
 
     if (digits.length <= 6) {

@@ -366,25 +366,48 @@
           <div class="h1" [innerHTML]="'HOME.COVERDBANNER.TITLE' | translateHtml | async"></div>
           <div class="selectable mt-5">
             @for (item of chips.slice(0, 3); track item.name) {
-            <div class="chip" *ngIf="item.name">
+            <button
+              type="button"
+              class="chip"
+              *ngIf="item.name"
+              [class.selected]="selectedChip === item.name"
+              [attr.aria-pressed]="selectedChip === item.name"
+              (click)="selectChip(item.name)">
               <i class="{{ item?.icon }}"></i>
               <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
-            </div>
+            </button>
             }
           </div>
           <div class="selectable mt-2">
             @for (item of chips.slice(3, 6); track item.name) {
-            <div class="chip" *ngIf="item.name">
+            <button
+              type="button"
+              class="chip"
+              *ngIf="item.name"
+              [class.selected]="selectedChip === item.name"
+              [attr.aria-pressed]="selectedChip === item.name"
+              (click)="selectChip(item.name)">
               <i class="{{ item?.icon }}"></i>
               <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
-            </div>
+            </button>
             }
           </div>
           <div class="inps">
-            <input type="text" [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate" class="form-control" />
-            <input type="tel" appPhoneFormat [placeholder]="'HOME.BANNER.FORM.PHONE' | translate" class="form-control" />
+            <input
+              type="text"
+              [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate"
+              class="form-control"
+              [value]="fullName"
+              (input)="fullName = $any($event.target).value" />
+            <input
+              type="tel"
+              appPhoneFormat
+              [placeholder]="'HOME.BANNER.FORM.PHONE' | translate"
+              class="form-control"
+              [value]="phone"
+              (input)="phone = $any($event.target).value" />
           </div>
-          <button class="btn" [routerLink]="getRoute('getAQuote')">{{ 'HOME.COVERDBANNER.FORM.BUTTON' | translate
+          <button class="btn" [disabled]="!selectedChip" (click)="goToSelectedQuote()">{{ 'HOME.COVERDBANNER.FORM.BUTTON' | translate
             }}</button>
         </div>
       </div>
