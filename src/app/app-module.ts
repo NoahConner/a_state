@@ -87,6 +87,7 @@ import { PetInsurance } from './pages/additional_insurance/pet-insurance/pet-ins
 import { TranslateHtmlPipe } from './services/translate-html.pipe';
 import { AsyncPipe } from '@angular/common';
 import { PhoneFormatDirective } from './directives/phone-format.directive';
+import { ChipNavigationDirective } from './directives/chip-navigation.directive';
 
 @NgModule({
   declarations: [
@@ -167,6 +168,7 @@ import { PhoneFormatDirective } from './directives/phone-format.directive';
     TitleTransfer,
     PetInsurance,
     PhoneFormatDirective,
+    ChipNavigationDirective,
   ],
   imports: [
     BrowserModule,

@@ -14,7 +14,7 @@
           <div class="selectable">
             
             @for (item of chips; track item.name) {
-            <div class="chip" *ngIf="item.name">
+            <div class="chip" [appChipNav]="item.name" *ngIf="item.name">
               <i class="{{ item.icon }}"></i>
               <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
@@ -23,7 +23,7 @@
 
                     <div class="selectable mt-4">
                         @for (item of chips.slice(0, 3); track item.name) {
-                        <div class="chip" *ngIf="item.name">
+                        <div class="chip" [appChipNav]="item.name" *ngIf="item.name">
                             <i class="{{ item?.icon }}"></i>
                             <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
                         </div>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="selectable mt-2">
                         @for (item of chips.slice(3, 6); track item.name) {
-                        <div class="chip" *ngIf="item.name">
+                        <div class="chip" [appChipNav]="item.name" *ngIf="item.name">
                             <i class="{{ item?.icon }}"></i>
                             <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
                         </div>
@@ -666,7 +666,7 @@
                     </p>
                     <div class="selectable mt-4">
                         @for (item of chips.slice(0, 3); track item.name) {
-                        <div class="chip" *ngIf="item.name">
+                        <div class="chip" [appChipNav]="item.name" *ngIf="item.name">
                             <i class="{{ item?.icon }}"></i>
                             <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
                         </div>
@@ -674,7 +674,7 @@
                     </div>
                     <div class="selectable mt-2">
                         @for (item of chips.slice(3, 6); track item.name) {
-                        <div class="chip" *ngIf="item.name">
+                        <div class="chip" [appChipNav]="item.name" *ngIf="item.name">
                             <i class="{{ item?.icon }}"></i>
                             <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
                         </div>

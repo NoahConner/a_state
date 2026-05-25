@@ -322,3 +322,81 @@ img {
     margin-bottom: 0.5rem !important;
   }
 }
+body .topBanner .selectable .chip,
+body .getCovver .selectable .chip,
+body .selectable .chip {
+  appearance: none;
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  border: 1.5px solid rgba(202, 43, 40, 0.12) !important;
+  border-radius: 12px !important;
+  width: 175px !important;
+  min-width: 175px !important;
+  height: 67px !important;
+  min-height: 67px !important;
+  padding: 12px 14px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  text-align: center !important;
+  color: #3a3a3a !important;
+  box-shadow: 0 8px 18px rgba(28, 28, 28, 0.08) !important;
+  transition: 0.25s all ease-in-out !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  box-sizing: border-box !important;
+}
+
+body .topBanner .selectable .chip i,
+body .getCovver .selectable .chip i,
+body .selectable .chip i {
+  // color: #ca2b28 !important;
+  font-size: 18px !important;
+  width: auto !important;
+}
+
+body .topBanner .selectable .chip span,
+body .getCovver .selectable .chip span,
+body .selectable .chip span {
+  line-height: 1.2 !important;
+}
+
+body .topBanner .selectable .chip:hover,
+body .topBanner .selectable .chip.selected,
+body .getCovver .selectable .chip:hover,
+body .getCovver .selectable .chip.selected,
+body .selectable .chip:hover,
+body .selectable .chip.selected {
+  border-color: #ca2b28 !important;
+  background-color: #fff22e !important;
+  color: #ca2b28 !important;
+  box-shadow: 0 12px 24px rgba(202, 43, 40, 0.14) !important;
+  transform: translateY(-1px);
+}
+
+body .topBanner .selectable .chip.chip-disabled,
+body .topBanner .selectable .chip[aria-disabled='true'],
+body .getCovver .selectable .chip.chip-disabled,
+body .getCovver .selectable .chip[aria-disabled='true'],
+body .selectable .chip.chip-disabled,
+body .selectable .chip[aria-disabled='true'] {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  border-color: rgba(202, 43, 40, 0.08) !important;
+  color: #8f8f8f !important;
+  box-shadow: none !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  transform: none !important;
+}
+
+body .topBanner .selectable .chip.chip-disabled i,
+body .topBanner .selectable .chip[aria-disabled='true'] i,
+body .getCovver .selectable .chip.chip-disabled i,
+body .getCovver .selectable .chip[aria-disabled='true'] i,
+body .selectable .chip.chip-disabled i,
+body .selectable .chip[aria-disabled='true'] i {
+  color: #b4b4b4 !important;
+}
