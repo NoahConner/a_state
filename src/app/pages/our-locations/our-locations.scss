@@ -116,8 +116,13 @@
       .buttons {
         display: flex;
         gap: 15px;
+        flex-wrap: nowrap;
+        align-items: stretch;
 
         .btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
           border-radius: 8px;
           padding: 12px 24px;
           font-size: 17px;
@@ -125,6 +130,10 @@
           border: none;
           transition: transform 0.2s;
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          text-align: center;
+          min-height: 50px;
+          flex: 1 1 0;
+          white-space: normal;
 
           &:hover {
             transform: translateY(-2px);
@@ -158,11 +167,61 @@
         width: 100%;
       }
 
+      .info {
+        padding: 32px 28px;
+
+        .buttons {
+          .btn {
+            flex: 1 1 calc(50% - 8px);
+            white-space: normal;
+          }
+
+          .details-btn {
+            flex-basis: 100%;
+          }
+        }
+      }
+
       .info::after {
         display: none;
       }
 
       // Remove watermark on mobile for clarity
+    }
+  }
+
+  @media (max-width: 576px) {
+    .location-card {
+      .map {
+        min-height: 280px;
+      }
+
+      .info {
+        padding: 24px 18px;
+
+        h4 {
+          margin-bottom: 24px;
+          font-size: 24px;
+        }
+
+        .details {
+          margin-bottom: 28px;
+
+          li {
+            align-items: flex-start;
+            font-size: 16px;
+          }
+        }
+
+        .buttons {
+          flex-direction: column;
+
+          .btn {
+            width: 100%;
+            flex: 1 1 100%;
+          }
+        }
+      }
     }
   }
 }

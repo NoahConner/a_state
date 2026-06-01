@@ -64,7 +64,7 @@ export class LocationDetail implements OnInit {
   }
 
   ngOnInit(): void {
-    let currentLang = this.languageService.getCurrentLanguage();
+    const currentLang = this.languageService.getCurrentLanguage();
     this.getLocationDetail(currentLang);
     this.languageService.getLanguageChange().subscribe((lang: any) => {
       this.getLocationDetail(lang.lang);
@@ -72,10 +72,22 @@ export class LocationDetail implements OnInit {
   }
 
   getLocationDetail(lang: any) {
-    const id = this.route.snapshot.paramMap.get('id');
     this.http.get<any[]>('assets/locations.json').subscribe({
       next: (locations) => {
-        const found = locations[lang].find((loc: any) => loc.id === id);
+        const locationList = locations?.[lang] || [];
+        const id = this.resolveLocationId();
+        const found =
+          locationList.find((loc: any) => loc.id === id) ||
+          locationList.find((loc: any) => loc.id === `${id}-es`) ||
+          locationList.find((loc: any) => loc.id === id?.replace(/-es$/, ''));
+
+        if (!found) {
+          this.location = null;
+          console.warn(`Location not found for id: ${id} and language: ${lang}`);
+          this.cdr.detectChanges();
+          return;
+        }
+
         this.location = found;
         this.location.mapUrl = this.sanitizer.bypassSecurityTrustResourceUrl(found.mapEmbedUrl);
         this.cdr.detectChanges();
@@ -84,6 +96,17 @@ export class LocationDetail implements OnInit {
         console.log(err);
       },
     });
+  }
+
+  private resolveLocationId(): string {
+    const routeParamId = this.route.snapshot.paramMap.get('id');
+    if (routeParamId) {
+      return routeParamId;
+    }
+
+    const cleanUrl = this.router.url.split('?')[0].split('#')[0];
+    const segments = cleanUrl.split('/').filter(Boolean);
+    return segments[segments.length - 1] || '';
   }
 
   getRoute(page: string) {

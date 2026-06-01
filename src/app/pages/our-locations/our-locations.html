@@ -26,11 +26,11 @@
           <ul class="details">
             <li >
               <span class="icon">📍</span>
-              <a href="{{ loc.link }}" target="_blank" rel="noopener noreferrer">{{ loc.address }}</a>
+              <a class="inline-link" href="{{ loc.link }}" target="_blank" rel="noopener noreferrer">{{ loc.address }}</a>
             </li>
             <li>
               <span class="icon">📞</span>
-            <a  style="color: inherit; text-decoration: underline;" href="tel:{{ loc.phone }}">
+            <a  class="inline-link" style="color: inherit; text-decoration: underline;" href="tel:{{ loc.phone }}">
               {{ loc.phone }}
               </a>
             </li>
@@ -84,12 +84,12 @@
           <h3 class="feature-title" [innerHTML]="'OUR_LOCATION.SESSION2.CARD1.TITLE' | translateHtml | async"></h3>
           <p class="feature-text">
             <span [innerHTML]="'OUR_LOCATION.SESSION2.CARD1.DESCRIPTION_PART1' | translateHtml | async"></span>
-            <a [routerLink]="getRoute('autoInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.AUTO' | translateHtml | async"></a>,
-            <a [routerLink]="getRoute('homeInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.HOMEOWNERS' | translateHtml | async"></a>,
-            <a [routerLink]="getRoute('commercialInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.COMMERCIAL' | translateHtml | async"></a>,
-            <a [routerLink]="getRoute('lifeInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.LIFE' | translateHtml | async"></a>,
+            <a  class="inline-link" [routerLink]="getRoute('autoInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.AUTO' | translateHtml | async"></a>,
+            <a class="inline-link" [routerLink]="getRoute('homeInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.HOMEOWNERS' | translateHtml | async"></a>,
+            <a class="inline-link" [routerLink]="getRoute('commercialInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.COMMERCIAL' | translateHtml | async"></a>,
+            <a class="inline-link" [routerLink]="getRoute('lifeInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.LIFE' | translateHtml | async"></a>,
             <span [innerHTML]="'OUR_LOCATION.SESSION2.CARD1.DESCRIPTION_PART2' | translateHtml | async"></span>
-            <a [routerLink]="getRoute('healthInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.HEALTH' | translateHtml | async"></a>
+            <a class="inline-link" [routerLink]="getRoute('healthInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.HEALTH' | translateHtml | async"></a>
             <span [innerHTML]="'OUR_LOCATION.SESSION2.CARD1.DESCRIPTION_PART3' | translateHtml | async"></span>
           </p>
         </div>

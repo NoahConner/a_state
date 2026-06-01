@@ -64,19 +64,19 @@
 
                 <p>
                   <img src="/assets/images/detailLocation.png" alt="" />
-                  <a href="{{ loc?.link }}" target="_blank" rel="noopener noreferrer">
+                  <a class="inline-link" href="{{ loc?.link }}" target="_blank" rel="noopener noreferrer">
                     {{ loc.detailPage?.session1?.contact?.address }}
                   </a>
                 </p>
                 <p>
                   <img src="/assets/images/phone.png" alt="" />
-                  <a style="color: inherit; text-decoration: underline;     margin-left: 3px;" href="tel:{{ loc.detailPage?.session1?.contact?.phone }}">
+                  <a class="inline-link" style="color: inherit; text-decoration: underline;     margin-left: 3px;" href="tel:{{ loc.detailPage?.session1?.contact?.phone }}">
                     {{ loc.detailPage?.session1?.contact?.phone }}
                   </a>
                 </p>
                 <p>
                   <img src="/assets/images/detailMail.png" alt="" />
-                  <a style="color: inherit; text-decoration: underline;     margin-left: 3px;" href="mailto:{{ loc.detailPage?.session1?.contact?.email }}">
+                  <a class="inline-link" style="color: inherit; text-decoration: underline;     margin-left: 3px;" href="mailto:{{ loc.detailPage?.session1?.contact?.email }}">
                     {{ loc.detailPage?.session1?.contact?.email }}
                   </a>
                 </p>

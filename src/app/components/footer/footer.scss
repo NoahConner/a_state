@@ -139,14 +139,29 @@
       align-items: center;
 
       .imagess {
-        flex-direction: row;
         display: flex;
+        flex-direction: row;
         align-items: center;
         gap: 10px;
+        flex-wrap: nowrap;
+
+        a {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          flex: 0 0 auto;
+          line-height: 0;
+        }
 
         img {
           height: 34px;
+          width: auto;
+          max-height: 34px;
+          max-width: 100%;
+          display: block;
           border-radius: 8px;
+          object-fit: contain;
+          flex-shrink: 0;
         }
       }
 
