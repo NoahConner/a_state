@@ -1124,7 +1124,21 @@
           "PRIMARY_RESIDENCE": "¿Es esta su residencia principal?",
           "PRIMARY_RESIDENCE_YES": "Sí, vivo aquí.",
           "PRIMARY_RESIDENCE_NO": "No, es propiedad de alquiler / segunda vivienda.",
-          "PROPERTY_TYPE": "Tipo de Propiedad"
+          "PROPERTY_TYPE": "Tipo de Propiedad",
+           "PROPERTY_TYPE_OPTIONS": [
+            "Casa unifamiliar",
+            "Condominio",
+            "Casa adosada/Townhome",
+            "Casa móvil",
+            "Otro"
+          ],
+          "ROOF_AGE": [
+            "Nuevo",
+            "1–10 años",
+            "11–20 años",
+            "más de 20 años",
+            "No estoy seguro"
+          ]
         }
       },
       "STEP2": {
@@ -1258,7 +1272,13 @@
         "FIELDS": {
           "LEGAL_BUSINESS_NAME": "Nombre Legal del Negocio",
           "INDUSTRY_TYPE": "Industria/Tipo de Negocio",
-          "BUSINESS_ZIP_CODE": "Código Postal del Negocio"
+          "BUSINESS_ZIP_CODE": "Código Postal del Negocio",
+           "INDUSTRY_TYPE_OPTIONS": [
+            "Construcción",
+            "Minorista",
+            "Restaurante",
+            "Oficina"
+          ]
         }
       },
       "STEP2": {
@@ -1267,9 +1287,8 @@
           "YEARS_IN_BUSINESS": "Años en el Negocio",
           "YEARS_OPTIONS": [
             "Nuevo Negocio",
-            "1-5 años",
-            "6-10 años",
-            "10+ años"
+            "1–3 años",
+            "4+ años"
           ],
           "NUMBER_OF_EMPLOYEES": "Número de Empleados",
           "EMPLOYEES_OPTIONS": [
@@ -1282,9 +1301,7 @@
           "REVENUE_OPTIONS": [
             "Menos de $100k",
             "$100k - $500k",
-            "$500k - $1M",
-            "$1M - $5M",
-            "$5M+"
+            "$500k"
           ]
         }
       },

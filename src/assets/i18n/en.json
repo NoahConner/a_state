@@ -1137,7 +1137,21 @@
           "PRIMARY_RESIDENCE": "Is this your primary residence?",
           "PRIMARY_RESIDENCE_YES": "Yes, I live here.",
           "PRIMARY_RESIDENCE_NO": "No, it’s a rental property / second home.",
-          "PROPERTY_TYPE": "Property Type"
+          "PROPERTY_TYPE": "Property Type",
+          "PROPERTY_TYPE_OPTIONS": [
+            "Single-Family Home",
+            "Condo",
+            "Townhome",
+            "Mobile Home",
+            "Other"
+          ],
+          "ROOF_AGE": [
+            "Brand New",
+            "1–10 years",
+            "11–20 years",
+            "20+ years",
+            "I'm not sure"
+          ]
         }
       },
       "STEP2": {
@@ -1271,7 +1285,13 @@
         "FIELDS": {
           "LEGAL_BUSINESS_NAME": "Legal Business Name",
           "INDUSTRY_TYPE": "Industry/Type of Business",
-          "BUSINESS_ZIP_CODE": "Business Zip Code"
+          "BUSINESS_ZIP_CODE": "Business Zip Code",
+          "INDUSTRY_TYPE_OPTIONS": [
+            "Construction",
+            "Retail",
+            "Restaurant",
+            "Office"
+          ]
         }
       },
       "STEP2": {
@@ -1280,9 +1300,8 @@
           "YEARS_IN_BUSINESS": "Years in Business",
           "YEARS_OPTIONS": [
             "New Venture",
-            "1-5 years",
-            "6-10 years",
-            "10+ years"
+            "1–3 years",
+            "4+ years"
           ],
           "NUMBER_OF_EMPLOYEES": "Number of Employees",
           "EMPLOYEES_OPTIONS": [
@@ -1293,11 +1312,9 @@
           ],
           "ANNUAL_REVENUE": "Estimated Annual Revenue",
           "REVENUE_OPTIONS": [
-            "Under $100k",
+            "Under $100k,",
             "$100k - $500k",
-            "$500k - $1M",
-            "$1M - $5M",
-            "$5M+"
+            "$500k"
           ]
         }
       },
@@ -12463,7 +12480,6 @@
         }
       }
     },
-
     "DRIVING_PERIODS": {
       "TITLE": "Understanding the 3 Rideshare Driving Periods — and What Each Covers",
       "INTRO": "Rideshare driving in Texas is divided into three main periods, each with different coverage rules that determine how and when insurance applies.",
@@ -23784,74 +23800,74 @@
         }
       }
     },
-   "DISCOUNT_FACTORS": {
-    "HEADER": {
-      "TITLE": "How to Maximize Your Discounts and Lower Your Cyber Liability Insurance Premium",
-      "DESC": "You can reduce your Cyber Liability insurance premium in Texas by strengthening cybersecurity controls, reducing risk exposure, and maintaining strong internal security practices. Insurers reward businesses that implement advanced security tools, provide employee training, maintain updated systems, and demonstrate strong incident response planning. Choosing higher deductibles, bundling policies, and working with an independent broker can also help lower overall costs."
-    },
-    "LIST": {
-      "MFA": {
-        "TITLE": "Implement Multi-Factor Authentication (MFA)",
-        "DESC": "MFA adds an extra layer of login security and significantly reduces the risk of unauthorized access to business systems and accounts.",
-        "ICON": "fas fa-shield-alt"
+    "DISCOUNT_FACTORS": {
+      "HEADER": {
+        "TITLE": "How to Maximize Your Discounts and Lower Your Cyber Liability Insurance Premium",
+        "DESC": "You can reduce your Cyber Liability insurance premium in Texas by strengthening cybersecurity controls, reducing risk exposure, and maintaining strong internal security practices. Insurers reward businesses that implement advanced security tools, provide employee training, maintain updated systems, and demonstrate strong incident response planning. Choosing higher deductibles, bundling policies, and working with an independent broker can also help lower overall costs."
       },
-      "EDR": {
-        "TITLE": "Use Endpoint Detection and Response (EDR) Software",
-        "DESC": "EDR tools help detect, investigate, and respond to cyber threats in real time, reducing the likelihood and impact of attacks.",
-        "ICON": "fas fa-laptop-code"
-      },
-      "EMPLOYEE_TRAINING": {
-        "TITLE": "Conduct Regular Employee Cybersecurity Training",
-        "DESC": "Training reduces human error such as phishing clicks and improves overall awareness of cyber risks across the organization.",
-        "ICON": "fas fa-chalkboard-teacher"
-      },
-      "SOFTWARE_UPDATES": {
-        "TITLE": "Keep All Software and Systems Up to Date",
-        "DESC": "Regular updates patch security vulnerabilities and protect systems from known cyber threats and exploits.",
-        "ICON": "fas fa-sync-alt"
-      },
-      "DATA_ENCRYPTION": {
-        "TITLE": "Encrypt All Sensitive Data",
-        "DESC": "Encryption protects sensitive business and customer data from unauthorized access during storage and transmission.",
-        "ICON": "fas fa-lock"
-      },
-      "INCIDENT_RESPONSE": {
-        "TITLE": "Establish a Formal Incident Response Plan",
-        "DESC": "A response plan helps your business quickly identify, contain, and recover from cyberattacks to reduce damage and downtime.",
-        "ICON": "fas fa-bolt"
-      },
-      "DATA_BACKUPS": {
-        "TITLE": "Perform Regular Data Backups",
-        "DESC": "Frequent backups ensure business continuity and allow fast recovery in case of ransomware attacks or data loss.",
-        "ICON": "fas fa-database"
-      },
-      "ACCESS_CONTROL": {
-        "TITLE": "Limit Employee Access to Sensitive Data",
-        "DESC": "Restricting access based on job roles reduces internal exposure and minimizes the risk of data breaches.",
-        "ICON": "fas fa-user-lock"
-      },
-      "BUNDLING": {
-        "TITLE": "Bundle Cyber Liability with Other Business Policies",
-        "DESC": "Bundling cyber liability with general liability or <a class='inline-link' href='/commercial-insurance/business-owners-policy-bop'> business owner's policy </a> can reduce overall insurance costs and improve coverage efficiency.",
-        "ICON": "fas fa-layer-group"
-      },
-      "HIGHER_DEDUCTIBLE": {
-        "TITLE": "Choose a Higher Deductible",
-        "DESC": "A higher deductible lowers your premium costs but increases out-of-pocket expenses during a claim.",
-        "ICON": "fas fa-chart-bar"
-      },
-      "INDEPENDENT_AGENT": {
-        "TITLE": "Work with an Independent Insurance Agent",
-        "DESC": "Independent agents compare multiple carriers to find better pricing and more suitable cyber liability coverage options.",
-        "ICON": "fas fa-handshake"
-      },
-      "CLAIMS_HISTORY": {
-        "TITLE": "Maintain a Clean Claims History",
-        "DESC": "A clean claims history signals lower risk to insurers and helps secure more competitive cyber insurance rates.",
-        "ICON": "fas fa-user-check"
+      "LIST": {
+        "MFA": {
+          "TITLE": "Implement Multi-Factor Authentication (MFA)",
+          "DESC": "MFA adds an extra layer of login security and significantly reduces the risk of unauthorized access to business systems and accounts.",
+          "ICON": "fas fa-shield-alt"
+        },
+        "EDR": {
+          "TITLE": "Use Endpoint Detection and Response (EDR) Software",
+          "DESC": "EDR tools help detect, investigate, and respond to cyber threats in real time, reducing the likelihood and impact of attacks.",
+          "ICON": "fas fa-laptop-code"
+        },
+        "EMPLOYEE_TRAINING": {
+          "TITLE": "Conduct Regular Employee Cybersecurity Training",
+          "DESC": "Training reduces human error such as phishing clicks and improves overall awareness of cyber risks across the organization.",
+          "ICON": "fas fa-chalkboard-teacher"
+        },
+        "SOFTWARE_UPDATES": {
+          "TITLE": "Keep All Software and Systems Up to Date",
+          "DESC": "Regular updates patch security vulnerabilities and protect systems from known cyber threats and exploits.",
+          "ICON": "fas fa-sync-alt"
+        },
+        "DATA_ENCRYPTION": {
+          "TITLE": "Encrypt All Sensitive Data",
+          "DESC": "Encryption protects sensitive business and customer data from unauthorized access during storage and transmission.",
+          "ICON": "fas fa-lock"
+        },
+        "INCIDENT_RESPONSE": {
+          "TITLE": "Establish a Formal Incident Response Plan",
+          "DESC": "A response plan helps your business quickly identify, contain, and recover from cyberattacks to reduce damage and downtime.",
+          "ICON": "fas fa-bolt"
+        },
+        "DATA_BACKUPS": {
+          "TITLE": "Perform Regular Data Backups",
+          "DESC": "Frequent backups ensure business continuity and allow fast recovery in case of ransomware attacks or data loss.",
+          "ICON": "fas fa-database"
+        },
+        "ACCESS_CONTROL": {
+          "TITLE": "Limit Employee Access to Sensitive Data",
+          "DESC": "Restricting access based on job roles reduces internal exposure and minimizes the risk of data breaches.",
+          "ICON": "fas fa-user-lock"
+        },
+        "BUNDLING": {
+          "TITLE": "Bundle Cyber Liability with Other Business Policies",
+          "DESC": "Bundling cyber liability with general liability or <a class='inline-link' href='/commercial-insurance/business-owners-policy-bop'> business owner's policy </a> can reduce overall insurance costs and improve coverage efficiency.",
+          "ICON": "fas fa-layer-group"
+        },
+        "HIGHER_DEDUCTIBLE": {
+          "TITLE": "Choose a Higher Deductible",
+          "DESC": "A higher deductible lowers your premium costs but increases out-of-pocket expenses during a claim.",
+          "ICON": "fas fa-chart-bar"
+        },
+        "INDEPENDENT_AGENT": {
+          "TITLE": "Work with an Independent Insurance Agent",
+          "DESC": "Independent agents compare multiple carriers to find better pricing and more suitable cyber liability coverage options.",
+          "ICON": "fas fa-handshake"
+        },
+        "CLAIMS_HISTORY": {
+          "TITLE": "Maintain a Clean Claims History",
+          "DESC": "A clean claims history signals lower risk to insurers and helps secure more competitive cyber insurance rates.",
+          "ICON": "fas fa-user-check"
+        }
       }
-    }
-  },
+    },
     "AGENT_COMPARISON": {
       "HEADER": {
         "TITLE": "Independent Insurance Agency vs. Captive Agent: Why Choice Saves You Money",

@@ -53,12 +53,23 @@
               <div class="row gy-3 mb-3 mt-2">
                 <div class="col-md-4">
                   <label class="form-label"><span [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP1.FIELDS.INDUSTRY_TYPE' | translateHtml | async"></span><span>*</span></label>
-                  <input type="text"
+                   <select class="form-select" formControlName="industry_type" [class.is-invalid]="commercialQuoteForm.get('industry_type')?.invalid && commercialQuoteForm.get('industry_type')?.touched">
+                    <option *ngFor="
+                        let option of 'GET_COMMERCIAL_QUOTE.STEPPER.STEP1.FIELDS.INDUSTRY_TYPE_OPTIONS' | translate
+                      " [value]="option">
+                      {{ option }}
+                    </option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="
+                      commercialQuoteForm.get('industry_type')?.invalid &&
+                      commercialQuoteForm.get('industry_type')?.touched
+                    " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                  <!-- <input type="text"
                          formControlName="industry_type"
                          [class.is-invalid]="commercialQuoteForm.get('industry_type')?.invalid && commercialQuoteForm.get('industry_type')?.touched"  
                          class="form-control" 
                          placeholder="Technology" />
-                  <div class="invalid-feedback" *ngIf="commercialQuoteForm.get('industry_type')?.invalid && commercialQuoteForm.get('industry_type')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                  <div class="invalid-feedback" *ngIf="commercialQuoteForm.get('industry_type')?.invalid && commercialQuoteForm.get('industry_type')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div> -->
                 </div>
                 <div class="col-md-4">
                   <label class="form-label"><span [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP1.FIELDS.BUSINESS_ZIP_CODE' | translateHtml | async"></span><span>*</span></label>
