@@ -91,11 +91,28 @@ export class Language {
       return;
     }
 
-    const routeKey = Object.keys(routeTranslations).find(
+    let routeKey = Object.keys(routeTranslations).find(
       (key) => routeTranslations[key][currentLang] === currentSlug,
     );
 
+    // Handle dynamic route patterns (e.g., "our-locations/:id")
     if (!routeKey) {
+      for (const key of Object.keys(routeTranslations)) {
+        const pattern = routeTranslations[key][currentLang];
+        if (pattern && pattern.includes(':')) {
+          // Convert pattern to regex: "our-locations/:id" -> /^our-locations\/(.+)$/
+          const regexPattern = '^' + pattern.replace(/:\w+/g, '(.+)') + '$';
+          const regex = new RegExp(regexPattern);
+          if (regex.test(currentSlug)) {
+            routeKey = key;
+            break;
+          }
+        }
+      }
+    }
+
+    if (!routeKey) {
+      // Fallback: preserve the slug structure even if it's not recognized
       if (lang === 'en') {
         this.router.navigate(['/' + currentSlug]);
       } else {
@@ -107,12 +124,31 @@ export class Language {
     }
 
     const newSlug = routeTranslations[routeKey][lang];
-    const newSegments = newSlug.split('/');
-
-    if (lang === 'en') {
-      this.router.navigate(['/', ...newSegments]);
+    
+    // Extract dynamic parameters from current slug and apply to new slug
+    if (newSlug.includes(':')) {
+      const currentPattern = routeTranslations[routeKey][currentLang];
+      const paramNames = (currentPattern.match(/:\w+/g) || []).map(p => p.substring(1));
+      const paramValues = currentSlug.split('/').slice(paramNames.length === 1 ? -1 : -paramNames.length);
+      
+      let translatedSlug = newSlug;
+      paramNames.forEach((paramName, index) => {
+        translatedSlug = translatedSlug.replace(`:${paramName}`, paramValues[index]);
+      });
+      
+      const newSegments = translatedSlug.split('/');
+      if (lang === 'en') {
+        this.router.navigate(['/', ...newSegments]);
+      } else {
+        this.router.navigate(['/es', ...newSegments]);
+      }
     } else {
-      this.router.navigate(['/es', ...newSegments]);
+      const newSegments = newSlug.split('/');
+      if (lang === 'en') {
+        this.router.navigate(['/', ...newSegments]);
+      } else {
+        this.router.navigate(['/es', ...newSegments]);
+      }
     }
 
     localStorage.setItem('lang', lang);
