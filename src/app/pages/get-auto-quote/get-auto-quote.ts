@@ -15,6 +15,7 @@ import { ToastrService } from 'ngx-toastr';
 export class GetAutoQuote {
 
   autoQuoteForm!: FormGroup;
+  maxDate = new Date().toISOString().split('T')[0];
   contactOptions: string[] = [];
   timeOptions: string[] = [];
 
@@ -132,6 +133,7 @@ export class GetAutoQuote {
     if (this.currentStep < this.totalSteps) {
       this.currentStep++;
     } else if (this.currentStep === this.totalSteps) {
+      this.currentStep = this.totalSteps + 1;
       setTimeout(() => {
         document.querySelector('.quote-summary-container')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 0);
@@ -152,6 +154,19 @@ export class GetAutoQuote {
     setTimeout(() => {
       document.querySelector('.quote-wrapper')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 0);
+  }
+
+  canEditStep(step: number): boolean {
+    return this.getControlsForStep(step).every((control) => control.valid);
+  }
+
+  formatDate(value: string | null | undefined): string {
+    if (!value) return 'None';
+
+    const [year, month, day] = value.split('-');
+    if (!year || !month || !day) return value;
+
+    return `${day}/${month}/${year}`;
   }
 
   private validateStep(step: number): boolean {

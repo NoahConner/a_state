@@ -87,6 +87,7 @@ export class GetCustomQuote {
       this.currentStep++;
     } else if (this.currentStep === this.totalSteps) {
       this.submitted = true;
+      this.currentStep = this.totalSteps + 1;
       setTimeout(() => {
         document.querySelector('.quote-summary-container')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 0);
@@ -106,6 +107,10 @@ export class GetCustomQuote {
     setTimeout(() => {
       document.querySelector('.quote-wrapper')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 0);
+  }
+
+  canEditStep(step: number): boolean {
+    return this.getControlsForStep(step).every((control) => control.valid);
   }
 
   private validateStep(step: number): boolean {

@@ -98,6 +98,7 @@ export class GetCommercialQuote {
       this.currentStep++;
     } else if (this.currentStep === this.totalSteps) {
       this.submitted = true;
+      this.currentStep = this.totalSteps + 1;
       setTimeout(() => {
         document.querySelector('.quote-summary-container')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 0);
@@ -119,6 +120,17 @@ export class GetCommercialQuote {
       document.querySelector('.quote-wrapper')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 0);
   }
+
+  canEditStep(step: number): boolean {
+    return this.getControlsForStep(step).every((control) => {
+      if (control instanceof FormArray) {
+        return control.length > 0 && control.valid;
+      }
+
+      return control.valid;
+    });
+  }
+
   private validateStep(step: number): boolean {
     const controls = this.getControlsForStep(step);
     controls.forEach((control) => {

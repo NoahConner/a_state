@@ -11,23 +11,23 @@
   <div class="container my-5 quote-wrapper">
     <div class="card border-0 p-4 mb-5">
       <div class="d-flex justify-content-between align-items-center stepper">
-        <div class="step" [class.active]="currentStep === 1">
+        <div class="step" [class.active]="currentStep === 1" [class.completed]="canEditStep(1)">
           <div class="circle"><img src="/assets/images/quote-step-1.png" alt="" /></div>
           <p [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP1.TITLE' | translateHtml | async"></p>
         </div>
-        <div class="step" [class.active]="currentStep === 2">
+        <div class="step" [class.active]="currentStep === 2" [class.completed]="canEditStep(2)">
           <div class="circle"><img src="/assets/images/quote-step-2.png" alt="" /></div>
           <p [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP2.TITLE' | translateHtml | async"></p>
         </div>
-        <div class="step" [class.active]="currentStep === 3">
+        <div class="step" [class.active]="currentStep === 3" [class.completed]="canEditStep(3)">
           <div class="circle"><img src="/assets/images/quote-step-3.png" alt="" /></div>
           <p [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP3.TITLE' | translateHtml | async"></p>
         </div>
-        <div class="step" [class.active]="currentStep === 4">
+        <div class="step" [class.active]="currentStep === 4" [class.completed]="canEditStep(4)">
           <div class="circle"><img src="/assets/images/quote-step-4.png" alt="" /></div>
           <p [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP4.TITLE' | translateHtml | async"></p>
         </div>
-        <div class="step" [class.active]="currentStep === 5">
+        <div class="step" [class.active]="currentStep === 5" [class.completed]="canEditStep(5)">
           <div class="circle"><img src="/assets/images/quote-step-5.png" alt="" /></div>
           <p [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP5.TITLE' | translateHtml | async"></p>
         </div>
@@ -180,7 +180,7 @@
                     <label class="form-label">
                       <span [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP3.FIELDS.DATE_OF_BIRTH' | translateHtml | async"></span><span>*</span>
                     </label>
-                    <input type="text" class="form-control" formControlName="date_of_birth" placeholder="01/01/1990"
+                    <input type="date" class="form-control" formControlName="date_of_birth" lang="en-GB" [max]="maxDate"
                       [class.is-invalid]="driver.get('date_of_birth')?.invalid && driver.get('date_of_birth')?.touched" />
                     <div class="invalid-feedback"
                       *ngIf="driver.get('date_of_birth')?.invalid && driver.get('date_of_birth')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
@@ -382,7 +382,7 @@
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0" [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.TITLE' | translateHtml | async"></h5>
-            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(1)">
+            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(1)" [attr.aria-disabled]="!canEditStep(1)" (click)="canEditStep(1) && goToStep(1)">
               <i class="bi bi-pencil-square"></i>
               <span [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.EDIT' | translateHtml | async"></span></a>
           </div>
@@ -409,7 +409,7 @@
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0" [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD2.TITLE' | translateHtml | async"></h5>
-            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(2)">
+            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(2)" [attr.aria-disabled]="!canEditStep(2)" (click)="canEditStep(2) && goToStep(2)">
               <i class="bi bi-pencil-square"></i>
               <span [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD2.EDIT' | translateHtml | async"></span></a>
           </div>
@@ -427,7 +427,7 @@
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0" [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD3.TITLE' | translateHtml | async"></h5>
-            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(3)">
+            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(3)" [attr.aria-disabled]="!canEditStep(3)" (click)="canEditStep(3) && goToStep(3)">
               <i class="bi bi-pencil-square"></i>
               <span [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD3.EDIT' | translateHtml | async"></span></a>
           </div>
@@ -435,7 +435,7 @@
             <li *ngFor="let driver of drivers.controls; let i = index">
               <strong><span [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.DRIVER' | translateHtml | async"></span>
                 {{ i + 1 }}</strong>
-              {{ driver.get('full_name')?.value }} (DOB: {{ driver.get('date_of_birth')?.value }},
+              {{ driver.get('full_name')?.value }} (DOB: {{ formatDate(driver.get('date_of_birth')?.value) }},
               {{ driver.get('marital_status')?.value }})
             </li>
           </ul>
@@ -444,7 +444,7 @@
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0" [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD4.TITLE' | translateHtml | async"></h5>
-            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(4)">
+            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(4)" [attr.aria-disabled]="!canEditStep(4)" (click)="canEditStep(4) && goToStep(4)">
               <i class="bi bi-pencil-square"></i>
               <span [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD4.EDIT' | translateHtml | async"></span></a>
           </div>
@@ -467,7 +467,7 @@
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="m-0" [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD5.TITLE' | translateHtml | async"></h5>
-            <a href="javascript:void(0)" class="edit-link" (click)="goToStep(5)">
+            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(5)" [attr.aria-disabled]="!canEditStep(5)" (click)="canEditStep(5) && goToStep(5)">
               <i class="bi bi-pencil-square"></i>
               <span [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD5.EDIT' | translateHtml | async"></span></a>
           </div>

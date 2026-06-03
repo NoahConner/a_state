@@ -117,6 +117,10 @@ export class GetHomeQuote {
     }, 0);
   }
 
+  canEditStep(step: number): boolean {
+    return this.getControlsForStep(step).every((control) => control.valid);
+  }
+
   private validateStep(step: number): boolean {
     const controls = this.getControlsForStep(step);
     controls.forEach((control) => {
