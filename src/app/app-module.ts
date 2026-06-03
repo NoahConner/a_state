@@ -88,6 +88,9 @@ import { TranslateHtmlPipe } from './services/translate-html.pipe';
 import { AsyncPipe } from '@angular/common';
 import { PhoneFormatDirective } from './directives/phone-format.directive';
 import { ChipNavigationDirective } from './directives/chip-navigation.directive';
+import { UrlSerializer } from '@angular/router';
+import { TrailingSlashUrlSerializer } from './services/trailing-slash-url-serializer';
+import { TrailingSlashRedirect } from './services/trailing-slash-redirect';
 
 @NgModule({
   declarations: [
@@ -186,6 +189,7 @@ import { ChipNavigationDirective } from './directives/chip-navigation.directive'
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideClientHydration(withEventReplay()),
+    { provide: UrlSerializer, useClass: TrailingSlashUrlSerializer },
 
     // ✅ Correct loader for v17
     provideTranslateHttpLoader({

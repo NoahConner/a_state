@@ -3,6 +3,7 @@ import { Language } from './services/language';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { filter, map, mergeMap } from 'rxjs/operators';
 import { MetaService } from './services/meta-service';
+import { TrailingSlashRedirect } from './services/trailing-slash-redirect';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ export class App {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private metaService: MetaService,
+    _trailingSlashRedirect: TrailingSlashRedirect,
   ) {}
 
   ngOnInit() {

@@ -13,6 +13,25 @@ const app = express();
 const angularApp = new AngularNodeAppEngine();
 
 /**
+ * Redirect paths without a trailing slash (skip static assets and root).
+ */
+app.use((req, res, next) => {
+  const path = req.path;
+
+  if (
+    req.method === 'GET' &&
+    path !== '/' &&
+    !path.endsWith('/') &&
+    !path.includes('.')
+  ) {
+    const query = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
+    return res.redirect(301, `${path}/${query}`);
+  }
+
+  next();
+});
+
+/**
  * Example Express Rest API endpoints can be defined here.
  * Uncomment and define endpoints as necessary.
  *
