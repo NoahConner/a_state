@@ -1,0 +1,29 @@
+# Robots.txt for A-State Insurance
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.astateinsurance.com/sitemap.xml
+
+# Disallow standard CMS and sensitive paths
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /cgi-bin/
+Disallow: /administrator/
+Disallow: /bin/
+
+# Disallow internal search results to prevent duplicate content issues
+Disallow: /*?s=
+Disallow: /search/
+
+# Disallow account, portal, and thank-you pages
+Disallow: /account/
+Disallow: /portal/
+Disallow: /login/
+Disallow: /thank-you/
+Disallow: /success/
+
+# Prevent crawling of specific system files
+Disallow: /xmlrpc.php
+Disallow: /wp-login.php
