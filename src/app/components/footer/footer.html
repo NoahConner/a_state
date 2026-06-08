@@ -42,37 +42,36 @@
         <div class="footer-right">
           <div class="footer-links">
             <section class="footer-links__column">
-              <h3 class="footer-links__title">Personal Insurance</h3>
-              <a class="footer-links__item" [routerLink]="getRoute('carInsurance')">Car Insurance</a>
-              <a class="footer-links__item" [routerLink]="getRoute('sr22Insurance')">SR-22 Insurance</a>
-              <a class="footer-links__item" [routerLink]="getRoute('homeInsurance')">Homeowners Insurance</a>
-              <a class="footer-links__item" [routerLink]="getRoute('rentersInsurance')">Renters Insurance</a>
-              <a class="footer-links__item" [routerLink]="getRoute('floodInsurance')">Flood Insurance</a>
-              <a class="footer-links__item" [routerLink]="getRoute('healthInsurance')">Health Insurance</a>
-              <a class="footer-links__item" [routerLink]="getRoute('lifeInsurance')">Life Insurance</a>
-              <a class="footer-links__item" [routerLink]="getRoute('medicareSupplementInsurance')">Medicare Supplement / Medigap</a>
+              <h3 class="footer-links__title">{{ 'FOOTER.SECTIONS.PERSONAL_INSURANCE' | translate }}</h3>
+              <a
+                *ngFor="let link of personalInsuranceLinks"
+                class="footer-links__item"
+                [routerLink]="getRoute(link.routeKey)"
+              >
+                {{ getLinkLabel(link) }}
+              </a>
             </section>
 
             <section class="footer-links__column">
-              <h3 class="footer-links__title">Commercial Insurance</h3>
-              <a class="footer-links__item" [routerLink]="getRoute('generalLiabilityInsurance')">General Liability Insurance</a>
-              <a class="footer-links__item" [routerLink]="getRoute('workersCompensationInsurance')">Workers' Compensation</a>
-              <a class="footer-links__item" [routerLink]="getRoute('commercialAutoInsurance')">Commercial Auto Insurance</a>
-              <a class="footer-links__item" [routerLink]="getRoute('businessOwnerInsurance')">Business Owner's Policy (BOP)</a>
-              <a class="footer-links__item" [routerLink]="getRoute('commercialPropertyInsurance')">Commercial Property Insurance</a>
-              <a class="footer-links__item" [routerLink]="getRoute('professionalLiabilityInsurance')">Professional Liability (E&O)</a>
-              <a class="footer-links__item" [routerLink]="getRoute('cyberLiabilityInsurance')">Cyber Liability Insurance</a>
-              <a class="footer-links__item" [routerLink]="getRoute('buildersRiskInsurance')">Builders Risk / Construction</a>
+              <h3 class="footer-links__title">{{ 'FOOTER.SECTIONS.COMMERCIAL_INSURANCE' | translate }}</h3>
+              <a
+                *ngFor="let link of commercialInsuranceLinks"
+                class="footer-links__item"
+                [routerLink]="getRoute(link.routeKey)"
+              >
+                {{ getLinkLabel(link) }}
+              </a>
             </section>
 
             <section class="footer-links__column footer-links__column--company">
-              <h3 class="footer-links__title">Company</h3>
-              <a class="footer-links__item" [routerLink]="getRoute('about')">About</a>
-              <a class="footer-links__item" [routerLink]="getRoute('insuranceServices')">Insurance Services</a>
-              <a class="footer-links__item" [routerLink]="getRoute('careers')">Careers</a>
-              <a class="footer-links__item" [routerLink]="getRoute('ourLocations')">Our Locations</a>
-              <a class="footer-links__item" [routerLink]="getRoute('contact')">Contact</a>
-              <a class="footer-links__item" [routerLink]="getRoute('getAQuote')">Get a Free Quote →</a>
+              <h3 class="footer-links__title">{{ 'FOOTER.SECTIONS.COMPANY' | translate }}</h3>
+              <a
+                *ngFor="let link of companyLinks"
+                class="footer-links__item"
+                [routerLink]="getRoute(link.routeKey)"
+              >
+                {{ getLinkLabel(link) }}
+              </a>
             </section>
           </div>
 

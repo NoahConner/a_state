@@ -1,6 +1,20 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { Language } from '../../services/language';
 import { routeTranslations } from '../../app-routing-module';
+
+type FooterLink = {
+  routeKey: string;
+  labelKey?: string;
+};
+
+type InsuranceMenuSection = {
+  TITLE?: string;
+  ITEMS?: Array<{
+    KEY: string;
+    LABEL: string;
+  }>;
+};
 
 @Component({
   selector: 'app-footer',
@@ -9,7 +23,41 @@ import { routeTranslations } from '../../app-routing-module';
   styleUrl: './footer.scss',
 })
 export class Footer {
-  constructor(public languageService: Language) {}
+  constructor(
+    public languageService: Language,
+    private translate: TranslateService,
+  ) {}
+
+  personalInsuranceLinks: FooterLink[] = [
+    { routeKey: 'carInsurance' },
+    { routeKey: 'sr22Insurance' },
+    { routeKey: 'homeInsurance', labelKey: 'HEADER.HOME_INSURANCE' },
+    { routeKey: 'rentersInsurance' },
+    { routeKey: 'floodInsurance' },
+    { routeKey: 'healthInsurance', labelKey: 'HEADER.HEALTH_INSURANCE' },
+    { routeKey: 'lifeInsurance', labelKey: 'HEADER.LIFE_INSURANCE' },
+    { routeKey: 'medicareSupplementInsurance' },
+  ];
+
+  commercialInsuranceLinks: FooterLink[] = [
+    { routeKey: 'generalLiabilityInsurance' },
+    { routeKey: 'workersCompensationInsurance' },
+    { routeKey: 'commercialAutoInsurance' },
+    { routeKey: 'businessOwnerInsurance' },
+    { routeKey: 'commercialPropertyInsurance' },
+    { routeKey: 'professionalLiabilityInsurance' },
+    { routeKey: 'cyberLiabilityInsurance' },
+    { routeKey: 'buildersRiskInsurance' },
+  ];
+
+  companyLinks: FooterLink[] = [
+    { routeKey: 'about', labelKey: 'HEADER.ABOUT' },
+    { routeKey: 'insuranceServices', labelKey: 'HEADER.INSURANCE_SERVICES' },
+    { routeKey: 'careers', labelKey: 'FOOTER.POLICIES.CAREERS' },
+    { routeKey: 'ourLocations', labelKey: 'HEADER.OFFICE_LOCATOR' },
+    { routeKey: 'contact', labelKey: 'HEADER.CONTACT' },
+    { routeKey: 'getAQuote', labelKey: 'HEADER.GET_A_QUOTE' },
+  ];
 
   socialLinks = [
     {
@@ -24,27 +72,27 @@ export class Footer {
     },
     {
       icon: 'fa-brands fa-youtube',
-      href: null,
+      href: 'https://www.youtube.com/@a-state-insurance',
       label: 'YouTube',
     },
     {
       icon: 'fa-brands fa-tiktok',
-      href: null,
+      href: 'https://www.tiktok.com/@astateinsurancetx',
       label: 'TikTok',
     },
     {
       icon: 'fa-brands fa-pinterest-p',
-      href: null,
+      href: 'https://www.pinterest.com/astateinsurance/',
       label: 'Pinterest',
     },
     {
       icon: 'fa-brands fa-snapchat-ghost',
-      href: null,
+      href: 'https://www.snapchat.com/@astateinsurance',
       label: 'Snapchat',
     },
     {
       icon: 'fa-brands fa-x-twitter',
-      href: null,
+      href: 'https://x.com/astateinsurance',
       label: 'X',
     },
     {
@@ -56,6 +104,26 @@ export class Footer {
 
   get currentLang() {
     return this.languageService.getCurrentLanguage();
+  }
+
+  getLinkLabel(link: FooterLink): string {
+    if (link.labelKey) {
+      return this.translate.instant(link.labelKey);
+    }
+
+    const sections = this.translate.instant('FOOTER.INSURANCE_MENU') as InsuranceMenuSection[];
+
+    if (Array.isArray(sections)) {
+      for (const section of sections) {
+        const item = section.ITEMS?.find((entry) => entry.KEY === link.routeKey);
+
+        if (item?.LABEL) {
+          return item.LABEL;
+        }
+      }
+    }
+
+    return link.routeKey;
   }
 
   getRoute(page: string): string[] {
