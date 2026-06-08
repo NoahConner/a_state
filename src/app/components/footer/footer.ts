@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Language } from '../../services/language';
+import { routeTranslations } from '../../app-routing-module';
 
 @Component({
   selector: 'app-footer',
@@ -9,8 +10,6 @@ import { Language } from '../../services/language';
 })
 export class Footer {
   constructor(public languageService: Language) {}
-
-  dummyRoute = ['/'];
 
   socialLinks = [
     {
@@ -57,6 +56,22 @@ export class Footer {
 
   get currentLang() {
     return this.languageService.getCurrentLanguage();
+  }
+
+  getRoute(page: string): string[] {
+    const lang = this.languageService.getCurrentLanguage();
+
+    if (page === 'home') {
+      return lang === 'en' ? ['/'] : ['/', lang];
+    }
+
+    const slug = routeTranslations[page]?.[lang] || routeTranslations[page]?.['en'];
+
+    if (!slug) return ['/'];
+
+    const segments = slug.split('/');
+
+    return lang === 'en' ? ['/', ...segments] : ['/', lang, ...segments];
   }
 
   changeLang(lang: string) {

@@ -3,7 +3,7 @@
     <div class="footer-card">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a class="footer-brand__logo" [routerLink]="dummyRoute">
+          <a class="footer-brand__logo" [routerLink]="getRoute('home')">
             <img src="assets/images/logo.png" alt="A-State Insurance" />
           </a>
 
@@ -43,36 +43,36 @@
           <div class="footer-links">
             <section class="footer-links__column">
               <h3 class="footer-links__title">Personal Insurance</h3>
-              <a class="footer-links__item" [routerLink]="dummyRoute">Car Insurance</a>
-              <a class="footer-links__item" [routerLink]="dummyRoute">SR-22 Insurance</a>
-              <a class="footer-links__item" [routerLink]="dummyRoute">Homeowners Insurance</a>
-              <a class="footer-links__item" [routerLink]="dummyRoute">Renters Insurance</a>
-              <a class="footer-links__item" [routerLink]="dummyRoute">Flood Insurance</a>
-              <a class="footer-links__item" [routerLink]="dummyRoute">Health Insurance</a>
-              <a class="footer-links__item" [routerLink]="dummyRoute">Life Insurance</a>
-              <a class="footer-links__item" [routerLink]="dummyRoute">Medicare Supplement / Medigap</a>
+              <a class="footer-links__item" [routerLink]="getRoute('carInsurance')">Car Insurance</a>
+              <a class="footer-links__item" [routerLink]="getRoute('sr22Insurance')">SR-22 Insurance</a>
+              <a class="footer-links__item" [routerLink]="getRoute('homeInsurance')">Homeowners Insurance</a>
+              <a class="footer-links__item" [routerLink]="getRoute('rentersInsurance')">Renters Insurance</a>
+              <a class="footer-links__item" [routerLink]="getRoute('floodInsurance')">Flood Insurance</a>
+              <a class="footer-links__item" [routerLink]="getRoute('healthInsurance')">Health Insurance</a>
+              <a class="footer-links__item" [routerLink]="getRoute('lifeInsurance')">Life Insurance</a>
+              <a class="footer-links__item" [routerLink]="getRoute('medicareSupplementInsurance')">Medicare Supplement / Medigap</a>
             </section>
 
             <section class="footer-links__column">
               <h3 class="footer-links__title">Commercial Insurance</h3>
-              <a class="footer-links__item" [routerLink]="dummyRoute">General Liability Insurance</a>
-              <a class="footer-links__item" [routerLink]="dummyRoute">Workers' Compensation</a>
-              <a class="footer-links__item" [routerLink]="dummyRoute">Commercial Auto Insurance</a>
-              <a class="footer-links__item" [routerLink]="dummyRoute">Business Owner's Policy (BOP)</a>
-              <a class="footer-links__item" [routerLink]="dummyRoute">Commercial Property Insurance</a>
-              <a class="footer-links__item" [routerLink]="dummyRoute">Professional Liability (E&O)</a>
-              <a class="footer-links__item" [routerLink]="dummyRoute">Cyber Liability Insurance</a>
-              <a class="footer-links__item" [routerLink]="dummyRoute">Builders Risk / Construction</a>
+              <a class="footer-links__item" [routerLink]="getRoute('generalLiabilityInsurance')">General Liability Insurance</a>
+              <a class="footer-links__item" [routerLink]="getRoute('workersCompensationInsurance')">Workers' Compensation</a>
+              <a class="footer-links__item" [routerLink]="getRoute('commercialAutoInsurance')">Commercial Auto Insurance</a>
+              <a class="footer-links__item" [routerLink]="getRoute('businessOwnerInsurance')">Business Owner's Policy (BOP)</a>
+              <a class="footer-links__item" [routerLink]="getRoute('commercialPropertyInsurance')">Commercial Property Insurance</a>
+              <a class="footer-links__item" [routerLink]="getRoute('professionalLiabilityInsurance')">Professional Liability (E&O)</a>
+              <a class="footer-links__item" [routerLink]="getRoute('cyberLiabilityInsurance')">Cyber Liability Insurance</a>
+              <a class="footer-links__item" [routerLink]="getRoute('buildersRiskInsurance')">Builders Risk / Construction</a>
             </section>
 
             <section class="footer-links__column footer-links__column--company">
               <h3 class="footer-links__title">Company</h3>
-              <a class="footer-links__item" [routerLink]="dummyRoute">About</a>
-              <a class="footer-links__item" [routerLink]="dummyRoute">Insurance Services</a>
-              <a class="footer-links__item" [routerLink]="dummyRoute">Careers</a>
-              <a class="footer-links__item" [routerLink]="dummyRoute">Our Locations</a>
-              <a class="footer-links__item" [routerLink]="dummyRoute">Contact</a>
-              <a class="footer-links__item" [routerLink]="dummyRoute">Get a Free Quote →</a>
+              <a class="footer-links__item" [routerLink]="getRoute('about')">About</a>
+              <a class="footer-links__item" [routerLink]="getRoute('insuranceServices')">Insurance Services</a>
+              <a class="footer-links__item" [routerLink]="getRoute('careers')">Careers</a>
+              <a class="footer-links__item" [routerLink]="getRoute('ourLocations')">Our Locations</a>
+              <a class="footer-links__item" [routerLink]="getRoute('contact')">Contact</a>
+              <a class="footer-links__item" [routerLink]="getRoute('getAQuote')">Get a Free Quote →</a>
             </section>
           </div>
 
@@ -106,8 +106,8 @@
             </div>
 
             <div class="footer-bottom__links">
-              <a [routerLink]="dummyRoute">{{ 'FOOTER.POLICIES.PRIVACY' | translate }}</a>
-              <a [routerLink]="dummyRoute">{{ 'FOOTER.POLICIES.TERMS' | translate }}</a>
+              <a [routerLink]="getRoute('privacyPolicy')">{{ 'FOOTER.POLICIES.PRIVACY' | translate }}</a>
+              <a [routerLink]="getRoute('termsAndConditions')">{{ 'FOOTER.POLICIES.TERMS' | translate }}</a>
             </div>
           </div>
         </div>
