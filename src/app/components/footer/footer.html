@@ -1,230 +1,117 @@
-<div class="footerMain">
+<footer class="footer-shell">
   <div class="container">
-    <div class="fupper row">
-      <div class="col" *ngFor="let section of 'FOOTER.INSURANCE_MENU' | translate">
-        <div class="head1">{{ section.TITLE | translate }}</div>
-        <div class="subH" *ngFor="let item of section.ITEMS">
-          <a [routerLink]="getRoute(item.KEY)">{{ item.LABEL | translate }}</a>
-        </div>
-      </div>
-    </div>
+    <div class="footer-card">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="footer-brand__logo" [routerLink]="dummyRoute">
+            <img src="assets/images/logo.png" alt="A-State Insurance" />
+          </a>
 
-    <div class="fupper2">
-      <div class="accordion" id="accordionExample">
-        <div class="accordion-item" *ngFor="let section of 'FOOTER.INSURANCE_MENU' | translate | keyvalue; index as i">
-          <h2 class="accordion-header">
-            <button class="accordion-button" [class.collapsed]="i !== 0" type="button" data-bs-toggle="collapse"
-              [attr.data-bs-target]="'#collapseOne-' + i" [attr.aria-expanded]="i === 0"
-              [attr.aria-controls]="'collapseOne-' + i">
-              {{ section.value.TITLE }}
-            </button>
-          </h2>
-          <div [attr.id]="'collapseOne-' + i" class="accordion-collapse collapse" [class.show]="i === 0"
-            data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <div class="subH" *ngFor="let item of section.value.ITEMS">
-                <a [routerLink]="getRoute(item.KEY)">{{ item.LABEL | translate }}</a>
-              </div>
+          <p class="footer-brand__copy" [innerHTML]="'FOOTER.BRAND_COPY' | translate"></p>
+
+          <div class="footer-brand__divider" aria-hidden="true"></div>
+
+          <div class="footer-brand__meta">
+            <div class="footer-meta__item">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <span>Texas - All Cities & Counties</span>
+            </div>
+
+            <div class="footer-meta__item">
+              <i class="fa-regular fa-clock" aria-hidden="true"></i>
+              <span>{{ 'FOOTER.CONTACT.HOURS' | translate }}</span>
+            </div>
+
+            <div class="footer-meta__item">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              <a
+                href="tel:7133577771"
+                *ngFor="let phone of 'FOOTER.CONTACT.PHONE' | translate; trackBy: trackByValue"
+              >
+                {{ phone }}
+              </a>
+            </div>
+
+            <div class="footer-meta__item">
+              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+              <a href="mailto:save@astateinsurance.com">{{ 'FOOTER.CONTACT.EMAIL' | translate }}</a>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="upperLink">
-      <div class="uph" [innerHTML]="'FOOTER.QUICK_LINKS.TITLE' | translateHtml | async"></div>
-    </div>
+        <div class="footer-right">
+          <div class="footer-links">
+            <section class="footer-links__column">
+              <h3 class="footer-links__title">Personal Insurance</h3>
+              <a class="footer-links__item" [routerLink]="dummyRoute">Car Insurance</a>
+              <a class="footer-links__item" [routerLink]="dummyRoute">SR-22 Insurance</a>
+              <a class="footer-links__item" [routerLink]="dummyRoute">Homeowners Insurance</a>
+              <a class="footer-links__item" [routerLink]="dummyRoute">Renters Insurance</a>
+              <a class="footer-links__item" [routerLink]="dummyRoute">Flood Insurance</a>
+              <a class="footer-links__item" [routerLink]="dummyRoute">Health Insurance</a>
+              <a class="footer-links__item" [routerLink]="dummyRoute">Life Insurance</a>
+              <a class="footer-links__item" [routerLink]="dummyRoute">Medicare Supplement / Medigap</a>
+            </section>
 
-    <div class="subUppers">
-      <div class="row">
-        <div class="col-lg-6 offset-lg-3">
-          <div class="homeNav">
-            <div class="subupH" *ngFor="let link of 'FOOTER.QUICK_LINKS.LINKS' | translate">
-              <a [routerLink]="getRoute(link.KEY)">{{ link.LABEL }}</a>
-            </div>
+            <section class="footer-links__column">
+              <h3 class="footer-links__title">Commercial Insurance</h3>
+              <a class="footer-links__item" [routerLink]="dummyRoute">General Liability Insurance</a>
+              <a class="footer-links__item" [routerLink]="dummyRoute">Workers' Compensation</a>
+              <a class="footer-links__item" [routerLink]="dummyRoute">Commercial Auto Insurance</a>
+              <a class="footer-links__item" [routerLink]="dummyRoute">Business Owner's Policy (BOP)</a>
+              <a class="footer-links__item" [routerLink]="dummyRoute">Commercial Property Insurance</a>
+              <a class="footer-links__item" [routerLink]="dummyRoute">Professional Liability (E&O)</a>
+              <a class="footer-links__item" [routerLink]="dummyRoute">Cyber Liability Insurance</a>
+              <a class="footer-links__item" [routerLink]="dummyRoute">Builders Risk / Construction</a>
+            </section>
+
+            <section class="footer-links__column footer-links__column--company">
+              <h3 class="footer-links__title">Company</h3>
+              <a class="footer-links__item" [routerLink]="dummyRoute">About</a>
+              <a class="footer-links__item" [routerLink]="dummyRoute">Insurance Services</a>
+              <a class="footer-links__item" [routerLink]="dummyRoute">Careers</a>
+              <a class="footer-links__item" [routerLink]="dummyRoute">Our Locations</a>
+              <a class="footer-links__item" [routerLink]="dummyRoute">Contact</a>
+              <a class="footer-links__item" [routerLink]="dummyRoute">Get a Free Quote →</a>
+            </section>
           </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="otherLinks">
-      <div class="row">
-        <div class="col-lg-10 offset-lg-1">
-          <div class="row">
-            <!-- <div class="col-lg-3 col-sm-6">
-              <div class="uuper">
-                <div class="icon">
-                  <img src="/assets/images/location.png" alt="" />
-                </div>
-                <div class="uph red">Main office location</div>
-              </div>
-              <div class="lower">
-                <div class="icon"></div>
-                <a href="#" class="uph">707 Shotwell St Houston Tx 77020</a>
-              </div>
-            </div> -->
-
-            <div class="col-lg-3 col-sm-6">
-              <div class="uuper">
-                <div class="icon">
-                  <img src="/assets/images/location.png" alt="" />
-                </div>
-                <div class="uph">Southwest</div>
-              </div>
-              <div class="lower">
-                <div class="icon"></div>
-                <a [routerLink]="getRoute('ourLocations/:id', '11503-southwest-fwy-b-houston-tx-77031')"
-                  class="uph">11503 Southwest Fwy B, Houston, TX 77031
+          <div class="footer-social">
+            <div class="footer-social__title">{{ 'FOOTER.SOCIAL_TITLE' | translate }}</div>
+            <div class="footer-social__icons">
+              <ng-container *ngFor="let social of socialLinks">
+                <a
+                  *ngIf="social.href; else staticSocial"
+                  class="footer-social__icon"
+                  [href]="social.href"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  [attr.aria-label]="social.label"
+                >
+                  <i [class]="social.icon" aria-hidden="true"></i>
                 </a>
-              </div>
-            </div>
 
-            <div class="col-lg-3 col-sm-6">
-              <div class="uuper">
-                <div class="icon">
-                  <img src="/assets/images/location.png" alt="" />
-                </div>
-                <div class="uph">Antoine</div>
-              </div>
-              <div class="lower">
-                <div class="icon"></div>
-                <a [routerLink]="getRoute('ourLocations/:id', '5712-antoine-dr-houston-tx-77091')" class="uph">5712
-                  Antoine Dr, Houston, TX 77091</a>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-6">
-              <div class="uuper">
-                <div class="icon">
-                  <img src="/assets/images/location.png" alt="" />
-                </div>
-                <div class="uph">Airline</div>
-              </div>
-              <div class="lower">
-                <div class="icon"></div>
-                <a [routerLink]="getRoute('ourLocations/:id', '5206-airline-dr-g-houston-tx-77022')" class="uph">5206
-                  Airline Dr G, Houston, TX 77022</a>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-6">
-              <div class="uuper">
-                <div class="icon">
-                  <img src="/assets/images/location.png" alt="" />
-                </div>
-                <div class="uph">Shotwell</div>
-              </div>
-              <div class="lower">
-                <div class="icon"></div>
-                <a [routerLink]="getRoute('ourLocations/:id', '707-shotwell-st-a-houston-tx-77020')" class="uph">707
-                  Shotwell St, Suit A, Houston, TX 77020</a>
-              </div>
+                <ng-template #staticSocial>
+                  <span class="footer-social__icon is-static" [attr.aria-label]="social.label">
+                    <i [class]="social.icon" aria-hidden="true"></i>
+                  </span>
+                </ng-template>
+              </ng-container>
             </div>
           </div>
 
-          <div class="row mt-3">
-
-
-            <div class="col-lg-3 col-sm-6">
-              <div class="uuper">
-                <div class="icon">
-                  <img src="/assets/images/location.png" alt="" />
-                </div>
-                <div class="uph">S Post Oak</div>
-              </div>
-              <div class="lower">
-                <div class="icon"></div>
-                <a [routerLink]="getRoute('ourLocations/:id', '10547-s-post-oak-rd-houston-tx-77035')" class="uph">10547
-                  S Post Oak Rd, Houston, TX 77035</a>
-              </div>
+          <div class="footer-bottom">
+            <div class="footer-bottom__copyright">
+              <span [innerHTML]="'FOOTER.COPYRIGHT' | translate"></span>
             </div>
-            <!-- 
-            <div class="col-lg-3 col-sm-6">
-              <div class="uuper">
-                <div class="icon">
-                  <img src="/assets/images/location.png" alt="" />
-                </div>
-                <div class="uph">Cullen</div>
-              </div>
-              <div class="lower">
-                <div class="icon"></div>
-                <a href="#" class="uph">9421 Cullen Blvd ste B Houston TX 77051</a>
-              </div>
-            </div> -->
 
-            <div class="col-lg-3 col-sm-6">
-              <div class="uuper">
-                <div class="icon">
-                  <i class="far fa-clock"></i>
-                </div>
-                <div class="uph red">Office business hours</div>
-              </div>
-              <div class="lower">
-                <div class="icon"></div>
-                <div href="#" class="timee">Mon – Sat: 9AM – 7PM Sunday: Closed</div>
-              </div>
+            <div class="footer-bottom__links">
+              <a [routerLink]="dummyRoute">{{ 'FOOTER.POLICIES.PRIVACY' | translate }}</a>
+              <a [routerLink]="dummyRoute">{{ 'FOOTER.POLICIES.TERMS' | translate }}</a>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="lastRite">
-      <div class="block1">
-        <div class="b1">
-          <div class="icn">
-            <img src="/assets/images/policy.png" alt="" />
-          </div>
-          <div class="he">
-            <a [routerLink]="getRoute('privacyPolicy')" [innerHTML]="'FOOTER.POLICIES.PRIVACY' | translateHtml | async"></a>
-          </div>
-        </div>
-        <div class="b1">
-          <div class="icn">
-            <img src="/assets/images/terms.png" alt="" />
-          </div>
-          <div class="he">
-            <a [routerLink]="getRoute('termsAndConditions')" [innerHTML]="'FOOTER.POLICIES.TERMS' | translateHtml | async"></a>
-          </div>
-        </div>
-
-        <div class="b1">
-          <div class="icn">
-            <img src="/assets/images/terms.png" alt="" />
-          </div>
-          <div class="he">
-            <a [routerLink]="getRoute('careers')" [innerHTML]="'FOOTER.POLICIES.CAREERS' | translateHtml | async"></a>
-          </div>
-        </div>
-      </div>
-      <div class="block1">
-        <div class="left">24/7 Customer support</div>
-        <div class="right">
-          <div class="opp" *ngFor="let phone of 'FOOTER.CONTACT.PHONE' | translate">
-            <a href="tel:7133577771">
-              {{ phone }}
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="block1">
-        <div class="imagess">
-          <a href="https://www.instagram.com/astateinsurance/" target="_blank" rel="noopener noreferrer">
-            <img src="assets/images/Instagram.png" alt="Instagram" />
-          </a>
-          <a href="https://www.facebook.com/astateinsurancetx" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/images/fb.png" alt="Facebook" />
-          </a>
-        </div>
-        <div class="b1">
-          <div class="icn">
-            <i class="fas fa-envelope"></i>
-          </div>
-          <div class="he"><a href="mailto:save@astateinsurance.com" [innerHTML]="'FOOTER.CONTACT.EMAIL' | translateHtml | async"></a></div>
         </div>
       </div>
     </div>
   </div>
-</div>
-
-<div class="laster" [innerHTML]="'FOOTER.COPYRIGHT' | translateHtml | async"></div>
+</footer>

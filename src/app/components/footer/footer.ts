@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Language } from '../../services/language';
-import { routeTranslations } from '../../app-routing-module';
 
 @Component({
   selector: 'app-footer',
@@ -9,8 +8,53 @@ import { routeTranslations } from '../../app-routing-module';
   styleUrl: './footer.scss',
 })
 export class Footer {
-  constructor(public languageService: Language) { }
-  
+  constructor(public languageService: Language) {}
+
+  dummyRoute = ['/'];
+
+  socialLinks = [
+    {
+      icon: 'fa-brands fa-facebook-f',
+      href: 'https://www.facebook.com/astateinsurancetx',
+      label: 'Facebook',
+    },
+    {
+      icon: 'fa-brands fa-instagram',
+      href: 'https://www.instagram.com/astateinsurance/',
+      label: 'Instagram',
+    },
+    {
+      icon: 'fa-brands fa-youtube',
+      href: null,
+      label: 'YouTube',
+    },
+    {
+      icon: 'fa-brands fa-tiktok',
+      href: null,
+      label: 'TikTok',
+    },
+    {
+      icon: 'fa-brands fa-pinterest-p',
+      href: null,
+      label: 'Pinterest',
+    },
+    {
+      icon: 'fa-brands fa-snapchat-ghost',
+      href: null,
+      label: 'Snapchat',
+    },
+    {
+      icon: 'fa-brands fa-x-twitter',
+      href: null,
+      label: 'X',
+    },
+    {
+      icon: 'fa-brands fa-linkedin-in',
+      href: null,
+      label: 'LinkedIn',
+    },
+  ];
+
   get currentLang() {
     return this.languageService.getCurrentLanguage();
   }
@@ -19,22 +63,7 @@ export class Footer {
     this.languageService.setLanguage(lang);
   }
 
-  getRoute(page: string, id?: string): any[] {
-    const lang = this.languageService.getCurrentLanguage();
-
-    const slug = routeTranslations[page]?.[lang] || routeTranslations[page]?.['en'];
-
-    if (!slug) return ['/']; // fallback to homepage
-
-    let resolvedSlug = slug;
-    if (id) {
-      resolvedSlug = slug.replace(':id', id);
-    }
-
-    const segments = resolvedSlug.split('/').filter(s => s !== '');
-
-    return lang === 'en'
-      ? ['/', ...segments]
-      : ['/', lang, ...segments];
+  trackByValue(_index: number, value: string): string {
+    return value;
   }
 }
