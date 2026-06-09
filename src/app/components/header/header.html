@@ -461,13 +461,13 @@
             <!-- Language dropdown -->
             <div class="dropdown">
               <a
-                class="nav-link dropdown-toggle d-flex align-items-center"
+                class="nav-link d-flex align-items-center"
                 href="#"
-                data-bs-toggle="dropdown"
+                (click)="changeLang(currentLang == 'en' ? 'es' : 'en'); $event.preventDefault()"
               >
-                <i class="fa-solid fa-globe me-1"></i> {{ currentLang.toUpperCase() }}
+                <i class="fa-solid fa-language me-1"></i> {{ currentLang.toUpperCase() }}
               </a>
-              <ul class="dropdown-menu">
+              <!-- <ul class="dropdown-menu">
                 <li>
                   <a
                     class="dropdown-item"
@@ -484,7 +484,7 @@
                     >ES</a
                   >
                 </li>
-              </ul>
+              </ul> -->
             </div>
             <!-- Get a Quote -->
             <a
