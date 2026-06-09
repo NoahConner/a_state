@@ -91,6 +91,8 @@ import { ChipNavigationDirective } from './directives/chip-navigation.directive'
 import { UrlSerializer } from '@angular/router';
 import { TrailingSlashUrlSerializer } from './services/trailing-slash-url-serializer';
 import { TrailingSlashRedirect } from './services/trailing-slash-redirect';
+import { TitleStrategy } from '@angular/router';
+import { SeoTitleStrategy } from './services/seo-title-strategy';
 
 @NgModule({
   declarations: [
@@ -190,6 +192,7 @@ import { TrailingSlashRedirect } from './services/trailing-slash-redirect';
     provideBrowserGlobalErrorListeners(),
     provideClientHydration(withEventReplay()),
     { provide: UrlSerializer, useClass: TrailingSlashUrlSerializer },
+    { provide: TitleStrategy, useClass: SeoTitleStrategy },
 
     // ✅ Correct loader for v17
     provideTranslateHttpLoader({

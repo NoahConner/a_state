@@ -1,6 +1,6 @@
 import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
-import { isPlatformBrowser } from '@angular/common';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { routeTranslations } from '../app-routing-module';
 import { Observable } from 'rxjs';
@@ -23,6 +23,7 @@ export class Language {
     private translate: TranslateService,
     @Inject(PLATFORM_ID) private platformId: Object,
     private router: Router,
+    @Inject(DOCUMENT) private document: Document,
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
     this.initLanguage();
@@ -129,7 +130,7 @@ export class Language {
     this.translate.addLangs(this.availableLangs);
     this.translate.setDefaultLang('en');
 
-    const langToUse = this.isBrowser ? this.getLanguageFromUrl() : 'en';
+    const langToUse = this.getLanguageFromUrl();
     this.applyLanguage(langToUse);
   }
 
@@ -155,10 +156,13 @@ export class Language {
   private applyLanguage(lang: string) {
     this.translate.use(lang);
 
+    if (this.document?.documentElement) {
+      this.document.documentElement.lang = lang;
+    }
+
     if (!this.isBrowser) return;
 
     localStorage.setItem('lang', lang);
-    document.documentElement.lang = lang;
   }
 
   /** User-initiated language switch: navigate first, then sync translations from the new URL. */

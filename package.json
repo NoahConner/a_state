@@ -5,8 +5,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:ssr": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "serve:ssr": "node dist/myapp/server/server.mjs",
+    "dev:ssr": "node tools/dev-ssr.mjs",
     "serve:ssr:myapp": "node dist/myapp/server/server.mjs"
   },
   "prettier": {
