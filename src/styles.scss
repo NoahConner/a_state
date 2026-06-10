@@ -84,6 +84,13 @@ img {
   }
 }
 
+.topBanner {
+  height: 55rem !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
 @media only screen and (max-width: 820px) {
   .topBanner {
     height: auto !important;

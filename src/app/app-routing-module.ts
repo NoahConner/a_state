@@ -87,6 +87,7 @@ const routes: Routes = [
   { path: 'our-locations/707-shotwell-st-a-houston-tx-77020', component: LocationDetail, runGuardsAndResolvers: 'always', data: { metaPage: 'location_707-shotwell-st-a-houston-tx-77020' } },
   { path: 'our-locations/11503-southwest-fwy-b-houston-tx-77031', component: LocationDetail, runGuardsAndResolvers: 'always', data: { metaPage: 'location_11503-southwest-fwy-b-houston-tx-77031' } },
   { path: 'our-locations/10547-s-post-oak-rd-houston-tx-77035', component: LocationDetail, runGuardsAndResolvers: 'always', data: { metaPage: 'location_10547-s-post-oak-rd-houston-tx-77035' } },
+  { path: 'our-locations/5712-antoine-dr-houston-tx-77091', component: LocationDetail, runGuardsAndResolvers: 'always', data: { metaPage: 'location_5712-antoine-dr-houston-tx-77091' } },
   { path: 'our-locations/5206-airline-dr-g-houston-tx-77022', component: LocationDetail, runGuardsAndResolvers: 'always', data: { metaPage: 'location_5206-airline-dr-g-houston-tx-77022' } },
   { path: 'our-locations/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
   { path: 'get-a-quote', component: GetAQuote, data: { metaPage: 'getAQuote' } },
