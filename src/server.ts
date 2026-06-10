@@ -6,6 +6,11 @@ import {
 } from '@angular/ssr/node';
 import express from 'express';
 import { join } from 'node:path';
+import {
+  buildCanonicalRedirectUrl,
+  isManagedSeoHost,
+  SEO_CANONICAL_HOST,
+} from './app/services/seo-url';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
@@ -13,19 +18,34 @@ const app = express();
 const angularApp = new AngularNodeAppEngine();
 
 /**
- * Redirect paths without a trailing slash (skip static assets and root).
+ * Redirect production traffic to the single canonical host and URL shape.
  */
 app.use((req, res, next) => {
-  const path = req.path;
+  if (req.method !== 'GET') {
+    next();
+    return;
+  }
 
-  if (
-    req.method === 'GET' &&
-    path !== '/' &&
-    !path.endsWith('/') &&
-    !path.includes('.')
-  ) {
-    const query = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
-    return res.redirect(301, `${path}/${query}`);
+  const forwardedHost = req.headers['x-forwarded-host'];
+  const requestHost = Array.isArray(forwardedHost) ? forwardedHost[0] : forwardedHost ?? req.get('host');
+
+  if (!isManagedSeoHost(requestHost)) {
+    next();
+    return;
+  }
+
+  const forwardedProto = req.headers['x-forwarded-proto'];
+  const requestProto = Array.isArray(forwardedProto)
+    ? forwardedProto[0]
+    : forwardedProto?.split(',')[0] ?? req.protocol;
+  const normalizedHost = requestHost?.split(',')[0].trim().toLowerCase().split(':')[0];
+  const canonicalUrl = buildCanonicalRedirectUrl(req.originalUrl);
+  const needsSlashRedirect = canonicalUrl !== `https://${SEO_CANONICAL_HOST}${req.originalUrl}`;
+  const needsHostRedirect = normalizedHost !== SEO_CANONICAL_HOST || requestProto !== 'https';
+
+  if (needsSlashRedirect || needsHostRedirect) {
+    res.redirect(301, canonicalUrl);
+    return;
   }
 
   next();

@@ -7,6 +7,7 @@ import {
   TitleStrategy,
 } from '@angular/router';
 import { getSeoPageMeta, resolveSeoLanguageFromUrl } from './seo-meta';
+import { buildCanonicalUrl } from './seo-url';
 
 @Injectable()
 export class SeoTitleStrategy extends TitleStrategy {
@@ -38,6 +39,7 @@ export class SeoTitleStrategy extends TitleStrategy {
 
     this.title.setTitle(pageMeta.title);
     this.updateMetaTags(pageMeta);
+    this.updateCanonicalUrl(snapshot.url);
   }
 
   private getMetaPageKey(route: ActivatedRouteSnapshot): string | undefined {
@@ -76,5 +78,23 @@ export class SeoTitleStrategy extends TitleStrategy {
         'property="og:title"',
       );
     }
+  }
+
+  private updateCanonicalUrl(url: string): void {
+    const canonicalUrl = buildCanonicalUrl(url);
+    let canonicalLink = this.document.querySelector('link[rel="canonical"]');
+
+    if (!canonicalLink) {
+      canonicalLink = this.document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      this.document.head.appendChild(canonicalLink);
+    }
+
+    canonicalLink.setAttribute('href', canonicalUrl);
+
+    this.meta.updateTag(
+      { property: 'og:url', content: canonicalUrl },
+      'property="og:url"',
+    );
   }
 }

@@ -36,6 +36,38 @@ ng build
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
+## Checking Exact Duplicate Pages
+
+To test for exact duplicate rendered HTML pages:
+
+1. Build the SSR app:
+
+```bash
+npm run build
+```
+
+2. Start the SSR server:
+
+```bash
+npm run serve:ssr
+```
+
+3. In another terminal, run:
+
+```bash
+npm run seo:duplicates
+```
+
+This script reads URLs from `src/sitemap.xml`, requests each page from `http://localhost:4000`, computes an MD5 hash of the full HTML, and reports duplicate hash groups.
+
+Useful options:
+
+```bash
+node tools/check-duplicate-pages.mjs --base-url http://localhost:4000
+node tools/check-duplicate-pages.mjs --include-unique
+node tools/check-duplicate-pages.mjs --sitemap src/sitemap.xml --base-url http://localhost:4000
+```
+
 ## Running unit tests
 
 To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
