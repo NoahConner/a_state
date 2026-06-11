@@ -11,6 +11,11 @@ import { buildCanonicalUrl } from './seo-url';
 
 @Injectable()
 export class SeoTitleStrategy extends TitleStrategy {
+  private static readonly LOCATION_ROUTE_PREFIXES = [
+    '/our-locations/',
+    '/es/nuestras-ubicaciones/',
+  ];
+
   constructor(
     private readonly title: Title,
     private readonly meta: Meta,
@@ -20,36 +25,58 @@ export class SeoTitleStrategy extends TitleStrategy {
   }
 
   override updateTitle(snapshot: RouterStateSnapshot): void {
-    const pageKey = this.getMetaPageKey(snapshot.root);
+    const lang = resolveSeoLanguageFromUrl(snapshot.url);
+
+    if (this.document?.documentElement) {
+      this.document.documentElement.lang = lang;
+    }
+
+    this.updateCanonicalUrl(snapshot.url);
+
+    const pageKey = this.getMetaPageKey(snapshot.root, snapshot.url);
 
     if (!pageKey) {
       return;
     }
 
-    const lang = resolveSeoLanguageFromUrl(snapshot.url);
     const pageMeta = getSeoPageMeta(pageKey, lang);
 
     if (!pageMeta?.title) {
       return;
     }
 
-    if (this.document?.documentElement) {
-      this.document.documentElement.lang = lang;
-    }
-
     this.title.setTitle(pageMeta.title);
     this.updateMetaTags(pageMeta);
-    this.updateCanonicalUrl(snapshot.url);
   }
 
-  private getMetaPageKey(route: ActivatedRouteSnapshot): string | undefined {
+  private getMetaPageKey(route: ActivatedRouteSnapshot, url: string): string | undefined {
     let currentRoute = route;
 
     while (currentRoute.firstChild) {
       currentRoute = currentRoute.firstChild;
     }
 
-    return currentRoute.data['metaPage'];
+    return currentRoute.data['metaPage'] ?? this.resolveLocationMetaPage(url);
+  }
+
+  private resolveLocationMetaPage(url: string): string | undefined {
+    const pathname = url.split('?')[0].split('#')[0];
+
+    for (const prefix of SeoTitleStrategy.LOCATION_ROUTE_PREFIXES) {
+      if (!pathname.startsWith(prefix)) {
+        continue;
+      }
+
+      const locationId = pathname.slice(prefix.length).replace(/\/+$/, '');
+
+      if (!locationId) {
+        return undefined;
+      }
+
+      return `location_${locationId}`;
+    }
+
+    return undefined;
   }
 
   private updateMetaTags(pageMeta: { title?: string; description?: string; keywords?: string }): void {
