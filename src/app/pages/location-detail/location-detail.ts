@@ -1,8 +1,11 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core'; // ChangeDetectorRef import kiya
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit, ChangeDetectorRef } from '@angular/core'; // ChangeDetectorRef import kiya
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { DomSanitizer, Meta, SafeResourceUrl, Title } from '@angular/platform-browser';
 import { Language } from '../../services/language';
+import { getSeoPageMeta, resolveSeoLanguageFromUrl } from '../../services/seo-meta';
+import { buildCanonicalUrl } from '../../services/seo-url';
 
 interface Location {
   id: string;
@@ -37,8 +40,11 @@ export class LocationDetail implements OnInit {
     private http: HttpClient,
     private router: Router,
     private sanitizer: DomSanitizer,
+    private titleService: Title,
+    private metaService: Meta,
     private cdr: ChangeDetectorRef,
-    public languageService: Language
+    public languageService: Language,
+    @Inject(DOCUMENT) private readonly document: Document,
   ) {}
 
   chips = [
@@ -64,9 +70,11 @@ export class LocationDetail implements OnInit {
   }
 
   ngOnInit(): void {
+    this.applySeoFallback();
     const currentLang = this.languageService.getCurrentLanguage();
     this.getLocationDetail(currentLang);
     this.languageService.getLanguageChange().subscribe((lang: any) => {
+      this.applySeoFallback();
       this.getLocationDetail(lang.lang);
     });
   }
@@ -107,6 +115,60 @@ export class LocationDetail implements OnInit {
     const cleanUrl = this.router.url.split('?')[0].split('#')[0];
     const segments = cleanUrl.split('/').filter(Boolean);
     return segments[segments.length - 1] || '';
+  }
+
+  private applySeoFallback(): void {
+    const url = this.router.url;
+    const lang = resolveSeoLanguageFromUrl(url);
+    const locationId = this.resolveLocationId();
+    const pageMeta = getSeoPageMeta(`location_${locationId}`, lang);
+
+    if (this.document?.documentElement) {
+      this.document.documentElement.lang = lang;
+    }
+
+    const canonicalUrl = buildCanonicalUrl(url);
+    let canonicalLink = this.document.querySelector('link[rel="canonical"]');
+
+    if (!canonicalLink) {
+      canonicalLink = this.document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      this.document.head.appendChild(canonicalLink);
+    }
+
+    canonicalLink.setAttribute('href', canonicalUrl);
+    this.metaService.updateTag(
+      { property: 'og:url', content: canonicalUrl },
+      'property="og:url"',
+    );
+
+    if (!pageMeta?.title) {
+      return;
+    }
+
+    this.titleService.setTitle(pageMeta.title);
+    this.metaService.updateTag(
+      { property: 'og:title', content: pageMeta.title },
+      'property="og:title"',
+    );
+
+    if (pageMeta.description) {
+      this.metaService.updateTag(
+        { name: 'description', content: pageMeta.description },
+        'name="description"',
+      );
+      this.metaService.updateTag(
+        { property: 'og:description', content: pageMeta.description },
+        'property="og:description"',
+      );
+    }
+
+    if (pageMeta.keywords) {
+      this.metaService.updateTag(
+        { name: 'keywords', content: pageMeta.keywords },
+        'name="keywords"',
+      );
+    }
   }
 
   getRoute(page: string) {
