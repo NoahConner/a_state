@@ -3,10 +3,10 @@
     <div class="container">
       <div class="topSub">
         <div class="topSub2">
-          <div class="h1">
+          <h1 class="h1">
             <span [innerHTML]="'INSURANCE_SERVICES.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
             <span [innerHTML]="'INSURANCE_SERVICES.BANNER.TITLE_LINE2' | translateHtml | async"></span>
-          </div>
+          </h1>
 
           <div class="selectable mt-5">
             @for (item of chips.slice(0, 3); track item.name) {
@@ -50,7 +50,7 @@
       <div class="row mb-5 text-center">
         <!-- Changed col-12 to col-lg-8 to make the text area narrower and centered -->
         <div class="col-12 col-md-9 mt-3 mx-auto main-content">
-          <h4 class="insurance-heading-2" [routerLink]="getRoute('autoInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEADING_2' | translateHtml | async"></h4>
+          <h2 class="insurance-heading-2" [routerLink]="getRoute('autoInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEADING_2' | translateHtml | async"></h2>
           <!-- Added a class to target specifically -->
           <p class="description-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.DESCRIPTION' | translateHtml | async"></p>
         </div>
@@ -65,7 +65,7 @@
                 <img src="../assets/images/iconoir_car.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('carInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD1.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('carInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD1.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD1.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -77,7 +77,7 @@
                 <img src="../assets/images/pepicons.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('motorcycleInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD2.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('motorcycleInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD2.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD2.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -91,7 +91,7 @@
                 <img src="../assets/images/hugeicons_boat.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('boatInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD3.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('boatInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD3.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD3.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -103,7 +103,7 @@
                 <img src="../assets/images/fluent.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('rvInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD4.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('rvInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD4.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD4.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -117,7 +117,7 @@
                 <img src="../assets/images/clarity_car.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('classicCarInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD5.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('classicCarInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD5.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD5.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -129,7 +129,7 @@
                 <img src="../assets/images/cil_truck.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD6.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD6.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD6.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -143,7 +143,7 @@
                 <img src="../assets/images/material.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('sr22Insurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD7.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('sr22Insurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD7.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD7.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -155,7 +155,7 @@
                 <img src="../assets/images/carbon_ibm.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('atvAndUtvInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD8.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('atvAndUtvInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD8.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD8.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -169,7 +169,7 @@
                 <img src="../assets/images/ph_truck.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('trailerInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD9.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('trailerInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD9.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD9.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -181,7 +181,7 @@
                 <img src="../assets/images/mingcute.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('mexicanCarInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD10.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('mexicanCarInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD10.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD10.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -195,7 +195,7 @@
                 <img src="../assets/images/hugeicons_uber.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('rideshareInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD11.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('rideshareInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD11.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD11.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -214,7 +214,7 @@
       <div class="row mb-5 text-center">
         <!-- Changed col-12 to col-lg-8 to make the text area narrower and centered -->
         <div class="col-12 col-md-10 mt-3 mx-auto main-content">
-          <h4 class="insurance-heading-2" [routerLink]="getRoute('homeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.HEADING' | translateHtml | async"></h4>
+          <h2 class="insurance-heading-2" [routerLink]="getRoute('homeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.HEADING' | translateHtml | async"></h2>
           <!-- Added a class to target specifically -->
           <p class="description-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.DESCRIPTION' | translateHtml | async"></p>
         </div>
@@ -228,7 +228,7 @@
                 <img src="../assets/images/ri_parent-line.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD1.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD1.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD1.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -240,7 +240,7 @@
                 <img src="../assets/images/hugeicons_property-new.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('landlordInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD2.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('landlordInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD2.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD2.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -254,7 +254,7 @@
                 <img src="../assets/images/prime_building.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('condoInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD3.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('condoInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD3.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD3.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -266,7 +266,7 @@
                 <img src="../assets/images/fe_home.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('earthquakeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD4.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('earthquakeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD4.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD4.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -280,7 +280,7 @@
                 <img src="../assets/images/streamline-sharp_necktie.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('manufacturedMobileHomeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD5.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('manufacturedMobileHomeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD5.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD5.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -292,7 +292,7 @@
                 <img src="../assets/images/proicons_food.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('rentersInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD6.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('rentersInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD6.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD6.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -306,7 +306,7 @@
                 <img src="../assets/images/carbon_earthquake.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('floodInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD7.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('floodInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD7.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD7.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -324,7 +324,7 @@
       <div class="row mb-5 text-center">
         <!-- Changed col-12 to col-lg-8 to make the text area narrower and centered -->
         <div class="col-12 col-md-10 mt-3 mx-auto main-content">
-          <h4 class="insurance-heading-2" [routerLink]="getRoute('commercialInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.HEADING' | translateHtml | async"></h4>
+          <h2 class="insurance-heading-2" [routerLink]="getRoute('commercialInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.HEADING' | translateHtml | async"></h2>
           <!-- Added a class to target specifically -->
           <p class="description-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.DESCRIPTION' | translateHtml | async"></p>
         </div>
@@ -339,7 +339,7 @@
                 <img src="../assets/images/c_iconoir_car.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('professionalLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD1.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('professionalLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD1.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD1.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -351,7 +351,7 @@
                 <img src="../assets/images/c_pepicons-pencil_motorcycle.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('generalLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD2.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('generalLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD2.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD2.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -365,7 +365,7 @@
                 <img src="../assets/images/c_hugeicons_boat.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('workersCompensationInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD3.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('workersCompensationInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD3.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD3.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -377,7 +377,7 @@
                 <img src="../assets/images/c_ri_building-4-line.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('commercialPropertyInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD4.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('commercialPropertyInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD4.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD4.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -391,7 +391,7 @@
                 <img src="../assets/images/c_hugeicons_truck.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('commercialAutoInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD5.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('commercialAutoInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD5.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD5.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -403,7 +403,7 @@
                 <img src="../assets/images/c_streamline-ultimate_human-resources-businessman.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('businessOwnerInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD6.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('businessOwnerInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD6.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD6.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -417,7 +417,7 @@
                 <img src="../assets/images/c_clarity_employee-line.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('employmentPracticesLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD7.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('employmentPracticesLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD7.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD7.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -429,7 +429,7 @@
                 <img src="../assets/images/c_gala_secure.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('cyberLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD8.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('cyberLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD8.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD8.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -443,7 +443,7 @@
                 <img src="../assets/images/c_emojione-monotone_building-construction.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('buildersRiskInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD9.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('buildersRiskInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD9.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD9.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -455,7 +455,7 @@
                 <img src="../assets/images/c_pepicons-pencil_people.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('directorsOfficersLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD10.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('directorsOfficersLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD10.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD10.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -473,7 +473,7 @@
       <div class="row mb-5 text-center">
         <!-- Changed col-12 to col-lg-8 to make the text area narrower and centered -->
         <div class="col-12 col-md-9 mt-3 mx-auto main-content">
-          <h4 class="insurance-heading-2" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.HEADING' | translateHtml | async"></h4>
+          <h2 class="insurance-heading-2" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.HEADING' | translateHtml | async"></h2>
           <!-- Added a class to target specifically -->
           <p class="description-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.DESCRIPTION' | translateHtml | async"></p>
         </div>
@@ -487,7 +487,7 @@
                 <img src="../assets/images/healthicons_life-science-outline.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('termLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD1.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('termLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD1.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD1.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -499,7 +499,7 @@
                 <img src="../assets/images/ri_heart-line.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('wholeLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD2.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('wholeLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD2.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD2.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -513,7 +513,7 @@
                 <img src="../assets/images/iconoir_lifebelt.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('universalLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD3.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('universalLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD3.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD3.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -525,7 +525,7 @@
                 <img src="../assets/images/solar_bill-linear.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('finalExpenseInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD4.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('finalExpenseInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD4.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD4.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -539,7 +539,7 @@
                 <img src="../assets/images/la_hands-helping.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('variableLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD5.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('variableLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD5.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD5.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -551,7 +551,7 @@
                 <img src="../assets/images/ri_group-line.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('groupLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD6.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('groupLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD6.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD6.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -568,7 +568,7 @@
       <div class="row mb-5 text-center">
         <!-- Changed col-12 to col-lg-8 to make the text area narrower and centered -->
         <div class="col-12 col-md-9 mt-3 mx-auto main-content">
-          <h4 class="insurance-heading-2" [routerLink]="getRoute('healthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.HEADING' | translateHtml | async"></h4>
+          <h2 class="insurance-heading-2" [routerLink]="getRoute('healthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.HEADING' | translateHtml | async"></h2>
           <!-- Added a class to target specifically -->
           <p class="description-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.DESCRIPTION' | translateHtml | async"></p>
         </div>
@@ -583,7 +583,7 @@
                 <img src="../assets/images/streamline-plump_insurance-hand.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('individualHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD1.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('individualHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD1.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD1.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -595,7 +595,7 @@
                 <img src="../assets/images/famicons_logo-family.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('familyHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD2.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('familyHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD2.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD2.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -609,7 +609,7 @@
                 <img src="../assets/images/streamline-cyber_business-laptop-1.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('smallBusinessHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD3.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('smallBusinessHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD3.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD3.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -621,7 +621,7 @@
                 <img src="../assets/images/fluent_group-20-regular.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('employerGroupHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD4.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('employerGroupHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD4.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD4.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -635,7 +635,7 @@
                 <img src="../assets/images/material-symbols-light_travel-explore-rounded.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('travelHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD5.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('travelHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD5.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD5.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -647,7 +647,7 @@
                 <img src="../assets/images/fluent-mdl2_medical.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('medicareSupplementInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD6.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('medicareSupplementInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD6.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD6.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -661,7 +661,7 @@
                 <img src="../assets/images/clarity_employee-line.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('shortTermHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD7.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('shortTermHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD7.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD7.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -673,7 +673,7 @@
                 <img src="../assets/images/hugeicons_dental-tooth.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('dentalVisionInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD8.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('dentalVisionInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD8.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD8.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -687,7 +687,7 @@
                 <img src="../assets/images/emojione-monotone_building-construction.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [routerLink]="getRoute('acaMarketplacePlansInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD9.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('acaMarketplacePlansInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD9.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD9.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -707,7 +707,7 @@
     <div class="container">
       <div class="row mb-5 text-center">
         <div class="col-10  mt-5 mx-auto surety-content">
-          <h4 [routerLink]="getRoute('suretyBondInsurance')" [innerHTML]="'INSURANCE_SERVICES.SURETY.HEADING' | translateHtml | async"></h4>
+          <h2 class="surety-title" [routerLink]="getRoute('suretyBondInsurance')" [innerHTML]="'INSURANCE_SERVICES.SURETY.HEADING' | translateHtml | async"></h2>
           <!-- Added a class to target specifically -->
           <p class="description-text justify-content-center" [innerHTML]="'INSURANCE_SERVICES.SURETY.DESCRIPTION' | translateHtml | async"></p>
         </div>
@@ -718,7 +718,7 @@
           <div class="col-sm-3">
             <div class="card surtey-card">
               <div class="card-body">
-                <h5 class="card-title" [routerLink]="getRoute('performanceBondsPaymentBonds')" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD1.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('performanceBondsPaymentBonds')" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD1.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD1.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -726,7 +726,7 @@
           <div class="col-sm-3">
             <div class="card surtey-card">
               <div class="card-body">
-                <h5 class="card-title" [routerLink]="getRoute('commercialSuretyBonds')" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD2.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('commercialSuretyBonds')" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD2.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD2.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -735,7 +735,7 @@
           <div class="col-sm-3">
             <div class="card surtey-card">
               <div class="card-body">
-                <h5 class="card-title" [routerLink]="getRoute('bidBonds')" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD3.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('bidBonds')" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD3.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD3.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -744,7 +744,7 @@
           <div class="col-sm-3">
             <div class="card surtey-card">
               <div class="card-body">
-                <h5 class="card-title" [routerLink]="getRoute('notaryBonds')" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD4.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [routerLink]="getRoute('notaryBonds')" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD4.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD4.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -821,15 +821,15 @@
 
         <div class="col-lg-6 mt-5">
           <div class="content-inner ">
-            <h4 class="section-title mb-5"><span [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.HEADING' | translateHtml | async"></span><br>
+            <h2 class="section-title mb-5"><span [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.HEADING' | translateHtml | async"></span><br>
               <strong [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.HEADING2' | translateHtml | async"></strong>
-            </h4>
+            </h2>
 
             <div class="features-list">
               <div class="feature-item d-flex mb-3">
                 <div class="icon-dot me-3 mt-2"></div>
                 <div>
-                  <h5 class="fw-bold mb-1" [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD1.TITLE' | translateHtml | async"></h5>
+                  <h3 class="fw-bold mb-1 card-title" [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD1.TITLE' | translateHtml | async"></h3>
                   <p [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD1.DESC' | translateHtml | async"></p>
                 </div>
               </div>
@@ -837,7 +837,7 @@
               <div class="feature-item d-flex mb-3">
                 <div class="icon-dot me-3 mt-2"></div>
                 <div>
-                  <h5 class="fw-bold mb-1" [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD2.TITLE' | translateHtml | async"></h5>
+                  <h3 class="fw-bold mb-1 card-title" [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD2.TITLE' | translateHtml | async"></h3>
                   <p [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD2.DESC' | translateHtml | async"></p>
                 </div>
               </div>
@@ -845,7 +845,7 @@
               <div class="feature-item d-flex mb-3">
                 <div class="icon-dot me-3 mt-2"></div>
                 <div>
-                  <h5 class="fw-bold mb-1" [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD3.TITLE' | translateHtml | async"></h5>
+                  <h3 class="fw-bold mb-1 card-title" [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD3.TITLE' | translateHtml | async"></h3>
                   <p [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD3.DESC' | translateHtml | async"></p>
                 </div>
               </div>
@@ -853,7 +853,7 @@
               <div class="feature-item d-flex mb-3">
                 <div class="icon-dot me-3 mt-2"></div>
                 <div>
-                  <h5 class="fw-bold mb-1" [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD4.TITLE' | translateHtml | async"></h5>
+                  <h3 class="fw-bold mb-1 card-title" [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD4.TITLE' | translateHtml | async"></h3>
                   <p [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD4.DESC' | translateHtml | async"></p>
                 </div>
               </div>
@@ -861,7 +861,7 @@
               <div class="feature-item d-flex mb-3">
                 <div class="icon-dot me-3 mt-2"></div>
                 <div>
-                  <h5 class="fw-bold mb-1" [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD5.TITLE' | translateHtml | async"></h5>
+                  <h3 class="fw-bold mb-1 card-title" [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD5.TITLE' | translateHtml | async"></h3>
                   <p [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD5.DESC' | translateHtml | async"></p>
                 </div>
               </div>
@@ -869,7 +869,7 @@
               <div class="feature-item d-flex mb-3">
                 <div class="icon-dot me-3 mt-2"></div>
                 <div>
-                  <h5 class="fw-bold mb-1" [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD6.TITLE' | translateHtml | async"></h5>
+                  <h3 class="fw-bold mb-1 card-title" [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD6.TITLE' | translateHtml | async"></h3>
                   <p [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD6.DESC' | translateHtml | async"></p>
                 </div>
               </div>
@@ -893,11 +893,11 @@
     <img src="../assets/images/insurance-right.png" class="bg-shape shape-right " alt="decoration" />
 
     <div class="container">
-      <h5 class="text-center mb-5 heading">
+      <h2 class="text-center mb-5 heading">
         <span [innerHTML]="'HOME.WORKING_PROCESS.TITLE_LINE1' | translateHtml | async"></span>
         <strong [innerHTML]="'HOME.WORKING_PROCESS.TITLE_STRONG' | translateHtml | async"></strong>
         <span [innerHTML]="'HOME.WORKING_PROCESS.TITLE_LINE2' | translateHtml | async"></span>
-      </h5>
+      </h2>
 
       <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6 position-relative">
@@ -906,7 +906,7 @@
           <div class="d-flex align-items-center mb-4 insurance-card p-3">
             <div class="step-number">01</div>
             <div class="ms-4 working-heading">
-              <h5 class="fw-bold mb-1" [innerHTML]="'HOME.WORKING_PROCESS.STEP1.TITLE' | translateHtml | async"></h5>
+              <h3 class="fw-bold mb-1 working-step-title" [innerHTML]="'HOME.WORKING_PROCESS.STEP1.TITLE' | translateHtml | async"></h3>
               <p class="text-muted mb-0 small" [innerHTML]="'HOME.WORKING_PROCESS.STEP1.DESC' | translateHtml | async"></p>
             </div>
           </div>
@@ -914,7 +914,7 @@
           <div class="d-flex align-items-center mb-4 insurance-card p-3">
             <div class="step-number">02</div>
             <div class="ms-4 working-heading">
-              <h5 class="fw-bold mb-1" [innerHTML]="'HOME.WORKING_PROCESS.STEP2.TITLE' | translateHtml | async"></h5>
+              <h3 class="fw-bold mb-1 working-step-title" [innerHTML]="'HOME.WORKING_PROCESS.STEP2.TITLE' | translateHtml | async"></h3>
               <p class="text-muted mb-0 small" [innerHTML]="'HOME.WORKING_PROCESS.STEP2.DESC' | translateHtml | async"></p>
             </div>
           </div>
@@ -922,7 +922,7 @@
           <div class="d-flex align-items-center mb-4 insurance-card p-3">
             <div class="step-number">03</div>
             <div class="ms-4 working-heading">
-              <h5 class="fw-bold mb-1" [innerHTML]="'HOME.WORKING_PROCESS.STEP3.TITLE' | translateHtml | async"></h5>
+              <h3 class="fw-bold mb-1 working-step-title" [innerHTML]="'HOME.WORKING_PROCESS.STEP3.TITLE' | translateHtml | async"></h3>
               <p class="text-muted mb-0 small" [innerHTML]="'HOME.WORKING_PROCESS.STEP3.DESC' | translateHtml | async"></p>
             </div>
           </div>
@@ -930,7 +930,7 @@
           <div class="d-flex align-items-center insurance-card p-3">
             <div class="step-number">04</div>
             <div class="ms-4 working-heading">
-              <h5 class="fw-bold mb-1" [innerHTML]="'HOME.WORKING_PROCESS.STEP4.TITLE' | translateHtml | async"></h5>
+              <h3 class="fw-bold mb-1 working-step-title" [innerHTML]="'HOME.WORKING_PROCESS.STEP4.TITLE' | translateHtml | async"></h3>
               <p class="text-muted mb-0 small" [innerHTML]="'HOME.WORKING_PROCESS.STEP4.DESC' | translateHtml | async"></p>
             </div>
           </div>
