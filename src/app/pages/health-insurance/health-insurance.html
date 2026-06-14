@@ -397,7 +397,7 @@
               <p> <strong><span [innerHTML]="('HEALTH_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.TITLE') | translateHtml | async"></span> :</strong>
                 <span [innerHTML]="('HEALTH_INSURANCE.DISCOUNT_FACTORS.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
 
-              <!-- <h6 class="factor-title">
+              <!-- <h3 class="factor-title">
                 <span [innerHTML]="('COMMERCIAL_INSURANCE.FACTORS_IMPACT.LIST.' + key + '.TITLE') | translateHtml | async"></span>
               </h6>
               <p class="factor-desc">
@@ -692,7 +692,7 @@
     <div class="container">
       <div class="topSub">
         <div class="topSub2">
-          <div class="h1" [innerHTML]="'HEALTH_INSURANCE.FREE_QUOTE.HEADER' | translateHtml | async"></div>
+          <h2 class="h1" [innerHTML]="'HEALTH_INSURANCE.FREE_QUOTE.HEADER' | translateHtml | async"></h2>
           <p class="para" [innerHTML]="'HEALTH_INSURANCE.FREE_QUOTE.DESCRIPTION' | translateHtml | async"></p>
           <div class="selectable mt-4">
             @for (item of chips.slice(0, 3); track item.name) {
