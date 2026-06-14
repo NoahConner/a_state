@@ -3,10 +3,10 @@
     <div class="container">
       <div class="topSub">
         <div class="topSub2">
-          <div class="h1">
+          <h1 class="h1">
             <span [innerHTML]="'ACA_MARKETPLACE.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
             <span [innerHTML]="'ACA_MARKETPLACE.BANNER.TITLE_LINE2' | translateHtml | async"></span> <span class="heading-span" [innerHTML]="'ACA_MARKETPLACE.BANNER.TITLE_LINE3' | translateHtml | async"></span>
-          </div>
+          </h1>
           <!-- 
           <div class="selectable">
             
@@ -66,7 +66,7 @@
         <div class="number">0{{ i + 1 }}</div>
 
         <div class="content">
-          <h5>{{ item.TITLE }}</h5>
+          <h3 class="need-title">{{ item.TITLE }}</h3>
           <p>{{ item.TEXT }}</p>
         </div>
 
@@ -78,7 +78,7 @@
   <section class="insurance-laws-section py-5">
     <div class="container-max-800">
 
-      <h1 class="main-title" [innerHTML]="'ACA_MARKETPLACE.HOW_IT_WORKS.TITLE' | translateHtml | async"></h1>
+      <h2 class="main-title" [innerHTML]="'ACA_MARKETPLACE.HOW_IT_WORKS.TITLE' | translateHtml | async"></h2>
 
       <p class="intro-text">
         <span [innerHTML]="'ACA_MARKETPLACE.HOW_IT_WORKS.DESC1' | translateHtml | async"></span>
@@ -98,7 +98,7 @@
     <div class="container">
       <!-- Header -->
       <div class="header-content mb-5">
-        <h6 class="text-danger fw-bold" [innerHTML]="'ACA_MARKETPLACE.COVERAGES.STANDARD.TITLE' | translateHtml | async"></h6>
+        <h2 class="coverages-title text-danger fw-bold" [innerHTML]="'ACA_MARKETPLACE.COVERAGES.STANDARD.TITLE' | translateHtml | async"></h2>
         <p class="small text-muted" [innerHTML]="'ACA_MARKETPLACE.COVERAGES.STANDARD.DESC' | translateHtml | async"></p>
       </div>
 
@@ -108,7 +108,7 @@
           <div class="insurance-card">
             <div class="card-icon"><i [class]="item.ICON"></i></div>
             <div class="card-body">
-              <h6>{{ item.TITLE }}</h6>
+              <h3 class="coverage-title">{{ item.TITLE }}</h3>
               <p>{{ item.DESC }}</p>
             </div>
           </div>
@@ -134,7 +134,7 @@
               <i [class]="'ACA_MARKETPLACE.NOT_COVERED.LIST.' + key + '.ICON' | translate"></i>
             </div>
             <div class="factor-content">
-              <h6><span [innerHTML]="('ACA_MARKETPLACE.NOT_COVERED.LIST.' + key + '.TITLE') | translateHtml | async"></span></h6>
+              <h3 class="factor-title"><span [innerHTML]="('ACA_MARKETPLACE.NOT_COVERED.LIST.' + key + '.TITLE') | translateHtml | async"></span></h3>
               <p><span [innerHTML]="('ACA_MARKETPLACE.NOT_COVERED.LIST.' + key + '.DESC') | translateHtml | async"></span></p>
             </div>
           </div>
@@ -148,7 +148,7 @@
     <div class="container">
       <!-- Header -->
       <div class="header-content mb-5">
-        <h6 class="text-danger fw-bold" [innerHTML]="'ACA_MARKETPLACE.COVERAGES.TYPES.TITLE' | translateHtml | async"></h6>
+        <h2 class="coverages-title text-danger fw-bold" [innerHTML]="'ACA_MARKETPLACE.COVERAGES.TYPES.TITLE' | translateHtml | async"></h2>
         <p class="small text-muted" [innerHTML]="'ACA_MARKETPLACE.COVERAGES.TYPES.DESC' | translateHtml | async"></p>
       </div>
 
@@ -158,7 +158,7 @@
           <div class="insurance-card">
             <div class="card-icon"><i [class]="item.ICON"></i></div>
             <div class="card-body">
-              <h6>{{ item.TITLE }}</h6>
+              <h3 class="coverage-title">{{ item.TITLE }}</h3>
               <p>{{ item.DESC }}</p>
             </div>
           </div>
@@ -176,7 +176,7 @@
       <div class="row">
         <div class="col-lg-10">
           <!-- Title -->
-          <h4 class="cost-title mb-4" [innerHTML]="'ACA_MARKETPLACE.HEALTH_INSURANCE_COST.TITLE' | translateHtml | async"></h4>
+          <h2 class="cost-title mb-4" [innerHTML]="'ACA_MARKETPLACE.HEALTH_INSURANCE_COST.TITLE' | translateHtml | async"></h2>
 
           <!-- Description Content -->
           <div class="cost-description">
@@ -468,7 +468,7 @@
                 <img src="../assets/images/carbon_license.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [innerHTML]="'ACA_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [innerHTML]="'ACA_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'ACA_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.DESCRIPTION' | translateHtml | async"></p>
               </div>
             </div>
@@ -480,7 +480,7 @@
                 <img src="../assets/images/Heart.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [innerHTML]="'ACA_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [innerHTML]="'ACA_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'ACA_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.DESCRIPTION' | translateHtml | async"></p>
               </div>
             </div>
@@ -494,7 +494,7 @@
                 <img src="../assets/images/calendar.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [innerHTML]="'ACA_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [innerHTML]="'ACA_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'ACA_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.DESCRIPTION' | translateHtml | async"></p>
               </div>
             </div>
@@ -506,7 +506,7 @@
                 <img src="../assets/images/price.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [innerHTML]="'ACA_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [innerHTML]="'ACA_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'ACA_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.DESCRIPTION' | translateHtml | async"></p>
               </div>
             </div>
@@ -520,7 +520,7 @@
                 <img src="../assets/images/wifi.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [innerHTML]="'ACA_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [innerHTML]="'ACA_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'ACA_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' | translateHtml | async"></p>
               </div>
             </div>
@@ -532,7 +532,7 @@
                 <img src="../assets/images/agents.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [innerHTML]="'ACA_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.TITLE' | translateHtml | async"></h5>
+                <h3 class="card-title" [innerHTML]="'ACA_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.TITLE' | translateHtml | async"></h3>
                 <p class="card-text" [innerHTML]="'ACA_MARKETPLACE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.DESCRIPTION' | translateHtml | async"></p>
               </div>
             </div>
@@ -605,7 +605,7 @@
         @for (step of switchSteps; track step) {
         <div class="switch-card-wrapper">
           <div class="switch-card">
-            <h6><span [innerHTML]="('ACA_MARKETPLACE.SWITCH_STEPS.STEPS.' + step + '.TITLE') | translateHtml | async"></span></h6>
+            <h3 class="switch-step-title"><span [innerHTML]="('ACA_MARKETPLACE.SWITCH_STEPS.STEPS.' + step + '.TITLE') | translateHtml | async"></span></h3>
             <p><span [innerHTML]="('ACA_MARKETPLACE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION') | translateHtml | async"></span></p>
           </div>
         </div>
