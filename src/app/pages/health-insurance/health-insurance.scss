@@ -311,7 +311,7 @@
       flex-direction: column;
       justify-content: center;
 
-      h5 {
+      .need-title {
         font-weight: 500;
         font-size: 21px;
         padding: 5px;
@@ -577,7 +577,7 @@
   .header-content {
     max-width: 900px;
 
-    h6 {
+    .coverages-title {
       color: #CA2B28;
       font-size: 18px;
     }
@@ -588,7 +588,7 @@
       color: #555;
     }
 
-    h6 {
+    .coverages-title {
       color: #ca2b28;
     }
   }
@@ -669,7 +669,7 @@
     .card-body {
       padding: 0;
 
-      h6 {
+      .coverage-title {
         font-size: 15px;
         font-weight: 600;
         margin-bottom: 6px;
@@ -813,7 +813,7 @@
     max-width: 800px;
     margin: 1px auto;
 
-    h5 {
+    .rates-title {
       font-size: 1.1rem;
       color: #CA2B28;
     }
@@ -944,7 +944,7 @@
     }
 
     .factor-content {
-      h6 {
+      .factor-title {
         font-size: 16.5px;
         font-weight: 700;
         color: #000;
@@ -980,7 +980,7 @@
     }
 
     .factor-content {
-      h6.factor-title {
+      .factor-title {
         font-size: 16.5px;
         font-weight: 700;
         color: #000;
@@ -1161,7 +1161,7 @@
     transform: scale(1.1);
   }
 
-  h6 {
+  .vehicle-type-title {
     color: #151515;
     font-size: 19px;
     font-weight: 700;
@@ -1292,7 +1292,7 @@
       box-shadow: 0 20px 70px rgba(255, 180, 180, 0.8);
     }
 
-    h6 {
+    .switch-step-title {
       color: #CA2B28;
       font-size: 18px;
       font-weight: 700;
