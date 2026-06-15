@@ -73,6 +73,7 @@ import { CommercialSuretyBonds } from './pages/surety-bond-insurance/commercial-
 import { TitleInsurance } from './pages/additional_insurance/title-insurance/title-insurance';
 import { TitleTransfer } from './pages/additional_insurance/title-transfer/title-transfer';
 import { PetInsurance } from './pages/additional_insurance/pet-insurance/pet-insurance';
+import { HoustonTx } from './pages/auto-insurance/houston-tx/houston-tx';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -159,6 +160,7 @@ const routes: Routes = [
       { path: 'trailer-insurance', component: TrailerInsurance, data: { metaPage: 'trailerInsurance' } },
       { path: 'mexican-car-insurance', component: MexicanCarInsurance, data: { metaPage: 'mexicanCarInsurance' } },
       { path: 'rideshare-insurance', component: RideshareInsurance, data: { metaPage: 'rideshareInsurance' } },
+      { path: 'houston-tx', component: HoustonTx, data: { metaPage: 'houstonTx' } }
     ]
   },
 
@@ -241,6 +243,7 @@ const routes: Routes = [
           { path: 'seguro-de-remolque', component: TrailerInsurance, data: { metaPage: 'trailerInsurance' } },
           { path: 'seguro-de-auto-en-mexico', component: MexicanCarInsurance, data: { metaPage: 'mexicanCarInsurance' } },
           { path: 'seguro-para-rideshare', component: RideshareInsurance, data: { metaPage: 'rideshareInsurance' } },
+          { path: 'houston-tx', component: HoustonTx, data: { metaPage: 'houstonTx' } }
         ]
       },
       {
@@ -621,4 +624,8 @@ export const routeTranslations: Record<string, Record<string, string>> = {
     en: 'pet-insurance',
     es: 'seguro-para-mascotas'
   },
+  houstonTx: {
+    en: 'houston-tx',
+    es: 'houston-tx'
+  }
 };

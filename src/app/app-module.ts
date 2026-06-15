@@ -93,6 +93,7 @@ import { TrailingSlashUrlSerializer } from './services/trailing-slash-url-serial
 import { TrailingSlashRedirect } from './services/trailing-slash-redirect';
 import { TitleStrategy } from '@angular/router';
 import { SeoTitleStrategy } from './services/seo-title-strategy';
+import { HoustonTx } from './pages/auto-insurance/houston-tx/houston-tx';
 
 @NgModule({
   declarations: [
@@ -172,6 +173,7 @@ import { SeoTitleStrategy } from './services/seo-title-strategy';
     TitleInsurance,
     TitleTransfer,
     PetInsurance,
+    HoustonTx,
     PhoneFormatDirective,
     ChipNavigationDirective,
   ],

@@ -1,0 +1,420 @@
+<div class="homeMain">
+  <div class="topBanner">
+    <div class="container">
+      <div class="topSub">
+        <div class="topSub2">
+          <h1 class="h1">
+            <span [innerHTML]="'HOUSTON_TX.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
+            <span [innerHTML]="'HOUSTON_TX.BANNER.TITLE_LINE2' | translateHtml | async"></span> <br/>
+            <span [innerHTML]="'HOUSTON_TX.BANNER.TITLE_LINE3' | translateHtml | async"></span> 
+          </h1>
+          <div class="banner-quote-card">
+            <div class="quote-options">
+              @for (item of chips; track item.name) {
+              <button
+                type="button"
+                class="quote-option"
+                *ngIf="item.name"
+                [class.selected]="selectedChip === item.name"
+                [attr.aria-pressed]="selectedChip === item.name"
+                (click)="selectChip(item.name)">
+                <span class="icon-badge">
+                  <span class="icon-burst"></span>
+                  <img [src]="item.image" [alt]="item.name | translate" class="quote-option-image" />
+                </span>
+                <span class="quote-option-label">
+                  <span class="radio-indicator"></span>
+                  <span [innerHTML]="item.name | translateHtml | async"></span>
+                </span>
+              </button>
+              }
+            </div>
+
+            <div class="quote-form-row">
+              <input
+                type="text"
+                [placeholder]="'AUTO_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
+                class="form-control"
+                [value]="fullName"
+                (input)="fullName = $any($event.target).value" />
+
+              <input
+                type="tel"
+                appPhoneFormat
+                [placeholder]="'AUTO_INSURANCE.BANNER.FORM.PHONE' | translate"
+                class="form-control"
+                [value]="phone"
+                (input)="phone = $any($event.target).value" />
+
+              <button class="quote-submit" [disabled]="!selectedChip" (click)="goToSelectedQuote()">
+                {{ 'AUTO_INSURANCE.BANNER.FORM.BUTTON' | translate }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why Texans Choose A-State Insurance -->
+
+  <div class="texan-choose-image">
+    <div class="container py-5 mt-5">
+      <div class="row mb-5 text-center">
+        <div class="col-12">
+          <h2 class="heading">
+            <span [innerHTML]="'HOME.WHY_CHOOSE.HEADING' | translateHtml | async"></span>
+            <strong [innerHTML]="'HOME.WHY_CHOOSE.HEADING_STRONG' | translateHtml | async"></strong>
+          </h2>
+        </div>
+      </div>
+      <div class="gap-m">
+        <!-- card start -->
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/carbon_license.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [innerHTML]="'HOME.WHY_CHOOSE.CARD1.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'HOME.WHY_CHOOSE.CARD1.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/Heart.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [innerHTML]="'HOME.WHY_CHOOSE.CARD2.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'HOME.WHY_CHOOSE.CARD2.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/calendar.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [innerHTML]="'HOME.WHY_CHOOSE.CARD3.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'HOME.WHY_CHOOSE.CARD3.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/price.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [innerHTML]="'HOME.WHY_CHOOSE.CARD4.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'HOME.WHY_CHOOSE.CARD4.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/wifi.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [innerHTML]="'HOME.WHY_CHOOSE.CARD5.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'HOME.WHY_CHOOSE.CARD5.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="../assets/images/agents.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [innerHTML]="'HOME.WHY_CHOOSE.CARD6.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'HOME.WHY_CHOOSE.CARD6.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- card end -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Our Insurance Solutions -->
+  <div class="solutions-section">
+    <div class="side-strip"></div>
+    <div class="container position-relative">
+      <div class="row mb-5 text-center">
+        <div class="col-12">
+          <h2 class="section-title">{{ 'HOME.INSURANCE_SOLUTIONS.TITLE' | translate }}</h2>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="solution-card">
+            <div class="d-flex align-items-start">
+              <div class="icon-box">
+                <img src="../assets/images/car.png" alt="Car Icon" />
+                <!-- <i class="fas fa-car"></i> -->
+              </div>
+              <div class="card-content">
+                <h3 class="solution-title" [routerLink]="getRoute('autoInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.AUTO.TITLE' | translateHtml | async"></h3>
+                <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.AUTO.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="solution-card seprator">
+            <div class="d-flex align-items-start">
+              <div class="icon-box">
+                <img src="../assets/images/house.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="solution-title" [routerLink]="getRoute('homeInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HOME.TITLE' | translateHtml | async"></h3>
+
+                <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HOME.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="solution-card seprator">
+            <div class="d-flex align-items-start">
+              <div class="icon-box">
+                <img src="../assets/images/commercial.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="solution-title" [routerLink]="getRoute('commercialInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.TITLE' | translateHtml | async"></h3>
+
+                <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="solution-card">
+            <div class="d-flex align-items-start">
+              <div class="icon-box">
+                <img src="../assets/images/life.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="solution-title" [routerLink]="getRoute('lifeInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.LIFE.TITLE' | translateHtml | async"></h3>
+
+                <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.LIFE.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="solution-card">
+            <div class="d-flex align-items-start">
+              <div class="icon-box">
+                <img src="../assets/images/health.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="solution-title" [routerLink]="getRoute('healthInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HEALTH.TITLE' | translateHtml | async"></h3>
+
+                <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HEALTH.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="solution-card seprator">
+            <div class="d-flex align-items-start">
+              <div class="icon-box">
+                <img src="../assets/images/secure.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="solution-title" [routerLink]="getRoute('suretyBondInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.SURETY.TITLE' | translateHtml | async"></h3>
+
+                <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.SURETY.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5 text-end">
+        <div class="col-12">
+          <button class="btn btn-see-all" [routerLink]="getRoute('insuranceServices')">
+            {{ 'HOME.INSURANCE_SOLUTIONS.SEE_ALL' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- everystory -->
+  <div class="everyStory">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="story">
+            <div class="sinner">
+              <div class="bar"></div>
+              <div class="text">
+                <div class="h4">
+                  <span [innerHTML]="'HOME.EVERY_STORY.TITLE_LINE1' | translateHtml | async"></span> <br />
+                  <span [innerHTML]="'HOME.EVERY_STORY.TITLE_LINE2' | translateHtml | async"></span>
+                </div>
+                <p [innerHTML]="'HOME.EVERY_STORY.PARA1' | translateHtml | async"></p>
+
+                <br />
+
+                <p [innerHTML]="'HOME.EVERY_STORY.PARA2' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Working With A State -->
+  <div class="container-fluid py-5 insurance-section position-relative overflow-hidden">
+    <img src="../assets/images/insurance-left.png" class="bg-shape shape-left" alt="decoration" />
+    <img src="../assets/images/insurance-right.png" class="bg-shape shape-right" alt="decoration" />
+
+    <div class="container">
+      <h2 class="text-center mb-5 heading">
+        <span [innerHTML]="'HOME.WORKING_PROCESS.TITLE_LINE1' | translateHtml | async"></span>
+        <strong [innerHTML]="'HOME.WORKING_PROCESS.TITLE_STRONG' | translateHtml | async"></strong>
+        <span [innerHTML]="'HOME.WORKING_PROCESS.TITLE_LINE2' | translateHtml | async"></span>
+      </h2>
+
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 position-relative">
+          <div class="vertical-line"></div>
+
+          <div class="d-flex align-items-center mb-4 insurance-card p-3">
+            <div class="step-number">01</div>
+            <div class="ms-4 working-heading">
+              <h3 class="fw-bold mb-1 working-step-title" [innerHTML]="'HOME.WORKING_PROCESS.STEP1.TITLE' | translateHtml | async"></h3>
+              <p class="text-muted mb-0 small" [innerHTML]="'HOME.WORKING_PROCESS.STEP1.DESC' | translateHtml | async"></p>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center mb-4 insurance-card p-3">
+            <div class="step-number">02</div>
+            <div class="ms-4 working-heading">
+              <h3 class="fw-bold mb-1 working-step-title" [innerHTML]="'HOME.WORKING_PROCESS.STEP2.TITLE' | translateHtml | async"></h3>
+              <p class="text-muted mb-0 small" [innerHTML]="'HOME.WORKING_PROCESS.STEP2.DESC' | translateHtml | async"></p>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center mb-4 insurance-card p-3">
+            <div class="step-number">03</div>
+            <div class="ms-4 working-heading">
+              <h3 class="fw-bold mb-1 working-step-title" [innerHTML]="'HOME.WORKING_PROCESS.STEP3.TITLE' | translateHtml | async"></h3>
+              <p class="text-muted mb-0 small" [innerHTML]="'HOME.WORKING_PROCESS.STEP3.DESC' | translateHtml | async"></p>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center insurance-card p-3">
+            <div class="step-number">04</div>
+            <div class="ms-4 working-heading">
+              <h3 class="fw-bold mb-1 working-step-title" [innerHTML]="'HOME.WORKING_PROCESS.STEP4.TITLE' | translateHtml | async"></h3>
+              <p class="text-muted mb-0 small" [innerHTML]="'HOME.WORKING_PROCESS.STEP4.DESC' | translateHtml | async"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials Section -->
+  <app-testimonial-slider></app-testimonial-slider>
+
+  <!-- get covered -->
+  <div class="topBanner getCovver">
+    <div class="container">
+      <div class="topSub">
+        <div class="topSub2">
+          <div class="h1" [innerHTML]="'HOME.COVERDBANNER.TITLE' | translateHtml | async"></div>
+          <div class="banner-quote-card">
+            <div class="quote-options">
+              @for (item of chips; track item.name) {
+              <button
+                type="button"
+                class="quote-option"
+                *ngIf="item.name"
+                [class.selected]="selectedChip === item.name"
+                [attr.aria-pressed]="selectedChip === item.name"
+                (click)="selectChip(item.name)">
+                <span class="icon-badge">
+                  <span class="icon-burst"></span>
+                  <img [src]="item.image" [alt]="item.name | translate" class="quote-option-image" />
+                </span>
+                <span class="quote-option-label">
+                  <span class="radio-indicator"></span>
+                  <span [innerHTML]="item.name | translateHtml | async"></span>
+                </span>
+              </button>
+              }
+            </div>
+
+            <div class="quote-form-row">
+              <input
+                type="text"
+                [placeholder]="'AUTO_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
+                class="form-control"
+                [value]="fullName"
+                (input)="fullName = $any($event.target).value" />
+              <input
+                type="tel"
+                appPhoneFormat
+                [placeholder]="'AUTO_INSURANCE.BANNER.FORM.PHONE' | translate"
+                class="form-control"
+                [value]="phone"
+                (input)="phone = $any($event.target).value" />
+              <button class="quote-submit" [disabled]="!selectedChip" (click)="goToSelectedQuote()">
+                {{ 'HOME.COVERDBANNER.FORM.BUTTON' | translate }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footuper -->
+  <div class="footUpper">
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="clipp"></div>
+    <div class="contain">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="icon">
+              <img src="/assets/images/logo.png" alt="User menu" />
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="h4" [innerHTML]="'FOOTER.SLOGAN' | translateHtml | async"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  -->
+</div>
