@@ -17,6 +17,8 @@
           font-weight: 700;
           color: #fff;
           font-size: 3rem;
+          line-height: 1.15;
+          margin: 0;
         }
 
         .selectable {
@@ -171,6 +173,8 @@
         margin-top: -6px;
         cursor: pointer;
         font-size: 27px;
+        line-height: 1.2;
+        display: block;
       }
 
       .solution-text {
@@ -252,11 +256,12 @@
     .section {
       margin-bottom: 10px;
 
-      h5 {
+      .section-heading {
         color: #CA2B28;
         font-weight: 400;
         font-size: 21px;
-        margin-bottom: 10px;
+        line-height: 1.2;
+        margin: 0 0 10px;
       }
 
       p {

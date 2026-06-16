@@ -3,10 +3,10 @@
     <div class="container">
       <div class="topSub">
         <div class="topSub2">
-          <div class="h1">
+          <h1 class="h1">
             {{ loc?.detailPage?.banner.heroHeading }} <br />
             {{ loc?.name }}
-          </div>
+          </h1>
 
           <div class="selectable mt-5">
             @for (item of chips.slice(0, 3); track item.name) {
@@ -60,7 +60,7 @@
           <div class="col-lg-6">
             <div class="content">
               <div class="section">
-                <h5>{{ loc.detailPage?.session1?.LocationAndHeading }}</h5>
+                <h3 class="section-heading">{{ loc.detailPage?.session1?.LocationAndHeading }}</h3>
 
                 <p>
                   <img src="/assets/images/detailLocation.png" alt="" />
@@ -85,7 +85,7 @@
               <hr />
 
               <div class="section">
-                <h5>{{ loc.detailPage?.session1?.OfficeHoursHeading }}</h5>
+                <h3 class="section-heading">{{ loc.detailPage?.session1?.OfficeHoursHeading }}</h3>
                 <p>
                   <img src="/assets/images/clock.png" alt="" />
                   {{ loc.detailPage?.session1?.contact?.hours }}
@@ -98,7 +98,7 @@
               <hr />
 
               <div class="section">
-                <h5>{{ loc.detailPage?.session1?.LanguagesSpokenHeading }}</h5>
+                <h3 class="section-heading">{{ loc.detailPage?.session1?.LanguagesSpokenHeading }}</h3>
                 <p>{{ loc.languagesHeading }}</p>
                 <p>
                   <img src="/assets/images/language.png" alt="" /> {{ loc.languages.join(' | ') }}
@@ -108,7 +108,7 @@
               <hr />
 
               <div class="section">
-                <h5>{{ loc.detailPage?.session1?.GettingHereHeading }}</h5>
+                <h3 class="section-heading">{{ loc.detailPage?.session1?.GettingHereHeading }}</h3>
 
                 <p>
                   <strong>{{ loc.detailPage?.session1?.NearbyLandmarksHeading }}:</strong>
@@ -223,9 +223,9 @@
 
                 <!-- CONTENT -->
                 <div class="card-content">
-                  <h5 class="solution-title" [routerLink]="getRoute(item.route)">
+                  <h3 class="solution-title" [routerLink]="getRoute(item.route)">
                     {{ item.name }}
-                  </h5>
+                  </h3>
 
                   <p class="solution-text">
                     {{ item.text }}
