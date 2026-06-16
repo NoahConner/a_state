@@ -14,8 +14,7 @@ export class HoustonTx {
     private router: Router,
   ) {}
 
-
-    chips = [
+  chips = [
     { name: 'AUTO_INSURANCE.BANNER.CHIPS.PERSONAL_CAR',  image: '/assets/images/houston-tx/car.png', routeKey: 'carInsurance' },
     { name: 'AUTO_INSURANCE.BANNER.CHIPS.COMMERCIAL_AUTO', image: '/assets/images/houston-tx/truck.png', routeKey: 'commercialAutoInsurance' },
     { name: 'AUTO_INSURANCE.BANNER.CHIPS.SR22', image: '/assets/images/houston-tx/plane.png', routeKey: 'sr22Insurance' },
@@ -23,7 +22,46 @@ export class HoustonTx {
     { name: 'AUTO_INSURANCE.BANNER.CHIPS.RV_MOTORHOME', image: '/assets/images/houston-tx/truck-1.png', routeKey: 'rvInsurance' },
     { name: 'AUTO_INSURANCE.BANNER.CHIPS.OTHER', image: '/assets/images/houston-tx/shield with cross.png', routeKey: 'getAutoQuote' },
   ];
-  
+
+  tableOfContents = [
+    'Lorem Ipsum is simply dummy text of the printing.',
+    'Lorem Ipsum is simply dummy text of the printing.',
+    'Lorem Ipsum is simply dummy text of the printing.',
+    'Lorem Ipsum is simply dummy text of the printing.',
+    'Lorem Ipsum is simply dummy text of the printing.',
+    'Lorem Ipsum is simply dummy text of the printing.',
+    'Lorem Ipsum is simply dummy text of the printing.',
+  ];
+
+  monthlyRates = [
+    { company: 'Texas Farm Bureau', minimum: '$40', fullCoverage: '$97' },
+    { company: 'USAA', minimum: '$50', fullCoverage: '$130' },
+    { company: 'State Farm', minimum: '$51', fullCoverage: '$124' },
+    { company: 'Geico', minimum: '$81', fullCoverage: '$182' },
+    { company: 'Progressive', minimum: '$105', fullCoverage: '$266' },
+    { company: 'Allstate', minimum: '$106', fullCoverage: '$267' },
+  ];
+
+  compareRateColumns = ['Houston', 'Texas Average', 'National Average'];
+
+  compareRates = [
+    { label: 'Minimum Coverage', values: ['$157/mo', '$111/mo', '$98/mo'], highlighted: false },
+    { label: 'Full Coverage', values: ['$270/mo', '$207/mo', '$187/mo'], highlighted: true },
+  ];
+
+  zipRateRows = [
+    { zipCode: '77015', neighborhood: 'Northshore', monthlyRate: '$296', highlighted: false },
+    { zipCode: '77095', neighborhood: 'Copperfield', monthlyRate: '$299', highlighted: true },
+    { zipCode: '77077', neighborhood: 'Energy Corridor', monthlyRate: '$302', highlighted: false },
+    { zipCode: '77084', neighborhood: 'Bear Creek', monthlyRate: '$306', highlighted: true },
+    { zipCode: '77089', neighborhood: 'Sagemont', monthlyRate: '$306', highlighted: false },
+    { zipCode: '77083', neighborhood: 'Mission Bend', monthlyRate: '$308', highlighted: true },
+    { zipCode: '77082', neighborhood: 'West Oaks', monthlyRate: '$312', highlighted: false },
+    { zipCode: '77072', neighborhood: 'Alief', monthlyRate: '$316', highlighted: true },
+    { zipCode: '77044', neighborhood: 'Summerwood', monthlyRate: '$316', highlighted: false },
+    { zipCode: '77036', neighborhood: 'Sharpstown', monthlyRate: '$317', highlighted: true },
+  ];
+
   selectedChip: string | null = null;
   fullName = '';
   phone = '';

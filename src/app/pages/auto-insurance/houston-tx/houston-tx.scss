@@ -281,6 +281,273 @@
   }
 }
 
+.houston-rates-section {
+  background: #fbf8f2;
+  padding: 4.6rem 0 3.9rem;
+
+  .row {
+    --bs-gutter-x: 2.8rem;
+  }
+
+  .toc-card {
+    max-width: 210px;
+  }
+
+  .toc-title {
+    margin: 0 0 1rem;
+    font-size: 1.08rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1f1c18;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+  }
+
+  .toc-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.45rem;
+    padding: 0.78rem 0 0.78rem 0.05rem;
+    border-bottom: 1px solid #d9ca94;
+    color: #3b372f;
+
+    &.active {
+      color: #ef554d;
+    }
+  }
+
+  .toc-bullet {
+    width: 3px;
+    height: 3px;
+    margin-top: 0.55rem;
+    flex: 0 0 3px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  .toc-text {
+    font-size: 0.86rem;
+    line-height: 1.6;
+  }
+
+  .rates-content {
+    max-width: 820px;
+    margin: 0 auto;
+    color: #2f2a24;
+  }
+
+  .rates-lead,
+  .rates-copy,
+  .rates-disclaimer {
+    font-size: 1rem;
+    line-height: 1.85;
+    letter-spacing: -0.01em;
+  }
+
+  .rates-lead {
+    max-width: 735px;
+    margin: 0 auto 4.35rem;
+    }
+
+  .rates-copy {
+    max-width: 48rem;
+    margin: 0 auto 4.35rem;
+    }
+
+  .highlight {
+    color: #ef554d;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  .rates-heading,
+  .rates-subheading {
+    color: #df4135;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .rates-heading {
+  font-size: 31px;
+    margin: 0 0 1rem;
+    color: #CA2B28;
+
+  }
+
+  .rates-subheading {
+    // font-size: clamp(1.7rem, 2.6vw, 2.2rem);
+  font-size: 31px;
+    margin: 0 0 1.2rem;
+    color: #CA2B28;
+    font-weight: 600;
+  }
+
+  .rates-table {
+    border-collapse: separate;
+    border-spacing: 0 0.35rem;
+
+    thead th {
+      background: #fff;
+      border: 1px solid rgba(65, 58, 48, 0.26);
+      padding: 1.35rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #23201b;
+      text-align: center;
+    }
+
+    tbody td {
+      padding: 0.8rem 1rem;
+      background: #e8e8e8;
+      border-right: 1px solid rgba(65, 58, 48, 0.18);
+      font-size: 0.95rem;
+      color: #1d1a16;
+      text-align: center;
+      vertical-align: middle;
+
+      &:first-child {
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+      }
+
+      &:last-child {
+        border-right: 0;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+      }
+    }
+
+    tbody tr.alt-row td {
+      background: #ffd2d2;
+    }
+  }
+
+  .company-name {
+    text-decoration: underline;
+  }
+
+  .rates-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 1.15rem 0 0.7rem;
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: #df4135;
+  }
+
+  .source-name {
+    text-decoration: underline;
+  }
+
+  .rates-disclaimer {
+    max-width: 825px;
+    margin: 0;
+  }
+}
+
+.houston-comparison-section {
+  background: #fbf8f2;
+  padding: 0.5rem 0 5rem;
+
+  .comparison-content {
+    color: #2f2a24;
+  }
+
+  .comparison-heading {
+      margin: 0 0 1.35rem;
+    color: #CA2B28;
+    font-size: 29px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .comparison-copy {
+max-width: 865px;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    line-height: 1.85;
+    letter-spacing: -0.01em;
+
+  }
+
+  .comparison-table-wrap {
+    max-width: 830px;
+  }
+
+  .comparison-table {
+    border-collapse: separate;
+    border-spacing: 0;
+
+    thead th {
+      background: transparent;
+      border: 0;
+      padding: 1rem 1.1rem 1.15rem;
+      color: #26211d;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-align: center;
+
+      &:not(:first-child) {
+        border-left: 1px solid rgba(65, 58, 48, 0.22);
+      }
+    }
+
+    tbody th,
+    tbody td {
+      border: 0;
+      padding: 1rem 1.2rem;
+      background: #e8e8e8;
+      color: #1d1a16;
+      font-size: 0.95rem;
+      vertical-align: middle;
+    }
+
+    tbody th {
+      width: 25%;
+      font-weight: 500;
+      text-align: left;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+      padding-left: 1.45rem;
+    }
+
+    tbody td {
+      text-align: center;
+      border-left: 1px solid rgba(65, 58, 48, 0.18);
+    }
+
+    tbody td:last-child {
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+
+    tbody tr.highlight-row th,
+    tbody tr.highlight-row td {
+      background: #ffd2d2;
+    }
+  }
+
+
+}
+
+
+  .rate-check {
+    color: #7bc319;
+    font-weight: 700;
+    margin-right: 0.4rem;
+  }
+
 .topBanner.getCovver {
   background-image: url('/assets/images/coverd.png');
   height: 45rem;
@@ -414,6 +681,23 @@
 }
 
 @media only screen and (max-width: 820px) {
+  .houston-rates-section {
+    padding: 3.5rem 0 3rem;
+
+    .toc-card {
+      max-width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    .rates-content {
+      max-width: 100%;
+    }
+  }
+
+  .houston-comparison-section {
+    padding-bottom: 3.5rem;
+  }
+
   .topBanner {
     min-height: auto;
 
@@ -482,6 +766,54 @@
 }
 
 @media only screen and (max-width: 576px) {
+  .houston-rates-section {
+    .rates-lead,
+    .rates-copy,
+    .rates-disclaimer,
+    .toc-text {
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .rates-table {
+      min-width: 610px;
+    }
+
+    .rates-meta {
+      flex-direction: column;
+      align-items: flex-start;
+      font-size: 0.78rem;
+    }
+  }
+
+  .houston-comparison-section {
+    .comparison-copy {
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .comparison-table {
+      min-width: 640px;
+    }
+  }
+
+  .houston-zip-section {
+    .zip-copy,
+    .zip-disclaimer {
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .zip-table {
+      min-width: 640px;
+    }
+
+    .zip-meta {
+      font-size: 0.78rem;
+      margin-bottom: 0.8rem;
+    }
+  }
+
   .topBanner {
     .container {
       .topSub {

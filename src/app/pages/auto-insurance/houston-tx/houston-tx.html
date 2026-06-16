@@ -4,20 +4,16 @@
       <div class="topSub">
         <div class="topSub2">
           <h1 class="h1">
-            <span [innerHTML]="'HOUSTON_TX.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
-            <span [innerHTML]="'HOUSTON_TX.BANNER.TITLE_LINE2' | translateHtml | async"></span> <br/>
-            <span [innerHTML]="'HOUSTON_TX.BANNER.TITLE_LINE3' | translateHtml | async"></span> 
+            <span [innerHTML]="'GLOBAL_TX.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
+            <span
+              [innerHTML]="(('HOUSTON_TX.BANNER.LOCATION' | translate) + ('GLOBAL_TX.BANNER.TITLE_LINE2' | translate))">
+            </span> <br /> <span [innerHTML]="'GLOBAL_TX.BANNER.TITLE_LINE3' | translateHtml | async"></span>
           </h1>
           <div class="banner-quote-card">
             <div class="quote-options">
               @for (item of chips; track item.name) {
-              <button
-                type="button"
-                class="quote-option"
-                *ngIf="item.name"
-                [class.selected]="selectedChip === item.name"
-                [attr.aria-pressed]="selectedChip === item.name"
-                (click)="selectChip(item.name)">
+              <button type="button" class="quote-option" *ngIf="item.name" [class.selected]="selectedChip === item.name"
+                [attr.aria-pressed]="selectedChip === item.name" (click)="selectChip(item.name)">
                 <span class="icon-badge">
                   <span class="icon-burst"></span>
                   <img [src]="item.image" [alt]="item.name | translate" class="quote-option-image" />
@@ -31,20 +27,11 @@
             </div>
 
             <div class="quote-form-row">
-              <input
-                type="text"
-                [placeholder]="'AUTO_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
-                class="form-control"
-                [value]="fullName"
-                (input)="fullName = $any($event.target).value" />
+              <input type="text" [placeholder]="'AUTO_INSURANCE.BANNER.FORM.FULL_NAME' | translate" class="form-control"
+                [value]="fullName" (input)="fullName = $any($event.target).value" />
 
-              <input
-                type="tel"
-                appPhoneFormat
-                [placeholder]="'AUTO_INSURANCE.BANNER.FORM.PHONE' | translate"
-                class="form-control"
-                [value]="phone"
-                (input)="phone = $any($event.target).value" />
+              <input type="tel" appPhoneFormat [placeholder]="'AUTO_INSURANCE.BANNER.FORM.PHONE' | translate"
+                class="form-control" [value]="phone" (input)="phone = $any($event.target).value" />
 
               <button class="quote-submit" [disabled]="!selectedChip" (click)="goToSelectedQuote()">
                 {{ 'AUTO_INSURANCE.BANNER.FORM.BUTTON' | translate }}
@@ -55,6 +42,171 @@
       </div>
     </div>
   </div>
+
+  <section class="houston-rates-section">
+    <div class="container">
+      <div class="row align-items-start">
+        <div class="col-lg-2">
+          <aside class="toc-card">
+            <h3 class="toc-title">Table of Content</h3>
+            <ul class="toc-list list-unstyled mb-0">
+              @for (item of tableOfContents; track item; let i = $index) {
+              <li class="toc-item" [class.active]="i === 3">
+                <span class="toc-bullet"></span>
+                <span class="toc-text">{{ item }}</span>
+              </li>
+              }
+            </ul>
+          </aside>
+        </div>
+
+        <div class="col-lg-9">
+          <div class="rates-content text-center">
+            <p class="rates-lead">
+              Houston drivers spend <span class="highlight">nearly 54 hours a year stuck in traffic,</span> and Texas
+              has one of the highest rates of uninsured drivers on the road. With sudden storms and flood risks, having
+              the <span class="highlight">right auto coverage</span> isn't optional it's essential. A reliable and
+              trusted independent broker in Texas compares top carriers to find Houston drivers reliable,
+              budget-friendly protection tailored to how and where they drive.
+            </p>
+
+            <h2 class="rates-heading">How Much Does Car Insurance Cost in Houston, TX?</h2>
+            <p class="rates-copy">
+              Car insurance in Houston is often more expensive than the Texas average due to heavy traffic, high
+              accident rates, uninsured drivers, and weather-related risks such as flooding and hailstorms.
+              <span class="highlight">Recent market data</span> show that Houston drivers pay around $270 per month for
+              full-coverage auto insurance, while minimum coverage can range from roughly $157 monthly, depending on
+              driving history, ZIP code, vehicle type, and coverage level.
+            </p>
+
+            <h3 class="rates-subheading">Average Monthly Rate in Houston (minimum vs. full coverage)</h3>
+
+            <div class="table-responsive">
+              <table class="table rates-table mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">Company</th>
+                    <th scope="col">Minimum</th>
+                    <th scope="col">Full Coverage</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (rate of monthlyRates; track rate.company; let i = $index) {
+                  <tr [class.alt-row]="i % 2 === 1">
+                    <td><span class="company-name">{{ rate.company }}</span></td>
+                    <td>{{ rate.minimum }}</td>
+                    <td>{{ rate.fullCoverage }}</td>
+                  </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+
+            <div class="rates-meta">
+              <p class="source-line mb-0"><strong>Source:</strong> <span class="source-name">LendingTree</span></p>
+              <p class="updated-line mb-0"><strong>Last Updated:</strong> May 2026</p>
+            </div>
+
+            <p class="rates-disclaimer mb-0 text-start">
+              <strong>Disclaimer:</strong> The information provided on this page is for general informational purposes
+              only and may not reflect the most current updates. Coverage requirements, rates, and laws are subject to
+              change. Please consult a licensed insurance agent for the most accurate and up-to-date information.
+            </p>
+          </div>
+
+          <div class="py-4"></div>
+
+          <div class="houston-comparison-section">
+            <div class="comparison-content text-center">
+              <h2 class="comparison-heading">How Houston Rates Compare to the Texas State Average</h2>
+              <p class="comparison-copy mx-auto">
+                Houston auto insurance rates are typically higher than the Texas state average, with drivers often
+                paying 35-45% more for similar coverage. The increase is driven by heavy traffic and higher accident
+                frequency, which raises claim risk. A higher number of uninsured drivers also impacts premiums. On top
+                of that, Houston's exposure to severe weather includes flooding and hail.
+              </p>
+
+              <div class="table-responsive comparison-table-wrap mx-auto">
+                <table class="table comparison-table mb-0">
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      @for (column of compareRateColumns; track column) {
+                      <th scope="col">{{ column }}</th>
+                      }
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @for (row of compareRates; track row.label) {
+                    <tr [class.highlight-row]="row.highlighted">
+                      <th scope="row">{{ row.label }}</th>
+                      @for (value of row.values; track value) {
+                      <td>
+                        <span class="rate-check">✔</span>
+                        <span>{{ value }}</span>
+                      </td>
+                      }
+                    </tr>
+                    }
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="py-4"></div>
+
+          <div class="rates-content text-center">
+           <h3 class="rates-subheading">Average Cost of Car Insurance in Houston’s Largest ZIP Codes</h3>
+            <p class="zip-copy mx-auto">
+              In Houston ZIP codes like 77036, 77084, and 77083, full coverage can cost around $3,750-$4,000 per
+              year due to dense traffic, frequent accidents, theft claims, and weather risks such as flooding and
+              hail. These factors push premiums higher in busy areas. Even so, comparing multiple carriers through an
+              independent agent can still uncover lower rates and better-value coverage.
+            </p>
+
+            <div class="table-responsive">
+              
+              <table class="table rates-table mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">Zip Code</th>
+                    <th scope="col">Neighborhood</th>
+                    <th scope="col">Avg. Monthly Rate</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (rate of zipRateRows; track rate.zipCode; let i = $index) {
+                  <tr [class.alt-row]="i % 2 === 1">
+                    <td><span >{{ rate.zipCode }}</span></td>
+                    <td>{{ rate.neighborhood }}</td>
+                    <td>
+                      <span class="rate-check">✔</span>
+                      <span> {{ rate.monthlyRate }}</span>
+                    </td>
+                  </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+
+            <div class="rates-meta">
+              <p class="source-line mb-0"><strong>Source:</strong> <span class="source-name">LendingTree</span></p>
+              <p class="updated-line mb-0"><strong>Last Updated:</strong> May 2026</p>
+            </div>
+
+            <p class="rates-disclaimer mb-0 text-start">
+              <strong>Disclaimer:</strong> The information provided on this page is for general informational purposes
+              only and may not reflect the most current updates. Coverage requirements, rates, and laws are subject to
+              change. Please consult a licensed insurance agent for the most accurate and up-to-date information.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </section>
 
   <!-- Why Texans Choose A-State Insurance -->
 
@@ -171,7 +323,8 @@
                 <!-- <i class="fas fa-car"></i> -->
               </div>
               <div class="card-content">
-                <h3 class="solution-title" [routerLink]="getRoute('autoInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.AUTO.TITLE' | translateHtml | async"></h3>
+                <h3 class="solution-title" [routerLink]="getRoute('autoInsurance')"
+                  [innerHTML]="'HOME.INSURANCE_SOLUTIONS.AUTO.TITLE' | translateHtml | async"></h3>
                 <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.AUTO.DESC' | translateHtml | async"></p>
               </div>
             </div>
@@ -185,7 +338,8 @@
                 <img src="../assets/images/house.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h3 class="solution-title" [routerLink]="getRoute('homeInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HOME.TITLE' | translateHtml | async"></h3>
+                <h3 class="solution-title" [routerLink]="getRoute('homeInsurance')"
+                  [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HOME.TITLE' | translateHtml | async"></h3>
 
                 <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HOME.DESC' | translateHtml | async"></p>
               </div>
@@ -200,9 +354,11 @@
                 <img src="../assets/images/commercial.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h3 class="solution-title" [routerLink]="getRoute('commercialInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.TITLE' | translateHtml | async"></h3>
+                <h3 class="solution-title" [routerLink]="getRoute('commercialInsurance')"
+                  [innerHTML]="'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.TITLE' | translateHtml | async"></h3>
 
-                <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.DESC' | translateHtml | async"></p>
+                <p class="solution-text"
+                  [innerHTML]="'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.DESC' | translateHtml | async"></p>
               </div>
             </div>
           </div>
@@ -215,7 +371,8 @@
                 <img src="../assets/images/life.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h3 class="solution-title" [routerLink]="getRoute('lifeInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.LIFE.TITLE' | translateHtml | async"></h3>
+                <h3 class="solution-title" [routerLink]="getRoute('lifeInsurance')"
+                  [innerHTML]="'HOME.INSURANCE_SOLUTIONS.LIFE.TITLE' | translateHtml | async"></h3>
 
                 <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.LIFE.DESC' | translateHtml | async"></p>
               </div>
@@ -230,9 +387,11 @@
                 <img src="../assets/images/health.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h3 class="solution-title" [routerLink]="getRoute('healthInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HEALTH.TITLE' | translateHtml | async"></h3>
+                <h3 class="solution-title" [routerLink]="getRoute('healthInsurance')"
+                  [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HEALTH.TITLE' | translateHtml | async"></h3>
 
-                <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HEALTH.DESC' | translateHtml | async"></p>
+                <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HEALTH.DESC' | translateHtml | async">
+                </p>
               </div>
             </div>
           </div>
@@ -245,9 +404,11 @@
                 <img src="../assets/images/secure.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h3 class="solution-title" [routerLink]="getRoute('suretyBondInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.SURETY.TITLE' | translateHtml | async"></h3>
+                <h3 class="solution-title" [routerLink]="getRoute('suretyBondInsurance')"
+                  [innerHTML]="'HOME.INSURANCE_SOLUTIONS.SURETY.TITLE' | translateHtml | async"></h3>
 
-                <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.SURETY.DESC' | translateHtml | async"></p>
+                <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.SURETY.DESC' | translateHtml | async">
+                </p>
               </div>
             </div>
           </div>
@@ -308,32 +469,40 @@
           <div class="d-flex align-items-center mb-4 insurance-card p-3">
             <div class="step-number">01</div>
             <div class="ms-4 working-heading">
-              <h3 class="fw-bold mb-1 working-step-title" [innerHTML]="'HOME.WORKING_PROCESS.STEP1.TITLE' | translateHtml | async"></h3>
-              <p class="text-muted mb-0 small" [innerHTML]="'HOME.WORKING_PROCESS.STEP1.DESC' | translateHtml | async"></p>
+              <h3 class="fw-bold mb-1 working-step-title"
+                [innerHTML]="'HOME.WORKING_PROCESS.STEP1.TITLE' | translateHtml | async"></h3>
+              <p class="text-muted mb-0 small" [innerHTML]="'HOME.WORKING_PROCESS.STEP1.DESC' | translateHtml | async">
+              </p>
             </div>
           </div>
 
           <div class="d-flex align-items-center mb-4 insurance-card p-3">
             <div class="step-number">02</div>
             <div class="ms-4 working-heading">
-              <h3 class="fw-bold mb-1 working-step-title" [innerHTML]="'HOME.WORKING_PROCESS.STEP2.TITLE' | translateHtml | async"></h3>
-              <p class="text-muted mb-0 small" [innerHTML]="'HOME.WORKING_PROCESS.STEP2.DESC' | translateHtml | async"></p>
+              <h3 class="fw-bold mb-1 working-step-title"
+                [innerHTML]="'HOME.WORKING_PROCESS.STEP2.TITLE' | translateHtml | async"></h3>
+              <p class="text-muted mb-0 small" [innerHTML]="'HOME.WORKING_PROCESS.STEP2.DESC' | translateHtml | async">
+              </p>
             </div>
           </div>
 
           <div class="d-flex align-items-center mb-4 insurance-card p-3">
             <div class="step-number">03</div>
             <div class="ms-4 working-heading">
-              <h3 class="fw-bold mb-1 working-step-title" [innerHTML]="'HOME.WORKING_PROCESS.STEP3.TITLE' | translateHtml | async"></h3>
-              <p class="text-muted mb-0 small" [innerHTML]="'HOME.WORKING_PROCESS.STEP3.DESC' | translateHtml | async"></p>
+              <h3 class="fw-bold mb-1 working-step-title"
+                [innerHTML]="'HOME.WORKING_PROCESS.STEP3.TITLE' | translateHtml | async"></h3>
+              <p class="text-muted mb-0 small" [innerHTML]="'HOME.WORKING_PROCESS.STEP3.DESC' | translateHtml | async">
+              </p>
             </div>
           </div>
 
           <div class="d-flex align-items-center insurance-card p-3">
             <div class="step-number">04</div>
             <div class="ms-4 working-heading">
-              <h3 class="fw-bold mb-1 working-step-title" [innerHTML]="'HOME.WORKING_PROCESS.STEP4.TITLE' | translateHtml | async"></h3>
-              <p class="text-muted mb-0 small" [innerHTML]="'HOME.WORKING_PROCESS.STEP4.DESC' | translateHtml | async"></p>
+              <h3 class="fw-bold mb-1 working-step-title"
+                [innerHTML]="'HOME.WORKING_PROCESS.STEP4.TITLE' | translateHtml | async"></h3>
+              <p class="text-muted mb-0 small" [innerHTML]="'HOME.WORKING_PROCESS.STEP4.DESC' | translateHtml | async">
+              </p>
             </div>
           </div>
         </div>
@@ -353,13 +522,8 @@
           <div class="banner-quote-card">
             <div class="quote-options">
               @for (item of chips; track item.name) {
-              <button
-                type="button"
-                class="quote-option"
-                *ngIf="item.name"
-                [class.selected]="selectedChip === item.name"
-                [attr.aria-pressed]="selectedChip === item.name"
-                (click)="selectChip(item.name)">
+              <button type="button" class="quote-option" *ngIf="item.name" [class.selected]="selectedChip === item.name"
+                [attr.aria-pressed]="selectedChip === item.name" (click)="selectChip(item.name)">
                 <span class="icon-badge">
                   <span class="icon-burst"></span>
                   <img [src]="item.image" [alt]="item.name | translate" class="quote-option-image" />
@@ -373,19 +537,10 @@
             </div>
 
             <div class="quote-form-row">
-              <input
-                type="text"
-                [placeholder]="'AUTO_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
-                class="form-control"
-                [value]="fullName"
-                (input)="fullName = $any($event.target).value" />
-              <input
-                type="tel"
-                appPhoneFormat
-                [placeholder]="'AUTO_INSURANCE.BANNER.FORM.PHONE' | translate"
-                class="form-control"
-                [value]="phone"
-                (input)="phone = $any($event.target).value" />
+              <input type="text" [placeholder]="'AUTO_INSURANCE.BANNER.FORM.FULL_NAME' | translate" class="form-control"
+                [value]="fullName" (input)="fullName = $any($event.target).value" />
+              <input type="tel" appPhoneFormat [placeholder]="'AUTO_INSURANCE.BANNER.FORM.PHONE' | translate"
+                class="form-control" [value]="phone" (input)="phone = $any($event.target).value" />
               <button class="quote-submit" [disabled]="!selectedChip" (click)="goToSelectedQuote()">
                 {{ 'HOME.COVERDBANNER.FORM.BUTTON' | translate }}
               </button>
