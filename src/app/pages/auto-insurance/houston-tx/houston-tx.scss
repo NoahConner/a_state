@@ -360,6 +360,13 @@
     margin: 0 auto 4.35rem;
     }
 
+  ::ng-deep .highlight {
+    color: #ef554d;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
   .highlight {
     color: #ef554d;
     text-decoration: underline;
@@ -445,8 +452,15 @@
     color: #df4135;
   }
 
+
   .source-name {
-    text-decoration: underline;
+    color: #df4135;
+    font-size: 17px;
+  }
+
+  .updated-line{
+       color: #df4135;
+    font-size: 17px;
   }
 
   .rates-disclaimer {
@@ -539,6 +553,359 @@ max-width: 865px;
   }
 
 
+}
+
+
+.insurance-section {
+  background: #F2F2F2;
+  min-height: auto;
+  padding: 4.6rem 0 3rem !important;
+
+  .container-custom {
+    max-width: 940px;
+  }
+}
+
+.main-title {
+  color: #de342d;
+  font-size: clamp(2rem, 3vw, 2.55rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.sub-title {
+  color: #5a5550;
+  font-size: clamp(1.42rem, 2vw, 1.8rem);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.lead-text {
+  font-size: 0.98rem;
+  line-height: 1.9;
+  color: #3f3b37;
+  max-width: 905px;
+}
+
+.insurance-table {
+  border-collapse: separate;
+  border-spacing: 0 0.38rem;
+  border: 0;
+  overflow: visible;
+  font-size: 0.92rem;
+
+  thead tr th {
+    background: #fff;
+    color: #2f2a26;
+    font-weight: 600;
+    text-align: center;
+    padding: 1rem 1.15rem;
+    border: 1px solid #aaa39d;
+    line-height: 1.4;
+
+    &:first-child {
+      border-top-left-radius: 7px;
+      border-bottom-left-radius: 7px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 7px;
+      border-bottom-right-radius: 7px;
+    }
+
+    &:not(:last-child) {
+      border-right: 0;
+    }
+  }
+
+  tbody tr td {
+    padding: 0.86rem 1.05rem;
+    border: 1px solid #aaa39d;
+    color: #2d2825;
+    line-height: 1.45;
+    background: #fff;
+    vertical-align: middle;
+
+    &:first-child {
+      border-top-left-radius: 7px;
+      border-bottom-left-radius: 7px;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    &:last-child {
+      border-top-right-radius: 7px;
+      border-bottom-right-radius: 7px;
+    }
+
+    &:not(:last-child) {
+      border-right: 0;
+    }
+  }
+
+  tbody tr td + td {
+    border-left: 1px solid #aaa39d;
+  }
+
+  .d-flex {
+    gap: 0.55rem !important;
+  }
+}
+
+.font-weight-medium {
+  font-weight: 500;
+}
+
+.icon-check,
+.icon-cross {
+  display: inline-grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  border-radius: 50%;
+  margin-top: 0.08rem;
+}
+
+.icon-check::before {
+  content: '✓';
+  color: #8fd71d;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.icon-cross {
+  background: #ef5b97;
+}
+
+.icon-cross::before {
+  content: '×';
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.footer-title {
+  color: #de342d;
+  font-size: clamp(1.85rem, 2.45vw, 2.3rem);
+  font-weight: 700;
+  line-height: 1.24;
+  letter-spacing: -0.03em;
+  max-width: 430px;
+}
+
+.footer-text {
+  font-size: 0.88rem;
+  line-height: 1.78;
+  letter-spacing: -0.01em;
+  color: #3e3935;
+  max-width: 780px;
+  text-align: left;
+}
+
+.vehicle-illustration {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+}
+
+.requirement-footer-row {
+  margin-top: 1.15rem;
+  row-gap: 0.95rem !important;
+}
+
+.requirement-copy-col {
+  padding-top: 3.3rem;
+}
+
+.requirement-illustration-col {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.requirement-description-col {
+  margin-top: -0.2rem;
+}
+
+@media only screen and (max-width: 1199px) {
+  .houston-rates-section {
+    .row {
+      --bs-gutter-x: 1.8rem;
+    }
+
+    .toc-card {
+      max-width: 100%;
+    }
+
+    .rates-heading,
+    .rates-subheading {
+      font-size: 2rem;
+    }
+  }
+
+  .houston-comparison-section {
+    .comparison-heading {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .insurance-section {
+    padding: 3.8rem 0 2.6rem !important;
+
+    .table-responsive {
+      margin-bottom: 2.5rem !important;
+    }
+
+    .insurance-table {
+      min-width: 760px;
+    }
+
+    .footer-title,
+    .footer-text {
+      max-width: 100%;
+    }
+
+    .requirement-copy-col {
+      padding-top: 1.25rem;
+    }
+
+    .requirement-illustration-col {
+      justify-content: center;
+    }
+
+    .requirement-description-col {
+      margin-top: 0;
+    }
+
+    .vehicle-illustration {
+      max-width: 220px;
+    }
+  }
+
+  .houston-rates-section {
+    padding: 3.75rem 0 3rem;
+
+    .row {
+      --bs-gutter-x: 0;
+      gap: 2rem;
+    }
+
+    .toc-column {
+      width: 100%;
+      margin-bottom: 0;
+    }
+
+    .toc-card {
+      position: static;
+      top: auto;
+      max-width: 100%;
+      height: auto;
+      padding-bottom: 0.5rem;
+    }
+
+    .toc-list {
+      gap: 0.15rem;
+    }
+
+    .toc-item {
+      padding: 0.65rem 0;
+    }
+
+    .rates-content {
+      max-width: 100%;
+    }
+
+    .rates-heading,
+    .rates-subheading {
+      font-size: 1.85rem;
+    }
+
+    .rates-meta {
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    .source-name,
+    .updated-line {
+      font-size: 1rem;
+    }
+
+    .rates-table {
+      min-width: 640px;
+
+      thead th,
+      tbody td {
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+      }
+    }
+  }
+
+  .houston-comparison-section {
+    padding-bottom: 3.75rem;
+
+    .comparison-heading {
+      font-size: 1.85rem;
+    }
+
+    .comparison-copy {
+      max-width: 100%;
+    }
+
+    .comparison-table {
+      min-width: 700px;
+    }
+  }
+
+  .topBanner {
+    .container {
+      .topSub {
+        padding: 7.5rem 0 2.5rem;
+
+        .topSub2 {
+          .h1 {
+            font-size: clamp(2.35rem, 5vw, 3.4rem);
+          }
+
+          .banner-quote-card {
+            max-width: 100%;
+          }
+
+          .quote-options {
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+
+          .quote-option {
+            flex: 0 0 calc(33.333% - 0.6rem);
+            min-width: calc(33.333% - 0.6rem);
+          }
+
+          .quote-form-row {
+            flex-wrap: wrap;
+
+            .form-control {
+              flex: 1 1 calc(50% - 0.5rem);
+              min-width: 220px;
+            }
+
+            .quote-submit {
+              flex: 1 1 100%;
+              min-width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 
@@ -687,15 +1054,27 @@ max-width: 865px;
     .toc-card {
       max-width: 100%;
       margin-bottom: 2rem;
+      position: static;
+      top: auto;
+      height: auto;
     }
 
     .rates-content {
       max-width: 100%;
     }
+
+    .rates-heading,
+    .rates-subheading {
+      font-size: 1.7rem;
+    }
   }
 
   .houston-comparison-section {
     padding-bottom: 3.5rem;
+
+    .comparison-heading {
+      font-size: 1.7rem;
+    }
   }
 
   .topBanner {
@@ -766,11 +1145,65 @@ max-width: 865px;
 }
 
 @media only screen and (max-width: 576px) {
+  .insurance-section {
+    padding: 3rem 0 2.2rem !important;
+
+    .main-title {
+      font-size: 1.7rem;
+    }
+
+    .sub-title {
+      font-size: 1.2rem;
+    }
+
+    .lead-text,
+    .footer-text {
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    .footer-title {
+      font-size: 1.7rem;
+      margin-bottom: 1rem !important;
+    }
+
+    .requirement-footer-row {
+      margin-top: 0.25rem;
+      row-gap: 0.55rem !important;
+    }
+
+    .requirement-copy-col {
+      padding-top: 0;
+      text-align: left;
+    }
+
+    .footer-text {
+      font-size: 0.84rem;
+      line-height: 1.72;
+      max-width: 100%;
+    }
+
+    .insurance-table {
+      min-width: 720px;
+      font-size: 0.88rem;
+
+      thead tr th,
+      tbody tr td {
+        padding: 0.8rem 0.85rem;
+      }
+    }
+
+    .vehicle-illustration {
+      max-width: 188px;
+    }
+  }
+
   .houston-rates-section {
     .rates-lead,
     .rates-copy,
     .rates-disclaimer,
-    .toc-text {
+    .toc-text,
+    .zip-copy {
       font-size: 0.92rem;
       line-height: 1.7;
     }
@@ -783,6 +1216,16 @@ max-width: 865px;
       flex-direction: column;
       align-items: flex-start;
       font-size: 0.78rem;
+    }
+
+    .source-name,
+    .updated-line {
+      font-size: 0.95rem;
+    }
+
+    .rates-heading,
+    .rates-subheading {
+      font-size: 1.45rem;
     }
   }
 
@@ -1239,7 +1682,7 @@ max-width: 865px;
 }
 
 // Working Section
-.insurance-section {
+.working-insurance-section {
   min-height: 100vh;
   position: relative;
 

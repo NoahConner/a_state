@@ -46,14 +46,15 @@
   <section class="houston-rates-section">
     <div class="container">
       <div class="row align-items-start">
-        <div class="col-lg-2">
+        <div class="col-lg-2 toc-column">
           <aside class="toc-card">
-            <h3 class="toc-title">Table of Content</h3>
+            <h3 class="toc-title">
+              <span class="toc-highlight">{{ 'GLOBAL_TX.TABLE_OF_CONTENTS.TITLE' | translate }}</span>
+            </h3>
             <ul class="toc-list list-unstyled mb-0">
-              @for (item of tableOfContents; track item; let i = $index) {
-              <li class="toc-item" [class.active]="i === 3">
-                <span class="toc-bullet"></span>
-                <span class="toc-text">{{ item }}</span>
+              @for (item of tableOfContents; track item) {
+              <li class="toc-item">
+                <span class="toc-text" [innerHTML]="item"></span>
               </li>
               }
             </ul>
@@ -62,38 +63,26 @@
 
         <div class="col-lg-9">
           <div class="rates-content text-center">
-            <p class="rates-lead">
-              Houston drivers spend <span class="highlight">nearly 54 hours a year stuck in traffic,</span> and Texas
-              has one of the highest rates of uninsured drivers on the road. With sudden storms and flood risks, having
-              the <span class="highlight">right auto coverage</span> isn't optional it's essential. A reliable and
-              trusted independent broker in Texas compares top carriers to find Houston drivers reliable,
-              budget-friendly protection tailored to how and where they drive.
-            </p>
+            <p class="rates-lead" [innerHTML]="'HOUSTON_TX.RATES.LEAD' | translateHtml | async"></p>
 
-            <h2 class="rates-heading">How Much Does Car Insurance Cost in Houston, TX?</h2>
-            <p class="rates-copy">
-              Car insurance in Houston is often more expensive than the Texas average due to heavy traffic, high
-              accident rates, uninsured drivers, and weather-related risks such as flooding and hailstorms.
-              <span class="highlight">Recent market data</span> show that Houston drivers pay around $270 per month for
-              full-coverage auto insurance, while minimum coverage can range from roughly $157 monthly, depending on
-              driving history, ZIP code, vehicle type, and coverage level.
-            </p>
+            <h2 class="rates-heading">{{ ratesHeading }}</h2>
+            <p class="rates-copy" [innerHTML]="'HOUSTON_TX.RATES.COPY' | translateHtml | async"></p>
 
-            <h3 class="rates-subheading">Average Monthly Rate in Houston (minimum vs. full coverage)</h3>
+            <h3 class="rates-subheading">{{ averageMonthlyRateHeading }}</h3>
 
             <div class="table-responsive">
               <table class="table rates-table mb-0">
                 <thead>
                   <tr>
-                    <th scope="col">Company</th>
-                    <th scope="col">Minimum</th>
-                    <th scope="col">Full Coverage</th>
+                    <th scope="col">{{ 'GLOBAL_TX.RATES.TABLE.COMPANY' | translate }}</th>
+                    <th scope="col">{{ 'GLOBAL_TX.RATES.TABLE.MINIMUM' | translate }}</th>
+                    <th scope="col">{{ 'GLOBAL_TX.RATES.TABLE.FULL_COVERAGE' | translate }}</th>
                   </tr>
                 </thead>
                 <tbody>
                   @for (rate of monthlyRates; track rate.company; let i = $index) {
                   <tr [class.alt-row]="i % 2 === 1">
-                    <td><span class="company-name">{{ rate.company }}</span></td>
+                    <td><span  [innerHTML]="rate.company"></span></td>
                     <td>{{ rate.minimum }}</td>
                     <td>{{ rate.fullCoverage }}</td>
                   </tr>
@@ -103,28 +92,19 @@
             </div>
 
             <div class="rates-meta">
-              <p class="source-line mb-0"><strong>Source:</strong> <span class="source-name">LendingTree</span></p>
-              <p class="updated-line mb-0"><strong>Last Updated:</strong> May 2026</p>
+              <p class="source-line mb-0"><strong class="source-name">{{ 'GLOBAL_TX.RATES.SOURCE_LABEL' | translate }}</strong> <a class="source-name" href="https://www.lendingtree.com/car-insurance/houston-texas-car-insurance/" rel="nofollow" target="_blank">LendingTree</a></p>
+              <p class="updated-line mb-0"><strong class="source-name">{{ 'GLOBAL_TX.RATES.LAST_UPDATED_LABEL' | translate }}</strong> May 2026</p>
             </div>
 
-            <p class="rates-disclaimer mb-0 text-start">
-              <strong>Disclaimer:</strong> The information provided on this page is for general informational purposes
-              only and may not reflect the most current updates. Coverage requirements, rates, and laws are subject to
-              change. Please consult a licensed insurance agent for the most accurate and up-to-date information.
-            </p>
+            <p class="rates-disclaimer mb-0 text-start" [innerHTML]="'GLOBAL_TX.RATES.DISCLAIMER' | translateHtml | async"></p>
           </div>
 
           <div class="py-4"></div>
 
           <div class="houston-comparison-section">
             <div class="comparison-content text-center">
-              <h2 class="comparison-heading">How Houston Rates Compare to the Texas State Average</h2>
-              <p class="comparison-copy mx-auto">
-                Houston auto insurance rates are typically higher than the Texas state average, with drivers often
-                paying 35-45% more for similar coverage. The increase is driven by heavy traffic and higher accident
-                frequency, which raises claim risk. A higher number of uninsured drivers also impacts premiums. On top
-                of that, Houston's exposure to severe weather includes flooding and hail.
-              </p>
+              <h2 class="comparison-heading">{{ comparisonHeading }}</h2>
+              <p class="comparison-copy mx-auto" [innerHTML]="'HOUSTON_TX.RATES.COMPARISON_COPY' | translateHtml | async"></p>
 
               <div class="table-responsive comparison-table-wrap mx-auto">
                 <table class="table comparison-table mb-0">
@@ -157,28 +137,23 @@
           <div class="py-4"></div>
 
           <div class="rates-content text-center">
-           <h3 class="rates-subheading">Average Cost of Car Insurance in Houston’s Largest ZIP Codes</h3>
-            <p class="zip-copy mx-auto">
-              In Houston ZIP codes like 77036, 77084, and 77083, full coverage can cost around $3,750-$4,000 per
-              year due to dense traffic, frequent accidents, theft claims, and weather risks such as flooding and
-              hail. These factors push premiums higher in busy areas. Even so, comparing multiple carriers through an
-              independent agent can still uncover lower rates and better-value coverage.
-            </p>
+            <h3 class="rates-subheading">{{ zipCodesHeading }}</h3>
+            <p class="zip-copy mx-auto" [innerHTML]="'HOUSTON_TX.RATES.ZIP_COPY' | translateHtml | async"></p>
 
             <div class="table-responsive">
-              
+
               <table class="table rates-table mb-0">
                 <thead>
                   <tr>
-                    <th scope="col">Zip Code</th>
-                    <th scope="col">Neighborhood</th>
-                    <th scope="col">Avg. Monthly Rate</th>
+                    <th scope="col">{{ 'GLOBAL_TX.RATES.ZIP_TABLE.ZIP_CODE' | translate }}</th>
+                    <th scope="col">{{ 'GLOBAL_TX.RATES.ZIP_TABLE.NEIGHBORHOOD' | translate }}</th>
+                    <th scope="col">{{ 'GLOBAL_TX.RATES.ZIP_TABLE.AVG_MONTHLY_RATE' | translate }}</th>
                   </tr>
                 </thead>
                 <tbody>
                   @for (rate of zipRateRows; track rate.zipCode; let i = $index) {
                   <tr [class.alt-row]="i % 2 === 1">
-                    <td><span >{{ rate.zipCode }}</span></td>
+                    <td><span>{{ rate.zipCode }}</span></td>
                     <td>{{ rate.neighborhood }}</td>
                     <td>
                       <span class="rate-check">✔</span>
@@ -191,20 +166,108 @@
             </div>
 
             <div class="rates-meta">
-              <p class="source-line mb-0"><strong>Source:</strong> <span class="source-name">LendingTree</span></p>
-              <p class="updated-line mb-0"><strong>Last Updated:</strong> May 2026</p>
+               <p class="source-line mb-0"><strong class="source-name">{{ 'GLOBAL_TX.RATES.SOURCE_LABEL' | translate }}</strong> <a class="source-name" href="https://www.lendingtree.com/car-insurance/houston-texas-car-insurance/" rel="nofollow" target="_blank">LendingTree</a></p>
+              <p class="updated-line mb-0"><strong class="source-name">{{ 'GLOBAL_TX.RATES.LAST_UPDATED_LABEL' | translate }}</strong> May 2026</p>
             </div>
+            
+            <p class="rates-disclaimer mb-0 text-start" [innerHTML]="'GLOBAL_TX.RATES.DISCLAIMER' | translateHtml | async"></p>
 
-            <p class="rates-disclaimer mb-0 text-start">
-              <strong>Disclaimer:</strong> The information provided on this page is for general informational purposes
-              only and may not reflect the most current updates. Coverage requirements, rates, and laws are subject to
-              change. Please consult a licensed insurance agent for the most accurate and up-to-date information.
-            </p>
           </div>
         </div>
 
         <div class="col-lg-1"></div>
       </div>
+    </div>
+  </section>
+
+
+    <section class="insurance-section py-5">
+    <div class="container container-custom">
+      
+      <!-- Header Section -->
+      <div class="text-center mb-4">
+        <h1 class="main-title mb-3">Texas Auto Insurance Requirements — What Houston Drivers Must Carry</h1>
+        <h2 class="sub-title mb-4">State Minimum Coverage: 30/60/25 Explained</h2>
+        <p class="lead-text mx-auto">
+          Texas requires drivers to carry 30/60/25 liability coverage. The $30,000 limit pays for injuries to one person if you cause an accident. The $60,000 limit covers total injuries for everyone involved in that accident. The $25,000 portion pays for damage you cause to another person's car or property. In a city like Houston, where medical bills and repair costs are high, limits can run out quickly.
+        </p>
+      </div>
+
+      <!-- Table Section -->
+      <div class="table-responsive mb-5">
+        <table class="table insurance-table align-middle m-0">
+          <thead>
+            <tr>
+              <th scope="col" style="width: 33.33%;">Coverage</th>
+              <th scope="col" style="width: 33.33%;">What It Covers</th>
+              <th scope="col" style="width: 33.33%;">What It Doesn't Cover</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="font-weight-medium text-dark-blue">$30,000 Bodily Injury Per Person</td>
+              <td>
+                <div class="d-flex align-items-start gap-2">
+                  <span class="icon-check flex-shrink-0"></span>
+                  <span>Medical bills for one person you injure in an accident</span>
+                </div>
+              </td>
+              <td>
+                <div class="d-flex align-items-start gap-2">
+                  <span class="icon-cross flex-shrink-0"></span>
+                  <span>Anything above $30K — you pay the difference out of pocket</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="font-weight-medium text-dark-blue">$60,000 Bodily Injury Per Accident</td>
+              <td>
+                <div class="d-flex align-items-start gap-2">
+                  <span class="icon-check flex-shrink-0"></span>
+                  <span>Total medical bills for all injured parties in one accident</span>
+                </div>
+              </td>
+              <td>
+                <div class="d-flex align-items-start gap-2">
+                  <span class="icon-cross flex-shrink-0"></span>
+                  <span>Costs exceeding $60K when multiple people are hurt</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="font-weight-medium text-dark-blue">$25,000 Property Damage</td>
+              <td>
+                <div class="d-flex align-items-start gap-2">
+                  <span class="icon-check flex-shrink-0"></span>
+                  <span>Repairs to the other driver's vehicle or property</span>
+                </div>
+              </td>
+              <td>
+                <div class="d-flex align-items-start gap-2">
+                  <span class="icon-cross flex-shrink-0"></span>
+                  <span>Your own vehicle repairs, your medical bills, or your passengers' injuries</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Footer Section Layout -->
+      <div class="row requirement-footer-row align-items-start pt-3 g-4">
+        <div class="col-md-7 col-lg-8 order-2 order-md-1 requirement-copy-col">
+          <h3 class="footer-title mb-0">Is Minimum Coverage Enough for Houston Drivers?</h3>
+        </div>
+        <div class="col-md-5 col-lg-4 order-1 order-md-2 text-center text-md-end requirement-illustration-col">
+          <img src="assets/images/houston-tx/van.png" alt="Driver with broke down camper van vector" class="img-fluid vehicle-illustration">
+        </div>
+        <div class="col-12 requirement-description-col order-3">
+          <p class="footer-text mb-0">
+            Minimum coverage may meet Texas legal requirements, but it often falls short for Houston drivers. With heavy traffic, frequent accidents, and rising repair and medical costs, even a minor crash can quickly exceed basic limits. In a city where vehicle values and healthcare expenses are high, liability claims can add up fast. Storm-related risks like flooding and hail can also increase overall damage costs. Without higher coverage, drivers may face significant out-of-pocket expenses after an accident.
+          </p>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -451,7 +514,7 @@
   </div>
 
   <!-- Working With A State -->
-  <div class="container-fluid py-5 insurance-section position-relative overflow-hidden">
+  <div class="container-fluid py-5 working-insurance-section position-relative overflow-hidden">
     <img src="../assets/images/insurance-left.png" class="bg-shape shape-left" alt="decoration" />
     <img src="../assets/images/insurance-right.png" class="bg-shape shape-right" alt="decoration" />
 
