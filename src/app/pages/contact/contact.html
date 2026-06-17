@@ -1,10 +1,10 @@
 <div class="contactMain">
   <div class="topBanner">
     <div class="container">
-      <div class="h1">
+      <h1 class="h1">
         <span [innerHTML]="'CONTACT.HEADING' | translateHtml | async"></span> <br />
         <strong [innerHTML]="'CONTACT.HEADINGSTRONG' | translateHtml | async"></strong>
-      </div>
+      </h1>
     </div>
   </div>
 
@@ -74,7 +74,7 @@
             <div class="card-top">
               <img src="assets/images/message.png" alt="" />
 
-              <h5 [innerHTML]="'CONTACT.REACH-INSURANCE.CARD1.TITLE' | translateHtml | async"></h5>
+              <h3 class="reach-card-title" [innerHTML]="'CONTACT.REACH-INSURANCE.CARD1.TITLE' | translateHtml | async"></h3>
             </div>
             <p>
               <span [innerHTML]="'CONTACT.REACH-INSURANCE.CARD1.DESC' | translateHtml | async"></span> <span>(713) 357-7771</span>
@@ -87,7 +87,7 @@
           <div class="reach-card">
             <div class="card-top">
               <img src="assets/images/call.png" alt="" />
-              <h5 [innerHTML]="'CONTACT.REACH-INSURANCE.CARD2.TITLE' | translateHtml | async"></h5>
+              <h3 class="reach-card-title" [innerHTML]="'CONTACT.REACH-INSURANCE.CARD2.TITLE' | translateHtml | async"></h3>
             </div>
             <p>
               <span [innerHTML]="'CONTACT.REACH-INSURANCE.CARD2.DESC' | translateHtml | async"></span>
@@ -101,7 +101,7 @@
           <div class="reach-card">
             <div class="card-top">
               <img src="assets/images/email.png" alt="" />
-              <h5 [innerHTML]="'CONTACT.REACH-INSURANCE.CARD3.TITLE' | translateHtml | async"></h5>
+              <h3 class="reach-card-title" [innerHTML]="'CONTACT.REACH-INSURANCE.CARD3.TITLE' | translateHtml | async"></h3>
             </div>
             <p>
               <span [innerHTML]="'CONTACT.REACH-INSURANCE.CARD3.DESC' | translateHtml | async"></span>
@@ -117,8 +117,7 @@
           <div class="reach-card">
             <div class="card-top">
               <img src="assets/images/contact-location.png" alt="" />
-              <h5 [innerHTML]="'CONTACT.REACH-INSURANCE.CARD4.TITLE' | translateHtml | async">
-              </h5>
+              <h3 class="reach-card-title" [innerHTML]="'CONTACT.REACH-INSURANCE.CARD4.TITLE' | translateHtml | async"></h3>
             </div>
               <p>
               <span class="underline" [routerLink]="getRoute('ourLocations')" [innerHTML]="'CONTACT.REACH-INSURANCE.CARD4.DESC' | translateHtml | async"></span>
@@ -153,23 +152,4 @@
   </section>
 
   <!-- footuper -->
-  <div class="footUpper">
-    <div class="left"></div>
-    <div class="right"></div>
-    <div class="clipp"></div>
-    <div class="contain">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 col-sm-6 col-xs-12">
-            <div class="icon">
-              <img src="/assets/images/logo.png" alt="User menu" />
-            </div>
-          </div>
-          <div class="col-lg-6 col-sm-6 col-xs-12">
-            <div class="h4" [innerHTML]="'FOOTER.SLOGAN' | translateHtml | async"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  <app-foot-upper></app-foot-upper>

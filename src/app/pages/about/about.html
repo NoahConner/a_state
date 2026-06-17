@@ -1,7 +1,7 @@
 <div class="aboutMain">
   <div class="topBanner">
     <div class="container">
-      <div class="h1" [innerHTML]="'ABOUT.HERO.HEADING' | translateHtml | async"></div>
+      <h1 class="h1" [innerHTML]="'ABOUT.HERO.HEADING' | translateHtml | async"></h1>
     </div>
   </div>
 
@@ -18,7 +18,7 @@
           <div class="card h-100 border-0 rounded-3">
             <img src="assets/images/trusted1.png" class="card-img-top" alt="Company History" />
             <div class="card-body">
-              <h5 class="card-title" [innerHTML]="'ABOUT.TRUSTED_INSURANCE.CARD1.TITLE' | translateHtml | async"></h5>
+              <h3 class="card-title" [innerHTML]="'ABOUT.TRUSTED_INSURANCE.CARD1.TITLE' | translateHtml | async"></h3>
               <div class="divider"></div>
               <p class="card-text" [innerHTML]="'ABOUT.TRUSTED_INSURANCE.CARD1.DESC' | translateHtml | async"></p>
             </div>
@@ -29,7 +29,7 @@
           <div class="card h-100 border-0 rounded-3">
             <img src="assets/images/trusted3.png" class="card-img-top" alt="Company History" />
             <div class="card-body">
-              <h5 class="card-title" [innerHTML]="'ABOUT.TRUSTED_INSURANCE.CARD2.TITLE' | translateHtml | async"></h5>
+              <h3 class="card-title" [innerHTML]="'ABOUT.TRUSTED_INSURANCE.CARD2.TITLE' | translateHtml | async"></h3>
               <div class="divider"></div>
               <p class="card-text" [innerHTML]="'ABOUT.TRUSTED_INSURANCE.CARD2.DESC' | translateHtml | async"></p>
             </div>
@@ -40,7 +40,7 @@
           <div class="card h-100 border-0 rounded-3">
             <img src="assets/images/trusted2.png" class="card-img-top" alt="Company History" />
             <div class="card-body">
-              <h5 class="card-title" [innerHTML]="'ABOUT.TRUSTED_INSURANCE.CARD3.TITLE' | translateHtml | async"></h5>
+              <h3 class="card-title" [innerHTML]="'ABOUT.TRUSTED_INSURANCE.CARD3.TITLE' | translateHtml | async"></h3>
               <div class="divider"></div>
               <p class="card-text" [innerHTML]="'ABOUT.TRUSTED_INSURANCE.CARD3.DESC' | translateHtml | async"></p>
             </div>
@@ -70,7 +70,7 @@
                 <!-- <i class="fas fa-car"></i> -->
               </div>
               <div class="card-content">
-                <h5 class="solution-title" [routerLink]="getRoute('autoInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.AUTO.TITLE' | translateHtml | async"></h5>
+                <h3 class="solution-title" [routerLink]="getRoute('autoInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.AUTO.TITLE' | translateHtml | async"></h3>
 
                 <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.AUTO.DESC' | translateHtml | async"></p>
               </div>
@@ -85,7 +85,7 @@
                 <img src="../assets/images/house.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="solution-title" [routerLink]="getRoute('homeInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HOME.TITLE' | translateHtml | async"></h5>
+                <h3 class="solution-title" [routerLink]="getRoute('homeInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HOME.TITLE' | translateHtml | async"></h3>
 
                 <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HOME.DESC' | translateHtml | async"></p>
               </div>
@@ -100,7 +100,7 @@
                 <img src="../assets/images/commercial.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="solution-title" [routerLink]="getRoute('commercialInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.TITLE' | translateHtml | async"></h5>
+                <h3 class="solution-title" [routerLink]="getRoute('commercialInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.TITLE' | translateHtml | async"></h3>
 
                 <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.DESC' | translateHtml | async"></p>
               </div>
@@ -115,7 +115,7 @@
                 <img src="../assets/images/life.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="solution-title" [routerLink]="getRoute('lifeInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.LIFE.TITLE' | translateHtml | async"></h5>
+                <h3 class="solution-title" [routerLink]="getRoute('lifeInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.LIFE.TITLE' | translateHtml | async"></h3>
 
                 <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.LIFE.DESC' | translateHtml | async"></p>
               </div>
@@ -130,7 +130,7 @@
                 <img src="../assets/images/health.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="solution-title" [routerLink]="getRoute('healthInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HEALTH.TITLE' | translateHtml | async"></h5>
+                <h3 class="solution-title" [routerLink]="getRoute('healthInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HEALTH.TITLE' | translateHtml | async"></h3>
 
                 <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HEALTH.DESC' | translateHtml | async"></p>
               </div>
@@ -145,7 +145,7 @@
                 <img src="../assets/images/secure.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="solution-title" [routerLink]="getRoute('suretyBondInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.SURETY.TITLE' | translateHtml | async"></h5>
+                <h3 class="solution-title" [routerLink]="getRoute('suretyBondInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.SURETY.TITLE' | translateHtml | async"></h3>
 
                 <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.SURETY.DESC' | translateHtml | async"></p>
               </div>
@@ -167,16 +167,16 @@
 
         <div class="col-sm-6 mt-5">
           <div class="content-inner">
-            <h4 class="section-title mb-5">
+            <h2 class="section-title mb-5">
               <span [innerHTML]="'ABOUT.WHY_TEXANS_CHOOSE.HEADING' | translateHtml | async"></span><br />
               <strong [innerHTML]="'ABOUT.WHY_TEXANS_CHOOSE.HEADING2' | translateHtml | async"></strong>
-            </h4>
+            </h2>
 
             <div class="features-list">
               <div class="feature-item d-flex mb-3">
                 <div class="icon-dot me-3 mt-2"></div>
                 <div>
-                  <h5 class="fw-bold mb-1" [innerHTML]="'ABOUT.WHY_TEXANS_CHOOSE.CARD1.TITLE' | translateHtml | async"></h5>
+                  <h3 class="feature-title fw-bold mb-1" [innerHTML]="'ABOUT.WHY_TEXANS_CHOOSE.CARD1.TITLE' | translateHtml | async"></h3>
                   <p [innerHTML]="'ABOUT.WHY_TEXANS_CHOOSE.CARD1.DESC' | translateHtml | async"></p>
                 </div>
               </div>
@@ -184,7 +184,7 @@
               <div class="feature-item d-flex mb-3">
                 <div class="icon-dot me-3 mt-2"></div>
                 <div>
-                  <h5 class="fw-bold mb-1" [innerHTML]="'ABOUT.WHY_TEXANS_CHOOSE.CARD2.TITLE' | translateHtml | async"></h5>
+                  <h3 class="feature-title fw-bold mb-1" [innerHTML]="'ABOUT.WHY_TEXANS_CHOOSE.CARD2.TITLE' | translateHtml | async"></h3>
                   <p [innerHTML]="'ABOUT.WHY_TEXANS_CHOOSE.CARD2.DESC' | translateHtml | async"></p>
                 </div>
               </div>
@@ -192,7 +192,7 @@
               <div class="feature-item d-flex mb-3">
                 <div class="icon-dot me-3 mt-2"></div>
                 <div>
-                  <h5 class="fw-bold mb-1" [innerHTML]="'ABOUT.WHY_TEXANS_CHOOSE.CARD3.TITLE' | translateHtml | async"></h5>
+                  <h3 class="feature-title fw-bold mb-1" [innerHTML]="'ABOUT.WHY_TEXANS_CHOOSE.CARD3.TITLE' | translateHtml | async"></h3>
                   <p [innerHTML]="'ABOUT.WHY_TEXANS_CHOOSE.CARD3.DESC' | translateHtml | async"></p>
                 </div>
               </div>
@@ -200,7 +200,7 @@
               <div class="feature-item d-flex mb-3">
                 <div class="icon-dot me-3 mt-2"></div>
                 <div>
-                  <h5 class="fw-bold mb-1" [innerHTML]="'ABOUT.WHY_TEXANS_CHOOSE.CARD4.TITLE' | translateHtml | async"></h5>
+                  <h3 class="feature-title fw-bold mb-1" [innerHTML]="'ABOUT.WHY_TEXANS_CHOOSE.CARD4.TITLE' | translateHtml | async"></h3>
                   <p [innerHTML]="'ABOUT.WHY_TEXANS_CHOOSE.CARD4.DESC' | translateHtml | async"></p>
                 </div>
               </div>
@@ -208,7 +208,7 @@
               <div class="feature-item d-flex mb-3">
                 <div class="icon-dot me-3 mt-2"></div>
                 <div>
-                  <h5 class="fw-bold mb-1" [innerHTML]="'ABOUT.WHY_TEXANS_CHOOSE.CARD5.TITLE' | translateHtml | async"></h5>
+                  <h3 class="feature-title fw-bold mb-1" [innerHTML]="'ABOUT.WHY_TEXANS_CHOOSE.CARD5.TITLE' | translateHtml | async"></h3>
                   <p [innerHTML]="'ABOUT.WHY_TEXANS_CHOOSE.CARD5.DESC' | translateHtml | async"></p>
                 </div>
               </div>
@@ -226,7 +226,7 @@
     <div class="container">
       <div class="topSub">
         <div class="topSub2">
-          <div class="h1" [innerHTML]="'HOME.COVERDBANNER.TITLE' | translateHtml | async"></div>
+          <h2 class="h1" [innerHTML]="'HOME.COVERDBANNER.TITLE' | translateHtml | async"></h2>
           <p class="paragraph"><span [innerHTML]="'HOME.COVERDBANNER.DESC' | translateHtml | async"></span> f</p>
 
           <div class="selectable mt-5">
@@ -257,23 +257,4 @@
   </div>
 
   <!-- footuper -->
-  <div class="footUpper">
-    <div class="left"></div>
-    <div class="right"></div>
-    <div class="clipp"></div>
-    <div class="contain">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 col-sm-6 col-xs-12">
-            <div class="icon">
-              <img src="/assets/images/logo.png" alt="User menu" />
-            </div>
-          </div>
-          <div class="col-lg-6 col-sm-6 col-xs-12">
-            <div class="h4" [innerHTML]="'FOOTER.SLOGAN' | translateHtml | async"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  <app-foot-upper></app-foot-upper>

@@ -3,10 +3,10 @@
     <div class="container">
       <div class="topSub">
         <div class="topSub2">
-          <div class="h1">
+          <h1 class="h1">
             <span [innerHTML]="'SURETY_INSURANCE.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
             <span [innerHTML]="'SURETY_INSURANCE.BANNER.TITLE_LINE2' | translateHtml | async"></span>
-          </div>
+          </h1>
           <!-- 
           <div class="selectable">
             
@@ -55,7 +55,7 @@
     <h2 class="section-title mb-4" [innerHTML]="'SURETY_INSURANCE.WHY_DO_YOU_NEED.TITLE' | translateHtml | async"></h2>
     <p class="section-description mb-4" [innerHTML]="'SURETY_INSURANCE.WHY_DO_YOU_NEED.DESC' | translateHtml | async"></p>
 
-    <p class="section-sub-title mb-4" [innerHTML]="'SURETY_INSURANCE.WHY_DO_YOU_NEED.SUB_TITLE' | translateHtml | async"></p>
+    <h3 class="section-sub-title mb-4" [innerHTML]="'SURETY_INSURANCE.WHY_DO_YOU_NEED.SUB_TITLE' | translateHtml | async"></h3>
 
     <div class="insurance-list">
       <div class="insurance-item"
@@ -64,7 +64,7 @@
         <div class="number">0{{ i + 1 }}</div>
 
         <div class="content">
-          <h5>{{ item.TITLE }}</h5>
+          <h3 class="insurance-item-title">{{ item.TITLE }}</h3>
           <p>{{ item.TEXT }}</p>
         </div>
 
@@ -76,7 +76,7 @@
   <section class="insurance-laws-section py-5">
     <div class="container-max-800">
 
-      <h1 class="main-title" [innerHTML]="'SURETY_INSURANCE.SURETY_VS_INSURANCE.TITLE' | translateHtml | async"></h1>
+      <h2 class="main-title" [innerHTML]="'SURETY_INSURANCE.SURETY_VS_INSURANCE.TITLE' | translateHtml | async"></h2>
 
       <p class="intro-text" [innerHTML]="'SURETY_INSURANCE.SURETY_VS_INSURANCE.OVERVIEW' | translateHtml | async"></p>
 
@@ -104,7 +104,7 @@
       <div class="row">
         <div class="col-lg-10">
           <!-- Title -->
-          <h4 class="how-it-work-title mb-4" [innerHTML]="'SURETY_INSURANCE.HOW_IT_WORKS.TITLE' | translateHtml | async"></h4>
+          <h2 class="how-it-work-title mb-4" [innerHTML]="'SURETY_INSURANCE.HOW_IT_WORKS.TITLE' | translateHtml | async"></h2>
 
           <!-- Description Content -->
           <div class="how-it-work-description">
@@ -133,7 +133,7 @@
   <section class="insurance-section py-5 bg-pink">
     <div class="container">
       <div class="header-content mb-5">
-        <h6 class="text-danger fw-bold" [innerHTML]="'SURETY_INSURANCE.COVERAGES.WHO_REQUIRES.TITLE' | translateHtml | async"></h6>
+        <h2 class="section-heading text-danger fw-bold" [innerHTML]="'SURETY_INSURANCE.COVERAGES.WHO_REQUIRES.TITLE' | translateHtml | async"></h2>
         <p class="small text-muted" [innerHTML]="'SURETY_INSURANCE.COVERAGES.WHO_REQUIRES.DESC' | translateHtml | async"></p>
       </div>
       <div id="optionalCoveragesCarousel" class="carousel slide pb-5" data-bs-ride="carousel">
@@ -158,7 +158,7 @@
                   <div class="card-body">
                     <div class="card-icon"><i [class]="item.ICON"></i></div>
 
-                    <h6  class="mt-2" [innerHTML]="item.TITLE | translate"></h6>
+                    <h3 class="insurance-card-title mt-2" [innerHTML]="item.TITLE | translate"></h3>
                     <p>{{ item.DESC }}</p>
                   </div>
                 </div>
@@ -176,7 +176,7 @@
     <div class="container">
       <!-- Header -->
       <div class="header-content mb-5">
-        <h6 class="text-danger fw-bold" [innerHTML]="'SURETY_INSURANCE.COVERAGES.STANDARD.TITLE' | translateHtml | async"></h6>
+        <h2 class="section-heading text-danger fw-bold" [innerHTML]="'SURETY_INSURANCE.COVERAGES.STANDARD.TITLE' | translateHtml | async"></h2>
         <p class="small text-muted" [innerHTML]="'SURETY_INSURANCE.COVERAGES.STANDARD.DESC' | translateHtml | async"></p>
       </div>
 
@@ -186,7 +186,7 @@
           <div class="insurance-card">
             <div class="card-icon"><i [class]="item.ICON"></i></div>
             <div class="card-body">
-              <h6>{{ item.TITLE }}</h6>
+              <h3 class="insurance-card-title">{{ item.TITLE }}</h3>
               <p>{{ item.DESC }}</p>
             </div>
           </div>
@@ -202,7 +202,7 @@
   <section class="insurance-section py-5 bg-pink">
     <div class="container">
       <div class="header-content mb-5">
-        <h6 class="text-danger fw-bold" [innerHTML]="'SURETY_INSURANCE.COVERAGES.OPTIONAL.TITLE' | translateHtml | async"></h6>
+        <h2 class="section-heading text-danger fw-bold" [innerHTML]="'SURETY_INSURANCE.COVERAGES.OPTIONAL.TITLE' | translateHtml | async"></h2>
         <p class="small text-muted" [innerHTML]="'SURETY_INSURANCE.COVERAGES.OPTIONAL.DESC' | translateHtml | async"></p>
       </div>
       <div id="optionalCoveragesCarousel" class="carousel slide pb-5" data-bs-ride="carousel">
@@ -227,7 +227,7 @@
                   <div class="card-body">
                     <div class="card-icon"><i [class]="item.ICON"></i></div>
 
-                    <h6 class="mt-2">{{ item.TITLE }}</h6>
+                    <h3 class="insurance-card-title mt-2">{{ item.TITLE }}</h3>
                     <p>{{ item.DESC }}</p>
                   </div>
                 </div>
@@ -245,7 +245,7 @@
 
   <section class="how-much-do-you-need mt-5 mb-5">
     <div class="container">
-      <h1 class="how-much-do-you-need-title" [innerHTML]="'SURETY_INSURANCE.SURETY_BOND_COST.TITLE' | translateHtml | async"></h1>
+      <h2 class="how-much-do-you-need-title" [innerHTML]="'SURETY_INSURANCE.SURETY_BOND_COST.TITLE' | translateHtml | async"></h2>
       <div class="how-much-do-you-need-description">
         <p [innerHTML]="'SURETY_INSURANCE.SURETY_BOND_COST.DESC1' | translate"></p>
         <p [innerHTML]="'SURETY_INSURANCE.SURETY_BOND_COST.DESC2' | translateHtml | async"></p>
@@ -359,7 +359,7 @@
             <div class="icon-wrapper">
               <i [class]="'SURETY_INSURANCE.SURETY_BOND_TYPES.LIST.' + type + '.ICON' | translate"></i>
             </div>
-            <h6 style="cursor: pointer;" [routerLink]="getRoute(('SURETY_INSURANCE.SURETY_BOND_TYPES.LIST.' + type + '.ROUTE') | translate)"><span [innerHTML]="('SURETY_INSURANCE.SURETY_BOND_TYPES.LIST.' + type + '.TITLE') | translateHtml | async"></span></h6>
+            <h3 class="vehicle-type-title" style="cursor: pointer;" [routerLink]="getRoute(('SURETY_INSURANCE.SURETY_BOND_TYPES.LIST.' + type + '.ROUTE') | translate)"><span [innerHTML]="('SURETY_INSURANCE.SURETY_BOND_TYPES.LIST.' + type + '.TITLE') | translateHtml | async"></span></h3>
             <p><span [innerHTML]="('SURETY_INSURANCE.SURETY_BOND_TYPES.LIST.' + type + '.DESCRIPTION') | translateHtml | async"></span></p>
           </div>
         </div>
@@ -407,7 +407,7 @@
                 <img src="../assets/images/carbon_license.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [innerHTML]="'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.TITLE' | translateHtml | async"></h5>
+                <h4 class="card-title" [innerHTML]="'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.TITLE' | translateHtml | async"></h4>
                 <p class="card-text" [innerHTML]="'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.LICENSED_BROKERS.DESCRIPTION' | translateHtml | async"></p>
               </div>
             </div>
@@ -419,7 +419,7 @@
                 <img src="../assets/images/Heart.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [innerHTML]="'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.TITLE' | translateHtml | async"></h5>
+                <h4 class="card-title" [innerHTML]="'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.TITLE' | translateHtml | async"></h4>
                 <p class="card-text" [innerHTML]="'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.HISPANIC_LATINO_FRIENDLY.DESCRIPTION' | translateHtml | async"></p>
               </div>
             </div>
@@ -433,7 +433,7 @@
                 <img src="../assets/images/calendar.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [innerHTML]="'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.TITLE' | translateHtml | async"></h5>
+                <h4 class="card-title" [innerHTML]="'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.TITLE' | translateHtml | async"></h4>
                 <p class="card-text" [innerHTML]="'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.YEARS_SERVING.DESCRIPTION' | translateHtml | async"></p>
               </div>
             </div>
@@ -445,7 +445,7 @@
                 <img src="../assets/images/price.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [innerHTML]="'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.TITLE' | translateHtml | async"></h5>
+                <h4 class="card-title" [innerHTML]="'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.TITLE' | translateHtml | async"></h4>
                 <p class="card-text" [innerHTML]="'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.CUSTOM_COVERAGE.DESCRIPTION' | translateHtml | async"></p>
               </div>
             </div>
@@ -459,7 +459,7 @@
                 <img src="../assets/images/wifi.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [innerHTML]="'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translateHtml | async"></h5>
+                <h4 class="card-title" [innerHTML]="'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.TITLE' | translateHtml | async"></h4>
                 <p class="card-text" [innerHTML]="'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.ONLINE_LOCAL.DESCRIPTION' | translateHtml | async"></p>
               </div>
             </div>
@@ -471,7 +471,7 @@
                 <img src="../assets/images/agents.png" alt="Car Icon" />
               </div>
               <div class="card-content">
-                <h5 class="card-title" [innerHTML]="'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.TITLE' | translateHtml | async"></h5>
+                <h4 class="card-title" [innerHTML]="'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.TITLE' | translateHtml | async"></h4>
                 <p class="card-text" [innerHTML]="'SURETY_INSURANCE.ASTATE_DIFFERENTIATORS.LIST.MULTILINGUAL_AGENTS.DESCRIPTION' | translateHtml | async"></p>
               </div>
             </div>
@@ -543,7 +543,7 @@
         @for (step of switchSteps; track step) {
         <div class="switch-card-wrapper">
           <div class="switch-card">
-            <h6><span [innerHTML]="('SURETY_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE') | translateHtml | async"></span></h6>
+            <h3 class="switch-card-title"><span [innerHTML]="('SURETY_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.TITLE') | translateHtml | async"></span></h3>
             <p><span [innerHTML]="('SURETY_INSURANCE.SWITCH_STEPS.STEPS.' + step + '.DESCRIPTION') | translateHtml | async"></span></p>
           </div>
         </div>
@@ -558,7 +558,7 @@
     <div class="container">
       <div class="topSub">
         <div class="topSub2">
-          <div class="h1" [innerHTML]="'SURETY_INSURANCE.FREE_QUOTE.HEADER' | translateHtml | async"></div>
+          <h2 class="h1" [innerHTML]="'SURETY_INSURANCE.FREE_QUOTE.HEADER' | translateHtml | async"></h2>
           <p class="para" [innerHTML]="'SURETY_INSURANCE.FREE_QUOTE.DESCRIPTION' | translateHtml | async"></p>
           <div class="selectable mt-4">
             @for (item of chips.slice(0, 3); track item.name) {
@@ -596,24 +596,6 @@
 
 
   <!-- footuper -->
-  <div class="footUpper">
-    <div class="left"></div>
-    <div class="right"></div>
-    <div class="clipp"></div>
-    <div class="contain">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 col-sm-6 col-xs-12">
-            <div class="icon">
-              <img src="/assets/images/logo.png" alt="User menu" />
-            </div>
-          </div>
-          <div class="col-lg-6 col-sm-6 col-xs-12">
-            <div class="h4" [innerHTML]="'FOOTER.SLOGAN' | translateHtml | async"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <app-foot-upper></app-foot-upper>
   <!--  -->
 </div>

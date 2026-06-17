@@ -1,7 +1,7 @@
 <div class="locationMain">
   <div class="topBanner">
     <div class="container">
-      <div class="h1" [innerHTML]="'OUR_LOCATION.HEADING' | translateHtml | async"></div>
+      <h1 class="h1" [innerHTML]="'OUR_LOCATION.HEADING' | translateHtml | async"></h1>
     </div>
   </div>
 
@@ -114,7 +114,7 @@
     <div class="container">
       <div class="topSub">
         <div class="topSub2">
-          <div class="h1" [innerHTML]="'OUR_LOCATION.SESSION3.TITLE' | translateHtml | async"></div>
+          <h2 class="h1" [innerHTML]="'OUR_LOCATION.SESSION3.TITLE' | translateHtml | async"></h2>
           <p class="paragraph" [innerHTML]="'OUR_LOCATION.SESSION3.DEC1' | translateHtml | async"></p>
 
           <div class="selectable mt-5">
@@ -144,23 +144,4 @@
   </div>
 
   <!-- footuper -->
-  <div class="footUpper">
-    <div class="left"></div>
-    <div class="right"></div>
-    <div class="clipp"></div>
-    <div class="contain">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 col-sm-6 col-xs-12">
-            <div class="icon">
-              <img src="/assets/images/logo.png" alt="User menu" />
-            </div>
-          </div>
-          <div class="col-lg-6 col-sm-6 col-xs-12">
-            <div class="h4" [innerHTML]="'FOOTER.SLOGAN' | translateHtml | async"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  <app-foot-upper></app-foot-upper>

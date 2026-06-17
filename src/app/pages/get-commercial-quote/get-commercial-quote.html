@@ -1,9 +1,9 @@
 <div class="quoteMain">
   <div class="topBanner">
     <div class="container">
-      <div class="h1"><span [innerHTML]="'GET_COMMERCIAL_QUOTE.HEADING' | translateHtml | async"></span>
+      <h1 class="h1"><span [innerHTML]="'GET_COMMERCIAL_QUOTE.HEADING' | translateHtml | async"></span>
         <p class="heroDesc" [innerHTML]="'GET_COMMERCIAL_QUOTE.DESCRIPTION' | translateHtml | async"></p>
-      </div>
+      </h1>
     </div>
   </div>
 
@@ -274,7 +274,7 @@
 
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="m-0" [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD1.TITLE' | translateHtml | async"></h5>
+            <h3 class="summary-card-title m-0" [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD1.TITLE' | translateHtml | async"></h3>
             <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(1)" [attr.aria-disabled]="!canEditStep(1)" (click)="canEditStep(1) && goToStep(1)"><i class="bi bi-pencil-square"></i> <span [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD1.EDIT' | translateHtml | async"></span></a>
           </div>
           <ul class="list-unstyled mb-0">
@@ -291,7 +291,7 @@
 
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="m-0" [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD2.TITLE' | translateHtml | async"></h5>
+            <h3 class="summary-card-title m-0" [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD2.TITLE' | translateHtml | async"></h3>
             <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(2)" [attr.aria-disabled]="!canEditStep(2)" (click)="canEditStep(2) && goToStep(2)"><i class="bi bi-pencil-square"></i> <span [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD2.EDIT' | translateHtml | async"></span></a>
           </div>
           <ul class="list-unstyled mb-0">
@@ -311,7 +311,7 @@
 
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="m-0" [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD3.TITLE' | translateHtml | async"></h5>
+            <h3 class="summary-card-title m-0" [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD3.TITLE' | translateHtml | async"></h3>
             <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(3)" [attr.aria-disabled]="!canEditStep(3)" (click)="canEditStep(3) && goToStep(3)"><i class="bi bi-pencil-square"></i> <span [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD3.EDIT' | translateHtml | async"></span></a>
           </div>
           <ul class="list-unstyled mb-0">
@@ -324,7 +324,7 @@
 
         <div class="summary-card mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="m-0" [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD4.TITLE' | translateHtml | async"></h5>
+            <h3 class="summary-card-title m-0" [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD4.TITLE' | translateHtml | async"></h3>
             <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(4)" [attr.aria-disabled]="!canEditStep(4)" (click)="canEditStep(4) && goToStep(4)"><i class="bi bi-pencil-square"></i> <span [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD4.EDIT' | translateHtml | async"></span></a>
           </div>
           <ul class="list-unstyled mb-0">
@@ -354,23 +354,4 @@
   </div>
 
   <!-- footuper -->
-  <div class="footUpper">
-    <div class="left"></div>
-    <div class="right"></div>
-    <div class="clipp"></div>
-    <div class="contain">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 col-sm-6 col-xs-12">
-            <div class="icon">
-              <img src="/assets/images/logo.png" alt="User menu" />
-            </div>
-          </div>
-          <div class="col-lg-6 col-sm-6 col-xs-12">
-            <div class="h4" [innerHTML]="'FOOTER.SLOGAN' | translateHtml | async"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  <app-foot-upper></app-foot-upper>

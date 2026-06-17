@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
+import { FootUpper } from './components/foot-upper/foot-upper';
 import { Home } from './pages/home/home';
 import { Contact } from './pages/contact/contact';
 import { InsuranceServices } from './pages/insurance-services/insurance-services';
@@ -100,6 +101,7 @@ import { HoustonTx } from './pages/auto-insurance/houston-tx/houston-tx';
     App,
     Header,
     Footer,
+    FootUpper,
     Home,
     Contact,
     InsuranceServices,

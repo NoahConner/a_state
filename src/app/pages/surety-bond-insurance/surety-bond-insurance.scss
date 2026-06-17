@@ -311,7 +311,7 @@
       flex-direction: column;
       justify-content: center;
 
-      h5 {
+      .insurance-item-title {
         font-weight: 500;
         font-size: 21px;
         padding: 5px;
@@ -612,7 +612,7 @@
   .header-content {
     max-width: 900px;
 
-    h6 {
+    .section-heading {
       color: #CA2B28;
       font-size: 18px;
     }
@@ -623,7 +623,7 @@
       color: #555;
     }
 
-    h6 {
+    .insurance-card-title {
       color: #ca2b28;
     }
   }
@@ -704,7 +704,7 @@
     .card-body {
       padding: 0;
 
-      h6 {
+      .insurance-card-title {
         font-size: 15px;
         font-weight: 600;
         margin-bottom: 6px;
@@ -1196,7 +1196,7 @@
     transform: scale(1.1);
   }
 
-  h6 {
+  .vehicle-type-title {
     color: #151515;
     font-size: 19px;
     font-weight: 700;
@@ -1325,7 +1325,7 @@
       box-shadow: 0 20px 70px rgba(255, 180, 180, 0.8);
     }
 
-    h6 {
+    .switch-card-title {
       color: #CA2B28;
       font-size: 18px;
       font-weight: 700;
