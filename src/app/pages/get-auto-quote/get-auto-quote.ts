@@ -22,6 +22,7 @@ export class GetAutoQuote {
   currentStep = 1;
   totalSteps = 5;
   loading = false;
+  submitted = false;
   termsAccepted = false;
 
   constructor(
@@ -133,6 +134,7 @@ export class GetAutoQuote {
     if (this.currentStep < this.totalSteps) {
       this.currentStep++;
     } else if (this.currentStep === this.totalSteps) {
+      this.submitted = true;
       this.currentStep = this.totalSteps + 1;
       setTimeout(() => {
         document.querySelector('.quote-summary-container')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -246,6 +248,7 @@ export class GetAutoQuote {
     this.addVehicle();
     this.addDriver();
     this.currentStep = 1;
+    this.submitted = false;
     this.termsAccepted = false;
   }
 }

@@ -567,7 +567,7 @@ max-width: 865px;
 }
 
 .main-title {
-  color: #de342d;
+  color: #CA2B28;
   font-size: clamp(2rem, 3vw, 2.55rem);
   font-weight: 700;
   line-height: 1.3;
@@ -667,7 +667,7 @@ max-width: 865px;
 }
 
 .footer-title {
-  color: #de342d;
+  color: #CA2B28;
   font-size: clamp(1.85rem, 2.45vw, 2.3rem);
   font-weight: 700;
   line-height: 1.24;
@@ -724,7 +724,7 @@ max-width: 865px;
 
   .penalties-title,
   .texassure-title {
-    color: #de342d;
+    color: #CA2B28;
     font-weight: 700;
     line-height: 1.3;
     letter-spacing: -0.03em;
@@ -816,9 +816,253 @@ max-width: 865px;
   }
 
   .texassure-link {
-    color: #de342d;
+    color: #CA2B28;
     text-decoration: underline;
     text-underline-offset: 2px;
+  }
+}
+
+.houston-coverage-options-section {
+  background: #FFFFEF;
+  padding-top: 2.9rem !important;
+  padding-bottom: 2.55rem !important;
+
+
+  .coverage-options-header {
+    margin-bottom: 2.7rem;
+  }
+
+  .coverage-options-title {
+    color: #CA2B28;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .coverage-options-grid {
+    --bs-gutter-y: 2.3rem;
+  }
+
+  .coverage-option-card {
+    max-width: 292px;
+    color: #261d1a;
+  }
+
+  .coverage-option-card__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    margin-bottom: 0.58rem;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      overflow: visible;
+    }
+  }
+
+  .coverage-option-card__icon-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+  }
+
+  .coverage-option-card__title {
+    margin: 0 0 0.34rem;
+    color: #231815;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.16;
+    letter-spacing: -0.015em;
+  }
+
+  .coverage-option-card__text {
+    color: #272424;
+    font-size: 11.8px;
+    font-weight: 400;
+    line-height: 1.62;
+    letter-spacing: -0.01em;
+  }
+}
+
+.houston-rate-factors-section {
+  background: #fbf8e6;
+  padding: 4.25rem 0 4rem;
+
+  .rate-factors-container {
+    max-width: 1008px;
+  }
+
+  .rate-factors-header {
+    max-width: 770px;
+    margin: 0 auto 2.65rem;
+  }
+
+  .rate-factors-title {
+    color: #CA2B28;
+    font-size: 33px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .rate-factors-copy {
+   margin-top: 1.15rem;
+    color: #403530;
+    font-size: 14.9px;
+    line-height: 1.72;
+    max-width: 50rem;
+  }
+
+  .rate-factors-grid {
+    max-width: 946px;
+    margin: 0 auto;
+  }
+
+  .rate-factors-list__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.48rem;
+    color: #414141;
+    font-size: 12.65px;
+        line-height: 1.45;
+    text-decoration: underline;
+    text-decoration-thickness: 0.8px;
+    text-underline-offset: 1px;
+    font-weight: 600;
+
+    & + .rate-factors-list__item {
+      margin-top: 1.05rem;
+    }
+  }
+
+  .rate-list-icon {
+    width: 10px;
+    min-width: 10px;
+    height: 14px;
+    margin-top: 0.05rem;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+    }
+
+    &::before {
+      left: 2px;
+      top: 0;
+      width: 6px;
+      height: 10px;
+      border: 1.2px solid #231815;
+      border-radius: 6px 6px 6px 0;
+      transform: rotate(30deg);
+      background: #fff;
+    }
+
+    &::after {
+      left: 3px;
+      top: 5px;
+      width: 5px;
+      height: 2px;
+      background: #a6d56e;
+      border-radius: 999px;
+      transform: rotate(30deg);
+      box-shadow: 0 3px 0 #a6d56e;
+    }
+  }
+}
+
+.houston-savings-section {
+  background: #fff;
+  padding: 4.1rem 0 4.35rem;
+
+  .savings-container {
+    max-width: 1008px;
+  }
+
+  .savings-header {
+    max-width: 765px;
+    margin: 0 auto 2.75rem;
+  }
+
+  .savings-title {
+    color: #CA2B28;
+    font-size: 33px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .savings-copy {
+    margin-top: 1.1rem;
+    color: #403530;
+    font-size: 10.9px;
+    line-height: 1.72;
+  }
+
+  .savings-grid {
+    max-width: 950px;
+    margin: 0 auto;
+  }
+
+  .savings-list__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    color: #231815;
+    font-size: 9.7px;
+    line-height: 1.44;
+    text-decoration: underline;
+    text-decoration-thickness: 0.8px;
+    text-underline-offset: 1px;
+
+    & + .savings-list__item {
+      margin-top: 1.03rem;
+    }
+  }
+
+  .savings-list-icon {
+    width: 10px;
+    min-width: 10px;
+    height: 14px;
+    margin-top: 0.02rem;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+    }
+
+    &::before {
+      left: 2px;
+      top: 0;
+      width: 6px;
+      height: 10px;
+      border: 1.2px solid #6da33a;
+      border-radius: 6px 6px 6px 0;
+      transform: rotate(30deg);
+      background: #fff;
+    }
+
+    &::after {
+      left: 3px;
+      top: 5px;
+      width: 5px;
+      height: 2px;
+      background: #8ac753;
+      border-radius: 999px;
+      transform: rotate(30deg);
+      box-shadow: 0 3px 0 #8ac753;
+    }
   }
 }
 
@@ -841,6 +1085,24 @@ max-width: 865px;
   .houston-comparison-section {
     .comparison-heading {
       font-size: 2rem;
+    }
+  }
+
+  .houston-coverage-options-section {
+    .coverage-options-container {
+      max-width: 980px;
+    }
+
+    .coverage-option-card {
+      max-width: 100%;
+    }
+  }
+
+  .houston-rate-factors-section,
+  .houston-savings-section {
+    .rate-factors-container,
+    .savings-container {
+      max-width: 940px;
     }
   }
 }
@@ -921,6 +1183,44 @@ max-width: 865px;
 
     .penalties-grid-row .col-md-6:first-child .penalties-grid-cell {
       border-bottom: 1px solid rgba(179, 171, 165, 0.7);
+    }
+  }
+
+  .houston-coverage-options-section {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.4rem !important;
+
+    .coverage-options-header {
+      margin-bottom: 2.15rem;
+    }
+
+    .coverage-options-title {
+      font-size: 29px;
+    }
+
+    .coverage-options-grid {
+      --bs-gutter-y: 1.8rem;
+    }
+  }
+
+  .houston-rate-factors-section,
+  .houston-savings-section {
+    padding-top: 3.4rem;
+    padding-bottom: 3.45rem;
+
+    .rate-factors-title,
+    .savings-title {
+      font-size: 28px;
+    }
+
+    .rate-factors-grid,
+    .savings-grid {
+      row-gap: 1.8rem !important;
+    }
+
+    .rate-factors-list__item,
+    .savings-list__item {
+      font-size: 11px;
     }
   }
 
@@ -1038,6 +1338,74 @@ max-width: 865px;
           }
         }
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .houston-coverage-options-section {
+    .coverage-options-container {
+      max-width: 560px;
+    }
+
+    .coverage-options-title {
+      font-size: 25px;
+      line-height: 1.25;
+    }
+
+    .coverage-options-grid {
+      --bs-gutter-y: 1.55rem;
+    }
+
+    .coverage-option-card {
+      max-width: 100%;
+    }
+
+    .coverage-option-card__title {
+      font-size: 16px;
+    }
+
+    .coverage-option-card__text {
+      font-size: 12.5px;
+      line-height: 1.58;
+    }
+  }
+
+  .houston-rate-factors-section,
+  .houston-savings-section {
+    padding-top: 2.9rem;
+    padding-bottom: 3rem;
+
+    .rate-factors-header,
+    .savings-header {
+      margin-bottom: 2rem;
+    }
+
+    .rate-factors-title,
+    .savings-title {
+      font-size: 24px;
+      line-height: 1.24;
+    }
+
+    .rate-factors-copy,
+    .savings-copy {
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .rate-factors-list__item,
+    .savings-list__item {
+      font-size: 12px;
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .houston-rate-factors-section,
+  .houston-savings-section {
+    .rate-factors-list__item + .rate-factors-list__item,
+    .savings-list__item + .savings-list__item {
+      margin-top: 0.9rem;
     }
   }
 }

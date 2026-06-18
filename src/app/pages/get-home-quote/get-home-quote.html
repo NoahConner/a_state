@@ -446,7 +446,7 @@
         </div>
       </div>
     </form>
-    <div class="quote-summary-container p-4 p-md-5 mt-5">
+    <div class="quote-summary-container p-4 p-md-5 mt-5" *ngIf="currentStep > totalSteps">
       <div class="container max-width-700">
         <h2 class="text-center mb-4 section-title"
           [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.MAIN_TITLE' | translateHtml | async"></h2>

@@ -20,7 +20,7 @@ export class GetHomeQuote {
   timeOptions: string[] = [];
 
   currentStep = 1;
-  totalSteps = 6;
+  totalSteps = 5;
   loading = false;
   submitted = false;
   termsAccepted = false;
@@ -95,6 +95,7 @@ export class GetHomeQuote {
       this.currentStep++;
     } else if (this.currentStep === this.totalSteps) {
       this.submitted = true;
+      this.currentStep = this.totalSteps + 1;
       setTimeout(() => {
         document.querySelector('.quote-summary-container')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 0);
