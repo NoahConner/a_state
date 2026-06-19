@@ -28,7 +28,7 @@
     </div>
   </div>
 
-  <div class="headerMain">
+  <div class="headerMain" [class.headerMain--es]="currentLang === 'es'">
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
       <div class="container">
         <!-- Logo -->
@@ -459,14 +459,33 @@
           <!-- Right side -->
           <div class="d-flex align-items-center leftie">
             <!-- Language dropdown -->
-            <div class="dropdown">
+            <div class="language-dropdown" [class.is-open]="openMenu === 'desktop-language'">
               <a
-                class="nav-link d-flex align-items-center"
+                class="language-switcher"
                 href="#"
-                (click)="changeLang(currentLang == 'en' ? 'es' : 'en'); $event.preventDefault()"
+                (click)="toggleMenu('desktop-language'); $event.preventDefault()"
               >
-                <i class="fa-solid fa-language me-1"></i> {{ currentLang.toUpperCase() }}
+                <span class="language-switcher__flag-wrap">
+                  <img [src]="currentLanguageFlag" [alt]="currentLang === 'en' ? 'English' : 'Spanish'" class="language-switcher__flag" />
+                </span>
+                <span class="language-switcher__chevron" aria-hidden="true"></span>
               </a>
+              <div class="language-dropdown__menu">
+                <a
+                  class="language-dropdown__item"
+                  href="#"
+                  (click)="selectLang('en'); $event.preventDefault()">
+                  <img src="/assets/images/header/flag-us.svg" alt="English" class="language-dropdown__item-flag" />
+                  <span>English</span>
+                </a>
+                <a
+                  class="language-dropdown__item"
+                  href="#"
+                  (click)="selectLang('es'); $event.preventDefault()">
+                  <img src="/assets/images/header/flag-es.svg" alt="Español" class="language-dropdown__item-flag" />
+                  <span>Español</span>
+                </a>
+              </div>
               <!-- <ul class="dropdown-menu">
                 <li>
                   <a
