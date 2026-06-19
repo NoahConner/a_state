@@ -58,6 +58,58 @@ export class HoustonTx {
     { zipCode: '77036', neighborhood: 'Sharpstown', monthlyRate: '$317', highlighted: true },
   ];
 
+  faqItems = [
+    {
+      question: 'How much is car insurance in Houston per month?',
+      answer:
+        'Car insurance in Houston typically ranges from $257 to $357 per month for full coverage, depending on driving history, ZIP code, and vehicle type. Minimum liability coverage can cost around $157 monthly, making Houston one of the more expensive Texas cities for auto insurance overall consistently.',
+    },
+    {
+      question: 'What is the minimum car insurance required in Texas?',
+      answer:
+        'Texas requires at least 30/60/25 liability coverage, which includes $30,000 for injuries per person, $60,000 per accident, and $25,000 for property damage you cause to others.',
+    },
+    {
+      question: 'Why is car insurance so expensive in Houston?',
+      answer:
+        'Houston car insurance rates are often higher because of dense traffic, severe weather risks, frequent claims, uninsured drivers, and higher repair and medical costs across the metro area.',
+    },
+    {
+      question: 'What\'s the cheapest car insurance in Houston?',
+      answer:
+        'The cheapest car insurance in Houston depends on your driving record, age, vehicle, and coverage level, but minimum coverage from lower-cost regional or national carriers is often the most affordable starting point.',
+    },
+    {
+      question: 'Do I need flood insurance for my car in Houston?',
+      answer:
+        'If you want protection from flood damage in Houston, you typically need comprehensive coverage on your auto policy, since standard liability insurance does not cover weather-related damage to your own vehicle.',
+    },
+  ];
+  neighborhoodsRows = [
+    ['Acres Home', 'Addicks / Park Ten', 'Afton Oaks / River Oaks', 'Alief'],
+    ['Astrodome Area', 'Braeburn', 'Braeswood', 'Brays Oaks'],
+    ['Briar Forest', 'Carverdale', 'Central Northwest', 'Central Southwest'],
+    ['Clear Lake', 'Clinton Park', 'Denver Harbor', 'Downtown'],
+    ['East Houston', 'East Little York', 'Eastex / Jensen', 'Edgebrook'],
+    ['El Dorado / Oates Prairie', 'Eldridge / West Oaks', 'Fairbanks / NW Crossing', 'Fondren Gardens'],
+    ['Fort Bend / Houston', 'Fourth Ward', 'Golfcrest / Bellfort', 'Greater Eastwood'],
+    ['Greater Fifth Ward', 'Greater Greenspoint', 'Greater Heights', 'Greater Hobby Area'],
+    ['Greater Inwood', 'Greater Meyerland', 'Greater OST / South Union', 'Greater Third Ward'],
+    ['Greater Uptown', 'Greenway / Upper Kirby', 'Gulfgate / Pine Valley', 'Gulfton'],
+    ['Harrisburg / Manchester', 'Hidden Valley', 'Hunterwood', 'IAH Airport'],
+    ['Independence Heights', 'Kashmere Gardens', 'Kingwood', 'Lake Houston'],
+    ['Langwood', 'Lawndale / Wayside', 'Lazybrook / Timbergrove', 'MacGregor'],
+    ['Magnolia Park', 'Meadowbrook / Allendale', 'Medical Center', 'Memorial'],
+    ['Mid-West', 'Midtown', 'Minnetex', 'Museum Park'],
+    ['Near Northside', 'Near Southwest', 'Neartown / Montrose', 'Northshore'],
+    ['Northside / Northline', 'Park Place', 'Pecan Park', 'Pleasantville Area'],
+    ['Second Ward', 'Settegast', 'Sharpstown', 'South Acres / Crestmont'],
+    ['South Belt / Ellington', 'South Main', 'South Park', 'Spring Branch Central'],
+    ['Trinity / Houston Gardens', 'University Place', 'Washington Ave / Memorial', 'Westbranch'],
+    ['Westbury', 'Westchase', 'Westwood', 'Willowbrook'],
+  ];
+  openFaqIndex = 0;
+
   selectedChip: string | null = null;
   fullName = '';
   phone = '';
@@ -119,6 +171,10 @@ export class HoustonTx {
 
   selectChip(chipName: string) {
     this.selectedChip = chipName;
+  }
+
+  toggleFaq(index: number) {
+    this.openFaqIndex = this.openFaqIndex === index ? -1 : index;
   }
 
   goToSelectedQuote() {

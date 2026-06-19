@@ -1,4 +1,5 @@
 <div class="homeMain">
+  <!-- Hero Banner Section Start -->
   <div class="topBanner">
     <div class="container">
       <div class="topSub">
@@ -42,7 +43,9 @@
       </div>
     </div>
   </div>
+  <!-- Hero Banner Section End -->
 
+  <!-- Rates Section Start -->
   <section class="houston-rates-section">
     <div class="container">
       <div class="row align-items-start">
@@ -82,7 +85,7 @@
                 <tbody>
                   @for (rate of monthlyRates; track rate.company; let i = $index) {
                   <tr [class.alt-row]="i % 2 === 1">
-                    <td><span  [innerHTML]="rate.company"></span></td>
+                    <td><span [innerHTML]="rate.company"></span></td>
                     <td>{{ rate.minimum }}</td>
                     <td>{{ rate.fullCoverage }}</td>
                   </tr>
@@ -92,19 +95,26 @@
             </div>
 
             <div class="rates-meta">
-              <p class="source-line mb-0"><strong class="source-name">{{ 'GLOBAL_TX.RATES.SOURCE_LABEL' | translate }}</strong> <a class="source-name" href="https://www.lendingtree.com/car-insurance/houston-texas-car-insurance/" rel="nofollow" target="_blank">LendingTree</a></p>
-              <p class="updated-line mb-0"><strong class="source-name">{{ 'GLOBAL_TX.RATES.LAST_UPDATED_LABEL' | translate }}</strong> May 2026</p>
+              <p class="source-line mb-0"><strong class="source-name">{{ 'GLOBAL_TX.RATES.SOURCE_LABEL' | translate
+                  }}</strong> <a class="source-name"
+                  href="https://www.lendingtree.com/car-insurance/houston-texas-car-insurance/" rel="nofollow"
+                  target="_blank">LendingTree</a></p>
+              <p class="updated-line mb-0"><strong class="source-name">{{ 'GLOBAL_TX.RATES.LAST_UPDATED_LABEL' |
+                  translate }}</strong> May 2026</p>
             </div>
 
-            <p class="rates-disclaimer mb-0 text-start" [innerHTML]="'GLOBAL_TX.RATES.DISCLAIMER' | translateHtml | async"></p>
+            <p class="rates-disclaimer mb-0 text-start"
+              [innerHTML]="'GLOBAL_TX.RATES.DISCLAIMER' | translateHtml | async"></p>
           </div>
 
           <div class="py-4"></div>
 
+          <!-- Rates Comparison Section Start -->
           <div class="houston-comparison-section">
             <div class="comparison-content text-center">
               <h2 class="comparison-heading">{{ comparisonHeading }}</h2>
-              <p class="comparison-copy mx-auto" [innerHTML]="'HOUSTON_TX.RATES.COMPARISON_COPY' | translateHtml | async"></p>
+              <p class="comparison-copy mx-auto"
+                [innerHTML]="'HOUSTON_TX.RATES.COMPARISON_COPY' | translateHtml | async"></p>
 
               <div class="table-responsive comparison-table-wrap mx-auto">
                 <table class="table comparison-table mb-0">
@@ -133,6 +143,7 @@
               </div>
             </div>
           </div>
+          <!-- Rates Comparison Section End -->
 
           <div class="py-4"></div>
 
@@ -166,11 +177,16 @@
             </div>
 
             <div class="rates-meta">
-               <p class="source-line mb-0"><strong class="source-name">{{ 'GLOBAL_TX.RATES.SOURCE_LABEL' | translate }}</strong> <a class="source-name" href="https://www.lendingtree.com/car-insurance/houston-texas-car-insurance/" rel="nofollow" target="_blank">LendingTree</a></p>
-              <p class="updated-line mb-0"><strong class="source-name">{{ 'GLOBAL_TX.RATES.LAST_UPDATED_LABEL' | translate }}</strong> May 2026</p>
+              <p class="source-line mb-0"><strong class="source-name">{{ 'GLOBAL_TX.RATES.SOURCE_LABEL' | translate
+                  }}</strong> <a class="source-name"
+                  href="https://www.lendingtree.com/car-insurance/houston-texas-car-insurance/" rel="nofollow"
+                  target="_blank">LendingTree</a></p>
+              <p class="updated-line mb-0"><strong class="source-name">{{ 'GLOBAL_TX.RATES.LAST_UPDATED_LABEL' |
+                  translate }}</strong> May 2026</p>
             </div>
-            
-            <p class="rates-disclaimer mb-0 text-start" [innerHTML]="'GLOBAL_TX.RATES.DISCLAIMER' | translateHtml | async"></p>
+
+            <p class="rates-disclaimer mb-0 text-start"
+              [innerHTML]="'GLOBAL_TX.RATES.DISCLAIMER' | translateHtml | async"></p>
 
           </div>
         </div>
@@ -179,17 +195,22 @@
       </div>
     </div>
   </section>
+  <!-- Rates Section End -->
 
 
-    <section class="insurance-section py-5">
+  <!-- Texas Requirements Section Start -->
+  <section class="insurance-section py-5">
     <div class="container container-custom">
-      
+
       <!-- Header Section -->
       <div class="text-center mb-4">
         <h1 class="main-title mb-3">Texas Auto Insurance Requirements — What Houston Drivers Must Carry</h1>
         <h2 class="sub-title mb-4">State Minimum Coverage: 30/60/25 Explained</h2>
         <p class="lead-text mx-auto">
-          Texas requires drivers to carry 30/60/25 liability coverage. The $30,000 limit pays for injuries to one person if you cause an accident. The $60,000 limit covers total injuries for everyone involved in that accident. The $25,000 portion pays for damage you cause to another person's car or property. In a city like Houston, where medical bills and repair costs are high, limits can run out quickly.
+          Texas requires drivers to carry 30/60/25 liability coverage. The $30,000 limit pays for injuries to one person
+          if you cause an accident. The $60,000 limit covers total injuries for everyone involved in that accident. The
+          $25,000 portion pays for damage you cause to another person's car or property. In a city like Houston, where
+          medical bills and repair costs are high, limits can run out quickly.
         </p>
       </div>
 
@@ -280,18 +301,25 @@
           <h3 class="footer-title mb-0">Is Minimum Coverage Enough for Houston Drivers?</h3>
         </div>
         <div class="col-md-5 col-lg-4 order-1 order-md-2 text-center text-md-end requirement-illustration-col">
-          <img src="assets/images/houston-tx/van.png" alt="Driver with broke down camper van vector" class="img-fluid vehicle-illustration">
+          <img src="assets/images/houston-tx/van.png" alt="Driver with broke down camper van vector"
+            class="img-fluid vehicle-illustration">
         </div>
         <div class="col-12 requirement-description-col order-3">
           <p class="footer-text mb-0">
-            Minimum coverage may meet Texas legal requirements, but it often falls short for Houston drivers. With heavy traffic, frequent accidents, and rising repair and medical costs, even a minor crash can quickly exceed basic limits. In a city where vehicle values and healthcare expenses are high, liability claims can add up fast. Storm-related risks like flooding and hail can also increase overall damage costs. Without higher coverage, drivers may face significant out-of-pocket expenses after an accident.
+            Minimum coverage may meet Texas legal requirements, but it often falls short for Houston drivers. With heavy
+            traffic, frequent accidents, and rising repair and medical costs, even a minor crash can quickly exceed
+            basic limits. In a city where vehicle values and healthcare expenses are high, liability claims can add up
+            fast. Storm-related risks like flooding and hail can also increase overall damage costs. Without higher
+            coverage, drivers may face significant out-of-pocket expenses after an accident.
           </p>
         </div>
       </div>
 
     </div>
   </section>
+  <!-- Texas Requirements Section End -->
 
+  <!-- Uninsured Penalties Section Start -->
   <section class="uninsured-penalties-section py-5">
     <div class="container penalties-container">
       <div class="text-center penalties-header">
@@ -426,7 +454,9 @@
       </div>
     </div>
   </section>
+  <!-- Uninsured Penalties Section End -->
 
+  <!-- Coverage Options Section Start -->
   <section class="houston-coverage-options-section py-5">
     <div class="container">
       <div class="coverage-options-header text-center">
@@ -440,7 +470,9 @@
               <img src="assets/images/houston-tx/magic.png" alt="" class="coverage-option-card__icon-image">
             </span>
             <h3 class="coverage-option-card__title">Liability Coverage (Bodily Injury &amp; Property Damage)</h3>
-            <p class="coverage-option-card__text mb-0">Liability coverage pays for injuries and property damage you cause to others in an accident. It covers medical bills, repairs, and legal costs, so you do not pay everything yourself later.</p>
+            <p class="coverage-option-card__text mb-0">Liability coverage pays for injuries and property damage you
+              cause to others in an accident. It covers medical bills, repairs, and legal costs, so you do not pay
+              everything yourself later.</p>
           </article>
         </div>
 
@@ -448,17 +480,22 @@
           <article class="coverage-option-card">
             <span class="coverage-option-card__icon coverage-option-card__icon--collision" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false">
-                <circle cx="9" cy="6" r="2.2" fill="#ffffff" stroke="#231815" stroke-width="1.1"/>
-                <circle cx="15.6" cy="6" r="2.2" fill="#ffffff" stroke="#231815" stroke-width="1.1"/>
-                <path d="M7 18v-4.1c0-1.7 1.4-3.1 3.1-3.1h.5c1.7 0 3.1 1.4 3.1 3.1V18" fill="none" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
-                <path d="M2.9 18v-2.6c0-1.5 1.2-2.6 2.6-2.6h.5" fill="none" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
-                <path d="M17.3 12.8h.5c1.5 0 2.7 1.1 2.7 2.6V18" fill="none" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
-                <path d="M9.8 16.2h5.8" stroke="#f08b7f" stroke-width="2" stroke-linecap="round"/>
-                <path d="M12.7 13.3v5.8" stroke="#f08b7f" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="9" cy="6" r="2.2" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <circle cx="15.6" cy="6" r="2.2" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <path d="M7 18v-4.1c0-1.7 1.4-3.1 3.1-3.1h.5c1.7 0 3.1 1.4 3.1 3.1V18" fill="none" stroke="#231815"
+                  stroke-width="1.1" stroke-linecap="round" />
+                <path d="M2.9 18v-2.6c0-1.5 1.2-2.6 2.6-2.6h.5" fill="none" stroke="#231815" stroke-width="1.1"
+                  stroke-linecap="round" />
+                <path d="M17.3 12.8h.5c1.5 0 2.7 1.1 2.7 2.6V18" fill="none" stroke="#231815" stroke-width="1.1"
+                  stroke-linecap="round" />
+                <path d="M9.8 16.2h5.8" stroke="#f08b7f" stroke-width="2" stroke-linecap="round" />
+                <path d="M12.7 13.3v5.8" stroke="#f08b7f" stroke-width="2" stroke-linecap="round" />
               </svg>
             </span>
             <h3 class="coverage-option-card__title">Collision Coverage</h3>
-            <p class="coverage-option-card__text mb-0">Collision coverage helps pay to repair or replace your car if it is damaged in an accident, no matter who is at fault. It applies after crashes with cars or other objects to help protect you.</p>
+            <p class="coverage-option-card__text mb-0">Collision coverage helps pay to repair or replace your car if it
+              is damaged in an accident, no matter who is at fault. It applies after crashes with cars or other objects
+              to help protect you.</p>
           </article>
         </div>
 
@@ -466,16 +503,21 @@
           <article class="coverage-option-card">
             <span class="coverage-option-card__icon coverage-option-card__icon--comprehensive" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M12 3.5v7.4" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
-                <path d="m8.7 7 2.6 1.8L8.4 9.9" fill="#ff8a61" stroke="#231815" stroke-width="1.1" stroke-linejoin="round"/>
-                <path d="m15.3 7-2.6 1.8 2.9 1.1" fill="#ff8a61" stroke="#231815" stroke-width="1.1" stroke-linejoin="round"/>
-                <path d="M5.2 18.5h13.6" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
-                <path d="M7.7 18.5c.2-2.5 1.8-4.1 4.3-4.1s4.1 1.6 4.3 4.1" fill="#f9d95d" stroke="#231815" stroke-width="1.1" stroke-linejoin="round"/>
-                <path d="M4.6 13.8h2.6m9.6 0h2.6" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
+                <path d="M12 3.5v7.4" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+                <path d="m8.7 7 2.6 1.8L8.4 9.9" fill="#ff8a61" stroke="#231815" stroke-width="1.1"
+                  stroke-linejoin="round" />
+                <path d="m15.3 7-2.6 1.8 2.9 1.1" fill="#ff8a61" stroke="#231815" stroke-width="1.1"
+                  stroke-linejoin="round" />
+                <path d="M5.2 18.5h13.6" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+                <path d="M7.7 18.5c.2-2.5 1.8-4.1 4.3-4.1s4.1 1.6 4.3 4.1" fill="#f9d95d" stroke="#231815"
+                  stroke-width="1.1" stroke-linejoin="round" />
+                <path d="M4.6 13.8h2.6m9.6 0h2.6" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
               </svg>
             </span>
             <h3 class="coverage-option-card__title">Comprehensive Coverage</h3>
-            <p class="coverage-option-card__text mb-0">Comprehensive coverage protects your car from theft, vandalism, fire, storms, flooding, or falling objects. It covers non-accident damage, giving broader protection for your vehicle.</p>
+            <p class="coverage-option-card__text mb-0">Comprehensive coverage protects your car from theft, vandalism,
+              fire, storms, flooding, or falling objects. It covers non-accident damage, giving broader protection for
+              your vehicle.</p>
           </article>
         </div>
 
@@ -483,15 +525,18 @@
           <article class="coverage-option-card">
             <span class="coverage-option-card__icon coverage-option-card__icon--pip" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M6 18.2c0-2.7 2.2-4.9 4.9-4.9H13c2.7 0 4.9 2.2 4.9 4.9" fill="none" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
-                <circle cx="11.9" cy="8.3" r="3" fill="#ffffff" stroke="#231815" stroke-width="1.1"/>
-                <path d="M18.1 5.3v4.2" stroke="#f08b7f" stroke-width="2" stroke-linecap="round"/>
-                <path d="M16 7.4h4.2" stroke="#f08b7f" stroke-width="2" stroke-linecap="round"/>
-                <path d="M6.7 18.2h10.5" stroke="#7bc1f3" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M6 18.2c0-2.7 2.2-4.9 4.9-4.9H13c2.7 0 4.9 2.2 4.9 4.9" fill="none" stroke="#231815"
+                  stroke-width="1.1" stroke-linecap="round" />
+                <circle cx="11.9" cy="8.3" r="3" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <path d="M18.1 5.3v4.2" stroke="#f08b7f" stroke-width="2" stroke-linecap="round" />
+                <path d="M16 7.4h4.2" stroke="#f08b7f" stroke-width="2" stroke-linecap="round" />
+                <path d="M6.7 18.2h10.5" stroke="#7bc1f3" stroke-width="1.6" stroke-linecap="round" />
               </svg>
             </span>
             <h3 class="coverage-option-card__title">Personal Injury Protection (PIP)</h3>
-            <p class="coverage-option-card__text mb-0">PIP covers medical bills, lost wages, and rehab costs after an accident, regardless of fault. It provides fast financial support and helps you recover easily after a crash without stress.</p>
+            <p class="coverage-option-card__text mb-0">PIP covers medical bills, lost wages, and rehab costs after an
+              accident, regardless of fault. It provides fast financial support and helps you recover easily after a
+              crash without stress.</p>
           </article>
         </div>
 
@@ -499,13 +544,16 @@
           <article class="coverage-option-card">
             <span class="coverage-option-card__icon coverage-option-card__icon--medpay" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M5.4 8.8 12 3.9l6.6 4.9-6.6 11.3L5.4 8.8Z" fill="#8de3ef" stroke="#231815" stroke-width="1.1" stroke-linejoin="round"/>
-                <path d="M9.2 9.4h5.6" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
-                <path d="M12 6.6v5.6" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
+                <path d="M5.4 8.8 12 3.9l6.6 4.9-6.6 11.3L5.4 8.8Z" fill="#8de3ef" stroke="#231815" stroke-width="1.1"
+                  stroke-linejoin="round" />
+                <path d="M9.2 9.4h5.6" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+                <path d="M12 6.6v5.6" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
               </svg>
             </span>
             <h3 class="coverage-option-card__title">Medical Payments Coverage (MedPay)</h3>
-            <p class="coverage-option-card__text mb-0">MedPay helps pay medical expenses for you and passengers after an accident, regardless of fault. It covers hospital visits and treatment quickly, so care is not delayed or stressful.</p>
+            <p class="coverage-option-card__text mb-0">MedPay helps pay medical expenses for you and passengers after an
+              accident, regardless of fault. It covers hospital visits and treatment quickly, so care is not delayed or
+              stressful.</p>
           </article>
         </div>
 
@@ -513,15 +561,19 @@
           <article class="coverage-option-card">
             <span class="coverage-option-card__icon coverage-option-card__icon--um" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M4.7 15.8h10.8l1.7-4.3H6.8l-2.1 4.3Z" fill="#ffd449" stroke="#231815" stroke-width="1.1" stroke-linejoin="round"/>
-                <circle cx="8.3" cy="17.4" r="1.5" fill="#ffffff" stroke="#231815" stroke-width="1.1"/>
-                <circle cx="14.7" cy="17.4" r="1.5" fill="#ffffff" stroke="#231815" stroke-width="1.1"/>
-                <path d="M17.8 7.3a2.6 2.6 0 1 1 0 5.2 2.6 2.6 0 0 1 0-5.2Z" fill="#f4f4f4" stroke="#231815" stroke-width="1.1"/>
-                <path d="M16.1 8.9h3.4M17.8 7.2v3.4" stroke="#ef6a5f" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M4.7 15.8h10.8l1.7-4.3H6.8l-2.1 4.3Z" fill="#ffd449" stroke="#231815" stroke-width="1.1"
+                  stroke-linejoin="round" />
+                <circle cx="8.3" cy="17.4" r="1.5" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <circle cx="14.7" cy="17.4" r="1.5" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <path d="M17.8 7.3a2.6 2.6 0 1 1 0 5.2 2.6 2.6 0 0 1 0-5.2Z" fill="#f4f4f4" stroke="#231815"
+                  stroke-width="1.1" />
+                <path d="M16.1 8.9h3.4M17.8 7.2v3.4" stroke="#ef6a5f" stroke-width="1.6" stroke-linecap="round" />
               </svg>
             </span>
             <h3 class="coverage-option-card__title">Uninsured Motorist Coverage (UM)</h3>
-            <p class="coverage-option-card__text mb-0">UM coverage protects you if hit by a driver without insurance. It covers medical bills and damages when the at-fault driver cannot cover the costs, keeping you financially safe at all times.</p>
+            <p class="coverage-option-card__text mb-0">UM coverage protects you if hit by a driver without insurance. It
+              covers medical bills and damages when the at-fault driver cannot cover the costs, keeping you financially
+              safe at all times.</p>
           </article>
         </div>
 
@@ -529,16 +581,19 @@
           <article class="coverage-option-card">
             <span class="coverage-option-card__icon coverage-option-card__icon--uim" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false">
-                <circle cx="9.3" cy="7.2" r="2.4" fill="#ffffff" stroke="#231815" stroke-width="1.1"/>
-                <circle cx="14.8" cy="7.2" r="2.4" fill="#ffffff" stroke="#231815" stroke-width="1.1"/>
-                <path d="M5.2 18.6c0-2.6 2.1-4.6 4.6-4.6h1.1c2.5 0 4.6 2 4.6 4.6" fill="none" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
-                <path d="M15.8 13.4h3.3" stroke="#f08b7f" stroke-width="2" stroke-linecap="round"/>
-                <path d="M17.4 11.8v3.3" stroke="#f08b7f" stroke-width="2" stroke-linecap="round"/>
-                <path d="M7.7 18.6h8.6" stroke="#8bd86b" stroke-width="1.6" stroke-linecap="round"/>
+                <circle cx="9.3" cy="7.2" r="2.4" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <circle cx="14.8" cy="7.2" r="2.4" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <path d="M5.2 18.6c0-2.6 2.1-4.6 4.6-4.6h1.1c2.5 0 4.6 2 4.6 4.6" fill="none" stroke="#231815"
+                  stroke-width="1.1" stroke-linecap="round" />
+                <path d="M15.8 13.4h3.3" stroke="#f08b7f" stroke-width="2" stroke-linecap="round" />
+                <path d="M17.4 11.8v3.3" stroke="#f08b7f" stroke-width="2" stroke-linecap="round" />
+                <path d="M7.7 18.6h8.6" stroke="#8bd86b" stroke-width="1.6" stroke-linecap="round" />
               </svg>
             </span>
             <h3 class="coverage-option-card__title">Underinsured Motorist Coverage (UIM)</h3>
-            <p class="coverage-option-card__text mb-0">UIM helps when the at-fault driver has insurance but not enough to cover your full medical or repair costs after a serious accident, giving you extra financial protection when needed.</p>
+            <p class="coverage-option-card__text mb-0">UIM helps when the at-fault driver has insurance but not enough
+              to cover your full medical or repair costs after a serious accident, giving you extra financial protection
+              when needed.</p>
           </article>
         </div>
 
@@ -546,16 +601,19 @@
           <article class="coverage-option-card">
             <span class="coverage-option-card__icon coverage-option-card__icon--umpd" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M4.8 15.8h10.2l1.6-4.1H6.8l-2 4.1Z" fill="#ffd449" stroke="#231815" stroke-width="1.1" stroke-linejoin="round"/>
-                <circle cx="8.3" cy="17.3" r="1.5" fill="#ffffff" stroke="#231815" stroke-width="1.1"/>
-                <circle cx="14.1" cy="17.3" r="1.5" fill="#ffffff" stroke="#231815" stroke-width="1.1"/>
-                <path d="M18.8 6.3v6.4" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
-                <circle cx="18.8" cy="5" r="1.3" fill="#f5d75b" stroke="#231815" stroke-width="1.1"/>
-                <path d="M17.2 10h3.2" stroke="#ef6a5f" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M4.8 15.8h10.2l1.6-4.1H6.8l-2 4.1Z" fill="#ffd449" stroke="#231815" stroke-width="1.1"
+                  stroke-linejoin="round" />
+                <circle cx="8.3" cy="17.3" r="1.5" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <circle cx="14.1" cy="17.3" r="1.5" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <path d="M18.8 6.3v6.4" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+                <circle cx="18.8" cy="5" r="1.3" fill="#f5d75b" stroke="#231815" stroke-width="1.1" />
+                <path d="M17.2 10h3.2" stroke="#ef6a5f" stroke-width="1.6" stroke-linecap="round" />
               </svg>
             </span>
             <h3 class="coverage-option-card__title">Uninsured Motorist Property Damage (UMPD)</h3>
-            <p class="coverage-option-card__text mb-0">UMPD covers repair costs if your car is damaged by an uninsured driver. It ensures you do not pay out of pocket after a crash, protecting your vehicle from unexpected expenses.</p>
+            <p class="coverage-option-card__text mb-0">UMPD covers repair costs if your car is damaged by an uninsured
+              driver. It ensures you do not pay out of pocket after a crash, protecting your vehicle from unexpected
+              expenses.</p>
           </article>
         </div>
 
@@ -563,17 +621,20 @@
           <article class="coverage-option-card">
             <span class="coverage-option-card__icon coverage-option-card__icon--roadside" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M4.8 15.8h10.6l1.8-4.1H6.9l-2.1 4.1Z" fill="#ffd449" stroke="#231815" stroke-width="1.1" stroke-linejoin="round"/>
-                <circle cx="8.4" cy="17.4" r="1.5" fill="#ffffff" stroke="#231815" stroke-width="1.1"/>
-                <circle cx="14.5" cy="17.4" r="1.5" fill="#ffffff" stroke="#231815" stroke-width="1.1"/>
-                <path d="M17.3 8.1h2.8" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
-                <path d="M18.7 6.7v2.8" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
-                <path d="M18.7 10.5v8" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
-                <path d="M17 18.5h3.4" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
+                <path d="M4.8 15.8h10.6l1.8-4.1H6.9l-2.1 4.1Z" fill="#ffd449" stroke="#231815" stroke-width="1.1"
+                  stroke-linejoin="round" />
+                <circle cx="8.4" cy="17.4" r="1.5" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <circle cx="14.5" cy="17.4" r="1.5" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <path d="M17.3 8.1h2.8" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+                <path d="M18.7 6.7v2.8" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+                <path d="M18.7 10.5v8" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+                <path d="M17 18.5h3.4" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
               </svg>
             </span>
             <h3 class="coverage-option-card__title">Roadside Assistance</h3>
-            <p class="coverage-option-card__text mb-0">Roadside assistance helps when your car breaks down, offering towing, tire changes, jump-starts, lockout assistance, and fuel delivery so you are never stranded during your emergencies.</p>
+            <p class="coverage-option-card__text mb-0">Roadside assistance helps when your car breaks down, offering
+              towing, tire changes, jump-starts, lockout assistance, and fuel delivery so you are never stranded during
+              your emergencies.</p>
           </article>
         </div>
 
@@ -581,15 +642,18 @@
           <article class="coverage-option-card">
             <span class="coverage-option-card__icon coverage-option-card__icon--rental" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M6.3 14.6v-4.7l3.2-1.8 3.2 1.8v4.7" fill="#ffffff" stroke="#231815" stroke-width="1.1" stroke-linejoin="round"/>
-                <circle cx="9.5" cy="14.6" r="1.5" fill="#ffd449" stroke="#231815" stroke-width="1.1"/>
-                <circle cx="15.8" cy="8" r="2.6" fill="#8bd86b" stroke="#231815" stroke-width="1.1"/>
-                <path d="M15.8 6.5v3M14.3 8h3" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
-                <path d="M4.8 18.5h14.4" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
+                <path d="M6.3 14.6v-4.7l3.2-1.8 3.2 1.8v4.7" fill="#ffffff" stroke="#231815" stroke-width="1.1"
+                  stroke-linejoin="round" />
+                <circle cx="9.5" cy="14.6" r="1.5" fill="#ffd449" stroke="#231815" stroke-width="1.1" />
+                <circle cx="15.8" cy="8" r="2.6" fill="#8bd86b" stroke="#231815" stroke-width="1.1" />
+                <path d="M15.8 6.5v3M14.3 8h3" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+                <path d="M4.8 18.5h14.4" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
               </svg>
             </span>
             <h3 class="coverage-option-card__title">Rental Reimbursement Coverage</h3>
-            <p class="coverage-option-card__text mb-0">Rental reimbursement covers a rental car while your vehicle is being repaired after a covered accident, helping you stay mobile at no extra cost when your car is in the shop.</p>
+            <p class="coverage-option-card__text mb-0">Rental reimbursement covers a rental car while your vehicle is
+              being repaired after a covered accident, helping you stay mobile at no extra cost when your car is in the
+              shop.</p>
           </article>
         </div>
 
@@ -597,15 +661,18 @@
           <article class="coverage-option-card">
             <span class="coverage-option-card__icon coverage-option-card__icon--gap" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false">
-                <rect x="4.8" y="5.6" width="14.4" height="11.3" rx="1.6" fill="#ffffff" stroke="#231815" stroke-width="1.1"/>
-                <path d="M7.4 9.1h4.5" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
-                <path d="M7.4 12h4.5" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
-                <path d="M14.5 10.7h2.7" stroke="#ef6a5f" stroke-width="2" stroke-linecap="round"/>
-                <path d="M15.8 9.4v2.7" stroke="#ef6a5f" stroke-width="2" stroke-linecap="round"/>
+                <rect x="4.8" y="5.6" width="14.4" height="11.3" rx="1.6" fill="#ffffff" stroke="#231815"
+                  stroke-width="1.1" />
+                <path d="M7.4 9.1h4.5" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+                <path d="M7.4 12h4.5" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+                <path d="M14.5 10.7h2.7" stroke="#ef6a5f" stroke-width="2" stroke-linecap="round" />
+                <path d="M15.8 9.4v2.7" stroke="#ef6a5f" stroke-width="2" stroke-linecap="round" />
               </svg>
             </span>
             <h3 class="coverage-option-card__title">Gap Insurance</h3>
-            <p class="coverage-option-card__text mb-0">Gap Insurance covers the difference between your car loan and the actual value if the vehicle is totaled or stolen, helping you avoid paying the remaining loan balance out of pocket.</p>
+            <p class="coverage-option-card__text mb-0">Gap Insurance covers the difference between your car loan and the
+              actual value if the vehicle is totaled or stolen, helping you avoid paying the remaining loan balance out
+              of pocket.</p>
           </article>
         </div>
 
@@ -613,15 +680,18 @@
           <article class="coverage-option-card">
             <span class="coverage-option-card__icon coverage-option-card__icon--towing" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false">
-                <circle cx="10.5" cy="6.7" r="2.3" fill="#f3cd67" stroke="#231815" stroke-width="1.1"/>
-                <path d="M6.6 18.2c0-2.9 1.7-5.1 3.9-5.1h1.3c2.2 0 3.9 2.2 3.9 5.1" fill="none" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
-                <path d="M16.8 14.4h3.5" stroke="#7bc1f3" stroke-width="1.8" stroke-linecap="round"/>
-                <path d="M18.6 12.7v3.5" stroke="#7bc1f3" stroke-width="1.8" stroke-linecap="round"/>
-                <path d="M5.1 18.2h13.8" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
+                <circle cx="10.5" cy="6.7" r="2.3" fill="#f3cd67" stroke="#231815" stroke-width="1.1" />
+                <path d="M6.6 18.2c0-2.9 1.7-5.1 3.9-5.1h1.3c2.2 0 3.9 2.2 3.9 5.1" fill="none" stroke="#231815"
+                  stroke-width="1.1" stroke-linecap="round" />
+                <path d="M16.8 14.4h3.5" stroke="#7bc1f3" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M18.6 12.7v3.5" stroke="#7bc1f3" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M5.1 18.2h13.8" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
               </svg>
             </span>
             <h3 class="coverage-option-card__title">Towing &amp; Labor Coverage</h3>
-            <p class="coverage-option-card__text mb-0">Towing and labor coverage pays for towing and minor roadside repairs when your car breaks down unexpectedly, helping you get back on the road quickly without high out-of-pocket costs.</p>
+            <p class="coverage-option-card__text mb-0">Towing and labor coverage pays for towing and minor roadside
+              repairs when your car breaks down unexpectedly, helping you get back on the road quickly without high
+              out-of-pocket costs.</p>
           </article>
         </div>
 
@@ -629,13 +699,17 @@
           <article class="coverage-option-card">
             <span class="coverage-option-card__icon coverage-option-card__icon--custom" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false">
-                <circle cx="12" cy="12" r="3" fill="#f6c84e" stroke="#231815" stroke-width="1.1"/>
-                <path d="M12 4.7v2.2M12 17.1v2.2M19.3 12h-2.2M6.9 12H4.7M17.2 6.8l-1.6 1.6M8.4 15.6l-1.6 1.6M17.2 17.2l-1.6-1.6M8.4 8.4 6.8 6.8" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
-                <path d="M11.2 9.8h1.6v4.4" stroke="#ef6a5f" stroke-width="1.6" stroke-linecap="round"/>
+                <circle cx="12" cy="12" r="3" fill="#f6c84e" stroke="#231815" stroke-width="1.1" />
+                <path
+                  d="M12 4.7v2.2M12 17.1v2.2M19.3 12h-2.2M6.9 12H4.7M17.2 6.8l-1.6 1.6M8.4 15.6l-1.6 1.6M17.2 17.2l-1.6-1.6M8.4 8.4 6.8 6.8"
+                  stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+                <path d="M11.2 9.8h1.6v4.4" stroke="#ef6a5f" stroke-width="1.6" stroke-linecap="round" />
               </svg>
             </span>
             <h3 class="coverage-option-card__title">Custom Parts &amp; Equipment Coverage</h3>
-            <p class="coverage-option-card__text mb-0">Custom parts coverage protects upgrades like rims, sound systems, or modifications if your car is damaged or stolen, ensuring your added investments stay financially protected.</p>
+            <p class="coverage-option-card__text mb-0">Custom parts coverage protects upgrades like rims, sound systems,
+              or modifications if your car is damaged or stolen, ensuring your added investments stay financially
+              protected.</p>
           </article>
         </div>
 
@@ -643,15 +717,20 @@
           <article class="coverage-option-card">
             <span class="coverage-option-card__icon coverage-option-card__icon--rideshare" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M8.8 7.1A3.2 3.2 0 0 1 12 4a3.2 3.2 0 0 1 3.2 3.1c0 1.8-1.4 2.8-2.2 4v1.8h-2V11c-.8-1.2-2.2-2.2-2.2-3.9Z" fill="#8bd0de" stroke="#231815" stroke-width="1.1" stroke-linejoin="round"/>
-                <path d="M9.4 18.2c0-1.9 1.2-3.2 2.6-3.2s2.6 1.3 2.6 3.2" fill="none" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
-                <circle cx="8" cy="17.8" r="1.2" fill="#ffffff" stroke="#231815" stroke-width="1.1"/>
-                <circle cx="16" cy="17.8" r="1.2" fill="#ffffff" stroke="#231815" stroke-width="1.1"/>
-                <path d="M12 6.2v2.9" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
+                <path
+                  d="M8.8 7.1A3.2 3.2 0 0 1 12 4a3.2 3.2 0 0 1 3.2 3.1c0 1.8-1.4 2.8-2.2 4v1.8h-2V11c-.8-1.2-2.2-2.2-2.2-3.9Z"
+                  fill="#8bd0de" stroke="#231815" stroke-width="1.1" stroke-linejoin="round" />
+                <path d="M9.4 18.2c0-1.9 1.2-3.2 2.6-3.2s2.6 1.3 2.6 3.2" fill="none" stroke="#231815"
+                  stroke-width="1.1" stroke-linecap="round" />
+                <circle cx="8" cy="17.8" r="1.2" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <circle cx="16" cy="17.8" r="1.2" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <path d="M12 6.2v2.9" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
               </svg>
             </span>
             <h3 class="coverage-option-card__title">Rideshare Coverage</h3>
-            <p class="coverage-option-card__text mb-0">Rideshare coverage protects drivers working for Uber or Lyft, filling gaps when personal insurance does not apply while driving for hire, ensuring safer coverage while earning income.</p>
+            <p class="coverage-option-card__text mb-0">Rideshare coverage protects drivers working for Uber or Lyft,
+              filling gaps when personal insurance does not apply while driving for hire, ensuring safer coverage while
+              earning income.</p>
           </article>
         </div>
 
@@ -659,14 +738,18 @@
           <article class="coverage-option-card">
             <span class="coverage-option-card__icon coverage-option-card__icon--loan" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false">
-                <rect x="4.8" y="6" width="14.5" height="10.7" rx="1.4" fill="#ffffff" stroke="#231815" stroke-width="1.1"/>
-                <path d="M7.5 9.2h9.1M7.5 11.9h9.1M7.5 14.6h5.3" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
-                <path d="M17.7 4.4v4.2" stroke="#f3cd67" stroke-width="1.8" stroke-linecap="round"/>
-                <path d="M15.6 6.5h4.2" stroke="#f3cd67" stroke-width="1.8" stroke-linecap="round"/>
+                <rect x="4.8" y="6" width="14.5" height="10.7" rx="1.4" fill="#ffffff" stroke="#231815"
+                  stroke-width="1.1" />
+                <path d="M7.5 9.2h9.1M7.5 11.9h9.1M7.5 14.6h5.3" stroke="#231815" stroke-width="1.1"
+                  stroke-linecap="round" />
+                <path d="M17.7 4.4v4.2" stroke="#f3cd67" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M15.6 6.5h4.2" stroke="#f3cd67" stroke-width="1.8" stroke-linecap="round" />
               </svg>
             </span>
             <h3 class="coverage-option-card__title">Loan/Lease Payoff Coverage</h3>
-            <p class="coverage-option-card__text mb-0">Loan payoff coverage helps pay off your remaining loan if your car is totaled and worth less than what you owe, protecting you from paying a balance after losing your vehicle unexpectedly.</p>
+            <p class="coverage-option-card__text mb-0">Loan payoff coverage helps pay off your remaining loan if your
+              car is totaled and worth less than what you owe, protecting you from paying a balance after losing your
+              vehicle unexpectedly.</p>
           </article>
         </div>
 
@@ -674,15 +757,19 @@
           <article class="coverage-option-card">
             <span class="coverage-option-card__icon coverage-option-card__icon--newcar" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M4.9 15.8h10.5l1.8-4.1H6.9l-2 4.1Z" fill="#79c7ee" stroke="#231815" stroke-width="1.1" stroke-linejoin="round"/>
-                <circle cx="8.4" cy="17.4" r="1.5" fill="#ffffff" stroke="#231815" stroke-width="1.1"/>
-                <circle cx="14.5" cy="17.4" r="1.5" fill="#ffffff" stroke="#231815" stroke-width="1.1"/>
-                <path d="M17.7 7a2.7 2.7 0 1 1 0 5.4A2.7 2.7 0 0 1 17.7 7Z" fill="#ff8a61" stroke="#231815" stroke-width="1.1"/>
-                <path d="M17.7 5.4v8.6M13.4 9.7H22" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
+                <path d="M4.9 15.8h10.5l1.8-4.1H6.9l-2 4.1Z" fill="#79c7ee" stroke="#231815" stroke-width="1.1"
+                  stroke-linejoin="round" />
+                <circle cx="8.4" cy="17.4" r="1.5" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <circle cx="14.5" cy="17.4" r="1.5" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <path d="M17.7 7a2.7 2.7 0 1 1 0 5.4A2.7 2.7 0 0 1 17.7 7Z" fill="#ff8a61" stroke="#231815"
+                  stroke-width="1.1" />
+                <path d="M17.7 5.4v8.6M13.4 9.7H22" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
               </svg>
             </span>
             <h3 class="coverage-option-card__title">New Car Replacement Coverage</h3>
-            <p class="coverage-option-card__text mb-0">New car replacement provides a brand-new vehicle of the same model if your new car is totaled during a covered period, helping you quickly recover full value after a major loss.</p>
+            <p class="coverage-option-card__text mb-0">New car replacement provides a brand-new vehicle of the same
+              model if your new car is totaled during a covered period, helping you quickly recover full value after a
+              major loss.</p>
           </article>
         </div>
 
@@ -690,13 +777,17 @@
           <article class="coverage-option-card">
             <span class="coverage-option-card__icon coverage-option-card__icon--forgiveness" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M6.6 15.2V8.7l5.3-3 5.3 3v6.5l-5.3 3-5.3-3Z" fill="#ffffff" stroke="#231815" stroke-width="1.1" stroke-linejoin="round"/>
-                <path d="m10.1 12.2 1.5 1.6 3.2-3.5" fill="none" stroke="#ef6a5f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M5.1 18.7h3.2M15.7 18.7h3.2" stroke="#8bd86b" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M6.6 15.2V8.7l5.3-3 5.3 3v6.5l-5.3 3-5.3-3Z" fill="#ffffff" stroke="#231815" stroke-width="1.1"
+                  stroke-linejoin="round" />
+                <path d="m10.1 12.2 1.5 1.6 3.2-3.5" fill="none" stroke="#ef6a5f" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M5.1 18.7h3.2M15.7 18.7h3.2" stroke="#8bd86b" stroke-width="1.6" stroke-linecap="round" />
               </svg>
             </span>
             <h3 class="coverage-option-card__title">Accident Forgiveness</h3>
-            <p class="coverage-option-card__text mb-0">Accident forgiveness prevents your insurance rates from increasing after your first at-fault accident, helping keep premiums stable over time, giving you financial protection and peace.</p>
+            <p class="coverage-option-card__text mb-0">Accident forgiveness prevents your insurance rates from
+              increasing after your first at-fault accident, helping keep premiums stable over time, giving you
+              financial protection and peace.</p>
           </article>
         </div>
 
@@ -704,27 +795,36 @@
           <article class="coverage-option-card">
             <span class="coverage-option-card__icon coverage-option-card__icon--death" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M12 19.1c-3.6-2.7-5.8-5.2-5.8-8.1 0-1.9 1.5-3.3 3.3-3.3 1.2 0 2 .5 2.5 1.3.5-.8 1.4-1.3 2.5-1.3 1.9 0 3.3 1.4 3.3 3.3 0 2.9-2.2 5.4-5.8 8.1Z" fill="#8dd7ea" stroke="#231815" stroke-width="1.1" stroke-linejoin="round"/>
-                <path d="M18.3 6.2h2.4M19.5 5v2.4" stroke="#231815" stroke-width="1.1" stroke-linecap="round"/>
-                <path d="M4.8 18.5h5" stroke="#ef6a5f" stroke-width="1.6" stroke-linecap="round"/>
+                <path
+                  d="M12 19.1c-3.6-2.7-5.8-5.2-5.8-8.1 0-1.9 1.5-3.3 3.3-3.3 1.2 0 2 .5 2.5 1.3.5-.8 1.4-1.3 2.5-1.3 1.9 0 3.3 1.4 3.3 3.3 0 2.9-2.2 5.4-5.8 8.1Z"
+                  fill="#8dd7ea" stroke="#231815" stroke-width="1.1" stroke-linejoin="round" />
+                <path d="M18.3 6.2h2.4M19.5 5v2.4" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+                <path d="M4.8 18.5h5" stroke="#ef6a5f" stroke-width="1.6" stroke-linecap="round" />
               </svg>
             </span>
             <h3 class="coverage-option-card__title">Death &amp; Disability Coverage</h3>
-            <p class="coverage-option-card__text mb-0">Death and disability coverage provides financial support if you are seriously injured or killed in an accident, helping protect your family’s financial future during difficult times.</p>
+            <p class="coverage-option-card__text mb-0">Death and disability coverage provides financial support if you
+              are seriously injured or killed in an accident, helping protect your family’s financial future during
+              difficult times.</p>
           </article>
         </div>
       </div>
     </div>
   </section>
+  <!-- Coverage Options Section End -->
 
+  <!-- Rate Factors Section Start -->
   <section class="houston-rate-factors-section">
     <div class="container rate-factors-container">
       <div class="rate-factors-header text-center">
         <h2 class="rate-factors-title mb-0">What Affects Your Car Insurance Rate in Houston, TX?</h2>
         <p class="rate-factors-copy mb-0">
-          Car insurance rates in Houston are influenced by several key factors that determine your overall risk to insurers. Your driving record, age,
-          and credit score play a major role in pricing. Where you live also matters, as busy traffic areas and high-accident ZIP codes cost more.
-          The type of vehicle, annual mileage, and chosen coverage level further affect premium. Severe weather risks, such as flooding, hail, and
+          Car insurance rates in Houston are influenced by several key factors that determine your overall risk to
+          insurers. Your driving record, age,
+          and credit score play a major role in pricing. Where you live also matters, as busy traffic areas and
+          high-accident ZIP codes cost more.
+          The type of vehicle, annual mileage, and chosen coverage level further affect premium. Severe weather risks,
+          such as flooding, hail, and
           theft, also increase costs, making insurance more expensive across Houston overall.
         </p>
       </div>
@@ -732,58 +832,88 @@
       <div class="row rate-factors-grid gx-lg-5 gx-4 gy-0">
         <div class="col-md-4">
           <ul class="rate-factors-list list-unstyled mb-0">
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>Driving Record (accidents, violations, DUIs)</span></li>
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>Credit Score</span></li>
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>Vehicle Make &amp; Model</span></li>
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>Daily Commute Distance</span></li>
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>Coverage Level Chosen</span></li>
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>Number of Vehicles on Policy</span></li>
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>Number of Drivers on Policy</span></li>
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>Occupation (some carriers)</span></li>
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>Bundling with Other Policies</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>Driving Record (accidents, violations,
+                DUIs)</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>Credit Score</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>Vehicle Make &amp; Model</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>Daily Commute Distance</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>Coverage Level Chosen</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>Number of Vehicles on Policy</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>Number of Drivers on Policy</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>Occupation (some carriers)</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>Bundling with Other Policies</span></li>
           </ul>
         </div>
 
         <div class="col-md-4">
           <ul class="rate-factors-list list-unstyled mb-0">
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>Age &amp; Years of Driving Experience</span></li>
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>Marital Status</span></li>
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>Vehicle Year</span></li>
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>Annual Mileage</span></li>
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>Deductible Amount</span></li>
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>Lapses in Coverage History</span></li>
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>Education Level (some carriers)</span></li>
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>Insurance Score</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>Age &amp; Years of Driving Experience</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>Marital Status</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>Vehicle Year</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>Annual Mileage</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>Deductible Amount</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>Lapses in Coverage History</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>Education Level (some carriers)</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>Insurance Score</span></li>
           </ul>
         </div>
 
         <div class="col-md-4">
           <ul class="rate-factors-list list-unstyled mb-0">
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>Gender</span></li>
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>ZIP Code &amp; Neighborhood</span></li>
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>Vehicle Safety Features</span></li>
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>How the Vehicle Is Used (personal vs. business)</span></li>
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>Claims History</span></li>
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>Teen or High-Risk Drivers on Policy</span></li>
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>Homeownership Status</span></li>
-            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt="" class="rate-list-icon-image" aria-hidden="true"><span>Type of Insurance Company (captive vs. independent)</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>Gender</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>ZIP Code &amp; Neighborhood</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>Vehicle Safety Features</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>How the Vehicle Is Used (personal vs.
+                business)</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>Claims History</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>Teen or High-Risk Drivers on Policy</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>Homeownership Status</span></li>
+            <li class="rate-factors-list__item"><img src="assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>Type of Insurance Company (captive vs.
+                independent)</span></li>
           </ul>
         </div>
       </div>
     </div>
   </section>
+  <!-- Rate Factors Section End -->
 
-
-
-
+  <!-- Savings Section Start -->
   <section class="houston-savings-section">
     <div class="container savings-container">
       <div class="savings-header text-center">
         <h2 class="savings-title mb-0">How to Save on Car Insurance in Houston, TX</h2>
         <p class="savings-copy mb-0">
-          Saving on car insurance in Houston starts with shopping around and comparing quotes from multiple carriers, since rates can vary
-          widely for the same driver. Increasing your deductible, bundling auto with home insurance, and maintaining a clean driving record can
-          also significantly lower your premium. Many insurers also offer discounts for safe driving, good credit, and low mileage. Reviewing your
+          Saving on car insurance in Houston starts with shopping around and comparing quotes from multiple carriers,
+          since rates can vary
+          widely for the same driver. Increasing your deductible, bundling auto with home insurance, and maintaining a
+          clean driving record can
+          also significantly lower your premium. Many insurers also offer discounts for safe driving, good credit, and
+          low mileage. Reviewing your
           policy regularly ensures you are not paying for unnecessary coverage while still staying protected.
         </p>
       </div>
@@ -791,43 +921,67 @@
       <div class="row savings-grid gx-lg-5 gx-4 gy-0">
         <div class="col-md-4">
           <ul class="savings-list list-unstyled mb-0">
-            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt="" class="savings-list-icon-image" aria-hidden="true"><span>Multi-Policy</span></li>
-            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt="" class="savings-list-icon-image" aria-hidden="true"><span>Good Driver Discount</span></li>
-            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt="" class="savings-list-icon-image" aria-hidden="true"><span>Good Student Discount</span></li>
-            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt="" class="savings-list-icon-image" aria-hidden="true"><span>Paperless Billing<br>Discount</span></li>
-            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt="" class="savings-list-icon-image" aria-hidden="true"><span>New Car Discount</span></li>
-            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt="" class="savings-list-icon-image" aria-hidden="true"><span>Telematics / Usage-Based Discount</span></li>
-            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt="" class="savings-list-icon-image" aria-hidden="true"><span>Affinity / Group Discount</span></li>
+            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt=""
+                class="savings-list-icon-image" aria-hidden="true"><span>Multi-Policy</span></li>
+            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt=""
+                class="savings-list-icon-image" aria-hidden="true"><span>Good Driver Discount</span></li>
+            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt=""
+                class="savings-list-icon-image" aria-hidden="true"><span>Good Student Discount</span></li>
+            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt=""
+                class="savings-list-icon-image" aria-hidden="true"><span>Paperless Billing<br>Discount</span></li>
+            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt=""
+                class="savings-list-icon-image" aria-hidden="true"><span>New Car Discount</span></li>
+            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt=""
+                class="savings-list-icon-image" aria-hidden="true"><span>Telematics / Usage-Based Discount</span></li>
+            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt=""
+                class="savings-list-icon-image" aria-hidden="true"><span>Affinity / Group Discount</span></li>
           </ul>
         </div>
 
         <div class="col-md-4">
           <ul class="savings-list list-unstyled mb-0">
-            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt="" class="savings-list-icon-image" aria-hidden="true"><span>Multi-Car Discount</span></li>
-            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt="" class="savings-list-icon-image" aria-hidden="true"><span>Defensive Driving Course Discount</span></li>
-            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt="" class="savings-list-icon-image" aria-hidden="true"><span>Pay-in-Full Discount</span></li>
-            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt="" class="savings-list-icon-image" aria-hidden="true"><span>Military &amp; Veteran Discount</span></li>
-            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt="" class="savings-list-icon-image" aria-hidden="true"><span>Homeowner<br>Discount</span></li>
-            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt="" class="savings-list-icon-image" aria-hidden="true"><span>Vehicle Safety Feature Discount</span></li>
-            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt="" class="savings-list-icon-image" aria-hidden="true"><span>Student Away at School Discount</span></li>
+            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt=""
+                class="savings-list-icon-image" aria-hidden="true"><span>Multi-Car Discount</span></li>
+            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt=""
+                class="savings-list-icon-image" aria-hidden="true"><span>Defensive Driving Course Discount</span></li>
+            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt=""
+                class="savings-list-icon-image" aria-hidden="true"><span>Pay-in-Full Discount</span></li>
+            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt=""
+                class="savings-list-icon-image" aria-hidden="true"><span>Military &amp; Veteran Discount</span></li>
+            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt=""
+                class="savings-list-icon-image" aria-hidden="true"><span>Homeowner<br>Discount</span></li>
+            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt=""
+                class="savings-list-icon-image" aria-hidden="true"><span>Vehicle Safety Feature Discount</span></li>
+            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt=""
+                class="savings-list-icon-image" aria-hidden="true"><span>Student Away at School Discount</span></li>
           </ul>
         </div>
 
         <div class="col-md-4">
           <ul class="savings-list list-unstyled mb-0">
-            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt="" class="savings-list-icon-image" aria-hidden="true"><span>Accident-Free Discount</span></li>
-            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt="" class="savings-list-icon-image" aria-hidden="true"><span>Automatic Payment (Auto-Pay) Discount</span></li>
-            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt="" class="savings-list-icon-image" aria-hidden="true"><span>Early Signing Discount</span></li>
-            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt="" class="savings-list-icon-image" aria-hidden="true"><span>Loyalty Discount</span></li>
-            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt="" class="savings-list-icon-image" aria-hidden="true"><span>Anti-Theft Device Discount</span></li>
-            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt="" class="savings-list-icon-image" aria-hidden="true"><span>Low Mileage Discount</span></li>
-            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt="" class="savings-list-icon-image" aria-hidden="true"><span>E-Signature Discount</span></li>
+            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt=""
+                class="savings-list-icon-image" aria-hidden="true"><span>Accident-Free Discount</span></li>
+            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt=""
+                class="savings-list-icon-image" aria-hidden="true"><span>Automatic Payment (Auto-Pay) Discount</span>
+            </li>
+            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt=""
+                class="savings-list-icon-image" aria-hidden="true"><span>Early Signing Discount</span></li>
+            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt=""
+                class="savings-list-icon-image" aria-hidden="true"><span>Loyalty Discount</span></li>
+            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt=""
+                class="savings-list-icon-image" aria-hidden="true"><span>Anti-Theft Device Discount</span></li>
+            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt=""
+                class="savings-list-icon-image" aria-hidden="true"><span>Low Mileage Discount</span></li>
+            <li class="savings-list__item"><img src="assets/images/houston-tx/arrow.png" alt=""
+                class="savings-list-icon-image" aria-hidden="true"><span>E-Signature Discount</span></li>
           </ul>
         </div>
       </div>
     </div>
   </section>
+  <!-- Savings Section End -->
 
+  <!-- Independent Agency Section Start -->
   <section class="houston-independent-agency-section">
     <div class="container independent-agency-container">
       <div class="independent-agency-header text-center">
@@ -946,81 +1100,283 @@
       </div>
     </div>
   </section>
+  <!-- Independent Agency Section End -->
 
-  <section class="houston-special-coverage-section">
-    <div class="container special-coverage-container">
-      <div class="special-coverage-header text-center">
-        <h2 class="special-coverage-title mb-0">Special Coverage Situations for Houston Drivers</h2>
+  <!-- Special Coverage Section Start -->
+  <section class="coverage">
+    <div class="container-fluid coverage__container">
+      <h2 class="coverage__title">Special Coverage Situations for Houston Drivers</h2>
+
+      <div class="row coverage__grid">
+        <!-- SR-22 -->
+        <div class="col-12 col-sm-6 col-lg-3 coverage__col">
+          <div class="coverage__item">
+            <span class="coverage__icon" aria-hidden="true">🛩️</span>
+            <h3 class="coverage__heading">
+              <a href="#" class="coverage__link">SR-22 Insurance</a>
+            </h3>
+            <p class="coverage__text">
+              SR-22 insurance is required for drivers who must demonstrate
+              financial responsibility after a violation. It is not a policy but a
+              certificate filed with the state to reinstate or maintain driving
+              privileges.
+            </p>
+          </div>
+        </div>
+
+        <!-- High-Risk -->
+        <div class="col-12 col-sm-6 col-lg-3 coverage__col">
+          <div class="coverage__item">
+            <span class="coverage__icon" aria-hidden="true">🚕</span>
+            <h3 class="coverage__heading">
+              <a href="#" class="coverage__link">High-Risk Drivers</a>
+            </h3>
+            <p class="coverage__text">
+              High-risk drivers may have accidents, tickets, or lapses in
+              coverage. Insurance options are still available, often with higher
+              premiums, until driving records improve in the area over time.
+            </p>
+          </div>
+        </div>
+
+        <!-- Teen & Young -->
+        <div class="col-12 col-sm-6 col-lg-3 coverage__col">
+          <div class="coverage__item">
+            <span class="coverage__icon" aria-hidden="true">👦</span>
+            <h3 class="coverage__heading">
+              <a href="#" class="coverage__link">Teen &amp; Young Drivers</a>
+            </h3>
+            <p class="coverage__text">
+              Teen and young drivers usually pay higher rates due to limited
+              experience. Good student discounts and safe driving programs can help
+              reduce costs while building responsible driving habits early on.
+            </p>
+          </div>
+        </div>
+
+        <!-- Rideshare -->
+        <div class="col-12 col-sm-6 col-lg-3 coverage__col">
+          <div class="coverage__item">
+            <span class="coverage__icon" aria-hidden="true">🚖</span>
+            <h3 class="coverage__heading">
+              <a href="#" class="coverage__link">Rideshare Drivers (Uber/Lyft)</a>
+            </h3>
+            <p class="coverage__text">
+              Rideshare drivers need special coverage because personal
+              policies may not apply while working. Extra protection fills gaps
+              during app use, ensuring safety while earning income daily.
+            </p>
+          </div>
+        </div>
+
+        <!-- Classic & Collector -->
+        <div class="col-12 col-sm-6 col-lg-3 coverage__col">
+          <div class="coverage__item">
+            <span class="coverage__icon" aria-hidden="true">🏎️</span>
+            <h3 class="coverage__heading">
+              <a href="#" class="coverage__link">Classic &amp; Collector Cars</a>
+            </h3>
+            <p class="coverage__text">
+              Classic and collector cars need specialized coverage based on
+              agreed value, not depreciation. This helps protect rare vehicles
+              from damage, theft, or loss while preserving their true market worth.
+            </p>
+          </div>
+        </div>
+
+        <!-- Non-Owner -->
+        <div class="col-12 col-sm-6 col-lg-3 coverage__col">
+          <div class="coverage__item">
+            <span class="coverage__icon" aria-hidden="true">🙋</span>
+            <h3 class="coverage__heading">
+              <a href="#" class="coverage__link">Non-Owner Auto Insurance</a>
+            </h3>
+            <p class="coverage__text">
+              Non-owner insurance covers drivers who do not own a
+              vehicle but still drive occasionally. It provides liability
+              protection when using borrowed or rented cars without
+              full-time ownership costs.
+            </p>
+          </div>
+        </div>
+
+        <!-- Car illustration (spans the remaining two columns) -->
+        <div class="col-12 col-lg-6 coverage__media-col">
+          <img class="coverage__image" src="assets/images/houston-tx/drivers.png"
+            alt="Line-art illustration of a vintage car with luggage on top, a person driving and a dog looking out the back window" />
+        </div>
       </div>
+    </div>
+  </section>
+  <!-- Special Coverage Section End -->
 
-      <div class="row special-coverage-grid">
-        <div class="col-lg-3 col-md-6">
-          <article class="special-coverage-card">
-            <span class="special-coverage-card__icon" aria-hidden="true">
-              <img src="assets/images/houston-tx/plane.png" alt="" class="special-coverage-card__icon-image">
-            </span>
-            <h3 class="special-coverage-card__title">SR-22 Insurance</h3>
-            <p class="special-coverage-card__text mb-0">SR-22 insurance is required for drivers who must demonstrate financial responsibility after a violation. It is not a policy but a certificate filed with the state to reinstate or maintain driving privileges.</p>
-          </article>
+  <section class="risks">
+    <div class="container-fluid risks__container">
+      <h2 class="risks__title">Houston-Specific Driving Risks You Should Know</h2>
+
+      <!-- Decorative RISK badge -->
+      <img class="risks__decor" src="assets/images/houston-tx/risk.png" alt="" aria-hidden="true" />
+
+      <div class="row risks__grid">
+        <!-- 01 -->
+        <div class="col-12 col-lg-6 risks__col">
+          <div class="risks__item">
+            <span class="risks__number">01</span>
+            <h3 class="risks__heading">Houston Traffic &amp; Commute Patterns</h3>
+            <p class="risks__text">
+              Houston ranks <a href="#" class="risks__link">among the top 5 most congested cities in the U.S.</a>, with
+              major delays on I-45, I-10, US-59, and the 610 Loop. These high-traffic
+              corridors create daily stop-and-go driving conditions that increase
+              accident exposure and claim frequency. More time spent commuting
+              increases the risk of collisions, which directly raises insurance premiums
+              for drivers across the city. This is why comprehensive coverage matters
+              more in Houston than in smaller Texas cities with lighter traffic.
+            </p>
+          </div>
         </div>
 
-        <div class="col-lg-3 col-md-6">
-          <article class="special-coverage-card">
-            <span class="special-coverage-card__icon" aria-hidden="true">
-              <img src="assets/images/houston-tx/taxi.png" alt="" class="special-coverage-card__icon-image">
-            </span>
-            <h3 class="special-coverage-card__title">High-Risk Drivers</h3>
-            <p class="special-coverage-card__text mb-0">High-risk drivers may have accidents, tickets, or lapses in coverage. Insurance options are still available, often with higher premiums, until driving records improve in the area over time.</p>
-          </article>
+        <!-- 02 -->
+        <div class="col-12 col-lg-6 risks__col">
+          <div class="risks__item">
+            <span class="risks__number">02</span>
+            <h3 class="risks__heading">Weather Risks in Houston, TX</h3>
+            <p class="risks__text">
+              Houston&apos;s weather risks are a <a href="#" class="risks__link">major factor behind higher insurance
+                costs</a>, with frequent hurricanes, heavy rainfall, flash flooding, and
+              hailstorms affecting drivers year-round. Sudden storms can damage
+              vehicles, flood roads, and increase accident rates during extreme
+              weather events. High humidity and unpredictable weather patterns also
+              contribute to long-term wear and to the risk of exposure. These
+              conditions lead to higher premiums because claims are more frequent
+              and often more expensive in Houston.
+            </p>
+          </div>
         </div>
 
-        <div class="col-lg-3 col-md-6">
-          <article class="special-coverage-card">
-            <span class="special-coverage-card__icon special-coverage-card__icon--emoji" aria-hidden="true">👦</span>
-            <h3 class="special-coverage-card__title">Teen &amp; Young<br>Drivers</h3>
-            <p class="special-coverage-card__text mb-0">Teen and young drivers usually pay higher rates due to limited experience. Good student discounts and safe driving programs can help reduce costs while building responsible driving habits early on.</p>
-          </article>
+        <!-- 03 -->
+        <div class="col-12 col-lg-6 risks__col">
+          <div class="risks__item">
+            <span class="risks__number">03</span>
+            <h3 class="risks__heading">Vehicle Theft Rates by Neighborhood in Houston, TX</h3>
+            <p class="risks__text">
+              Houston vehicle theft rates vary significantly by neighborhood, with
+              higher risk often seen in dense urban and high-traffic areas. Central
+              Houston, Downtown, and parts of East Houston report more frequent
+              thefts due to heavy parking turnover, apartment complexes, and easy
+              highway access for quick getaways. These factors push comprehensive
+              coverage premiums higher in affected ZIP codes across the city.
+            </p>
+          </div>
         </div>
 
-        <div class="col-lg-3 col-md-6">
-          <article class="special-coverage-card">
-            <span class="special-coverage-card__icon" aria-hidden="true">
-              <img src="assets/images/houston-tx/truck.png" alt="" class="special-coverage-card__icon-image">
-            </span>
-            <h3 class="special-coverage-card__title">Rideshare Drivers<br>(Uber/Lyft)</h3>
-            <p class="special-coverage-card__text mb-0">Rideshare drivers need special coverage because personal policies may not apply while working. Extra protection fills gaps during app use, ensuring safety while earning income daily.</p>
-          </article>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <article class="special-coverage-card">
-            <span class="special-coverage-card__icon" aria-hidden="true">
-              <img src="assets/images/houston-tx/car.png" alt="" class="special-coverage-card__icon-image">
-            </span>
-            <h3 class="special-coverage-card__title">Classic &amp; Collector<br>Cars</h3>
-            <p class="special-coverage-card__text mb-0">Classic and collector cars need specialized coverage based on agreed value, not depreciation. This helps protect rare vehicles from damage, theft, or loss while preserving their true market worth.</p>
-          </article>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <article class="special-coverage-card">
-            <span class="special-coverage-card__icon special-coverage-card__icon--emoji" aria-hidden="true">🧑‍🦱</span>
-            <h3 class="special-coverage-card__title">Non-Owner Auto<br>Insurance</h3>
-            <p class="special-coverage-card__text mb-0">Non-owner insurance covers drivers who do not own a vehicle but still drive occasionally. It provides liability protection when using borrowed or rented cars without full-time ownership costs.</p>
-          </article>
-        </div>
-
-        <div class="col-lg-6 col-md-12">
-          <div class="special-coverage-illustration">
-            <img src="assets/images/houston-tx/drivers.png" alt="Car with luggage illustration" class="special-coverage-illustration__image">
+        <!-- 04 -->
+        <div class="col-12 col-lg-6 risks__col">
+          <div class="risks__item">
+            <span class="risks__number">04</span>
+            <h3 class="risks__heading">Uninsured Driver Statistics for Houston, TX</h3>
+            <p class="risks__text">
+              Texas&apos;s uninsured driver rate is estimated at <a href="#" class="risks__link">around 20% of
+                motorists</a>,
+              meaning roughly 1 in 5 vehicles on the road may have no coverage.
+              Statewide figures show Texas also ranks among the highest in the U.S.
+              This increases financial risk in the event of an accident, as injured drivers
+              may be left covering costs themselves. Uninsured motorist coverage is
+              strongly recommended for Houston drivers.
+            </p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  
-  <!-- get covered -->
+  <!-- Neighborhoods Section Start -->
+  <section class="houston-neighborhoods-section">
+    <div class="container">
+      <div class="houston-neighborhoods-section__inner">
+        <h2 class="houston-neighborhoods-section__title">Neighborhoods &amp; Areas We Serve in Houston, TX</h2>
+
+        <div class="houston-neighborhoods-section__table">
+          @for (row of neighborhoodsRows; track row[0]; let i = $index) {
+          <div class="houston-neighborhoods-section__row" [class.houston-neighborhoods-section__row--alt]="i % 2 === 1">
+            @for (item of row; track item) {
+            <div class="houston-neighborhoods-section__cell">{{ item }}</div>
+            }
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Neighborhoods Section End -->
+
+  <!-- FAQ Section Start -->
+  <section class="faq">
+    <div class="container-fluid faq__container">
+      <h2 class="faq__title">Frequently Asked Questions — Auto Insurance in Houston, TX</h2>
+
+      <div class="faq__list">
+        @for (item of faqItems; track item.question; let i = $index) {
+        <div class="faq__entry">
+          <div class="faq__item" [class.faq__item--open]="openFaqIndex === i">
+            <button class="faq__question" type="button" [attr.aria-expanded]="openFaqIndex === i"
+              (click)="toggleFaq(i)">
+              <span class="faq__question-text">{{ item.question }}</span>
+              <span class="faq__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path d="M6 9l6 6 6-6" stroke="#1f1f24" stroke-width="2.2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </span>
+            </button>
+          </div>
+
+          @if (openFaqIndex === i) {
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>{{ item.answer }}</p>
+            </div>
+          </div>
+          }
+        </div>
+        }
+      </div>
+
+      <!-- Decorative question mark -->
+      <div class="faq__decor" aria-hidden="true">
+        <img src="assets/images/houston-tx/question.png" alt="" class="faq__decor-image">
+      </div>
+    </div>
+  </section>
+  <!-- FAQ Section End -->
+
+  <section class="espanol">
+    <div class="container-fluid espanol__container">
+      <h2 class="espanol__title">Hablamos Español — Seguro de Auto en Houston, TX</h2>
+
+      <div class="row align-items-center espanol__row">
+        <!-- Illustration -->
+        <div class="col-12 col-lg-4 espanol__media-col">
+          <img class="espanol__image" src="assets/images/houston-tx/language.png"
+            alt="Illustration of a person holding a tablet with a U.S. flag and ABC blocks representing bilingual support" />
+        </div>
+
+        <!-- Text -->
+        <div class="col-12 col-lg-8 espanol__text-col">
+          <p class="espanol__text">
+            At <a href="#" class="espanol__link">A-State Insurance</a>, we understand the importance of speaking your
+            language. We offer auto
+            insurance with full Spanish support so you can understand every detail of your coverage without
+            confusion. Our agents compare multiple companies to find the best protection at the best price.
+            Whether you need basic liability or full coverage, we guide you step by step so you can make
+            clear and confident decisions. Reliable protection for your car and family in Houston today with
+            trusted local help.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Get Covered Section Start -->
   <div class="topBanner getCovver">
     <div class="container">
       <div class="topSub">
@@ -1028,22 +1384,29 @@
           <section class="cover-quote-shell">
             <div class="cover-quote-shell__top">
               <div class="cover-quote-shell__visual">
-                <img src="assets/images/car-insurance/poster.png" alt="Car insurance quote visual" class="cover-quote-shell__visual-image">
+                <img src="assets/images/houston-tx/coverd-poster.png" alt="Car insurance quote visual"
+                  class="cover-quote-shell__visual-image">
               </div>
 
               <div class="cover-quote-shell__content">
                 <h2 class="cover-quote-shell__title mb-0">Get Your Free Car Insurance Quote in Houston, TX — Today</h2>
                 <p class="cover-quote-shell__copy mb-0">
-                  Getting a <a href="/get-auto-quote" class="cover-quote-shell__link">free car insurance quote</a> in Houston, TX, is quick and simple with A-State Insurance. Instead of calling multiple companies one by one, we compare rates from different trusted carriers for you in minutes. Just share your details and coverage needs, and our licensed agents will find the most affordable options available. Whether you need basic liability or full coverage, we help you save time, reduce stress, and get the right protection for your vehicle in Houston today with no obligation.
+                  Getting a <a href="/get-auto-quote" class="cover-quote-shell__link">free car insurance quote</a> in
+                  Houston, TX, is quick and simple with A-State Insurance. Instead of calling multiple companies one by
+                  one, we compare rates from different trusted carriers for you in minutes. Just share your details and
+                  coverage needs, and our licensed agents will find the most affordable options available. Whether you
+                  need basic liability or full coverage, we help you save time, reduce stress, and get the right
+                  protection for your vehicle in Houston today with no obligation.
                 </p>
               </div>
             </div>
 
-            <div class="banner-quote-card">
+            <div class="coverd-quote-card">
               <div class="quote-options">
                 @for (item of chips; track item.name) {
-                <button type="button" class="quote-option" *ngIf="item.name" [class.selected]="selectedChip === item.name"
-                  [attr.aria-pressed]="selectedChip === item.name" (click)="selectChip(item.name)">
+                <button type="button" class="quote-option" *ngIf="item.name"
+                  [class.selected]="selectedChip === item.name" [attr.aria-pressed]="selectedChip === item.name"
+                  (click)="selectChip(item.name)">
                   <span class="icon-badge">
                     <span class="icon-burst"></span>
                     <img [src]="item.image" [alt]="item.name | translate" class="quote-option-image" />
@@ -1057,8 +1420,8 @@
               </div>
 
               <div class="quote-form-row">
-                <input type="text" [placeholder]="'AUTO_INSURANCE.BANNER.FORM.FULL_NAME' | translate" class="form-control"
-                  [value]="fullName" (input)="fullName = $any($event.target).value" />
+                <input type="text" [placeholder]="'AUTO_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
+                  class="form-control" [value]="fullName" (input)="fullName = $any($event.target).value" />
                 <input type="tel" appPhoneFormat [placeholder]="'AUTO_INSURANCE.BANNER.FORM.PHONE' | translate"
                   class="form-control" [value]="phone" (input)="phone = $any($event.target).value" />
                 <button class="quote-submit" [disabled]="!selectedChip" (click)="goToSelectedQuote()">
@@ -1071,6 +1434,7 @@
       </div>
     </div>
   </div>
+  <!-- Get Covered Section End -->
 
   <!-- footuper -->
   <app-foot-upper></app-foot-upper>
