@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Language } from '../../../services/language';
+import { QuoteLeadCaptureService } from '../../../services/quote-lead-capture.service';
 
 @Component({
   selector: 'app-houston-tx',
@@ -12,8 +12,8 @@ import { Language } from '../../../services/language';
 export class HoustonTx {
   constructor(
     public languageService: Language,
-    private router: Router,
     private translate: TranslateService,
+    private quoteLeadCaptureService: QuoteLeadCaptureService,
   ) {
     this.buildTableOfContents();
     this.languageService.getLanguageChange().subscribe(() => this.buildTableOfContents());
@@ -177,24 +177,24 @@ export class HoustonTx {
     this.openFaqIndex = this.openFaqIndex === index ? -1 : index;
   }
 
-  goToSelectedQuote() {
+  async goToSelectedQuote() {
     const selected = this.chips.find((chip) => chip.name === this.selectedChip);
     if (!selected) {
       return;
     }
 
-    const queryParams: Record<string, string> = {};
-    const trimmedName = this.fullName.trim();
-    const trimmedPhone = this.phone.trim();
+    const isSubmitted = await this.quoteLeadCaptureService.submitLead({
+      selected_chip: this.translate.instant(selected.name),
+      full_name: this.fullName,
+      phone_number: this.phone,
+    });
 
-    if (trimmedName) {
-      queryParams['fullName'] = trimmedName;
+    if (!isSubmitted) {
+      return;
     }
 
-    if (trimmedPhone) {
-      queryParams['phone'] = trimmedPhone;
-    }
-
-    this.router.navigate(this.getRoute(selected.routeKey), { queryParams });
+    this.selectedChip = null;
+    this.fullName = '';
+    this.phone = '';
   }
 }

@@ -62,7 +62,7 @@
               (input)="phone = $any($event.target).value" />
           </div>
 
-          <button class="btn" [disabled]="!selectedChip" (click)="goToSelectedQuote()">
+          <button class="btn" [disabled]="!selectedChip || !fullName.trim() || !phone.trim()" (click)="goToSelectedQuote()">
             {{ 'HOME.BANNER.FORM.BUTTON' | translate }}
           </button>
         </div>
@@ -407,7 +407,7 @@
               [value]="phone"
               (input)="phone = $any($event.target).value" />
           </div>
-          <button class="btn" [disabled]="!selectedChip" (click)="goToSelectedQuote()">{{ 'HOME.COVERDBANNER.FORM.BUTTON' | translate
+          <button class="btn" [disabled]="!selectedChip || !fullName.trim() || !phone.trim()" (click)="goToSelectedQuote()">{{ 'HOME.COVERDBANNER.FORM.BUTTON' | translate
             }}</button>
         </div>
       </div>

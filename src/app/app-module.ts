@@ -89,6 +89,7 @@ import { TranslateHtmlPipe } from './services/translate-html.pipe';
 import { AsyncPipe } from '@angular/common';
 import { PhoneFormatDirective } from './directives/phone-format.directive';
 import { ChipNavigationDirective } from './directives/chip-navigation.directive';
+import { BannerButtonNoRedirectDirective } from './directives/banner-button-no-redirect.directive';
 import { UrlSerializer } from '@angular/router';
 import { TrailingSlashUrlSerializer } from './services/trailing-slash-url-serializer';
 import { TrailingSlashRedirect } from './services/trailing-slash-redirect';
@@ -178,6 +179,7 @@ import { HoustonTx } from './pages/auto-insurance/houston-tx/houston-tx';
     HoustonTx,
     PhoneFormatDirective,
     ChipNavigationDirective,
+    BannerButtonNoRedirectDirective,
   ],
   imports: [
     BrowserModule,

@@ -31,7 +31,7 @@
             <input type="tel" appPhoneFormat [placeholder]="'HOME.BANNER.FORM.PHONE' | translate" class="form-control" />
           </div>
 
-          <button class="btn" [routerLink]="getRoute('getAQuote')">
+          <button class="btn" type="button" appBannerQuoteSubmit>
             {{ 'HOME.BANNER.FORM.BUTTON' | translate }}
           </button>
         </div>
@@ -124,7 +124,7 @@
                 <a class="btn btn-yellow"  href="{{ loc?.directionsLink }}" target="_blank" rel="noopener noreferrer">
                   {{ loc.detailPage?.session1?.ctaButtons[0] }}
                 </a>
-                <button class="btn btn-yellow" [routerLink]="getRoute('getAQuote')">
+                <button class="btn btn-yellow" type="button">
                   {{ loc.detailPage?.session1?.ctaButtons[1] }}
                 </button>
                 <a href class="btn btn-red" href="tel:{{ loc.detailPage?.session1?.contact?.phone }}">
