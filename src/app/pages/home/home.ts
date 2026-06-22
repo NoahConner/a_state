@@ -27,6 +27,7 @@ export class Home {
   selectedChip: string | null = null;
   fullName = '';
   phone = '';
+  isSubmitting = false;
 
   getRoute(page: string) {
     return this.languageService.getRoute(page);
@@ -37,23 +38,33 @@ export class Home {
   }
 
   async goToSelectedQuote() {
+    if (this.isSubmitting) {
+      return;
+    }
+
     const selected = this.chips.find((chip) => chip.name === this.selectedChip);
     if (!selected) {
       return;
     }
 
-    const isSubmitted = await this.quoteLeadCaptureService.submitLead({
-      selected_chip: this.translate.instant(selected.name),
-      full_name: this.fullName,
-      phone_number: this.phone,
-    });
+    this.isSubmitting = true;
 
-    if (!isSubmitted) {
-      return;
+    try {
+      const isSubmitted = await this.quoteLeadCaptureService.submitLead({
+        selected_chip: this.translate.instant(selected.name),
+        full_name: this.fullName,
+        phone_number: this.phone,
+      });
+
+      if (!isSubmitted) {
+        return;
+      }
+
+      this.selectedChip = null;
+      this.fullName = '';
+      this.phone = '';
+    } finally {
+      this.isSubmitting = false;
     }
-
-    this.selectedChip = null;
-    this.fullName = '';
-    this.phone = '';
   }
 }

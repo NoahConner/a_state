@@ -7,6 +7,8 @@ import { QuoteLeadCaptureService } from '../services/quote-lead-capture.service'
 })
 export class BannerButtonNoRedirectDirective implements AfterViewInit, OnDestroy {
   private cleanupListeners: Array<() => void> = [];
+  private isSubmitting = false;
+  private defaultButtonText = '';
 
   constructor(
     private elementRef: ElementRef<HTMLElement>,
@@ -19,6 +21,8 @@ export class BannerButtonNoRedirectDirective implements AfterViewInit, OnDestroy
     if (!bannerContainer || !this.hasBannerForm(bannerContainer)) {
       return;
     }
+
+    this.defaultButtonText = this.elementRef.nativeElement.textContent?.trim() || 'Get a Quote';
 
     this.cleanupListeners.push(
       this.renderer.listen(bannerContainer, 'click', () => {
@@ -49,6 +53,10 @@ export class BannerButtonNoRedirectDirective implements AfterViewInit, OnDestroy
     event.preventDefault();
     event.stopImmediatePropagation();
 
+    if (this.isSubmitting) {
+      return;
+    }
+
     const selectedChip = bannerContainer.querySelector<HTMLElement>(
       '.chip.selected, .quote-option.selected',
     );
@@ -60,25 +68,32 @@ export class BannerButtonNoRedirectDirective implements AfterViewInit, OnDestroy
       return;
     }
 
-    const isSubmitted = await this.quoteLeadCaptureService.submitLead({
-      selected_chip: selectedChip.textContent?.trim() || '',
-      full_name: inputs[0]?.value || '',
-      phone_number: inputs[1]?.value || '',
-    });
+    this.isSubmitting = true;
+    this.setButtonLoadingState(true);
 
-    if (!isSubmitted) {
-      return;
+    try {
+      const isSubmitted = await this.quoteLeadCaptureService.submitLead({
+        selected_chip: selectedChip.textContent?.trim() || '',
+        full_name: inputs[0]?.value || '',
+        phone_number: inputs[1]?.value || '',
+      });
+
+      if (!isSubmitted) {
+        return;
+      }
+
+      selectedChip.classList.remove('selected');
+      selectedChip.setAttribute('aria-pressed', 'false');
+
+      inputs.forEach((input) => {
+        input.value = '';
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+      });
+    } finally {
+      this.isSubmitting = false;
+      this.setButtonLoadingState(false);
+      this.updateDisabledState();
     }
-
-    selectedChip?.classList.remove('selected');
-    selectedChip?.setAttribute('aria-pressed', 'false');
-
-    inputs.forEach((input) => {
-      input.value = '';
-      input.dispatchEvent(new Event('input', { bubbles: true }));
-    });
-
-    this.updateDisabledState();
   }
 
   private updateDisabledState() {
@@ -99,10 +114,27 @@ export class BannerButtonNoRedirectDirective implements AfterViewInit, OnDestroy
       !!inputs[0]?.value.trim() &&
       !!inputs[1]?.value.trim();
 
-    this.renderer.setProperty(this.elementRef.nativeElement, 'disabled', !hasAllValues);
+    this.renderer.setProperty(
+      this.elementRef.nativeElement,
+      'disabled',
+      this.isSubmitting || !hasAllValues,
+    );
   }
 
   private hasBannerForm(container: Element) {
     return !!container.querySelector('.inps input, .quote-form-row input');
+  }
+
+  private setButtonLoadingState(isLoading: boolean) {
+    this.renderer.setProperty(
+      this.elementRef.nativeElement,
+      'textContent',
+      isLoading ? 'Loading...' : this.defaultButtonText,
+    );
+    this.renderer.setAttribute(
+      this.elementRef.nativeElement,
+      'aria-busy',
+      isLoading ? 'true' : 'false',
+    );
   }
 }

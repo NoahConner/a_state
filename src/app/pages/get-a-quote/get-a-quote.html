@@ -17,7 +17,8 @@
             <div class="card-header" [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD1.TITLE' | translateHtml | async"></div>
             <div class="card-body">
               <p [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD1.DESC' | translateHtml | async"></p>
-              <button class="btn quote-btn" type="button">
+              <button class="btn quote-btn"
+                [routerLink]="languageService.getCurrentLanguage() === 'en' ? '/auto-insurance/quote' : '/es/seguros-de-auto/cotizacion'">
                 {{ 'GET_QUOTE.QUOTE_TYPE.CARD1.BUTTON' | translate }}
               </button>
             </div>
@@ -29,7 +30,8 @@
     <div class="card-header" [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD2.TITLE' | translateHtml | async"></div>
     <div class="card-body">
       <p [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD2.DESC' | translateHtml | async"></p>
-      <button class="btn quote-btn" type="button">
+      <button class="btn quote-btn"
+        [routerLink]="languageService.getCurrentLanguage() === 'en' ? '/homeowners-insurance/quote' : '/es/seguros-de-vivienda/cotizacion'">
         {{ 'GET_QUOTE.QUOTE_TYPE.CARD2.BUTTON' | translate }}
       </button>
     </div>
@@ -41,7 +43,8 @@
     <div class="card-header" [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD3.TITLE' | translateHtml | async"></div>
     <div class="card-body">
       <p [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD3.DESC' | translateHtml | async"></p>
-      <button class="btn quote-btn" type="button">
+      <button class="btn quote-btn"
+        [routerLink]="languageService.getCurrentLanguage() === 'en' ? '/commercial-insurance/quote' : '/es/seguros-comerciales/cotizacion'">
         {{ 'GET_QUOTE.QUOTE_TYPE.CARD3.BUTTON' | translate }}
       </button>
     </div>
@@ -53,7 +56,8 @@
     <div class="card-header" [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD4.TITLE' | translateHtml | async"></div>
     <div class="card-body">
       <p [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD4.DESC' | translateHtml | async"></p>
-      <button class="btn quote-btn" type="button">
+      <button class="btn quote-btn"
+        [routerLink]="languageService.getCurrentLanguage() === 'en' ? '/life-insurance/quote' : '/es/seguros-de-vida/cotizacion'">
         {{ 'GET_QUOTE.QUOTE_TYPE.CARD4.BUTTON' | translate }}
       </button>
     </div>
@@ -65,7 +69,8 @@
     <div class="card-header" [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD5.TITLE' | translateHtml | async"></div>
     <div class="card-body">
       <p [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD5.DESC' | translateHtml | async"></p>
-      <button class="btn quote-btn" type="button">
+      <button class="btn quote-btn"
+        [routerLink]="languageService.getCurrentLanguage() === 'en' ? '/health-insurance/quote' : '/es/seguros-de-salud/cotizacion'">
         {{ 'GET_QUOTE.QUOTE_TYPE.CARD5.BUTTON' | translate }}
       </button>
     </div>
@@ -77,7 +82,8 @@
     <div class="card-header" [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD6.TITLE' | translateHtml | async"></div>
     <div class="card-body">
       <p [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD6.DESC' | translateHtml | async"></p>
-      <button class="btn quote-btn" type="button">
+      <button class="btn quote-btn"
+        [routerLink]="languageService.getCurrentLanguage() === 'en' ? '/surety-bonds/quote' : '/es/fianzas/cotizacion'">
         {{ 'GET_QUOTE.QUOTE_TYPE.CARD6.BUTTON' | translate }}
       </button>
     </div>
@@ -89,7 +95,8 @@
             <div class="card-header" [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD7.TITLE' | translateHtml | async"></div>
             <div class="card-body">
               <p [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD7.DESC' | translateHtml | async"></p>
-               <button class="btn quote-btn" type="button">
+               <button class="btn quote-btn"
+                [routerLink]="languageService.getCurrentLanguage() === 'en' ? '/request-a-custom-quote' : '/es/solicitar-una-cotizacion-personalizada'">
                 {{ 'GET_QUOTE.QUOTE_TYPE.CARD7.BUTTON' | translate }}
               </button>
             </div>

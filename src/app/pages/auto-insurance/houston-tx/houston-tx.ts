@@ -113,6 +113,7 @@ export class HoustonTx {
   selectedChip: string | null = null;
   fullName = '';
   phone = '';
+  isSubmitting = false;
 
   private wrapHighlight(key: string) {
     return `<span class="toc-highlight">${this.translate.instant(key)}</span>`;
@@ -178,23 +179,33 @@ export class HoustonTx {
   }
 
   async goToSelectedQuote() {
+    if (this.isSubmitting) {
+      return;
+    }
+
     const selected = this.chips.find((chip) => chip.name === this.selectedChip);
     if (!selected) {
       return;
     }
 
-    const isSubmitted = await this.quoteLeadCaptureService.submitLead({
-      selected_chip: this.translate.instant(selected.name),
-      full_name: this.fullName,
-      phone_number: this.phone,
-    });
+    this.isSubmitting = true;
 
-    if (!isSubmitted) {
-      return;
+    try {
+      const isSubmitted = await this.quoteLeadCaptureService.submitLead({
+        selected_chip: this.translate.instant(selected.name),
+        full_name: this.fullName,
+        phone_number: this.phone,
+      });
+
+      if (!isSubmitted) {
+        return;
+      }
+
+      this.selectedChip = null;
+      this.fullName = '';
+      this.phone = '';
+    } finally {
+      this.isSubmitting = false;
     }
-
-    this.selectedChip = null;
-    this.fullName = '';
-    this.phone = '';
   }
 }
