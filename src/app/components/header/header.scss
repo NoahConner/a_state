@@ -127,8 +127,8 @@
     gap: 1.15rem;
 
     .angled-box {
-    width: 868px;
-          height: 42px;
+      width: 868px;
+      height: 42px;
       border-radius: 6px;
       position: relative;
       overflow: hidden;
@@ -261,7 +261,7 @@
     padding: 7px 14px 7px 8px;
     border-radius: 999px;
     // background: rgba(75, 75, 75, 0.92);
-        margin-top: 4px;
+    margin-top: 4px;
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
@@ -314,7 +314,10 @@
     visibility: hidden;
     transform: translateY(10px);
     pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      visibility 0.2s ease;
     z-index: 1000;
   }
 
@@ -409,10 +412,6 @@
 
   /* Mobile Fix */
   @media (max-width: 991px) {
-    #mainNavbar {
-      display: block !important;
-    }
-
     .dropdown-menu,
     .dropdown-submenu .submenu {
       position: relative !important;
@@ -773,6 +772,9 @@
 }
 
 @media only screen and (max-width: 560px) {
+  .headerMain #mainNavbar {
+    display: none !important;
+  }
   .homeMain {
     .mailerMain {
       .mailBoxer {
