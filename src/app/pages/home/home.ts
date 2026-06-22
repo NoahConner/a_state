@@ -1,5 +1,5 @@
 import { Language } from '../../services/language';
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { QuoteLeadCaptureService } from '../../services/quote-lead-capture.service';
 
@@ -14,6 +14,7 @@ export class Home {
     public languageService: Language,
     private translate: TranslateService,
     private quoteLeadCaptureService: QuoteLeadCaptureService,
+    private changeDetectorRef: ChangeDetectorRef,
   ) {}
 
   chips = [
@@ -60,11 +61,17 @@ export class Home {
         return;
       }
 
-      this.selectedChip = null;
-      this.fullName = '';
-      this.phone = '';
+      this.resetQuoteForm();
     } finally {
       this.isSubmitting = false;
+      this.changeDetectorRef.detectChanges();
     }
+  }
+
+  private resetQuoteForm() {
+    this.selectedChip = null;
+    this.fullName = '';
+    this.phone = '';
+    this.changeDetectorRef.detectChanges();
   }
 }
