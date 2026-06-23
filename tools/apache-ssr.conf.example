@@ -1,0 +1,40 @@
+# Example Apache vhost for Angular SSR on EC2.
+# Requires: sudo a2enmod proxy proxy_http headers ssl rewrite
+# Place in /etc/apache2/sites-available/astateinsurance.conf and enable the site.
+
+<VirtualHost *:80>
+    ServerName astateinsurance.com
+    ServerAlias www.astateinsurance.com
+    Redirect permanent / https://www.astateinsurance.com/
+</VirtualHost>
+
+<VirtualHost *:443>
+    ServerName www.astateinsurance.com
+
+    SSLEngine on
+    SSLCertificateFile /etc/letsencrypt/live/astateinsurance.com/fullchain.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/astateinsurance.com/privkey.pem
+
+    ProxyPreserveHost On
+    ProxyRequests Off
+
+    RequestHeader set X-Forwarded-Proto "https"
+    RequestHeader set X-Forwarded-Host "www.astateinsurance.com"
+
+    ProxyPass / http://127.0.0.1:4000/
+    ProxyPassReverse / http://127.0.0.1:4000/
+
+    ErrorLog ${APACHE_LOG_DIR}/astateinsurance-error.log
+    CustomLog ${APACHE_LOG_DIR}/astateinsurance-access.log combined
+</VirtualHost>
+
+# Redirect non-www HTTPS to www (optional second vhost if you serve both on 443)
+<VirtualHost *:443>
+    ServerName astateinsurance.com
+
+    SSLEngine on
+    SSLCertificateFile /etc/letsencrypt/live/astateinsurance.com/fullchain.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/astateinsurance.com/privkey.pem
+
+    Redirect permanent / https://www.astateinsurance.com/
+</VirtualHost>

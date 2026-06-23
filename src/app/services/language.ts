@@ -1,4 +1,5 @@
-import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID, Optional } from '@angular/core';
+import { REQUEST } from '@angular/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
@@ -24,6 +25,7 @@ export class Language {
     @Inject(PLATFORM_ID) private platformId: Object,
     private router: Router,
     @Inject(DOCUMENT) private document: Document,
+    @Optional() @Inject(REQUEST) private request: Request | null,
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
     this.initLanguage();
@@ -38,11 +40,18 @@ export class Language {
   }
 
   private getPathname(url?: string): string {
+    if (url) {
+      return url.split('?')[0].split('#')[0];
+    }
+
+    if (!this.isBrowser && this.request?.url) {
+      return new URL(this.request.url).pathname;
+    }
+
     const raw =
-      url ??
-      (this.isBrowser && this.router.url === '/' && window.location.pathname !== '/'
+      this.isBrowser && this.router.url === '/' && window.location.pathname !== '/'
         ? window.location.pathname
-        : this.router.url);
+        : this.router.url;
 
     return raw.split('?')[0].split('#')[0];
   }

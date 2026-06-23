@@ -1,6 +1,8 @@
-import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { APP_INITIALIZER, NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
+import { firstValueFrom } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { TranslateModule } from '@ngx-translate/core';
@@ -96,6 +98,18 @@ import { TrailingSlashRedirect } from './services/trailing-slash-redirect';
 import { TitleStrategy } from '@angular/router';
 import { SeoTitleStrategy } from './services/seo-title-strategy';
 import { HoustonTx } from './pages/auto-insurance/houston-tx/houston-tx';
+import { Language } from './services/language';
+
+export function initializeTranslations(
+  translate: TranslateService,
+  language: Language,
+): () => Promise<unknown> {
+  return () => {
+    const lang = language.getLanguageFromUrl();
+    translate.setDefaultLang('en');
+    return firstValueFrom(translate.use(lang));
+  };
+}
 
 @NgModule({
   declarations: [
@@ -184,25 +198,29 @@ import { HoustonTx } from './pages/auto-insurance/houston-tx/houston-tx';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
     AsyncPipe,
     TranslateHtmlPipe,
     // ✅ Required for NgModule apps
     TranslateModule.forRoot({
-      defaultLanguage: 'en',
+      fallbackLang: 'en',
     }),
   ],
   providers: [
+    provideHttpClient(withFetch()),
     provideBrowserGlobalErrorListeners(),
     provideClientHydration(withEventReplay()),
     { provide: UrlSerializer, useClass: TrailingSlashUrlSerializer },
     { provide: TitleStrategy, useClass: SeoTitleStrategy },
-
-    // ✅ Correct loader for v17
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeTranslations,
+      deps: [TranslateService, Language],
+      multi: true,
+    },
     provideTranslateHttpLoader({
-      prefix: './assets/i18n/',
+      prefix: '/assets/i18n/',
       suffix: '.json',
     }),
   ],

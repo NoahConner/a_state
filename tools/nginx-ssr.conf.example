@@ -1,0 +1,50 @@
+# Example nginx config for Angular SSR on EC2.
+# Copy to /etc/nginx/sites-available/astateinsurance and symlink into sites-enabled.
+
+upstream astate_ssr {
+    server 127.0.0.1:4000;
+    keepalive 64;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name astateinsurance.com www.astateinsurance.com;
+
+    # Redirect HTTP to HTTPS (adjust cert paths for your setup).
+    return 301 https://www.astateinsurance.com$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name astateinsurance.com;
+
+    ssl_certificate     /etc/letsencrypt/live/astateinsurance.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/astateinsurance.com/privkey.pem;
+
+    return 301 https://www.astateinsurance.com$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name www.astateinsurance.com;
+
+    ssl_certificate     /etc/letsencrypt/live/astateinsurance.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/astateinsurance.com/privkey.pem;
+
+    client_max_body_size 10m;
+
+    # Proxy everything to the Node SSR server (serves browser assets + renders HTML).
+    location / {
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header Connection "";
+        proxy_pass http://astate_ssr;
+    }
+}

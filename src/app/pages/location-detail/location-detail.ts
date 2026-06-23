@@ -58,15 +58,15 @@ export class LocationDetail implements OnInit {
 
   getIcon(key: string): string {
     const map: any = {
-      auto: 'assets/images/car.png',
-      home: 'assets/images/house.png',
-      commercial: 'assets/images/commercial.png',
-      life: 'assets/images/life.png',
-      health: 'assets/images/health.png',
-      bonds: 'assets/images/secure.png',
+      auto: '/assets/images/car.png',
+      home: '/assets/images/house.png',
+      commercial: '/assets/images/commercial.png',
+      life: '/assets/images/life.png',
+      health: '/assets/images/health.png',
+      bonds: '/assets/images/secure.png',
     };
 
-    return map[key] || 'assets/images/default.png';
+    return map[key] || '/assets/images/default.png';
   }
 
   ngOnInit(): void {
@@ -80,7 +80,7 @@ export class LocationDetail implements OnInit {
   }
 
   getLocationDetail(lang: any) {
-    this.http.get<any[]>('assets/locations.json').subscribe({
+    this.http.get<any[]>('/assets/locations.json').subscribe({
       next: (locations) => {
         const locationList = locations?.[lang] || [];
         const id = this.resolveLocationId();

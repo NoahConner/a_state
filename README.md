@@ -46,10 +46,11 @@ To test for exact duplicate rendered HTML pages:
 npm run build
 ```
 
-2. Start the SSR server:
+2. Build and Start the SSR server:
 
 ```bash
-npm run serve:ssr
+npm run build:ssr
+npm run start:ssr
 ```
 
 3. In another terminal, run:

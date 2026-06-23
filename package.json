@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build:ssr": "ng build --configuration production",
+    "start:ssr": "node dist/myapp/server/server.mjs",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "seo:duplicates": "node tools/check-duplicate-pages.mjs",

@@ -51,18 +51,18 @@ export class CommercialInsurance implements OnInit {
   // Map JSON keys to icons
   getIconForKey(key: string): string {
     const icons: any = {
-      PROFESSIONAL_LIABILITY: 'assets/images/commercial-insurance/liability_license.png',
-      GENERAL_LIABILITY: 'assets/images/commercial-insurance/general_liability.png',
-      WORKERS_COMPENSATION: 'assets/images/commercial-insurance/workers.png',
-      COMMERCIAL_PROPERTY: 'assets/images/commercial-insurance/property.png',
-      COMMERCIAL_AUTO: 'assets/images/commercial-insurance/c_i_auto.png',
-      BUSINESS_OWNER_POLICY: 'assets/images/commercial-insurance/bop.png',
-      EPLI: 'assets/images/commercial-insurance/epl.png',
-      CYBER_LIABILITY: 'assets/images/commercial-insurance/cyber.png',
-      BUILDERS_RISK: 'assets/images/commercial-insurance/builders.png',
-      D_O_LIABILITY: 'assets/images/commercial-insurance/do.png'
+      PROFESSIONAL_LIABILITY: '/assets/images/commercial-insurance/liability_license.png',
+      GENERAL_LIABILITY: '/assets/images/commercial-insurance/general_liability.png',
+      WORKERS_COMPENSATION: '/assets/images/commercial-insurance/workers.png',
+      COMMERCIAL_PROPERTY: '/assets/images/commercial-insurance/property.png',
+      COMMERCIAL_AUTO: '/assets/images/commercial-insurance/c_i_auto.png',
+      BUSINESS_OWNER_POLICY: '/assets/images/commercial-insurance/bop.png',
+      EPLI: '/assets/images/commercial-insurance/epl.png',
+      CYBER_LIABILITY: '/assets/images/commercial-insurance/cyber.png',
+      BUILDERS_RISK: '/assets/images/commercial-insurance/builders.png',
+      D_O_LIABILITY: '/assets/images/commercial-insurance/do.png'
     };
-    return icons[key] || 'assets/images/default.png';
+    return icons[key] || '/assets/images/default.png';
   }
 
   chunkArray(array: any[], size: number) {
