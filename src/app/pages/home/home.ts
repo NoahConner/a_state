@@ -2,6 +2,7 @@ import { Language } from '../../services/language';
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { QuoteLeadCaptureService } from '../../services/quote-lead-capture.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,7 @@ export class Home {
     private translate: TranslateService,
     private quoteLeadCaptureService: QuoteLeadCaptureService,
     private changeDetectorRef: ChangeDetectorRef,
+    private router: Router,
   ) {}
 
   chips = [
@@ -62,6 +64,7 @@ export class Home {
       }
 
       this.resetQuoteForm();
+      await this.router.navigate(this.languageService.getRoute(selected.routeKey));
     } finally {
       this.isSubmitting = false;
       this.changeDetectorRef.detectChanges();

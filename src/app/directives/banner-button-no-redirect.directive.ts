@@ -1,5 +1,7 @@
 import { AfterViewInit, Directive, ElementRef, HostListener, OnDestroy, Renderer2 } from '@angular/core';
+import { Router } from '@angular/router';
 import { QuoteLeadCaptureService } from '../services/quote-lead-capture.service';
+import { Language } from '../services/language';
 
 @Directive({
   selector: 'button[appBannerQuoteSubmit]',
@@ -14,6 +16,8 @@ export class BannerButtonNoRedirectDirective implements AfterViewInit, OnDestroy
     private elementRef: ElementRef<HTMLElement>,
     private quoteLeadCaptureService: QuoteLeadCaptureService,
     private renderer: Renderer2,
+    private router: Router,
+    private languageService: Language,
   ) {}
 
   ngAfterViewInit() {
@@ -89,6 +93,11 @@ export class BannerButtonNoRedirectDirective implements AfterViewInit, OnDestroy
         input.value = '';
         input.dispatchEvent(new Event('input', { bubbles: true }));
       });
+
+      const redirectRoute = this.resolveRedirectRoute(selectedChip);
+      if (redirectRoute) {
+        await this.router.navigate(redirectRoute);
+      }
     } finally {
       this.isSubmitting = false;
       this.setButtonLoadingState(false);
@@ -123,6 +132,58 @@ export class BannerButtonNoRedirectDirective implements AfterViewInit, OnDestroy
 
   private hasBannerForm(container: Element) {
     return !!container.querySelector('.inps input, .quote-form-row input');
+  }
+
+  private resolveRedirectRoute(selectedChip: HTMLElement): string[] | null {
+    const chipKey = selectedChip.getAttribute('data-chip-key') || '';
+
+    const chipRouteMap: Record<string, string> = {
+      'HOME.BANNER.CHIPS.AUTO': 'autoInsurance',
+      'HOME.BANNER.CHIPS.HOMEOWNERS': 'homeInsurance',
+      'HOME.BANNER.CHIPS.COMMERCIAL': 'commercialInsurance',
+      'HOME.BANNER.CHIPS.LIFE': 'lifeInsurance',
+      'HOME.BANNER.CHIPS.HEALTH': 'healthInsurance',
+      'HOME.BANNER.CHIPS.SURETY': 'suretyBondInsurance',
+
+      'AUTO_INSURANCE.BANNER.CHIPS.PERSONAL_CAR': 'carInsurance',
+      'AUTO_INSURANCE.BANNER.CHIPS.COMMERCIAL_AUTO': 'commercialAutoInsurance',
+      'AUTO_INSURANCE.BANNER.CHIPS.RIDESHARE': 'rideshareInsurance',
+      'AUTO_INSURANCE.BANNER.CHIPS.SR22': 'sr22Insurance',
+      'AUTO_INSURANCE.BANNER.CHIPS.RV_MOTORHOME': 'rvInsurance',
+
+      'HOME_INSURANCE.BANNER.CHIPS.CONDO': 'condoInsurance',
+      'HOME_INSURANCE.BANNER.CHIPS.RENTERS': 'rentersInsurance',
+      'HOME_INSURANCE.BANNER.CHIPS.OLDER_HOME': 'manufacturedMobileHomeInsurance',
+
+      'COMMERCIAL_INSURANCE.BANNER.CHIPS.GENERAL_LIABILITY': 'generalLiabilityInsurance',
+      'COMMERCIAL_INSURANCE.BANNER.CHIPS.BUSINESS_OWNERS': 'businessOwnerInsurance',
+      'COMMERCIAL_INSURANCE.BANNER.CHIPS.COMMERCIAL_AUTO': 'commercialAutoInsurance',
+      'COMMERCIAL_INSURANCE.BANNER.CHIPS.WORKERS_COMPENSATION': 'workersCompensationInsurance',
+      'COMMERCIAL_INSURANCE.BANNER.CHIPS.PROFESSIONAL_LIABILITY': 'professionalLiabilityInsurance',
+
+      'LIFE_INSURANCE.BANNER.CHIPS.TERM_LIFE': 'termLifeInsurance',
+      'LIFE_INSURANCE.BANNER.CHIPS.WHOLE_LIFE': 'wholeLifeInsurance',
+      'LIFE_INSURANCE.BANNER.CHIPS.UNIVERSAL_LIFE': 'universalLifeInsurance',
+      'LIFE_INSURANCE.BANNER.CHIPS.FINAL_EXPENSE': 'finalExpenseInsurance',
+      'LIFE_INSURANCE.BANNER.CHIPS.GROUP_LIFE': 'groupLifeInsurance',
+
+      'HEALTH_INSURANCE.BANNER.CHIPS.INDIVIDUAL_FAMILY': 'individualHealthInsurance',
+      'HEALTH_INSURANCE.BANNER.CHIPS.MEDICARE_SUPPLEMENT': 'medicareSupplementInsurance',
+      'HEALTH_INSURANCE.BANNER.CHIPS.SHORT_TERM': 'shortTermHealthInsurance',
+      'HEALTH_INSURANCE.BANNER.CHIPS.DENTAL_VISION': 'dentalVisionInsurance',
+      'HEALTH_INSURANCE.BANNER.CHIPS.GROUP_EMPLOYER': 'employerGroupHealthInsurance',
+
+      'SURETY_INSURANCE.BANNER.CHIPS.CONTRACT_CONSTRUCTION': 'performanceBondsPaymentBonds',
+      'SURETY_INSURANCE.BANNER.CHIPS.COMMERCIAL': 'commercialSuretyBonds',
+      'SURETY_INSURANCE.BANNER.CHIPS.LICENSE_PERMIT': 'notaryBonds',
+    };
+
+    const directRouteKey = chipRouteMap[chipKey];
+    if (directRouteKey) {
+      return this.languageService.getRoute(directRouteKey);
+    }
+
+    return null;
   }
 
   private setButtonLoadingState(isLoading: boolean) {

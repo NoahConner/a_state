@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Language } from '../../../services/language';
 import { QuoteLeadCaptureService } from '../../../services/quote-lead-capture.service';
@@ -14,6 +15,7 @@ export class HoustonTx {
     public languageService: Language,
     private translate: TranslateService,
     private quoteLeadCaptureService: QuoteLeadCaptureService,
+    private router: Router,
   ) {
     this.buildTableOfContents();
     this.languageService.getLanguageChange().subscribe(() => this.buildTableOfContents());
@@ -204,6 +206,7 @@ export class HoustonTx {
       this.selectedChip = null;
       this.fullName = '';
       this.phone = '';
+      await this.router.navigate(this.languageService.getRoute(selected.routeKey));
     } finally {
       this.isSubmitting = false;
     }

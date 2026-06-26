@@ -29,6 +29,7 @@ export class ChipNavigationDirective implements OnInit {
     this.renderer.setStyle(this.elementRef.nativeElement, 'appearance', 'none');
     this.renderer.setAttribute(this.elementRef.nativeElement, 'role', 'button');
     this.renderer.setAttribute(this.elementRef.nativeElement, 'tabindex', '0');
+    this.renderer.setAttribute(this.elementRef.nativeElement, 'data-chip-key', this.appChipNav);
   }
 
   @HostListener('click', ['$event'])
