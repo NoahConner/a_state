@@ -1,7 +1,7 @@
 import { addTrailingSlash } from './trailing-slash-url-serializer';
 
-export const SEO_CANONICAL_ORIGIN = 'https://www.astateinsurance.com';
-export const SEO_CANONICAL_HOST = 'www.astateinsurance.com';
+export const SEO_CANONICAL_ORIGIN = 'https://astateinsurance.com';
+export const SEO_CANONICAL_HOST = 'astateinsurance.com';
 
 const SEO_MANAGED_HOSTS = new Set(['astateinsurance.com', SEO_CANONICAL_HOST]);
 
