@@ -51,6 +51,8 @@ npm run build
 ```bash
 npm run build:ssr
 npm run start:ssr
+
+scp -r -i ec2.pem dist/myapp ubuntu@13.63.66.100:/var/www/
 ```
 
 3. In another terminal, run:

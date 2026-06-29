@@ -15,6 +15,7 @@ import {
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
 const app = express();
+app.set('trust proxy', true);
 const angularApp = new AngularNodeAppEngine();
 
 /**
@@ -26,8 +27,23 @@ app.use((req, res, next) => {
     return;
   }
 
+  // Skip SEO redirects for static assets
+  if (
+    req.path.startsWith('/assets/') ||
+    req.path.startsWith('/media/') ||
+    req.path === '/favicon.ico' ||
+    req.path === '/robots.txt' ||
+    req.path === '/sitemap.xml' ||
+    /\.[a-zA-Z0-9]+$/.test(req.path)
+  ) {
+    next();
+    return;
+  }
+
   const forwardedHost = req.headers['x-forwarded-host'];
-  const requestHost = Array.isArray(forwardedHost) ? forwardedHost[0] : forwardedHost ?? req.get('host');
+  const requestHost = Array.isArray(forwardedHost)
+    ? forwardedHost[0]
+    : (forwardedHost ?? req.get('host'));
 
   if (!isManagedSeoHost(requestHost)) {
     next();
@@ -37,12 +53,20 @@ app.use((req, res, next) => {
   const forwardedProto = req.headers['x-forwarded-proto'];
   const requestProto = Array.isArray(forwardedProto)
     ? forwardedProto[0]
-    : forwardedProto?.split(',')[0] ?? req.protocol;
+    : (forwardedProto?.split(',')[0] ?? req.protocol);
   const normalizedHost = requestHost?.split(',')[0].trim().toLowerCase().split(':')[0];
   const canonicalUrl = buildCanonicalRedirectUrl(req.originalUrl);
   const needsSlashRedirect = canonicalUrl !== `https://${SEO_CANONICAL_HOST}${req.originalUrl}`;
   const needsHostRedirect = normalizedHost !== SEO_CANONICAL_HOST || requestProto !== 'https';
-
+  console.log({
+    host: requestHost,
+    normalizedHost,
+    proto: requestProto,
+    originalUrl: req.originalUrl,
+    canonicalUrl,
+    needsHostRedirect,
+    needsSlashRedirect,
+  });
   if (needsSlashRedirect || needsHostRedirect) {
     res.redirect(301, canonicalUrl);
     return;

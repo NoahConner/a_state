@@ -3,7 +3,7 @@ import { addTrailingSlash } from './trailing-slash-url-serializer';
 export const SEO_CANONICAL_ORIGIN = 'https://astateinsurance.com';
 export const SEO_CANONICAL_HOST = 'astateinsurance.com';
 
-const SEO_MANAGED_HOSTS = new Set(['astateinsurance.com', SEO_CANONICAL_HOST]);
+const SEO_MANAGED_HOSTS = new Set(['astateinsurance.com', 'www.astateinsurance.com']);
 
 function getPathname(url: string): string {
   const pathname = url.split('?')[0].split('#')[0];

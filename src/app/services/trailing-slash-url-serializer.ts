@@ -27,6 +27,16 @@ export function addTrailingSlash(url: string): string {
     return url;
   }
 
+  // Skip files (.css, .js, .png, .jpg, .svg, .ico, .woff2, etc.)
+  if (/\.[a-zA-Z0-9]+$/.test(path)) {
+    return url;
+  }
+
+  // Skip static asset folders
+  if (path.startsWith('/assets/') || path.startsWith('/media/')) {
+    return url;
+  }
+
   if (path.endsWith('/')) {
     return url;
   }
