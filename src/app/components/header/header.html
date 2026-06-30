@@ -458,53 +458,12 @@
 
           <!-- Right side -->
           <div class="d-flex align-items-center leftie">
-            <!-- Language dropdown -->
-            <div class="language-dropdown" [class.is-open]="openMenu === 'desktop-language'">
-              <a
-                class="language-switcher"
-                href="#"
-                (click)="toggleMenu('desktop-language'); $event.preventDefault()"
-              >
-                <span class="language-switcher__flag-wrap">
-                  <img [src]="currentLanguageFlag" [alt]="currentLang === 'en' ? 'English' : 'Spanish'" class="language-switcher__flag" />
-                </span>
-                <span class="language-switcher__chevron" aria-hidden="true"></span>
-              </a>
-              <div class="language-dropdown__menu">
-                <a
-                  class="language-dropdown__item"
-                  href="#"
-                  (click)="selectLang('en'); $event.preventDefault()">
-                  <img src="/assets/images/header/flag-us.svg" alt="English" class="language-dropdown__item-flag" />
-                  <span>English</span>
-                </a>
-                <a
-                  class="language-dropdown__item"
-                  href="#"
-                  (click)="selectLang('es'); $event.preventDefault()">
-                  <img src="/assets/images/header/flag-es.svg" alt="Español" class="language-dropdown__item-flag" />
-                  <span>Español</span>
-                </a>
-              </div>
-              <!-- <ul class="dropdown-menu">
-                <li>
-                  <a
-                    class="dropdown-item"
-                    href="javascript:void(0)"
-                    (click)="changeLang('en'); $event.preventDefault()"
-                    >EN</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item"
-                    href="javascript:void(0)"
-                    (click)="changeLang('es'); $event.preventDefault()"
-                    >ES</a
-                  >
-                </li>
-              </ul> -->
-            </div>
+            <button class="language-switcher" type="button" (click)="toggleLanguage()">
+              <span class="language-switcher__flag-wrap">
+                <img [src]="targetLanguageFlag" [alt]="targetLang === 'en' ? 'English' : 'Spanish'" class="language-switcher__flag" />
+              </span>
+              <span class="language-switcher__label">{{ targetLanguageLabel }}</span>
+            </button>
             <!-- Get a Quote -->
             <a
               [routerLink]="getRoute('getAQuote')"

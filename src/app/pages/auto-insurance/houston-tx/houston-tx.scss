@@ -304,8 +304,13 @@ border: 1px solid rgba(255, 255, 255, 0.2);
     --bs-gutter-x: 2.8rem;
   }
 
+  .toc-column {
+    position: relative;
+  }
+
   .toc-card {
     max-width: 210px;
+    transition: top 0.18s ease-out;
   }
 
   .toc-title {
@@ -467,6 +472,11 @@ border: 1px solid rgba(255, 255, 255, 0.2);
     color: #df4135;
   }
 
+
+  .source-label {
+    color: #000;
+    font-size: 17px;
+  }
 
   .source-name {
     color: #df4135;
@@ -920,7 +930,7 @@ border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 3.95rem 0 3.55rem;
 
   .rate-factors-container {
-    max-width: 1180px;
+    max-width: 940px;
   }
 
   .rate-factors-header {
@@ -946,7 +956,7 @@ border: 1px solid rgba(255, 255, 255, 0.2);
   .rate-factors-grid {
     --bs-gutter-x: 3.3rem;
     --bs-gutter-y: 0;
-    max-width: 1120px;
+    max-width: 100%;
     margin: 0 auto;
   }
 
@@ -961,7 +971,7 @@ border: 1px solid rgba(255, 255, 255, 0.2);
     color: #4a4744;
     font-size: 15px;
     line-height: 1.7;
-    text-decoration: underline;
+    text-decoration: none;
     text-decoration-thickness: 0.9px;
     text-underline-offset: 1.5px;
     font-weight: 600;
@@ -992,7 +1002,7 @@ border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 3.95rem 0 4.15rem;
 
   .savings-container {
-    max-width: 1180px;
+    max-width: 940px;
   }
 
   .savings-header {
@@ -1018,7 +1028,7 @@ border: 1px solid rgba(255, 255, 255, 0.2);
   .savings-grid {
     --bs-gutter-x: 4.6rem;
     --bs-gutter-y: 0;
-    max-width: 1115px;
+    max-width: 100%;
     margin: 0 auto;
   }
 
@@ -1033,7 +1043,7 @@ border: 1px solid rgba(255, 255, 255, 0.2);
     color: #4c4b4b;
     font-size: 15px;
     line-height: 1.32;
-    text-decoration: underline;
+    text-decoration: none;
     text-decoration-thickness: 0.9px;
     text-underline-offset: 1.6px;
     font-weight: 600;
@@ -1064,7 +1074,7 @@ border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 3rem 0 3.25rem;
 
   .independent-agency-container {
-    max-width: 1180px;
+    max-width: 940px;
   }
 
   .independent-agency-header {
@@ -1080,7 +1090,7 @@ border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   .independent-agency-badges {
-    max-width: 1110px;
+    max-width: 100%;
     margin: 0 auto 5.2rem;
 
     .row {
@@ -1123,7 +1133,7 @@ border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   .independent-agency-table-wrap {
-    max-width: 1110px;
+    max-width: 100%;
     margin: 0 auto;
   }
 
@@ -1191,6 +1201,7 @@ border: 1px solid rgba(255, 255, 255, 0.2);
       border-bottom-left-radius: 6px;
       padding-left: 0.85rem;
       padding-right: 0.85rem;
+      font-weight: 700;
     }
 
     tbody td:last-child {
@@ -1297,11 +1308,11 @@ border: 1px solid rgba(255, 255, 255, 0.2);
   margin-bottom: 55px;
 
   .container {
-    max-width: 1180px;
+    max-width: 940px;
   }
 
   &__inner {
-    max-width: 1108px;
+    max-width: 100%;
     margin: 0 auto;
   }
 
@@ -1466,8 +1477,7 @@ display: block;
     height: auto;
     margin-top: -4rem;
     /* margin-right: 21px; */
-    margin-left: -6rem;
-  }
+    margin-left: 15rem;  }
 
   @media (max-width: 1400px) {
     &__decor {
@@ -1515,38 +1525,38 @@ display: block;
 
   &__container {
     position: relative;
-    max-width: 1900px;
+    max-width: 940px;
     margin: 0 auto;
-    padding: 0 60px;
+    padding: 0 12px;
   }
 
   // ===== Title =====
   &__title {
- color: #ed1c24;
+    color: #ed1c24;
     font-weight: 600;
     font-size: 35px;
     line-height: 1.2;
     margin: 0 0 90px;
-    max-width: 820px;
+    max-width: 100%;
     letter-spacing: 0.2px;
-    margin-left: 19rem;
+    text-align: center;
   }
 
   // ===== Decorative RISK badge =====
   &__decor {
-    position: absolute;
+position: absolute;
     top: -2rem;
-    right: 10rem;
-    width: 20rem;
-    height: 17rem;
+    right: -12rem;
+    width: 18rem;
+    height: 15rem;
     max-width: 40%;
   }
 
   // ===== Grid =====
   &__grid {
-    max-width: 1280px;
+    max-width: 100%;
     margin: 0 auto;
-    --bs-gutter-x: 120px;
+    --bs-gutter-x: 32px;
   }
 
   &__col {
@@ -1750,26 +1760,27 @@ color: #ed1c24;
   overflow: hidden;
 
   &__container {
+    max-width: 940px;
     margin: 0 auto;
-    padding: 0 60px;
+    padding: 0 12px;
   }
 
   // ===== Title =====
   &__title {
-     color: #ed1c24;
+    color: #ed1c24;
     font-weight: 700;
     font-size: 30px;
     line-height: 1.2;
     margin: 0 0 21px;
     letter-spacing: 0.2px;
-    margin-left: 19rem;
-}
+    text-align: center;
+  }
 
 
   // ===== Grid =====
   &__grid {
-    max-width: 1180px;
-        margin: 0 auto;
+    max-width: 100%;
+    margin: 0 auto;
     --bs-gutter-x: 32px;
     --bs-gutter-y: 60px;
   }
@@ -1851,6 +1862,9 @@ color: #ed1c24;
 }
 
 .homeMain {
+  --content-shell-width: 940px;
+  --content-shell-padding: 0;
+  --rates-aligned-shell-width: 900px;
 
   .container-custom,
   .penalties-container,
@@ -1858,7 +1872,87 @@ color: #ed1c24;
   .savings-container,
   .independent-agency-container,
   .special-coverage-container {
-    max-width: 1180px;
+    max-width: var(--content-shell-width);
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .insurance-section .container-custom,
+  .uninsured-penalties-section .penalties-container,
+  .houston-coverage-options-section .container,
+  .houston-rate-factors-section .rate-factors-container,
+  .houston-savings-section .savings-container,
+  .houston-independent-agency-section .independent-agency-container,
+  .houston-neighborhoods-section .container,
+  .coverage .coverage__container,
+  .risks .risks__container,
+  .faq .faq__container {
+    max-width: var(--rates-aligned-shell-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--content-shell-padding);
+    padding-right: var(--content-shell-padding);
+  }
+
+  .faq {
+    &__container {
+      max-width: var(--rates-aligned-shell-width);
+    }
+
+    &__title,
+    &__list {
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .coverage {
+    &__grid,
+    &__title {
+      max-width: 100%;
+    }
+  }
+
+  .risks {
+    &__grid,
+    &__title {
+      max-width: 100%;
+    }
+  }
+
+  .insurance-section {
+    .main-title,
+    .sub-title,
+    .lead-text,
+    .coverage-grid-wrap,
+    .requirement-footer-row {
+      max-width: 100%;
+    }
+  }
+
+  .uninsured-penalties-section {
+    .penalties-copy,
+    .texassure-block,
+    .texassure-copy,
+    .penalties-grid-wrap {
+      max-width: 100%;
+    }
+  }
+
+  .houston-coverage-options-section,
+  .houston-rate-factors-section,
+  .houston-savings-section,
+  .houston-independent-agency-section,
+  .houston-neighborhoods-section {
+    .coverage-options-grid,
+    .rate-factors-grid,
+    .savings-grid,
+    .independent-agency-badges,
+    .independent-agency-table-wrap,
+    .houston-neighborhoods-section__inner {
+      max-width: 100%;
+    }
   }
 }
 
@@ -2059,8 +2153,6 @@ color: #ed1c24;
     }
 
     .toc-card {
-      position: static;
-      top: auto;
       max-width: 100%;
       height: auto;
       padding-bottom: 0.5rem;

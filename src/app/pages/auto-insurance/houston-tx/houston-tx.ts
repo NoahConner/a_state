@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Language } from '../../../services/language';
@@ -10,7 +10,14 @@ import { QuoteLeadCaptureService } from '../../../services/quote-lead-capture.se
   templateUrl: './houston-tx.html',
   styleUrl: './houston-tx.scss',
 })
-export class HoustonTx {
+export class HoustonTx implements AfterViewInit {
+  @ViewChild('ratesSection') private ratesSectionRef?: ElementRef<HTMLElement>;
+  @ViewChild('tocColumn') private tocColumnRef?: ElementRef<HTMLElement>;
+  @ViewChild('tocCard') private tocCardRef?: ElementRef<HTMLElement>;
+  @ViewChild('tocStopSection') private tocStopSectionRef?: ElementRef<HTMLElement>;
+
+  tocCardStyles: Record<string, string> | null = null;
+
   constructor(
     public languageService: Language,
     private translate: TranslateService,
@@ -18,7 +25,10 @@ export class HoustonTx {
     private router: Router,
   ) {
     this.buildTableOfContents();
-    this.languageService.getLanguageChange().subscribe(() => this.buildTableOfContents());
+    this.languageService.getLanguageChange().subscribe(() => {
+      this.buildTableOfContents();
+      setTimeout(() => this.updateTocStickyState());
+    });
   }
 
   chips = [
@@ -117,6 +127,10 @@ export class HoustonTx {
   phone = '';
   isSubmitting = false;
 
+  ngAfterViewInit() {
+    setTimeout(() => this.updateTocStickyState());
+  }
+
   private wrapHighlight(key: string) {
     return `<span class="toc-highlight">${this.translate.instant(key)}</span>`;
   }
@@ -178,6 +192,7 @@ export class HoustonTx {
 
   toggleFaq(index: number) {
     this.openFaqIndex = this.openFaqIndex === index ? -1 : index;
+    setTimeout(() => this.updateTocStickyState());
   }
 
   async goToSelectedQuote() {
@@ -210,5 +225,49 @@ export class HoustonTx {
     } finally {
       this.isSubmitting = false;
     }
+  }
+
+  @HostListener('window:scroll')
+  @HostListener('window:resize')
+  updateTocStickyState() {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const ratesSection = this.ratesSectionRef?.nativeElement;
+    const tocColumn = this.tocColumnRef?.nativeElement;
+    const tocCard = this.tocCardRef?.nativeElement;
+    const tocStopSection = this.tocStopSectionRef?.nativeElement;
+
+    if (!ratesSection || !tocColumn || !tocCard || !tocStopSection || window.innerWidth <= 820) {
+      this.tocCardStyles = null;
+      return;
+    }
+
+    const stickyOffset = 24;
+    const stopGap = 24;
+    const scrollY = window.scrollY;
+    const columnTop = tocColumn.getBoundingClientRect().top + scrollY;
+
+    if (scrollY + stickyOffset < columnTop) {
+      this.tocCardStyles = null;
+      return;
+    }
+
+    const columnRect = tocColumn.getBoundingClientRect();
+    const stopRect = tocStopSection.getBoundingClientRect();
+    const cardHeight = tocCard.offsetHeight;
+    const stopTop = stopRect.top + scrollY;
+    const maxTop = stopTop - columnTop - cardHeight - stopGap;
+    const nextTop = scrollY - columnTop + stickyOffset;
+    const clampedTop = Math.max(0, Math.min(nextTop, maxTop));
+
+    this.tocCardStyles = {
+      position: 'absolute',
+      top: `${clampedTop}px`,
+      left: '0',
+      width: `${columnRect.width}px`,
+      zIndex: '10',
+    };
   }
 }

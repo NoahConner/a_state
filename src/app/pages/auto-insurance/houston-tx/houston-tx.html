@@ -46,11 +46,11 @@
   <!-- Hero Banner Section End -->
 
   <!-- Rates Section Start -->
-  <section class="houston-rates-section">
+  <section class="houston-rates-section" #ratesSection>
     <div class="container">
       <div class="row align-items-start">
-        <div class="col-lg-2 toc-column">
-          <aside class="toc-card">
+        <div class="col-lg-2 toc-column" #tocColumn>
+          <aside class="toc-card" #tocCard [ngStyle]="tocCardStyles">
             <h3 class="toc-title">
               <span class="toc-highlight">{{ 'GLOBAL_TX.TABLE_OF_CONTENTS.TITLE' | translate }}</span>
             </h3>
@@ -95,11 +95,11 @@
             </div>
 
             <div class="rates-meta">
-              <p class="source-line mb-0"><strong class="source-name">{{ 'GLOBAL_TX.RATES.SOURCE_LABEL' | translate
-                  }}</strong> <a class="source-name"
+              <p class="source-line mb-0"><strong class="source-label">{{ 'GLOBAL_TX.RATES.SOURCE_LABEL' | translate
+                  }}</strong>&nbsp;<a class="source-name"
                   href="https://www.lendingtree.com/car-insurance/houston-texas-car-insurance/" rel="nofollow"
                   target="_blank">LendingTree</a></p>
-              <p class="updated-line mb-0"><strong class="source-name">{{ 'GLOBAL_TX.RATES.LAST_UPDATED_LABEL' |
+              <p class="updated-line mb-0"><strong class="source-label">{{ 'GLOBAL_TX.RATES.LAST_UPDATED_LABEL' |
                   translate }}</strong> May 2026</p>
             </div>
 
@@ -177,11 +177,11 @@
             </div>
 
             <div class="rates-meta">
-              <p class="source-line mb-0"><strong class="source-name">{{ 'GLOBAL_TX.RATES.SOURCE_LABEL' | translate
-                  }}</strong> <a class="source-name"
+              <p class="source-line mb-0"><strong class="source-label">{{ 'GLOBAL_TX.RATES.SOURCE_LABEL' | translate
+                  }}</strong>&nbsp;<a class="source-name"
                   href="https://www.lendingtree.com/car-insurance/houston-texas-car-insurance/" rel="nofollow"
                   target="_blank">LendingTree</a></p>
-              <p class="updated-line mb-0"><strong class="source-name">{{ 'GLOBAL_TX.RATES.LAST_UPDATED_LABEL' |
+              <p class="updated-line mb-0"><strong class="source-label">{{ 'GLOBAL_TX.RATES.LAST_UPDATED_LABEL' |
                   translate }}</strong> May 2026</p>
             </div>
 
@@ -1310,7 +1310,7 @@
   <!-- Neighborhoods Section End -->
 
   <!-- FAQ Section Start -->
-  <section class="faq">
+  <section class="faq" #faqSection>
     <div class="container-fluid faq__container">
       <h2 class="faq__title">Frequently Asked Questions — Auto Insurance in Houston, TX</h2>
 

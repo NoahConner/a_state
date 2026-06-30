@@ -25,9 +25,25 @@ export class Header implements OnInit {
     return this.languageFlags[this.currentLang];
   }
 
+  get targetLang(): 'en' | 'es' {
+    return this.currentLang === 'en' ? 'es' : 'en';
+  }
+
+  get targetLanguageFlag(): string {
+    return this.languageFlags[this.targetLang];
+  }
+
+  get targetLanguageLabel(): string {
+    return this.targetLang.toUpperCase();
+  }
+
   changeLang(lang: string) {
     this.languageService.setLanguage(lang);
     this.currentLang = lang as 'en' | 'es';
+  }
+
+  toggleLanguage() {
+    this.changeLang(this.targetLang);
   }
 
   selectLang(lang: 'en' | 'es') {
