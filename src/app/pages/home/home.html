@@ -24,9 +24,9 @@
               type="button"
               class="chip"
               *ngIf="item.name"
-              [class.selected]="selectedChip === item.name"
-              [attr.aria-pressed]="selectedChip === item.name"
-              (click)="selectChip(item.name)">
+              [class.selected]="bannerForm.selectedChip === item.name"
+              [attr.aria-pressed]="bannerForm.selectedChip === item.name"
+              (click)="selectChip(bannerForm, item.name)">
               <i class="{{ item?.icon }}"></i>
               <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </button>
@@ -38,9 +38,9 @@
               type="button"
               class="chip"
               *ngIf="item.name"
-              [class.selected]="selectedChip === item.name"
-              [attr.aria-pressed]="selectedChip === item.name"
-              (click)="selectChip(item.name)">
+              [class.selected]="bannerForm.selectedChip === item.name"
+              [attr.aria-pressed]="bannerForm.selectedChip === item.name"
+              (click)="selectChip(bannerForm, item.name)">
               <i class="{{ item?.icon }}"></i>
               <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </button>
@@ -52,18 +52,18 @@
               type="text"
               [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate"
               class="form-control"
-              [value]="fullName"
-              (input)="fullName = $any($event.target).value" />
+              [value]="bannerForm.fullName"
+              (input)="bannerForm.fullName = $any($event.target).value" />
 
             <input type="tel" appPhoneFormat
               [placeholder]="'HOME.BANNER.FORM.PHONE' | translate"
               class="form-control"
-              [value]="phone"
-              (input)="phone = $any($event.target).value" />
+              [value]="bannerForm.phone"
+              (input)="bannerForm.phone = $any($event.target).value" />
           </div>
 
-          <button class="btn" [disabled]="isSubmitting || !selectedChip || !fullName.trim() || !phone.trim()" (click)="goToSelectedQuote()">
-            {{ isSubmitting ? 'Loading...' : ('HOME.BANNER.FORM.BUTTON' | translate) }}
+          <button class="btn" [disabled]="bannerForm.isSubmitting || !bannerForm.selectedChip || !bannerForm.fullName.trim() || !bannerForm.phone.trim()" (click)="goToSelectedQuote(bannerForm)">
+            {{ bannerForm.isSubmitting ? 'Loading...' : ('HOME.BANNER.FORM.BUTTON' | translate) }}
           </button>
         </div>
       </div>
@@ -370,9 +370,9 @@
               type="button"
               class="chip"
               *ngIf="item.name"
-              [class.selected]="selectedChip === item.name"
-              [attr.aria-pressed]="selectedChip === item.name"
-              (click)="selectChip(item.name)">
+              [class.selected]="coveredForm.selectedChip === item.name"
+              [attr.aria-pressed]="coveredForm.selectedChip === item.name"
+              (click)="selectChip(coveredForm, item.name)">
               <i class="{{ item?.icon }}"></i>
               <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </button>
@@ -384,9 +384,9 @@
               type="button"
               class="chip"
               *ngIf="item.name"
-              [class.selected]="selectedChip === item.name"
-              [attr.aria-pressed]="selectedChip === item.name"
-              (click)="selectChip(item.name)">
+              [class.selected]="coveredForm.selectedChip === item.name"
+              [attr.aria-pressed]="coveredForm.selectedChip === item.name"
+              (click)="selectChip(coveredForm, item.name)">
               <i class="{{ item?.icon }}"></i>
               <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </button>
@@ -397,17 +397,17 @@
               type="text"
               [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate"
               class="form-control"
-              [value]="fullName"
-              (input)="fullName = $any($event.target).value" />
+              [value]="coveredForm.fullName"
+              (input)="coveredForm.fullName = $any($event.target).value" />
             <input
               type="tel"
               appPhoneFormat
               [placeholder]="'HOME.BANNER.FORM.PHONE' | translate"
               class="form-control"
-              [value]="phone"
-              (input)="phone = $any($event.target).value" />
+              [value]="coveredForm.phone"
+              (input)="coveredForm.phone = $any($event.target).value" />
           </div>
-          <button class="btn" [disabled]="isSubmitting || !selectedChip || !fullName.trim() || !phone.trim()" (click)="goToSelectedQuote()">{{ isSubmitting ? 'Loading...' : ('HOME.COVERDBANNER.FORM.BUTTON' | translate)
+          <button class="btn" [disabled]="coveredForm.isSubmitting || !coveredForm.selectedChip || !coveredForm.fullName.trim() || !coveredForm.phone.trim()" (click)="goToSelectedQuote(coveredForm)">{{ coveredForm.isSubmitting ? 'Loading...' : ('HOME.COVERDBANNER.FORM.BUTTON' | translate)
             }}</button>
         </div>
       </div>

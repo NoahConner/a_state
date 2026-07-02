@@ -15,6 +15,8 @@ export class HoustonTx implements AfterViewInit {
   @ViewChild('tocColumn') private tocColumnRef?: ElementRef<HTMLElement>;
   @ViewChild('tocCard') private tocCardRef?: ElementRef<HTMLElement>;
   @ViewChild('tocStopSection') private tocStopSectionRef?: ElementRef<HTMLElement>;
+  readonly bannerForm = this.createQuoteFormState();
+  readonly coveredForm = this.createQuoteFormState();
 
   tocCardStyles: Record<string, string> | null = null;
 
@@ -70,62 +72,9 @@ export class HoustonTx implements AfterViewInit {
     { zipCode: '77036', neighborhood: 'Sharpstown', monthlyRate: '$317', highlighted: true },
   ];
 
-  faqItems = [
-    {
-      question: 'How much is car insurance in Houston per month?',
-      answer:
-        'Car insurance in Houston typically ranges from $257 to $357 per month for full coverage, depending on driving history, ZIP code, and vehicle type. Minimum liability coverage can cost around $157 monthly, making Houston one of the more expensive Texas cities for auto insurance overall consistently.',
-    },
-    {
-      question: 'What is the minimum car insurance required in Texas?',
-      answer:
-        'Texas requires at least 30/60/25 liability coverage, which includes $30,000 for injuries per person, $60,000 per accident, and $25,000 for property damage you cause to others.',
-    },
-    {
-      question: 'Why is car insurance so expensive in Houston?',
-      answer:
-        'Houston car insurance rates are often higher because of dense traffic, severe weather risks, frequent claims, uninsured drivers, and higher repair and medical costs across the metro area.',
-    },
-    {
-      question: 'What\'s the cheapest car insurance in Houston?',
-      answer:
-        'The cheapest car insurance in Houston depends on your driving record, age, vehicle, and coverage level, but minimum coverage from lower-cost regional or national carriers is often the most affordable starting point.',
-    },
-    {
-      question: 'Do I need flood insurance for my car in Houston?',
-      answer:
-        'If you want protection from flood damage in Houston, you typically need comprehensive coverage on your auto policy, since standard liability insurance does not cover weather-related damage to your own vehicle.',
-    },
-  ];
-  neighborhoodsRows = [
-    ['Acres Home', 'Addicks / Park Ten', 'Afton Oaks / River Oaks', 'Alief'],
-    ['Astrodome Area', 'Braeburn', 'Braeswood', 'Brays Oaks'],
-    ['Briar Forest', 'Carverdale', 'Central Northwest', 'Central Southwest'],
-    ['Clear Lake', 'Clinton Park', 'Denver Harbor', 'Downtown'],
-    ['East Houston', 'East Little York', 'Eastex / Jensen', 'Edgebrook'],
-    ['El Dorado / Oates Prairie', 'Eldridge / West Oaks', 'Fairbanks / NW Crossing', 'Fondren Gardens'],
-    ['Fort Bend / Houston', 'Fourth Ward', 'Golfcrest / Bellfort', 'Greater Eastwood'],
-    ['Greater Fifth Ward', 'Greater Greenspoint', 'Greater Heights', 'Greater Hobby Area'],
-    ['Greater Inwood', 'Greater Meyerland', 'Greater OST / South Union', 'Greater Third Ward'],
-    ['Greater Uptown', 'Greenway / Upper Kirby', 'Gulfgate / Pine Valley', 'Gulfton'],
-    ['Harrisburg / Manchester', 'Hidden Valley', 'Hunterwood', 'IAH Airport'],
-    ['Independence Heights', 'Kashmere Gardens', 'Kingwood', 'Lake Houston'],
-    ['Langwood', 'Lawndale / Wayside', 'Lazybrook / Timbergrove', 'MacGregor'],
-    ['Magnolia Park', 'Meadowbrook / Allendale', 'Medical Center', 'Memorial'],
-    ['Mid-West', 'Midtown', 'Minnetex', 'Museum Park'],
-    ['Near Northside', 'Near Southwest', 'Neartown / Montrose', 'Northshore'],
-    ['Northside / Northline', 'Park Place', 'Pecan Park', 'Pleasantville Area'],
-    ['Second Ward', 'Settegast', 'Sharpstown', 'South Acres / Crestmont'],
-    ['South Belt / Ellington', 'South Main', 'South Park', 'Spring Branch Central'],
-    ['Trinity / Houston Gardens', 'University Place', 'Washington Ave / Memorial', 'Westbranch'],
-    ['Westbury', 'Westchase', 'Westwood', 'Willowbrook'],
-  ];
+  faqItems: { question: string; answer: string }[] = [];
+  neighborhoodsRows: string[][] = [];
   openFaqIndex = 0;
-
-  selectedChip: string | null = null;
-  fullName = '';
-  phone = '';
-  isSubmitting = false;
 
   ngAfterViewInit() {
     setTimeout(() => this.updateTocStickyState());
@@ -180,14 +129,17 @@ export class HoustonTx implements AfterViewInit {
       `${this.wrapHighlight('GLOBAL_TX.TABLE_OF_CONTENTS.ITEMS.NEIGHBORHOODS')} ${cityWithState}`,
       `${this.wrapHighlight('GLOBAL_TX.TABLE_OF_CONTENTS.ITEMS.FAQ')} ${cityWithState}`,
     ];
+
+    this.faqItems = this.translate.instant('HOUSTON_TX.FAQ.ITEMS');
+    this.neighborhoodsRows = this.translate.instant('HOUSTON_TX.NEIGHBORHOODS.ROWS');
   }
 
   getRoute(page: string) {
     return this.languageService.getRoute(page);
   }
 
-  selectChip(chipName: string) {
-    this.selectedChip = chipName;
+  selectChip(form: QuoteFormState, chipName: string) {
+    form.selectedChip = chipName;
   }
 
   toggleFaq(index: number) {
@@ -195,36 +147,49 @@ export class HoustonTx implements AfterViewInit {
     setTimeout(() => this.updateTocStickyState());
   }
 
-  async goToSelectedQuote() {
-    if (this.isSubmitting) {
+  async goToSelectedQuote(form: QuoteFormState) {
+    if (form.isSubmitting) {
       return;
     }
 
-    const selected = this.chips.find((chip) => chip.name === this.selectedChip);
+    const selected = this.chips.find((chip) => chip.name === form.selectedChip);
     if (!selected) {
       return;
     }
 
-    this.isSubmitting = true;
+    form.isSubmitting = true;
 
     try {
       const isSubmitted = await this.quoteLeadCaptureService.submitLead({
         selected_chip: this.translate.instant(selected.name),
-        full_name: this.fullName,
-        phone_number: this.phone,
+        full_name: form.fullName,
+        phone_number: form.phone,
       });
 
       if (!isSubmitted) {
         return;
       }
 
-      this.selectedChip = null;
-      this.fullName = '';
-      this.phone = '';
+      this.resetQuoteForm(form);
       await this.router.navigate(this.languageService.getRoute(selected.routeKey));
     } finally {
-      this.isSubmitting = false;
+      form.isSubmitting = false;
     }
+  }
+
+  private resetQuoteForm(form: QuoteFormState) {
+    form.selectedChip = null;
+    form.fullName = '';
+    form.phone = '';
+  }
+
+  private createQuoteFormState(): QuoteFormState {
+    return {
+      selectedChip: null,
+      fullName: '',
+      phone: '',
+      isSubmitting: false,
+    };
   }
 
   @HostListener('window:scroll')
@@ -270,4 +235,11 @@ export class HoustonTx implements AfterViewInit {
       zIndex: '10',
     };
   }
+}
+
+interface QuoteFormState {
+  selectedChip: string | null;
+  fullName: string;
+  phone: string;
+  isSubmitting: boolean;
 }

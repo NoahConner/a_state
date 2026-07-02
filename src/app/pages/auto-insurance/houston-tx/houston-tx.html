@@ -13,8 +13,8 @@
           <div class="banner-quote-card">
             <div class="quote-options">
               @for (item of chips; track item.name) {
-              <button type="button" class="quote-option" *ngIf="item.name" [class.selected]="selectedChip === item.name"
-                [attr.aria-pressed]="selectedChip === item.name" (click)="selectChip(item.name)">
+              <button type="button" class="quote-option" *ngIf="item.name" [class.selected]="bannerForm.selectedChip === item.name"
+                [attr.aria-pressed]="bannerForm.selectedChip === item.name" (click)="selectChip(bannerForm, item.name)">
                 <span class="icon-badge">
                   <span class="icon-burst"></span>
                   <img [src]="item.image" [alt]="item.name | translate" class="quote-option-image" />
@@ -29,13 +29,13 @@
 
             <div class="quote-form-row">
               <input type="text" [placeholder]="'AUTO_INSURANCE.BANNER.FORM.FULL_NAME' | translate" class="form-control"
-                [value]="fullName" (input)="fullName = $any($event.target).value" />
+                [value]="bannerForm.fullName" (input)="bannerForm.fullName = $any($event.target).value" />
 
               <input type="tel" appPhoneFormat [placeholder]="'AUTO_INSURANCE.BANNER.FORM.PHONE' | translate"
-                class="form-control" [value]="phone" (input)="phone = $any($event.target).value" />
+                class="form-control" [value]="bannerForm.phone" (input)="bannerForm.phone = $any($event.target).value" />
 
-              <button class="quote-submit" [disabled]="isSubmitting || !selectedChip || !fullName.trim() || !phone.trim()" (click)="goToSelectedQuote()">
-                {{ isSubmitting ? 'Loading...' : ('AUTO_INSURANCE.BANNER.FORM.BUTTON' | translate) }}
+              <button class="quote-submit" [disabled]="bannerForm.isSubmitting || !bannerForm.selectedChip || !bannerForm.fullName.trim() || !bannerForm.phone.trim()" (click)="goToSelectedQuote(bannerForm)">
+                {{ bannerForm.isSubmitting ? 'Loading...' : ('AUTO_INSURANCE.BANNER.FORM.BUTTON' | translate) }}
               </button>
             </div>
           </div>
@@ -179,8 +179,8 @@
             <div class="rates-meta">
               <p class="source-line mb-0"><strong class="source-label">{{ 'GLOBAL_TX.RATES.SOURCE_LABEL' | translate
                   }}</strong>&nbsp;<a class="source-name"
-                  href="https://www.lendingtree.com/car-insurance/houston-texas-car-insurance/" rel="nofollow"
-                  target="_blank">LendingTree</a></p>
+                  href="https://www.nerdwallet.com/insurance/auto/cheap-car-insurance-houston-tx" rel="nofollow"
+                  target="_blank">Nerdwallet</a></p>
               <p class="updated-line mb-0"><strong class="source-label">{{ 'GLOBAL_TX.RATES.LAST_UPDATED_LABEL' |
                   translate }}</strong> May 2026</p>
             </div>
@@ -208,39 +208,34 @@
 
       <!-- Header Section -->
       <div class="text-center mb-4">
-        <h1 class="main-title mb-3">Texas Auto Insurance Requirements — What Houston Drivers Must Carry</h1>
-        <h2 class="sub-title mb-4">State Minimum Coverage: 30/60/25 Explained</h2>
-        <p class="lead-text mx-auto">
-          Texas requires drivers to carry 30/60/25 liability coverage. The $30,000 limit pays for injuries to one person
-          if you cause an accident. The $60,000 limit covers total injuries for everyone involved in that accident. The
-          $25,000 portion pays for damage you cause to another person's car or property. In a city like Houston, where
-          medical bills and repair costs are high, limits can run out quickly.
-        </p>
+        <h1 class="main-title mb-3">{{ 'GLOBAL_TX.REQUIREMENTS.TITLE_PREFIX' | translate }} {{ 'HOUSTON_TX.LOCATION.CITY' | translate }} {{ 'GLOBAL_TX.REQUIREMENTS.TITLE_SUFFIX' | translate }}</h1>
+        <h2 class="sub-title mb-4">{{ 'GLOBAL_TX.REQUIREMENTS.SUBTITLE' | translate }}</h2>
+        <p class="lead-text mx-auto">{{ 'HOUSTON_TX.REQUIREMENTS.LEAD' | translate }}</p>
       </div>
 
       <!-- Table Section -->
       <div class="coverage-grid-wrap mb-5">
         <div class="coverage-grid-header row g-0">
           <div class="col-lg-4">
-            <div class="coverage-grid-head">Coverage</div>
+            <div class="coverage-grid-head">{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.COVERAGE' | translate }}</div>
           </div>
           <div class="col-lg-4">
-            <div class="coverage-grid-head">What It Covers</div>
+            <div class="coverage-grid-head">{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.WHAT_IT_COVERS' | translate }}</div>
           </div>
           <div class="col-lg-4">
-            <div class="coverage-grid-head">What It Doesn't Cover</div>
+            <div class="coverage-grid-head">{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.WHAT_IT_DOESNT_COVER' | translate }}</div>
           </div>
         </div>
 
         <div class="coverage-grid-row row g-0">
           <div class="col-lg-4">
-            <div class="coverage-grid-cell coverage-grid-cell--title">$30,000 Bodily Injury Per Person</div>
+            <div class="coverage-grid-cell coverage-grid-cell--title">{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_1_TITLE' | translate }}</div>
           </div>
           <div class="col-lg-4">
             <div class="coverage-grid-cell">
               <div class="d-flex align-items-start gap-2">
                 <span class="icon-check flex-shrink-0"></span>
-                <span>Medical bills for one person you injure in an accident</span>
+                <span>{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_1_COVER' | translate }}</span>
               </div>
             </div>
           </div>
@@ -248,7 +243,7 @@
             <div class="coverage-grid-cell">
               <div class="d-flex align-items-start gap-2">
                 <span class="icon-cross flex-shrink-0"></span>
-                <span>Anything above $30K — you pay the difference out of pocket</span>
+                <span>{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_1_EXCLUDE' | translate }}</span>
               </div>
             </div>
           </div>
@@ -256,13 +251,13 @@
 
         <div class="coverage-grid-row row g-0">
           <div class="col-lg-4">
-            <div class="coverage-grid-cell coverage-grid-cell--title">$60,000 Bodily Injury Per Accident</div>
+            <div class="coverage-grid-cell coverage-grid-cell--title">{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_2_TITLE' | translate }}</div>
           </div>
           <div class="col-lg-4">
             <div class="coverage-grid-cell">
               <div class="d-flex align-items-start gap-2">
                 <span class="icon-check flex-shrink-0"></span>
-                <span>Total medical bills for all injured parties in one accident</span>
+                <span>{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_2_COVER' | translate }}</span>
               </div>
             </div>
           </div>
@@ -270,7 +265,7 @@
             <div class="coverage-grid-cell">
               <div class="d-flex align-items-start gap-2">
                 <span class="icon-cross flex-shrink-0"></span>
-                <span>Costs exceeding $60K when multiple people are hurt</span>
+                <span>{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_2_EXCLUDE' | translate }}</span>
               </div>
             </div>
           </div>
@@ -278,13 +273,13 @@
 
         <div class="coverage-grid-row row g-0">
           <div class="col-lg-4">
-            <div class="coverage-grid-cell coverage-grid-cell--title">$25,000 Property Damage</div>
+            <div class="coverage-grid-cell coverage-grid-cell--title">{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_3_TITLE' | translate }}</div>
           </div>
           <div class="col-lg-4">
             <div class="coverage-grid-cell">
               <div class="d-flex align-items-start gap-2">
                 <span class="icon-check flex-shrink-0"></span>
-                <span>Repairs to the other driver's vehicle or property</span>
+                <span>{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_3_COVER' | translate }}</span>
               </div>
             </div>
           </div>
@@ -292,7 +287,7 @@
             <div class="coverage-grid-cell">
               <div class="d-flex align-items-start gap-2">
                 <span class="icon-cross flex-shrink-0"></span>
-                <span>Your own vehicle repairs, your medical bills, or your passengers' injuries</span>
+                <span>{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_3_EXCLUDE' | translate }}</span>
               </div>
             </div>
           </div>
@@ -302,20 +297,14 @@
       <!-- Footer Section Layout -->
       <div class="row requirement-footer-row align-items-start pt-3 g-4">
         <div class="col-md-7 col-lg-8 order-2 order-md-1 requirement-copy-col">
-          <h3 class="footer-title mb-0">Is Minimum Coverage Enough for Houston Drivers?</h3>
+          <h3 class="footer-title mb-0">{{ 'GLOBAL_TX.REQUIREMENTS.FOOTER_TITLE_PREFIX' | translate }} {{ 'HOUSTON_TX.LOCATION.CITY' | translate }} {{ 'GLOBAL_TX.REQUIREMENTS.FOOTER_TITLE_SUFFIX' | translate }}</h3>
         </div>
         <div class="col-md-5 col-lg-4 order-1 order-md-2 text-center text-md-end requirement-illustration-col">
           <img src="/assets/images/houston-tx/van.png" alt="Driver with broke down camper van vector"
             class="img-fluid vehicle-illustration">
         </div>
         <div class="col-12 requirement-description-col order-3">
-          <p class="footer-text mb-0">
-            Minimum coverage may meet Texas legal requirements, but it often falls short for Houston drivers. With heavy
-            traffic, frequent accidents, and rising repair and medical costs, even a minor crash can quickly exceed
-            basic limits. In a city where vehicle values and healthcare expenses are high, liability claims can add up
-            fast. Storm-related risks like flooding and hail can also increase overall damage costs. Without higher
-            coverage, drivers may face significant out-of-pocket expenses after an accident.
-          </p>
+          <p class="footer-text mb-0">{{ 'HOUSTON_TX.REQUIREMENTS.FOOTER_COPY' | translate }}</p>
         </div>
       </div>
 
@@ -335,35 +324,29 @@
         <div class="col-lg-9">
           <div class="section-content-shell">
       <div class="text-center penalties-header">
-        <h2 class="penalties-title mb-3">Penalties for Driving Uninsured in Texas</h2>
-        <p class="penalties-copy mx-auto mb-0">
-          Driving without insurance in Texas can lead to serious financial and legal consequences. First-time
-          offenders may face fines ranging from $175 to $350, along with added surcharges and possible license
-          suspension. Repeat violations can increase fines up to $1,000, and may include vehicle impoundment and
-          reinstatement fees. Drivers are often required to file an SR-22, which raises future insurance costs. In
-          Houston, the cost of getting caught uninsured exceeds the cost of a basic policy.
-        </p>
+        <h2 class="penalties-title mb-3">{{ 'GLOBAL_TX.UNINSURED.TITLE' | translate }}</h2>
+        <p class="penalties-copy mx-auto mb-0">{{ 'HOUSTON_TX.UNINSURED.COPY' | translate }}</p>
       </div>
 
       <div class="penalties-grid-wrap">
         <div class="penalties-grid-header row g-0">
           <div class="col-md-6">
-            <div class="penalties-grid-head">Penalty</div>
+            <div class="penalties-grid-head">{{ 'GLOBAL_TX.UNINSURED.TABLE.PENALTY' | translate }}</div>
           </div>
           <div class="col-md-6">
-            <div class="penalties-grid-head">Details</div>
+            <div class="penalties-grid-head">{{ 'GLOBAL_TX.UNINSURED.TABLE.DETAILS' | translate }}</div>
           </div>
         </div>
 
         <div class="penalties-grid-row row g-0">
           <div class="col-md-6">
-            <div class="penalties-grid-cell">First Offense Fine</div>
+            <div class="penalties-grid-cell">{{ 'GLOBAL_TX.UNINSURED.TABLE.FIRST_OFFENSE_FINE' | translate }}</div>
           </div>
           <div class="col-md-6">
             <div class="penalties-grid-cell">
               <div class="penalty-detail">
                 <span class="penalty-icon"></span>
-                <span>$175 - $350</span>
+                <span>{{ 'HOUSTON_TX.UNINSURED.DETAILS.FIRST_OFFENSE_FINE' | translate }}</span>
               </div>
             </div>
           </div>
@@ -371,13 +354,13 @@
 
         <div class="penalties-grid-row row g-0">
           <div class="col-md-6">
-            <div class="penalties-grid-cell">Subsequent Offense Fine</div>
+            <div class="penalties-grid-cell">{{ 'GLOBAL_TX.UNINSURED.TABLE.SUBSEQUENT_OFFENSE_FINE' | translate }}</div>
           </div>
           <div class="col-md-6">
             <div class="penalties-grid-cell">
               <div class="penalty-detail">
                 <span class="penalty-icon"></span>
-                <span>Up to $1,000</span>
+                <span>{{ 'HOUSTON_TX.UNINSURED.DETAILS.SUBSEQUENT_OFFENSE_FINE' | translate }}</span>
               </div>
             </div>
           </div>
@@ -385,13 +368,13 @@
 
         <div class="penalties-grid-row row g-0">
           <div class="col-md-6">
-            <div class="penalties-grid-cell">License Surcharge</div>
+            <div class="penalties-grid-cell">{{ 'GLOBAL_TX.UNINSURED.TABLE.LICENSE_SURCHARGE' | translate }}</div>
           </div>
           <div class="col-md-6">
             <div class="penalties-grid-cell">
               <div class="penalty-detail">
                 <span class="penalty-icon"></span>
-                <span>$250/year for 3 years</span>
+                <span>{{ 'HOUSTON_TX.UNINSURED.DETAILS.LICENSE_SURCHARGE' | translate }}</span>
               </div>
             </div>
           </div>
@@ -399,13 +382,13 @@
 
         <div class="penalties-grid-row row g-0">
           <div class="col-md-6">
-            <div class="penalties-grid-cell">Vehicle Impoundment</div>
+            <div class="penalties-grid-cell">{{ 'GLOBAL_TX.UNINSURED.TABLE.VEHICLE_IMPOUNDMENT' | translate }}</div>
           </div>
           <div class="col-md-6">
             <div class="penalties-grid-cell">
               <div class="penalty-detail">
                 <span class="penalty-icon"></span>
-                <span>Your car can be towed and held</span>
+                <span>{{ 'HOUSTON_TX.UNINSURED.DETAILS.VEHICLE_IMPOUNDMENT' | translate }}</span>
               </div>
             </div>
           </div>
@@ -413,13 +396,13 @@
 
         <div class="penalties-grid-row row g-0">
           <div class="col-md-6">
-            <div class="penalties-grid-cell">SR-22 Requirement</div>
+            <div class="penalties-grid-cell">{{ 'GLOBAL_TX.UNINSURED.TABLE.SR22_REQUIREMENT' | translate }}</div>
           </div>
           <div class="col-md-6">
             <div class="penalties-grid-cell">
               <div class="penalty-detail">
                 <span class="penalty-icon"></span>
-                <span>Must file proof of financial responsibility with TDI</span>
+                <span>{{ 'HOUSTON_TX.UNINSURED.DETAILS.SR22_REQUIREMENT' | translate }}</span>
               </div>
             </div>
           </div>
@@ -427,13 +410,13 @@
 
         <div class="penalties-grid-row row g-0">
           <div class="col-md-6">
-            <div class="penalties-grid-cell">License Suspension</div>
+            <div class="penalties-grid-cell">{{ 'GLOBAL_TX.UNINSURED.TABLE.LICENSE_SUSPENSION' | translate }}</div>
           </div>
           <div class="col-md-6">
             <div class="penalties-grid-cell">
               <div class="penalty-detail">
                 <span class="penalty-icon"></span>
-                <span>Driving privileges revoked until insurance is confirmed</span>
+                <span>{{ 'HOUSTON_TX.UNINSURED.DETAILS.LICENSE_SUSPENSION' | translate }}</span>
               </div>
             </div>
           </div>
@@ -441,13 +424,13 @@
 
         <div class="penalties-grid-row row g-0">
           <div class="col-md-6">
-            <div class="penalties-grid-cell">Registration Suspension</div>
+            <div class="penalties-grid-cell">{{ 'GLOBAL_TX.UNINSURED.TABLE.REGISTRATION_SUSPENSION' | translate }}</div>
           </div>
           <div class="col-md-6">
             <div class="penalties-grid-cell">
               <div class="penalty-detail">
                 <span class="penalty-icon"></span>
-                <span>Vehicle registration canceled until coverage is reinstated</span>
+                <span>{{ 'HOUSTON_TX.UNINSURED.DETAILS.REGISTRATION_SUSPENSION' | translate }}</span>
               </div>
             </div>
           </div>
@@ -455,14 +438,8 @@
       </div>
 
       <div class="texassure-block text-center">
-        <h3 class="texassure-title mb-3">TexasSure Verification System — How it Works</h3>
-        <p class="texassure-copy mx-auto mb-0">
-          <span class="texassure-link">TexasSure</span> is a state-run electronic verification system in Texas that
-          helps confirm whether drivers have valid auto insurance coverage. Insurance companies regularly update policy
-          data, which is matched with vehicle registration records. If a vehicle is found without active coverage, the
-          system alerts the Texas Department of Motor Vehicles. This can lead to warnings, fines, or registration
-          issues. It helps reduce uninsured driving and keeps compliance checks automatic statewide.
-        </p>
+        <h3 class="texassure-title mb-3">{{ 'GLOBAL_TX.UNINSURED.TEXASSURE_TITLE' | translate }}</h3>
+        <p class="texassure-copy mx-auto mb-0" [innerHTML]="'HOUSTON_TX.UNINSURED.TEXASSURE_COPY' | translateHtml | async"></p>
       </div>
           </div>
         </div>
@@ -480,7 +457,7 @@
         <div class="col-lg-9">
           <div class="section-content-shell">
       <div class="coverage-options-header text-center">
-        <h2 class="coverage-options-title mb-5">Coverage Options Available to Houston Drivers</h2>
+        <h2 class="coverage-options-title mb-5">{{ 'GLOBAL_TX.COVERAGE_OPTIONS.TITLE_PREFIX' | translate }} {{ 'HOUSTON_TX.LOCATION.CITY' | translate }} {{ 'GLOBAL_TX.COVERAGE_OPTIONS.TITLE_SUFFIX' | translate }}</h2>
       </div>
 
       <div class="row coverage-options-grid gy-4 gx-lg-5 gx-4">
@@ -845,16 +822,8 @@
         <div class="col-lg-9">
           <div class="section-content-shell">
       <div class="rate-factors-header text-center">
-        <h2 class="rate-factors-title mb-0">What Affects Your Car Insurance Rate in Houston, TX?</h2>
-        <p class="rate-factors-copy mb-0">
-          Car insurance rates in Houston are influenced by several key factors that determine your overall risk to
-          insurers. Your driving record, age,
-          and credit score play a major role in pricing. Where you live also matters, as busy traffic areas and
-          high-accident ZIP codes cost more.
-          The type of vehicle, annual mileage, and chosen coverage level further affect premium. Severe weather risks,
-          such as flooding, hail, and
-          theft, also increase costs, making insurance more expensive across Houston overall.
-        </p>
+        <h2 class="rate-factors-title mb-0">{{ 'GLOBAL_TX.RATE_FACTORS.TITLE_PREFIX' | translate }} {{ 'HOUSTON_TX.LOCATION.CITY_WITH_STATE' | translate }}?</h2>
+        <p class="rate-factors-copy mb-0">{{ 'HOUSTON_TX.RATE_FACTORS.COPY' | translate }}</p>
       </div>
 
       <div class="row rate-factors-grid gx-lg-5 gx-4 gy-0">
@@ -942,16 +911,8 @@
         <div class="col-lg-9">
           <div class="section-content-shell">
       <div class="savings-header text-center">
-        <h2 class="savings-title mb-0">How to Save on Car Insurance in Houston, TX</h2>
-        <p class="savings-copy mb-0">
-          Saving on car insurance in Houston starts with shopping around and comparing quotes from multiple carriers,
-          since rates can vary
-          widely for the same driver. Increasing your deductible, bundling auto with home insurance, and maintaining a
-          clean driving record can
-          also significantly lower your premium. Many insurers also offer discounts for safe driving, good credit, and
-          low mileage. Reviewing your
-          policy regularly ensures you are not paying for unnecessary coverage while still staying protected.
-        </p>
+        <h2 class="savings-title mb-0">{{ 'GLOBAL_TX.SAVINGS.TITLE_PREFIX' | translate }} {{ 'HOUSTON_TX.LOCATION.CITY_WITH_STATE' | translate }}</h2>
+        <p class="savings-copy mb-0">{{ 'HOUSTON_TX.SAVINGS.COPY' | translate }}</p>
       </div>
 
       <div class="row savings-grid gx-lg-5 gx-4 gy-0">
@@ -1029,7 +990,7 @@
         <div class="col-lg-9">
           <div class="section-content-shell">
       <div class="independent-agency-header text-center">
-        <h2 class="independent-agency-title mb-0">Why Houston Drivers Choose an Independent<br>Insurance Agency</h2>
+        <h2 class="independent-agency-title mb-0">{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TITLE_PREFIX' | translate }} {{ 'HOUSTON_TX.LOCATION.CITY' | translate }} {{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TITLE_SUFFIX' | translate }}</h2>
       </div>
 
       <div class="independent-agency-badges">
@@ -1157,7 +1118,7 @@
       <div class="col-lg-2"></div>
       <div class="col-lg-9">
         <div class="section-content-shell">
-          <h2 class="coverage__title mb-4">Special Coverage Situations for Houston Drivers</h2>
+      <h2 class="coverage__title mb-4">{{ 'GLOBAL_TX.SPECIAL_COVERAGE.TITLE_PREFIX' | translate }} {{ 'HOUSTON_TX.LOCATION.CITY' | translate }} {{ 'GLOBAL_TX.SPECIAL_COVERAGE.TITLE_SUFFIX' | translate }}</h2>
 
           <div class="row g-4 coverage__grid">
             <!-- SR-22 -->
@@ -1165,14 +1126,9 @@
               <div class="coverage__item d-flex flex-column h-100">
                 <span class="coverage__icon" aria-hidden="true">🛩️</span>
                 <h3 class="coverage__heading">
-                  <a href="#" class="coverage__link">SR-22 Insurance</a>
+                  <a href="#" class="coverage__link">{{ 'GLOBAL_TX.SPECIAL_COVERAGE.ITEMS.SR22' | translate }}</a>
                 </h3>
-                <p class="coverage__text mt-auto">
-                  SR-22 insurance is required for drivers who must demonstrate
-                  financial responsibility after a violation. It is not a policy but a
-                  certificate filed with the state to reinstate or maintain driving
-                  privileges.
-                </p>
+                <p class="coverage__text mt-auto">{{ 'HOUSTON_TX.SPECIAL_COVERAGE.ITEMS.SR22' | translate }}</p>
               </div>
             </div>
 
@@ -1181,13 +1137,9 @@
               <div class="coverage__item d-flex flex-column h-100">
                 <span class="coverage__icon" aria-hidden="true">🚕</span>
                 <h3 class="coverage__heading">
-                  <a href="#" class="coverage__link">High-Risk Drivers</a>
+                  <a href="#" class="coverage__link">{{ 'GLOBAL_TX.SPECIAL_COVERAGE.ITEMS.HIGH_RISK' | translate }}</a>
                 </h3>
-                <p class="coverage__text mt-auto">
-                  High-risk drivers may have accidents, tickets, or lapses in
-                  coverage. Insurance options are still available, often with higher
-                  premiums, until driving records improve in the area over time.
-                </p>
+                <p class="coverage__text mt-auto">{{ 'HOUSTON_TX.SPECIAL_COVERAGE.ITEMS.HIGH_RISK' | translate }}</p>
               </div>
             </div>
 
@@ -1196,13 +1148,9 @@
               <div class="coverage__item d-flex flex-column h-100">
                 <span class="coverage__icon" aria-hidden="true">👦</span>
                 <h3 class="coverage__heading">
-                  <a href="#" class="coverage__link">Teen &amp; Young Drivers</a>
+                  <a href="#" class="coverage__link">{{ 'GLOBAL_TX.SPECIAL_COVERAGE.ITEMS.TEEN' | translate }}</a>
                 </h3>
-                <p class="coverage__text mt-auto">
-                  Teen and young drivers usually pay higher rates due to limited
-                  experience. Good student discounts and safe driving programs can help
-                  reduce costs while building responsible driving habits early on.
-                </p>
+                <p class="coverage__text mt-auto">{{ 'HOUSTON_TX.SPECIAL_COVERAGE.ITEMS.TEEN' | translate }}</p>
               </div>
             </div>
 
@@ -1211,13 +1159,9 @@
               <div class="coverage__item d-flex flex-column h-100">
                 <span class="coverage__icon" aria-hidden="true">🚖</span>
                 <h3 class="coverage__heading">
-                  <a href="#" class="coverage__link">Rideshare Drivers (Uber/Lyft)</a>
+                  <a href="#" class="coverage__link">{{ 'GLOBAL_TX.SPECIAL_COVERAGE.ITEMS.RIDESHARE' | translate }}</a>
                 </h3>
-                <p class="coverage__text mt-auto">
-                  Rideshare drivers need special coverage because personal
-                  policies may not apply while working. Extra protection fills gaps
-                  during app use, ensuring safety while earning income daily.
-                </p>
+                <p class="coverage__text mt-auto">{{ 'HOUSTON_TX.SPECIAL_COVERAGE.ITEMS.RIDESHARE' | translate }}</p>
               </div>
             </div>
 
@@ -1226,13 +1170,9 @@
               <div class="coverage__item d-flex flex-column h-100">
                 <span class="coverage__icon" aria-hidden="true">🏎️</span>
                 <h3 class="coverage__heading">
-                  <a href="#" class="coverage__link">Classic &amp; Collector Cars</a>
+                  <a href="#" class="coverage__link">{{ 'GLOBAL_TX.SPECIAL_COVERAGE.ITEMS.CLASSIC' | translate }}</a>
                 </h3>
-                <p class="coverage__text mt-auto">
-                  Classic and collector cars need specialized coverage based on
-                  agreed value, not depreciation. This helps protect rare vehicles
-                  from damage, theft, or loss while preserving their true market worth.
-                </p>
+                <p class="coverage__text mt-auto">{{ 'HOUSTON_TX.SPECIAL_COVERAGE.ITEMS.CLASSIC' | translate }}</p>
               </div>
             </div>
 
@@ -1241,14 +1181,9 @@
               <div class="coverage__item d-flex flex-column h-100">
                 <span class="coverage__icon" aria-hidden="true">🙋</span>
                 <h3 class="coverage__heading">
-                  <a href="#" class="coverage__link">Non-Owner Auto Insurance</a>
+                  <a href="#" class="coverage__link">{{ 'GLOBAL_TX.SPECIAL_COVERAGE.ITEMS.NON_OWNER' | translate }}</a>
                 </h3>
-                <p class="coverage__text mt-auto">
-                  Non-owner insurance covers drivers who do not own a
-                  vehicle but still drive occasionally. It provides liability
-                  protection when using borrowed or rented cars without
-                  full-time ownership costs.
-                </p>
+                <p class="coverage__text mt-auto">{{ 'HOUSTON_TX.SPECIAL_COVERAGE.ITEMS.NON_OWNER' | translate }}</p>
               </div>
             </div>
 
@@ -1272,7 +1207,7 @@
         <div class="col-lg-2"></div>
         <div class="col-lg-9">
           <div class="section-content-shell">
-      <h2 class="risks__title">Houston-Specific Driving Risks You Should Know</h2>
+      <h2 class="risks__title">{{ 'HOUSTON_TX.LOCATION.CITY' | translate }}-{{ 'GLOBAL_TX.RISKS.TITLE_SUFFIX' | translate }}</h2>
 
       <!-- Decorative RISK badge -->
       <img class="risks__decor" src="/assets/images/houston-tx/risk.png" alt="" aria-hidden="true" />
@@ -1282,16 +1217,8 @@
         <div class="col-12 col-lg-6 risks__col">
           <div class="risks__item">
             <span class="risks__number">01</span>
-            <h3 class="risks__heading">Houston Traffic &amp; Commute Patterns</h3>
-            <p class="risks__text">
-              Houston ranks <a href="#" class="risks__link">among the top 5 most congested cities in the U.S.</a>, with
-              major delays on I-45, I-10, US-59, and the 610 Loop. These high-traffic
-              corridors create daily stop-and-go driving conditions that increase
-              accident exposure and claim frequency. More time spent commuting
-              increases the risk of collisions, which directly raises insurance premiums
-              for drivers across the city. This is why comprehensive coverage matters
-              more in Houston than in smaller Texas cities with lighter traffic.
-            </p>
+            <h3 class="risks__heading">{{ 'HOUSTON_TX.RISKS.ITEMS.0.HEADING' | translate }}</h3>
+            <p class="risks__text" [innerHTML]="'HOUSTON_TX.RISKS.ITEMS.0.TEXT' | translateHtml | async"></p>
           </div>
         </div>
 
@@ -1299,17 +1226,8 @@
         <div class="col-12 col-lg-6 risks__col">
           <div class="risks__item">
             <span class="risks__number">02</span>
-            <h3 class="risks__heading">Weather Risks in Houston, TX</h3>
-            <p class="risks__text">
-              Houston&apos;s weather risks are a <a href="#" class="risks__link">major factor behind higher insurance
-                costs</a>, with frequent hurricanes, heavy rainfall, flash flooding, and
-              hailstorms affecting drivers year-round. Sudden storms can damage
-              vehicles, flood roads, and increase accident rates during extreme
-              weather events. High humidity and unpredictable weather patterns also
-              contribute to long-term wear and to the risk of exposure. These
-              conditions lead to higher premiums because claims are more frequent
-              and often more expensive in Houston.
-            </p>
+            <h3 class="risks__heading">{{ 'HOUSTON_TX.RISKS.ITEMS.1.HEADING' | translate }}</h3>
+            <p class="risks__text" [innerHTML]="'HOUSTON_TX.RISKS.ITEMS.1.TEXT' | translateHtml | async"></p>
           </div>
         </div>
 
@@ -1317,15 +1235,8 @@
         <div class="col-12 col-lg-6 risks__col">
           <div class="risks__item">
             <span class="risks__number">03</span>
-            <h3 class="risks__heading">Vehicle Theft Rates by Neighborhood in Houston, TX</h3>
-            <p class="risks__text">
-              Houston vehicle theft rates vary significantly by neighborhood, with
-              higher risk often seen in dense urban and high-traffic areas. Central
-              Houston, Downtown, and parts of East Houston report more frequent
-              thefts due to heavy parking turnover, apartment complexes, and easy
-              highway access for quick getaways. These factors push comprehensive
-              coverage premiums higher in affected ZIP codes across the city.
-            </p>
+            <h3 class="risks__heading">{{ 'HOUSTON_TX.RISKS.ITEMS.2.HEADING' | translate }}</h3>
+            <p class="risks__text" [innerHTML]="'HOUSTON_TX.RISKS.ITEMS.2.TEXT' | translateHtml | async"></p>
           </div>
         </div>
 
@@ -1333,16 +1244,8 @@
         <div class="col-12 col-lg-6 risks__col">
           <div class="risks__item">
             <span class="risks__number">04</span>
-            <h3 class="risks__heading">Uninsured Driver Statistics for Houston, TX</h3>
-            <p class="risks__text">
-              Texas&apos;s uninsured driver rate is estimated at <a href="#" class="risks__link">around 20% of
-                motorists</a>,
-              meaning roughly 1 in 5 vehicles on the road may have no coverage.
-              Statewide figures show Texas also ranks among the highest in the U.S.
-              This increases financial risk in the event of an accident, as injured drivers
-              may be left covering costs themselves. Uninsured motorist coverage is
-              strongly recommended for Houston drivers.
-            </p>
+            <h3 class="risks__heading">{{ 'HOUSTON_TX.RISKS.ITEMS.3.HEADING' | translate }}</h3>
+            <p class="risks__text" [innerHTML]="'HOUSTON_TX.RISKS.ITEMS.3.TEXT' | translateHtml | async"></p>
           </div>
         </div>
       </div>
@@ -1361,7 +1264,7 @@
         <div class="col-lg-9">
           <div class="section-content-shell">
       <div class="houston-neighborhoods-section__inner">
-        <h2 class="houston-neighborhoods-section__title">Neighborhoods &amp; Areas We Serve in Houston, TX</h2>
+        <h2 class="houston-neighborhoods-section__title">{{ 'GLOBAL_TX.NEIGHBORHOODS.TITLE_PREFIX' | translate }} {{ 'HOUSTON_TX.LOCATION.CITY_WITH_STATE' | translate }}</h2>
 
         <div class="houston-neighborhoods-section__table">
           @for (row of neighborhoodsRows; track row[0]; let i = $index) {
@@ -1388,7 +1291,7 @@
         <div class="col-lg-2"></div>
         <div class="col-lg-9">
           <div class="section-content-shell">
-      <h2 class="faq__title">Frequently Asked Questions — Auto Insurance in Houston, TX</h2>
+      <h2 class="faq__title">{{ 'GLOBAL_TX.FAQ_SECTION.TITLE_PREFIX' | translate }} {{ 'HOUSTON_TX.LOCATION.CITY_WITH_STATE' | translate }}</h2>
 
       <div class="faq__list">
         @for (item of faqItems; track item.question; let i = $index) {
@@ -1431,7 +1334,7 @@
 
   <section class="espanol" #tocStopSection>
     <div class="container-fluid espanol__container">
-      <h2 class="espanol__title">Hablamos Español — Seguro de Auto en Houston, TX</h2>
+      <h2 class="espanol__title">{{ 'GLOBAL_TX.ESPANOL.TITLE_PREFIX' | translate }} {{ 'HOUSTON_TX.LOCATION.CITY_WITH_STATE' | translate }}</h2>
 
       <div class="row align-items-center espanol__row">
         <!-- Illustration -->
@@ -1442,15 +1345,7 @@
 
         <!-- Text -->
         <div class="col-12 col-lg-8 espanol__text-col">
-          <p class="espanol__text">
-            At <a href="#" class="espanol__link">A-State Insurance</a>, we understand the importance of speaking your
-            language. We offer auto
-            insurance with full Spanish support so you can understand every detail of your coverage without
-            confusion. Our agents compare multiple companies to find the best protection at the best price.
-            Whether you need basic liability or full coverage, we guide you step by step so you can make
-            clear and confident decisions. Reliable protection for your car and family in Houston today with
-            trusted local help.
-          </p>
+          <p class="espanol__text" [innerHTML]="'HOUSTON_TX.ESPANOL.COPY' | translateHtml | async"></p>
         </div>
       </div>
     </div>
@@ -1469,15 +1364,8 @@
               </div>
 
               <div class="cover-quote-shell__content">
-                <h2 class="cover-quote-shell__title mb-0">Get Your Free Car Insurance Quote in Houston, TX — Today</h2>
-                <p class="cover-quote-shell__copy mb-0">
-                  Getting a <a href="/get-auto-quote" class="cover-quote-shell__link">free car insurance quote</a> in
-                  Houston, TX, is quick and simple with A-State Insurance. Instead of calling multiple companies one by
-                  one, we compare rates from different trusted carriers for you in minutes. Just share your details and
-                  coverage needs, and our licensed agents will find the most affordable options available. Whether you
-                  need basic liability or full coverage, we help you save time, reduce stress, and get the right
-                  protection for your vehicle in Houston today with no obligation.
-                </p>
+                <h2 class="cover-quote-shell__title mb-0">{{ 'GLOBAL_TX.QUOTE.TITLE_PREFIX' | translate }} {{ 'HOUSTON_TX.LOCATION.CITY_WITH_STATE' | translate }} {{ 'GLOBAL_TX.QUOTE.TITLE_SUFFIX' | translate }}</h2>
+                <p class="cover-quote-shell__copy mb-0" [innerHTML]="'HOUSTON_TX.QUOTE.COPY' | translateHtml | async"></p>
               </div>
             </div>
 
@@ -1485,8 +1373,8 @@
               <div class="quote-options">
                 @for (item of chips; track item.name) {
                 <button type="button" class="quote-option" *ngIf="item.name"
-                  [class.selected]="selectedChip === item.name" [attr.aria-pressed]="selectedChip === item.name"
-                  (click)="selectChip(item.name)">
+                  [class.selected]="coveredForm.selectedChip === item.name" [attr.aria-pressed]="coveredForm.selectedChip === item.name"
+                  (click)="selectChip(coveredForm, item.name)">
                   <span class="icon-badge">
                     <span class="icon-burst"></span>
                     <img [src]="item.image" [alt]="item.name | translate" class="quote-option-image" />
@@ -1501,11 +1389,11 @@
 
               <div class="quote-form-row">
                 <input type="text" [placeholder]="'AUTO_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
-                  class="form-control" [value]="fullName" (input)="fullName = $any($event.target).value" />
+                  class="form-control" [value]="coveredForm.fullName" (input)="coveredForm.fullName = $any($event.target).value" />
                 <input type="tel" appPhoneFormat [placeholder]="'AUTO_INSURANCE.BANNER.FORM.PHONE' | translate"
-                  class="form-control" [value]="phone" (input)="phone = $any($event.target).value" />
-                <button class="quote-submit" [disabled]="isSubmitting || !selectedChip || !fullName.trim() || !phone.trim()" (click)="goToSelectedQuote()">
-                  {{ isSubmitting ? 'Loading...' : 'Get a Quote' }}
+                  class="form-control" [value]="coveredForm.phone" (input)="coveredForm.phone = $any($event.target).value" />
+                <button class="quote-submit" [disabled]="coveredForm.isSubmitting || !coveredForm.selectedChip || !coveredForm.fullName.trim() || !coveredForm.phone.trim()" (click)="goToSelectedQuote(coveredForm)">
+                  {{ coveredForm.isSubmitting ? 'Loading...' : 'Get a Quote' }}
                 </button>
               </div>
             </div>
