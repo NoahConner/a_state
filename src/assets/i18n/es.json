@@ -38300,10 +38300,60 @@
       }
     },
     "RATE_FACTORS": {
-      "TITLE_PREFIX": "¿Qué Afecta la Tarifa de su Seguro de Auto en"
+      "TITLE_PREFIX": "¿Qué Afecta la Tarifa de su Seguro de Auto en",
+      "ITEMS": {
+        "DRIVING_RECORD": "Historial de Manejo (accidentes, infracciones y DUI)",
+        "CREDIT_SCORE": "Puntaje de Crédito",
+        "VEHICLE_MAKE_MODEL": "Marca y Modelo del Vehículo",
+        "DAILY_COMMUTE": "Distancia Diaria de Desplazamiento",
+        "COVERAGE_LEVEL": "Nivel de Cobertura Seleccionado",
+        "NUMBER_OF_VEHICLES": "Número de Vehículos en la Póliza",
+        "NUMBER_OF_DRIVERS": "Número de Conductores en la Póliza",
+        "OCCUPATION": "Ocupación (algunas aseguradoras)",
+        "BUNDLING": "Agrupación con Otras Pólizas",
+        "AGE_EXPERIENCE": "Edad y Años de Experiencia al Volante",
+        "MARITAL_STATUS": "Estado Civil",
+        "VEHICLE_YEAR": "Año del Vehículo",
+        "ANNUAL_MILEAGE": "Kilometraje Anual",
+        "DEDUCTIBLE": "Monto del Deducible",
+        "LAPSES": "Historial de Interrupciones en la Cobertura",
+        "EDUCATION": "Nivel Educativo (algunas aseguradoras)",
+        "INSURANCE_SCORE": "Puntaje de Seguro",
+        "GENDER": "Género",
+        "ZIP_NEIGHBORHOOD": "Código Postal y Vecindario",
+        "SAFETY_FEATURES": "Características de Seguridad del Vehículo",
+        "VEHICLE_USE": "Uso del Vehículo (personal o comercial)",
+        "CLAIMS_HISTORY": "Historial de Reclamaciones",
+        "TEEN_HIGH_RISK": "Conductores Adolescentes o de Alto Riesgo en la Póliza",
+        "HOMEOWNERSHIP": "Propiedad de Vivienda",
+        "COMPANY_TYPE": "Tipo de Compañía de Seguros (cautiva vs. independiente)"
+      }
     },
     "SAVINGS": {
-      "TITLE_PREFIX": "Cómo Ahorrar en el Seguro de Auto en"
+      "TITLE_PREFIX": "Cómo Ahorrar en el Seguro de Auto en",
+      "ITEMS": {
+        "MULTI_POLICY": "Descuento por Múltiples Pólizas",
+        "GOOD_DRIVER": "Descuento para Buenos Conductores",
+        "GOOD_STUDENT": "Descuento para Buenos Estudiantes",
+        "PAPERLESS": "Descuento por Facturación Electrónica",
+        "NEW_CAR": "Descuento para Vehículos Nuevos",
+        "TELEMATICS": "Descuento por Telemática o Seguro Basado en el Uso",
+        "AFFINITY": "Descuento por Afinidad o Membresía de Grupo",
+        "MULTI_CAR": "Descuento por Múltiples Vehículos",
+        "DEFENSIVE_DRIVING": "Descuento por Curso de Manejo Defensivo",
+        "PAY_IN_FULL": "Descuento por Pago Total Anticipado",
+        "MILITARY_VETERAN": "Descuento para Militares y Veteranos",
+        "HOMEOWNER": "Descuento para Propietarios de Vivienda",
+        "SAFETY_FEATURE": "Descuento por Características de Seguridad del Vehículo",
+        "STUDENT_AWAY": "Descuento para Estudiantes que Estudian Fuera de Casa",
+        "ACCIDENT_FREE": "Descuento por Historial Sin Accidentes",
+        "AUTO_PAY": "Descuento por Pago Automático",
+        "EARLY_SIGNING": "Descuento por Contratación Anticipada",
+        "LOYALTY": "Descuento por Lealtad",
+        "ANTI_THEFT": "Descuento por Dispositivo Antirrobo",
+        "LOW_MILEAGE": "Descuento por Bajo Kilometraje",
+        "E_SIGNATURE": "Descuento por Firma Electrónica"
+      }
     },
     "INDEPENDENT_AGENCY": {
       "TITLE_PREFIX": "Por qué los Conductores de",
@@ -38320,17 +38370,41 @@
         "INDEPENDENT": "Agencia Independiente (A-State)",
         "CAPTIVE": "Agente Cautivo",
         "ROW_1": "Número de Aseguradoras",
+        "ROW_1_INDEPENDENT": "Múltiples: compara más de 10 aseguradoras por usted",
+        "ROW_1_CAPTIVE": "Una sola: limitado a una única compañía",
         "ROW_2": "Comparación de Precios",
+        "ROW_2_INDEPENDENT": "Compara tarifas de varias aseguradoras para encontrar la más económica",
+        "ROW_2_CAPTIVE": "Solo puede ofrecer la tarifa de una compañía",
         "ROW_3": "Opciones de Cobertura",
+        "ROW_3_INDEPENDENT": "Mayor variedad de coberturas y límites",
+        "ROW_3_CAPTIVE": "Limitado a la estructura de pólizas de una sola compañía",
         "ROW_4": "Conductores de Alto Riesgo",
+        "ROW_4_INDEPENDENT": "Acceso a mercados especializados y no estándar",
+        "ROW_4_CAPTIVE": "Puede rechazar por completo a conductores de alto riesgo",
         "ROW_5": "Presentación de SR-22",
+        "ROW_5_INDEPENDENT": "Puede comparar múltiples aseguradoras para encontrar la mejor tarifa SR-22",
+        "ROW_5_CAPTIVE": "Opciones limitadas de SR-22 a través de una sola compañía",
         "ROW_6": "Fidelidad Hacia Usted",
+        "ROW_6_INDEPENDENT": "Trabaja para el cliente, no para la aseguradora",
+        "ROW_6_CAPTIVE": "Trabaja para la aseguradora",
         "ROW_7": "Búsqueda de Tarifas en la Renovación",
+        "ROW_7_INDEPENDENT": "Vuelve a comparar tarifas en todas las aseguradoras en cada renovación",
+        "ROW_7_CAPTIVE": "Permanece con la misma aseguradora al renovar",
         "ROW_8": "Defensa en Reclamaciones",
+        "ROW_8_INDEPENDENT": "Defiende sus intereses durante el proceso de reclamación",
+        "ROW_8_CAPTIVE": "Representa los intereses de la aseguradora",
         "ROW_9": "Personalización de la Póliza",
+        "ROW_9_INDEPENDENT": "Adapta la cobertura entre múltiples opciones de aseguradoras",
+        "ROW_9_CAPTIVE": "Limitado a la estructura de pólizas de una sola compañía",
         "ROW_10": "Cambio de Aseguradora",
+        "ROW_10_INDEPENDENT": "Puede cambiarle a una mejor aseguradora sin cambiar de agente",
+        "ROW_10_CAPTIVE": "Debe buscar un nuevo agente para cambiar de compañía",
         "ROW_11": "Conocimiento Local",
+        "ROW_11_INDEPENDENT": "Agentes con experiencia en Texas y el mercado local",
+        "ROW_11_CAPTIVE": "Pueden ser agentes nacionales sin conocimiento local",
         "ROW_12": "Soporte Multilingüe"
+        ,"ROW_12_INDEPENDENT": "Atención en varios idiomas",
+        "ROW_12_CAPTIVE": "Varía según el agente; no está garantizado"
       }
     },
     "SPECIAL_COVERAGE": {
@@ -38388,8 +38462,8 @@
       "LOCATION": "Houston"
     },
     "RATES": {
-      "LEAD": "Los conductores de Houston pasan casi 54 horas al año atrapados en el tráfico, y Texas tiene una de las tasas más altas de conductores sin seguro en las carreteras. Además, las tormentas repentinas y el riesgo de inundaciones hacen que contar con la cobertura de auto adecuada no sea una opción, sino una necesidad. Un corredor de seguros independiente, confiable y con experiencia en Texas compara las principales compañías aseguradoras para ayudar a los conductores de Houston a encontrar una protección confiable y accesible, adaptada a la forma y los lugares donde conducen.",
-      "COPY": "El seguro de auto en Houston suele ser más costoso que el promedio de Texas debido al intenso tráfico, las altas tasas de accidentes, la cantidad de conductores sin seguro y los riesgos climáticos, como inundaciones y tormentas de granizo. Datos recientes del mercado muestran que los conductores de Houston pagan <strong>alrededor de $270 al mes por una póliza con cobertura completa,</strong> mientras que <strong>la cobertura mínima puede costar desde aproximadamente $157 mensuales,</strong> dependiendo del historial de conducción, el código postal, el tipo de vehículo y el nivel de cobertura seleccionado.",
+      "LEAD": "Los conductores de Houston pasan casi 54 horas al año atrapados en el tráfico, y Texas tiene una de las tasas más altas de conductores sin seguro en las carreteras. Además, las tormentas repentinas y el riesgo de inundaciones hacen que contar con la <a href='/es/seguros-de-auto' class='highlight'>cobertura de auto adecuada</a> no sea una opción, sino una necesidad. Un corredor de seguros independiente, confiable y con experiencia en Texas compara las principales compañías aseguradoras para ayudar a los conductores de Houston a encontrar una protección confiable y accesible, adaptada a la forma y los lugares donde conducen.",
+      "COPY": "El seguro de auto en Houston suele ser más costoso que el promedio de Texas debido al intenso tráfico, las altas tasas de accidentes, la cantidad de conductores sin seguro y los riesgos climáticos, como inundaciones y tormentas de granizo. <a href='https://insurify.com/car-insurance/texas/houston/' rel='nofollow' target='_blank' class='highlight'>Datos recientes del mercado</a> muestran que los conductores de Houston pagan <strong>alrededor de $270 al mes por una póliza con cobertura completa,</strong> mientras que <strong>la cobertura mínima puede costar desde aproximadamente $157 mensuales,</strong> dependiendo del historial de conducción, el código postal, el tipo de vehículo y el nivel de cobertura seleccionado.",
       "COMPARISON_COPY": "Las tarifas del seguro de auto en Houston suelen ser más altas que el promedio estatal de Texas, y los conductores con frecuencia pagan entre un 35 % y un 45 % más por una cobertura similar. Este aumento se debe al intenso tráfico y a la mayor frecuencia de accidentes, factores que elevan el riesgo de reclamaciones. La gran cantidad de conductores sin seguro también influye en las primas. Además, Houston está expuesta a condiciones climáticas severas, como inundaciones y tormentas de granizo.",
       "ZIP_LOCATION_POSSESSIVE": "Houston",
       "ZIP_COPY": "En códigos postales de Houston como 77036, 77084 y 77083, una póliza con cobertura completa puede costar entre $3,750 y $4,000 al año debido al tráfico denso, la frecuencia de accidentes, las reclamaciones por robo y los riesgos climáticos, como inundaciones y granizadas. Estos factores contribuyen al aumento de las primas en las zonas con mayor actividad. Aun así, comparar varias compañías aseguradoras a través de un agente independiente puede ayudarle a encontrar tarifas más bajas y una cobertura con mejor relación calidad-precio.",
@@ -38413,7 +38487,7 @@
         "LICENSE_SUSPENSION": "Privilegios de conducción revocados hasta que se confirme el seguro",
         "REGISTRATION_SUSPENSION": "Registro del vehículo cancelado hasta que se restablezca la cobertura"
       },
-      "TEXASSURE_COPY": "TexasSure es un sistema electrónico administrado por el estado de Texas que ayuda a verificar si los conductores cuentan con una cobertura de seguro de auto válida. Las compañías de seguros actualizan periódicamente la información de las pólizas, la cual se compara con los registros de los vehículos. Si se detecta que un vehículo no tiene una cobertura activa, el sistema notifica al Departamento de Vehículos Motorizados de Texas. Esto puede dar lugar a advertencias, multas o problemas con el registro del vehículo. El sistema ayuda a reducir la cantidad de conductores sin seguro y permite que las verificaciones de cumplimiento se realicen automáticamente en todo el estado."
+      "TEXASSURE_COPY": "<a class='inline-link' href='https://www.txdmv.gov/motorists/register-your-vehicle/texassure-insurance-verification'>TexasSure</a> es un sistema electrónico administrado por el estado de Texas que ayuda a verificar si los conductores cuentan con una cobertura de seguro de auto válida. Las compañías de seguros actualizan periódicamente la información de las pólizas, la cual se compara con los registros de los vehículos. Si se detecta que un vehículo no tiene una cobertura activa, el sistema notifica al Departamento de Vehículos Motorizados de Texas. Esto puede dar lugar a advertencias, multas o problemas con el registro del vehículo. El sistema ayuda a reducir la cantidad de conductores sin seguro y permite que las verificaciones de cumplimiento se realicen automáticamente en todo el estado."
     },
     "COVERAGE_OPTIONS": {
       "ITEMS": {
@@ -38457,19 +38531,19 @@
       "ITEMS": [
         {
           "HEADING": "Patrones de Tráfico y Trasbordo en Houston",
-          "TEXT": "Houston se encuentra entre las 5 ciudades más congestionadas de Estados Unidos, con retrasos importantes en autopistas como la I-45, I-10, US-59 y el Loop 610. Estos corredores de alto tráfico generan condiciones diarias de manejo con constantes frenadas y arranques, lo que aumenta la exposición a accidentes y la frecuencia de reclamaciones. Pasar más tiempo en el tráfico eleva el riesgo de colisiones, lo que incrementa directamente las primas de seguro para los conductores en toda la ciudad. Por esta razón, la cobertura completa es más importante en Houston que en ciudades más pequeñas de Texas con menor congestión."
+          "TEXT": "Houston se encuentra entre las <a href='https://www.consumeraffairs.com/automotive/cities-with-the-worst-traffic.html' class='inline-link'>5 ciudades más congestionadas de Estados Unidos</a>, con retrasos importantes en autopistas como la I-45, I-10, US-59 y el Loop 610. Estos corredores de alto tráfico generan condiciones diarias de manejo con constantes frenadas y arranques, lo que aumenta la exposición a accidentes y la frecuencia de reclamaciones. Pasar más tiempo en el tráfico eleva el riesgo de colisiones, lo que incrementa directamente las primas de seguro para los conductores en toda la ciudad. Por esta razón, la cobertura completa es más importante en Houston que en ciudades más pequeñas de Texas con menor congestión."
         },
         {
           "HEADING": "Riesgos Climáticos en Houston, TX",
-          "TEXT": "Los riesgos climáticos en Houston son un factor clave detrás del aumento en los costos del seguro, con huracanes frecuentes, lluvias intensas, inundaciones repentinas y tormentas de granizo que afectan a los conductores durante todo el año. Las tormentas repentinas pueden dañar vehículos, inundar carreteras y aumentar la tasa de accidentes durante eventos climáticos extremos. La alta humedad y los patrones climáticos impredecibles también contribuyen al desgaste a largo plazo y al riesgo de exposición. Estas condiciones generan primas más altas debido a que las reclamaciones son más frecuentes y costosas en Houston."
+          "TEXT": "Los riesgos climáticos en Houston son un <a href='https://climatecheck.com/texas/houston' class='inline-link'>factor clave detrás del aumento en los costos del seguro</a>, con huracanes frecuentes, lluvias intensas, inundaciones repentinas y tormentas de granizo que afectan a los conductores durante todo el año. Las tormentas repentinas pueden dañar vehículos, inundar carreteras y aumentar la tasa de accidentes durante eventos climáticos extremos. La alta humedad y los patrones climáticos impredecibles también contribuyen al desgaste a largo plazo y al riesgo de exposición. Estas condiciones generan primas más altas debido a que las reclamaciones son más frecuentes y costosas en Houston."
         },
         {
           "HEADING": "Tasas de Robo de Vehículos por Vecindario en Houston, TX",
-          "TEXT": "Las tasas de robo de vehículos en Houston varían significativamente según el vecindario, siendo mayor el riesgo en zonas urbanas densas y áreas de alto tráfico. El centro de Houston, Downtown y algunas partes del este de la ciudad reportan más robos debido a la alta rotación de estacionamiento, complejos de apartamentos y fácil acceso a autopistas para escapar rápidamente. En contraste, los vecindarios del norte y las zonas suburbanas suelen presentar menos incidentes. En general, Houston tiene una de las tasas de robo de vehículos más altas de Texas, lo que influye en el costo del seguro."
+          "TEXT": "Las tasas de robo de vehículos en Houston varían significativamente según el vecindario, siendo mayor el riesgo en zonas urbanas densas y áreas de alto tráfico. El centro de Houston, Downtown y algunas partes del este de la ciudad reportan más robos debido a la alta rotación de estacionamiento, complejos de apartamentos y fácil acceso a autopistas para escapar rápidamente. En contraste, los vecindarios del norte y las zonas suburbanas suelen presentar menos incidentes. En general, Houston tiene <a href='https://crimegrade.org/vehicle-theft-houston-tx/' class='inline-link'>una de las tasas de robo de vehículos más altas de Texas</a>, lo que influye en el costo del seguro."
         },
         {
           "HEADING": "Estadísticas de Conductores No Asegurados en Houston, TX",
-          "TEXT": "Se estima que la tasa de conductores sin seguro en Texas es de aproximadamente el 20% de los automovilistas, lo que significa que alrededor de 1 de cada 5 vehículos en la carretera podría no tener cobertura. A nivel estatal, Texas también se encuentra entre los más altos de Estados Unidos en este indicador. Esto incrementa el riesgo financiero en caso de accidente, ya que los conductores lesionados a menudo dependen de su propia póliza para la recuperación. La mayor exposición a reclamaciones por conductores sin seguro eleva directamente las primas en los corredores de alto tráfico y en las zonas urbanas densas de Houston."
+          "TEXT": "Se estima que la tasa de conductores sin seguro en Texas es de <a href='https://www.mukerjilaw.com/en/blog/why-houston-drivers-are-dropping-car-insurance' class='inline-link'>aproximadamente el 20% de los automovilistas</a>, lo que significa que alrededor de 1 de cada 5 vehículos en la carretera podría no tener cobertura. A nivel estatal, Texas también se encuentra entre los más altos de Estados Unidos en este indicador. Esto incrementa el riesgo financiero en caso de accidente, ya que los conductores lesionados a menudo dependen de su propia póliza para la recuperación. La mayor exposición a reclamaciones por conductores sin seguro eleva directamente las primas en los corredores de alto tráfico y en las zonas urbanas densas de Houston."
         }
       ]
     },
@@ -38536,10 +38610,940 @@
       ]
     },
     "ESPANOL": {
-      "COPY": "En Seguros A-State entendemos la importancia de comunicarnos en su idioma. Ofrecemos seguros de auto con soporte completo en español para que pueda comprender cada detalle de su cobertura sin confusiones. Nuestros agentes comparan múltiples compañías para encontrar la mejor protección al mejor precio. Ya sea que necesite una cobertura de responsabilidad básica o una cobertura completa, lo guiamos paso a paso para que pueda tomar decisiones claras y seguras. Protección confiable para su vehículo y su familia en Houston, con ayuda local en la que puede confiar."
+      "COPY": "En <a href='/es/' class='inline-link'>Seguros A-State</a> entendemos la importancia de comunicarnos en su idioma. Ofrecemos seguros de auto con soporte completo en español para que pueda comprender cada detalle de su cobertura sin confusiones. Nuestros agentes comparan múltiples compañías para encontrar la mejor protección al mejor precio. Ya sea que necesite una cobertura de responsabilidad básica o una cobertura completa, lo guiamos paso a paso para que pueda tomar decisiones claras y seguras. Protección confiable para su vehículo y su familia en Houston, con ayuda local en la que puede confiar."
     },
     "QUOTE": {
-      "COPY": "Obtener una cotización gratuita de seguro de auto en Houston, TX es rápido y sencillo con Seguros A-State. En lugar de llamar a varias compañías una por una, nosotros comparamos en minutos las tarifas de diferentes aseguradoras confiables por usted. Solo comparta sus datos y necesidades de cobertura, y nuestros agentes autorizados encontrarán las opciones más económicas disponibles. Ya sea que necesite cobertura de responsabilidad básica o cobertura completa, le ayudamos a ahorrar tiempo, reducir el estrés y obtener la protección adecuada para su vehículo en Houston hoy mismo, sin ningún compromiso."
+      "COPY": "Obtener una <a href='/es/obtener-una-cotizacion' class='inline-link'>cotización gratuita de seguro de auto</a> en Houston, TX es rápido y sencillo con Seguros A-State. En lugar de llamar a varias compañías una por una, nosotros comparamos en minutos las tarifas de diferentes aseguradoras confiables por usted. Solo comparta sus datos y necesidades de cobertura, y nuestros agentes autorizados encontrarán las opciones más económicas disponibles. Ya sea que necesite cobertura de responsabilidad básica o cobertura completa, le ayudamos a ahorrar tiempo, reducir el estrés y obtener la protección adecuada para su vehículo en Houston hoy mismo, sin ningún compromiso."
+    }
+  },
+  "SAN_ANTONIO_TX": {
+    "LOCATION": {
+      "CITY": "San Antonio",
+      "CITY_WITH_STATE": "San Antonio, TX",
+      "POSSESSIVE": "San Antonio"
+    },
+    "BANNER": {
+      "LOCATION": "San Antonio",
+      "CHIPS": {
+        "ACCIDENT_ONLY": "Auto Personal",
+        "ACCIDENT_ILLNESS": "Auto Comercial",
+        "COMPREHENSIVE": "SR-22",
+        "WELLNESS": "Viajes Compartidos",
+        "LIFETIME": "RV y Casa Rodante",
+        "OTHER": "Otro"
+      },
+      "FORM": {
+        "FULL_NAME": "Nombre Completo",
+        "PHONE": "Número de Teléfono",
+        "BUTTON": "Obtener Cotización"
+      }
+    },
+    "TABLE_OF_CONTENTS": {
+      "LOCATION": "San Antonio"
+    },
+    "RATES": {
+      "LEAD": "Los conductores de San Antonio enfrentan algunos de los costos de seguro de auto más altos de Texas, debido al tráfico intenso, las fuertes tormentas de granizo, las inundaciones repentinas y la gran cantidad de conductores sin seguro en las carreteras locales. Ya sea que conduzcas diariamente por la I-35, Loop 410 o el centro de la ciudad, contar con la <a href='/es/seguros-de-auto' class='highlight'>cobertura adecuada</a> es fundamental. Te ayudamos a encontrar un seguro de auto económico en San Antonio, Texas, comparando tarifas de múltiples aseguradoras para adaptarlas a tu presupuesto, vehículo y necesidades de cobertura.",
+      "COPY": "Las tarifas de seguro de auto en San Antonio son más altas que en muchas otras ciudades de Texas debido al tráfico denso, las costosas reclamaciones por accidentes, el clima severo y el alto porcentaje de conductores sin seguro. La cobertura mínima en San Antonio cuesta en promedio <a href='https://insurify.com/car-insurance/texas/san-antonio/#average-car-insurance-cost-in-san-antonio,-tx' rel='nofollow' class='inline-link'> alrededor de $118 al mes,</a> mientras que la cobertura completa promedia <strong> aproximadamente $216 al mes.</strong> Los conductores con un historial limpio, buen crédito y menor kilometraje anual suelen calificar para tarifas más bajas.",
+      "COMPARISON_COPY": "Las tarifas de seguro de auto en San Antonio son más altas que el promedio estatal de Texas debido a la mayor congestión vehicular, una frecuencia más alta de accidentes y una mayor cantidad de conductores sin seguro en comparación con muchas ciudades más pequeñas del estado. Los riesgos asociados al clima severo también aumentan los costos de reclamaciones para las aseguradoras. Además, los gastos más elevados de reparación y atención médica en una gran área metropolitana contribuyen a que las primas superen el promedio estatal.",
+      "ZIP_LOCATION_POSSESSIVE": "San Antonio",
+      "ZIP_COPY": "Los conductores que viven en códigos postales de San Antonio con tráfico denso, mayores tasas de accidentes, niveles más altos de robo de vehículos y una mayor cantidad de conductores sin seguro suelen pagar más por su cobertura. Las zonas con reclamaciones frecuentes por tormentas y patrones de desplazamiento intensivo también registran primas más elevadas. Incluso en los códigos postales más costosos, comparar cotizaciones de varias aseguradoras a través de una agencia independiente puede ayudar a reducir el costo mensual del seguro de auto.",
+      "COMPARISON_TABLE": {
+        "MINIMUM": "$118/mes",
+        "FULL_COVERAGE": "$216/mes"
+      }
+    },
+    "REQUIREMENTS": {
+      "LEAD": "Texas exige que todos los conductores cuenten con <a class='inline-link' href='/es/seguros-de-auto/'> cobertura de seguro de auto.</a> El límite de $30,000 cubre las lesiones de una persona si usted causa un accidente. El límite de $60,000 cubre el total de las lesiones de todas las personas afectadas en el mismo accidente. El límite de $25,000 para daños a la propiedad cubre los daños causados al vehículo, cerca, edificio u otra propiedad de la otra parte. En una ciudad como San Antonio, donde los costos médicos y de reparación de vehículos son elevados, estos límites mínimos pueden agotarse rápidamente, por lo que es importante considerar una cobertura adicional.",
+      "FOOTER_COPY": "La cobertura mínima a menudo no es suficiente para los conductores de San Antonio porque solo cumple con los requisitos legales y no refleja los costos reales de un accidente. Con el tráfico intenso, los accidentes frecuentes y el aumento de los costos de reparación de vehículos y atención médica, un solo accidente puede superar fácilmente los límites básicos de una póliza. Los conductores podrían terminar pagando miles de dólares de su bolsillo por daños, lesiones o demandas. En una ciudad tan concurrida como San Antonio, la cobertura completa o límites de responsabilidad más altos ofrecen una protección financiera mucho más sólida."
+    },
+    "UNINSURED": {
+      "COPY": "Conducir sin seguro en Texas puede generar graves consecuencias financieras y legales. Los infractores por primera vez pueden enfrentar multas de entre $175 y $350, mientras que las infracciones posteriores pueden alcanzar hasta $1,000. Los conductores también pueden recibir un recargo de $250 por año durante tres años, además de una posible suspensión de la licencia, confiscación del vehículo y la obligación de presentar un formulario SR-22. El registro del vehículo también puede ser suspendido hasta que se presente prueba de seguro. El costo de ser sorprendido conduciendo sin seguro en San Antonio suele ser mucho mayor que el costo de mantener una póliza activa.",
+      "DETAILS": {
+        "FIRST_OFFENSE_FINE": "$175 - $350",
+        "SUBSEQUENT_OFFENSE_FINE": "Hasta $1,000",
+        "LICENSE_SURCHARGE": "$250 al año por 3 años",
+        "VEHICLE_IMPOUNDMENT": "Su vehículo puede ser remolcado y retenido",
+        "SR22_REQUIREMENT": "Debe presentar prueba de responsabilidad financiera ante el TDI",
+        "LICENSE_SUSPENSION": "Se revocan los privilegios de conducción hasta confirmar el seguro",
+        "REGISTRATION_SUSPENSION": "El registro del vehículo se cancela hasta que se restablezca la cobertura"
+      },
+      "TEXASSURE_COPY": "Texas utiliza el sistema de verificación <a class='inline-link' href='https://www.txdmv.gov/motorists/register-your-vehicle/texassure-insurance-verification'>TexasSure</a> para confirmar electrónicamente que los conductores mantienen una cobertura de seguro de auto activa. Las compañías de seguros reportan regularmente la información de las pólizas al estado, lo que permite a las autoridades y al Departamento de Vehículos Motorizados verificar la cobertura durante controles de tráfico, renovaciones de registro o después de accidentes. Si una póliza vence o es cancelada, TexasSure puede identificar rápidamente el vehículo como no asegurado, lo que podría resultar en multas, problemas con el registro o sanciones relacionadas con la licencia para los conductores de San Antonio."
+    },
+    "COVERAGE_OPTIONS": {
+      "ITEMS": {
+        "LIABILITY": "Paga las lesiones y los daños materiales que usted cause a otras personas en un accidente. Cubre facturas médicas, reparaciones y costos legales de la otra parte, pero nunca cubre su propio vehículo ni sus lesiones si usted es responsable.",
+        "COLLISION": "Paga la reparación o el reemplazo de su vehículo después de un accidente, sin importar quién tenga la culpa. Cubre costosos daños ocasionados por choques en tráfico intenso o incidentes de un solo vehículo, como golpear un poste.",
+        "COMPREHENSIVE": "Protege su vehículo contra daños que no sean por colisión, como robo, granizo, inundaciones, incendios o vandalismo. Debido al riesgo de tormentas e inundaciones en San Antonio, esta es una de las coberturas opcionales más importantes.",
+        "PIP": "Cubre gastos médicos, pérdida de ingresos y costos relacionados después de un accidente, sin importar quién sea responsable. Ayuda a usted y a sus pasajeros a recuperarse económicamente más rápido sin esperar la aprobación de reclamaciones.",
+        "MEDPAY": "Paga los gastos médicos de usted y sus pasajeros después de un accidente, independientemente de quién tenga la culpa. No cubre salarios perdidos, pero ayuda con facturas hospitalarias, visitas médicas y costos de atención de emergencia.",
+        "UM": "Lo protege si es impactado por un conductor que no tiene seguro. Cubre tanto los gastos médicos como los daños a su vehículo, algo especialmente importante en áreas donde hay muchos conductores sin seguro.",
+        "UIM": "Ayuda a cubrir sus gastos cuando el conductor responsable tiene seguro, pero no suficiente para pagar todas sus facturas médicas o reparaciones. Esta cobertura cubre la diferencia para que usted no tenga que asumir los costos restantes.",
+        "UMPD": "Cubre los costos de reparación de su vehículo si es dañado por un conductor sin seguro. Esto le ayuda a evitar gastos de bolsillo en accidentes causados por conductores no asegurados.",
+        "ROADSIDE": "Brinda ayuda cuando su vehículo se avería, incluyendo remolque, arranque de batería, cambio de neumáticos pinchados y apertura de puertas por bloqueo. Ofrece apoyo rápido durante emergencias y averías inesperadas.",
+        "RENTAL": "Paga un automóvil de alquiler mientras su vehículo está siendo reparado después de una reclamación cubierta. Le permite seguir conduciendo y evita gastos adicionales de transporte durante el período de reparación.",
+        "GAP": "Cubre la diferencia entre el valor real en efectivo de su vehículo y el saldo pendiente de su préstamo o arrendamiento si el automóvil es declarado pérdida total. Le protege de seguir debiendo dinero por un vehículo que ya no puede utilizar.",
+        "TOWING": "Paga servicios de remolque y asistencia básica en carretera cuando su vehículo se avería. Incluye arranque de batería, ayuda con neumáticos pinchados, desbloqueo de puertas y remolque de emergencia.",
+        "CUSTOM_PARTS": "Protege mejoras instaladas después de la compra, como rines, sistemas de sonido, polarizados o modificaciones personalizadas. Si estos elementos son dañados o robados, esta cobertura ayuda a repararlos o reemplazarlos.",
+        "RIDESHARE": "Proporciona protección para conductores de Uber y Lyft cuando la aplicación está activa, pero no hay pasajeros en el vehículo. Cubre las brechas de seguro entre el uso personal y comercial.",
+        "LOAN_PAYOFF": "Liquida el saldo restante de un préstamo o arrendamiento si su vehículo es pérdida total y su valor es menor que la cantidad adeudada. Ayuda a evitar dificultades financieras y patrimonio negativo después de una pérdida total.",
+        "NEW_CAR": "Reemplaza su vehículo nuevo declarado pérdida total por uno completamente nuevo de la misma marca y modelo, siempre que se encuentre dentro del período de elegibilidad. Le protege contra la depreciación inmediata después de la compra.",
+        "ACCIDENT_FORGIVENESS": "Evita que su primer accidente con culpa aumente sus tarifas de seguro. Esta cobertura ayuda a mantener primas estables y protege a los conductores de incrementos repentinos en sus costos de seguro.",
+        "DEATH_DISABILITY": "Proporciona apoyo financiero si un accidente provoca lesiones graves, discapacidad permanente o fallecimiento. Ayuda a cubrir la pérdida de ingresos y brinda respaldo económico a las familias durante situaciones difíciles después de un accidente grave."
+      }
+    },
+    "RATE_FACTORS": {
+      "COPY": "Las tarifas del seguro de auto en San Antonio, TX, se determinan según múltiples factores de riesgo que las aseguradoras utilizan para estimar la probabilidad y el costo de una reclamación. Su historial de conducción, edad, puntaje de crédito, código postal, tipo de vehículo, kilometraje anual y límites de cobertura influyen en el precio. Las zonas con tráfico intenso, antecedentes de accidentes y altas tasas de conductores sin seguro pueden aumentar las primas, mientras que una conducción segura, la combinación de pólizas y deducibles más altos pueden reducir los costos. Cada uno de estos factores ayuda a las aseguradoras a establecer una tarifa personalizada según el nivel de riesgo."
+    },
+    "SAVINGS": {
+      "COPY": "Puede ahorrar en el seguro de auto en San Antonio, TX, aprovechando descuentos y tomando decisiones inteligentes sobre su cobertura. Combinar el seguro de auto con el seguro de vivienda o de inquilinos, mantener un historial de conducción limpio y elegir deducibles más altos puede reducir las primas. Otros ahorros incluyen descuentos por múltiples vehículos, buen conductor y bajo kilometraje, además de programas telemáticos que recompensan la conducción segura. Comparar cotizaciones a través de un agente independiente ayuda a encontrar las opciones de seguro de auto más económicas en San Antonio entre múltiples aseguradoras."
+    },
+    "SPECIAL_COVERAGE": {
+      "ITEMS": {
+        "SR22": "El seguro SR-22 es requerido para conductores que deben demostrar responsabilidad financiera después de infracciones graves. No es una cobertura en sí misma, sino un formulario que confirma que usted mantiene el seguro de auto requerido.",
+        "HIGH_RISK": "Los conductores de alto riesgo pueden tener accidentes, multas o interrupciones en la cobertura. Generalmente pagan tarifas más altas, pero aún pueden obtener seguro a través de aseguradoras especializadas o agencias independientes.",
+        "TEEN": "Los conductores adolescentes y jóvenes suelen pagar primas más altas debido a su poca experiencia al volante y mayor riesgo de accidentes. Los descuentos por buen rendimiento académico y los hábitos de conducción segura pueden ayudar a reducir los costos.",
+        "RIDESHARE": "Los conductores de rideshare necesitan cobertura adicional porque su seguro de auto personal no cubre completamente la conducción basada en aplicaciones. Las pólizas de rideshare cubren los vacíos cuando la app está activa pero no hay pasajeros en el vehículo.",
+        "CLASSIC": "El seguro para autos clásicos y de colección protege vehículos vintage de alto valor con un valor acordado en lugar de cobertura por depreciación. Está diseñado para autos de uso limitado, generalmente almacenados y conducidos ocasionalmente.",
+        "NON_OWNER": "El seguro para no propietarios cubre a conductores que no poseen un vehículo pero aún necesitan protección de responsabilidad civil cuando conducen autos prestados o alquilados. Es útil para mantener cobertura y cumplir con los requisitos legales."
+      }
+    },
+    "RISKS": {
+      "ITEMS": [
+        {
+          "HEADING": "Tráfico y Patrones de Desplazamiento en San Antonio",
+          "TEXT": "San Antonio se encuentra <a href='https://www.sacurrent.com/news/study-san-antonio-has-some-of-the-nations-worst-traffic-and-its-getting-worse-36482954/' class='inline-link'> entre las áreas metropolitanas más congestionadas de Texas, </a> con tráfico intenso en corredores principales como la I-35, Loop 410, Loop 1604 y la Highway 281. Los retrasos durante las horas pico aumentan el tiempo en carretera, lo que eleva la probabilidad de accidentes y reclamaciones de seguros. Una mayor exposición a colisiones también incrementa las primas en comparación con ciudades más pequeñas de Texas. Por eso la cobertura es más importante en San Antonio, ya que ayuda a proteger a los conductores contra daños relacionados con el tráfico y pérdidas inesperadas."
+        },
+        {
+          "HEADING": "Riesgos Climáticos en San Antonio, TX",
+          "TEXT": "El clima de San Antonio es conocido por <a href='https://climatecheck.com/texas/san-antonio' class='inline-link'> cambios repentinos,</a> con fuertes lluvias que pueden provocar inundaciones repentinas en zonas bajas. Las inundaciones son el riesgo más grave, ya que suelen causar daños costosos a los vehículos. Las tormentas de granizo también son frecuentes y pueden abollar o romper parabrisas, mientras que los huracanes y tormentas tropicales provocan daños generalizados e interrupciones por fallas eléctricas. Los vientos fuertes también pueden dañar vehículos estacionados o en movimiento. Por eso, la cobertura mínima puede ser riesgosa en San Antonio."
+        },
+        {
+          "HEADING": "Tasas de Robo de Vehículos por Vecindario en San Antonio, TX",
+          "TEXT": "San Antonio se encuentra consistentemente <a href='https://crimegrade.org/vehicle-theft-san-antonio-tx/' class='inline-link'> entre las ciudades de Texas con mayores tasas de robo de vehículos.</a> Las zonas con mayor incidencia incluyen el centro, el lado oeste, el lado sur, el área del Medical Center y zonas cercanas a corredores principales como la I-10 y Loop 410. Los vehículos más robados suelen ser camionetas y modelos antiguos de Honda y Chevrolet debido a la alta demanda de piezas. El riesgo de robo por código postal impacta directamente el precio de la cobertura integral, ya que las aseguradoras ajustan las tarifas según los patrones locales de pérdida."
+        },
+        {
+          "HEADING": "Estadísticas de Conductores Sin Seguro en San Antonio, TX",
+          "TEXT": "<a href='https://www.reynainjurylaw.com/uninsured-at-fault-driver-texas' class='inline-link'>Aproximadamente 1 de cada 5 conductores en Texas no tiene seguro, </a> y San Antonio refleja esta tendencia de alto riesgo. En términos prácticos, esto significa que si un conductor sin seguro lo golpea, usted es responsable de los costos de reparación y médicos, a menos que cuente con cobertura UM/UIM. Las aseguradoras en Texas deben ofrecer UM/UIM, pero los conductores pueden rechazarla por escrito, lo cual es un error costoso en ciudades con tanto tráfico como San Antonio. Se recomienda UM/UIM para una protección completa. Seguros A-State garantiza que usted no quede desprotegido en una ciudad donde los conductores sin seguro son tan comunes."
+        }
+      ]
+    },
+    "NEIGHBORHOODS": {
+      "ROWS": [
+        ["Adams Hill", "Alazan Apache", "Alamo Heights", "Alamo Ranch"],
+        ["Alta Vista", "Altamira", "Amber Creek", "Amhurst"],
+        ["Arena District", "Avalon", "Balcones Heights", "Beacon Hill"],
+        ["Bel Meade", "Big Country", "Blossom Park", "Braun Station"],
+        ["Bridgewood", "Brooks", "Bulverde Village", "Camelot"],
+        ["Castle Hills", "Churchill Estates", "Cibolo Canyons", "Collins Gardens"],
+        ["Colonies North", "Creative City", "Creekside", "Crestway"],
+        ["Crownridge", "De Zavala", "Deerfield", "Denver Heights"],
+        ["Dignowity Hill", "Dominion", "Donaldson Terrace", "Downtown"],
+        ["East Terrell Hills", "Eastwood", "El Dorado", "Elm Creek"],
+        ["Emerald Forest", "Encino Park", "Fair Oaks Ranch", "Five Points"],
+        ["Forest Crest", "Fox Run", "Fredericksburg Rd", "French Creek"],
+        ["Garden Ridge", "Government Hill", "Great Northwest", "Harvard Place"],
+        ["Heritage", "Hidden Cove", "Highland Hills", "Highland Park"],
+        ["Hunter's Creek", "Inwood", "Jefferson", "King William"],
+        ["Lackland Terrace", "Lakeside", "Lavaca", "Leon Springs"],
+        ["Leon Valley", "Live Oak", "Lone Star", "Longs Creek"],
+        ["Los Angeles Heights", "Medical Center", "Meadow Village", "Memorial Heights"],
+        ["Midtown", "Mission Del Lago", "Monticello Park", "Monte Vista"],
+        ["Mountain View", "Near Eastside", "Near Northwest", "North Central"],
+        ["North San Antonio", "Northeast Side", "Northwest Crossing", "Oak Hills"],
+        ["Oakland Estates", "Oakwell Farms", "Olmos Park", "Park Village"],
+        ["Pearl District", "Pecan Valley", "Prospect Hill", "Redland Ridge"],
+        ["Riverside", "Rogers Ranch", "San Antonio Hills", "Shavano Park"],
+        ["Shearer Hills", "Skyline Park", "Southtown", "Southwood"],
+        ["Spring Vly / Hidden Vly", "Steubing Farm", "Stone Oak", "Sun Terrace"],
+        ["Sunrise", "Terrell Hills", "Third World", "Timberwood Park"],
+        ["Tobin Hill", "University City", "Upper Westside", "Uptown"],
+        ["Vance Jackson", "Villas of San Antonio", "West Side", "Westover Hills"],
+        ["Westwood", "Wilshire", "Windcrest", "Woodlawn Lake"]
+      ]
+    },
+    "FAQ": {
+      "ITEMS": [
+        {
+          "question": "¿Cuánto cuesta el seguro de auto en San Antonio al mes?",
+          "answer": "El seguro de auto en San Antonio generalmente cuesta alrededor de $110 a $120 al mes para cobertura mínima y aproximadamente $210 a $230 al mes para cobertura completa, dependiendo de su historial de manejo, vehículo, código postal, edad y límites de cobertura. Los conductores con historial limpio y buen crédito suelen calificar para tarifas más bajas, mientras que los conductores de alto riesgo normalmente pagan más. Comparar cotizaciones a través de una agencia independiente es una de las mejores formas de encontrar un seguro de auto asequible en San Antonio, TX."
+        },
+        {
+          "question": "¿Cuál es el seguro mínimo requerido en Texas?",
+          "answer": "Texas requiere que los conductores mantengan una cobertura de responsabilidad civil mínima conocida como 30/60/25. Esto incluye $30,000 por lesiones a una persona, $60,000 en total por lesiones corporales por accidente y $25,000 por daños a la propiedad. Estos límites solo cubren daños que usted cause a otras personas y no cubren las reparaciones de su propio vehículo ni sus gastos médicos. Muchos conductores en San Antonio eligen límites más altos o cobertura completa para una mayor protección financiera contra accidentes graves y riesgos climáticos."
+        },
+        {
+          "question": "¿Por qué el seguro de auto es tan caro en San Antonio?",
+          "answer": "El seguro de auto en San Antonio, Texas suele ser más caro debido a la alta congestión de tráfico, altas tasas de accidentes, conductores sin seguro y riesgos climáticos severos como inundaciones y granizo. Las grandes áreas metropolitanas también tienen mayores costos de reparación de vehículos, gastos médicos y reclamaciones por robo, lo que aumenta los pagos de las aseguradoras. El código postal, el historial de conducción y el tipo de vehículo también influyen en las primas, por lo que comparar tarifas es clave para encontrar opciones más económicas."
+        },
+        {
+          "question": "¿Cuál es el seguro de auto más barato en San Antonio?",
+          "answer": "El seguro de auto más barato en San Antonio depende de factores como edad, historial de manejo, vehículo y necesidades de cobertura. Compañías como Texas Farm Bureau, Allstate y Progressive suelen ofrecer tarifas más bajas que el promedio para conductores calificados, pero los precios varían significativamente entre aseguradoras. La mejor manera de encontrar seguro económico en San Antonio es comparar múltiples cotizaciones a través de una agencia independiente que trabaja con varias compañías a la vez."
+        },
+        {
+          "question": "¿Necesito seguro contra inundaciones para mi auto en San Antonio?",
+          "answer": "El daño por inundación en su vehículo está cubierto por la cobertura integral, no por la cobertura de responsabilidad civil estándar. San Antonio experimenta inundaciones repentinas durante fuertes lluvias, especialmente en carreteras bajas y zonas propensas a inundaciones, por lo que la cobertura integral es altamente recomendada. Sin ella, es posible que deba pagar de su bolsillo las reparaciones o la pérdida total del vehículo. La cobertura mínima no protege su auto contra daños por agua o tormentas."
+        },
+        {
+          "question": "¿Puedo obtener seguro de auto con mal historial de manejo en San Antonio?",
+          "answer": "Sí, los conductores con accidentes, multas por exceso de velocidad, DUI, requisitos SR-22 o interrupciones en la cobertura aún pueden obtener seguro de auto en San Antonio. Los conductores de alto riesgo generalmente pagan primas más altas, pero las agencias independientes pueden comparar múltiples aseguradoras, incluidas compañías especializadas en riesgos altos. Tomar cursos de manejo defensivo, mejorar el crédito y mantener cobertura continua puede ayudar a reducir tarifas con el tiempo."
+        },
+        {
+          "question": "¿Qué pasa si me choca un conductor sin seguro en San Antonio?",
+          "answer": "Si un conductor sin seguro lo choca en San Antonio, es posible que tenga que pagar las reparaciones y gastos médicos por su cuenta a menos que tenga cobertura de conductor sin seguro o con seguro insuficiente (UM/UIM). Esta cobertura opcional ayuda a pagar daños al vehículo, lesiones y otros costos cuando el conductor responsable no tiene seguro o tiene cobertura insuficiente. Dado que Texas tiene un alto porcentaje de conductores sin seguro, muchos profesionales recomiendan agregar esta protección."
+        },
+        {
+          "question": "¿El seguro de auto en San Antonio es más caro que en otras ciudades de Texas?",
+          "answer": "Las tarifas de seguro de auto en San Antonio suelen ser ligeramente más altas que el promedio estatal de Texas debido a la congestión del tráfico, la frecuencia de accidentes, reclamaciones por clima severo y riesgos de conductores sin seguro. Aunque puede ser más barato que en ciudades grandes como Houston o Dallas, los conductores en San Antonio suelen pagar más que en ciudades más pequeñas de Texas. El código postal, los patrones de desplazamiento y las tasas de robo también afectan las primas, por lo que comparar aseguradoras ayuda a reducir costos."
+        }
+      ]
+    },
+    "ESPANOL": {
+      "COPY": "En <a href='/es/' class='inline-link'>Seguros A-State</a>, apoyamos con orgullo a la comunidad hispana en San Antonio, TX con seguros de auto. Entendemos que cada conductor tiene necesidades diferentes, por eso comparamos múltiples aseguradoras para encontrar una cobertura asequible y confiable. Ya sea que necesite responsabilidad civil básica, cobertura completa o seguro SR-22, le ayudamos a elegir la póliza adecuada para su presupuesto y su vehículo en Texas."
+    },
+    "QUOTE": {
+      "COPY": "Obtener una <a href='/es/obtener-una-cotizacion' class='inline-link'>cotización gratuita de seguro de auto</a> en San Antonio, TX es rápido y sencillo. Primero, seleccione el tipo de cobertura. Luego, ingrese su nombre completo y número de teléfono para que un agente pueda contactarlo con opciones personalizadas. Una vez enviado, comparamos múltiples aseguradoras para encontrar la mejor tarifa y cobertura para sus necesidades. Nuestro equipo revisa los detalles y le ayuda a elegir la póliza según su presupuesto y nivel de protección. Finalmente, recibe su cotización personalizada y puede activar la cobertura el mismo día si es necesario."
+    }
+  },
+  "DALLAS_TX": {
+    "LOCATION": {
+      "CITY": "Dallas",
+      "CITY_WITH_STATE": "Dallas, TX",
+      "POSSESSIVE": "Dallas"
+    },
+    "BANNER": {
+      "LOCATION": "Dallas",
+      "CHIPS": {
+        "ACCIDENT_ONLY": "Auto Personal",
+        "ACCIDENT_ILLNESS": "Auto Comercial",
+        "COMPREHENSIVE": "SR-22",
+        "WELLNESS": "Viajes Compartidos",
+        "LIFETIME": "RV y Casa Rodante",
+        "OTHER": "Otros"
+      },
+      "FORM": {
+        "FULL_NAME": "Nombre Completo",
+        "PHONE": "Número De Teléfono",
+        "BUTTON": "Obtener Cotización"
+      }
+    },
+    "TABLE_OF_CONTENTS": {
+      "LOCATION": "Dallas"
+    },
+    "RATES": {
+      "LEAD": "En Dallas, TX, los conductores circulan por algunas de las autopistas más transitadas de Texas, con una alta congestión de tráfico, accidentes frecuentes y una de las tasas más elevadas de conductores sin seguro en el estado. Además, las tormentas de granizo repentinas pueden dañar los vehículos en cuestión de minutos. Por eso, contar con un <a href='/es/seguros-de-auto' class='highlight'>seguro de auto adecuado</a> no es opcional, es esencial. Como bróker independiente de seguros en Texas, comparamos las principales aseguradoras para encontrar una cobertura que se ajuste a tu presupuesto y te proteja en cada carretera de Dallas. Obtén cotizaciones hoy mismo, de forma rápida y sencilla.",
+      "COPY": "El seguro de auto en Dallas, TX, generalmente cuesta más que el promedio nacional debido al alto volumen de tráfico, las altas tasas de accidentes, la gran cantidad de conductores sin seguro y los frecuentes daños por granizo. En promedio, los conductores en Dallas pagan alrededor de <strong>$235 al mes por cobertura completa,</strong> mientras que <strong>la cobertura mínima de responsabilidad suele costar desde $125 al mes,</strong> dependiendo del perfil del conductor, el código postal y el tipo de vehículo.",
+      "COMPARISON_COPY": "Las tarifas de seguro de auto en Dallas suelen ser más altas que el promedio del estado de Texas, al igual que en Houston, debido al alto tráfico, los accidentes frecuentes y los mayores costos médicos y de reparación. Las primas en Dallas están influenciadas por una combinación de factores de riesgo locales, incluyendo la congestión vial, la densidad de población, las tasas de robo de vehículos y la frecuencia de reclamaciones. El tráfico intenso en autopistas, la mayor exposición a accidentes y una mayor cantidad de conductores sin seguro también pueden contribuir al aumento de los costos del seguro.",
+      "ZIP_LOCATION_POSSESSIVE": "Dallas",
+      "ZIP_COPY": "En Dallas, TX, el costo mensual promedio del seguro de auto varía según el código postal debido a la densidad del tráfico, las tasas de robo, la frecuencia de accidentes y la exposición a condiciones climáticas como tormentas de granizo. Las zonas de mayor riesgo, como 75217 y 75211, suelen presentar mayor actividad de reclamaciones, más incidentes de robo de vehículos y más pérdidas relacionadas con el tráfico. Los códigos postales de riesgo moderadamente más bajo, como 75287, generalmente presentan menos reclamaciones y menor exposición a ciertos factores de riesgo.",
+      "COMPARISON_TABLE": {
+        "MINIMUM": "$125/mes",
+        "FULL_COVERAGE": "$235/mes"
+      }
+    },
+    "REQUIREMENTS": {
+      "LEAD": "Texas exige que los conductores tengan al menos una cobertura de responsabilidad 30/60/25. Esto significa hasta $30,000 para lesiones de una persona en un accidente que usted cause. También cubre hasta $60,000 en total por todas las lesiones en un solo accidente, sin importar cuántas personas resulten heridas. Y finalmente, cubre hasta $25,000 por daños que usted cause al vehículo o propiedad de otra persona. Estos límites pueden agotarse rápidamente después de un accidente grave.",
+      "FOOTER_COPY": "La cobertura mínima en Texas puede cumplir con los requisitos legales, pero a menudo no es suficiente para los conductores en Dallas. Con el alto tráfico, los frecuentes accidentes entre varios vehículos y los elevados costos médicos y de reparación, incluso un accidente menor puede superar rápidamente los límites básicos. Si usted es responsable del accidente, podría tener que pagar los costos restantes de su propio bolsillo. Por eso, muchos conductores en Dallas optan por límites de responsabilidad más altos o por cobertura completa para una mejor protección financiera."
+    },
+    "UNINSURED": {
+      "COPY": "Conducir sin seguro en Texas puede traer consecuencias graves. Los infractores por primera vez pueden enfrentar multas que van desde aproximadamente $175 hasta $350, además de cargos judiciales adicionales. Las reincidencias pueden resultar en multas de hasta $1,000, junto con la suspensión de la licencia, la incautación del vehículo y primas de seguro más altas en el futuro. También puede ser obligatorio presentar un formulario SR-22.",
+      "DETAILS": {
+        "FIRST_OFFENSE_FINE": "$175 - $350",
+        "SUBSEQUENT_OFFENSE_FINE": "Hasta $1,000",
+        "LICENSE_SURCHARGE": "$250/año durante 3 años",
+        "VEHICLE_IMPOUNDMENT": "Su auto puede ser remolcado y retenido",
+        "SR22_REQUIREMENT": "Debe presentar prueba de responsabilidad financiera ante TDI",
+        "LICENSE_SUSPENSION": "Privilegios de conducción suspendidos hasta confirmar el seguro",
+        "REGISTRATION_SUSPENSION": "Registro del vehículo cancelado hasta restablecer la cobertura"
+      },
+      "TEXASSURE_COPY": "Texas utiliza el sistema <a class='inline-link' href='https://www.txdmv.gov/motorists/register-your-vehicle/texassure-insurance-verification'>TexasSure</a> para verificar electrónicamente si cada vehículo registrado cuenta con seguro activo. Las compañías de seguros envían regularmente actualizaciones de pólizas a la base de datos estatal, que se compara con los registros de matriculación de vehículos. Si la cobertura no aparece o no puede verificarse, los conductores pueden recibir avisos, multas o problemas con el registro. Este sistema ayuda a reducir la cantidad de conductores sin seguro en Texas."
+    },
+    "COVERAGE_OPTIONS": {
+      "ITEMS": {
+        "LIABILITY": "Cubre las lesiones y los daños a la propiedad que usted cause a otras personas en un accidente. Paga gastos médicos, costos de reparación y gastos legales, ayudando a proteger sus finanzas de demandas y pérdidas de su propio bolsillo.",
+        "COLLISION": "Paga los daños a su vehículo después de una colisión, sin importar quién tuvo la culpa. Ya sea que choque con otro auto u objeto, ayuda a cubrir los costos de reparación o reemplazo, reduciendo el impacto financiero de los accidentes.",
+        "COMPREHENSIVE": "Protege su vehículo contra daños que no sean por colisión, como robo, vandalismo, incendio, granizo o inundaciones. Es especialmente útil en zonas donde los eventos climáticos pueden causar daños repentinos y costosos.",
+        "PIP": "Cubre gastos médicos, pérdida de ingresos y servicios esenciales después de un accidente, sin importar quién tuvo la culpa. Garantiza que usted y sus pasajeros reciban apoyo financiero inmediato para sus necesidades de recuperación.",
+        "MEDPAY": "Ayuda a pagar los gastos médicos de usted y sus pasajeros después de un accidente, sin importar quién tuvo la culpa. Puede cubrir rápidamente visitas al hospital, honorarios médicos y costos de ambulancia.",
+        "UM": "Lo protege si es impactado por un conductor que no tiene seguro. Ayuda a cubrir sus gastos médicos y costos relacionados, evitando que usted pague por el error de otra persona.",
+        "UIM": "Cubre los gastos cuando el seguro del otro conductor no es suficiente para pagar sus daños. Cierra la brecha para que sus gastos médicos y reparaciones estén cubiertos total o parcialmente.",
+        "UMPD": "Paga los daños a su vehículo causados por un conductor sin seguro. Ayuda a cubrir los costos de reparación para que usted no tenga que pagar de su bolsillo cuando el responsable no tiene cobertura.",
+        "ROADSIDE": "Proporciona ayuda en emergencias como llantas ponchadas, batería descargada, bloqueo de llaves o entrega de combustible. Le asegura no quedarse varado y volver a la carretera rápidamente con el menor estrés posible.",
+        "RENTAL": "Cubre el costo de alquilar un vehículo mientras su auto está en reparación después de un reclamo cubierto. Le ayuda a mantener su rutina diaria sin interrupciones de transporte.",
+        "GAP": "Paga la diferencia entre el valor actual de su auto y el saldo pendiente de su préstamo o arrendamiento si su vehículo queda como pérdida total. Evita que usted siga pagando por un auto que ya no tiene.",
+        "TOWING": "Cubre el costo del remolque de su vehículo y servicios básicos de asistencia en carretera. Ayuda a reducir gastos inesperados cuando su auto se descompone o necesita ayuda en el camino.",
+        "CUSTOM_PARTS": "Protege accesorios instalados después de fábrica como llantas mejoradas, sistemas de sonido o modificaciones personalizadas. Asegura que sus inversiones adicionales estén cubiertas en caso de daño o robo.",
+        "RIDESHARE": "Extiende la protección cuando conduce para servicios como Uber o Lyft. Cubre los vacíos entre el seguro personal y comercial, asegurando protección mientras trabaja.",
+        "LOAN_PAYOFF": "Ayuda a pagar el saldo restante de su préstamo o arrendamiento si su vehículo queda como pérdida total. Reduce la carga financiera después de una pérdida total.",
+        "NEW_CAR": "Reemplaza su vehículo siniestrado con uno nuevo del mismo modelo y marca. Es ideal para autos recientes y ayuda a evitar la pérdida por depreciación tras un accidente grave.",
+        "ACCIDENT_FORGIVENESS": "Evita que su tarifa de seguro aumente después de su primer accidente con culpa. Recompensa un historial de manejo seguro y ayuda a evitar incrementos repentinos en la prima.",
+        "DEATH_DISABILITY": "Brinda apoyo financiero en caso de lesiones graves o fallecimiento como resultado de un accidente. Ayuda a cubrir atención a largo plazo, pérdida de ingresos y gastos familiares en situaciones difíciles."
+      }
+    },
+    "RATE_FACTORS": {
+      "COPY": "Las tarifas de seguro de auto en Dallas, TX, dependen de varios factores clave. Tu historial de manejo, incluyendo accidentes o infracciones, juega un papel importante. La edad, el historial crediticio y la ubicación también influyen en el precio, especialmente en códigos postales de alto riesgo. El tipo de vehículo que conduces, la frecuencia con la que lo usas diariamente y los límites de cobertura seleccionados también afectan el costo. En Dallas, el tráfico intenso, los riesgos climáticos y las tasas de robo también influyen en las primas, por lo que las cotizaciones personalizadas son esenciales para obtener precios precisos."
+    },
+    "SAVINGS": {
+      "COPY": "Ahorrar en el seguro de auto en Dallas, TX, comienza comparando cotizaciones de múltiples aseguradoras en lugar de elegir la primera opción. Mantener un historial de manejo limpio y mejorar su puntaje crediticio puede reducir su tarifa con el tiempo. Agrupar pólizas, aumentar los deducibles y preguntar por descuentos disponibles también ayuda a reducir costos. Dado que Dallas tiene factores de riesgo más altos, trabajar con un bróker independiente le asegura encontrar el precio más competitivo sin sacrificar la cobertura."
+    },
+    "SPECIAL_COVERAGE": {
+      "ITEMS": {
+        "SR22": "El seguro SR-22 es un certificado exigido por el estado que demuestra que usted mantiene la cobertura mínima de responsabilidad civil. A menudo se requiere después de infracciones graves como DUI, suspensión de licencia o conducir sin seguro.",
+        "HIGH_RISK": "Los conductores de alto riesgo incluyen a quienes tienen accidentes, infracciones de tránsito o antecedentes de DUI. Las tarifas de seguro son más altas, pero la cobertura sigue estando disponible a través de aseguradoras especializadas diseñadas para conductores con mayor riesgo.",
+        "TEEN": "Los conductores adolescentes y jóvenes suelen enfrentar tarifas de seguro más altas debido a su poca experiencia y mayor riesgo de accidentes. Los descuentos por buen rendimiento académico y cursos de educación vial pueden ayudar a reducir la prima total.",
+        "RIDESHARE": "Los conductores de rideshare necesitan cobertura adicional más allá del seguro de auto personal. Esta cobertura cubre los vacíos entre la póliza personal y la de la empresa, asegurando protección mientras conducen para Uber, Lyft o aplicaciones similares.",
+        "CLASSIC": "El seguro para autos clásicos y de colección protege vehículos raros o de alto valor. Generalmente incluye cobertura por valor acordado, opciones de kilometraje limitado y protección especializada para restauración y modificaciones personalizadas.",
+        "NON_OWNER": "El seguro de auto para no propietarios brinda cobertura de responsabilidad civil a conductores que no poseen un vehículo pero conducen ocasionalmente. Ayuda a cumplir con los requisitos legales y ofrece protección financiera en caso de accidente."
+      }
+    },
+    "RISKS": {
+      "ITEMS": [
+        {
+          "HEADING": "Tráfico y Patrones de Desplazamiento en Dallas",
+          "TEXT": "Dallas se encuentra <a href='https://www.edhat.com/news/top-10-us-cities-with-the-worst-traffic-congestion/' class='inline-link'> entre las 10 ciudades más congestionadas de Estados Unidos, </a> con conductores que pasan más de 50 horas al año atrapados en el tráfico. Los corredores de mayor riesgo incluyen I-635 (LBJ Freeway), I-35E, US-75 y Dallas North Tollway, donde la congestión intensa y los accidentes frecuentes son comunes durante las horas pico. Más tiempo en la carretera significa mayor exposición a accidentes, lo que incrementa directamente el riesgo de seguro y el costo de las primas. Por esta razón, la cobertura completa es más importante en Dallas."
+        },
+        {
+          "HEADING": "Riesgos Climáticos en Dallas, TX",
+          "TEXT": "El clima en Dallas es altamente impredecible, con <a href='https://climatecheck.com/texas/dallas' class='inline-link'> tormentas repentinas y cambios estacionales extremos </a> que afectan directamente las condiciones de conducción y las reclamaciones de seguros. El riesgo más grave son las inundaciones, que pueden dañar rápidamente vehículos e infraestructura vial, y generalmente requieren cobertura integral para su protección. El granizo también es común en el norte de Texas y puede causar abolladuras costosas y daños en cristales, lo cual normalmente está cubierto por el seguro comprensivo. Los huracanes y tormentas tropicales son menos frecuentes en el interior."
+        },
+        {
+          "HEADING": "Tasas de Robo de Vehículos por Vecindario en Dallas, TX",
+          "TEXT": "Dallas se mantiene constantemente <a href='https://crimegrade.org/vehicle-theft-dallas-tx/' class='inline-link'> entre las ciudades con mayor tasa de robo de vehículos en Texas,</a> con riesgos que varían significativamente según el código postal. Áreas como South Dallas, Oak Cliff, Pleasant Grove y partes del centro reportan tasas más altas de incidentes, mientras que las zonas suburbanas suelen tener menor riesgo. Los vehículos más robados incluyen camionetas como la Ford F-150 y la Chevrolet Silverado. Las altas tasas de robo en un código postal aumentan directamente las primas del seguro de cobertura completa debido a una mayor exposición a reclamaciones."
+        },
+        {
+          "HEADING": "Estadísticas de Conductores Sin Seguro en Dallas, TX",
+          "TEXT": "<a href='https://www.reynainjurylaw.com/uninsured-at-fault-driver-texas' class='inline-link'>Se estima que alrededor de 1 de cada 5 conductores en Texas no tiene seguro,</a> lo que convierte al estado en uno de los de mayor riesgo por brechas de cobertura, según informes estatales de seguros. En la práctica, si un conductor sin seguro te choca, podrías tener que pagar los gastos médicos y de reparación por tu cuenta, a menos que cuentes con cobertura UM/UIM. Texas exige que las aseguradoras ofrezcan UM/UIM, pero los conductores pueden rechazarla por escrito, una decisión que a menudo resulta costosa en Dallas. Se recomienda encarecidamente agregar cobertura UM/UIM."
+        }
+      ]
+    },
+    "NEIGHBORHOODS": {
+      "ROWS": [
+        ["Arts District", "Bachman Lake", "Baylor District", "Belmont"],
+        ["Bonton", "Bryan Place", "Buckner Terrace", "Caruth Terrace"],
+        ["Casa Linda", "Casa View", "Cedar Crest", "Cedars"],
+        ["Church Road", "Cockrell Hill", "Dallas Farmers Market", "Deep Ellum"],
+        ["Design District", "Dixon Circle", "Dolphin Heights", "Downtown Dallas"],
+        ["East Dallas", "East Kleberg", "Elm Thicket", "Exposition Park"],
+        ["Fair Park", "Far North Dallas", "Fort Worth Avenue", "Gables"],
+        ["Glencoe Park", "Greenlands", "Greenway Park", "Harwood District"],
+        ["Henderson Ave", "Highland Hills", "Hillcrest Forest", "Hollywood Santa Monica"],
+        ["Inwood", "Jubilee Park", "Kessler Park", "Kidd Springs"],
+        ["King William", "Kleberg", "Knox-Henderson", "Lake Highlands"],
+        ["Lakewood", "Little Forest Hills", "Lochwood", "Longs Creek"],
+        ["Love Field", "Lower Greenville", "Main Street District", "Medical District"],
+        ["Midway Hollow", "Mill City", "Midtown Dallas", "Mountain Creek"],
+        ["Munger Place", "North Dallas", "North Oak Lawn", "Northeast Dallas"],
+        ["Northwest Dallas", "Oak Cliff", "Oak Lawn", "Old East Dallas"],
+        ["Owenwood", "Parkdale", "Peak's Addition", "Pemberton Hill"],
+        ["Pleasant Grove", "Pleasant Mound", "Preston Hollow", "Prestonwood"],
+        ["Reunion District", "Riverfront District", "Rylie", "Sagemont"],
+        ["Scyene", "Singing Hills", "Skyline Heights", "South Dallas"],
+        ["South Side", "Southeast Dallas", "Trinity Groves", "University Meadows"],
+        ["Uptown", "Urbandale", "Vickery Meadow", "Vickery Place"],
+        ["Victory Park", "Walnut Hill", "West Dallas", "West End"],
+        ["Westhollow", "Wheatley Place", "White Rock Valley", "Wilshire Heights"]
+      ]
+    },
+    "FAQ": {
+      "ITEMS": [
+        {
+          "question": "¿Cuánto Cuesta el Seguro de Auto en Dallas al Mes?",
+          "answer": "El seguro de auto en Dallas generalmente cuesta entre $60 y $150 al mes para cobertura mínima y entre $185 y $310 al mes para cobertura completa. Los costos varían según el historial de manejo, el tipo de vehículo, el código postal y los límites de cobertura. El alto tráfico y las tasas de accidentes en Dallas suelen elevar las primas por encima del promedio estatal."
+        },
+        {
+          "question": "¿Cuál es el Seguro de Auto Mínimo Requerido en Texas?",
+          "answer": "Texas exige a los conductores una cobertura de responsabilidad 30/60/25. Esto incluye $30,000 por lesiones por persona, $60,000 por accidente y $25,000 por daños a la propiedad. Esta cobertura solo paga los daños que usted cause a otros, no a su propio vehículo. En ciudades concurridas como Dallas, se recomienda encarecidamente una cobertura mayor para una mejor protección."
+        },
+        {
+          "question": "¿Por Qué es Tan Caro el Seguro de Auto en Dallas?",
+          "answer": "El seguro en Dallas es costoso debido al alto tráfico, los frecuentes accidentes, las altas tasas de conductores sin seguro y las condiciones climáticas severas como las tormentas de granizo. La densidad urbana aumenta la frecuencia de reclamaciones, mientras que el robo de vehículos y los costos de reparación también elevan las primas. Estos riesgos combinados hacen que las aseguradoras cobren más que en ciudades más pequeñas de Texas."
+        },
+        {
+          "question": "¿Cuál es el Seguro de Auto Más Barato en Dallas?",
+          "answer": "El seguro más barato en Dallas suele ser la cobertura de responsabilidad mínima de aseguradoras económicas, pero las tarifas varían mucho según el perfil del conductor. Los brókers independientes ayudan a comparar múltiples compañías para encontrar precios más bajos. Los descuentos por buen manejo, pólizas combinadas y deducibles más altos pueden reducir significativamente las primas mensuales."
+        },
+        {
+          "question": "¿Necesito Seguro Contra Inundaciones para mi Auto en Dallas?",
+          "answer": "No se compra un seguro de inundación separado para autos; los daños por inundación están cubiertos por el seguro de cobertura integral. En Dallas, las tormentas repentinas y las inundaciones hacen que esta cobertura sea muy importante. Sin ella, los daños por agua no están cubiertos, dejando al conductor responsable de reparaciones costosas o la pérdida total del vehículo."
+        },
+        {
+          "question": "¿Puedo Obtener Seguro de Auto con Mal Historial de Manejo en Dallas?",
+          "answer": "Sí, los conductores con accidentes, multas o DUI aún pueden obtener cobertura en Dallas, pero a tarifas más altas. Las aseguradoras especializadas en alto riesgo ofrecen pólizas, y mejorar el historial con el tiempo ayuda a reducir costos. Los agentes independientes pueden comparar opciones y encontrar compañías más accesibles para conductores de alto riesgo."
+        },
+        {
+          "question": "¿Qué Pasa si Me Choca un Conductor sin Seguro en Dallas?",
+          "answer": "Si un conductor sin seguro lo choca, usted podría tener que pagar los gastos médicos y de reparación por su cuenta, a menos que tenga cobertura UM/UIM. Texas exige que las aseguradoras la ofrezcan, pero usted puede rechazarla por escrito. En Dallas, donde muchos conductores no tienen seguro, la cobertura UM/UIM es altamente recomendada para protección financiera."
+        },
+        {
+          "question": "¿El Seguro de Auto en Dallas es Más Caro que en Otras Ciudades de Texas?",
+          "answer": "Sí, el seguro de auto en Dallas generalmente es más caro que en ciudades más pequeñas de Texas debido a la mayor congestión del tráfico, las tasas de accidentes, el robo de vehículos y la cantidad de conductores sin seguro. Los factores de riesgo urbano aumentan la frecuencia de reclamaciones, lo que lleva a primas más altas que en zonas menos pobladas con menores costos de accidentes y reparaciones."
+        }
+      ]
+    },
+    "ESPANOL": {
+      "COPY": "En <a href='/es/' class='inline-link'>Seguros A-State</a>, ofrecemos soporte completo de seguro de auto en Dallas, TX, con asistencia en español para que pueda comprender cada detalle con total confianza. Nuestro equipo compara múltiples compañías de seguros para encontrar la mejor cobertura y el mejor precio para usted. Ya sea que necesite cobertura de responsabilidad mínima o cobertura completa, lo guiamos paso a paso. Como agencia independiente de seguros en Texas, ayudamos a la comunidad hispana a acceder a una protección clara, asequible y confiable para sus automóviles y vehículos en cada etapa de la vida."
+    },
+    "QUOTE": {
+      "COPY": "Obtén una <a href='/es/obtener-una-cotizacion' class='inline-link'>cotización gratuita de seguro de auto</a> en Dallas, TX. Es rápido y sencillo con Seguros A-State. Nuestro equipo compara múltiples aseguradoras de alto nivel para encontrarle el mejor precio y las mejores opciones de cobertura según sus necesidades, historial de manejo y código postal. Ya sea que busque la cobertura mínima de responsabilidad civil o una protección completa, hacemos que el proceso sea fácil y sin complicaciones. Como corredor de seguros de confianza en Texas, ayudamos a los conductores de Dallas a ahorrar dinero mientras obtienen una protección confiable para conducir con tranquilidad todos los días."
+    }
+  },
+  "AUSTIN_TX": {
+    "LOCATION": {
+      "CITY": "Austin",
+      "CITY_WITH_STATE": "Austin, TX",
+      "POSSESSIVE": "Austin"
+    },
+    "BANNER": {
+      "LOCATION": "Austin",
+      "CHIPS": {
+        "ACCIDENT_ONLY": "Auto Personal",
+        "ACCIDENT_ILLNESS": "Auto Comercial",
+        "COMPREHENSIVE": "SR-22",
+        "WELLNESS": "Rideshare",
+        "LIFETIME": "RV y Casa Rodante",
+        "OTHER": "Otro"
+      },
+      "FORM": {
+        "FULL_NAME": "Nombre Completo",
+        "PHONE": "Número de Teléfono",
+        "BUTTON": "Obtener Cotización"
+      }
+    },
+    "TABLE_OF_CONTENTS": {
+      "LOCATION": "Austin"
+    },
+    "RATES": {
+      "LEAD": "Los conductores de Austin enfrentan algunas de las condiciones de manejo más desafiantes de Texas, con una fuerte congestión de tráfico en la I-35 y Mopac, un aumento en los accidentes y una proporción significativa de automovilistas sin seguro. Las tormentas repentinas, el granizo y las inundaciones repentinas también incrementan los riesgos diarios al conducir y los costos de reparación. En una ciudad tan dinámica, nuestros expertos le ayudan a comparar múltiples aseguradoras como agencia independiente para encontrar una mejor cobertura y tarifas adaptadas a los riesgos específicos de Austin.",
+      "COPY": "Los costos del seguro de auto en Austin varían según factores como la edad, el historial de conducción, el tipo de vehículo y el nivel de cobertura. En promedio, los conductores en Austin pagan alrededor de <strong>$2,520 al año por una cobertura completa,</strong> mientras que <strong>la cobertura mínima es considerablemente más económica.</strong> Comparar cotizaciones de múltiples compañías de seguros puede ayudarle a encontrar tarifas asequibles dentro de su presupuesto y una mejor protección.",
+      "COMPARISON_COPY": "Las tarifas de seguro de auto en Austin tienden a ser más altas que el promedio de Texas debido al rápido crecimiento de la población, la fuerte congestión vehicular y las mayores tasas de accidentes en corredores principales como la I-35 y Mopac. El robo de vehículos, los riesgos de clima severo y el aumento de los costos de reparación también elevan las primas. Los códigos postales urbanos con mayores desplazamientos diarios y más conductores sin seguro suelen registrar las tarifas de seguro más altas en Austin.",
+      "ZIP_LOCATION_POSSESSIVE": "Austin",
+      "ZIP_COPY": "Las tarifas de seguro de auto en los códigos postales de Austin varían según la densidad del tráfico, la frecuencia de accidentes, las reclamaciones por robo, el crecimiento poblacional y los patrones de desplazamiento. Las áreas cercanas al Centro de Austin, UT, West Campus, I-35 y East Riverside suelen registrar primas más altas debido a la congestión y al mayor número de reclamaciones. La exposición al clima y los costos de reparación también influyen en los precios. Incluso en los códigos postales con tarifas más elevadas, comparar múltiples aseguradoras a través de una agencia independiente puede ayudar a reducir su prima.",
+      "COMPARISON_TABLE": {
+        "MINIMUM": "$119/mes",
+        "FULL_COVERAGE": "$210/mes"
+      }
+    },
+    "REQUIREMENTS": {
+      "LEAD": "Texas exige que los conductores cuenten con cobertura de responsabilidad civil. El límite de $30,000 paga las lesiones de una persona si usted causa un accidente. El límite de $60,000 es el monto máximo que su póliza paga por todas las lesiones combinadas en un solo accidente. El límite de $25,000 para daños a la propiedad ayuda a cubrir las reparaciones del vehículo del otro conductor o los daños materiales que usted cause. En Austin, donde los costos médicos y el valor de los vehículos son elevados, estos límites mínimos pueden agotarse muy rápidamente.",
+      "FOOTER_COPY": "La cobertura mínima rara vez es suficiente para los conductores de Austin porque solo cumple con los requisitos legales de Texas, no con los costos reales de los accidentes. En una ciudad concurrida como Austin, con tráfico intenso, costos de reparación en aumento y atención médica costosa, incluso un accidente menor puede superar rápidamente los límites de cobertura. Esto significa que usted podría terminar pagando miles de dólares de su bolsillo por daños al vehículo, gastos hospitalarios o reclamaciones legales. Agregar cobertura completa, cobertura por colisión y protección UM/UIM brinda una seguridad financiera mucho mayor y mayor tranquilidad."
+    },
+    "UNINSURED": {
+      "COPY": "Conducir sin seguro en Texas puede generar graves consecuencias financieras y legales. Los infractores por primera vez pueden enfrentar multas de entre $175 y $350, mientras que las reincidencias pueden alcanzar hasta $1,000. Los conductores también pueden tener que pagar un recargo anual de $250 durante tres años, enfrentar la inmovilización del vehículo e incluso la suspensión de su licencia o registro. También puede requerirse una presentación SR-22 para demostrar responsabilidad financiera. El costo de ser sorprendido conduciendo sin seguro en Austin supera el costo de una póliza básica.",
+      "DETAILS": {
+        "FIRST_OFFENSE_FINE": "$175 – $350",
+        "SUBSEQUENT_OFFENSE_FINE": "Hasta $1,000",
+        "LICENSE_SURCHARGE": "$250 por año durante 3 años",
+        "VEHICLE_IMPOUNDMENT": "Su vehículo puede ser remolcado y retenido",
+        "SR22_REQUIREMENT": "Debe presentar prueba de responsabilidad financiera ante el TDI",
+        "LICENSE_SUSPENSION": "Se revocan los privilegios de conducción hasta confirmar el seguro",
+        "REGISTRATION_SUSPENSION": "El registro del vehículo se cancela hasta que se restablezca la cobertura"
+      },
+      "TEXASSURE_COPY": "<a href='https://www.txdmv.gov/motorists/register-your-vehicle/texassure-insurance-verification' class='inline-link'>TexasSure</a> es el sistema electrónico de verificación de seguros de Texas que ayuda a garantizar que todos los vehículos registrados cuenten con un seguro de auto válido. Las compañías de seguros reportan regularmente la información de las pólizas, la cual se compara con los registros de matriculación vehicular del DMV. Si la cobertura vence o no existe, el sistema marca el vehículo y notifica a las autoridades estatales. Esto puede generar advertencias, multas o problemas con el registro. En Austin, ayuda a reducir el número de conductores sin seguro y mantiene las carreteras financieramente más protegidas."
+    },
+    "COVERAGE_OPTIONS": {
+      "ITEMS": {
+        "LIABILITY": "Ayuda a los conductores a crear pólizas adaptadas a riesgos locales como el tráfico, el robo y el clima severo. Las opciones de cobertura van desde la protección básica de responsabilidad civil hasta coberturas más amplias que protegen su vehículo y sus finanzas.",
+        "COLLISION": "Paga la reparación o el reemplazo de su vehículo si resulta dañado en un accidente, sin importar quién tenga la culpa. Es importante debido al tráfico intenso, las colisiones frecuentes y los costosos costos de reparación vehicular.",
+        "COMPREHENSIVE": "Protege su vehículo contra daños que no sean por colisión, como robo, granizo, inundaciones, incendios, vandalismo y caída de objetos. Es importante debido al clima impredecible y al creciente riesgo de robo de vehículos.",
+        "PIP": "Cubre gastos médicos, salarios perdidos y costos relacionados para usted y sus pasajeros después de un accidente, independientemente de quién tenga la culpa. Proporciona apoyo financiero adicional más allá de la cobertura estándar de responsabilidad civil.",
+        "MEDPAY": "Ayuda a pagar los gastos médicos de usted y sus pasajeros después de un accidente, sin importar quién tenga la culpa. Es una cobertura complementaria más simple que se enfoca únicamente en los costos médicos y no cubre salarios perdidos.",
+        "UM": "Lo protege si es golpeado por un conductor que no tiene seguro. Esta cobertura ayuda a pagar facturas médicas y lesiones, garantizando que no tenga que asumir costos causados por conductores sin seguro.",
+        "UIM": "Ayuda a pagar sus lesiones o daños cuando el conductor responsable tiene seguro, pero no suficiente para cubrir todos los costos. Cubre la diferencia para que no tenga que asumir gastos de su bolsillo después de un accidente.",
+        "UMPD": "Cubre el costo de reparar o reemplazar su vehículo si es impactado por un conductor sin seguro. Lo protege de tener que pagar de su bolsillo por daños causados por el error de otra persona, especialmente en áreas concurridas.",
+        "ROADSIDE": "Brinda ayuda cuando su vehículo se avería o queda inutilizado en la carretera. Incluye remolque, arranque de batería, cambio de neumáticos, entrega de combustible y asistencia por bloqueo de llaves, para que nunca quede varado en una emergencia.",
+        "RENTAL": "Paga un vehículo de alquiler temporal mientras su automóvil está siendo reparado después de una reclamación cubierta. Le ayuda a mantener su movilidad diaria, desplazarse al trabajo y cumplir con sus responsabilidades sin interrupciones.",
+        "GAP": "Cubre la diferencia entre el saldo pendiente del préstamo del vehículo y su valor real en efectivo si el automóvil es declarado pérdida total o es robado. Lo protege de tener que seguir pagando un préstamo por un vehículo que ya no posee o no puede utilizar.",
+        "TOWING": "Paga los costos de remolque y servicios básicos de asistencia cuando su vehículo se avería. Cubre servicios como remolque de corta distancia, arranque de batería, cambio de neumáticos y reparaciones menores en el lugar de la avería.",
+        "CUSTOM_PARTS": "Protege mejoras instaladas después de la compra, como ruedas personalizadas, sistemas de sonido, pintura especial o modificaciones de rendimiento. Estos elementos suelen estar excluidos de las pólizas estándar a menos que se agregue esta cobertura por separado.",
+        "RIDESHARE": "Protege a quienes trabajan para Uber, Lyft u otras aplicaciones similares. Cubre los vacíos entre el seguro personal de auto y la cobertura proporcionada por la empresa mientras la aplicación está activa y usted está aceptando solicitudes.",
+        "LOAN_PAYOFF": "Paga el saldo restante de su préstamo o arrendamiento vehicular si su automóvil es declarado pérdida total y el pago del seguro no es suficiente. Evita que usted deba dinero por un vehículo que ya no puede conducir.",
+        "NEW_CAR": "Reemplaza su vehículo nuevo declarado pérdida total por uno completamente nuevo de la misma marca y modelo. Está diseñada para vehículos recientes y evita que pierda valor inmediatamente después de la compra debido a la depreciación.",
+        "ACCIDENT_FORGIVENESS": "Evita que su prima de seguro aumente después de su primer accidente con culpa. Ayuda a proteger su historial de conducción y mantiene tarifas más estables incluso si comete un error en la carretera.",
+        "DEATH_DISABILITY": "Proporciona apoyo financiero si un accidente resulta en fallecimiento o discapacidad grave. Puede ayudar a reemplazar ingresos perdidos, cubrir gastos continuos y brindar apoyo a su familia durante la recuperación o períodos de pérdida."
+      }
+    },
+    "RATE_FACTORS": {
+      "COPY": "Las tarifas de seguro de auto en Austin están influenciadas por múltiples factores personales, del vehículo y de la ubicación. Su historial de conducción, edad, puntaje de crédito e historial de reclamaciones ayudan a las aseguradoras a predecir el riesgo, mientras que el código postal, la densidad del tráfico y las tasas de robo afectan la exposición a accidentes. El tipo de vehículo, las características de seguridad, el kilometraje y el uso también influyen en el precio. Incluso los límites de cobertura y los deducibles modifican los costos. Un mayor riesgo percibido en cualquier categoría generalmente resulta en primas más altas."
+    },
+    "SAVINGS": {
+      "COPY": "Puede ahorrar en el seguro de auto en Austin comparando cotizaciones de múltiples aseguradoras y eligiendo únicamente la cobertura que necesita. Los descuentos por múltiples pólizas, múltiples vehículos, buen conductor y programas telemáticos pueden reducir significativamente las primas. Aumentar su deducible, mantener un historial de conducción limpio y mejorar su puntaje de crédito también ayudan a reducir las tarifas. Combinar el seguro de vivienda y automóvil o pagar la póliza por completo puede generar ahorros adicionales, haciendo que la cobertura sea más asequible sin sacrificar protección."
+    },
+    "SPECIAL_COVERAGE": {
+      "ITEMS": {
+        "SR22": "El SR-22 es una presentación estatal requerida para conductores de alto riesgo después de infracciones graves. Demuestra responsabilidad financiera y es necesario para restablecer o mantener los privilegios de conducción en todo Texas.",
+        "HIGH_RISK": "Los conductores de alto riesgo con accidentes, DUI o interrupciones en su cobertura enfrentan primas más altas, pero muchas aseguradoras aún ofrecen cobertura. Comparar múltiples compañías ayuda a encontrar opciones más asequibles.",
+        "TEEN": "Los conductores adolescentes son más costosos de asegurar debido a su falta de experiencia y mayor riesgo de accidentes. Los descuentos para buenos estudiantes, cursos de conducción segura y la inclusión en pólizas familiares pueden ayudar a reducir las primas.",
+        "RIDESHARE": "El seguro para rideshare cubre los vacíos de cobertura al conducir para Uber, Lyft u otras plataformas similares. Protege durante los períodos en los que el seguro personal de auto puede no aplicar, garantizando cobertura mientras espera solicitudes o transporta pasajeros.",
+        "CLASSIC": "Estos vehículos se aseguran con un valor acordado en lugar de un valor de mercado. Esto protege vehículos raros o antiguos con altos costos de restauración y uso limitado, garantizando una compensación adecuada en caso de daños.",
+        "NON_OWNER": "Proporciona cobertura de responsabilidad civil para conductores que no poseen un vehículo personal. Ayuda a mantener un historial continuo de seguro y es ideal para vehículos de alquiler, autos prestados o necesidades ocasionales de conducción."
+      }
+    },
+    "RISKS": {
+      "ITEMS": [
+        {
+          "HEADING": "Tráfico y Patrones de Desplazamiento en Austin",
+          "TEXT": "El tráfico de Austin se encuentra entre los más congestionados de Estados Unidos, con importantes retrasos en corredores como la I-35, la Autopista Mopac, la US-183 y Loop 360. El intenso flujo de viajeros significa que los conductores pasan más tiempo en la carretera, aumentando su exposición a accidentes y riesgos de seguro. La congestión durante las horas pico y el rápido crecimiento de la población incrementan aún más el riesgo de colisiones y la frecuencia de reclamaciones. Este entorno de mayor riesgo hace que la cobertura integral sea más importante en Austin que en ciudades más pequeñas de Texas."
+        },
+        {
+          "HEADING": "Riesgos Climáticos en Austin, TX",
+          "TEXT": "El clima de Austin es altamente impredecible y presenta frecuentes riesgos de tormentas severas durante todo el año. Las inundaciones son el riesgo más dañino, especialmente durante episodios de lluvias intensas. El granizo puede causar daños costosos a los vehículos en cuestión de minutos. Los huracanes y las tormentas tropicales traen lluvias generalizadas y riesgos por escombros. Los vientos fuertes pueden provocar la caída de objetos y accidentes. La cobertura integral ayuda a pagar los daños causados por granizo, inundaciones y viento. Contar únicamente con cobertura mínima deja a los conductores expuestos en Austin."
+        },
+        {
+          "HEADING": "Tasas de Robo de Vehículos por Vecindario en Austin, TX",
+          "TEXT": "Austin tiene una de las tasas más altas de robo de vehículos entre las principales ciudades de Texas, con zonas de mayor incidencia reportadas con frecuencia en el centro de Austin, East Riverside, Rundberg y áreas cercanas al campus de UT y grandes corredores de complejos de apartamentos. Los datos del NICB y del estado muestran que las camionetas de Texas y modelos populares como la Chevrolet Silverado y ciertos vehículos Hyundai/Kia son objetivos frecuentes. El riesgo de robo varía según el código postal, y las áreas de mayor riesgo suelen registrar primas más altas. La cobertura integral es la única protección contra el robo; la responsabilidad civil y la cobertura por colisión no lo cubren."
+        },
+        {
+          "HEADING": "Estadísticas de Conductores Sin Seguro en Austin, TX",
+          "TEXT": "Se estima que uno de cada cinco conductores en Texas no tiene seguro, y Austin refleja este riesgo debido a su gran población de viajeros. En términos prácticos, si un conductor sin seguro lo golpea, podría verse obligado a pagar de su bolsillo las facturas médicas y las reparaciones del vehículo, a menos que cuente con cobertura UM/UIM. Texas exige que las aseguradoras ofrezcan esta cobertura, pero los conductores pueden rechazarla por escrito, lo que a menudo resulta ser un error costoso. Se recomienda agregar cobertura UM/UIM. Seguros A-State le ayuda a asegurarse de que no quede expuesto en una ciudad con un alto riesgo de conductores sin seguro."
+        }
+      ]
+    },
+    "NEIGHBORHOODS": {
+      "ROWS": [
+        ["Allandale", "Anderson Mill", "Angus Valley", "Apache Shores"],
+        ["Arboretum", "Avery Ranch", "Balcones Woods", "Barrington Oaks"],
+        ["Barton Creek", "Barton Hills", "Battle Bend", "Beacon Ridge"],
+        ["Becker Meadows", "Bee Cave Woods", "Belterra", "Bouldin Creek"],
+        ["Bradshaw Crossing", "Brentwood", "Bridges of Bear Creek", "Bryker Woods"],
+        ["Bull Creek", "Canyon Creek", "Caruth Terrace", "Cat Mountain"],
+        ["Cedar Park Area", "Central Austin", "Cherry Creek", "Circle C Ranch"],
+        ["Clarksville", "Copperfield", "Coronado Hills", "Crestview"],
+        ["Davenport Ranch", "Dawson", "Deep Eddy", "Delwood"],
+        ["Dove Springs", "Downtown Austin", "East Austin", "East Cesar Chavez"],
+        ["East MLK", "Easton Park", "Enclave at Westgate", "Enfield"],
+        ["Eubank Acres", "Far West", "Franklin Park", "Galindo"],
+        ["Garrison Park", "Georgian Acres", "Goodshade", "Gracywoods"],
+        ["Grand Oaks", "Grandview Hills", "Great Hills", "Greenshores"],
+        ["Hancock", "Harris Branch", "Harris Ridge", "Heritage Hills"],
+        ["Highland", "Holly", "Hyde Park", "Jester Estates"],
+        ["Johnston Terrace", "Lake Austin", "Lake Pointe", "Lakewood"],
+        ["Lamplight Village", "Lantana", "Legend Oaks", "Long Canyon"],
+        ["Lost Creek", "Lower East Side", "MacFarlane", "Maple Run"],
+        ["McKinney Park", "Mesa Park", "Milwood", "Montopolis"],
+        ["Mooreland", "Morris Williams", "Mueller", "North Austin"],
+        ["North Burnet", "North Central", "North Lamar", "North Loop"],
+        ["North Shoal Creek", "North University", "Northwest Hills", "Oak Hill"],
+        ["Old West Austin", "Olympic Heights", "Onion Creek", "Parkfield"],
+        ["Pecan Springs", "Pemberton Heights", "Pioneer Crossing", "Pleasant Valley"],
+        ["Quail Creek", "Rosedale", "Scofield Farms", "Sendero Hills"],
+        ["Shady Hollow", "South Congress", "South Lamar", "Southeast Austin"],
+        ["Southgate", "Southwest Austin", "Spicewood", "Spring Branch"],
+        ["St. Edwards", "Steiner Ranch", "Sweetbriar", "Tarrytown"],
+        ["Travis Heights", "University Hills", "Upper Boggy Creek", "Upper Kirby"],
+        ["UT West Campus", "West Austin", "West Campus", "Westgate"],
+        ["Westlake Hills", "Willow Creek", "Windsor Park", "Wooten"]
+      ]
+    },
+    "FAQ": {
+      "ITEMS": [
+        {
+          "question": "¿Cuánto cuesta el seguro de auto en Austin por mes?",
+          "answer": "El seguro de auto en Austin generalmente cuesta alrededor de $119 al mes para la cobertura mínima y entre $200 y $260 al mes para la cobertura completa. La prima promedio de cobertura completa es de aproximadamente $257 al mes. Las tarifas varían según el historial de conducción, el tipo de vehículo, el código postal y el nivel de cobertura."
+        },
+        {
+          "question": "¿Cuál es el seguro mínimo de auto requerido en Texas?",
+          "answer": "Texas exige cobertura de responsabilidad civil, lo que significa $30,000 por persona lesionada, $60,000 por accidente y $25,000 por daños a la propiedad. Esto cumple con los requisitos legales, pero puede no proteger completamente a los conductores en accidentes graves."
+        },
+        {
+          "question": "¿Por qué el seguro de auto es tan caro en Austin?",
+          "answer": "Las tarifas en Austin son más altas debido al tráfico intenso, el rápido crecimiento de la población, los accidentes frecuentes, el aumento de los costos de reparación y el incremento en los robos de vehículos. Los riesgos climáticos y la cantidad de conductores sin seguro también contribuyen a primas más elevadas."
+        },
+        {
+          "question": "¿Cuál es el seguro de auto más barato en Austin?",
+          "answer": "La opción más económica depende de su perfil, pero las pólizas de responsabilidad civil mínima suelen ser las de menor costo. Sin embargo, comparar múltiples aseguradoras a través de un agente independiente suele ayudar a encontrar tarifas más competitivas y asequibles."
+        },
+        {
+          "question": "¿Necesito seguro contra inundaciones para mi automóvil en Austin?",
+          "answer": "Los daños por inundación están cubiertos por la cobertura integral del seguro de auto, no por una póliza separada de seguro contra inundaciones. Debido a que Austin puede experimentar lluvias intensas e inundaciones repentinas, se recomienda encarecidamente contar con cobertura integral para proteger su vehículo."
+        },
+        {
+          "question": "¿Puedo obtener seguro de auto con un mal historial de conducción en Austin?",
+          "answer": "Sí. Muchas aseguradoras ofrecen cobertura para conductores con accidentes, multas o DUI. Las tarifas serán más altas, pero las compañías especializadas para conductores de alto riesgo y las opciones SR-22 pueden ayudarle a mantenerse legalmente asegurado."
+        },
+        {
+          "question": "¿Qué sucede si me golpea un conductor sin seguro en Austin?",
+          "answer": "Sin cobertura UM/UIM, es posible que tenga que pagar usted mismo las reparaciones y las facturas médicas. Con esta cobertura, su póliza ayuda a cubrir esos gastos, lo que la convierte en una protección importante en Texas, donde los conductores sin seguro son comunes."
+        },
+        {
+          "question": "¿Es más caro el seguro de auto en Austin que en otras ciudades de Texas?",
+          "answer": "Sí. Austin suele tener tarifas más altas que muchas otras ciudades de Texas debido a la congestión del tráfico, el crecimiento poblacional, las tasas de robo y los costos de reparación. Sin embargo, comparar cotizaciones aún puede ayudar a los conductores a encontrar precios competitivos."
+        }
+      ]
+    },
+    "ESPANOL": {
+      "COPY": "En <a href='/es/' class='inline-link'>Seguros A-State</a>, ofrecemos servicios de seguro de auto para conductores de Austin que prefieren recibir atención en español. Nuestro equipo le ayuda a comparar opciones de cobertura, comprender los detalles de su póliza y elegir la protección que mejor se adapte a sus necesidades y presupuesto. Desde la cobertura de responsabilidad civil hasta la cobertura completa, hacemos que el proceso sea sencillo y fácil de entender. Ya sea que sea un conductor nuevo o que esté cambiando de aseguradora, le guiamos en cada paso del camino. Obtenga asistencia en su idioma preferido y encuentre el seguro de auto adecuado en Austin con confianza y tranquilidad."
+    },
+    "QUOTE": {
+      "COPY": "Obtener una <a href='/es/obtener-una-cotizacion' class='inline-link'>cotización gratuita de seguro de auto</a> en Austin es rápido y sencillo. Primero, elija su tipo de cobertura: Auto Personal, Auto Comercial, SR-22, Rideshare, RV y Casa Rodante, u Otro. Luego, ingrese su Nombre Completo y Número de Teléfono en el formulario. Después de enviar la información, nuestros agentes de Seguros A-State revisarán sus datos, compararán múltiples aseguradoras y le ayudarán a encontrar la mejor tarifa y las opciones de cobertura más adecuadas para usted. Sin complicaciones y sin ninguna obligación. Haga clic en “Obtener Cotización” hoy mismo y comience a ahorrar en su seguro de auto en Austin, TX."
+    }
+  },
+  "FORT_WORTH_TX": {
+    "LOCATION": {
+      "CITY": "Fort Worth",
+      "CITY_WITH_STATE": "Fort Worth, TX",
+      "POSSESSIVE": "Fort Worth"
+    },
+    "BANNER": {
+      "LOCATION": "Fort Worth",
+      "CHIPS": {
+        "ACCIDENT_ONLY": "Auto Personal",
+        "ACCIDENT_ILLNESS": "Auto Comercial",
+        "COMPREHENSIVE": "SR-22",
+        "WELLNESS": "Viajes Compartidos",
+        "LIFETIME": "RV Y Casa Rodante",
+        "OTHER": "Otros"
+      },
+      "FORM": {
+        "FULL_NAME": "Nombre Completo",
+        "PHONE": "Número De Teléfono",
+        "BUTTON": "Obtener Cotización"
+      }
+    },
+    "TABLE_OF_CONTENTS": {
+      "LOCATION": "Fort Worth"
+    },
+    "RATES": {
+      "LEAD": "Conducir en Fort Worth presenta desafíos únicos, desde el tráfico intenso en la I-35W y la I-30 hasta las fuertes tormentas de granizo y el impredecible clima de Texas, factores que pueden aumentar el riesgo de accidentes. Encontrar la cobertura de seguro de auto adecuada puede resultar abrumador, ya que las necesidades de cada conductor son diferentes. En Seguros A-State simplificamos el proceso al comparar aseguradoras de confianza, ayudando a los conductores de Fort Worth a explorar opciones de cobertura que se adapten a sus vehículos, presupuesto y estilo de vida, mientras les brindamos orientación clara en cada paso del camino.",
+      "COPY": "El costo del seguro de auto en Fort Worth suele variar entre aproximadamente <strong>$110 al mes para una cobertura mínima</strong> y <strong>$207 al mes para una cobertura completa,</strong> aunque las tarifas individuales pueden diferir considerablemente. Factores como la edad, el historial de manejo, el tipo de vehículo, el código postal, las coberturas seleccionadas y el kilometraje anual influyen en el precio. Los patrones de tráfico locales, los riesgos relacionados con el clima y la frecuencia de reclamaciones también pueden afectar las primas. Comparar varias aseguradoras suele ser la mejor manera de encontrar la cobertura adecuada.",
+      "COMPARISON_COPY": "Las tarifas del seguro de auto en Fort Worth suelen ser ligeramente más altas que el promedio de Texas debido al crecimiento de la población de la ciudad, la congestión en las carreteras y una mayor exposición a accidentes. Los riesgos relacionados con el clima, incluidas las tormentas de granizo y los fuertes vientos, también pueden contribuir a un mayor número de reclamaciones. Estos factores pueden influir en las primas, por lo que es importante comparar opciones de cobertura entre varias aseguradoras.",
+      "ZIP_LOCATION_POSSESSIVE": "Fort Worth",
+      "ZIP_COPY": "Las tarifas del seguro pueden variar entre los diferentes códigos postales de Fort Worth debido al volumen de tráfico, la frecuencia de accidentes, las tendencias de robo de vehículos, la densidad de población y las reclamaciones relacionadas con el clima. Las zonas con mayor congestión o con una actividad de reclamaciones más elevada suelen tener primas más altas. Sin embargo, vivir en un código postal con tarifas más elevadas no significa que tengas que pagar de más. Comparar varias aseguradoras a través de una agencia independiente puede ayudarte a encontrar mejores opciones de cobertura.",
+      "COMPARISON_TABLE": {
+        "MINIMUM": "$110/mes",
+        "FULL_COVERAGE": "$207/mes"
+      }
+    },
+    "REQUIREMENTS": {
+      "LEAD": "Texas exige que los conductores cuenten con una cobertura mínima de responsabilidad civil conocida como 30/60/25. El límite de $30,000 ayuda a cubrir las lesiones de una persona si provocas un accidente. El límite de $60,000 representa la cantidad máxima disponible para cubrir las lesiones de todas las personas involucradas en un mismo accidente, sin importar cuántas sean. El límite de $25,000 ayuda a pagar los daños que causes al vehículo o a la propiedad de otra persona. En Fort Worth, el aumento de los costos médicos y el mayor valor de los vehículos pueden hacer que estos límites se agoten rápidamente.",
+      "FOOTER_COPY": "La cobertura mínima cumple con los requisitos legales de Texas, pero puede no ofrecer suficiente protección para muchos conductores de Fort Worth. El tráfico intenso, los accidentes con varios vehículos, el aumento de los costos de reparación y los tratamientos médicos cada vez más costosos pueden superar rápidamente los límites básicos de responsabilidad civil. Si los daños exceden tu cobertura, podrías ser responsable de pagar la diferencia de tu bolsillo. Por esta razón, muchos conductores optan por límites más altos para contar con una mayor protección financiera y una mayor tranquilidad a largo plazo."
+    },
+    "UNINSURED": {
+      "COPY": "Conducir sin seguro en Texas puede resultar en multas, suspensión de la licencia, cargos de restablecimiento y la inmovilización del vehículo. Las infracciones repetidas conllevan sanciones más severas y cargos adicionales que pueden mantenerse durante años. Estas consecuencias pueden generar una carga financiera a largo plazo mucho más allá de la multa inicial. La ley de Texas también puede exigir la presentación de un SR-22, primas de seguro más altas y requisitos estrictos para demostrar responsabilidad financiera en el futuro. En Fort Worth, el costo de ser sorprendido conduciendo sin seguro suele ser mucho mayor que el costo de una póliza básica.",
+      "DETAILS": {
+        "FIRST_OFFENSE_FINE": "$175 – $350",
+        "SUBSEQUENT_OFFENSE_FINE": "Hasta $1,000",
+        "LICENSE_SURCHARGE": "$250 por año durante 3 años",
+        "VEHICLE_IMPOUNDMENT": "Tu vehículo puede ser remolcado y retenido",
+        "SR22_REQUIREMENT": "Debes presentar una prueba de responsabilidad financiera ante el Departamento de Seguros de Texas (TDI)",
+        "LICENSE_SUSPENSION": "Se suspenden los privilegios de conducción hasta que se confirme la cobertura",
+        "REGISTRATION_SUSPENSION": "El registro del vehículo se cancela hasta que se restablezca la cobertura"
+      },
+      "TEXASSURE_COPY": "<a href='https://www.txdmv.gov/motorists/register-your-vehicle/texassure-insurance-verification' class='inline-link'>TexasSure</a> es el sistema electrónico de verificación de seguros de Texas que ayuda a confirmar si un vehículo cuenta con una cobertura activa de responsabilidad civil. Las compañías de seguros reportan periódicamente la información de las pólizas a la base de datos, la cual se compara con los registros de los vehículos. Si no se puede verificar la cobertura, el sistema puede generar avisos solicitando una prueba de seguro. Esto ayuda a reducir la cantidad de conductores sin seguro y contribuye a que las carreteras de Texas sean más seguras y financieramente responsables. El sistema se actualiza continuamente para todos los vehículos registrados."
+    },
+    "COVERAGE_OPTIONS": {
+      "ITEMS": {
+        "LIABILITY": "La cobertura de responsabilidad civil ayuda a pagar las lesiones y los daños a la propiedad que causes a otras personas en un accidente. Puede cubrir gastos médicos, reparaciones y costos legales si se determina que eres responsable del choque.",
+        "COLLISION": "La cobertura contra colisiones ayuda a pagar las reparaciones de tu vehículo después de un accidente, independientemente de quién haya tenido la culpa. Es especialmente útil al conducir en el tráfico congestionado de Fort Worth.",
+        "COMPREHENSIVE": "La cobertura integral protege tu vehículo contra eventos no relacionados con colisiones, como robo, granizo, vandalismo y daños causados por tormentas. Es una cobertura importante en Fort Worth debido a los frecuentes riesgos asociados con el clima severo.",
+        "PIP": "La Protección Contra Lesiones Personales ayuda a cubrir gastos médicos, pérdida de ingresos y costos de rehabilitación después de un accidente, sin importar quién lo haya causado. Brinda apoyo financiero a los conductores de Fort Worth.",
+        "MEDPAY": "La Cobertura De Pagos Médicos ayuda a cubrir las facturas médicas después de un accidente, independientemente de quién tenga la culpa. Puede ayudar a pagar visitas al hospital, honorarios médicos y tratamientos de emergencia para los conductores de Fort Worth.",
+        "UM": "La Cobertura Contra Conductores Sin Seguro te protege si eres impactado por un conductor que no cuenta con seguro. Puede ayudar a cubrir gastos médicos y daños a tu vehículo después de un accidente en el tráfico de Fort Worth.",
+        "UIM": "La Cobertura Contra Conductores Con Seguro Insuficiente ayuda cuando el conductor responsable tiene seguro, pero este no es suficiente para cubrir tus gastos médicos o las reparaciones de tu vehículo. Esta cobertura cubre la diferencia para las víctimas de accidentes en Fort Worth.",
+        "UMPD": "La Cobertura De Daños A La Propiedad Causados Por Conductores Sin Seguro ayuda a pagar las reparaciones de tu vehículo si un conductor sin seguro provoca un accidente. Es una opción útil para los conductores de Fort Worth que enfrentan el tráfico diario de la ciudad.",
+        "ROADSIDE": "La cobertura de asistencia en carretera brinda ayuda cuando tu vehículo se avería, ofreciendo servicios como remolque, cambio de llantas, suministro de combustible y asistencia por cierre accidental. Ayuda a los conductores de Fort Worth a continuar su camino con mayor seguridad.",
+        "RENTAL": "La cobertura de reembolso de auto de alquiler ayuda a pagar un vehículo de alquiler mientras tu automóvil está siendo reparado después de un accidente cubierto. Reduce las dificultades de transporte para los conductores de Fort Worth.",
+        "GAP": "El seguro GAP ayuda a cubrir la diferencia entre el valor actual de tu vehículo y el saldo pendiente de tu préstamo si el automóvil es declarado pérdida total después de un accidente. Es una cobertura importante para los vehículos financiados en Fort Worth.",
+        "TOWING": "La cobertura de remolque y mano de obra ayuda a pagar servicios en carretera, como remolque, arranque de batería, cambio de llantas y reparaciones menores cuando tu vehículo se avería inesperadamente en Fort Worth.",
+        "CUSTOM_PARTS": "La cobertura para piezas y equipos personalizados ayuda a proteger mejoras como sistemas de sonido, rines y modificaciones instaladas en tu vehículo después de la compra. Es especialmente útil para los automóviles personalizados en Fort Worth.",
+        "RIDESHARE": "La cobertura para servicios de transporte compartido ayuda a los conductores que trabajan para aplicaciones como Uber o Lyft al cubrir las diferencias entre el seguro de auto personal y la cobertura proporcionada por la compañía mientras transportan pasajeros en Fort Worth.",
+        "LOAN_PAYOFF": "La cobertura para liquidación de préstamo o arrendamiento ayuda a cubrir el saldo restante de tu préstamo vehicular si tu automóvil es declarado pérdida total después de un accidente. Protege a los conductores de Fort Worth de tener que seguir pagando un vehículo que ya no pueden utilizar.",
+        "NEW_CAR": "La cobertura de reemplazo de auto nuevo ayuda a sustituir tu vehículo por uno completamente nuevo si se declara pérdida total durante los primeros años de propiedad. Brinda una protección más sólida para las compras recientes de automóviles en Fort Worth.",
+        "ACCIDENT_FORGIVENESS": "El perdón de accidentes ayuda a evitar que tu prima de seguro aumente después de tu primer accidente con culpa. Ofrece alivio financiero a los conductores de Fort Worth y ayuda a mantener la estabilidad de las primas a largo plazo.",
+        "DEATH_DISABILITY": "La cobertura por fallecimiento e incapacidad proporciona apoyo financiero si un accidente provoca lesiones graves, una discapacidad o la muerte. Ayuda a proteger a las familias de Fort Worth frente a la pérdida repentina de ingresos y las dificultades económicas."
+      }
+    },
+    "RATE_FACTORS": {
+      "COPY": "Las tarifas del seguro de auto en Fort Worth están influenciadas por factores como el historial de manejo, la edad, el tipo de vehículo, el código postal, el kilometraje anual y el perfil crediticio. Los conductores con accidentes o infracciones previas suelen pagar más, mientras que mantener un historial de conducción seguro puede ayudar a reducir los costos. Los vehículos más costosos, las zonas con tráfico intenso y una mayor frecuencia de robos o reclamaciones relacionadas con el clima también pueden aumentar las primas. Las aseguradoras utilizan estos factores de riesgo para estimar la probabilidad de reclamaciones y establecer las tarifas de acuerdo con la situación de cada conductor."
+    },
+    "SAVINGS": {
+      "COPY": "Ahorrar en el seguro de auto en Fort Worth comienza por comparar cotizaciones de varias aseguradoras a través de una agencia independiente. Agrupar el seguro de auto con el seguro de vivienda o de inquilinos, mantener un historial de manejo limpio y elegir deducibles más altos puede ayudar a reducir los costos. Los conductores también pueden calificar para descuentos por contar con características de seguridad en el vehículo, recorrer pocos kilómetros, tener un buen historial crediticio y completar cursos de manejo defensivo. Revisar la póliza periódicamente ayuda a garantizar que no estés pagando de más y que sigas obteniendo la mejor tarifa disponible en el área de Fort Worth, TX."
+    },
+    "SPECIAL_COVERAGE": {
+      "ITEMS": {
+        "SR22": "El seguro SR-22 es un certificado requerido para conductores considerados de alto riesgo después de ciertas infracciones. Demuestra responsabilidad financiera y suele ser obligatorio después de un DUI o una interrupción en la cobertura en Texas.",
+        "HIGH_RISK": "Los conductores de alto riesgo suelen pagar primas más altas porque las aseguradoras los consideran más propensos a presentar reclamaciones debido a accidentes, multas o lapsos en la cobertura, lo que incrementa el nivel de riesgo general en Texas.",
+        "TEEN": "Los conductores adolescentes y jóvenes generalmente enfrentan tarifas de seguro más altas debido a su limitada experiencia al volante, mayor riesgo de accidentes y estadísticas que muestran más reclamaciones en comparación con conductores mayores con experiencia.",
+        "RIDESHARE": "Los conductores de servicios como Uber o Lyft necesitan una cobertura especial, ya que las pólizas de auto personales generalmente excluyen la actividad comercial al transportar pasajeros por pago en áreas urbanas de Texas.",
+        "CLASSIC": "El seguro para autos clásicos y de colección está diseñado para vehículos con bajo kilometraje y bien mantenidos, ofreciendo una cobertura de valor acordado que protege el valor real del vehículo en lugar de aplicar depreciación estándar.",
+        "NON_OWNER": "El seguro de auto para no propietarios brinda cobertura de responsabilidad civil a conductores que no poseen un vehículo, pero que aún necesitan prueba de seguro al rentar o conducir autos prestados, lo cual es requerido con frecuencia para cumplir con la normativa en Texas."
+      }
+    },
+    "RISKS": {
+      "ITEMS": [
+        {
+          "HEADING": "Tráfico y Patrones de Desplazamiento en Fort Worth",
+          "TEXT": "Fort Worth se encuentra entre las ciudades con mayor congestión vehicular en Texas, con un tráfico intenso de commuters en corredores principales como la I-35W, la I-30, Loop 820 y la US-287. Estas rutas suelen experimentar frecuentes ralentizaciones, colisiones y una mayor actividad de reclamaciones debido al constante flujo de vehículos. Pasar más tiempo en la carretera aumenta la exposición a accidentes, lo que incrementa directamente las primas de seguro para muchos conductores. Por esta razón, la cobertura completa se vuelve más importante en Fort Worth que en ciudades más pequeñas de Texas."
+        },
+        {
+          "HEADING": "Riesgos Climáticos en Fort Worth, TX",
+          "TEXT": "El clima en Fort Worth representa riesgos importantes para los conductores, comenzando con inundaciones durante eventos de lluvias intensas que pueden dañar vehículos y carreteras. Las tormentas de granizo son una de las causas más frecuentes de reclamaciones costosas de autos y normalmente están cubiertas por el seguro de cobertura integral. Los huracanes y tormentas tropicales también pueden provocar daños por viento y agua, seguidos de fuertes ráfagas que pueden causar accidentes por escombros. La cobertura integral ayuda a proteger contra daños por granizo, inundaciones y viento, por lo que es esencial."
+        },
+        {
+          "HEADING": "Tasas de Robo de Vehículos por Vecindario en Fort Worth, TX",
+          "TEXT": "Fort Worth se encuentra entre las áreas con mayores índices de robo de vehículos en Texas, con ciertos códigos postales que presentan un riesgo más alto en comparación con el promedio estatal. Las zonas más afectadas suelen incluir el este de Fort Worth, el North Side y partes de los corredores del sur y centro de la ciudad. Los vehículos más robados comúnmente incluyen camionetas como la Ford F-150, Chevrolet Silverado y sedanes más antiguos. La alta actividad de robos aumenta las primas de cobertura integral según el código postal. La cobertura integral es la única protección contra el robo."
+        },
+        {
+          "HEADING": "Estadísticas de Conductores sin Seguro en Fort Worth, TX",
+          "TEXT": "Texas tiene una alta tasa de conductores sin seguro, con aproximadamente uno de cada cinco automovilistas sin cobertura activa. Esto significa que si un conductor sin seguro te choca, podrías tener que pagar por reparaciones y gastos médicos de tu bolsillo, a menos que cuentes con cobertura de conductor no asegurado (UM/UIM). En Texas, las aseguradoras deben ofrecer UM/UIM, pero los conductores pueden rechazarla por escrito, lo que a menudo lleva a errores costosos. Añadir UM/UIM es altamente recomendable. Seguros A-State ayuda a garantizar que no conduzcas desprotegido en la ciudad."
+        }
+      ]
+    },
+    "NEIGHBORHOODS": {
+      "ROWS": [
+        ["Alamo Heights", "Alliance", "Arlington Heights", "Berkeley Place"],
+        ["Blue Mound", "Bluebonnet Hills", "Bomber Heights", "Bonnie Brae"],
+        ["Camp Bowie West", "Candleridge", "Carter Riverside", "Castner Heights"],
+        ["Central Meadowbrook", "Chisholm Trail Ranch", "Clearfork", "Colonial Hills"],
+        ["Como", "Crestline Area", "Crestwood", "Distrito Cultural"],
+        ["Diamond Hill", "Centro De La Ciudad", "Este De Fort Worth", "Eastchase"],
+        ["Eastern Hills", "Eastwood", "Echo Heights", "Ederville"],
+        ["Fairmount", "Fairway Bend", "Northside Extendido", "Fossil Creek"],
+        ["Fossil Park", "Foster Park", "Glencrest", "Hallmark-Camelot"],
+        ["Handley", "Harmon Ranch", "Harvest Ridge", "Historic Carver Heights"],
+        ["Historic Southside", "Hulen Bend Estates", "Hulen Heights", "John T. White"],
+        ["Lake Country Estates", "Linwood", "Marine Creek Ranch", "Meadowbrook"],
+        ["Meadows West", "Mira Vista", "Mistletoe Heights", "Monticello"],
+        ["Morningside", "Montserrat", "Near Southside", "North Hi Mount"],
+        ["Northside", "Oakhurst", "Overton Park", "Overton Woods"],
+        ["Panther Island", "Park Glen", "Park Hill", "Polytechnic Heights"],
+        ["Quail Ridge Estates", "Ridglea Hills", "Ridglea North", "Ridgmar"],
+        ["Distrito Del Río", "River East", "River Trails", "Rivercrest"],
+        ["Rock Island", "Rosemont", "Ryan Place", "Ryanwood"],
+        ["Sagamore Hill", "Saginaw", "Santa Fe Enclave", "Sendera Ranch"],
+        ["Silver Sage", "Springdale", "Stockyards", "Stonegate"],
+        ["Stop Six", "Summer Creek Ranch", "Summerfields", "Sundance Square"],
+        ["Tanglewood", "Tehama Ridge", "Terrell Heights", "Trinity Bluff"],
+        ["United Riverside", "University Place", "University West", "Villages of Woodland Springs"],
+        ["Vintage Riverside", "Walsh", "Watersbend", "Wedgewood"],
+        ["West 7th", "West Byers", "West Meadowbrook", "Westcliff"],
+        ["Western Hills", "Westland", "Westover Hills", "White Lake Hills"],
+        ["White Settlement", "Willow Creek", "Woodhaven", "Worth Heights"]
+      ]
+    },
+    "FAQ": {
+      "ITEMS": [
+        {
+          "question": "¿Cuánto cuesta el seguro de auto en Fort Worth por mes?",
+          "answer": "El seguro de auto en Fort Worth varía según el perfil del conductor, pero los promedios mensuales pueden ir desde costos bajos hasta más altos dependiendo del nivel de cobertura, tipo de vehículo, historial de manejo, código postal y la aseguradora seleccionada."
+        },
+        {
+          "question": "¿Cuál es el seguro mínimo requerido en Texas?",
+          "answer": "Texas exige una cobertura de responsabilidad civil 30/60/25, lo que significa $30,000 por persona, $60,000 por accidente en lesiones y $25,000 por daños a la propiedad. Este es el mínimo legal para poder conducir en el estado."
+        },
+        {
+          "question": "¿Por qué el seguro de auto es tan caro en Fort Worth?",
+          "answer": "Las tarifas en Fort Worth son más altas debido al tráfico intenso, la frecuencia de accidentes, conductores sin seguro, riesgos de robo y condiciones climáticas severas como tormentas de granizo, todos factores que aumentan los costos de reclamaciones para las aseguradoras."
+        },
+        {
+          "question": "¿Cuál es el seguro de auto más barato en Fort Worth?",
+          "answer": "El seguro más económico depende del perfil del conductor, pero las pólizas de responsabilidad mínima de aseguradoras económicas suelen ser las más baratas. Sin embargo, las agencias independientes pueden encontrar mejores tarifas al comparar múltiples compañías."
+        },
+        {
+          "question": "¿Necesito seguro contra inundaciones para mi auto en Fort Worth?",
+          "answer": "Los daños por inundación no están cubiertos por la responsabilidad civil. Se necesita cobertura integral para proteger contra daños por agua. En el clima propenso a tormentas de Fort Worth, se recomienda ampliamente para una protección financiera completa."
+        },
+        {
+          "question": "¿Puedo obtener seguro de auto con mal historial de manejo en Fort Worth?",
+          "answer": "Sí, los conductores con infracciones o accidentes aún pueden obtener cobertura. Existen opciones para conductores de alto riesgo, aunque las primas son más altas. Mejorar el historial con el tiempo ayuda a reducir significativamente las tarifas."
+        },
+        {
+          "question": "¿Qué pasa si un conductor sin seguro me choca en Fort Worth?",
+          "answer": "Sin cobertura de conductor no asegurado, podrías tener que pagar reparaciones y gastos médicos de tu bolsillo. La cobertura UM/UIM te protege financieramente cuando el conductor responsable no tiene seguro en accidentes en Fort Worth."
+        },
+        {
+          "question": "¿El seguro de auto en Fort Worth es más caro que en otras ciudades de Texas?",
+          "answer": "Sí, Fort Worth suele ser ligeramente más caro que el promedio de Texas debido a la congestión vehicular, tasas de robo, conductores sin seguro y riesgos climáticos severos, lo que incrementa la frecuencia y el costo de las reclamaciones."
+        }
+      ]
+    },
+    "ESPANOL": {
+      "COPY": "En <a href='/es/' class='inline-link'>Seguros A-State</a>, apoyamos con orgullo a la comunidad hispana y latina de Fort Worth con orientación sencilla, clara y amigable sobre seguros de auto en inglés, español y otros idiomas. Nuestro objetivo es hacer que el seguro de auto sea fácil de entender, comparar y elegir, sin confusión ni estrés. Desde cobertura de responsabilidad civil hasta opciones de cobertura completa, le ayudamos a explorar planes que se ajusten a sus necesidades, presupuesto y hábitos de manejo. Obtenga apoyo local confiable y ayuda personalizada diseñada para cada conductor y familia de Fort Worth hoy mismo."
+    },
+    "QUOTE": {
+      "COPY": "Obtener una <a href='/es/obtener-una-cotizacion' class='inline-link'>cotización gratuita de seguro de auto</a> en Fort Worth, TX es rápido y sencillo con Seguros A-State. Nuestro equipo le ayuda a comparar múltiples aseguradoras confiables para que encuentre la cobertura que se ajuste a sus necesidades, hábitos de manejo y presupuesto sin confusión ni presión. Ya sea que necesite cobertura de responsabilidad civil mínima o protección de cobertura completa, le guiamos paso a paso en cada opción. Contáctenos hoy para recibir cotizaciones personalizadas y explorar mejores tarifas diseñadas para ayudar a los conductores de Fort Worth a mantenerse protegidos."
+    }
+  },
+  "EL_PASO_TX": {
+    "LOCATION": {
+      "CITY": "El Paso",
+      "CITY_WITH_STATE": "El Paso, TX",
+      "POSSESSIVE": "El Paso"
+    },
+    "BANNER": {
+      "LOCATION": "El Paso",
+      "CHIPS": {
+        "ACCIDENT_ONLY": "Auto Personal",
+        "ACCIDENT_ILLNESS": "Auto Comercial",
+        "COMPREHENSIVE": "SR-22",
+        "WELLNESS": "Rideshare",
+        "LIFETIME": "RV y Casa Rodante",
+        "OTHER": "Otro"
+      },
+      "FORM": {
+        "FULL_NAME": "Nombre Completo",
+        "PHONE": "Número de Teléfono",
+        "BUTTON": "Obtener Cotización"
+      }
+    },
+    "TABLE_OF_CONTENTS": {
+      "LOCATION": "El Paso"
+    },
+    "RATES": {
+      "LEAD": "Con un estimado del 20% de los conductores de Texas sin seguro y los viajeros de El Paso pasando más tiempo en corredores concurridos como la I-10 y Loop 375, contar con la cobertura adecuada es fundamental. A esto se suman inundaciones repentinas, granizo y el aumento en los costos de reparación, por lo que la cobertura mínima puede no ser suficiente. Facilitamos la búsqueda de un seguro de auto económico en El Paso, TX, comparando tarifas de múltiples aseguradoras para ayudar a los conductores locales a obtener mejor protección al mejor precio posible dentro de su presupuesto.",
+      "COPY": "En El Paso, los conductores pagan en promedio alrededor de <strong>$92 al mes por cobertura mínima</strong> y <strong>$186 al mes por cobertura completa.</strong> Aunque el seguro de responsabilidad civil mínimo es más económico inicialmente, la cobertura completa ayuda a proteger contra reparaciones, robo, granizo, inundaciones y conductores sin seguro en El Paso. Comparar múltiples aseguradoras es una de las mejores maneras de encontrar un seguro de auto económico en El Paso sin sacrificar cobertura.",
+      "COMPARISON_COPY": "Varios factores de riesgo locales influyen en las tarifas de seguro de auto en El Paso. El tráfico intenso en la I-10 y Loop 375 aumenta la frecuencia de accidentes, mientras que fenómenos meteorológicos severos como el granizo y las inundaciones repentinas generan más reclamaciones. El Paso también tiene un porcentaje más alto de conductores sin seguro que muchas ciudades de Texas, lo que incrementa los costos de reclamaciones para las aseguradoras y eleva las primas tanto de cobertura mínima como completa.",
+      "ZIP_LOCATION_POSSESSIVE": "El Paso",
+      "ZIP_COPY": "Las tarifas del seguro de auto varían entre los códigos ZIP de El Paso debido a diferencias en la densidad del tráfico, frecuencia de accidentes, tasas de robo de vehículos, reclamaciones relacionadas con el clima y crecimiento poblacional. Las áreas con trayectos más largos y más conductores sin seguro suelen registrar primas más altas. Incluso en los códigos ZIP más costosos, comparar cotizaciones a través de una agencia independiente puede ayudar a encontrar tarifas más bajas y mejores opciones de cobertura.",
+      "COMPARISON_TABLE": {
+        "MINIMUM": "$92/mes",
+        "FULL_COVERAGE": "$186/mes"
+      }
+    },
+    "REQUIREMENTS": {
+      "LEAD": "Texas exige que los conductores cuenten con cobertura de responsabilidad civil. El límite de $30,000 por lesiones corporales por persona paga las lesiones que causes a una persona en un accidente. El límite de $60,000 por lesiones corporales por accidente cubre el total de las lesiones de todas las personas afectadas en el mismo accidente. El límite de $25,000 por daños a la propiedad ayuda a pagar los daños que causes a otro vehículo o propiedad. En El Paso, donde los costos médicos y de reparación de vehículos continúan aumentando, estos límites mínimos pueden agotarse rápidamente después de un accidente grave.",
+      "FOOTER_COPY": "La cobertura mínima puede cumplir con los requisitos legales de Texas, pero a menudo deja a los conductores de El Paso financieramente expuestos después de un accidente grave. El seguro de responsabilidad civil únicamente no cubre los daños a tu propio vehículo causados por colisiones, robo, granizo, inundaciones o conductores sin seguro. Con autopistas congestionadas, costos de reparación en aumento y riesgos climáticos severos en toda el área de El Paso, muchos conductores optan por límites de responsabilidad más altos y cobertura completa para evitar pagar miles de dólares de su bolsillo después de una reclamación."
+    },
+    "UNINSURED": {
+      "COPY": "Conducir sin seguro en Texas puede generar graves consecuencias financieras y legales para los conductores de El Paso. Una primera infracción puede resultar en multas de entre $175 y $350, mientras que las infracciones posteriores pueden conllevar multas de hasta $1,000. Los conductores también pueden enfrentar un recargo anual de $250 durante tres años, la retención del vehículo, la suspensión de la licencia y el requisito de presentar un formulario SR-22 para futuras coberturas. El registro del vehículo puede ser suspendido hasta que se restablezca el seguro. El costo de ser sorprendido conduciendo sin seguro en El Paso supera el costo de una póliza básica.",
+      "DETAILS": {
+        "FIRST_OFFENSE_FINE": "$175 - $350",
+        "SUBSEQUENT_OFFENSE_FINE": "Hasta $1,000",
+        "LICENSE_SURCHARGE": "$250 por año durante 3 años",
+        "VEHICLE_IMPOUNDMENT": "Tu vehículo puede ser remolcado y retenido",
+        "SR22_REQUIREMENT": "Debes presentar prueba de responsabilidad financiera ante el TDI",
+        "LICENSE_SUSPENSION": "Se revocan los privilegios de conducción hasta confirmar la cobertura",
+        "REGISTRATION_SUSPENSION": "El registro del vehículo se cancela hasta que la cobertura sea restablecida"
+      },
+      "TEXASSURE_COPY": "<a href='https://www.txdmv.gov/motorists/register-your-vehicle/texassure-insurance-verification' class='inline-link'>TexasSure</a> es el sistema electrónico de verificación de seguros del estado de Texas que ayuda a confirmar si los vehículos cuentan con la cobertura requerida. Las compañías de seguros envían actualizaciones periódicas de las pólizas a la base de datos, lo que permite a las autoridades y agencias estatales verificar rápidamente la cobertura utilizando la placa o el número de identificación del vehículo (VIN). Si una póliza es cancelada o deja de estar activa, el sistema identifica el vehículo como no asegurado, lo que puede generar advertencias, multas o problemas con el registro hasta que se proporcione prueba de cobertura."
+    },
+    "COVERAGE_OPTIONS": {
+      "ITEMS": {
+        "LIABILITY": "Cubre los gastos médicos y los daños materiales que causes a otras personas en un accidente. Paga las lesiones de terceros y las reparaciones de su propiedad, pero no cubre tu propio vehículo ni tus gastos médicos.",
+        "COLLISION": "Paga la reparación o el reemplazo de tu propio vehículo después de una colisión, independientemente de quién haya causado el accidente. Después de que pagues tu deducible, ayuda a cubrir los daños ocasionados por choques con otros objetos, como cercas.",
+        "COMPREHENSIVE": "Ayuda a pagar los daños a tu vehículo causados por eventos distintos a una colisión. Esto incluye robo, vandalismo, tormentas de granizo, inundaciones, incendios, caída de objetos e incluso impactos con animales.",
+        "PIP": "Ayuda a cubrir los gastos médicos para ti y tus pasajeros después de un accidente, sin importar quién tuvo la culpa. También puede ayudar con salarios perdidos y servicios esenciales, como cuidado infantil, si las lesiones te impiden trabajar.",
+        "MEDPAY": "Paga el tratamiento médico para ti y tus pasajeros después de un accidente automovilístico, independientemente de quién causó el choque. Cubre visitas al hospital, servicios de ambulancia y otros gastos médicos hasta el límite de la póliza.",
+        "UM": "Te protege si eres impactado por un conductor que no tiene seguro. Paga tus gastos médicos, pérdida de ingresos y, en algunos casos, las reparaciones de tu vehículo. Es especialmente importante en áreas con altas tasas de conductores sin seguro.",
+        "UIM": "Ayuda a cubrir los costos cuando el conductor responsable tiene seguro, pero no suficiente para pagar completamente tus gastos médicos o las reparaciones de tu vehículo. Cubre la diferencia entre su cobertura limitada y tus gastos reales.",
+        "UMPD": "Paga los daños a tu vehículo causados por un conductor sin seguro cuando este es responsable del accidente. Esto garantiza que no tengas que asumir los costos de reparación cuando el otro conductor no puede hacerlo.",
+        "ROADSIDE": "Brinda ayuda cuando tu vehículo se avería en el camino. Los servicios pueden incluir remolque, arranque de batería, cambio de llantas, entrega de combustible y asistencia por bloqueo de llaves. Ofrece apoyo rápido durante emergencias para que no quedes varado lejos de ayuda.",
+        "RENTAL": "Ayuda a pagar un automóvil de alquiler mientras tu vehículo está siendo reparado después de un accidente cubierto. Esto te permite continuar con tus actividades diarias, como ir al trabajo o realizar diligencias, mientras tu automóvil está en el taller.",
+        "GAP": "Cubre la diferencia entre lo que debes en tu préstamo o arrendamiento vehicular y el valor real en efectivo de tu vehículo si es declarado pérdida total. Evita que tengas que pagar de tu bolsillo por un automóvil que ya no conduces, pero que aún debes.",
+        "TOWING": "Paga el remolque y los servicios básicos de asistencia en carretera cuando tu vehículo se avería inesperadamente. Ayuda a cubrir costos como el traslado a un taller de reparación y otros gastos relacionados con problemas mecánicos imprevistos.",
+        "CUSTOM_PARTS": "Cubre modificaciones o mejoras realizadas a tu vehículo, como rines personalizados, sistemas de sonido o piezas de alto rendimiento. Estas modificaciones generalmente no están incluidas en las pólizas estándar de seguro.",
+        "RIDESHARE": "Brinda protección mientras conduces para servicios de transporte compartido como Uber o Lyft. Cubre los vacíos entre tu seguro personal y la póliza comercial proporcionada por la empresa de rideshare, garantizando una protección continua.",
+        "LOAN_PAYOFF": "Paga el saldo restante de tu préstamo o arrendamiento vehicular si tu vehículo es declarado pérdida total y su valor es menor a la cantidad que aún debes. Esto evita que sigas pagando por un automóvil que ya no puede utilizarse.",
+        "NEW_CAR": "Proporciona un vehículo de reemplazo de la misma marca y modelo si tu automóvil nuevo es declarado pérdida total dentro de un período de tiempo o límite de kilometraje determinado. Ayuda a evitar pérdidas por depreciación durante los primeros años de propiedad.",
+        "ACCIDENT_FORGIVENESS": "Protege tus tarifas de seguro para que no aumenten después de tu primer accidente con culpa. Garantiza que un solo error no afecte significativamente tu prima, ayudando a mantener costos de seguro más estables con el tiempo.",
+        "DEATH_DISABILITY": "Brinda apoyo financiero para ti o tu familia en caso de sufrir una lesión grave, incapacidad o fallecimiento en un accidente cubierto. Ayuda a reemplazar ingresos perdidos y cubrir gastos importantes durante momentos difíciles después de un accidente."
+      }
+    },
+    "RATE_FACTORS": {
+      "COPY": "Las tarifas de seguro de auto en El Paso están influenciadas por múltiples factores de riesgo que las aseguradoras utilizan para predecir la probabilidad y el costo de futuras reclamaciones. Tu historial de conducción, edad, tipo de vehículo, puntaje de crédito y kilometraje anual influyen en el precio, al igual que el lugar donde vives dentro de la ciudad y la frecuencia con la que conduces por corredores de alto tráfico como la I-10. Las altas tasas de accidentes, los conductores sin seguro y los riesgos climáticos en El Paso también aumentan las primas generales, haciendo que los detalles de tu perfil individual sean aún más importantes."
+    },
+    "SAVINGS": {
+      "COPY": "Ahorrar en el seguro de auto en El Paso se basa en reducir riesgos y aprovechar los descuentos disponibles. Los conductores pueden disminuir sus primas manteniendo un historial de conducción limpio, agrupando pólizas de auto y vivienda, y eligiendo deducibles más altos cuando sea asequible. Los hábitos de conducción segura, un bajo kilometraje anual y la instalación de dispositivos antirrobo o características de seguridad también ayudan a reducir las tarifas. Comparar múltiples aseguradoras a través de un agente independiente es una de las formas más efectivas de encontrar mejores precios y una cobertura más completa."
+    },
+    "SPECIAL_COVERAGE": {
+      "ITEMS": {
+        "SR22": "Requerido para conductores que deben demostrar responsabilidad financiera después de infracciones como conducir bajo la influencia (DUI) o manejar sin seguro. Es un certificado que se presenta ante el estado. Ayuda a los conductores de alto riesgo a restablecer legalmente sus privilegios de conducción.",
+        "HIGH_RISK": "Los conductores de alto riesgo incluyen a quienes tienen antecedentes de accidentes, multas, DUI o interrupciones en su cobertura. Generalmente enfrentan primas más altas debido a una mayor probabilidad de presentar reclamaciones. Las aseguradoras ayudan a estos conductores a encontrar opciones de cobertura adecuadas.",
+        "TEEN": "Los conductores jóvenes suelen pagar tarifas más altas debido a su limitada experiencia al volante y al mayor riesgo de accidentes. Incluirlos en una póliza familiar, mantener buenas calificaciones y completar cursos de conducción puede ayudar a reducir los costos.",
+        "RIDESHARE": "Los conductores de rideshare necesitan cobertura adicional porque el seguro de auto personal puede no protegerlos completamente mientras trabajan. El seguro para rideshare cubre los vacíos entre la cobertura personal y la proporcionada por la empresa de transporte compartido.",
+        "CLASSIC": "Los autos clásicos y de colección requieren una cobertura que considere un valor acordado en lugar de la depreciación del mercado. Estas pólizas protegen vehículos raros o restaurados utilizados para exhibiciones, conducción limitada o almacenamiento.",
+        "NON_OWNER": "El seguro para no propietarios está diseñado para personas que no poseen un vehículo pero necesitan cobertura de responsabilidad civil para mantenerse legalmente aseguradas. Ofrece protección al alquilar o pedir prestados vehículos y ayuda a mantener un historial de seguro continuo."
+      }
+    },
+    "RISKS": {
+      "ITEMS": [
+        {
+          "HEADING": "Tráfico y Patrones de Desplazamiento en El Paso",
+          "TEXT": "El Paso se encuentra entre las áreas metropolitanas medianas más congestionadas de Texas, con un tráfico intenso en corredores principales como la I-10, Loop 375 y la US-54. Estas rutas experimentan frecuentes embotellamientos durante las horas pico, aumentando el tráfico de arranque y frenado constante y el riesgo de accidentes. Pasar más tiempo conduciendo en condiciones de tráfico intenso incrementa la exposición a colisiones y reclamaciones, lo que impacta directamente las primas del seguro. Por ello, contar con una buena cobertura es aún más importante en El Paso que en ciudades más pequeñas de Texas con menos tráfico."
+        },
+        {
+          "HEADING": "Riesgos Climáticos en El Paso, TX",
+          "TEXT": "El clima desértico de El Paso puede traer cambios repentinos y en ocasiones, severos que afectan directamente a los conductores y a las reclamaciones de seguros. Las inundaciones representan el riesgo más costoso durante las tormentas intensas, seguidas por el granizo, que con frecuencia provoca daños significativos a los vehículos. Los huracanes y tormentas tropicales pueden generar efectos secundarios relacionados con humedad y viento, mientras que los fuertes vientos pueden causar daños por escombros. Los conductores que solo cuentan con cobertura mínima corren el riesgo de tener que pagar de su bolsillo por pérdidas relacionadas con el clima."
+        },
+        {
+          "HEADING": "Tasas de Robo de Vehículos por Vecindario en El Paso, TX",
+          "TEXT": "El Paso suele registrar tasas de robo de vehículos superiores al promedio estatal, con una mayor actividad en áreas como Central El Paso, Ysleta y partes del Lower Valley. Entre los vehículos más robados se encuentran camionetas pickup antiguas, Honda Civic, Toyota Corolla y camionetas de tamaño completo. Las tasas de robo por código postal influyen directamente en las primas del seguro, ya que las aseguradoras calculan el riesgo basándose en datos locales de reclamaciones. La cobertura integral (comprehensive) protege contra el robo; otros tipos de cobertura no reemplazarán tu vehículo si es robado o dañado."
+        },
+        {
+          "HEADING": "Estadísticas de Conductores Sin Seguro en El Paso, TX",
+          "TEXT": "Se estima que 1 de cada 5 conductores en Texas no tiene seguro, lo que representa un importante riesgo financiero en las carreteras. Si un conductor sin seguro te golpea, podrías tener que pagar tus gastos médicos y las reparaciones del vehículo de tu bolsillo, a menos que cuentes con cobertura UM/UIM. Texas exige que las aseguradoras ofrezcan cobertura UM/UIM, aunque los conductores pueden rechazarla por escrito, una decisión que a menudo genera consecuencias costosas después de un accidente. Agregar cobertura UM/UIM es altamente recomendable para los conductores de El Paso. Un agente independiente puede ayudarte a asegurarte de que estés completamente protegido."
+        }
+      ]
+    },
+    "NEIGHBORHOODS": {
+      "ROWS": [
+        ["Album", "Alfalfa", "Alpine", "Angels Triangle"],
+        ["Apollo Heights", "Arlington Park", "Austin Terrace", "Bandolero"],
+        ["Bear Ridge", "Beaumont", "Blue Sky Place", "Borderland"],
+        ["Buena Vista", "Campo del Sol", "Canutillo Heights", "Castner Heights"],
+        ["Cedar Grove", "Central El Paso", "Chamizal", "Chaparral Park North"],
+        ["Chihuahuita", "Cielo Vista", "Clardy Fox", "Collingsworth"],
+        ["Cooperstown", "Coronado", "Country Club", "Crestmont"],
+        ["Desert Springs", "Downtown El Paso", "Duranguito", "Eastwood Heights"],
+        ["El Dorado East", "El Dorado West", "El Segundo Barrio", "Enchanted Hills"],
+        ["Falcon Hills", "Festival Hills", "Five Points", "Futureland"],
+        ["Golden Hill", "Grandview", "Hacienda Heights", "High Ridge"],
+        ["Hidden Village", "Highland Park", "Horizon", "Indian Ridge"],
+        ["Irvin", "Kern Place", "Kohlberg", "Lomas Del Rey"],
+        ["Lomas Del Sol", "Logan Heights", "Lower Valley", "Magoffin"],
+        ["Manhattan Heights", "Marty Robbins", "Mesa Hills", "Mesquite Hills"],
+        ["Milagro Hills", "Military Heights", "Mission Hills", "Montoya Heights"],
+        ["Montwood", "Morningside Heights", "Mountain Park", "Mountain View"],
+        ["Mundy", "North Hills", "Northside", "Northwest El Paso"],
+        ["O'Shea Keleher", "Pacific Park", "Park Foothills", "Parkland"],
+        ["Pebble Hills Park", "Pershing - Gov. Hill", "Ponderosa", "Prado Verde"],
+        ["Ranchos del Sol", "Redd-Mulberry", "Remcon", "Ripley Village"],
+        ["Sandstone Ranch", "Shawver Park", "Silver Springs Village", "Socorro"],
+        ["Sun Ridge Estates", "Sunland Park North", "Sunrise Acres", "Sunset Heights"],
+        ["Thomas Manor", "Tierra Del Este", "Tobin Park", "United"],
+        ["Valley Creek", "Veteran's Park", "Via Hermosa", "Village Green"],
+        ["Vista Del Prado", "Vista Hills", "West Valley", "Ysleta"]
+      ]
+    },
+    "FAQ": {
+      "ITEMS": [
+        {
+          "question": "¿Cuánto cuesta el seguro de auto en El Paso por mes?",
+          "answer": "El seguro de auto en El Paso cuesta en promedio alrededor de $92 al mes para cobertura mínima y aproximadamente $186 al mes para cobertura completa. Tu tarifa real puede variar según factores como tu historial de conducción, edad, tipo de vehículo, código postal, nivel de cobertura e historial de reclamaciones. El tráfico de El Paso, los conductores sin seguro y los riesgos climáticos, como el granizo y las inundaciones, también pueden influir en el precio del seguro."
+        },
+        {
+          "question": "¿Cuál es el seguro de auto mínimo requerido en Texas?",
+          "answer": "Texas exige que los conductores cuenten con cobertura de responsabilidad civil 30/60/25. Esto significa $30,000 por persona lesionada, $60,000 por accidente y $25,000 para daños a la propiedad. Esta cobertura protege a otras personas afectadas por un accidente que causes, pero no cubre tu propio vehículo ni tus lesiones."
+        },
+        {
+          "question": "¿Por qué el seguro de auto es tan caro en El Paso?",
+          "answer": "Las tarifas son más altas debido al tráfico intenso, la gran cantidad de conductores sin seguro, los accidentes frecuentes y los riesgos climáticos como granizo e inundaciones. Los costos de reparación y el crecimiento de la población también aumentan la frecuencia de reclamaciones, lo que eleva las primas de seguro en la zona."
+        },
+        {
+          "question": "¿Cuál es el seguro de auto más barato en El Paso?",
+          "answer": "La opción más económica generalmente depende de tu historial de conducción, tu vehículo y tus necesidades de cobertura. Las pólizas de responsabilidad civil mínima suelen tener el costo más bajo, pero comparar varias aseguradoras a través de un agente independiente suele ayudarte a encontrar la tarifa más accesible para tu situación."
+        },
+        {
+          "question": "¿Necesito seguro contra inundaciones para mi automóvil en El Paso?",
+          "answer": "No necesitas una póliza separada contra inundaciones para tu automóvil, pero los daños por inundación solo están cubiertos si tienes cobertura integral (comprehensive). Sin ella, cualquier daño causado por agua o fenómenos climáticos deberá ser pagado de tu bolsillo, lo que puede resultar costoso después de tormentas severas."
+        },
+        {
+          "question": "¿Puedo obtener seguro de auto con un mal historial de conducción en El Paso?",
+          "answer": "Sí. Los conductores con accidentes, multas o DUI aún pueden obtener cobertura, aunque las tarifas suelen ser más altas. Algunas aseguradoras se especializan en pólizas para conductores de alto riesgo, y comparar múltiples compañías puede ayudarte a encontrar opciones más económicas incluso con un historial de conducción desfavorable."
+        },
+        {
+          "question": "¿Qué sucede si me golpea un conductor sin seguro en El Paso?",
+          "answer": "Sin cobertura para conductores sin seguro o con seguro insuficiente (UM/UIM), es posible que debas pagar tú mismo las reparaciones y los gastos médicos. Con cobertura UM/UIM, tu seguro ayuda a cubrir esos costos. Esta protección es especialmente importante en El Paso debido al alto número de conductores sin seguro."
+        },
+        {
+          "question": "¿Es el seguro de auto en El Paso más caro que en otras ciudades de Texas?",
+          "answer": "Sí, en muchos casos. El Paso puede tener tarifas ligeramente más altas debido a la densidad del tráfico, las tasas de accidentes, la cantidad de conductores sin seguro y los riesgos climáticos. Sin embargo, las tarifas varían según cada conductor, y comparar cotizaciones puede ayudar a reducir los costos a niveles similares o incluso inferiores a los de otras ciudades importantes de Texas."
+        }
+      ]
+    },
+    "ESPANOL": {
+      "COPY": "En El Paso, contar con el seguro de auto adecuado es esencial para mantenerte protegido en la carretera y cumplir con los requisitos del estado de Texas. Ofrecemos opciones integrales y accesibles, incluyendo cobertura de responsabilidad civil, cobertura completa y seguro SR-22 para conductores de alto riesgo. Nuestro equipo de expertos compara múltiples compañías de seguros para ayudarte a encontrar tarifas más bajas y una mejor protección. Hacemos que el proceso sea sencillo, explicamos claramente tus opciones y te ayudamos a elegir una póliza que se adapte a tus necesidades y presupuesto."
+    },
+    "QUOTE": {
+      "COPY": "Obtener una <a href='/es/obtener-una-cotizacion' class='inline-link'>cotización gratuita de seguro de auto</a> en El Paso es fácil y te ayuda a encontrar rápidamente la cobertura adecuada. Comienza seleccionando el tipo de seguro que necesitas, como auto personal, auto comercial, SR-22, rideshare o cobertura para RV. Luego, ingresa tu nombre completo, número de teléfono y algunos datos básicos sobre tu vehículo e historial de conducción. Una vez enviada la información, un agente de Seguros A-State revisará tus datos, comparará múltiples aseguradoras y se comunicará contigo con las mejores tarifas y opciones de cobertura disponibles según tus necesidades."
     }
   },
   "FOOTER": {

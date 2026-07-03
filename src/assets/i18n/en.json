@@ -39003,10 +39003,60 @@
       }
     },
     "RATE_FACTORS": {
-      "TITLE_PREFIX": "What Affects Your Car Insurance Rate in"
+      "TITLE_PREFIX": "What Affects Your Car Insurance Rate in",
+      "ITEMS": {
+        "DRIVING_RECORD": "Driving Record (accidents, violations, DUIs)",
+        "CREDIT_SCORE": "Credit Score",
+        "VEHICLE_MAKE_MODEL": "Vehicle Make & Model",
+        "DAILY_COMMUTE": "Daily Commute Distance",
+        "COVERAGE_LEVEL": "Coverage Level Chosen",
+        "NUMBER_OF_VEHICLES": "Number of Vehicles on Policy",
+        "NUMBER_OF_DRIVERS": "Number of Drivers on Policy",
+        "OCCUPATION": "Occupation (some carriers)",
+        "BUNDLING": "Bundling with Other Policies",
+        "AGE_EXPERIENCE": "Age & Years of Driving Experience",
+        "MARITAL_STATUS": "Marital Status",
+        "VEHICLE_YEAR": "Vehicle Year",
+        "ANNUAL_MILEAGE": "Annual Mileage",
+        "DEDUCTIBLE": "Deductible Amount",
+        "LAPSES": "Lapses in Coverage History",
+        "EDUCATION": "Education Level (some carriers)",
+        "INSURANCE_SCORE": "Insurance Score",
+        "GENDER": "Gender",
+        "ZIP_NEIGHBORHOOD": "ZIP Code & Neighborhood",
+        "SAFETY_FEATURES": "Vehicle Safety Features",
+        "VEHICLE_USE": "How the Vehicle Is Used (personal vs. business)",
+        "CLAIMS_HISTORY": "Claims History",
+        "TEEN_HIGH_RISK": "Teen or High-Risk Drivers on Policy",
+        "HOMEOWNERSHIP": "Homeownership Status",
+        "COMPANY_TYPE": "Type of Insurance Company (captive vs. independent)"
+      }
     },
     "SAVINGS": {
-      "TITLE_PREFIX": "How to Save on Car Insurance in"
+      "TITLE_PREFIX": "How to Save on Car Insurance in",
+      "ITEMS": {
+        "MULTI_POLICY": "Multi-Policy",
+        "GOOD_DRIVER": "Good Driver Discount",
+        "GOOD_STUDENT": "Good Student Discount",
+        "PAPERLESS": "Paperless Billing Discount",
+        "NEW_CAR": "New Car Discount",
+        "TELEMATICS": "Telematics / Usage-Based Discount",
+        "AFFINITY": "Affinity / Group Discount",
+        "MULTI_CAR": "Multi-Car Discount",
+        "DEFENSIVE_DRIVING": "Defensive Driving Course Discount",
+        "PAY_IN_FULL": "Pay-in-Full Discount",
+        "MILITARY_VETERAN": "Military & Veteran Discount",
+        "HOMEOWNER": "Homeowner Discount",
+        "SAFETY_FEATURE": "Vehicle Safety Feature Discount",
+        "STUDENT_AWAY": "Student Away at School Discount",
+        "ACCIDENT_FREE": "Accident-Free Discount",
+        "AUTO_PAY": "Automatic Payment (Auto-Pay) Discount",
+        "EARLY_SIGNING": "Early Signing Discount",
+        "LOYALTY": "Loyalty Discount",
+        "ANTI_THEFT": "Anti-Theft Device Discount",
+        "LOW_MILEAGE": "Low Mileage Discount",
+        "E_SIGNATURE": "E-Signature Discount"
+      }
     },
     "INDEPENDENT_AGENCY": {
       "TITLE_PREFIX": "Why",
@@ -39023,17 +39073,41 @@
         "INDEPENDENT": "Independent Agency (A-State)",
         "CAPTIVE": "Captive Agent",
         "ROW_1": "Number of Carriers",
+        "ROW_1_INDEPENDENT": "Multiple — shops 10+ carriers for you",
+        "ROW_1_CAPTIVE": "One — locked into a single company",
         "ROW_2": "Price Comparison",
+        "ROW_2_INDEPENDENT": "Compares rates across multiple carriers to find the lowest",
+        "ROW_2_CAPTIVE": "Can only offer one company's rate",
         "ROW_3": "Coverage Options",
+        "ROW_3_INDEPENDENT": "Broader selection of coverage types and limits",
+        "ROW_3_CAPTIVE": "Limited to one carrier's policy structure",
         "ROW_4": "High-Risk Drivers",
+        "ROW_4_INDEPENDENT": "Access to non-standard and specialty markets",
+        "ROW_4_CAPTIVE": "May decline high-risk applicants entirely",
         "ROW_5": "SR-22 Filing",
+        "ROW_5_INDEPENDENT": "Can shop multiple carriers for best SR-22 rate",
+        "ROW_5_CAPTIVE": "Limited SR-22 options through one carrier",
         "ROW_6": "Loyalty to You",
+        "ROW_6_INDEPENDENT": "Works for the client — not the insurance company",
+        "ROW_6_CAPTIVE": "Works for the insurance company",
         "ROW_7": "Rate Shopping at Renewal",
+        "ROW_7_INDEPENDENT": "Re-shops your rate every renewal across all carriers",
+        "ROW_7_CAPTIVE": "Locked into same carrier at renewal",
         "ROW_8": "Claims Advocacy",
+        "ROW_8_INDEPENDENT": "Advocates on your behalf during claims",
+        "ROW_8_CAPTIVE": "Represents the insurance company's interests",
         "ROW_9": "Policy Customization",
+        "ROW_9_INDEPENDENT": "Tailors coverage across multiple carrier options",
+        "ROW_9_CAPTIVE": "Limited to one carrier's policy structure",
         "ROW_10": "Switching Carriers",
+        "ROW_10_INDEPENDENT": "Can switch you to a better carrier without changing agents",
+        "ROW_10_CAPTIVE": "Must find a new agent to switch carriers",
         "ROW_11": "Local Knowledge",
+        "ROW_11_INDEPENDENT": "Texas-based agents with local market expertise",
+        "ROW_11_CAPTIVE": "May be national agents with no local context",
         "ROW_12": "Multilingual Support"
+        ,"ROW_12_INDEPENDENT": "Multi-language support",
+        "ROW_12_CAPTIVE": "Varies by agent — not guaranteed"
       }
     },
     "SPECIAL_COVERAGE": {
@@ -39277,7 +39351,7 @@
       }
     },
     "REQUIREMENTS": {
-      "LEAD": "Texas requires all drivers to carry auto insurance coverage. The $30,000 limit pays for injuries to one person if you cause an accident. The $60,000 limit covers total injuries for everyone hurt in the same accident. The $25,000 property damage limit pays for damage to the other driver's vehicle, fence, building, or property. In a city like San Antonio, where medical bills and vehicle repair costs are high, these minimum limits can run out very quickly, so one has to take measures accordingly.",
+      "LEAD": "Texas requires all drivers to carry <a class='inline-link' href='/auto-insurance'> auto insurance coverage.</a> The $30,000 limit pays for injuries to one person if you cause an accident. The $60,000 limit covers total injuries for everyone hurt in the same accident. The $25,000 property damage limit pays for damage to the other driver's vehicle, fence, building, or property. In a city like San Antonio, where medical bills and vehicle repair costs are high, these minimum limits can run out very quickly, so one has to take measures accordingly.",
       "FOOTER_COPY": "Minimum coverage is often not enough for San Antonio drivers because it only meets legal requirements, not real-world costs. With heavy traffic, frequent accidents, and rising vehicle repair and medical expenses, a single crash can easily exceed basic policy limits. Drivers may end up paying thousands out of pocket for damages, injuries, or lawsuits. In a busy city like San Antonio, full comprehensive coverage or higher liability limits offer much stronger financial protection."
     },
     "UNINSURED": {
@@ -39335,19 +39409,19 @@
       "ITEMS": [
         {
           "HEADING": "San Antonio Traffic & Commute Patterns",
-          "TEXT": "San Antonio ranks among the more congested metro areas in Texas, with heavy commuter traffic on major corridors like I-35, Loop 410, Loop 1604, and Highway 281. Daily rush hour delays increase time on the road, which raises the likelihood of accidents and insurance claims. Higher exposure to collisions also pushes premiums up compared to smaller Texas cities. This is why coverage matters more in San Antonio, helping protect drivers from both traffic-related damage and unexpected losses."
+          "TEXT": "San Antonio ranks <a href='https://www.sacurrent.com/news/study-san-antonio-has-some-of-the-nations-worst-traffic-and-its-getting-worse-36482954/' class='inline-link'> among the more congested metro areas in Texas, </a> with heavy commuter traffic on major corridors like I-35, Loop 410, Loop 1604, and Highway 281. Daily rush hour delays increase time on the road, which raises the likelihood of accidents and insurance claims. Higher exposure to collisions also pushes premiums up compared to smaller Texas cities. This is why coverage matters more in San Antonio, helping protect drivers from both traffic-related damage and unexpected losses."
         },
         {
           "HEADING": "Weather Risks in San Antonio, TX",
-          "TEXT": "San Antonio's weather is known for sudden shifts, with heavy rainfall events that can quickly lead to flash flooding in low-lying areas. Flooding is the most serious risk, often causing costly vehicle damage. Hailstorms are also frequent and can dent or shatter windshields, while hurricanes and tropical storms bring widespread damage and power-related disruptions. High winds can further damage parked or moving vehicles. This coverage makes minimum-only coverage risky in San Antonio."
+          "TEXT": "San Antonio's weather is known for <a href='https://climatecheck.com/texas/san-antonio' class='inline-link'> sudden shifts,</a> with heavy rainfall events that can quickly lead to flash flooding in low-lying areas. Flooding is the most serious risk, often causing costly vehicle damage. Hailstorms are also frequent and can dent or shatter windshields, while hurricanes and tropical storms bring widespread damage and power-related disruptions. High winds can further damage parked or moving vehicles. This coverage makes minimum-only coverage risky in San Antonio."
         },
         {
           "HEADING": "Vehicle Theft Rates by Neighborhood in San Antonio, TX",
-          "TEXT": "San Antonio consistently ranks among the higher Texas cities for vehicle theft. Hotspots include Downtown, West Side, South Side, Medical Center, and areas along major corridors like I-10 and Loop 410. Commonly stolen vehicles include pickup trucks and older Honda and Chevrolet models due to high demand for parts. ZIP-code-level theft risk directly impacts comprehensive coverage pricing, since insurers adjust rates based on local loss patterns."
+          "TEXT": "San Antonio consistently ranks <a href='https://crimegrade.org/vehicle-theft-san-antonio-tx/' class='inline-link'> among the higher Texas cities for vehicle theft.</a> Hotspots include Downtown, West Side, South Side, Medical Center, and areas along major corridors like I-10 and Loop 410. Commonly stolen vehicles include pickup trucks and older Honda and Chevrolet models due to high demand for parts. ZIP-code-level theft risk directly impacts comprehensive coverage pricing, since insurers adjust rates based on local loss patterns."
         },
         {
           "HEADING": "Uninsured Driver Statistics for San Antonio, TX",
-          "TEXT": "Roughly 1 in 5 drivers in Texas is uninsured, and San Antonio reflects this high-risk trend. Practically, this means if an uninsured driver hits you, you are responsible for repairs and medical costs unless you carry UM/UIM coverage. Texas insurers must offer UM/UIM, but drivers can waive it in writing, a costly mistake in busy cities like San Antonio. UM/UIM is recommended for full protection. A-State Insurance ensures you're not exposed on the road where uninsured drivers are so common."
+          "TEXT": "<a href='https://www.reynainjurylaw.com/uninsured-at-fault-driver-texas' class='inline-link'>Roughly 1 in 5 drivers in Texas is uninsured, </a> and San Antonio reflects this high-risk trend. Practically, this means if an uninsured driver hits you, you are responsible for repairs and medical costs unless you carry UM/UIM coverage. Texas insurers must offer UM/UIM, but drivers can waive it in writing, a costly mistake in busy cities like San Antonio. UM/UIM is recommended for full protection. A-State Insurance ensures you're not exposed on the road where uninsured drivers are so common."
         }
       ]
     },
@@ -39454,8 +39528,8 @@
       "LOCATION": "Dallas"
     },
     "RATES": {
-      "LEAD": "In Dallas, TX, drivers face some of the busiest highways in Texas, with heavy traffic congestion, frequent accidents, and one of the highest uninsured driver rates in the state, plus sudden hailstorms that can damage vehicles in minutes. That makes having the right auto insurance essential, not optional. As an independent Texas insurance broker, we compare top carriers to find coverage that fits your budget and protects you on every Dallas road. Get quotes today, fast and easy now.",
-      "COPY": "Car insurance in Dallas, TX, typically costs more than the national average due to heavy traffic, high accident rates, uninsured drivers, and frequent hail damage claims. On average, drivers in Dallas pay <strong>around $235 per month for full coverage,</strong> while <strong>minimum liability coverage usually ranges from $125 per month,</strong> depending on driver profile, ZIP code, and vehicle type.",
+      "LEAD": "In Dallas, TX, drivers face  <strong> some of the busiest highways in Texas,</strong> with heavy traffic congestion, frequent accidents, and one of the highest uninsured driver rates in the state, plus sudden hailstorms that can damage vehicles in minutes. That makes having the  <a class='inline-link' href='/auto-insurance'>right auto insurance</a> essential, not optional. As an independent Texas insurance broker, we compare top carriers to find coverage that fits your budget and protects you on every Dallas road. Get quotes today, fast and easy now.",
+      "COPY": "Car insurance in Dallas, TX, typically costs more than the national average due to heavy traffic, high accident rates, uninsured drivers, and frequent hail damage claims. <a href='https://insurify.com/car-insurance/texas/dallas/' rel='nofollow' class='inline-link'> On average,<a> drivers in Dallas pay <strong>around $235 per month for full coverage,</strong> while <strong>minimum liability coverage usually ranges from $125 per month,</strong> depending on driver profile, ZIP code, and vehicle type.",
       "COMPARISON_COPY": "Dallas auto insurance rates are generally higher than the Texas state average, as in Houston, due to heavy traffic, frequent accidents, and higher repair and medical costs. Insurance premiums in Dallas are influenced by a combination of local risk factors, including road congestion, population density, vehicle theft rates, and claim frequency. Heavy highway traffic, increased accident exposure, and a larger number of uninsured drivers can also contribute to higher insurance costs.",
       "ZIP_LOCATION_POSSESSIVE": "Dallas's",
       "ZIP_COPY": "In Dallas, TX, average monthly car insurance costs vary by ZIP code due to traffic density, theft rates, accident frequency, and weather exposure such as hailstorms. Higher-risk areas, including 75217 and 75211, often experience greater claim activity, increased vehicle theft incidents, and more traffic-related losses. Moderately lower-risk ZIP codes, such as 75287, generally experience fewer claims and reduced exposure to certain risk factors.",
@@ -39465,7 +39539,7 @@
       }
     },
     "REQUIREMENTS": {
-      "LEAD": "Texas requires drivers to carry at least 30/60/25 liability coverage. This means up to $30,000 for injuries to one person in an accident you cause. It also means up to $60,000 in total for all injuries in a single accident, no matter how many people are hurt. And finally, it covers up to $25,000 for damage you cause to another person's vehicle or property. These limits can run out quickly after a serious accident.",
+      "LEAD": "Texas requires drivers to carry at least <strong> 30/60/25 liability coverage. </strong> This means up to $30,000 for injuries to one person in an accident you cause. It also means up to $60,000 in total for all injuries in a single accident, no matter how many people are hurt. And finally, it covers up to $25,000 for damage you cause to another person's vehicle or property. These limits can run out quickly after a serious accident.",
       "FOOTER_COPY": "Minimum coverage in Texas may meet legal requirements, but it is often not enough for drivers in Dallas. With heavy traffic, frequent multi-car accidents, and high repair and medical costs, even a small crash can quickly exceed basic limits. If you are at fault, you could be responsible for paying the remaining costs out of pocket. That's why many Dallas drivers choose higher liability limits or full coverage for better financial protection."
     },
     "UNINSURED": {
@@ -39479,7 +39553,7 @@
         "LICENSE_SUSPENSION": "Driving privileges revoked until insurance is confirmed",
         "REGISTRATION_SUSPENSION": "Vehicle registration cancelled until coverage is reinstated"
       },
-      "TEXASSURE_COPY": "Texas uses the TexasSure system to electronically verify whether every registered vehicle has active insurance coverage. Insurance companies regularly send policy updates to the state database, which is matched against vehicle registration records. If coverage is missing or cannot be verified, drivers may receive notices, fines, or registration issues. This system helps reduce uninsured driving in Texas."
+      "TEXASSURE_COPY": "Texas uses the <a href='https://www.txdmv.gov/motorists/register-your-vehicle/texassure-insurance-verification' class='inline-link'> TexasSure system </a> to electronically verify whether every registered vehicle has active insurance coverage. Insurance companies regularly send policy updates to the state database, which is matched against vehicle registration records. If coverage is missing or cannot be verified, drivers may receive notices, fines, or registration issues. This system helps reduce uninsured driving in Texas."
     },
     "COVERAGE_OPTIONS": {
       "ITEMS": {
@@ -39523,19 +39597,19 @@
       "ITEMS": [
         {
           "HEADING": "Dallas Traffic & Commute Patterns",
-          "TEXT": "Dallas ranks among the top 10 most congested cities in the U.S., with drivers spending over 50 hours a year stuck in traffic delays. High-risk corridors include I-635 (LBJ Freeway), I-35E, US-75, and the Dallas North Tollway, where heavy congestion and frequent crashes are common during peak hours. More time on the road means higher exposure to accidents, which directly increases insurance risk and premium costs. This is why comprehensive coverage matters more in Dallas."
+          "TEXT": "Dallas ranks <a href='https://www.edhat.com/news/top-10-us-cities-with-the-worst-traffic-congestion/' class='inline-link'> among the top 10 most congested cities in the U.S., </a> with drivers spending over 50 hours a year stuck in traffic delays. High-risk corridors include I-635 (LBJ Freeway), I-35E, US-75, and the Dallas North Tollway, where heavy congestion and frequent crashes are common during peak hours. More time on the road means higher exposure to accidents, which directly increases insurance risk and premium costs. This is why comprehensive coverage matters more in Dallas."
         },
         {
           "HEADING": "Weather Risks in Dallas, TX",
-          "TEXT": "Dallas weather is highly unpredictable, with sudden storms and extreme seasonal changes that directly impact driving conditions and insurance claims. The most severe risk is flooding, which can quickly damage vehicles and road infrastructure, often requiring comprehensive coverage for protection. Hail is also common in North Texas and can cause costly vehicle dents and glass damage, which is typically covered under comprehensive insurance. Hurricanes and tropical storms are less frequent inland."
+          "TEXT": "Dallas weather is highly unpredictable, with <a href='https://climatecheck.com/texas/dallas' class='inline-link'> sudden storms and extreme seasonal changes </a> that directly impact driving conditions and insurance claims. The most severe risk is flooding, which can quickly damage vehicles and road infrastructure, often requiring comprehensive coverage for protection. Hail is also common in North Texas and can cause costly vehicle dents and glass damage, which is typically covered under comprehensive insurance. Hurricanes and tropical storms are less frequent inland."
         },
         {
           "HEADING": "Vehicle Theft Rates by Neighborhood in Dallas, TX",
-          "TEXT": "Dallas consistently ranks among the higher vehicle theft cities in Texas, with theft risk varying widely by ZIP code. Areas like South Dallas, Oak Cliff, Pleasant Grove, and parts of Downtown report higher incident rates, while suburban zones are generally lower-risk. Commonly stolen vehicles include pickup trucks such as the Ford F-150 and the Chevrolet Silverado. Higher theft rates in a ZIP code directly increase comprehensive insurance premiums due to greater claim exposure."
+          "TEXT": "Dallas consistently ranks <a href='https://crimegrade.org/vehicle-theft-dallas-tx/' class='inline-link'> among the higher vehicle theft cities in Texas,</a> with theft risk varying widely by ZIP code. Areas like South Dallas, Oak Cliff, Pleasant Grove, and parts of Downtown report higher incident rates, while suburban zones are generally lower-risk. Commonly stolen vehicles include pickup trucks such as the Ford F-150 and the Chevrolet Silverado. Higher theft rates in a ZIP code directly increase comprehensive insurance premiums due to greater claim exposure."
         },
         {
           "HEADING": "Uninsured Driver Statistics for Dallas, TX",
-          "TEXT": "Around 1 in 5 drivers in Texas is estimated to be uninsured, making Texas one of the highest-risk states for coverage gaps, according to state insurance reports. Practically, if an uninsured driver hits you, you may have to pay medical and repair costs yourself unless you carry UM/UIM coverage. Texas requires insurers to offer UM/UIM, but drivers can waive it in writing, a choice that often proves costly in Dallas. Adding UM/UIM is strongly recommended."
+          "TEXT": "<a href='https://www.reynainjurylaw.com/uninsured-at-fault-driver-texas' class='inline-link'>Around 1 in 5 drivers in Texas is estimated to be uninsured,</a> making Texas one of the highest-risk states for coverage gaps, according to state insurance reports. Practically, if an uninsured driver hits you, you may have to pay medical and repair costs yourself unless you carry UM/UIM coverage. Texas requires insurers to offer UM/UIM, but drivers can waive it in writing, a choice that often proves costly in Dallas. Adding UM/UIM is strongly recommended."
         }
       ]
     },

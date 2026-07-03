@@ -1056,23 +1056,23 @@ export const routeTranslations: Record<string, Record<string, string>> = {
     es: 'seguros-de-auto/houston-tx',
   },
   sanAntonioTx: {
-    en: 'san-antonio-tx',
-    es: 'san-antonio-tx',
+    en: 'auto-insurance/san-antonio-tx',
+    es: 'seguros-de-auto/san-antonio-tx',
   },
   dallasTx: {
-    en: 'dallas-tx',
-    es: 'dallas-tx',
+    en: 'auto-insurance/dallas-tx',
+    es: 'seguros-de-auto/dallas-tx',
   },
   austinTx: {
-    en: 'austin-tx',
-    es: 'austin-tx',
+    en: 'auto-insurance/austin-tx',
+    es: 'seguros-de-auto/austin-tx',
   },
   fortWorthTx: {
-    en: 'fort-worth-tx',
-    es: 'fort-worth-tx',
+    en: 'auto-insurance/fort-worth-tx',
+    es: 'seguros-de-auto/fort-worth-tx',
   },
   elPasoTx: {
-    en: 'el-paso-tx',
-    es: 'el-paso-tx',
+    en: 'auto-insurance/el-paso-tx',
+    es: 'seguros-de-auto/el-paso-tx',
   },
 };
