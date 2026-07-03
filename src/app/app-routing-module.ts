@@ -74,6 +74,11 @@ import { TitleInsurance } from './pages/additional_insurance/title-insurance/tit
 import { TitleTransfer } from './pages/additional_insurance/title-transfer/title-transfer';
 import { PetInsurance } from './pages/additional_insurance/pet-insurance/pet-insurance';
 import { HoustonTx } from './pages/auto-insurance/houston-tx/houston-tx';
+import { SanAntonioTx } from './pages/auto-insurance/san-antonio-tx/san-antonio-tx';
+import { DallasTx } from './pages/auto-insurance/dallas-tx/dallas-tx';
+import { AustinTx } from './pages/auto-insurance/austin-tx/austin-tx';
+import { FortWorthTx } from './pages/auto-insurance/fort-worth-tx/fort-worth-tx';
+import { ElPasoTx } from './pages/auto-insurance/el-paso-tx/el-paso-tx';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -302,6 +307,12 @@ const routes: Routes = [
         data: { metaPage: 'rideshareInsurance' },
       },
       { path: 'houston-tx', component: HoustonTx, data: { metaPage: 'houstonTx' } },
+      { path: 'san-antonio-tx', component: SanAntonioTx, data: { metaPage: 'sanAntonioTx' } },
+      { path: 'dallas-tx', component: DallasTx, data: { metaPage: 'dallasTx' } },
+      { path: 'austin-tx', component: AustinTx, data: { metaPage: 'austinTx' } },
+      { path: 'fort-worth-tx', component: FortWorthTx, data: { metaPage: 'fortWorthTx' } },
+      { path: 'el-paso-tx', component: ElPasoTx, data: { metaPage: 'elPasoTx' } },
+
     ],
   },
 
@@ -490,6 +501,13 @@ const routes: Routes = [
             data: { metaPage: 'rideshareInsurance' },
           },
           { path: 'houston-tx', component: HoustonTx, data: { metaPage: 'houstonTx' } },
+          { path: 'san-antonio-tx', component: SanAntonioTx, data: { metaPage: 'sanAntonioTx' } },
+          { path: 'dallas-tx', component: DallasTx, data: { metaPage: 'dallasTx' } },
+          { path: 'austin-tx', component: AustinTx, data: { metaPage: 'austinTx' } },
+          { path: 'fort-worth-tx', component: FortWorthTx, data: { metaPage: 'fortWorthTx' } },
+          { path: 'el-paso-tx', component: ElPasoTx, data: { metaPage: 'elPasoTx' } },
+
+
         ],
       },
       {
@@ -1034,7 +1052,27 @@ export const routeTranslations: Record<string, Record<string, string>> = {
     es: 'seguro-para-mascotas',
   },
   houstonTx: {
-    en: 'houston-tx',
-    es: 'houston-tx',
+    en: 'auto-insurance/houston-tx',
+    es: 'seguros-de-auto/houston-tx',
+  },
+  sanAntonioTx: {
+    en: 'san-antonio-tx',
+    es: 'san-antonio-tx',
+  },
+  dallasTx: {
+    en: 'dallas-tx',
+    es: 'dallas-tx',
+  },
+  austinTx: {
+    en: 'austin-tx',
+    es: 'austin-tx',
+  },
+  fortWorthTx: {
+    en: 'fort-worth-tx',
+    es: 'fort-worth-tx',
+  },
+  elPasoTx: {
+    en: 'el-paso-tx',
+    es: 'el-paso-tx',
   },
 };

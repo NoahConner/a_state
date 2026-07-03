@@ -1,0 +1,3180 @@
+/* Hero Banner Section Start */
+.topBanner {
+  background-image:
+    linear-gradient(180deg, rgba(27, 15, 8, 0.2) 0%, rgba(27, 15, 8, 0.5) 100%),
+    url('/assets/images/houston-tx/houston-banner.png');
+
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+
+  .container {
+    height: 100%;
+
+    .topSub {
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 9rem 0 3rem;
+
+      .topSub2 {
+        width: 100%;
+
+        .h1 {
+          font-weight: 700;
+          color: #fff;
+          font-size: clamp(2.8rem, 4vw, 4.35rem);
+          line-height: 1.1;
+          text-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+          margin-bottom: 1.8rem;
+
+          .price-highlight {
+            color: #fff22e;
+          }
+        }
+
+       .banner-quote-card {
+          max-width: 833px;
+          padding: 2rem 2.2rem 2.25rem;
+          border-radius: 11px;
+          border: 1px solid rgba(255, 255, 255, 0.38);
+          background: rgba(255, 255, 255, 0.52);
+          backdrop-filter: blur(2px);
+          -webkit-backdrop-filter: blur(2px);
+          box-shadow: 0 24px 60px rgba(17, 11, 8, 0.28);
+        }
+
+        .coverd-quote-card{
+              // max-width: 833px;
+          padding: 2rem 2.2rem 2.25rem;
+          border-radius: 11px;
+          // border: 1px solid rgba(255, 255, 255, 0.38);
+// background: rgba(229, 189, 189, 0.4);
+    background: rgb(248 15 15 / 0.4);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .quote-options {
+          display: flex;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+          align-items: flex-start;
+          gap: 0.75rem;
+          margin-bottom: 2.1rem;
+
+          .quote-option {
+            appearance: none;
+            background: transparent;
+            border: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.55rem;
+            flex: 1 1 0;
+            min-width: 0;
+            cursor: pointer;
+            color: #231815;
+            transition: transform 0.2s ease;
+
+            .icon-badge {
+              position: relative;
+              width: 88px;
+              height: 72px;
+              display: grid;
+              place-items: center;
+
+              .icon-burst {
+                position: absolute;
+                inset: 3px 9px 3px;
+                background: #f6b4b8;
+                clip-path: polygon(50% 0%,
+                    61% 18%,
+                    82% 8%,
+                    76% 29%,
+                    100% 32%,
+                    82% 50%,
+                    100% 68%,
+                    76% 71%,
+                    82% 92%,
+                    61% 82%,
+                    50% 100%,
+                    39% 82%,
+                    18% 92%,
+                    24% 71%,
+                    0% 68%,
+                    18% 50%,
+                    0% 32%,
+                    24% 29%,
+                    18% 8%,
+                    39% 18%);
+                opacity: 0.95;
+                transition: transform 0.2s ease, background-color 0.2s ease;
+              }
+
+              .quote-option-image {
+                position: relative;
+                max-width: 68px;
+                max-height: 44px;
+                width: auto;
+                height: auto;
+                object-fit: contain;
+                filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.18));
+              }
+            }
+
+            .quote-option-label {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              gap: 0.4rem;
+              font-size: 0.95rem;
+              font-weight: 500;
+              color: #17110f;
+              line-height: 1.2;
+              white-space: nowrap;
+
+              .radio-indicator {
+                width: 16px;
+                height: 16px;
+                flex: 0 0 16px;
+                border-radius: 50%;
+                border: 1.5px solid #1f1a17;
+                background: transparent;
+                position: relative;
+                transition:
+                  border-color 0.2s ease,
+                  background-color 0.2s ease,
+                  box-shadow 0.2s ease;
+
+                &::after {
+                  content: '';
+                  position: absolute;
+                  left: 4px;
+                  top: 0px;
+                  width: 5px;
+                  height: 10px;
+                  border-right: 1.8px solid #1f1a17;
+                  border-bottom: 1.8px solid #1f1a17;
+                  transform: rotate(45deg) scale(0.65);
+                  transform-origin: center;
+                  opacity: 0;
+                  transition:
+                    transform 0.2s ease,
+                    opacity 0.2s ease;
+                }
+              }
+            }
+
+            &.selected {
+              .radio-indicator {
+                border-color: #1f1a17;
+                box-shadow: none;
+              }
+
+              .radio-indicator::after {
+                transform: rotate(45deg) scale(1);
+                opacity: 1;
+              }
+            }
+
+            &:hover {
+              transform: translateY(-1px);
+            }
+
+            &:nth-child(1) .quote-option-image {
+              max-width: 56px;
+              max-height: 40px;
+            }
+
+            &:nth-child(2) .quote-option-image {
+              max-width: 70px;
+              max-height: 42px;
+            }
+
+            &:nth-child(3) .quote-option-image {
+              max-width: 66px;
+              max-height: 39px;
+            }
+
+            &:nth-child(4) .quote-option-image {
+              max-width: 52px;
+              max-height: 41px;
+            }
+
+            &:nth-child(5) .quote-option-image {
+              max-width: 56px;
+              max-height: 39px;
+            }
+
+            &:nth-child(6) .quote-option-image {
+              max-width: 33px;
+              max-height: 39px;
+            }
+          }
+        }
+
+        .quote-form-row {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          .form-control {
+            flex: 1 1 0;
+            min-height: 3.35rem;
+            border-radius: 10px;
+            border: 0;
+            padding: 0 1.15rem;
+            color: #342925;
+            box-shadow: 0 10px 24px rgba(33, 24, 18, 0.12);
+
+            &::placeholder {
+              color: #b0a8a1;
+            }
+          }
+
+          .quote-submit {
+            min-width: 195px;
+            min-height: 3.35rem;
+            font-family: "Afacad", sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 999px;
+            border: 2px solid #ff7f24;
+            background: #fff22e;
+            color: #111;
+            box-shadow: 0 12px 28px rgba(56, 40, 28, 0.18);
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+
+            &::before {
+              content: '';
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              height: 0;
+              background: #ffb400;
+              border-radius: inherit;
+              transition: height 0.28s ease;
+              z-index: -1;
+            }
+
+            &:hover {
+              transform: translateY(-1px);
+              box-shadow: 0 16px 32px rgba(56, 40, 28, 0.22);
+              color: #111;
+
+              &::before {
+                height: 100%;
+              }
+            }
+
+            &:disabled {
+              background: #efe7a5;
+              border-color: #d3c86b;
+              color: #8a7d2f;
+              cursor: not-allowed;
+              box-shadow: none;
+              transform: none;
+
+              &::before {
+                height: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/* Hero Banner Section End */
+
+/* Rates Section Start */
+.houston-rates-section {
+  background: #fbf8f2;
+  padding: 4.6rem 0 3.9rem;
+
+  .row {
+    --bs-gutter-x: 2.8rem;
+  }
+
+  .toc-column {
+    position: relative;
+  }
+
+  .toc-card {
+    max-width: 210px;
+    transition: top 0.18s ease-out;
+  }
+
+  .toc-title {
+    margin: 0 0 1rem;
+    font-size: 1.08rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1f1c18;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+  }
+
+  .toc-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.45rem;
+    padding: 0.78rem 0 0.78rem 0.05rem;
+    border-bottom: 1px solid #d9ca94;
+    color: #3b372f;
+
+    &.active {
+      color: #ef554d;
+    }
+  }
+
+  .toc-bullet {
+    width: 3px;
+    height: 3px;
+    margin-top: 0.55rem;
+    flex: 0 0 3px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  .toc-text {
+    font-size: 0.86rem;
+    line-height: 1.6;
+  }
+
+  .rates-content {
+    max-width: 820px;
+    margin: 0 auto;
+    color: #2f2a24;
+  }
+
+  .rates-lead,
+  .rates-copy,
+  .rates-disclaimer {
+    font-size: 1rem;
+    line-height: 1.85;
+    letter-spacing: -0.01em;
+  }
+
+  .rates-lead {
+    max-width: 735px;
+    margin: 0 auto 4.35rem;
+  }
+
+  .rates-copy {
+    max-width: 48rem;
+    margin: 0 auto 4.35rem;
+  }
+
+  ::ng-deep .highlight {
+    color: #ef554d;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  .highlight {
+    color: #ef554d;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  .rates-heading,
+  .rates-subheading {
+    color: #df4135;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .rates-heading {
+    font-size: 31px;
+    margin: 0 0 1rem;
+    color: #CA2B28;
+
+  }
+
+  .rates-subheading {
+    // font-size: clamp(1.7rem, 2.6vw, 2.2rem);
+    font-size: 31px;
+    margin: 0 0 1.2rem;
+    color: #CA2B28;
+    font-weight: 600;
+  }
+
+  .rates-table {
+    border-collapse: separate;
+    border-spacing: 0 0.35rem;
+
+    thead th {
+      background: #fff;
+      border: 1px solid rgba(65, 58, 48, 0.26);
+      padding: 1.35rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #23201b;
+      text-align: center;
+    }
+
+    tbody td {
+      padding: 0.8rem 1rem;
+      background: #e8e8e8;
+      border-right: 1px solid rgba(65, 58, 48, 0.18);
+      font-size: 0.95rem;
+      color: #1d1a16;
+      text-align: center;
+      vertical-align: middle;
+
+      &:first-child {
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+      }
+
+      &:last-child {
+        border-right: 0;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+      }
+    }
+
+    tbody tr.alt-row td {
+      background: #ffd2d2;
+    }
+  }
+
+  .company-name {
+    text-decoration: underline;
+  }
+
+  .rates-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 1.15rem 0 0.7rem;
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: #df4135;
+  }
+
+
+  .source-label {
+    color: #000;
+    font-size: 17px;
+  }
+
+  .source-name {
+    color: #df4135;
+    font-size: 17px;
+  }
+
+  .updated-line {
+    color: #df4135;
+    font-size: 17px;
+  }
+
+  .rates-disclaimer {
+    max-width: 825px;
+    margin: 0;
+  }
+}
+/* Rates Section End */
+
+/* Rates Comparison Section Start */
+.houston-comparison-section {
+  background: #fbf8f2;
+  padding: 0.5rem 0 5rem;
+
+  .comparison-content {
+    color: #2f2a24;
+  }
+
+  .comparison-heading {
+    margin: 0 0 1.35rem;
+    color: #CA2B28;
+    font-size: 29px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .comparison-copy {
+    max-width: 865px;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    line-height: 1.85;
+    letter-spacing: -0.01em;
+
+  }
+
+  .comparison-table-wrap {
+    max-width: 830px;
+  }
+
+  .comparison-table {
+    border-collapse: separate;
+    border-spacing: 0;
+
+    thead th {
+      background: transparent;
+      border: 0;
+      padding: 1rem 1.1rem 1.15rem;
+      color: #26211d;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-align: center;
+
+      &:not(:first-child) {
+        border-left: 1px solid rgba(65, 58, 48, 0.22);
+      }
+    }
+
+    tbody th,
+    tbody td {
+      border: 0;
+      padding: 1rem 1.2rem;
+      background: #e8e8e8;
+      color: #1d1a16;
+      font-size: 0.95rem;
+      vertical-align: middle;
+    }
+
+    tbody th {
+      width: 25%;
+      font-weight: 500;
+      text-align: left;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+      padding-left: 1.45rem;
+    }
+
+    tbody td {
+      text-align: center;
+      border-left: 1px solid rgba(65, 58, 48, 0.18);
+    }
+
+    tbody td:last-child {
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+
+    tbody tr.highlight-row th,
+    tbody tr.highlight-row td {
+      background: #ffd2d2;
+    }
+  }
+}
+/* Rates Comparison Section End */
+.section-content-row {
+  --bs-gutter-x: 2.8rem;
+}
+
+.section-content-shell {
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+/* Texas Requirements Section Start */
+.insurance-section {
+  background: #F2F2F2;
+  min-height: auto;
+  padding: 4.6rem 0 3rem !important;
+}
+
+.main-title {
+  color: #CA2B28;
+  font-size: clamp(2rem, 3vw, 2.55rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.sub-title {
+  color: #5a5550;
+  font-size: clamp(1.42rem, 2vw, 1.8rem);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.lead-text {
+  font-size: 0.98rem;
+  line-height: 1.9;
+  color: #3f3b37;
+  max-width: 905px;
+}
+
+.coverage-grid-wrap {
+  display: grid;
+  gap: 0.42rem;
+}
+
+.coverage-grid-header,
+.coverage-grid-row {
+  --bs-gutter-x: 0;
+}
+
+.coverage-grid-head,
+.coverage-grid-cell {
+  height: 100%;
+  padding: 0.95rem 1.05rem;
+  border: 1px solid #aaa39d;
+  background: #fff;
+  color: #2d2825;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.coverage-grid-head {
+  font-weight: 600;
+  text-align: center;
+}
+
+.coverage-grid-cell {
+  display: flex;
+  align-items: center;
+}
+
+.coverage-grid-cell--title {
+  justify-content: center;
+  text-align: center;
+  font-weight: 500;
+}
+
+.coverage-grid-wrap .d-flex {
+  gap: 0.55rem !important;
+}
+
+.font-weight-medium {
+  font-weight: 500;
+}
+
+.icon-check,
+.icon-cross {
+  display: inline-grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  border-radius: 50%;
+  margin-top: 0.08rem;
+}
+
+.icon-check::before {
+  content: '✓';
+  color: #8fd71d;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.icon-cross {
+  background: #ef5b97;
+}
+
+.icon-cross::before {
+  content: '×';
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.footer-title {
+  color: #CA2B28;
+  font-size: clamp(1.85rem, 2.45vw, 2.3rem);
+  font-weight: 700;
+  line-height: 1.24;
+  letter-spacing: -0.03em;
+  max-width: 430px;
+}
+
+.footer-text {
+  font-size: 1rem;
+  line-height: 1.78;
+  letter-spacing: -0.01em;
+  color: #3e3935;
+  // max-width: 780px;
+  text-align: left;
+}
+
+.vehicle-illustration {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+}
+
+.requirement-footer-row {
+  margin-top: 1.15rem;
+  row-gap: 0.95rem !important;
+}
+
+.requirement-copy-col {
+  padding-top: 3.3rem;
+}
+
+.requirement-illustration-col {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.requirement-description-col {
+  margin-top: -0.2rem;
+}
+/* Texas Requirements Section End */
+
+/* Uninsured Penalties Section Start */
+.uninsured-penalties-section {
+  background: #f2f2f2;
+  padding-top: 1.25rem !important;
+  padding-bottom: 4.75rem !important;
+
+  .penalties-header {
+    margin-bottom: 2.3rem;
+  }
+
+  .penalties-title,
+  .texassure-title {
+    color: #CA2B28;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+  }
+
+  .penalties-title {
+    font-size: clamp(1.8rem, 2.4vw, 2.15rem);
+  }
+
+  .texassure-title {
+    font-size: clamp(1.65rem, 2.2vw, 1.95rem);
+  }
+
+  .penalties-copy,
+  .texassure-copy {
+    max-width: 840px;
+    color: #3f3b37;
+    font-size: 0.9rem;
+    line-height: 1.85;
+  }
+
+  .penalties-grid-wrap {
+    max-width: 760px;
+    margin: 0 auto 4rem;
+    display: grid;
+    gap: 0;
+  }
+
+  .penalties-grid-header,
+  .penalties-grid-row {
+    --bs-gutter-x: 0;
+  }
+
+  .penalties-grid-head,
+  .penalties-grid-cell {
+    height: 100%;
+    padding: 0.92rem 1.2rem;
+    border: 1px solid #b3aba5;
+    color: #28231f;
+    text-align: center;
+    font-size: 0.92rem;
+  }
+
+  .penalties-grid-head {
+    background: #fff;
+    color: #2f2a26;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .penalties-grid-row:nth-child(odd) .penalties-grid-cell {
+    background: #ededed;
+  }
+
+  .penalties-grid-row:nth-child(even) .penalties-grid-cell {
+    background: #ffd6d6;
+  }
+
+  .penalty-detail {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    text-align: left;
+  }
+
+  .penalty-icon {
+    width: 15px;
+    height: 15px;
+    min-width: 15px;
+    border-radius: 50%;
+    background: #b4e14e;
+    border: 1px solid #6d9c13;
+    display: inline-grid;
+    place-items: center;
+
+    &::before {
+      content: '✓';
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1;
+    }
+  }
+
+  .texassure-block {
+    max-width: 840px;
+    margin: 0 auto;
+  }
+
+  .texassure-link {
+    color: #CA2B28;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+}
+/* Uninsured Penalties Section End */
+
+/* Coverage Options Section Start */
+.houston-coverage-options-section {
+  background: #ffff;
+  padding-top: 2.9rem !important;
+  padding-bottom: 2.55rem !important;
+
+  .coverage-options-header {
+    margin-bottom: 2.7rem;
+  }
+
+  .coverage-options-title {
+    color: #CA2B28;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 5rem;
+  }
+
+  .coverage-options-grid {
+    --bs-gutter-y: 2.3rem;
+  }
+
+  .coverage-option-card {
+    max-width: 292px;
+    color: #261d1a;
+  }
+
+  .coverage-option-card__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    margin-bottom: 0.58rem;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      overflow: visible;
+    }
+  }
+
+  .coverage-option-card__icon-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+  }
+
+  .coverage-option-card__title {
+    margin: 0 0 11px;
+    color: #231815;
+    font-size: 20.31px;
+    font-weight: 600;
+    line-height: 1.16;
+    letter-spacing: -0.015em;
+  }
+
+  .coverage-option-card__text {
+    color: #272424;
+    font-size: 13.8px;
+    font-weight: 400;
+    line-height: 1.62;
+    letter-spacing: -0.01em;
+  }
+}
+/* Coverage Options Section End */
+
+/* Rate Factors Section Start */
+.houston-rate-factors-section {
+  background: #ffffef;
+  padding: 3.95rem 0 3.55rem;
+
+  .rate-factors-header {
+    margin: 0 auto 2.55rem;
+  }
+
+  .rate-factors-title {
+    color: #ca2b28;
+    font-size: 31px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .rate-factors-copy {
+    max-width: 57rem;
+    margin: 1.7rem auto 0;
+    color: #3f3834;
+    font-size: 15px;
+    line-height: 1.95;
+  }
+
+  .rate-factors-grid {
+    --bs-gutter-x: 3.3rem;
+    --bs-gutter-y: 0;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .rate-factors-list {
+    padding-top: 0.05rem;
+  }
+
+  .rate-factors-list__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.95rem;
+    color: #4a4744;
+    font-size: 15px;
+    line-height: 1.7;
+    text-decoration: none;
+    text-decoration-thickness: 0.9px;
+    text-underline-offset: 1.5px;
+    font-weight: 600;
+
+    &+.rate-factors-list__item {
+      margin-top: 1.75rem;
+    }
+  }
+
+  .rate-factors-list__item span {
+    display: inline-block;
+    max-width: 100%;
+  }
+
+  .rate-list-icon-image {
+    width: 17px;
+    min-width: 17px;
+    height: 24px;
+    margin-top: -0.02rem;
+    object-fit: contain;
+  }
+}
+/* Rate Factors Section End */
+
+/* Savings Section Start */
+.houston-savings-section {
+  background: #fff;
+  padding: 3.95rem 0 4.15rem;
+
+  .savings-header {
+    margin: 0 auto 3.35rem;
+  }
+
+  .savings-title {
+    color: #CA2B28;
+    font-size: 31px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .savings-copy {
+    margin: 1.7rem auto 0;
+    color: #3f3834;
+    font-size: 15px;
+    line-height: 1.95;
+    max-width: 57rem;
+  }
+
+  .savings-grid {
+    --bs-gutter-x: 4.6rem;
+    --bs-gutter-y: 0;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .savings-list {
+    padding-top: 0.15rem;
+  }
+
+  .savings-list__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    color: #4c4b4b;
+    font-size: 15px;
+    line-height: 1.32;
+    text-decoration: none;
+    text-decoration-thickness: 0.9px;
+    text-underline-offset: 1.6px;
+    font-weight: 600;
+
+    &+.savings-list__item {
+      margin-top: 2.05rem;
+    }
+  }
+
+  .savings-list__item span {
+    display: inline-block;
+    max-width: 100%;
+  }
+
+  .savings-list-icon-image {
+    width: auto;
+    /* min-width: 17px; */
+    height: auto;
+    margin-top: -1rem;
+    object-fit: contain;
+  }
+}
+/* Savings Section End */
+
+/* Independent Agency Section Start */
+.houston-independent-agency-section {
+  background: #f2f2f2;
+  padding: 3rem 0 3.25rem;
+
+  .independent-agency-header {
+    margin-bottom: 2.85rem;
+  }
+
+  .independent-agency-title {
+    color: #ca2b28;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+  }
+
+  .independent-agency-badges {
+    max-width: 100%;
+    margin: 0 auto 5.2rem;
+
+    .row {
+      --bs-gutter-x: 0.44rem;
+      --bs-gutter-y: 1.05rem;
+    }
+  }
+
+  .independent-agency-badge {
+    min-height: 66px;
+    padding: 0.9rem 1.55rem 0.9rem 1.6rem;
+    border: 2px solid #c24d32;
+    border-radius: 10px;
+    background: #f5e70b;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    box-shadow: 4px 5px 0 #d4362a;
+  }
+
+  .independent-agency-badge--center {
+    max-width: 552px;
+    margin: 0 auto;
+  }
+
+  .independent-agency-badge__number {
+    color: #111;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1;
+    min-width: 36px;
+  }
+
+  .independent-agency-badge__text {
+    color: #161616;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  .independent-agency-table-wrap {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .independent-agency-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+
+    thead th,
+    tbody th,
+    tbody td {
+      border: 0;
+      text-align: center;
+      vertical-align: middle;
+      color: #2b2725;
+      font-size: 14px;
+      line-height: 1.28;
+      padding: 1.05rem 1rem;
+    }
+
+    thead th {
+      background: #fdfdfd;
+      font-weight: 500;
+      border: 1px solid #b8b2ac;
+      padding-top: 1.8rem;
+      padding-bottom: 1.8rem;
+
+      &:first-child {
+        width: 22.6%;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+
+      &:nth-child(2) {
+        width: 39.8%;
+      }
+
+      &:last-child {
+        width: 37.6%;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+    }
+
+    thead th+th,
+    tbody th+td,
+    tbody td+td {
+      border-left: 1px solid #9c958f;
+    }
+
+    tbody th,
+    tbody td {
+      background: #e9e9e9;
+      font-weight: 400;
+    }
+
+    tbody tr:nth-child(even) th,
+    tbody tr:nth-child(even) td {
+      background: #ffd2d2;
+    }
+
+    tbody th {
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+      padding-left: 0.85rem;
+      padding-right: 0.85rem;
+      font-weight: 700;
+    }
+
+    tbody td:last-child {
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+  }
+}
+/* Independent Agency Section End */
+
+/* Special Coverage Section Start */
+.houston-special-coverage-section {
+  background: #fff;
+  padding: 4.1rem 0 2.3rem;
+
+  .special-coverage-container {
+    max-width: 1180px;
+  }
+
+  .special-coverage-header {
+    margin-bottom: 3.55rem;
+  }
+
+  .special-coverage-title {
+    color: #ca2b28;
+    font-size: 33px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  .special-coverage-grid {
+    --bs-gutter-x: 3.1rem;
+    --bs-gutter-y: 2.85rem;
+    align-items: start;
+  }
+
+  .special-coverage-card {
+    color: #3e1c18;
+    max-width: 100%;
+  }
+
+  .special-coverage-card__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.9rem;
+  }
+
+  .special-coverage-card__icon--emoji {
+    font-size: 39px;
+    line-height: 1;
+  }
+
+  .special-coverage-card__icon-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .special-coverage-card__title {
+    margin: 0 0 1.05rem;
+    color: #431c19;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.16;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  .special-coverage-card__text {
+    color: #4a2b27;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+  }
+
+  .special-coverage-illustration {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 100%;
+    padding-top: 0.85rem;
+  }
+
+  .special-coverage-illustration__image {
+    width: 100%;
+    max-width: 490px;
+    height: auto;
+    display: block;
+  }
+}
+/* Special Coverage Section End */
+
+/* Neighborhoods Section Start */
+.houston-neighborhoods-section {
+  background: #fff;
+  padding: 4.2rem 0 0.1rem;
+  margin-bottom: 55px;
+
+  &__inner {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin: 0 0 2.9rem;
+    color: #ca2b28;
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    text-align: center;
+  }
+
+  &__table {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-radius: 11px;
+    overflow: hidden;
+    background: #e5e5e5;
+
+    &--alt {
+      background: #ffd0d0;
+    }
+  }
+
+  &__cell {
+    min-height: 58px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #302e30;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.25;
+    text-align: center;
+
+    + .houston-neighborhoods-section__cell {
+      border-left: 1px solid rgba(74, 69, 67, 0.46);
+    }
+  }
+}
+/* Neighborhoods Section End */
+
+/* FAQ Section Start */
+.faq {
+  background-color: #fbfbe3;
+  padding: 70px 0 40px;
+  overflow: hidden;
+
+  &__container {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  // ===== Title =====
+  &__title {
+    color: #ed1c24;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1.2;
+    text-align: center;
+    margin: 0 0 60px;
+    letter-spacing: 0.2px;
+  }
+
+  // ===== List wrapper =====
+  &__list {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  &__entry {
+    margin-bottom: 38px;
+  }
+
+  // ===== Item (question card) =====
+  &__item {
+    background-color: #ffffff;
+    border: 2px solid #ed1c24;
+    border-radius: 14px;
+    box-shadow: 0 6px 10px rgba(237, 28, 36, 0.18);
+  }
+
+  &__question {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 26px;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  &__question-text {
+    color: #1f1f24;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+  &__icon {
+    flex: 0 0 auto;
+    margin-left: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+
+  &__icon-image {
+    display: block;
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+  }
+
+  // Rotate chevron when item is open
+  &__item--open &__icon {
+    transform: rotate(180deg);
+  }
+
+  // ===== Answer (collapsible) =====
+  &__answer {
+    overflow: hidden;
+  }
+
+  &__answer-inner {
+    padding: 4px 26px 26px;
+
+    p {
+      color: #2b2b2b;
+      font-size: 16px;
+      line-height: 1.7;
+      margin: 0;
+      max-width: 100%;
+    }
+  }
+
+  // ===== Decorative question mark =====
+  &__decor {
+    position: absolute;
+    top: 70px;
+    right: 30rem;
+    width: 200px;
+    height: 320px;
+  }
+
+  &__decor-image {
+display: block;
+    width: auto;
+    height: auto;
+    margin-top: -4rem;
+    /* margin-right: 21px; */
+    margin-left: 15rem;  }
+
+  @media (max-width: 1400px) {
+    &__decor {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 40px 0 30px;
+
+    &__container {
+      padding: 0 20px;
+    }
+
+    &__title {
+      font-size: 24px;
+      margin-bottom: 36px;
+    }
+
+    &__question {
+      padding: 18px 18px;
+    }
+
+    &__question-text {
+      font-size: 16px;
+    }
+
+    &__answer-inner {
+      padding: 4px 18px 20px;
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
+/* FAQ Section End */
+
+// ===== Risks section =====
+.risks {
+  background-color: #fbfbe3;
+  font-family: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
+  padding: 70px 0 60px;
+  overflow: hidden;
+
+  &__container {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  // ===== Title =====
+  &__title {
+    color: #ed1c24;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 1.2;
+    margin: 0 0 90px;
+    max-width: 100%;
+    letter-spacing: 0.2px;
+    text-align: center;
+  }
+
+  // ===== Decorative RISK badge =====
+  &__decor {
+position: absolute;
+    top: -2rem;
+right: 14rem;
+    width: 18rem;
+    height: 15rem;
+    max-width: 40%;
+  }
+
+  // ===== Grid =====
+  &__grid {
+    max-width: 100%;
+    margin: 0 auto;
+    --bs-gutter-x: 32px;
+  }
+
+  &__col {
+    margin-bottom: 70px;
+  }
+
+  // ===== Item =====
+  &__item {
+    max-width: 540px;
+  }
+
+  &__number {
+    display: block;
+    color: #f3e98a;
+    font-weight: 800;
+    font-size: 72px;
+    line-height: 1;
+    margin-bottom: 26px;
+  }
+
+  &__heading {
+    color: #1f1f24;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.3;
+    margin: 0 0 22px;
+  }
+
+  &__text {
+    color: #2b2b2b;
+    font-size: 17px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  &__link {
+    color: #ed1c24;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    &:hover {
+      color: #c9151c;
+    }
+  }
+}
+
+
+
+// ===== Responsive =====
+@media (max-width: 1200px) {
+  .risks {
+    &__decor { width: 360px; }
+    &__grid { --bs-gutter-x: 60px; }
+  }
+}
+
+@media (max-width: 991px) {
+  .risks {
+    &__title {
+      max-width: 60%;
+      margin-bottom: 60px;
+    }
+    &__decor {
+      width: 280px;
+      top: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .risks {
+    padding: 40px 0 30px;
+
+    &__container { padding: 0 20px; }
+
+    &__title {
+      font-size: 24px;
+      max-width: 100%;
+      margin-bottom: 40px;
+    }
+
+    &__decor {
+      position: static;
+      display: block;
+      width: 200px;
+      max-width: 60%;
+      margin: 0 0 30px auto;
+    }
+
+    &__number { font-size: 56px; }
+    &__heading { font-size: 20px; }
+    &__text { font-size: 15px; }
+    &__col { margin-bottom: 40px; }
+  }
+}
+
+// styles.scss
+
+// ===== Espanol section =====
+.espanol {
+  font-family: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
+  padding: 60px 0;
+  overflow: hidden;
+
+  &__container {
+    max-width: 1900px;
+    margin: 0 auto;
+    padding: 0 60px;
+  }
+
+  // ===== Title =====
+  &__title {
+color: #ed1c24;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1.2;
+    /* text-align: center; */
+    margin: 0 0 15px;
+    margin-left: 23rem;
+    letter-spacing: 0.2px;
+  }
+
+  // ===== Row =====
+  &__row {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  // ===== Illustration =====
+  &__media-col {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__image {
+    width: 260px;
+    height: auto;
+    max-width: 100%;
+  }
+
+  // ===== Text =====
+  &__text-col {
+        padding-left: 40px;
+    margin-top: 40px;
+  }
+
+  &__text {
+    color: #2b2b2b;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 760px;
+  }
+
+  &__link {
+    color: #ed1c24;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    &:hover {
+      color: #c9151c;
+    }
+  }
+}
+
+// ===== Responsive =====
+@media (max-width: 991px) {
+  .espanol {
+    &__text-col { padding-left: 12px; }
+  }
+}
+
+@media (max-width: 768px) {
+  .espanol {
+    padding: 40px 0;
+
+    &__container { padding: 0 20px; }
+
+    &__title {
+      font-size: 24px;
+      margin-bottom: 36px;
+    }
+
+    &__media-col { margin-bottom: 24px; }
+
+    &__image { width: 200px; }
+
+    &__text-col { padding-left: 12px; }
+
+    &__text { font-size: 16px; }
+  }
+}
+
+// styles.scss
+
+// ===== Coverage section =====
+.coverage {
+  background-color: #ffffff;
+  font-family: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
+  padding: 60px 0;
+  overflow: hidden;
+
+  &__container {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 0 12px;
+  }
+
+  // ===== Title =====
+  &__title {
+    color: #ed1c24;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.2;
+    margin: 0 0 21px;
+    letter-spacing: 0.2px;
+    text-align: center;
+  }
+
+
+  // ===== Grid =====
+  &__grid {
+    max-width: 100%;
+    margin: 0 auto;
+    --bs-gutter-x: 32px;
+    --bs-gutter-y: 60px;
+  }
+
+  // ===== Item =====
+  &__item {
+    max-width: 280px;
+  }
+
+  &__icon {
+    display: block;
+    font-size: 34px;
+    line-height: 1;
+    margin-bottom: 18px;
+  }
+
+  &__heading {
+    margin: 0 0 18px;
+    font-size: 21px;
+    line-height: 1.25;
+    font-weight: 700;
+  }
+
+  &__link {
+    color: #1f1f24;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    &:hover {
+      color: #ed1c24;
+    }
+  }
+
+  &__text {
+    color: #2b2b2b;
+    font-size: 15px;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  // ===== Car illustration =====
+  &__media-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__image {
+    width: 480px;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+// ===== Responsive =====
+@media (max-width: 991px) {
+  .coverage {
+    &__title { font-size: 26px; margin-bottom: 50px; }
+    &__item { max-width: 100%; }
+    &__media-col { margin-top: 20px; }
+  }
+}
+
+@media (max-width: 768px) {
+  .coverage {
+    padding: 40px 0;
+
+    &__container { padding: 0 20px; }
+
+    &__title { font-size: 22px; margin-bottom: 40px; }
+
+    &__icon { font-size: 30px; }
+    &__heading { font-size: 19px; }
+    &__text { font-size: 14px; }
+
+    &__image { width: 320px; }
+  }
+}
+
+.homeMain {
+  p,
+  .rates-lead,
+  .rates-copy,
+  .rates-disclaimer,
+  .comparison-copy,
+  .zip-copy,
+  .lead-text,
+  .footer-text,
+  .penalties-copy,
+  .texassure-copy,
+  .coverage-option-card__text,
+  .rate-factors-copy,
+  .savings-copy,
+  .special-coverage-card__text,
+  .risks__text,
+  .espanol__text,
+  .coverage__text,
+  .faq__answer-inner p,
+  .cover-quote-shell__copy {
+    font-size: 18px;
+  }
+}
+
+
+
+
+@media only screen and (max-width: 1199px) {
+  .houston-rates-section {
+    .row {
+      --bs-gutter-x: 1.8rem;
+    }
+
+    .toc-card {
+      max-width: 100%;
+    }
+
+    .rates-heading,
+    .rates-subheading {
+      font-size: 2rem;
+    }
+  }
+
+  .houston-comparison-section {
+    .comparison-heading {
+      font-size: 2rem;
+    }
+  }
+
+  .houston-coverage-options-section {
+    .coverage-options-container {
+      max-width: 980px;
+    }
+
+    .coverage-option-card {
+      max-width: 100%;
+    }
+  }
+
+  .houston-neighborhoods-section {
+    &__inner {
+      max-width: 100%;
+    }
+
+    &__title {
+      font-size: 31px;
+      margin-bottom: 2.4rem;
+    }
+
+    &__cell {
+      font-size: 16px;
+      padding-left: 0.9rem;
+      padding-right: 0.9rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .insurance-section {
+    padding: 3.8rem 0 2.6rem !important;
+
+    .footer-title,
+    .footer-text {
+      max-width: 100%;
+    }
+
+    .requirement-copy-col {
+      padding-top: 1.25rem;
+    }
+
+    .requirement-illustration-col {
+      justify-content: center;
+    }
+
+    .requirement-description-col {
+      margin-top: 0;
+    }
+
+    .vehicle-illustration {
+      max-width: 220px;
+    }
+
+    .coverage-grid-header {
+      display: none;
+    }
+
+    .coverage-grid-wrap {
+      gap: 1rem;
+      margin-bottom: 2.5rem !important;
+    }
+
+    .coverage-grid-row {
+      border: 1px solid #aaa39d;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .coverage-grid-cell,
+    .coverage-grid-head {
+      border: 0;
+      border-bottom: 1px solid rgba(170, 163, 157, 0.7);
+    }
+
+    .coverage-grid-row>div:last-child .coverage-grid-cell {
+      border-bottom: 0;
+    }
+  }
+
+  .uninsured-penalties-section {
+    padding-top: 0.4rem !important;
+    padding-bottom: 3.9rem !important;
+
+    .penalties-grid-wrap {
+      margin-bottom: 3rem;
+    }
+
+    .penalties-grid-header {
+      display: none;
+    }
+
+    .penalties-grid-row {
+      border: 1px solid #b3aba5;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 0.85rem;
+    }
+
+    .penalties-grid-cell {
+      border: 0;
+    }
+
+    .penalties-grid-row .col-md-6:first-child .penalties-grid-cell {
+      border-bottom: 1px solid rgba(179, 171, 165, 0.7);
+    }
+  }
+
+  .houston-coverage-options-section {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.4rem !important;
+
+    .coverage-options-header {
+      margin-bottom: 2.15rem;
+    }
+
+    .coverage-options-title {
+      font-size: 29px;
+    }
+
+    .coverage-options-grid {
+      --bs-gutter-y: 1.8rem;
+    }
+  }
+
+  .houston-rate-factors-section,
+  .houston-savings-section {
+    padding-top: 3.4rem;
+    padding-bottom: 3.45rem;
+
+    .rate-factors-title,
+    .savings-title {
+      font-size: 28px;
+    }
+
+    .rate-factors-grid,
+    .savings-grid {
+      row-gap: 1.8rem !important;
+    }
+
+    .rate-factors-list__item,
+    .savings-list__item {
+      font-size: 11px;
+    }
+  }
+
+  .houston-rates-section {
+    padding: 3.75rem 0 3rem;
+
+    .row {
+      --bs-gutter-x: 0;
+      gap: 2rem;
+    }
+
+    .toc-column {
+      width: 100%;
+      margin-bottom: 0;
+    }
+
+    .toc-card {
+      max-width: 100%;
+      height: auto;
+      padding-bottom: 0.5rem;
+    }
+
+    .toc-list {
+      gap: 0.15rem;
+    }
+
+    .toc-item {
+      padding: 0.65rem 0;
+    }
+
+    .rates-content {
+      max-width: 100%;
+    }
+
+    .rates-heading,
+    .rates-subheading {
+      font-size: 1.85rem;
+    }
+
+    .rates-meta {
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    .source-name,
+    .updated-line {
+      font-size: 1rem;
+    }
+
+    .rates-table {
+      min-width: 640px;
+
+      thead th,
+      tbody td {
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+      }
+    }
+  }
+
+  .houston-comparison-section {
+    padding-bottom: 3.75rem;
+
+    .comparison-heading {
+      font-size: 1.85rem;
+    }
+
+    .comparison-copy {
+      max-width: 100%;
+    }
+
+    .comparison-table {
+      min-width: 700px;
+    }
+  }
+
+  .topBanner {
+    .container {
+      .topSub {
+        padding: 7.5rem 0 2.5rem;
+
+        .topSub2 {
+          .h1 {
+            font-size: clamp(2.35rem, 5vw, 3.4rem);
+          }
+
+          .banner-quote-card {
+            max-width: 100%;
+          }
+
+          .quote-options {
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+
+          .quote-option {
+            flex: 0 0 calc(33.333% - 0.6rem);
+            min-width: calc(33.333% - 0.6rem);
+          }
+
+          .quote-form-row {
+            flex-wrap: wrap;
+
+            .form-control {
+              flex: 1 1 calc(50% - 0.5rem);
+              min-width: 220px;
+            }
+
+            .quote-submit {
+              flex: 1 1 100%;
+              min-width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .houston-independent-agency-section {
+    padding-top: 2.7rem;
+    padding-bottom: 2.8rem;
+
+    .independent-agency-title {
+      font-size: 24px;
+    }
+
+    .independent-agency-badges,
+    .independent-agency-table-wrap {
+      max-width: 100%;
+    }
+
+    .independent-agency-badge {
+      min-height: 46px;
+      padding: 0.62rem 1rem;
+      border-radius: 8px;
+      gap: 0.75rem;
+    }
+
+    .independent-agency-badge--center {
+      max-width: 100%;
+    }
+
+    .independent-agency-badge__number {
+      font-size: 17px;
+      min-width: 28px;
+    }
+
+    .independent-agency-badge__text {
+      font-size: 10.5px;
+    }
+
+    .independent-agency-table {
+      min-width: 660px;
+    }
+  }
+
+  .houston-special-coverage-section {
+    padding-top: 3.3rem;
+    padding-bottom: 2.3rem;
+
+    .special-coverage-title {
+      font-size: 28px;
+    }
+
+    .special-coverage-header {
+      margin-bottom: 2.8rem;
+    }
+
+    .special-coverage-grid {
+      --bs-gutter-x: 1.8rem;
+      --bs-gutter-y: 2.4rem;
+    }
+
+    .special-coverage-card__title {
+      font-size: 20px;
+    }
+
+    .special-coverage-card__text {
+      font-size: 13px;
+    }
+
+    .special-coverage-illustration__image {
+      max-width: 430px;
+    }
+  }
+
+  .houston-neighborhoods-section {
+    padding-top: 3.2rem;
+
+    &__title {
+      font-size: 27px;
+    }
+
+    &__table {
+      overflow-x: auto;
+      padding-bottom: 0.15rem;
+    }
+
+    &__row {
+      min-width: 860px;
+    }
+
+    &__cell {
+      min-height: 54px;
+      font-size: 15px;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .houston-coverage-options-section {
+    .coverage-options-container {
+      max-width: 560px;
+    }
+
+    .coverage-options-title {
+      font-size: 25px;
+      line-height: 1.25;
+    }
+
+    .coverage-options-grid {
+      --bs-gutter-y: 1.55rem;
+    }
+
+    .coverage-option-card {
+      max-width: 100%;
+    }
+
+    .coverage-option-card__title {
+      font-size: 16px;
+    }
+
+    .coverage-option-card__text {
+      font-size: 12.5px;
+      line-height: 1.58;
+    }
+  }
+
+  .houston-rate-factors-section,
+  .houston-savings-section {
+    padding-top: 2.9rem;
+    padding-bottom: 3rem;
+
+    .rate-factors-header,
+    .savings-header {
+      margin-bottom: 2rem;
+    }
+
+    .rate-factors-title,
+    .savings-title {
+      font-size: 24px;
+      line-height: 1.24;
+    }
+
+    .rate-factors-copy,
+    .savings-copy {
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .rate-factors-list__item,
+    .savings-list__item {
+      font-size: 12px;
+    }
+  }
+
+  .houston-independent-agency-section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.6rem;
+
+    .independent-agency-header {
+      margin-bottom: 1.55rem;
+    }
+
+    .independent-agency-title {
+      font-size: 18px;
+      line-height: 1.35;
+    }
+
+    .independent-agency-badges {
+      margin-bottom: 1.8rem;
+
+      .row {
+        --bs-gutter-y: 0.6rem;
+      }
+    }
+
+    .independent-agency-badge {
+      min-height: 34px;
+      padding: 0.5rem 0.72rem;
+      gap: 0.65rem;
+    }
+
+    .independent-agency-badge--center {
+      max-width: 100%;
+    }
+
+    .independent-agency-badge__number {
+      font-size: 15px;
+      min-width: 24px;
+    }
+
+    .independent-agency-badge__text {
+      font-size: 9.6px;
+    }
+  }
+
+  .houston-special-coverage-section {
+    padding-top: 2.8rem;
+    padding-bottom: 2.2rem;
+
+    .special-coverage-header {
+      margin-bottom: 2rem;
+    }
+
+    .special-coverage-title {
+      font-size: 24px;
+      line-height: 1.26;
+    }
+
+    .special-coverage-grid {
+      --bs-gutter-x: 0;
+      --bs-gutter-y: 1.9rem;
+    }
+
+    .special-coverage-card__icon {
+      width: 42px;
+      height: 42px;
+      margin-bottom: 0.75rem;
+    }
+
+    .special-coverage-card__icon--emoji {
+      font-size: 34px;
+    }
+
+    .special-coverage-card__title {
+      font-size: 18px;
+      margin-bottom: 0.8rem;
+    }
+
+    .special-coverage-card__text {
+      font-size: 12.5px;
+      line-height: 1.5;
+    }
+
+    .special-coverage-illustration {
+      padding-top: 0.2rem;
+    }
+
+    .special-coverage-illustration__image {
+      max-width: 360px;
+    }
+  }
+
+  .houston-neighborhoods-section {
+    padding-top: 2.8rem;
+
+    &__title {
+      font-size: 24px;
+      line-height: 1.26;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+
+  .houston-rate-factors-section,
+  .houston-savings-section {
+
+    .rate-factors-list__item+.rate-factors-list__item,
+    .savings-list__item+.savings-list__item {
+      margin-top: 0.9rem;
+    }
+  }
+}
+
+
+.rate-check {
+  color: #7bc319;
+  font-weight: 700;
+  margin-right: 0.4rem;
+}
+
+
+/* Get Covered Section Start */
+.topBanner.getCovver {
+  background: #fff;
+  min-height: auto;
+  padding: 1.35rem 0 0;
+
+  .container {
+    max-width: 1210px;
+
+    .topSub {
+      min-height: auto;
+      display: block;
+      padding: 0;
+
+      .topSub2 {
+        width: 100%;
+      }
+    }
+  }
+
+  .cover-quote-shell {
+    max-width: 1185px;
+    margin: 0 auto;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    background: linear-gradient(90deg, #ffd9dc 0%, #ffc7cb 100%);
+    box-shadow: 0 18px 40px rgba(214, 92, 95, 0.12);
+  }
+
+  .cover-quote-shell__top {
+    display: grid;
+    grid-template-columns: 436px 1fr;
+    align-items: center;
+    gap: 2.1rem;
+    padding: 3.75rem 6.1rem 2.25rem 5.95rem;
+  }
+
+  .cover-quote-shell__visual {
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #8bc0d0 0%, #f6d8bc 55%, #de844d 100%);
+    box-shadow: 0 14px 30px rgba(179, 110, 80, 0.18);
+  }
+
+  .cover-quote-shell__visual-image {
+    display: block;
+    width: 100%;
+    height: 478px;
+    object-fit: cover;
+    mix-blend-mode: multiply;
+    opacity: 0.92;
+  }
+
+  .cover-quote-shell__content {
+    max-width: 500px;
+    padding-top: 0.55rem;
+  }
+
+  .cover-quote-shell__title {
+    color: #3a3739;
+    font-size: 37px;
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.03em;
+  }
+
+  .cover-quote-shell__copy {
+    margin-top: 1.8rem !important;
+    color: #3c2e30;
+    font-size: 16px;
+    line-height: 1.68;
+    letter-spacing: -0.01em;
+  }
+
+  .cover-quote-shell__link {
+    color: #ff3f31;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  .banner-quote-card {
+    max-width: none;
+    padding: 2rem 6.1rem 2rem;
+    border-radius: 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: linear-gradient(90deg, #ff9ea5 0%, #ffa4aa 100%);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+  }
+
+  .quote-options {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    align-items: start;
+    gap: 0.9rem;
+    margin-bottom: 2rem;
+
+    .quote-option {
+      appearance: none;
+      background: transparent;
+      border: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.85rem;
+      cursor: pointer;
+      color: #231815;
+      min-width: 0;
+      transform: none !important;
+
+      .icon-badge {
+        position: relative;
+        width: 68px;
+        height: 62px;
+        display: grid;
+        place-items: center;
+
+        .icon-burst {
+          position: absolute;
+          inset: 2px 3px;
+          background: #fff;
+          clip-path: polygon(50% 0%,
+              61% 18%,
+              82% 8%,
+              76% 29%,
+              100% 32%,
+              82% 50%,
+              100% 68%,
+              76% 71%,
+              82% 92%,
+              61% 82%,
+              50% 100%,
+              39% 82%,
+              18% 92%,
+              24% 71%,
+              0% 68%,
+              18% 50%,
+              0% 32%,
+              24% 29%,
+              18% 8%,
+              39% 18%);
+        }
+
+        .quote-option-image {
+          position: relative;
+          max-width: 46px;
+          max-height: 36px;
+          object-fit: contain;
+          filter: none;
+        }
+      }
+
+      .quote-option-label {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1.25;
+        color: #1f1a17;
+        text-align: center;
+        white-space: normal;
+      }
+
+      .radio-indicator {
+        width: 14px;
+        height: 14px;
+        flex: 0 0 14px;
+        border-radius: 50%;
+        border: 1.4px solid #1f1a17;
+        background: transparent;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          inset: 3px;
+          border-radius: 50%;
+          background: #1f1a17;
+          opacity: 0;
+        }
+      }
+
+      &.selected .radio-indicator::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  .quote-form-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 228px;
+    align-items: center;
+    gap: 0.8rem;
+
+    .form-control {
+      min-height: 60px;
+      border-radius: 10px;
+      border: 0;
+      padding: 0 1.35rem;
+      color: #342925;
+      font-size: 14px;
+      box-shadow: none;
+
+      &::placeholder {
+        color: #b5a9a5;
+      }
+    }
+
+    .quote-submit {
+      min-width: 228px;
+      min-height: 56px;
+      font-family: "Afacad", sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      border-radius: 999px;
+      border: 2px solid #ff6b53;
+      background: #ffef1d;
+      color: #111;
+      box-shadow: 0 4px 0 #ff6b53;
+
+      &::before {
+        display: none;
+      }
+
+      &:hover {
+        box-shadow: 0 4px 0 #ff6b53;
+      }
+
+      &:disabled {
+        background: #efe7a5;
+        border-color: #d3c86b;
+        color: #8a7d2f;
+      }
+    }
+  }
+}
+/* Get Covered Section End */
+
+
+
+
+.footUpper {
+  height: 130px;
+  width: 100%;
+  background-color: #ca2b28;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+  .left {
+    width: 55%;
+    height: 100%;
+  }
+
+  .right {
+    height: 100%;
+    background-color: #e62e2a;
+    width: 50%;
+  }
+
+  .clipp {
+    position: absolute;
+    clip-path: polygon(67% 0, 100% 0, 100% 99%, 20% 100%);
+    height: 130px;
+    width: 130px;
+    background-color: #e62e2a;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .contain {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+
+    .col-lg-6 {
+      display: flex;
+      align-items: center;
+
+      .icon {
+        height: 80%;
+        width: fit-content;
+      }
+
+      .h4 {
+        font-weight: 700;
+        color: #fff;
+        font-size: 42px;
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .houston-rates-section {
+    padding: 3.5rem 0 3rem;
+
+    .toc-card {
+      max-width: 100%;
+      margin-bottom: 2rem;
+      position: static;
+      top: auto;
+      height: auto;
+    }
+
+    .rates-content {
+      max-width: 100%;
+    }
+
+    .rates-heading,
+    .rates-subheading {
+      font-size: 1.7rem;
+    }
+  }
+
+  .houston-comparison-section {
+    padding-bottom: 3.5rem;
+
+    .comparison-heading {
+      font-size: 1.7rem;
+    }
+  }
+
+  .topBanner {
+    min-height: auto;
+
+    .container {
+      .topSub {
+        min-height: auto;
+        padding: 7rem 0 2rem;
+
+        .topSub2 {
+          .banner-quote-card {
+            max-width: 100%;
+            padding: 1.2rem 0.95rem 1rem;
+          }
+
+          .quote-options {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem 0.7rem;
+            margin-bottom: 1.35rem;
+
+            .quote-option {
+              flex: 0 0 calc(33.333% - 0.5rem);
+              min-width: calc(33.333% - 0.5rem);
+
+              .icon-badge {
+                width: 74px;
+                height: 62px;
+
+                .icon-burst {
+                  inset: 4px 8px;
+                }
+
+                .quote-option-image {
+                  max-width: 54px;
+                  max-height: 35px;
+                }
+              }
+
+              .quote-option-label {
+                white-space: normal;
+                justify-content: center;
+                text-align: center;
+                font-size: 0.92rem;
+              }
+            }
+          }
+
+          .quote-form-row {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0.8rem;
+
+            .form-control,
+            .quote-submit {
+              min-height: 3.15rem;
+            }
+
+            .quote-submit {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .insurance-section {
+    padding: 3rem 0 2.2rem !important;
+
+    .main-title {
+      font-size: 1.7rem;
+    }
+
+    .sub-title {
+      font-size: 1.2rem;
+    }
+
+    .lead-text,
+    .footer-text {
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    .footer-title {
+      font-size: 1.7rem;
+      margin-bottom: 1rem !important;
+    }
+
+    .requirement-footer-row {
+      margin-top: 0.25rem;
+      row-gap: 0.55rem !important;
+    }
+
+    .requirement-copy-col {
+      padding-top: 0;
+      text-align: left;
+    }
+
+    .footer-text {
+      font-size: 0.84rem;
+      line-height: 1.72;
+      max-width: 100%;
+    }
+
+    .coverage-grid-cell,
+    .coverage-grid-head {
+      font-size: 0.88rem;
+      padding: 0.8rem 0.85rem;
+    }
+
+    .vehicle-illustration {
+      max-width: 188px;
+    }
+  }
+
+  .houston-rates-section {
+
+    .rates-lead,
+    .rates-copy,
+    .rates-disclaimer,
+    .toc-text,
+    .zip-copy {
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .rates-table {
+      min-width: 610px;
+    }
+
+    .rates-meta {
+      flex-direction: column;
+      align-items: flex-start;
+      font-size: 0.78rem;
+    }
+
+    .source-name,
+    .updated-line {
+      font-size: 0.95rem;
+    }
+
+    .rates-heading,
+    .rates-subheading {
+      font-size: 1.45rem;
+    }
+  }
+
+  .houston-comparison-section {
+    .comparison-copy {
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .comparison-table {
+      min-width: 640px;
+    }
+  }
+
+  .houston-zip-section {
+
+    .zip-copy,
+    .zip-disclaimer {
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .zip-table {
+      min-width: 640px;
+    }
+
+    .zip-meta {
+      font-size: 0.78rem;
+      margin-bottom: 0.8rem;
+    }
+  }
+
+  .topBanner {
+    .container {
+      .topSub {
+        .topSub2 {
+          .h1 {
+            font-size: 2rem;
+          }
+
+          .banner-quote-card {
+            padding: 1rem 0.8rem 0.9rem;
+          }
+
+          .quote-options {
+            gap: 0.9rem 0.45rem;
+
+            .quote-option {
+              flex: 0 0 calc(50% - 0.3rem);
+              min-width: calc(50% - 0.3rem);
+
+              .icon-badge {
+                width: 68px;
+                height: 56px;
+
+                .icon-burst {
+                  inset: 5px 8px;
+                }
+
+                .quote-option-image {
+                  max-width: 48px;
+                  max-height: 31px;
+                }
+              }
+
+              .quote-option-label {
+                gap: 0.3rem;
+                font-size: 0.88rem;
+                line-height: 1.15;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .topBanner {
+    .container {
+      .topSub {
+        padding: 6rem 0 1.5rem;
+
+        .topSub2 {
+          .h1 {
+            font-size: 1.7rem;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+          }
+
+          .banner-quote-card {
+            padding: 0.9rem 0.7rem 0.85rem;
+          }
+
+          .quote-options {
+            gap: 0.8rem 0.35rem;
+            margin-bottom: 1rem;
+
+            .quote-option {
+              gap: 0.4rem;
+
+              .icon-badge {
+                width: 62px;
+                height: 52px;
+
+                .quote-option-image {
+                  max-width: 44px;
+                  max-height: 28px;
+                }
+              }
+
+              .quote-option-label {
+                font-size: 0.82rem;
+              }
+
+              .radio-indicator {
+                width: 14px;
+                height: 14px;
+                flex: 0 0 14px;
+              }
+            }
+          }
+
+          .quote-form-row {
+
+            .form-control,
+            .quote-submit {
+              min-height: 3rem;
+            }
+
+            .quote-submit {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .topBanner {
+    background-position: center;
+
+    .container {
+      .topSub {
+        padding-bottom: 0rem;
+        align-items: center;
+        justify-content: center;
+
+        .topSub2 {
+          text-align: center;
+
+          .h1 {
+            font-size: 32px;
+            text-align: center;
+          }
+
+          .selectable {
+            justify-content: center;
+          }
+
+          .inps {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .topBanner.getCovver {
+    padding-top: 1rem;
+
+    .cover-quote-shell {
+      border-radius: 12px 12px 0 0;
+    }
+
+    .cover-quote-shell__top {
+      grid-template-columns: 1fr;
+      gap: 1.45rem;
+      padding: 1.5rem 1.2rem 1.4rem;
+    }
+
+    .cover-quote-shell__visual-image {
+      height: 320px;
+    }
+
+    .cover-quote-shell__content {
+      max-width: 100%;
+      padding-top: 0;
+    }
+
+    .cover-quote-shell__title {
+      font-size: 28px;
+      line-height: 1.14;
+    }
+
+    .cover-quote-shell__copy {
+      margin-top: 1rem !important;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .banner-quote-card {
+      padding: 1.3rem 1.2rem 1.4rem;
+    }
+
+    .quote-options {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem 0.7rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .quote-form-row {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+
+      .quote-submit {
+        min-width: 100%;
+      }
+    }
+  }
+
+  .footUpper {
+    height: 270px;
+    flex-direction: column;
+
+    .left {
+      width: 100%;
+    }
+
+    .right {
+      width: 100%;
+    }
+
+    .clipp {
+      display: none;
+    }
+
+    .contain {
+      .col-lg-6 {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+
+        .icon {
+          transform: translateY(-15px);
+        }
+
+        .h4 {
+          font-size: 40px;
+          margin: 0;
+          transform: translateY(10px);
+        }
+      }
+    }
+  }
+
+  .everyStory {
+    .h4 {
+      font-size: 2rem !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .topBanner {
+    .container {
+      .topSub {
+        .topSub2 {
+          .h1 {
+            font-size: 26px;
+            margin-bottom: 2rem;
+          }
+        }
+      }
+    }
+  }
+}

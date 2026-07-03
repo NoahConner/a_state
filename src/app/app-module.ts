@@ -99,6 +99,11 @@ import { TitleStrategy } from '@angular/router';
 import { SeoTitleStrategy } from './services/seo-title-strategy';
 import { HoustonTx } from './pages/auto-insurance/houston-tx/houston-tx';
 import { Language } from './services/language';
+import { SanAntonioTx } from './pages/auto-insurance/san-antonio-tx/san-antonio-tx';
+import { DallasTx } from './pages/auto-insurance/dallas-tx/dallas-tx';
+import { AustinTx } from './pages/auto-insurance/austin-tx/austin-tx';
+import { FortWorthTx } from './pages/auto-insurance/fort-worth-tx/fort-worth-tx';
+import { ElPasoTx } from './pages/auto-insurance/el-paso-tx/el-paso-tx';
 
 export function initializeTranslations(
   translate: TranslateService,
@@ -191,6 +196,11 @@ export function initializeTranslations(
     TitleTransfer,
     PetInsurance,
     HoustonTx,
+    SanAntonioTx,
+    DallasTx,
+    AustinTx,
+    FortWorthTx,
+    ElPasoTx,
     PhoneFormatDirective,
     ChipNavigationDirective,
     BannerButtonNoRedirectDirective,
