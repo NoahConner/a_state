@@ -475,7 +475,7 @@ const routes: Routes = [
             data: { metaPage: 'rvInsurance' },
           },
           {
-            path: 'seguro-de-auto-clasico',
+            path: 'seguro-de-autos-clasicos',
             component: ClassicCarInsurance,
             data: { metaPage: 'classicCarInsurance' },
           },
@@ -877,7 +877,7 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   },
   classicCarInsurance: {
     en: 'auto-insurance/classic-car-insurance',
-    es: 'seguros-de-auto/seguro-de-auto-clasico',
+    es: 'seguros-de-auto/seguro-de-autos-clasicos',
   },
   sr22Insurance: {
     en: 'auto-insurance/sr-22-insurance',
