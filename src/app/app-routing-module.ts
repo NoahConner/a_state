@@ -79,6 +79,11 @@ import { DallasTx } from './pages/auto-insurance/dallas-tx/dallas-tx';
 import { AustinTx } from './pages/auto-insurance/austin-tx/austin-tx';
 import { FortWorthTx } from './pages/auto-insurance/fort-worth-tx/fort-worth-tx';
 import { ElPasoTx } from './pages/auto-insurance/el-paso-tx/el-paso-tx';
+import { ArlingtonTx } from './pages/auto-insurance/arlington-tx/arlington-tx';
+import { CorpusChristiTx } from './pages/auto-insurance/corpus-christi-tx/corpus-christi-tx';
+import { PlanoTx } from './pages/auto-insurance/plano-tx/plano-tx';
+import { LubbockTx } from './pages/auto-insurance/lubbock-tx/lubbock-tx';
+import { LaredoTx } from './pages/auto-insurance/laredo-tx/laredo-tx';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -309,6 +314,11 @@ const routes: Routes = [
       { path: 'houston-tx', component: HoustonTx, data: { metaPage: 'houstonTx' } },
       { path: 'san-antonio-tx', component: SanAntonioTx, data: { metaPage: 'sanAntonioTx' } },
       { path: 'dallas-tx', component: DallasTx, data: { metaPage: 'dallasTx' } },
+      { path: 'arlington-tx', component: ArlingtonTx, data: { metaPage: 'arlingtonTx' } },
+      { path: 'corpus-christi-tx', component: CorpusChristiTx, data: { metaPage: 'corpusChristiTx' } },
+      { path: 'plano-tx', component: PlanoTx, data: { metaPage: 'planoTx' } },
+      { path: 'lubbock-tx', component: LubbockTx, data: { metaPage: 'lubbockTx' } },
+      { path: 'laredo-tx', component: LaredoTx, data: { metaPage: 'laredoTx' } },
       { path: 'austin-tx', component: AustinTx, data: { metaPage: 'austinTx' } },
       { path: 'fort-worth-tx', component: FortWorthTx, data: { metaPage: 'fortWorthTx' } },
       { path: 'el-paso-tx', component: ElPasoTx, data: { metaPage: 'elPasoTx' } },
@@ -503,6 +513,11 @@ const routes: Routes = [
           { path: 'houston-tx', component: HoustonTx, data: { metaPage: 'houstonTx' } },
           { path: 'san-antonio-tx', component: SanAntonioTx, data: { metaPage: 'sanAntonioTx' } },
           { path: 'dallas-tx', component: DallasTx, data: { metaPage: 'dallasTx' } },
+          { path: 'arlington-tx', component: ArlingtonTx, data: { metaPage: 'arlingtonTx' } },
+          { path: 'corpus-christi-tx', component: CorpusChristiTx, data: { metaPage: 'corpusChristiTx' } },
+          { path: 'plano-tx', component: PlanoTx, data: { metaPage: 'planoTx' } },
+          { path: 'lubbock-tx', component: LubbockTx, data: { metaPage: 'lubbockTx' } },
+          { path: 'laredo-tx', component: LaredoTx, data: { metaPage: 'laredoTx' } },
           { path: 'austin-tx', component: AustinTx, data: { metaPage: 'austinTx' } },
           { path: 'fort-worth-tx', component: FortWorthTx, data: { metaPage: 'fortWorthTx' } },
           { path: 'el-paso-tx', component: ElPasoTx, data: { metaPage: 'elPasoTx' } },
@@ -1062,6 +1077,26 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   dallasTx: {
     en: 'auto-insurance/dallas-tx',
     es: 'seguros-de-auto/dallas-tx',
+  },
+  arlingtonTx: {
+    en: 'auto-insurance/arlington-tx',
+    es: 'seguros-de-auto/arlington-tx',
+  },
+  corpusChristiTx: {
+    en: 'auto-insurance/corpus-christi-tx',
+    es: 'seguros-de-auto/corpus-christi-tx',
+  },
+  planoTx: {
+    en: 'auto-insurance/plano-tx',
+    es: 'seguros-de-auto/plano-tx',
+  },
+  lubbockTx: {
+    en: 'auto-insurance/lubbock-tx',
+    es: 'seguros-de-auto/lubbock-tx',
+  },
+  laredoTx: {
+    en: 'auto-insurance/laredo-tx',
+    es: 'seguros-de-auto/laredo-tx',
   },
   austinTx: {
     en: 'auto-insurance/austin-tx',

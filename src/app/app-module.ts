@@ -104,6 +104,11 @@ import { DallasTx } from './pages/auto-insurance/dallas-tx/dallas-tx';
 import { AustinTx } from './pages/auto-insurance/austin-tx/austin-tx';
 import { FortWorthTx } from './pages/auto-insurance/fort-worth-tx/fort-worth-tx';
 import { ElPasoTx } from './pages/auto-insurance/el-paso-tx/el-paso-tx';
+import { ArlingtonTx } from './pages/auto-insurance/arlington-tx/arlington-tx';
+import { CorpusChristiTx } from './pages/auto-insurance/corpus-christi-tx/corpus-christi-tx';
+import { PlanoTx } from './pages/auto-insurance/plano-tx/plano-tx';
+import { LubbockTx } from './pages/auto-insurance/lubbock-tx/lubbock-tx';
+import { LaredoTx } from './pages/auto-insurance/laredo-tx/laredo-tx';
 
 export function initializeTranslations(
   translate: TranslateService,
@@ -201,6 +206,11 @@ export function initializeTranslations(
     AustinTx,
     FortWorthTx,
     ElPasoTx,
+    ArlingtonTx,
+    CorpusChristiTx,
+    PlanoTx,
+    LubbockTx,
+    LaredoTx,
     PhoneFormatDirective,
     ChipNavigationDirective,
     BannerButtonNoRedirectDirective,
