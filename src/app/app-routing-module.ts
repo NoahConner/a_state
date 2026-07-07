@@ -84,6 +84,7 @@ import { CorpusChristiTx } from './pages/auto-insurance/corpus-christi-tx/corpus
 import { PlanoTx } from './pages/auto-insurance/plano-tx/plano-tx';
 import { LubbockTx } from './pages/auto-insurance/lubbock-tx/lubbock-tx';
 import { LaredoTx } from './pages/auto-insurance/laredo-tx/laredo-tx';
+import { IrvingTx } from './pages/auto-insurance/irving-tx/irving-tx';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -319,6 +320,7 @@ const routes: Routes = [
       { path: 'plano-tx', component: PlanoTx, data: { metaPage: 'planoTx' } },
       { path: 'lubbock-tx', component: LubbockTx, data: { metaPage: 'lubbockTx' } },
       { path: 'laredo-tx', component: LaredoTx, data: { metaPage: 'laredoTx' } },
+      { path: 'irving-tx', component: IrvingTx, data: { metaPage: 'irvingTx' } },
       { path: 'austin-tx', component: AustinTx, data: { metaPage: 'austinTx' } },
       { path: 'fort-worth-tx', component: FortWorthTx, data: { metaPage: 'fortWorthTx' } },
       { path: 'el-paso-tx', component: ElPasoTx, data: { metaPage: 'elPasoTx' } },
@@ -518,6 +520,7 @@ const routes: Routes = [
           { path: 'plano-tx', component: PlanoTx, data: { metaPage: 'planoTx' } },
           { path: 'lubbock-tx', component: LubbockTx, data: { metaPage: 'lubbockTx' } },
           { path: 'laredo-tx', component: LaredoTx, data: { metaPage: 'laredoTx' } },
+          { path: 'irving-tx', component: IrvingTx, data: { metaPage: 'irvingTx' } },
           { path: 'austin-tx', component: AustinTx, data: { metaPage: 'austinTx' } },
           { path: 'fort-worth-tx', component: FortWorthTx, data: { metaPage: 'fortWorthTx' } },
           { path: 'el-paso-tx', component: ElPasoTx, data: { metaPage: 'elPasoTx' } },
@@ -1097,6 +1100,10 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   laredoTx: {
     en: 'auto-insurance/laredo-tx',
     es: 'seguros-de-auto/laredo-tx',
+  },
+  irvingTx: {
+    en: 'auto-insurance/irving-tx',
+    es: 'seguros-de-auto/irving-tx',
   },
   austinTx: {
     en: 'auto-insurance/austin-tx',
