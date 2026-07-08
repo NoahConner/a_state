@@ -170,7 +170,7 @@ export class PlanoTx implements AfterViewInit {
       }
 
       this.resetQuoteForm(form);
-      await this.router.navigate(this.languageService.getRoute(selected.routeKey));
+      await this.router.navigate(this.languageService.getRoute('getAutoQuote'));
     } finally {
       form.isSubmitting = false;
     }

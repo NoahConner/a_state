@@ -136,6 +136,11 @@ export class BannerButtonNoRedirectDirective implements AfterViewInit, OnDestroy
 
   private resolveRedirectRoute(selectedChip: HTMLElement): string[] | null {
     const chipKey = selectedChip.getAttribute('data-chip-key') || '';
+    const parentRouteKey = this.resolveParentRouteKey();
+
+    if (parentRouteKey) {
+      return this.languageService.getRoute(parentRouteKey);
+    }
 
     const chipRouteMap: Record<string, string> = {
       'HOME.BANNER.CHIPS.AUTO': 'autoInsurance',
@@ -184,6 +189,58 @@ export class BannerButtonNoRedirectDirective implements AfterViewInit, OnDestroy
     }
 
     return null;
+  }
+
+  private resolveParentRouteKey(): string | null {
+    const currentUrl = this.router.url.split('?')[0].split('#')[0];
+    const normalizedUrl = currentUrl.endsWith('/') && currentUrl.length > 1
+      ? currentUrl.slice(0, -1)
+      : currentUrl;
+
+    const parentRoutePrefixes: Array<{ prefixes: string[]; routeKey: string }> = [
+      {
+        prefixes: ['/auto-insurance/', '/es/seguros-de-auto/'],
+        routeKey: 'getAutoQuote',
+      },
+      {
+        prefixes: ['/homeowners-insurance/', '/es/seguros-de-vivienda/'],
+        routeKey: 'getHomeQuote',
+      },
+      {
+        prefixes: ['/commercial-insurance/', '/es/seguros-comerciales/'],
+        routeKey: 'getCommercialQuote',
+      },
+      {
+        prefixes: ['/life-insurance/', '/es/seguros-de-vida/'],
+        routeKey: 'getLifeQuote',
+      },
+      {
+        prefixes: ['/health-insurance/', '/es/seguros-de-salud/'],
+        routeKey: 'getHealthQuote',
+      },
+      {
+        prefixes: ['/surety-bonds/', '/es/fianzas/'],
+        routeKey: 'getSuretyQuote',
+      },
+      {
+        prefixes: ['/title-insurance', '/es/seguro-de-titulo'],
+        routeKey: 'requestACustomQuote',
+      },
+      {
+        prefixes: ['/title-transfer', '/es/traspaso-de-titulo'],
+        routeKey: 'requestACustomQuote',
+      },
+      {
+        prefixes: ['/pet-insurance', '/es/seguro-para-mascotas'],
+        routeKey: 'requestACustomQuote',
+      },
+    ];
+
+    const matchedParent = parentRoutePrefixes.find(({ prefixes }) =>
+      prefixes.some((prefix) => normalizedUrl.startsWith(prefix)),
+    );
+
+    return matchedParent?.routeKey || null;
   }
 
   private setButtonLoadingState(isLoading: boolean) {

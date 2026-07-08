@@ -113,6 +113,10 @@ export class GetCustomQuote {
     return this.getControlsForStep(step).every((control) => control.valid);
   }
 
+  isStepCompleted(step: number): boolean {
+    return this.currentStep > step && this.canEditStep(step);
+  }
+
   private validateStep(step: number): boolean {
     const controls = this.getControlsForStep(step);
     controls.forEach((control) => {

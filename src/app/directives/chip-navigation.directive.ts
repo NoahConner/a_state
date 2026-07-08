@@ -1,7 +1,6 @@
 import {
   Directive,
   ElementRef,
-  HostBinding,
   HostListener,
   Input,
   OnInit,
@@ -15,11 +14,6 @@ import {
 export class ChipNavigationDirective implements OnInit {
   @Input() appChipNav = '';
 
-  @HostBinding('class.selected') isSelected = false;
-  @HostBinding('attr.aria-pressed') get ariaPressed() {
-    return this.isSelected ? 'true' : 'false';
-  }
-
   constructor(
     private elementRef: ElementRef<HTMLElement>,
     private renderer: Renderer2,
@@ -30,6 +24,7 @@ export class ChipNavigationDirective implements OnInit {
     this.renderer.setAttribute(this.elementRef.nativeElement, 'role', 'button');
     this.renderer.setAttribute(this.elementRef.nativeElement, 'tabindex', '0');
     this.renderer.setAttribute(this.elementRef.nativeElement, 'data-chip-key', this.appChipNav);
+    this.setSelectedState(this.elementRef.nativeElement, false);
   }
 
   @HostListener('click', ['$event'])
@@ -50,12 +45,22 @@ export class ChipNavigationDirective implements OnInit {
     const chipContainer = currentChip.closest('.topSub2') || currentChip.closest('.selectable')?.parentElement;
 
     chipContainer?.querySelectorAll('.chip.selected').forEach((chip) => {
-      if (chip !== currentChip) {
-        this.renderer.removeClass(chip, 'selected');
-        this.renderer.setAttribute(chip, 'aria-pressed', 'false');
-      }
+      this.setSelectedState(chip as HTMLElement, chip === currentChip);
     });
 
-    this.isSelected = true;
+    // Re-apply the current state explicitly so repeat selections still work
+    // even if some other code removed the class directly from the DOM.
+    this.setSelectedState(currentChip, true);
+  }
+
+  private setSelectedState(chip: HTMLElement, isSelected: boolean) {
+    if (isSelected) {
+      this.renderer.addClass(chip, 'selected');
+      this.renderer.setAttribute(chip, 'aria-pressed', 'true');
+      return;
+    }
+
+    this.renderer.removeClass(chip, 'selected');
+    this.renderer.setAttribute(chip, 'aria-pressed', 'false');
   }
 }
