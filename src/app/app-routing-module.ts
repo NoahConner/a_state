@@ -85,6 +85,7 @@ import { PlanoTx } from './pages/auto-insurance/plano-tx/plano-tx';
 import { LubbockTx } from './pages/auto-insurance/lubbock-tx/lubbock-tx';
 import { LaredoTx } from './pages/auto-insurance/laredo-tx/laredo-tx';
 import { IrvingTx } from './pages/auto-insurance/irving-tx/irving-tx';
+import { GarlandTx } from './pages/auto-insurance/garland-tx/garland-tx';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -224,7 +225,7 @@ const routes: Routes = [
     children: [
       { path: '', component: SuretyBondInsurance, data: { metaPage: 'suretyBonds' } },
       {
-        path: 'performance-bonds-payment-bonds',
+        path: 'performance-payment-bonds',
         component: PerformanceBondsPaymentBonds,
         data: { metaPage: 'performanceBondsPaymentBonds' },
       },
@@ -321,6 +322,7 @@ const routes: Routes = [
       { path: 'lubbock-tx', component: LubbockTx, data: { metaPage: 'lubbockTx' } },
       { path: 'laredo-tx', component: LaredoTx, data: { metaPage: 'laredoTx' } },
       { path: 'irving-tx', component: IrvingTx, data: { metaPage: 'irvingTx' } },
+      { path: 'garland-tx', component: GarlandTx, data: { metaPage: 'garlandTx' } },
       { path: 'austin-tx', component: AustinTx, data: { metaPage: 'austinTx' } },
       { path: 'fort-worth-tx', component: FortWorthTx, data: { metaPage: 'fortWorthTx' } },
       { path: 'el-paso-tx', component: ElPasoTx, data: { metaPage: 'elPasoTx' } },
@@ -521,6 +523,7 @@ const routes: Routes = [
           { path: 'lubbock-tx', component: LubbockTx, data: { metaPage: 'lubbockTx' } },
           { path: 'laredo-tx', component: LaredoTx, data: { metaPage: 'laredoTx' } },
           { path: 'irving-tx', component: IrvingTx, data: { metaPage: 'irvingTx' } },
+          { path: 'garland-tx', component: GarlandTx, data: { metaPage: 'garlandTx' } },
           { path: 'austin-tx', component: AustinTx, data: { metaPage: 'austinTx' } },
           { path: 'fort-worth-tx', component: FortWorthTx, data: { metaPage: 'fortWorthTx' } },
           { path: 'el-paso-tx', component: ElPasoTx, data: { metaPage: 'elPasoTx' } },
@@ -594,12 +597,12 @@ const routes: Routes = [
             data: { metaPage: 'commercialAutoInsurance' },
           },
           {
-            path: 'seguro-de-propietarios-de-negocios-bop',
+            path: 'politica-para-propietarios-de-negocios-bop',
             component: BusinessOwnerInsurance,
             data: { metaPage: 'businessOwnersPolicyBOP' },
           },
           {
-            path: 'seguro-de-responsabilidad-de-practicas-laborales-epli',
+            path: 'seguro-de-responsabilidad-en-practicas-laborales-epli',
             component: EmploymentPracticesLiabilityInsurance,
             data: { metaPage: 'employmentPracticesLiabilityInsuranceEPLI' },
           },
@@ -963,11 +966,11 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   },
   businessOwnerInsurance: {
     en: 'commercial-insurance/business-owners-policy-bop',
-    es: 'seguros-comerciales/seguro-de-propietarios-de-negocios-bop',
+    es: 'seguros-comerciales/politica-para-propietarios-de-negocios-bop',
   },
   employmentPracticesLiabilityInsurance: {
     en: 'commercial-insurance/employment-practices-liability-insurance-epli',
-    es: 'seguros-comerciales/seguro-de-responsabilidad-de-practicas-laborales-epli',
+    es: 'seguros-comerciales/seguro-de-responsabilidad-en-practicas-laborales-epli',
   },
   cyberLiabilityInsurance: {
     en: 'commercial-insurance/cyber-liability-insurance',
@@ -1042,7 +1045,7 @@ export const routeTranslations: Record<string, Record<string, string>> = {
     es: 'seguros-de-salud/planes-aca-mercado-de-seguros',
   },
   performanceBondsPaymentBonds: {
-    en: 'surety-bonds/performance-bonds-payment-bonds',
+    en: 'surety-bonds/performance-payment-bonds',
     es: 'fianzas/fianzas-de-cumplimiento-y-pago',
   },
   commercialSuretyBonds: {
@@ -1104,6 +1107,10 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   irvingTx: {
     en: 'auto-insurance/irving-tx',
     es: 'seguros-de-auto/irving-tx',
+  },
+  garlandTx: {
+    en: 'auto-insurance/garland-tx',
+    es: 'seguros-de-auto/garland-tx',
   },
   austinTx: {
     en: 'auto-insurance/austin-tx',

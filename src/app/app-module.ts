@@ -110,6 +110,7 @@ import { PlanoTx } from './pages/auto-insurance/plano-tx/plano-tx';
 import { LubbockTx } from './pages/auto-insurance/lubbock-tx/lubbock-tx';
 import { LaredoTx } from './pages/auto-insurance/laredo-tx/laredo-tx';
 import { IrvingTx } from './pages/auto-insurance/irving-tx/irving-tx';
+import { GarlandTx } from './pages/auto-insurance/garland-tx/garland-tx';
 
 export function initializeTranslations(
   translate: TranslateService,
@@ -213,6 +214,7 @@ export function initializeTranslations(
     LubbockTx,
     LaredoTx,
     IrvingTx,
+    GarlandTx,
     PhoneFormatDirective,
     ChipNavigationDirective,
     BannerButtonNoRedirectDirective,
