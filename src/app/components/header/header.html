@@ -53,45 +53,30 @@
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-semibold">
             <!-- Insurance Services dropdown -->
             <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                [routerLink]="getRoute('insuranceServices')"
-                [innerHTML]="'HEADER.INSURANCE_SERVICES' | translateHtml | async"
-              >
+              <a class="nav-link dropdown-toggle" [routerLink]="getRoute('insuranceServices')"
+                [innerHTML]="'HEADER.INSURANCE_SERVICES' | translateHtml | async">
               </a>
               <ul class="dropdown-menu">
                 <li class="dropdown-submenu">
-                  <a
-                    class="dropdown-item submenu-toggle"
-                    [routerLink]="getRoute('autoInsurance')"
-                    [innerHTML]="'HEADER.VEHICLE_INSURANCE' | translateHtml | async"
-                  >
+                  <a class="dropdown-item submenu-toggle" [routerLink]="getRoute('autoInsurance')"
+                    [innerHTML]="'HEADER.VEHICLE_INSURANCE' | translateHtml | async">
                   </a>
 
                   <ul class="dropdown-menu submenu">
                     <li>
-                      <a
-                        class="dropdown-item"
-                        [routerLink]="getRoute('carInsurance')"
-                        [innerHTML]="'HEADER.CAR_INSURANCE' | translateHtml | async"
-                      >
+                      <a class="dropdown-item" [routerLink]="getRoute('carInsurance')"
+                        [innerHTML]="'HEADER.CAR_INSURANCE' | translateHtml | async">
                       </a>
                     </li>
 
                     <li>
-                      <a
-                        class="dropdown-item"
-                        [routerLink]="getRoute('motorcycleInsurance')"
-                        [innerHTML]="'HEADER.MOTORCYCLE_INSURANCE' | translateHtml | async"
-                      >
+                      <a class="dropdown-item" [routerLink]="getRoute('motorcycleInsurance')"
+                        [innerHTML]="'HEADER.MOTORCYCLE_INSURANCE' | translateHtml | async">
                       </a>
                     </li>
                     <li>
-                      <a
-                        class="dropdown-item"
-                        [routerLink]="getRoute('boatInsurance')"
-                        [innerHTML]="'HEADER.BOAT_INSURANCE' | translateHtml | async"
-                      >
+                      <a class="dropdown-item" [routerLink]="getRoute('boatInsurance')"
+                        [innerHTML]="'HEADER.BOAT_INSURANCE' | translateHtml | async">
                       </a>
                     </li>
                     <li>
@@ -100,19 +85,13 @@
                       </a>
                     </li>
                     <li>
-                      <a
-                        class="dropdown-item"
-                        [routerLink]="getRoute('rvInsurance')"
-                        [innerHTML]="'HEADER.RV_MOTORHOME_INSURANCE' | translateHtml | async"
-                      >
+                      <a class="dropdown-item" [routerLink]="getRoute('rvInsurance')"
+                        [innerHTML]="'HEADER.RV_MOTORHOME_INSURANCE' | translateHtml | async">
                       </a>
                     </li>
                     <li>
-                      <a
-                        class="dropdown-item"
-                        [routerLink]="getRoute('classicCarInsurance')"
-                        [innerHTML]="'HEADER.CLASSIC_CAR_INSURANCE' | translateHtml | async"
-                      >
+                      <a class="dropdown-item" [routerLink]="getRoute('classicCarInsurance')"
+                        [innerHTML]="'HEADER.CLASSIC_CAR_INSURANCE' | translateHtml | async">
                       </a>
                     </li>
                     <li>
@@ -131,19 +110,13 @@
                       </a>
                     </li>
                     <li>
-                      <a
-                        class="dropdown-item"
-                        [routerLink]="getRoute('mexicanCarInsurance')"
-                        [innerHTML]="'HEADER.MEXICAN_CAR_INSURANCE' | translateHtml | async"
-                      >
+                      <a class="dropdown-item" [routerLink]="getRoute('mexicanCarInsurance')"
+                        [innerHTML]="'HEADER.MEXICAN_CAR_INSURANCE' | translateHtml | async">
                       </a>
                     </li>
                     <li>
-                      <a
-                        class="dropdown-item"
-                        [routerLink]="getRoute('rideshareInsurance')"
-                        [innerHTML]="'HEADER.RIDESHARE_INSURANCE' | translateHtml | async"
-                      >
+                      <a class="dropdown-item" [routerLink]="getRoute('rideshareInsurance')"
+                        [innerHTML]="'HEADER.RIDESHARE_INSURANCE' | translateHtml | async">
                       </a>
                     </li>
                   </ul>
@@ -166,10 +139,7 @@
                       </a>
                     </li>
                     <li>
-                      <a
-                        class="dropdown-item"
-                        [routerLink]="getRoute('manufacturedMobileHomeInsurance')"
-                      >
+                      <a class="dropdown-item" [routerLink]="getRoute('manufacturedMobileHomeInsurance')">
                         {{ 'HEADER.MANUFACTURED_MOBILE_HOME_INSURANCE' | translate }}
                       </a>
                     </li>
@@ -186,6 +156,65 @@
                     <li>
                       <a class="dropdown-item" [routerLink]="getRoute('floodInsurance')">
                         {{ 'HEADER.FLOOD_INSURANCE' | translate }}
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item submenu-toggle" [routerLink]="getRoute('commercialInsurance')">
+                    {{ 'HEADER.COMMERCIAL_INSURANCE' | translate }}
+                  </a>
+
+                  <ul class="dropdown-menu submenu">
+                    <li>
+                      <a class="dropdown-item" [routerLink]="getRoute('professionalLiabilityInsurance')">
+                        {{ 'HEADER.PROFESSIONAL_LIABILITY_INSURANCE' | translate }}
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" [routerLink]="getRoute('generalLiabilityInsurance')">
+                        {{ 'HEADER.GENERAL_LIABILITY_INSURANCE' | translate }}
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" [routerLink]="getRoute('workersCompensationInsurance')">
+                        {{ 'HEADER.WORKERS_COMPENSATION_INSURANCE' | translate }}
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" [routerLink]="getRoute('commercialPropertyInsurance')">
+                        {{ 'HEADER.COMMERCIAL_PROPERTY_INSURANCE' | translate }}
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" [routerLink]="getRoute('commercialAutoInsurance')">
+                        {{ 'HEADER.COMMERCIAL_AUTO_INSURANCE' | translate }}
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" [routerLink]="getRoute('businessOwnerInsurance')">
+                        {{ 'HEADER.BUSINESS_OWNER_INSURANCE' | translate }}
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" [routerLink]="getRoute('employmentPracticesLiabilityInsurance')">
+                        {{ 'HEADER.EMPLOYMENT_PRACTICES_LIABILITY_INSURANCE' | translate }}
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" [routerLink]="getRoute('cyberLiabilityInsurance')">
+                        {{ 'HEADER.CYBER_LIABILITY_INSURANCE' | translate }}
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" [routerLink]="getRoute('buildersRiskInsurance')">
+                        {{ 'HEADER.BUILDERS_RISK_INSURANCE' | translate }}
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" [routerLink]="getRoute('directorsOfficersLiabilityInsurance')">
+                        {{ 'HEADER.DIRECTORS_OFFICERS_LIABILITY_INSURANCE' | translate }}
                       </a>
                     </li>
                   </ul>
@@ -230,88 +259,10 @@
                   </ul>
                 </li>
 
-                <li class="dropdown-submenu">
-                  <a
-                    class="dropdown-item submenu-toggle"
-                    [routerLink]="getRoute('commercialInsurance')"
-                  >
-                    {{ 'HEADER.COMMERCIAL_INSURANCE' | translate }}
-                  </a>
 
-                  <ul class="dropdown-menu submenu">
-                    <li>
-                      <a
-                        class="dropdown-item"
-                        [routerLink]="getRoute('professionalLiabilityInsurance')"
-                      >
-                        {{ 'HEADER.PROFESSIONAL_LIABILITY_INSURANCE' | translate }}
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" [routerLink]="getRoute('generalLiabilityInsurance')">
-                        {{ 'HEADER.GENERAL_LIABILITY_INSURANCE' | translate }}
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        class="dropdown-item"
-                        [routerLink]="getRoute('workersCompensationInsurance')"
-                      >
-                        {{ 'HEADER.WORKERS_COMPENSATION_INSURANCE' | translate }}
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        class="dropdown-item"
-                        [routerLink]="getRoute('commercialPropertyInsurance')"
-                      >
-                        {{ 'HEADER.COMMERCIAL_PROPERTY_INSURANCE' | translate }}
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" [routerLink]="getRoute('commercialAutoInsurance')">
-                        {{ 'HEADER.COMMERCIAL_AUTO_INSURANCE' | translate }}
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" [routerLink]="getRoute('businessOwnerInsurance')">
-                        {{ 'HEADER.BUSINESS_OWNER_INSURANCE' | translate }}
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        class="dropdown-item"
-                        [routerLink]="getRoute('employmentPracticesLiabilityInsurance')"
-                      >
-                        {{ 'HEADER.EMPLOYMENT_PRACTICES_LIABILITY_INSURANCE' | translate }}
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" [routerLink]="getRoute('cyberLiabilityInsurance')">
-                        {{ 'HEADER.CYBER_LIABILITY_INSURANCE' | translate }}
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" [routerLink]="getRoute('buildersRiskInsurance')">
-                        {{ 'HEADER.BUILDERS_RISK_INSURANCE' | translate }}
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        class="dropdown-item"
-                        [routerLink]="getRoute('directorsOfficersLiabilityInsurance')"
-                      >
-                        {{ 'HEADER.DIRECTORS_OFFICERS_LIABILITY_INSURANCE' | translate }}
-                      </a>
-                    </li>
-                  </ul>
-                </li>
 
                 <li class="dropdown-submenu">
-                  <a
-                    class="dropdown-item submenu-toggle"
-                    [routerLink]="getRoute('healthInsurance')"
-                  >
+                  <a class="dropdown-item submenu-toggle" [routerLink]="getRoute('healthInsurance')">
                     {{ 'HEADER.HEALTH_INSURANCE' | translate }}
                   </a>
 
@@ -322,18 +273,12 @@
                       </a>
                     </li>
                     <li>
-                      <a
-                        class="dropdown-item"
-                        [routerLink]="getRoute('smallBusinessHealthInsurance')"
-                      >
+                      <a class="dropdown-item" [routerLink]="getRoute('smallBusinessHealthInsurance')">
                         {{ 'HEADER.SMALL_BUSINESS_HEALTH_INSURANCE' | translate }}
                       </a>
                     </li>
                     <li>
-                      <a
-                        class="dropdown-item"
-                        [routerLink]="getRoute('medicareSupplementInsurance')"
-                      >
+                      <a class="dropdown-item" [routerLink]="getRoute('medicareSupplementInsurance')">
                         {{ 'HEADER.MEDICARE_SUPPLEMENT_INSURANCE' | translate }}
                       </a>
                     </li>
@@ -353,10 +298,7 @@
                       </a>
                     </li>
                     <li>
-                      <a
-                        class="dropdown-item"
-                        [routerLink]="getRoute('employerGroupHealthInsurance')"
-                      >
+                      <a class="dropdown-item" [routerLink]="getRoute('employerGroupHealthInsurance')">
                         {{ 'HEADER.EMPLOYER_GROUP_HEALTH_INSURANCE' | translate }}
                       </a>
                     </li>
@@ -366,10 +308,7 @@
                       </a>
                     </li>
                     <li>
-                      <a
-                        class="dropdown-item"
-                        [routerLink]="getRoute('acaMarketplacePlansInsurance')"
-                      >
+                      <a class="dropdown-item" [routerLink]="getRoute('acaMarketplacePlansInsurance')">
                         {{ 'HEADER.ACA_MARKETPLACE_PLANS_INSURANCE' | translate }}
                       </a>
                     </li>
@@ -377,19 +316,13 @@
                 </li>
 
                 <li class="dropdown-submenu">
-                  <a
-                    class="dropdown-item submenu-toggle"
-                    [routerLink]="getRoute('suretyBondInsurance')"
-                  >
+                  <a class="dropdown-item submenu-toggle" [routerLink]="getRoute('suretyBondInsurance')">
                     {{ 'HEADER.SURETY_BOND_INSURANCE' | translate }}
                   </a>
 
                   <ul class="dropdown-menu submenu">
                     <li>
-                      <a
-                        class="dropdown-item"
-                        [routerLink]="getRoute('performanceBondsPaymentBonds')"
-                      >
+                      <a class="dropdown-item" [routerLink]="getRoute('performanceBondsPaymentBonds')">
                         {{ 'HEADER.PERFORMANCE_PAYMENT_BONDS' | translate }}
                       </a>
                     </li>
@@ -440,19 +373,19 @@
             <li class="nav-item">
               <a class="nav-link" [routerLink]="getRoute('about')">{{
                 'HEADER.ABOUT' | translate
-              }}</a>
+                }}</a>
             </li>
 
             <li class="nav-item">
               <a class="nav-link" [routerLink]="getRoute('contact')">{{
                 'HEADER.CONTACT' | translate
-              }}</a>
+                }}</a>
             </li>
 
             <li class="nav-item">
               <a class="nav-link" [routerLink]="getRoute('ourLocations')">{{
                 'HEADER.OFFICE_LOCATOR' | translate
-              }}</a>
+                }}</a>
             </li>
           </ul>
 
@@ -460,15 +393,13 @@
           <div class="d-flex align-items-center leftie">
             <button class="language-switcher" type="button" (click)="toggleLanguage()">
               <span class="language-switcher__flag-wrap">
-                <img [src]="targetLanguageFlag" [alt]="targetLang === 'en' ? 'English' : 'Spanish'" class="language-switcher__flag" />
+                <img [src]="targetLanguageFlag" [alt]="targetLang === 'en' ? 'English' : 'Spanish'"
+                  class="language-switcher__flag" />
               </span>
               <span class="language-switcher__label">{{ targetLanguageLabel }}</span>
             </button>
             <!-- Get a Quote -->
-            <a
-              [routerLink]="getRoute('getAQuote')"
-              class="btn btn-danger px-4 rounded-pill fw-semibold"
-            >
+            <a [routerLink]="getRoute('getAQuote')" class="btn btn-danger px-4 rounded-pill fw-semibold">
               {{ 'HEADER.GET_A_QUOTE' | translate }}
             </a>
           </div>
@@ -494,43 +425,43 @@
               <i class="fas fa-car sm-icon"></i>
               <a class="sm-label" [routerLink]="getRoute('autoInsurance')">{{
                 'HEADER.AUTO_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <i class="fas fa-chevron-right sm-chevron" [class.open]="openMenu === 'auto'"></i>
             </div>
             <div class="sm-sub" [class.open]="openMenu === 'auto'">
               <a class="sm-sub-item" [routerLink]="getRoute('carInsurance')">{{
                 'HEADER.CAR_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('motorcycleInsurance')">{{
                 'HEADER.MOTORCYCLE_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('boatInsurance')">{{
                 'HEADER.BOAT_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('rvInsurance')">{{
                 'HEADER.RV_MOTORHOME_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('classicCarInsurance')">{{
                 'HEADER.CLASSIC_CAR_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('commercialAutoInsurance')">
                 {{ 'HEADER.COMMERCIAL_AUTO_INSURANCE' | translate }}
               </a>
               <a class="sm-sub-item" [routerLink]="getRoute('sr22Insurance')">{{
                 'HEADER.SR22_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('atvAndUtvInsurance')">{{
                 'HEADER.ATV_UTV_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('trailerInsurance')">{{
                 'HEADER.TRAILER_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('mexicanCarInsurance')">{{
                 'HEADER.MEXICAN_CAR_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('rideshareInsurance')">{{
                 'HEADER.RIDESHARE_INSURANCE' | translate
-              }}</a>
+                }}</a>
             </div>
 
             <!-- Home Insurance -->
@@ -538,143 +469,135 @@
               <i class="fas fa-home sm-icon"></i>
               <a [routerLink]="getRoute('homeInsurance')" class="sm-label">{{
                 'HEADER.HOME_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <i class="fas fa-chevron-right sm-chevron" [class.open]="openMenu === 'home'"></i>
             </div>
             <div class="sm-sub" [class.open]="openMenu === 'home'">
               <a class="sm-sub-item" [routerLink]="getRoute('rentersInsurance')">{{
                 'HEADER.RENTERS_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('condoInsurance')">{{
                 'HEADER.CONDO_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('manufacturedMobileHomeInsurance')">{{
                 'HEADER.MANUFACTURED_MOBILE_HOME_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('landlordInsurance')">{{
                 'HEADER.LANDLORD_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('earthquakeInsurance')">{{
                 'HEADER.EARTHQUAKE_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('floodInsurance')">{{
                 'HEADER.FLOOD_INSURANCE' | translate
-              }}</a>
+                }}</a>
             </div>
 
+                     <!-- Commercial Insurance -->
+            <div class="sm-item" (click)="toggleMenu('commercial')">
+              <i class="fas fa-building sm-icon"></i>
+              <a [routerLink]="getRoute('commercialInsurance')" class="sm-label">{{
+                'HEADER.COMMERCIAL_INSURANCE' | translate
+                }}</a>
+              <i class="fas fa-chevron-right sm-chevron" [class.open]="openMenu === 'commercial'"></i>
+            </div>
+            <div class="sm-sub" [class.open]="openMenu === 'commercial'">
+              <a class="sm-sub-item" [routerLink]="getRoute('professionalLiabilityInsurance')">{{
+                'HEADER.PROFESSIONAL_LIABILITY_INSURANCE' | translate
+                }}</a>
+              <a class="sm-sub-item" [routerLink]="getRoute('generalLiabilityInsurance')">{{
+                'HEADER.GENERAL_LIABILITY_INSURANCE' | translate
+                }}</a>
+              <a class="sm-sub-item" [routerLink]="getRoute('workersCompensationInsurance')">{{
+                'HEADER.WORKERS_COMPENSATION_INSURANCE' | translate
+                }}</a>
+              <a class="sm-sub-item" [routerLink]="getRoute('commercialPropertyInsurance')">{{
+                'HEADER.COMMERCIAL_PROPERTY_INSURANCE' | translate
+                }}</a>
+              <a class="sm-sub-item" [routerLink]="getRoute('commercialAutoInsurance')">{{
+                'HEADER.COMMERCIAL_AUTO_INSURANCE' | translate
+                }}</a>
+              <a class="sm-sub-item" [routerLink]="getRoute('businessOwnerInsurance')">{{
+                'HEADER.BUSINESS_OWNER_INSURANCE' | translate
+                }}</a>
+              <a class="sm-sub-item" [routerLink]="getRoute('employmentPracticesLiabilityInsurance')">{{
+                'HEADER.EMPLOYMENT_PRACTICES_LIABILITY_INSURANCE' | translate }}</a>
+              <a class="sm-sub-item" [routerLink]="getRoute('cyberLiabilityInsurance')">{{
+                'HEADER.CYBER_LIABILITY_INSURANCE' | translate
+                }}</a>
+              <a class="sm-sub-item" [routerLink]="getRoute('buildersRiskInsurance')">{{
+                'HEADER.BUILDERS_RISK_INSURANCE' | translate
+                }}</a>
+              <a class="sm-sub-item" [routerLink]="getRoute('directorsOfficersLiabilityInsurance')">{{
+                'HEADER.DIRECTORS_OFFICERS_LIABILITY_INSURANCE' | translate }}</a>
+            </div>
             <!-- Life Insurance -->
             <div class="sm-item" (click)="toggleMenu('life')">
               <i class="fas fa-heartbeat sm-icon"></i>
               <a [routerLink]="getRoute('lifeInsurance')" class="sm-label">{{
                 'HEADER.LIFE_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <i class="fas fa-chevron-right sm-chevron" [class.open]="openMenu === 'life'"></i>
             </div>
             <div class="sm-sub" [class.open]="openMenu === 'life'">
               <a class="sm-sub-item" [routerLink]="getRoute('wholeLifeInsurance')">{{
                 'HEADER.WHOLE_LIFE_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('universalLifeInsurance')">{{
                 'HEADER.UNIVERSAL_LIFE_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('finalExpenseInsurance')">{{
                 'HEADER.FINAL_EXPENSE_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('termLifeInsurance')">{{
                 'HEADER.TERM_LIFE_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('groupLifeInsurance')">{{
                 'HEADER.GROUP_LIFE_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('variableLifeInsurance')">{{
                 'HEADER.VARIABLE_LIFE_INSURANCE' | translate
-              }}</a>
+                }}</a>
             </div>
 
-            <!-- Commercial Insurance -->
-            <div class="sm-item" (click)="toggleMenu('commercial')">
-              <i class="fas fa-building sm-icon"></i>
-              <a [routerLink]="getRoute('commercialInsurance')" class="sm-label">{{
-                'HEADER.COMMERCIAL_INSURANCE' | translate
-              }}</a>
-              <i
-                class="fas fa-chevron-right sm-chevron"
-                [class.open]="openMenu === 'commercial'"
-              ></i>
-            </div>
-            <div class="sm-sub" [class.open]="openMenu === 'commercial'">
-              <a class="sm-sub-item" [routerLink]="getRoute('professionalLiabilityInsurance')">{{
-                'HEADER.PROFESSIONAL_LIABILITY_INSURANCE' | translate
-              }}</a>
-              <a class="sm-sub-item" [routerLink]="getRoute('generalLiabilityInsurance')">{{
-                'HEADER.GENERAL_LIABILITY_INSURANCE' | translate
-              }}</a>
-              <a class="sm-sub-item" [routerLink]="getRoute('workersCompensationInsurance')">{{
-                'HEADER.WORKERS_COMPENSATION_INSURANCE' | translate
-              }}</a>
-              <a class="sm-sub-item" [routerLink]="getRoute('commercialPropertyInsurance')">{{
-                'HEADER.COMMERCIAL_PROPERTY_INSURANCE' | translate
-              }}</a>
-              <a class="sm-sub-item" [routerLink]="getRoute('commercialAutoInsurance')">{{
-                'HEADER.COMMERCIAL_AUTO_INSURANCE' | translate
-              }}</a>
-              <a class="sm-sub-item" [routerLink]="getRoute('businessOwnerInsurance')">{{
-                'HEADER.BUSINESS_OWNER_INSURANCE' | translate
-              }}</a>
-              <a
-                class="sm-sub-item"
-                [routerLink]="getRoute('employmentPracticesLiabilityInsurance')"
-                >{{ 'HEADER.EMPLOYMENT_PRACTICES_LIABILITY_INSURANCE' | translate }}</a
-              >
-              <a class="sm-sub-item" [routerLink]="getRoute('cyberLiabilityInsurance')">{{
-                'HEADER.CYBER_LIABILITY_INSURANCE' | translate
-              }}</a>
-              <a class="sm-sub-item" [routerLink]="getRoute('buildersRiskInsurance')">{{
-                'HEADER.BUILDERS_RISK_INSURANCE' | translate
-              }}</a>
-              <a
-                class="sm-sub-item"
-                [routerLink]="getRoute('directorsOfficersLiabilityInsurance')"
-                >{{ 'HEADER.DIRECTORS_OFFICERS_LIABILITY_INSURANCE' | translate }}</a
-              >
-            </div>
+   
 
             <!-- Health Insurance -->
             <div class="sm-item" (click)="toggleMenu('health')">
               <i class="fas fa-stethoscope sm-icon"></i>
               <a [routerLink]="getRoute('healthInsurance')" class="sm-label">{{
                 'HEADER.HEALTH_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <i class="fas fa-chevron-right sm-chevron" [class.open]="openMenu === 'health'"></i>
             </div>
             <div class="sm-sub" [class.open]="openMenu === 'health'">
               <a class="sm-sub-item" [routerLink]="getRoute('familyHealthInsurance')">{{
                 'HEADER.FAMILY_HEALTH_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('smallBusinessHealthInsurance')">{{
                 'HEADER.SMALL_BUSINESS_HEALTH_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('medicareSupplementInsurance')">{{
                 'HEADER.MEDICARE_SUPPLEMENT_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('dentalVisionInsurance')">{{
                 'HEADER.DENTAL_VISION_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('shortTermHealthInsurance')">{{
                 'HEADER.SHORT_TERM_HEALTH_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('individualHealthInsurance')">{{
                 'HEADER.INDIVIDUAL_HEALTH_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('employerGroupHealthInsurance')">{{
                 'HEADER.EMPLOYER_GROUP_HEALTH_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('travelHealthInsurance')">{{
                 'HEADER.TRAVEL_HEALTH_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('acaMarketplacePlansInsurance')">{{
                 'HEADER.ACA_MARKETPLACE_PLANS_INSURANCE' | translate
-              }}</a>
+                }}</a>
             </div>
 
             <!-- Surety Bond -->
@@ -682,22 +605,22 @@
               <i class="fas fa-file-contract sm-icon"></i>
               <a [routerLink]="getRoute('suretyBondInsurance')" class="sm-label">{{
                 'HEADER.SURETY_BOND_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <i class="fas fa-chevron-right sm-chevron" [class.open]="openMenu === 'surety'"></i>
             </div>
             <div class="sm-sub" [class.open]="openMenu === 'surety'">
               <a class="sm-sub-item" [routerLink]="getRoute('performanceBondsPaymentBonds')">{{
                 'HEADER.PERFORMANCE_PAYMENT_BONDS' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('commercialSuretyBonds')">{{
                 'HEADER.COMMERCIAL_SURETY_BONDS' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('bidBonds')">{{
                 'HEADER.BID_BONDS' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('notaryBonds')">{{
                 'HEADER.NOTARY_BONDS' | translate
-              }}</a>
+                }}</a>
             </div>
 
             <!-- Additional Insurance -->
@@ -705,35 +628,32 @@
               <i class="fas fa-ellipsis-h sm-icon"></i>
               <a href="javascript:void(0)" class="sm-label">{{
                 'HEADER.ADDITIONAL_INSURANCE' | translate
-              }}</a>
-              <i
-                class="fas fa-chevron-right sm-chevron"
-                [class.open]="openMenu === 'additional'"
-              ></i>
+                }}</a>
+              <i class="fas fa-chevron-right sm-chevron" [class.open]="openMenu === 'additional'"></i>
             </div>
             <div class="sm-sub" [class.open]="openMenu === 'additional'">
               <a class="sm-sub-item" [routerLink]="getRoute('petInsurance')">{{
                 'HEADER.PET_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('titleInsurance')">{{
                 'HEADER.TITLE_INSURANCE' | translate
-              }}</a>
+                }}</a>
               <a class="sm-sub-item" [routerLink]="getRoute('titleTransfer')">{{
                 'HEADER.TITLE_TRANSFER' | translate
-              }}</a>
+                }}</a>
             </div>
 
             <div class="sm-divider"></div>
 
             <a class="sm-plain-link" [routerLink]="getRoute('about')">{{
               'HEADER.ABOUT' | translate
-            }}</a>
+              }}</a>
             <a class="sm-plain-link" [routerLink]="getRoute('contact')">{{
               'HEADER.CONTACT' | translate
-            }}</a>
+              }}</a>
             <a class="sm-plain-link" [routerLink]="getRoute('ourLocations')">{{
               'HEADER.OFFICE_LOCATOR' | translate
-            }}</a>
+              }}</a>
 
             <div class="sm-divider"></div>
 
@@ -751,7 +671,7 @@
             <div class="sm-cta-wrap">
               <a [routerLink]="getRoute('getAQuote')" class="sm-cta">{{
                 'HEADER.GET_A_QUOTE' | translate
-              }}</a>
+                }}</a>
             </div>
           </nav>
 
