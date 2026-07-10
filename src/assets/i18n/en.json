@@ -952,9 +952,17 @@
       "STEP4": {
         "TITLE": "Contact Preferences",
         "DESC": "How would you like to be contacted?",
-        "OPTIONS": ["Phone", "Text Message", "Email"],
+        "OPTIONS": [
+          "Phone",
+          "Text Message",
+          "Email"
+        ],
         "DESC1": "Best time to reach you:",
-        "TIME_OPTIONS": ["Morning", "Afternoon", "Evening"]
+        "TIME_OPTIONS": [
+          "Morning",
+          "Afternoon",
+          "Evening"
+        ]
       },
       "STEP5": {
         "TITLE": "Review Your Custom Quote Request"
@@ -1044,9 +1052,17 @@
       "STEP5": {
         "TITLE": "Contact Preferences",
         "LANGUAGE_TITLE": "Preferred Language:",
-        "LANGUAGE_OPTIONS": ["English", "Spanish", "Hindi"],
+        "LANGUAGE_OPTIONS": [
+          "English",
+          "Spanish",
+          "Hindi"
+        ],
         "CONTACT_TITLE": "How should we reach you?",
-        "CONTACT_OPTIONS": ["Phone Call", "Text Message", "Email"],
+        "CONTACT_OPTIONS": [
+          "Phone Call",
+          "Text Message",
+          "Email"
+        ],
         "TIME_TITLE": "Best Time to Connect:",
         "TIME_OPTIONS": [
           "Morning (8 AM - 12 PM)",
@@ -1130,7 +1146,13 @@
             "Mobile Home",
             "Other"
           ],
-          "ROOF_AGE": ["Brand New", "1–10 years", "11–20 years", "20+ years", "I'm not sure"]
+          "ROOF_AGE": [
+            "Brand New",
+            "1–10 years",
+            "11–20 years",
+            "20+ years",
+            "I'm not sure"
+          ]
         }
       },
       "STEP2": {
@@ -1159,7 +1181,10 @@
       "STEP4": {
         "TITLE": "History and Bundling",
         "INSURED_TITLE": "Current Home Insurance Status",
-        "INSURED_OPTIONS": ["Currently Insured", "Not Insured"],
+        "INSURED_OPTIONS": [
+          "Currently Insured",
+          "Not Insured"
+        ],
         "BUNDLE_TITLE": "Do you want to bundle your policies to save more?",
         "BUNDLE_OPTIONS": [
           "Yes! I want a Home + Auto bundle discount.",
@@ -1175,9 +1200,17 @@
           "PHONE": "Phone Number"
         },
         "LANGUAGE_TITLE": "Preferred Language",
-        "LANGUAGE_OPTIONS": ["English", "Spanish", "Hindi"],
+        "LANGUAGE_OPTIONS": [
+          "English",
+          "Spanish",
+          "Hindi"
+        ],
         "CONTACT_TITLE": "How should we reach you?",
-        "CONTACT_OPTIONS": ["Phone Call", "Text Message", "Email"],
+        "CONTACT_OPTIONS": [
+          "Phone Call",
+          "Text Message",
+          "Email"
+        ],
         "TIME_TITLE": "Best Time to Connect",
         "TIME_OPTIONS": [
           "Morning (8 AM - 12 PM)",
@@ -1254,18 +1287,36 @@
           "LEGAL_BUSINESS_NAME": "Legal Business Name",
           "INDUSTRY_TYPE": "Industry/Type of Business",
           "BUSINESS_ZIP_CODE": "Business Zip Code",
-          "INDUSTRY_TYPE_OPTIONS": ["Construction", "Retail", "Restaurant", "Office"]
+          "INDUSTRY_TYPE_OPTIONS": [
+            "Construction",
+            "Retail",
+            "Restaurant",
+            "Office"
+          ]
         }
       },
       "STEP2": {
         "TITLE": "Scale of Operations",
         "FIELDS": {
           "YEARS_IN_BUSINESS": "Years in Business",
-          "YEARS_OPTIONS": ["New Venture", "1–3 years", "4+ years"],
+          "YEARS_OPTIONS": [
+            "New Venture",
+            "1–3 years",
+            "4+ years"
+          ],
           "NUMBER_OF_EMPLOYEES": "Number of Employees",
-          "EMPLOYEES_OPTIONS": ["1-10", "11-50", "51-200", "200+"],
+          "EMPLOYEES_OPTIONS": [
+            "1-10",
+            "11-50",
+            "51-200",
+            "200+"
+          ],
           "ANNUAL_REVENUE": "Estimated Annual Revenue",
-          "REVENUE_OPTIONS": ["Under $100k,", "$100k - $500k", "$500k"]
+          "REVENUE_OPTIONS": [
+            "Under $100k,",
+            "$100k - $500k",
+            "$500k"
+          ]
         }
       },
       "STEP3": {
@@ -1292,9 +1343,17 @@
           "PHONE_NUMBER": "Phone Number*"
         },
         "LANGUAGE_TITLE": "Preferred Language",
-        "LANGUAGE_OPTIONS": ["English", "Spanish", "Hindi"],
+        "LANGUAGE_OPTIONS": [
+          "English",
+          "Spanish",
+          "Hindi"
+        ],
         "TIME_TITLE": "Best Time to Connect",
-        "TIME_OPTIONS": ["Morning", "Afternoon", "Evening"]
+        "TIME_OPTIONS": [
+          "Morning",
+          "Afternoon",
+          "Evening"
+        ]
       }
     },
     "QUOTE_SUMMARY": {
@@ -1365,8 +1424,15 @@
           "TOBACCO_USE": "Do you use tobacco or nicotine products?",
           "HEALTH_STATUS": "How would you describe your general health?"
         },
-        "TOBACCO_OPTIONS": ["Yes", "No"],
-        "HEALTH_OPTIONS": ["Excellent", "Good", "Fair"]
+        "TOBACCO_OPTIONS": [
+          "Yes",
+          "No"
+        ],
+        "HEALTH_OPTIONS": [
+          "Excellent",
+          "Good",
+          "Fair"
+        ]
       },
       "STEP3": {
         "TITLE": "Coverage Needs",
@@ -1388,9 +1454,17 @@
       "STEP4": {
         "TITLE": "Contact Details and Preferences",
         "LANGUAGE_TITLE": "Preferred Language for your Quote",
-        "LANGUAGE_OPTIONS": ["English", "Spanish", "Hindi"],
+        "LANGUAGE_OPTIONS": [
+          "English",
+          "Spanish",
+          "Hindi"
+        ],
         "CONTACT_TITLE": "Best Way to Reach You",
-        "CONTACT_OPTIONS": ["Call", "Text Message", "Email"],
+        "CONTACT_OPTIONS": [
+          "Call",
+          "Text Message",
+          "Email"
+        ],
         "TIME_TITLE": "Best Time to Connect",
         "TIME_OPTIONS": [
           "Morning (8 AM - 12 PM)",
@@ -1453,7 +1527,12 @@
       "STEP1": {
         "TITLE": "Coverage Type",
         "COVERAGE_TITLE": "Who needs coverage?",
-        "COVERAGE_OPTIONS": ["Just Me", "Me + Spouse", "Me + Children", "My Whole Family"],
+        "COVERAGE_OPTIONS": [
+          "Just Me",
+          "Me + Spouse",
+          "Me + Children",
+          "My Whole Family"
+        ],
         "FIELDS": {
           "ZIPCODE": "Zip Code"
         }
@@ -1473,7 +1552,10 @@
           "$60,000 – $100,000",
           "Over $100,000"
         ],
-        "TOBACCO_OPTIONS": ["Yes", "No"]
+        "TOBACCO_OPTIONS": [
+          "Yes",
+          "No"
+        ]
       },
       "STEP3": {
         "TITLE": "Contact & Language Preference",
@@ -1484,8 +1566,16 @@
           "LANGUAGE": "Preferred Language for your Quote",
           "BEST_TIME": "Best time to call?"
         },
-        "LANGUAGE_OPTIONS": ["English", "Spanish", "Hindi"],
-        "TIME_OPTIONS": ["Morning", "Afternoon", "Evening"]
+        "LANGUAGE_OPTIONS": [
+          "English",
+          "Spanish",
+          "Hindi"
+        ],
+        "TIME_OPTIONS": [
+          "Morning",
+          "Afternoon",
+          "Evening"
+        ]
       }
     },
     "QUOTE_SUMMARY": {
@@ -1550,7 +1640,12 @@
         "TITLE": "Quick Underwriting",
         "FIELDS": {
           "CREDIT_SCORE_TITLE": "Estimated Credit Score: Crucial Explain that checking this won’t hurt their credit score.",
-          "CREDIT_SCORE_TITLE_OPTION": ["Excellent", "Good", "Fair", "Poor"],
+          "CREDIT_SCORE_TITLE_OPTION": [
+            "Excellent",
+            "Good",
+            "Fair",
+            "Poor"
+          ],
           "YEARS_IN_BUSINESS": "Years in Business"
         }
       },
@@ -1558,9 +1653,17 @@
         "TITLE": "Contact & Language Preference",
         "FIELDS": {
           "LANGUAGE": "Preferred Language for your Quote",
-          "LANGUAGE_OPTIONS": ["English", "Spanish", "Hindi"],
+          "LANGUAGE_OPTIONS": [
+            "English",
+            "Spanish",
+            "Hindi"
+          ],
           "BEST_TIME": "Best time to call?",
-          "TIME_OPTIONS": ["Morning", "Afternoon", "Evening"]
+          "TIME_OPTIONS": [
+            "Morning",
+            "Afternoon",
+            "Evening"
+          ]
         }
       }
     },
@@ -2480,7 +2583,7 @@
           "DESC": "HO-3 is the most commonly used homeowners' insurance policy in Texas. It typically covers the home's structure against most risks, while personal belongings remain protected against listed events such as fire, theft, and storms."
         },
         {
-          "TITLE": "<a class='inline-link' href='/homeowners-insurance/renters-insurance'>HO-4 — Renters Insurance</a>",
+          "TITLE": "<a class='inline-link' href='homeowners-insurance/renters-insurance'>HO-4 — Renters Insurance</a>",
           "DESC": "HO-4 policies are designed for people who rent rather than own their homes. This coverage protects personal belongings, provides liability protection, and may help cover temporary living costs if the rental becomes unlivable."
         },
         {
@@ -2488,11 +2591,11 @@
           "DESC": "HO-5 policies offer some of the most extensive protection available for homeowners. Both the home and personal belongings are usually covered against a wide range of risks unless specifically excluded."
         },
         {
-          "TITLE": "<a class='inline-link' href='/homeowners-insurance/condo-insurance'>HO-6 — Condo Insurance</a>",
+          "TITLE": "<a class='inline-link' href='homeowners-insurance/condo-insurance'>HO-6 — Condo Insurance</a>",
           "DESC": "HO-6 insurance is designed for condominium owners. It typically covers personal belongings, interior structures such as walls or flooring, and liability protection. Condo associations usually insure the main building structure."
         },
         {
-          "TITLE": "<a class='inline-link' href='/homeowners-insurance/manufactured-mobile-home-insurance'>HO-7 — Mobile & Manufactured Home Insurance</a>",
+          "TITLE": "<a class='inline-link' href='homeowners-insurance/manufactured-mobile-home-insurance'>HO-7 — Mobile & Manufactured Home Insurance</a>",
           "DESC": "HO-7 policies are created specifically for mobile or manufactured homes. Coverage is similar to HO-3 policies but tailored to address the unique structures, installations, and risk factors associated with manufactured housing properties."
         },
         {
@@ -2608,7 +2711,7 @@
       "LIST": {
         "BUNDLING": {
           "TITLE": "Bundling Discount (Home + Auto)",
-          "DESC": "Bundle your home and <a class='inline-link' href='/auto-insurance' >auto policies</a> with one insurer and save on both. One of the biggest discounts available.",
+          "DESC": "Bundle your home and <a class='inline-link' href='auto-insurance' >auto policies</a> with one insurer and save on both. One of the biggest discounts available.",
           "ICON": "fas fa-house-user"
         },
         "NEW_HOME": {
@@ -2953,7 +3056,7 @@
       "STEPS": {
         "REACH_OUT": {
           "TITLE": "Reach Out",
-          "DESCRIPTION": "<a class='inline-link' href='contact-us'>Contact us </a> online, <a class='inline-link' href='tel:(713) 357-7771'>by phone</a>, or <a class='inline-link' href='/our-locations'>visit our office</a> to start your insurance journey."
+          "DESCRIPTION": "<a class='inline-link' href='contact-us'>Contact us </a> online, <a class='inline-link' href='tel:(713) 357-7771'>by phone</a>, or <a class='inline-link' href='our-locations'>visit our office</a> to start your insurance journey."
         },
         "GET_ADVICE": {
           "TITLE": "Get Advice",
@@ -4407,7 +4510,7 @@
       "STEPS": {
         "STEP_1": {
           "TITLE": "Step 1: Get Your Free Comparison Quote",
-          "DESCRIPTION": "Start by  <a class='inline-link' href='/free-quote'>requesting a free quote </a> to compare life insurance plans in Texas. Our experts evaluate multiple carriers to help you find coverage that fits your needs, budget, and lifestyle. Getting a clear comparison ensures you make an informed decision without guesswork or hidden costs."
+          "DESCRIPTION": "Start by  <a class='inline-link' href='get-a-quote'>requesting a free quote </a> to compare life insurance plans in Texas. Our experts evaluate multiple carriers to help you find coverage that fits your needs, budget, and lifestyle. Getting a clear comparison ensures you make an informed decision without guesswork or hidden costs."
         },
         "STEP_2": {
           "TITLE": "Step 2: Pick Your Plan and Activate",
@@ -5803,7 +5906,7 @@
       },
       "CONTENT": {
         "DESC1": "At <a class='inline-link' href='/' target='_blank'>A-State Insurance</a>, we understand that clear communication is essential when securing a surety bond. That’s why we proudly offer services in Spanish. Whether you’re navigating complex bond requirements or reviewing financial documents, our bilingual team ensures you fully understand every step of the process, free of confusion or miscommunication.",
-        "DESC2": "We know that language barriers can create unnecessary delays or misunderstandings. By providing Spanish-language support, we make bonding accessible to more <a href='/commercial-insurance/business-owners-policy-bop' class='inline-link'> business owners, </a> contractors, and professionals across Texas. Our goal is to remove friction and provide guidance in the language you’re most comfortable with, so you can focus on growing your business.",
+        "DESC2": "We know that language barriers can create unnecessary delays or misunderstandings. By providing Spanish-language support, we make bonding accessible to more <a href='commercial-insurance/business-owners-policy-bop' class='inline-link'> business owners, </a> contractors, and professionals across Texas. Our goal is to remove friction and provide guidance in the language you’re most comfortable with, so you can focus on growing your business.",
         "DESC3": "From initial inquiries to final approvals, our bilingual staff is available to answer questions, explain options, and guide you through the underwriting process. We take pride in serving Spanish-speaking clients with the same expertise and attention to detail that all A-State Insurance customers receive, ensuring a smooth, confident bonding experience."
       }
     },
@@ -7373,7 +7476,7 @@
       "STEPS": {
         "STEP_1": {
           "TITLE": "Step 1: Get Your Free Comparison Quote",
-          "DESCRIPTION": "Start by <a href='/free-quote' class='inline-link'>requesting a free quote </a> to compare multiple motorcycle insurance options side by side. We review your details and show clear pricing over the phone, helping you choose with no hidden fees.",
+          "DESCRIPTION": "Start by <a href='/get-a-quote' class='inline-link'>requesting a free quote </a> to compare multiple motorcycle insurance options side by side. We review your details and show clear pricing over the phone, helping you choose with no hidden fees.",
           "ICON": "fas fa-file-invoice-dollar"
         },
         "STEP_2": {
@@ -8118,7 +8221,7 @@
       "STEPS": {
         "REACH_OUT": {
           "TITLE": "Step 1 - Reach Out",
-          "DESCRIPTION": "<a href='/contact-us' class='inline-link'>Contact us </a> today by filling out the form or calling to get started with your free quote.",
+          "DESCRIPTION": "<a href='contact-us' class='inline-link'>Contact us </a> today by filling out the form or calling to get started with your free quote.",
           "ICON": "fas fa-phone-alt"
         },
         "GET_ADVICE": {
@@ -8972,7 +9075,7 @@
       "STEPS": {
         "STEP_1": {
           "TITLE": "Step 1: Get Your Free Comparison Quote",
-          "DESCRIPTION": "Start by  <a class='inline-link'  href='/free-quote'>requesting a free quote </a> comparison from A-State Insurance. Share your current policy details, and we'll review options to find better coverage and value tailored to your RV and travel needs.",
+          "DESCRIPTION": "Start by  <a class='inline-link'  href='/get-a-quote'>requesting a free quote </a> comparison from A-State Insurance. Share your current policy details, and we'll review options to find better coverage and value tailored to your RV and travel needs.",
           "ICON": "fas fa-file-invoice-dollar"
         },
         "STEP_2": {
@@ -10561,7 +10664,7 @@
       "STEPS": {
         "REACH_OUT": {
           "TITLE": "Step 1 - Reach Out",
-          "DESCRIPTION": "<a class='inline-link' href='/contact-us'>Contact us </a> today to start your journey toward affordable ATV & UTV insurance in Texas. Our team is ready to help!",
+          "DESCRIPTION": "<a class='inline-link' href='contact-us'>Contact us </a> today to start your journey toward affordable ATV & UTV insurance in Texas. Our team is ready to help!",
           "ICON": "fas fa-phone-alt"
         },
         "GET_ADVICE": {
@@ -12106,7 +12209,7 @@
       "STEPS": {
         "REACH_OUT": {
           "TITLE": "Step 1 - Reach Out",
-          "DESCRIPTION": "<a class='inline-link' href='/contact-us'>Contact us </a> via phone or online to start your trailer insurance journey with ease and clarity.",
+          "DESCRIPTION": "<a class='inline-link' href='contact-us'>Contact us </a> via phone or online to start your trailer insurance journey with ease and clarity.",
           "ICON": "fas fa-phone-alt"
         },
         "GET_ADVICE": {
@@ -14345,7 +14448,7 @@
       "LIST": [
         {
           "TITLE": "Understanding Condo Insurance",
-          "TEXT": "Condo insurance is a policy designed specifically for condominium owners, covering your personal belongings, interior structure, and liability. Unlike <a href='/homeowners-insurance/condo-insurance' class='inline-link white'>homeowners' insurance, </a> it complements the building’s master policy, protecting areas you’re responsible for inside your unit."
+          "TEXT": "Condo insurance is a policy designed specifically for condominium owners, covering your personal belongings, interior structure, and liability. Unlike <a href='/homeowners-insurance' class='inline-link white'>homeowners' insurance, </a> it complements the building’s master policy, protecting areas you’re responsible for inside your unit."
         },
         {
           "TITLE": "Protection for Personal Property",
@@ -21888,7 +21991,7 @@
       "STEPS": {
         "STEP_1": {
           "TITLE": "Step 1: Get Your Free Comparison Quote",
-          "DESCRIPTION": "Start by <a href='/free-quote' class='inline-link'>requesting a free quote </a> from A-State Insurance. We'll compare options to ensure you get the best rates and coverage for your business."
+          "DESCRIPTION": "Start by <a href='/get-a-quote' class='inline-link'>requesting a free quote </a> from A-State Insurance. We'll compare options to ensure you get the best rates and coverage for your business."
         },
         "STEP_2": {
           "TITLE": "Step 2: Pick Your Plan and Activate",
@@ -28152,7 +28255,7 @@
             "DESC": "Short-term plans provide temporary coverage for families during gaps, offering basic protection for emergencies but limited benefits overall."
           },
           {
-            "TITLE": "<a class='inline-link' href='/health-insurance/aca-marketplace-plans'>ACA Marketplace Family Health Insurance Plan</a>",
+            "TITLE": "<a class='inline-link' href='/health-insurance/aca-marketplace-plans'>ACA Marketplace Family Health Insurance Plan",
             "DESC": "ACA plans provide essential health benefits with income-based subsidies, ensuring families receive standardized coverage and preventive care."
           },
           {
@@ -31564,7 +31667,7 @@
             "DESC": "Provides coverage for serious accidents or illnesses. Low premiums, high deductibles, designed for young, healthy individuals under 30."
           },
           {
-            "TITLE": "<a href='/health-insurance/short-term-health-insurance' class='inline-link'>Short-Term Health Insurance Plan</a>",
+            "TITLE": "<a href='/health-insurance/short-term-health-insurance' class='inline-link'>Short-Term Health Insurance Plan",
             "DESC": "Temporary, limited coverage, ideal for those between jobs or waiting for other insurance. Offers fewer benefits than traditional plans."
           },
           {
@@ -33369,7 +33472,7 @@
     "FAMILY_VS_INDIVIDUAL": {
       "HEADER": {
         "TITLE": "ACA / Marketplace Plan vs. Other Health Insurance Options in Texas",
-        "DESC": "ACA / Marketplace plans offer comprehensive health coverage with essential benefits, subsidy eligibility, and protection for pre-existing conditions. Compared to employer plans, Medicaid, <a class='inline-link' href=/health-insurance/aca-marketplace-plans'>Medicare,</a> and <a class='inline-link' href='/health-insurance/short-term-health-insurance'>short-term insurance,</a> ACA plans provide flexible options for individuals and families who need reliable healthcare coverage without relying on employer-sponsored or government program eligibility."
+        "DESC": "ACA / Marketplace plans offer comprehensive health coverage with essential benefits, subsidy eligibility, and protection for pre-existing conditions. Compared to employer plans, Medicaid, <a class='inline-link' href=/health-insurance/medicare-supplement-medigap-insurance'>Medicare,</a> and <a class='inline-link' href='https:/health-insurance/short-term-health-insurance'>short-term insurance,</a> ACA plans provide flexible options for individuals and families who need reliable healthcare coverage without relying on employer-sponsored or government program eligibility."
       },
       "TABLE": {
         "COLUMNS": {
@@ -34294,7 +34397,7 @@
       "STEPS": {
         "STEP_1": {
           "TITLE": "Step 1: Get Your Free Comparison Quote",
-          "DESCRIPTION": "Start by <a href='/free-quote' class='inline-link'>requesting a free quote </a> from A-State Insurance. We compare multiple surety options in Texas to quickly find you better performance and payment bond rates based on your project, credit profile, and contractor history."
+          "DESCRIPTION": "Start by <a href='/get-a-quote' class='inline-link'>requesting a free quote </a> from A-State Insurance. We compare multiple surety options in Texas to quickly find you better performance and payment bond rates based on your project, credit profile, and contractor history."
         },
         "STEP_2": {
           "TITLE": "Step 2: Pick Your Plan and Activate",
@@ -34874,7 +34977,7 @@
       "STEPS": {
         "STEP_1": {
           "TITLE": "Step 1: Get Your Free Comparison Quote",
-          "DESCRIPTION": "Start by <a href='/free-quote' class='inline-link'>requesting a free quote </a>, where your current bond details are reviewed. This helps compare your existing coverage with new surety options, ensuring you understand potential savings, better terms, and improved protection before making any decision."
+          "DESCRIPTION": "Start by <a href='/get-a-quote' class='inline-link'>requesting a free quote </a>, where your current bond details are reviewed. This helps compare your existing coverage with new surety options, ensuring you understand potential savings, better terms, and improved protection before making any decision."
         },
         "STEP_2": {
           "TITLE": "Step 2: Pick Your Plan and Activate",
@@ -35961,7 +36064,7 @@
       "STEPS": {
         "STEP_1": {
           "TITLE": "Step 1: Get Your Free Comparison Quote",
-          "DESCRIPTION": "Start by <a href='/free-quote' class='inline-link'>requesting a free quote </a> from A-State Insurance. Our team reviews your current notary bond details and compares multiple Texas carriers to find better pricing and coverage options tailored to your needs. This step helps you understand potential savings and improvements before making any changes."
+          "DESCRIPTION": "Start by <a href='/get-a-quote' class='inline-link'>requesting a free quote </a> from A-State Insurance. Our team reviews your current notary bond details and compares multiple Texas carriers to find better pricing and coverage options tailored to your needs. This step helps you understand potential savings and improvements before making any changes."
         },
         "STEP_2": {
           "TITLE": "Step 2: Pick Your Plan and Activate",
@@ -39002,8 +39105,8 @@
         "ROW_11": "Local Knowledge",
         "ROW_11_INDEPENDENT": "Texas-based agents with local market expertise",
         "ROW_11_CAPTIVE": "May be national agents with no local context",
-        "ROW_12": "Multilingual Support",
-        "ROW_12_INDEPENDENT": "Multi-language support",
+        "ROW_12": "Multilingual Support"
+        ,"ROW_12_INDEPENDENT": "Multi-language support",
         "ROW_12_CAPTIVE": "Varies by agent — not guaranteed"
       }
     },
@@ -39045,7 +39148,7 @@
     "BANNER": {
       "LOCATION": "Houston",
       "CHIPS": {
-        "ACCIDENT_ONLY": "Personal Car",
+       "ACCIDENT_ONLY": "Personal Car",
         "ACCIDENT_ILLNESS": "Commercial Auto",
         "COMPREHENSIVE": "SR-22",
         "WELLNESS": "Rideshare",
@@ -39150,12 +39253,7 @@
         ["Briar Forest", "Carverdale", "Central Northwest", "Central Southwest"],
         ["Clear Lake", "Clinton Park", "Denver Harbor", "Downtown"],
         ["East Houston", "East Little York", "Eastex / Jensen", "Edgebrook"],
-        [
-          "El Dorado / Oates Prairie",
-          "Eldridge / West Oaks",
-          "Fairbanks / NW Crossing",
-          "Fondren Gardens"
-        ],
+        ["El Dorado / Oates Prairie", "Eldridge / West Oaks", "Fairbanks / NW Crossing", "Fondren Gardens"],
         ["Fort Bend / Houston", "Fourth Ward", "Golfcrest / Bellfort", "Greater Eastwood"],
         ["Greater Fifth Ward", "Greater Greenspoint", "Greater Heights", "Greater Hobby Area"],
         ["Greater Inwood", "Greater Meyerland", "Greater OST / South Union", "Greater Third Ward"],
@@ -39169,12 +39267,7 @@
         ["Northside / Northline", "Park Place", "Pecan Park", "Pleasantville Area"],
         ["Second Ward", "Settegast", "Sharpstown", "South Acres / Crestmont"],
         ["South Belt / Ellington", "South Main", "South Park", "Spring Branch Central"],
-        [
-          "Trinity / Houston Gardens",
-          "University Place",
-          "Washington Ave / Memorial",
-          "Westbranch"
-        ],
+        ["Trinity / Houston Gardens", "University Place", "Washington Ave / Memorial", "Westbranch"],
         ["Westbury", "Westchase", "Westwood", "Willowbrook"]
       ]
     },
@@ -41348,7 +41441,7 @@
     "BRAND_COPY": "Texas's independent insurance agency, serving individuals, families, and businesses across the state for 5+ years. We shop 50+ carriers so you get the best coverage at the best price.",
     "SLOGAN": "We protect what matters to you.",
     "INSURANCE_MENU": [
-      {
+      { 
         "TITLE": "Vehicle Insurance",
         "ITEMS": [
           {
@@ -41643,7 +41736,9 @@
       ],
       "HOURS": "Mon – Sat: 9AM – 7PM | Sunday: Closed",
       "EMAIL": "save@astateinsurance.com",
-      "PHONE": ["(713) 357-7771"]
+      "PHONE": [
+        "(713) 357-7771"
+      ]
     },
     "POLICIES": {
       "PRIVACY": "Privacy Policy",
