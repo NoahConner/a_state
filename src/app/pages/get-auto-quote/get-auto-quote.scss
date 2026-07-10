@@ -7,22 +7,29 @@
 
     .container {
       display: flex;
-      align-items: end;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
       height: 100%;
+      padding-top: 0;
+      padding-bottom: 6rem;
 
       .h1 {
         color: #fff22f;
         font-weight: 600;
         font-size: 3rem;
-        padding-right: 35rem;
-        margin-bottom: 5rem;
+        line-height: 1.25;
+        max-width: 50rem;
+        margin-bottom: 1rem;
       }
 
       .heroDesc {
         font-size: 1.2rem;
         color: #fff;
         font-weight: 400;
-        margin-top: 1rem;
+        line-height: 1.7;
+        max-width: 44rem;
+        margin: 0;
       }
     }
   }
@@ -412,8 +419,10 @@
       height: 22rem;
 
       .container {
+        padding-bottom: 4rem;
+
         .h1 {
-          padding-right: 14rem;
+          max-width: 40rem;
         }
       }
     }
@@ -426,13 +435,19 @@
       height: 22rem;
 
       .container {
-        align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding-bottom: 3rem;
 
         .h1 {
-          padding-right: 0rem;
-          margin-bottom: 0;
-          text-align: center;
+          max-width: 100%;
+          margin-bottom: 1rem;
+          text-align: left;
+        }
+
+        .heroDesc {
+          max-width: 100%;
+          text-align: left;
         }
       }
     }
@@ -448,11 +463,18 @@
 @media only screen and (max-width: 540px) {
   .quoteMain {
     .topBanner {
-      height: 15rem;
+      height: 18rem;
 
       .container {
+        padding-bottom: 2.5rem;
+
         .h1 {
           font-size: 2rem;
+        }
+
+        .heroDesc {
+          font-size: 1rem;
+          line-height: 1.5;
         }
       }
     }
