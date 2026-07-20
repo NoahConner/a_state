@@ -86,6 +86,22 @@ import { LubbockTx } from './pages/auto-insurance/lubbock-tx/lubbock-tx';
 import { LaredoTx } from './pages/auto-insurance/laredo-tx/laredo-tx';
 import { IrvingTx } from './pages/auto-insurance/irving-tx/irving-tx';
 import { GarlandTx } from './pages/auto-insurance/garland-tx/garland-tx';
+import { FriscoTx } from './pages/auto-insurance/frisco-tx/frisco-tx';
+import { MckinneyTx } from './pages/auto-insurance/mckinney-tx/mckinney-tx';
+import { AmarilloTx } from './pages/auto-insurance/amarillo-tx/amarillo-tx';
+import { GrandPrairieTx } from './pages/auto-insurance/grand-prairie-tx/grand-prairie-tx';
+import { BrownsvilleTx } from './pages/auto-insurance/brownsville-tx/brownsville-tx';
+import { KilleenTx } from './pages/auto-insurance/killeen-tx/killeen-tx';
+import { PasadenaTx } from './pages/auto-insurance/pasadena-tx/pasadena-tx';
+import { DentonTx } from './pages/auto-insurance/denton-tx/denton-tx';
+import { MesquiteTx } from './pages/auto-insurance/mesquite-tx/mesquite-tx';
+import { McallenTx } from './pages/auto-insurance/mcallen-tx/mcallen-tx';
+import { WacoTx } from './pages/auto-insurance/waco-tx/waco-tx';
+import { MidlandTx } from './pages/auto-insurance/midland-tx/midland-tx';
+import { CarrolltonTx } from './pages/auto-insurance/carrollton-tx/carrollton-tx';
+import { LewisvilleTx } from './pages/auto-insurance/lewisville-tx/lewisville-tx';
+import { AbileneTx } from './pages/auto-insurance/abilene-tx/abilene-tx';
+import { RoundRockTx } from './pages/auto-insurance/round-rock-tx/round-rock-tx';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -323,6 +339,22 @@ const routes: Routes = [
       { path: 'laredo-tx', component: LaredoTx, data: { metaPage: 'laredoTx' } },
       { path: 'irving-tx', component: IrvingTx, data: { metaPage: 'irvingTx' } },
       { path: 'garland-tx', component: GarlandTx, data: { metaPage: 'garlandTx' } },
+      { path: 'frisco-tx', component: FriscoTx, data: { metaPage: 'friscoTx' } },
+      { path: 'mckinney-tx', component: MckinneyTx, data: { metaPage: 'mckinneyTx' } },
+      { path: 'amarillo-tx', component: AmarilloTx, data: { metaPage: 'amarilloTx' } },
+      { path: 'grand-prairie-tx', component: GrandPrairieTx, data: { metaPage: 'grandPrairieTx' } },
+      { path: 'brownsville-tx', component: BrownsvilleTx, data: { metaPage: 'brownsvilleTx' } },
+      { path: 'killeen-tx', component: KilleenTx, data: { metaPage: 'killeenTx' } },
+      { path: 'pasadena-tx', component: PasadenaTx, data: { metaPage: 'pasadenaTx' } },
+      { path: 'denton-tx', component: DentonTx, data: { metaPage: 'dentonTx' } },
+      { path: 'mesquite-tx', component: MesquiteTx, data: { metaPage: 'mesquiteTx' } },
+      { path: 'mcallen-tx', component: McallenTx, data: { metaPage: 'mcallenTx' } },
+      { path: 'waco-tx', component: WacoTx, data: { metaPage: 'wacoTx' } },
+      { path: 'midland-tx', component: MidlandTx, data: { metaPage: 'midlandTx' } },
+      { path: 'carrollton-tx', component: CarrolltonTx, data: { metaPage: 'carrolltonTx' } },
+      { path: 'lewisville-tx', component: LewisvilleTx, data: { metaPage: 'lewisvilleTx' } },
+      { path: 'abilene-tx', component: AbileneTx, data: { metaPage: 'abileneTx' } },
+      { path: 'round-rock-tx', component: RoundRockTx, data: { metaPage: 'roundRockTx' } },
       { path: 'austin-tx', component: AustinTx, data: { metaPage: 'austinTx' } },
       { path: 'fort-worth-tx', component: FortWorthTx, data: { metaPage: 'fortWorthTx' } },
       { path: 'el-paso-tx', component: ElPasoTx, data: { metaPage: 'elPasoTx' } },
@@ -524,6 +556,22 @@ const routes: Routes = [
           { path: 'laredo-tx', component: LaredoTx, data: { metaPage: 'laredoTx' } },
           { path: 'irving-tx', component: IrvingTx, data: { metaPage: 'irvingTx' } },
           { path: 'garland-tx', component: GarlandTx, data: { metaPage: 'garlandTx' } },
+          { path: 'frisco-tx', component: FriscoTx, data: { metaPage: 'friscoTx' } },
+          { path: 'mckinney-tx', component: MckinneyTx, data: { metaPage: 'mckinneyTx' } },
+          { path: 'amarillo-tx', component: AmarilloTx, data: { metaPage: 'amarilloTx' } },
+          { path: 'grand-prairie-tx', component: GrandPrairieTx, data: { metaPage: 'grandPrairieTx' } },
+          { path: 'brownsville-tx', component: BrownsvilleTx, data: { metaPage: 'brownsvilleTx' } },
+          { path: 'killeen-tx', component: KilleenTx, data: { metaPage: 'killeenTx' } },
+          { path: 'pasadena-tx', component: PasadenaTx, data: { metaPage: 'pasadenaTx' } },
+          { path: 'denton-tx', component: DentonTx, data: { metaPage: 'dentonTx' } },
+      { path: 'mesquite-tx', component: MesquiteTx, data: { metaPage: 'mesquiteTx' } },
+      { path: 'mcallen-tx', component: McallenTx, data: { metaPage: 'mcallenTx' } },
+      { path: 'waco-tx', component: WacoTx, data: { metaPage: 'wacoTx' } },
+      { path: 'midland-tx', component: MidlandTx, data: { metaPage: 'midlandTx' } },
+      { path: 'carrollton-tx', component: CarrolltonTx, data: { metaPage: 'carrolltonTx' } },
+      { path: 'lewisville-tx', component: LewisvilleTx, data: { metaPage: 'lewisvilleTx' } },
+      { path: 'abilene-tx', component: AbileneTx, data: { metaPage: 'abileneTx' } },
+      { path: 'round-rock-tx', component: RoundRockTx, data: { metaPage: 'roundRockTx' } },
           { path: 'austin-tx', component: AustinTx, data: { metaPage: 'austinTx' } },
           { path: 'fort-worth-tx', component: FortWorthTx, data: { metaPage: 'fortWorthTx' } },
           { path: 'el-paso-tx', component: ElPasoTx, data: { metaPage: 'elPasoTx' } },
@@ -1111,6 +1159,70 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   garlandTx: {
     en: 'auto-insurance/garland-tx',
     es: 'seguros-de-auto/garland-tx',
+  },
+  friscoTx: {
+    en: 'auto-insurance/frisco-tx',
+    es: 'seguros-de-auto/frisco-tx',
+  },
+  mckinneyTx: {
+    en: 'auto-insurance/mckinney-tx',
+    es: 'seguros-de-auto/mckinney-tx',
+  },
+  amarilloTx: {
+    en: 'auto-insurance/amarillo-tx',
+    es: 'seguros-de-auto/amarillo-tx',
+  },
+  grandPrairieTx: {
+    en: 'auto-insurance/grand-prairie-tx',
+    es: 'seguros-de-auto/grand-prairie-tx',
+  },
+  brownsvilleTx: {
+    en: 'auto-insurance/brownsville-tx',
+    es: 'seguros-de-auto/brownsville-tx',
+  },
+  killeenTx: {
+    en: 'auto-insurance/killeen-tx',
+    es: 'seguros-de-auto/killeen-tx',
+  },
+  pasadenaTx: {
+    en: 'auto-insurance/pasadena-tx',
+    es: 'seguros-de-auto/pasadena-tx',
+  },
+  dentonTx: {
+    en: 'auto-insurance/denton-tx',
+    es: 'seguros-de-auto/denton-tx',
+  },
+  mesquiteTx: {
+    en: 'auto-insurance/mesquite-tx',
+    es: 'seguros-de-auto/mesquite-tx',
+  },
+  mcallenTx: {
+    en: 'auto-insurance/mcallen-tx',
+    es: 'seguros-de-auto/mcallen-tx',
+  },
+  wacoTx: {
+    en: 'auto-insurance/waco-tx',
+    es: 'seguros-de-auto/waco-tx',
+  },
+  midlandTx: {
+    en: 'auto-insurance/midland-tx',
+    es: 'seguros-de-auto/midland-tx',
+  },
+  carrolltonTx: {
+    en: 'auto-insurance/carrollton-tx',
+    es: 'seguros-de-auto/carrollton-tx',
+  },
+  lewisvilleTx: {
+    en: 'auto-insurance/lewisville-tx',
+    es: 'seguros-de-auto/lewisville-tx',
+  },
+  abileneTx: {
+    en: 'auto-insurance/abilene-tx',
+    es: 'seguros-de-auto/abilene-tx',
+  },
+  roundRockTx: {
+    en: 'auto-insurance/round-rock-tx',
+    es: 'seguros-de-auto/round-rock-tx',
   },
   austinTx: {
     en: 'auto-insurance/austin-tx',

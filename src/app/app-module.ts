@@ -111,6 +111,22 @@ import { LubbockTx } from './pages/auto-insurance/lubbock-tx/lubbock-tx';
 import { LaredoTx } from './pages/auto-insurance/laredo-tx/laredo-tx';
 import { IrvingTx } from './pages/auto-insurance/irving-tx/irving-tx';
 import { GarlandTx } from './pages/auto-insurance/garland-tx/garland-tx';
+import { FriscoTx } from './pages/auto-insurance/frisco-tx/frisco-tx';
+import { MckinneyTx } from './pages/auto-insurance/mckinney-tx/mckinney-tx';
+import { AmarilloTx } from './pages/auto-insurance/amarillo-tx/amarillo-tx';
+import { GrandPrairieTx } from './pages/auto-insurance/grand-prairie-tx/grand-prairie-tx';
+import { BrownsvilleTx } from './pages/auto-insurance/brownsville-tx/brownsville-tx';
+import { KilleenTx } from './pages/auto-insurance/killeen-tx/killeen-tx';
+import { PasadenaTx } from './pages/auto-insurance/pasadena-tx/pasadena-tx';
+import { DentonTx } from './pages/auto-insurance/denton-tx/denton-tx';
+import { MesquiteTx } from './pages/auto-insurance/mesquite-tx/mesquite-tx';
+import { McallenTx } from './pages/auto-insurance/mcallen-tx/mcallen-tx';
+import { WacoTx } from './pages/auto-insurance/waco-tx/waco-tx';
+import { MidlandTx } from './pages/auto-insurance/midland-tx/midland-tx';
+import { CarrolltonTx } from './pages/auto-insurance/carrollton-tx/carrollton-tx';
+import { LewisvilleTx } from './pages/auto-insurance/lewisville-tx/lewisville-tx';
+import { AbileneTx } from './pages/auto-insurance/abilene-tx/abilene-tx';
+import { RoundRockTx } from './pages/auto-insurance/round-rock-tx/round-rock-tx';
 
 export function initializeTranslations(
   translate: TranslateService,
@@ -215,6 +231,22 @@ export function initializeTranslations(
     LaredoTx,
     IrvingTx,
     GarlandTx,
+    FriscoTx,
+    MckinneyTx,
+    AmarilloTx,
+    GrandPrairieTx,
+    BrownsvilleTx,
+    KilleenTx,
+    PasadenaTx,
+    DentonTx,
+    MesquiteTx,
+    McallenTx,
+    WacoTx,
+    MidlandTx,
+    CarrolltonTx,
+    LewisvilleTx,
+    AbileneTx,
+    RoundRockTx,
     PhoneFormatDirective,
     ChipNavigationDirective,
     BannerButtonNoRedirectDirective,
