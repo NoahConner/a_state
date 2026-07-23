@@ -66,25 +66,35 @@
   },
   "HOME": {
     "BANNER": {
-      "TITLE_LINE1": "Texas Insurance Made Simple –",
-      "TITLE_LINE2": "Coverage for Everyone",
+      "TITLE_LINE1": "Texas's",
+      "TITLE_LINE2": "Independent",
+      "TITLE_LINE3": "Insurance Agency",
       "CHIPS": {
         "AUTO": "Auto",
         "HOMEOWNERS": "Homeowners",
         "COMMERCIAL": "Commercial",
         "LIFE": "Life",
         "HEALTH": "Health",
-        "SURETY": "Surety Bonds"
+        "SURETY": "Other"
       },
       "FORM": {
         "FULL_NAME": "Full Name",
         "PHONE": "Phone Number",
-        "BUTTON": "Get a Quote"
+        "BUTTON": "Get a Quote",
+        "LOADING": "Loading..."
       }
+    },
+    "TRUST_BADGES": {
+      "GOOGLE_RATING": "4.9 Google Rating",
+      "LICENSED": "Licensed in Texas",
+      "INDEPENDENT": "Independent (Not Captive)",
+      "CARRIERS": "50+ Carriers",
+      "SPANISH": "Hablamos Español"
     },
     "WHY_CHOOSE": {
       "HEADING": "Why Texans Choose",
-      "HEADING_STRONG": "A-State Insurance",
+      "HEADING_STRONG": "&nbsp;A-State Insurance",
+      "SUBHEADING": "<span>Independent.</span><span>Local.</span><span>On Your Side.</span>",
       "CARD1": {
         "TITLE": "Texas Licensed Brokers",
         "DESC": "Our insurance agency compares trusted carriers and guides you to the right, reliable coverage at the best rates."
@@ -94,8 +104,9 @@
         "DESC": "A supportive insurance agency in Texas that genuinely respects Hispanic and Latino communities, culture, and priorities."
       },
       "CARD3": {
-        "TITLE": "20+ Years Serving Texans",
-        "DESC": "Over two decades of experience protecting Texas families, their homes, vehicles, businesses, and personal well-being."
+        "TITLE": "5+ Years Serving Texans",
+        "STAT": "5+",
+        "DESC": "Years of experience protecting Texas families, their homes, vehicles, businesses, and personal well-being."
       },
       "CARD4": {
         "TITLE": "Custom Coverage Plans",
@@ -108,12 +119,20 @@
       "CARD6": {
         "TITLE": "Multilingual Agents",
         "DESC": "Professional multilingual agents explain every option clearly in English, Spanish, and Hindi, ensuring understanding and confidence."
+      },
+      "CARD7": {
+        "TITLE": "50+ Carriers",
+        "DESC": "Access to over 50 top-rated carriers means we shop the market to find you the best coverage at the best price."
+      },
+      "CARD8": {
+        "TITLE": "No Carrier Bias — Ever",
+        "DESC": "We work for you, not one insurance company, so you always get honest, unbiased advice."
       }
     },
     "INSURANCE_SOLUTIONS": {
-      "TITLE": "Our Insurance Solutions",
+      "TITLE": "<strong>Insurance</strong> Coverage for <span class='highlight-red'>Every Texan</span>",
       "DESC1": " A-State Insurance offers customized insurance coverage for homes, vehicles, health, life, businesses, and bonds. With multilingual support, multiple carrier options, and personalized guidance, we make choosing the right plan simple, reliable, and stress-free for everyone. Trust us to protect what matters most to you and your family.",
-      "SEE_ALL": "See All Services",
+      "GET_A_QUOTE": "Get A Quote",
       "AUTO": {
         "TITLE": "Auto Insurance",
         "DESC": "From daily commutes to Texas road trips, the right auto coverage keeps the focus on the drive. It’s about finding reliable protection for you and your passengers."
@@ -137,13 +156,33 @@
       "SURETY": {
         "TITLE": "Surety Bonds",
         "DESC": "Surety bonds play a vital role in building professional trust. Having the right bond in place helps Texas businesses meet legal and contract requirements."
+      },
+      "SR22": {
+        "TITLE": "SR-22 / Non-Standard",
+        "DESC": "From daily commutes to Texas road trips, the right auto coverage keeps the focus on the drive."
+      },
+      "RENTERS": {
+        "TITLE": "Renters Insurance",
+        "DESC": "Coverage for your belongings and liability can help you feel at home, wherever you rent."
       }
     },
     "EVERY_STORY": {
-      "TITLE_LINE1": "Every Story. Every Language.",
-      "TITLE_LINE2": "Every Texan Protected.",
+      "TITLE_LINE1": "Every Story.",
+      "TITLE_LINE2": "Every Language.",
+      "TITLE_LINE3": "Every Texan Protected.",
       "PARA1": "At <a class='inline-link' href='/' target='_blank'>A-State Insurance</a>, we believe everyone deserves coverage that fits their life, budget, and unique needs. From families to business owners, first-time buyers to long-time policyholders, our team ensures you have access to reliable protection. We offer support in English, Spanish, and Hindi, with multilingual agents ready to guide you through every insurance option with expertise and care.",
       "PARA2": "As one of Texas's top insurance agencies, we understand the needs of the Hispanic and Latino communities and provide tailored support that respects their culture and priorities. No matter your background, situation, or type of insurance (auto, home, commercial, life, health, or bonds), we make it simple to find coverage that works for you. Our mission is to protect what matters most while making the process easy for every Texan."
+    },
+    "SIMPLE_STEPS": {
+      "TITLE": "Getting Covered Is Simple",
+      "SUBTITLE": "4 Steps",
+      "STEP1": { "LABEL": "Step 01", "TITLE": "Reach Out" },
+      "STEP2": { "LABEL": "Step 02", "TITLE": "Get Expert Advice" },
+      "STEP3": { "LABEL": "Step 03", "TITLE": "Pick Your Plan" },
+      "STEP4": { "LABEL": "Step 04", "TITLE": "You're Covered" }
+    },
+    "CARRIERS": {
+      "TITLE": "Trusted by 50+ Leading Insurance Carriers"
     },
     "WORKING_PROCESS": {
       "TITLE_LINE1": "Working With",
@@ -167,16 +206,21 @@
       }
     },
     "TESTIMONIALS": {
-      "TITLE_LINE1": "Hear From",
-      "TITLE_HIGHLIGHT": "Texans",
-      "TITLE_LINE2": "Like You",
+      "TITLE_LINE1": "What Texans Are Saying About",
+      "TITLE_HIGHLIGHT": "A-State Insurance",
+      "TITLE_LINE2": "",
+      "SATISFACTION": "100% Satisfied",
+      "PREVIOUS": "Previous testimonials",
+      "NEXT": "Next testimonials",
       "ITEMS": [
         {
           "NAME": "Valeria Esquivel",
+          "CITY": "Houston",
           "TEXT": "Honestly, I was dreading shopping for car insurance, but Marisol made it so easy. She didn't just dump a bunch of policies on me; she sat down and explained how each one protected my kids. It felt like getting advice from a neighbor who actually cares."
         },
         {
           "NAME": "Camila Castañeda",
+          "CITY": "San Antonio",
           "TEXT": "Buying our first home was a whirlwind, and the insurance part was honestly the most confusing. I called and spoke with Diego, who took the time to explain what 'replacement cost' actually meant for our little 1950s bungalow."
         },
         {
@@ -214,8 +258,8 @@
       ]
     },
     "COVERDBANNER": {
-      "TITLE": "Get Covered in Texas Today",
-      "DESC": "At <a class='inline-link white' href='/' target='_blank'>A-State Insurance</a>, we make protecting your home, car, business, or family simple and worry-free. Our experts compare multiple carriers to find coverage that fits your life perfectly. With clear guidance, multilingual support, and personalized service, we give Texans confidence. Insurance that fits your life, backed by experts who care, peace of mind starts here with A-State Insurance. You can call, email, text, fill out the form, or visit us in person. Getting the right protection has never been easier.",
+      "TITLE": "Get Your Free Texas Insurance Quote Today",
+      "DESC": "Protecting what matters most is simple with A-State Insurance. Whether you need auto, home, life, health, commercial insurance coverage, or surety bonds, our Texas insurance team is ready to guide you every step of the way. You can call, email, text, fill out our online form, or visit us in person anytime. We make finding the right insurance coverage easy, clear, and customized for every Texan, helping you feel confident and fully secure every day. Reach out to us today!",
       "FORM": {
         "BUTTON": "Get a Quote"
       }

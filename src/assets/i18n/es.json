@@ -62,8 +62,9 @@
   },
   "HOME": {
     "BANNER": {
-      "TITLE_LINE1": "Seguro en Texas Hecho Simple –",
-      "TITLE_LINE2": "Cobertura Para Todos",
+      "TITLE_LINE1": "La Agencia de Seguros",
+      "TITLE_LINE2": "Independiente de",
+      "TITLE_LINE3": "Texas",
       "CHIPS": {
         "AUTO": "Auto",
         "HOMEOWNERS": "Propietarios",
@@ -75,12 +76,21 @@
       "FORM": {
         "FULL_NAME": "Nombre Completo",
         "PHONE": "Número de Teléfono",
-        "BUTTON": "Obtener Cotización"
+        "BUTTON": "Obtener Cotización",
+        "LOADING": "Cargando..."
       }
+    },
+    "TRUST_BADGES": {
+      "GOOGLE_RATING": "4.9 Calificación en Google",
+      "LICENSED": "Licenciados en Texas",
+      "INDEPENDENT": "Independiente (No Cautivo)",
+      "CARRIERS": "50+ Aseguradoras",
+      "SPANISH": "Hablamos Español"
     },
     "WHY_CHOOSE": {
       "HEADING": "Por qué los texanos eligen",
       "HEADING_STRONG": "A-State Insurance",
+      "SUBHEADING": "<span>Independiente.</span><span>Local.</span><span>De su lado.</span>",
       "CARD1": {
         "TITLE": "Corredores con Licencia en Texas",
         "DESC": "Nuestra agencia compara aseguradoras confiables y lo guía hacia la cobertura correcta y confiable al mejor precio."
@@ -90,8 +100,9 @@
         "DESC": "Una agencia en Texas que respeta genuinamente a las comunidades hispanas y latinas, su cultura y prioridades."
       },
       "CARD3": {
-        "TITLE": "Más de 20 Años Sirviendo a Texas",
-        "DESC": "Más de dos décadas protegiendo a familias texanas, sus hogares, vehículos, negocios y bienestar personal."
+        "TITLE": "Más de 5 Años Sirviendo a Texas",
+        "STAT": "5+",
+        "DESC": "Años de experiencia protegiendo a familias texanas, sus hogares, vehículos, negocios y bienestar personal."
       },
       "CARD4": {
         "TITLE": "Planes de Cobertura Personalizados",
@@ -104,11 +115,20 @@
       "CARD6": {
         "TITLE": "Agentes Multilingües",
         "DESC": "Agentes profesionales explican cada opción claramente en inglés, español e hindi, garantizando confianza."
+      },
+      "CARD7": {
+        "TITLE": "Más de 50 Aseguradoras",
+        "DESC": "El acceso a más de 50 aseguradoras de primer nivel nos permite buscar en el mercado la mejor cobertura al mejor precio."
+      },
+      "CARD8": {
+        "TITLE": "Sin Sesgo de Aseguradora — Nunca",
+        "DESC": "Trabajamos para usted, no para una sola aseguradora, así que siempre recibe asesoría honesta e imparcial."
       }
     },
     "INSURANCE_SOLUTIONS": {
-      "TITLE": "Nuestras Soluciones de Seguro",
+      "TITLE": "<strong>Cobertura</strong> de Seguros para <span class='highlight-red'>Cada Texano</span>",
       "DESC1": "A-State Insurance ofrece cobertura de seguros personalizada para hogares, vehículos, salud, vida, negocios y fianzas. Con soporte multilingüe, múltiples opciones de compañías aseguradoras y orientación personalizada, hacemos que elegir el plan adecuado sea simple, confiable y libre de estrés para todos. Confíe en nosotros para proteger lo que más le importa a usted y a su familia.",
+      "GET_A_QUOTE": "Obtener una Cotización",
       "SEE_ALL": "Ver Todos los Servicios",
       "AUTO": {
         "TITLE": "Seguro de Auto",
@@ -133,13 +153,33 @@
       "SURETY": {
         "TITLE": "Fianzas (Surety Bonds)",
         "DESC": "Las fianzas son clave para generar confianza profesional y cumplir con requisitos legales y contractuales en Texas."
+      },
+      "SR22": {
+        "TITLE": "SR-22 / No Estándar",
+        "DESC": "Desde los viajes diarios hasta los recorridos por Texas, la cobertura de auto adecuada mantiene el enfoque en el camino."
+      },
+      "RENTERS": {
+        "TITLE": "Seguro para Inquilinos",
+        "DESC": "La cobertura para sus pertenencias y responsabilidad civil le ayuda a sentirse en casa, dondequiera que rente."
       }
     },
     "EVERY_STORY": {
-      "TITLE_LINE1": "Cada Historia. Cada Idioma.",
-      "TITLE_LINE2": "Cada Texano Protegido.",
+      "TITLE_LINE1": "Cada Historia.",
+      "TITLE_LINE2": "Cada Idioma.",
+      "TITLE_LINE3": "Cada Texano Protegido.",
       "PARA1": "En A-State Insurance, creemos que todos merecen una cobertura que se adapte a su vida, presupuesto y necesidades únicas. Desde familias hasta dueños de negocios, compradores por primera vez hasta asegurados de larga trayectoria, nuestro equipo garantiza protección confiable. Ofrecemos apoyo en inglés, español e hindi, con agentes multilingües listos para guiarlo con experiencia y atención.",
       "PARA2": "Como una de las principales agencias de seguros en Texas, entendemos las necesidades de las comunidades hispanas y latinas y brindamos apoyo personalizado que respeta su cultura y prioridades. Sin importar su situación o tipo de seguro (auto, hogar, comercial, vida, salud o fianzas), hacemos que encontrar la cobertura adecuada sea simple. Nuestra misión es proteger lo que más importa mientras hacemos el proceso fácil para cada texano."
+    },
+    "SIMPLE_STEPS": {
+      "TITLE": "Obtener Cobertura es Simple",
+      "SUBTITLE": "4 Pasos",
+      "STEP1": { "LABEL": "Paso 01", "TITLE": "Contáctenos" },
+      "STEP2": { "LABEL": "Paso 02", "TITLE": "Asesoría Experta" },
+      "STEP3": { "LABEL": "Paso 03", "TITLE": "Elija su Plan" },
+      "STEP4": { "LABEL": "Paso 04", "TITLE": "Está Cubierto" }
+    },
+    "CARRIERS": {
+      "TITLE": "Con la Confianza de Más de 50 Aseguradoras Líderes"
     },
     "WORKING_PROCESS": {
       "TITLE_LINE1": "Trabajar Con",
@@ -163,16 +203,21 @@
       }
     },
     "TESTIMONIALS": {
-      "TITLE_LINE1": "Escucha a",
-      "TITLE_HIGHLIGHT": "Texanos",
-      "TITLE_LINE2": "Como Tú",
+      "TITLE_LINE1": "Lo Que Dicen los Texanos Sobre",
+      "TITLE_HIGHLIGHT": "A-State Insurance",
+      "TITLE_LINE2": "",
+      "SATISFACTION": "100% Satisfecho",
+      "PREVIOUS": "Testimonios anteriores",
+      "NEXT": "Siguientes testimonios",
       "ITEMS": [
         {
           "NAME": "Valeria Esquivel",
+          "CITY": "Houston",
           "TEXT": "La verdad, me daba miedo buscar seguro de auto, pero Marisol lo hizo muy fácil. No solo me mostró muchas pólizas; se sentó conmigo y explicó cómo cada una protegía a mis hijos. Se sintió como recibir el consejo de una vecina que realmente se preocupa."
         },
         {
           "NAME": "Camila Castañeda",
+          "CITY": "San Antonio",
           "TEXT": "Comprar nuestra primera casa fue una locura, y la parte del seguro fue la más confusa. Llamé y hablé con Diego, quien se tomó el tiempo de explicarme qué significaba realmente el 'costo de reemplazo' para nuestra pequeña casa de los años 50."
         },
         {
@@ -211,7 +256,7 @@
     },
     "COVERDBANNER": {
       "TITLE": "Obtenga Cobertura en Texas Hoy",
-      "DESC": "En <a class='inline-link white' href='/' target='_blank'>A Seguros A-State,</a> hacemos que proteger su hogar, auto, negocio o familia sea simple y sin preocupaciones. Nuestros expertos comparan múltiples compañías para encontrar la cobertura que se adapte perfectamente a su vida. Con una guía clara, apoyo multilingüe y servicio personalizado, brindamos confianza a los texanos. Seguros que se ajustan a su vida, respaldados por expertos que se preocupan; su tranquilidad comienza aquí con Seguros A-State. Puede llamar, enviar un correo electrónico, mensaje de texto, completar nuestro formulario o visitarnos en persona. Obtener la protección adecuada nunca ha sido tan fácil.",
+      "DESC": "En <a class='inline-link' href='/' target='_blank'>A Seguros A-State,</a> hacemos que proteger su hogar, auto, negocio o familia sea simple y sin preocupaciones. Nuestros expertos comparan múltiples compañías para encontrar la cobertura que se adapte perfectamente a su vida. Con una guía clara, apoyo multilingüe y servicio personalizado, brindamos confianza a los texanos. Seguros que se ajustan a su vida, respaldados por expertos que se preocupan; su tranquilidad comienza aquí con Seguros A-State. Puede llamar, enviar un correo electrónico, mensaje de texto, completar nuestro formulario o visitarnos en persona. Obtener la protección adecuada nunca ha sido tan fácil.",
       "FORM": {
         "BUTTON": "Obtener Cotización"
       }
