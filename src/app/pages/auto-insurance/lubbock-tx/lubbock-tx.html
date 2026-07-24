@@ -56,7 +56,7 @@
             </h3>
             <ul class="toc-list list-unstyled mb-0">
               @for (item of tableOfContents; track item; let i = $index) {
-              <li class="toc-item">
+              <li class="toc-item" [class.active]="activeTocIndex === i">
                 <a class="toc-link" [href]="'#toc-section-' + (i + 1)" (click)="scrollToSection(i, $event)">
                   <span class="toc-text" [innerHTML]="item"></span>
                 </a>
