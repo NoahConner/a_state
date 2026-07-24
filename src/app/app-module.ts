@@ -127,6 +127,7 @@ import { CarrolltonTx } from './pages/auto-insurance/carrollton-tx/carrollton-tx
 import { LewisvilleTx } from './pages/auto-insurance/lewisville-tx/lewisville-tx';
 import { AbileneTx } from './pages/auto-insurance/abilene-tx/abilene-tx';
 import { RoundRockTx } from './pages/auto-insurance/round-rock-tx/round-rock-tx';
+import { PearlandTx } from './pages/auto-insurance/pearland-tx/pearland-tx';
 
 export function initializeTranslations(
   translate: TranslateService,
@@ -247,6 +248,7 @@ export function initializeTranslations(
     LewisvilleTx,
     AbileneTx,
     RoundRockTx,
+    PearlandTx,
     PhoneFormatDirective,
     ChipNavigationDirective,
     BannerButtonNoRedirectDirective,

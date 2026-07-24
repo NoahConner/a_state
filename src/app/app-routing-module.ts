@@ -102,6 +102,7 @@ import { CarrolltonTx } from './pages/auto-insurance/carrollton-tx/carrollton-tx
 import { LewisvilleTx } from './pages/auto-insurance/lewisville-tx/lewisville-tx';
 import { AbileneTx } from './pages/auto-insurance/abilene-tx/abilene-tx';
 import { RoundRockTx } from './pages/auto-insurance/round-rock-tx/round-rock-tx';
+import { PearlandTx } from './pages/auto-insurance/pearland-tx/pearland-tx';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -358,6 +359,7 @@ const routes: Routes = [
       { path: 'austin-tx', component: AustinTx, data: { metaPage: 'austinTx' } },
       { path: 'fort-worth-tx', component: FortWorthTx, data: { metaPage: 'fortWorthTx' } },
       { path: 'el-paso-tx', component: ElPasoTx, data: { metaPage: 'elPasoTx' } },
+      { path: 'pearland-tx', component: PearlandTx, data: { metaPage: 'pearlandTx' } },
 
     ],
   },
@@ -575,6 +577,7 @@ const routes: Routes = [
           { path: 'austin-tx', component: AustinTx, data: { metaPage: 'austinTx' } },
           { path: 'fort-worth-tx', component: FortWorthTx, data: { metaPage: 'fortWorthTx' } },
           { path: 'el-paso-tx', component: ElPasoTx, data: { metaPage: 'elPasoTx' } },
+          { path: 'pearland-tx', component: PearlandTx, data: { metaPage: 'pearlandTx' } },
 
 
         ],
@@ -1235,5 +1238,9 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   elPasoTx: {
     en: 'auto-insurance/el-paso-tx',
     es: 'seguros-de-auto/el-paso-tx',
+  },
+  pearlandTx: {
+    en: 'auto-insurance/pearland-tx',
+    es: 'seguros-de-auto/pearland-tx',
   },
 };

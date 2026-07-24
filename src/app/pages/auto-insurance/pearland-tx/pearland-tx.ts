@@ -5,12 +5,12 @@ import { Language } from '../../../services/language';
 import { QuoteLeadCaptureService } from '../../../services/quote-lead-capture.service';
 
 @Component({
-  selector: 'app-corpus-christi-tx',
+  selector: 'app-pearland-tx',
   standalone: false,
-  templateUrl: './corpus-christi-tx.html',
-  styleUrl: './corpus-christi-tx.scss',
+  templateUrl: './pearland-tx.html',
+  styleUrl: './pearland-tx.scss',
 })
-export class CorpusChristiTx implements AfterViewInit {
+export class PearlandTx implements AfterViewInit {
   @ViewChild('ratesSection') private ratesSectionRef?: ElementRef<HTMLElement>;
   @ViewChild('tocColumn') private tocColumnRef?: ElementRef<HTMLElement>;
   @ViewChild('tocCard') private tocCardRef?: ElementRef<HTMLElement>;
@@ -51,26 +51,21 @@ export class CorpusChristiTx implements AfterViewInit {
   compareRates: { label: string; values: string[]; highlighted: boolean }[] = [];
 
   monthlyRates = [
-    { company: '<a class="company-name inline-link" href="https://www.geico.com/" rel="nofollow" target="_blank">Geico</a>', minimum: '$52', fullCoverage: '$119' },
-    { company: '<a class="company-name inline-link" href="https://www.usaa.com/?akredirect=true" rel="nofollow" target="_blank">USAA</a>', minimum: '$53', fullCoverage: '$143' },
-    { company: '<a class="company-name inline-link" href="https://www.allstate.com/" rel="nofollow" target="_blank">Allstate</a>', minimum: '$58', fullCoverage: '$211' },
-    { company: '<a class="company-name inline-link" href="https://texasfarmbureau.org/" rel="nofollow" target="_blank">Texas Farm Bureau</a>', minimum: '$68', fullCoverage: '$141' },
-    { company: '<a class="company-name inline-link" href="https://www.statefarm.com/" rel="nofollow" target="_blank">State Farm</a>', minimum: '$68', fullCoverage: '$132' },
-    { company: '<a class="company-name inline-link" href="https://www.progressive.com/" rel="nofollow" target="_blank">Progressive</a>', minimum: '$76', fullCoverage: '$184' },
-    { company: '<a class="company-name inline-link" href="https://www.nationwide.com/" rel="nofollow" target="_blank">Nationwide</a>', minimum: '$82', fullCoverage: '$152' },
+    { company: '<a class="company-name inline-link" href="https://www.usaa.com/?akredirect=true" rel="nofollow" target="_blank">USAA</a>', minimum: '$54', fullCoverage: '$168' },
+    { company: '<a class="company-name inline-link" href="https://texasfarmbureau.org/" rel="nofollow" target="_blank">Texas Farm Bureau</a>', minimum: '$57', fullCoverage: '$149' },
+    { company: '<a class="company-name inline-link" href="https://www.statefarm.com/" rel="nofollow" target="_blank">State Farm</a>', minimum: '$58', fullCoverage: '$154' },
+    { company: '<a class="company-name inline-link" href="https://www.redpointinsurance.com/" rel="nofollow" target="_blank">Redpoint County Mutual</a>', minimum: '$61', fullCoverage: '$178' },
+    { company: '<a class="company-name inline-link" href="https://www.mercuryinsurance.com/" rel="nofollow" target="_blank">Mercury</a>', minimum: '$70', fullCoverage: '$141' },
+    { company: '<a class="company-name inline-link" href="https://www.aaa.com/" rel="nofollow" target="_blank">AAA</a>', minimum: '$78', fullCoverage: '$214' },
+    { company: '<a class="company-name inline-link" href="https://www.progressive.com/" rel="nofollow" target="_blank">Progressive</a>', minimum: '$79', fullCoverage: '$225' },
+    { company: '<a class="company-name inline-link" href="https://www.allstate.com/" rel="nofollow" target="_blank">Allstate</a>', minimum: '$167', fullCoverage: '$484' },
+    { company: '<a class="company-name inline-link" href="https://www.farmers.com/" rel="nofollow" target="_blank">Farmers</a>', minimum: '$172', fullCoverage: '$446' },
   ];
 
   zipRateRows = [
-    { zipCode: '78416', neighborhood: 'Westwood', monthlyRate: '$123', highlighted: false },
-    { zipCode: '78410', neighborhood: 'Calallen', monthlyRate: '$137', highlighted: true },
-    { zipCode: '78408', neighborhood: 'Molina', monthlyRate: '$139', highlighted: false },
-    { zipCode: '78413', neighborhood: 'Schanen Estates', monthlyRate: '$154', highlighted: true },
-    { zipCode: '78411', neighborhood: 'Lamar Park', monthlyRate: '$160', highlighted: false },
-    { zipCode: '78412', neighborhood: 'Pharaoh Valley', monthlyRate: '$162', highlighted: true },
-    { zipCode: '78415', neighborhood: 'Del Mar', monthlyRate: '$163', highlighted: false },
-    { zipCode: '78405', neighborhood: 'Westside', monthlyRate: '$172', highlighted: true },
-    { zipCode: '78418', neighborhood: 'Flour Bluff', monthlyRate: '$175', highlighted: false },
-    { zipCode: '78414', neighborhood: 'Kings Crossing', monthlyRate: '$176', highlighted: true },
+    { zipCode: '77566', neighborhood: 'Lake Jackson', monthlyRate: '$87', highlighted: false },
+    { zipCode: '77581', neighborhood: 'East Pearland', monthlyRate: '$153', highlighted: true },
+    { zipCode: '77584', neighborhood: 'West Pearland', monthlyRate: '$171', highlighted: false },
   ];
 
   faqItems: { question: string; answer: string }[] = [];
@@ -86,12 +81,12 @@ export class CorpusChristiTx implements AfterViewInit {
   }
 
   private buildTableOfContents() {
-    const city = this.translate.instant('CORPUS_CHRISTI_TX.TABLE_OF_CONTENTS.LOCATION');
+    const city = this.translate.instant('PEARLAND_TX.TABLE_OF_CONTENTS.LOCATION');
     const cityWithState = `${city}${this.translate.instant('GLOBAL_TX.LOCATION.STATE_SUFFIX')}`;
     this.ratesHeading = `${this.translate.instant('GLOBAL_TX.RATES.HEADING_PREFIX')} ${cityWithState}?`;
     this.averageMonthlyRateHeading = `${this.translate.instant('GLOBAL_TX.RATES.AVERAGE_MONTHLY_RATE_PREFIX')} ${city} ${this.translate.instant('GLOBAL_TX.RATES.AVERAGE_MONTHLY_RATE_SUFFIX')}`;
     this.comparisonHeading = `${this.translate.instant('GLOBAL_TX.RATES.COMPARISON_HEADING_PREFIX')} ${city} ${this.translate.instant('GLOBAL_TX.RATES.COMPARISON_HEADING_SUFFIX')}`;
-    this.zipCodesHeading = `${this.translate.instant('GLOBAL_TX.RATES.ZIP_CODES_HEADING_PREFIX')} ${this.translate.instant('CORPUS_CHRISTI_TX.RATES.ZIP_LOCATION_POSSESSIVE')} ${this.translate.instant('GLOBAL_TX.RATES.ZIP_CODES_HEADING_SUFFIX')}`;
+    this.zipCodesHeading = `${this.translate.instant('GLOBAL_TX.RATES.ZIP_CODES_HEADING_PREFIX')} ${this.translate.instant('PEARLAND_TX.RATES.ZIP_LOCATION_POSSESSIVE')} ${this.translate.instant('GLOBAL_TX.RATES.ZIP_CODES_HEADING_SUFFIX')}`;
     this.compareRateColumns = [
       city,
       this.translate.instant('GLOBAL_TX.RATES.COMPARISON_TABLE.COLUMNS.TEXAS_AVERAGE'),
@@ -101,7 +96,7 @@ export class CorpusChristiTx implements AfterViewInit {
       {
         label: this.translate.instant('GLOBAL_TX.RATES.COMPARISON_TABLE.ROWS.MINIMUM_COVERAGE.LABEL'),
         values: [
-          this.translate.instant('CORPUS_CHRISTI_TX.RATES.COMPARISON_TABLE.MINIMUM'),
+          this.translate.instant('PEARLAND_TX.RATES.COMPARISON_TABLE.MINIMUM'),
           this.translate.instant('GLOBAL_TX.RATES.COMPARISON_TABLE.ROWS.MINIMUM_COVERAGE.TEXAS_VALUE'),
           this.translate.instant('GLOBAL_TX.RATES.COMPARISON_TABLE.ROWS.MINIMUM_COVERAGE.NATIONAL_VALUE'),
         ],
@@ -110,7 +105,7 @@ export class CorpusChristiTx implements AfterViewInit {
       {
         label: this.translate.instant('GLOBAL_TX.RATES.COMPARISON_TABLE.ROWS.FULL_COVERAGE.LABEL'),
         values: [
-          this.translate.instant('CORPUS_CHRISTI_TX.RATES.COMPARISON_TABLE.FULL_COVERAGE'),
+          this.translate.instant('PEARLAND_TX.RATES.COMPARISON_TABLE.FULL_COVERAGE'),
           this.translate.instant('GLOBAL_TX.RATES.COMPARISON_TABLE.ROWS.FULL_COVERAGE.TEXAS_VALUE'),
           this.translate.instant('GLOBAL_TX.RATES.COMPARISON_TABLE.ROWS.FULL_COVERAGE.NATIONAL_VALUE'),
         ],
@@ -131,8 +126,8 @@ export class CorpusChristiTx implements AfterViewInit {
       `${this.wrapHighlight('GLOBAL_TX.TABLE_OF_CONTENTS.ITEMS.FAQ')} ${cityWithState}`,
     ];
 
-    this.faqItems = this.translate.instant('CORPUS_CHRISTI_TX.FAQ.ITEMS');
-    this.neighborhoodsRows = this.translate.instant('CORPUS_CHRISTI_TX.NEIGHBORHOODS.ROWS');
+    this.faqItems = this.translate.instant('PEARLAND_TX.FAQ.ITEMS');
+    this.neighborhoodsRows = this.translate.instant('PEARLAND_TX.NEIGHBORHOODS.ROWS');
   }
 
   getRoute(page: string) {

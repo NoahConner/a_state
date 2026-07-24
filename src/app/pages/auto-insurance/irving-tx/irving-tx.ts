@@ -144,6 +144,16 @@ export class IrvingTx implements AfterViewInit {
     setTimeout(() => this.updateTocStickyState());
   }
 
+  scrollToSection(index: number, event: Event) {
+    event.preventDefault();
+
+    if (typeof document === 'undefined') {
+      return;
+    }
+
+    document.getElementById(`toc-section-${index + 1}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
   async goToSelectedQuote(form: QuoteFormState) {
     if (form.isSubmitting) {
       return;

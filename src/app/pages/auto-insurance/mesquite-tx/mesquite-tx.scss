@@ -1,3 +1,120 @@
+h2 {
+  font-size: 36px !important;
+}
+
+.rates-meta,
+.rates-meta .source-label,
+.rates-meta .source-name,
+.rates-meta .updated-line,
+.rates-disclaimer {
+  font-size: 14px !important;
+}
+
+.penalties-grid-row .col-md-6:first-child .penalties-grid-cell {
+  font-weight: 700 !important;
+}
+
+.penalty-detail {
+  justify-content: flex-start !important;
+}
+
+::ng-deep .texassure-copy .inline-link {
+  text-decoration: underline !important;
+  color: #df4135 !important;
+}
+
+::ng-deep .risks__text .inline-link {
+  text-decoration: underline !important;
+  color: #df4135 !important;
+}
+
+.faq__decor {
+  pointer-events: none !important;
+}
+
+::ng-deep .espanol__text .inline-link {
+  text-decoration: underline !important;
+  color: #df4135 !important;
+}
+
+::ng-deep .cover-quote-shell__copy .inline-link,
+::ng-deep .rates-lead .inline-link,
+::ng-deep .lead-text .inline-link {
+  text-decoration: underline !important;
+  color: #df4135 !important;
+}
+
+.toc-link {
+  display: block;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+section[id^="toc-section-"] {
+  scroll-margin-top: 90px;
+}
+
+.faq__answer-inner {
+  padding-top: 20px !important;
+}
+
+.quote-option .radio-indicator {
+  width: 18px !important;
+  height: 18px !important;
+  border-radius: 50% !important;
+}
+
+.quote-option.selected .radio-indicator {
+  border-color: #1a1a1a !important;
+  background-color: #ffffff !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4.5 12.5l5 5L19.5 6.5' stroke='%231a1a1a' stroke-width='3.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+  background-size: 65% !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.quote-option.selected .radio-indicator::after {
+  display: none !important;
+}
+
+@media (min-width: 992px) {
+  .quote-options {
+    display: grid !important;
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+    justify-items: center !important;
+    gap: 0.6rem !important;
+  }
+
+  .quote-options .quote-option {
+    width: 100% !important;
+    flex: none !important;
+  }
+
+  .quote-options .quote-option-label {
+    min-height: 2.4rem !important;
+    align-items: flex-start !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .topBanner .container {
+    max-width: 1500px !important;
+  }
+
+  .topBanner .h1 {
+    font-size: clamp(2.8rem, 4.8vw, 5.25rem) !important;
+  }
+
+  .topBanner .banner-quote-card {
+    max-width: 1100px !important;
+  }
+}
+
+::ng-deep .rates-table .company-name {
+  text-decoration: underline !important;
+  color: #df4135 !important;
+}
+
 /* Hero Banner Section Start */
 .topBanner {
   background-image:
