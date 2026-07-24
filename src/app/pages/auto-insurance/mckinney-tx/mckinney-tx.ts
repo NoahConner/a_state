@@ -19,6 +19,7 @@ export class MckinneyTx implements AfterViewInit {
   readonly coveredForm = this.createQuoteFormState();
 
   tocCardStyles: Record<string, string> | null = null;
+  activeTocIndex = 0;
 
   constructor(
     public languageService: Language,
@@ -143,6 +144,16 @@ export class MckinneyTx implements AfterViewInit {
     setTimeout(() => this.updateTocStickyState());
   }
 
+  scrollToSection(index: number, event: Event) {
+    event.preventDefault();
+
+    if (typeof document === 'undefined') {
+      return;
+    }
+
+    document.getElementById(`toc-section-${index + 1}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
   async goToSelectedQuote(form: QuoteFormState) {
     if (form.isSubmitting) {
       return;
@@ -188,6 +199,30 @@ export class MckinneyTx implements AfterViewInit {
     };
   }
 
+  private updateActiveTocSection() {
+    if (typeof document === 'undefined') {
+      return;
+    }
+
+    const scrollPos = window.scrollY + 140;
+    let activeIndex = 0;
+
+    for (let i = 0; i < this.tableOfContents.length; i++) {
+      const section = document.getElementById(`toc-section-${i + 1}`);
+      if (section && section.offsetTop <= scrollPos) {
+        activeIndex = i;
+      }
+    }
+
+    this.activeTocIndex = activeIndex;
+
+    // Directly toggle the DOM class: the [class.active] binding stops
+    // reacting to state changes after SSR hydration for items inside
+    // an @for block, so we bypass Angular's binding here.
+    const items = this.tocColumnRef?.nativeElement.querySelectorAll('.toc-item');
+    items?.forEach((item, i) => item.classList.toggle('active', i === activeIndex));
+  }
+
   @HostListener('window:scroll')
   @HostListener('window:resize')
   updateTocStickyState() {
@@ -195,12 +230,14 @@ export class MckinneyTx implements AfterViewInit {
       return;
     }
 
+    this.updateActiveTocSection();
+
     const ratesSection = this.ratesSectionRef?.nativeElement;
     const tocColumn = this.tocColumnRef?.nativeElement;
     const tocCard = this.tocCardRef?.nativeElement;
     const tocStopSection = this.tocStopSectionRef?.nativeElement;
 
-    if (!ratesSection || !tocColumn || !tocCard || !tocStopSection || window.innerWidth <= 820) {
+    if (!ratesSection || !tocColumn || !tocCard || window.innerWidth <= 820) {
       this.tocCardStyles = null;
       return;
     }
@@ -208,25 +245,35 @@ export class MckinneyTx implements AfterViewInit {
     const stickyOffset = 24;
     const stopGap = 24;
     const scrollY = window.scrollY;
-    const columnTop = tocColumn.getBoundingClientRect().top + scrollY;
+    const columnRect = tocColumn.getBoundingClientRect();
+    const columnTop = columnRect.top + scrollY;
 
     if (scrollY + stickyOffset < columnTop) {
       this.tocCardStyles = null;
       return;
     }
 
-    const columnRect = tocColumn.getBoundingClientRect();
-    const stopRect = tocStopSection.getBoundingClientRect();
-    const cardHeight = tocCard.offsetHeight;
-    const stopTop = stopRect.top + scrollY;
-    const maxTop = stopTop - columnTop - cardHeight - stopGap;
-    const nextTop = scrollY - columnTop + stickyOffset;
-    const clampedTop = Math.max(0, Math.min(nextTop, maxTop));
+    if (tocStopSection) {
+      const stopTop = tocStopSection.getBoundingClientRect().top + scrollY;
+      const cardHeight = tocCard.offsetHeight;
+      const maxPageTop = stopTop - cardHeight - stopGap;
+
+      if (scrollY + stickyOffset > maxPageTop) {
+        this.tocCardStyles = {
+          position: 'absolute',
+          top: `${maxPageTop - columnTop}px`,
+          left: '0',
+          width: `${columnRect.width}px`,
+          zIndex: '10',
+        };
+        return;
+      }
+    }
 
     this.tocCardStyles = {
-      position: 'absolute',
-      top: `${clampedTop}px`,
-      left: '0',
+      position: 'fixed',
+      top: `${stickyOffset}px`,
+      left: `${columnRect.left}px`,
       width: `${columnRect.width}px`,
       zIndex: '10',
     };
