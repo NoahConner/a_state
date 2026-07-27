@@ -5,9 +5,8 @@
       <div class="topSub">
         <div class="topSub2">
           <h1 class="h1">
-            <span [innerHTML]="'GLOBAL_TX.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
             <span
-              [innerHTML]="(('ARLINGTON_TX.BANNER.LOCATION' | translate) + ('GLOBAL_TX.BANNER.TITLE_LINE2' | translate))">
+              [innerHTML]="(('GLOBAL_TX.BANNER.TITLE_LINE1' | translate) + ' ' + ('ARLINGTON_TX.BANNER.LOCATION' | translate) + ('GLOBAL_TX.BANNER.TITLE_LINE2' | translate))">
             </span> <br /> <span [innerHTML]="'GLOBAL_TX.BANNER.TITLE_LINE3' | translateHtml | async"></span>
           </h1>
           <div class="banner-quote-card">
@@ -1075,11 +1074,19 @@
       <div class="col-lg-2"></div>
       <div class="col-lg-9">
         <div class="section-content-shell">
-      <h2 class="coverage__title mb-4">{{ 'GLOBAL_TX.SPECIAL_COVERAGE.TITLE_PREFIX' | translate }} {{ 'ARLINGTON_TX.LOCATION.CITY' | translate }} {{ 'GLOBAL_TX.SPECIAL_COVERAGE.TITLE_SUFFIX' | translate }}</h2>
+      <div class="row coverage__header-row align-items-center g-4 mb-2">
+        <div class="col-md-7 col-lg-8 order-2 order-md-1 coverage__header-copy-col">
+          <h2 class="coverage__title mb-0">{{ 'GLOBAL_TX.SPECIAL_COVERAGE.TITLE_PREFIX' | translate }} {{ 'ARLINGTON_TX.LOCATION.CITY' | translate }} {{ 'GLOBAL_TX.SPECIAL_COVERAGE.TITLE_SUFFIX' | translate }}</h2>
+        </div>
+        <div class="col-md-5 col-lg-4 order-1 order-md-2 text-center text-md-end coverage__header-illustration-col">
+          <img class="coverage__image img-fluid" src="/assets/images/houston-tx/drivers.png"
+            alt="Line-art illustration of a vintage car with luggage on top, a person driving and a dog looking out the back window" />
+        </div>
+      </div>
 
           <div class="row g-4 coverage__grid">
             <!-- SR-22 -->
-            <div class="col-12 col-sm-6 col-lg-3 coverage__col">
+            <div class="col-12 col-sm-6 col-lg-4 coverage__col">
               <div class="coverage__item d-flex flex-column h-100">
                 <span class="coverage__icon" aria-hidden="true">🛩️</span>
                 <h3 class="coverage__heading">
@@ -1090,7 +1097,7 @@
             </div>
 
             <!-- High-Risk -->
-            <div class="col-12 col-sm-6 col-lg-3 coverage__col">
+            <div class="col-12 col-sm-6 col-lg-4 coverage__col">
               <div class="coverage__item d-flex flex-column h-100">
                 <span class="coverage__icon" aria-hidden="true">🚕</span>
                 <h3 class="coverage__heading">
@@ -1101,7 +1108,7 @@
             </div>
 
             <!-- Teen & Young -->
-            <div class="col-12 col-sm-6 col-lg-3 coverage__col">
+            <div class="col-12 col-sm-6 col-lg-4 coverage__col">
               <div class="coverage__item d-flex flex-column h-100">
                 <span class="coverage__icon" aria-hidden="true">👦</span>
                 <h3 class="coverage__heading">
@@ -1112,7 +1119,7 @@
             </div>
 
             <!-- Rideshare -->
-            <div class="col-12 col-sm-6 col-lg-3 coverage__col">
+            <div class="col-12 col-sm-6 col-lg-4 coverage__col">
               <div class="coverage__item d-flex flex-column h-100">
                 <span class="coverage__icon" aria-hidden="true">🚖</span>
                 <h3 class="coverage__heading">
@@ -1123,7 +1130,7 @@
             </div>
 
             <!-- Classic & Collector -->
-            <div class="col-12 col-sm-6 col-lg-3 coverage__col">
+            <div class="col-12 col-sm-6 col-lg-4 coverage__col">
               <div class="coverage__item d-flex flex-column h-100">
                 <span class="coverage__icon" aria-hidden="true">🏎️</span>
                 <h3 class="coverage__heading">
@@ -1134,7 +1141,7 @@
             </div>
 
             <!-- Non-Owner -->
-            <div class="col-12 col-sm-6 col-lg-3 coverage__col">
+            <div class="col-12 col-sm-6 col-lg-4 coverage__col">
               <div class="coverage__item d-flex flex-column h-100">
                 <span class="coverage__icon" aria-hidden="true">🙋</span>
                 <h3 class="coverage__heading">
@@ -1144,11 +1151,6 @@
               </div>
             </div>
 
-            <!-- Car illustration -->
-            <div class="col-12 col-lg-6 coverage__media-col d-flex align-items-center">
-              <img class="coverage__image img-fluid w-100" src="/assets/images/houston-tx/drivers.png"
-                alt="Line-art illustration of a vintage car with luggage on top, a person driving and a dog looking out the back window" />
-            </div>
           </div>
         </div>
       </div>

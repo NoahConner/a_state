@@ -102,7 +102,11 @@ import { CarrolltonTx } from './pages/auto-insurance/carrollton-tx/carrollton-tx
 import { LewisvilleTx } from './pages/auto-insurance/lewisville-tx/lewisville-tx';
 import { AbileneTx } from './pages/auto-insurance/abilene-tx/abilene-tx';
 import { RoundRockTx } from './pages/auto-insurance/round-rock-tx/round-rock-tx';
+import { OdessaTx } from './pages/auto-insurance/odessa-tx/odessa-tx';
 import { PearlandTx } from './pages/auto-insurance/pearland-tx/pearland-tx';
+import { CollegeStationTx } from './pages/auto-insurance/college-station-tx/college-station-tx';
+import { TheWoodlandsTx } from './pages/auto-insurance/the-woodlands-tx/the-woodlands-tx';
+import { RichardsonTx } from './pages/auto-insurance/richardson-tx/richardson-tx';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -356,10 +360,14 @@ const routes: Routes = [
       { path: 'lewisville-tx', component: LewisvilleTx, data: { metaPage: 'lewisvilleTx' } },
       { path: 'abilene-tx', component: AbileneTx, data: { metaPage: 'abileneTx' } },
       { path: 'round-rock-tx', component: RoundRockTx, data: { metaPage: 'roundRockTx' } },
+      { path: 'odessa-tx', component: OdessaTx, data: { metaPage: 'odessaTx' } },
       { path: 'austin-tx', component: AustinTx, data: { metaPage: 'austinTx' } },
       { path: 'fort-worth-tx', component: FortWorthTx, data: { metaPage: 'fortWorthTx' } },
       { path: 'el-paso-tx', component: ElPasoTx, data: { metaPage: 'elPasoTx' } },
       { path: 'pearland-tx', component: PearlandTx, data: { metaPage: 'pearlandTx' } },
+      { path: 'college-station-tx', component: CollegeStationTx, data: { metaPage: 'collegeStationTx' } },
+      { path: 'the-woodlands-tx', component: TheWoodlandsTx, data: { metaPage: 'theWoodlandsTx' } },
+      { path: 'richardson-tx', component: RichardsonTx, data: { metaPage: 'richardsonTx' } },
 
     ],
   },
@@ -574,10 +582,14 @@ const routes: Routes = [
       { path: 'lewisville-tx', component: LewisvilleTx, data: { metaPage: 'lewisvilleTx' } },
       { path: 'abilene-tx', component: AbileneTx, data: { metaPage: 'abileneTx' } },
       { path: 'round-rock-tx', component: RoundRockTx, data: { metaPage: 'roundRockTx' } },
+      { path: 'odessa-tx', component: OdessaTx, data: { metaPage: 'odessaTx' } },
           { path: 'austin-tx', component: AustinTx, data: { metaPage: 'austinTx' } },
           { path: 'fort-worth-tx', component: FortWorthTx, data: { metaPage: 'fortWorthTx' } },
           { path: 'el-paso-tx', component: ElPasoTx, data: { metaPage: 'elPasoTx' } },
           { path: 'pearland-tx', component: PearlandTx, data: { metaPage: 'pearlandTx' } },
+          { path: 'college-station-tx', component: CollegeStationTx, data: { metaPage: 'collegeStationTx' } },
+          { path: 'the-woodlands-tx', component: TheWoodlandsTx, data: { metaPage: 'theWoodlandsTx' } },
+          { path: 'richardson-tx', component: RichardsonTx, data: { metaPage: 'richardsonTx' } },
 
 
         ],
@@ -1227,6 +1239,10 @@ export const routeTranslations: Record<string, Record<string, string>> = {
     en: 'auto-insurance/round-rock-tx',
     es: 'seguros-de-auto/round-rock-tx',
   },
+  odessaTx: {
+    en: 'auto-insurance/odessa-tx',
+    es: 'seguros-de-auto/odessa-tx',
+  },
   austinTx: {
     en: 'auto-insurance/austin-tx',
     es: 'seguros-de-auto/austin-tx',
@@ -1242,5 +1258,17 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   pearlandTx: {
     en: 'auto-insurance/pearland-tx',
     es: 'seguros-de-auto/pearland-tx',
+  },
+  collegeStationTx: {
+    en: 'auto-insurance/college-station-tx',
+    es: 'seguros-de-auto/college-station-tx',
+  },
+  theWoodlandsTx: {
+    en: 'auto-insurance/the-woodlands-tx',
+    es: 'seguros-de-auto/the-woodlands-tx',
+  },
+  richardsonTx: {
+    en: 'auto-insurance/richardson-tx',
+    es: 'seguros-de-auto/richardson-tx',
   },
 };
