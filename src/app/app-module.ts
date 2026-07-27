@@ -127,7 +127,11 @@ import { CarrolltonTx } from './pages/auto-insurance/carrollton-tx/carrollton-tx
 import { LewisvilleTx } from './pages/auto-insurance/lewisville-tx/lewisville-tx';
 import { AbileneTx } from './pages/auto-insurance/abilene-tx/abilene-tx';
 import { RoundRockTx } from './pages/auto-insurance/round-rock-tx/round-rock-tx';
+import { OdessaTx } from './pages/auto-insurance/odessa-tx/odessa-tx';
 import { PearlandTx } from './pages/auto-insurance/pearland-tx/pearland-tx';
+import { CollegeStationTx } from './pages/auto-insurance/college-station-tx/college-station-tx';
+import { TheWoodlandsTx } from './pages/auto-insurance/the-woodlands-tx/the-woodlands-tx';
+import { RichardsonTx } from './pages/auto-insurance/richardson-tx/richardson-tx';
 
 export function initializeTranslations(
   translate: TranslateService,
@@ -248,7 +252,11 @@ export function initializeTranslations(
     LewisvilleTx,
     AbileneTx,
     RoundRockTx,
+    OdessaTx,
     PearlandTx,
+    CollegeStationTx,
+    TheWoodlandsTx,
+    RichardsonTx,
     PhoneFormatDirective,
     ChipNavigationDirective,
     BannerButtonNoRedirectDirective,
