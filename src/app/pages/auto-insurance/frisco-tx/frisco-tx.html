@@ -74,7 +74,7 @@
 
             <h3 class="rates-subheading">{{ averageMonthlyRateHeading }}</h3>
 
-            <div class="table-responsive">
+            <div class="table-responsive card-table">
               <table class="table rates-table mb-0">
                 <thead>
                   <tr>
@@ -117,7 +117,7 @@
               <p class="comparison-copy mx-auto"
                 [innerHTML]="'FRISCO_TX.RATES.COMPARISON_COPY' | translateHtml | async"></p>
 
-              <div class="table-responsive comparison-table-wrap mx-auto">
+              <div class="table-responsive comparison-table-wrap card-table mx-auto">
                 <table class="table comparison-table mb-0">
                   <thead>
                     <tr>
@@ -149,7 +149,7 @@
             <h3 class="rates-subheading">{{ zipCodesHeading }}</h3>
             <p class="zip-copy mx-auto" [innerHTML]="'FRISCO_TX.RATES.ZIP_COPY' | translateHtml | async"></p>
 
-            <div class="table-responsive">
+            <div class="table-responsive card-table">
 
               <table class="table rates-table mb-0">
                 <thead>
@@ -209,84 +209,63 @@
       </div>
 
       <!-- Table Section -->
-      <div class="coverage-grid-wrap mb-5">
-        <div class="coverage-grid-header row g-0">
-          <div class="col-lg-4">
-            <div class="coverage-grid-head">{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.COVERAGE' | translate }}</div>
-          </div>
-          <div class="col-lg-4">
-            <div class="coverage-grid-head">{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.WHAT_IT_COVERS' | translate }}</div>
-          </div>
-          <div class="col-lg-4">
-            <div class="coverage-grid-head">{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.WHAT_IT_DOESNT_COVER' | translate }}</div>
-          </div>
-        </div>
-
-        <div class="coverage-grid-row row g-0">
-          <div class="col-lg-4">
-            <div class="coverage-grid-cell coverage-grid-cell--title">{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_1_TITLE' | translate }}</div>
-          </div>
-          <div class="col-lg-4">
-            <div class="coverage-grid-cell">
-              <div class="d-flex align-items-start gap-2">
-                <span class="icon-check flex-shrink-0"></span>
-                <span>{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_1_COVER' | translate }}</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="coverage-grid-cell">
-              <div class="d-flex align-items-start gap-2">
-                <span class="icon-cross flex-shrink-0"></span>
-                <span>{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_1_EXCLUDE' | translate }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="coverage-grid-row row g-0">
-          <div class="col-lg-4">
-            <div class="coverage-grid-cell coverage-grid-cell--title">{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_2_TITLE' | translate }}</div>
-          </div>
-          <div class="col-lg-4">
-            <div class="coverage-grid-cell">
-              <div class="d-flex align-items-start gap-2">
-                <span class="icon-check flex-shrink-0"></span>
-                <span>{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_2_COVER' | translate }}</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="coverage-grid-cell">
-              <div class="d-flex align-items-start gap-2">
-                <span class="icon-cross flex-shrink-0"></span>
-                <span>{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_2_EXCLUDE' | translate }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="coverage-grid-row row g-0">
-          <div class="col-lg-4">
-            <div class="coverage-grid-cell coverage-grid-cell--title">{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_3_TITLE' | translate }}</div>
-          </div>
-          <div class="col-lg-4">
-            <div class="coverage-grid-cell">
-              <div class="d-flex align-items-start gap-2">
-                <span class="icon-check flex-shrink-0"></span>
-                <span>{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_3_COVER' | translate }}</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="coverage-grid-cell">
-              <div class="d-flex align-items-start gap-2">
-                <span class="icon-cross flex-shrink-0"></span>
-                <span>{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_3_EXCLUDE' | translate }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="coverage-grid-wrap mb-5 card-table">
+        <table class="table coverage-grid-table mb-0">
+          <thead>
+            <tr>
+              <th scope="col">{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.COVERAGE' | translate }}</th>
+              <th scope="col">{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.WHAT_IT_COVERS' | translate }}</th>
+              <th scope="col">{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.WHAT_IT_DOESNT_COVER' | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="coverage-grid-cell--title">{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_1_TITLE' | translate }}</td>
+              <td>
+                <div class="d-flex align-items-start justify-content-center gap-2">
+                  <span class="icon-check flex-shrink-0"></span>
+                  <span>{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_1_COVER' | translate }}</span>
+                </div>
+              </td>
+              <td>
+                <div class="d-flex align-items-start justify-content-center gap-2">
+                  <span class="icon-cross flex-shrink-0"></span>
+                  <span>{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_1_EXCLUDE' | translate }}</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="coverage-grid-cell--title">{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_2_TITLE' | translate }}</td>
+              <td>
+                <div class="d-flex align-items-start justify-content-center gap-2">
+                  <span class="icon-check flex-shrink-0"></span>
+                  <span>{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_2_COVER' | translate }}</span>
+                </div>
+              </td>
+              <td>
+                <div class="d-flex align-items-start justify-content-center gap-2">
+                  <span class="icon-cross flex-shrink-0"></span>
+                  <span>{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_2_EXCLUDE' | translate }}</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="coverage-grid-cell--title">{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_3_TITLE' | translate }}</td>
+              <td>
+                <div class="d-flex align-items-start justify-content-center gap-2">
+                  <span class="icon-check flex-shrink-0"></span>
+                  <span>{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_3_COVER' | translate }}</span>
+                </div>
+              </td>
+              <td>
+                <div class="d-flex align-items-start justify-content-center gap-2">
+                  <span class="icon-cross flex-shrink-0"></span>
+                  <span>{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_3_EXCLUDE' | translate }}</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <!-- Footer Section Layout -->
@@ -323,113 +302,80 @@
         <p class="penalties-copy mx-auto mb-0">{{ 'FRISCO_TX.UNINSURED.COPY' | translate }}</p>
       </div>
 
-      <div class="penalties-grid-wrap">
-        <div class="penalties-grid-header row g-0">
-          <div class="col-md-6">
-            <div class="penalties-grid-head">{{ 'GLOBAL_TX.UNINSURED.TABLE.PENALTY' | translate }}</div>
-          </div>
-          <div class="col-md-6">
-            <div class="penalties-grid-head">{{ 'GLOBAL_TX.UNINSURED.TABLE.DETAILS' | translate }}</div>
-          </div>
-        </div>
-
-        <div class="penalties-grid-row row g-0">
-          <div class="col-md-6">
-            <div class="penalties-grid-cell">{{ 'GLOBAL_TX.UNINSURED.TABLE.FIRST_OFFENSE_FINE' | translate }}</div>
-          </div>
-          <div class="col-md-6">
-            <div class="penalties-grid-cell">
-              <div class="penalty-detail">
-                <span class="penalty-icon"></span>
-                <span>{{ 'FRISCO_TX.UNINSURED.DETAILS.FIRST_OFFENSE_FINE' | translate }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="penalties-grid-row row g-0">
-          <div class="col-md-6">
-            <div class="penalties-grid-cell">{{ 'GLOBAL_TX.UNINSURED.TABLE.SUBSEQUENT_OFFENSE_FINE' | translate }}</div>
-          </div>
-          <div class="col-md-6">
-            <div class="penalties-grid-cell">
-              <div class="penalty-detail">
-                <span class="penalty-icon"></span>
-                <span>{{ 'FRISCO_TX.UNINSURED.DETAILS.SUBSEQUENT_OFFENSE_FINE' | translate }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="penalties-grid-row row g-0">
-          <div class="col-md-6">
-            <div class="penalties-grid-cell">{{ 'GLOBAL_TX.UNINSURED.TABLE.LICENSE_SURCHARGE' | translate }}</div>
-          </div>
-          <div class="col-md-6">
-            <div class="penalties-grid-cell">
-              <div class="penalty-detail">
-                <span class="penalty-icon"></span>
-                <span>{{ 'FRISCO_TX.UNINSURED.DETAILS.LICENSE_SURCHARGE' | translate }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="penalties-grid-row row g-0">
-          <div class="col-md-6">
-            <div class="penalties-grid-cell">{{ 'GLOBAL_TX.UNINSURED.TABLE.VEHICLE_IMPOUNDMENT' | translate }}</div>
-          </div>
-          <div class="col-md-6">
-            <div class="penalties-grid-cell">
-              <div class="penalty-detail">
-                <span class="penalty-icon"></span>
-                <span>{{ 'FRISCO_TX.UNINSURED.DETAILS.VEHICLE_IMPOUNDMENT' | translate }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="penalties-grid-row row g-0">
-          <div class="col-md-6">
-            <div class="penalties-grid-cell">{{ 'GLOBAL_TX.UNINSURED.TABLE.SR22_REQUIREMENT' | translate }}</div>
-          </div>
-          <div class="col-md-6">
-            <div class="penalties-grid-cell">
-              <div class="penalty-detail">
-                <span class="penalty-icon"></span>
-                <span>{{ 'FRISCO_TX.UNINSURED.DETAILS.SR22_REQUIREMENT' | translate }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="penalties-grid-row row g-0">
-          <div class="col-md-6">
-            <div class="penalties-grid-cell">{{ 'GLOBAL_TX.UNINSURED.TABLE.LICENSE_SUSPENSION' | translate }}</div>
-          </div>
-          <div class="col-md-6">
-            <div class="penalties-grid-cell">
-              <div class="penalty-detail">
-                <span class="penalty-icon"></span>
-                <span>{{ 'FRISCO_TX.UNINSURED.DETAILS.LICENSE_SUSPENSION' | translate }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="penalties-grid-row row g-0">
-          <div class="col-md-6">
-            <div class="penalties-grid-cell">{{ 'GLOBAL_TX.UNINSURED.TABLE.REGISTRATION_SUSPENSION' | translate }}</div>
-          </div>
-          <div class="col-md-6">
-            <div class="penalties-grid-cell">
-              <div class="penalty-detail">
-                <span class="penalty-icon"></span>
-                <span>{{ 'FRISCO_TX.UNINSURED.DETAILS.REGISTRATION_SUSPENSION' | translate }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="penalties-grid-wrap card-table">
+        <table class="table penalties-grid-table mb-0">
+          <thead>
+            <tr>
+              <th scope="col">{{ 'GLOBAL_TX.UNINSURED.TABLE.PENALTY' | translate }}</th>
+              <th scope="col">{{ 'GLOBAL_TX.UNINSURED.TABLE.DETAILS' | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ 'GLOBAL_TX.UNINSURED.TABLE.FIRST_OFFENSE_FINE' | translate }}</td>
+              <td>
+                <div class="penalty-detail">
+                  <span class="penalty-icon"></span>
+                  <span>{{ 'FRISCO_TX.UNINSURED.DETAILS.FIRST_OFFENSE_FINE' | translate }}</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>{{ 'GLOBAL_TX.UNINSURED.TABLE.SUBSEQUENT_OFFENSE_FINE' | translate }}</td>
+              <td>
+                <div class="penalty-detail">
+                  <span class="penalty-icon"></span>
+                  <span>{{ 'FRISCO_TX.UNINSURED.DETAILS.SUBSEQUENT_OFFENSE_FINE' | translate }}</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>{{ 'GLOBAL_TX.UNINSURED.TABLE.LICENSE_SURCHARGE' | translate }}</td>
+              <td>
+                <div class="penalty-detail">
+                  <span class="penalty-icon"></span>
+                  <span>{{ 'FRISCO_TX.UNINSURED.DETAILS.LICENSE_SURCHARGE' | translate }}</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>{{ 'GLOBAL_TX.UNINSURED.TABLE.VEHICLE_IMPOUNDMENT' | translate }}</td>
+              <td>
+                <div class="penalty-detail">
+                  <span class="penalty-icon"></span>
+                  <span>{{ 'FRISCO_TX.UNINSURED.DETAILS.VEHICLE_IMPOUNDMENT' | translate }}</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>{{ 'GLOBAL_TX.UNINSURED.TABLE.SR22_REQUIREMENT' | translate }}</td>
+              <td>
+                <div class="penalty-detail">
+                  <span class="penalty-icon"></span>
+                  <span>{{ 'FRISCO_TX.UNINSURED.DETAILS.SR22_REQUIREMENT' | translate }}</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>{{ 'GLOBAL_TX.UNINSURED.TABLE.LICENSE_SUSPENSION' | translate }}</td>
+              <td>
+                <div class="penalty-detail">
+                  <span class="penalty-icon"></span>
+                  <span>{{ 'FRISCO_TX.UNINSURED.DETAILS.LICENSE_SUSPENSION' | translate }}</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>{{ 'GLOBAL_TX.UNINSURED.TABLE.REGISTRATION_SUSPENSION' | translate }}</td>
+              <td>
+                <div class="penalty-detail">
+                  <span class="penalty-icon"></span>
+                  <span>{{ 'FRISCO_TX.UNINSURED.DETAILS.REGISTRATION_SUSPENSION' | translate }}</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <div class="texassure-block text-center">
@@ -985,7 +931,7 @@
       </div>
 
       <div class="independent-agency-table-wrap">
-        <div class="table-responsive">
+        <div class="table-responsive card-table">
           <table class="table independent-agency-table mb-0">
             <thead>
               <tr>
@@ -1101,7 +1047,7 @@
               <div class="coverage__item d-flex flex-column h-100">
                 <span class="coverage__icon" aria-hidden="true">🚕</span>
                 <h3 class="coverage__heading">
-                  <a >{{ 'GLOBAL_TX.SPECIAL_COVERAGE.ITEMS.HIGH_RISK' | translate }}</a>
+                  {{ 'GLOBAL_TX.SPECIAL_COVERAGE.ITEMS.HIGH_RISK' | translate }}
                 </h3>
                 <p class="coverage__text mt-auto">{{ 'FRISCO_TX.SPECIAL_COVERAGE.ITEMS.HIGH_RISK' | translate }}</p>
               </div>
@@ -1112,7 +1058,7 @@
               <div class="coverage__item d-flex flex-column h-100">
                 <span class="coverage__icon" aria-hidden="true">👦</span>
                 <h3 class="coverage__heading">
-                  <a >{{ 'GLOBAL_TX.SPECIAL_COVERAGE.ITEMS.TEEN' | translate }}</a>
+                  {{ 'GLOBAL_TX.SPECIAL_COVERAGE.ITEMS.TEEN' | translate }}
                 </h3>
                 <p class="coverage__text mt-auto">{{ 'FRISCO_TX.SPECIAL_COVERAGE.ITEMS.TEEN' | translate }}</p>
               </div>
@@ -1145,7 +1091,7 @@
               <div class="coverage__item d-flex flex-column h-100">
                 <span class="coverage__icon" aria-hidden="true">🙋</span>
                 <h3 class="coverage__heading">
-                  <a >{{ 'GLOBAL_TX.SPECIAL_COVERAGE.ITEMS.NON_OWNER' | translate }}</a>
+                  {{ 'GLOBAL_TX.SPECIAL_COVERAGE.ITEMS.NON_OWNER' | translate }}
                 </h3>
                 <p class="coverage__text mt-auto">{{ 'FRISCO_TX.SPECIAL_COVERAGE.ITEMS.NON_OWNER' | translate }}</p>
               </div>
@@ -1225,7 +1171,7 @@
       <div class="houston-neighborhoods-section__inner">
         <h2 class="houston-neighborhoods-section__title">{{ 'GLOBAL_TX.NEIGHBORHOODS.TITLE_PREFIX' | translate }} {{ 'FRISCO_TX.LOCATION.CITY_WITH_STATE' | translate }}</h2>
 
-        <div class="houston-neighborhoods-section__table">
+        <div class="houston-neighborhoods-section__table card-table">
           @for (row of neighborhoodsRows; track row[0]; let i = $index) {
           <div class="houston-neighborhoods-section__row" [class.houston-neighborhoods-section__row--alt]="i % 2 === 1">
             @for (item of row; track item) {
