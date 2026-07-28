@@ -461,3 +461,158 @@ body .selectable .chip.chip-disabled i,
 body .selectable .chip[aria-disabled='true'] i {
   color: #b4b4b4 !important;
 }
+
+/* =========================================================
+   Shared Card-Style Data Table
+   Reused by every rate/comparison table across the City Pages.
+   Design tokens live on .card-table as CSS custom properties so
+   every table (and any future one) shares one definition.
+========================================================= */
+.card-table {
+  --ct-radius-card: 20px;
+  --ct-radius-row: 10px;
+  --ct-header-bg: #f26666;
+  --ct-header-text: #ffffff;
+  --ct-row-bg: #e6e6e6;
+  --ct-row-text: #23201b;
+  --ct-row-gap: 10px;
+  --ct-cell-py: 20px;
+  --ct-cell-px: 24px;
+
+  background: #ffffff;
+  border-radius: var(--ct-radius-card);
+  box-shadow: 0 14px 34px rgba(35, 20, 15, 0.12);
+  padding: 20px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  table {
+    width: calc(100% + var(--ct-row-gap) * 2);
+    min-width: calc(100% + var(--ct-row-gap) * 2);
+    border-collapse: separate;
+    border-spacing: var(--ct-row-gap) var(--ct-row-gap);
+    margin: calc(var(--ct-row-gap) * -1);
+  }
+
+  thead th {
+    background: var(--ct-header-bg);
+    color: var(--ct-header-text);
+    font-weight: 700;
+    font-size: 1.05rem;
+    line-height: 1.3;
+    text-align: center;
+    vertical-align: middle;
+    padding: var(--ct-cell-py) var(--ct-cell-px);
+    border: 0;
+    border-radius: var(--ct-radius-row);
+    white-space: normal;
+  }
+
+  tbody th,
+  tbody td {
+    background: var(--ct-row-bg);
+    color: var(--ct-row-text);
+    font-size: 0.98rem;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
+    vertical-align: middle;
+    padding: var(--ct-cell-py) var(--ct-cell-px);
+    border: 0;
+    border-radius: var(--ct-radius-row);
+  }
+
+  /* Existing zebra/highlight markers stay in the markup (data-driven) but
+     render flat, matching the reference design's uniform row color. */
+  tbody tr.alt-row td,
+  tbody tr.highlight-row th,
+  tbody tr.highlight-row td,
+  tbody tr:nth-child(even) th,
+  tbody tr:nth-child(even) td {
+    background: var(--ct-row-bg);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: inherit;
+
+    &:hover {
+      color: var(--ct-header-bg);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--ct-header-bg);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+  }
+
+  @media (max-width: 991px) {
+    padding: 16px;
+    --ct-cell-py: 16px;
+    --ct-cell-px: 18px;
+
+    thead th {
+      font-size: 0.98rem;
+    }
+
+    tbody th,
+    tbody td {
+      font-size: 0.92rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    padding: 12px;
+    border-radius: 16px;
+    --ct-radius-card: 16px;
+    --ct-cell-py: 14px;
+    --ct-cell-px: 14px;
+
+    thead th {
+      font-size: 0.88rem;
+    }
+
+    tbody th,
+    tbody td {
+      font-size: 0.84rem;
+    }
+  }
+}
+
+/* Company / Minimum / Full Coverage style rate tables: wider first column */
+.card-table .rates-table {
+  th:first-child,
+  td:first-child {
+    width: 40%;
+  }
+}
+
+/* Independent Agency comparison table keeps its own tuned column widths */
+.card-table .independent-agency-table {
+  table-layout: fixed;
+
+  th:first-child,
+  td:first-child {
+    width: 24%;
+  }
+
+  th:nth-child(2),
+  td:nth-child(2) {
+    width: 38%;
+  }
+
+  th:last-child,
+  td:last-child {
+    width: 38%;
+  }
+}
+
+/* Requirements coverage grid (3 equal columns) and Uninsured Penalties
+   grid (2 equal columns): fixed layout keeps every column balanced */
+.card-table .coverage-grid-table,
+.card-table .penalties-grid-table {
+  table-layout: fixed;
+}
