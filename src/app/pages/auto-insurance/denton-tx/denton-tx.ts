@@ -20,6 +20,7 @@ export class DentonTx implements AfterViewInit {
 
   tocCardStyles: Record<string, string> | null = null;
   activeTocIndex = 0;
+  isMobileTocOpen = false;
 
   constructor(
     public languageService: Language,
@@ -153,12 +154,21 @@ export class DentonTx implements AfterViewInit {
 
   scrollToSection(index: number, event: Event) {
     event.preventDefault();
+    this.closeMobileToc();
 
     if (typeof document === 'undefined') {
       return;
     }
 
     document.getElementById(`toc-section-${index + 1}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  toggleMobileToc() {
+    this.isMobileTocOpen = !this.isMobileTocOpen;
+  }
+
+  closeMobileToc() {
+    this.isMobileTocOpen = false;
   }
 
   async goToSelectedQuote(form: QuoteFormState) {
@@ -243,6 +253,10 @@ export class DentonTx implements AfterViewInit {
     const tocColumn = this.tocColumnRef?.nativeElement;
     const tocCard = this.tocCardRef?.nativeElement;
     const tocStopSection = this.tocStopSectionRef?.nativeElement;
+
+    if (window.innerWidth > 820) {
+      this.closeMobileToc();
+    }
 
     if (!ratesSection || !tocColumn || !tocCard || window.innerWidth <= 820) {
       this.tocCardStyles = null;

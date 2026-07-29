@@ -670,8 +670,8 @@
   }
 
   .homeMain,
-  #mainNavbar {
-    display: none;
+  .headerMain #mainNavbar {
+    display: none !important;
   }
 
   .headerMain {
