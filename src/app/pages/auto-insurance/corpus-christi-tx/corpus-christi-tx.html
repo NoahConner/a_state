@@ -49,7 +49,21 @@
     <div class="container">
       <div class="row align-items-start">
         <div class="col-lg-2 toc-column" #tocColumn>
-          <aside class="toc-card" #tocCard [ngStyle]="tocCardStyles">
+          <button type="button" class="toc-fab" [class.is-open]="isMobileTocOpen" (click)="toggleMobileToc()"
+            [attr.aria-expanded]="isMobileTocOpen" aria-controls="mobileTocPanel"
+            [attr.aria-label]="'GLOBAL_TX.TABLE_OF_CONTENTS.TITLE' | translate">
+            <svg class="toc-fab__icon" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </button>
+
+          <div class="toc-backdrop" *ngIf="isMobileTocOpen" (click)="toggleMobileToc()"></div>
+
+          <aside class="toc-card" #tocCard [ngStyle]="tocCardStyles" [class.toc-card--mobile-open]="isMobileTocOpen"
+            id="mobileTocPanel">
+            <button type="button" class="toc-card__close" (click)="toggleMobileToc()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
             <h3 class="toc-title">
               <span class="toc-highlight">{{ 'GLOBAL_TX.TABLE_OF_CONTENTS.TITLE' | translate }}</span>
             </h3>
