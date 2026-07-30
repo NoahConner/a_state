@@ -251,7 +251,7 @@ border: 1px solid rgba(255, 255, 255, 0.2);
 
             .quote-option-label {
               display: flex;
-              align-items: flex-start;
+              align-items: center;
               justify-content: center;
               gap: 0.4rem;
               width: 100%;
@@ -270,7 +270,7 @@ border: 1px solid rgba(255, 255, 255, 0.2);
               .radio-indicator {
                 width: 16px;
                 height: 16px;
-                flex: 0 0 16px;
+                flex: 0 0 18px;
                 border-radius: 50%;
                 border: 1.5px solid #1f1a17;
                 background: transparent;
@@ -546,10 +546,6 @@ border: 1px solid rgba(255, 255, 255, 0.2);
     font-weight: 600;
   }
 
-  .py-4 + .rates-content .rates-subheading {
-    margin-top: 22px;
-  }
-
   .company-name {
     text-decoration: underline;
   }
@@ -591,7 +587,7 @@ border: 1px solid rgba(255, 255, 255, 0.2);
 /* Rates Comparison Section Start */
 .houston-comparison-section {
   background: #fbf8f2;
-  padding: 1.375rem 0 5rem;
+  padding: 1.375rem 0;
 
   .comparison-content {
     color: #2f2a24;
@@ -747,7 +743,7 @@ border: 1px solid rgba(255, 255, 255, 0.2);
 /* Uninsured Penalties Section Start */
 .uninsured-penalties-section {
   background: #f2f2f2;
-  padding-top: 4.375rem !important;
+  padding-top: 0 !important;
   padding-bottom: 4.375rem !important;
 
   .penalties-header {
@@ -986,8 +982,12 @@ border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   .savings-grid {
-    --bs-gutter-x: 4.6rem;
-    --bs-gutter-y: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: column;
+    grid-template-rows: repeat(7, auto);
+    column-gap: 4.6rem;
+    row-gap: 2.05rem;
     max-width: 100%;
     margin: 0 auto;
   }
@@ -998,7 +998,7 @@ border: 1px solid rgba(255, 255, 255, 0.2);
 
   .savings-list__item {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.8rem;
     color: #4c4b4b;
     font-size: 15px;
@@ -1007,10 +1007,6 @@ border: 1px solid rgba(255, 255, 255, 0.2);
     text-decoration-thickness: 0.9px;
     text-underline-offset: 1.6px;
     font-weight: 600;
-
-    &+.savings-list__item {
-      margin-top: 2.05rem;
-    }
   }
 
   .savings-list__item span {
@@ -1020,9 +1016,7 @@ border: 1px solid rgba(255, 255, 255, 0.2);
 
   .savings-list-icon-image {
     width: auto;
-    /* min-width: 17px; */
     height: auto;
-    margin-top: -1rem;
     object-fit: contain;
   }
 }
@@ -1443,6 +1437,16 @@ right: 14rem;
 
   &__col {
     margin-bottom: 70px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: 992px) {
+    &__col:nth-last-child(-n+2) {
+      margin-bottom: 0;
+    }
   }
 
   // ===== Item =====
@@ -1807,6 +1811,8 @@ color: #ed1c24;
 
     .coverage-option-card {
       max-width: 100%;
+      padding: 0 16px;
+      text-align: center;
     }
   }
 
@@ -1856,10 +1862,14 @@ color: #ed1c24;
     .coverage-grid-wrap {
       margin-bottom: 2.5rem !important;
     }
+
+    .coverage-grid-table {
+      min-width: 620px;
+    }
   }
 
   .uninsured-penalties-section {
-    padding-top: 3rem !important;
+    padding-top: 0 !important;
     padding-bottom: 3rem !important;
 
     .penalties-grid-wrap {
@@ -1957,8 +1967,6 @@ color: #ed1c24;
   }
 
   .houston-comparison-section {
-    padding-bottom: 3.75rem;
-
     .comparison-heading {
       font-size: 1.85rem;
     }
@@ -2115,7 +2123,7 @@ color: #ed1c24;
   }
 
   .uninsured-penalties-section {
-    padding-top: 2.5rem !important;
+    padding-top: 0 !important;
     padding-bottom: 2.5rem !important;
   }
 
@@ -2175,6 +2183,13 @@ color: #ed1c24;
     .rate-factors-list__item,
     .savings-list__item {
       font-size: 12px;
+    }
+
+    .savings-grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: none;
+      grid-auto-flow: row;
+      padding: 0 26px;
     }
   }
 
@@ -2287,8 +2302,7 @@ color: #ed1c24;
       row-gap: 0.9rem !important;
     }
 
-    .rate-factors-list__item+.rate-factors-list__item,
-    .savings-list__item+.savings-list__item {
+    .rate-factors-list__item+.rate-factors-list__item {
       margin-top: 0.9rem;
     }
   }
@@ -2474,7 +2488,7 @@ color: #ed1c24;
       .radio-indicator {
         width: 14px;
         height: 14px;
-        flex: 0 0 14px;
+        flex: 0 0 18px;
         border-radius: 50%;
         border: 1.4px solid #1f1a17;
         background: transparent;
@@ -2723,8 +2737,6 @@ color: #ed1c24;
   }
 
   .houston-comparison-section {
-    padding-bottom: 3.5rem;
-
     .comparison-heading {
       font-size: 1.7rem;
     }
@@ -2903,6 +2915,8 @@ color: #ed1c24;
   .topBanner {
     .container {
       .topSub {
+        padding: 6.25rem 0 1.75rem;
+
         .topSub2 {
           .h1 {
             font-size: 2rem;
@@ -2913,7 +2927,8 @@ color: #ed1c24;
           }
 
           .quote-options {
-            gap: 1rem 0.55rem;
+            gap: 1.1rem 0.6rem;
+            margin-bottom: 3rem;
 
             .quote-option {
               flex: 0 0 calc(50% - 0.3rem);
@@ -2937,6 +2952,8 @@ color: #ed1c24;
                 gap: 0.3rem;
                 font-size: 0.88rem;
                 line-height: 1.15;
+                justify-content: center;
+                text-align: center;
               }
             }
           }
@@ -2965,7 +2982,7 @@ color: #ed1c24;
 
           .quote-options {
             gap: 0.9rem 0.45rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
 
             .quote-option {
               gap: 0.4rem;
@@ -2987,12 +3004,13 @@ color: #ed1c24;
               .radio-indicator {
                 width: 14px;
                 height: 14px;
-                flex: 0 0 14px;
+                flex: 0 0 18px;
               }
             }
           }
 
           .quote-form-row {
+            gap: 1.25rem;
 
             .form-control,
             .quote-submit {

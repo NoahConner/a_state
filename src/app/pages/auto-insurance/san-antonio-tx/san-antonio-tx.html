@@ -223,7 +223,7 @@
       </div>
 
       <!-- Table Section -->
-      <div class="coverage-grid-wrap mb-5 card-table">
+      <div class="coverage-grid-wrap mb-5 card-table table-responsive">
         <table class="table coverage-grid-table mb-0">
           <thead>
             <tr>
@@ -831,65 +831,51 @@
         <p class="savings-copy mb-0">{{ 'SAN_ANTONIO_TX.SAVINGS.COPY' | translate }}</p>
       </div>
 
-      <div class="row savings-grid gx-lg-5 gx-4 gy-0">
-        <div class="col-md-4">
-          <ul class="savings-list list-unstyled mb-0">
-            <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
-                class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.MULTI_POLICY' | translate }}</span></li>
-            <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
-                class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.GOOD_DRIVER' | translate }}</span></li>
-            <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
-                class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.GOOD_STUDENT' | translate }}</span></li>
-            <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
-                class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.PAPERLESS' | translate }}</span></li>
-            <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
-                class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.NEW_CAR' | translate }}</span></li>
-            <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
-                class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.TELEMATICS' | translate }}</span></li>
-            <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
-                class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.AFFINITY' | translate }}</span></li>
-          </ul>
-        </div>
-
-        <div class="col-md-4">
-          <ul class="savings-list list-unstyled mb-0">
-            <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
-                class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.MULTI_CAR' | translate }}</span></li>
-            <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
-                class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.DEFENSIVE_DRIVING' | translate }}</span></li>
-            <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
-                class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.PAY_IN_FULL' | translate }}</span></li>
-            <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
-                class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.MILITARY_VETERAN' | translate }}</span></li>
-            <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
-                class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.HOMEOWNER' | translate }}</span></li>
-            <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
-                class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.SAFETY_FEATURE' | translate }}</span></li>
-            <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
-                class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.STUDENT_AWAY' | translate }}</span></li>
-          </ul>
-        </div>
-
-        <div class="col-md-4">
-          <ul class="savings-list list-unstyled mb-0">
-            <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
-                class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.ACCIDENT_FREE' | translate }}</span></li>
-            <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
-                class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.AUTO_PAY' | translate }}</span>
-            </li>
-            <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
-                class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.EARLY_SIGNING' | translate }}</span></li>
-            <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
-                class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.LOYALTY' | translate }}</span></li>
-            <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
-                class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.ANTI_THEFT' | translate }}</span></li>
-            <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
-                class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.LOW_MILEAGE' | translate }}</span></li>
-            <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
-                class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.E_SIGNATURE' | translate }}</span></li>
-          </ul>
-        </div>
-      </div>
+      <ul class="savings-list savings-grid list-unstyled mb-0">
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.MULTI_POLICY' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.GOOD_DRIVER' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.GOOD_STUDENT' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.PAPERLESS' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.NEW_CAR' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.TELEMATICS' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.AFFINITY' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.MULTI_CAR' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.DEFENSIVE_DRIVING' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.PAY_IN_FULL' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.MILITARY_VETERAN' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.HOMEOWNER' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.SAFETY_FEATURE' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.STUDENT_AWAY' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.ACCIDENT_FREE' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.AUTO_PAY' | translate }}</span>
+        </li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.EARLY_SIGNING' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.LOYALTY' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.ANTI_THEFT' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.LOW_MILEAGE' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.E_SIGNATURE' | translate }}</span></li>
+      </ul>
           </div>
         </div>
         <div class="col-lg-1"></div>
