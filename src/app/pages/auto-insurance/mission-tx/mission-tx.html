@@ -1,0 +1,1315 @@
+<div class="homeMain">
+  <!-- Hero Banner Section Start -->
+  <div class="topBanner">
+    <div class="container">
+      <div class="topSub">
+        <div class="topSub2">
+          <h1 class="h1">
+            <span
+              [innerHTML]="(('GLOBAL_TX.BANNER.TITLE_LINE1' | translate) + ' ' + ('MISSION_TX.BANNER.LOCATION' | translate) + ('GLOBAL_TX.BANNER.TITLE_LINE2' | translate))">
+            </span> <br /> <span [innerHTML]="'GLOBAL_TX.BANNER.TITLE_LINE3' | translateHtml | async"></span>
+          </h1>
+          <div class="banner-quote-card">
+            <div class="quote-options">
+              @for (item of chips; track item.name) {
+              <button type="button" class="quote-option" *ngIf="item.name" [class.selected]="bannerForm.selectedChip === item.name"
+                [attr.aria-pressed]="bannerForm.selectedChip === item.name" (click)="selectChip(bannerForm, item.name)">
+                <span class="icon-badge">
+                  <span class="icon-burst"></span>
+                  <img [src]="item.image" [alt]="item.name | translate" class="quote-option-image" />
+                </span>
+                <span class="quote-option-label">
+                  <span class="radio-indicator"></span>
+                  <span [innerHTML]="item.name | translateHtml | async"></span>
+                </span>
+              </button>
+              }
+            </div>
+
+            <div class="quote-form-row">
+              <input type="text" [placeholder]="'AUTO_INSURANCE.BANNER.FORM.FULL_NAME' | translate" class="form-control"
+                [value]="bannerForm.fullName" (input)="bannerForm.fullName = $any($event.target).value" />
+
+              <input type="tel" appPhoneFormat [placeholder]="'AUTO_INSURANCE.BANNER.FORM.PHONE' | translate"
+                class="form-control" [value]="bannerForm.phone" (input)="bannerForm.phone = $any($event.target).value" />
+
+              <button class="quote-submit" [disabled]="bannerForm.isSubmitting || !bannerForm.selectedChip || !bannerForm.fullName.trim() || !bannerForm.phone.trim()" (click)="goToSelectedQuote(bannerForm)">
+                {{ bannerForm.isSubmitting ? 'Loading...' : ('AUTO_INSURANCE.BANNER.FORM.BUTTON' | translate) }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Hero Banner Section End -->
+
+  <!-- Rates Section Start -->
+  <section class="houston-rates-section" id="toc-section-1" #ratesSection>
+    <div class="container">
+      <div class="row align-items-start">
+        <div class="col-lg-2 toc-column" #tocColumn>
+          <button type="button" class="toc-fab" [class.is-open]="isMobileTocOpen" (click)="toggleMobileToc()"
+            [attr.aria-expanded]="isMobileTocOpen" aria-controls="mobileTocPanel"
+            [attr.aria-label]="'GLOBAL_TX.TABLE_OF_CONTENTS.TITLE' | translate">
+            <svg class="toc-fab__icon" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </button>
+
+          <div class="toc-backdrop" *ngIf="isMobileTocOpen" (click)="toggleMobileToc()"></div>
+
+          <aside class="toc-card" #tocCard [ngStyle]="tocCardStyles" [class.toc-card--mobile-open]="isMobileTocOpen"
+            id="mobileTocPanel">
+            <button type="button" class="toc-card__close" (click)="toggleMobileToc()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h3 class="toc-title">
+              <span class="toc-highlight">{{ 'GLOBAL_TX.TABLE_OF_CONTENTS.TITLE' | translate }}</span>
+            </h3>
+            <ul class="toc-list list-unstyled mb-0">
+              @for (item of tableOfContents; track item; let i = $index) {
+              <li class="toc-item" [class.active]="activeTocIndex === i">
+                <a class="toc-link" [href]="'#toc-section-' + (i + 1)" (click)="scrollToSection(i, $event)">
+                  <span class="toc-text" [innerHTML]="item"></span>
+                </a>
+              </li>
+              }
+            </ul>
+          </aside>
+        </div>
+
+        <div class="col-lg-9">
+          <div class="rates-content text-center">
+            <p class="rates-lead" [innerHTML]="'MISSION_TX.RATES.LEAD' | translateHtml | async"></p>
+
+            <h2 class="rates-heading">{{ ratesHeading }}</h2>
+            <p class="rates-copy" [innerHTML]="'MISSION_TX.RATES.COPY' | translateHtml | async"></p>
+
+            <h3 class="rates-subheading">{{ averageMonthlyRateHeading }}</h3>
+
+            <div class="table-responsive card-table">
+              <table class="table rates-table mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">{{ 'GLOBAL_TX.RATES.TABLE.COMPANY' | translate }}</th>
+                    <th scope="col">{{ 'GLOBAL_TX.RATES.TABLE.MINIMUM' | translate }}</th>
+                    <th scope="col">{{ 'GLOBAL_TX.RATES.TABLE.FULL_COVERAGE' | translate }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (rate of monthlyRates; track rate.company; let i = $index) {
+                  <tr [class.alt-row]="i % 2 === 1">
+                    <td><span [innerHTML]="rate.company"></span></td>
+                    <td>{{ rate.minimum }}</td>
+                    <td>{{ rate.fullCoverage }}</td>
+                  </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+
+            <div class="rates-meta">
+              <p class="source-line mb-0"><strong class="source-label">{{ 'GLOBAL_TX.RATES.SOURCE_LABEL' | translate
+                  }}</strong>&nbsp;<a class="source-name"
+                  href="https://www.way.com/" rel="nofollow"
+                  target="_blank">Way</a></p>
+              <p class="updated-line mb-0"><strong class="source-label">{{ 'GLOBAL_TX.RATES.LAST_UPDATED_LABEL' |
+                  translate }}</strong> May 2026</p>
+            </div>
+
+            <p class="rates-disclaimer mb-0 text-start"
+              [innerHTML]="'GLOBAL_TX.RATES.DISCLAIMER' | translateHtml | async"></p>
+          </div>
+
+          <div class="py-4"></div>
+
+          <!-- Rates Comparison Section Start -->
+          <div class="houston-comparison-section">
+            <div class="comparison-content text-center">
+              <h2 class="comparison-heading">{{ comparisonHeading }}</h2>
+              <p class="comparison-copy mx-auto"
+                [innerHTML]="'MISSION_TX.RATES.COMPARISON_COPY' | translateHtml | async"></p>
+
+              <div class="table-responsive comparison-table-wrap card-table mx-auto">
+                <table class="table comparison-table mb-0">
+                  <thead>
+                    <tr>
+                      <th scope="col">Coverage Type</th>
+                      @for (column of compareRateColumns; track column) {
+                      <th scope="col">{{ column }}</th>
+                      }
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @for (row of compareRates; track row.label) {
+                    <tr [class.highlight-row]="row.highlighted">
+                      <th scope="row">{{ row.label }}</th>
+                      @for (value of row.values; track value) {
+                      <td>{{ value }}</td>
+                      }
+                    </tr>
+                    }
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- Rates Comparison Section End -->
+
+          <div class="py-4"></div>
+
+          <div class="rates-content text-center">
+            <h3 class="rates-subheading">{{ zipCodesHeading }}</h3>
+            <p class="zip-copy mx-auto" [innerHTML]="'MISSION_TX.RATES.ZIP_COPY' | translateHtml | async"></p>
+
+            <div class="table-responsive card-table">
+
+              <table class="table rates-table mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">{{ 'GLOBAL_TX.RATES.ZIP_TABLE.ZIP_CODE' | translate }}</th>
+                    <th scope="col">{{ 'GLOBAL_TX.RATES.ZIP_TABLE.NEIGHBORHOOD' | translate }}</th>
+                    <th scope="col">{{ 'GLOBAL_TX.RATES.ZIP_TABLE.AVG_MONTHLY_RATE' | translate }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (rate of zipRateRows; track rate.zipCode; let i = $index) {
+                  <tr [class.alt-row]="i % 2 === 1">
+                    <td><span class="fw-bold">{{ rate.zipCode }}</span></td>
+                    <td>{{ rate.neighborhood }}</td>
+                    <td>{{ rate.monthlyRate }}</td>
+                  </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+
+            <div class="rates-meta">
+              <p class="source-line mb-0"><strong class="source-label">{{ 'GLOBAL_TX.RATES.SOURCE_LABEL' | translate
+                  }}</strong>&nbsp;<a class="source-name"
+                  href="https://smartfinancial.com/texas/mission-car-insurance" rel="nofollow"
+                  target="_blank">SmartFinancial</a></p>
+              <p class="updated-line mb-0"><strong class="source-label">{{ 'GLOBAL_TX.RATES.LAST_UPDATED_LABEL' |
+                  translate }}</strong> May 2026</p>
+            </div>
+
+            <p class="rates-disclaimer mb-0 text-start"
+              [innerHTML]="'GLOBAL_TX.RATES.DISCLAIMER' | translateHtml | async"></p>
+
+          </div>
+        </div>
+
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Rates Section End -->
+
+
+  <!-- Texas Requirements Section Start -->
+  <section class="insurance-section py-5" id="toc-section-2">
+    <div class="container">
+      <div class="row section-content-row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-9">
+          <div class="section-content-shell">
+
+      <!-- Header Section -->
+      <div class="text-center mb-4">
+        <h1 class="main-title mb-3">{{ 'GLOBAL_TX.REQUIREMENTS.TITLE_PREFIX' | translate }} {{ 'MISSION_TX.LOCATION.CITY' | translate }} {{ 'GLOBAL_TX.REQUIREMENTS.TITLE_SUFFIX' | translate }}</h1>
+        <h2 class="sub-title mb-4">{{ 'GLOBAL_TX.REQUIREMENTS.SUBTITLE' | translate }}</h2>
+        <p class="lead-text mx-auto" [innerHTML]="'MISSION_TX.REQUIREMENTS.LEAD' | translateHtml | async"></p>
+      </div>
+
+      <!-- Table Section -->
+      <div class="coverage-grid-wrap mb-5 card-table table-responsive">
+        <table class="table coverage-grid-table mb-0">
+          <thead>
+            <tr>
+              <th scope="col">{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.COVERAGE' | translate }}</th>
+              <th scope="col">{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.WHAT_IT_COVERS' | translate }}</th>
+              <th scope="col">{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.WHAT_IT_DOESNT_COVER' | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="coverage-grid-cell--title">{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_1_TITLE' | translate }}</td>
+              <td>
+                <div class="d-flex align-items-start justify-content-center gap-2">
+                  <span class="icon-check flex-shrink-0"></span>
+                  <span>{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_1_COVER' | translate }}</span>
+                </div>
+              </td>
+              <td>
+                <div class="d-flex align-items-start justify-content-center gap-2">
+                  <span class="icon-cross flex-shrink-0"></span>
+                  <span>{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_1_EXCLUDE' | translate }}</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="coverage-grid-cell--title">{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_2_TITLE' | translate }}</td>
+              <td>
+                <div class="d-flex align-items-start justify-content-center gap-2">
+                  <span class="icon-check flex-shrink-0"></span>
+                  <span>{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_2_COVER' | translate }}</span>
+                </div>
+              </td>
+              <td>
+                <div class="d-flex align-items-start justify-content-center gap-2">
+                  <span class="icon-cross flex-shrink-0"></span>
+                  <span>{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_2_EXCLUDE' | translate }}</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="coverage-grid-cell--title">{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_3_TITLE' | translate }}</td>
+              <td>
+                <div class="d-flex align-items-start justify-content-center gap-2">
+                  <span class="icon-check flex-shrink-0"></span>
+                  <span>{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_3_COVER' | translate }}</span>
+                </div>
+              </td>
+              <td>
+                <div class="d-flex align-items-start justify-content-center gap-2">
+                  <span class="icon-cross flex-shrink-0"></span>
+                  <span>{{ 'GLOBAL_TX.REQUIREMENTS.TABLE.ROW_3_EXCLUDE' | translate }}</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Footer Section Layout -->
+      <div class="row requirement-footer-row align-items-start pt-3 g-4">
+        <div class="col-md-7 col-lg-8 order-2 order-md-1 requirement-copy-col">
+          <h3 class="footer-title mb-0">{{ 'GLOBAL_TX.REQUIREMENTS.FOOTER_TITLE_PREFIX' | translate }} {{ 'MISSION_TX.LOCATION.CITY' | translate }} {{ 'GLOBAL_TX.REQUIREMENTS.FOOTER_TITLE_SUFFIX' | translate }}</h3>
+        </div>
+        <div class="col-md-5 col-lg-4 order-1 order-md-2 text-center text-md-end requirement-illustration-col">
+          <img src="/assets/images/houston-tx/van.png" alt="Driver with broke down camper van vector"
+            class="img-fluid vehicle-illustration">
+        </div>
+        <div class="col-12 requirement-description-col order-3">
+          <p class="footer-text mb-0">{{ 'MISSION_TX.REQUIREMENTS.FOOTER_COPY' | translate }}</p>
+        </div>
+      </div>
+
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Texas Requirements Section End -->
+
+  <!-- Uninsured Penalties Section Start -->
+  <section class="uninsured-penalties-section py-5">
+    <div class="container">
+      <div class="row section-content-row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-9">
+          <div class="section-content-shell">
+      <div class="text-center penalties-header">
+        <h2 class="penalties-title mb-3">{{ 'GLOBAL_TX.UNINSURED.TITLE' | translate }}</h2>
+        <p class="penalties-copy mx-auto mb-0">{{ 'MISSION_TX.UNINSURED.COPY' | translate }}</p>
+      </div>
+
+      <div class="penalties-grid-wrap card-table">
+        <table class="table penalties-grid-table mb-0">
+          <thead>
+            <tr>
+              <th scope="col">{{ 'GLOBAL_TX.UNINSURED.TABLE.PENALTY' | translate }}</th>
+              <th scope="col">{{ 'GLOBAL_TX.UNINSURED.TABLE.DETAILS' | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ 'GLOBAL_TX.UNINSURED.TABLE.FIRST_OFFENSE_FINE' | translate }}</td>
+              <td>
+                <div class="penalty-detail">
+                  <span class="penalty-icon"></span>
+                  <span>{{ 'MISSION_TX.UNINSURED.DETAILS.FIRST_OFFENSE_FINE' | translate }}</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>{{ 'GLOBAL_TX.UNINSURED.TABLE.SUBSEQUENT_OFFENSE_FINE' | translate }}</td>
+              <td>
+                <div class="penalty-detail">
+                  <span class="penalty-icon"></span>
+                  <span>{{ 'MISSION_TX.UNINSURED.DETAILS.SUBSEQUENT_OFFENSE_FINE' | translate }}</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>{{ 'GLOBAL_TX.UNINSURED.TABLE.LICENSE_SURCHARGE' | translate }}</td>
+              <td>
+                <div class="penalty-detail">
+                  <span class="penalty-icon"></span>
+                  <span>{{ 'MISSION_TX.UNINSURED.DETAILS.LICENSE_SURCHARGE' | translate }}</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>{{ 'GLOBAL_TX.UNINSURED.TABLE.VEHICLE_IMPOUNDMENT' | translate }}</td>
+              <td>
+                <div class="penalty-detail">
+                  <span class="penalty-icon"></span>
+                  <span>{{ 'MISSION_TX.UNINSURED.DETAILS.VEHICLE_IMPOUNDMENT' | translate }}</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>{{ 'GLOBAL_TX.UNINSURED.TABLE.SR22_REQUIREMENT' | translate }}</td>
+              <td>
+                <div class="penalty-detail">
+                  <span class="penalty-icon"></span>
+                  <span>{{ 'MISSION_TX.UNINSURED.DETAILS.SR22_REQUIREMENT' | translate }}</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>{{ 'GLOBAL_TX.UNINSURED.TABLE.LICENSE_SUSPENSION' | translate }}</td>
+              <td>
+                <div class="penalty-detail">
+                  <span class="penalty-icon"></span>
+                  <span>{{ 'MISSION_TX.UNINSURED.DETAILS.LICENSE_SUSPENSION' | translate }}</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>{{ 'GLOBAL_TX.UNINSURED.TABLE.REGISTRATION_SUSPENSION' | translate }}</td>
+              <td>
+                <div class="penalty-detail">
+                  <span class="penalty-icon"></span>
+                  <span>{{ 'MISSION_TX.UNINSURED.DETAILS.REGISTRATION_SUSPENSION' | translate }}</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="texassure-block text-center">
+        <h3 class="texassure-title mb-3">{{ 'GLOBAL_TX.UNINSURED.TEXASSURE_TITLE' | translate }}</h3>
+        <p class="texassure-copy mx-auto mb-0" [innerHTML]="'MISSION_TX.UNINSURED.TEXASSURE_COPY' | translateHtml | async"></p>
+      </div>
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Uninsured Penalties Section End -->
+
+  <!-- Coverage Options Section Start -->
+  <section class="houston-coverage-options-section py-5" id="toc-section-3">
+    <div class="container">
+      <div class="row section-content-row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-9">
+          <div class="section-content-shell">
+      <div class="coverage-options-header text-center">
+        <h2 class="coverage-options-title mb-5">{{ 'GLOBAL_TX.COVERAGE_OPTIONS.TITLE_PREFIX' | translate }} {{ 'MISSION_TX.LOCATION.CITY' | translate }} {{ 'GLOBAL_TX.COVERAGE_OPTIONS.TITLE_SUFFIX' | translate }}</h2>
+      </div>
+
+      <div class="row coverage-options-grid gy-4 gx-lg-5 gx-4">
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon coverage-option-card__icon--liability" aria-hidden="true">
+              <img src="/assets/images/houston-tx/magic.png" alt="" class="coverage-option-card__icon-image">
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_TX.COVERAGE_OPTIONS.ITEMS.LIABILITY' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'MISSION_TX.COVERAGE_OPTIONS.ITEMS.LIABILITY' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon coverage-option-card__icon--collision" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <circle cx="9" cy="6" r="2.2" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <circle cx="15.6" cy="6" r="2.2" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <path d="M7 18v-4.1c0-1.7 1.4-3.1 3.1-3.1h.5c1.7 0 3.1 1.4 3.1 3.1V18" fill="none" stroke="#231815"
+                  stroke-width="1.1" stroke-linecap="round" />
+                <path d="M2.9 18v-2.6c0-1.5 1.2-2.6 2.6-2.6h.5" fill="none" stroke="#231815" stroke-width="1.1"
+                  stroke-linecap="round" />
+                <path d="M17.3 12.8h.5c1.5 0 2.7 1.1 2.7 2.6V18" fill="none" stroke="#231815" stroke-width="1.1"
+                  stroke-linecap="round" />
+                <path d="M9.8 16.2h5.8" stroke="#f08b7f" stroke-width="2" stroke-linecap="round" />
+                <path d="M12.7 13.3v5.8" stroke="#f08b7f" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_TX.COVERAGE_OPTIONS.ITEMS.COLLISION' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'MISSION_TX.COVERAGE_OPTIONS.ITEMS.COLLISION' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon coverage-option-card__icon--comprehensive" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M12 3.5v7.4" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+                <path d="m8.7 7 2.6 1.8L8.4 9.9" fill="#ff8a61" stroke="#231815" stroke-width="1.1"
+                  stroke-linejoin="round" />
+                <path d="m15.3 7-2.6 1.8 2.9 1.1" fill="#ff8a61" stroke="#231815" stroke-width="1.1"
+                  stroke-linejoin="round" />
+                <path d="M5.2 18.5h13.6" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+                <path d="M7.7 18.5c.2-2.5 1.8-4.1 4.3-4.1s4.1 1.6 4.3 4.1" fill="#f9d95d" stroke="#231815"
+                  stroke-width="1.1" stroke-linejoin="round" />
+                <path d="M4.6 13.8h2.6m9.6 0h2.6" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+              </svg>
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_TX.COVERAGE_OPTIONS.ITEMS.COMPREHENSIVE' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'MISSION_TX.COVERAGE_OPTIONS.ITEMS.COMPREHENSIVE' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon coverage-option-card__icon--pip" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M6 18.2c0-2.7 2.2-4.9 4.9-4.9H13c2.7 0 4.9 2.2 4.9 4.9" fill="none" stroke="#231815"
+                  stroke-width="1.1" stroke-linecap="round" />
+                <circle cx="11.9" cy="8.3" r="3" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <path d="M18.1 5.3v4.2" stroke="#f08b7f" stroke-width="2" stroke-linecap="round" />
+                <path d="M16 7.4h4.2" stroke="#f08b7f" stroke-width="2" stroke-linecap="round" />
+                <path d="M6.7 18.2h10.5" stroke="#7bc1f3" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_TX.COVERAGE_OPTIONS.ITEMS.PIP' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'MISSION_TX.COVERAGE_OPTIONS.ITEMS.PIP' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon coverage-option-card__icon--medpay" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M5.4 8.8 12 3.9l6.6 4.9-6.6 11.3L5.4 8.8Z" fill="#8de3ef" stroke="#231815" stroke-width="1.1"
+                  stroke-linejoin="round" />
+                <path d="M9.2 9.4h5.6" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+                <path d="M12 6.6v5.6" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+              </svg>
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_TX.COVERAGE_OPTIONS.ITEMS.MEDPAY' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'MISSION_TX.COVERAGE_OPTIONS.ITEMS.MEDPAY' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon coverage-option-card__icon--um" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M4.7 15.8h10.8l1.7-4.3H6.8l-2.1 4.3Z" fill="#ffd449" stroke="#231815" stroke-width="1.1"
+                  stroke-linejoin="round" />
+                <circle cx="8.3" cy="17.4" r="1.5" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <circle cx="14.7" cy="17.4" r="1.5" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <path d="M17.8 7.3a2.6 2.6 0 1 1 0 5.2 2.6 2.6 0 0 1 0-5.2Z" fill="#f4f4f4" stroke="#231815"
+                  stroke-width="1.1" />
+                <path d="M16.1 8.9h3.4M17.8 7.2v3.4" stroke="#ef6a5f" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_TX.COVERAGE_OPTIONS.ITEMS.UM' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'MISSION_TX.COVERAGE_OPTIONS.ITEMS.UM' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon coverage-option-card__icon--uim" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <circle cx="9.3" cy="7.2" r="2.4" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <circle cx="14.8" cy="7.2" r="2.4" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <path d="M5.2 18.6c0-2.6 2.1-4.6 4.6-4.6h1.1c2.5 0 4.6 2 4.6 4.6" fill="none" stroke="#231815"
+                  stroke-width="1.1" stroke-linecap="round" />
+                <path d="M15.8 13.4h3.3" stroke="#f08b7f" stroke-width="2" stroke-linecap="round" />
+                <path d="M17.4 11.8v3.3" stroke="#f08b7f" stroke-width="2" stroke-linecap="round" />
+                <path d="M7.7 18.6h8.6" stroke="#8bd86b" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_TX.COVERAGE_OPTIONS.ITEMS.UIM' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'MISSION_TX.COVERAGE_OPTIONS.ITEMS.UIM' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon coverage-option-card__icon--umpd" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M4.8 15.8h10.2l1.6-4.1H6.8l-2 4.1Z" fill="#ffd449" stroke="#231815" stroke-width="1.1"
+                  stroke-linejoin="round" />
+                <circle cx="8.3" cy="17.3" r="1.5" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <circle cx="14.1" cy="17.3" r="1.5" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <path d="M18.8 6.3v6.4" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+                <circle cx="18.8" cy="5" r="1.3" fill="#f5d75b" stroke="#231815" stroke-width="1.1" />
+                <path d="M17.2 10h3.2" stroke="#ef6a5f" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_TX.COVERAGE_OPTIONS.ITEMS.UMPD' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'MISSION_TX.COVERAGE_OPTIONS.ITEMS.UMPD' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon coverage-option-card__icon--roadside" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M4.8 15.8h10.6l1.8-4.1H6.9l-2.1 4.1Z" fill="#ffd449" stroke="#231815" stroke-width="1.1"
+                  stroke-linejoin="round" />
+                <circle cx="8.4" cy="17.4" r="1.5" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <circle cx="14.5" cy="17.4" r="1.5" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <path d="M17.3 8.1h2.8" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+                <path d="M18.7 6.7v2.8" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+                <path d="M18.7 10.5v8" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+                <path d="M17 18.5h3.4" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+              </svg>
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_TX.COVERAGE_OPTIONS.ITEMS.ROADSIDE' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'MISSION_TX.COVERAGE_OPTIONS.ITEMS.ROADSIDE' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon coverage-option-card__icon--rental" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M6.3 14.6v-4.7l3.2-1.8 3.2 1.8v4.7" fill="#ffffff" stroke="#231815" stroke-width="1.1"
+                  stroke-linejoin="round" />
+                <circle cx="9.5" cy="14.6" r="1.5" fill="#ffd449" stroke="#231815" stroke-width="1.1" />
+                <circle cx="15.8" cy="8" r="2.6" fill="#8bd86b" stroke="#231815" stroke-width="1.1" />
+                <path d="M15.8 6.5v3M14.3 8h3" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+                <path d="M4.8 18.5h14.4" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+              </svg>
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_TX.COVERAGE_OPTIONS.ITEMS.RENTAL' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'MISSION_TX.COVERAGE_OPTIONS.ITEMS.RENTAL' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon coverage-option-card__icon--gap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <rect x="4.8" y="5.6" width="14.4" height="11.3" rx="1.6" fill="#ffffff" stroke="#231815"
+                  stroke-width="1.1" />
+                <path d="M7.4 9.1h4.5" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+                <path d="M7.4 12h4.5" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+                <path d="M14.5 10.7h2.7" stroke="#ef6a5f" stroke-width="2" stroke-linecap="round" />
+                <path d="M15.8 9.4v2.7" stroke="#ef6a5f" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_TX.COVERAGE_OPTIONS.ITEMS.GAP' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'MISSION_TX.COVERAGE_OPTIONS.ITEMS.GAP' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon coverage-option-card__icon--towing" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <circle cx="10.5" cy="6.7" r="2.3" fill="#f3cd67" stroke="#231815" stroke-width="1.1" />
+                <path d="M6.6 18.2c0-2.9 1.7-5.1 3.9-5.1h1.3c2.2 0 3.9 2.2 3.9 5.1" fill="none" stroke="#231815"
+                  stroke-width="1.1" stroke-linecap="round" />
+                <path d="M16.8 14.4h3.5" stroke="#7bc1f3" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M18.6 12.7v3.5" stroke="#7bc1f3" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M5.1 18.2h13.8" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+              </svg>
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_TX.COVERAGE_OPTIONS.ITEMS.TOWING' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'MISSION_TX.COVERAGE_OPTIONS.ITEMS.TOWING' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon coverage-option-card__icon--custom" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <circle cx="12" cy="12" r="3" fill="#f6c84e" stroke="#231815" stroke-width="1.1" />
+                <path
+                  d="M12 4.7v2.2M12 17.1v2.2M19.3 12h-2.2M6.9 12H4.7M17.2 6.8l-1.6 1.6M8.4 15.6l-1.6 1.6M17.2 17.2l-1.6-1.6M8.4 8.4 6.8 6.8"
+                  stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+                <path d="M11.2 9.8h1.6v4.4" stroke="#ef6a5f" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_TX.COVERAGE_OPTIONS.ITEMS.CUSTOM_PARTS' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'MISSION_TX.COVERAGE_OPTIONS.ITEMS.CUSTOM_PARTS' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon coverage-option-card__icon--rideshare" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path
+                  d="M8.8 7.1A3.2 3.2 0 0 1 12 4a3.2 3.2 0 0 1 3.2 3.1c0 1.8-1.4 2.8-2.2 4v1.8h-2V11c-.8-1.2-2.2-2.2-2.2-3.9Z"
+                  fill="#8bd0de" stroke="#231815" stroke-width="1.1" stroke-linejoin="round" />
+                <path d="M9.4 18.2c0-1.9 1.2-3.2 2.6-3.2s2.6 1.3 2.6 3.2" fill="none" stroke="#231815"
+                  stroke-width="1.1" stroke-linecap="round" />
+                <circle cx="8" cy="17.8" r="1.2" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <circle cx="16" cy="17.8" r="1.2" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <path d="M12 6.2v2.9" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+              </svg>
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_TX.COVERAGE_OPTIONS.ITEMS.RIDESHARE' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'MISSION_TX.COVERAGE_OPTIONS.ITEMS.RIDESHARE' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon coverage-option-card__icon--loan" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <rect x="4.8" y="6" width="14.5" height="10.7" rx="1.4" fill="#ffffff" stroke="#231815"
+                  stroke-width="1.1" />
+                <path d="M7.5 9.2h9.1M7.5 11.9h9.1M7.5 14.6h5.3" stroke="#231815" stroke-width="1.1"
+                  stroke-linecap="round" />
+                <path d="M17.7 4.4v4.2" stroke="#f3cd67" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M15.6 6.5h4.2" stroke="#f3cd67" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_TX.COVERAGE_OPTIONS.ITEMS.LOAN_PAYOFF' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'MISSION_TX.COVERAGE_OPTIONS.ITEMS.LOAN_PAYOFF' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon coverage-option-card__icon--newcar" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M4.9 15.8h10.5l1.8-4.1H6.9l-2 4.1Z" fill="#79c7ee" stroke="#231815" stroke-width="1.1"
+                  stroke-linejoin="round" />
+                <circle cx="8.4" cy="17.4" r="1.5" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <circle cx="14.5" cy="17.4" r="1.5" fill="#ffffff" stroke="#231815" stroke-width="1.1" />
+                <path d="M17.7 7a2.7 2.7 0 1 1 0 5.4A2.7 2.7 0 0 1 17.7 7Z" fill="#ff8a61" stroke="#231815"
+                  stroke-width="1.1" />
+                <path d="M17.7 5.4v8.6M13.4 9.7H22" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+              </svg>
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_TX.COVERAGE_OPTIONS.ITEMS.NEW_CAR' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'MISSION_TX.COVERAGE_OPTIONS.ITEMS.NEW_CAR' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon coverage-option-card__icon--forgiveness" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M6.6 15.2V8.7l5.3-3 5.3 3v6.5l-5.3 3-5.3-3Z" fill="#ffffff" stroke="#231815" stroke-width="1.1"
+                  stroke-linejoin="round" />
+                <path d="m10.1 12.2 1.5 1.6 3.2-3.5" fill="none" stroke="#ef6a5f" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M5.1 18.7h3.2M15.7 18.7h3.2" stroke="#8bd86b" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_TX.COVERAGE_OPTIONS.ITEMS.ACCIDENT_FORGIVENESS' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'MISSION_TX.COVERAGE_OPTIONS.ITEMS.ACCIDENT_FORGIVENESS' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon coverage-option-card__icon--death" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path
+                  d="M12 19.1c-3.6-2.7-5.8-5.2-5.8-8.1 0-1.9 1.5-3.3 3.3-3.3 1.2 0 2 .5 2.5 1.3.5-.8 1.4-1.3 2.5-1.3 1.9 0 3.3 1.4 3.3 3.3 0 2.9-2.2 5.4-5.8 8.1Z"
+                  fill="#8dd7ea" stroke="#231815" stroke-width="1.1" stroke-linejoin="round" />
+                <path d="M18.3 6.2h2.4M19.5 5v2.4" stroke="#231815" stroke-width="1.1" stroke-linecap="round" />
+                <path d="M4.8 18.5h5" stroke="#ef6a5f" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_TX.COVERAGE_OPTIONS.ITEMS.DEATH_DISABILITY' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'MISSION_TX.COVERAGE_OPTIONS.ITEMS.DEATH_DISABILITY' | translate }}</p>
+          </article>
+        </div>
+      </div>
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Coverage Options Section End -->
+
+  <!-- Rate Factors Section Start -->
+  <section class="houston-rate-factors-section" id="toc-section-4">
+    <div class="container">
+      <div class="row section-content-row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-9">
+          <div class="section-content-shell">
+      <div class="rate-factors-header text-center">
+        <h2 class="rate-factors-title mb-0">{{ 'GLOBAL_TX.RATE_FACTORS.TITLE_PREFIX' | translate }} {{ 'MISSION_TX.LOCATION.CITY_WITH_STATE' | translate }}?</h2>
+        <p class="rate-factors-copy mb-0">{{ 'MISSION_TX.RATE_FACTORS.COPY' | translate }}</p>
+      </div>
+
+      <div class="row rate-factors-grid gx-lg-5 gx-4 gy-0">
+        <div class="col-md-4">
+          <ul class="rate-factors-list list-unstyled mb-0">
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.DRIVING_RECORD' | translate }}</span></li>
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.CREDIT_SCORE' | translate }}</span></li>
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.VEHICLE_MAKE_MODEL' | translate }}</span></li>
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.DAILY_COMMUTE' | translate }}</span></li>
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.COVERAGE_LEVEL' | translate }}</span></li>
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.NUMBER_OF_VEHICLES' | translate }}</span></li>
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.NUMBER_OF_DRIVERS' | translate }}</span></li>
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.OCCUPATION' | translate }}</span></li>
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.BUNDLING' | translate }}</span></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4">
+          <ul class="rate-factors-list list-unstyled mb-0">
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.AGE_EXPERIENCE' | translate }}</span></li>
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.MARITAL_STATUS' | translate }}</span></li>
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.VEHICLE_YEAR' | translate }}</span></li>
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.ANNUAL_MILEAGE' | translate }}</span></li>
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.DEDUCTIBLE' | translate }}</span></li>
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.LAPSES' | translate }}</span></li>
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.EDUCATION' | translate }}</span></li>
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.INSURANCE_SCORE' | translate }}</span></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4">
+          <ul class="rate-factors-list list-unstyled mb-0">
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.GENDER' | translate }}</span></li>
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.ZIP_NEIGHBORHOOD' | translate }}</span></li>
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.SAFETY_FEATURES' | translate }}</span></li>
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.VEHICLE_USE' | translate }}</span></li>
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.CLAIMS_HISTORY' | translate }}</span></li>
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.TEEN_HIGH_RISK' | translate }}</span></li>
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.HOMEOWNERSHIP' | translate }}</span></li>
+            <li class="rate-factors-list__item"><img src="/assets/images/houston-tx/magic.png" alt=""
+                class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.RATE_FACTORS.ITEMS.COMPANY_TYPE' | translate }}</span></li>
+          </ul>
+        </div>
+      </div>
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Rate Factors Section End -->
+
+  <!-- Savings Section Start -->
+  <section class="houston-savings-section" id="toc-section-5">
+    <div class="container">
+      <div class="row section-content-row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-9">
+          <div class="section-content-shell">
+      <div class="savings-header text-center">
+        <h2 class="savings-title mb-0">{{ 'GLOBAL_TX.SAVINGS.TITLE_PREFIX' | translate }} {{ 'MISSION_TX.LOCATION.CITY_WITH_STATE' | translate }}</h2>
+        <p class="savings-copy mb-0">{{ 'MISSION_TX.SAVINGS.COPY' | translate }}</p>
+      </div>
+
+      <ul class="savings-list savings-grid list-unstyled mb-0">
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.MULTI_POLICY' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.GOOD_DRIVER' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.GOOD_STUDENT' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.PAPERLESS' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.NEW_CAR' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.TELEMATICS' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.AFFINITY' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.MULTI_CAR' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.DEFENSIVE_DRIVING' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.PAY_IN_FULL' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.MILITARY_VETERAN' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.HOMEOWNER' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.SAFETY_FEATURE' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.STUDENT_AWAY' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.ACCIDENT_FREE' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.AUTO_PAY' | translate }}</span>
+        </li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.EARLY_SIGNING' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.LOYALTY' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.ANTI_THEFT' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.LOW_MILEAGE' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/houston-tx/arrow.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_TX.SAVINGS.ITEMS.E_SIGNATURE' | translate }}</span></li>
+      </ul>
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Savings Section End -->
+
+  <!-- Independent Agency Section Start -->
+  <section class="houston-independent-agency-section" id="toc-section-6">
+    <div class="container">
+      <div class="row section-content-row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-9">
+          <div class="section-content-shell">
+      <div class="independent-agency-header text-center">
+        <h2 class="independent-agency-title mb-0">{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TITLE_PREFIX' | translate }} {{ 'MISSION_TX.LOCATION.CITY' | translate }} {{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TITLE_SUFFIX' | translate }}</h2>
+      </div>
+
+      <div class="independent-agency-badges">
+        <div class="row g-2 justify-content-center">
+          <div class="col-lg-6 col-md-8 col-sm-10">
+            <div class="independent-agency-badge">
+              <span class="independent-agency-badge__number">01</span>
+              <span class="independent-agency-badge__text">{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.BADGES.ONE' | translate }}</span>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-8 col-sm-10">
+            <div class="independent-agency-badge">
+              <span class="independent-agency-badge__number">02</span>
+              <span class="independent-agency-badge__text">{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.BADGES.TWO' | translate }}</span>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-8 col-sm-10">
+            <div class="independent-agency-badge">
+              <span class="independent-agency-badge__number">03</span>
+              <span class="independent-agency-badge__text">{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.BADGES.THREE' | translate }}</span>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-8 col-sm-10">
+            <div class="independent-agency-badge">
+              <span class="independent-agency-badge__number">04</span>
+              <span class="independent-agency-badge__text">{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.BADGES.FOUR' | translate }}</span>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-8 col-sm-10">
+            <div class="independent-agency-badge independent-agency-badge--center">
+              <span class="independent-agency-badge__number">05</span>
+              <span class="independent-agency-badge__text">{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.BADGES.FIVE' | translate }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="independent-agency-table-wrap">
+        <div class="table-responsive card-table">
+          <table class="table independent-agency-table mb-0">
+            <thead>
+              <tr>
+                <th scope="col">{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.FEATURE' | translate }}</th>
+                <th scope="col">{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.INDEPENDENT' | translate }}</th>
+                <th scope="col">{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.CAPTIVE' | translate }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_1' | translate }}</th>
+                <td>{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_1_INDEPENDENT' | translate }}</td>
+                <td>{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_1_CAPTIVE' | translate }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_2' | translate }}</th>
+                <td>{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_2_INDEPENDENT' | translate }}</td>
+                <td>{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_2_CAPTIVE' | translate }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_3' | translate }}</th>
+                <td>{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_3_INDEPENDENT' | translate }}</td>
+                <td>{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_3_CAPTIVE' | translate }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_4' | translate }}</th>
+                <td>{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_4_INDEPENDENT' | translate }}</td>
+                <td>{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_4_CAPTIVE' | translate }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_5' | translate }}</th>
+                <td>{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_5_INDEPENDENT' | translate }}</td>
+                <td>{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_5_CAPTIVE' | translate }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_6' | translate }}</th>
+                <td>{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_6_INDEPENDENT' | translate }}</td>
+                <td>{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_6_CAPTIVE' | translate }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_7' | translate }}</th>
+                <td>{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_7_INDEPENDENT' | translate }}</td>
+                <td>{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_7_CAPTIVE' | translate }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_8' | translate }}</th>
+                <td>{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_8_INDEPENDENT' | translate }}</td>
+                <td>{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_8_CAPTIVE' | translate }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_9' | translate }}</th>
+                <td>{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_9_INDEPENDENT' | translate }}</td>
+                <td>{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_9_CAPTIVE' | translate }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_10' | translate }}</th>
+                <td>{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_10_INDEPENDENT' | translate }}</td>
+                <td>{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_10_CAPTIVE' | translate }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_11' | translate }}</th>
+                <td>{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_11_INDEPENDENT' | translate }}</td>
+                <td>{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_11_CAPTIVE' | translate }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_12' | translate }}</th>
+                <td>{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_12_INDEPENDENT' | translate }}</td>
+                <td>{{ 'GLOBAL_TX.INDEPENDENT_AGENCY.TABLE.ROW_12_CAPTIVE' | translate }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Independent Agency Section End -->
+
+  <!-- Special Coverage Section Start -->
+<section class="coverage" id="toc-section-7">
+  <div class="container ">
+    <div class="row section-content-row">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-9">
+        <div class="section-content-shell">
+      <div class="row coverage__header-row align-items-center g-4 mb-2">
+        <div class="col-md-7 col-lg-8 order-2 order-md-1 coverage__header-copy-col">
+          <h2 class="coverage__title mb-0">{{ 'GLOBAL_TX.SPECIAL_COVERAGE.TITLE_PREFIX' | translate }} {{ 'MISSION_TX.LOCATION.CITY' | translate }} {{ 'GLOBAL_TX.SPECIAL_COVERAGE.TITLE_SUFFIX' | translate }}</h2>
+        </div>
+        <div class="col-md-5 col-lg-4 order-1 order-md-2 text-center text-md-end coverage__header-illustration-col">
+          <img class="coverage__image img-fluid" src="/assets/images/houston-tx/drivers.png"
+            alt="Line-art illustration of a vintage car with luggage on top, a person driving and a dog looking out the back window" />
+        </div>
+      </div>
+
+          <div class="row g-4 coverage__grid">
+            <!-- SR-22 -->
+            <div class="col-12 col-sm-6 col-lg-4 coverage__col">
+              <div class="coverage__item d-flex flex-column h-100">
+                <span class="coverage__icon" aria-hidden="true">🛩️</span>
+                <h3 class="coverage__heading">
+                  <a [routerLink]="getRoute('sr22Insurance')" class="coverage__link">{{ 'GLOBAL_TX.SPECIAL_COVERAGE.ITEMS.SR22' | translate }}</a>
+                </h3>
+                <p class="coverage__text">{{ 'MISSION_TX.SPECIAL_COVERAGE.ITEMS.SR22' | translate }}</p>
+              </div>
+            </div>
+
+            <!-- High-Risk -->
+            <div class="col-12 col-sm-6 col-lg-4 coverage__col">
+              <div class="coverage__item d-flex flex-column h-100">
+                <span class="coverage__icon" aria-hidden="true">🚕</span>
+                <h3 class="coverage__heading">
+                  {{ 'GLOBAL_TX.SPECIAL_COVERAGE.ITEMS.HIGH_RISK' | translate }}
+                </h3>
+                <p class="coverage__text">{{ 'MISSION_TX.SPECIAL_COVERAGE.ITEMS.HIGH_RISK' | translate }}</p>
+              </div>
+            </div>
+
+            <!-- Teen & Young -->
+            <div class="col-12 col-sm-6 col-lg-4 coverage__col">
+              <div class="coverage__item d-flex flex-column h-100">
+                <span class="coverage__icon" aria-hidden="true">👦</span>
+                <h3 class="coverage__heading">
+                  {{ 'GLOBAL_TX.SPECIAL_COVERAGE.ITEMS.TEEN' | translate }}
+                </h3>
+                <p class="coverage__text">{{ 'MISSION_TX.SPECIAL_COVERAGE.ITEMS.TEEN' | translate }}</p>
+              </div>
+            </div>
+
+            <!-- Rideshare -->
+            <div class="col-12 col-sm-6 col-lg-4 coverage__col">
+              <div class="coverage__item d-flex flex-column h-100">
+                <span class="coverage__icon" aria-hidden="true">🚖</span>
+                <h3 class="coverage__heading">
+                  <a [routerLink]="getRoute('rideshareInsurance')" class="coverage__link">{{ 'GLOBAL_TX.SPECIAL_COVERAGE.ITEMS.RIDESHARE' | translate }}</a>
+                </h3>
+                <p class="coverage__text">{{ 'MISSION_TX.SPECIAL_COVERAGE.ITEMS.RIDESHARE' | translate }}</p>
+              </div>
+            </div>
+
+            <!-- Classic & Collector -->
+            <div class="col-12 col-sm-6 col-lg-4 coverage__col">
+              <div class="coverage__item d-flex flex-column h-100">
+                <span class="coverage__icon" aria-hidden="true">🏎️</span>
+                <h3 class="coverage__heading">
+                  <a [routerLink]="getRoute('classicCarInsurance')" class="coverage__link">{{ 'GLOBAL_TX.SPECIAL_COVERAGE.ITEMS.CLASSIC' | translate }}</a>
+                </h3>
+                <p class="coverage__text">{{ 'MISSION_TX.SPECIAL_COVERAGE.ITEMS.CLASSIC' | translate }}</p>
+              </div>
+            </div>
+
+            <!-- Non-Owner -->
+            <div class="col-12 col-sm-6 col-lg-4 coverage__col">
+              <div class="coverage__item d-flex flex-column h-100">
+                <span class="coverage__icon" aria-hidden="true">🙋</span>
+                <h3 class="coverage__heading">
+                  {{ 'GLOBAL_TX.SPECIAL_COVERAGE.ITEMS.NON_OWNER' | translate }}
+                </h3>
+                <p class="coverage__text">{{ 'MISSION_TX.SPECIAL_COVERAGE.ITEMS.NON_OWNER' | translate }}</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-1"></div>
+    </div>
+  </div>
+</section>
+  <!-- Special Coverage Section End -->
+
+  <section class="risks" id="toc-section-8">
+    <div class="container risks__container">
+      <div class="row section-content-row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-9">
+          <div class="section-content-shell">
+      <h2 class="risks__title">{{ 'MISSION_TX.LOCATION.CITY' | translate }}-{{ 'GLOBAL_TX.RISKS.TITLE_SUFFIX' | translate }}</h2>
+
+      <!-- Decorative RISK badge -->
+      <img class="risks__decor" src="/assets/images/houston-tx/risk.png" alt="" aria-hidden="true" />
+
+      <div class="row risks__grid">
+        <!-- 01 -->
+        <div class="col-12 col-lg-6 risks__col">
+          <div class="risks__item">
+            <span class="risks__number">01</span>
+            <h3 class="risks__heading">{{ 'MISSION_TX.RISKS.ITEMS.0.HEADING' | translate }}</h3>
+            <p class="risks__text" [innerHTML]="'MISSION_TX.RISKS.ITEMS.0.TEXT' | translateHtml | async"></p>
+          </div>
+        </div>
+
+        <!-- 02 -->
+        <div class="col-12 col-lg-6 risks__col">
+          <div class="risks__item">
+            <span class="risks__number">02</span>
+            <h3 class="risks__heading">{{ 'MISSION_TX.RISKS.ITEMS.1.HEADING' | translate }}</h3>
+            <p class="risks__text" [innerHTML]="'MISSION_TX.RISKS.ITEMS.1.TEXT' | translateHtml | async"></p>
+          </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="col-12 col-lg-6 risks__col">
+          <div class="risks__item">
+            <span class="risks__number">03</span>
+            <h3 class="risks__heading">{{ 'MISSION_TX.RISKS.ITEMS.2.HEADING' | translate }}</h3>
+            <p class="risks__text" [innerHTML]="'MISSION_TX.RISKS.ITEMS.2.TEXT' | translateHtml | async"></p>
+          </div>
+        </div>
+
+        <!-- 04 -->
+        <div class="col-12 col-lg-6 risks__col">
+          <div class="risks__item">
+            <span class="risks__number">04</span>
+            <h3 class="risks__heading">{{ 'MISSION_TX.RISKS.ITEMS.3.HEADING' | translate }}</h3>
+            <p class="risks__text" [innerHTML]="'MISSION_TX.RISKS.ITEMS.3.TEXT' | translateHtml | async"></p>
+          </div>
+        </div>
+      </div>
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neighborhoods Section Start -->
+  <section class="houston-neighborhoods-section" id="toc-section-9">
+    <div class="container">
+      <div class="row section-content-row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-9">
+          <div class="section-content-shell">
+      <div class="houston-neighborhoods-section__inner">
+        <h2 class="houston-neighborhoods-section__title">{{ 'GLOBAL_TX.NEIGHBORHOODS.TITLE_PREFIX' | translate }} {{ 'MISSION_TX.LOCATION.CITY_WITH_STATE' | translate }}</h2>
+
+        <div class="houston-neighborhoods-section__table card-table">
+          @for (row of neighborhoodsRows; track row[0]; let i = $index) {
+          <div class="houston-neighborhoods-section__row" [class.houston-neighborhoods-section__row--alt]="i % 2 === 1">
+            @for (item of row; track item) {
+            <div class="houston-neighborhoods-section__cell">{{ item }}</div>
+            }
+          </div>
+          }
+        </div>
+      </div>
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Neighborhoods Section End -->
+
+  <!-- FAQ Section Start -->
+  <section class="faq" id="toc-section-10" #faqSection>
+    <div class="container faq__container">
+      <div class="row section-content-row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-9">
+          <div class="section-content-shell">
+      <h2 class="faq__title">{{ 'GLOBAL_TX.FAQ_SECTION.TITLE_PREFIX' | translate }} {{ 'MISSION_TX.LOCATION.CITY_WITH_STATE' | translate }}</h2>
+
+      <div class="faq__list">
+        @for (item of faqItems; track item.question; let i = $index) {
+        <div class="faq__entry">
+          <div class="faq__item" [class.faq__item--open]="openFaqIndex === i">
+            <button class="faq__question" type="button" [attr.aria-expanded]="openFaqIndex === i"
+              (click)="toggleFaq(i)">
+              <span class="faq__question-text">{{ item.question }}</span>
+              <span class="faq__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path d="M6 9l6 6 6-6" stroke="#1f1f24" stroke-width="2.2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </span>
+            </button>
+          </div>
+
+          @if (openFaqIndex === i) {
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>{{ item.answer }}</p>
+            </div>
+          </div>
+          }
+        </div>
+        }
+      </div>
+
+      <!-- Decorative question mark -->
+      <div class="faq__decor" aria-hidden="true">
+        <img src="/assets/images/houston-tx/question.png" alt="" class="faq__decor-image">
+      </div>
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </section>
+  <!-- FAQ Section End -->
+
+  <section class="espanol" #tocStopSection>
+    <div class="container-fluid espanol__container">
+      <h2 class="espanol__title">{{ 'GLOBAL_TX.ESPANOL.TITLE_PREFIX' | translate }} {{ 'MISSION_TX.LOCATION.CITY_WITH_STATE' | translate }}</h2>
+
+      <div class="row align-items-center espanol__row">
+        <!-- Illustration -->
+        <div class="col-12 col-lg-4 espanol__media-col">
+          <img class="espanol__image" src="/assets/images/houston-tx/language.png"
+            alt="Illustration of a person holding a tablet with a U.S. flag and ABC blocks representing bilingual support" />
+        </div>
+
+        <!-- Text -->
+        <div class="col-12 col-lg-8 espanol__text-col">
+          <p class="espanol__text" [innerHTML]="'MISSION_TX.ESPANOL.COPY' | translateHtml | async"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Get Covered Section Start -->
+  <div class="topBanner getCovver">
+    <div class="container">
+      <div class="topSub">
+        <div class="topSub2">
+          <section class="cover-quote-shell">
+            <div class="cover-quote-shell__top">
+              <div class="cover-quote-shell__visual">
+                <img src="/assets/images/houston-tx/coverd-poster.png" alt="Car insurance quote visual"
+                  class="cover-quote-shell__visual-image">
+              </div>
+
+              <div class="cover-quote-shell__content">
+                <h2 class="cover-quote-shell__title mb-0">{{ 'GLOBAL_TX.QUOTE.TITLE_PREFIX' | translate }} {{ 'MISSION_TX.LOCATION.CITY_WITH_STATE' | translate }} {{ 'GLOBAL_TX.QUOTE.TITLE_SUFFIX' | translate }}</h2>
+                <p class="cover-quote-shell__copy mb-0" [innerHTML]="'MISSION_TX.QUOTE.COPY' | translateHtml | async"></p>
+              </div>
+            </div>
+
+            <div class="coverd-quote-card">
+              <div class="quote-options">
+                @for (item of chips; track item.name) {
+                <button type="button" class="quote-option" *ngIf="item.name"
+                  [class.selected]="coveredForm.selectedChip === item.name" [attr.aria-pressed]="coveredForm.selectedChip === item.name"
+                  (click)="selectChip(coveredForm, item.name)">
+                  <span class="icon-badge">
+                    <span class="icon-burst"></span>
+                    <img [src]="item.image" [alt]="item.name | translate" class="quote-option-image" />
+                  </span>
+                  <span class="quote-option-label">
+                    <span class="radio-indicator"></span>
+                    <span [innerHTML]="item.name | translateHtml | async"></span>
+                  </span>
+                </button>
+                }
+              </div>
+
+              <div class="quote-form-row">
+                <input type="text" [placeholder]="'AUTO_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
+                  class="form-control" [value]="coveredForm.fullName" (input)="coveredForm.fullName = $any($event.target).value" />
+                <input type="tel" appPhoneFormat [placeholder]="'AUTO_INSURANCE.BANNER.FORM.PHONE' | translate"
+                  class="form-control" [value]="coveredForm.phone" (input)="coveredForm.phone = $any($event.target).value" />
+                <button class="quote-submit" [disabled]="coveredForm.isSubmitting || !coveredForm.selectedChip || !coveredForm.fullName.trim() || !coveredForm.phone.trim()" (click)="goToSelectedQuote(coveredForm)">
+                  {{ coveredForm.isSubmitting ? 'Loading...' : 'Get a Quote' }}
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Get Covered Section End -->
+
+  <!-- footuper -->
+  <app-foot-upper></app-foot-upper>
+  <!--  -->
+</div>

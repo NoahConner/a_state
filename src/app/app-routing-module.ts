@@ -107,6 +107,14 @@ import { PearlandTx } from './pages/auto-insurance/pearland-tx/pearland-tx';
 import { CollegeStationTx } from './pages/auto-insurance/college-station-tx/college-station-tx';
 import { TheWoodlandsTx } from './pages/auto-insurance/the-woodlands-tx/the-woodlands-tx';
 import { RichardsonTx } from './pages/auto-insurance/richardson-tx/richardson-tx';
+import { AllenTx } from './pages/auto-insurance/allen-tx/allen-tx';
+import { TylerTx } from './pages/auto-insurance/tyler-tx/tyler-tx';
+import { NewBraunfelsTx } from './pages/auto-insurance/new-braunfels-tx/new-braunfels-tx';
+import { EdinburgTx } from './pages/auto-insurance/edinburg-tx/edinburg-tx';
+import { ConroeTx } from './pages/auto-insurance/conroe-tx/conroe-tx';
+import { MissionTx } from './pages/auto-insurance/mission-tx/mission-tx';
+import { GeorgetownTx } from './pages/auto-insurance/georgetown-tx/georgetown-tx';
+import { BaytownTx } from './pages/auto-insurance/baytown-tx/baytown-tx';
 
 const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full', data: { metaPage: 'home' } },
@@ -368,6 +376,14 @@ const routes: Routes = [
       { path: 'college-station-tx', component: CollegeStationTx, data: { metaPage: 'collegeStationTx' } },
       { path: 'the-woodlands-tx', component: TheWoodlandsTx, data: { metaPage: 'theWoodlandsTx' } },
       { path: 'richardson-tx', component: RichardsonTx, data: { metaPage: 'richardsonTx' } },
+      { path: 'allen-tx', component: AllenTx, data: { metaPage: 'allenTx' } },
+      { path: 'tyler-tx', component: TylerTx, data: { metaPage: 'tylerTx' } },
+      { path: 'new-braunfels-tx', component: NewBraunfelsTx, data: { metaPage: 'newBraunfelsTx' } },
+      { path: 'edinburg-tx', component: EdinburgTx, data: { metaPage: 'edinburgTx' } },
+      { path: 'conroe-tx', component: ConroeTx, data: { metaPage: 'conroeTx' } },
+      { path: 'mission-tx', component: MissionTx, data: { metaPage: 'missionTx' } },
+      { path: 'georgetown-tx', component: GeorgetownTx, data: { metaPage: 'georgetownTx' } },
+      { path: 'baytown-tx', component: BaytownTx, data: { metaPage: 'baytownTx' } },
 
     ],
   },
@@ -590,6 +606,14 @@ const routes: Routes = [
           { path: 'college-station-tx', component: CollegeStationTx, data: { metaPage: 'collegeStationTx' } },
           { path: 'the-woodlands-tx', component: TheWoodlandsTx, data: { metaPage: 'theWoodlandsTx' } },
           { path: 'richardson-tx', component: RichardsonTx, data: { metaPage: 'richardsonTx' } },
+          { path: 'allen-tx', component: AllenTx, data: { metaPage: 'allenTx' } },
+          { path: 'tyler-tx', component: TylerTx, data: { metaPage: 'tylerTx' } },
+          { path: 'new-braunfels-tx', component: NewBraunfelsTx, data: { metaPage: 'newBraunfelsTx' } },
+          { path: 'edinburg-tx', component: EdinburgTx, data: { metaPage: 'edinburgTx' } },
+          { path: 'conroe-tx', component: ConroeTx, data: { metaPage: 'conroeTx' } },
+          { path: 'mission-tx', component: MissionTx, data: { metaPage: 'missionTx' } },
+          { path: 'georgetown-tx', component: GeorgetownTx, data: { metaPage: 'georgetownTx' } },
+          { path: 'baytown-tx', component: BaytownTx, data: { metaPage: 'baytownTx' } },
 
 
         ],
@@ -1270,5 +1294,37 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   richardsonTx: {
     en: 'auto-insurance/richardson-tx',
     es: 'seguros-de-auto/richardson-tx',
+  },
+  allenTx: {
+    en: 'auto-insurance/allen-tx',
+    es: 'seguros-de-auto/allen-tx',
+  },
+  tylerTx: {
+    en: 'auto-insurance/tyler-tx',
+    es: 'seguros-de-auto/tyler-tx',
+  },
+  newBraunfelsTx: {
+    en: 'auto-insurance/new-braunfels-tx',
+    es: 'seguros-de-auto/new-braunfels-tx',
+  },
+  edinburgTx: {
+    en: 'auto-insurance/edinburg-tx',
+    es: 'seguros-de-auto/edinburg-tx',
+  },
+  conroeTx: {
+    en: 'auto-insurance/conroe-tx',
+    es: 'seguros-de-auto/conroe-tx',
+  },
+  missionTx: {
+    en: 'auto-insurance/mission-tx',
+    es: 'seguros-de-auto/mission-tx',
+  },
+  georgetownTx: {
+    en: 'auto-insurance/georgetown-tx',
+    es: 'seguros-de-auto/georgetown-tx',
+  },
+  baytownTx: {
+    en: 'auto-insurance/baytown-tx',
+    es: 'seguros-de-auto/baytown-tx',
   },
 };

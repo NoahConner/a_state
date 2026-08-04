@@ -132,6 +132,14 @@ import { PearlandTx } from './pages/auto-insurance/pearland-tx/pearland-tx';
 import { CollegeStationTx } from './pages/auto-insurance/college-station-tx/college-station-tx';
 import { TheWoodlandsTx } from './pages/auto-insurance/the-woodlands-tx/the-woodlands-tx';
 import { RichardsonTx } from './pages/auto-insurance/richardson-tx/richardson-tx';
+import { AllenTx } from './pages/auto-insurance/allen-tx/allen-tx';
+import { TylerTx } from './pages/auto-insurance/tyler-tx/tyler-tx';
+import { NewBraunfelsTx } from './pages/auto-insurance/new-braunfels-tx/new-braunfels-tx';
+import { EdinburgTx } from './pages/auto-insurance/edinburg-tx/edinburg-tx';
+import { ConroeTx } from './pages/auto-insurance/conroe-tx/conroe-tx';
+import { MissionTx } from './pages/auto-insurance/mission-tx/mission-tx';
+import { GeorgetownTx } from './pages/auto-insurance/georgetown-tx/georgetown-tx';
+import { BaytownTx } from './pages/auto-insurance/baytown-tx/baytown-tx';
 
 export function initializeTranslations(
   translate: TranslateService,
@@ -257,6 +265,14 @@ export function initializeTranslations(
     CollegeStationTx,
     TheWoodlandsTx,
     RichardsonTx,
+    AllenTx,
+    TylerTx,
+    NewBraunfelsTx,
+    EdinburgTx,
+    ConroeTx,
+    MissionTx,
+    GeorgetownTx,
+    BaytownTx,
     PhoneFormatDirective,
     ChipNavigationDirective,
     BannerButtonNoRedirectDirective,
