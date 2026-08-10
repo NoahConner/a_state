@@ -277,11 +277,12 @@
       "FORM": {
         "FULL_NAME": "Nombre Completo",
         "PHONE": "Número de Teléfono",
-        "BUTTON": "Obtener Cotización"
+        "BUTTON": "Obtener Cotización",
+        "LOADING": "Cargando..."
       }
     },
     "WHY_CHOOSE": {
-      "HEADING": "Nuestros Servicios de Seguros",
+      "HEADING": "Nuestros Servicios de <span class='text-accent'>Seguros</span> de Texas",
       "HEADING_2": "Seguro de Auto",
       "DESCRIPTION": "¿Conduce todos los días? ¿Viajes por carretera? ¿Salidas nocturnas por comida? A-State Insurance lo respalda. Ofrecemos servicios confiables de seguro de auto en todo Texas, brindando a los conductores una sólida protección contra accidentes, robo, responsabilidad civil y daños al vehículo. Trabajamos con aseguradoras de confianza para encontrar la cobertura que se adapte a usted. Nuestro equipo hace que el proceso sea sencillo con cotizaciones rápidas, pólizas claras y apoyo local en el que puede confiar. Con A-State Insurance, obtiene un seguro de auto confiable en Texas y un servicio que lo pone a usted primero.",
       "CARD1": {
@@ -329,11 +330,11 @@
         "DESC": "Obtenga la cobertura adecuada para rideshare y asegúrese de estar completamente protegido y financieramente seguro mientras conduce para compañías como Uber o Lyft."
       },
       "HOMEOWNERS": {
-        "HEADING": "Seguro para Propietarios de Vivienda",
-        "DESCRIPTION": "Con el seguro para propietarios de vivienda, A-State Insurance le brinda una sólida protección para su hogar, sus pertenencias y su presupuesto. Obtenga los mejores servicios de seguro para riesgos comunes como incendios, tormentas, robo y vandalismo, para que un daño inesperado no se convierta en un gasto mayor. Sus artículos personales, incluyendo muebles, electrodomésticos y equipos electrónicos, también están cubiertos, para que no tenga que reemplazarlos por su cuenta. Elija opciones a un precio que tenga sentido y tenga la tranquilidad de que su hogar está respaldado por A-State Insurance.",
+        "HEADING": "Seguro de Hogar y Propiedad",
+        "DESCRIPTION": "Con el seguro para propietarios de vivienda, A-State Insurance le brinda una sólida protección para su hogar, sus pertenencias y su presupuesto. Obtenga los mejores servicios de seguro para riesgos comunes como incendios, tormentas, robo y vandalismo, para que un daño inesperado no se convierta en un gasto mayor. Sus artículos personales, incluyendo muebles, electrodomésticos y equipos electrónicos, también están cubiertos, para queCon el seguro de hogar y propiedad, A-State Insurance le brinda una sólida protección para su hogar, sus pertenencias y su presupuesto. Obtenga los mejores servicios de seguro para riesgos comunes como incendios, tormentas, robo y vandalismo, para que un daño inesperado no se convierta en un gasto mayor. Sus artículos personales, incluyendo muebles, electrodomésticos y equipos electrónicos, también están cubiertos, para que no tenga que reemplazarlos por su cuenta. Elija opciones a un precio que tenga sentido y sepa que su hogar está respaldado por nosotros.",
         "CARD1": {
-          "TITLE": "Seguro de Propiedad Comercial",
-          "DESC": "Proteja su edificio, equipo e inventario contra incendios, tormentas y robo con este seguro, manteniendo su negocio financieramente seguro."
+          "TITLE": "Seguro para Propietarios de Vivienda",
+          "DESC": "Proteja su hogar contra incendios, robos y clima severo. Cubra su propiedad y pertenencias personales con pólizas flexibles y verdadera tranquilidad."
         },
         "CARD2": {
           "TITLE": "Seguro para Propietarios (Landlord)",
@@ -402,6 +403,14 @@
         "CARD10": {
           "TITLE": "Seguro de Responsabilidad para Directores y Ejecutivos (D&O)",
           "DESC": "Protege a los líderes de la empresa contra pérdidas financieras personales causadas por decisiones administrativas, investigaciones regulatorias o demandas de accionistas."
+        },
+        "CARD11": {
+          "TITLE": "Seguro de Transporte de Mercancías (Inland Marine)",
+          "DESC": "Proteja sus herramientas, equipos y carga mientras están en tránsito o almacenados fuera de sitio. Cobertura esencial para contratistas y traslado de mercancías."
+        },
+        "CARD12": {
+          "TITLE": "Seguro Comercial Sombrilla (Umbrella)",
+          "DESC": "Extienda sus límites de responsabilidad civil más allá de las pólizas estándar. Proteja los activos de su empresa contra demandas devastadoras y reclamaciones catastróficas."
         }
       },
       "LIFE": {
@@ -491,6 +500,14 @@
       "CARD4": {
         "TITLE": "Fianzas para Notarios",
         "DESC": "Protegen al público contra errores, mala conducta o negligencia por parte de notarios comisionados, asegurando un procesamiento de documentos ético y legal."
+      },
+      "CARD5": {
+        "TITLE": "Fianzas de Licencias y Permisos",
+        "DESC": "Requeridas por agencias gubernamentales para operar legalmente su negocio. Garantizan que usted cumpla con las regulaciones locales y protejan a sus consumidores."
+      },
+      "CARD6": {
+        "TITLE": "Fianzas de Contrato",
+        "DESC": "Garantizan que un proyecto de construcción se complete según los términos del contrato y que todos los subcontratistas, trabajadores y proveedores reciban su pago."
       }
     },
     "ADDITIONAL": {
@@ -507,6 +524,14 @@
       "CARD3": {
         "TITLE": "Seguro de Transferencia de Título",
         "DESC": "Asiste con cambios legales de propiedad, documentación y registro, asegurando una transferencia fluida y precisa de títulos de vehículos o propiedades."
+      },
+      "CARD4": {
+        "TITLE": "Seguro Sombrilla (Umbrella)",
+        "DESC": "Obtenga protección adicional de responsabilidad civil más allá de sus pólizas de auto y hogar. Proteja sus ahorros y activos contra demandas costosas e inesperadas."
+      },
+      "CARD5": {
+        "TITLE": "Protección contra Robo de Identidad",
+        "DESC": "Monitoree su crédito, detecte fraudes a tiempo y obtenga ayuda experta para restaurar su buen nombre si le roban su información personal."
       }
     },
     "WHY_TEXANS_CHOOSE": {
@@ -546,6 +571,23 @@
       "TEXT1": "Tu",
       "HIGHLIGHT": "Seguro de Confianza",
       "TEXT2": "Aliado."
+    },
+    "TEXAS_STRATEGY": {
+      "HEADING": "Por Qué Texas Requiere Su Propia Estrategia de Seguros",
+      "INTRO": "Texas es un excelente lugar para vivir y hacer negocios, pero su paisaje único, clima y entorno legal requieren un enfoque de seguros altamente especializado. Una póliza genérica y única para todos simplemente no es suficiente aquí. Para obtener los mejores servicios de seguros en Texas, necesita una estrategia diseñada específicamente para los riesgos particulares del Estado de la Estrella Solitaria.",
+      "LIST_INTRO": "Desde la Costa del Golfo hasta el panhandle, Texas enfrenta riesgos sin igual:",
+      "ITEM1": {
+        "LABEL": "Clima Extremo:",
+        "DESC": "Las pólizas estándar a menudo dejan grandes vacíos cuando se trata de huracanes en la Costa del Golfo, inundaciones y los notorios daños por granizo."
+      },
+      "ITEM2": {
+        "LABEL": "Marcos Legales Únicos:",
+        "DESC": "Texas es el único estado que permite a los empleadores ser \"no suscriptores\" de la compensación laboral, lo que requiere estrategias comerciales alternativas."
+      },
+      "ITEM3": {
+        "LABEL": "Riesgos en Carretera:",
+        "DESC": "Con una alta tasa de conductores sin seguro y viajes constantes a través de la frontera que requieren cobertura específica para autos mexicanos, los límites estándar de auto quedan cortos."
+      }
     },
     "WHY_TEXANS_CHOOSE": {
       "HEADING": "Por Qué los Tejanos Eligen",

@@ -267,8 +267,9 @@
   },
   "INSURANCE_SERVICES": {
     "BANNER": {
-      "TITLE_LINE1": "Insurance Solutions for ",
-      "TITLE_LINE2": "Every Texan",
+      "TITLE_LINE1": "Texas Insurance ",
+      "TITLE_LINE2": "Services — Coverage ",
+      "TITLE_LINE3": "for Every Texan ",
       "CHIPS": {
         "AUTO": "Auto",
         "HOMEOWNERS": "Homeowners",
@@ -280,11 +281,12 @@
       "FORM": {
         "FULL_NAME": "Full Name",
         "PHONE": "Phone Number",
-        "BUTTON": "Get a Quote"
+        "BUTTON": "Get a Quote",
+        "LOADING": "Loading..."
       }
     },
     "WHY_CHOOSE": {
-      "HEADING": "Our Insurance Services",
+      "HEADING": "Our Texas <span class='text-accent'>Insurance</span> Services",
       "HEADING_2": "Auto Insurance",
       "DESCRIPTION": "Driving every day? Road trips? Late-night food runs? A-State Insurance has your back. We provide reliable auto insurance services across Texas, offering drivers strong protection for accidents, theft, liability, and vehicle damage. We work with trusted carriers to find coverage that fits you. Our team makes the process simple with fast quotes, clear policies, and local support you can count on. With A-State Insurance, you get dependable Texas auto insurance and service that puts you first.",
       "CARD1": {
@@ -332,12 +334,12 @@
         "DESC": "Get proper rideshare insurance coverage to ensure you are fully protected and financially secure while driving for companies like Uber or Lyft."
       },
       "HOMEOWNERS": {
-        "HEADING": "Homeowners Insurance",
-        "DESCRIPTION": "With homeowners' insurance, A-State Insurance gives you strong protection for your home, your belongings, and your budget. Get the best insurance services for common risks like fire, storms, theft, and vandalism, so unexpected damage doesn’t turn into a major expense. Your personal items, including furniture, appliances, and electronics, are also covered, so you’re not left replacing them on your own. Choose options at a price that makes sense, and know your home is backed by A-State Insurance.",
+        "HEADING": "Home & Property Insurance",
+        "DESCRIPTION": "With homeowners' insurance, A-State Insurance gives you strong protection for your home, your belongings, and your budget. Get the best insurance services for common risks like fire, storms, theft, and vandalism, so unexpected damage doesn’t turn into a major expense. Your personal items, including furniture, appliances, and electronics, are also covered, so youWith home and property insurance, A-State Insurance gives you strong protection for your home, your belongings, and your budget. Get the best insurance services for common risks like fire, storms, theft, and vandalism, so unexpected damage doesn’t turn into a major expense. Your personal items, including furniture, appliances, and electronics, are also covered, so you’re not left replacing them on your own. Choose options at a price that makes sense, and know your home is backed by us.",
         "CARD1": {
-          "TITLE": "Commercial Property Insurance",
-          "DESC": "Safeguard your building, equipment, and inventory from fire, storms, and theft with this insurance, keeping your business financially secure."
-        },
+          "TITLE": "Homeowners Insurance",
+          "DESC": "Protect your home against fires, theft, and severe weather. Cover your property and personal belongings with flexible policies and true peace of mind." 
+          },
         "CARD2": {
           "TITLE": "Landlord Insurance",
           "DESC": "Protect your investment and your income. We cover tenant damage, legal claims, and lost rent so you can grow your Texas portfolio with confidence."
@@ -405,6 +407,14 @@
         "CARD10": {
           "TITLE": "Directors & Officers (D&O) Liability Insurance",
           "DESC": "Protects company leaders from personal financial loss caused by management decisions, regulatory investigations, or shareholder lawsuits."
+        },
+        "CARD11": {
+          "TITLE": "Inland Marine Insurance",
+          "DESC": "Protect your business tools, equipment, and cargo while in transit or stored off-site. Crucial coverage for contractors and moving goods."
+        },
+        "CARD12": {
+          "TITLE": "Commercial Umbrella Insurance",
+          "DESC": "Extend your liability limits beyond standard policies. Protect your business assets against devastating lawsuits and catastrophic claims."
         }
       },
       "LIFE": {
@@ -494,6 +504,14 @@
       "CARD4": {
         "TITLE": "Notary Bonds",
         "DESC": "Protect the public from errors, misconduct, or negligence by commissioned notaries, ensuring ethical and lawful document processing."
+      },
+      "CARD5": {
+        "TITLE": "License & Permit Bonds",
+        "DESC": "Required by government agencies to legally operate your business. They guarantee you follow local regulations and protect your consumers."
+      },
+      "CARD6": {
+        "TITLE": "Contract Bonds",
+        "DESC": "Guarantee that a construction project gets completed according to contract terms and that all subcontractors, laborers, and suppliers are paid."
       }
     },
     "ADDITIONAL": {
@@ -501,7 +519,7 @@
       "DESCRIPTION": "Extra protection fills important gaps that standard policies may not cover. With A-State Insurance's Additional insurance, we help safeguard valuable assets, personal responsibilities, and unique risks. These specialized solutions support long-term security, reduce financial exposure, and strengthen overall protection, making life easy. From personal interests to legal requirements, our comprehensive coverage and expert knowledge provide peace of mind across personal and business areas.",
       "CARD1": {
         "TITLE": "Pet Insurance",
-        "DESC": "Guarantee project completion and timely payments to suppliers and subcontractors, protecting owners from financial loss and construction delays."
+        "DESC": "Helps cover veterinary visits, surgeries, medications, and emergency care, ensuring pets receive quality treatment without a heavy financial burden."
       },
       "CARD2": {
         "TITLE": "Title Insurance",
@@ -510,6 +528,31 @@
       "CARD3": {
         "TITLE": "Title Transfer Insurance",
         "DESC": "Assists with legal ownership changes, documentation, and registration, ensuring smooth and accurate transfer of vehicle or property titles."
+      },
+      "CARD4": {
+        "TITLE": "Umbrella Insurance",
+        "DESC": "Get extra liability protection beyond your auto and home policies. Safeguard your savings and assets from costly, unexpected lawsuits."
+      },
+      "CARD5": {
+        "TITLE": "Identity Theft Protection",
+        "DESC": "Monitor your credit, detect fraud early, and get expert help to restore your good name if your personal information is stolen."
+      }
+    },
+    "TEXAS_STRATEGY": {
+      "HEADING": "Why Texas Requires Its Own Insurance Strategy",
+      "INTRO": "Texas is a great place to live and do business, but its unique landscape, weather, and legal environment require a highly specialized approach to insurance. A generic, one-size-fits-all policy simply won't cut it here. To secure the best Texas insurance services, you need a strategy tailored specifically to the Lone Star State's distinct risks.",
+      "LIST_INTRO": "From the Gulf Coast to the panhandle, Texas faces unparalleled exposures:",
+      "ITEM1": {
+        "LABEL": "Extreme Weather:",
+        "DESC": "Standard policies often leave massive gaps when it comes to Gulf Coast hurricanes, flooding, and the notorious hail belt damage."
+      },
+      "ITEM2": {
+        "LABEL": "Unique Legal Frameworks:",
+        "DESC": "Texas is the only state that allows employers to be \"non-subscribers\" to workers' compensation, requiring alternative commercial strategies."
+      },
+      "ITEM3": {
+        "LABEL": "Roadway Risks:",
+        "DESC": "With a high rate of uninsured motorists and constant cross-border travel requiring specific Mexican car coverage, standard auto limits fall short."
       }
     },
     "WHY_TEXANS_CHOOSE": {
