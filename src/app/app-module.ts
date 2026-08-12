@@ -129,6 +129,10 @@ import { ConroeTx } from './pages/auto-insurance/conroe-tx/conroe-tx';
 import { MissionTx } from './pages/auto-insurance/mission-tx/mission-tx';
 import { GeorgetownTx } from './pages/auto-insurance/georgetown-tx/georgetown-tx';
 import { BaytownTx } from './pages/auto-insurance/baytown-tx/baytown-tx';
+import { LeagueCityTx } from './pages/auto-insurance/league-city-tx/league-city-tx';
+import { SugarLandTx } from './pages/auto-insurance/sugar-land-tx/sugar-land-tx';
+import { BeaumontTx } from './pages/auto-insurance/beaumont-tx/beaumont-tx';
+import { WichitaFallsTx } from './pages/auto-insurance/wichita-falls-tx/wichita-falls-tx';
 import { WacoTx } from './pages/auto-insurance/waco-tx/waco-tx';
 import { MidlandTx } from './pages/auto-insurance/midland-tx/midland-tx';
 import { CarrolltonTx } from './pages/auto-insurance/carrollton-tx/carrollton-tx';
@@ -262,6 +266,10 @@ export function initializeTranslations(
     MissionTx,
     GeorgetownTx,
     BaytownTx,
+    LeagueCityTx,
+    SugarLandTx,
+    BeaumontTx,
+    WichitaFallsTx,
     WacoTx,
     MidlandTx,
     CarrolltonTx,
