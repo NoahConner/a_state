@@ -121,6 +121,14 @@ import { PasadenaTx } from './pages/auto-insurance/pasadena-tx/pasadena-tx';
 import { DentonTx } from './pages/auto-insurance/denton-tx/denton-tx';
 import { MesquiteTx } from './pages/auto-insurance/mesquite-tx/mesquite-tx';
 import { McallenTx } from './pages/auto-insurance/mcallen-tx/mcallen-tx';
+import { AllenTx } from './pages/auto-insurance/allen-tx/allen-tx';
+import { TylerTx } from './pages/auto-insurance/tyler-tx/tyler-tx';
+import { NewBraunfelsTx } from './pages/auto-insurance/new-braunfels-tx/new-braunfels-tx';
+import { EdinburgTx } from './pages/auto-insurance/edinburg-tx/edinburg-tx';
+import { ConroeTx } from './pages/auto-insurance/conroe-tx/conroe-tx';
+import { MissionTx } from './pages/auto-insurance/mission-tx/mission-tx';
+import { GeorgetownTx } from './pages/auto-insurance/georgetown-tx/georgetown-tx';
+import { BaytownTx } from './pages/auto-insurance/baytown-tx/baytown-tx';
 import { WacoTx } from './pages/auto-insurance/waco-tx/waco-tx';
 import { MidlandTx } from './pages/auto-insurance/midland-tx/midland-tx';
 import { CarrolltonTx } from './pages/auto-insurance/carrollton-tx/carrollton-tx';
@@ -246,6 +254,14 @@ export function initializeTranslations(
     DentonTx,
     MesquiteTx,
     McallenTx,
+    AllenTx,
+    TylerTx,
+    NewBraunfelsTx,
+    EdinburgTx,
+    ConroeTx,
+    MissionTx,
+    GeorgetownTx,
+    BaytownTx,
     WacoTx,
     MidlandTx,
     CarrolltonTx,
