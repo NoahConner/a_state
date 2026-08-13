@@ -96,6 +96,10 @@ import { PasadenaTx } from './pages/auto-insurance/pasadena-tx/pasadena-tx';
 import { DentonTx } from './pages/auto-insurance/denton-tx/denton-tx';
 import { MesquiteTx } from './pages/auto-insurance/mesquite-tx/mesquite-tx';
 import { McallenTx } from './pages/auto-insurance/mcallen-tx/mcallen-tx';
+import { LeagueCityTx } from './pages/auto-insurance/league-city-tx/league-city-tx';
+import { SugarLandTx } from './pages/auto-insurance/sugar-land-tx/sugar-land-tx';
+import { BeaumontTx } from './pages/auto-insurance/beaumont-tx/beaumont-tx';
+import { WichitaFallsTx } from './pages/auto-insurance/wichita-falls-tx/wichita-falls-tx';
 import { WacoTx } from './pages/auto-insurance/waco-tx/waco-tx';
 import { MidlandTx } from './pages/auto-insurance/midland-tx/midland-tx';
 import { CarrolltonTx } from './pages/auto-insurance/carrollton-tx/carrollton-tx';
@@ -362,6 +366,18 @@ const routes: Routes = [
       { path: 'denton-tx', component: DentonTx, data: { metaPage: 'dentonTx' } },
       { path: 'mesquite-tx', component: MesquiteTx, data: { metaPage: 'mesquiteTx' } },
       { path: 'mcallen-tx', component: McallenTx, data: { metaPage: 'mcallenTx' } },
+      { path: 'allen-tx', component: AllenTx, data: { metaPage: 'allenTx' } },
+      { path: 'tyler-tx', component: TylerTx, data: { metaPage: 'tylerTx' } },
+      { path: 'new-braunfels-tx', component: NewBraunfelsTx, data: { metaPage: 'newBraunfelsTx' } },
+      { path: 'edinburg-tx', component: EdinburgTx, data: { metaPage: 'edinburgTx' } },
+      { path: 'conroe-tx', component: ConroeTx, data: { metaPage: 'conroeTx' } },
+      { path: 'mission-tx', component: MissionTx, data: { metaPage: 'missionTx' } },
+      { path: 'georgetown-tx', component: GeorgetownTx, data: { metaPage: 'georgetownTx' } },
+      { path: 'baytown-tx', component: BaytownTx, data: { metaPage: 'baytownTx' } },
+      { path: 'league-city-tx', component: LeagueCityTx, data: { metaPage: 'leagueCityTx' } },
+      { path: 'sugar-land-tx', component: SugarLandTx, data: { metaPage: 'sugarLandTx' } },
+      { path: 'beaumont-tx', component: BeaumontTx, data: { metaPage: 'beaumontTx' } },
+      { path: 'wichita-falls-tx', component: WichitaFallsTx, data: { metaPage: 'wichitaFallsTx' } },
       { path: 'waco-tx', component: WacoTx, data: { metaPage: 'wacoTx' } },
       { path: 'midland-tx', component: MidlandTx, data: { metaPage: 'midlandTx' } },
       { path: 'carrollton-tx', component: CarrolltonTx, data: { metaPage: 'carrolltonTx' } },
@@ -592,6 +608,18 @@ const routes: Routes = [
           { path: 'denton-tx', component: DentonTx, data: { metaPage: 'dentonTx' } },
       { path: 'mesquite-tx', component: MesquiteTx, data: { metaPage: 'mesquiteTx' } },
       { path: 'mcallen-tx', component: McallenTx, data: { metaPage: 'mcallenTx' } },
+      { path: 'allen-tx', component: AllenTx, data: { metaPage: 'allenTx' } },
+      { path: 'tyler-tx', component: TylerTx, data: { metaPage: 'tylerTx' } },
+      { path: 'new-braunfels-tx', component: NewBraunfelsTx, data: { metaPage: 'newBraunfelsTx' } },
+      { path: 'edinburg-tx', component: EdinburgTx, data: { metaPage: 'edinburgTx' } },
+      { path: 'conroe-tx', component: ConroeTx, data: { metaPage: 'conroeTx' } },
+      { path: 'mission-tx', component: MissionTx, data: { metaPage: 'missionTx' } },
+      { path: 'georgetown-tx', component: GeorgetownTx, data: { metaPage: 'georgetownTx' } },
+      { path: 'baytown-tx', component: BaytownTx, data: { metaPage: 'baytownTx' } },
+      { path: 'league-city-tx', component: LeagueCityTx, data: { metaPage: 'leagueCityTx' } },
+      { path: 'sugar-land-tx', component: SugarLandTx, data: { metaPage: 'sugarLandTx' } },
+      { path: 'beaumont-tx', component: BeaumontTx, data: { metaPage: 'beaumontTx' } },
+      { path: 'wichita-falls-tx', component: WichitaFallsTx, data: { metaPage: 'wichitaFallsTx' } },
       { path: 'waco-tx', component: WacoTx, data: { metaPage: 'wacoTx' } },
       { path: 'midland-tx', component: MidlandTx, data: { metaPage: 'midlandTx' } },
       { path: 'carrollton-tx', component: CarrolltonTx, data: { metaPage: 'carrolltonTx' } },
@@ -1239,6 +1267,54 @@ export const routeTranslations: Record<string, Record<string, string>> = {
     en: 'auto-insurance/mcallen-tx',
     es: 'seguros-de-auto/mcallen-tx',
   },
+  allenTx: {
+    en: 'auto-insurance/allen-tx',
+    es: 'seguros-de-auto/allen-tx',
+  },
+  tylerTx: {
+    en: 'auto-insurance/tyler-tx',
+    es: 'seguros-de-auto/tyler-tx',
+  },
+  newBraunfelsTx: {
+    en: 'auto-insurance/new-braunfels-tx',
+    es: 'seguros-de-auto/new-braunfels-tx',
+  },
+  edinburgTx: {
+    en: 'auto-insurance/edinburg-tx',
+    es: 'seguros-de-auto/edinburg-tx',
+  },
+  conroeTx: {
+    en: 'auto-insurance/conroe-tx',
+    es: 'seguros-de-auto/conroe-tx',
+  },
+  missionTx: {
+    en: 'auto-insurance/mission-tx',
+    es: 'seguros-de-auto/mission-tx',
+  },
+  georgetownTx: {
+    en: 'auto-insurance/georgetown-tx',
+    es: 'seguros-de-auto/georgetown-tx',
+  },
+  baytownTx: {
+    en: 'auto-insurance/baytown-tx',
+    es: 'seguros-de-auto/baytown-tx',
+  },
+  leagueCityTx: {
+    en: 'auto-insurance/league-city-tx',
+    es: 'seguros-de-auto/league-city-tx',
+  },
+  sugarLandTx: {
+    en: 'auto-insurance/sugar-land-tx',
+    es: 'seguros-de-auto/sugar-land-tx',
+  },
+  beaumontTx: {
+    en: 'auto-insurance/beaumont-tx',
+    es: 'seguros-de-auto/beaumont-tx',
+  },
+  wichitaFallsTx: {
+    en: 'auto-insurance/wichita-falls-tx',
+    es: 'seguros-de-auto/wichita-falls-tx',
+  },
   wacoTx: {
     en: 'auto-insurance/waco-tx',
     es: 'seguros-de-auto/waco-tx',
@@ -1295,36 +1371,5 @@ export const routeTranslations: Record<string, Record<string, string>> = {
     en: 'auto-insurance/richardson-tx',
     es: 'seguros-de-auto/richardson-tx',
   },
-  allenTx: {
-    en: 'auto-insurance/allen-tx',
-    es: 'seguros-de-auto/allen-tx',
-  },
-  tylerTx: {
-    en: 'auto-insurance/tyler-tx',
-    es: 'seguros-de-auto/tyler-tx',
-  },
-  newBraunfelsTx: {
-    en: 'auto-insurance/new-braunfels-tx',
-    es: 'seguros-de-auto/new-braunfels-tx',
-  },
-  edinburgTx: {
-    en: 'auto-insurance/edinburg-tx',
-    es: 'seguros-de-auto/edinburg-tx',
-  },
-  conroeTx: {
-    en: 'auto-insurance/conroe-tx',
-    es: 'seguros-de-auto/conroe-tx',
-  },
-  missionTx: {
-    en: 'auto-insurance/mission-tx',
-    es: 'seguros-de-auto/mission-tx',
-  },
-  georgetownTx: {
-    en: 'auto-insurance/georgetown-tx',
-    es: 'seguros-de-auto/georgetown-tx',
-  },
-  baytownTx: {
-    en: 'auto-insurance/baytown-tx',
-    es: 'seguros-de-auto/baytown-tx',
-  },
+ 
 };

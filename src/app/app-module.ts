@@ -121,6 +121,10 @@ import { PasadenaTx } from './pages/auto-insurance/pasadena-tx/pasadena-tx';
 import { DentonTx } from './pages/auto-insurance/denton-tx/denton-tx';
 import { MesquiteTx } from './pages/auto-insurance/mesquite-tx/mesquite-tx';
 import { McallenTx } from './pages/auto-insurance/mcallen-tx/mcallen-tx';
+import { LeagueCityTx } from './pages/auto-insurance/league-city-tx/league-city-tx';
+import { SugarLandTx } from './pages/auto-insurance/sugar-land-tx/sugar-land-tx';
+import { BeaumontTx } from './pages/auto-insurance/beaumont-tx/beaumont-tx';
+import { WichitaFallsTx } from './pages/auto-insurance/wichita-falls-tx/wichita-falls-tx';
 import { WacoTx } from './pages/auto-insurance/waco-tx/waco-tx';
 import { MidlandTx } from './pages/auto-insurance/midland-tx/midland-tx';
 import { CarrolltonTx } from './pages/auto-insurance/carrollton-tx/carrollton-tx';
@@ -254,6 +258,18 @@ export function initializeTranslations(
     DentonTx,
     MesquiteTx,
     McallenTx,
+    AllenTx,
+    TylerTx,
+    NewBraunfelsTx,
+    EdinburgTx,
+    ConroeTx,
+    MissionTx,
+    GeorgetownTx,
+    BaytownTx,
+    LeagueCityTx,
+    SugarLandTx,
+    BeaumontTx,
+    WichitaFallsTx,
     WacoTx,
     MidlandTx,
     CarrolltonTx,
@@ -265,14 +281,6 @@ export function initializeTranslations(
     CollegeStationTx,
     TheWoodlandsTx,
     RichardsonTx,
-    AllenTx,
-    TylerTx,
-    NewBraunfelsTx,
-    EdinburgTx,
-    ConroeTx,
-    MissionTx,
-    GeorgetownTx,
-    BaytownTx,
     PhoneFormatDirective,
     ChipNavigationDirective,
     BannerButtonNoRedirectDirective,
