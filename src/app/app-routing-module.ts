@@ -98,6 +98,7 @@ import { MesquiteTx } from './pages/auto-insurance/mesquite-tx/mesquite-tx';
 import { McallenTx } from './pages/auto-insurance/mcallen-tx/mcallen-tx';
 import { LeagueCityTx } from './pages/auto-insurance/league-city-tx/league-city-tx';
 import { SugarLandTx } from './pages/auto-insurance/sugar-land-tx/sugar-land-tx';
+import { SanAngeloTx } from './pages/auto-insurance/san-angelo-tx/san-angelo-tx';
 import { BeaumontTx } from './pages/auto-insurance/beaumont-tx/beaumont-tx';
 import { WichitaFallsTx } from './pages/auto-insurance/wichita-falls-tx/wichita-falls-tx';
 import { WacoTx } from './pages/auto-insurance/waco-tx/waco-tx';
@@ -376,6 +377,7 @@ const routes: Routes = [
       { path: 'baytown-tx', component: BaytownTx, data: { metaPage: 'baytownTx' } },
       { path: 'league-city-tx', component: LeagueCityTx, data: { metaPage: 'leagueCityTx' } },
       { path: 'sugar-land-tx', component: SugarLandTx, data: { metaPage: 'sugarLandTx' } },
+      { path: 'san-angelo-tx', component: SanAngeloTx, data: { metaPage: 'sanAngeloTx' } },
       { path: 'beaumont-tx', component: BeaumontTx, data: { metaPage: 'beaumontTx' } },
       { path: 'wichita-falls-tx', component: WichitaFallsTx, data: { metaPage: 'wichitaFallsTx' } },
       { path: 'waco-tx', component: WacoTx, data: { metaPage: 'wacoTx' } },
@@ -618,6 +620,7 @@ const routes: Routes = [
       { path: 'baytown-tx', component: BaytownTx, data: { metaPage: 'baytownTx' } },
       { path: 'league-city-tx', component: LeagueCityTx, data: { metaPage: 'leagueCityTx' } },
       { path: 'sugar-land-tx', component: SugarLandTx, data: { metaPage: 'sugarLandTx' } },
+      { path: 'san-angelo-tx', component: SanAngeloTx, data: { metaPage: 'sanAngeloTx' } },
       { path: 'beaumont-tx', component: BeaumontTx, data: { metaPage: 'beaumontTx' } },
       { path: 'wichita-falls-tx', component: WichitaFallsTx, data: { metaPage: 'wichitaFallsTx' } },
       { path: 'waco-tx', component: WacoTx, data: { metaPage: 'wacoTx' } },
@@ -1306,6 +1309,10 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   sugarLandTx: {
     en: 'auto-insurance/sugar-land-tx',
     es: 'seguros-de-auto/sugar-land-tx',
+  },
+  sanAngeloTx: {
+    en: 'auto-insurance/san-angelo-tx',
+    es: 'seguros-de-auto/san-angelo-tx',
   },
   beaumontTx: {
     en: 'auto-insurance/beaumont-tx',

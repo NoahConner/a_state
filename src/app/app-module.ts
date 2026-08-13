@@ -123,6 +123,7 @@ import { MesquiteTx } from './pages/auto-insurance/mesquite-tx/mesquite-tx';
 import { McallenTx } from './pages/auto-insurance/mcallen-tx/mcallen-tx';
 import { LeagueCityTx } from './pages/auto-insurance/league-city-tx/league-city-tx';
 import { SugarLandTx } from './pages/auto-insurance/sugar-land-tx/sugar-land-tx';
+import { SanAngeloTx } from './pages/auto-insurance/san-angelo-tx/san-angelo-tx';
 import { BeaumontTx } from './pages/auto-insurance/beaumont-tx/beaumont-tx';
 import { WichitaFallsTx } from './pages/auto-insurance/wichita-falls-tx/wichita-falls-tx';
 import { WacoTx } from './pages/auto-insurance/waco-tx/waco-tx';
@@ -268,6 +269,7 @@ export function initializeTranslations(
     BaytownTx,
     LeagueCityTx,
     SugarLandTx,
+    SanAngeloTx,
     BeaumontTx,
     WichitaFallsTx,
     WacoTx,
