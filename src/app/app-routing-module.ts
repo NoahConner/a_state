@@ -99,6 +99,8 @@ import { McallenTx } from './pages/auto-insurance/mcallen-tx/mcallen-tx';
 import { LeagueCityTx } from './pages/auto-insurance/league-city-tx/league-city-tx';
 import { SugarLandTx } from './pages/auto-insurance/sugar-land-tx/sugar-land-tx';
 import { SanAngeloTx } from './pages/auto-insurance/san-angelo-tx/san-angelo-tx';
+import { BryanTx } from './pages/auto-insurance/bryan-tx/bryan-tx';
+import { AtascocitaTx } from './pages/auto-insurance/atascocita-tx/atascocita-tx';
 import { BeaumontTx } from './pages/auto-insurance/beaumont-tx/beaumont-tx';
 import { WichitaFallsTx } from './pages/auto-insurance/wichita-falls-tx/wichita-falls-tx';
 import { WacoTx } from './pages/auto-insurance/waco-tx/waco-tx';
@@ -378,6 +380,8 @@ const routes: Routes = [
       { path: 'league-city-tx', component: LeagueCityTx, data: { metaPage: 'leagueCityTx' } },
       { path: 'sugar-land-tx', component: SugarLandTx, data: { metaPage: 'sugarLandTx' } },
       { path: 'san-angelo-tx', component: SanAngeloTx, data: { metaPage: 'sanAngeloTx' } },
+      { path: 'bryan-tx', component: BryanTx, data: { metaPage: 'bryanTx' } },
+      { path: 'atascocita-tx', component: AtascocitaTx, data: { metaPage: 'atascocitaTx' } },
       { path: 'beaumont-tx', component: BeaumontTx, data: { metaPage: 'beaumontTx' } },
       { path: 'wichita-falls-tx', component: WichitaFallsTx, data: { metaPage: 'wichitaFallsTx' } },
       { path: 'waco-tx', component: WacoTx, data: { metaPage: 'wacoTx' } },
@@ -621,6 +625,8 @@ const routes: Routes = [
       { path: 'league-city-tx', component: LeagueCityTx, data: { metaPage: 'leagueCityTx' } },
       { path: 'sugar-land-tx', component: SugarLandTx, data: { metaPage: 'sugarLandTx' } },
       { path: 'san-angelo-tx', component: SanAngeloTx, data: { metaPage: 'sanAngeloTx' } },
+      { path: 'bryan-tx', component: BryanTx, data: { metaPage: 'bryanTx' } },
+      { path: 'atascocita-tx', component: AtascocitaTx, data: { metaPage: 'atascocitaTx' } },
       { path: 'beaumont-tx', component: BeaumontTx, data: { metaPage: 'beaumontTx' } },
       { path: 'wichita-falls-tx', component: WichitaFallsTx, data: { metaPage: 'wichitaFallsTx' } },
       { path: 'waco-tx', component: WacoTx, data: { metaPage: 'wacoTx' } },
@@ -1313,6 +1319,14 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   sanAngeloTx: {
     en: 'auto-insurance/san-angelo-tx',
     es: 'seguros-de-auto/san-angelo-tx',
+  },
+  bryanTx: {
+    en: 'auto-insurance/bryan-tx',
+    es: 'seguros-de-auto/bryan-tx',
+  },
+  atascocitaTx: {
+    en: 'auto-insurance/atascocita-tx',
+    es: 'seguros-de-auto/atascocita-tx',
   },
   beaumontTx: {
     en: 'auto-insurance/beaumont-tx',
