@@ -5,38 +5,35 @@
         <div class="topSub2">
           <h1 class="h1">
             <span [innerHTML]="'INSURANCE_SERVICES.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
-            <span [innerHTML]="'INSURANCE_SERVICES.BANNER.TITLE_LINE2' | translateHtml | async"></span> <br />
-            <span [innerHTML]="'INSURANCE_SERVICES.BANNER.TITLE_LINE3' | translateHtml | async"></span>
+            <span [innerHTML]="'INSURANCE_SERVICES.BANNER.TITLE_LINE2' | translateHtml | async"></span>
           </h1>
-          <div class="banner-quote-card">
-            <div class="quote-options">
-              @for (item of chips; track item.name) {
-              <button type="button" class="quote-option" *ngIf="item.name" [class.selected]="bannerForm.selectedChip === item.name"
-                [attr.aria-pressed]="bannerForm.selectedChip === item.name" (click)="selectChip(bannerForm, item.name)">
-                <span class="icon-badge">
-                  <span class="icon-burst"></span>
-                  <img [src]="item.image" [alt]="item.name | translate" class="quote-option-image" />
-                </span>
-                <span class="quote-option-label">
-                  <span class="radio-indicator" [class.checked]="bannerForm.selectedChip === item.name"></span>
-                  <span [innerHTML]="item.name | translateHtml | async"></span>
-                </span>
-              </button>
-              }
+
+          <div class="selectable mt-5">
+            @for (item of chips.slice(0, 3); track item.name) {
+            <div class="chip" [appChipNav]="item.name" *ngIf="item.name">
+              <i class="{{ item?.icon }}"></i>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
-
-            <div class="quote-form-row">
-              <input type="text" [placeholder]="'INSURANCE_SERVICES.BANNER.FORM.FULL_NAME' | translate" class="form-control"
-                [value]="bannerForm.fullName" (input)="bannerForm.fullName = $any($event.target).value" />
-
-              <input type="tel" appPhoneFormat [placeholder]="'INSURANCE_SERVICES.BANNER.FORM.PHONE' | translate"
-                class="form-control" [value]="bannerForm.phone" (input)="bannerForm.phone = $any($event.target).value" />
-
-              <button class="quote-submit" [disabled]="bannerForm.isSubmitting || !bannerForm.selectedChip || !bannerForm.fullName.trim() || !bannerForm.phone.trim()" (click)="goToSelectedQuote(bannerForm)">
-                {{ bannerForm.isSubmitting ? ('INSURANCE_SERVICES.BANNER.FORM.LOADING' | translate) : ('INSURANCE_SERVICES.BANNER.FORM.BUTTON' | translate) }}
-              </button>
-            </div>
+            }
           </div>
+          <div class="selectable mt-2">
+            @for (item of chips.slice(3, 6); track item.name) {
+            <div class="chip" [appChipNav]="item.name" *ngIf="item.name">
+              <i class="{{ item?.icon }}"></i>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
+            </div>
+            }
+          </div>
+
+          <div class="inps">
+            <input type="text" [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate" class="form-control" />
+
+            <input type="tel" appPhoneFormat [placeholder]="'HOME.BANNER.FORM.PHONE' | translate" class="form-control" />
+          </div>
+
+          <button class="btn" type="button" appBannerQuoteSubmit>
+            {{ 'HOME.BANNER.FORM.BUTTON' | translate }}
+          </button>
         </div>
       </div>
     </div>
@@ -51,82 +48,162 @@
       </div>
 
       <div class="row mb-5 text-center">
-        <div class="col-12 mt-3 mx-auto main-content">
-          <div class="main-content-icon mx-auto">
-            <img src="/assets/images/home/solution/car.png" alt="" />
-          </div>
+        <!-- Changed col-12 to col-lg-8 to make the text area narrower and centered -->
+        <div class="col-12 col-md-9 mt-3 mx-auto main-content">
           <h2 class="insurance-heading-2" [routerLink]="getRoute('autoInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEADING_2' | translateHtml | async"></h2>
           <!-- Added a class to target specifically -->
           <p class="description-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.DESCRIPTION' | translateHtml | async"></p>
         </div>
       </div>
 
-      <div class="services-flat-grid">
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/car.png" alt="Car Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('carInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD1.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD1.DESC' | translateHtml | async"></p>
+      <div class="gap-m">
+        <!-- card start -->
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/iconoir_car.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('carInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD1.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD1.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/pepicons.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('motorcycleInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD2.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD2.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/motorcycle.png" alt="Motorcycle Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('motorcycleInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD2.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD2.DESC' | translateHtml | async"></p>
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/hugeicons_boat.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('boatInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD3.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD3.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/fluent.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('rvInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD4.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD4.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/boat.png" alt="Boat Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('boatInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD3.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD3.DESC' | translateHtml | async"></p>
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/clarity_car.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('classicCarInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD5.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD5.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/cil_truck.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD6.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD6.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/tourist-van.png" alt="RV Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('rvInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD4.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD4.DESC' | translateHtml | async"></p>
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/material.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('sr22Insurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD7.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD7.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/carbon_ibm.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('atvAndUtvInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD8.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD8.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/classic-car.png" alt="Classic Car Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('classicCarInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD5.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD5.DESC' | translateHtml | async"></p>
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/ph_truck.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('trailerInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD9.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD9.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/mingcute.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('mexicanCarInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD10.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD10.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/delivery-truck.png" alt="Commercial Auto Icon" /></div>
-          <h3 class="service-title" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD6.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD6.DESC' | translateHtml | async"></p>
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/hugeicons_uber.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('rideshareInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD11.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD11.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col px-4"></div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/plane.png" alt="SR-22 Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('sr22Insurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD7.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD7.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/atv.png" alt="ATV Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('atvAndUtvInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD8.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD8.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/food-truck.png" alt="Trailer Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('trailerInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD9.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD9.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/mexican-car.png" alt="Mexican Car Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('mexicanCarInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD10.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD10.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/rideshare.png" alt="Rideshare Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('rideshareInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD11.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD11.DESC' | translateHtml | async"></p>
-        </div>
+        <!-- card end -->
       </div>
     </div>
   </div>
@@ -135,59 +212,109 @@
     <div class="side-strip"></div>
     <div class="container">
       <div class="row mb-5 text-center">
-        <div class="col-12 mt-3 mx-auto main-content">
-          <h2 class="insurance-heading-homeowners" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.HEADING' | translateHtml | async"></h2>
+        <!-- Changed col-12 to col-lg-8 to make the text area narrower and centered -->
+        <div class="col-12 col-md-10 mt-3 mx-auto main-content">
+          <h2 class="insurance-heading-2" [routerLink]="getRoute('homeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.HEADING' | translateHtml | async"></h2>
           <!-- Added a class to target specifically -->
           <p class="description-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.DESCRIPTION' | translateHtml | async"></p>
         </div>
       </div>
 
-      <div class="services-flat-grid services-flat-grid--4col">
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/homeowners.png" alt="Homeowners Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('homeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD1.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD1.DESC' | translateHtml | async"></p>
+      <div class="gap-m">
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/ri_parent-line.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD1.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD1.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/hugeicons_property-new.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('landlordInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD2.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD2.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/prime_building.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('condoInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD3.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD3.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/landlord.png" alt="Landlord Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('landlordInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD2.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD2.DESC' | translateHtml | async"></p>
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/fe_home.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('earthquakeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD4.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD4.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/condo.png" alt="Condo Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('condoInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD3.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD3.DESC' | translateHtml | async"></p>
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/streamline-sharp_necktie.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('manufacturedMobileHomeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD5.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD5.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/proicons_food.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('rentersInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD6.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD6.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/earthquake.png" alt="Earthquake Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('earthquakeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD4.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD4.DESC' | translateHtml | async"></p>
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/carbon_earthquake.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('floodInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD7.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD7.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col px-4"></div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/manufactured-home.png" alt="Manufactured Home Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('manufacturedMobileHomeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD5.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD5.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/renters.png" alt="Renters Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('rentersInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD6.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD6.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/flood.png" alt="Flood Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('floodInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD7.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD7.DESC' | translateHtml | async"></p>
-        </div>
-
-        
+        <!-- card end -->
       </div>
     </div>
   </div>
@@ -197,84 +324,145 @@
       <div class="row mb-5 text-center">
         <!-- Changed col-12 to col-lg-8 to make the text area narrower and centered -->
         <div class="col-12 col-md-10 mt-3 mx-auto main-content">
-          <h2 class="insurance-heading-homeowners" [routerLink]="getRoute('commercialInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.HEADING' | translateHtml | async"></h2>
+          <h2 class="insurance-heading-2" [routerLink]="getRoute('commercialInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.HEADING' | translateHtml | async"></h2>
           <!-- Added a class to target specifically -->
           <p class="description-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.DESCRIPTION' | translateHtml | async"></p>
         </div>
       </div>
 
-      <div class="services-flat-grid services-flat-grid--4col">
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/commercial/professional-liability.png" alt="Professional Liability Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('professionalLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD1.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD1.DESC' | translateHtml | async"></p>
+      <div class="gap-m">
+        <!-- card start -->
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/c_iconoir_car.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('professionalLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD1.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD1.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/c_pepicons-pencil_motorcycle.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('generalLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD2.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD2.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/commercial/general-liability.png" alt="General Liability Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('generalLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD2.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD2.DESC' | translateHtml | async"></p>
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/c_hugeicons_boat.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('workersCompensationInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD3.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD3.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/c_ri_building-4-line.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('commercialPropertyInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD4.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD4.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/commercial/workers-compensation.png" alt="Workers Compensation Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('workersCompensationInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD3.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD3.DESC' | translateHtml | async"></p>
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/c_hugeicons_truck.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('commercialAutoInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD5.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD5.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/c_streamline-ultimate_human-resources-businessman.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('businessOwnerInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD6.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD6.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/commercial/commercial-property.png" alt="Commercial Property Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('commercialPropertyInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD4.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD4.DESC' | translateHtml | async"></p>
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/c_clarity_employee-line.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('employmentPracticesLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD7.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD7.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/c_gala_secure.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('cyberLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD8.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD8.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/commercial/commercial-auto.png" alt="Commercial Auto Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('commercialAutoInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD5.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD5.DESC' | translateHtml | async"></p>
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/c_emojione-monotone_building-construction.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('buildersRiskInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD9.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD9.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/c_pepicons-pencil_people.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('directorsOfficersLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD10.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD10.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/commercial/bop.png" alt="Business Owner's Policy Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('businessOwnerInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD6.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD6.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/commercial/epli.png" alt="EPLI Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('employmentPracticesLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD7.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD7.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/commercial/cyber-liability.png" alt="Cyber Liability Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('cyberLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD8.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD8.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/commercial/builders-risk.png" alt="Builders Risk Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('buildersRiskInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD9.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD9.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/commercial/directors-officers.png" alt="Directors and Officers Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('directorsOfficersLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD10.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD10.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/commercial/inland-marine.png" alt="Inland Marine Icon" /></div>
-          <h3 class="service-title" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD11.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD11.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/commercial/commercial-umbrella.png" alt="Commercial Umbrella Icon" /></div>
-          <h3 class="service-title" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD12.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD12.DESC' | translateHtml | async"></p>
-        </div>
+        <!-- card end -->
       </div>
     </div>
   </div>
@@ -285,48 +473,92 @@
       <div class="row mb-5 text-center">
         <!-- Changed col-12 to col-lg-8 to make the text area narrower and centered -->
         <div class="col-12 col-md-9 mt-3 mx-auto main-content">
-          <h2 class="insurance-heading-homeowners" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.HEADING' | translateHtml | async"></h2>
+          <h2 class="insurance-heading-2" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.HEADING' | translateHtml | async"></h2>
           <!-- Added a class to target specifically -->
           <p class="description-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.DESCRIPTION' | translateHtml | async"></p>
         </div>
       </div>
 
-      <div class="services-flat-grid">
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/life/term-life.png" alt="Term Life Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('termLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD1.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD1.DESC' | translateHtml | async"></p>
+      <div class="gap-m">
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/healthicons_life-science-outline.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('termLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD1.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD1.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/ri_heart-line.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('wholeLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD2.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD2.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/life/whole-life.png" alt="Whole Life Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('wholeLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD2.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD2.DESC' | translateHtml | async"></p>
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/iconoir_lifebelt.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('universalLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD3.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD3.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/solar_bill-linear.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('finalExpenseInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD4.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD4.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/life/universal-life.png" alt="Universal Life Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('universalLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD3.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD3.DESC' | translateHtml | async"></p>
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/la_hands-helping.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('variableLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD5.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD5.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/ri_group-line.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('groupLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD6.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD6.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/life/final-expense.png" alt="Final Expense Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('finalExpenseInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD4.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD4.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/life/variable-life.png" alt="Variable Life Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('variableLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD5.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD5.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/life/group-life.png" alt="Group Life Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('groupLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD6.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD6.DESC' | translateHtml | async"></p>
-        </div>
+        <!-- card end -->
       </div>
     </div>
   </div>
@@ -336,66 +568,135 @@
       <div class="row mb-5 text-center">
         <!-- Changed col-12 to col-lg-8 to make the text area narrower and centered -->
         <div class="col-12 col-md-9 mt-3 mx-auto main-content">
-          <h2 class="insurance-heading-homeowners" [routerLink]="getRoute('healthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.HEADING' | translateHtml | async"></h2>
+          <h2 class="insurance-heading-2" [routerLink]="getRoute('healthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.HEADING' | translateHtml | async"></h2>
           <!-- Added a class to target specifically -->
           <p class="description-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.DESCRIPTION' | translateHtml | async"></p>
         </div>
       </div>
 
-      <div class="services-flat-grid">
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/health/individual-health.png" alt="Individual Health Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('individualHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD1.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD1.DESC' | translateHtml | async"></p>
+      <div class="gap-m">
+        <!-- card start -->
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/streamline-plump_insurance-hand.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('individualHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD1.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD1.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/famicons_logo-family.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('familyHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD2.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD2.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/health/family-health.png" alt="Family Health Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('familyHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD2.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD2.DESC' | translateHtml | async"></p>
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/streamline-cyber_business-laptop-1.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('smallBusinessHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD3.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD3.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/fluent_group-20-regular.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('employerGroupHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD4.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD4.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/health/small-business.png" alt="Small Business Health Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('smallBusinessHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD3.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD3.DESC' | translateHtml | async"></p>
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/material-symbols-light_travel-explore-rounded.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('travelHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD5.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD5.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/fluent-mdl2_medical.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('medicareSupplementInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD6.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD6.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/health/employer-group.png" alt="Employer and Group Health Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('employerGroupHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD4.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD4.DESC' | translateHtml | async"></p>
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/clarity_employee-line.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('shortTermHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD7.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD7.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/hugeicons_dental-tooth.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('dentalVisionInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD8.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD8.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/health/travel-health.png" alt="Travel Health Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('travelHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD5.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD5.DESC' | translateHtml | async"></p>
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/emojione-monotone_building-construction.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [routerLink]="getRoute('acaMarketplacePlansInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD9.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD9.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4"></div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/health/medicare-supplement.png" alt="Medicare Supplement Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('medicareSupplementInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD6.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD6.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/health/short-term.png" alt="Short-Term Health Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('shortTermHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD7.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD7.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/health/dental-vision.png" alt="Dental and Vision Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('dentalVisionInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD8.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD8.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/health/aca-marketplace.png" alt="ACA Marketplace Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('acaMarketplacePlansInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD9.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD9.DESC' | translateHtml | async"></p>
-        </div>
+        <!-- card end -->
       </div>
     </div>
   </div>
@@ -412,41 +713,42 @@
         </div>
       </div>
 
-      <div class="services-flat-grid">
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/surety/performance-payment-bonds.png" alt="Performance and Payment Bonds Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('performanceBondsPaymentBonds')" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD1.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD1.DESC' | translateHtml | async"></p>
-        </div>
+      <div class="gap-m">
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="card surtey-card">
+              <div class="card-body">
+                <h3 class="card-title" [routerLink]="getRoute('performanceBondsPaymentBonds')" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD1.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD1.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card surtey-card">
+              <div class="card-body">
+                <h3 class="card-title" [routerLink]="getRoute('commercialSuretyBonds')" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD2.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD2.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/surety/commercial-surety-bonds.png" alt="Commercial Surety Bonds Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('commercialSuretyBonds')" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD2.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD2.DESC' | translateHtml | async"></p>
-        </div>
+          <div class="col-sm-3">
+            <div class="card surtey-card">
+              <div class="card-body">
+                <h3 class="card-title" [routerLink]="getRoute('bidBonds')" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD3.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD3.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/surety/bid-bonds.png" alt="Bid Bonds Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('bidBonds')" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD3.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD3.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/surety/notary-bonds.png" alt="Notary Bonds Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('notaryBonds')" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD4.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD4.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/surety/license-permit-bonds.png" alt="License and Permit Bonds Icon" /></div>
-          <h3 class="service-title" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD5.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD5.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/surety/contract-bonds.png" alt="Contract Bonds Icon" /></div>
-          <h3 class="service-title" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD6.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD6.DESC' | translateHtml | async"></p>
+          <div class="col-sm-3">
+            <div class="card surtey-card">
+              <div class="card-body">
+                <h3 class="card-title" [routerLink]="getRoute('notaryBonds')" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD4.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD4.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -463,234 +765,209 @@
       </div>
 
       <!-- Cards Section -->
-      <div class="services-flat-grid services-flat-grid--4col">
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/additional/pet-insurance.png" alt="Pet Insurance Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('petInsurance')" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD1.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD1.DESC' | translateHtml | async"></p>
-        </div>
+      <div class="row justify-content-center g-4">
+        <div class="col-lg-8">
 
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/additional/title-insurance.png" alt="Title Insurance Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('titleInsurance')" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD2.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD2.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/tabler_transfer.png" alt="Title Transfer Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('titleTransfer')" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD3.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD3.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/additional/umbrella-insurance.png" alt="Umbrella Insurance Icon" /></div>
-          <h3 class="service-title" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD4.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD4.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/additional/identity-theft.png" alt="Identity Theft Protection Icon" /></div>
-          <h3 class="service-title" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD5.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD5.DESC' | translateHtml | async"></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- everystory -->
-  <section class="story-section py-5">
-    <div class="container py-lg-4">
-      <div class="row align-items-center g-4 g-lg-5">
-
-        <!-- Left Content Column -->
-        <div class="col-12 col-lg-7 col-xl-6">
-          <div class="content-wrapper">
-
-            <!-- Heading -->
-            <h2 class="section-title mb-3" [innerHTML]="'INSURANCE_SERVICES.TEXAS_STRATEGY.HEADING' | translateHtml | async"></h2>
-
-            <!-- Underline Divider -->
-            <div class="title-underline mb-4"></div>
-
-            <!-- Paragraphs -->
-            <div class="story-copy">
-              <p class="mb-3" [innerHTML]="'INSURANCE_SERVICES.TEXAS_STRATEGY.INTRO' | translateHtml | async"></p>
-              <p class="mb-2 fw-bold" [innerHTML]="'INSURANCE_SERVICES.TEXAS_STRATEGY.LIST_INTRO' | translateHtml | async"></p>
-              <ul class="story-list mb-0">
-                <li>
-                  <strong [innerHTML]="'INSURANCE_SERVICES.TEXAS_STRATEGY.ITEM1.LABEL' | translateHtml | async"></strong>
-                  <span [innerHTML]="'INSURANCE_SERVICES.TEXAS_STRATEGY.ITEM1.DESC' | translateHtml | async"></span>
-                </li>
-                <li>
-                  <strong [innerHTML]="'INSURANCE_SERVICES.TEXAS_STRATEGY.ITEM2.LABEL' | translateHtml | async"></strong>
-                  <span [innerHTML]="'INSURANCE_SERVICES.TEXAS_STRATEGY.ITEM2.DESC' | translateHtml | async"></span>
-                </li>
-                <li>
-                  <strong [innerHTML]="'INSURANCE_SERVICES.TEXAS_STRATEGY.ITEM3.LABEL' | translateHtml | async"></strong>
-                  <span [innerHTML]="'INSURANCE_SERVICES.TEXAS_STRATEGY.ITEM3.DESC' | translateHtml | async"></span>
-                </li>
-              </ul>
+          <!-- Pet Insurance -->
+          <div class="custom-card card-yellow d-flex align-items-center mb-4">
+            <div class="card-icon me-4 card-image">
+              <img src="/assets/images/streamline-plump_pet-paw.png" alt="Pet Insurance">
             </div>
-
+            <div class="card-body p-0 inner-content-custom">
+              <h3 class="mb-1" [routerLink]="getRoute('petInsurance')" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD1.TITLE' | translateHtml | async"></h3>
+              <div class="title-line bg-yellow mb-2"></div>
+              <p class=" mb-0" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD1.DESC' | translateHtml | async"></p>
+            </div>
           </div>
-        </div>
 
-        <!-- Right Image Column -->
-        <div class="col-12 col-lg-5 col-xl-6">
-          <div class="image-wrapper ms-lg-auto">
-            <img src="assets/images/home/story/poster.png" alt="Texas Flag Floating in Sky" class="img-fluid rounded-image" />
+          <div class="custom-card card-red d-flex align-items-center mb-4">
+            <div class="card-icon me-4 card-image">
+              <img src="/assets/images/pajamas_title.png" alt="Pet Insurance">
+            </div>
+            <div class="card-body p-0 inner-content-custom">
+              <h3 class="mb-1" [routerLink]="getRoute('titleInsurance')" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD2.TITLE' | translateHtml | async"></h3>
+              <div class="title-line bg-red mb-2"></div>
+              <p class=" mb-0" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD2.DESC' | translateHtml | async"></p>
+            </div>
           </div>
-        </div>
 
+
+          <div class="custom-card card-red d-flex align-items-center mb-4">
+            <div class="card-icon me-4 card-image">
+              <img src="/assets/images/tabler_transfer.png" alt="Pet Insurance">
+            </div>
+            <div class="card-body p-0 inner-content-custom">
+              <h3 class="mb-1" [routerLink]="getRoute('titleTransfer')" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD3.TITLE' | translateHtml | async"></h3>
+              <div class="title-line bg-red mb-2"></div>
+              <p class=" mb-0" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD3.DESC' | translateHtml | async"></p>
+            </div>
+          </div>
+
+
+
+        </div>
       </div>
     </div>
   </section>
 
- 
+  <section class="why-choose-us">
+    <div class="container-fluid p-0 overflow-hidden">
+      <div class="row g-0">
+        <div class="col-md-6  d-none d-md-block">
+          <div class="image-wrapper">
+            <img src="/assets/images/texasBg.jpeg" alt="Texas Flags" class=" object-fit-cover">
+          </div>
+        </div>
 
-  <section class="features-section">
+        <div class="col-lg-6 mt-5">
+          <div class="content-inner ">
+            <h2 class="section-title mb-5"><span [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.HEADING' | translateHtml | async"></span><br>
+              <strong [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.HEADING2' | translateHtml | async"></strong>
+            </h2>
+
+            <div class="features-list">
+              <div class="feature-item d-flex mb-3">
+                <div class="icon-dot me-3 mt-2"></div>
+                <div>
+                  <h3 class="fw-bold mb-1 card-title" [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD1.TITLE' | translateHtml | async"></h3>
+                  <p [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD1.DESC' | translateHtml | async"></p>
+                </div>
+              </div>
+
+              <div class="feature-item d-flex mb-3">
+                <div class="icon-dot me-3 mt-2"></div>
+                <div>
+                  <h3 class="fw-bold mb-1 card-title" [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD2.TITLE' | translateHtml | async"></h3>
+                  <p [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD2.DESC' | translateHtml | async"></p>
+                </div>
+              </div>
+
+              <div class="feature-item d-flex mb-3">
+                <div class="icon-dot me-3 mt-2"></div>
+                <div>
+                  <h3 class="fw-bold mb-1 card-title" [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD3.TITLE' | translateHtml | async"></h3>
+                  <p [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD3.DESC' | translateHtml | async"></p>
+                </div>
+              </div>
+
+              <div class="feature-item d-flex mb-3">
+                <div class="icon-dot me-3 mt-2"></div>
+                <div>
+                  <h3 class="fw-bold mb-1 card-title" [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD4.TITLE' | translateHtml | async"></h3>
+                  <p [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD4.DESC' | translateHtml | async"></p>
+                </div>
+              </div>
+
+              <div class="feature-item d-flex mb-3">
+                <div class="icon-dot me-3 mt-2"></div>
+                <div>
+                  <h3 class="fw-bold mb-1 card-title" [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD5.TITLE' | translateHtml | async"></h3>
+                  <p [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD5.DESC' | translateHtml | async"></p>
+                </div>
+              </div>
+
+              <div class="feature-item d-flex mb-3">
+                <div class="icon-dot me-3 mt-2"></div>
+                <div>
+                  <h3 class="fw-bold mb-1 card-title" [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD6.TITLE' | translateHtml | async"></h3>
+                  <p [innerHTML]="'INSURANCE_SERVICES.WHY_TEXANS_CHOOSE.CARD6.DESC' | translateHtml | async"></p>
+                </div>
+              </div>
+
+              <!-- ... Repeat for other items ... -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <div class="container-fluid py-5 working-section position-relative mt-5 overflow-hidden">
+    <img src="/assets/images/insurance-left.png" class="bg-shape shape-left" alt="decoration" />
+    <img src="/assets/images/insurance-right.png" class="bg-shape shape-right " alt="decoration" />
+
     <div class="container">
-      <!-- Title & Sub-header -->
-      <div class="mb-5 text-start">
-        <h2 class="section-title mb-3">
-          <span [innerHTML]="'HOME.WHY_CHOOSE.HEADING' | translateHtml | async"></span>
-          <span class="brand-red" [innerHTML]="'HOME.WHY_CHOOSE.HEADING_STRONG' | translateHtml | async"></span>
-        </h2>
-        <div class="row g-3 sub-features">
-          <div class="col-12">
-            <p><strong [innerHTML]="'HOME.WHY_CHOOSE.SUBHEADING' | translateHtml | async"></strong></p>
-          </div>
-        </div>
-      </div>
+      <h2 class="text-center mb-5 heading">
+        <span [innerHTML]="'HOME.WORKING_PROCESS.TITLE_LINE1' | translateHtml | async"></span>
+        <strong [innerHTML]="'HOME.WORKING_PROCESS.TITLE_STRONG' | translateHtml | async"></strong>
+        <span [innerHTML]="'HOME.WORKING_PROCESS.TITLE_LINE2' | translateHtml | async"></span>
+      </h2>
 
-      <!-- Cards Grid -->
-      <div class="row g-4">
-        @for (card of featureHighlights; track card.titleKey) {
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="feature-card">
-            <div class="icon-circle">
-              @if (card.textKey) {
-              <span class="stat-text">{{ card.textKey | translate }}</span>
-              } @else {
-              <i class="fa-solid {{ card.icon }}"></i>
-              }
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 position-relative">
+          <div class="vertical-line"></div>
+
+          <div class="d-flex align-items-center mb-4 insurance-card p-3">
+            <div class="step-number">01</div>
+            <div class="ms-4 working-heading">
+              <h3 class="fw-bold mb-1 working-step-title" [innerHTML]="'HOME.WORKING_PROCESS.STEP1.TITLE' | translateHtml | async"></h3>
+              <p class="text-muted mb-0 small" [innerHTML]="'HOME.WORKING_PROCESS.STEP1.DESC' | translateHtml | async"></p>
             </div>
-            <h3 class="card-title-text" [innerHTML]="card.titleKey | translateHtml | async"></h3>
           </div>
-        </div>
-        }
-      </div>
-    </div>
-  </section>
 
-  <section class="steps-section py-5 position-relative overflow-hidden">
-
-    <!-- Background Circles -->
-    <div class="bg-circle bg-circle-left"></div>
-    <div class="bg-circle bg-circle-right"></div>
-
-    <div class="container py-4 position-relative z-1">
-
-      <!-- Section Header -->
-      <div class="text-center text-white mb-5">
-        <h2 class="section-title fw-bold mb-1" [innerHTML]="'HOME.SIMPLE_STEPS.TITLE' | translateHtml | async"></h2>
-        <p class="section-subtitle mb-0" [innerHTML]="'HOME.SIMPLE_STEPS.SUBTITLE' | translateHtml | async"></p>
-      </div>
-
-      <!-- Cards Grid -->
-      <div class="row g-3 justify-content-center">
-
-        <!-- Step 01 -->
-        <div class="col-12 col-sm-6 col-md-auto d-flex justify-content-center">
-          <div class="step-card text-center">
-            <div class="icon-circle mx-auto d-flex align-items-center justify-content-center">
-              <img src="assets/images/home/steps/hand.png" alt="Reach Out" width="33" height="33" />
+          <div class="d-flex align-items-center mb-4 insurance-card p-3">
+            <div class="step-number">02</div>
+            <div class="ms-4 working-heading">
+              <h3 class="fw-bold mb-1 working-step-title" [innerHTML]="'HOME.WORKING_PROCESS.STEP2.TITLE' | translateHtml | async"></h3>
+              <p class="text-muted mb-0 small" [innerHTML]="'HOME.WORKING_PROCESS.STEP2.DESC' | translateHtml | async"></p>
             </div>
-            <span class="step-number text-uppercase d-block" [innerHTML]="'HOME.SIMPLE_STEPS.STEP1.LABEL' | translateHtml | async"></span>
-            <h3 class="step-title fw-bold text-white mb-0" [innerHTML]="'HOME.SIMPLE_STEPS.STEP1.TITLE' | translateHtml | async"></h3>
           </div>
-        </div>
 
-        <!-- Step 02 -->
-        <div class="col-12 col-sm-6 col-md-auto d-flex justify-content-center">
-          <div class="step-card text-center">
-            <div class="icon-circle mx-auto d-flex align-items-center justify-content-center">
-              <img src="assets/images/home/steps/rocket.png" alt="Get Expert Advice" width="33" height="33" />
+          <div class="d-flex align-items-center mb-4 insurance-card p-3">
+            <div class="step-number">03</div>
+            <div class="ms-4 working-heading">
+              <h3 class="fw-bold mb-1 working-step-title" [innerHTML]="'HOME.WORKING_PROCESS.STEP3.TITLE' | translateHtml | async"></h3>
+              <p class="text-muted mb-0 small" [innerHTML]="'HOME.WORKING_PROCESS.STEP3.DESC' | translateHtml | async"></p>
             </div>
-            <span class="step-number text-uppercase d-block" [innerHTML]="'HOME.SIMPLE_STEPS.STEP2.LABEL' | translateHtml | async"></span>
-            <h3 class="step-title fw-bold text-white mb-0" [innerHTML]="'HOME.SIMPLE_STEPS.STEP2.TITLE' | translateHtml | async"></h3>
           </div>
-        </div>
 
-        <!-- Step 03 -->
-        <div class="col-12 col-sm-6 col-md-auto d-flex justify-content-center">
-          <div class="step-card text-center">
-            <div class="icon-circle mx-auto d-flex align-items-center justify-content-center">
-              <img src="assets/images/home/steps/notepad.png" alt="Pick Your Plan" width="33" height="33" />
+          <div class="d-flex align-items-center insurance-card p-3">
+            <div class="step-number">04</div>
+            <div class="ms-4 working-heading">
+              <h3 class="fw-bold mb-1 working-step-title" [innerHTML]="'HOME.WORKING_PROCESS.STEP4.TITLE' | translateHtml | async"></h3>
+              <p class="text-muted mb-0 small" [innerHTML]="'HOME.WORKING_PROCESS.STEP4.DESC' | translateHtml | async"></p>
             </div>
-            <span class="step-number text-uppercase d-block" [innerHTML]="'HOME.SIMPLE_STEPS.STEP3.LABEL' | translateHtml | async"></span>
-            <h3 class="step-title fw-bold text-white mb-0" [innerHTML]="'HOME.SIMPLE_STEPS.STEP3.TITLE' | translateHtml | async"></h3>
           </div>
         </div>
-
-        <!-- Step 04 -->
-        <div class="col-12 col-sm-6 col-md-auto d-flex justify-content-center">
-          <div class="step-card text-center">
-            <div class="icon-circle mx-auto d-flex align-items-center justify-content-center">
-              <img src="assets/images/home/steps/lightning.png" alt="You're Covered" width="33" height="33" />
-            </div>
-            <span class="step-number text-uppercase d-block" [innerHTML]="'HOME.SIMPLE_STEPS.STEP4.LABEL' | translateHtml | async"></span>
-            <h3 class="step-title fw-bold text-white mb-0" [innerHTML]="'HOME.SIMPLE_STEPS.STEP4.TITLE' | translateHtml | async"></h3>
-          </div>
-        </div>
-
       </div>
     </div>
-  </section>
+  </div>
 
 
   <!-- get covered -->
-  <div class="get-quote-section">
+  <div class="topBanner getCovver">
     <div class="container">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-6">
-          <div class="get-quote-text">
-            <h2 class="get-quote-title mb-0" [innerHTML]="'HOME.COVERDBANNER.TITLE' | translateHtml | async"></h2>
-            <p class="get-quote-desc" [innerHTML]="'HOME.COVERDBANNER.DESC' | translateHtml | async"></p>
-
-            <div class="quote-options get-quote-options">
-              @for (item of chips; track item.name) {
-              <button type="button" class="quote-option" *ngIf="item.name"
-                [class.selected]="coveredForm.selectedChip === item.name" [attr.aria-pressed]="coveredForm.selectedChip === item.name"
-                (click)="selectChip(coveredForm, item.name)">
-                <span class="icon-badge">
-                  <span class="icon-burst"></span>
-                  <img [src]="item.image" [alt]="item.name | translate" class="quote-option-image" />
-                </span>
-                <span class="quote-option-label">
-                  <span class="radio-indicator" [class.checked]="coveredForm.selectedChip === item.name"></span>
-                  <span [innerHTML]="item.name | translateHtml | async"></span>
-                </span>
-              </button>
-              }
+      <div class="topSub">
+        <div class="topSub2">
+          <div class="h1" [innerHTML]="'HOME.COVERDBANNER.TITLE' | translateHtml | async"></div>
+          <div class="selectable mt-5">
+            @for (item of chips.slice(0, 3); track item.name) {
+            <div class="chip" [appChipNav]="item.name" *ngIf="item.name">
+              <i class="{{ item?.icon }}"></i>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
-
-            <div class="quote-form-row get-quote-form-row">
-              <input type="text" [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate"
-                class="form-control" [value]="coveredForm.fullName" (input)="coveredForm.fullName = $any($event.target).value" />
-              <input type="tel" appPhoneFormat [placeholder]="'HOME.BANNER.FORM.PHONE' | translate"
-                class="form-control" [value]="coveredForm.phone" (input)="coveredForm.phone = $any($event.target).value" />
-              <button class="quote-submit" [disabled]="coveredForm.isSubmitting || !coveredForm.selectedChip || !coveredForm.fullName.trim() || !coveredForm.phone.trim()" (click)="goToSelectedQuote(coveredForm)">
-                {{ coveredForm.isSubmitting ? ('HOME.BANNER.FORM.LOADING' | translate) : ('HOME.COVERDBANNER.FORM.BUTTON' | translate) }}
-              </button>
+            }
+          </div>
+          <div class="selectable mt-2">
+            @for (item of chips.slice(3, 6); track item.name) {
+            <div class="chip" [appChipNav]="item.name" *ngIf="item.name">
+              <i class="{{ item?.icon }}"></i>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
+            }
           </div>
-        </div>
-
-        <div class="col-12 col-lg-5 col-xl-6">
-          <div class="image-wrapper ms-lg-auto">
-            <img src="/assets/images/home/get-coverd/poster.png" alt="Get covered visual" class="img-fluid rounded-image" />
+          <div class="inps">
+            <input type="text" [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate" class="form-control" />
+            <input type="tel" appPhoneFormat [placeholder]="'HOME.BANNER.FORM.PHONE' | translate" class="form-control" />
           </div>
+          <button class="btn" type="button" appBannerQuoteSubmit>{{ 'HOME.COVERDBANNER.FORM.BUTTON' | translate
+            }}</button>
         </div>
       </div>
     </div>

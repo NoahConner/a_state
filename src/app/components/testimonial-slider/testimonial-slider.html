@@ -1,53 +1,59 @@
-<section class="testimonials">
-  <div class="testimonial-rings" aria-hidden="true">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+<section class="testimonials py-5 overflow-hidden">
+  <div class="container position-relative">
+    <div class="header-banner">
+      <img src="/assets/images/banner.png" alt="" />
+    </div>
 
-  <div class="container testimonial-content position-relative">
-    <h2 class="section-title">
+    <h2 class="section-title mb-5">
       {{ 'HOME.TESTIMONIALS.TITLE_LINE1' | translate }}
-      <span>{{ 'HOME.TESTIMONIALS.TITLE_HIGHLIGHT' | translate }}</span>
+      <span class="text-danger fw-bold">
+        {{ 'HOME.TESTIMONIALS.TITLE_HIGHLIGHT' | translate }}
+      </span>
+      {{ 'HOME.TESTIMONIALS.TITLE_LINE2' | translate }}
     </h2>
 
-    <div id="testimonialSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="7000">
+    <!-- Bootstrap Carousel -->
+    <div
+      id="testimonialSlider"
+      class="carousel slide"
+      data-bs-ride="carousel"
+      style="margin-top: 7rem"
+    >
       <div class="carousel-inner">
         <div
           class="carousel-item"
           *ngFor="let group of groupedTestimonials; let i = index"
           [class.active]="i === 0"
         >
-          <div class="row g-2 justify-content-center">
-            <div class="col-12 col-md-6" *ngFor="let item of group">
-              <article class="testimonial-card">
-                <div class="rating" aria-label="5 out of 5 stars">
-                  <i class="fa-solid fa-star" *ngFor="let star of stars"></i>
-                  <i class="fa-regular fa-star"></i>
-                </div>
-
-                <p class="testimonial-text">“{{ item.TEXT }}”</p>
-
-                <footer class="reviewer">
-                  <span class="reviewer-avatar">{{ getInitials(item.NAME) }}</span>
-                  <span class="reviewer-details">
-                    <strong>{{ item.NAME }}<ng-container *ngIf="item.CITY">, {{ item.CITY }}</ng-container></strong>
-                    <small>{{ 'HOME.TESTIMONIALS.SATISFACTION' | translate }}</small>
+          <div class="row g-4 justify-content-center">
+            <div class="col-lg-4" *ngFor="let item of group">
+              <div class="testimonial-card h-100 p-4 shadow-sm border-0">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <p class="fw-bold testimonial-heading mb-0">
+                    {{ item.NAME }}
+                  </p>
+                  <span class="quote-icon">
+                    <i class="fas fa-quote-right"></i>
                   </span>
-                </footer>
-              </article>
+                </div>
+                <p class="testimonial-text">"{{ item.TEXT }}"</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="testimonial-controls">
-        <button type="button" data-bs-target="#testimonialSlider" data-bs-slide="prev" [attr.aria-label]="'HOME.TESTIMONIALS.PREVIOUS' | translate">
-          <i class="fa-solid fa-arrow-left"></i>
-        </button>
-        <button type="button" data-bs-target="#testimonialSlider" data-bs-slide="next" [attr.aria-label]="'HOME.TESTIMONIALS.NEXT' | translate">
-          <i class="fa-solid fa-arrow-right"></i>
-        </button>
+      <!-- Carousel Indicators -->
+      <div class="carousel-indicators pagination-dots position-relative mt-5">
+        <button
+          *ngFor="let group of groupedTestimonials; let i = index"
+          type="button"
+          data-bs-target="#testimonialSlider"
+          [attr.data-bs-slide-to]="i"
+          [class.active]="i === 0"
+          [attr.aria-current]="i === 0 ? 'true' : null"
+          class="dot"
+        ></button>
       </div>
     </div>
   </div>

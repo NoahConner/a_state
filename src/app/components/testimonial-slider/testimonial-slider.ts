@@ -9,7 +9,6 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class TestimonialSliderComponent implements OnInit {
   testimonials: any[] = [];
-  readonly stars = Array.from({ length: 4 });
 
   constructor(private translate: TranslateService) {}
 
@@ -28,20 +27,11 @@ export class TestimonialSliderComponent implements OnInit {
   }
 
   get groupedTestimonials() {
-    const chunkSize = 2;
+    const chunkSize = 3;
     const groups = [];
     for (let i = 0; i < this.testimonials.length; i += chunkSize) {
       groups.push(this.testimonials.slice(i, i + chunkSize));
     }
     return groups;
-  }
-
-  getInitials(name: string): string {
-    return name
-      .split(' ')
-      .map((part) => part.charAt(0))
-      .join('')
-      .slice(0, 2)
-      .toUpperCase();
   }
 }

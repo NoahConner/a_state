@@ -5,320 +5,306 @@
         <div class="topSub2">
           <h1 class="h1">
             <span [innerHTML]="'HOME.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
-            <span [innerHTML]="'HOME.BANNER.TITLE_LINE2' | translateHtml | async"></span><br />
-            <strong [innerHTML]="'HOME.BANNER.TITLE_LINE3' | translateHtml | async"></strong>
+            <span [innerHTML]="'HOME.BANNER.TITLE_LINE2' | translateHtml | async"></span>
           </h1>
-          <div class="banner-quote-card">
-            <div class="quote-options">
-              @for (item of chips; track item.name) {
-              <button type="button" class="quote-option" *ngIf="item.name" [class.selected]="bannerForm.selectedChip === item.name"
-                [attr.aria-pressed]="bannerForm.selectedChip === item.name" (click)="selectChip(bannerForm, item.name)">
-                <span class="icon-badge">
-                  <span class="icon-burst"></span>
-                  <img [src]="item.image" [alt]="item.name | translate" class="quote-option-image" />
-                </span>
-                <span class="quote-option-label">
-                  <span class="radio-indicator" [class.checked]="bannerForm.selectedChip === item.name"></span>
-                  <span [innerHTML]="item.name | translateHtml | async"></span>
-                </span>
-              </button>
-              }
+          <!-- 
+          <div class="selectable">
+            
+            @for (item of chips; track item.name) {
+            <div class="chip" *ngIf="item.name">
+              <i class="{{ item.icon }}"></i>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
             </div>
+            }
+          </div> -->
 
-            <div class="quote-form-row">
-              <input type="text" [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate" class="form-control"
-                [value]="bannerForm.fullName" (input)="bannerForm.fullName = $any($event.target).value" />
-
-              <input type="tel" appPhoneFormat [placeholder]="'HOME.BANNER.FORM.PHONE' | translate"
-                class="form-control" [value]="bannerForm.phone" (input)="bannerForm.phone = $any($event.target).value" />
-
-              <button class="quote-submit" [disabled]="bannerForm.isSubmitting || !bannerForm.selectedChip || !bannerForm.fullName.trim() || !bannerForm.phone.trim()" (click)="goToSelectedQuote(bannerForm)">
-                {{ bannerForm.isSubmitting ? ('HOME.BANNER.FORM.LOADING' | translate) : ('HOME.BANNER.FORM.BUTTON' | translate) }}
-              </button>
-            </div>
+          <div class="selectable mt-5">
+            @for (item of chips.slice(0, 3); track item.name) {
+            <button
+              type="button"
+              class="chip"
+              *ngIf="item.name"
+              [class.selected]="bannerForm.selectedChip === item.name"
+              [attr.aria-pressed]="bannerForm.selectedChip === item.name"
+              (click)="selectChip(bannerForm, item.name)">
+              <i class="{{ item?.icon }}"></i>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
+            </button>
+            }
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
+          <div class="selectable mt-2">
+            @for (item of chips.slice(3, 6); track item.name) {
+            <button
+              type="button"
+              class="chip"
+              *ngIf="item.name"
+              [class.selected]="bannerForm.selectedChip === item.name"
+              [attr.aria-pressed]="bannerForm.selectedChip === item.name"
+              (click)="selectChip(bannerForm, item.name)">
+              <i class="{{ item?.icon }}"></i>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
+            </button>
+            }
+          </div>
 
-  <!-- Trust Badges Strip -->
-  <div class="trust-badges">
-    <div class="container">
-      <div class="trust-badges__card">
-        @for (badge of trustBadges; track badge.labelKey) {
-        <div class="trust-badge">
-          <span class="trust-badge__icon">
-            <img [src]="badge.image" [alt]="badge.labelKey | translate" class="trust-badge__image" />
-          </span>
-          <span class="trust-badge__label" [innerHTML]="badge.labelKey | translateHtml | async"></span>
+          <div class="inps">
+            <input
+              type="text"
+              [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate"
+              class="form-control"
+              [value]="bannerForm.fullName"
+              (input)="bannerForm.fullName = $any($event.target).value" />
+
+            <input type="tel" appPhoneFormat
+              [placeholder]="'HOME.BANNER.FORM.PHONE' | translate"
+              class="form-control"
+              [value]="bannerForm.phone"
+              (input)="bannerForm.phone = $any($event.target).value" />
+          </div>
+
+          <button class="btn" [disabled]="bannerForm.isSubmitting || !bannerForm.selectedChip || !bannerForm.fullName.trim() || !bannerForm.phone.trim()" (click)="goToSelectedQuote(bannerForm)">
+            {{ bannerForm.isSubmitting ? 'Loading...' : ('HOME.BANNER.FORM.BUTTON' | translate) }}
+          </button>
         </div>
-        }
       </div>
     </div>
   </div>
 
   <!-- Why Texans Choose A-State Insurance -->
 
-  <section class="features-section">
-    
-    <div class="container">
-      <!-- Title & Sub-header -->
-      <div class="mb-5 text-start">
-        <h2 class="section-title mb-3">
-          <span [innerHTML]="'HOME.WHY_CHOOSE.HEADING' | translateHtml | async"></span>
-          <span class="brand-red" [innerHTML]="'HOME.WHY_CHOOSE.HEADING_STRONG' | translateHtml | async"></span>
-        </h2>
-        <div class="row g-3 sub-features">
-          <div class="col-12">
-            <p><strong [innerHTML]="'HOME.WHY_CHOOSE.SUBHEADING' | translateHtml | async"></strong></p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Cards Grid -->
-      <div class="row g-4">
-        @for (card of featureHighlights; track card.titleKey) {
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="feature-card">
-            <div class="icon-circle">
-              @if (card.textKey) {
-              <span class="stat-text">{{ card.textKey | translate }}</span>
-              } @else {
-              <i class="fa-solid {{ card.icon }}"></i>
-              }
-            </div>
-            <h3 class="card-title-text" [innerHTML]="card.titleKey | translateHtml | async"></h3>
-          </div>
-        </div>
-        }
-      </div>
-    </div>
-  </section>
-
-  <!-- <div class="why-choose-section">
-    <div class="container">
-      <div class="row mb-4">
+  <div class="texan-choose-image">
+    <div class="container py-5 mt-5">
+      <div class="row mb-5 text-center">
         <div class="col-12">
           <h2 class="heading">
-            <span [innerHTML]="'HOME.WHY_CHOOSE.HEADING' | translateHtml | async"></span> 
+            <span [innerHTML]="'HOME.WHY_CHOOSE.HEADING' | translateHtml | async"></span>
             <strong [innerHTML]="'HOME.WHY_CHOOSE.HEADING_STRONG' | translateHtml | async"></strong>
           </h2>
-          <p class="why-choose-subheading" [innerHTML]="'HOME.WHY_CHOOSE.SUBHEADING' | translateHtml | async"></p>
         </div>
       </div>
+      <div class="gap-m">
+        <!-- card start -->
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/carbon_license.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [innerHTML]="'HOME.WHY_CHOOSE.CARD1.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'HOME.WHY_CHOOSE.CARD1.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
 
-      <div class="row g-4">
-        @for (card of whyChooseCards; track card.titleKey) {
-        <div class="col-6 col-md-3">
-          <div class="why-choose-card">
-            <span class="why-choose-icon" [class]="'accent-' + card.accent">
-              @if (card.text) {
-              <span class="why-choose-icon-text">{{ card.text }}</span>
-              } @else {
-              <i class="fas {{ card.icon }}"></i>
-              }
-            </span>
-            <h3 class="why-choose-title" [innerHTML]="card.titleKey | translateHtml | async"></h3>
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/Heart.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [innerHTML]="'HOME.WHY_CHOOSE.CARD2.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'HOME.WHY_CHOOSE.CARD2.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
           </div>
         </div>
-        }
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/calendar.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [innerHTML]="'HOME.WHY_CHOOSE.CARD3.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'HOME.WHY_CHOOSE.CARD3.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/price.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [innerHTML]="'HOME.WHY_CHOOSE.CARD4.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'HOME.WHY_CHOOSE.CARD4.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/wifi.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [innerHTML]="'HOME.WHY_CHOOSE.CARD5.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'HOME.WHY_CHOOSE.CARD5.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-4">
+            <div class="feature-card feature-card-height">
+              <div class="icon-wrapper">
+                <img src="/assets/images/agents.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title" [innerHTML]="'HOME.WHY_CHOOSE.CARD6.TITLE' | translateHtml | async"></h3>
+                <p class="card-text" [innerHTML]="'HOME.WHY_CHOOSE.CARD6.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- card end -->
       </div>
     </div>
-  </div> -->
+  </div>
 
-  <!-- Insurance Coverage -->
-  <section class="solutions-section py-5">
-    <div class="container py-4">
-      <div class="mb-5">
-        <h2 class="section-title" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.TITLE' | translateHtml | async"></h2>
-        <div class="title-underline"></div>
+  <!-- Our Insurance Solutions -->
+  <div class="solutions-section">
+    <div class="side-strip"></div>
+    <div class="container position-relative">
+      <div class="row mb-5 text-center">
+        <div class="col-12">
+          <h2 class="section-title">{{ 'HOME.INSURANCE_SOLUTIONS.TITLE' | translate }}</h2>
+        </div>
       </div>
-      <div class="row g-4 g-lg-5">
-        <div class="col-12 col-md-6 col-lg-4">
-          <article class="card-item">
-            <div class="icon-wrapper mb-3"><img src="/assets/images/home/solution/car.png" alt="Auto Insurance" /></div>
-            <h3 class="card-title fw-bold mb-2" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.AUTO.TITLE' | translateHtml | async"></h3>
-            <p class="card-description mb-3" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.AUTO.DESC' | translateHtml | async"></p>
-            <a class="quote-link" [routerLink]="getRoute('autoInsurance')">{{ 'HOME.INSURANCE_SOLUTIONS.GET_A_QUOTE' | translate }} <span class="arrow">&rarr;</span></a>
-          </article>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="solution-card">
+            <div class="d-flex align-items-start">
+              <div class="icon-box">
+                <img src="/assets/images/car.png" alt="Car Icon" />
+                <!-- <i class="fas fa-car"></i> -->
+              </div>
+              <div class="card-content">
+                <h3 class="solution-title" [routerLink]="getRoute('autoInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.AUTO.TITLE' | translateHtml | async"></h3>
+                <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.AUTO.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="col-12 col-md-6 col-lg-4">
-          <article class="card-item">
-            <div class="icon-wrapper mb-3"><img src="/assets/images/home/solution/man.png" alt="SR-22 Insurance" /></div>
-            <h3 class="card-title fw-bold mb-2" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.SR22.TITLE' | translateHtml | async"></h3>
-            <p class="card-description mb-3" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.SR22.DESC' | translateHtml | async"></p>
-            <a class="quote-link" [routerLink]="getRoute('sr22Insurance')">{{ 'HOME.INSURANCE_SOLUTIONS.GET_A_QUOTE' | translate }} <span class="arrow">&rarr;</span></a>
-          </article>
+        <div class="col-md-6">
+          <div class="solution-card seprator">
+            <div class="d-flex align-items-start">
+              <div class="icon-box">
+                <img src="/assets/images/house.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="solution-title" [routerLink]="getRoute('homeInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HOME.TITLE' | translateHtml | async"></h3>
+
+                <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HOME.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="col-12 col-md-6 col-lg-4">
-          <article class="card-item">
-            <div class="icon-wrapper mb-3"><img src="/assets/images/home/solution/house.png" alt="Homeowners Insurance" /></div>
-            <h3 class="card-title fw-bold mb-2" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HOME.TITLE' | translateHtml | async"></h3>
-            <p class="card-description mb-3" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HOME.DESC' | translateHtml | async"></p>
-            <a class="quote-link" [routerLink]="getRoute('homeInsurance')">{{ 'HOME.INSURANCE_SOLUTIONS.GET_A_QUOTE' | translate }} <span class="arrow">&rarr;</span></a>
-          </article>
+        <div class="col-md-6">
+          <div class="solution-card seprator">
+            <div class="d-flex align-items-start">
+              <div class="icon-box">
+                <img src="/assets/images/commercial.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="solution-title" [routerLink]="getRoute('commercialInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.TITLE' | translateHtml | async"></h3>
+
+                <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="col-12 col-md-6 col-lg-4">
-          <article class="card-item">
-            <div class="icon-wrapper mb-3"><img src="/assets/images/home/solution/renters.png" alt="Renters Insurance" /></div>
-            <h3 class="card-title fw-bold mb-2" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.RENTERS.TITLE' | translateHtml | async"></h3>
-            <p class="card-description mb-3" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.RENTERS.DESC' | translateHtml | async"></p>
-            <a class="quote-link" [routerLink]="getRoute('rentersInsurance')">{{ 'HOME.INSURANCE_SOLUTIONS.GET_A_QUOTE' | translate }} <span class="arrow">&rarr;</span></a>
-          </article>
+        <div class="col-md-6">
+          <div class="solution-card">
+            <div class="d-flex align-items-start">
+              <div class="icon-box">
+                <img src="/assets/images/life.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="solution-title" [routerLink]="getRoute('lifeInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.LIFE.TITLE' | translateHtml | async"></h3>
+
+                <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.LIFE.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="col-12 col-md-6 col-lg-4">
-          <article class="card-item">
-            <div class="icon-wrapper mb-3"><img src="/assets/images/home/solution/commercial.png" alt="Commercial Insurance" /></div>
-            <h3 class="card-title fw-bold mb-2" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.TITLE' | translateHtml | async"></h3>
-            <p class="card-description mb-3" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.DESC' | translateHtml | async"></p>
-            <a class="quote-link" [routerLink]="getRoute('commercialInsurance')">{{ 'HOME.INSURANCE_SOLUTIONS.GET_A_QUOTE' | translate }} <span class="arrow">&rarr;</span></a>
-          </article>
+        <div class="col-md-6">
+          <div class="solution-card">
+            <div class="d-flex align-items-start">
+              <div class="icon-box">
+                <img src="/assets/images/health.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="solution-title" [routerLink]="getRoute('healthInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HEALTH.TITLE' | translateHtml | async"></h3>
+
+                <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HEALTH.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="col-12 col-md-6 col-lg-4">
-          <article class="card-item">
-            <div class="icon-wrapper mb-3"><img src="/assets/images/home/solution/life.png" alt="Life Insurance" /></div>
-            <h3 class="card-title fw-bold mb-2" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.LIFE.TITLE' | translateHtml | async"></h3>
-            <p class="card-description mb-3" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.LIFE.DESC' | translateHtml | async"></p>
-            <a class="quote-link" [routerLink]="getRoute('lifeInsurance')">{{ 'HOME.INSURANCE_SOLUTIONS.GET_A_QUOTE' | translate }} <span class="arrow">&rarr;</span></a>
-          </article>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <article class="card-item">
-            <div class="icon-wrapper mb-3"><img src="/assets/images/home/solution/health.png" alt="Health Insurance" /></div>
-            <h3 class="card-title fw-bold mb-2" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HEALTH.TITLE' | translateHtml | async"></h3>
-            <p class="card-description mb-3" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HEALTH.DESC' | translateHtml | async"></p>
-            <a class="quote-link" [routerLink]="getRoute('healthInsurance')">{{ 'HOME.INSURANCE_SOLUTIONS.GET_A_QUOTE' | translate }} <span class="arrow">&rarr;</span></a>
-          </article>
-        </div>
+        <div class="col-md-6">
+          <div class="solution-card seprator">
+            <div class="d-flex align-items-start">
+              <div class="icon-box">
+                <img src="/assets/images/secure.png" alt="Car Icon" />
+              </div>
+              <div class="card-content">
+                <h3 class="solution-title" [routerLink]="getRoute('suretyBondInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.SURETY.TITLE' | translateHtml | async"></h3>
 
-        <div class="col-12 col-md-6 col-lg-4">
-          <article class="card-item">
-            <div class="icon-wrapper mb-3"><img src="/assets/images/home/solution/surety.png" alt="Surety Bonds" /></div>
-            <h3 class="card-title fw-bold mb-2" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.SURETY.TITLE' | translateHtml | async"></h3>
-            <p class="card-description mb-3" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.SURETY.DESC' | translateHtml | async"></p>
-            <a class="quote-link" [routerLink]="getRoute('suretyBondInsurance')">{{ 'HOME.INSURANCE_SOLUTIONS.GET_A_QUOTE' | translate }} <span class="arrow">&rarr;</span></a>
-          </article>
+                <p class="solution-text" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.SURETY.DESC' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5 text-end">
+        <div class="col-12">
+          <button class="btn btn-see-all" [routerLink]="getRoute('insuranceServices')">
+            {{ 'HOME.INSURANCE_SOLUTIONS.SEE_ALL' | translate }}
+          </button>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- everystory -->
+  <div class="everyStory">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="story">
+            <div class="sinner">
+              <div class="bar"></div>
+              <div class="text">
+                <div class="h4">
+                  <span [innerHTML]="'HOME.EVERY_STORY.TITLE_LINE1' | translateHtml | async"></span> <br />
+                  <span [innerHTML]="'HOME.EVERY_STORY.TITLE_LINE2' | translateHtml | async"></span>
+                </div>
+                <p [innerHTML]="'HOME.EVERY_STORY.PARA1' | translateHtml | async"></p>
 
-  <section class="story-section py-5">
-  <div class="container py-lg-4">
-    <div class="row align-items-center g-4 g-lg-5">
-      
-      <!-- Left Content Column -->
-      <div class="col-12 col-lg-7 col-xl-6">
-        <div class="content-wrapper">
-          
-          <!-- Heading -->
-          <h2 class="section-title mb-3">
-            <span class="line-1" [innerHTML]="'HOME.EVERY_STORY.TITLE_LINE1' | translateHtml | async"></span>
-            <span class="line-2 ms-lg-5" [innerHTML]="'HOME.EVERY_STORY.TITLE_LINE2' | translateHtml | async"></span>
-            <span class="line-3" [innerHTML]="'HOME.EVERY_STORY.TITLE_LINE3' | translateHtml | async"></span>
-          </h2>
+                <br />
 
-          <!-- Underline Divider -->
-          <div class="title-underline mb-4"></div>
-
-          <!-- Paragraphs -->
-          <div class="description-text">
-            <p [innerHTML]="'HOME.EVERY_STORY.PARA1' | translateHtml | async" class="mb-3">
-            </p>
-            <p class="mb-0" [innerHTML]="'HOME.EVERY_STORY.PARA2' | translateHtml | async">
-            </p>
+                <p [innerHTML]="'HOME.EVERY_STORY.PARA2' | translateHtml | async"></p>
+              </div>
+            </div>
           </div>
-
         </div>
       </div>
-
-      <!-- Right Image Column -->
-      <div class="col-12 col-lg-5 col-xl-6">
-        <div class="image-wrapper ms-lg-auto">
-          <img src="assets/images/home/story/poster.png" alt="Texas Flag Floating in Sky" class="img-fluid rounded-image" />
-        </div>
-      </div>
-
     </div>
   </div>
-</section>
-
 
   <!-- Working With A State -->
-<section class="steps-section py-5 position-relative overflow-hidden">
-  
-  <!-- Background Circles -->
-  <div class="bg-circle bg-circle-left"></div>
-  <div class="bg-circle bg-circle-right"></div>
-
-  <div class="container py-4 position-relative z-1">
-    
-    <!-- Section Header -->
-    <div class="text-center text-white mb-5">
-      <h2 class="section-title fw-bold mb-1" [innerHTML]="'HOME.SIMPLE_STEPS.TITLE' | translateHtml | async"></h2>
-      <p class="section-subtitle mb-0" [innerHTML]="'HOME.SIMPLE_STEPS.SUBTITLE' | translateHtml | async"></p>
-    </div>
-
-    <!-- Cards Grid -->
-    <div class="row g-3 justify-content-center">
-      
-      <!-- Step 01 -->
-      <div class="col-12 col-sm-6 col-md-auto d-flex justify-content-center">
-        <div class="step-card text-center">
-          <div class="icon-circle mx-auto d-flex align-items-center justify-content-center">
-            <img src="assets/images/home/steps/hand.png" alt="Reach Out" width="33" height="33" />
-          </div>
-          <span class="step-number text-uppercase d-block" [innerHTML]="'HOME.SIMPLE_STEPS.STEP1.LABEL' | translateHtml | async"></span>
-          <h3 class="step-title fw-bold text-white mb-0" [innerHTML]="'HOME.SIMPLE_STEPS.STEP1.TITLE' | translateHtml | async"></h3>
-        </div>
-      </div>
-
-      <!-- Step 02 -->
-      <div class="col-12 col-sm-6 col-md-auto d-flex justify-content-center">
-        <div class="step-card text-center">
-          <div class="icon-circle mx-auto d-flex align-items-center justify-content-center">
-            <img src="assets/images/home/steps/rocket.png" alt="Get Expert Advice" width="33" height="33" />
-          </div>
-          <span class="step-number text-uppercase d-block" [innerHTML]="'HOME.SIMPLE_STEPS.STEP2.LABEL' | translateHtml | async"></span>
-          <h3 class="step-title fw-bold text-white mb-0" [innerHTML]="'HOME.SIMPLE_STEPS.STEP2.TITLE' | translateHtml | async"></h3>
-        </div>
-      </div>
-
-      <!-- Step 03 -->
-      <div class="col-12 col-sm-6 col-md-auto d-flex justify-content-center">
-        <div class="step-card text-center">
-          <div class="icon-circle mx-auto d-flex align-items-center justify-content-center">
-            <img src="assets/images/home/steps/notepad.png" alt="Pick Your Plan" width="33" height="33" />
-          </div>
-          <span class="step-number text-uppercase d-block" [innerHTML]="'HOME.SIMPLE_STEPS.STEP3.LABEL' | translateHtml | async"></span>
-          <h3 class="step-title fw-bold text-white mb-0" [innerHTML]="'HOME.SIMPLE_STEPS.STEP3.TITLE' | translateHtml | async"></h3>
-        </div>
-      </div>
-
-      <!-- Step 04 -->
-      <div class="col-12 col-sm-6 col-md-auto d-flex justify-content-center">
-        <div class="step-card text-center">
-          <div class="icon-circle mx-auto d-flex align-items-center justify-content-center">
-            <img src="assets/images/home/steps/lightning.png" alt="You're Covered" width="33" height="33" />
-          </div>
-          <span class="step-number text-uppercase d-block" [innerHTML]="'HOME.SIMPLE_STEPS.STEP4.LABEL' | translateHtml | async"></span>
-          <h3 class="step-title fw-bold text-white mb-0" [innerHTML]="'HOME.SIMPLE_STEPS.STEP4.TITLE' | translateHtml | async"></h3>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-  <!-- <div class="container-fluid py-5 insurance-section position-relative overflow-hidden">
+  <div class="container-fluid py-5 insurance-section position-relative overflow-hidden">
     <img src="/assets/images/insurance-left.png" class="bg-shape shape-left" alt="decoration" />
     <img src="/assets/images/insurance-right.png" class="bg-shape shape-right" alt="decoration" />
 
@@ -367,128 +353,68 @@
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 
   <!-- Testimonials Section -->
   <app-testimonial-slider></app-testimonial-slider>
 
-  <!-- Carriers -->
-<section class="carriers-section">
-  <div class="container-fluid px-0">
-    
-    <!-- Centered Header -->
-    <h2 class="carriers-title text-center mb-0" [innerHTML]="'HOME.CARRIERS.TITLE' | translateHtml | async"></h2>
-
-    <!-- Infinite Marquee Slider -->
-    <div class="logo-slider-wrapper mt-5">
-      <div class="logo-track">
-        
-        <!-- Original Set -->
-        <a href="#" class="logo-item" title="AINSCO Insurance">
-          <img src="assets/images/home/carriers/1.png" alt="AINSCO logo" />
-        </a>
-        <a href="#" class="logo-item" title="INFINITY Insurance">
-          <img src="assets/images/home/carriers/2.png" alt="INFINITY logo" />
-        </a>
-        <a href="#" class="logo-item" title="HISCOX Insurance">
-          <img src="assets/images/home/carriers/3.png" alt="HISCOX logo" />
-        </a>
-        <a href="#" class="logo-item" title="GEICO Insurance">
-          <img src="assets/images/home/carriers/4.png" alt="GEICO logo" />
-        </a>
-        <a href="#" class="logo-item" title="Texas Mutual Insurance">
-          <img src="assets/images/home/carriers/5.png" alt="Texas Mutual logo" />
-        </a>
-        <a href="#" class="logo-item" title="wellington IT">
-          <img src="assets/images/home/carriers/6.png" alt="wellington IT logo" />
-        </a>
-        <a href="#" class="logo-item" title="National General Insurance">
-          <img src="assets/images/home/carriers/7.png" alt="National General logo" />
-        </a>
-
-        <!-- Duplicate Set for Seamless Loop -->
-        <a href="#" class="logo-item" title="AINSCO Insurance">
-          <img src="assets/images/home/carriers/1.png" alt="AINSCO logo" />
-        </a>
-        <a href="#" class="logo-item" title="INFINITY Insurance">
-          <img src="assets/images/home/carriers/2.png" alt="INFINITY logo" />
-        </a>
-        <a href="#" class="logo-item" title="HISCOX Insurance">
-          <img src="assets/images/home/carriers/3.png" alt="HISCOX logo" />
-        </a>
-        <a href="#" class="logo-item" title="GEICO Insurance">
-          <img src="assets/images/home/carriers/4.png" alt="GEICO logo" />
-        </a>
-        <a href="#" class="logo-item" title="Texas Mutual Insurance">
-          <img src="assets/images/home/carriers/5.png" alt="Texas Mutual logo" />
-        </a>
-        <a href="#" class="logo-item" title="wellington IT">
-          <img src="assets/images/home/carriers/6.png" alt="wellington IT logo" />
-        </a>
-        <a href="#" class="logo-item" title="National General Insurance">
-          <img src="assets/images/home/carriers/7.png" alt="National General logo" />
-        </a>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
   <!-- get covered -->
-  <div class="get-quote-section">
+  <div class="topBanner getCovver">
     <div class="container">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-6">
-          <div class="get-quote-text">
-            <h2 class="get-quote-title mb-0" [innerHTML]="'HOME.COVERDBANNER.TITLE' | translateHtml | async"></h2>
-            <p class="get-quote-desc" [innerHTML]="'HOME.COVERDBANNER.DESC' | translateHtml | async"></p>
-
-            <div class="quote-options get-quote-options">
-              @for (item of chips; track item.name) {
-              <button type="button" class="quote-option" *ngIf="item.name"
-                [class.selected]="coveredForm.selectedChip === item.name" [attr.aria-pressed]="coveredForm.selectedChip === item.name"
-                (click)="selectChip(coveredForm, item.name)">
-                <span class="icon-badge">
-                  <span class="icon-burst"></span>
-                  <img [src]="item.image" [alt]="item.name | translate" class="quote-option-image" />
-                </span>
-                <span class="quote-option-label">
-                  <span class="radio-indicator"></span>
-                  <span [innerHTML]="item.name | translateHtml | async"></span>
-                </span>
-              </button>
-              }
-            </div>
-
-            <div class="quote-form-row get-quote-form-row">
-              <input type="text" [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate"
-                class="form-control" [value]="coveredForm.fullName" (input)="coveredForm.fullName = $any($event.target).value" />
-              <input type="tel" appPhoneFormat [placeholder]="'HOME.BANNER.FORM.PHONE' | translate"
-                class="form-control" [value]="coveredForm.phone" (input)="coveredForm.phone = $any($event.target).value" />
-              <button class="quote-submit" [disabled]="coveredForm.isSubmitting || !coveredForm.selectedChip || !coveredForm.fullName.trim() || !coveredForm.phone.trim()" (click)="goToSelectedQuote(coveredForm)">
-                {{ coveredForm.isSubmitting ? ('HOME.BANNER.FORM.LOADING' | translate) : ('HOME.COVERDBANNER.FORM.BUTTON' | translate) }}
-              </button>
-            </div>
+      <div class="topSub">
+        <div class="topSub2">
+          <div class="h1" [innerHTML]="'HOME.COVERDBANNER.TITLE' | translateHtml | async"></div>
+          <div class="selectable mt-5">
+            @for (item of chips.slice(0, 3); track item.name) {
+            <button
+              type="button"
+              class="chip"
+              *ngIf="item.name"
+              [class.selected]="coveredForm.selectedChip === item.name"
+              [attr.aria-pressed]="coveredForm.selectedChip === item.name"
+              (click)="selectChip(coveredForm, item.name)">
+              <i class="{{ item?.icon }}"></i>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
+            </button>
+            }
           </div>
-        </div>
-
-        <!-- <div class="col-lg-6">
-          <div class="image-wrapper ms-lg-auto">
-            <img src="/assets/images/home/get-coverd/poster.png" alt="Get covered visual" class="get-quote-visual-image">
+          <div class="selectable mt-2">
+            @for (item of chips.slice(3, 6); track item.name) {
+            <button
+              type="button"
+              class="chip"
+              *ngIf="item.name"
+              [class.selected]="coveredForm.selectedChip === item.name"
+              [attr.aria-pressed]="coveredForm.selectedChip === item.name"
+              (click)="selectChip(coveredForm, item.name)">
+              <i class="{{ item?.icon }}"></i>
+              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
+            </button>
+            }
           </div>
-        </div> -->
-
-          <div class="col-12 col-lg-5 col-xl-6">
-        <div class="image-wrapper ms-lg-auto">
-            <img src="/assets/images/home/get-coverd/poster.png" alt="Get covered visual" class="img-fluid rounded-image" >
+          <div class="inps">
+            <input
+              type="text"
+              [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate"
+              class="form-control"
+              [value]="coveredForm.fullName"
+              (input)="coveredForm.fullName = $any($event.target).value" />
+            <input
+              type="tel"
+              appPhoneFormat
+              [placeholder]="'HOME.BANNER.FORM.PHONE' | translate"
+              class="form-control"
+              [value]="coveredForm.phone"
+              (input)="coveredForm.phone = $any($event.target).value" />
+          </div>
+          <button class="btn" [disabled]="coveredForm.isSubmitting || !coveredForm.selectedChip || !coveredForm.fullName.trim() || !coveredForm.phone.trim()" (click)="goToSelectedQuote(coveredForm)">{{ coveredForm.isSubmitting ? 'Loading...' : ('HOME.COVERDBANNER.FORM.BUTTON' | translate)
+            }}</button>
         </div>
-      </div>
       </div>
     </div>
   </div>
 
   <!-- footuper -->
-  <!-- <app-foot-upper></app-foot-upper> -->
+  <app-foot-upper></app-foot-upper>
   <!--  -->
 </div>

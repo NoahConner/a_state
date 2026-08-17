@@ -1,173 +1,136 @@
 <div class="contactMain">
   <div class="topBanner">
     <div class="container">
-      <div class="banner-content">
-        <h1 class="h1">
-          <span [innerHTML]="'CONTACT.HEADING' | translateHtml | async"></span> <br />
-          <span [innerHTML]="'CONTACT.HEADINGSTRONG' | translateHtml | async"></span> <br />
-        </h1>
-        <p class="hero-desc" [innerHTML]="'CONTACT.HERO_DESC' | translateHtml | async"></p>
-      </div>
+      <h1 class="h1">
+        <span [innerHTML]="'CONTACT.HEADING' | translateHtml | async"></span> <br />
+        <strong [innerHTML]="'CONTACT.HEADINGSTRONG' | translateHtml | async"></strong>
+      </h1>
     </div>
   </div>
 
-  <!-- Reach A-State Insurance Directly -->
-  <section class="reach-direct">
-    <div class="reach-direct__inner">
-      <div class="reach-direct__top">
-        <div class="reach-direct__info">
-          <span class="reach-direct__blob" aria-hidden="true"></span>
-
-          <h2 class="reach-direct__title" [innerHTML]="'CONTACT.REACH_DIRECT.HEADING' | translateHtml | async"></h2>
-
-          <div class="contact-cards">
-            <article class="contact-card">
-              <div class="contact-card__head">
-                <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
-                <span class="contact-card__label" [innerHTML]="'CONTACT.REACH_DIRECT.TEXT_US.LABEL' | translateHtml | async"></span>
-              </div>
-              <div class="contact-card__body">
-                <span [innerHTML]="'CONTACT.REACH_DIRECT.TEXT_US.LINE' | translateHtml | async"></span>
-                <a class="contact-card__link" href="sms:7133577771">(713) 357-7771</a>
-              </div>
-            </article>
-
-            <article class="contact-card">
-              <div class="contact-card__head">
-                <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                <span class="contact-card__label" [innerHTML]="'CONTACT.REACH_DIRECT.CALL_US.LABEL' | translateHtml | async"></span>
-              </div>
-              <div class="contact-card__body">
-                <span [innerHTML]="'CONTACT.REACH_DIRECT.CALL_US.LINE' | translateHtml | async"></span>
-                <a class="contact-card__link" href="tel:7133577771">(713) 357-7771</a>
-              </div>
-            </article>
-
-            <article class="contact-card">
-              <div class="contact-card__head">
-                <i class="fa-regular fa-envelope" aria-hidden="true"></i>
-                <span class="contact-card__label" [innerHTML]="'CONTACT.REACH_DIRECT.EMAIL_US.LABEL' | translateHtml | async"></span>
-              </div>
-              <div class="contact-card__body">
-                <span [innerHTML]="'CONTACT.REACH_DIRECT.EMAIL_US.LINE' | translateHtml | async"></span>
-                <a class="contact-card__link" href="mailto:info@astateins.com">info&#64;astateins.com</a>
-              </div>
-            </article>
-
-            <article class="contact-card">
-              <div class="contact-card__head">
-                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                <span class="contact-card__label" [innerHTML]="'CONTACT.REACH_DIRECT.VISIT_US.LABEL' | translateHtml | async"></span>
-              </div>
-              <div class="contact-card__body">
-                <span class="contact-card__line">
-                  <a class="contact-card__link" [routerLink]="getRoute('ourLocations')"
-                    [innerHTML]="'CONTACT.REACH_DIRECT.VISIT_US.LINK' | translateHtml | async"></a>
-                  <span [innerHTML]="'CONTACT.REACH_DIRECT.VISIT_US.LINE' | translateHtml | async"></span>
-                </span>
-                <span [innerHTML]="'CONTACT.REACH_DIRECT.VISIT_US.HOURS' | translateHtml | async"></span>
-              </div>
-            </article>
+  <section class="contact-section">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <!-- Left Image -->
+        <div class="col-lg-6 p-0">
+          <div class="contact-image">
+            <img src="/assets/images/contact-section.png" alt="Family" />
           </div>
         </div>
 
-        <figure class="support-media">
-          <!-- TODO: replace with the final support photo -->
-          <img src="/assets/images/contact/poster.png" [alt]="'CONTACT.REACH_DIRECT.IMAGE_ALT' | translate"
-            class="support-media__image" />
+        <!-- Right Form -->
+        <div class="col-lg-6">
+          <div class="contact-form-wrapper">
+            <h2 class="contact-title" [innerHTML]="'CONTACT.CONTACT-INSURANCE.HEADING' | translateHtml | async"></h2>
 
-          <figcaption class="response-card">
-            <span class="response-card__chip" [innerHTML]="'CONTACT.REACH_DIRECT.RESPONSE.CHIP' | translateHtml | async"></span>
-            <span class="response-card__line" [innerHTML]="'CONTACT.REACH_DIRECT.RESPONSE.PHONE' | translateHtml | async"></span>
-            <span class="response-card__line" [innerHTML]="'CONTACT.REACH_DIRECT.RESPONSE.EMAIL' | translateHtml | async"></span>
-          </figcaption>
-        </figure>
-      </div>
+            <form class="mt-4">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <input type="text" required class="form-control custom-input"
+                    [placeholder]="'CONTACT.CONTACT-INSURANCE.FEILD1' | translate" />
+                </div>
 
-      <div class="message-block">
-        <h2 class="message-block__title">
-          <span class="message-block__accent" [innerHTML]="'CONTACT.MESSAGE_FORM.TITLE_ACCENT' | translateHtml | async"></span>
-          <span [innerHTML]="'CONTACT.MESSAGE_FORM.TITLE_REST' | translateHtml | async"></span>
-        </h2>
-        <span class="message-block__divider" aria-hidden="true"></span>
+                <div class="col-md-6">
+                  <input type="email" class="form-control custom-input"
+                    [placeholder]="'CONTACT.CONTACT-INSURANCE.FEILD2' | translate" />
+                </div>
 
-        <form class="message-form" (ngSubmit)="goToThankYou()">
-          <div class="message-form__grid">
-            <input type="text" class="message-form__field" required
-              [placeholder]="'CONTACT.MESSAGE_FORM.FULL_NAME' | translate" />
-            <input type="email" class="message-form__field" required
-              [placeholder]="'CONTACT.MESSAGE_FORM.EMAIL' | translate" />
-            <input type="tel" appPhoneFormat class="message-form__field" required
-              [placeholder]="'CONTACT.MESSAGE_FORM.PHONE' | translate" />
-            <input type="text" class="message-form__field" required
-              [placeholder]="'CONTACT.MESSAGE_FORM.CONTACT_METHOD' | translate" />
-            <input type="text" class="message-form__field"
-              [placeholder]="'CONTACT.MESSAGE_FORM.INSURANCE_TYPE' | translate" />
-            <input type="text" class="message-form__field"
-              [placeholder]="'CONTACT.MESSAGE_FORM.BEST_TIME' | translate" />
-            <textarea rows="6" class="message-form__field message-form__field--full" required
-              [placeholder]="'CONTACT.MESSAGE_FORM.MESSAGE' | translate"></textarea>
+                <div class="col-md-6">
+                  <input type="text" class="form-control custom-input"
+                    [placeholder]="'CONTACT.CONTACT-INSURANCE.FEILD3' | translate" />
+                </div>
+
+                <div class="col-md-6">
+                  <select class="form-select custom-input">
+                    <option selected [innerHTML]="'CONTACT.CONTACT-INSURANCE.FEILD4' | translateHtml | async"></option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <textarea rows="6" class="form-control custom-input textarea"
+                    [placeholder]="'CONTACT.CONTACT-INSURANCE.FEILD5' | translate"></textarea>
+                </div>
+
+                <div class="col-12">
+                  <button type="button" class="btn send-btn" (click)="goToThankYou()">
+                    {{ 'CONTACT.CONTACT-INSURANCE.BUTTON' | translate }}
+                  </button>
+                </div>
+              </div>
+            </form>
           </div>
-
-          <button type="submit" class="message-form__submit">
-            {{ 'CONTACT.MESSAGE_FORM.BUTTON' | translate }}
-          </button>
-        </form>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Find Your Nearest Office -->
-  <section class="offices">
-    <div class="offices__inner">
-      <h2 class="offices__title">
-        <span [innerHTML]="'CONTACT.OFFICES.TITLE_START' | translateHtml | async"></span>
-        <strong class="offices__title-accent"
-          [innerHTML]="'CONTACT.OFFICES.TITLE_ACCENT' | translateHtml | async"></strong>
-        <span [innerHTML]="'CONTACT.OFFICES.TITLE_END' | translateHtml | async"></span>
-      </h2>
-      <span class="offices__divider" aria-hidden="true"></span>
-    </div>
+  <section class="reach-section py-5">
+    <div class="container text-center">
+      <h2 class="section-title mb-5" [innerHTML]="'CONTACT.REACH-INSURANCE.HEADING' | translateHtml | async"></h2>
 
-    <div class="offices__map">
-      <div class="offices__inner">
-        <div class="offices__grid">
-        @for (office of offices; track office.id) {
-        <article class="office-card">
-          <h3 class="office-card__name">
-            {{ 'CONTACT.OFFICES.BRAND' | translate }} <br />
-            ({{ office.name }})
-          </h3>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-6 col-lg-5">
+          <div class="reach-card">
+            <div class="card-top">
+              <img src="/assets/images/message.png" alt="" />
 
-          <p class="office-card__row">
-            <span class="office-card__label">{{ 'CONTACT.OFFICES.ADDRESS' | translate }}</span>
-            <a class="office-card__link" [href]="office.link" target="_blank" rel="noopener noreferrer">{{
-              office.address }}</a>
-          </p>
-
-          <p class="office-card__row">
-            <span class="office-card__label">{{ 'CONTACT.OFFICES.PHONE' | translate }}</span>
-            <a class="office-card__link" [href]="'tel:' + office.phone">{{ office.phone }}</a>
-          </p>
-
-          <p class="office-card__row">
-            <span class="office-card__label">{{ 'CONTACT.OFFICES.HOURS' | translate }}</span>
-            <span class="office-card__value">{{ office.officeHours }}</span>
-          </p>
-
-          <div class="office-card__actions">
-            <a class="office-card__action" [href]="office.directionsLink" target="_blank" rel="noopener noreferrer">
-              <span [innerHTML]="'CONTACT.OFFICES.DIRECTIONS' | translateHtml | async"></span>
-              <span class="office-card__arrow" aria-hidden="true">&rarr;</span>
-            </a>
-            <a class="office-card__action" [routerLink]="getOfficeDetailRoute(office.id)">
-              <span [innerHTML]="'CONTACT.OFFICES.DETAILS' | translateHtml | async"></span>
-              <span class="office-card__arrow" aria-hidden="true">&rarr;</span>
-            </a>
+              <h3 class="reach-card-title" [innerHTML]="'CONTACT.REACH-INSURANCE.CARD1.TITLE' | translateHtml | async"></h3>
+            </div>
+            <p>
+              <span [innerHTML]="'CONTACT.REACH-INSURANCE.CARD1.DESC' | translateHtml | async"></span> <span>(713) 357-7771</span>
+            </p>
           </div>
-        </article>
-        }
         </div>
+
+        <!-- Call Us -->
+        <div class="col-md-6 col-lg-5">
+          <div class="reach-card">
+            <div class="card-top">
+              <img src="/assets/images/call.png" alt="" />
+              <h3 class="reach-card-title" [innerHTML]="'CONTACT.REACH-INSURANCE.CARD2.TITLE' | translateHtml | async"></h3>
+            </div>
+            <p>
+              <span [innerHTML]="'CONTACT.REACH-INSURANCE.CARD2.DESC' | translateHtml | async"></span>
+              <span class="underline"><a href="tel:7133577771">(713) 357-7771</a></span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Email Us -->
+        <div class="col-md-6 col-lg-5">
+          <div class="reach-card">
+            <div class="card-top">
+              <img src="/assets/images/email.png" alt="" />
+              <h3 class="reach-card-title" [innerHTML]="'CONTACT.REACH-INSURANCE.CARD3.TITLE' | translateHtml | async"></h3>
+            </div>
+            <p>
+              <span [innerHTML]="'CONTACT.REACH-INSURANCE.CARD3.DESC' | translateHtml | async"></span>
+              <a href="mailto:save@astateinsurance.com">
+                <span class="underline">save@astateinsurance.com</span>
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Visit Us -->
+        <div class="col-md-6 col-lg-5">
+          <div class="reach-card">
+            <div class="card-top">
+              <img src="/assets/images/contact-location.png" alt="" />
+              <h3 class="reach-card-title" [innerHTML]="'CONTACT.REACH-INSURANCE.CARD4.TITLE' | translateHtml | async"></h3>
+            </div>
+              <p>
+              <span class="underline" [routerLink]="getRoute('ourLocations')" [innerHTML]="'CONTACT.REACH-INSURANCE.CARD4.DESC' | translateHtml | async"></span>
+              <span [innerHTML]="'CONTACT.REACH-INSURANCE.CARD4.DESC1' | translateHtml | async"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hours -->
+        <div class="hours mt-5">
+        <img src="/assets/images/tabler_clock.png" alt="" />
+        <span [innerHTML]="'CONTACT.REACH-INSURANCE.DESC' | translateHtml | async"></span>
       </div>
     </div>
   </section>
