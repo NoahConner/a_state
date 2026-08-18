@@ -668,6 +668,18 @@
               <a class="sm-sub-item" (click)="changeLang('es'); $event.preventDefault()">Español</a>
             </div>
 
+            <div class="sm-divider"></div>
+
+            <!-- Contact -->
+            <a class="sm-contact" href="mailto:save@astateinsurance.com">
+              <i class="fas fa-envelope sm-icon"></i>
+              <span class="sm-label">save&#64;astateinsurance.com</span>
+            </a>
+            <a class="sm-contact" href="tel:7133577771">
+              <i class="fas fa-phone sm-icon"></i>
+              <span class="sm-label">713-357-7771</span>
+            </a>
+
             <div class="sm-cta-wrap">
               <a [routerLink]="getRoute('getAQuote')" class="sm-cta">{{
                 'HEADER.GET_A_QUOTE' | translate

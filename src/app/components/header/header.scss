@@ -633,6 +633,26 @@
     margin: 6px 0;
   }
 
+  .sm-contact {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 20px;
+    font-size: 15px;
+    color: #222;
+    text-decoration: none;
+    transition: background 0.12s;
+    word-break: break-word;
+
+    &:hover {
+      background: #f5f5f5;
+    }
+
+    .sm-icon {
+      color: #ca2b28;
+    }
+  }
+
   .sm-cta-wrap {
     padding: 12px 20px 20px;
   }
@@ -669,6 +689,7 @@
     display: block !important;
   }
 
+  // contact details live in the mobile drawer instead of a top strip
   .homeMain,
   .headerMain #mainNavbar {
     display: none !important;

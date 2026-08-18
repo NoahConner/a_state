@@ -57,6 +57,56 @@
     .map {
       width: 40%; // Map is slightly narrower in design
       min-height: 400px;
+      position: relative;
+
+      // The branded marker is anchored to the centre of the embed, which is where
+      // Google draws its own pin. Panning would break that alignment, so the map
+      // itself is not interactive — the marker links out to the full map instead.
+      iframe {
+        pointer-events: none;
+      }
+    }
+
+    .map-pin {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 58px;
+      height: 70px; // 58px badge + 12px tail
+      transform: translate(-50%, -100%); // tail tip sits on the map centre
+      z-index: 2;
+      display: block;
+      text-decoration: none;
+
+      .map-pin__badge {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 58px;
+        height: 58px;
+        padding: 9px;
+        border-radius: 50%;
+        background: #fff;
+        border: 3px solid #ca2b28;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 55px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-top: 15px solid #ca2b28;
+      }
     }
 
     .info {

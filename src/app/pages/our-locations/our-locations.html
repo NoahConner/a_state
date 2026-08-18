@@ -17,6 +17,12 @@
         <div class="map">
           <iframe [src]="loc.safeMapUrl" width="100%" height="100%" style="border: 0" loading="lazy">
           </iframe>
+          <a class="map-pin" [href]="loc.link" target="_blank" rel="noopener noreferrer"
+            [attr.aria-label]="'A-State Insurance (' + loc.name + ') on Google Maps'">
+            <span class="map-pin__badge">
+              <img src="/assets/images/logo.png" alt="A-State Insurance" />
+            </span>
+          </a>
         </div>
 
         <!-- INFO -->
