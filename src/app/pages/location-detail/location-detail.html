@@ -54,6 +54,12 @@
           <div class="col-lg-6">
             <div class="map-wrapper">
               <iframe [src]="loc.mapUrl" loading="lazy"> </iframe>
+              <a class="map-pin" href="{{ loc?.link }}" target="_blank" rel="noopener noreferrer"
+                [attr.aria-label]="'A-State Insurance (' + loc.name + ') on Google Maps'">
+                <span class="map-pin__badge">
+                  <img src="/assets/images/logo.png" alt="A-State Insurance" />
+                </span>
+              </a>
             </div>
           </div>
 
