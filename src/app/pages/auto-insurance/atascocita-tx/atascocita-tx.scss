@@ -501,12 +501,14 @@ border: 1px solid rgba(255, 255, 255, 0.2);
 
   .rates-lead {
     max-width: 735px;
-    margin: 0 auto 4.35rem;
+    margin: 0 auto 2.5rem;
+    line-height: 1.5;
   }
 
   .rates-copy {
     max-width: 48rem;
-    margin: 0 auto 4.35rem;
+    margin: 0 auto 2.5rem;
+    line-height: 1.5;
   }
 
   ::ng-deep .highlight {

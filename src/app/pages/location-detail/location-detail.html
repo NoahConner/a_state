@@ -4,9 +4,17 @@
       <div class="topSub">
         <div class="topSub2">
           <h1 class="h1">
-            {{ loc?.detailPage?.banner.heroHeading }} <br />
-            {{ loc?.name }}
+            @if (loc?.detailPage?.banner?.heading) {
+              {{ loc.detailPage.banner.heading }}
+            } @else {
+              {{ loc?.detailPage?.banner?.heroHeading }} <br />
+              {{ loc?.name }}
+            }
           </h1>
+
+          @if (loc?.detailPage?.banner?.subheading) {
+          <p class="banner-subheading">{{ loc.detailPage.banner.subheading }}</p>
+          }
 
           <div class="selectable mt-5">
             @for (item of chips.slice(0, 3); track item.name) {

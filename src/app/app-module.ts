@@ -124,6 +124,7 @@ import { McallenTx } from './pages/auto-insurance/mcallen-tx/mcallen-tx';
 import { LeagueCityTx } from './pages/auto-insurance/league-city-tx/league-city-tx';
 import { SugarLandTx } from './pages/auto-insurance/sugar-land-tx/sugar-land-tx';
 import { SanAngeloTx } from './pages/auto-insurance/san-angelo-tx/san-angelo-tx';
+import { TempleTx } from './pages/auto-insurance/temple-tx/temple-tx';
 import { BryanTx } from './pages/auto-insurance/bryan-tx/bryan-tx';
 import { AtascocitaTx } from './pages/auto-insurance/atascocita-tx/atascocita-tx';
 import { BeaumontTx } from './pages/auto-insurance/beaumont-tx/beaumont-tx';
@@ -272,6 +273,7 @@ export function initializeTranslations(
     LeagueCityTx,
     SugarLandTx,
     SanAngeloTx,
+    TempleTx,
     BryanTx,
     AtascocitaTx,
     BeaumontTx,
