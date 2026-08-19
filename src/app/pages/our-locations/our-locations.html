@@ -13,6 +13,8 @@
 
       <p class="desc" [innerHTML]="'OUR_LOCATION.SESSION1.DEC2' | translateHtml | async"></p>
 
+      <h2 class="offices-title" [innerHTML]="'OUR_LOCATION.SESSION1.OFFICES_TITLE' | translateHtml | async"></h2>
+
       <div class="location-card shadow" *ngFor="let loc of locations">
         <div class="map">
           <iframe [src]="loc.safeMapUrl" width="100%" height="100%" style="border: 0" loading="lazy">
@@ -47,6 +49,16 @@
             <li>
               <span class="icon">⏰</span>
               {{ loc.officeHours }}
+            </li>
+            <li *ngIf="loc.googleReviews">
+              <span class="icon">⭐</span>
+              <strong>{{ 'OUR_LOCATION.SESSION1.CARD.REVIEWS_LABEL' | translate }}:</strong>
+              {{ loc.googleReviews }}
+            </li>
+            <li *ngIf="loc.parking">
+              <span class="icon">🅿️</span>
+              <strong>{{ 'OUR_LOCATION.SESSION1.CARD.PARKING_LABEL' | translate }}:</strong>
+              {{ loc.parking }}
             </li>
           </ul>
 

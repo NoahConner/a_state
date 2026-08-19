@@ -99,6 +99,7 @@ import { McallenTx } from './pages/auto-insurance/mcallen-tx/mcallen-tx';
 import { LeagueCityTx } from './pages/auto-insurance/league-city-tx/league-city-tx';
 import { SugarLandTx } from './pages/auto-insurance/sugar-land-tx/sugar-land-tx';
 import { SanAngeloTx } from './pages/auto-insurance/san-angelo-tx/san-angelo-tx';
+import { TempleTx } from './pages/auto-insurance/temple-tx/temple-tx';
 import { BryanTx } from './pages/auto-insurance/bryan-tx/bryan-tx';
 import { AtascocitaTx } from './pages/auto-insurance/atascocita-tx/atascocita-tx';
 import { BeaumontTx } from './pages/auto-insurance/beaumont-tx/beaumont-tx';
@@ -380,6 +381,7 @@ const routes: Routes = [
       { path: 'league-city-tx', component: LeagueCityTx, data: { metaPage: 'leagueCityTx' } },
       { path: 'sugar-land-tx', component: SugarLandTx, data: { metaPage: 'sugarLandTx' } },
       { path: 'san-angelo-tx', component: SanAngeloTx, data: { metaPage: 'sanAngeloTx' } },
+      { path: 'temple-tx', component: TempleTx, data: { metaPage: 'templeTx' } },
       { path: 'bryan-tx', component: BryanTx, data: { metaPage: 'bryanTx' } },
       { path: 'atascocita-tx', component: AtascocitaTx, data: { metaPage: 'atascocitaTx' } },
       { path: 'beaumont-tx', component: BeaumontTx, data: { metaPage: 'beaumontTx' } },
@@ -625,6 +627,7 @@ const routes: Routes = [
       { path: 'league-city-tx', component: LeagueCityTx, data: { metaPage: 'leagueCityTx' } },
       { path: 'sugar-land-tx', component: SugarLandTx, data: { metaPage: 'sugarLandTx' } },
       { path: 'san-angelo-tx', component: SanAngeloTx, data: { metaPage: 'sanAngeloTx' } },
+      { path: 'temple-tx', component: TempleTx, data: { metaPage: 'templeTx' } },
       { path: 'bryan-tx', component: BryanTx, data: { metaPage: 'bryanTx' } },
       { path: 'atascocita-tx', component: AtascocitaTx, data: { metaPage: 'atascocitaTx' } },
       { path: 'beaumont-tx', component: BeaumontTx, data: { metaPage: 'beaumontTx' } },
@@ -1319,6 +1322,10 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   sanAngeloTx: {
     en: 'auto-insurance/san-angelo-tx',
     es: 'seguros-de-auto/san-angelo-tx',
+  },
+  templeTx: {
+    en: 'auto-insurance/temple-tx',
+    es: 'seguros-de-auto/temple-tx',
   },
   bryanTx: {
     en: 'auto-insurance/bryan-tx',
