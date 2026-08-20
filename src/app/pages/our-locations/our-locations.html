@@ -34,31 +34,39 @@
           <ul class="details">
             <li >
               <span class="icon">📍</span>
-              <a class="inline-link" href="{{ loc.link }}" target="_blank" rel="noopener noreferrer">{{ loc.address }}</a>
+              <span class="text">
+                <a class="inline-link" href="{{ loc.link }}" target="_blank" rel="noopener noreferrer">{{ loc.address }}</a>
+              </span>
             </li>
             <li>
               <span class="icon">📞</span>
-            <a  class="inline-link" style="color: inherit; text-decoration: underline;" href="tel:{{ loc.phone }}">
-              {{ loc.phone }}
-              </a>
+              <span class="text">
+                <a class="inline-link" style="color: inherit; text-decoration: underline;" href="tel:{{ loc.phone }}">
+                  {{ loc.phone }}
+                </a>
+              </span>
             </li>
             <li>
               <span class="icon">🌐</span>
-              {{ loc.languages.join(' | ') }}
+              <span class="text">{{ loc.languages.join(' | ') }}</span>
             </li>
             <li>
               <span class="icon">⏰</span>
-              {{ loc.officeHours }}
+              <span class="text">{{ loc.officeHours }}</span>
             </li>
             <li *ngIf="loc.googleReviews">
               <span class="icon">⭐</span>
-              <strong>{{ 'OUR_LOCATION.SESSION1.CARD.REVIEWS_LABEL' | translate }}:</strong>
-              {{ loc.googleReviews }}
+              <span class="text">
+                <strong>{{ 'OUR_LOCATION.SESSION1.CARD.REVIEWS_LABEL' | translate }}:</strong>
+                {{ loc.googleReviews }}
+              </span>
             </li>
             <li *ngIf="loc.parking">
               <span class="icon">🅿️</span>
-              <strong>{{ 'OUR_LOCATION.SESSION1.CARD.PARKING_LABEL' | translate }}:</strong>
-              {{ loc.parking }}
+              <span class="text">
+                <strong>{{ 'OUR_LOCATION.SESSION1.CARD.PARKING_LABEL' | translate }}:</strong>
+                {{ loc.parking }}
+              </span>
             </li>
           </ul>
 

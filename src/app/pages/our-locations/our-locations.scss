@@ -93,7 +93,7 @@
         height: 58px;
         padding: 9px;
         border-radius: 50%;
-        background: #fff;
+        background: #ca2b28;
         border: 3px solid #ca2b28;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 
@@ -154,18 +154,33 @@
         margin-bottom: 40px;
 
         li {
+          // Top-aligned so the icon and label stay on the first line when the
+          // value wraps (parking blurbs are often two lines).
           display: flex;
-          align-items: center;
+          align-items: flex-start;
+          gap: 15px;
           margin-bottom: 20px;
           font-size: 18px; // Larger text
           font-weight: 500;
+          line-height: 1.5;
           color: #333;
 
           .icon {
-            margin-right: 15px;
+            flex: 0 0 25px;
             font-size: 20px;
-            width: 25px;
+            line-height: 1.5;
             text-align: center;
+          }
+
+          // Label and value share one inline flow, so wrapped lines run the
+          // full width instead of forming a narrow column beside the label.
+          .text {
+            flex: 1 1 auto;
+            min-width: 0;
+
+            strong {
+              margin-right: 4px;
+            }
           }
         }
       }
