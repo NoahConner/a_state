@@ -78,8 +78,8 @@
       position: absolute;
       left: 50%;
       top: 50%;
-      width: 58px;
-      height: 70px; // 58px badge + 12px tail
+      width: 44px;
+      height: 54px; // 44px badge + 10px tail
       transform: translate(-50%, -100%); // tail tip sits on the map centre
       z-index: 2;
       display: block;
@@ -89,13 +89,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 58px;
-        height: 58px;
-        padding: 9px;
+        width: 44px;
+        height: 44px;
+        padding: 7px;
         border-radius: 50%;
         background: #ca2b28;
-        border: 3px solid #ca2b28;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        border: 2px solid #ca2b28;
+        box-shadow: 0 3px 9px rgba(0, 0, 0, 0.3);
 
         img {
           width: 100%;
@@ -107,12 +107,12 @@
       &::after {
         content: "";
         position: absolute;
-        top: 55px;
+        top: 42px;
         left: 50%;
         transform: translateX(-50%);
-        border-left: 9px solid transparent;
-        border-right: 9px solid transparent;
-        border-top: 15px solid #ca2b28;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 12px solid #ca2b28;
       }
     }
 
