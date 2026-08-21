@@ -1,5 +1,24 @@
 <footer class="footer-shell">
   <div class="container">
+    <section class="footer-cities">
+      <div class="footer-cities__head">
+        <h2 class="footer-cities__title">
+          {{ 'FOOTER.SECTIONS.AUTO_INSURANCE_BY_CITY' | translate }}
+        </h2>
+        <span class="footer-cities__rule" aria-hidden="true"></span>
+      </div>
+
+      <div class="footer-cities__grid">
+        <a
+          *ngFor="let city of cityLinks"
+          class="footer-cities__item"
+          [routerLink]="getRoute(city.routeKey)"
+        >
+          {{ city.label }}
+        </a>
+      </div>
+    </section>
+
     <div class="footer-card">
       <div class="footer-grid">
         <div class="footer-brand">

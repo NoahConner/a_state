@@ -8,6 +8,11 @@ type FooterLink = {
   labelKey?: string;
 };
 
+type CityLink = {
+  routeKey: string;
+  label: string;
+};
+
 type InsuranceMenuSection = {
   TITLE?: string;
   ITEMS?: Array<{
@@ -57,6 +62,34 @@ export class Footer {
     { routeKey: 'ourLocations', labelKey: 'HEADER.OFFICE_LOCATOR' },
     { routeKey: 'contact', labelKey: 'HEADER.CONTACT' },
     { routeKey: 'getAQuote', labelKey: 'HEADER.GET_A_QUOTE' },
+  ];
+
+  // Rendered above the footer card as an 8-column grid; order matches the design.
+  cityLinks: CityLink[] = [
+    { routeKey: 'houstonTx', label: 'Houston' },
+    { routeKey: 'sanAntonioTx', label: 'San Antonio' },
+    { routeKey: 'dallasTx', label: 'Dallas' },
+    { routeKey: 'austinTx', label: 'Austin' },
+    { routeKey: 'fortWorthTx', label: 'Fort Worth' },
+    { routeKey: 'elPasoTx', label: 'El Paso' },
+    { routeKey: 'arlingtonTx', label: 'Arlington' },
+    { routeKey: 'corpusChristiTx', label: 'Corpus Christi' },
+    { routeKey: 'lubbockTx', label: 'Lubbock' },
+    { routeKey: 'laredoTx', label: 'Laredo' },
+    { routeKey: 'irvingTx', label: 'Irving' },
+    { routeKey: 'garlandTx', label: 'Garland' },
+    { routeKey: 'friscoTx', label: 'Frisco' },
+    { routeKey: 'mckinneyTx', label: 'McKinney' },
+    { routeKey: 'amarilloTx', label: 'Amarillo' },
+    { routeKey: 'grandPrairieTx', label: 'Grand Prairie' },
+    { routeKey: 'killeenTx', label: 'Killeen' },
+    { routeKey: 'dentonTx', label: 'Denton' },
+    { routeKey: 'pasadenaTx', label: 'Pasadena' },
+    { routeKey: 'mesquiteTx', label: 'Mesquite' },
+    { routeKey: 'mcallenTx', label: 'McAllen' },
+    { routeKey: 'wacoTx', label: 'Waco' },
+    { routeKey: 'planoTx', label: 'Plano' },
+    { routeKey: 'brownsvilleTx', label: 'Brownsville' },
   ];
 
   socialLinks = [
