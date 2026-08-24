@@ -1571,6 +1571,314 @@
       }
     }
   },
+  "GET_LIFE_QUOTE": {
+    "HEADING": "Cotizaciones de Seguro de Vida en Texas — Diseñadas para el Futuro de su Familia",
+    "DESCRIPTION": "Proteger lo que más importa no debería ser complicado. Le ofrecemos opciones claras y accesibles, junto con la asesoría de expertos en inglés, español e hindi.",
+    "NEXT_BUTTON": "Siguiente",
+    "PREVIOUS_BUTTON": "Anterior",
+    "STEPPER": {
+      "STEP1": {
+        "TITLE": "Datos Personales",
+        "FIELDS": {
+          "FULL_NAME": "Nombre Completo",
+          "EMAIL": "Correo Electrónico",
+          "PHONE": "Teléfono",
+          "GENDER": "Género",
+          "DATE_OF_BIRTH": "Fecha de Nacimiento",
+          "ZIPCODE": "Código Postal"
+        }
+      },
+      "STEP2": {
+        "TITLE": "Detalles del Estilo de Vida",
+        "FIELDS": {
+          "TOBACCO_USE": "¿Consume Productos de Tabaco o Nicotina?",
+          "HEALTH_STATUS": "¿Cómo Describiría su Estado General de Salud?"
+        },
+        "TOBACCO_OPTIONS": [
+          "Sí",
+          "No"
+        ],
+        "HEALTH_OPTIONS": [
+          "Excelente",
+          "Bueno",
+          "Regular"
+        ]
+      },
+      "STEP3": {
+        "TITLE": "Necesidades de Cobertura",
+        "COVERAGE_TITLE": "¿Cuánta Cobertura Tiene en Mente?",
+        "COVERAGE_OPTIONS": [
+          "Básica / Gastos Finales ($10k – $50k)",
+          "Protección de Hipoteca / Apoyo Familiar ($100k – $500k)",
+          "Protección de Alto Valor ($500k+)",
+          "No Estoy Seguro(a), Necesito Ayuda de un Experto para Calcular."
+        ],
+        "BUNDLE_TITLE": "¿Paquete y Ahorro?",
+        "BUNDLE_OPTIONS": [
+          "¡Sí! Quiero el Descuento por Paquete de Vida + Auto.",
+          "¡Sí! Quiero el Descuento por Paquete de Vida + Hogar.",
+          "¡Sí! Quiero el Descuento por Paquete de Vida + Salud.",
+          "No, Solo Vida por Ahora."
+        ]
+      },
+      "STEP4": {
+        "TITLE": "Preferencias de Contacto",
+        "LANGUAGE_TITLE": "Idioma de Preferencia para su Cotización",
+        "LANGUAGE_OPTIONS": [
+          "Inglés",
+          "Español",
+          "Hindi"
+        ],
+        "CONTACT_TITLE": "Mejor Forma de Contactarle",
+        "CONTACT_OPTIONS": [
+          "Llamada",
+          "Mensaje de Texto",
+          "Correo Electrónico"
+        ],
+        "TIME_TITLE": "Mejor Horario para Contactarle",
+        "TIME_OPTIONS": [
+          "Mañana (8 AM - 12 PM)",
+          "Tarde (12 PM - 5 PM)",
+          "Noche (5 PM - 8 PM)"
+        ]
+      }
+    },
+    "QUOTE_SUMMARY": {
+      "MAIN_TITLE": "Revise su Solicitud de Cotización de Seguro de Vida",
+      "MAIN_DESC": "Revise sus datos a continuación. Si todo está correcto, haga clic en 'Enviar mi Solicitud de Cotización' y un corredor de A-State comenzará a buscar sus mejores tarifas en Texas.",
+      "SUMMARY_TITLE": "Resumen de su Cotización",
+      "DISCLAIMER": "Al hacer clic en “Enviar mi Solicitud de Cotización”, usted acepta ser contactado por un agente de A-State Insurance. Como agencia independiente (broker), compartiremos esta información únicamente con nuestras compañías de seguros de mayor calificación para encontrarle la mejor tarifa.",
+      "SUBMIT_BUTTON": "Enviar mi Solicitud de Cotización",
+      "CARD1": {
+        "TITLE": "1. Datos Personales",
+        "EDIT": "Editar Información",
+        "FIELDS": {
+          "FULL_NAME": "Nombre Completo:",
+          "EMAIL": "Correo Electrónico:",
+          "PHONE": "Teléfono:",
+          "GENDER": "Género:",
+          "DOB": "Fecha de Nacimiento:",
+          "ZIP": "Código Postal:"
+        }
+      },
+      "CARD2": {
+        "TITLE": "2. Detalles del Estilo de Vida",
+        "EDIT": "Editar Información",
+        "FIELDS": {
+          "TOBACCO": "Tabaco / Nicotina:",
+          "HEALTH": "Estado General de Salud:"
+        }
+      },
+      "CARD3": {
+        "TITLE": "3. Necesidades de Cobertura",
+        "EDIT": "Editar Información",
+        "FIELDS": {
+          "COVERAGE_AMOUNT": "Monto de Cobertura:",
+          "BUNDLE_SAVE": "Paquete y Ahorro:"
+        }
+      },
+      "CARD4": {
+        "TITLE": "4. Preferencias de Contacto",
+        "EDIT": "Editar Información",
+        "FIELDS": {
+          "LANGUAGE": "Idioma de Preferencia:",
+          "CONTACT_METHOD": "Mejor Forma de Contactarle:",
+          "BEST_TIME": "Mejor Horario para Contactarle:"
+        }
+      }
+    }
+  },
+  "GET_HEALTH_QUOTE": {
+    "HEADING": "Una Cotización de Seguro de Salud Diseñada Para su Familia",
+    "DESCRIPTION": "Proteger su salud no tiene por qué ser complicado. Reciba asesoría experta y opciones claras en inglés, español e hindi.",
+    "NEXT_BUTTON": "Siguiente",
+    "PREVIOUS_BUTTON": "Anterior",
+    "STEPPER": {
+      "STEP1": {
+        "TITLE": "Tipo de Cobertura",
+        "COVERAGE_TITLE": "¿Quién Necesita Cobertura?",
+        "COVERAGE_OPTIONS": [
+          "Solo Yo",
+          "Yo + Cónyuge",
+          "Yo + Hijos",
+          "Toda Mi Familia"
+        ],
+        "FIELDS": {
+          "ZIPCODE": "Código Postal"
+        }
+      },
+      "STEP2": {
+        "TITLE": "Salud Básica y Hogar",
+        "FIELDS": {
+          "HOUSEHOLD_SIZE": "Número de Integrantes del Hogar",
+          "ANNUAL_INCOME": "Ingreso Anual Estimado del Hogar",
+          "ANNUAL_INCOME_NOTE": " (Opcional) Nota: Nos ayuda a verificar si califica para ahorros / subsidios del gobierno.",
+          "TOBACCO_USE": "¿Alguien en el Hogar Consume Tabaco?"
+        },
+        "INCOME_OPTIONS": [
+          "Menos de $15,000",
+          "$15,000 – $30,000",
+          "$30,000 – $60,000",
+          "$60,000 – $100,000",
+          "Más de $100,000"
+        ],
+        "TOBACCO_OPTIONS": [
+          "Sí",
+          "No"
+        ]
+      },
+      "STEP3": {
+        "TITLE": "Contacto y Preferencia de Idioma",
+        "FIELDS": {
+          "FULL_NAME": "Nombre Completo",
+          "EMAIL": "Correo Electrónico",
+          "PHONE": "Teléfono",
+          "LANGUAGE": "Idioma de Preferencia para su Cotización",
+          "BEST_TIME": "Mejor Horario para Llamar"
+        },
+        "LANGUAGE_OPTIONS": [
+          "Inglés",
+          "Español",
+          "Hindi"
+        ],
+        "TIME_OPTIONS": [
+          "Mañana",
+          "Tarde",
+          "Noche"
+        ]
+      }
+    },
+    "QUOTE_SUMMARY": {
+      "MAIN_TITLE": "Revise su Solicitud de Cotización de Seguro de Salud",
+      "MAIN_DESC": "Revise sus datos a continuación. Si todo está correcto, haga clic en “Enviar Mi Solicitud de Cotización” y un corredor de A-State comenzará a buscar sus mejores tarifas en Texas.",
+      "SUMMARY_TITLE": "Resumen de su Cotización",
+      "CARD1": {
+        "TITLE": "1. Tipo de Cobertura",
+        "EDIT": "Editar Información",
+        "FIELDS": {
+          "COVERAGE_FOR": "¿Quién Necesita Cobertura?",
+          "ZIP": "Código Postal"
+        }
+      },
+      "CARD2": {
+        "TITLE": "2. Salud y Hogar",
+        "EDIT": "Editar Información",
+        "FIELDS": {
+          "HOUSEHOLD_SIZE": "Integrantes del Hogar",
+          "ANNUAL_INCOME": "Ingreso Anual Estimado",
+          "TOBACCO": "Uso de Tabaco"
+        }
+      },
+      "CARD3": {
+        "TITLE": "3. Preferencias de Contacto e Idioma",
+        "EDIT": "Editar Información",
+        "FIELDS": {
+          "FULL_NAME": "Nombre Completo",
+          "PHONE": "Teléfono",
+          "EMAIL": "Correo Electrónico",
+          "LANGUAGE": "Idioma de Preferencia",
+          "BEST_TIME": "Mejor Horario para Llamar"
+        }
+      },
+      "DISCLAIMER": "Al hacer clic en “Enviar Mi Solicitud de Cotización”, usted acepta ser contactado por un agente de Seguros A-State. Como brokers independientes, compartiremos esta información únicamente con nuestras compañías de seguros de mayor prestigio para encontrarle la mejor tarifa.",
+      "SUBMIT_BUTTON": "Enviar Mi Solicitud de Cotización"
+    }
+  },
+  "SURETY_BOND_QUOTE": {
+    "HEADING": "Cotizaciones de Fianzas en Texas — Rápidas, Accesibles, para Cualquier Historial de Crédito",
+    "DESCRIPTION": "Su centro integral para todo tipo de fianzas de licencias, permisos y contratos en Texas. Buscamos entre las mejores aseguradoras para encontrarle la tarifa más baja, sin importar su historial de crédito.",
+    "NEXT_BUTTON": "Siguiente",
+    "PREVIOUS_BUTTON": "Anterior",
+    "STEPPER": {
+      "STEP1": {
+        "TITLE": "Detalles Básicos",
+        "FIELDS": {
+          "FULL_NAME": "Nombre Completo / Nombre del Negocio",
+          "PHONE": "Teléfono",
+          "EMAIL": "Correo Electrónico"
+        }
+      },
+      "STEP2": {
+        "TITLE": "Detalles de la Fianza",
+        "FIELDS": {
+          "BOND_TYPE": "Tipo de Fianza",
+          "BOND_AMOUNT": "Monto de la Fianza: “¿Cuánto Monto de Cobertura Se Requiere?”",
+          "OBLIGEE_NAME": "Nombre del Acreedor / Beneficiario: “¿Quién Le Solicita Esta Fianza?”"
+        }
+      },
+      "STEP3": {
+        "TITLE": "Evaluación Rápida de Riesgo",
+        "FIELDS": {
+          "CREDIT_SCORE_TITLE": "Puntaje de Crédito Estimado: Consultar esto NO afecta su puntaje de crédito.",
+          "CREDIT_SCORE_TITLE_OPTION": [
+            "Excelente",
+            "Bueno",
+            "Regular",
+            "Deficiente"
+          ],
+          "YEARS_IN_BUSINESS": "Años en el Negocio"
+        }
+      },
+      "STEP4": {
+        "TITLE": "Contacto y Preferencia de Idioma",
+        "FIELDS": {
+          "LANGUAGE": "Idioma de Preferencia para su Cotización",
+          "LANGUAGE_OPTIONS": [
+            "Inglés",
+            "Español",
+            "Hindi"
+          ],
+          "BEST_TIME": "Mejor Horario para Llamar",
+          "TIME_OPTIONS": [
+            "Mañana",
+            "Tarde",
+            "Noche"
+          ]
+        }
+      }
+    },
+    "QUOTE_SUMMARY": {
+      "MAIN_TITLE": "Revise su Solicitud de Cotización de Fianza",
+      "MAIN_DESC": "Revise sus datos a continuación. Si todo está correcto, haga clic en “Enviar Mi Solicitud de Cotización” y un corredor de A-State comenzará a buscar sus mejores tarifas en Texas.",
+      "SUMMARY_TITLE": "Resumen de su Cotización",
+      "CARD1": {
+        "TITLE": "1. Información de Contacto",
+        "EDIT": "Editar Información",
+        "FIELDS": {
+          "NAME": "Nombre / Empresa",
+          "PHONE": "Teléfono",
+          "EMAIL": "Correo Electrónico"
+        }
+      },
+      "CARD2": {
+        "TITLE": "2. Detalles de la Fianza",
+        "EDIT": "Editar Información",
+        "FIELDS": {
+          "BOND_TYPE": "Tipo de Fianza",
+          "BOND_AMOUNT": "Monto de Cobertura",
+          "OBLIGEE": "Acreedor / Beneficiario"
+        }
+      },
+      "CARD3": {
+        "TITLE": "3. Perfil Comercial y de Crédito",
+        "EDIT": "Editar Información",
+        "FIELDS": {
+          "CREDIT_SCORE": "Puntaje de Crédito Estimado",
+          "YEARS_IN_BUSINESS": "Años en el Negocio"
+        }
+      },
+      "CARD4": {
+        "TITLE": "4. Preferencias de Contacto e Idioma",
+        "EDIT": "Editar Información",
+        "FIELDS": {
+          "LANGUAGE": "Idioma de Preferencia",
+          "BEST_TIME": "Mejor Horario para Llamar"
+        }
+      },
+      "DISCLAIMER": "Al hacer clic en “Enviar Mi Solicitud de Cotización”, usted acepta ser contactado por un agente de Seguros A-State. Como corredores de seguros independientes, compartiremos esta información únicamente con nuestras aseguradoras de mayor prestigio para encontrarle la mejor tasa.",
+      "SUBMIT_BUTTON": "Enviar Mi Solicitud de Cotización"
+    }
+  },
   "AUTO_INSURANCE": {
     "BANNER": {
       "TITLE_LINE1": "Obtén tu Cotización de Seguro de Auto",
@@ -24681,7 +24989,7 @@
     "FAMILY_VS_INDIVIDUAL": {
       "HEADER": {
         "TITLE": "Seguro de Vida Variable vs. Seguro de Vida Universal en Texas",
-        "DESC": "El seguro de vida variable y el <a href='es/seguros-de-vida/seguro-de-vida-universal/' class='inline-link' target='_blank'>seguro de vida universal</a> ofrecen ambos cobertura de por vida y un componente de valor en efectivo, pero difieren en cómo crece ese valor y en el nivel de flexibilidad. El seguro de vida variable se enfoca en inversiones basadas en el mercado con mayor riesgo y potencial de rendimiento, mientras que el seguro de vida universal ofrece un crecimiento más estable con primas flexibles y menor exposición al riesgo."
+        "DESC": "El seguro de vida variable y el <a href='/es/seguros-de-vida/seguro-de-vida-universal/' class='inline-link' target='_blank'>seguro de vida universal</a> ofrecen ambos cobertura de por vida y un componente de valor en efectivo, pero difieren en cómo crece ese valor y en el nivel de flexibilidad. El seguro de vida variable se enfoca en inversiones basadas en el mercado con mayor riesgo y potencial de rendimiento, mientras que el seguro de vida universal ofrece un crecimiento más estable con primas flexibles y menor exposición al riesgo."
       },
       "TABLE": {
         "COLUMNS": {
@@ -24983,7 +25291,7 @@
       "STEPS": {
         "REACH_OUT": {
           "TITLE": "Paso 1 - Contáctanos",
-          "DESCRIPTION": "<a href='/contacto/' class='inline-link' target='_blank'>Comunícate</a> con nosotros en línea o por teléfono para comenzar tu proceso de seguro rápido y sencillo."
+          "DESCRIPTION": "<a href='/es/contacto/' class='inline-link' target='_blank'>Comunícate</a> con nosotros en línea o por teléfono para comenzar tu proceso de seguro rápido y sencillo."
         },
         "GET_ADVICE": {
           "TITLE": "Paso 2 - Recibe Asesoría",
