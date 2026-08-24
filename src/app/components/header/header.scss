@@ -689,15 +689,49 @@
     display: block !important;
   }
 
-  // contact details live in the mobile drawer instead of a top strip
-  .homeMain,
   .headerMain #mainNavbar {
     display: none !important;
   }
 
-  .headerMain {
+  // Contact details sit in a strip above the nav, mirroring desktop, instead of
+  // being buried in the drawer. Pinning .appHeader keeps the strip and the nav
+  // together; it was already out of flow (absolute), so nothing below shifts.
+  .appHeader {
     position: fixed;
     z-index: 9999;
+  }
+
+  .homeMain {
+    // The strip is transparent over the hero on desktop; pinned on mobile it
+    // would scroll over white sections, so it gets a solid brand background.
+    background-color: #ca2b28;
+    min-height: 44px;
+
+    .mailerMain {
+      justify-content: center !important;
+      gap: 20px;
+
+      .angled-box {
+        display: none;
+      }
+
+      .mailBoxer {
+        .box {
+          transform: none;
+        }
+
+        a {
+          font-size: 14px;
+          gap: 6px;
+        }
+      }
+    }
+  }
+
+  .headerMain {
+    // The hamburger is absolutely placed at top: 30px; keeping this element as
+    // its containing block anchors it to the nav row rather than to the strip.
+    position: relative;
     width: 100%;
 
     .navbar-brand {
@@ -733,14 +767,18 @@
   }
   .homeMain {
     .mailerMain {
+      // Both contact items have to sit side by side on a narrow phone.
+      gap: 12px;
+
       .mailBoxer {
         .box {
-          height: 40px;
-          width: 40px;
+          height: auto;
+          width: auto;
         }
 
         a {
-          font-size: 17px;
+          font-size: 12px;
+          gap: 5px;
         }
       }
     }
