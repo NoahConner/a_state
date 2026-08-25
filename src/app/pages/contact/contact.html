@@ -52,7 +52,16 @@
                 </div>
 
                 <div class="col-12">
-                  <button type="button" class="btn send-btn" (click)="goToThankYou()">
+                  <div class="form-check">
+                    <input class="form-check-input terms-check" type="checkbox" id="smsConsentCheck"
+                      (change)="smsConsentAccepted = $any($event.target).checked" [checked]="smsConsentAccepted" />
+                    <label class="form-check-label terms-check-label small" for="smsConsentCheck"
+                      [innerHTML]="'CONTACT_SMS_CONSENT' | translateHtml | async"></label>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <button type="button" class="btn send-btn" (click)="goToThankYou()" [disabled]="!smsConsentAccepted">
                     {{ 'CONTACT.CONTACT-INSURANCE.BUTTON' | translate }}
                   </button>
                 </div>
