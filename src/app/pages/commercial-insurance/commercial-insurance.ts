@@ -9,6 +9,8 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './commercial-insurance.scss',
 })
 export class CommercialInsurance implements OnInit {
+  termsAccepted = false;
+  termsAccepted2 = false;
   optionalCoveragesChunks: any[][] = [];
   shopEveryCards: any[][] = [];
 

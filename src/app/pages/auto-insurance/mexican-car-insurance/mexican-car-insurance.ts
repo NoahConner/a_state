@@ -9,6 +9,8 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './mexican-car-insurance.scss',
 })
 export class MexicanCarInsurance {
+  termsAccepted = false;
+  termsAccepted2 = false;
   optionalCoveragesChunks: any[][] = [];
 
   constructor(public languageService: Language, private translate: TranslateService) { }

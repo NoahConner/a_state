@@ -5,10 +5,10 @@
         <div class="topSub2">
           <h1 class="h1">
             @if (loc?.detailPage?.banner?.heading) {
-              {{ loc.detailPage.banner.heading }}
+            {{ loc.detailPage.banner.heading }}
             } @else {
-              {{ loc?.detailPage?.banner?.heroHeading }} <br />
-              {{ loc?.name }}
+            {{ loc?.detailPage?.banner?.heroHeading }} <br />
+            {{ loc?.name }}
             }
           </h1>
 
@@ -21,7 +21,7 @@
             <div class="chip" [appChipNav]="item.name" *ngIf="item.name">
               <i class="{{ item?.icon }}"></i>
               <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
-            </div>  
+            </div>
             }
           </div>
           <div class="selectable mt-2">
@@ -36,10 +36,18 @@
           <div class="inps">
             <input type="text" [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate" class="form-control" />
 
-            <input type="tel" appPhoneFormat [placeholder]="'HOME.BANNER.FORM.PHONE' | translate" class="form-control" />
+            <input type="tel" appPhoneFormat [placeholder]="'HOME.BANNER.FORM.PHONE' | translate"
+              class="form-control" />
           </div>
 
-          <button class="btn" type="button" appBannerQuoteSubmit>
+          <div class="form-check mb-4">
+            <input class="form-check-input terms-check" type="checkbox" id="termsCheck"
+              (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
+            <label class="form-check-label terms-check-label small text-light" for="termsCheck"
+              [innerHTML]="'QUOTE_SMS_CONSENT' | translateHtml | async"></label>
+          </div>
+
+          <button class="btn" type="button" appBannerQuoteSubmit [disabled]="!termsAccepted">
             {{ 'HOME.BANNER.FORM.BUTTON' | translate }}
           </button>
         </div>
@@ -84,13 +92,15 @@
                 </p>
                 <p>
                   <img src="/assets/images/phone.png" alt="" />
-                  <a class="inline-link" style="color: inherit; text-decoration: underline;     margin-left: 3px;" href="tel:{{ loc.detailPage?.session1?.contact?.phone }}">
+                  <a class="inline-link" style="color: inherit; text-decoration: underline;     margin-left: 3px;"
+                    href="tel:{{ loc.detailPage?.session1?.contact?.phone }}">
                     {{ loc.detailPage?.session1?.contact?.phone }}
                   </a>
                 </p>
                 <p>
                   <img src="/assets/images/detailMail.png" alt="" />
-                  <a class="inline-link" style="color: inherit; text-decoration: underline;     margin-left: 3px;" href="mailto:{{ loc.detailPage?.session1?.contact?.email }}">
+                  <a class="inline-link" style="color: inherit; text-decoration: underline;     margin-left: 3px;"
+                    href="mailto:{{ loc.detailPage?.session1?.contact?.email }}">
                     {{ loc.detailPage?.session1?.contact?.email }}
                   </a>
                 </p>
@@ -135,12 +145,12 @@
               </div>
 
               <div class="btn-group-custom mt-4">
-                <a class="btn btn-yellow"  href="{{ loc?.directionsLink }}" target="_blank" rel="noopener noreferrer">
+                <a class="btn btn-yellow" href="{{ loc?.directionsLink }}" target="_blank" rel="noopener noreferrer">
                   {{ loc.detailPage?.session1?.ctaButtons[0] }}
                 </a>
-                <button class="btn btn-yellow" type="button">
+                <a class="btn btn-yellow" href="#quote-section" (click)="scrollToQuote($event)">
                   {{ loc.detailPage?.session1?.ctaButtons[1] }}
-                </button>
+                </a>
                 <a href class="btn btn-red" href="tel:{{ loc.detailPage?.session1?.contact?.phone }}">
                   {{ loc.detailPage?.session1?.ctaButtons[2] }}
                 </a>
@@ -261,7 +271,7 @@
   </div>
 
   <section class="quote-section">
-    <div class="container">
+    <div class="container" id="quote-section">
       <!-- HEADER -->
       <div class="text-center mb-5">
         <h2 class="title">{{ loc.detailPage?.session4?.title }}</h2>
@@ -321,11 +331,20 @@
               <option>Email</option>
             </select>
           </div>
+          <div class="col-lg-10 mt-4">
+            <div class="form-check">
+              <input class="form-check-input terms-check" type="checkbox" id="smsConsentCheck"
+                (change)="smsConsentAccepted = $any($event.target).checked" [checked]="smsConsentAccepted" />
+              <label class="form-check-label terms-check-label small" for="smsConsentCheck"
+                [innerHTML]="'CONTACT_SMS_CONSENT' | translateHtml | async"></label>
+            </div>
+          </div>
         </div>
+
 
         <!-- BUTTON -->
         <div class="text-center mt-5">
-          <button type="submit" class="submit-btn">
+          <button type="submit" class="submit-btn" [disabled]="!smsConsentAccepted">
             {{ loc.detailPage?.session4?.submitText }}
           </button>
         </div>

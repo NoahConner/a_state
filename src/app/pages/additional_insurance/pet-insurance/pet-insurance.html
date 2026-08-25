@@ -41,7 +41,14 @@
             <input type="tel" appPhoneFormat [placeholder]="'PET_INSURANCE.BANNER.FORM.PHONE' | translate" class="form-control" />
           </div>
 
-          <button class="btn" type="button" appBannerQuoteSubmit>
+          <div class="form-check mb-4">
+            <input class="form-check-input terms-check" type="checkbox" id="termsCheck"
+              (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
+            <label class="form-check-label terms-check-label small text-light" for="termsCheck"
+              [innerHTML]="'QUOTE_SMS_CONSENT' | translateHtml | async"></label>
+          </div>
+
+          <button class="btn" type="button" appBannerQuoteSubmit [disabled]="!termsAccepted">
             {{ 'PET_INSURANCE.BANNER.FORM.BUTTON' | translate }}
           </button>
         </div>
@@ -800,7 +807,14 @@
             <input type="tel" appPhoneFormat [placeholder]="'PET_INSURANCE.BANNER.FORM.PHONE' | translate" class="form-control" />
           </div>
 
-          <button class="btn" type="button" appBannerQuoteSubmit>
+          <div class="form-check mb-4">
+            <input class="form-check-input terms-check" type="checkbox" id="termsCheck2"
+              (change)="termsAccepted2 = $any($event.target).checked" [checked]="termsAccepted2" />
+            <label class="form-check-label terms-check-label small text-light" for="termsCheck2"
+              [innerHTML]="'QUOTE_SMS_CONSENT' | translateHtml | async"></label>
+          </div>
+
+          <button class="btn" type="button" appBannerQuoteSubmit [disabled]="!termsAccepted2">
             {{ 'PET_INSURANCE.BANNER.FORM.BUTTON' | translate }}
           </button>
         </div>

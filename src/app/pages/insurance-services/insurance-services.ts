@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
   styleUrl: './insurance-services.scss',
 })
 export class InsuranceServices {
+  termsAccepted = false;
+  termsAccepted2 = false;
   readonly bannerForm = this.createQuoteFormState();
   readonly coveredForm = this.createQuoteFormState();
 
