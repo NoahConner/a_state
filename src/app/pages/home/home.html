@@ -138,73 +138,76 @@
         <div class="col-12 col-md-6 col-lg-4">
           <article class="card-item">
             <div class="icon-wrapper mb-3"><img src="/assets/images/home/solution/car.png" alt="Auto Insurance" /></div>
-            <h3 class="card-title fw-bold mb-2" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.AUTO.TITLE' | translateHtml | async"></h3>
+            <h3 class="card-title fw-bold mb-2"><a class="card-title-link" [routerLink]="getRoute('autoInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.AUTO.TITLE' | translateHtml | async"></a></h3>
             <p class="card-description mb-3" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.AUTO.DESC' | translateHtml | async"></p>
-            <a class="quote-link" [routerLink]="getRoute('autoInsurance')">{{ 'HOME.INSURANCE_SOLUTIONS.GET_A_QUOTE' | translate }} <span class="arrow">&rarr;</span></a>
+            <a class="quote-link" [routerLink]="getRoute('getAutoQuote')">{{ 'HOME.INSURANCE_SOLUTIONS.GET_A_QUOTE' | translate }} <span class="arrow">&rarr;</span></a>
           </article>
         </div>
 
         <div class="col-12 col-md-6 col-lg-4">
           <article class="card-item">
             <div class="icon-wrapper mb-3"><img src="/assets/images/home/solution/man.png" alt="SR-22 Insurance" /></div>
-            <h3 class="card-title fw-bold mb-2" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.SR22.TITLE' | translateHtml | async"></h3>
+            <h3 class="card-title fw-bold mb-2"><a class="card-title-link" [routerLink]="getRoute('sr22Insurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.SR22.TITLE' | translateHtml | async"></a></h3>
             <p class="card-description mb-3" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.SR22.DESC' | translateHtml | async"></p>
-            <a class="quote-link" [routerLink]="getRoute('sr22Insurance')">{{ 'HOME.INSURANCE_SOLUTIONS.GET_A_QUOTE' | translate }} <span class="arrow">&rarr;</span></a>
+            <a class="quote-link" [routerLink]="getRoute('getAQuote')">{{ 'HOME.INSURANCE_SOLUTIONS.GET_A_QUOTE' | translate }} <span class="arrow">&rarr;</span></a>
           </article>
         </div>
 
         <div class="col-12 col-md-6 col-lg-4">
           <article class="card-item">
             <div class="icon-wrapper mb-3"><img src="/assets/images/home/solution/house.png" alt="Homeowners Insurance" /></div>
-            <h3 class="card-title fw-bold mb-2" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HOME.TITLE' | translateHtml | async"></h3>
+            <h3 class="card-title fw-bold mb-2"><a class="card-title-link" [routerLink]="getRoute('homeInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HOME.TITLE' | translateHtml | async"></a></h3>
             <p class="card-description mb-3" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HOME.DESC' | translateHtml | async"></p>
-            <a class="quote-link" [routerLink]="getRoute('homeInsurance')">{{ 'HOME.INSURANCE_SOLUTIONS.GET_A_QUOTE' | translate }} <span class="arrow">&rarr;</span></a>
+            <a class="quote-link" [routerLink]="getRoute('getHomeQuote')">{{ 'HOME.INSURANCE_SOLUTIONS.GET_A_QUOTE' | translate }} <span class="arrow">&rarr;</span></a>
           </article>
         </div>
 
         <div class="col-12 col-md-6 col-lg-4">
           <article class="card-item">
             <div class="icon-wrapper mb-3"><img src="/assets/images/home/solution/renters.png" alt="Renters Insurance" /></div>
-            <h3 class="card-title fw-bold mb-2" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.RENTERS.TITLE' | translateHtml | async"></h3>
+            <h3 class="card-title fw-bold mb-2"><a class="card-title-link" [routerLink]="getRoute('rentersInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.RENTERS.TITLE' | translateHtml | async"></a></h3>
             <p class="card-description mb-3" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.RENTERS.DESC' | translateHtml | async"></p>
-            <a class="quote-link" [routerLink]="getRoute('rentersInsurance')">{{ 'HOME.INSURANCE_SOLUTIONS.GET_A_QUOTE' | translate }} <span class="arrow">&rarr;</span></a>
+            <a class="quote-link" [routerLink]="getRoute('getAQuote')">{{ 'HOME.INSURANCE_SOLUTIONS.GET_A_QUOTE' | translate }} <span class="arrow">&rarr;</span></a>
           </article>
         </div>
 
         <div class="col-12 col-md-6 col-lg-4">
           <article class="card-item">
             <div class="icon-wrapper mb-3"><img src="/assets/images/home/solution/commercial.png" alt="Commercial Insurance" /></div>
-            <h3 class="card-title fw-bold mb-2" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.TITLE' | translateHtml | async"></h3>
+            <h3 class="card-title fw-bold mb-2"><a class="card-title-link" [routerLink]="getRoute('commercialInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.TITLE' | translateHtml | async"></a></h3>
             <p class="card-description mb-3" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.DESC' | translateHtml | async"></p>
-            <a class="quote-link" [routerLink]="getRoute('commercialInsurance')">{{ 'HOME.INSURANCE_SOLUTIONS.GET_A_QUOTE' | translate }} <span class="arrow">&rarr;</span></a>
+            <a class="quote-link" [routerLink]="getRoute('getCommercialQuote')">{{ 'HOME.INSURANCE_SOLUTIONS.GET_A_QUOTE' | translate }} <span class="arrow">&rarr;</span></a>
           </article>
         </div>
 
         <div class="col-12 col-md-6 col-lg-4">
           <article class="card-item">
             <div class="icon-wrapper mb-3"><img src="/assets/images/home/solution/life.png" alt="Life Insurance" /></div>
-            <h3 class="card-title fw-bold mb-2" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.LIFE.TITLE' | translateHtml | async"></h3>
+            <h3 class="card-title fw-bold mb-2"><a class="card-title-link" [routerLink]="getRoute('lifeInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.LIFE.TITLE' | translateHtml | async"></a></h3>
             <p class="card-description mb-3" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.LIFE.DESC' | translateHtml | async"></p>
-            <a class="quote-link" [routerLink]="getRoute('lifeInsurance')">{{ 'HOME.INSURANCE_SOLUTIONS.GET_A_QUOTE' | translate }} <span class="arrow">&rarr;</span></a>
+            <a class="quote-link" [routerLink]="getRoute('getLifeQuote')">{{ 'HOME.INSURANCE_SOLUTIONS.GET_A_QUOTE' | translate }} <span class="arrow">&rarr;</span></a>
           </article>
         </div>
         <div class="col-12 col-md-6 col-lg-4">
           <article class="card-item">
             <div class="icon-wrapper mb-3"><img src="/assets/images/home/solution/health.png" alt="Health Insurance" /></div>
-            <h3 class="card-title fw-bold mb-2" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HEALTH.TITLE' | translateHtml | async"></h3>
+            <h3 class="card-title fw-bold mb-2"><a class="card-title-link" [routerLink]="getRoute('healthInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HEALTH.TITLE' | translateHtml | async"></a></h3>
             <p class="card-description mb-3" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.HEALTH.DESC' | translateHtml | async"></p>
-            <a class="quote-link" [routerLink]="getRoute('healthInsurance')">{{ 'HOME.INSURANCE_SOLUTIONS.GET_A_QUOTE' | translate }} <span class="arrow">&rarr;</span></a>
+            <a class="quote-link" [routerLink]="getRoute('getHealthQuote')">{{ 'HOME.INSURANCE_SOLUTIONS.GET_A_QUOTE' | translate }} <span class="arrow">&rarr;</span></a>
           </article>
         </div>
 
         <div class="col-12 col-md-6 col-lg-4">
           <article class="card-item">
             <div class="icon-wrapper mb-3"><img src="/assets/images/home/solution/surety.png" alt="Surety Bonds" /></div>
-            <h3 class="card-title fw-bold mb-2" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.SURETY.TITLE' | translateHtml | async"></h3>
+            <h3 class="card-title fw-bold mb-2"><a class="card-title-link" [routerLink]="getRoute('suretyBondInsurance')" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.SURETY.TITLE' | translateHtml | async"></a></h3>
             <p class="card-description mb-3" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.SURETY.DESC' | translateHtml | async"></p>
-            <a class="quote-link" [routerLink]="getRoute('suretyBondInsurance')">{{ 'HOME.INSURANCE_SOLUTIONS.GET_A_QUOTE' | translate }} <span class="arrow">&rarr;</span></a>
+            <a class="quote-link" [routerLink]="getRoute('getSuretyQuote')">{{ 'HOME.INSURANCE_SOLUTIONS.GET_A_QUOTE' | translate }} <span class="arrow">&rarr;</span></a>
           </article>
         </div>
+      </div>
+      <div class="text-center mt-5">
+        <a class="see-all-link" [routerLink]="getRoute('insuranceServices')">{{ 'HOME.INSURANCE_SOLUTIONS.SEE_ALL' | translate }} <span class="arrow">&rarr;</span></a>
       </div>
     </div>
   </section>
