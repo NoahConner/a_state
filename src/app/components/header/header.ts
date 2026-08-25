@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Language } from '../../services/language';
 import { routeTranslations } from '../../app-routing-module';
 
@@ -11,6 +11,7 @@ import { routeTranslations } from '../../app-routing-module';
 export class Header implements OnInit {
   constructor(public languageService: Language) {}
   currentLang: 'en' | 'es' = 'es';
+  isScrolled = false;
   openMenu: string | null = null;
   readonly languageFlags: Record<'en' | 'es', string> = {
     en: '/assets/images/header/flag-us.svg',
@@ -19,6 +20,11 @@ export class Header implements OnInit {
 
   ngOnInit() {
     this.currentLang = this.languageService.getCurrentLanguage() as 'en' | 'es';
+  }
+
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 100;
   }
 
   get currentLanguageFlag(): string {

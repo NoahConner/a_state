@@ -28,7 +28,11 @@
     </div>
   </div>
 
-  <div class="headerMain" [class.headerMain--es]="currentLang === 'es'">
+  <div
+    class="headerMain"
+    [class.headerMain--es]="currentLang === 'es'"
+    [class.headerMain--scrolled]="isScrolled"
+  >
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
       <div class="container">
         <!-- Logo -->
