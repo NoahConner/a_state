@@ -97,10 +97,18 @@
 }
 
 .headerMain {
+  transition: background-color 0.3s ease;
+
   .navbar {
     background-color: transparent !important;
     border-bottom: 0px !important;
   }
+
+  &.headerMain--scrolled {
+    background-color: #ffffffeb;
+
+  }
+
   .navbar-brand {
     height: 90px;
     display: flex;
