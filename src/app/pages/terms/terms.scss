@@ -1,6 +1,11 @@
 .termsMain {
   .topBanner {
-    height: 13rem;
+    // styles.scss forces .topBanner:not(.getCovver) to 55rem (plus hero padding
+    // and a min-height on small screens) for the image heroes. This page's
+    // banner is a plain colour bar, so it opts out of all three.
+    height: 18rem !important;
+    min-height: 0;
+    padding: 0 !important;
     background-color: #ca2b28;
 
     .container {
@@ -13,7 +18,7 @@
         font-weight: 600;
         font-size: 3rem;
         padding-right: 35rem;
-        margin-bottom: 5rem;
+        margin-bottom: 2rem;
       }
     }
   }
@@ -132,14 +137,22 @@
 @media only screen and (max-width: 540px) {
   .termsMain {
     .topBanner {
-      min-height: 6rem;
+      // The header is fixed on mobile and roughly 120px tall (44px contact
+      // strip + nav), and it sits over this banner. Sizing the banner from its
+      // own padding — rather than bottom-aligning inside a fixed height — keeps
+      // the title clear of the header whatever the title wraps to.
+      height: auto !important;
+      min-height: 0;
+      padding: 150px 0 40px !important;
 
       .container {
+        height: auto;
+        align-items: center;
         justify-content: center;
 
         .page-title {
           font-size: 1.6rem;
-          margin-bottom: 2.8rem;
+          margin-bottom: 0;
           text-align: center;
           padding: 0 1rem;
         }

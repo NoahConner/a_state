@@ -12,6 +12,7 @@ import { Language } from '../../services/language';
 export class Contact implements OnInit {
   offices: any[] = [];
   currentLang = 'en';
+  smsConsentAccepted = false;
 
   constructor(
     private router: Router,
