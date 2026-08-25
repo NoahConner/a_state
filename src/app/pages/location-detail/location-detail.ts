@@ -32,9 +32,10 @@ interface Location {
   standalone: false,
 })
 export class LocationDetail implements OnInit {
+  termsAccepted = false;
   location: any;
   mapUrl?: SafeResourceUrl;
-
+  smsConsentAccepted = false;
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient,
@@ -173,5 +174,13 @@ export class LocationDetail implements OnInit {
 
   getRoute(page: string) {
     return this.languageService.getRoute(page);
+  }
+
+  scrollToQuote(event: Event): void {
+    event.preventDefault();
+    this.document.getElementById('quote-section')?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
   }
 }

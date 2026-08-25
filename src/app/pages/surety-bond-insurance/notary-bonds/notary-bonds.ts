@@ -9,6 +9,8 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './notary-bonds.scss',
 })
 export class NotaryBonds {
+  termsAccepted = false;
+  termsAccepted2 = false;
 
   constructor(public languageService: Language, private translate: TranslateService) { }
 

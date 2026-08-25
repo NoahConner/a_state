@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './insurance-services.scss',
 })
 export class InsuranceServices {
+  termsAccepted = false;
+  termsAccepted2 = false;
   constructor(public languageService: Language) {}
 
   chips = [

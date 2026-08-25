@@ -9,6 +9,8 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './renters-insurance.scss',
 })
 export class RentersInsurance {
+  termsAccepted = false;
+  termsAccepted2 = false;
   constructor(public languageService: Language) {}
 
 

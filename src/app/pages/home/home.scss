@@ -1,11 +1,11 @@
 .topBanner {
- background-image: 
-linear-gradient(
-  90deg,
-  rgba(26, 26, 26, 0.85) 0%,
-  rgba(39, 0, 0, 0.75) 46%,
-  rgba(96, 9, 9, 0.85) 100%
-),
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(26, 26, 26, 0.85) 0%,
+      rgba(39, 0, 0, 0.75) 46%,
+      rgba(96, 9, 9, 0.85) 100%
+    ),
     url('/assets/images/home1.png');
 
   height: 57rem;
@@ -37,11 +37,11 @@ linear-gradient(
 
           .chip {
             appearance: none;
-background-color: rgba(255, 255, 255, 0.631372549);
+            background-color: rgba(255, 255, 255, 0.631372549);
             border: 1.5px solid rgba(202, 43, 40, 0.12);
             border-radius: 12px !important;
-      min-width: 175px;
-    min-height: 67px;
+            min-width: 175px;
+            min-height: 67px;
             padding: 12px 14px;
             display: flex;
             flex-direction: column;
@@ -86,7 +86,8 @@ background-color: rgba(255, 255, 255, 0.631372549);
           align-items: center;
           gap: 10px;
           margin: 1rem 0;
-    width: 88%;        }
+          width: 618px;
+        }
 
         button {
           font-family: 'Afacad', sans-serif;
@@ -123,7 +124,9 @@ background-color: rgba(255, 255, 255, 0.631372549);
     }
   }
 }
-
+// .form-check{
+//   width: 500px;
+// }
 .topBanner.getCovver {
   background-image: url('/assets/images/coverd.png');
   height: 45rem;
@@ -134,11 +137,11 @@ background-color: rgba(255, 255, 255, 0.631372549);
       padding-bottom: 0;
       align-items: center;
 
-      .topSub2 {
-        .inps {
-          width: 100%;
-        }
-      }
+      // .topSub2 {
+      //   .inps {
+      //     width: 100%;
+      //   }
+      // }
     }
   }
 }
@@ -265,6 +268,9 @@ background-color: rgba(255, 255, 255, 0.631372549);
 }
 
 @media only screen and (max-width: 540px) {
+  .form-check {
+    width: 100%;
+  }
   .topBanner {
     background-position: center;
 

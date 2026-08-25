@@ -8,6 +8,7 @@ import { Language } from '../../services/language';
   styleUrl: './about.scss',
 })
 export class About {
+  termsAccepted = false;
   constructor(public languageService: Language) { }
 
   chips = [

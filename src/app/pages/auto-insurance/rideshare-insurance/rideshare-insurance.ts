@@ -9,6 +9,8 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './rideshare-insurance.scss',
 })
 export class RideshareInsurance {
+  termsAccepted = false;
+  termsAccepted2 = false;
   optionalCoveragesChunks: any[][] = [];
 
   constructor(public languageService: Language, private translate: TranslateService) { }

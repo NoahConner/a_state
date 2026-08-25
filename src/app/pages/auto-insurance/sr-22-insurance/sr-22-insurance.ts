@@ -9,6 +9,8 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './sr-22-insurance.scss',
 })
 export class Sr22Insurance {
+  termsAccepted = false;
+  termsAccepted2 = false;
   optionalCoveragesChunks: any[][] = [];
 
 

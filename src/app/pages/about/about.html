@@ -249,7 +249,14 @@
             <input type="text" [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate" class="form-control" />
             <input type="tel" appPhoneFormat [placeholder]="'HOME.BANNER.FORM.PHONE' | translate" class="form-control" />
           </div>
-          <button class="btn" type="button" appBannerQuoteSubmit>{{ 'HOME.COVERDBANNER.FORM.BUTTON' | translate
+
+          <div class="form-check mb-4">
+            <input class="form-check-input terms-check" type="checkbox" id="termsCheck"
+              (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
+            <label class="form-check-label terms-check-label small text-light" for="termsCheck"
+              [innerHTML]="'QUOTE_SMS_CONSENT' | translateHtml | async"></label>
+          </div>
+          <button class="btn" type="button" appBannerQuoteSubmit [disabled]="!termsAccepted">{{ 'HOME.COVERDBANNER.FORM.BUTTON' | translate
             }}</button>
         </div>
       </div>

@@ -9,6 +9,8 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './health-insurance.scss',
 })
 export class HealthInsurance implements OnInit {
+  termsAccepted = false;
+  termsAccepted2 = false;
   optionalCoveragesChunks: any[][] = [];
 
 

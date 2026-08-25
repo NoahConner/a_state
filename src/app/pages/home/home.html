@@ -62,7 +62,13 @@
               (input)="bannerForm.phone = $any($event.target).value" />
           </div>
 
-          <button class="btn" [disabled]="bannerForm.isSubmitting || !bannerForm.selectedChip || !bannerForm.fullName.trim() || !bannerForm.phone.trim()" (click)="goToSelectedQuote(bannerForm)">
+          <div class="form-check mb-4">
+            <input class="form-check-input terms-check" type="checkbox" id="termsCheck"
+              (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
+            <label class="form-check-label terms-check-label small text-light" for="termsCheck" [innerHTML]="'QUOTE_SMS_CONSENT' | translateHtml | async"></label>
+          </div>
+
+          <button class="btn" [disabled]="bannerForm.isSubmitting || !bannerForm.selectedChip || !bannerForm.fullName.trim() || !bannerForm.phone.trim() || !termsAccepted" (click)="goToSelectedQuote(bannerForm)">
             {{ bannerForm.isSubmitting ? 'Loading...' : ('HOME.BANNER.FORM.BUTTON' | translate) }}
           </button>
         </div>
@@ -407,7 +413,14 @@
               [value]="coveredForm.phone"
               (input)="coveredForm.phone = $any($event.target).value" />
           </div>
-          <button class="btn" [disabled]="coveredForm.isSubmitting || !coveredForm.selectedChip || !coveredForm.fullName.trim() || !coveredForm.phone.trim()" (click)="goToSelectedQuote(coveredForm)">{{ coveredForm.isSubmitting ? 'Loading...' : ('HOME.COVERDBANNER.FORM.BUTTON' | translate)
+
+          <div class="form-check mb-4">
+            <input class="form-check-input terms-check" type="checkbox" id="termsCheck2"
+              (change)="termsAccepted2 = $any($event.target).checked" [checked]="termsAccepted2" />
+            <label class="form-check-label terms-check-label small text-light" for="termsCheck2"
+              [innerHTML]="'QUOTE_SMS_CONSENT' | translateHtml | async"></label>
+          </div>
+          <button class="btn" [disabled]="coveredForm.isSubmitting || !coveredForm.selectedChip || !coveredForm.fullName.trim() || !coveredForm.phone.trim() || !termsAccepted2" (click)="goToSelectedQuote(coveredForm)">{{ coveredForm.isSubmitting ? 'Loading...' : ('HOME.COVERDBANNER.FORM.BUTTON' | translate)
             }}</button>
         </div>
       </div>
