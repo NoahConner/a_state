@@ -90,7 +90,7 @@
                 </div>
 
                 <div class="d-flex gap-3 mt-4">
-                  <button type="button" class="btn btn-next" (click)="nextStep()">{{ 'GET_CUSTOM_QUOTE.NEXT_BUTTON' | translate }}</button>
+          <button type="button" class="btn btn-next" (click)="nextStep()">{{ 'GET_CUSTOM_QUOTE.NEXT_BUTTON' | translate }}</button>
                 </div>
             </div>
           </div>
@@ -301,9 +301,10 @@
         <!-- Form Footer -->
         <div class="mt-4">
           <div class="form-check mb-4">
-            <input class="form-check-input terms-check" type="checkbox" id="termsCheck" (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
-            <label class="form-check-label terms-check-label small" for="termsCheck" [innerHTML]="'QUOTE_SMS_CONSENT' | translateHtml | async"></label>
+          <input class="form-check-input terms-check" type="checkbox" id="termsCheck" (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
+          <label class="form-check-label terms-check-label small" for="termsCheck" [innerHTML]="'QUOTE_SMS_CONSENT' | translateHtml | async"></label>
           </div>
+
           <button class="btn btn-submit" (click)="sendCustomQuote()" [disabled]="loading || !termsAccepted">
             <span *ngIf="loading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
             {{ loading ? 'Submitting...' : ('GET_CUSTOM_QUOTE.QUOTE_SUMMARY.SUBMIT_BUTTON' | translate) }}

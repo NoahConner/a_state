@@ -197,6 +197,7 @@ export class AllenTx implements AfterViewInit {
     form.selectedChip = null;
     form.fullName = '';
     form.phone = '';
+    form.termsAccepted = false;
   }
 
   private createQuoteFormState(): QuoteFormState {
@@ -205,6 +206,7 @@ export class AllenTx implements AfterViewInit {
       fullName: '',
       phone: '',
       isSubmitting: false,
+      termsAccepted: false,
     };
   }
 
@@ -298,4 +300,5 @@ interface QuoteFormState {
   fullName: string;
   phone: string;
   isSubmitting: boolean;
+  termsAccepted: boolean;
 }

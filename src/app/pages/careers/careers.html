@@ -127,7 +127,15 @@
             </div>
           </div>
 
-          <button type="submit" class="btn submit-btn mt-4" (click)="goToThankYou()">
+
+          <div class="form-check mb-4">
+            <input class="form-check-input terms-check" type="checkbox" id="termsCheck"
+              (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
+            <label class="form-check-label terms-check-label small" for="termsCheck"
+              [innerHTML]="'CAREERS_SMS_CONSENT' | translateHtml | async"></label>
+          </div>
+
+          <button type="submit" class="btn submit-btn mt-4" (click)="goToThankYou()" [disabled]="!termsAccepted">
             {{ 'CAREERS.FORM.SUBMIT_BUTTON' | translate }}
           </button>
         </form>

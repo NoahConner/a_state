@@ -33,9 +33,15 @@
               <input type="tel" appPhoneFormat [placeholder]="'AUTO_INSURANCE.BANNER.FORM.PHONE' | translate"
                 class="form-control" [value]="bannerForm.phone" (input)="bannerForm.phone = $any($event.target).value" />
 
-              <button class="quote-submit" [disabled]="bannerForm.isSubmitting || !bannerForm.selectedChip || !bannerForm.fullName.trim() || !bannerForm.phone.trim()" (click)="goToSelectedQuote(bannerForm)">
+              <button class="quote-submit" [disabled]="bannerForm.isSubmitting || !bannerForm.selectedChip || !bannerForm.fullName.trim() || !bannerForm.phone.trim() || !bannerForm.termsAccepted" (click)="goToSelectedQuote(bannerForm)">
                 {{ bannerForm.isSubmitting ? 'Loading...' : ('AUTO_INSURANCE.BANNER.FORM.BUTTON' | translate) }}
               </button>
+            </div>
+            <div class="form-check terms-consent mt-3 mb-0">
+              <input class="form-check-input terms-check" type="checkbox" id="termsCheck"
+                (change)="bannerForm.termsAccepted = $any($event.target).checked" [checked]="bannerForm.termsAccepted" />
+              <label class="form-check-label terms-check-label small" for="termsCheck"
+                [innerHTML]="'QUOTE_SMS_CONSENT_GET_QUOTE' | translateHtml | async"></label>
             </div>
           </div>
         </div>
@@ -1297,9 +1303,15 @@
                   class="form-control" [value]="coveredForm.fullName" (input)="coveredForm.fullName = $any($event.target).value" />
                 <input type="tel" appPhoneFormat [placeholder]="'AUTO_INSURANCE.BANNER.FORM.PHONE' | translate"
                   class="form-control" [value]="coveredForm.phone" (input)="coveredForm.phone = $any($event.target).value" />
-                <button class="quote-submit" [disabled]="coveredForm.isSubmitting || !coveredForm.selectedChip || !coveredForm.fullName.trim() || !coveredForm.phone.trim()" (click)="goToSelectedQuote(coveredForm)">
+                <button class="quote-submit" [disabled]="coveredForm.isSubmitting || !coveredForm.selectedChip || !coveredForm.fullName.trim() || !coveredForm.phone.trim() || !coveredForm.termsAccepted" (click)="goToSelectedQuote(coveredForm)">
                   {{ coveredForm.isSubmitting ? 'Loading...' : 'Get a Quote' }}
                 </button>
+              </div>
+              <div class="form-check terms-consent mt-3 mb-0">
+                <input class="form-check-input terms-check" type="checkbox" id="termsCheck2"
+                  (change)="coveredForm.termsAccepted = $any($event.target).checked" [checked]="coveredForm.termsAccepted" />
+                <label class="form-check-label terms-check-label small text-light" for="termsCheck2"
+                  [innerHTML]="'QUOTE_SMS_CONSENT_GET_QUOTE' | translateHtml | async"></label>
               </div>
             </div>
           </section>

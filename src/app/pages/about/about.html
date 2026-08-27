@@ -227,7 +227,7 @@
       <div class="topSub">
         <div class="topSub2">
           <h2 class="h1" [innerHTML]="'HOME.COVERDBANNER.TITLE' | translateHtml | async"></h2>
-          <p class="paragraph"><span [innerHTML]="'HOME.COVERDBANNER.DESC' | translateHtml | async"></span> f</p>
+          <p class="paragraph"><span [innerHTML]="'HOME.COVERDBANNER.DESC' | translateHtml | async"></span></p>
 
           <div class="selectable mt-5">
             @for (item of chips.slice(0, 3); track item.name) {
@@ -254,8 +254,9 @@
             <input class="form-check-input terms-check" type="checkbox" id="termsCheck"
               (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
             <label class="form-check-label terms-check-label small text-light" for="termsCheck"
-              [innerHTML]="'QUOTE_SMS_CONSENT' | translateHtml | async"></label>
+              [innerHTML]="'QUOTE_SMS_CONSENT_GET_QUOTE' | translateHtml | async"></label>
           </div>
+
           <button class="btn" type="button" appBannerQuoteSubmit [disabled]="!termsAccepted">{{ 'HOME.COVERDBANNER.FORM.BUTTON' | translate
             }}</button>
         </div>

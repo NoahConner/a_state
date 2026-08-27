@@ -12,6 +12,7 @@ export class Careers {
 
   personalList: string[] = [];
   autoList: string[] = [];
+  termsAccepted = false;
 
   goToThankYou() {
     // Navigate to thank-you page with query param type=contact

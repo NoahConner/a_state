@@ -43,12 +43,13 @@
                             class="form-control" />
                     </div>
 
-          <div class="form-check mb-4">
-            <input class="form-check-input terms-check" type="checkbox" id="termsCheck"
-              (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
-            <label class="form-check-label terms-check-label small text-light" for="termsCheck"
-              [innerHTML]="'QUOTE_SMS_CONSENT' | translateHtml | async"></label>
-          </div>
+
+                    <div class="form-check mb-4">
+                      <input class="form-check-input terms-check" type="checkbox" id="termsCheck"
+                        (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
+                      <label class="form-check-label terms-check-label small text-light" for="termsCheck"
+                        [innerHTML]="'QUOTE_SMS_CONSENT_GET_QUOTE' | translateHtml | async"></label>
+                    </div>
 
                     <button class="btn" type="button" appBannerQuoteSubmit [disabled]="!termsAccepted">
                         {{ 'MOTORCYCLE_INSURANCE.BANNER.FORM.BUTTON' | translate }}
@@ -662,7 +663,8 @@
                 @for (item of faqList; track item) {
                 <div class="accordion-item mb-3">
                     <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             [attr.data-bs-target]="'#' + item" [attr.aria-controls]="item">
                             {{ 'MOTORCYCLE_INSURANCE.FAQ_LIST.QUESTIONS.' + item + '.QUESTION' | translate }}
                         </button>
@@ -712,13 +714,13 @@
                     </div>
 
           <div class="form-check mb-4">
-            <input class="form-check-input terms-check" type="checkbox" id="termsCheck2"
-              (change)="termsAccepted2 = $any($event.target).checked" [checked]="termsAccepted2" />
-            <label class="form-check-label terms-check-label small text-light" for="termsCheck2"
-              [innerHTML]="'QUOTE_SMS_CONSENT' | translateHtml | async"></label>
+          <input class="form-check-input terms-check" type="checkbox" id="termsCheck2"
+          (change)="termsAccepted2 = $any($event.target).checked" [checked]="termsAccepted2" />
+          <label class="form-check-label terms-check-label small text-light" for="termsCheck2"
+          [innerHTML]="'QUOTE_SMS_CONSENT_GET_QUOTE' | translateHtml | async"></label>
           </div>
 
-                    <button class="btn" type="button" appBannerQuoteSubmit [disabled]="!termsAccepted2">
+          <button class="btn" type="button" appBannerQuoteSubmit [disabled]="!termsAccepted2">
                         {{ 'MOTORCYCLE_INSURANCE.BANNER.FORM.BUTTON' | translate }}
                     </button>
                 </div>
