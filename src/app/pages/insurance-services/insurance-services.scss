@@ -1,3 +1,17 @@
+h2 {
+  font-size: 36px !important;
+}
+
+.InsuranceMain p {
+  font-size: 20px;
+}
+
+@media (min-width: 992px) {
+  .topBanner .h1 {
+    font-size: clamp(2.8rem, 4.8vw, 5.25rem) !important;
+  }
+}
+
 .topBanner {
   background-image:
     linear-gradient(180deg, #1A1A1A 0%, rgba(39, 0, 0, 0.56) 56%, rgba(96, 9, 9, 0) 100%),

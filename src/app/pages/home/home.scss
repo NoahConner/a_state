@@ -1,3 +1,17 @@
+h2 {
+  font-size: 36px !important;
+}
+
+.homeMain p {
+  font-size: 20px;
+}
+
+@media (min-width: 992px) {
+  .topBanner .h1 {
+    font-size: clamp(2.8rem, 4.8vw, 5.25rem) !important;
+  }
+}
+
 .topBanner {
   background-image:
      linear-gradient(180deg, #1A1A1A 0%, rgba(39, 0, 0, 0.56) 56%, rgba(96, 9, 9, 0) 100%),
@@ -606,7 +620,7 @@ font-weight: 600;
 .story-section {
   background-color: #ffffff;
   color: #2d1c15;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: 'Afacad', sans-serif;
 
   .content-wrapper {
     max-width: 540px; // Keeps paragraph width clean and exact to design
@@ -648,7 +662,7 @@ font-weight: 600;
 
   .description-text {
     p {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.55;
     color: #44110E;
     opacity: 1;
@@ -1325,7 +1339,7 @@ font-weight: 600;
     }
 
     .card-description {
-    font-size: 16px;
+    font-size: 20px;
     color: #44110E;
     opacity: 2;
     max-width: 290px;

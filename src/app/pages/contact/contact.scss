@@ -1,3 +1,17 @@
+h2 {
+  font-size: 36px !important;
+}
+
+.contactMain p {
+  font-size: 20px;
+}
+
+@media (min-width: 992px) {
+  .topBanner .h1 {
+    font-size: clamp(2.8rem, 4.8vw, 5.25rem) !important;
+  }
+}
+
 .contactMain {
   .topBanner {
       background-image:
