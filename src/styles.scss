@@ -68,6 +68,70 @@ img {
 .inline-link.red {
   color: #CA2B28 !important;
 }
+
+.form-check:has(> .terms-check) {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.65rem;
+  padding-left: 0;
+  text-align: left;
+
+  .terms-check.form-check-input {
+    flex: 0 0 auto;
+    float: none;
+    width: 1.1em;
+    height: 1.1em;
+    margin: 0.25em 0 0;
+    cursor: pointer;
+  }
+
+  .terms-check-label {
+    text-align: left;
+    line-height: 1.6;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 576px) {
+  .form-check:has(> .terms-check) .terms-check-label {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+}
+
+.getCoverd .terms-check-label .inline-link,
+.getCovver .terms-check-label .inline-link {
+  color: #fff22e !important;
+  font-weight: bold !important;
+  // text-decoration: underline;
+}
+
+@media only screen and (max-width: 540px) {
+  body .getCoverd,
+  body .getCovver {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 48px 0 !important;
+  }
+
+  body .getCoverd .topSub,
+  body .getCovver .topSub {
+    padding-bottom: 0 !important;
+  }
+}
+
+body .careerMain .topBanner {
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 170px 0 70px !important;
+}
+
+@media only screen and (max-width: 540px) {
+  body .careerMain .topBanner {
+    padding: 120px 0 45px !important;
+  }
+}
 .data-pill a {
   color: #000000 !important;
   text-decoration: none !important;
@@ -185,7 +249,7 @@ img {
   .topBanner:not(.getCovver) {
     background-position: center;
     min-height: 25rem;
-    padding: 110px 0 70px 0 !important;
+    padding: 140px 0 70px 0 !important;
 
     .container {
       .topSub {
@@ -228,7 +292,7 @@ img {
 
 @media only screen and (max-width: 430px) {
   .topBanner:not(.getCovver) {
-    padding: 100px 0 60px 0 !important;
+    padding: 130px 0 60px 0 !important;
 
     .container {
       .topSub {
@@ -468,6 +532,35 @@ body .getCovver .selectable .chip[aria-disabled='true'] i,
 body .selectable .chip.chip-disabled i,
 body .selectable .chip[aria-disabled='true'] i {
   color: #b4b4b4 !important;
+}
+
+@media only screen and (max-width: 540px) {
+  body .selectable {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    width: 100%;
+  }
+
+  body .topBanner .selectable .chip,
+  body .getCovver .selectable .chip,
+  body .selectable .chip {
+    flex: 1 1 0 !important;
+    width: auto !important;
+    min-width: 0 !important;
+    height: 62px !important;
+    min-height: 62px !important;
+    padding: 8px 6px !important;
+    gap: 4px !important;
+    font-size: 11px !important;
+    border-radius: 10px !important;
+  }
+
+  body .topBanner .selectable .chip i,
+  body .getCovver .selectable .chip i,
+  body .selectable .chip i {
+    font-size: 15px !important;
+  }
 }
 
 /* =========================================================
