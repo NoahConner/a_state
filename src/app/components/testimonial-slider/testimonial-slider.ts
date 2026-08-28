@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Inject,
+  PLATFORM_ID,
+  HostListener,
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -9,9 +16,13 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class TestimonialSliderComponent implements OnInit {
   testimonials: any[] = [];
-  readonly stars = Array.from({ length: 4 });
+  readonly stars = Array.from({ length: 5 });
+  isMobile = false;
 
-  constructor(private translate: TranslateService) {}
+  constructor(
+    private translate: TranslateService,
+    @Inject(PLATFORM_ID) private platformId: Object,
+  ) {}
 
   ngOnInit() {
     this.loadTestimonials();
@@ -19,6 +30,22 @@ export class TestimonialSliderComponent implements OnInit {
     this.translate.onLangChange.subscribe(() => {
       this.loadTestimonials();
     });
+
+    if (isPlatformBrowser(this.platformId)) {
+      // defer past hydration so the first client render matches the server
+      setTimeout(() => this.updateIsMobile());
+    }
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.updateIsMobile();
+    }
+  }
+
+  private updateIsMobile() {
+    this.isMobile = window.innerWidth < 768;
   }
 
   loadTestimonials() {
@@ -28,7 +55,7 @@ export class TestimonialSliderComponent implements OnInit {
   }
 
   get groupedTestimonials() {
-    const chunkSize = 2;
+    const chunkSize = this.isMobile ? 1 : 2;
     const groups = [];
     for (let i = 0; i < this.testimonials.length; i += chunkSize) {
       groups.push(this.testimonials.slice(i, i + chunkSize));

@@ -532,24 +532,25 @@
 }
 
 .sidebar__menu {
-  .sidebar__menu {
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    padding: 8px 0;
-  }
-  .sidebar__menu::-webkit-scrollbar {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 8px 0;
+
+  &::-webkit-scrollbar {
     width: 4px;
   }
-  .sidebar__menu::-webkit-scrollbar-track {
+  &::-webkit-scrollbar-track {
     background: transparent;
   }
-  .sidebar__menu::-webkit-scrollbar-thumb {
+  &::-webkit-scrollbar-thumb {
     background: #ddd;
     border-radius: 4px;
   }
 
   .sm-section-label {
-    padding: 12px 20px 4px;
+    padding: 8px 20px 2px;
     font-size: 11px;
     font-weight: 700;
     color: #aaa;
@@ -561,8 +562,8 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 11px 20px;
-    font-size: 15px;
+    padding: 7px 20px;
+    font-size: 14px;
     color: #222;
     cursor: pointer;
     user-select: none;
@@ -625,8 +626,8 @@
 
   .sm-plain-link {
     display: block;
-    padding: 11px 20px;
-    font-size: 15px;
+    padding: 7px 20px;
+    font-size: 14px;
     color: #222;
     text-decoration: none;
     transition: background 0.12s;
@@ -645,8 +646,8 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 11px 20px;
-    font-size: 15px;
+    padding: 7px 20px;
+    font-size: 14px;
     color: #222;
     text-decoration: none;
     transition: background 0.12s;
@@ -662,7 +663,7 @@
   }
 
   .sm-cta-wrap {
-    padding: 12px 20px 20px;
+    padding: 8px 20px 14px;
   }
   .sm-cta {
     display: block;
@@ -717,7 +718,7 @@
 
     .mailerMain {
       justify-content: center !important;
-      gap: 20px;
+      gap: 34px;
 
       .angled-box {
         display: none;

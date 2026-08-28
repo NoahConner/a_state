@@ -344,7 +344,7 @@ font-weight: 600;
   .get-quote-desc {
     margin-top: 1.4rem;
     color: #5c5c5c;
-    font-size: 0.98rem;
+    font-size: 20px;
     line-height: 1.7;
     max-width: 560px;
   }
@@ -858,7 +858,7 @@ font-weight: 600;
       .topSub {
         .topSub2 {
           .h1 {
-            font-size: 2rem;
+            font-size: 2.6rem;
           }
 
           .banner-quote-card {
@@ -907,7 +907,7 @@ font-weight: 600;
 
         .topSub2 {
           .h1 {
-            font-size: 1.7rem;
+            font-size: 2.2rem;
             line-height: 1.15;
             margin-bottom: 1rem;
           }
@@ -1001,7 +1001,7 @@ font-weight: 600;
 
     .get-quote-desc {
       margin-top: 1rem;
-      font-size: 14px;
+      font-size: 16px;
       line-height: 1.6;
     }
 
@@ -1014,6 +1014,11 @@ font-weight: 600;
       flex-direction: column;
       align-items: stretch;
       gap: 0.75rem;
+
+      .form-control {
+        flex: 0 0 auto;
+        height: 3rem;
+      }
 
       .quote-submit {
         min-width: 100%;
@@ -1073,7 +1078,7 @@ font-weight: 600;
       .topSub {
         .topSub2 {
           .h1 {
-            font-size: 26px;
+            font-size: 34px;
             margin-bottom: 2rem;
           }
         }
@@ -1208,6 +1213,7 @@ font-weight: 600;
   .brand-red {
     color: #e61c24;
     font-weight: 700;
+    white-space: nowrap;
   }
 
   .sub-features p {
@@ -1280,6 +1286,31 @@ font-weight: 600;
     font-size: 1.25rem;
     text-align: center;
     line-height: 1.3;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .feature-card {
+      padding: 20px 10px;
+      border-radius: 14px;
+    }
+
+    .icon-circle {
+      width: 54px;
+      height: 54px;
+      margin-bottom: 12px;
+
+      i {
+        font-size: 1.3rem;
+      }
+
+      .stat-text {
+        font-size: 1.05rem;
+      }
+    }
+
+    .card-title-text {
+      font-size: 0.95rem;
+    }
   }
 }
 // End Features Section Styles
@@ -1372,14 +1403,33 @@ font-weight: 600;
     }
   }
 
+  @media only screen and (max-width: 767px) {
+    .card-item {
+      margin-bottom: 1rem;
+    }
+  }
+
   .see-all-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-width: 220px;
+    min-height: 3.35rem;
+    padding: 0 2rem;
+    font-family: 'Afacad', sans-serif;
+    font-size: 1.1rem;
     font-weight: 700;
-    font-size: 18px;
-    color: #44110E;
-    text-decoration: underline;
-    text-underline-offset: 4px;
+    color: #111;
+    text-decoration: none;
+    border-radius: 999px;
+    border: 2px solid #ff7f24;
+    background: #fff22e;
+    box-shadow: 0 12px 28px rgba(56, 40, 28, 0.18);
     cursor: pointer;
-    transition: opacity 0.2s ease-in-out;
+    transition:
+      background-color 0.2s ease-in-out,
+      transform 0.2s ease-in-out;
 
     .arrow {
       display: inline-block;
@@ -1388,7 +1438,8 @@ font-weight: 600;
     }
 
     &:hover {
-      opacity: 0.75;
+      background: #ffe94d;
+      transform: translateY(-1px);
 
       .arrow {
         transform: translateX(4px);
@@ -1486,6 +1537,25 @@ font-weight: 600;
           line-height: 1.18;
       font-weight: 700;
       max-width: 160px;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .step-card {
+      width: 100%;
+      height: auto;
+      min-height: 185px;
+      padding: 22px 12px 20px;
+
+      .icon-circle {
+        width: 52px;
+        height: 52px;
+        margin-bottom: 14px !important;
+      }
+
+      .step-title {
+        font-size: 20px;
+      }
     }
   }
 }
