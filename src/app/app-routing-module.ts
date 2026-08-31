@@ -20,6 +20,7 @@ import { GetHealthQuote } from './pages/get-health-quote/get-health-quote';
 import { GetSuretyQuote } from './pages/get-surety-quote/get-surety-quote';
 import { AutoInsurance } from './pages/auto-insurance/auto-insurance';
 import { HomeInsurance } from './pages/home-insurance/home-insurance';
+import { HomeownersHoustonTx } from './pages/home-insurance/houston-tx/houston-tx';
 import { CommercialInsurance } from './pages/commercial-insurance/commercial-insurance';
 import { LifeInsurance } from './pages/life-insurance/life-insurance';
 import { HealthInsurance } from './pages/health-insurance/health-insurance';
@@ -417,6 +418,11 @@ const routes: Routes = [
     children: [
       { path: '', component: HomeInsurance, data: { metaPage: 'homeInsurance' } },
       {
+        path: 'houston-tx',
+        component: HomeownersHoustonTx,
+        data: { metaPage: 'homeownersHoustonTx' },
+      },
+      {
         path: 'renters-insurance',
         component: RentersInsurance,
         data: { metaPage: 'rentersInsurance' },
@@ -662,6 +668,11 @@ const routes: Routes = [
         path: 'seguros-de-vivienda',
         children: [
           { path: '', component: HomeInsurance, data: { metaPage: 'homeInsurance' } },
+          {
+            path: 'houston-tx',
+            component: HomeownersHoustonTx,
+            data: { metaPage: 'homeownersHoustonTx' },
+          },
           {
             path: 'seguros-para-inquilinos',
             component: RentersInsurance,
@@ -990,6 +1001,10 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   homeInsurance: {
     en: 'homeowners-insurance',
     es: 'seguros-de-vivienda',
+  },
+  homeownersHoustonTx: {
+    en: 'homeowners-insurance/houston-tx',
+    es: 'seguros-de-vivienda/houston-tx',
   },
   commercialInsurance: {
     en: 'commercial-insurance',

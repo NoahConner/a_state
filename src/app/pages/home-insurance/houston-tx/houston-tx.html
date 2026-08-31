@@ -1,0 +1,981 @@
+<div class="homeMain">
+  <!-- Hero Banner Section Start -->
+  <div class="topBanner">
+    <div class="container">
+      <div class="topSub">
+        <div class="topSub2">
+          <h1 class="h1">
+            <span [innerHTML]="'GLOBAL_HOME_TX.BANNER.TITLE_LINE1' | translateHtml | async"></span><br />
+            <span
+              [innerHTML]="(('GLOBAL_HOME_TX.BANNER.TITLE_LINE2_PREFIX' | translate) + ('HOUSTON_HOME_TX.BANNER.LOCATION' | translate) + ('GLOBAL_HOME_TX.BANNER.TITLE_LINE2_SUFFIX' | translate))">
+            </span><br />
+            <span [innerHTML]="'GLOBAL_HOME_TX.BANNER.TITLE_LINE3' | translateHtml | async"></span>
+          </h1>
+          <div class="banner-quote-card">
+            <div class="quote-options">
+              @for (item of chips; track item.name) {
+              <button type="button" class="quote-option" *ngIf="item.name" [class.selected]="bannerForm.selectedChip === item.name"
+                [attr.aria-pressed]="bannerForm.selectedChip === item.name" (click)="selectChip(bannerForm, item.name)">
+                <span class="icon-badge">
+                  <span class="icon-burst"></span>
+                  <img [src]="item.image" [alt]="item.name | translate" class="quote-option-image" />
+                </span>
+                <span class="quote-option-label">
+                  <span class="radio-indicator"></span>
+                  <span [innerHTML]="item.name | translateHtml | async"></span>
+                </span>
+              </button>
+              }
+            </div>
+
+            <div class="quote-form-row">
+              <input type="text" [placeholder]="'HOME_INSURANCE.BANNER.FORM.FULL_NAME' | translate" class="form-control"
+                [value]="bannerForm.fullName" (input)="bannerForm.fullName = $any($event.target).value" />
+
+              <input type="tel" appPhoneFormat [placeholder]="'HOME_INSURANCE.BANNER.FORM.PHONE' | translate"
+                class="form-control" [value]="bannerForm.phone" (input)="bannerForm.phone = $any($event.target).value" />
+
+              <button class="quote-submit" [disabled]="bannerForm.isSubmitting || !bannerForm.selectedChip || !bannerForm.fullName.trim() || !bannerForm.phone.trim() || !bannerForm.termsAccepted" (click)="goToSelectedQuote(bannerForm)">
+                {{ bannerForm.isSubmitting ? 'Loading...' : ('HOME_INSURANCE.BANNER.FORM.BUTTON' | translate) }}
+              </button>
+            </div>
+            <div class="form-check terms-consent mt-3 mb-0">
+              <input class="form-check-input terms-check" type="checkbox" id="termsCheck"
+                (change)="bannerForm.termsAccepted = $any($event.target).checked" [checked]="bannerForm.termsAccepted" />
+              <label class="form-check-label terms-check-label small" for="termsCheck"
+                [innerHTML]="'QUOTE_SMS_CONSENT_GET_QUOTE' | translateHtml | async"></label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Hero Banner Section End -->
+
+  <!-- Rates Section Start -->
+  <section class="houston-rates-section" #ratesSection>
+    <div class="container">
+      <div class="row align-items-start">
+        <div class="col-lg-2 toc-column" #tocColumn>
+          <button type="button" class="toc-fab" [class.is-open]="isMobileTocOpen" (click)="toggleMobileToc()"
+            [attr.aria-expanded]="isMobileTocOpen" aria-controls="mobileTocPanel"
+            [attr.aria-label]="'GLOBAL_HOME_TX.TABLE_OF_CONTENTS.TITLE' | translate">
+            <svg class="toc-fab__icon" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </button>
+
+          <div class="toc-backdrop" *ngIf="isMobileTocOpen" (click)="toggleMobileToc()"></div>
+
+          <aside class="toc-card" #tocCard [ngStyle]="tocCardStyles" [class.toc-card--mobile-open]="isMobileTocOpen"
+            id="mobileTocPanel">
+            <button type="button" class="toc-card__close" (click)="toggleMobileToc()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h3 class="toc-title">
+              <span class="toc-highlight">{{ 'GLOBAL_HOME_TX.TABLE_OF_CONTENTS.TITLE' | translate }}</span>
+            </h3>
+            <ul class="toc-list list-unstyled mb-0">
+              @for (item of tableOfContents; track item; let i = $index) {
+              <li class="toc-item" [class.active]="activeTocIndex === i">
+                <a class="toc-link" [href]="'#toc-section-' + (i + 1)" (click)="scrollToSection(i, $event)">
+                  <span class="toc-text" [innerHTML]="item"></span>
+                </a>
+              </li>
+              }
+            </ul>
+          </aside>
+        </div>
+
+        <div class="col-lg-9">
+          <div class="rates-content text-center">
+            <p class="rates-lead" [innerHTML]="'HOUSTON_HOME_TX.RATES.LEAD' | translateHtml | async"></p>
+          </div>
+
+          <!-- Why Local Coverage (inline, beside TOC like the auto city pages) -->
+          <div class="section-content-shell why-local-inline" id="toc-section-1">
+            <div class="text-center mb-4">
+              <h2 class="main-title mb-3">{{ 'GLOBAL_HOME_TX.WHY_LOCAL.TITLE_PREFIX' | translate }} {{ 'HOUSTON_HOME_TX.LOCATION.CITY' | translate }} {{ 'GLOBAL_HOME_TX.WHY_LOCAL.TITLE_SUFFIX' | translate }}</h2>
+              <p class="lead-text mx-auto" [innerHTML]="'HOUSTON_HOME_TX.WHY_LOCAL.PARA1' | translateHtml | async"></p>
+            </div>
+
+            <p class="footer-text text-center mx-auto mb-0" [innerHTML]="'HOUSTON_HOME_TX.WHY_LOCAL.PARA2' | translateHtml | async"></p>
+          </div>
+        </div>
+
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Rates + Why Local Section End -->
+
+  <!-- Neighborhoods Section Start -->
+  <section class="houston-neighborhoods-section" id="toc-section-2">
+    <div class="container">
+      <div class="row section-content-row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-9">
+          <div class="section-content-shell">
+      <div class="houston-neighborhoods-section__inner">
+        <h2 class="houston-neighborhoods-section__title">{{ 'GLOBAL_HOME_TX.NEIGHBORHOODS.TITLE_PREFIX' | translate }} {{ 'HOUSTON_HOME_TX.LOCATION.CITY_WITH_STATE' | translate }}</h2>
+
+        <div class="houston-neighborhoods-section__table card-table">
+          @for (row of neighborhoodsRows; track row[0]; let i = $index) {
+          <div class="houston-neighborhoods-section__row" [class.houston-neighborhoods-section__row--alt]="i % 2 === 1">
+            @for (item of row; track item) {
+            <div class="houston-neighborhoods-section__cell">{{ item }}</div>
+            }
+          </div>
+          }
+        </div>
+      </div>
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Neighborhoods Section End -->
+
+  <!-- Coverage Options Section Start -->
+  <section class="houston-coverage-options-section py-5" id="toc-section-3">
+    <div class="container">
+      <div class="row section-content-row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-9">
+          <div class="section-content-shell">
+      <div class="coverage-options-header text-center">
+        <h2 class="coverage-options-title mb-3">{{ 'GLOBAL_HOME_TX.COVERAGE_OPTIONS.TITLE_PREFIX' | translate }} {{ 'HOUSTON_HOME_TX.LOCATION.CITY_WITH_STATE' | translate }}?</h2>
+        <p class="lead-text mx-auto mb-5" [innerHTML]="'HOUSTON_HOME_TX.COVERAGE_OPTIONS.INTRO' | translateHtml | async"></p>
+      </div>
+
+      <div class="row coverage-options-grid gy-4 gx-lg-5 gx-4">
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon" aria-hidden="true">
+              <img src="/assets/images/homeowners-city/houston-tx/icons/cover-dwelling.png" alt="" class="coverage-option-card__icon-image">
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.COVERAGE_OPTIONS.ITEMS.DWELLING' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.COVERAGE_OPTIONS.ITEMS.DWELLING' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon" aria-hidden="true">
+              <img src="/assets/images/homeowners-city/houston-tx/icons/cover-other-structures.png" alt="" class="coverage-option-card__icon-image">
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.COVERAGE_OPTIONS.ITEMS.OTHER_STRUCTURES' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.COVERAGE_OPTIONS.ITEMS.OTHER_STRUCTURES' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon" aria-hidden="true">
+              <img src="/assets/images/homeowners-city/houston-tx/icons/cover-personal-property.png" alt="" class="coverage-option-card__icon-image">
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.COVERAGE_OPTIONS.ITEMS.PERSONAL_PROPERTY' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.COVERAGE_OPTIONS.ITEMS.PERSONAL_PROPERTY' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon" aria-hidden="true">
+              <img src="/assets/images/homeowners-city/houston-tx/icons/cover-liability.png" alt="" class="coverage-option-card__icon-image">
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.COVERAGE_OPTIONS.ITEMS.LIABILITY' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.COVERAGE_OPTIONS.ITEMS.LIABILITY' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon" aria-hidden="true">
+              <img src="/assets/images/homeowners-city/houston-tx/icons/cover-loss-of-use.png" alt="" class="coverage-option-card__icon-image">
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.COVERAGE_OPTIONS.ITEMS.LOSS_OF_USE' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.COVERAGE_OPTIONS.ITEMS.LOSS_OF_USE' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon" aria-hidden="true">
+              <img src="/assets/images/homeowners-city/houston-tx/icons/cover-medical-payments.png" alt="" class="coverage-option-card__icon-image">
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.COVERAGE_OPTIONS.ITEMS.MEDICAL_PAYMENTS' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.COVERAGE_OPTIONS.ITEMS.MEDICAL_PAYMENTS' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon" aria-hidden="true">
+              <img src="/assets/images/homeowners-city/houston-tx/icons/cover-sewer-backup.png" alt="" class="coverage-option-card__icon-image">
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.COVERAGE_OPTIONS.ITEMS.SEWER_BACKUP' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.COVERAGE_OPTIONS.ITEMS.SEWER_BACKUP' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon" aria-hidden="true">
+              <img src="/assets/images/homeowners-city/houston-tx/icons/cover-ordinance-law.png" alt="" class="coverage-option-card__icon-image">
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.COVERAGE_OPTIONS.ITEMS.ORDINANCE_LAW' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.COVERAGE_OPTIONS.ITEMS.ORDINANCE_LAW' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon" aria-hidden="true">
+              <img src="/assets/images/homeowners-city/houston-tx/icons/cover-extended-replacement.png" alt="" class="coverage-option-card__icon-image">
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.COVERAGE_OPTIONS.ITEMS.EXTENDED_REPLACEMENT' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.COVERAGE_OPTIONS.ITEMS.EXTENDED_REPLACEMENT' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon" aria-hidden="true">
+              <img src="/assets/images/homeowners-city/houston-tx/icons/cover-identity-theft.png" alt="" class="coverage-option-card__icon-image">
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.COVERAGE_OPTIONS.ITEMS.IDENTITY_THEFT' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.COVERAGE_OPTIONS.ITEMS.IDENTITY_THEFT' | translate }}</p>
+          </article>
+        </div>
+      </div>
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Coverage Options Section End -->
+
+  <!-- Not Covered Section Start -->
+  <section class="houston-coverage-options-section py-5" id="toc-section-4">
+    <div class="container">
+      <div class="row section-content-row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-9">
+          <div class="section-content-shell">
+      <div class="coverage-options-header text-center">
+        <h2 class="coverage-options-title mb-3">{{ 'GLOBAL_HOME_TX.NOT_COVERED.TITLE_PREFIX' | translate }} {{ 'HOUSTON_HOME_TX.LOCATION.CITY_WITH_STATE' | translate }}?</h2>
+        <p class="lead-text mx-auto mb-5" [innerHTML]="'HOUSTON_HOME_TX.NOT_COVERED.INTRO' | translateHtml | async"></p>
+      </div>
+
+      <div class="row coverage-options-grid gy-4 gx-lg-5 gx-4">
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon" aria-hidden="true">
+              <img src="/assets/images/homeowners-city/houston-tx/icons/notcover-flood.png" alt="" class="coverage-option-card__icon-image">
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.NOT_COVERED.ITEMS.FLOOD' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.NOT_COVERED.ITEMS.FLOOD' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon" aria-hidden="true">
+              <img src="/assets/images/homeowners-city/houston-tx/icons/notcover-earthquake.png" alt="" class="coverage-option-card__icon-image">
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.NOT_COVERED.ITEMS.EARTHQUAKE' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.NOT_COVERED.ITEMS.EARTHQUAKE' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon" aria-hidden="true">
+              <img src="/assets/images/homeowners-city/houston-tx/icons/notcover-sewer-drain.png" alt="" class="coverage-option-card__icon-image">
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.NOT_COVERED.ITEMS.SEWER_BACKUP' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.NOT_COVERED.ITEMS.SEWER_BACKUP' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon" aria-hidden="true">
+              <img src="/assets/images/homeowners-city/houston-tx/icons/notcover-mold.png" alt="" class="coverage-option-card__icon-image">
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.NOT_COVERED.ITEMS.MOLD' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.NOT_COVERED.ITEMS.MOLD' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon" aria-hidden="true">
+              <img src="/assets/images/homeowners-city/houston-tx/icons/notcover-wear-tear.png" alt="" class="coverage-option-card__icon-image">
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.NOT_COVERED.ITEMS.WEAR_TEAR' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.NOT_COVERED.ITEMS.WEAR_TEAR' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon" aria-hidden="true">
+              <img src="/assets/images/homeowners-city/houston-tx/icons/notcover-pest.png" alt="" class="coverage-option-card__icon-image">
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.NOT_COVERED.ITEMS.PEST' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.NOT_COVERED.ITEMS.PEST' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon" aria-hidden="true">
+              <img src="/assets/images/homeowners-city/houston-tx/icons/notcover-business-use.png" alt="" class="coverage-option-card__icon-image">
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.NOT_COVERED.ITEMS.BUSINESS_USE' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0" [innerHTML]="'HOUSTON_HOME_TX.NOT_COVERED.ITEMS.BUSINESS_USE' | translateHtml | async"></p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon" aria-hidden="true">
+              <img src="/assets/images/homeowners-city/houston-tx/icons/notcover-acts-of-war.png" alt="" class="coverage-option-card__icon-image">
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.NOT_COVERED.ITEMS.ACTS_OF_WAR' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.NOT_COVERED.ITEMS.ACTS_OF_WAR' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon" aria-hidden="true">
+              <img src="/assets/images/homeowners-city/houston-tx/icons/notcover-nuclear.png" alt="" class="coverage-option-card__icon-image">
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.NOT_COVERED.ITEMS.NUCLEAR' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.NOT_COVERED.ITEMS.NUCLEAR' | translate }}</p>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="coverage-option-card">
+            <span class="coverage-option-card__icon" aria-hidden="true">
+              <img src="/assets/images/homeowners-city/houston-tx/icons/notcover-intentional.png" alt="" class="coverage-option-card__icon-image">
+            </span>
+            <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.NOT_COVERED.ITEMS.INTENTIONAL' | translate }}</h3>
+            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.NOT_COVERED.ITEMS.INTENTIONAL' | translate }}</p>
+          </article>
+        </div>
+      </div>
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Not Covered Section End -->
+
+  <section class="risks" id="toc-section-5">
+    <div class="container">
+      <div class="row section-content-row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-9">
+          <div class="section-content-shell">
+      <h2 class="risks__title">{{ ('GLOBAL_HOME_TX.RISKS.TITLE_PREFIX' | translate) + ('HOUSTON_HOME_TX.LOCATION.CITY' | translate) + ('GLOBAL_HOME_TX.RISKS.TITLE_SUFFIX' | translate) }}</h2>
+
+      <div class="row risks__grid">
+        <div class="col-12 col-lg-6 risks__col">
+          <div class="risks__item">
+            <div class="risks__head">
+              <img class="risks__icon" src="/assets/images/homeowners-city/houston-tx/icons/risk-flood-zone.png" alt="" aria-hidden="true">
+              <h3 class="risks__heading">{{ 'HOUSTON_HOME_TX.RISKS.ITEMS.0.HEADING' | translate }}</h3>
+            </div>
+            <p class="risks__text" [innerHTML]="'HOUSTON_HOME_TX.RISKS.ITEMS.0.TEXT' | translateHtml | async"></p>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6 risks__col">
+          <div class="risks__item">
+            <div class="risks__head">
+              <img class="risks__icon" src="/assets/images/homeowners-city/houston-tx/icons/risk-hail-roof.png" alt="" aria-hidden="true">
+              <h3 class="risks__heading">{{ 'HOUSTON_HOME_TX.RISKS.ITEMS.1.HEADING' | translate }}</h3>
+            </div>
+            <p class="risks__text" [innerHTML]="'HOUSTON_HOME_TX.RISKS.ITEMS.1.TEXT' | translateHtml | async"></p>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6 risks__col">
+          <div class="risks__item">
+            <div class="risks__head">
+              <img class="risks__icon" src="/assets/images/homeowners-city/houston-tx/icons/risk-wind-hurricane.png" alt="" aria-hidden="true">
+              <h3 class="risks__heading">{{ 'HOUSTON_HOME_TX.RISKS.ITEMS.2.HEADING' | translate }}</h3>
+            </div>
+            <p class="risks__text" [innerHTML]="'HOUSTON_HOME_TX.RISKS.ITEMS.2.TEXT' | translateHtml | async"></p>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6 risks__col">
+          <div class="risks__item">
+            <div class="risks__head">
+              <img class="risks__icon" src="/assets/images/homeowners-city/houston-tx/icons/risk-foundation.png" alt="" aria-hidden="true">
+              <h3 class="risks__heading">{{ 'HOUSTON_HOME_TX.RISKS.ITEMS.3.HEADING' | translate }}</h3>
+            </div>
+            <p class="risks__text" [innerHTML]="'HOUSTON_HOME_TX.RISKS.ITEMS.3.TEXT' | translateHtml | async"></p>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6 risks__col">
+          <div class="risks__item">
+            <div class="risks__head">
+              <img class="risks__icon" src="/assets/images/homeowners-city/houston-tx/icons/risk-aging-infra.png" alt="" aria-hidden="true">
+              <h3 class="risks__heading">{{ 'HOUSTON_HOME_TX.RISKS.ITEMS.4.HEADING' | translate }}</h3>
+            </div>
+            <p class="risks__text" [innerHTML]="'HOUSTON_HOME_TX.RISKS.ITEMS.4.TEXT' | translateHtml | async"></p>
+          </div>
+        </div>
+      </div>
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Costs Section Start -->
+  <section class="houston-rates-section houston-rates-section--gray" id="toc-section-6">
+    <div class="container">
+      <div class="row section-content-row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-9">
+          <div class="rates-content text-center">
+            <h2 class="rates-heading">{{ ratesHeading }}</h2>
+            <p class="rates-copy" [innerHTML]="'HOUSTON_HOME_TX.RATES.COPY' | translateHtml | async"></p>
+
+            <h3 class="rates-subheading">{{ averageAnnualRateHeading }}</h3>
+            <p class="rates-copy" [innerHTML]="'HOUSTON_HOME_TX.RATES.AVERAGE_COPY' | translateHtml | async"></p>
+
+            <div class="table-responsive card-table">
+              <table class="table rates-table mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">{{ 'GLOBAL_HOME_TX.RATES.TABLE.COMPANY' | translate }}</th>
+                    <th scope="col">{{ 'GLOBAL_HOME_TX.RATES.TABLE.PREMIUM' | translate }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (rate of annualRates; track rate.company; let i = $index) {
+                  <tr [class.alt-row]="i % 2 === 1">
+                    <td><span [innerHTML]="rate.company"></span></td>
+                    <td>{{ rate.premium }}</td>
+                  </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+
+            <div class="rates-meta">
+              <p class="source-line mb-0"><strong class="source-label">{{ 'GLOBAL_HOME_TX.RATES.SOURCE_LABEL' | translate
+                  }}</strong>&nbsp;<a class="source-name"
+                  href="https://insurify.com/homeowners-insurance/texas/houston/" rel="nofollow"
+                  target="_blank">Insurify</a></p>
+              <p class="updated-line mb-0"><strong class="source-label">{{ 'GLOBAL_HOME_TX.RATES.LAST_UPDATED_LABEL' |
+                  translate }}</strong> August 2026</p>
+            </div>
+
+            <p class="rates-disclaimer mb-0 text-start"
+              [innerHTML]="'GLOBAL_HOME_TX.RATES.DISCLAIMER' | translateHtml | async"></p>
+          </div>
+
+
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Costs Section End -->
+
+  <!-- ZIP & Comparison Section Start -->
+  <section class="houston-rates-section houston-rates-section--cream">
+    <div class="container">
+      <div class="row section-content-row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-9">
+          <div class="rates-content text-center">
+            <h3 class="rates-subheading">{{ zipCodesHeading }}</h3>
+            <p class="zip-copy mx-auto" [innerHTML]="'HOUSTON_HOME_TX.RATES.ZIP_COPY' | translateHtml | async"></p>
+
+            <div class="table-responsive card-table">
+
+              <table class="table rates-table mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">{{ 'GLOBAL_HOME_TX.RATES.ZIP_TABLE.ZIP_CODE' | translate }}</th>
+                    <th scope="col">{{ 'GLOBAL_HOME_TX.RATES.ZIP_TABLE.NEIGHBORHOOD' | translate }}</th>
+                    <th scope="col">{{ 'GLOBAL_HOME_TX.RATES.ZIP_TABLE.AVG_ANNUAL_COST' | translate }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (rate of zipRateRows; track rate.zipCode; let i = $index) {
+                  <tr [class.alt-row]="i % 2 === 1">
+                    <td><span class="fw-bold">{{ rate.zipCode }}</span></td>
+                    <td>{{ rate.neighborhood }}</td>
+                    <td>{{ rate.annualCost }}</td>
+                  </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+
+            <div class="rates-meta">
+              <p class="source-line mb-0"><strong class="source-label">{{ 'GLOBAL_HOME_TX.RATES.SOURCE_LABEL' | translate
+                  }}</strong>&nbsp;<a class="source-name"
+                  href="https://www.policygenius.com/homeowners-insurance/" rel="nofollow"
+                  target="_blank">Policygenius</a></p>
+              <p class="updated-line mb-0"><strong class="source-label">{{ 'GLOBAL_HOME_TX.RATES.LAST_UPDATED_LABEL' |
+                  translate }}</strong> August 2026</p>
+            </div>
+
+            <p class="rates-disclaimer mb-0 text-start"
+              [innerHTML]="'GLOBAL_HOME_TX.RATES.DISCLAIMER' | translateHtml | async"></p>
+
+          </div>
+
+          <div class="py-4"></div>
+
+          <!-- Rates Comparison Section Start -->
+          <div class="houston-comparison-section">
+            <div class="comparison-content text-center">
+              <h2 class="comparison-heading">{{ comparisonHeading }}</h2>
+              <p class="comparison-copy mx-auto"
+                [innerHTML]="'HOUSTON_HOME_TX.RATES.COMPARISON_COPY' | translateHtml | async"></p>
+
+              <div class="table-responsive comparison-table-wrap card-table mx-auto">
+                <table class="table comparison-table mb-0">
+                  <thead>
+                    <tr>
+                      @for (column of compareRateColumns; track column) {
+                      <th scope="col">{{ column }}</th>
+                      }
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @for (row of compareRates; track row.label) {
+                    <tr [class.highlight-row]="row.highlighted">
+                      @for (value of row.values; track value) {
+                      <td>{{ value }}</td>
+                      }
+                    </tr>
+                    }
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- Rates Comparison Section End -->
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </section>
+  <!-- ZIP & Comparison Section End -->
+
+  <!-- Rate Factors Section Start -->
+  <section class="houston-rate-factors-section" id="toc-section-7">
+    <div class="container">
+      <div class="row section-content-row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-9">
+          <div class="section-content-shell">
+      <div class="rate-factors-header text-center">
+        <h2 class="rate-factors-title mb-0">{{ 'GLOBAL_HOME_TX.RATE_FACTORS.TITLE_PREFIX' | translate }} {{ 'HOUSTON_HOME_TX.LOCATION.CITY_WITH_STATE' | translate }}?</h2>
+        <p class="rate-factors-copy mb-0">{{ 'HOUSTON_HOME_TX.RATE_FACTORS.COPY' | translate }}</p>
+      </div>
+
+      <ul class="rate-factors-list rate-factors-grid list-unstyled mb-0">
+        <li class="rate-factors-list__item"><img src="/assets/images/homeowners-city/houston-tx/icons/rate-factor.png" alt=""
+            class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_HOME_TX.RATE_FACTORS.ITEMS.HOME_AGE' | translate }}</span></li>
+        <li class="rate-factors-list__item"><img src="/assets/images/homeowners-city/houston-tx/icons/rate-factor.png" alt=""
+            class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_HOME_TX.RATE_FACTORS.ITEMS.ROOF_AGE' | translate }}</span></li>
+        <li class="rate-factors-list__item"><img src="/assets/images/homeowners-city/houston-tx/icons/rate-factor.png" alt=""
+            class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_HOME_TX.RATE_FACTORS.ITEMS.CONSTRUCTION' | translate }}</span></li>
+        <li class="rate-factors-list__item"><img src="/assets/images/homeowners-city/houston-tx/icons/rate-factor.png" alt=""
+            class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_HOME_TX.RATE_FACTORS.ITEMS.CLAIMS_HISTORY' | translate }}</span></li>
+        <li class="rate-factors-list__item"><img src="/assets/images/homeowners-city/houston-tx/icons/rate-factor.png" alt=""
+            class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_HOME_TX.RATE_FACTORS.ITEMS.CREDIT_SCORE' | translate }}</span></li>
+        <li class="rate-factors-list__item"><img src="/assets/images/homeowners-city/houston-tx/icons/rate-factor.png" alt=""
+            class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_HOME_TX.RATE_FACTORS.ITEMS.FIRE_DISTANCE' | translate }}</span></li>
+        <li class="rate-factors-list__item"><img src="/assets/images/homeowners-city/houston-tx/icons/rate-factor.png" alt=""
+            class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_HOME_TX.RATE_FACTORS.ITEMS.SECURITY' | translate }}</span></li>
+        <li class="rate-factors-list__item"><img src="/assets/images/homeowners-city/houston-tx/icons/rate-factor.png" alt=""
+            class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_HOME_TX.RATE_FACTORS.ITEMS.FLOOD_CLAIMS' | translate }}</span></li>
+        <li class="rate-factors-list__item"><img src="/assets/images/homeowners-city/houston-tx/icons/rate-factor.png" alt=""
+            class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_HOME_TX.RATE_FACTORS.ITEMS.ZIP_TIER' | translate }}</span></li>
+        <li class="rate-factors-list__item"><img src="/assets/images/homeowners-city/houston-tx/icons/rate-factor.png" alt=""
+            class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_HOME_TX.RATE_FACTORS.ITEMS.DWELLING_VALUE' | translate }}</span></li>
+        <li class="rate-factors-list__item"><img src="/assets/images/homeowners-city/houston-tx/icons/rate-factor.png" alt=""
+            class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_HOME_TX.RATE_FACTORS.ITEMS.DEDUCTIBLE' | translate }}</span></li>
+        <li class="rate-factors-list__item"><img src="/assets/images/homeowners-city/houston-tx/icons/rate-factor.png" alt=""
+            class="rate-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_HOME_TX.RATE_FACTORS.ITEMS.BUNDLING' | translate }}</span></li>
+      </ul>
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Rate Factors Section End -->
+
+  <!-- Savings Section Start -->
+  <section class="houston-savings-section" id="toc-section-8">
+    <div class="container">
+      <div class="row section-content-row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-9">
+          <div class="section-content-shell">
+      <div class="savings-header text-center">
+        <h2 class="savings-title mb-0">{{ 'GLOBAL_HOME_TX.SAVINGS.TITLE_PREFIX' | translate }} {{ 'HOUSTON_HOME_TX.LOCATION.CITY' | translate }} {{ 'GLOBAL_HOME_TX.SAVINGS.TITLE_SUFFIX' | translate }}</h2>
+        <p class="savings-copy mb-0">{{ 'HOUSTON_HOME_TX.SAVINGS.COPY' | translate }}</p>
+      </div>
+
+      <ul class="savings-list savings-grid list-unstyled mb-0">
+        <li class="savings-list__item"><img src="/assets/images/homeowners-city/houston-tx/icons/discount.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_HOME_TX.SAVINGS.ITEMS.MULTI_POLICY' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/homeowners-city/houston-tx/icons/discount.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_HOME_TX.SAVINGS.ITEMS.NEW_ROOF' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/homeowners-city/houston-tx/icons/discount.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_HOME_TX.SAVINGS.ITEMS.SECURITY_SYSTEM' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/homeowners-city/houston-tx/icons/discount.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_HOME_TX.SAVINGS.ITEMS.CLAIMS_FREE' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/homeowners-city/houston-tx/icons/discount.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_HOME_TX.SAVINGS.ITEMS.NEW_HOME' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/homeowners-city/houston-tx/icons/discount.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_HOME_TX.SAVINGS.ITEMS.GATED_COMMUNITY' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/homeowners-city/houston-tx/icons/discount.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_HOME_TX.SAVINGS.ITEMS.STORM_SHUTTERS' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/homeowners-city/houston-tx/icons/discount.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_HOME_TX.SAVINGS.ITEMS.SENIOR' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/homeowners-city/houston-tx/icons/discount.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_HOME_TX.SAVINGS.ITEMS.NON_SMOKER' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/homeowners-city/houston-tx/icons/discount.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_HOME_TX.SAVINGS.ITEMS.LOYALTY' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/homeowners-city/houston-tx/icons/discount.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_HOME_TX.SAVINGS.ITEMS.AFFILIATION' | translate }}</span></li>
+        <li class="savings-list__item"><img src="/assets/images/homeowners-city/houston-tx/icons/discount.png" alt=""
+            class="savings-list-icon-image" aria-hidden="true"><span>{{ 'GLOBAL_HOME_TX.SAVINGS.ITEMS.PAPERLESS' | translate }}</span></li>
+      </ul>
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Savings Section End -->
+
+  <!-- Independent Agency Section Start -->
+  <section class="houston-independent-agency-section" id="toc-section-9">
+    <div class="container">
+      <div class="row section-content-row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-9">
+          <div class="section-content-shell">
+      <div class="independent-agency-header text-center">
+        <h2 class="independent-agency-title mb-0">{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TITLE_PREFIX' | translate }} {{ 'HOUSTON_HOME_TX.LOCATION.CITY_WITH_STATE' | translate }}</h2>
+      </div>
+
+      <div class="independent-agency-table-wrap">
+        <div class="table-responsive card-table">
+          <table class="table independent-agency-table mb-0">
+            <thead>
+              <tr>
+                <th scope="col">{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.FEATURE' | translate }}</th>
+                <th scope="col">{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.INDEPENDENT' | translate }}</th>
+                <th scope="col">{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.CAPTIVE' | translate }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_1' | translate }}</th>
+                <td>{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_1_INDEPENDENT' | translate }}</td>
+                <td>{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_1_CAPTIVE' | translate }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_2' | translate }}</th>
+                <td>{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_2_INDEPENDENT' | translate }}</td>
+                <td>{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_2_CAPTIVE' | translate }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_3' | translate }}</th>
+                <td>{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_3_INDEPENDENT' | translate }}</td>
+                <td>{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_3_CAPTIVE' | translate }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_4' | translate }}</th>
+                <td>{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_4_INDEPENDENT' | translate }}</td>
+                <td>{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_4_CAPTIVE' | translate }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_5' | translate }}</th>
+                <td>{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_5_INDEPENDENT' | translate }}</td>
+                <td>{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_5_CAPTIVE' | translate }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_6' | translate }}</th>
+                <td>{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_6_INDEPENDENT' | translate }}</td>
+                <td>{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_6_CAPTIVE' | translate }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_7' | translate }}</th>
+                <td>{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_7_INDEPENDENT' | translate }}</td>
+                <td>{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_7_CAPTIVE' | translate }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_8' | translate }}</th>
+                <td>{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_8_INDEPENDENT' | translate }}</td>
+                <td>{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_8_CAPTIVE' | translate }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_9' | translate }}</th>
+                <td>{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_9_INDEPENDENT' | translate }}</td>
+                <td>{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_9_CAPTIVE' | translate }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_10' | translate }}</th>
+                <td>{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_10_INDEPENDENT' | translate }}</td>
+                <td>{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_10_CAPTIVE' | translate }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_11' | translate }}</th>
+                <td>{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_11_INDEPENDENT' | translate }}</td>
+                <td>{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TABLE.ROW_11_CAPTIVE' | translate }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Independent Agency Section End -->
+
+  <!-- Coverage Types Section Start -->
+  <section class="coverage" id="toc-section-10">
+    <div class="container">
+      <div class="row section-content-row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-9">
+          <div class="section-content-shell">
+      <div class="text-center coverage__header mb-2">
+        <h2 class="coverage__title coverage__title--center mb-0">{{ 'GLOBAL_HOME_TX.SPECIAL_COVERAGE.TITLE_PREFIX' | translate }} {{ 'HOUSTON_HOME_TX.LOCATION.CITY_WITH_STATE' | translate }}</h2>
+      </div>
+
+          <div class="row g-4 coverage__grid">
+            <div class="col-12 col-lg-6 coverage__col">
+              <div class="coverage__item coverage__item--standard">
+                <div class="coverage__head">
+                  <img class="coverage__icon-img" src="/assets/images/homeowners-city/houston-tx/icons/covtype-standard.png" alt="" aria-hidden="true">
+                  <h3 class="coverage__heading">
+                    <a [routerLink]="getRoute('homeInsurance')" class="coverage__link">{{ 'GLOBAL_HOME_TX.SPECIAL_COVERAGE.ITEMS.STANDARD' | translate }}</a>
+                  </h3>
+                </div>
+                <p class="coverage__text">{{ 'HOUSTON_HOME_TX.SPECIAL_COVERAGE.ITEMS.STANDARD' | translate }}</p>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-6 coverage__col">
+              <div class="coverage__item coverage__item--condo">
+                <div class="coverage__head">
+                  <img class="coverage__icon-img" src="/assets/images/homeowners-city/houston-tx/icons/covtype-condo.png" alt="" aria-hidden="true">
+                  <h3 class="coverage__heading">
+                    <a [routerLink]="getRoute('condoInsurance')" class="coverage__link">{{ 'GLOBAL_HOME_TX.SPECIAL_COVERAGE.ITEMS.CONDO' | translate }}</a>
+                  </h3>
+                </div>
+                <p class="coverage__text">{{ 'HOUSTON_HOME_TX.SPECIAL_COVERAGE.ITEMS.CONDO' | translate }}</p>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-6 coverage__col">
+              <div class="coverage__item coverage__item--landlord">
+                <div class="coverage__head">
+                  <img class="coverage__icon-img" src="/assets/images/homeowners-city/houston-tx/icons/covtype-landlord.png" alt="" aria-hidden="true">
+                  <h3 class="coverage__heading">
+                    <a [routerLink]="getRoute('landlordInsurance')" class="coverage__link">{{ 'GLOBAL_HOME_TX.SPECIAL_COVERAGE.ITEMS.LANDLORD' | translate }}</a>
+                  </h3>
+                </div>
+                <p class="coverage__text">{{ 'HOUSTON_HOME_TX.SPECIAL_COVERAGE.ITEMS.LANDLORD' | translate }}</p>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-6 coverage__col">
+              <div class="coverage__item coverage__item--mobile">
+                <div class="coverage__head">
+                  <img class="coverage__icon-img" src="/assets/images/homeowners-city/houston-tx/icons/covtype-manufactured.png" alt="" aria-hidden="true">
+                  <h3 class="coverage__heading">
+                    <a [routerLink]="getRoute('manufacturedMobileHomeInsurance')" class="coverage__link">{{ 'GLOBAL_HOME_TX.SPECIAL_COVERAGE.ITEMS.MOBILE' | translate }}</a>
+                  </h3>
+                </div>
+                <p class="coverage__text">{{ 'HOUSTON_HOME_TX.SPECIAL_COVERAGE.ITEMS.MOBILE' | translate }}</p>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-6 coverage__col">
+              <div class="coverage__item coverage__item--flood">
+                <div class="coverage__head">
+                  <img class="coverage__icon-img" src="/assets/images/homeowners-city/houston-tx/icons/covtype-flood.png" alt="" aria-hidden="true">
+                  <h3 class="coverage__heading">
+                    <a [routerLink]="getRoute('floodInsurance')" class="coverage__link">{{ 'GLOBAL_HOME_TX.SPECIAL_COVERAGE.ITEMS.FLOOD' | translate }}</a>
+                  </h3>
+                </div>
+                <p class="coverage__text">{{ 'HOUSTON_HOME_TX.SPECIAL_COVERAGE.ITEMS.FLOOD' | translate }}</p>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-6 coverage__col">
+              <div class="coverage__item coverage__item--earthquake">
+                <div class="coverage__head">
+                  <img class="coverage__icon-img" src="/assets/images/homeowners-city/houston-tx/icons/covtype-earthquake.png" alt="" aria-hidden="true">
+                  <h3 class="coverage__heading">
+                    <a [routerLink]="getRoute('earthquakeInsurance')" class="coverage__link">{{ 'GLOBAL_HOME_TX.SPECIAL_COVERAGE.ITEMS.EARTHQUAKE' | translate }}</a>
+                  </h3>
+                </div>
+                <p class="coverage__text">{{ 'HOUSTON_HOME_TX.SPECIAL_COVERAGE.ITEMS.EARTHQUAKE' | translate }}</p>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-6 coverage__col">
+              <div class="coverage__item coverage__item--renters">
+                <div class="coverage__head">
+                  <img class="coverage__icon-img" src="/assets/images/homeowners-city/houston-tx/icons/covtype-renters.png" alt="" aria-hidden="true">
+                  <h3 class="coverage__heading">
+                    <a [routerLink]="getRoute('rentersInsurance')" class="coverage__link">{{ 'GLOBAL_HOME_TX.SPECIAL_COVERAGE.ITEMS.RENTERS' | translate }}</a>
+                  </h3>
+                </div>
+                <p class="coverage__text">{{ 'HOUSTON_HOME_TX.SPECIAL_COVERAGE.ITEMS.RENTERS' | translate }}</p>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Coverage Types Section End -->
+
+  <!-- FAQ Section Start -->
+  <section class="faq" id="toc-section-11" #faqSection>
+    <div class="container">
+      <div class="row section-content-row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-9">
+          <div class="section-content-shell">
+      <h2 class="faq__title">{{ 'GLOBAL_HOME_TX.FAQ_SECTION.TITLE_PREFIX' | translate }} {{ 'HOUSTON_HOME_TX.LOCATION.CITY_WITH_STATE' | translate }}</h2>
+
+      <div class="faq__list">
+        @for (item of faqItems; track item.question; let i = $index) {
+        <div class="faq__entry">
+          <div class="faq__item" [class.faq__item--open]="openFaqIndex === i">
+            <button class="faq__question" type="button" [attr.aria-expanded]="openFaqIndex === i"
+              (click)="toggleFaq(i)">
+              <span class="faq__question-text">{{ item.question }}</span>
+              <span class="faq__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path d="M6 9l6 6 6-6" stroke="#1f1f24" stroke-width="2.2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </span>
+            </button>
+          </div>
+
+          @if (openFaqIndex === i) {
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>{{ item.answer }}</p>
+            </div>
+          </div>
+          }
+        </div>
+        }
+      </div>
+
+      <!-- Decorative question mark -->
+      <div class="faq__decor" aria-hidden="true">
+        <img src="/assets/images/homeowners-city/houston-tx/question.png" alt="" class="faq__decor-image">
+      </div>
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </section>
+  <!-- FAQ Section End -->
+
+  <!-- Get Covered Section Start -->
+  <div class="topBanner getCovver" #tocStopSection>
+    <div class="container">
+      <div class="topSub">
+        <div class="topSub2">
+          <section class="cover-quote-shell">
+            <div class="cover-quote-shell__top">
+              <div class="cover-quote-shell__visual">
+                <img src="/assets/images/homeowners-city/houston-tx/covered-photo.png" alt="Homeowners insurance quote visual"
+                  class="cover-quote-shell__visual-image">
+              </div>
+
+              <div class="cover-quote-shell__content">
+                <h2 class="cover-quote-shell__title mb-0">{{ 'GLOBAL_HOME_TX.QUOTE.TITLE_PREFIX' | translate }} {{ 'HOUSTON_HOME_TX.LOCATION.CITY_WITH_STATE' | translate }}</h2>
+                <p class="cover-quote-shell__copy mb-0" [innerHTML]="'HOUSTON_HOME_TX.QUOTE.COPY' | translateHtml | async"></p>
+              </div>
+            </div>
+
+            <div class="coverd-quote-card">
+              <div class="quote-options">
+                @for (item of chips; track item.name) {
+                <button type="button" class="quote-option" *ngIf="item.name"
+                  [class.selected]="coveredForm.selectedChip === item.name" [attr.aria-pressed]="coveredForm.selectedChip === item.name"
+                  (click)="selectChip(coveredForm, item.name)">
+                  <span class="icon-badge">
+                    <span class="icon-burst"></span>
+                    <img [src]="item.image" [alt]="item.name | translate" class="quote-option-image" />
+                  </span>
+                  <span class="quote-option-label">
+                    <span class="radio-indicator"></span>
+                    <span [innerHTML]="item.name | translateHtml | async"></span>
+                  </span>
+                </button>
+                }
+              </div>
+
+              <div class="quote-form-row">
+                <input type="text" [placeholder]="'HOME_INSURANCE.BANNER.FORM.FULL_NAME' | translate"
+                  class="form-control" [value]="coveredForm.fullName" (input)="coveredForm.fullName = $any($event.target).value" />
+                <input type="tel" appPhoneFormat [placeholder]="'HOME_INSURANCE.BANNER.FORM.PHONE' | translate"
+                  class="form-control" [value]="coveredForm.phone" (input)="coveredForm.phone = $any($event.target).value" />
+                <button class="quote-submit" [disabled]="coveredForm.isSubmitting || !coveredForm.selectedChip || !coveredForm.fullName.trim() || !coveredForm.phone.trim() || !coveredForm.termsAccepted" (click)="goToSelectedQuote(coveredForm)">
+                  {{ coveredForm.isSubmitting ? 'Loading...' : ('HOME_INSURANCE.BANNER.FORM.BUTTON' | translate) }}
+                </button>
+              </div>
+              <div class="form-check terms-consent mt-3 mb-0">
+                <input class="form-check-input terms-check" type="checkbox" id="termsCheck2"
+                  (change)="coveredForm.termsAccepted = $any($event.target).checked" [checked]="coveredForm.termsAccepted" />
+                <label class="form-check-label terms-check-label small text-light" for="termsCheck2"
+                  [innerHTML]="'QUOTE_SMS_CONSENT_GET_QUOTE' | translateHtml | async"></label>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Get Covered Section End -->
+
+  <!-- footuper -->
+  <app-foot-upper></app-foot-upper>
+  <!--  -->
+</div>
