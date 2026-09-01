@@ -34,7 +34,7 @@ export class GetHealthQuote {
     this.healthQuoteForm = this.fb.group({
       type: ['health'],
       who_needs_coverage: ['', Validators.required],
-      zip_code: ['', Validators.required],
+      zip_code: ['', [Validators.required, Validators.pattern(/^\d{5}$/)]],
       household_size: ['', Validators.required],
       household_income: ['', Validators.required],
       uses_tobacco: ['', Validators.required],

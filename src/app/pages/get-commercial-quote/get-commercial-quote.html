@@ -75,9 +75,40 @@
                   <input type="text" 
                          formControlName="business_zip_code"
                          [class.is-invalid]="commercialQuoteForm.get('business_zip_code')?.invalid && commercialQuoteForm.get('business_zip_code')?.touched"
-                         class="form-control" 
-                         placeholder="10001" />
+                         class="form-control"
+                         placeholder="10001" maxlength="5" inputmode="numeric" />
                   <div class="invalid-feedback" *ngIf="commercialQuoteForm.get('business_zip_code')?.invalid && commercialQuoteForm.get('business_zip_code')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                </div>
+              </div>
+
+              <div class="row gy-3 mb-3 mt-2">
+                <div class="col-md-4">
+                  <label class="form-label"><span [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP1.FIELDS.ENTITY_TYPE' | translateHtml | async"></span><span>*</span></label>
+                  <select class="form-select" formControlName="business_entity_type" [class.is-invalid]="commercialQuoteForm.get('business_entity_type')?.invalid && commercialQuoteForm.get('business_entity_type')?.touched">
+                    <option *ngFor="
+                        let option of 'GET_COMMERCIAL_QUOTE.STEPPER.STEP1.FIELDS.ENTITY_TYPE_OPTIONS' | translate
+                      " [value]="option">
+                      {{ option }}
+                    </option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="
+                      commercialQuoteForm.get('business_entity_type')?.invalid &&
+                      commercialQuoteForm.get('business_entity_type')?.touched
+                    " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label"><span [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP1.FIELDS.BUSINESS_STATE' | translateHtml | async"></span><span>*</span></label>
+                  <select class="form-select" formControlName="business_state" [class.is-invalid]="commercialQuoteForm.get('business_state')?.invalid && commercialQuoteForm.get('business_state')?.touched">
+                    <option *ngFor="
+                        let option of 'GET_COMMERCIAL_QUOTE.STEPPER.STEP1.FIELDS.BUSINESS_STATE_OPTIONS' | translate
+                      " [value]="option">
+                      {{ option }}
+                    </option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="
+                      commercialQuoteForm.get('business_state')?.invalid &&
+                      commercialQuoteForm.get('business_state')?.touched
+                    " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>
               </div>
               <div class="d-flex gap-3 mt-4">
@@ -129,6 +160,28 @@
                     </select>
                     <div class="invalid-feedback" *ngIf="commercialQuoteForm.get('estimated_annual_revenue')?.invalid && commercialQuoteForm.get('estimated_annual_revenue')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                   </div>
+
+                  <div class="col-md-4">
+                    <label class="form-label" [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP2.FIELDS.BUSINESS_VEHICLES' | translateHtml | async"></label>
+                    <select class="form-select" formControlName="business_vehicles"
+                            [class.is-invalid]="commercialQuoteForm.get('business_vehicles')?.invalid && commercialQuoteForm.get('business_vehicles')?.touched">
+                      <option
+                        *ngFor="let option of ('GET_COMMERCIAL_QUOTE.STEPPER.STEP2.FIELDS.BUSINESS_VEHICLES_OPTIONS' | translate)"
+                        [value]="option">{{ option }}</option>
+                    </select>
+                    <div class="invalid-feedback" *ngIf="commercialQuoteForm.get('business_vehicles')?.invalid && commercialQuoteForm.get('business_vehicles')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <label class="form-label" [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP2.FIELDS.LOCATION_TYPE' | translateHtml | async"></label>
+                    <select class="form-select" formControlName="business_location_type"
+                            [class.is-invalid]="commercialQuoteForm.get('business_location_type')?.invalid && commercialQuoteForm.get('business_location_type')?.touched">
+                      <option
+                        *ngFor="let option of ('GET_COMMERCIAL_QUOTE.STEPPER.STEP2.FIELDS.LOCATION_TYPE_OPTIONS' | translate)"
+                        [value]="option">{{ option }}</option>
+                    </select>
+                    <div class="invalid-feedback" *ngIf="commercialQuoteForm.get('business_location_type')?.invalid && commercialQuoteForm.get('business_location_type')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                  </div>
                 </div>
                 <div class="d-flex gap-3 mt-4">
                   <button type="button" class="btn btn-previous" (click)="previousStep()">{{ 'GET_COMMERCIAL_QUOTE.PREVIOUS_BUTTON' | translate
@@ -159,6 +212,19 @@
                       </div>
                       <div class="invalid-feedback d-block" *ngIf="commercialQuoteForm.get('coverage_items')?.invalid && commercialQuoteForm.get('coverage_items')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                     </div>
+                  </div>
+                </div>
+
+                <div class="row gy-3 mt-3">
+                  <div class="col-md-8">
+                    <label class="form-label"><span [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP3.POLICY_TITLE' | translateHtml | async"></span><span>*</span></label>
+                    <select class="form-select" formControlName="policy_status"
+                            [class.is-invalid]="commercialQuoteForm.get('policy_status')?.invalid && commercialQuoteForm.get('policy_status')?.touched">
+                      <option
+                        *ngFor="let option of ('GET_COMMERCIAL_QUOTE.STEPPER.STEP3.POLICY_OPTIONS' | translate)"
+                        [value]="option">{{ option }}</option>
+                    </select>
+                    <div class="invalid-feedback" *ngIf="commercialQuoteForm.get('policy_status')?.invalid && commercialQuoteForm.get('policy_status')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                   </div>
                 </div>
 
@@ -215,6 +281,15 @@
                            placeholder="johndoe@email.com" />
                     <div class="invalid-feedback" *ngIf="commercialQuoteForm.get('email_address')?.invalid && commercialQuoteForm.get('email_address')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.EMAIL' | translateHtml | async"></div>
                   </div>
+                  <div class="col-md-4">
+                    <label class="form-label"><span [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP4.FIELDS.JOB_TITLE' | translateHtml | async"></span><span>*</span></label>
+                    <select class="form-select" formControlName="job_title"
+                            [class.is-invalid]="commercialQuoteForm.get('job_title')?.invalid && commercialQuoteForm.get('job_title')?.touched">
+                      <option *ngFor="let option of ('GET_COMMERCIAL_QUOTE.STEPPER.STEP4.FIELDS.JOB_TITLE_OPTIONS' | translate)"
+                        [value]="option">{{ option }}</option>
+                    </select>
+                    <div class="invalid-feedback" *ngIf="commercialQuoteForm.get('job_title')?.invalid && commercialQuoteForm.get('job_title')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                  </div>
 
                 </div>
 
@@ -248,6 +323,15 @@
                         [value]="option">{{ option }}</option>
                     </select>
                     <div class="invalid-feedback" *ngIf="commercialQuoteForm.get('best_time_to_connect')?.invalid && commercialQuoteForm.get('best_time_to_connect')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label" [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP4.CONTACT_METHOD_TITLE' | translateHtml | async"></label>
+                    <select class="form-select" formControlName="preferred_contact_method"
+                            [class.is-invalid]="commercialQuoteForm.get('preferred_contact_method')?.invalid && commercialQuoteForm.get('preferred_contact_method')?.touched">
+                      <option *ngFor="let option of ('GET_COMMERCIAL_QUOTE.STEPPER.STEP4.CONTACT_METHOD_OPTIONS' | translate)"
+                        [value]="option">{{ option }}</option>
+                    </select>
+                    <div class="invalid-feedback" *ngIf="commercialQuoteForm.get('preferred_contact_method')?.invalid && commercialQuoteForm.get('preferred_contact_method')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                   </div>
                 </div>
 
@@ -285,6 +369,12 @@
             <li><strong [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.BUSINESS_ZIP_CODE' | translateHtml | async"></strong>:
               {{ commercialQuoteForm.get('business_zip_code')?.value }}
             </li>
+            <li><strong [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP1.FIELDS.ENTITY_TYPE' | translateHtml | async"></strong>:
+              {{ commercialQuoteForm.get('business_entity_type')?.value }}
+            </li>
+            <li><strong [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP1.FIELDS.BUSINESS_STATE' | translateHtml | async"></strong>:
+              {{ commercialQuoteForm.get('business_state')?.value }}
+            </li>
           </ul>
         </div>
 
@@ -302,8 +392,16 @@
             </li>
 
             <li>
-              <strong [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.ANNUAL_REVENUE' | translateHtml | async"></strong>: 
+              <strong [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.ANNUAL_REVENUE' | translateHtml | async"></strong>:
             {{ commercialQuoteForm.get('estimated_annual_revenue')?.value }}
+            </li>
+            <li>
+              <strong [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP2.FIELDS.BUSINESS_VEHICLES' | translateHtml | async"></strong>:
+            {{ commercialQuoteForm.get('business_vehicles')?.value }}
+            </li>
+            <li>
+              <strong [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP2.FIELDS.LOCATION_TYPE' | translateHtml | async"></strong>:
+            {{ commercialQuoteForm.get('business_location_type')?.value }}
             </li>
           </ul>
         </div>
@@ -315,6 +413,7 @@
           </div>
           <ul class="list-unstyled mb-0">
             <li><strong [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.COVERAGE_SELECTION' | translateHtml | async"></strong>: {{ commercialQuoteForm.value.coverage_items.join(', ') || 'None' }}</li>
+            <li><strong [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP3.POLICY_TITLE' | translateHtml | async"></strong> {{ commercialQuoteForm.get('policy_status')?.value || 'None' }}</li>
             <li><strong [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.BUNDLE_SAVE' | translateHtml | async"></strong>: {{ commercialQuoteForm.get('bundle_option')?.value || 'None' }}
             </li>
 
@@ -328,11 +427,14 @@
           </div>
           <ul class="list-unstyled mb-0">
             <li><strong [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.CONTACT_NAME' | translateHtml | async"></strong>: {{ commercialQuoteForm.get('contact_name')?.value }}</li>
+            <li><strong [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP4.FIELDS.JOB_TITLE' | translateHtml | async"></strong>: {{ commercialQuoteForm.get('job_title')?.value }}</li>
             <li><strong [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.EMAIL_ADDRESS' | translateHtml | async"></strong>: {{ commercialQuoteForm.get('email_address')?.value }}</li>
             <li><strong [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.PHONE_NUMBER' | translateHtml | async"></strong>: {{ commercialQuoteForm.get('phone_number')?.value }}</li>
             <li><strong [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.PREFERRED_LANGUAGE' | translateHtml | async"></strong>: {{ commercialQuoteForm.get('preferred_language')?.value }}
             </li>
             <li><strong [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.BEST_TIME' | translateHtml | async"></strong>: {{ commercialQuoteForm.get('best_time_to_connect')?.value }}
+            </li>
+            <li><strong [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP4.CONTACT_METHOD_TITLE' | translateHtml | async"></strong>: {{ commercialQuoteForm.get('preferred_contact_method')?.value }}
             </li>
           </ul>
         </div>

@@ -15,6 +15,7 @@ export class GetHomeQuote {
 
   homeQuoteForm!: FormGroup;
   bundleOptions: string[] = [];
+  insuredOptions: string[] = [];
   reachOption: string[] = [];
 
   timeOptions: string[] = [];
@@ -38,14 +39,22 @@ export class GetHomeQuote {
       property_address: ['', Validators.required],
       is_primary_residence: ['', Validators.required],
       property_type: ['', Validators.required],
-      year_built: ['', Validators.required],
+      ownership_status: ['', Validators.required],
+      year_built: ['', [Validators.required, Validators.pattern(/^\d{4}$/)]],
       square_footage: ['', Validators.required],
       number_of_stories: ['', Validators.required],
       roof_age: ['', Validators.required],
+      roof_type: ['', Validators.required],
+      construction_type: ['', Validators.required],
       has_alarm_system: ['', Validators.required],
       has_swimming_pool: ['', Validators.required],
       has_pets: ['', Validators.required],
+      has_trampoline: ['', Validators.required],
+      recent_claims: ['', Validators.required],
       current_insurance_status: ['', Validators.required],
+      current_carrier: [''],
+      renewal_date: [''],
+      needs_flood_insurance: ['', Validators.required],
       bundle_option: ['', Validators.required],
       full_name: ['', Validators.required],
       email_address: ['', [Validators.required, Validators.email]],
@@ -62,6 +71,28 @@ export class GetHomeQuote {
       });
 
     this.translate
+      .get('GET_HOME_QUOTE.STEPPER.STEP4.INSURED_OPTIONS')
+      .subscribe((res: string[]) => {
+        this.insuredOptions = res;
+      });
+
+    this.homeQuoteForm.get('current_insurance_status')!.valueChanges.subscribe(() => {
+      const carrier = this.homeQuoteForm.get('current_carrier')!;
+      const renewal = this.homeQuoteForm.get('renewal_date')!;
+      if (this.isCurrentlyInsured) {
+        carrier.setValidators(Validators.required);
+        renewal.setValidators(Validators.required);
+      } else {
+        carrier.clearValidators();
+        renewal.clearValidators();
+        carrier.reset('');
+        renewal.reset('');
+      }
+      carrier.updateValueAndValidity();
+      renewal.updateValueAndValidity();
+    });
+
+    this.translate
       .get('GET_HOME_QUOTE.STEPPER.STEP5.CONTACT_OPTIONS')
       .subscribe((res: string[]) => {
         this.reachOption = res;
@@ -74,6 +105,11 @@ export class GetHomeQuote {
       });
 
     this.applyPrefillFromQueryParams();
+  }
+
+  get isCurrentlyInsured(): boolean {
+    const value = this.homeQuoteForm?.get('current_insurance_status')?.value;
+    return !!value && value === this.insuredOptions[0];
   }
 
   private applyPrefillFromQueryParams() {
@@ -145,6 +181,7 @@ export class GetHomeQuote {
           this.homeQuoteForm.get('property_address')!,
           this.homeQuoteForm.get('is_primary_residence')!,
           this.homeQuoteForm.get('property_type')!,
+          this.homeQuoteForm.get('ownership_status')!,
         ];
       case 2:
         return [
@@ -152,16 +189,23 @@ export class GetHomeQuote {
           this.homeQuoteForm.get('square_footage')!,
           this.homeQuoteForm.get('number_of_stories')!,
           this.homeQuoteForm.get('roof_age')!,
+          this.homeQuoteForm.get('roof_type')!,
+          this.homeQuoteForm.get('construction_type')!,
         ];
       case 3:
         return [
           this.homeQuoteForm.get('has_alarm_system')!,
           this.homeQuoteForm.get('has_swimming_pool')!,
           this.homeQuoteForm.get('has_pets')!,
+          this.homeQuoteForm.get('has_trampoline')!,
+          this.homeQuoteForm.get('recent_claims')!,
         ];
       case 4:
         return [
           this.homeQuoteForm.get('current_insurance_status')!,
+          this.homeQuoteForm.get('current_carrier')!,
+          this.homeQuoteForm.get('renewal_date')!,
+          this.homeQuoteForm.get('needs_flood_insurance')!,
           this.homeQuoteForm.get('bundle_option')!,
         ];
       case 5:
