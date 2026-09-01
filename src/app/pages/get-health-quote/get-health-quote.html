@@ -53,7 +53,7 @@
                   <label class="form-label"><span [innerHTML]="'GET_HEALTH_QUOTE.STEPPER.STEP1.FIELDS.ZIPCODE' | translateHtml | async"></span><span>*</span></label>
                   <input type="text" formControlName="zip_code"
                     [class.is-invalid]="healthQuoteForm.get('zip_code')?.invalid && healthQuoteForm.get('zip_code')?.touched"
-                    class="form-control" placeholder="3232" />
+                    class="form-control" placeholder="12345" maxlength="5" inputmode="numeric" />
                   <div class="invalid-feedback"
                     *ngIf="healthQuoteForm.get('zip_code')?.invalid && healthQuoteForm.get('zip_code')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>

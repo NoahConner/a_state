@@ -50,7 +50,7 @@
                 </div>
                 <div class="col-md-4">
                   <label class="form-label"><span [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP1.FIELDS.ZIPCODE' | translateHtml | async"></span><span>*</span></label>
-                  <input type="text" class="form-control" placeholder="12345" formControlName="zip_code"
+                  <input type="text" class="form-control" placeholder="12345" maxlength="5" inputmode="numeric" formControlName="zip_code"
                     [class.is-invalid]="autoQuoteForm.get('zip_code')?.invalid && autoQuoteForm.get('zip_code')?.touched" />
                   <div class="invalid-feedback"
                     *ngIf="autoQuoteForm.get('zip_code')?.invalid && autoQuoteForm.get('zip_code')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
@@ -100,7 +100,7 @@
                 <div class="row gy-3 mb-3">
                   <div class="col-md-3">
                     <label class="form-label"><span [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.YEAR' | translateHtml | async"></span><span>*</span></label>
-                    <input type="text" class="form-control" placeholder="2025" formControlName="year"
+                    <input type="text" class="form-control" placeholder="2025" maxlength="4" inputmode="numeric" formControlName="year"
                       [class.is-invalid]="vehicle.get('year')?.invalid && vehicle.get('year')?.touched" />
                     <div class="invalid-feedback" *ngIf="vehicle.get('year')?.invalid && vehicle.get('year')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                   </div>
@@ -122,15 +122,23 @@
                 <div class="row gy-3">
                   <div class="col-md-4">
                     <label class="form-label"><span [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.OWNERSHIP' | translateHtml | async"></span><span>*</span></label>
-                    <input type="text" class="form-control" placeholder="Owned" formControlName="ownership"
-                      [class.is-invalid]="vehicle.get('ownership')?.invalid && vehicle.get('ownership')?.touched" />
+                    <select class="form-select" formControlName="ownership"
+                      [class.is-invalid]="vehicle.get('ownership')?.invalid && vehicle.get('ownership')?.touched">
+                      <option *ngFor="let option of 'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.OWNERSHIP_OPTIONS' | translate" [value]="option">
+                        {{ option }}
+                      </option>
+                    </select>
                     <div class="invalid-feedback"
                       *ngIf="vehicle.get('ownership')?.invalid && vehicle.get('ownership')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                   </div>
                   <div class="col-md-4">
                     <label class="form-label"><span [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.PRIMARY_USE' | translateHtml | async"></span><span>*</span></label>
-                    <input type="text" class="form-control" placeholder="Personal" formControlName="primary_use"
-                      [class.is-invalid]="vehicle.get('primary_use')?.invalid && vehicle.get('primary_use')?.touched" />
+                    <select class="form-select" formControlName="primary_use"
+                      [class.is-invalid]="vehicle.get('primary_use')?.invalid && vehicle.get('primary_use')?.touched">
+                      <option *ngFor="let option of 'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.PRIMARY_USE_OPTIONS' | translate" [value]="option">
+                        {{ option }}
+                      </option>
+                    </select>
                     <div class="invalid-feedback"
                       *ngIf="vehicle.get('primary_use')?.invalid && vehicle.get('primary_use')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                   </div>

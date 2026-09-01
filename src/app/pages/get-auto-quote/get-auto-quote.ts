@@ -36,7 +36,7 @@ export class GetAutoQuote {
     this.autoQuoteForm = this.fb.group({
       type: ['auto'],
       first_name: ['', Validators.required],
-      zip_code: ['', Validators.required],
+      zip_code: ['', [Validators.required, Validators.pattern(/^\d{5}$/)]],
       email_address: ['', [Validators.required, Validators.email]],
       phone_number: ['', Validators.required],
       vehicles: this.fb.array([]),
@@ -85,7 +85,7 @@ export class GetAutoQuote {
   addVehicle() {
     this.vehicles.push(
       this.fb.group({
-        year: ['', Validators.required],
+        year: ['', [Validators.required, Validators.pattern(/^\d{4}$/)]],
         make: ['', Validators.required],
         model: ['', Validators.required],
         ownership: ['', Validators.required],

@@ -39,10 +39,16 @@ export class GetLifeQuote {
       phone_number: ['', Validators.required],
       gender: ['', Validators.required],
       date_of_birth: ['', Validators.required],
-      zip_code: ['', Validators.required],
+      zip_code: ['', [Validators.required, Validators.pattern(/^\d{5}$/)]],
+      marital_status: ['', Validators.required],
+      height: ['', Validators.required],
+      weight: ['', Validators.required],
       uses_tobacco: ['', Validators.required],
       general_health: ['', Validators.required],
+      health_conditions: ['', Validators.required],
+      insurance_type: ['', Validators.required],
       coverage_amount: ['', Validators.required],
+      coverage_term_length: ['', Validators.required],
       bundle_option: ['', Validators.required],
       preferred_language: ['', Validators.required],
       contact_method: ['', Validators.required],
@@ -166,15 +172,21 @@ export class GetLifeQuote {
           this.lifeQuoteForm.get('gender')!,
           this.lifeQuoteForm.get('date_of_birth')!,
           this.lifeQuoteForm.get('zip_code')!,
+          this.lifeQuoteForm.get('marital_status')!,
         ];
       case 2:
         return [
+          this.lifeQuoteForm.get('height')!,
+          this.lifeQuoteForm.get('weight')!,
           this.lifeQuoteForm.get('uses_tobacco')!,
           this.lifeQuoteForm.get('general_health')!,
+          this.lifeQuoteForm.get('health_conditions')!,
         ];
       case 3:
         return [
+          this.lifeQuoteForm.get('insurance_type')!,
           this.lifeQuoteForm.get('coverage_amount')!,
+          this.lifeQuoteForm.get('coverage_term_length')!,
           this.lifeQuoteForm.get('bundle_option')!,
         ];
       case 4:

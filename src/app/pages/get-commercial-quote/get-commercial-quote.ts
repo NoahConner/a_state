@@ -35,13 +35,20 @@ export class GetCommercialQuote {
       type: ['commercial'],
       business_name: ['', Validators.required],
       industry_type: ['', Validators.required],
-      business_zip_code: ['', Validators.required],
+      business_zip_code: ['', [Validators.required, Validators.pattern(/^\d{5}$/)]],
+      business_entity_type: ['', Validators.required],
+      business_state: ['', Validators.required],
       years_in_business: ['', Validators.required],
       number_of_employees: ['', Validators.required],
       estimated_annual_revenue: ['', Validators.required],
+      business_vehicles: ['', Validators.required],
+      business_location_type: ['', Validators.required],
       coverage_items: this.fb.array([], Validators.required),
+      policy_status: ['', Validators.required],
       bundle_option: ['', Validators.required],
       contact_name: ['', Validators.required],
+      job_title: ['', Validators.required],
+      preferred_contact_method: ['', Validators.required],
       email_address: ['', [Validators.required, Validators.email]],
       phone_number: ['', Validators.required],
       preferred_language: ['', Validators.required],
@@ -159,16 +166,21 @@ export class GetCommercialQuote {
           this.commercialQuoteForm.get('business_name')!,
           this.commercialQuoteForm.get('industry_type')!,
           this.commercialQuoteForm.get('business_zip_code')!,
+          this.commercialQuoteForm.get('business_entity_type')!,
+          this.commercialQuoteForm.get('business_state')!,
         ];
       case 2:
         return [
           this.commercialQuoteForm.get('years_in_business')!,
           this.commercialQuoteForm.get('number_of_employees')!,
           this.commercialQuoteForm.get('estimated_annual_revenue')!,
+          this.commercialQuoteForm.get('business_vehicles')!,
+          this.commercialQuoteForm.get('business_location_type')!,
         ];
       case 3:
         return [
           this.commercialQuoteForm.get('coverage_items')!,
+          this.commercialQuoteForm.get('policy_status')!,
           this.commercialQuoteForm.get('bundle_option')!,
         ];
       case 4:
@@ -176,8 +188,10 @@ export class GetCommercialQuote {
           this.commercialQuoteForm.get('contact_name')!,
           this.commercialQuoteForm.get('email_address')!,
           this.commercialQuoteForm.get('phone_number')!,
+          this.commercialQuoteForm.get('job_title')!,
           this.commercialQuoteForm.get('preferred_language')!,
           this.commercialQuoteForm.get('best_time_to_connect')!,
+          this.commercialQuoteForm.get('preferred_contact_method')!,
         ];
       default:
         return [];

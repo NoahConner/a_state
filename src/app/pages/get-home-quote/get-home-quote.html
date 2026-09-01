@@ -101,6 +101,24 @@
                     " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>
               </div>
+
+              <div class="row gy-3 mb-3 mt-2">
+                <div class="col-md-8">
+                  <label class="form-label"><span
+                      [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP1.FIELDS.OWNERSHIP_STATUS' | translateHtml | async"></span><span>*</span></label>
+                  <select class="form-select" formControlName="ownership_status" [class.is-invalid]="homeQuoteForm.get('ownership_status')?.invalid && homeQuoteForm.get('ownership_status')?.touched">
+                    <option *ngFor="
+                        let option of 'GET_HOME_QUOTE.STEPPER.STEP1.FIELDS.OWNERSHIP_STATUS_OPTIONS' | translate
+                      " [value]="option">
+                      {{ option }}
+                    </option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="
+                      homeQuoteForm.get('ownership_status')?.invalid &&
+                      homeQuoteForm.get('ownership_status')?.touched
+                    " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                </div>
+              </div>
               <div class="d-flex gap-3 mt-4">
           <button type="submit" class="btn btn-next" (click)="nextStep()">
                   {{ 'GET_HOME_QUOTE.NEXT_BUTTON' | translate }}
@@ -124,7 +142,7 @@
                   <input type="text" class="form-control" formControlName="year_built" [class.is-invalid]="
                       homeQuoteForm.get('year_built')?.invalid &&
                       homeQuoteForm.get('year_built')?.touched
-                    " placeholder="2025" />
+                    " placeholder="2025" maxlength="4" inputmode="numeric" />
                   <div class="invalid-feedback" *ngIf="
                       homeQuoteForm.get('year_built')?.invalid &&
                       homeQuoteForm.get('year_built')?.touched
@@ -177,7 +195,44 @@
                       homeQuoteForm.get('roof_age')?.invalid &&
                       homeQuoteForm.get('roof_age')?.touched
                     " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-               
+
+                </div>
+              </div>
+
+              <div class="row gy-3 mt-1">
+                <div class="col-md-4">
+                  <label class="form-label">
+                    <span
+                      [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP2.FIELDS.ROOF_TYPE' | translateHtml | async"></span><span>*</span>
+                  </label>
+                  <select class="form-select" formControlName="roof_type" [class.is-invalid]="homeQuoteForm.get('roof_type')?.invalid && homeQuoteForm.get('roof_type')?.touched">
+                    <option *ngFor="
+                        let option of 'GET_HOME_QUOTE.STEPPER.STEP2.FIELDS.ROOF_TYPE_OPTIONS' | translate
+                      " [value]="option">
+                      {{ option }}
+                    </option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="
+                      homeQuoteForm.get('roof_type')?.invalid &&
+                      homeQuoteForm.get('roof_type')?.touched
+                    " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">
+                    <span
+                      [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP2.FIELDS.CONSTRUCTION_TYPE' | translateHtml | async"></span><span>*</span>
+                  </label>
+                  <select class="form-select" formControlName="construction_type" [class.is-invalid]="homeQuoteForm.get('construction_type')?.invalid && homeQuoteForm.get('construction_type')?.touched">
+                    <option *ngFor="
+                        let option of 'GET_HOME_QUOTE.STEPPER.STEP2.FIELDS.CONSTRUCTION_TYPE_OPTIONS' | translate
+                      " [value]="option">
+                      {{ option }}
+                    </option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="
+                      homeQuoteForm.get('construction_type')?.invalid &&
+                      homeQuoteForm.get('construction_type')?.touched
+                    " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>
               </div>
               <div class="d-flex gap-3 mt-4">
@@ -273,6 +328,65 @@
                 </div>
               </div>
 
+              <div class="selection-group mt-4">
+                <h4 class="selection-heading"
+                  [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.TRAMPOLINE' | translateHtml | async"></h4>
+
+                <div class="coverage-options">
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" id="has_trampoline_yes"
+                      formControlName="has_trampoline" value="Yes" />
+                    <label class="form-check-label" for="has_trampoline_yes"
+                      [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.TRAMPOLINE_YES' | translateHtml | async"></label><br />
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" id="has_trampoline_no"
+                      formControlName="has_trampoline" value="No" />
+                    <label class="form-check-label" for="has_trampoline_no"
+                      [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.TRAMPOLINE_NO' | translateHtml | async"></label>
+                  </div>
+
+                  <div class="invalid-feedback d-block" *ngIf="
+                      homeQuoteForm.get('has_trampoline')?.invalid &&
+                      homeQuoteForm.get('has_trampoline')?.touched
+                    " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                </div>
+              </div>
+
+              <div class="selection-group mt-4">
+                <h4 class="selection-heading"
+                  [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.RECENT_CLAIMS' | translateHtml | async"></h4>
+
+                <div class="coverage-options">
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" id="recent_claims_yes"
+                      formControlName="recent_claims" value="Yes" />
+                    <label class="form-check-label" for="recent_claims_yes"
+                      [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.RECENT_CLAIMS_YES' | translateHtml | async"></label><br />
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" id="recent_claims_no"
+                      formControlName="recent_claims" value="No" />
+                    <label class="form-check-label" for="recent_claims_no"
+                      [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.RECENT_CLAIMS_NO' | translateHtml | async"></label><br />
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" id="recent_claims_not_sure"
+                      formControlName="recent_claims" value="Not sure" />
+                    <label class="form-check-label" for="recent_claims_not_sure"
+                      [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.RECENT_CLAIMS_NOT_SURE' | translateHtml | async"></label>
+                  </div>
+
+                  <div class="invalid-feedback d-block" *ngIf="
+                      homeQuoteForm.get('recent_claims')?.invalid &&
+                      homeQuoteForm.get('recent_claims')?.touched
+                    " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                </div>
+              </div>
+
               <div class="d-flex gap-3 mt-4">
                 <button type="button" class="btn btn-previous" (click)="previousStep()">
                   {{ 'GET_HOME_QUOTE.PREVIOUS_BUTTON' | translate }}
@@ -301,6 +415,68 @@
                       {{ option }}
                     </option>
                   </select>
+                </div>
+              </div>
+
+              <div class="row gy-3 mt-1" *ngIf="isCurrentlyInsured">
+                <div class="col-md-8">
+                  <label class="form-label"
+                    [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP4.CARRIER_LABEL' | translateHtml | async"></label>
+                  <input type="text" class="form-control" formControlName="current_carrier"
+                    [class.is-invalid]="homeQuoteForm.get('current_carrier')?.invalid && homeQuoteForm.get('current_carrier')?.touched"
+                    placeholder="Provider Name" />
+                  <div class="invalid-feedback" *ngIf="
+                      homeQuoteForm.get('current_carrier')?.invalid &&
+                      homeQuoteForm.get('current_carrier')?.touched
+                    " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                </div>
+              </div>
+
+              <div class="row gy-3 mt-1" *ngIf="isCurrentlyInsured">
+                <div class="col-md-8">
+                  <label class="form-label"
+                    [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP4.RENEWAL_LABEL' | translateHtml | async"></label>
+                  <input type="date" class="form-control" formControlName="renewal_date"
+                    [class.is-invalid]="homeQuoteForm.get('renewal_date')?.invalid && homeQuoteForm.get('renewal_date')?.touched" />
+                  <div class="invalid-feedback" *ngIf="
+                      homeQuoteForm.get('renewal_date')?.invalid &&
+                      homeQuoteForm.get('renewal_date')?.touched
+                    " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                </div>
+              </div>
+
+              <div class="row gy-3 mt-2">
+                <div class="selection-group">
+                  <h4 class="selection-heading"
+                    [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP4.FLOOD_TITLE' | translateHtml | async"></h4>
+
+                  <div class="coverage-options">
+                    <div class="form-check">
+                      <input type="radio" class="form-check-input" id="needs_flood_insurance_yes"
+                        formControlName="needs_flood_insurance" value="Yes" />
+                      <label class="form-check-label" for="needs_flood_insurance_yes"
+                        [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP4.FLOOD_YES' | translateHtml | async"></label><br />
+                    </div>
+
+                    <div class="form-check">
+                      <input type="radio" class="form-check-input" id="needs_flood_insurance_no"
+                        formControlName="needs_flood_insurance" value="No" />
+                      <label class="form-check-label" for="needs_flood_insurance_no"
+                        [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP4.FLOOD_NO' | translateHtml | async"></label><br />
+                    </div>
+
+                    <div class="form-check">
+                      <input type="radio" class="form-check-input" id="needs_flood_insurance_not_sure"
+                        formControlName="needs_flood_insurance" value="Not sure" />
+                      <label class="form-check-label" for="needs_flood_insurance_not_sure"
+                        [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP4.FLOOD_NOT_SURE' | translateHtml | async"></label>
+                    </div>
+
+                    <div class="invalid-feedback d-block" *ngIf="
+                        homeQuoteForm.get('needs_flood_insurance')?.invalid &&
+                        homeQuoteForm.get('needs_flood_insurance')?.touched
+                      " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                  </div>
                 </div>
               </div>
 
@@ -478,6 +654,11 @@
                 [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.PROPERTY_TYPE' | translateHtml | async"></strong>:
               {{ homeQuoteForm.get('property_type')?.value }}
             </li>
+            <li>
+              <strong
+                [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP1.FIELDS.OWNERSHIP_STATUS' | translateHtml | async"></strong>:
+              {{ homeQuoteForm.get('ownership_status')?.value }}
+            </li>
           </ul>
         </div>
 
@@ -509,6 +690,16 @@
                 [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.ROOF_AGE' | translateHtml | async"></strong>: {{
               homeQuoteForm.get('roof_age')?.value }}
             </li>
+            <li>
+              <strong
+                [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP2.FIELDS.ROOF_TYPE' | translateHtml | async"></strong>: {{
+              homeQuoteForm.get('roof_type')?.value }}
+            </li>
+            <li>
+              <strong
+                [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP2.FIELDS.CONSTRUCTION_TYPE' | translateHtml | async"></strong>: {{
+              homeQuoteForm.get('construction_type')?.value }}
+            </li>
           </ul>
         </div>
 
@@ -535,6 +726,16 @@
               {{
               homeQuoteForm.get('has_pets')?.value }}
             </li>
+            <li>
+              <strong [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.TRAMPOLINE' | translateHtml | async"></strong>
+              {{
+              homeQuoteForm.get('has_trampoline')?.value }}
+            </li>
+            <li>
+              <strong [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.RECENT_CLAIMS' | translateHtml | async"></strong>
+              {{
+              homeQuoteForm.get('recent_claims')?.value }}
+            </li>
           </ul>
         </div>
 
@@ -550,6 +751,21 @@
               <strong
                 [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.INSURED' | translateHtml | async"></strong>: {{
               homeQuoteForm.get('current_insurance_status')?.value }}
+            </li>
+            <li *ngIf="isCurrentlyInsured">
+              <strong
+                [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP4.CARRIER_LABEL' | translateHtml | async"></strong> {{
+              homeQuoteForm.get('current_carrier')?.value }}
+            </li>
+            <li *ngIf="isCurrentlyInsured">
+              <strong
+                [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP4.RENEWAL_LABEL' | translateHtml | async"></strong> {{
+              homeQuoteForm.get('renewal_date')?.value }}
+            </li>
+            <li>
+              <strong
+                [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP4.FLOOD_TITLE' | translateHtml | async"></strong> {{
+              homeQuoteForm.get('needs_flood_insurance')?.value }}
             </li>
             <li>
               <strong

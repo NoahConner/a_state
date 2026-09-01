@@ -162,24 +162,51 @@
                 <div class="row gy-3 mt-1">
                   <div class="col-md-8">
                     <label class="form-label"><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL1' | translateHtml | async"></span><span>*</span></label>
-                    <input type="text" 
-                           formControlName="currently_insured"
-                           [class.is-invalid]="customQuoteForm.get('currently_insured')?.invalid && customQuoteForm.get('currently_insured')?.touched"
-                           class="form-control" 
-                           placeholder="e.g. A brand new policy or Currently Insured" />
-                    <div class="invalid-feedback" *ngIf="customQuoteForm.get('currently_insured')?.invalid && customQuoteForm.get('currently_insured')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                    <select class="form-select"
+                            formControlName="looking_for"
+                            [class.is-invalid]="customQuoteForm.get('looking_for')?.invalid && customQuoteForm.get('looking_for')?.touched">
+                      <option *ngFor="let option of 'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL1_OPTIONS' | translate" [value]="option">
+                        {{ option }}
+                      </option>
+                    </select>
+                    <div class="invalid-feedback" *ngIf="customQuoteForm.get('looking_for')?.invalid && customQuoteForm.get('looking_for')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                   </div>
                 </div>
 
                 <div class="row gy-3 mt-4">
                   <div class="col-md-8">
                     <label class="form-label"><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL2' | translateHtml | async"></span><span>*</span></label>
-                    <input type="text" 
+                    <select class="form-select"
+                            formControlName="currently_insured"
+                            [class.is-invalid]="customQuoteForm.get('currently_insured')?.invalid && customQuoteForm.get('currently_insured')?.touched">
+                      <option *ngFor="let option of insuredOptions" [value]="option">
+                        {{ option }}
+                      </option>
+                    </select>
+                    <div class="invalid-feedback" *ngIf="customQuoteForm.get('currently_insured')?.invalid && customQuoteForm.get('currently_insured')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                  </div>
+                </div>
+
+                <div class="row gy-3 mt-4" *ngIf="isCurrentlyInsured">
+                  <div class="col-md-8">
+                    <label class="form-label"><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL3' | translateHtml | async"></span><span>*</span></label>
+                    <input type="text"
                            formControlName="current_insurance_provider"
                            [class.is-invalid]="customQuoteForm.get('current_insurance_provider')?.invalid && customQuoteForm.get('current_insurance_provider')?.touched"
-                           class="form-control" 
+                           class="form-control"
                            placeholder="Provider Name" />
                     <div class="invalid-feedback" *ngIf="customQuoteForm.get('current_insurance_provider')?.invalid && customQuoteForm.get('current_insurance_provider')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                  </div>
+                </div>
+
+                <div class="row gy-3 mt-4" *ngIf="isCurrentlyInsured">
+                  <div class="col-md-8">
+                    <label class="form-label"><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL4' | translateHtml | async"></span><span>*</span></label>
+                    <input type="date"
+                           formControlName="renewal_date"
+                           [class.is-invalid]="customQuoteForm.get('renewal_date')?.invalid && customQuoteForm.get('renewal_date')?.touched"
+                           class="form-control" />
+                    <div class="invalid-feedback" *ngIf="customQuoteForm.get('renewal_date')?.invalid && customQuoteForm.get('renewal_date')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                   </div>
                 </div>
 
@@ -282,8 +309,10 @@
             <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(3)" [attr.aria-disabled]="!canEditStep(3)" (click)="canEditStep(3) && goToStep(3)"><i class="bi bi-pencil-square"></i> <span [innerHTML]="'GET_CUSTOM_QUOTE.QUOTE_SUMMARY.CARD3.EDIT' | translateHtml | async"></span></a>
           </div>
           <ul class="list-unstyled mb-0">
-            <li><strong><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL1' | translateHtml | async"></span>:</strong> {{ customQuoteForm.get('currently_insured')?.value }}</li>
-            <li><strong><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL2' | translateHtml | async"></span>:</strong> {{ customQuoteForm.get('current_insurance_provider')?.value }}</li>
+            <li><strong><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL1' | translateHtml | async"></span></strong> {{ customQuoteForm.get('looking_for')?.value }}</li>
+            <li><strong><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL2' | translateHtml | async"></span></strong> {{ customQuoteForm.get('currently_insured')?.value }}</li>
+            <li *ngIf="isCurrentlyInsured"><strong><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL3' | translateHtml | async"></span></strong> {{ customQuoteForm.get('current_insurance_provider')?.value }}</li>
+            <li *ngIf="isCurrentlyInsured"><strong><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL4' | translateHtml | async"></span></strong> {{ customQuoteForm.get('renewal_date')?.value }}</li>
           </ul>
         </div>
 

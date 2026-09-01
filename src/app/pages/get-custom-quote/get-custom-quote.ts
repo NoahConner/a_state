@@ -16,6 +16,7 @@ export class GetCustomQuote {
   coverageOptions: string[] = [];
   contactOptions: string[] = [];
   reachOptions: string[] = [];
+  insuredOptions: string[] = [];
 
   currentStep = 1;
   totalSteps = 4;
@@ -47,8 +48,10 @@ export class GetCustomQuote {
       coverage_bundle_save: [0],
       coverage_other_details: [''],
 
+      looking_for: ['', Validators.required],
       currently_insured: ['', Validators.required],
-      current_insurance_provider: ['', Validators.required],
+      current_insurance_provider: [''],
+      renewal_date: [''],
 
       preferred_contact_method: ['', Validators.required],
       best_time_to_reach: ['', Validators.required],
@@ -68,6 +71,32 @@ export class GetCustomQuote {
       .subscribe((res: string[]) => {
         this.coverageOptions = res;
       });
+
+    this.translate.get('GET_CUSTOM_QUOTE.STEPPER.STEP3.FIELDLABEL2_OPTIONS')
+      .subscribe((res: string[]) => {
+        this.insuredOptions = res;
+      });
+
+    this.customQuoteForm.get('currently_insured')!.valueChanges.subscribe(() => {
+      const provider = this.customQuoteForm.get('current_insurance_provider')!;
+      const renewal = this.customQuoteForm.get('renewal_date')!;
+      if (this.isCurrentlyInsured) {
+        provider.setValidators(Validators.required);
+        renewal.setValidators(Validators.required);
+      } else {
+        provider.clearValidators();
+        renewal.clearValidators();
+        provider.reset('');
+        renewal.reset('');
+      }
+      provider.updateValueAndValidity();
+      renewal.updateValueAndValidity();
+    });
+  }
+
+  get isCurrentlyInsured(): boolean {
+    const value = this.customQuoteForm?.get('currently_insured')?.value;
+    return !!value && value === this.insuredOptions[0];
   }
 
   onCheckboxChange(e: any, controlName: string) {
@@ -151,8 +180,10 @@ export class GetCustomQuote {
         ];
       case 3:
         return [
+          this.customQuoteForm.get('looking_for')!,
           this.customQuoteForm.get('currently_insured')!,
           this.customQuoteForm.get('current_insurance_provider')!,
+          this.customQuoteForm.get('renewal_date')!,
         ];
       case 4:
         return [

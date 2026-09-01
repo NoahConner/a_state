@@ -1222,7 +1222,11 @@
       "STEP3": {
         "TITLE": "Policy Status",
         "FIELDLABEL1": "I am looking for:",
-        "FIELDLABEL2": "Current Insurance Status:"
+        "FIELDLABEL1_OPTIONS": ["New Policy", "Better Rate", "Add Driver/Property"],
+        "FIELDLABEL2": "Current Insurance Status:",
+        "FIELDLABEL2_OPTIONS": ["Currently Insured", "Not Insured"],
+        "FIELDLABEL3": "Current Carrier Name:",
+        "FIELDLABEL4": "Renewal/Expiration Date:"
       },
       "STEP4": {
         "TITLE": "Contact Preferences",
@@ -1297,7 +1301,9 @@
           "MAKE": "Make",
           "MODEL": "Model",
           "OWNERSHIP": "Ownership",
-          "PRIMARY_USE": "Primary Use"
+          "OWNERSHIP_OPTIONS": ["Owned", "Financed", "Leased"],
+          "PRIMARY_USE": "Primary Use",
+          "PRIMARY_USE_OPTIONS": ["Personal", "Commuting", "Business", "Rideshare"]
         }
       },
       "STEP3": {
@@ -1421,6 +1427,12 @@
             "Mobile Home",
             "Other"
           ],
+          "OWNERSHIP_STATUS": "Ownership Status",
+          "OWNERSHIP_STATUS_OPTIONS": [
+            "Own",
+            "Purchasing",
+            "Refinancing"
+          ],
           "ROOF_AGE": [
             "Brand New",
             "1–10 years",
@@ -1436,7 +1448,23 @@
           "YEAR_BUILT": "Year Built (Approximate)",
           "SQUARE_FOOTAGE": "Square Footage (Approximate)",
           "NUMBER_OF_STORIES": "Number of Stories",
-          "ROOF_AGE": "Roof Age"
+          "ROOF_AGE": "Roof Age",
+          "ROOF_TYPE": "Roof Type",
+          "ROOF_TYPE_OPTIONS": [
+            "Asphalt",
+            "Metal",
+            "Tile",
+            "Wood",
+            "Other",
+            "Not sure"
+          ],
+          "CONSTRUCTION_TYPE": "Construction Type",
+          "CONSTRUCTION_TYPE_OPTIONS": [
+            "Frame",
+            "Masonry",
+            "Mixed",
+            "Not sure"
+          ]
         }
       },
       "STEP3": {
@@ -1450,7 +1478,14 @@
           "SWIMMING_POOL_NO": "No",
           "PETS": "Are there any pets in the home?",
           "PETS_YES": "Yes",
-          "PETS_NO": "No"
+          "PETS_NO": "No",
+          "TRAMPOLINE": "Trampoline on the property?",
+          "TRAMPOLINE_YES": "Yes",
+          "TRAMPOLINE_NO": "No",
+          "RECENT_CLAIMS": "Any claims in the last 3–5 years?",
+          "RECENT_CLAIMS_YES": "Yes",
+          "RECENT_CLAIMS_NO": "No",
+          "RECENT_CLAIMS_NOT_SURE": "Not sure"
         }
       },
       "STEP4": {
@@ -1458,8 +1493,15 @@
         "INSURED_TITLE": "Current Home Insurance Status",
         "INSURED_OPTIONS": [
           "Currently Insured",
+          "New Purchase–Closing",
           "Not Insured"
         ],
+        "CARRIER_LABEL": "Current Carrier Name:",
+        "RENEWAL_LABEL": "Renewal/Expiration Date:",
+        "FLOOD_TITLE": "Do you need flood insurance?",
+        "FLOOD_YES": "Yes",
+        "FLOOD_NO": "No",
+        "FLOOD_NOT_SURE": "Not sure",
         "BUNDLE_TITLE": "Do you want to bundle your policies to save more?",
         "BUNDLE_OPTIONS": [
           "Yes! I want a Home + Auto bundle discount.",
@@ -1562,6 +1604,18 @@
           "LEGAL_BUSINESS_NAME": "Legal Business Name",
           "INDUSTRY_TYPE": "Industry/Type of Business",
           "BUSINESS_ZIP_CODE": "Business Zip Code",
+          "ENTITY_TYPE": "Business Entity Type",
+          "ENTITY_TYPE_OPTIONS": [
+            "LLC",
+            "Sole Prop",
+            "Corp",
+            "Partnership"
+          ],
+          "BUSINESS_STATE": "Business State",
+          "BUSINESS_STATE_OPTIONS": [
+            "Texas",
+            "Other"
+          ],
           "INDUSTRY_TYPE_OPTIONS": [
             "Construction",
             "Retail",
@@ -1591,6 +1645,18 @@
             "Under $100k,",
             "$100k - $500k",
             "$500k"
+          ],
+          "BUSINESS_VEHICLES": "Number of Business Vehicles",
+          "BUSINESS_VEHICLES_OPTIONS": [
+            "0",
+            "1–3",
+            "4+"
+          ],
+          "LOCATION_TYPE": "Business Location Type",
+          "LOCATION_TYPE_OPTIONS": [
+            "Physical Office or Store",
+            "Home-Based",
+            "Multiple Locations"
           ]
         }
       },
@@ -1598,25 +1664,45 @@
         "TITLE": "Coverage Needs",
         "COVERAGE_TITLE": "What are you looking to cover? (Select all that apply)",
         "COVERAGE_OPTIONS": [
-          "My Business Property/Equipment",
-          "General Liability (Protection from lawsuits)",
+          "General Liability",
+          "Business Property / Equipment",
           "Commercial Auto / Work Trucks",
-          "Workers' Comp (Employee injuries)",
-          "I'm not sure, I need an expert's advice."
+          "Workers' Compensation",
+          "Professional Liability / E&O",
+          "Cyber Liability",
+          "I'm not sure — I need expert advice"
         ],
-        "BUNDLE_TITLE": "Do you want to bundle your business policies to save more?",
+        "POLICY_TITLE": "Is this a new policy, renewal, or rate comparison?",
+        "POLICY_OPTIONS": [
+          "New Policy",
+          "Renewal",
+          "Rate Shop"
+        ],
+        "BUNDLE_TITLE": "Bundle with Surety Bonds?",
         "BUNDLE_OPTIONS": [
-          "Yes! I want the Commercial + Surety Bonds bundle discount.",
-          "No, just Commercial for now."
+          "Yes — apply bundle discount",
+          "No, just Commercial"
         ]
       },
       "STEP4": {
         "TITLE": "Contact Preferences",
         "FIELDS": {
           "CONTACT_NAME": "Contact Name",
+          "JOB_TITLE": "Job Title / Role",
+          "JOB_TITLE_OPTIONS": [
+            "Owner",
+            "Manager",
+            "Other"
+          ],
           "EMAIL_ADDRESS": "Email Address*",
           "PHONE_NUMBER": "Phone Number*"
         },
+        "CONTACT_METHOD_TITLE": "Preferred Contact Method",
+        "CONTACT_METHOD_OPTIONS": [
+          "Phone Call",
+          "Text Message",
+          "Email"
+        ],
         "LANGUAGE_TITLE": "Preferred Language",
         "LANGUAGE_OPTIONS": [
           "English",
@@ -1690,15 +1776,30 @@
           "PHONE": "Phone Number",
           "GENDER": "Gender",
           "DATE_OF_BIRTH": "Date of Birth",
-          "ZIPCODE": "Zip Code"
+          "ZIPCODE": "Zip Code",
+          "MARITAL_STATUS": "Marital Status",
+          "MARITAL_STATUS_OPTIONS": [
+            "Single",
+            "Married",
+            "Divorced",
+            "Widowed"
+          ]
         }
       },
       "STEP2": {
         "TITLE": "Lifestyle Details",
         "FIELDS": {
+          "HEIGHT": "Height",
+          "WEIGHT": "Weight",
           "TOBACCO_USE": "Do you use tobacco or nicotine products?",
-          "HEALTH_STATUS": "How would you describe your general health?"
+          "HEALTH_STATUS": "How would you describe your general health?",
+          "HEALTH_CONDITIONS": "Any major health conditions diagnosed in the last 10 years?"
         },
+        "HEALTH_CONDITIONS_OPTIONS": [
+          "Yes",
+          "No",
+          "Prefer not to say"
+        ],
         "TOBACCO_OPTIONS": [
           "Yes",
           "No"
@@ -1711,12 +1812,27 @@
       },
       "STEP3": {
         "TITLE": "Coverage Needs",
+        "INSURANCE_TYPE_TITLE": "What type of life insurance are you looking for?",
+        "INSURANCE_TYPE_OPTIONS": [
+          "Term",
+          "Whole",
+          "Final Expense",
+          "Not Sure"
+        ],
         "COVERAGE_TITLE": "How much coverage are you thinking of?",
         "COVERAGE_OPTIONS": [
           "Basic / Final Expenses ($10k – $50k)",
           "Mortgage Protection / Family Support ($100k – $500k)",
           "High Value Protection ($500k+)",
           "I'm not sure, I need an expert to help me calculate."
+        ],
+        "TERM_LENGTH_TITLE": "Coverage term length (if applicable):",
+        "TERM_LENGTH_OPTIONS": [
+          "10 years",
+          "20 years",
+          "30 years",
+          "Permanent",
+          "Not sure"
         ],
         "BUNDLE_TITLE": "Do you want to bundle your policies to save more?",
         "BUNDLE_OPTIONS": [

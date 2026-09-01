@@ -1210,7 +1210,11 @@
       "STEP3": {
         "TITLE": "Estado de la Póliza",
         "FIELDLABEL1": "Estoy buscando:",
-        "FIELDLABEL2": "Estado actual del seguro:"
+        "FIELDLABEL1_OPTIONS": ["Póliza nueva", "Mejor tarifa", "Agregar conductor/propiedad"],
+        "FIELDLABEL2": "Estado actual del seguro:",
+        "FIELDLABEL2_OPTIONS": ["Actualmente asegurado", "No asegurado"],
+        "FIELDLABEL3": "Nombre de la aseguradora actual:",
+        "FIELDLABEL4": "Fecha de renovación/vencimiento:"
       },
       "STEP4": {
         "TITLE": "Preferencias de Contacto",
@@ -1285,7 +1289,9 @@
           "MAKE": "Marca",
           "MODEL": "Modelo",
           "OWNERSHIP": "Propiedad",
-          "PRIMARY_USE": "Uso Principal"
+          "OWNERSHIP_OPTIONS": ["Propio", "Financiado", "Arrendado"],
+          "PRIMARY_USE": "Uso Principal",
+          "PRIMARY_USE_OPTIONS": ["Personal", "Viaje al trabajo", "Negocios", "Viaje compartido"]
         }
       },
       "STEP3": {
@@ -1409,6 +1415,12 @@
             "Casa móvil",
             "Otro"
           ],
+          "OWNERSHIP_STATUS": "Estado de Propiedad",
+          "OWNERSHIP_STATUS_OPTIONS": [
+            "Propietario",
+            "Comprando",
+            "Refinanciando"
+          ],
           "ROOF_AGE": [
             "Nuevo",
             "1–10 años",
@@ -1424,7 +1436,23 @@
           "YEAR_BUILT": "Año de Construcción (Aproximado)",
           "SQUARE_FOOTAGE": "Metraje Cuadrado (Aproximado)",
           "NUMBER_OF_STORIES": "Número de Pisos",
-          "ROOF_AGE": "Edad del Techo"
+          "ROOF_AGE": "Edad del Techo",
+          "ROOF_TYPE": "Tipo de Techo",
+          "ROOF_TYPE_OPTIONS": [
+            "Asfalto",
+            "Metal",
+            "Teja",
+            "Madera",
+            "Otro",
+            "No estoy seguro"
+          ],
+          "CONSTRUCTION_TYPE": "Tipo de Construcción",
+          "CONSTRUCTION_TYPE_OPTIONS": [
+            "Estructura de madera (Frame)",
+            "Mampostería",
+            "Mixto",
+            "No estoy seguro"
+          ]
         }
       },
       "STEP3": {
@@ -1438,7 +1466,14 @@
           "SWIMMING_POOL_NO": "No",
           "PETS": "¿Hay mascotas en el hogar?",
           "PETS_YES": "Sí",
-          "PETS_NO": "No"
+          "PETS_NO": "No",
+          "TRAMPOLINE": "¿Hay trampolín en la propiedad?",
+          "TRAMPOLINE_YES": "Sí",
+          "TRAMPOLINE_NO": "No",
+          "RECENT_CLAIMS": "¿Algún reclamo en los últimos 3–5 años?",
+          "RECENT_CLAIMS_YES": "Sí",
+          "RECENT_CLAIMS_NO": "No",
+          "RECENT_CLAIMS_NOT_SURE": "No estoy seguro"
         }
       },
       "STEP4": {
@@ -1446,8 +1481,15 @@
         "INSURED_TITLE": "Estado Actual del Seguro de Hogar",
         "INSURED_OPTIONS": [
           "Actualmente Asegurado",
+          "Nueva compra–Cierre",
           "No Asegurado"
         ],
+        "CARRIER_LABEL": "Nombre de la aseguradora actual:",
+        "RENEWAL_LABEL": "Fecha de renovación/vencimiento:",
+        "FLOOD_TITLE": "¿Necesita seguro contra inundaciones?",
+        "FLOOD_YES": "Sí",
+        "FLOOD_NO": "No",
+        "FLOOD_NOT_SURE": "No estoy seguro",
         "BUNDLE_TITLE": "¿Desea combinar sus pólizas para ahorrar más?",
         "BUNDLE_OPTIONS": [
           "¡Sí! Quiero el descuento por combinar Hogar + Auto.",
@@ -1550,6 +1592,18 @@
           "LEGAL_BUSINESS_NAME": "Nombre Legal del Negocio",
           "INDUSTRY_TYPE": "Industria/Tipo de Negocio",
           "BUSINESS_ZIP_CODE": "Código Postal del Negocio",
+          "ENTITY_TYPE": "Tipo de Entidad Comercial",
+          "ENTITY_TYPE_OPTIONS": [
+            "LLC",
+            "Propietario único",
+            "Corporación",
+            "Sociedad"
+          ],
+          "BUSINESS_STATE": "Estado del Negocio",
+          "BUSINESS_STATE_OPTIONS": [
+            "Texas",
+            "Otro"
+          ],
           "INDUSTRY_TYPE_OPTIONS": [
             "Construcción",
             "Minorista",
@@ -1579,6 +1633,18 @@
             "Menos de $100k",
             "$100k - $500k",
             "$500k"
+          ],
+          "BUSINESS_VEHICLES": "Número de Vehículos Comerciales",
+          "BUSINESS_VEHICLES_OPTIONS": [
+            "0",
+            "1–3",
+            "4+"
+          ],
+          "LOCATION_TYPE": "Tipo de Ubicación del Negocio",
+          "LOCATION_TYPE_OPTIONS": [
+            "Oficina o tienda física",
+            "Basado en casa",
+            "Múltiples ubicaciones"
           ]
         }
       },
@@ -1586,25 +1652,45 @@
         "TITLE": "Necesidades de Cobertura",
         "COVERAGE_TITLE": "¿Qué desea cubrir? (Seleccione todas las que correspondan)",
         "COVERAGE_OPTIONS": [
-          "Mi Propiedad/Equipo Comercial",
-          "Responsabilidad Civil General (Protección contra demandas)",
+          "Responsabilidad Civil General",
+          "Propiedad / Equipo del Negocio",
           "Auto Comercial / Camiones de Trabajo",
-          "Compensación Laboral (Lesiones de empleados)",
-          "No estoy seguro, necesito el consejo de un experto."
+          "Compensación Laboral",
+          "Responsabilidad Profesional / E&O",
+          "Responsabilidad Cibernética",
+          "No estoy seguro — necesito asesoría de un experto"
         ],
-        "BUNDLE_TITLE": "¿Desea combinar sus pólizas comerciales para ahorrar más?",
+        "POLICY_TITLE": "¿Es una póliza nueva, renovación o comparación de tarifas?",
+        "POLICY_OPTIONS": [
+          "Póliza nueva",
+          "Renovación",
+          "Comparación de tarifas"
+        ],
+        "BUNDLE_TITLE": "¿Combinar con Fianzas de Garantía (Surety Bonds)?",
         "BUNDLE_OPTIONS": [
-          "¡Sí! Quiero el descuento por combinar Comercial + Fianzas de Garantía.",
-          "No, solo Comercial por ahora."
+          "Sí — aplicar descuento por combinar",
+          "No, solo Comercial"
         ]
       },
       "STEP4": {
         "TITLE": "Preferencias de Contacto",
         "FIELDS": {
           "CONTACT_NAME": "Nombre de Contacto",
+          "JOB_TITLE": "Cargo / Rol",
+          "JOB_TITLE_OPTIONS": [
+            "Propietario",
+            "Gerente",
+            "Otro"
+          ],
           "EMAIL_ADDRESS": "Correo Electrónico*",
           "PHONE_NUMBER": "Número de Teléfono*"
         },
+        "CONTACT_METHOD_TITLE": "Método de Contacto Preferido",
+        "CONTACT_METHOD_OPTIONS": [
+          "Llamada telefónica",
+          "Mensaje de texto",
+          "Correo electrónico"
+        ],
         "LANGUAGE_TITLE": "Idioma Preferido",
         "LANGUAGE_OPTIONS": [
           "Inglés",
@@ -1678,15 +1764,30 @@
           "PHONE": "Teléfono",
           "GENDER": "Género",
           "DATE_OF_BIRTH": "Fecha de Nacimiento",
-          "ZIPCODE": "Código Postal"
+          "ZIPCODE": "Código Postal",
+          "MARITAL_STATUS": "Estado Civil",
+          "MARITAL_STATUS_OPTIONS": [
+            "Soltero/a",
+            "Casado/a",
+            "Divorciado/a",
+            "Viudo/a"
+          ]
         }
       },
       "STEP2": {
         "TITLE": "Detalles del Estilo de Vida",
         "FIELDS": {
+          "HEIGHT": "Estatura",
+          "WEIGHT": "Peso",
           "TOBACCO_USE": "¿Consume Productos de Tabaco o Nicotina?",
-          "HEALTH_STATUS": "¿Cómo Describiría su Estado General de Salud?"
+          "HEALTH_STATUS": "¿Cómo Describiría su Estado General de Salud?",
+          "HEALTH_CONDITIONS": "¿Alguna condición de salud importante diagnosticada en los últimos 10 años?"
         },
+        "HEALTH_CONDITIONS_OPTIONS": [
+          "Sí",
+          "No",
+          "Prefiero no decir"
+        ],
         "TOBACCO_OPTIONS": [
           "Sí",
           "No"
@@ -1699,12 +1800,27 @@
       },
       "STEP3": {
         "TITLE": "Necesidades de Cobertura",
+        "INSURANCE_TYPE_TITLE": "¿Qué tipo de seguro de vida está buscando?",
+        "INSURANCE_TYPE_OPTIONS": [
+          "Término",
+          "Vida Entera",
+          "Gastos Finales",
+          "No Estoy Seguro"
+        ],
         "COVERAGE_TITLE": "¿Cuánta Cobertura Tiene en Mente?",
         "COVERAGE_OPTIONS": [
           "Básica / Gastos Finales ($10k – $50k)",
           "Protección de Hipoteca / Apoyo Familiar ($100k – $500k)",
           "Protección de Alto Valor ($500k+)",
           "No Estoy Seguro(a), Necesito Ayuda de un Experto para Calcular."
+        ],
+        "TERM_LENGTH_TITLE": "Duración del plazo de cobertura (si aplica):",
+        "TERM_LENGTH_OPTIONS": [
+          "10 años",
+          "20 años",
+          "30 años",
+          "Permanente",
+          "No estoy seguro"
         ],
         "BUNDLE_TITLE": "¿Paquete y Ahorro?",
         "BUNDLE_OPTIONS": [
