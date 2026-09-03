@@ -859,7 +859,7 @@ font-weight: 600;
       .topSub {
         .topSub2 {
           .h1 {
-            font-size: 2.6rem;
+            font-size: 36px !important;
           }
 
           .banner-quote-card {
@@ -908,7 +908,7 @@ font-weight: 600;
 
         .topSub2 {
           .h1 {
-            font-size: 2.2rem;
+            font-size: 36px;
             line-height: 1.15;
             margin-bottom: 1rem;
           }
@@ -980,7 +980,7 @@ font-weight: 600;
           text-align: center;
 
           .h1 {
-            font-size: 32px;
+            font-size: 36px;
             text-align: center;
           }
 
@@ -1091,7 +1091,7 @@ font-weight: 600;
       .topSub {
         .topSub2 {
           .h1 {
-            font-size: 34px;
+            font-size: 36px !important;
             margin-bottom: 2rem;
           }
         }
@@ -1862,5 +1862,28 @@ font-size: 36px;
     .section-title {
       font-size: 1.6rem;
     }
+  }
+}
+
+@media (max-width: 380px) {
+  // !important zaroori hai: top ka `h2 { font-size: 36px !important }` warna jeet jata
+  .why-choose-section .heading {
+    font-size: 28px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  // Mobile: sab H2 section titles 30px (top ka 36px !important global override)
+  h2 {
+    font-size: 30px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  /* Desktop paragraph standard: 16px / 400 / 24px (fine print excluded) */
+  .homeMain p:not(.rates-disclaimer):not(.source-line):not(.updated-line) {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
   }
 }
