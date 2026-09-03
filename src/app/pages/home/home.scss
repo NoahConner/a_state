@@ -14,7 +14,7 @@ h2 {
 
 .topBanner {
   background-image:
-     linear-gradient(180deg, #1A1A1A 0%, rgba(39, 0, 0, 0.56) 56%, rgba(96, 9, 9, 0) 100%),
+    linear-gradient(180deg, #1a1a1a 0%, rgba(39, 0, 0, 0.56) 56%, rgba(96, 9, 9, 0) 100%),
     url('/assets/images/home1.png');
 
   min-height: 100vh;
@@ -97,28 +97,32 @@ h2 {
                 position: absolute;
                 inset: 3px 9px 3px;
                 background: #f6b4b8;
-                clip-path: polygon(50% 0%,
-                    61% 18%,
-                    82% 8%,
-                    76% 29%,
-                    100% 32%,
-                    82% 50%,
-                    100% 68%,
-                    76% 71%,
-                    82% 92%,
-                    61% 82%,
-                    50% 100%,
-                    39% 82%,
-                    18% 92%,
-                    24% 71%,
-                    0% 68%,
-                    18% 50%,
-                    0% 32%,
-                    24% 29%,
-                    18% 8%,
-                    39% 18%);
+                clip-path: polygon(
+                  50% 0%,
+                  61% 18%,
+                  82% 8%,
+                  76% 29%,
+                  100% 32%,
+                  82% 50%,
+                  100% 68%,
+                  76% 71%,
+                  82% 92%,
+                  61% 82%,
+                  50% 100%,
+                  39% 82%,
+                  18% 92%,
+                  24% 71%,
+                  0% 68%,
+                  18% 50%,
+                  0% 32%,
+                  24% 29%,
+                  18% 8%,
+                  39% 18%
+                );
                 opacity: 0.95;
-                transition: transform 0.2s ease, background-color 0.2s ease;
+                transition:
+                  transform 0.2s ease,
+                  background-color 0.2s ease;
               }
 
               .quote-option-image {
@@ -257,7 +261,7 @@ h2 {
           .quote-submit {
             min-width: 195px;
             min-height: 3.35rem;
-            font-family: "Afacad", sans-serif;
+            font-family: 'Afacad', sans-serif;
             font-size: 1.1rem;
             font-weight: 700;
             border-radius: 999px;
@@ -268,7 +272,10 @@ h2 {
             position: relative;
             overflow: hidden;
             isolation: isolate;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+            transition:
+              transform 0.2s ease,
+              box-shadow 0.2s ease,
+              background-color 0.2s ease;
 
             &::before {
               content: '';
@@ -322,21 +329,21 @@ h2 {
     z-index: 1;
 
     &::before {
-    content: "";
-    position: absolute;
-    top: -4.5rem;
-    left: -4.5rem;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    background: #FFEDED;
-    z-index: -1;
+      content: '';
+      position: absolute;
+      top: -4.5rem;
+      left: -4.5rem;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: #ffeded;
+      z-index: -1;
     }
   }
 
   .get-quote-title {
-font-weight: 600;
-    color: #44110E;
+    font-weight: 600;
+    color: #44110e;
     line-height: 1.18;
     font-size: 69.1px;
   }
@@ -353,7 +360,7 @@ font-weight: 600;
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-        margin: 2rem 0 1.8rem;
+    margin: 2rem 0 1.8rem;
 
     .quote-option {
       appearance: none;
@@ -379,26 +386,28 @@ font-weight: 600;
           position: absolute;
           inset: 3px 9px 3px;
           background: #f9c9cf;
-          clip-path: polygon(50% 0%,
-              61% 18%,
-              82% 8%,
-              76% 29%,
-              100% 32%,
-              82% 50%,
-              100% 68%,
-              76% 71%,
-              82% 92%,
-              61% 82%,
-              50% 100%,
-              39% 82%,
-              18% 92%,
-              24% 71%,
-              0% 68%,
-              18% 50%,
-              0% 32%,
-              24% 29%,
-              18% 8%,
-              39% 18%);
+          clip-path: polygon(
+            50% 0%,
+            61% 18%,
+            82% 8%,
+            76% 29%,
+            100% 32%,
+            82% 50%,
+            100% 68%,
+            76% 71%,
+            82% 92%,
+            61% 82%,
+            50% 100%,
+            39% 82%,
+            18% 92%,
+            24% 71%,
+            0% 68%,
+            18% 50%,
+            0% 32%,
+            24% 29%,
+            18% 8%,
+            39% 18%
+          );
         }
 
         .quote-option-image {
@@ -439,7 +448,9 @@ font-weight: 600;
           transform: rotate(45deg) scale(0.65);
           transform-origin: center;
           opacity: 0;
-          transition: transform 0.2s ease, opacity 0.2s ease;
+          transition:
+            transform 0.2s ease,
+            opacity 0.2s ease;
         }
       }
 
@@ -479,14 +490,16 @@ font-weight: 600;
       flex: 0 0 auto;
       min-width: 150px;
       min-height: 3rem;
-      font-family: "Afacad", sans-serif;
+      font-family: 'Afacad', sans-serif;
       font-size: 1rem;
       font-weight: 700;
       border-radius: 999px;
       border: 2px solid #ff7f24;
       background: #fff22e;
       color: #111;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 
       &:hover {
         transform: translateY(-1px);
@@ -501,8 +514,8 @@ font-weight: 600;
     }
   }
 
-   .image-wrapper {
-     max-width: 382px;
+  .image-wrapper {
+    max-width: 382px;
     width: 100%;
 
     .rounded-image {
@@ -530,7 +543,7 @@ font-weight: 600;
 }
 
 .trust-badges {
-  background-color: #FF3030;
+  background-color: #ff3030;
   padding: 2rem 0;
 
   &__card {
@@ -631,16 +644,15 @@ font-weight: 600;
     font-size: 3rem;
     font-weight: 700;
     line-height: 1.15;
-    color: #44110E;
+    color: #44110e;
     letter-spacing: -0.5px;
 
     .line-1 {
-    font-weight: 400;
+      font-weight: 400;
     }
 
-       .line-3 {
-    font-weight: 400;
-
+    .line-3 {
+      font-weight: 400;
     }
 
     span {
@@ -663,15 +675,15 @@ font-weight: 600;
 
   .description-text {
     p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #44110E;
-    opacity: 1;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #44110e;
+      opacity: 1;
     }
   }
 
   .image-wrapper {
-     max-width: 382px;
+    max-width: 382px;
     width: 100%;
 
     .rounded-image {
@@ -682,8 +694,6 @@ font-weight: 600;
     }
   }
 }
-
-
 
 .footUpper {
   height: 130px;
@@ -947,7 +957,6 @@ font-weight: 600;
           }
 
           .quote-form-row {
-
             .form-control,
             .quote-submit {
               min-height: 3rem;
@@ -980,7 +989,7 @@ font-weight: 600;
           text-align: center;
 
           .h1 {
-            font-size: 36px;
+            font-size: 30px;
             text-align: center;
           }
 
@@ -1110,7 +1119,7 @@ font-weight: 600;
 .why-choose-section {
   padding: 4.375rem 0;
   background-image:
-     linear-gradient(180deg, rgba(255, 255, 255, 0.68) 0%, rgba(255, 255, 255, 0.68) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.68) 0%, rgba(255, 255, 255, 0.68) 100%),
     url('/assets/images/home/why-choose/bg.png');
   background-size: cover;
   background-position: center;
@@ -1133,7 +1142,7 @@ font-weight: 600;
   }
 
   .why-choose-subheading {
-    color: #2C2C2C;
+    color: #2c2c2c;
     font-size: 1rem;
     font-weight: 500;
     margin-top: 0.35rem;
@@ -1213,7 +1222,8 @@ font-weight: 600;
 
 // Start Features Section Styles
 .features-section {
-  background: linear-gradient(rgba(245, 247, 250, 0.85), rgba(245, 247, 250, 0.85)),
+  background:
+    linear-gradient(rgba(245, 247, 250, 0.85), rgba(245, 247, 250, 0.85)),
     url('/assets/images/home/why-choose/bg.png') no-repeat center right / cover;
   padding: 4.375rem 0;
 
@@ -1260,7 +1270,7 @@ font-weight: 600;
     }
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 15%;
@@ -1370,8 +1380,8 @@ font-weight: 600;
     }
 
     .card-title {
-   font-size: 22px;
-    color: #44110E;
+      font-size: 22px;
+      color: #44110e;
 
       .card-title-link {
         color: inherit;
@@ -1384,17 +1394,17 @@ font-weight: 600;
     }
 
     .card-description {
-    font-size: 1rem;
-    color: #44110E;
-    opacity: 2;
-    max-width: 290px;
+      font-size: 1rem;
+      color: #44110e;
+      opacity: 2;
+      max-width: 290px;
       width: 100%;
     }
 
     .quote-link {
       font-weight: 700;
-         font-size: 1rem;
-    color: #44110E;
+      font-size: 1rem;
+      color: #44110e;
       text-decoration: underline;
       text-underline-offset: 4px;
       margin-top: auto;
@@ -1505,7 +1515,7 @@ font-weight: 600;
 
   // Cards Alignment & Styling
   .step-card {
- background-color: #ff5d47;
+    background-color: #ff5d47;
     border: 1px solid rgba(255, 255, 255, 0.45);
     border-radius: 22px;
     padding: 38px 21px;
@@ -1517,7 +1527,9 @@ font-weight: 600;
     align-items: center;
     justify-content: center; // equal space above the icon and below the title
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
 
     &:hover {
       transform: translateY(-5px);
@@ -1549,8 +1561,8 @@ font-weight: 600;
 
     // Main Title
     .step-title {
-    font-size: 24px;
-          line-height: 1.18;
+      font-size: 24px;
+      line-height: 1.18;
       font-weight: 700;
       max-width: 160px;
     }
@@ -1762,26 +1774,25 @@ font-weight: 600;
   }
 }
 
-
 .carriers-section {
-  background-color: #FFFBBE;
+  background-color: #fffbbe;
   color: #2d1c15;
   padding: 4.375rem 0;
   overflow: hidden; // Ensures no scrollbars appear anywhere
-      margin-bottom: 3rem;
+  margin-bottom: 3rem;
 
   .carriers-title {
-font-size: 36px;
+    font-size: 36px;
     font-weight: 300;
     margin-bottom: 60px;
-    color: #3A3A3A;
+    color: #3a3a3a;
   }
 
   .logo-slider-wrapper {
     width: 100%;
     overflow: hidden;
     position: relative;
-    
+
     &::-webkit-scrollbar {
       display: none;
     }
@@ -1792,12 +1803,12 @@ font-size: 36px;
   .logo-track {
     display: flex;
     align-items: center;
-    gap: 60px; 
+    gap: 60px;
     width: max-content;
-    animation: scrollLogos 25s linear infinite; 
+    animation: scrollLogos 25s linear infinite;
 
     &:hover {
-      animation-play-state: paused; 
+      animation-play-state: paused;
     }
   }
 
@@ -1856,12 +1867,19 @@ font-size: 36px;
 }
 
 @media only screen and (max-width: 540px) {
+  .story-section {
+    padding: 2rem 0 !important;
+  }
   .solutions-section {
-    padding: 2rem 0;
-
+    padding: 1rem 0 !important;
+  }
+  .solutions-section {
     .section-title {
       font-size: 1.6rem;
     }
+  }
+  .carriers-section {
+    margin-bottom: 0rem;
   }
 }
 
@@ -1869,6 +1887,12 @@ font-size: 36px;
   // !important zaroori hai: top ka `h2 { font-size: 36px !important }` warna jeet jata
   .why-choose-section .heading {
     font-size: 28px !important;
+  }
+
+  .features-section {
+    .section-title {
+      font-size: 24px !important;
+    }
   }
 }
 
