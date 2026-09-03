@@ -25,7 +25,7 @@ h2 {
 
 ::ng-deep .risks__text .inline-link {
   text-decoration: underline !important;
-  color: #44110e !important;
+  color: #df4135 !important;
 }
 
 .faq__decor {
@@ -118,7 +118,7 @@ section[id^="toc-section-"] {
 
 ::ng-deep .rates-table .company-name {
   text-decoration: underline !important;
-    color: #CA2B28 !important;
+    color: #df4135 !important;
   }
 
 /* Hero Banner Section Start */
@@ -715,7 +715,7 @@ border: 1px solid rgba(255, 255, 255, 0.2);
   font-size: 1rem;
   line-height: 1.78;
   letter-spacing: -0.01em;
-  color: #3f3b37;
+  color: #3e3935;
   max-width: 905px;
   text-align: center;
 }
@@ -877,7 +877,7 @@ border: 1px solid rgba(255, 255, 255, 0.2);
 
   .coverage-option-card__title {
     margin: 0 0 11px;
-    color: #44110e;
+    color: #231815;
     font-size: 20.31px;
     font-weight: 600;
     line-height: 1.16;
@@ -885,7 +885,7 @@ border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   .coverage-option-card__text {
-    color: #44110e;
+    color: #272424;
     font-size: 13.8px;
     font-weight: 400;
     line-height: 1.62;
@@ -939,7 +939,7 @@ border: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
     align-items: center;
     gap: 0.95rem;
-    color: #111;
+    color: #4a4744;
     font-size: 15px;
     line-height: 1.7;
     text-decoration: none;
@@ -1008,7 +1008,7 @@ border: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    color: #111;
+    color: #4c4b4b;
     font-size: 15px;
     line-height: 1.32;
     text-decoration: none;
@@ -3252,14 +3252,14 @@ color: #ed1c24;
 
   &__heading {
     margin: 0;
-    color: #44110e;
+    color: inherit;
   }
 
   &__text {
     position: relative;
     margin-left: 70px;
-    color: #44110e;
-    line-height: 1.75;
+    color: inherit;
+    line-height: 1.6;
 
     &::before {
       content: '';
@@ -3324,11 +3324,11 @@ color: #ed1c24;
   &__head .coverage__heading {
     margin: 0;
     font-size: 21px;
-    line-height: 1.4;
+    line-height: 1.25;
   }
 
   &__head .coverage__link {
-    color: #44110e;
+    color: #df4135;
     text-decoration: underline;
     text-underline-offset: 4px;
 
@@ -3340,8 +3340,8 @@ color: #ed1c24;
   &__item .coverage__text {
     position: relative;
     margin-left: 71px;
-    color: #44110e;
-    line-height: 1.7;
+    color: #2b2b2b;
+    line-height: 1.55;
 
     &::before {
       content: '';
@@ -3428,8 +3428,8 @@ color: #ed1c24;
   }
 
   .toc-text {
-    font-size: 0.83rem;
-    line-height: 1.5;
+    font-size: 0.86rem;
+    line-height: 1.6;
   }
 }
 

@@ -1806,11 +1806,15 @@ font-size: 36px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 55px;
+    // uniform box for every carrier: same width and height, logo contained
+    width: 160px;
+    height: 60px;
 
     img {
+      max-width: 100%;
       max-height: 100%;
       width: auto;
+      height: auto;
       object-fit: contain;
     }
   }
@@ -1829,7 +1833,8 @@ font-size: 36px;
     }
 
     .logo-item {
-      height: 45px;
+      width: 120px;
+      height: 48px;
     }
   }
 }
