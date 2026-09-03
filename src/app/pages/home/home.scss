@@ -1000,3 +1000,12 @@
     padding-bottom: 1rem;
   }
 }
+
+@media (min-width: 768px) {
+  /* Desktop paragraph standard: 20px / 400 / 24px (fine print excluded) */
+  .homeMain p:not(.rates-disclaimer):not(.source-line):not(.updated-line) {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}

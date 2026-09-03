@@ -3170,3 +3170,19 @@ color: #ed1c24;
     }
   }
 }
+
+@media (max-width: 767px) {
+  // Mobile: sab H2 section titles 30px (top ka 36px !important global override)
+  h2 {
+    font-size: 30px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  /* Desktop paragraph standard: 20px / 400 / 24px (fine print excluded) */
+  .homeMain p:not(.rates-disclaimer):not(.source-line):not(.updated-line) {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}
