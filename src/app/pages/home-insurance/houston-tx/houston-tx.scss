@@ -2121,6 +2121,11 @@ color: #ed1c24;
 }
 
 @media only screen and (max-width: 767px) {
+  // Mobile: sab H2 section titles 30px (top ka 36px !important global override)
+  h2 {
+    font-size: 30px !important;
+  }
+
   .houston-rates-section {
     padding: 2.5rem 0 2.5rem;
   }
@@ -3461,12 +3466,6 @@ color: #ed1c24;
   }
 }
 
-@media (max-width: 767px) {
-  // Mobile: sab H2 section titles 30px (top ka 36px !important global override)
-  h2 {
-    font-size: 30px !important;
-  }
-}
 
 @media (min-width: 768px) {
   /* Desktop paragraph standard: 20px / 400 / 24px (fine print excluded) */

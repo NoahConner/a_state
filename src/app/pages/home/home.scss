@@ -1860,31 +1860,53 @@ h2 {
   }
 }
 
-@media only screen and (max-width: 768px) {
+/* ==========================================================================
+   RESPONSIVE OVERRIDES — pattern: har breakpoint ka sirf EK block, yahan end
+   par (taake cascade mein sab se aakhri rahe). Naya override isi section ke
+   matching block mein add karo, nayi bikhri hui query mat banao.
+   Order: desktop (min-width) pehle, phir max-width descending.
+   ========================================================================== */
+
+@media (min-width: 768px) {
+  /* Desktop paragraph standard: 20px / 400 / 24px (fine print excluded) */
+  .homeMain p:not(.rates-disclaimer):not(.source-line):not(.updated-line) {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  // Mobile: sab H2 section titles 30px (top ka 36px !important global override)
+  h2 {
+    font-size: 30px !important;
+  }
+
   .solutions-section {
     padding: 3rem 0;
   }
 }
 
-@media only screen and (max-width: 540px) {
+@media (max-width: 540px) {
   .story-section {
     padding: 2rem 0 !important;
   }
+
   .solutions-section {
     padding: 1rem 0 !important;
-  }
-  .solutions-section {
+
     .section-title {
       font-size: 1.6rem;
     }
   }
+
   .carriers-section {
     margin-bottom: 0rem;
   }
 }
 
 @media (max-width: 380px) {
-  // !important zaroori hai: top ka `h2 { font-size: 36px !important }` warna jeet jata
+  // .heading/.section-title ki specificity h2 wale 30px override se upar hai
   .why-choose-section .heading {
     font-size: 28px !important;
   }
@@ -1893,21 +1915,5 @@ h2 {
     .section-title {
       font-size: 24px !important;
     }
-  }
-}
-
-@media (max-width: 767px) {
-  // Mobile: sab H2 section titles 30px (top ka 36px !important global override)
-  h2 {
-    font-size: 30px !important;
-  }
-}
-
-@media (min-width: 768px) {
-  /* Desktop paragraph standard: 20px / 400 / 24px (fine print excluded) */
-  .homeMain p:not(.rates-disclaimer):not(.source-line):not(.updated-line) {
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px;
   }
 }
