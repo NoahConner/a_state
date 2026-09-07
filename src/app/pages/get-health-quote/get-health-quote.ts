@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray, FormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { HttpService } from '../../services/http.service';
+import { PageSource } from '../../services/page-source';
 import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
 
@@ -27,6 +28,7 @@ export class GetHealthQuote {
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private http: HttpService,
+    private pageSource: PageSource,
     private translate: TranslateService
   ) { }
 
@@ -188,7 +190,10 @@ export class GetHealthQuote {
 
     this.loading = true;
     try {
-      const body = this.healthQuoteForm.getRawValue();
+      const body = {
+        ...this.healthQuoteForm.getRawValue(),
+        ...this.pageSource.getSourceFields(),
+      };
       const res: any = await this.http
         .post('/quotes/create', body, true)
         .toPromise();

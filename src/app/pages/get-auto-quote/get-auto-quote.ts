@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray, FormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { HttpService } from '../../services/http.service';
+import { PageSource } from '../../services/page-source';
 import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
 
@@ -29,6 +30,7 @@ export class GetAutoQuote {
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private http: HttpService,
+    private pageSource: PageSource,
     private translate: TranslateService
   ) { }
 
@@ -228,7 +230,10 @@ export class GetAutoQuote {
 
     this.loading = true;
     try {
-      const body = this.autoQuoteForm.getRawValue();
+      const body = {
+        ...this.autoQuoteForm.getRawValue(),
+        ...this.pageSource.getSourceFields(),
+      };
       const res: any = await this.http
         .post('/quotes/create', body, true)
         .toPromise();

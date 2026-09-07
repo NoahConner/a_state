@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { HttpService } from '../../services/http.service';
+import { PageSource } from '../../services/page-source';
 import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
 
@@ -26,6 +27,7 @@ export class GetCustomQuote {
   constructor(
     private fb: FormBuilder,
     private http: HttpService,
+    private pageSource: PageSource,
     private translate: TranslateService
   ) { }
 
@@ -183,7 +185,10 @@ export class GetCustomQuote {
 
     this.loading = true;
     try {
-      const body = this.customQuoteForm.getRawValue();
+      const body = {
+        ...this.customQuoteForm.getRawValue(),
+        ...this.pageSource.getSourceFields(),
+      };
       const res: any = await this.http
         .post('/quotes/create', body, true)
         .toPromise();
