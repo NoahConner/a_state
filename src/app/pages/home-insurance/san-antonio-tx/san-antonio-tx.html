@@ -7,7 +7,7 @@
           <h1 class="h1">
             <span [innerHTML]="'GLOBAL_HOME_TX.BANNER.TITLE_LINE1' | translateHtml | async"></span><br />
             <span
-              [innerHTML]="(('GLOBAL_HOME_TX.BANNER.TITLE_LINE2_PREFIX' | translate) + ('HOUSTON_HOME_TX.BANNER.LOCATION' | translate) + ('GLOBAL_HOME_TX.BANNER.TITLE_LINE2_SUFFIX' | translate))">
+              [innerHTML]="(('GLOBAL_HOME_TX.BANNER.TITLE_LINE2_PREFIX' | translate) + ('SAN_ANTONIO_HOME_TX.BANNER.LOCATION' | translate) + ('GLOBAL_HOME_TX.BANNER.TITLE_LINE2_SUFFIX' | translate))">
             </span><br />
             <span [innerHTML]="'GLOBAL_HOME_TX.BANNER.TITLE_LINE3' | translateHtml | async"></span>
           </h1>
@@ -89,17 +89,17 @@
 
         <div class="col-lg-9">
           <div class="rates-content text-center">
-            <p class="rates-lead" [innerHTML]="'HOUSTON_HOME_TX.RATES.LEAD' | translateHtml | async"></p>
+            <p class="rates-lead" [innerHTML]="'SAN_ANTONIO_HOME_TX.RATES.LEAD' | translateHtml | async"></p>
           </div>
 
           <!-- Why Local Coverage (inline, beside TOC like the auto city pages) -->
           <div class="section-content-shell why-local-inline" id="toc-section-1">
             <div class="text-center mb-4">
-              <h2 class="main-title mb-3">{{ 'GLOBAL_HOME_TX.WHY_LOCAL.TITLE_PREFIX' | translate }} {{ 'HOUSTON_HOME_TX.LOCATION.CITY' | translate }} {{ 'GLOBAL_HOME_TX.WHY_LOCAL.TITLE_SUFFIX' | translate }}</h2>
-              <p class="lead-text mx-auto" [innerHTML]="'HOUSTON_HOME_TX.WHY_LOCAL.PARA1' | translateHtml | async"></p>
+              <h2 class="main-title mb-3">{{ 'GLOBAL_HOME_TX.WHY_LOCAL.TITLE_PREFIX' | translate }} {{ 'SAN_ANTONIO_HOME_TX.LOCATION.CITY' | translate }} {{ 'GLOBAL_HOME_TX.WHY_LOCAL.TITLE_SUFFIX' | translate }}</h2>
+              <p class="lead-text mx-auto" [innerHTML]="'SAN_ANTONIO_HOME_TX.WHY_LOCAL.PARA1' | translateHtml | async"></p>
             </div>
 
-            <p class="footer-text text-center mx-auto mb-0" [innerHTML]="'HOUSTON_HOME_TX.WHY_LOCAL.PARA2' | translateHtml | async"></p>
+            <p class="footer-text text-center mx-auto mb-0" [innerHTML]="'SAN_ANTONIO_HOME_TX.WHY_LOCAL.PARA2' | translateHtml | async"></p>
           </div>
         </div>
 
@@ -117,7 +117,7 @@
         <div class="col-lg-9">
           <div class="section-content-shell">
       <div class="houston-neighborhoods-section__inner">
-        <h2 class="houston-neighborhoods-section__title">{{ 'GLOBAL_HOME_TX.NEIGHBORHOODS.TITLE_PREFIX' | translate }} {{ 'HOUSTON_HOME_TX.LOCATION.CITY_WITH_STATE' | translate }}</h2>
+        <h2 class="houston-neighborhoods-section__title">{{ 'GLOBAL_HOME_TX.NEIGHBORHOODS.TITLE_PREFIX' | translate }} {{ 'SAN_ANTONIO_HOME_TX.LOCATION.CITY_WITH_STATE' | translate }}</h2>
 
         <div class="houston-neighborhoods-section__table card-table">
           @for (row of neighborhoodsRows; track row[0]; let i = $index) {
@@ -145,8 +145,8 @@
         <div class="col-lg-9">
           <div class="section-content-shell">
       <div class="coverage-options-header text-center">
-        <h2 class="coverage-options-title mb-4">{{ 'GLOBAL_HOME_TX.COVERAGE_OPTIONS.TITLE_PREFIX' | translate }} {{ 'HOUSTON_HOME_TX.LOCATION.CITY_WITH_STATE' | translate }}?</h2>
-        <p class="lead-text mx-auto mb-5" [innerHTML]="'HOUSTON_HOME_TX.COVERAGE_OPTIONS.INTRO' | translateHtml | async"></p>
+        <h2 class="coverage-options-title mb-4">{{ 'GLOBAL_HOME_TX.COVERAGE_OPTIONS.TITLE_PREFIX' | translate }} {{ 'SAN_ANTONIO_HOME_TX.LOCATION.CITY_WITH_STATE' | translate }}?</h2>
+        <p class="lead-text mx-auto mb-5" [innerHTML]="'SAN_ANTONIO_HOME_TX.COVERAGE_OPTIONS.INTRO' | translateHtml | async"></p>
       </div>
 
       <div class="row coverage-options-grid gy-4 gx-lg-5 gx-4">
@@ -156,7 +156,7 @@
               <img src="/assets/images/homeowners-city/houston-tx/icons/cover-dwelling.png" alt="" class="coverage-option-card__icon-image">
             </span>
             <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.COVERAGE_OPTIONS.ITEMS.DWELLING' | translate }}</h3>
-            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.COVERAGE_OPTIONS.ITEMS.DWELLING' | translate }}</p>
+            <p class="coverage-option-card__text mb-0">{{ 'SAN_ANTONIO_HOME_TX.COVERAGE_OPTIONS.ITEMS.DWELLING' | translate }}</p>
           </article>
         </div>
 
@@ -166,7 +166,7 @@
               <img src="/assets/images/homeowners-city/houston-tx/icons/cover-other-structures.png" alt="" class="coverage-option-card__icon-image">
             </span>
             <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.COVERAGE_OPTIONS.ITEMS.OTHER_STRUCTURES' | translate }}</h3>
-            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.COVERAGE_OPTIONS.ITEMS.OTHER_STRUCTURES' | translate }}</p>
+            <p class="coverage-option-card__text mb-0">{{ 'SAN_ANTONIO_HOME_TX.COVERAGE_OPTIONS.ITEMS.OTHER_STRUCTURES' | translate }}</p>
           </article>
         </div>
 
@@ -176,7 +176,7 @@
               <img src="/assets/images/homeowners-city/houston-tx/icons/cover-personal-property.png" alt="" class="coverage-option-card__icon-image">
             </span>
             <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.COVERAGE_OPTIONS.ITEMS.PERSONAL_PROPERTY' | translate }}</h3>
-            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.COVERAGE_OPTIONS.ITEMS.PERSONAL_PROPERTY' | translate }}</p>
+            <p class="coverage-option-card__text mb-0">{{ 'SAN_ANTONIO_HOME_TX.COVERAGE_OPTIONS.ITEMS.PERSONAL_PROPERTY' | translate }}</p>
           </article>
         </div>
 
@@ -186,7 +186,7 @@
               <img src="/assets/images/homeowners-city/houston-tx/icons/cover-liability.png" alt="" class="coverage-option-card__icon-image">
             </span>
             <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.COVERAGE_OPTIONS.ITEMS.LIABILITY' | translate }}</h3>
-            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.COVERAGE_OPTIONS.ITEMS.LIABILITY' | translate }}</p>
+            <p class="coverage-option-card__text mb-0">{{ 'SAN_ANTONIO_HOME_TX.COVERAGE_OPTIONS.ITEMS.LIABILITY' | translate }}</p>
           </article>
         </div>
 
@@ -196,7 +196,7 @@
               <img src="/assets/images/homeowners-city/houston-tx/icons/cover-loss-of-use.png" alt="" class="coverage-option-card__icon-image">
             </span>
             <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.COVERAGE_OPTIONS.ITEMS.LOSS_OF_USE' | translate }}</h3>
-            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.COVERAGE_OPTIONS.ITEMS.LOSS_OF_USE' | translate }}</p>
+            <p class="coverage-option-card__text mb-0">{{ 'SAN_ANTONIO_HOME_TX.COVERAGE_OPTIONS.ITEMS.LOSS_OF_USE' | translate }}</p>
           </article>
         </div>
 
@@ -206,7 +206,7 @@
               <img src="/assets/images/homeowners-city/houston-tx/icons/cover-medical-payments.png" alt="" class="coverage-option-card__icon-image">
             </span>
             <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.COVERAGE_OPTIONS.ITEMS.MEDICAL_PAYMENTS' | translate }}</h3>
-            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.COVERAGE_OPTIONS.ITEMS.MEDICAL_PAYMENTS' | translate }}</p>
+            <p class="coverage-option-card__text mb-0">{{ 'SAN_ANTONIO_HOME_TX.COVERAGE_OPTIONS.ITEMS.MEDICAL_PAYMENTS' | translate }}</p>
           </article>
         </div>
 
@@ -216,7 +216,7 @@
               <img src="/assets/images/homeowners-city/houston-tx/icons/cover-sewer-backup.png" alt="" class="coverage-option-card__icon-image">
             </span>
             <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.COVERAGE_OPTIONS.ITEMS.SEWER_BACKUP' | translate }}</h3>
-            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.COVERAGE_OPTIONS.ITEMS.SEWER_BACKUP' | translate }}</p>
+            <p class="coverage-option-card__text mb-0">{{ 'SAN_ANTONIO_HOME_TX.COVERAGE_OPTIONS.ITEMS.SEWER_BACKUP' | translate }}</p>
           </article>
         </div>
 
@@ -226,7 +226,7 @@
               <img src="/assets/images/homeowners-city/houston-tx/icons/cover-ordinance-law.png" alt="" class="coverage-option-card__icon-image">
             </span>
             <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.COVERAGE_OPTIONS.ITEMS.ORDINANCE_LAW' | translate }}</h3>
-            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.COVERAGE_OPTIONS.ITEMS.ORDINANCE_LAW' | translate }}</p>
+            <p class="coverage-option-card__text mb-0">{{ 'SAN_ANTONIO_HOME_TX.COVERAGE_OPTIONS.ITEMS.ORDINANCE_LAW' | translate }}</p>
           </article>
         </div>
 
@@ -236,7 +236,7 @@
               <img src="/assets/images/homeowners-city/houston-tx/icons/cover-extended-replacement.png" alt="" class="coverage-option-card__icon-image">
             </span>
             <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.COVERAGE_OPTIONS.ITEMS.EXTENDED_REPLACEMENT' | translate }}</h3>
-            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.COVERAGE_OPTIONS.ITEMS.EXTENDED_REPLACEMENT' | translate }}</p>
+            <p class="coverage-option-card__text mb-0">{{ 'SAN_ANTONIO_HOME_TX.COVERAGE_OPTIONS.ITEMS.EXTENDED_REPLACEMENT' | translate }}</p>
           </article>
         </div>
 
@@ -246,7 +246,7 @@
               <img src="/assets/images/homeowners-city/houston-tx/icons/cover-identity-theft.png" alt="" class="coverage-option-card__icon-image">
             </span>
             <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.COVERAGE_OPTIONS.ITEMS.IDENTITY_THEFT' | translate }}</h3>
-            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.COVERAGE_OPTIONS.ITEMS.IDENTITY_THEFT' | translate }}</p>
+            <p class="coverage-option-card__text mb-0">{{ 'SAN_ANTONIO_HOME_TX.COVERAGE_OPTIONS.ITEMS.IDENTITY_THEFT' | translate }}</p>
           </article>
         </div>
       </div>
@@ -266,8 +266,8 @@
         <div class="col-lg-9">
           <div class="section-content-shell">
       <div class="coverage-options-header text-center">
-        <h2 class="coverage-options-title mb-3">{{ 'GLOBAL_HOME_TX.NOT_COVERED.TITLE_PREFIX' | translate }} {{ 'HOUSTON_HOME_TX.LOCATION.CITY_WITH_STATE' | translate }}?</h2>
-        <p class="lead-text mx-auto mb-5" [innerHTML]="'HOUSTON_HOME_TX.NOT_COVERED.INTRO' | translateHtml | async"></p>
+        <h2 class="coverage-options-title mb-3">{{ 'GLOBAL_HOME_TX.NOT_COVERED.TITLE_PREFIX' | translate }} {{ 'SAN_ANTONIO_HOME_TX.LOCATION.CITY_WITH_STATE' | translate }}?</h2>
+        <p class="lead-text mx-auto mb-5" [innerHTML]="'SAN_ANTONIO_HOME_TX.NOT_COVERED.INTRO' | translateHtml | async"></p>
       </div>
 
       <div class="row coverage-options-grid gy-4 gx-lg-5 gx-4">
@@ -277,7 +277,7 @@
               <img src="/assets/images/homeowners-city/houston-tx/icons/notcover-flood.png" alt="" class="coverage-option-card__icon-image">
             </span>
             <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.NOT_COVERED.ITEMS.FLOOD' | translate }}</h3>
-            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.NOT_COVERED.ITEMS.FLOOD' | translate }}</p>
+            <p class="coverage-option-card__text mb-0">{{ 'SAN_ANTONIO_HOME_TX.NOT_COVERED.ITEMS.FLOOD' | translate }}</p>
           </article>
         </div>
 
@@ -287,7 +287,7 @@
               <img src="/assets/images/homeowners-city/houston-tx/icons/notcover-earthquake.png" alt="" class="coverage-option-card__icon-image">
             </span>
             <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.NOT_COVERED.ITEMS.EARTHQUAKE' | translate }}</h3>
-            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.NOT_COVERED.ITEMS.EARTHQUAKE' | translate }}</p>
+            <p class="coverage-option-card__text mb-0">{{ 'SAN_ANTONIO_HOME_TX.NOT_COVERED.ITEMS.EARTHQUAKE' | translate }}</p>
           </article>
         </div>
 
@@ -297,7 +297,7 @@
               <img src="/assets/images/homeowners-city/houston-tx/icons/notcover-sewer-drain.png" alt="" class="coverage-option-card__icon-image">
             </span>
             <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.NOT_COVERED.ITEMS.SEWER_BACKUP' | translate }}</h3>
-            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.NOT_COVERED.ITEMS.SEWER_BACKUP' | translate }}</p>
+            <p class="coverage-option-card__text mb-0">{{ 'SAN_ANTONIO_HOME_TX.NOT_COVERED.ITEMS.SEWER_BACKUP' | translate }}</p>
           </article>
         </div>
 
@@ -307,7 +307,7 @@
               <img src="/assets/images/homeowners-city/houston-tx/icons/notcover-mold.png" alt="" class="coverage-option-card__icon-image">
             </span>
             <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.NOT_COVERED.ITEMS.MOLD' | translate }}</h3>
-            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.NOT_COVERED.ITEMS.MOLD' | translate }}</p>
+            <p class="coverage-option-card__text mb-0">{{ 'SAN_ANTONIO_HOME_TX.NOT_COVERED.ITEMS.MOLD' | translate }}</p>
           </article>
         </div>
 
@@ -317,7 +317,7 @@
               <img src="/assets/images/homeowners-city/houston-tx/icons/notcover-wear-tear.png" alt="" class="coverage-option-card__icon-image">
             </span>
             <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.NOT_COVERED.ITEMS.WEAR_TEAR' | translate }}</h3>
-            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.NOT_COVERED.ITEMS.WEAR_TEAR' | translate }}</p>
+            <p class="coverage-option-card__text mb-0">{{ 'SAN_ANTONIO_HOME_TX.NOT_COVERED.ITEMS.WEAR_TEAR' | translate }}</p>
           </article>
         </div>
 
@@ -327,7 +327,7 @@
               <img src="/assets/images/homeowners-city/houston-tx/icons/notcover-pest.png" alt="" class="coverage-option-card__icon-image">
             </span>
             <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.NOT_COVERED.ITEMS.PEST' | translate }}</h3>
-            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.NOT_COVERED.ITEMS.PEST' | translate }}</p>
+            <p class="coverage-option-card__text mb-0">{{ 'SAN_ANTONIO_HOME_TX.NOT_COVERED.ITEMS.PEST' | translate }}</p>
           </article>
         </div>
 
@@ -337,7 +337,7 @@
               <img src="/assets/images/homeowners-city/houston-tx/icons/notcover-business-use.png" alt="" class="coverage-option-card__icon-image">
             </span>
             <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.NOT_COVERED.ITEMS.BUSINESS_USE' | translate }}</h3>
-            <p class="coverage-option-card__text mb-0" [innerHTML]="'HOUSTON_HOME_TX.NOT_COVERED.ITEMS.BUSINESS_USE' | translateHtml | async"></p>
+            <p class="coverage-option-card__text mb-0" [innerHTML]="'SAN_ANTONIO_HOME_TX.NOT_COVERED.ITEMS.BUSINESS_USE' | translateHtml | async"></p>
           </article>
         </div>
 
@@ -347,7 +347,7 @@
               <img src="/assets/images/homeowners-city/houston-tx/icons/notcover-acts-of-war.png" alt="" class="coverage-option-card__icon-image">
             </span>
             <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.NOT_COVERED.ITEMS.ACTS_OF_WAR' | translate }}</h3>
-            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.NOT_COVERED.ITEMS.ACTS_OF_WAR' | translate }}</p>
+            <p class="coverage-option-card__text mb-0">{{ 'SAN_ANTONIO_HOME_TX.NOT_COVERED.ITEMS.ACTS_OF_WAR' | translate }}</p>
           </article>
         </div>
 
@@ -357,7 +357,7 @@
               <img src="/assets/images/homeowners-city/houston-tx/icons/notcover-nuclear.png" alt="" class="coverage-option-card__icon-image">
             </span>
             <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.NOT_COVERED.ITEMS.NUCLEAR' | translate }}</h3>
-            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.NOT_COVERED.ITEMS.NUCLEAR' | translate }}</p>
+            <p class="coverage-option-card__text mb-0">{{ 'SAN_ANTONIO_HOME_TX.NOT_COVERED.ITEMS.NUCLEAR' | translate }}</p>
           </article>
         </div>
 
@@ -367,7 +367,7 @@
               <img src="/assets/images/homeowners-city/houston-tx/icons/notcover-intentional.png" alt="" class="coverage-option-card__icon-image">
             </span>
             <h3 class="coverage-option-card__title">{{ 'GLOBAL_HOME_TX.NOT_COVERED.ITEMS.INTENTIONAL' | translate }}</h3>
-            <p class="coverage-option-card__text mb-0">{{ 'HOUSTON_HOME_TX.NOT_COVERED.ITEMS.INTENTIONAL' | translate }}</p>
+            <p class="coverage-option-card__text mb-0">{{ 'SAN_ANTONIO_HOME_TX.NOT_COVERED.ITEMS.INTENTIONAL' | translate }}</p>
           </article>
         </div>
       </div>
@@ -385,16 +385,16 @@
         <div class="col-lg-2"></div>
         <div class="col-lg-9">
           <div class="section-content-shell">
-      <h2 class="risks__title">{{ ('GLOBAL_HOME_TX.RISKS.TITLE_PREFIX' | translate) + ('HOUSTON_HOME_TX.LOCATION.CITY' | translate) + ('GLOBAL_HOME_TX.RISKS.TITLE_SUFFIX' | translate) }}</h2>
+      <h2 class="risks__title">{{ ('GLOBAL_HOME_TX.RISKS.TITLE_PREFIX' | translate) + ('SAN_ANTONIO_HOME_TX.LOCATION.CITY' | translate) + ('GLOBAL_HOME_TX.RISKS.TITLE_SUFFIX' | translate) }}</h2>
 
       <div class="row risks__grid">
         <div class="col-12 col-lg-6 risks__col">
           <div class="risks__item">
             <div class="risks__head">
               <img class="risks__icon" src="/assets/images/homeowners-city/houston-tx/icons/risk-flood-zone.png" alt="" aria-hidden="true">
-              <h3 class="risks__heading">{{ 'HOUSTON_HOME_TX.RISKS.ITEMS.0.HEADING' | translate }}</h3>
+              <h3 class="risks__heading">{{ 'SAN_ANTONIO_HOME_TX.RISKS.ITEMS.0.HEADING' | translate }}</h3>
             </div>
-            <p class="risks__text" [innerHTML]="'HOUSTON_HOME_TX.RISKS.ITEMS.0.TEXT' | translateHtml | async"></p>
+            <p class="risks__text" [innerHTML]="'SAN_ANTONIO_HOME_TX.RISKS.ITEMS.0.TEXT' | translateHtml | async"></p>
           </div>
         </div>
 
@@ -402,9 +402,9 @@
           <div class="risks__item">
             <div class="risks__head">
               <img class="risks__icon" src="/assets/images/homeowners-city/houston-tx/icons/risk-hail-roof.png" alt="" aria-hidden="true">
-              <h3 class="risks__heading">{{ 'HOUSTON_HOME_TX.RISKS.ITEMS.1.HEADING' | translate }}</h3>
+              <h3 class="risks__heading">{{ 'SAN_ANTONIO_HOME_TX.RISKS.ITEMS.1.HEADING' | translate }}</h3>
             </div>
-            <p class="risks__text" [innerHTML]="'HOUSTON_HOME_TX.RISKS.ITEMS.1.TEXT' | translateHtml | async"></p>
+            <p class="risks__text" [innerHTML]="'SAN_ANTONIO_HOME_TX.RISKS.ITEMS.1.TEXT' | translateHtml | async"></p>
           </div>
         </div>
 
@@ -412,9 +412,9 @@
           <div class="risks__item">
             <div class="risks__head">
               <img class="risks__icon" src="/assets/images/homeowners-city/houston-tx/icons/risk-wind-hurricane.png" alt="" aria-hidden="true">
-              <h3 class="risks__heading">{{ 'HOUSTON_HOME_TX.RISKS.ITEMS.2.HEADING' | translate }}</h3>
+              <h3 class="risks__heading">{{ 'SAN_ANTONIO_HOME_TX.RISKS.ITEMS.2.HEADING' | translate }}</h3>
             </div>
-            <p class="risks__text" [innerHTML]="'HOUSTON_HOME_TX.RISKS.ITEMS.2.TEXT' | translateHtml | async"></p>
+            <p class="risks__text" [innerHTML]="'SAN_ANTONIO_HOME_TX.RISKS.ITEMS.2.TEXT' | translateHtml | async"></p>
           </div>
         </div>
 
@@ -422,9 +422,9 @@
           <div class="risks__item">
             <div class="risks__head">
               <img class="risks__icon" src="/assets/images/homeowners-city/houston-tx/icons/risk-foundation.png" alt="" aria-hidden="true">
-              <h3 class="risks__heading">{{ 'HOUSTON_HOME_TX.RISKS.ITEMS.3.HEADING' | translate }}</h3>
+              <h3 class="risks__heading">{{ 'SAN_ANTONIO_HOME_TX.RISKS.ITEMS.3.HEADING' | translate }}</h3>
             </div>
-            <p class="risks__text" [innerHTML]="'HOUSTON_HOME_TX.RISKS.ITEMS.3.TEXT' | translateHtml | async"></p>
+            <p class="risks__text" [innerHTML]="'SAN_ANTONIO_HOME_TX.RISKS.ITEMS.3.TEXT' | translateHtml | async"></p>
           </div>
         </div>
 
@@ -432,9 +432,9 @@
           <div class="risks__item">
             <div class="risks__head">
               <img class="risks__icon" src="/assets/images/homeowners-city/houston-tx/icons/risk-aging-infra.png" alt="" aria-hidden="true">
-              <h3 class="risks__heading">{{ 'HOUSTON_HOME_TX.RISKS.ITEMS.4.HEADING' | translate }}</h3>
+              <h3 class="risks__heading">{{ 'SAN_ANTONIO_HOME_TX.RISKS.ITEMS.4.HEADING' | translate }}</h3>
             </div>
-            <p class="risks__text" [innerHTML]="'HOUSTON_HOME_TX.RISKS.ITEMS.4.TEXT' | translateHtml | async"></p>
+            <p class="risks__text" [innerHTML]="'SAN_ANTONIO_HOME_TX.RISKS.ITEMS.4.TEXT' | translateHtml | async"></p>
           </div>
         </div>
       </div>
@@ -453,10 +453,10 @@
         <div class="col-lg-9">
           <div class="rates-content text-center">
             <h2 class="rates-heading">{{ ratesHeading }}</h2>
-            <p class="rates-copy" [innerHTML]="'HOUSTON_HOME_TX.RATES.COPY' | translateHtml | async"></p>
+            <p class="rates-copy" [innerHTML]="'SAN_ANTONIO_HOME_TX.RATES.COPY' | translateHtml | async"></p>
 
             <h3 class="rates-subheading">{{ averageAnnualRateHeading }}</h3>
-            <p class="rates-copy" [innerHTML]="'HOUSTON_HOME_TX.RATES.AVERAGE_COPY' | translateHtml | async"></p>
+            <p class="rates-copy" [innerHTML]="'SAN_ANTONIO_HOME_TX.RATES.AVERAGE_COPY' | translateHtml | async"></p>
 
             <div class="table-responsive card-table">
               <table class="table rates-table mb-0">
@@ -480,7 +480,7 @@
             <div class="rates-meta">
               <p class="source-line mb-0"><strong class="source-label">{{ 'GLOBAL_HOME_TX.RATES.SOURCE_LABEL' | translate
                   }}</strong>&nbsp;<a class="source-name"
-                  href="https://insurify.com/homeowners-insurance/texas/houston/" rel="nofollow"
+                  href="https://insurify.com/homeowners-insurance/texas/san-antonio/" rel="nofollow"
                   target="_blank">Insurify</a></p>
               <p class="updated-line mb-0"><strong class="source-label">{{ 'GLOBAL_HOME_TX.RATES.LAST_UPDATED_LABEL' |
                   translate }}</strong> August 2026</p>
@@ -506,7 +506,7 @@
         <div class="col-lg-9">
           <div class="rates-content text-center">
             <h3 class="rates-subheading">{{ zipCodesHeading }}</h3>
-            <p class="zip-copy mx-auto" [innerHTML]="'HOUSTON_HOME_TX.RATES.ZIP_COPY' | translateHtml | async"></p>
+            <p class="zip-copy mx-auto" [innerHTML]="'SAN_ANTONIO_HOME_TX.RATES.ZIP_COPY' | translateHtml | async"></p>
 
             <div class="table-responsive card-table">
 
@@ -551,7 +551,7 @@
             <div class="comparison-content text-center">
               <h2 class="comparison-heading">{{ comparisonHeading }}</h2>
               <p class="comparison-copy mx-auto"
-                [innerHTML]="'HOUSTON_HOME_TX.RATES.COMPARISON_COPY' | translateHtml | async"></p>
+                [innerHTML]="'SAN_ANTONIO_HOME_TX.RATES.COMPARISON_COPY' | translateHtml | async"></p>
 
               <div class="table-responsive comparison-table-wrap card-table mx-auto">
                 <table class="table comparison-table mb-0">
@@ -591,8 +591,8 @@
         <div class="col-lg-9">
           <div class="section-content-shell">
       <div class="rate-factors-header text-center">
-        <h2 class="rate-factors-title mb-0">{{ 'GLOBAL_HOME_TX.RATE_FACTORS.TITLE_PREFIX' | translate }} {{ 'HOUSTON_HOME_TX.LOCATION.CITY_WITH_STATE' | translate }}?</h2>
-        <p class="rate-factors-copy mb-0">{{ 'HOUSTON_HOME_TX.RATE_FACTORS.COPY' | translate }}</p>
+        <h2 class="rate-factors-title mb-0">{{ 'GLOBAL_HOME_TX.RATE_FACTORS.TITLE_PREFIX' | translate }} {{ 'SAN_ANTONIO_HOME_TX.LOCATION.CITY_WITH_STATE' | translate }}?</h2>
+        <p class="rate-factors-copy mb-0">{{ 'SAN_ANTONIO_HOME_TX.RATE_FACTORS.COPY' | translate }}</p>
       </div>
 
       <ul class="rate-factors-list rate-factors-grid list-unstyled mb-0">
@@ -637,8 +637,8 @@
         <div class="col-lg-9">
           <div class="section-content-shell">
       <div class="savings-header text-center">
-        <h2 class="savings-title mb-0">{{ 'GLOBAL_HOME_TX.SAVINGS.TITLE_PREFIX' | translate }} {{ 'HOUSTON_HOME_TX.LOCATION.CITY' | translate }} {{ 'GLOBAL_HOME_TX.SAVINGS.TITLE_SUFFIX' | translate }}</h2>
-        <p class="savings-copy mb-0">{{ 'HOUSTON_HOME_TX.SAVINGS.COPY' | translate }}</p>
+        <h2 class="savings-title mb-0">{{ 'GLOBAL_HOME_TX.SAVINGS.TITLE_PREFIX' | translate }} {{ 'SAN_ANTONIO_HOME_TX.LOCATION.CITY' | translate }} {{ 'GLOBAL_HOME_TX.SAVINGS.TITLE_SUFFIX' | translate }}</h2>
+        <p class="savings-copy mb-0">{{ 'SAN_ANTONIO_HOME_TX.SAVINGS.COPY' | translate }}</p>
       </div>
 
       <ul class="savings-list savings-grid list-unstyled mb-0">
@@ -683,7 +683,7 @@
         <div class="col-lg-9">
           <div class="section-content-shell">
       <div class="independent-agency-header text-center">
-        <h2 class="independent-agency-title mb-0">{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TITLE_PREFIX' | translate }} {{ 'HOUSTON_HOME_TX.LOCATION.CITY_WITH_STATE' | translate }}</h2>
+        <h2 class="independent-agency-title mb-0">{{ 'GLOBAL_HOME_TX.INDEPENDENT_AGENCY.TITLE_PREFIX' | translate }} {{ 'SAN_ANTONIO_HOME_TX.LOCATION.CITY_WITH_STATE' | translate }}</h2>
       </div>
 
       <div class="independent-agency-table-wrap">
@@ -772,7 +772,7 @@
         <div class="col-lg-9">
           <div class="section-content-shell">
       <div class="text-center coverage__header mb-2">
-        <h2 class="coverage__title coverage__title--center mb-0">{{ 'GLOBAL_HOME_TX.SPECIAL_COVERAGE.TITLE_PREFIX' | translate }} {{ 'HOUSTON_HOME_TX.LOCATION.CITY_WITH_STATE' | translate }}</h2>
+        <h2 class="coverage__title coverage__title--center mb-0">{{ 'GLOBAL_HOME_TX.SPECIAL_COVERAGE.TITLE_PREFIX' | translate }} {{ 'SAN_ANTONIO_HOME_TX.LOCATION.CITY_WITH_STATE' | translate }}</h2>
       </div>
 
           <div class="row g-4 coverage__grid">
@@ -784,7 +784,7 @@
                     <a [routerLink]="getRoute('homeInsurance')" class="coverage__link">{{ 'GLOBAL_HOME_TX.SPECIAL_COVERAGE.ITEMS.STANDARD' | translate }}</a>
                   </h3>
                 </div>
-                <p class="coverage__text">{{ 'HOUSTON_HOME_TX.SPECIAL_COVERAGE.ITEMS.STANDARD' | translate }}</p>
+                <p class="coverage__text">{{ 'SAN_ANTONIO_HOME_TX.SPECIAL_COVERAGE.ITEMS.STANDARD' | translate }}</p>
               </div>
             </div>
 
@@ -796,7 +796,7 @@
                     <a [routerLink]="getRoute('condoInsurance')" class="coverage__link">{{ 'GLOBAL_HOME_TX.SPECIAL_COVERAGE.ITEMS.CONDO' | translate }}</a>
                   </h3>
                 </div>
-                <p class="coverage__text">{{ 'HOUSTON_HOME_TX.SPECIAL_COVERAGE.ITEMS.CONDO' | translate }}</p>
+                <p class="coverage__text">{{ 'SAN_ANTONIO_HOME_TX.SPECIAL_COVERAGE.ITEMS.CONDO' | translate }}</p>
               </div>
             </div>
 
@@ -808,7 +808,7 @@
                     <a [routerLink]="getRoute('landlordInsurance')" class="coverage__link">{{ 'GLOBAL_HOME_TX.SPECIAL_COVERAGE.ITEMS.LANDLORD' | translate }}</a>
                   </h3>
                 </div>
-                <p class="coverage__text">{{ 'HOUSTON_HOME_TX.SPECIAL_COVERAGE.ITEMS.LANDLORD' | translate }}</p>
+                <p class="coverage__text">{{ 'SAN_ANTONIO_HOME_TX.SPECIAL_COVERAGE.ITEMS.LANDLORD' | translate }}</p>
               </div>
             </div>
 
@@ -820,7 +820,7 @@
                     <a [routerLink]="getRoute('manufacturedMobileHomeInsurance')" class="coverage__link">{{ 'GLOBAL_HOME_TX.SPECIAL_COVERAGE.ITEMS.MOBILE' | translate }}</a>
                   </h3>
                 </div>
-                <p class="coverage__text">{{ 'HOUSTON_HOME_TX.SPECIAL_COVERAGE.ITEMS.MOBILE' | translate }}</p>
+                <p class="coverage__text">{{ 'SAN_ANTONIO_HOME_TX.SPECIAL_COVERAGE.ITEMS.MOBILE' | translate }}</p>
               </div>
             </div>
 
@@ -832,7 +832,7 @@
                     <a [routerLink]="getRoute('floodInsurance')" class="coverage__link">{{ 'GLOBAL_HOME_TX.SPECIAL_COVERAGE.ITEMS.FLOOD' | translate }}</a>
                   </h3>
                 </div>
-                <p class="coverage__text">{{ 'HOUSTON_HOME_TX.SPECIAL_COVERAGE.ITEMS.FLOOD' | translate }}</p>
+                <p class="coverage__text">{{ 'SAN_ANTONIO_HOME_TX.SPECIAL_COVERAGE.ITEMS.FLOOD' | translate }}</p>
               </div>
             </div>
 
@@ -844,7 +844,7 @@
                     <a [routerLink]="getRoute('earthquakeInsurance')" class="coverage__link">{{ 'GLOBAL_HOME_TX.SPECIAL_COVERAGE.ITEMS.EARTHQUAKE' | translate }}</a>
                   </h3>
                 </div>
-                <p class="coverage__text">{{ 'HOUSTON_HOME_TX.SPECIAL_COVERAGE.ITEMS.EARTHQUAKE' | translate }}</p>
+                <p class="coverage__text">{{ 'SAN_ANTONIO_HOME_TX.SPECIAL_COVERAGE.ITEMS.EARTHQUAKE' | translate }}</p>
               </div>
             </div>
 
@@ -856,7 +856,7 @@
                     <a [routerLink]="getRoute('rentersInsurance')" class="coverage__link">{{ 'GLOBAL_HOME_TX.SPECIAL_COVERAGE.ITEMS.RENTERS' | translate }}</a>
                   </h3>
                 </div>
-                <p class="coverage__text">{{ 'HOUSTON_HOME_TX.SPECIAL_COVERAGE.ITEMS.RENTERS' | translate }}</p>
+                <p class="coverage__text">{{ 'SAN_ANTONIO_HOME_TX.SPECIAL_COVERAGE.ITEMS.RENTERS' | translate }}</p>
               </div>
             </div>
           </div>
@@ -875,7 +875,7 @@
         <div class="col-lg-2"></div>
         <div class="col-lg-9">
           <div class="section-content-shell">
-      <h2 class="faq__title">{{ 'GLOBAL_HOME_TX.FAQ_SECTION.TITLE_PREFIX' | translate }} {{ 'HOUSTON_HOME_TX.LOCATION.CITY_WITH_STATE' | translate }}</h2>
+      <h2 class="faq__title">{{ 'GLOBAL_HOME_TX.FAQ_SECTION.TITLE_PREFIX' | translate }} {{ 'SAN_ANTONIO_HOME_TX.LOCATION.CITY_WITH_STATE' | translate }}</h2>
 
       <div class="faq__list">
         @for (item of faqItems; track item.question; let i = $index) {
@@ -929,8 +929,8 @@
               </div>
 
               <div class="cover-quote-shell__content">
-                <h2 class="cover-quote-shell__title mb-0">{{ 'GLOBAL_HOME_TX.QUOTE.TITLE_PREFIX' | translate }} {{ 'HOUSTON_HOME_TX.LOCATION.CITY_WITH_STATE' | translate }}</h2>
-                <p class="cover-quote-shell__copy mb-0" [innerHTML]="'HOUSTON_HOME_TX.QUOTE.COPY' | translateHtml | async"></p>
+                <h2 class="cover-quote-shell__title mb-0">{{ 'GLOBAL_HOME_TX.QUOTE.TITLE_PREFIX' | translate }} {{ 'SAN_ANTONIO_HOME_TX.LOCATION.CITY_WITH_STATE' | translate }}</h2>
+                <p class="cover-quote-shell__copy mb-0" [innerHTML]="'SAN_ANTONIO_HOME_TX.QUOTE.COPY' | translateHtml | async"></p>
               </div>
             </div>
 
