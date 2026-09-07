@@ -36,6 +36,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AutoInsurance } from './pages/auto-insurance/auto-insurance';
 import { HomeInsurance } from './pages/home-insurance/home-insurance';
 import { HomeownersHoustonTx } from './pages/home-insurance/houston-tx/houston-tx';
+import { HomeownersSanAntonioTx } from './pages/home-insurance/san-antonio-tx/san-antonio-tx';
+import { HomeownersDallasTx } from './pages/home-insurance/dallas-tx/dallas-tx';
+import { HomeownersAustinTx } from './pages/home-insurance/austin-tx/austin-tx';
 import { CommercialInsurance } from './pages/commercial-insurance/commercial-insurance';
 import { LifeInsurance } from './pages/life-insurance/life-insurance';
 import { HealthInsurance } from './pages/health-insurance/health-insurance';
@@ -189,6 +192,9 @@ export function initializeTranslations(
     AutoInsurance,
     HomeInsurance,
     HomeownersHoustonTx,
+    HomeownersSanAntonioTx,
+    HomeownersDallasTx,
+    HomeownersAustinTx,
     CommercialInsurance,
     LifeInsurance,
     HealthInsurance,
