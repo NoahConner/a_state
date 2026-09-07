@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 import Swal from 'sweetalert2';
 import { environment } from '../../environments/environment';
+import { PageSource } from './page-source';
 
 type QuoteLeadPayload = {
   selected_chip: string;
@@ -17,7 +18,10 @@ export class QuoteLeadCaptureService {
   // Assumption: the backend shortForm action is exposed at this route.
   private readonly endpoint = '/quotes/short-form';
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private pageSource: PageSource,
+  ) {}
 
   async submitLead(payload: QuoteLeadPayload) {
     const selectedChip = payload.selected_chip.trim();
@@ -39,6 +43,7 @@ export class QuoteLeadCaptureService {
         selected_chip: selectedChip,
         full_name: fullName,
         phone_number: phoneNumber,
+        ...this.pageSource.getSourceFields(),
       }),
     );
 

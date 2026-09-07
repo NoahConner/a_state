@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { HttpService } from '../../services/http.service';
+import { PageSource } from '../../services/page-source';
 import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
 
@@ -27,6 +28,7 @@ export class GetSuretyQuote {
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private http: HttpService,
+    private pageSource: PageSource,
     private translate: TranslateService
   ) { }
 
@@ -172,7 +174,10 @@ export class GetSuretyQuote {
 
     this.loading = true;
     try {
-      const body = this.suretyQuoteForm.getRawValue();
+      const body = {
+        ...this.suretyQuoteForm.getRawValue(),
+        ...this.pageSource.getSourceFields(),
+      };
       const res: any = await this.http
         .post('/quotes/create', body, true)
         .toPromise();
