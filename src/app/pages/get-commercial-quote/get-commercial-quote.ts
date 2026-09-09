@@ -41,7 +41,7 @@ export class GetCommercialQuote {
       business_entity_type: ['', Validators.required],
       business_state: ['', Validators.required],
       years_in_business: ['', Validators.required],
-      number_of_employees: ['', Validators.required],
+      number_of_employees: ['', [Validators.required, Validators.pattern(/^\d{1,6}$/)]],
       estimated_annual_revenue: ['', Validators.required],
       business_vehicles: ['', Validators.required],
       business_location_type: ['', Validators.required],

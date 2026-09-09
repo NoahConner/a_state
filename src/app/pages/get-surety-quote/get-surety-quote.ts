@@ -17,6 +17,8 @@ export class GetSuretyQuote {
 
   contactOptions: string[] = [];
   timeOptions: string[] = [];
+  bondNeededByOptions: string[] = [];
+  minBondDate = new Date().toISOString().split('T')[0];
 
   currentStep = 1;
   totalSteps = 4;
@@ -36,15 +38,39 @@ export class GetSuretyQuote {
     this.suretyQuoteForm = this.fb.group({
       type: ['surety_bond'],
       full_name: ['', Validators.required],
+      zip_code: ['', [Validators.required, Validators.pattern(/^\d{5}$/)]],
       email_address: ['', [Validators.required, Validators.email]],
       phone_number: ['', Validators.required],
+      applicant_type: ['', Validators.required],
       bond_type: ['', Validators.required],
       bond_amount: ['', Validators.required],
       obligee_name: ['', Validators.required],
+      bond_needed_by: ['', Validators.required],
+      bond_needed_by_specific_date: [''],
       estimated_credit_score: ['', Validators.required],
-      years_in_business: ['', Validators.required],
+      years_in_business: ['', [Validators.required, Validators.pattern(/^\d{1,3}$/)]],
+      prior_bond_history: ['', Validators.required],
+      has_judgments_liens_bankruptcies: ['', Validators.required],
       preferred_language: ['', Validators.required],
+      contact_method: ['', Validators.required],
       best_time_to_call: ['', Validators.required],
+    });
+
+    this.translate
+      .get('SURETY_BOND_QUOTE.STEPPER.STEP2.BOND_NEEDED_BY_OPTIONS')
+      .subscribe((res: string[]) => {
+        this.bondNeededByOptions = res;
+      });
+
+    this.suretyQuoteForm.get('bond_needed_by')!.valueChanges.subscribe(() => {
+      const specificDate = this.suretyQuoteForm.get('bond_needed_by_specific_date')!;
+      if (this.needsSpecificBondDate) {
+        specificDate.setValidators(Validators.required);
+      } else {
+        specificDate.clearValidators();
+        specificDate.reset('');
+      }
+      specificDate.updateValueAndValidity();
     });
 
     this.translate
@@ -60,6 +86,12 @@ export class GetSuretyQuote {
       });
 
     this.applyPrefillFromQueryParams();
+  }
+
+  /** Only the "Specific date" answer needs an exact date, so key off its position. */
+  get needsSpecificBondDate(): boolean {
+    const value = this.suretyQuoteForm?.get('bond_needed_by')?.value;
+    return !!value && value === this.bondNeededByOptions[2];
   }
 
   private applyPrefillFromQueryParams() {
@@ -108,6 +140,15 @@ export class GetSuretyQuote {
     return this.getControlsForStep(step).every((control) => control.valid);
   }
 
+  formatDate(value: string | null | undefined): string {
+    if (!value) return 'None';
+
+    const [year, month, day] = value.split('-');
+    if (!year || !month || !day) return value;
+
+    return `${day}/${month}/${year}`;
+  }
+
   private validateStep(step: number): boolean {
     const controls = this.getControlsForStep(step);
     controls.forEach((control) => {
@@ -131,23 +172,30 @@ export class GetSuretyQuote {
       case 1:
         return [
           this.suretyQuoteForm.get('full_name')!,
+          this.suretyQuoteForm.get('zip_code')!,
           this.suretyQuoteForm.get('email_address')!,
           this.suretyQuoteForm.get('phone_number')!,
+          this.suretyQuoteForm.get('applicant_type')!,
         ];
       case 2:
         return [
           this.suretyQuoteForm.get('bond_type')!,
           this.suretyQuoteForm.get('bond_amount')!,
           this.suretyQuoteForm.get('obligee_name')!,
+          this.suretyQuoteForm.get('bond_needed_by')!,
+          this.suretyQuoteForm.get('bond_needed_by_specific_date')!,
         ];
       case 3:
         return [
           this.suretyQuoteForm.get('estimated_credit_score')!,
           this.suretyQuoteForm.get('years_in_business')!,
+          this.suretyQuoteForm.get('prior_bond_history')!,
+          this.suretyQuoteForm.get('has_judgments_liens_bankruptcies')!,
         ];
       case 4:
         return [
           this.suretyQuoteForm.get('preferred_language')!,
+          this.suretyQuoteForm.get('contact_method')!,
           this.suretyQuoteForm.get('best_time_to_call')!,
         ];
       default:

@@ -63,16 +63,16 @@
 
                   <div class="coverage-options">
                     <div class="form-check">
-                      <input type="radio" class="form-check-input" id="is_primary_residence"
+                      <input type="radio" class="form-check-input" id="is_primary_residence_yes"
                         formControlName="is_primary_residence" value="Yes, I live here." />
-                      <label class="form-check-label" for="is_primary_residence"
+                      <label class="form-check-label" for="is_primary_residence_yes"
                         [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP1.FIELDS.PRIMARY_RESIDENCE_YES' | translateHtml | async"></label><br />
                     </div>
 
                     <div class="form-check">
-                      <input type="radio" class="form-check-input" id="is_primary_residence"
+                      <input type="radio" class="form-check-input" id="is_primary_residence_no"
                         formControlName="is_primary_residence" value="No, it’s a rental property / second home." />
-                      <label class="form-check-label" for="is_primary_residence"
+                      <label class="form-check-label" for="is_primary_residence_no"
                         [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP1.FIELDS.PRIMARY_RESIDENCE_NO' | translateHtml | async"></label>
                     </div>
 
@@ -170,10 +170,16 @@
                     <span
                       [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP2.FIELDS.NUMBER_OF_STORIES' | translateHtml | async"></span><span>*</span>
                   </label>
-                  <input type="text" class="form-control" formControlName="number_of_stories" [class.is-invalid]="
+                  <select class="form-select" formControlName="number_of_stories" [class.is-invalid]="
                       homeQuoteForm.get('number_of_stories')?.invalid &&
                       homeQuoteForm.get('number_of_stories')?.touched
-                    " placeholder="2" />
+                    ">
+                    <option *ngFor="
+                        let option of 'GET_HOME_QUOTE.STEPPER.STEP2.FIELDS.NUMBER_OF_STORIES_OPTIONS' | translate
+                      " [value]="option">
+                      {{ option }}
+                    </option>
+                  </select>
                   <div class="invalid-feedback" *ngIf="
                       homeQuoteForm.get('number_of_stories')?.invalid &&
                       homeQuoteForm.get('number_of_stories')?.touched
@@ -258,16 +264,16 @@
 
                 <div class="coverage-options">
                   <div class="form-check">
-                    <input type="radio" class="form-check-input" id="has_alarm_system"
+                    <input type="radio" class="form-check-input" id="has_alarm_system_yes"
                       formControlName="has_alarm_system" value="Yes" />
-                    <label class="form-check-label" for="has_alarm_system"
+                    <label class="form-check-label" for="has_alarm_system_yes"
                       [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.MONITORED_ALARM_YES' | translateHtml | async"></label><br />
                   </div>
 
                   <div class="form-check">
-                    <input type="radio" class="form-check-input" id="has_alarm_system"
+                    <input type="radio" class="form-check-input" id="has_alarm_system_no"
                       formControlName="has_alarm_system" value="No" />
-                    <label class="form-check-label" for="has_alarm_system"
+                    <label class="form-check-label" for="has_alarm_system_no"
                       [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.MONITORED_ALARM_NO' | translateHtml | async"></label>
                   </div>
 
@@ -284,16 +290,16 @@
 
                 <div class="coverage-options">
                   <div class="form-check">
-                    <input type="radio" class="form-check-input" id="has_swimming_pool"
+                    <input type="radio" class="form-check-input" id="has_swimming_pool_yes"
                       formControlName="has_swimming_pool" value="Yes" />
-                    <label class="form-check-label" for="has_swimming_pool"
+                    <label class="form-check-label" for="has_swimming_pool_yes"
                       [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.SWIMMING_POOL_YES' | translateHtml | async"></label><br />
                   </div>
 
                   <div class="form-check">
-                    <input type="radio" class="form-check-input" id="has_swimming_pool"
+                    <input type="radio" class="form-check-input" id="has_swimming_pool_no"
                       formControlName="has_swimming_pool" value="No" />
-                    <label class="form-check-label" for="has_swimming_pool"
+                    <label class="form-check-label" for="has_swimming_pool_no"
                       [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.SWIMMING_POOL_NO' | translateHtml | async"></label>
                   </div>
 
@@ -310,14 +316,14 @@
 
                 <div class="coverage-options">
                   <div class="form-check">
-                    <input type="radio" class="form-check-input" id="has_pets" formControlName="has_pets" value="Yes" />
-                    <label class="form-check-label" for="has_pets"
+                    <input type="radio" class="form-check-input" id="has_pets_yes" formControlName="has_pets" value="Yes" />
+                    <label class="form-check-label" for="has_pets_yes"
                       [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.PETS_YES' | translateHtml | async"></label><br />
                   </div>
 
                   <div class="form-check">
-                    <input type="radio" class="form-check-input" id="has_pets" formControlName="has_pets" value="No" />
-                    <label class="form-check-label" for="has_pets"
+                    <input type="radio" class="form-check-input" id="has_pets_no" formControlName="has_pets" value="No" />
+                    <label class="form-check-label" for="has_pets_no"
                       [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.PETS_NO' | translateHtml | async"></label>
                   </div>
 

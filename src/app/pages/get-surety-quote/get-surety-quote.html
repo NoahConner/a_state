@@ -46,12 +46,12 @@
                     *ngIf="suretyQuoteForm.get('full_name')?.invalid && suretyQuoteForm.get('full_name')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>
                 <div class="col-md-4">
-                  <label class="form-label"><span [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP1.FIELDS.EMAIL' | translateHtml | async"></span><span>*</span></label>
-                  <input type="email" formControlName="email_address"
-                    [class.is-invalid]="suretyQuoteForm.get('email_address')?.invalid && suretyQuoteForm.get('email_address')?.touched"
-                    class="form-control" id="email_address" placeholder="johndoe@email.com" />
+                  <label class="form-label"><span [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP1.FIELDS.ZIPCODE' | translateHtml | async"></span><span>*</span></label>
+                  <input type="text" formControlName="zip_code" maxlength="5" inputmode="numeric"
+                    [class.is-invalid]="suretyQuoteForm.get('zip_code')?.invalid && suretyQuoteForm.get('zip_code')?.touched"
+                    class="form-control" placeholder="12345" />
                   <div class="invalid-feedback"
-                    *ngIf="suretyQuoteForm.get('email_address')?.invalid && suretyQuoteForm.get('email_address')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.EMAIL' | translateHtml | async"></div>
+                    *ngIf="suretyQuoteForm.get('zip_code')?.invalid && suretyQuoteForm.get('zip_code')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>
               </div>
 
@@ -63,6 +63,34 @@
                     class="form-control" placeholder="+1 234 567 8900" />
                   <div class="invalid-feedback"
                     *ngIf="suretyQuoteForm.get('phone_number')?.invalid && suretyQuoteForm.get('phone_number')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label"><span [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP1.FIELDS.EMAIL' | translateHtml | async"></span><span>*</span></label>
+                  <input type="email" formControlName="email_address"
+                    [class.is-invalid]="suretyQuoteForm.get('email_address')?.invalid && suretyQuoteForm.get('email_address')?.touched"
+                    class="form-control" id="email_address" placeholder="johndoe@email.com" />
+                  <div class="invalid-feedback"
+                    *ngIf="suretyQuoteForm.get('email_address')?.invalid && suretyQuoteForm.get('email_address')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.EMAIL' | translateHtml | async"></div>
+                </div>
+              </div>
+
+              <div class="row gy-3 mt-4">
+                <div class="selection-group">
+                  <h4 class="selection-heading" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP1.FIELDS.APPLICANT_TYPE' | translateHtml | async"></h4>
+
+                  <div class="coverage-options">
+                    <div class="form-check"
+                      *ngFor="let option of ('SURETY_BOND_QUOTE.STEPPER.STEP1.APPLICANT_TYPE_OPTIONS' | translate)">
+                      <input class="form-check-input" type="radio" [value]="option" [id]="'applicant_type_' + option"
+                        formControlName="applicant_type" />
+
+                      <label class="form-check-label" [for]="'applicant_type_' + option">
+                        {{ option }}
+                      </label>
+                    </div>
+                    <div class="invalid-feedback d-block"
+                      *ngIf="suretyQuoteForm.get('applicant_type')?.invalid && suretyQuoteForm.get('applicant_type')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                  </div>
                 </div>
               </div>
 
@@ -80,35 +108,84 @@
 
             <div class="form-content-border">
               <div class="row gy-3 mb-3">
-                <div class="col-md-8">
-                  <label class="form-label"><span [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP2.FIELDS.BOND_TYPE' | translateHtml | async"></span><span>*</span></label>
-                  <input type="text" formControlName="bond_type"
-                    [class.is-invalid]="suretyQuoteForm.get('bond_type')?.invalid && suretyQuoteForm.get('bond_type')?.touched"
-                    class="form-control" placeholder="" />
-                  <div class="invalid-feedback"
-                    *ngIf="suretyQuoteForm.get('bond_type')?.invalid && suretyQuoteForm.get('bond_type')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                <div class="selection-group">
+                  <h4 class="selection-heading" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP2.FIELDS.BOND_TYPE' | translateHtml | async"></h4>
+
+                  <div class="coverage-options">
+                    <div class="form-check"
+                      *ngFor="let option of ('SURETY_BOND_QUOTE.STEPPER.STEP2.BOND_TYPE_OPTIONS' | translate)">
+                      <input class="form-check-input" type="radio" [value]="option" [id]="'bond_type_' + option"
+                        formControlName="bond_type" />
+
+                      <label class="form-check-label" [for]="'bond_type_' + option">
+                        {{ option }}
+                      </label>
+                    </div>
+                    <div class="invalid-feedback d-block"
+                      *ngIf="suretyQuoteForm.get('bond_type')?.invalid && suretyQuoteForm.get('bond_type')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                  </div>
                 </div>
               </div>
 
-              <div class="row gy-3 mb-3">
-                <div class="col-md-8">
-                  <label class="form-label" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP2.FIELDS.BOND_AMOUNT' | translateHtml | async"></label>
-                  <input type="text" formControlName="bond_amount"
-                    [class.is-invalid]="suretyQuoteForm.get('bond_amount')?.invalid && suretyQuoteForm.get('bond_amount')?.touched"
-                    class="form-control" placeholder="" />
-                  <div class="invalid-feedback"
-                    *ngIf="suretyQuoteForm.get('bond_amount')?.invalid && suretyQuoteForm.get('bond_amount')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+              <div class="row gy-3 mt-4">
+                <div class="selection-group">
+                  <h4 class="selection-heading" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP2.FIELDS.BOND_AMOUNT' | translateHtml | async"></h4>
+
+                  <div class="coverage-options">
+                    <div class="form-check"
+                      *ngFor="let option of ('SURETY_BOND_QUOTE.STEPPER.STEP2.BOND_AMOUNT_OPTIONS' | translate)">
+                      <input class="form-check-input" type="radio" [value]="option" [id]="'bond_amount_' + option"
+                        formControlName="bond_amount" />
+
+                      <label class="form-check-label" [for]="'bond_amount_' + option">
+                        {{ option }}
+                      </label>
+                    </div>
+                    <div class="invalid-feedback d-block"
+                      *ngIf="suretyQuoteForm.get('bond_amount')?.invalid && suretyQuoteForm.get('bond_amount')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                  </div>
                 </div>
               </div>
 
-              <div class="row gy-3 mb-3">
+              <div class="row gy-3 mt-4 mb-3">
                 <div class="col-md-8">
-                  <label class="form-label" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP2.FIELDS.OBLIGEE_NAME' | translateHtml | async"></label>
+                  <label class="form-label"><span [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP2.FIELDS.OBLIGEE_NAME' | translateHtml | async"></span><span>*</span></label>
                   <input type="text" formControlName="obligee_name"
                     [class.is-invalid]="suretyQuoteForm.get('obligee_name')?.invalid && suretyQuoteForm.get('obligee_name')?.touched"
-                    class="form-control" placeholder="" />
+                    class="form-control" placeholder="TxDMV, TDLR, City of Houston" />
                   <div class="invalid-feedback"
                     *ngIf="suretyQuoteForm.get('obligee_name')?.invalid && suretyQuoteForm.get('obligee_name')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                </div>
+              </div>
+
+              <div class="row gy-3 mt-4">
+                <div class="selection-group">
+                  <h4 class="selection-heading" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP2.FIELDS.BOND_NEEDED_BY' | translateHtml | async"></h4>
+
+                  <div class="coverage-options">
+                    <div class="form-check"
+                      *ngFor="let option of ('SURETY_BOND_QUOTE.STEPPER.STEP2.BOND_NEEDED_BY_OPTIONS' | translate)">
+                      <input class="form-check-input" type="radio" [value]="option" [id]="'bond_needed_by_' + option"
+                        formControlName="bond_needed_by" />
+
+                      <label class="form-check-label" [for]="'bond_needed_by_' + option">
+                        {{ option }}
+                      </label>
+                    </div>
+                    <div class="invalid-feedback d-block"
+                      *ngIf="suretyQuoteForm.get('bond_needed_by')?.invalid && suretyQuoteForm.get('bond_needed_by')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row gy-3 mt-1" *ngIf="needsSpecificBondDate">
+                <div class="col-md-4">
+                  <label class="form-label"><span [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP2.FIELDS.BOND_NEEDED_BY_SPECIFIC' | translateHtml | async"></span><span>*</span></label>
+                  <input type="date" formControlName="bond_needed_by_specific_date" lang="en-GB" [min]="minBondDate"
+                    [class.is-invalid]="suretyQuoteForm.get('bond_needed_by_specific_date')?.invalid && suretyQuoteForm.get('bond_needed_by_specific_date')?.touched"
+                    class="form-control" />
+                  <div class="invalid-feedback"
+                    *ngIf="suretyQuoteForm.get('bond_needed_by_specific_date')?.invalid && suretyQuoteForm.get('bond_needed_by_specific_date')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>
               </div>
 
@@ -130,15 +207,17 @@
             <div class="form-content-border">
               <div class="row gy-3 mt-2">
                 <div class="selection-group">
-                  <h4 class="selection-heading" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP3.FIELDS.CREDIT_SCORE_TITLE' | translateHtml | async"></h4>
+                  <h4 class="selection-heading"><span [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP3.FIELDS.CREDIT_SCORE_TITLE' | translateHtml | async"></span>
+                    <span class="note-heading" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP3.FIELDS.CREDIT_SCORE_NOTE' | translateHtml | async"></span>
+                  </h4>
 
                   <div class="coverage-options">
                     <div class="form-check"
                       *ngFor="let option of ('SURETY_BOND_QUOTE.STEPPER.STEP3.FIELDS.CREDIT_SCORE_TITLE_OPTION' | translate)">
-                      <input class="form-check-input" type="radio" [value]="option" [id]="option"
+                      <input class="form-check-input" type="radio" [value]="option" [id]="'credit_score_' + option"
                         formControlName="estimated_credit_score" />
 
-                      <label class="form-check-label" [for]="option">
+                      <label class="form-check-label" [for]="'credit_score_' + option">
                         {{ option }}
                       </label>
                     </div>
@@ -149,13 +228,43 @@
               </div>
 
               <div class="row gy-3 mb-3 mt-4">
-                <div class="col-md-8">
-                  <label class="form-label" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP3.FIELDS.YEARS_IN_BUSINESS' | translateHtml | async"></label>
-                  <input type="text" formControlName="years_in_business"
+                <div class="col-md-4">
+                  <label class="form-label"><span [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP3.FIELDS.YEARS_IN_BUSINESS' | translateHtml | async"></span><span>*</span></label>
+                  <input type="text" formControlName="years_in_business" maxlength="3" inputmode="numeric"
                     [class.is-invalid]="suretyQuoteForm.get('years_in_business')?.invalid && suretyQuoteForm.get('years_in_business')?.touched"
-                    class="form-control" placeholder="" />
+                    class="form-control" placeholder="5" />
                   <div class="invalid-feedback"
                     *ngIf="suretyQuoteForm.get('years_in_business')?.invalid && suretyQuoteForm.get('years_in_business')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label"><span [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP3.FIELDS.PRIOR_BOND_HISTORY' | translateHtml | async"></span><span>*</span></label>
+                  <select class="form-select" formControlName="prior_bond_history"
+                    [class.is-invalid]="suretyQuoteForm.get('prior_bond_history')?.invalid && suretyQuoteForm.get('prior_bond_history')?.touched">
+                    <option *ngFor="let option of ('SURETY_BOND_QUOTE.STEPPER.STEP3.PRIOR_BOND_HISTORY_OPTIONS' | translate)"
+                      [value]="option">{{ option }}</option>
+                  </select>
+                  <div class="invalid-feedback"
+                    *ngIf="suretyQuoteForm.get('prior_bond_history')?.invalid && suretyQuoteForm.get('prior_bond_history')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                </div>
+              </div>
+
+              <div class="row gy-3 mt-4">
+                <div class="selection-group">
+                  <h4 class="selection-heading" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP3.FIELDS.JUDGMENTS' | translateHtml | async"></h4>
+
+                  <div class="coverage-options">
+                    <div class="form-check"
+                      *ngFor="let option of ('SURETY_BOND_QUOTE.STEPPER.STEP3.JUDGMENTS_OPTIONS' | translate)">
+                      <input class="form-check-input" type="radio" [value]="option" [id]="'judgments_' + option"
+                        formControlName="has_judgments_liens_bankruptcies" />
+
+                      <label class="form-check-label" [for]="'judgments_' + option">
+                        {{ option }}
+                      </label>
+                    </div>
+                    <div class="invalid-feedback d-block"
+                      *ngIf="suretyQuoteForm.get('has_judgments_liens_bankruptcies')?.invalid && suretyQuoteForm.get('has_judgments_liens_bankruptcies')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                  </div>
                 </div>
               </div>
               <div class="d-flex gap-3 mt-4">
@@ -185,6 +294,19 @@
                   </select>
                   <div class="invalid-feedback"
                     *ngIf="suretyQuoteForm.get('preferred_language')?.invalid && suretyQuoteForm.get('preferred_language')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                </div>
+              </div>
+
+              <div class="row gy-3 mb-3">
+                <div class="col-md-8">
+                  <label class="form-label" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP4.FIELDS.CONTACT_METHOD' | translateHtml | async"></label>
+                  <select class="form-select" formControlName="contact_method"
+                    [class.is-invalid]="suretyQuoteForm.get('contact_method')?.invalid && suretyQuoteForm.get('contact_method')?.touched">
+                    <option *ngFor="let option of ('SURETY_BOND_QUOTE.STEPPER.STEP4.FIELDS.CONTACT_METHOD_OPTIONS' | translate)"
+                      [value]="option">{{ option }}</option>
+                  </select>
+                  <div class="invalid-feedback"
+                    *ngIf="suretyQuoteForm.get('contact_method')?.invalid && suretyQuoteForm.get('contact_method')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                 </div>
               </div>
 
@@ -234,6 +356,10 @@
             </li>
             <li><strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.EMAIL' | translateHtml | async"></strong>:
               {{ suretyQuoteForm.get('email_address')?.value }}</li>
+            <li><strong [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP1.FIELDS.ZIPCODE' | translateHtml | async"></strong>:
+              {{ suretyQuoteForm.get('zip_code')?.value }}</li>
+            <li><strong [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP1.FIELDS.APPLICANT_TYPE' | translateHtml | async"></strong>:
+              {{ suretyQuoteForm.get('applicant_type')?.value }}</li>
           </ul>
         </div>
 
@@ -254,6 +380,14 @@
               <strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.OBLIGEE' | translateHtml | async"></strong>:
               {{ suretyQuoteForm.get('obligee_name')?.value }}
             </li>
+            <li>
+              <strong [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP2.FIELDS.BOND_NEEDED_BY' | translateHtml | async"></strong>:
+              {{ suretyQuoteForm.get('bond_needed_by')?.value }}
+            </li>
+            <li *ngIf="needsSpecificBondDate">
+              <strong [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP2.FIELDS.BOND_NEEDED_BY_SPECIFIC' | translateHtml | async"></strong>:
+              {{ formatDate(suretyQuoteForm.get('bond_needed_by_specific_date')?.value) }}
+            </li>
           </ul>
         </div>
 
@@ -268,6 +402,12 @@
             <li><strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.YEARS_IN_BUSINESS' | translateHtml | async"></strong>: {{
               suretyQuoteForm.get('years_in_business')?.value }}
             </li>
+            <li><strong [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP3.FIELDS.PRIOR_BOND_HISTORY' | translateHtml | async"></strong>:
+              {{ suretyQuoteForm.get('prior_bond_history')?.value }}
+            </li>
+            <li><strong [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP3.FIELDS.JUDGMENTS' | translateHtml | async"></strong>:
+              {{ suretyQuoteForm.get('has_judgments_liens_bankruptcies')?.value }}
+            </li>
           </ul>
         </div>
 
@@ -279,6 +419,8 @@
           <ul class="list-unstyled mb-0">
             <li><strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.LANGUAGE' | translateHtml | async"></strong>:
               {{ suretyQuoteForm.get('preferred_language')?.value }}</li>
+            <li><strong [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP4.FIELDS.CONTACT_METHOD' | translateHtml | async"></strong>:
+              {{ suretyQuoteForm.get('contact_method')?.value }}</li>
             <li><strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.BEST_TIME' | translateHtml | async"></strong>:
               {{ suretyQuoteForm.get('best_time_to_call')?.value }}</li>
           </ul>

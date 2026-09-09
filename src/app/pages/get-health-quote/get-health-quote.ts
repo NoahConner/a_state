@@ -17,9 +17,11 @@ export class GetHealthQuote {
 
   contactOptions: string[] = [];
   timeOptions: string[] = [];
+  startDateOptions: string[] = [];
+  minStartDate = new Date().toISOString().split('T')[0];
 
   currentStep = 1;
-  totalSteps = 3;
+  totalSteps = 4;
   loading = false;
   submitted = false;
   termsAccepted = false;
@@ -37,14 +39,41 @@ export class GetHealthQuote {
       type: ['health'],
       who_needs_coverage: ['', Validators.required],
       zip_code: ['', [Validators.required, Validators.pattern(/^\d{5}$/)]],
-      household_size: ['', Validators.required],
-      household_income: ['', Validators.required],
+      county: ['', Validators.required],
+      coverage_start_date: ['', Validators.required],
+      coverage_start_specific_date: [''],
+      household_size: ['', [Validators.required, Validators.pattern(/^\d{1,2}$/)]],
+      ages_covered: ['', Validators.required],
+      // Optional on purpose: it only unlocks the subsidy check.
+      household_income: [''],
       uses_tobacco: ['', Validators.required],
+      on_medicare_or_medicaid: ['', Validators.required],
+      has_pre_existing_condition: ['', Validators.required],
+      plan_type: ['', Validators.required],
+      plan_priorities: this.fb.array([], Validators.required),
+      current_insurance_status: ['', Validators.required],
       full_name: ['', Validators.required],
       email_address: ['', [Validators.required, Validators.email]],
       phone_number: ['', Validators.required],
       preferred_language: ['', Validators.required],
       best_time_to_call: ['', Validators.required],
+    });
+
+    this.translate
+      .get('GET_HEALTH_QUOTE.STEPPER.STEP1.START_DATE_OPTIONS')
+      .subscribe((res: string[]) => {
+        this.startDateOptions = res;
+      });
+
+    this.healthQuoteForm.get('coverage_start_date')!.valueChanges.subscribe(() => {
+      const specificDate = this.healthQuoteForm.get('coverage_start_specific_date')!;
+      if (this.needsSpecificStartDate) {
+        specificDate.setValidators(Validators.required);
+      } else {
+        specificDate.clearValidators();
+        specificDate.reset('');
+      }
+      specificDate.updateValueAndValidity();
     });
 
     this.translate
@@ -60,6 +89,12 @@ export class GetHealthQuote {
       });
 
     this.applyPrefillFromQueryParams();
+  }
+
+  /** Only the "Specific date" answer needs an exact date, so key off its position. */
+  get needsSpecificStartDate(): boolean {
+    const value = this.healthQuoteForm?.get('coverage_start_date')?.value;
+    return !!value && value === this.startDateOptions[1];
   }
 
   private applyPrefillFromQueryParams() {
@@ -124,6 +159,15 @@ export class GetHealthQuote {
     return this.getControlsForStep(step).every((control) => control.valid);
   }
 
+  formatDate(value: string | null | undefined): string {
+    if (!value) return 'None';
+
+    const [year, month, day] = value.split('-');
+    if (!year || !month || !day) return value;
+
+    return `${day}/${month}/${year}`;
+  }
+
   private validateStep(step: number): boolean {
     const controls = this.getControlsForStep(step);
     controls.forEach((control) => {
@@ -151,14 +195,26 @@ export class GetHealthQuote {
         return [
           this.healthQuoteForm.get('who_needs_coverage')!,
           this.healthQuoteForm.get('zip_code')!,
+          this.healthQuoteForm.get('county')!,
+          this.healthQuoteForm.get('coverage_start_date')!,
+          this.healthQuoteForm.get('coverage_start_specific_date')!,
         ];
       case 2:
         return [
           this.healthQuoteForm.get('household_size')!,
+          this.healthQuoteForm.get('ages_covered')!,
           this.healthQuoteForm.get('household_income')!,
           this.healthQuoteForm.get('uses_tobacco')!,
+          this.healthQuoteForm.get('on_medicare_or_medicaid')!,
+          this.healthQuoteForm.get('has_pre_existing_condition')!,
         ];
       case 3:
+        return [
+          this.healthQuoteForm.get('plan_type')!,
+          this.healthQuoteForm.get('plan_priorities')!,
+          this.healthQuoteForm.get('current_insurance_status')!,
+        ];
+      case 4:
         return [
           this.healthQuoteForm.get('full_name')!,
           this.healthQuoteForm.get('email_address')!,
@@ -208,6 +264,7 @@ export class GetHealthQuote {
   private resetForm() {
     this.healthQuoteForm.reset();
     this.healthQuoteForm.patchValue({ type: 'health' });
+    (this.healthQuoteForm.get('plan_priorities') as FormArray).clear();
 
     this.currentStep = 1;
     this.submitted = false;

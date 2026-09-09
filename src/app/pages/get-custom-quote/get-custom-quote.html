@@ -68,27 +68,30 @@
                     <div class="invalid-feedback" *ngIf="customQuoteForm.get('email')?.invalid && customQuoteForm.get('email')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.EMAIL' | translateHtml | async"></div>
                   </div>
                   <div class="col-md-4">
-                    <label class="form-label"><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.PREFERRED_LANGUAGE' | translateHtml | async"></span><span>*</span></label>
-                    <input type="text" 
-                           formControlName="preferred_language"
-                           [class.is-invalid]="customQuoteForm.get('preferred_language')?.invalid && customQuoteForm.get('preferred_language')?.touched"
-                           class="form-control" 
-                           placeholder="English" />
-                    <div class="invalid-feedback" *ngIf="customQuoteForm.get('preferred_language')?.invalid && customQuoteForm.get('preferred_language')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                  </div>
-                </div>
-                <div class="row gy-3 mt-1">
-                  <div class="col-md-8">
-                    <label class="form-label"><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.FULL_ADDRESS' | translateHtml | async"></span><span>*</span></label>
-                    <input type="text" 
-                           formControlName="full_address"
-                           [class.is-invalid]="customQuoteForm.get('full_address')?.invalid && customQuoteForm.get('full_address')?.touched"
-                           class="form-control" 
-                           placeholder="123 Main St" />
-                    <div class="invalid-feedback" *ngIf="customQuoteForm.get('full_address')?.invalid && customQuoteForm.get('full_address')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                    <label class="form-label"><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.ZIPCODE' | translateHtml | async"></span><span>*</span></label>
+                    <input type="text"
+                           formControlName="zip_code"
+                           maxlength="5"
+                           inputmode="numeric"
+                           [class.is-invalid]="customQuoteForm.get('zip_code')?.invalid && customQuoteForm.get('zip_code')?.touched"
+                           class="form-control"
+                           placeholder="12345" />
+                    <div class="invalid-feedback" *ngIf="customQuoteForm.get('zip_code')?.invalid && customQuoteForm.get('zip_code')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                   </div>
                 </div>
 
+                <div class="row gy-3 mt-1">
+                  <div class="col-md-4">
+                    <label class="form-label"><span [innerHTML]="'GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.PREFERRED_LANGUAGE' | translateHtml | async"></span><span>*</span></label>
+                    <select class="form-select"
+                            formControlName="preferred_language"
+                            [class.is-invalid]="customQuoteForm.get('preferred_language')?.invalid && customQuoteForm.get('preferred_language')?.touched">
+                      <option *ngFor="let option of ('GET_CUSTOM_QUOTE.STEPPER.STEP1.FIELDS.PREFERRED_LANGUAGE_OPTIONS' | translate)"
+                              [value]="option">{{ option }}</option>
+                    </select>
+                    <div class="invalid-feedback" *ngIf="customQuoteForm.get('preferred_language')?.invalid && customQuoteForm.get('preferred_language')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                  </div>
+                </div>
                 <div class="d-flex gap-3 mt-4">
           <button type="button" class="btn btn-next" (click)="nextStep()">{{ 'GET_CUSTOM_QUOTE.NEXT_BUTTON' | translate }}</button>
                 </div>
@@ -277,7 +280,7 @@
             <li>Name: {{ customQuoteForm.get('name')?.value }}</li>
             <li>Phone: {{ customQuoteForm.get('phone_number')?.value }}</li>
             <li>Email: {{ customQuoteForm.get('email')?.value }}</li>
-            <li>Full Address: {{ customQuoteForm.get('full_address')?.value }}</li>
+            <li>Zip Code: {{ customQuoteForm.get('zip_code')?.value }}</li>
             <li>Preferred Language: {{ customQuoteForm.get('preferred_language')?.value }}</li>
           </ul>
         </div>

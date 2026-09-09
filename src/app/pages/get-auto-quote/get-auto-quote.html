@@ -200,10 +200,23 @@
                     <label class="form-label">
                       <span [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP3.FIELDS.MARTIAL_STATUS' | translateHtml | async"></span><span>*</span>
                     </label>
-                    <input type="text" class="form-control" formControlName="marital_status" placeholder="Single"
-                      [class.is-invalid]="driver.get('marital_status')?.invalid && driver.get('marital_status')?.touched" />
+                    <select class="form-select" formControlName="marital_status"
+                      [class.is-invalid]="driver.get('marital_status')?.invalid && driver.get('marital_status')?.touched">
+                      <option *ngFor="let option of 'GET_AUTO_QUOTE.STEPPER.STEP3.FIELDS.MARTIAL_STATUS_OPTIONS' | translate" [value]="option">
+                        {{ option }}
+                      </option>
+                    </select>
                     <div class="invalid-feedback"
                       *ngIf="driver.get('marital_status')?.invalid && driver.get('marital_status')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">
+                      <span [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP3.FIELDS.AGE_FIRST_LICENSED' | translateHtml | async"></span><span>*</span>
+                    </label>
+                    <input type="text" class="form-control" formControlName="age_first_licensed" placeholder="16" maxlength="2" inputmode="numeric"
+                      [class.is-invalid]="driver.get('age_first_licensed')?.invalid && driver.get('age_first_licensed')?.touched" />
+                    <div class="invalid-feedback"
+                      *ngIf="driver.get('age_first_licensed')?.invalid && driver.get('age_first_licensed')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
                   </div>
                 </div>
               </div>
@@ -248,6 +261,33 @@
 
                   <div class="invalid-feedback d-block"
                     *ngIf="autoQuoteForm.get('currently_issued')?.invalid && autoQuoteForm.get('currently_issued')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                </div>
+
+                <div class="row gy-3 mt-1" *ngIf="isCurrentlyInsured">
+                  <div class="col-md-8">
+                    <label class="form-label"
+                      [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP4.CARRIER_LABEL' | translateHtml | async"></label>
+                    <input type="text" class="form-control" formControlName="current_carrier"
+                      [class.is-invalid]="autoQuoteForm.get('current_carrier')?.invalid && autoQuoteForm.get('current_carrier')?.touched"
+                      placeholder="Provider Name" />
+                    <div class="invalid-feedback" *ngIf="
+                        autoQuoteForm.get('current_carrier')?.invalid &&
+                        autoQuoteForm.get('current_carrier')?.touched
+                      " [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                  </div>
+                </div>
+
+                <div class="row gy-3 mt-1" *ngIf="isCurrentlyInsured">
+                  <div class="col-md-8">
+                    <label class="form-label"
+                      [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP4.RENEWAL_LABEL' | translateHtml | async"></label>
+                    <input type="date" class="form-control" formControlName="renewal_date"
+                      [class.is-invalid]="autoQuoteForm.get('renewal_date')?.invalid && autoQuoteForm.get('renewal_date')?.touched" />
+                    <div class="invalid-feedback" *ngIf="
+                        autoQuoteForm.get('renewal_date')?.invalid &&
+                        autoQuoteForm.get('renewal_date')?.touched
+                      " [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
+                  </div>
                 </div>
               </div>
 
@@ -444,7 +484,8 @@
               <strong><span [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.DRIVER' | translateHtml | async"></span>
                 {{ i + 1 }}</strong>
               {{ driver.get('full_name')?.value }} (DOB: {{ formatDate(driver.get('date_of_birth')?.value) }},
-              {{ driver.get('marital_status')?.value }})
+              {{ driver.get('marital_status')?.value }}, <span [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP3.FIELDS.AGE_FIRST_LICENSED' | translateHtml | async"></span>:
+              {{ driver.get('age_first_licensed')?.value }})
             </li>
           </ul>
         </div>
@@ -460,6 +501,14 @@
             <li>
               <strong [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.INSURED' | translateHtml | async"></strong>
               {{ autoQuoteForm.get('currently_issued')?.value }}
+            </li>
+            <li *ngIf="isCurrentlyInsured">
+              <strong [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP4.CARRIER_LABEL' | translateHtml | async"></strong>
+              {{ autoQuoteForm.get('current_carrier')?.value }}
+            </li>
+            <li *ngIf="isCurrentlyInsured">
+              <strong [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP4.RENEWAL_LABEL' | translateHtml | async"></strong>
+              {{ formatDate(autoQuoteForm.get('renewal_date')?.value) }}
             </li>
             <li>
               <strong [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.SR22' | translateHtml | async"></strong>

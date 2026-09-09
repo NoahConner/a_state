@@ -44,6 +44,8 @@ export class GetAutoQuote {
       vehicles: this.fb.array([]),
       drivers: this.fb.array([]),
       currently_issued: ['', Validators.required],
+      current_carrier: [''],
+      renewal_date: [''],
       sr_22_needed: ['', Validators.required],
       bundle: ['', Validators.required],
       preferred_language: ['', Validators.required],
@@ -53,6 +55,23 @@ export class GetAutoQuote {
 
     this.addVehicle();
     this.addDriver();
+
+    this.autoQuoteForm.get('currently_issued')!.valueChanges.subscribe(() => {
+      const carrier = this.autoQuoteForm.get('current_carrier')!;
+      const renewal = this.autoQuoteForm.get('renewal_date')!;
+      if (this.isCurrentlyInsured) {
+        carrier.setValidators(Validators.required);
+        renewal.setValidators(Validators.required);
+      } else {
+        carrier.clearValidators();
+        renewal.clearValidators();
+        carrier.reset('');
+        renewal.reset('');
+      }
+      carrier.updateValueAndValidity();
+      renewal.updateValueAndValidity();
+    });
+
     this.applyPrefillFromQueryParams();
 
     this.translate.get('GET_AUTO_QUOTE.STEPPER.STEP5.CONTACT_OPTIONS')
@@ -64,6 +83,10 @@ export class GetAutoQuote {
       .subscribe((res: string[]) => {
         this.timeOptions = res;
       });
+  }
+
+  get isCurrentlyInsured(): boolean {
+    return this.autoQuoteForm?.get('currently_issued')?.value === 'Yes';
   }
 
   private applyPrefillFromQueryParams() {
@@ -105,7 +128,8 @@ export class GetAutoQuote {
       this.fb.group({
         full_name: ['', Validators.required],
         date_of_birth: ['', Validators.required],
-        marital_status: ['', Validators.required]
+        marital_status: ['', Validators.required],
+        age_first_licensed: ['', [Validators.required, Validators.pattern(/^\d{1,2}$/)]]
       })
     );
   }
@@ -207,6 +231,8 @@ export class GetAutoQuote {
       case 4:
         return [
           this.autoQuoteForm.get('currently_issued')!,
+          this.autoQuoteForm.get('current_carrier')!,
+          this.autoQuoteForm.get('renewal_date')!,
           this.autoQuoteForm.get('sr_22_needed')!,
           this.autoQuoteForm.get('bundle')!,
         ];

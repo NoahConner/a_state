@@ -1201,7 +1201,13 @@
           "FULL_NAME": "First & Last Name",
           "EMAIL": "Email Address",
           "PHONE": "Phone Number",
+          "ZIPCODE": "Zip Code",
           "PREFERRED_LANGUAGE": "Preferred Language",
+          "PREFERRED_LANGUAGE_OPTIONS": [
+            "English",
+            "Spanish",
+            "Hindi"
+          ],
           "FULL_ADDRESS": "Full Address"
         }
       },
@@ -1311,7 +1317,9 @@
         "FIELDS": {
           "FULL_NAME": "First & Last Name",
           "DATE_OF_BIRTH": "Date of Birth",
-          "MARTIAL_STATUS": "Marital Status"
+          "MARTIAL_STATUS": "Marital Status",
+          "MARTIAL_STATUS_OPTIONS": ["Single", "Married", "Other"],
+          "AGE_FIRST_LICENSED": "Age First Licensed"
         }
       },
       "STEP4": {
@@ -1319,6 +1327,8 @@
         "INSURED_TITLE": "Currently Insured?",
         "INSURED_YES": "Yes",
         "INSURED_NO": "No",
+          "CARRIER_LABEL": "Current Carrier Name:",
+          "RENEWAL_LABEL": "Renewal/Expiration Date:",
         "SR22_TITLE": "Do you need an SR-22 filing?",
         "SR22_YES": "Yes",
         "SR22_NO": "No",
@@ -1448,6 +1458,7 @@
           "YEAR_BUILT": "Year Built (Approximate)",
           "SQUARE_FOOTAGE": "Square Footage (Approximate)",
           "NUMBER_OF_STORIES": "Number of Stories",
+          "NUMBER_OF_STORIES_OPTIONS": ["1", "2", "3+"],
           "ROOF_AGE": "Roof Age",
           "ROOF_TYPE": "Roof Type",
           "ROOF_TYPE_OPTIONS": [
@@ -1633,18 +1644,12 @@
             "1–3 years",
             "4+ years"
           ],
-          "NUMBER_OF_EMPLOYEES": "Number of Employees",
-          "EMPLOYEES_OPTIONS": [
-            "1-10",
-            "11-50",
-            "51-200",
-            "200+"
-          ],
+          "NUMBER_OF_EMPLOYEES": "Number of Employees (including yourself)",
           "ANNUAL_REVENUE": "Estimated Annual Revenue",
           "REVENUE_OPTIONS": [
-            "Under $100k,",
-            "$100k - $500k",
-            "$500k"
+            "Under $100k",
+            "$100k–$500k",
+            "$500k+"
           ],
           "BUSINESS_VEHICLES": "Number of Business Vehicles",
           "BUSINESS_VEHICLES_OPTIONS": [
@@ -1925,13 +1930,25 @@
           "My Whole Family"
         ],
         "FIELDS": {
-          "ZIPCODE": "Zip Code"
-        }
+          "ZIPCODE": "Zip Code (5-digit)",
+          "COUNTY": "County",
+          "START_DATE": "When do you need coverage to start?",
+          "START_DATE_SPECIFIC": "Preferred start date"
+        },
+        "START_DATE_OPTIONS": [
+          "As soon as possible",
+          "Specific date",
+          "Open Enrollment",
+          "Not sure"
+        ]
       },
       "STEP2": {
         "TITLE": "Basic Health & Household",
         "FIELDS": {
           "HOUSEHOLD_SIZE": "How many people live in your household?",
+          "AGES_COVERED": "Ages of people to be covered",
+          "MEDICARE_MEDICAID": "Is anyone currently on Medicare or Medicaid?",
+          "PRE_EXISTING": "Does anyone have a pre-existing condition that requires ongoing care?",
           "ANNUAL_INCOME": "What is your estimated annual household income?",
           "ANNUAL_INCOME_NOTE": " (Optional) Note: This helps us check if you qualify for government savings/subsidies.",
           "TOBACCO_USE": "Does anyone in the household use tobacco?"
@@ -1946,9 +1963,48 @@
         "TOBACCO_OPTIONS": [
           "Yes",
           "No"
+        ],
+        "MEDICARE_OPTIONS": [
+          "Yes",
+          "No"
+        ],
+        "PRE_EXISTING_OPTIONS": [
+          "Yes",
+          "No",
+          "Prefer not to say"
         ]
       },
       "STEP3": {
+        "TITLE": "Coverage Priorities",
+        "FIELDS": {
+          "PLAN_TYPE": "What type of health plan are you looking for?",
+          "PRIORITIES": "What matters most to you in a plan?",
+          "PRIORITIES_NOTE": " (Select all that apply)",
+          "INSURED_STATUS": "Are you currently insured?"
+        },
+        "PLAN_TYPE_OPTIONS": [
+          "ACA / Marketplace Plan",
+          "Medicare Supplement",
+          "Short-Term Health",
+          "Dental & Vision Only",
+          "Employer / Group",
+          "Not Sure"
+        ],
+        "PRIORITIES_OPTIONS": [
+          "Lowest monthly premium",
+          "Lowest out-of-pocket costs",
+          "Specific doctors / providers in network",
+          "Prescription drug coverage",
+          "Dental & vision included",
+          "Mental health coverage"
+        ],
+        "INSURED_STATUS_OPTIONS": [
+          "Yes — looking for better plan",
+          "No — need coverage now",
+          "Losing coverage soon"
+        ]
+      },
+      "STEP4": {
         "TITLE": "Contact & Language Preference",
         "FIELDS": {
           "FULL_NAME": "Full Name",
@@ -1963,9 +2019,9 @@
           "Hindi"
         ],
         "TIME_OPTIONS": [
-          "Morning",
-          "Afternoon",
-          "Evening"
+          "Morning (8AM–12PM)",
+          "Afternoon (12PM–5PM)",
+          "Evening (5PM–8PM)"
         ]
       }
     },
@@ -1991,7 +2047,16 @@
         }
       },
       "CARD3": {
-        "TITLE": "3. Contact & Language Preferences",
+        "TITLE": "3. Coverage Priorities",
+        "EDIT": "Edit Information",
+        "FIELDS": {
+          "PLAN_TYPE": "Plan Type",
+          "PRIORITIES": "What Matters Most",
+          "INSURED_STATUS": "Currently Insured"
+        }
+      },
+      "CARD4": {
+        "TITLE": "4. Contact & Language Preferences",
         "EDIT": "Edit Information",
         "FIELDS": {
           "FULL_NAME": "Full Name",
@@ -2014,31 +2079,79 @@
       "STEP1": {
         "TITLE": "Basic Details",
         "FIELDS": {
-          "FULL_NAME": "Full Name/Business Name",
+          "FULL_NAME": "Full Name / Business Name",
+          "ZIPCODE": "Zip Code",
           "PHONE": "Phone Number",
-          "EMAIL": "Email Address"
-        }
+          "EMAIL": "Email Address",
+          "APPLICANT_TYPE": "Are you applying as an Individual or a Business?"
+        },
+        "APPLICANT_TYPE_OPTIONS": [
+          "Individual",
+          "Business",
+          "Not Sure"
+        ]
       },
       "STEP2": {
         "TITLE": "Bond Details",
         "FIELDS": {
-          "BOND_TYPE": "Bond Type",
-          "BOND_AMOUNT": "Bond Amount: “How much coverage is required?”",
-          "OBLIGEE_NAME": "Obligee Name: “Who is asking you for this bond?”"
-        }
+          "BOND_TYPE": "Bond Type — What bond do you need?",
+          "BOND_AMOUNT": "Bond Amount — How much coverage is required?",
+          "OBLIGEE_NAME": "Obligee Name — “Who is asking you for this bond?”",
+          "BOND_NEEDED_BY": "Bond needed by date",
+          "BOND_NEEDED_BY_SPECIFIC": "Preferred date"
+        },
+        "BOND_TYPE_OPTIONS": [
+          "Auto Dealer Bond",
+          "Contractor License Bond",
+          "Cleaning / Janitorial Bond",
+          "Title Bond (vehicle)",
+          "Court / Probate Bond",
+          "Notary Bond",
+          "License & Permit Bond",
+          "Performance / Payment Bond",
+          "Not Sure — I need help identifying my bond"
+        ],
+        "BOND_AMOUNT_OPTIONS": [
+          "Less than $5,000",
+          "$5,000–$10,000",
+          "$10,000–$15,000",
+          "$15,000–$20,000",
+          "$20,000–$50,000",
+          "$50,000+",
+          "Not sure — I need help"
+        ],
+        "BOND_NEEDED_BY_OPTIONS": [
+          "As soon as possible",
+          "Within 30 days",
+          "Specific date",
+          "Not sure"
+        ]
       },
       "STEP3": {
         "TITLE": "Quick Underwriting",
         "FIELDS": {
-          "CREDIT_SCORE_TITLE": "Estimated Credit Score: Crucial Explain that checking this won’t hurt their credit score.",
+          "CREDIT_SCORE_TITLE": "Estimated Credit Score",
+          "CREDIT_SCORE_NOTE": " Checking this does NOT affect your credit score.",
           "CREDIT_SCORE_TITLE_OPTION": [
-            "Excellent",
-            "Good",
-            "Fair",
-            "Poor"
+            "Excellent (720+)",
+            "Good (680–719)",
+            "Fair (620–679)",
+            "Poor (Below 620)"
           ],
-          "YEARS_IN_BUSINESS": "Years in Business"
-        }
+          "YEARS_IN_BUSINESS": "Years in Business",
+          "PRIOR_BOND_HISTORY": "Prior bond history?",
+          "JUDGMENTS": "Any outstanding judgments, liens, or bankruptcies?"
+        },
+        "PRIOR_BOND_HISTORY_OPTIONS": [
+          "First time",
+          "Renewal",
+          "Had a claim"
+        ],
+        "JUDGMENTS_OPTIONS": [
+          "Yes",
+          "No",
+          "Prefer not to say"
+        ]
       },
       "STEP4": {
         "TITLE": "Contact & Language Preference",
@@ -2049,11 +2162,17 @@
             "Spanish",
             "Hindi"
           ],
+          "CONTACT_METHOD": "Preferred Contact Method",
+          "CONTACT_METHOD_OPTIONS": [
+            "Call",
+            "Text",
+            "Email"
+          ],
           "BEST_TIME": "Best time to call?",
           "TIME_OPTIONS": [
-            "Morning",
-            "Afternoon",
-            "Evening"
+            "Morning (8AM–12PM)",
+            "Afternoon (12PM–5PM)",
+            "Evening (5PM–8PM)"
           ]
         }
       }

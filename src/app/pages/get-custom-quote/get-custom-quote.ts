@@ -38,8 +38,8 @@ export class GetCustomQuote {
       name: ['', Validators.required],
       phone_number: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
+      zip_code: ['', [Validators.required, Validators.pattern(/^\d{5}$/)]],
       preferred_language: ['', Validators.required],
-      full_address: ['', Validators.required],
 
       coverage_auto: [0],
       coverage_home: [0],
@@ -173,8 +173,8 @@ export class GetCustomQuote {
           this.customQuoteForm.get('name')!,
           this.customQuoteForm.get('phone_number')!,
           this.customQuoteForm.get('email')!,
+          this.customQuoteForm.get('zip_code')!,
           this.customQuoteForm.get('preferred_language')!,
-          this.customQuoteForm.get('full_address')!,
         ];
       case 2:
         return [
