@@ -47,6 +47,10 @@ import { HomeownersPlanoTx } from './pages/home-insurance/plano-tx/plano-tx';
 import { HomeownersLubbockTx } from './pages/home-insurance/lubbock-tx/lubbock-tx';
 import { HomeownersLaredoTx } from './pages/home-insurance/laredo-tx/laredo-tx';
 import { HomeownersIrvingTx } from './pages/home-insurance/irving-tx/irving-tx';
+import { HomeownersFriscoTx } from './pages/home-insurance/frisco-tx/frisco-tx';
+import { HomeownersGarlandTx } from './pages/home-insurance/garland-tx/garland-tx';
+import { HomeownersMckinneyTx } from './pages/home-insurance/mckinney-tx/mckinney-tx';
+import { HomeownersAmarilloTx } from './pages/home-insurance/amarillo-tx/amarillo-tx';
 import { CommercialInsurance } from './pages/commercial-insurance/commercial-insurance';
 import { LifeInsurance } from './pages/life-insurance/life-insurance';
 import { HealthInsurance } from './pages/health-insurance/health-insurance';
@@ -211,6 +215,10 @@ export function initializeTranslations(
     HomeownersLubbockTx,
     HomeownersLaredoTx,
     HomeownersIrvingTx,
+    HomeownersFriscoTx,
+    HomeownersGarlandTx,
+    HomeownersMckinneyTx,
+    HomeownersAmarilloTx,
     CommercialInsurance,
     LifeInsurance,
     HealthInsurance,
