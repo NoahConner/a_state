@@ -24,6 +24,14 @@ import { HomeownersHoustonTx } from './pages/home-insurance/houston-tx/houston-t
 import { HomeownersSanAntonioTx } from './pages/home-insurance/san-antonio-tx/san-antonio-tx';
 import { HomeownersDallasTx } from './pages/home-insurance/dallas-tx/dallas-tx';
 import { HomeownersAustinTx } from './pages/home-insurance/austin-tx/austin-tx';
+import { HomeownersFortWorthTx } from './pages/home-insurance/fort-worth-tx/fort-worth-tx';
+import { HomeownersElPasoTx } from './pages/home-insurance/el-paso-tx/el-paso-tx';
+import { HomeownersArlingtonTx } from './pages/home-insurance/arlington-tx/arlington-tx';
+import { HomeownersCorpusChristiTx } from './pages/home-insurance/corpus-christi-tx/corpus-christi-tx';
+import { HomeownersPlanoTx } from './pages/home-insurance/plano-tx/plano-tx';
+import { HomeownersLubbockTx } from './pages/home-insurance/lubbock-tx/lubbock-tx';
+import { HomeownersLaredoTx } from './pages/home-insurance/laredo-tx/laredo-tx';
+import { HomeownersIrvingTx } from './pages/home-insurance/irving-tx/irving-tx';
 import { CommercialInsurance } from './pages/commercial-insurance/commercial-insurance';
 import { LifeInsurance } from './pages/life-insurance/life-insurance';
 import { HealthInsurance } from './pages/health-insurance/health-insurance';
@@ -441,6 +449,46 @@ const routes: Routes = [
         data: { metaPage: 'homeownersAustinTx' },
       },
       {
+        path: 'fort-worth-tx',
+        component: HomeownersFortWorthTx,
+        data: { metaPage: 'homeownersFortWorthTx' },
+      },
+      {
+        path: 'el-paso-tx',
+        component: HomeownersElPasoTx,
+        data: { metaPage: 'homeownersElPasoTx' },
+      },
+      {
+        path: 'arlington-tx',
+        component: HomeownersArlingtonTx,
+        data: { metaPage: 'homeownersArlingtonTx' },
+      },
+      {
+        path: 'corpus-christi-tx',
+        component: HomeownersCorpusChristiTx,
+        data: { metaPage: 'homeownersCorpusChristiTx' },
+      },
+      {
+        path: 'plano-tx',
+        component: HomeownersPlanoTx,
+        data: { metaPage: 'homeownersPlanoTx' },
+      },
+      {
+        path: 'lubbock-tx',
+        component: HomeownersLubbockTx,
+        data: { metaPage: 'homeownersLubbockTx' },
+      },
+      {
+        path: 'laredo-tx',
+        component: HomeownersLaredoTx,
+        data: { metaPage: 'homeownersLaredoTx' },
+      },
+      {
+        path: 'irving-tx',
+        component: HomeownersIrvingTx,
+        data: { metaPage: 'homeownersIrvingTx' },
+      },
+      {
         path: 'renters-insurance',
         component: RentersInsurance,
         data: { metaPage: 'rentersInsurance' },
@@ -705,6 +753,46 @@ const routes: Routes = [
             path: 'austin-tx',
             component: HomeownersAustinTx,
             data: { metaPage: 'homeownersAustinTx' },
+          },
+          {
+            path: 'fort-worth-tx',
+            component: HomeownersFortWorthTx,
+            data: { metaPage: 'homeownersFortWorthTx' },
+          },
+          {
+            path: 'el-paso-tx',
+            component: HomeownersElPasoTx,
+            data: { metaPage: 'homeownersElPasoTx' },
+          },
+          {
+            path: 'arlington-tx',
+            component: HomeownersArlingtonTx,
+            data: { metaPage: 'homeownersArlingtonTx' },
+          },
+          {
+            path: 'corpus-christi-tx',
+            component: HomeownersCorpusChristiTx,
+            data: { metaPage: 'homeownersCorpusChristiTx' },
+          },
+          {
+            path: 'plano-tx',
+            component: HomeownersPlanoTx,
+            data: { metaPage: 'homeownersPlanoTx' },
+          },
+          {
+            path: 'lubbock-tx',
+            component: HomeownersLubbockTx,
+            data: { metaPage: 'homeownersLubbockTx' },
+          },
+          {
+            path: 'laredo-tx',
+            component: HomeownersLaredoTx,
+            data: { metaPage: 'homeownersLaredoTx' },
+          },
+          {
+            path: 'irving-tx',
+            component: HomeownersIrvingTx,
+            data: { metaPage: 'homeownersIrvingTx' },
           },
           {
             path: 'seguros-para-inquilinos',
@@ -1050,6 +1138,38 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   homeownersAustinTx: {
     en: 'homeowners-insurance/austin-tx',
     es: 'seguros-de-vivienda/austin-tx',
+  },
+  homeownersFortWorthTx: {
+    en: 'homeowners-insurance/fort-worth-tx',
+    es: 'seguros-de-vivienda/fort-worth-tx',
+  },
+  homeownersElPasoTx: {
+    en: 'homeowners-insurance/el-paso-tx',
+    es: 'seguros-de-vivienda/el-paso-tx',
+  },
+  homeownersArlingtonTx: {
+    en: 'homeowners-insurance/arlington-tx',
+    es: 'seguros-de-vivienda/arlington-tx',
+  },
+  homeownersCorpusChristiTx: {
+    en: 'homeowners-insurance/corpus-christi-tx',
+    es: 'seguros-de-vivienda/corpus-christi-tx',
+  },
+  homeownersPlanoTx: {
+    en: 'homeowners-insurance/plano-tx',
+    es: 'seguros-de-vivienda/plano-tx',
+  },
+  homeownersLubbockTx: {
+    en: 'homeowners-insurance/lubbock-tx',
+    es: 'seguros-de-vivienda/lubbock-tx',
+  },
+  homeownersLaredoTx: {
+    en: 'homeowners-insurance/laredo-tx',
+    es: 'seguros-de-vivienda/laredo-tx',
+  },
+  homeownersIrvingTx: {
+    en: 'homeowners-insurance/irving-tx',
+    es: 'seguros-de-vivienda/irving-tx',
   },
   commercialInsurance: {
     en: 'commercial-insurance',
