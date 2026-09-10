@@ -39,6 +39,14 @@ import { HomeownersHoustonTx } from './pages/home-insurance/houston-tx/houston-t
 import { HomeownersSanAntonioTx } from './pages/home-insurance/san-antonio-tx/san-antonio-tx';
 import { HomeownersDallasTx } from './pages/home-insurance/dallas-tx/dallas-tx';
 import { HomeownersAustinTx } from './pages/home-insurance/austin-tx/austin-tx';
+import { HomeownersFortWorthTx } from './pages/home-insurance/fort-worth-tx/fort-worth-tx';
+import { HomeownersElPasoTx } from './pages/home-insurance/el-paso-tx/el-paso-tx';
+import { HomeownersArlingtonTx } from './pages/home-insurance/arlington-tx/arlington-tx';
+import { HomeownersCorpusChristiTx } from './pages/home-insurance/corpus-christi-tx/corpus-christi-tx';
+import { HomeownersPlanoTx } from './pages/home-insurance/plano-tx/plano-tx';
+import { HomeownersLubbockTx } from './pages/home-insurance/lubbock-tx/lubbock-tx';
+import { HomeownersLaredoTx } from './pages/home-insurance/laredo-tx/laredo-tx';
+import { HomeownersIrvingTx } from './pages/home-insurance/irving-tx/irving-tx';
 import { CommercialInsurance } from './pages/commercial-insurance/commercial-insurance';
 import { LifeInsurance } from './pages/life-insurance/life-insurance';
 import { HealthInsurance } from './pages/health-insurance/health-insurance';
@@ -195,6 +203,14 @@ export function initializeTranslations(
     HomeownersSanAntonioTx,
     HomeownersDallasTx,
     HomeownersAustinTx,
+    HomeownersFortWorthTx,
+    HomeownersElPasoTx,
+    HomeownersArlingtonTx,
+    HomeownersCorpusChristiTx,
+    HomeownersPlanoTx,
+    HomeownersLubbockTx,
+    HomeownersLaredoTx,
+    HomeownersIrvingTx,
     CommercialInsurance,
     LifeInsurance,
     HealthInsurance,
