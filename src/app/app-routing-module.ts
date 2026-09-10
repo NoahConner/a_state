@@ -32,6 +32,10 @@ import { HomeownersPlanoTx } from './pages/home-insurance/plano-tx/plano-tx';
 import { HomeownersLubbockTx } from './pages/home-insurance/lubbock-tx/lubbock-tx';
 import { HomeownersLaredoTx } from './pages/home-insurance/laredo-tx/laredo-tx';
 import { HomeownersIrvingTx } from './pages/home-insurance/irving-tx/irving-tx';
+import { HomeownersFriscoTx } from './pages/home-insurance/frisco-tx/frisco-tx';
+import { HomeownersGarlandTx } from './pages/home-insurance/garland-tx/garland-tx';
+import { HomeownersMckinneyTx } from './pages/home-insurance/mckinney-tx/mckinney-tx';
+import { HomeownersAmarilloTx } from './pages/home-insurance/amarillo-tx/amarillo-tx';
 import { CommercialInsurance } from './pages/commercial-insurance/commercial-insurance';
 import { LifeInsurance } from './pages/life-insurance/life-insurance';
 import { HealthInsurance } from './pages/health-insurance/health-insurance';
@@ -489,6 +493,26 @@ const routes: Routes = [
         data: { metaPage: 'homeownersIrvingTx' },
       },
       {
+        path: 'frisco-tx',
+        component: HomeownersFriscoTx,
+        data: { metaPage: 'homeownersFriscoTx' },
+      },
+      {
+        path: 'garland-tx',
+        component: HomeownersGarlandTx,
+        data: { metaPage: 'homeownersGarlandTx' },
+      },
+      {
+        path: 'mckinney-tx',
+        component: HomeownersMckinneyTx,
+        data: { metaPage: 'homeownersMckinneyTx' },
+      },
+      {
+        path: 'amarillo-tx',
+        component: HomeownersAmarilloTx,
+        data: { metaPage: 'homeownersAmarilloTx' },
+      },
+      {
         path: 'renters-insurance',
         component: RentersInsurance,
         data: { metaPage: 'rentersInsurance' },
@@ -793,6 +817,26 @@ const routes: Routes = [
             path: 'irving-tx',
             component: HomeownersIrvingTx,
             data: { metaPage: 'homeownersIrvingTx' },
+          },
+          {
+            path: 'frisco-tx',
+            component: HomeownersFriscoTx,
+            data: { metaPage: 'homeownersFriscoTx' },
+          },
+          {
+            path: 'garland-tx',
+            component: HomeownersGarlandTx,
+            data: { metaPage: 'homeownersGarlandTx' },
+          },
+          {
+            path: 'mckinney-tx',
+            component: HomeownersMckinneyTx,
+            data: { metaPage: 'homeownersMckinneyTx' },
+          },
+          {
+            path: 'amarillo-tx',
+            component: HomeownersAmarilloTx,
+            data: { metaPage: 'homeownersAmarilloTx' },
           },
           {
             path: 'seguros-para-inquilinos',
@@ -1170,6 +1214,22 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   homeownersIrvingTx: {
     en: 'homeowners-insurance/irving-tx',
     es: 'seguros-de-vivienda/irving-tx',
+  },
+  homeownersFriscoTx: {
+    en: 'homeowners-insurance/frisco-tx',
+    es: 'seguros-de-vivienda/frisco-tx',
+  },
+  homeownersGarlandTx: {
+    en: 'homeowners-insurance/garland-tx',
+    es: 'seguros-de-vivienda/garland-tx',
+  },
+  homeownersMckinneyTx: {
+    en: 'homeowners-insurance/mckinney-tx',
+    es: 'seguros-de-vivienda/mckinney-tx',
+  },
+  homeownersAmarilloTx: {
+    en: 'homeowners-insurance/amarillo-tx',
+    es: 'seguros-de-vivienda/amarillo-tx',
   },
   commercialInsurance: {
     en: 'commercial-insurance',
