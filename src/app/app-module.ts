@@ -51,6 +51,15 @@ import { HomeownersFriscoTx } from './pages/home-insurance/frisco-tx/frisco-tx';
 import { HomeownersGarlandTx } from './pages/home-insurance/garland-tx/garland-tx';
 import { HomeownersMckinneyTx } from './pages/home-insurance/mckinney-tx/mckinney-tx';
 import { HomeownersAmarilloTx } from './pages/home-insurance/amarillo-tx/amarillo-tx';
+import { HomeownersGrandPrairieTx } from './pages/home-insurance/grand-prairie-tx/grand-prairie-tx';
+import { HomeownersBrownsvilleTx } from './pages/home-insurance/brownsville-tx/brownsville-tx';
+import { HomeownersKilleenTx } from './pages/home-insurance/killeen-tx/killeen-tx';
+import { HomeownersDentonTx } from './pages/home-insurance/denton-tx/denton-tx';
+import { HomeownersPasadenaTx } from './pages/home-insurance/pasadena-tx/pasadena-tx';
+import { HomeownersMesquiteTx } from './pages/home-insurance/mesquite-tx/mesquite-tx';
+import { HomeownersMcallenTx } from './pages/home-insurance/mcallen-tx/mcallen-tx';
+import { HomeownersWacoTx } from './pages/home-insurance/waco-tx/waco-tx';
+import { HomeownersMidlandTx } from './pages/home-insurance/midland-tx/midland-tx';
 import { CommercialInsurance } from './pages/commercial-insurance/commercial-insurance';
 import { LifeInsurance } from './pages/life-insurance/life-insurance';
 import { HealthInsurance } from './pages/health-insurance/health-insurance';
@@ -219,6 +228,15 @@ export function initializeTranslations(
     HomeownersGarlandTx,
     HomeownersMckinneyTx,
     HomeownersAmarilloTx,
+    HomeownersGrandPrairieTx,
+    HomeownersBrownsvilleTx,
+    HomeownersKilleenTx,
+    HomeownersDentonTx,
+    HomeownersPasadenaTx,
+    HomeownersMesquiteTx,
+    HomeownersMcallenTx,
+    HomeownersWacoTx,
+    HomeownersMidlandTx,
     CommercialInsurance,
     LifeInsurance,
     HealthInsurance,

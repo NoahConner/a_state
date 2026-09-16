@@ -36,6 +36,15 @@ import { HomeownersFriscoTx } from './pages/home-insurance/frisco-tx/frisco-tx';
 import { HomeownersGarlandTx } from './pages/home-insurance/garland-tx/garland-tx';
 import { HomeownersMckinneyTx } from './pages/home-insurance/mckinney-tx/mckinney-tx';
 import { HomeownersAmarilloTx } from './pages/home-insurance/amarillo-tx/amarillo-tx';
+import { HomeownersGrandPrairieTx } from './pages/home-insurance/grand-prairie-tx/grand-prairie-tx';
+import { HomeownersBrownsvilleTx } from './pages/home-insurance/brownsville-tx/brownsville-tx';
+import { HomeownersKilleenTx } from './pages/home-insurance/killeen-tx/killeen-tx';
+import { HomeownersDentonTx } from './pages/home-insurance/denton-tx/denton-tx';
+import { HomeownersPasadenaTx } from './pages/home-insurance/pasadena-tx/pasadena-tx';
+import { HomeownersMesquiteTx } from './pages/home-insurance/mesquite-tx/mesquite-tx';
+import { HomeownersMcallenTx } from './pages/home-insurance/mcallen-tx/mcallen-tx';
+import { HomeownersWacoTx } from './pages/home-insurance/waco-tx/waco-tx';
+import { HomeownersMidlandTx } from './pages/home-insurance/midland-tx/midland-tx';
 import { CommercialInsurance } from './pages/commercial-insurance/commercial-insurance';
 import { LifeInsurance } from './pages/life-insurance/life-insurance';
 import { HealthInsurance } from './pages/health-insurance/health-insurance';
@@ -513,6 +522,51 @@ const routes: Routes = [
         data: { metaPage: 'homeownersAmarilloTx' },
       },
       {
+        path: 'grand-prairie-tx',
+        component: HomeownersGrandPrairieTx,
+        data: { metaPage: 'homeownersGrandPrairieTx' },
+      },
+      {
+        path: 'brownsville-tx',
+        component: HomeownersBrownsvilleTx,
+        data: { metaPage: 'homeownersBrownsvilleTx' },
+      },
+      {
+        path: 'killeen-tx',
+        component: HomeownersKilleenTx,
+        data: { metaPage: 'homeownersKilleenTx' },
+      },
+      {
+        path: 'denton-tx',
+        component: HomeownersDentonTx,
+        data: { metaPage: 'homeownersDentonTx' },
+      },
+      {
+        path: 'pasadena-tx',
+        component: HomeownersPasadenaTx,
+        data: { metaPage: 'homeownersPasadenaTx' },
+      },
+      {
+        path: 'mesquite-tx',
+        component: HomeownersMesquiteTx,
+        data: { metaPage: 'homeownersMesquiteTx' },
+      },
+      {
+        path: 'mcallen-tx',
+        component: HomeownersMcallenTx,
+        data: { metaPage: 'homeownersMcallenTx' },
+      },
+      {
+        path: 'waco-tx',
+        component: HomeownersWacoTx,
+        data: { metaPage: 'homeownersWacoTx' },
+      },
+      {
+        path: 'midland-tx',
+        component: HomeownersMidlandTx,
+        data: { metaPage: 'homeownersMidlandTx' },
+      },
+      {
         path: 'renters-insurance',
         component: RentersInsurance,
         data: { metaPage: 'rentersInsurance' },
@@ -837,6 +891,51 @@ const routes: Routes = [
             path: 'amarillo-tx',
             component: HomeownersAmarilloTx,
             data: { metaPage: 'homeownersAmarilloTx' },
+          },
+          {
+            path: 'grand-prairie-tx',
+            component: HomeownersGrandPrairieTx,
+            data: { metaPage: 'homeownersGrandPrairieTx' },
+          },
+          {
+            path: 'brownsville-tx',
+            component: HomeownersBrownsvilleTx,
+            data: { metaPage: 'homeownersBrownsvilleTx' },
+          },
+          {
+            path: 'killeen-tx',
+            component: HomeownersKilleenTx,
+            data: { metaPage: 'homeownersKilleenTx' },
+          },
+          {
+            path: 'denton-tx',
+            component: HomeownersDentonTx,
+            data: { metaPage: 'homeownersDentonTx' },
+          },
+          {
+            path: 'pasadena-tx',
+            component: HomeownersPasadenaTx,
+            data: { metaPage: 'homeownersPasadenaTx' },
+          },
+          {
+            path: 'mesquite-tx',
+            component: HomeownersMesquiteTx,
+            data: { metaPage: 'homeownersMesquiteTx' },
+          },
+          {
+            path: 'mcallen-tx',
+            component: HomeownersMcallenTx,
+            data: { metaPage: 'homeownersMcallenTx' },
+          },
+          {
+            path: 'waco-tx',
+            component: HomeownersWacoTx,
+            data: { metaPage: 'homeownersWacoTx' },
+          },
+          {
+            path: 'midland-tx',
+            component: HomeownersMidlandTx,
+            data: { metaPage: 'homeownersMidlandTx' },
           },
           {
             path: 'seguros-para-inquilinos',
@@ -1230,6 +1329,42 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   homeownersAmarilloTx: {
     en: 'homeowners-insurance/amarillo-tx',
     es: 'seguros-de-vivienda/amarillo-tx',
+  },
+  homeownersGrandPrairieTx: {
+    en: 'homeowners-insurance/grand-prairie-tx',
+    es: 'seguros-de-vivienda/grand-prairie-tx',
+  },
+  homeownersBrownsvilleTx: {
+    en: 'homeowners-insurance/brownsville-tx',
+    es: 'seguros-de-vivienda/brownsville-tx',
+  },
+  homeownersKilleenTx: {
+    en: 'homeowners-insurance/killeen-tx',
+    es: 'seguros-de-vivienda/killeen-tx',
+  },
+  homeownersDentonTx: {
+    en: 'homeowners-insurance/denton-tx',
+    es: 'seguros-de-vivienda/denton-tx',
+  },
+  homeownersPasadenaTx: {
+    en: 'homeowners-insurance/pasadena-tx',
+    es: 'seguros-de-vivienda/pasadena-tx',
+  },
+  homeownersMesquiteTx: {
+    en: 'homeowners-insurance/mesquite-tx',
+    es: 'seguros-de-vivienda/mesquite-tx',
+  },
+  homeownersMcallenTx: {
+    en: 'homeowners-insurance/mcallen-tx',
+    es: 'seguros-de-vivienda/mcallen-tx',
+  },
+  homeownersWacoTx: {
+    en: 'homeowners-insurance/waco-tx',
+    es: 'seguros-de-vivienda/waco-tx',
+  },
+  homeownersMidlandTx: {
+    en: 'homeowners-insurance/midland-tx',
+    es: 'seguros-de-vivienda/midland-tx',
   },
   commercialInsurance: {
     en: 'commercial-insurance',
