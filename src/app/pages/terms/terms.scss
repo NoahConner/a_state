@@ -1,198 +1,319 @@
-.termsMain {
-  .topBanner {
-    // styles.scss forces .topBanner:not(.getCovver) to 55rem (plus hero padding
-    // and a min-height on small screens) for the image heroes. This page's
-    // banner is a plain colour bar, so it opts out of all three.
-    height: 18rem !important;
-    min-height: 0;
-    padding: 0 !important;
-    background-color: #ca2b28;
-
-    .container {
-      display: flex;
-      align-items: end;
-      height: 100%;
-
-      .page-title {
-        color: #fff22f;
-        font-weight: 600;
-        font-size: 3rem;
-        padding-right: 35rem;
-        margin-bottom: 2rem;
-      }
-    }
-  }
-}
-
-.terms-section {
-  padding: 100px 0;
-  position: relative;
-
-  .container {
-    max-width: 900px;
-  }
-
-  .terms-block {
-    margin-bottom: 70px;
-  }
-
-  .terms-heading {
-    font-size: 38px;
-    font-weight: 700;
-    color: #c62828;
-    margin-bottom: 25px;
-  }
-
-  p {
-    font-size: 17px;
-    line-height: 1.9;
-    color: #444;
-    margin-bottom: 20px;
-  }
-}
-
-.contact-title {
-  color: #c62828;
-  font-size: 48px;
-  font-weight: 600;
-  margin-bottom: 40px;
-}
-
-.contact-content {
-  h3 {
-    font-size: 32px;
-    color: #c62828;
-    margin-bottom: 20px;
-  }
-
-  p {
-    font-size: 22px;
-    margin-bottom: 18px;
-    color: #c62828;
-
-    a {
-      color: #c62828;
-      text-decoration: underline;
-      font-weight: 500;
-    }
-  }
-}
-
-.footUpper {
-  height: 130px;
-  width: 100%;
-  background-color: #ca2b28;
+// Not using .topBanner here: styles.scss forces that class to 55rem for the image heroes.
+.terms-hero {
   display: flex;
-  flex-direction: row;
-  position: relative;
+  align-items: center;
+  // Figma: 1920 x 862 banner (same as privacy), header overlays the top of it
+  height: calc(100vw * 862 / 1920);
+  min-height: 30rem;
+  padding-top: 4rem;
+  background-image:
+    linear-gradient(180deg, #1a1a1a 0%, rgba(39, 0, 0, 0.56) 45.7%, rgba(96, 9, 9, 0) 100%),
+    url('/assets/images/terms/banner.jpg');
+  background-size: cover;
+  background-position: center;
 
-  .left {
-    width: 55%;
-    height: 100%;
-  }
-
-  .right {
-    height: 100%;
-    background-color: #e62e2a;
-    width: 50%;
-  }
-
-  .clipp {
-    position: absolute;
-    clip-path: polygon(67% 0, 100% 0, 100% 99%, 20% 100%);
-    height: 130px;
-    width: 130px;
-    background-color: #e62e2a;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .contain {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  > .container {
     width: 100%;
+  }
 
-    .col-lg-6 {
-      display: flex;
-      align-items: center;
+  &__title {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(2.8rem, 5.47vw, 105px);
+    font-weight: 600;
+    line-height: 0.9;
+  }
+}
 
-      .icon {
-        height: 80%;
-        width: fit-content;
-      }
+.terms-body {
+  padding: 88px 0 120px;
+  background: #ffffff;
 
-      .h4 {
-        font-weight: 700;
-        color: #fff;
-        font-size: 42px;
-        margin: 0;
-      }
+  .row {
+    --bs-gutter-x: 2.8rem;
+  }
+}
+
+// ---------- Table of contents (same pattern as the home insurance city pages) ----------
+.toc-link {
+  display: block;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.toc-fab,
+.toc-backdrop,
+.toc-card__close {
+  display: none;
+}
+
+.toc-column {
+  position: relative;
+}
+
+.toc-card {
+  max-width: 210px;
+}
+
+.toc-title {
+  margin: 0 0 1rem;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1f1c18;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+.toc-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.toc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  padding: 0.58rem 0 0.58rem 0.05rem;
+  border-bottom: 1px solid #d9d9d9;
+  color: #3b372f;
+
+  &.active {
+    color: #ef554d;
+  }
+}
+
+.toc-text {
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+// Desktop: card is taken out of flow; fixed/stop states come from inline styles set in the component
+@media (min-width: 992px) {
+  .toc-column .toc-card {
+    position: absolute;
+    top: 0;
+    left: calc(var(--bs-gutter-x, 2.8rem) * 0.5);
+    width: calc(100% - var(--bs-gutter-x, 2.8rem));
+  }
+}
+
+.terms-content {
+  color: #272424;
+
+  p,
+  li {
+    font-size: 20.5px;
+    line-height: 30.7px;
+    color: #272424;
+  }
+
+  // Figma leaves one blank line between paragraphs and before the list
+  p {
+    margin: 0;
+
+    & + p,
+    & + .terms-points {
+      margin-top: 30.7px;
     }
+  }
+
+  a,
+  ::ng-deep a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  .terms-points {
+    margin: 0;
+    padding-left: 30px;
+  }
+
+  .last-updated {
+    font-weight: 700;
+  }
+}
+
+.terms-block {
+  scroll-margin-top: 90px;
+
+  & + & {
+    margin-top: 3.6rem;
+  }
+}
+
+.section-title {
+  margin: 0 0 28px;
+  color: #ca2b28;
+  font-size: 41px;
+  font-weight: 600;
+  line-height: 50px;
+}
+
+.contact-info {
+  p {
+    line-height: 49px;
+  }
+
+  .contact-info__row + .contact-info__row {
+    margin-top: 0;
+  }
+
+  &__row {
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 1199px) {
+  .terms-body .row {
+    --bs-gutter-x: 1.8rem;
+  }
+
+  .toc-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  .terms-body {
+    padding: 56px 0 80px;
+  }
+
+  .section-title {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 18px;
+  }
+
+  .terms-content {
+    p,
+    li {
+      font-size: 17px;
+      line-height: 27px;
+    }
+  }
+
+  .contact-info p {
+    line-height: 36px;
+  }
+
+  .terms-content p + p,
+  .terms-content p + .terms-points {
+    margin-top: 20px;
   }
 }
 
 @media only screen and (max-width: 540px) {
-  .termsMain {
-    .topBanner {
-      // The header is fixed on mobile and roughly 120px tall (44px contact
-      // strip + nav), and it sits over this banner. Sizing the banner from its
-      // own padding — rather than bottom-aligning inside a fixed height — keeps
-      // the title clear of the header whatever the title wraps to.
-      height: auto !important;
-      min-height: 0;
-      padding: 150px 0 40px !important;
-    background:linear-gradient(
-24deg, #ca2b28, #000000);
-      .container {
-        height: auto;
-        align-items: center;
-        justify-content: center;
+  // The header is fixed on mobile and roughly 120px tall
+  .terms-hero {
+    height: auto;
+    min-height: 22rem;
+    padding: 150px 0 40px;
 
-        .page-title {
-          font-size: 1.6rem;
-          margin-bottom: 0;
-          text-align: center;
-          padding: 0 1rem;
-        }
-      }
+    &__title {
+      text-align: center;
     }
   }
 
-  .footUpper {
-    height: 270px;
-    flex-direction: column;
+  .terms-block + .terms-block {
+    margin-top: 2.5rem;
+  }
 
-    .left {
-      width: 100%;
+  .section-title {
+    font-size: 27px;
+    line-height: 34px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .toc-fab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 1.1rem;
+    bottom: 1.1rem;
+    width: 52px;
+    height: 52px;
+    border: none;
+    border-radius: 50%;
+    background: #df4135;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
+    z-index: 1050;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+
+    &.is-open {
+      background: #1f1c18;
+      transform: rotate(90deg);
     }
+  }
 
-    .right {
-      width: 100%;
+  .toc-fab__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .toc-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1040;
+  }
+
+  .toc-column {
+    width: auto;
+    margin-bottom: 0;
+  }
+
+  .toc-card {
+    display: none;
+    position: fixed !important;
+    inset: auto 0 0 0;
+    top: auto !important;
+    left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 75vh;
+    margin: 0;
+    padding: 1.25rem 1.25rem 1.5rem;
+    border-radius: 18px 18px 0 0;
+    background: #fbf8f2;
+    box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.28);
+    overflow-y: auto;
+    z-index: 1045;
+    transform: translateY(100%);
+    transition: transform 0.25s ease;
+
+    &.toc-card--mobile-open {
+      display: block;
+      transform: translateY(0);
     }
+  }
 
-    .clipp {
-      display: none;
-    }
+  .toc-card__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0.6rem;
+    right: 0.75rem;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: #3b372f;
+    cursor: pointer;
+  }
 
-    .contain {
-      .col-lg-6 {
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-
-        .icon {
-          transform: translateY(-15px);
-        }
-
-        .h4 {
-          font-size: 40px;
-          margin: 0;
-          transform: translateY(10px);
-        }
-      }
-    }
+  .toc-text {
+    font-size: 0.92rem;
+    line-height: 1.7;
   }
 }

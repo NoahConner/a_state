@@ -1,147 +1,158 @@
 <div class="careerMain">
-  <div class="topBanner">
+  <!-- Hero -->
+  <div class="careers-hero">
     <div class="container">
-      <h1 class="banner-title">
-        <span [innerHTML]="'CAREERS.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
+      <h1 class="careers-hero__title">
+        <span [innerHTML]="'CAREERS.BANNER.TITLE_LINE1' | translateHtml | async"></span>&ngsp;
         <span [innerHTML]="'CAREERS.BANNER.TITLE_LINE2' | translateHtml | async"></span>
       </h1>
     </div>
   </div>
+
+  <!-- The Agency Advantage -->
+  <section class="agency">
+    <div class="careers-container agency__inner">
+      <div class="agency__copy">
+        <span class="agency__blob" aria-hidden="true"></span>
+        <h2 class="agency__title" [innerHTML]="'CAREERS.AGENCY.MAIN_TITLE' | translateHtml | async"></h2>
+        <p class="agency__text" [innerHTML]="'CAREERS.AGENCY.DESCRIPTION' | translateHtml | async"></p>
+      </div>
+
+      <img class="agency__image" src="/assets/images/careers/team-hands.jpg" alt="" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- Our Three Pillars -->
+  <section class="pillars">
+    <div class="careers-container">
+      <h2 class="careers-heading">
+        <span class="careers-heading__accent" [innerHTML]="'CAREERS.THREE_PILLARS.TITLE' | translateHtml | async"></span>
+      </h2>
+
+      <div class="pillars__grid">
+        @for (pillar of pillars; track pillar) {
+        <article class="pillar-card">
+          <h3 class="pillar-card__title" [innerHTML]="'CAREERS.THREE_PILLARS.' + pillar + '.TITLE' | translateHtml | async"></h3>
+          <p class="pillar-card__text" [innerHTML]="'CAREERS.THREE_PILLARS.' + pillar + '.DESCRIPTION' | translateHtml | async"></p>
+        </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Culture & Values -->
+  <section class="culture">
+    <div class="careers-container">
+      <h2 class="careers-heading">
+        <span class="careers-heading__accent" [innerHTML]="'CAREERS.CULTURE.TITLE_START' | translateHtml | async"></span>&ngsp;
+        <span [innerHTML]="'CAREERS.CULTURE.TITLE_END' | translateHtml | async"></span>
+      </h2>
+
+      <blockquote class="culture__quote">
+        "<span [innerHTML]="'CAREERS.CULTURE.QUOTE' | translateHtml | async"></span>"
+      </blockquote>
+
+      <p class="careers-lead culture__text" [innerHTML]="'CAREERS.CULTURE.DESCRIPTION' | translateHtml | async"></p>
+    </div>
+  </section>
+
+  <!-- What We Stand For -->
+  <section class="stand-for">
+    <div class="careers-container">
+      <h2 class="careers-heading">
+        <span class="careers-heading__accent" [innerHTML]="'CAREERS.STAND_FOR.TITLE_START' | translateHtml | async"></span>&ngsp;
+        <span [innerHTML]="'CAREERS.STAND_FOR.TITLE_END' | translateHtml | async"></span>
+      </h2>
+
+      <div class="stand-for__grid">
+        @for (item of standFor; track item) {
+        <article class="stand-card">
+          <h3 class="stand-card__title" [innerHTML]="'CAREERS.STAND_FOR.' + item + '.TITLE' | translateHtml | async"></h3>
+          <p class="stand-card__text" [innerHTML]="'CAREERS.STAND_FOR.' + item + '.DESCRIPTION' | translateHtml | async"></p>
+        </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Form -->
+  <section class="apply">
+    <div class="careers-container">
+      <h2 class="careers-heading">
+        <span class="careers-heading__accent" [innerHTML]="'CAREERS.FORM.TITLE_LINE1' | translateHtml | async"></span>&ngsp;
+        <span [innerHTML]="'CAREERS.FORM.TITLE_LINE2' | translateHtml | async"></span>
+      </h2>
+      <p class="careers-lead apply__lead" [innerHTML]="'CAREERS.FORM.DESCRIPTION' | translateHtml | async"></p>
+
+      <form class="apply-form" [formGroup]="form" (ngSubmit)="goToThankYou()">
+        <div class="apply-form__grid">
+          <label class="apply-field">
+            <span class="apply-field__label">{{ 'CAREERS.FORM.FIELDS.FULL_NAME' | translate }}</span>
+            <input type="text" class="apply-field__control" formControlName="fullName"
+              [class.is-invalid]="form.controls.fullName.touched && form.controls.fullName.invalid"
+              [placeholder]="'CAREERS.FORM.FIELDS.FULL_NAME_PLACEHOLDER' | translate" />
+          </label>
+
+          <label class="apply-field">
+            <span class="apply-field__label">{{ 'CAREERS.FORM.FIELDS.PHONE' | translate }}</span>
+            <input type="tel" appPhoneFormat class="apply-field__control" formControlName="phone"
+              [class.is-invalid]="form.controls.phone.touched && form.controls.phone.invalid"
+              [placeholder]="'CAREERS.FORM.FIELDS.PHONE_PLACEHOLDER' | translate" />
+          </label>
+
+          <fieldset class="apply-field">
+            <legend class="apply-field__label">{{ 'CAREERS.FORM.FIELDS.LANGUAGES' | translate }}</legend>
+            <div class="language-options">
+              @for (option of languageOptions; track option) {
+              <label class="language-option">
+                <input type="checkbox" class="language-option__input" [checked]="selectedLanguages.has(option)"
+                  (change)="toggleLanguage(option)" />
+                <span class="language-option__dot" aria-hidden="true"></span>
+                <span>{{ 'CAREERS.FORM.FIELDS.LANGUAGE_OPTIONS.' + option | translate }}</span>
+              </label>
+              }
+            </div>
+          </fieldset>
+
+          <label class="apply-field">
+            <span class="apply-field__label">{{ 'CAREERS.FORM.FIELDS.INTEREST' | translate }}</span>
+            <span class="apply-select">
+              <select class="apply-field__control apply-select__control" formControlName="interest"
+                [class.is-empty]="!form.controls.interest.value">
+                <option value="" disabled>{{ 'CAREERS.FORM.FIELDS.INTEREST_PLACEHOLDER' | translate }}</option>
+                @for (option of interestOptions; track option) {
+                <option [value]="option">{{ 'CAREERS.FORM.FIELDS.INTEREST_OPTIONS.' + option | translate }}</option>
+                }
+              </select>
+            </span>
+          </label>
+
+          <label class="upload-zone apply-form__full" [class.is-dragging]="isDragging" (dragover)="onDragOver($event)"
+            (dragleave)="onDragLeave()" (drop)="onDrop($event)">
+            <input type="file" class="upload-zone__input" accept=".pdf,.doc,.docx" (change)="onResumeSelected($event)" />
+            <span class="upload-zone__inner">
+              <img class="upload-zone__icon" src="/assets/images/careers/resume.png" alt="" />
+              @if (resumeFile) {
+              <span class="upload-zone__text upload-zone__file">{{ resumeFile.name }}</span>
+              } @else {
+              <span class="upload-zone__text">{{ 'CAREERS.FORM.FIELDS.UPLOAD' | translate }}</span>
+              <span class="upload-zone__text">{{ 'CAREERS.FORM.FIELDS.UPLOAD_HINT' | translate }}</span>
+              }
+            </span>
+          </label>
+        </div>
+
+        <div class="form-check apply-form__consent">
+          <input class="form-check-input terms-check" type="checkbox" id="termsCheck"
+            (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
+          <label class="form-check-label terms-check-label small" for="termsCheck"
+            [innerHTML]="'CAREERS_SMS_CONSENT' | translateHtml | async"></label>
+        </div>
+
+        <button type="submit" class="apply-form__submit" [disabled]="!termsAccepted">
+          {{ 'CAREERS.FORM.SUBMIT_BUTTON' | translate }}
+        </button>
+      </form>
+    </div>
+  </section>
 </div>
-
-<section class="agency-section py-5">
-  <div class="container">
-    <!-- Header -->
-    <div class="row">
-      <div class="col-lg-10">
-        <h2 class="main-title" [innerHTML]="'CAREERS.AGENCY.MAIN_TITLE' | translateHtml | async"></h2>
-        <!-- <p class="section-text" [innerHTML]="'CAREERS.AGENCY.DESCRIPTION' | translateHtml | async"></p> -->
-        <p
-          class="section-text"
-          [innerHTML]="'CAREERS.AGENCY.DESCRIPTION' | translateHtml | async"
-        ></p>
-      </div>
-    </div>
-
-    <!-- Three Pillars -->
-    <div class="row mt-5">
-      <div class="col-lg-10">
-        <h2 class="section-heading" [innerHTML]="'CAREERS.THREE_PILLARS.TITLE' | translateHtml | async"></h2>
-
-        <h3 class="pillar-title" [innerHTML]="'CAREERS.THREE_PILLARS.PILLAR1.TITLE' | translateHtml | async"></h3>
-        <p class="section-text" [innerHTML]="'CAREERS.THREE_PILLARS.PILLAR1.DESCRIPTION' | translateHtml | async"></p>
-
-        <h3 class="pillar-title" [innerHTML]="'CAREERS.THREE_PILLARS.PILLAR2.TITLE' | translateHtml | async"></h3>
-        <p class="section-text" [innerHTML]="'CAREERS.THREE_PILLARS.PILLAR2.DESCRIPTION' | translateHtml | async"></p>
-
-        <h3 class="pillar-title" [innerHTML]="'CAREERS.THREE_PILLARS.PILLAR3.TITLE' | translateHtml | async"></h3>
-        <p class="section-text" [innerHTML]="'CAREERS.THREE_PILLARS.PILLAR3.DESCRIPTION' | translateHtml | async"></p>
-      </div>
-    </div>
-
-    <!-- Culture Section -->
-    <div class="row mt-5">
-      <div class="col-lg-10">
-        <h2 class="culture-title" [innerHTML]="'CAREERS.CULTURE.TITLE' | translateHtml | async"></h2>
-
-        <blockquote class="culture-quote">"<span [innerHTML]="'CAREERS.CULTURE.QUOTE' | translateHtml | async"></span>"</blockquote>
-
-        <p class="section-text" [innerHTML]="'CAREERS.CULTURE.DESCRIPTION' | translateHtml | async"></p>
-      </div>
-    </div>
-
-    <!-- What We Stand For -->
-    <div class="row mt-5">
-      <div class="col-lg-10">
-        <h2 class="section-heading" [innerHTML]="'CAREERS.STAND_FOR.TITLE' | translateHtml | async"></h2>
-
-        <p class="section-text" [innerHTML]="'CAREERS.STAND_FOR.DESCRIPTION' | translateHtml | async"></p>
-
-        <h3 class="pillar-title" [innerHTML]="'CAREERS.STAND_FOR.GROWTH.TITLE' | translateHtml | async"></h3>
-        <p class="section-text" [innerHTML]="'CAREERS.STAND_FOR.GROWTH.DESCRIPTION' | translateHtml | async"></p>
-
-        <h3 class="pillar-title" [innerHTML]="'CAREERS.STAND_FOR.FLEXIBILITY.TITLE' | translateHtml | async"></h3>
-        <p class="section-text" [innerHTML]="'CAREERS.STAND_FOR.FLEXIBILITY.DESCRIPTION' | translateHtml | async"></p>
-
-        <h3 class="pillar-title" [innerHTML]="'CAREERS.STAND_FOR.MISSION.TITLE' | translateHtml | async"></h3>
-        <p class="section-text" [innerHTML]="'CAREERS.STAND_FOR.MISSION.DESCRIPTION' | translateHtml | async"></p>
-      </div>
-    </div>
-
-    <!-- Form Section -->
-    <div class="row mt-5">
-      <div class="col-lg-8">
-        <h2 class="section-heading-form">
-          <span [innerHTML]="'CAREERS.FORM.TITLE_LINE1' | translateHtml | async"></span> <br />
-          <span [innerHTML]="'CAREERS.FORM.TITLE_LINE2' | translateHtml | async"></span>
-        </h2>
-
-        <form class="mt-4">
-          <div class="row g-3">
-            <div class="col-md-6">
-              <input
-                type="text"
-                class="form-control custom-input"
-                [placeholder]="'CAREERS.FORM.FIELDS.FULL_NAME' | translate"
-              />
-            </div>
-
-            <div class="col-md-6">
-              <input
-                type="text"
-                class="form-control custom-input"
-                [placeholder]="'CAREERS.FORM.FIELDS.PHONE' | translate"
-              />
-            </div>
-
-            <div class="col-md-6">
-              <input
-                type="email"
-                class="form-control custom-input"
-                [placeholder]="'CAREERS.FORM.FIELDS.EMAIL' | translate"
-              />
-            </div>
-
-            <div class="col-md-6">
-              <input
-                type="text"
-                class="form-control custom-input"
-                [placeholder]="'CAREERS.FORM.FIELDS.LANGUAGES' | translate"
-              />
-            </div>
-
-            <div class="col-md-6">
-              <input
-                type="text"
-                class="form-control custom-input"
-                [placeholder]="'CAREERS.FORM.FIELDS.INTEREST' | translate"
-              />
-            </div>
-
-            <div class="col-md-6">
-              <input
-                type="file"
-                class="form-control custom-input"
-                [placeholder]="'CAREERS.FORM.FIELDS.UPLOAD' | translate"
-              />
-            </div>
-          </div>
-
-
-          <div class="form-check mb-4">
-            <input class="form-check-input terms-check" type="checkbox" id="termsCheck"
-              (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
-            <label class="form-check-label terms-check-label small" for="termsCheck"
-              [innerHTML]="'CAREERS_SMS_CONSENT' | translateHtml | async"></label>
-          </div>
-
-          <button type="submit" class="btn submit-btn mt-4" (click)="goToThankYou()" [disabled]="!termsAccepted">
-            {{ 'CAREERS.FORM.SUBMIT_BUTTON' | translate }}
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <app-foot-upper></app-foot-upper>

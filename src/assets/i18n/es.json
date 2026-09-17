@@ -763,6 +763,46 @@
     "HEADINGSTRONG": "A-State Insurance",
     "HERO_DESC": "Estamos disponibles de lunes a sábado, de 9 AM a 7 PM CT. Comunícate con nosotros por teléfono, mensaje de texto, correo electrónico o formulario, en inglés o español. La mayoría de las consultas se responden en 1 hora hábil.",
     "CONNECTTITLE": "Conéctese con nosotros en línea",
+    "FAQ": {
+      "TITLE_START": "Antes de Contactarnos —",
+      "TITLE_ACCENT": "Respuestas Rápidas",
+      "ITEMS": [
+        {
+          "question": "¿Qué tan rápido me responderán?",
+          "answer": "Si nos llama o nos envía un mensaje de texto, recibirá atención inmediata. Si nos escribe por correo electrónico o a través de nuestro formulario en línea, le garantizamos una respuesta dentro de 1 hora hábil."
+        },
+        {
+          "question": "¿Puedo obtener una cotización por teléfono?",
+          "answer": "Sí. Llame al (713) 357-7771 y un agente con licencia comparará tarifas de más de 50 aseguradoras y le explicará sus opciones en la misma llamada."
+        },
+        {
+          "question": "¿Tienen agentes que hablen español?",
+          "answer": "Sí. Nuestro equipo atiende a clientes en inglés y en español — por teléfono, mensaje de texto, correo electrónico o en persona en cualquiera de nuestras oficinas."
+        },
+        {
+          "question": "¿Qué información debo tener lista antes de llamar?",
+          "answer": "Tenga a la mano su licencia de conducir, los datos de su vehículo o propiedad y su póliza actual (si tiene una). Si le falta algo, no se preocupe — podemos empezar de todos modos."
+        },
+        {
+          "question": "¿Puedo visitarlos sin cita?",
+          "answer": "Por supuesto. Aceptamos visitas sin cita en todas nuestras oficinas del área de Houston, de lunes a sábado, de 9 AM a 7 PM."
+        },
+        {
+          "question": "¿Dan servicio en mi ciudad / código postal?",
+          "answer": "Atendemos a clientes en todas las ciudades y condados de Texas. Llámenos o envíenos un mensaje y le ayudaremos esté donde esté en el estado."
+        }
+      ]
+    },
+    "SOCIAL": {
+      "TITLE_START": "Conéctese con",
+      "TITLE_ACCENT": "A-State en Línea"
+    },
+    "CTA": {
+      "TITLE_START": "¿Listo para Asegurarse?",
+      "TITLE_ACCENT": "Estamos a Una Llamada.",
+      "QUOTE": "Cotización Gratis en Línea",
+      "NOTE": "Sin compromiso. Sin presión. Solo respuestas."
+    },
     "CONTACT-INSURANCE": {
       "HEADING": "Contacte a A-State Insurance",
       "FEILD1": "Nombre Completo",
@@ -846,6 +886,7 @@
   },
   "TERMS_PAGE": {
     "HEADING": "Términos y Condiciones",
+    "TOC_HEADING": "Tabla de Contenido",
     "ACCEPTANCE": {
       "TITLE": "Aceptación de los Términos",
       "P1": "Al utilizar el sitio web de A-State Insurance, solicitar una cotización o utilizar cualquiera de nuestros servicios, usted acepta estos Términos y Condiciones. Esto se aplica a todos los visitantes, clientes y cualquier persona que busque información sobre seguros. Si no está de acuerdo con estos términos, por favor no utilice el sitio web ni nuestros servicios.",
@@ -892,7 +933,7 @@
     },
     "PRIVACY": {
       "TITLE": "Referencia de Privacidad y Uso de Datos",
-      "P1": "Su información personal se recopila únicamente para proporcionar cotizaciones, servicio o orientación de cobertura. Cumplimos con las leyes de privacidad y nuestra Política de Privacidad explica cómo se manejan sus datos. Solo compartimos información con las compañías aseguradoras o socios necesarios para proporcionar la cobertura. Sus datos se utilizan para ayudarlo a encontrar las mejores pólizas y garantizar que su cobertura satisfaga sus necesidades. Nos tomamos la privacidad en serio y buscamos mantener su información segura en todo momento."
+      "P1": "Su información personal se recopila únicamente para proporcionar cotizaciones, servicio o orientación de cobertura. Cumplimos con las leyes de privacidad y nuestra <a class='inline-link' href='/es/politica-de-privacidad'>Política de Privacidad</a> explica cómo se manejan sus datos. Solo compartimos información con las compañías aseguradoras o socios necesarios para proporcionar la cobertura. Sus datos se utilizan para ayudarlo a encontrar las mejores pólizas y garantizar que su cobertura satisfaga sus necesidades. Nos tomamos la privacidad en serio y buscamos mantener su información segura en todo momento."
     },
     "INTELLECTUAL": {
       "TITLE": "Propiedad Intelectual",
@@ -909,7 +950,7 @@
     "CHANGES": {
       "TITLE": "Cambios en los Términos",
       "P1": "Podemos actualizar estos Términos en cualquier momento. El uso continuado del sitio web o de los servicios significa que acepta la versión más reciente. Le recomendamos revisar estos Términos periódicamente.",
-      "LAST_UPDATED": "Última actualización: 11/01/2026"
+      "LAST_UPDATED": "Última actualización: 11/02/2026"
     },
     "GOVERNING": {
       "TITLE": "Ley Aplicable",
@@ -921,90 +962,93 @@
     "CONTACT_INFO": {
       "TITLE": "Información de Contacto",
       "COMPANY": "A-State Insurance",
-      "ADDRESS": "707 Shotwell St A, Houston, TX 77020, Estados Unidos",
+      "ADDRESS_LABEL": "Dirección:",
+      "ADDRESS": "707 Shotwell St a, Houston, TX 77020, Estados Unidos",
       "PHONE_LABEL": "Teléfono:",
       "PHONE": "(713) 357-7771",
       "EMAIL_LABEL": "Correo electrónico:",
-      "EMAIL": "save@astateinsurance.com",
+      "EMAIL": "info@astateins.com",
       "HOURS": "Horario de atención: Lun – Sáb: 9AM – 7PM"
     }
   },
   "PRIVACY": {
     "HEADING": "Política de Privacidad",
+    "TOC_HEADING": "Tabla de Contenido",
     "INTRODUCTION": {
       "TITLE": "Introducción",
-      "DESCRIPTION": "Esta Política de Privacidad explica cómo A-State Insurance recopila, utiliza y protege la información personal obtenida a través de nuestro sitio web y servicios. Estamos comprometidos a respetar su privacidad y mantener la confidencialidad de sus datos. Esta política se aplica a los visitantes del sitio web, clientes y personas que envían información mediante formularios o comunicaciones. Al utilizar nuestro sitio web, usted acepta las prácticas descritas en esta política.",
+      "DESCRIPTION": "Esta Política de Privacidad explica cómo Seguros A-State recopila, utiliza y protege la información personal obtenida a través de nuestro sitio web y servicios. Nos comprometemos a respetar su privacidad y a mantener la confidencialidad de sus datos. Esta política se aplica a los visitantes del sitio web, clientes y personas que envían información a través de formularios o comunicaciones. Al utilizar nuestro sitio web, usted acepta las prácticas descritas en esta política.",
       "EFFECTIVE_DATE": "Fecha de vigencia / Última actualización: 10 de febrero de 2026"
     },
     "INFORMATION_COLLECT": {
-      "TITLE": "Información que Recopilamos",
-      "PERSONAL_TITLE": "• Información Personal",
+      "TITLE": "Información Que Recopilamos",
+      "PERSONAL_TITLE": "Información Personal",
       "PERSONAL_DESC": "Podemos recopilar datos personales que usted proporcione voluntariamente, incluyendo:",
       "PERSONAL_LIST": [
         "Nombre completo",
         "Dirección de correo electrónico",
         "Número de teléfono",
         "Dirección postal",
-        "Consultas relacionadas con seguros y solicitudes de servicios"
+        "Consultas relacionadas con seguros y solicitudes de servicio"
       ],
-      "PERSONAL_NOTE": "Esta información se recopila cuando se comunica con nosotros, solicita cotizaciones o utiliza nuestros servicios.",
-      "AUTO_TITLE": "• Información Recopilada Automáticamente",
-      "AUTO_DESC": "Cuando visita nuestro sitio web, ciertos datos se recopilan automáticamente, incluyendo:",
+      "PERSONAL_NOTE": "Esta información se recopila cuando usted nos contacta, solicita cotizaciones o utiliza nuestros servicios.",
+      "AUTO_TITLE": "Información Recopilada Automáticamente",
+      "AUTO_DESC": "Cuando visita nuestro sitio web, se recopila automáticamente cierta información, incluyendo:",
       "AUTO_LIST": [
         "Dirección de Protocolo de Internet (IP)",
         "Tipo de navegador e información del dispositivo",
         "Páginas visitadas y actividad de interacción",
         "Estadísticas de uso del sitio web"
       ],
-      "AUTO_NOTE": "Esta información nos ayuda a comprender cómo los visitantes utilizan nuestro sitio web y a mejorar su rendimiento."
+      "AUTO_NOTE": "Esta información nos ayuda a comprender cómo los visitantes utilizan nuestro sitio y a mejorar su rendimiento."
     },
     "HOW_COLLECT": {
-      "TITLE": "Cómo Recopilamos la Información",
-      "DESCRIPTION": "Recopilamos información cuando usted envía formularios de contacto o solicitudes de cotización en el sitio web, y cuando se comunica con nosotros por teléfono, mensaje de texto o correo electrónico. También recopilamos información mediante cookies y tecnologías de seguimiento similares que respaldan la funcionalidad del sitio web y miden su uso."
+      "TITLE": "Cómo Recopilamos La Información",
+      "DESCRIPTION": "Recopilamos información cuando usted envía formularios de contacto o solicitudes de cotización en el sitio web, y cuando se comunica con nosotros por teléfono, mensaje de texto o correo electrónico. También recopilamos información mediante cookies y tecnologías de seguimiento similares que respaldan la funcionalidad del sitio y miden su uso."
     },
     "HOW_USE": {
-      "TITLE": "Cómo Utilizamos Su Información",
-      "DESCRIPTION": "Utilizamos su información para responder preguntas, brindar atención al cliente y proporcionar servicios de seguros e información relacionada. También puede utilizarse para enviar actualizaciones del servicio o mensajes relacionados con su solicitud. Además, usamos los datos para mantener y mejorar el rendimiento del sitio web, comprender el comportamiento del usuario y cumplir con obligaciones legales o regulatorias."
+      "TITLE": "Cómo Usamos Su Información",
+      "DESCRIPTION": "Utilizamos su información para responder preguntas, brindar atención al cliente y ofrecer servicios de seguros e información relacionada. También puede utilizarse para enviar actualizaciones de servicio o mensajes vinculados a su solicitud. Además, usamos los datos para mantener y mejorar el rendimiento del sitio web, comprender el comportamiento de los usuarios y cumplir con obligaciones legales o regulatorias."
     },
     "COOKIES": {
-      "TITLE": "Cookies y Tecnologías de Seguimiento",
-      "DESCRIPTION": "Nuestro sitio web utiliza cookies y herramientas similares para respaldar funciones básicas y comprender cómo los visitantes utilizan nuestras páginas. Estas tecnologías ayudan con análisis, navegación y rendimiento. Podemos utilizar herramientas de terceros, como Google Analytics, para recopilar y reportar datos. Puede administrar o desactivar las cookies desde la configuración de su navegador, pero algunas partes del sitio web pueden no funcionar correctamente si las cookies están deshabilitadas."
+      "TITLE": "Cookies Y Tecnologías De Seguimiento",
+      "DESCRIPTION": "Nuestro sitio web utiliza cookies y herramientas similares para respaldar funciones básicas y comprender cómo los visitantes utilizan nuestras páginas. Estas tecnologías ayudan con el análisis, la navegación y el rendimiento.<br><br>Podemos utilizar herramientas de terceros, como Google Analytics, para recopilar y reportar datos. Usted puede administrar o desactivar las cookies a través de la configuración de su navegador, aunque algunas partes del sitio pueden no funcionar correctamente si las cookies están desactivadas."
     },
     "SHARING": {
-      "TITLE": "Intercambio y Divulgación de Información",
-      "DESCRIPTION": "No vendemos información personal. Podemos compartir información limitada con compañías de seguros y proveedores de servicios cuando sea necesario para ofrecer cotizaciones, cobertura o servicios relacionados. También podemos divulgar información a autoridades legales o regulatorias si la ley lo exige. Se espera que cualquier tercero que reciba información la proteja y la utilice únicamente para el propósito previsto."
+      "TITLE": "Compartición Y Divulgación De Información",
+      "DESCRIPTION": "No vendemos información personal. Podemos compartir información limitada con compañías de seguros y proveedores de servicios cuando sea necesario para proporcionar cotizaciones, cobertura u otros servicios relacionados.<br><br>También podemos divulgar información a autoridades legales o regulatorias cuando lo exija la ley. Cualquier tercero que reciba información deberá protegerla y usarla únicamente para el propósito previsto."
     },
     "SECURITY": {
-      "TITLE": "Seguridad de los Datos",
-      "DESCRIPTION": "Utilizamos medidas administrativas, técnicas y físicas razonables para proteger la información personal contra el acceso no autorizado, divulgación, alteración o uso indebido. Incluso con protecciones sólidas, ningún sistema de transmisión o almacenamiento en línea puede garantizarse como completamente seguro. Por esta razón, la información se comparte bajo su propia discreción."
+      "TITLE": "Seguridad De Datos",
+      "DESCRIPTION": "Utilizamos medidas administrativas, técnicas y físicas razonables para proteger la información personal contra el acceso, divulgación, alteración o uso no autorizado.<br><br>Aun con protecciones sólidas, ningún sistema de transmisión o almacenamiento en línea puede garantizarse como completamente seguro. Por esta razón, la información se comparte bajo su propia responsabilidad."
     },
     "RIGHTS": {
-      "TITLE": "Sus Derechos de Privacidad",
-      "DESCRIPTION": "Puede solicitar acceso a la información personal que tenemos sobre usted, pedir correcciones o solicitar su eliminación cuando la ley lo permita. También puede optar por no recibir comunicaciones de marketing o no esenciales en cualquier momento. Los residentes de Texas pueden tener derechos adicionales conforme a las leyes estatales de privacidad aplicables."
+      "TITLE": "Sus Derechos De Privacidad",
+      "DESCRIPTION": "Usted puede solicitar acceso a la información personal que tenemos sobre usted, pedir correcciones o solicitar su eliminación cuando la ley lo permita. También puede optar por no recibir comunicaciones de marketing o no esenciales en cualquier momento.<br><br>Los residentes de Texas pueden tener derechos adicionales conforme a las leyes estatales aplicables, y las solicitudes serán atendidas de acuerdo con dichos requisitos."
     },
     "THIRD_PARTY": {
-      "TITLE": "Enlaces a Terceros",
-      "DESCRIPTION": "Nuestro sitio web puede incluir enlaces a sitios web de terceros para su conveniencia. A-State Insurance no controla estos sitios y no es responsable de sus prácticas de privacidad ni de su contenido. Recomendamos revisar las políticas de privacidad de cualquier sitio web externo que visite."
+      "TITLE": "Enlaces De Terceros",
+      "DESCRIPTION": "Nuestro sitio web puede incluir enlaces a sitios web de terceros para su conveniencia. Seguros A-State no controla estos sitios y no es responsable de sus prácticas de privacidad ni de su contenido.<br><br>Le recomendamos revisar las políticas de privacidad de cualquier sitio externo que visite."
     },
     "CHILDREN": {
-      "TITLE": "Privacidad de los Niños",
-      "DESCRIPTION": "Nuestros servicios no están dirigidos a niños menores de 13 años y no recopilamos intencionalmente información personal de niños. Si descubrimos que se ha recopilado información de un niño, tomaremos medidas para eliminarla."
+      "TITLE": "Privacidad De Los Niños",
+      "DESCRIPTION": "Nuestros servicios no están dirigidos a niños menores de 13 años, y no recopilamos intencionalmente información personal de menores. Si descubrimos que se ha recopilado información de un niño, tomaremos medidas para eliminarla."
     },
     "SMS": {
       "TITLE": "Comunicaciones por SMS / Mensajes de texto",
       "DESCRIPTION": "<p>Al proporcionar su número de teléfono y aceptar recibir mensajes a través de nuestro sitio web, formularios, anuncios u otros canales, usted acepta recibir mensajes SMS/de texto de Astate Insurance. Estos pueden incluir:</p><ul><li>Seguimiento de cotizaciones</li><li>Actualizaciones de pólizas</li><li>Recordatorios de citas</li><li>Comunicaciones de servicio al cliente</li><li>Mensajes promocionales o informativos sobre nuestros servicios</li></ul><p>Pueden aplicarse tarifas de mensajes y datos. La frecuencia de los mensajes puede variar.</p><p>Puede cancelar su suscripción en cualquier momento respondiendo <strong>STOP</strong> a cualquier mensaje. Para obtener ayuda, responda <strong>HELP</strong> o contáctenos.</p><p>El consentimiento para recibir mensajes de texto no es una condición de compra.</p>"
     },
     "UPDATES": {
-      "TITLE": "Actualizaciones de Esta Política de Privacidad",
-      "DESCRIPTION": "Podemos actualizar esta Política de Privacidad periódicamente para reflejar cambios en las prácticas comerciales, requisitos legales o actualizaciones de servicios. Cualquier cambio se publicará en esta página y la fecha de “Última actualización” será modificada en consecuencia. El uso continuo del sitio web indica la aceptación de la política actualizada."
+      "TITLE": "Actualizaciones De Esta Política De Privacidad",
+      "DESCRIPTION": "Podemos actualizar esta Política de Privacidad periódicamente para reflejar cambios en las prácticas comerciales, requisitos legales o actualizaciones de servicios.<br><br>Cualquier cambio será publicado en esta página y la fecha de “Última actualización” será modificada en consecuencia. El uso continuo del sitio web indica la aceptación de la política actualizada."
     },
     "CONTACT": {
-      "TITLE": "Información de Contacto",
-      "DESCRIPTION": "Si tiene preguntas o inquietudes sobre esta Política de Privacidad o su información personal, comuníquese con nosotros:",
+      "TITLE": "Información De Contacto",
+      "DESCRIPTION": "Si tiene preguntas o inquietudes sobre esta Política de Privacidad o su información personal, puede comunicarse con nosotros:",
       "PHONE": "Teléfono:",
       "EMAIL": "Correo electrónico:",
-      "ADDRESS": "Dirección de la oficina:",
-      "FOOTER": "Estamos comprometidos a atender las consultas relacionadas con la privacidad de manera rápida y responsable."
+      "ADDRESS": "Dirección:",
+      "ADDRESS_VALUE": "707 Shotwell St a, Houston, TX 77020, Estados Unidos",
+      "FOOTER": "Nos comprometemos a atender las consultas relacionadas con la privacidad de manera oportuna y responsable."
     }
   },
   "CAREERS": {
@@ -1032,13 +1076,14 @@
       }
     },
     "CULTURE": {
-      "TITLE": "Nuestra Cultura y Valores: El 'Ambiente' de A-State",
+      "TITLE_START": "Nuestra Cultura y Valores:",
+      "TITLE_END": "El \"Ambiente\" de A-State",
       "QUOTE": "No buscamos engranajes en una máquina. Buscamos defensores de la comunidad.",
       "DESCRIPTION": "En muchas agencias, la \"cultura\" es solo un póster en la pared. Para nosotros, es la manera en que atendemos una llamada a las 4:55 PM un viernes. Creemos que si cuidamos de nuestro equipo, nuestro equipo cuidará de Texas."
     },
     "STAND_FOR": {
-      "TITLE": "Lo Que Representamos",
-      "DESCRIPTION": "La mayoría de los trabajos de seguros hacen que te sientas solo un número en una enorme máquina corporativa. En A-State Insurance, hacemos las cosas de manera diferente. Como agencia y corredor especializado, no estamos atados a un único guion de \"empresa\". Somos emprendedores que representamos primero a nuestros clientes. Esto significa que tienes la libertad de encontrar las mejores soluciones en Seguros de Auto, Hogar, Comercial y Vida, en lugar de estar obligado a vender un producto único para todos.",
+      "TITLE_START": "Lo Que",
+      "TITLE_END": "Representamos",
       "GROWTH": {
         "TITLE": "Mentalidad de Crecimiento",
         "DESCRIPTION": "La industria de seguros está en constante evolución, y queremos que lideres ese cambio. No solo contratamos por lo que sabes hoy; invertimos en lo que sabrás mañana. Ya sea patrocinando tu licencia profesional, financiando certificaciones avanzadas de seguros, o proporcionando mentoría práctica en productos Comerciales o de Vida, tu carrera no se estancará aquí. Cuando tú creces, la agencia crece."
@@ -1055,13 +1100,31 @@
     "FORM": {
       "TITLE_LINE1": "¿No Ves una Vacante Específica?",
       "TITLE_LINE2": "¡Aún Queremos Conocerte!",
+      "DESCRIPTION": "Siempre buscamos personas talentosas que sientan pasión por los seguros de Auto, Hogar, Vida, Salud y Comerciales. Envíanos tus datos y nos pondremos en contacto contigo cuando surja la oportunidad adecuada.",
       "FIELDS": {
         "FULL_NAME": "Nombre Completo",
         "PHONE": "Número de Teléfono",
         "EMAIL": "Correo Electrónico",
         "LANGUAGES": "Idiomas que Hablas",
         "INTEREST": "Área de Interés",
-        "UPLOAD": "Subir Currículum"
+        "UPLOAD": "Subir Currículum",
+        "FULL_NAME_PLACEHOLDER": "Juan Pérez",
+        "PHONE_PLACEHOLDER": "123-456-7890",
+        "LANGUAGE_OPTIONS": {
+          "ENGLISH": "Inglés",
+          "SPANISH": "Español",
+          "HINDI": "Hindi",
+          "OTHER": "Otro"
+        },
+        "INTEREST_PLACEHOLDER": "Selecciona un área",
+        "INTEREST_OPTIONS": {
+          "SALES": "Ventas",
+          "CUSTOMER_SERVICE": "Servicio al Cliente",
+          "ACCOUNT_MANAGEMENT": "Gestión de Cuentas",
+          "ADMINISTRATION": "Administración",
+          "OTHER": "Otro"
+        },
+        "UPLOAD_HINT": "Arrastra y Suelta"
       },
       "SUBMIT_BUTTON": "Enviar"
     }
@@ -1070,13 +1133,17 @@
     "TITLE_LINE1": "Gracias por",
     "TITLE_LINE2": "ponerte en contacto",
     "DESCRIPTION": "Agradecemos que se haya puesto en contacto con nosotros. Su mensaje ha sido recibido con éxito. Uno de nuestros representantes revisará su consulta y se pondrá en contacto con usted lo antes posible. Si su asunto es urgente, no dude en contactarnos directamente. Gracias por su interés — ¡esperamos poder ayudarle!",
-    "BUTTON": "Volver a la página de inicio"
+    "BUTTON": "Volver a la página de inicio",
+    "HEADING": "Gracias por Ponerse en Contacto con Nosotros",
+    "SUBHEADING": "Nuestro representante le llamará en breve."
   },
   "THANK_YOU_CAREER": {
     "TITLE_LINE1": "¡Gracias por tu",
     "TITLE_LINE2": "postulación!",
     "DESCRIPTION": "Agradecemos sinceramente el tiempo y el esfuerzo que dedicó a su solicitud. Nuestro equipo está revisando las candidaturas y, si su perfil coincide con nuestros requisitos, nos pondremos en contacto pronto. ¡Le deseamos lo mejor y le agradecemos una vez más su interés en unirse a nosotros!",
-    "BUTTON": "Explorar más empleos"
+    "BUTTON": "Explorar más empleos",
+    "HEADING": "¡Gracias por su Postulación!",
+    "MESSAGE": "Hemos recibido su solicitud con éxito. Nuestro equipo de contratación revisará su información y, si sus calificaciones coinciden con nuestros requisitos, nos comunicaremos con usted sobre los próximos pasos. Agradecemos su interés en formar parte de nuestro equipo."
   },
   "OUR_LOCATION": {
     "HEADING": "Encuentra una Oficina de Seguros A-State Cerca de Ti en Houston, TX",

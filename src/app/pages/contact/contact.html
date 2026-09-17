@@ -179,6 +179,76 @@
     </div>
   </section>
 
+  <!-- Before You Reach Out — Quick Answers -->
+  <section class="contact-faq">
+    <div class="contact-faq__inner">
+      <h2 class="section-heading">
+        <span [innerHTML]="'CONTACT.FAQ.TITLE_START' | translateHtml | async"></span>&ngsp;
+        <strong class="section-heading__accent" [innerHTML]="'CONTACT.FAQ.TITLE_ACCENT' | translateHtml | async"></strong>
+      </h2>
+      <span class="section-heading__divider" aria-hidden="true"></span>
+
+      <div class="contact-faq__list">
+        @for (item of faqItems; track item.question; let i = $index) {
+        <div class="contact-faq__item" [class.contact-faq__item--open]="openFaqIndex === i">
+          <button class="contact-faq__question" type="button" [attr.aria-expanded]="openFaqIndex === i"
+            (click)="toggleFaq(i)">
+            <span>{{ item.question }}</span>
+            <span class="contact-faq__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                <path d="M5 9l7 7 7-7" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+          </button>
+
+          @if (openFaqIndex === i) {
+          <p class="contact-faq__answer">{{ item.answer }}</p>
+          }
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Connect With A-State Online -->
+  <section class="social-strip">
+    <h2 class="section-heading">
+      <span [innerHTML]="'CONTACT.SOCIAL.TITLE_START' | translateHtml | async"></span>&ngsp;
+      <strong class="section-heading__accent" [innerHTML]="'CONTACT.SOCIAL.TITLE_ACCENT' | translateHtml | async"></strong>
+    </h2>
+    <span class="section-heading__divider" aria-hidden="true"></span>
+
+    <div class="social-strip__icons">
+      @for (social of socialLinks; track social.label) {
+      @if (social.href) {
+      <a class="social-strip__icon" [href]="social.href" target="_blank" rel="noopener noreferrer"
+        [attr.aria-label]="social.label">
+        <i [class]="social.icon" aria-hidden="true"></i>
+      </a>
+      } @else {
+      <span class="social-strip__icon" [attr.aria-label]="social.label">
+        <i [class]="social.icon" aria-hidden="true"></i>
+      </span>
+      }
+      }
+    </div>
+  </section>
+
+  <!-- Ready to Get Covered? -->
+  <section class="covered-cta">
+    <h2 class="section-heading covered-cta__title">
+      <span [innerHTML]="'CONTACT.CTA.TITLE_START' | translateHtml | async"></span>&ngsp;
+      <strong class="section-heading__accent" [innerHTML]="'CONTACT.CTA.TITLE_ACCENT' | translateHtml | async"></strong>
+    </h2>
+
+    <div class="covered-cta__actions">
+      <a class="covered-cta__btn" href="tel:7133577771">(713) 357-7771</a>
+      <a class="covered-cta__btn" [routerLink]="getRoute('getAQuote')">{{ 'CONTACT.CTA.QUOTE' | translate }}</a>
+    </div>
+
+    <p class="covered-cta__note">{{ 'CONTACT.CTA.NOTE' | translate }}</p>
+  </section>
+
   <section class="connect-section">
     <div class="container text-center">
       <h2 class="connect-title" [innerHTML]="'CONTACT.CONNECTTITLE' | translateHtml | async"></h2>

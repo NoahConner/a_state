@@ -1,51 +1,87 @@
 <div class="termsMain">
-  <div class="topBanner">
+  <div class="terms-hero">
     <div class="container">
-      <h1 class="page-title" [innerHTML]="'TERMS_PAGE.HEADING' | translateHtml | async"></h1>
+      <h1 class="terms-hero__title" [innerHTML]="'TERMS_PAGE.HEADING' | translateHtml | async"></h1>
     </div>
   </div>
-</div>
 
-<section class="terms-section">
-  <div class="container">
-    <div class="terms-block" *ngFor="let section of termsSections">
-      <h2 class="terms-heading">
-        <span [innerHTML]="section.title | translateHtml | async"></span>
-      </h2>
+  <section class="terms-body" #termsBody>
+    <div class="container">
+      <div class="row align-items-start">
+        <div class="col-lg-2 toc-column" #tocColumn>
+          <button type="button" class="toc-fab" [class.is-open]="isMobileTocOpen" (click)="toggleMobileToc()"
+            [attr.aria-expanded]="isMobileTocOpen" aria-controls="mobileTocPanel"
+            [attr.aria-label]="'TERMS_PAGE.TOC_HEADING' | translate">
+            <svg class="toc-fab__icon" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </button>
 
-      <p *ngFor="let paragraph of section.paragraphs">
-        <span [innerHTML]="paragraph | translateHtml | async"></span>
-      </p>
+          @if (isMobileTocOpen) {
+          <div class="toc-backdrop" (click)="toggleMobileToc()"></div>
+          }
 
-      <!-- Bullet Points Support -->
-      <ul *ngIf="section.points">
-        <li *ngFor="let point of section.points">
-          <span [innerHTML]="point | translateHtml | async"></span>
-        </li>
-      </ul>
-    </div>
+          <aside class="toc-card" #tocCard [ngStyle]="tocCardStyles" [class.toc-card--mobile-open]="isMobileTocOpen"
+            id="mobileTocPanel">
+            <button type="button" class="toc-card__close" (click)="toggleMobileToc()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h3 class="toc-title">{{ 'TERMS_PAGE.TOC_HEADING' | translate }}</h3>
+            <ul class="toc-list list-unstyled mb-0">
+              @for (section of termsSections; track section.id; let i = $index) {
+              <li class="toc-item" [class.active]="activeTocIndex === i">
+                <a class="toc-link" [href]="'#' + section.id" (click)="scrollToSection(i, $event)">
+                  <span class="toc-text" [innerHTML]="section.title | translateHtml | async"></span>
+                </a>
+              </li>
+              }
+            </ul>
+          </aside>
+        </div>
 
-    <div class="terms-block">
-      <h2 class="contact-title" [innerHTML]="'TERMS_PAGE.CONTACT_INFO.TITLE' | translateHtml | async"></h2>
-      <div class="contact-content">
-        <h3 [innerHTML]="'TERMS_PAGE.CONTACT_INFO.COMPANY' | translateHtml | async"></h3>
+        <div class="col-lg-9">
+          <div class="terms-content">
+            @for (section of termsSections; track section.id; let last = $last) {
+            <div class="terms-block" [id]="section.id">
+              <h2 class="section-title" [innerHTML]="section.title | translateHtml | async"></h2>
 
-        <p [innerHTML]="'TERMS_PAGE.CONTACT_INFO.ADDRESS' | translateHtml | async"></p>
+              @if (!last) {
+              @for (paragraph of section.paragraphs; track paragraph) {
+              <p [class.last-updated]="paragraph.endsWith('LAST_UPDATED')" [innerHTML]="paragraph | translateHtml | async"></p>
+              }
 
-        <p>
-          <strong [innerHTML]="'TERMS_PAGE.CONTACT_INFO.PHONE_LABEL' | translateHtml | async"></strong>
-          <a href="tel:7133577771" [innerHTML]="'TERMS_PAGE.CONTACT_INFO.PHONE' | translateHtml | async"></a>
-        </p>
+              @if (section.points) {
+              <ul class="terms-points">
+                @for (point of section.points; track point) {
+                <li><span [innerHTML]="point | translateHtml | async"></span></li>
+                }
+              </ul>
+              }
+              } @else {
+              <div class="contact-info">
+                <p class="contact-info__row">
+                  <span [innerHTML]="'TERMS_PAGE.CONTACT_INFO.ADDRESS_LABEL' | translateHtml | async"></span>&ngsp;
+                  <span [innerHTML]="'TERMS_PAGE.CONTACT_INFO.ADDRESS' | translateHtml | async"></span>
+                </p>
+                <p class="contact-info__row">
+                  <span [innerHTML]="'TERMS_PAGE.CONTACT_INFO.PHONE_LABEL' | translateHtml | async"></span>&ngsp;
+                  <a href="tel:7133577771" [innerHTML]="'TERMS_PAGE.CONTACT_INFO.PHONE' | translateHtml | async"></a>
+                </p>
+                <p class="contact-info__row">
+                  <span [innerHTML]="'TERMS_PAGE.CONTACT_INFO.EMAIL_LABEL' | translateHtml | async"></span>&ngsp;
+                  <a href="mailto:info@astateins.com" [innerHTML]="'TERMS_PAGE.CONTACT_INFO.EMAIL' | translateHtml | async"></a>
+                </p>
+                <p class="contact-info__row" [innerHTML]="'TERMS_PAGE.CONTACT_INFO.HOURS' | translateHtml | async"></p>
+              </div>
+              }
+            </div>
+            }
+          </div>
+        </div>
 
-        <p>
-          <strong [innerHTML]="'TERMS_PAGE.CONTACT_INFO.EMAIL_LABEL' | translateHtml | async"></strong>
-          <a href="mailto:save@astateinsurance.com" [innerHTML]="'TERMS_PAGE.CONTACT_INFO.EMAIL' | translateHtml | async"></a>
-        </p>
-
-        <p [innerHTML]="'TERMS_PAGE.CONTACT_INFO.HOURS' | translateHtml | async"></p>
+        <div class="col-lg-1"></div>
       </div>
     </div>
-  </div>
-</section>
-
-  <app-foot-upper></app-foot-upper>
+    <div class="toc-stop" #tocStopSection></div>
+  </section>
+</div>

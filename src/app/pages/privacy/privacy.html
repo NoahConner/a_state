@@ -1,89 +1,150 @@
 <div class="privacyMain">
-  <div class="topBanner">
+  <div class="privacy-hero">
     <div class="container">
-      <h1 class="page-title" [innerHTML]="'PRIVACY.HEADING' | translateHtml | async"></h1>
+      <h1 class="privacy-hero__title" [innerHTML]="'PRIVACY.HEADING' | translateHtml | async"></h1>
     </div>
   </div>
+
+  <section class="privacy-body" #privacyBody>
+    <div class="container">
+      <div class="row align-items-start">
+        <div class="col-lg-2 toc-column" #tocColumn>
+          <button type="button" class="toc-fab" [class.is-open]="isMobileTocOpen" (click)="toggleMobileToc()"
+            [attr.aria-expanded]="isMobileTocOpen" aria-controls="mobileTocPanel"
+            [attr.aria-label]="'PRIVACY.TOC_HEADING' | translate">
+            <svg class="toc-fab__icon" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+              <path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </button>
+
+          @if (isMobileTocOpen) {
+          <div class="toc-backdrop" (click)="toggleMobileToc()"></div>
+          }
+
+          <aside class="toc-card" #tocCard [ngStyle]="tocCardStyles" [class.toc-card--mobile-open]="isMobileTocOpen"
+            id="mobileTocPanel">
+            <button type="button" class="toc-card__close" (click)="toggleMobileToc()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h3 class="toc-title">{{ 'PRIVACY.TOC_HEADING' | translate }}</h3>
+            <ul class="toc-list list-unstyled mb-0">
+              @for (section of sections; track section.id; let i = $index) {
+              <li class="toc-item" [class.active]="activeTocIndex === i">
+                <a class="toc-link" [href]="'#' + section.id" (click)="scrollToSection(i, $event)">
+                  <span class="toc-text" [innerHTML]="section.title | translateHtml | async"></span>
+                </a>
+              </li>
+              }
+            </ul>
+          </aside>
+        </div>
+
+        <div class="col-lg-9">
+          <div class="privacy-content">
+            <div class="privacy-block" id="introduction">
+              <h2 class="section-title" [innerHTML]="'PRIVACY.INTRODUCTION.TITLE' | translateHtml | async"></h2>
+              <p [innerHTML]="'PRIVACY.INTRODUCTION.DESCRIPTION' | translateHtml | async"></p>
+              <p class="effective-date" [innerHTML]="'PRIVACY.INTRODUCTION.EFFECTIVE_DATE' | translateHtml | async"></p>
+            </div>
+
+            <div class="privacy-block" id="information-we-collect">
+              <h2 class="section-title" [innerHTML]="'PRIVACY.INFORMATION_COLLECT.TITLE' | translateHtml | async"></h2>
+
+              <h3 class="sub-title" [innerHTML]="'PRIVACY.INFORMATION_COLLECT.PERSONAL_TITLE' | translateHtml | async"></h3>
+              <p [innerHTML]="'PRIVACY.INFORMATION_COLLECT.PERSONAL_DESC' | translateHtml | async"></p>
+              <ol>
+                @for (item of personalList; track item) {
+                <li><span [innerHTML]="item | translateHtml | async"></span></li>
+                }
+              </ol>
+              <p class="block-gap" [innerHTML]="'PRIVACY.INFORMATION_COLLECT.PERSONAL_NOTE' | translateHtml | async"></p>
+
+              <h3 class="sub-title" [innerHTML]="'PRIVACY.INFORMATION_COLLECT.AUTO_TITLE' | translateHtml | async"></h3>
+              <p [innerHTML]="'PRIVACY.INFORMATION_COLLECT.AUTO_DESC' | translateHtml | async"></p>
+              <ol>
+                @for (item of AUTO_LIST; track item) {
+                <li><span [innerHTML]="item | translateHtml | async"></span></li>
+                }
+              </ol>
+              <p [innerHTML]="'PRIVACY.INFORMATION_COLLECT.AUTO_NOTE' | translateHtml | async"></p>
+            </div>
+
+            <div class="privacy-block" id="how-we-collect">
+              <h2 class="section-title" [innerHTML]="'PRIVACY.HOW_COLLECT.TITLE' | translateHtml | async"></h2>
+              <p [innerHTML]="'PRIVACY.HOW_COLLECT.DESCRIPTION' | translateHtml | async"></p>
+            </div>
+
+            <div class="privacy-block" id="how-we-use">
+              <h2 class="section-title" [innerHTML]="'PRIVACY.HOW_USE.TITLE' | translateHtml | async"></h2>
+              <p [innerHTML]="'PRIVACY.HOW_USE.DESCRIPTION' | translateHtml | async"></p>
+            </div>
+
+            <div class="privacy-block" id="cookies">
+              <h2 class="section-title" [innerHTML]="'PRIVACY.COOKIES.TITLE' | translateHtml | async"></h2>
+              <p [innerHTML]="'PRIVACY.COOKIES.DESCRIPTION' | translateHtml | async"></p>
+            </div>
+
+            <div class="privacy-block" id="sharing">
+              <h2 class="section-title" [innerHTML]="'PRIVACY.SHARING.TITLE' | translateHtml | async"></h2>
+              <p [innerHTML]="'PRIVACY.SHARING.DESCRIPTION' | translateHtml | async"></p>
+            </div>
+
+            <div class="privacy-block" id="data-security">
+              <h2 class="section-title" [innerHTML]="'PRIVACY.SECURITY.TITLE' | translateHtml | async"></h2>
+              <p [innerHTML]="'PRIVACY.SECURITY.DESCRIPTION' | translateHtml | async"></p>
+            </div>
+
+            <div class="privacy-block" id="privacy-rights">
+              <h2 class="section-title" [innerHTML]="'PRIVACY.RIGHTS.TITLE' | translateHtml | async"></h2>
+              <p [innerHTML]="'PRIVACY.RIGHTS.DESCRIPTION' | translateHtml | async"></p>
+            </div>
+
+            <div class="privacy-block" id="third-party-links">
+              <h2 class="section-title" [innerHTML]="'PRIVACY.THIRD_PARTY.TITLE' | translateHtml | async"></h2>
+              <p [innerHTML]="'PRIVACY.THIRD_PARTY.DESCRIPTION' | translateHtml | async"></p>
+            </div>
+
+            <div class="privacy-block" id="childrens-privacy">
+              <h2 class="section-title" [innerHTML]="'PRIVACY.CHILDREN.TITLE' | translateHtml | async"></h2>
+              <p [innerHTML]="'PRIVACY.CHILDREN.DESCRIPTION' | translateHtml | async"></p>
+            </div>
+
+            <div class="privacy-block" id="sms">
+              <h2 class="section-title" [innerHTML]="'PRIVACY.SMS.TITLE' | translateHtml | async"></h2>
+              <div class="sms-copy" [innerHTML]="'PRIVACY.SMS.DESCRIPTION' | translateHtml | async"></div>
+            </div>
+
+            <div class="privacy-block" id="updates">
+              <h2 class="section-title" [innerHTML]="'PRIVACY.UPDATES.TITLE' | translateHtml | async"></h2>
+              <p [innerHTML]="'PRIVACY.UPDATES.DESCRIPTION' | translateHtml | async"></p>
+            </div>
+
+            <div class="privacy-block" id="contact-information">
+              <h2 class="section-title" [innerHTML]="'PRIVACY.CONTACT.TITLE' | translateHtml | async"></h2>
+
+              <div class="contact-info">
+                <p [innerHTML]="'PRIVACY.CONTACT.DESCRIPTION' | translateHtml | async"></p>
+                <p class="contact-info__row">
+                  <span [innerHTML]="'PRIVACY.CONTACT.PHONE' | translateHtml | async"></span>&ngsp;
+                  <a href="tel:7133577771">(713) 357-7771</a>
+                </p>
+                <p class="contact-info__row">
+                  <span [innerHTML]="'PRIVACY.CONTACT.EMAIL' | translateHtml | async"></span>&ngsp;
+                  <a href="mailto:info@astateins.com">info&#64;astateins.com</a>
+                </p>
+                <p class="contact-info__row">
+                  <span [innerHTML]="'PRIVACY.CONTACT.ADDRESS' | translateHtml | async"></span>&ngsp;
+                  <span [innerHTML]="'PRIVACY.CONTACT.ADDRESS_VALUE' | translateHtml | async"></span>
+                </p>
+                <p [innerHTML]="'PRIVACY.CONTACT.FOOTER' | translateHtml | async"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+    <div class="toc-stop" #tocStopSection></div>
+  </section>
 </div>
-
-<section class="privacy-section py-5">
-  <div class="container">
-    <h2 class="section-title" [innerHTML]="'PRIVACY.INTRODUCTION.TITLE' | translateHtml | async"></h2>
-    <p [innerHTML]="'PRIVACY.INTRODUCTION.DESCRIPTION' | translateHtml | async"></p>
-    <p class="effective-date" [innerHTML]="'PRIVACY.INTRODUCTION.EFFECTIVE_DATE' | translateHtml | async"></p>
-
-    <h2 class="section-title mt-5" [innerHTML]="'PRIVACY.INFORMATION_COLLECT.TITLE' | translateHtml | async"></h2>
-
-    <h3 class="sub-title" [innerHTML]="'PRIVACY.INFORMATION_COLLECT.PERSONAL_TITLE' | translateHtml | async"></h3>
-    <p [innerHTML]="'PRIVACY.INFORMATION_COLLECT.PERSONAL_DESC' | translateHtml | async"></p>
-
-    <ol>
-      <li *ngFor="let item of personalList">
-        <span [innerHTML]="item | translateHtml | async"></span>
-      </li>
-    </ol>
-
-    <p [innerHTML]="'PRIVACY.INFORMATION_COLLECT.PERSONAL_NOTE' | translateHtml | async"></p>
-
-    <h3 class="sub-title mt-4" [innerHTML]="'PRIVACY.INFORMATION_COLLECT.AUTO_TITLE' | translateHtml | async"></h3>
-    <p [innerHTML]="'PRIVACY.INFORMATION_COLLECT.AUTO_DESC' | translateHtml | async"></p>
-
-    <ol>
-      <li *ngFor="let item of AUTO_LIST"><span [innerHTML]="item | translateHtml | async"></span></li>
-    </ol>
-    <p [innerHTML]="'PRIVACY.INFORMATION_COLLECT.AUTO_NOTE' | translateHtml | async"></p>
-
-    <h2 class="section-title mt-5" [innerHTML]="'PRIVACY.HOW_COLLECT.TITLE' | translateHtml | async"></h2>
-    <p [innerHTML]="'PRIVACY.HOW_COLLECT.DESCRIPTION' | translateHtml | async"></p>
-
-    <h2 class="section-title mt-5" [innerHTML]="'PRIVACY.HOW_USE.TITLE' | translateHtml | async"></h2>
-    <p [innerHTML]="'PRIVACY.HOW_USE.DESCRIPTION' | translateHtml | async"></p>
-
-    <h2 class="section-title mt-5" [innerHTML]="'PRIVACY.COOKIES.TITLE' | translateHtml | async"></h2>
-    <p [innerHTML]="'PRIVACY.COOKIES.DESCRIPTION' | translateHtml | async"></p>
-
-    <h2 class="section-title mt-5" [innerHTML]="'PRIVACY.SHARING.TITLE' | translateHtml | async"></h2>
-    <p [innerHTML]="'PRIVACY.SHARING.DESCRIPTION' | translateHtml | async"></p>
-
-    <h2 class="section-title mt-5" [innerHTML]="'PRIVACY.SECURITY.TITLE' | translateHtml | async"></h2>
-    <p [innerHTML]="'PRIVACY.SECURITY.DESCRIPTION' | translateHtml | async"></p>
-
-    <h2 class="section-title mt-5" [innerHTML]="'PRIVACY.RIGHTS.TITLE' | translateHtml | async"></h2>
-    <p [innerHTML]="'PRIVACY.RIGHTS.DESCRIPTION' | translateHtml | async"></p>
-
-    <h2 class="section-title mt-5" [innerHTML]="'PRIVACY.THIRD_PARTY.TITLE' | translateHtml | async"></h2>
-    <p [innerHTML]="'PRIVACY.THIRD_PARTY.DESCRIPTION' | translateHtml | async"></p>
-
-    <h2 class="section-title mt-5" [innerHTML]="'PRIVACY.CHILDREN.TITLE' | translateHtml | async"></h2>
-    <p [innerHTML]="'PRIVACY.CHILDREN.DESCRIPTION' | translateHtml | async"></p>
-
-    <h2 class="section-title mt-5" [innerHTML]="'PRIVACY.UPDATES.TITLE' | translateHtml | async"></h2>
-    <p [innerHTML]="'PRIVACY.UPDATES.DESCRIPTION' | translateHtml | async"></p>
-
-    <h2 class="section-title mt-5" [innerHTML]="'PRIVACY.SMS.TITLE' | translateHtml | async"></h2>
-    <p [innerHTML]="'PRIVACY.SMS.DESCRIPTION' | translateHtml | async"></p>
-
-    <h2 class="section-title mt-5" [innerHTML]="'PRIVACY.CONTACT.TITLE' | translateHtml | async"></h2>
-    <p [innerHTML]="'PRIVACY.CONTACT.DESCRIPTION' | translateHtml | async"></p>
-
-    <div class="contact-info">
-      <p>
-        <strong [innerHTML]="'PRIVACY.CONTACT.PHONE' | translateHtml | async"></strong>
-        <a href="tel:7133577771">(713) 357-7771</a>
-      </p>
-      <p>
-        <strong [innerHTML]="'PRIVACY.CONTACT.EMAIL' | translateHtml | async"></strong>
-        <a href="mailto:save@astateinsurance.com">
-          save@astateinsurance.com
-        </a>
-      </p>
-      <p>
-        <strong [innerHTML]="'PRIVACY.CONTACT.ADDRESS' | translateHtml | async"></strong>
-        707 Shotwell St, Houston, TX 77020, United States
-      </p>
-      <p class="highlight" [innerHTML]="'PRIVACY.CONTACT.FOOTER' | translateHtml | async"></p>
-    </div>
-  </div>
-</section>
-
-  <app-foot-upper></app-foot-upper>

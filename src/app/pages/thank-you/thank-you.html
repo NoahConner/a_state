@@ -1,24 +1,83 @@
-<div class="thankyouMain">
-  <div class="topBanner">
+@if (type === 'career') {
+<div class="careerThanks">
+  <div class="thanks-hero thanks-hero--career">
     <div class="container">
-      <div class="h1">
-        <span [innerHTML]="titleLine1 | translateHtml | async"></span> <br />
-        <span [innerHTML]="titleLine2 | translateHtml | async"></span>
+      <div class="glass-card">
+        <span class="glass-card__layer glass-card__layer--1" aria-hidden="true"></span>
+        <span class="glass-card__layer glass-card__layer--2" aria-hidden="true"></span>
+        <span class="glass-card__layer glass-card__layer--3" aria-hidden="true"></span>
+
+        <div class="glass-card__content">
+          <h1 class="glass-card__title" [innerHTML]="'THANK_YOU_CAREER.HEADING' | translateHtml | async"></h1>
+          <p class="glass-card__text" [innerHTML]="'THANK_YOU_CAREER.MESSAGE' | translateHtml | async"></p>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-<section class="thank-you-section py-5">
-  <div class="container">
-    <p>
-      <span [innerHTML]="description | translateHtml | async"></span>
-    </p>
-
-    <button class="btn send-btn" [routerLink]="type === 'career' ? '/careers' : '/'">
-      {{ button | translate }}
-    </button>
+} @else {
+<div class="contactThanks">
+  <div class="thanks-hero">
+    <div class="container thanks-hero__content">
+      <h1 class="thanks-hero__title" [innerHTML]="'THANK_YOU_CONTACT.HEADING' | translateHtml | async"></h1>
+      <p class="thanks-hero__subtitle" [innerHTML]="'THANK_YOU_CONTACT.SUBHEADING' | translateHtml | async"></p>
+    </div>
   </div>
-</section>
 
-  <app-foot-upper></app-foot-upper>
+  <!-- Connect With A-State Online -->
+  <section class="social-strip">
+    <h2 class="section-heading">
+      <span [innerHTML]="'CONTACT.SOCIAL.TITLE_START' | translateHtml | async"></span>&ngsp;
+      <strong class="section-heading__accent" [innerHTML]="'CONTACT.SOCIAL.TITLE_ACCENT' | translateHtml | async"></strong>
+    </h2>
+    <span class="section-heading__divider" aria-hidden="true"></span>
+
+    <div class="social-strip__icons">
+      @for (social of socialLinks; track social.label) {
+      @if (social.href) {
+      <a class="social-strip__icon" [href]="social.href" target="_blank" rel="noopener noreferrer"
+        [attr.aria-label]="social.label">
+        <i [class]="social.icon" aria-hidden="true"></i>
+      </a>
+      } @else {
+      <span class="social-strip__icon" [attr.aria-label]="social.label">
+        <i [class]="social.icon" aria-hidden="true"></i>
+      </span>
+      }
+      }
+    </div>
+  </section>
+
+  <!-- Ready to Get Covered? -->
+  <section class="covered-cta">
+    <h2 class="section-heading covered-cta__title">
+      <span [innerHTML]="'CONTACT.CTA.TITLE_START' | translateHtml | async"></span>&ngsp;
+      <strong class="section-heading__accent" [innerHTML]="'CONTACT.CTA.TITLE_ACCENT' | translateHtml | async"></strong>
+    </h2>
+
+    <div class="covered-cta__actions">
+      <a class="covered-cta__btn" href="tel:7133577771">(713) 357-7771</a>
+      <a class="covered-cta__btn" [routerLink]="getRoute('getAQuote')">{{ 'CONTACT.CTA.QUOTE' | translate }}</a>
+    </div>
+
+    <p class="covered-cta__note">{{ 'CONTACT.CTA.NOTE' | translate }}</p>
+  </section>
+
+  <!-- Connect With Us Online -->
+  <section class="connect-section">
+    <div class="container text-center">
+      <h2 class="connect-title" [innerHTML]="'CONTACT.CONNECTTITLE' | translateHtml | async"></h2>
+
+      <div class="social-wrapper">
+        <a href="https://www.instagram.com/astateinsurance/" target="_blank" rel="noopener noreferrer" class="social-box">
+          <img class="insta" src="/assets/images/Instagram.png" alt="Instagram" />
+        </a>
+
+        <a href="https://www.facebook.com/astateinsurancetx" target="_blank" rel="noopener noreferrer" class="social-box">
+          <img class="fb" src="/assets/images/Facebook.png" alt="Facebook" />
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+}

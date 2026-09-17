@@ -775,6 +775,46 @@
     "HEADINGSTRONG": "A-State Insurance",
     "HERO_DESC": "We’re here Monday–Saturday, 9 AM – 7 PM CT. Reach us by phone, text, email, or form — in English or Spanish. Most inquiries answered within 1 business hour.",
     "CONNECTTITLE": "Connect With Us Online",
+    "FAQ": {
+      "TITLE_START": "Before You Reach Out —",
+      "TITLE_ACCENT": "Quick Answers",
+      "ITEMS": [
+        {
+          "question": "How quickly will someone get back to me?",
+          "answer": "If you call or text us, you’ll get immediate support. If you reach out via email or our online contact form, we guarantee a response within 1 business hour."
+        },
+        {
+          "question": "Can I get a quote over the phone?",
+          "answer": "Yes. Call (713) 357-7771 and a licensed agent will compare rates from 50+ carriers and walk you through your options on the same call."
+        },
+        {
+          "question": "Do you have Spanish-speaking agents?",
+          "answer": "Yes. Our team serves customers in both English and Spanish — by phone, text, email, or in person at any of our offices."
+        },
+        {
+          "question": "What information should I have ready before I call?",
+          "answer": "Have your driver’s license, vehicle or property details, and your current policy (if you have one) handy. Don’t worry if you’re missing something — we can still get you started."
+        },
+        {
+          "question": "Can I visit without an appointment?",
+          "answer": "Absolutely. Walk-ins are welcome at all of our Houston-area offices, Monday–Saturday, 9 AM – 7 PM."
+        },
+        {
+          "question": "Do you serve my city / ZIP code?",
+          "answer": "We serve customers in all cities and counties across Texas. Call or send us a message and we’ll help you wherever you are in the state."
+        }
+      ]
+    },
+    "SOCIAL": {
+      "TITLE_START": "Connect With",
+      "TITLE_ACCENT": "A-State Online"
+    },
+    "CTA": {
+      "TITLE_START": "Ready to Get Covered?",
+      "TITLE_ACCENT": "We're One Call Away.",
+      "QUOTE": "Get a Free Quote Online",
+      "NOTE": "No obligation. No pressure. Just answers."
+    },
     "CONTACT-INSURANCE": {
       "HEADING": "Contact A-State Insurance",
       "FEILD1": "Full Name",
@@ -858,6 +898,7 @@
   },
   "TERMS_PAGE": {
     "HEADING": "Terms and Conditions",
+    "TOC_HEADING": "Table of Content",
     "ACCEPTANCE": {
       "TITLE": "Acceptance of Terms",
       "P1": "By using the A-State Insurance website, requesting a quote, or using any of our services, you agree to these Terms and Conditions. This applies to all visitors, clients, and anyone seeking insurance information. If you do not agree with these terms, please do not use the website or our services.",
@@ -904,7 +945,7 @@
     },
     "PRIVACY": {
       "TITLE": "Privacy & Data Use Reference",
-      "P1": "Your personal information is collected only to provide quotes, service, or coverage guidance. We follow privacy laws, and our Privacy Policy explains how your data is handled. We only share information with carriers or partners necessary to provide coverage. Your data is used to help you find the best policies and ensure your coverage meets your needs. We take privacy seriously and aim to keep your information secure at all times."
+      "P1": "Your personal information is collected only to provide quotes, service, or coverage guidance. We follow privacy laws, and our <a class='inline-link' href='/privacy-policy'>Privacy Policy</a> explains how your data is handled. We only share information with carriers or partners necessary to provide coverage. Your data is used to help you find the best policies and ensure your coverage meets your needs. We take privacy seriously and aim to keep your information secure at all times."
     },
     "INTELLECTUAL": {
       "TITLE": "Intellectual Property",
@@ -921,7 +962,7 @@
     "CHANGES": {
       "TITLE": "Changes to Terms",
       "P1": "We may update these Terms at any time. Continued use of the website or services means you accept the latest version. We encourage you to review these Terms regularly. ",
-      "LAST_UPDATED": "Last Updated: 01/11/2026"
+      "LAST_UPDATED": "Last Updated: 02/11/2026"
     },
     "GOVERNING": {
       "TITLE": "Governing Law",
@@ -933,16 +974,18 @@
     "CONTACT_INFO": {
       "TITLE": "Contact Information",
       "COMPANY": "A-State Insurance",
-      "ADDRESS": "707 Shotwell St A, Houston, TX 77020, United States",
+      "ADDRESS_LABEL": "Office Address:",
+      "ADDRESS": "707 Shotwell St a, Houston, TX 77020, United States",
       "PHONE_LABEL": "Phone:",
       "PHONE": "(713) 357-7771",
       "EMAIL_LABEL": "Email:",
-      "EMAIL": "save@astateinsurance.com",
+      "EMAIL": "info@astateins.com",
       "HOURS": "Business Hours: Mon – Sat: 9AM – 7PM"
     }
   },
   "PRIVACY": {
     "HEADING": "Privacy Policy",
+    "TOC_HEADING": "Table of Content",
     "INTRODUCTION": {
       "TITLE": "Introduction",
       "DESCRIPTION": "This Privacy Policy explains how A-State Insurance collects, uses, and protects personal information obtained through our website and services. We are committed to respecting your privacy and maintaining the confidentiality of your data. This policy applies to website visitors, customers, and individuals who submit information through forms or communications. By using our website, you agree to the practices described in this policy.",
@@ -950,7 +993,7 @@
     },
     "INFORMATION_COLLECT": {
       "TITLE": "Information We Collect",
-      "PERSONAL_TITLE": "• Personal Information",
+      "PERSONAL_TITLE": "Personal Information",
       "PERSONAL_DESC": "We may collect personal details that you voluntarily provide, including:",
       "PERSONAL_LIST": [
         "Full name",
@@ -960,7 +1003,7 @@
         "Insurance-related inquiries and service requests"
       ],
       "PERSONAL_NOTE": "This information is collected when you contact us, request quotes, or use our services.",
-      "AUTO_TITLE": "• Automatically Collected Information",
+      "AUTO_TITLE": "Automatically Collected Information",
       "AUTO_DESC": "When you visit our website, certain data is collected automatically, including:",
       "AUTO_LIST": [
         "Internet Protocol (IP) address",
@@ -984,7 +1027,7 @@
     },
     "SHARING": {
       "TITLE": "Information Sharing & Disclosure",
-      "DESCRIPTION": "We do not sell personal information. We may share limited information with insurance carriers and service providers when it is necessary to deliver quotes, coverage, or related services. We may also disclose information to legal or regulatory authorities if required by law. Any third party that receives information is expected to protect and use it only for the intended purpose."
+      "DESCRIPTION": "We do not sell personal information. We may share limited information with insurance carriers and service providers when it is necessary to deliver quotes, coverage, or related services. We may also disclose information to legal or regulatory authorities if required by law. Any third party that receives information is expected to protect it and use it only for the intended purpose."
     },
     "SECURITY": {
       "TITLE": "Data Security",
@@ -992,7 +1035,7 @@
     },
     "RIGHTS": {
       "TITLE": "Your Privacy Rights",
-      "DESCRIPTION": "You may request access to the personal information we have about you, ask for corrections, or request deletion where allowed by law. You may also opt out of marketing or non-essential communications at any time. Texas residents may have additional rights under applicable state privacy laws."
+      "DESCRIPTION": "You may request access to the personal information we have about you, ask for corrections, or request deletion where allowed by law. You may also opt out of marketing or non-essential communications at any time. Texas residents may have additional rights under applicable state privacy laws, and requests will be handled in accordance with those requirements."
     },
     "THIRD_PARTY": {
       "TITLE": "Third-Party Links",
@@ -1000,7 +1043,7 @@
     },
     "CHILDREN": {
       "TITLE": "Children’s Privacy",
-      "DESCRIPTION": "Our services are not intended for children under 13, and we do not knowingly collect personal information from children. If we learn that a child’s information has been collected, we will take steps to remove it."
+      "DESCRIPTION": "Our services are not intended for children under 13, and we do not knowingly collect personal information from children. If we learn that a child's information has been collected, we will take steps to remove it."
     },
     "SMS": {
       "TITLE": "SMS / Text Message Communications",
@@ -1016,6 +1059,7 @@
       "PHONE": "Phone:",
       "EMAIL": "Email:",
       "ADDRESS": "Office Address:",
+      "ADDRESS_VALUE": "707 Shotwell St a, Houston, TX 77020, United States",
       "FOOTER": "We are committed to addressing privacy-related inquiries promptly and responsibly."
     }
   },
@@ -1044,13 +1088,14 @@
       }
     },
     "CULTURE": {
-      "TITLE": "Our Culture & Values: The A-State \"Vibe\"",
+      "TITLE_START": "Our Culture & Values:",
+      "TITLE_END": "The A-State \"Vibe\"",
       "QUOTE": "We aren’t looking for cogs in a machine. We’re looking for community advocates.",
       "DESCRIPTION": "In many agencies, \"culture\" is just a poster on the wall. For us, it's the way we handle a phone call at 4:55 PM on a Friday. We believe that if we take care of our team, our team will take care of Texas."
     },
     "STAND_FOR": {
-      "TITLE": "What We Stand For",
-      "DESCRIPTION": "Most insurance jobs feel like you're just a number in a massive corporate machine. At <a class='inline-link' href='/' target='_blank'>A-State Insurance</a>, we do things differently. As a specialized agency and broker, we aren't tied to a single \"company\" script. We are entrepreneurs who represent our clients first. This means you have the freedom to find the best solutions across Auto, Home, Commercial, and Life insurance, rather than being forced to sell a one-size-fits-all product.",
+      "TITLE_START": "What We",
+      "TITLE_END": "Stand For",
       "GROWTH": {
         "TITLE": "A Growth Mindset",
         "DESCRIPTION": "The insurance industry is constantly evolving, and we want you to lead that change. We don’t just hire for what you know today; we invest in what you'll know tomorrow. Whether it's sponsoring your professional licensing, funding advanced insurance certifications, or providing hands-on mentorship in Commercial or Life products, your career won’t stall here. When you grow, the agency grows."
@@ -1067,13 +1112,31 @@
     "FORM": {
       "TITLE_LINE1": "Don't See a Specific Opening?",
       "TITLE_LINE2": "We Still Want to Meet You!",
+      "DESCRIPTION": "We are always looking for talented individuals who are passionate about Auto, Home, Life, Health, and Commercial insurance. Send us your details, and we’ll reach out when the right opportunity arrives.",
       "FIELDS": {
         "FULL_NAME": "Full Name",
         "PHONE": "Phone Number",
         "EMAIL": "Email Address",
         "LANGUAGES": "Languages Spoken",
         "INTEREST": "Area of Interest",
-        "UPLOAD": "Upload Resume"
+        "UPLOAD": "Upload Resume",
+        "FULL_NAME_PLACEHOLDER": "John Doe",
+        "PHONE_PLACEHOLDER": "123-456-7890",
+        "LANGUAGE_OPTIONS": {
+          "ENGLISH": "English",
+          "SPANISH": "Spanish",
+          "HINDI": "Hindi",
+          "OTHER": "Other"
+        },
+        "INTEREST_PLACEHOLDER": "Select an area",
+        "INTEREST_OPTIONS": {
+          "SALES": "Sales",
+          "CUSTOMER_SERVICE": "Customer Service",
+          "ACCOUNT_MANAGEMENT": "Account Management",
+          "ADMINISTRATION": "Administration",
+          "OTHER": "Other"
+        },
+        "UPLOAD_HINT": "Drag & Drop"
       },
       "SUBMIT_BUTTON": "Submit"
     }
@@ -1082,13 +1145,17 @@
     "TITLE_LINE1": "Thank You for",
     "TITLE_LINE2": "Getting in Touch!",
     "DESCRIPTION": "We appreciate you reaching out to us Your message has been successfully received One of our representatives will review your query and get back to you as soon as possible If your matter is urgent, please feel free to contact us directly Thank you for your interest — we look forward to assisting you!",
-    "BUTTON": "Go back to Home page"
+    "BUTTON": "Go back to Home page",
+    "HEADING": "Thanks For Getting In Touch With Us",
+    "SUBHEADING": "Our Representative will call you shortly."
   },
   "THANK_YOU_CAREER": {
     "TITLE_LINE1": "Thank You for Your",
     "TITLE_LINE2": "Application!",
     "DESCRIPTION": "We truly appreciate the time and effort you put into your application. Our team is currently reviewing submissions, and if your profile matches our requirements, we’ll be in touch soon. Wishing you the very best, and thank you once again for your interest in joining us!",
-    "BUTTON": "Explore More Jobs"
+    "BUTTON": "Explore More Jobs",
+    "HEADING": "Thank You for Your Application!",
+    "MESSAGE": "We've successfully received your application. Our hiring team will review your information, and if your qualifications match our requirements, we'll contact you regarding the next steps. We appreciate your interest in joining our team."
   },
   "OUR_LOCATION": {
     "HEADING": "Find an A-State Insurance Office Near You in Houston, TX",
