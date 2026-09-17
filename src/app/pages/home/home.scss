@@ -1,14 +1,39 @@
-h2 {
-  font-size: 36px !important;
-}
+// Typography scale from the design spec. !important because older section rules set their own sizes.
+.homeMain {
+  h1,
+  .h1 {
+    font-size: 60px !important;
+  }
 
-.homeMain p {
-  font-size: 20px;
-}
+  h2 {
+    font-size: 36px !important;
+  }
 
-@media (min-width: 992px) {
-  .topBanner .h1 {
-    font-size: clamp(2.8rem, 4.8vw, 5.25rem) !important;
+  h3 {
+    font-size: 25px !important;
+  }
+
+  p {
+    font-size: 20px !important;
+  }
+
+  @media (max-width: 767px) {
+    h1,
+    .h1 {
+      font-size: 36px !important;
+    }
+
+    h2 {
+      font-size: 25px !important;
+    }
+
+    h3 {
+      font-size: 20px !important;
+    }
+
+    p {
+      font-size: 16px !important;
+    }
   }
 }
 
@@ -41,6 +66,13 @@ h2 {
           line-height: 1.1;
           text-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
           margin-bottom: 1.8rem;
+        }
+
+        .banner-subtitle {
+          color: #fff;
+          font-size: clamp(1.1rem, 1.6vw, 1.5rem);
+          margin: -0.8rem 0 1.8rem;
+          text-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
         }
 
         .banner-quote-card {
@@ -342,7 +374,7 @@ h2 {
   }
 
   .get-quote-title {
-    font-weight: 600;
+    font-weight: 700;
     color: #44110e;
     line-height: 1.18;
     font-size: 69.1px;
@@ -350,7 +382,7 @@ h2 {
 
   .get-quote-desc {
     margin-top: 1.4rem;
-    color: #5c5c5c;
+    color: #44110e;
     font-size: 1rem;
     line-height: 1.6;
     max-width: 560px;
@@ -628,6 +660,7 @@ h2 {
 
 ::ng-deep .story-section .inline-link {
   color: #df4135 !important;
+  font-weight: 400;
 }
 
 .story-section {
@@ -1339,6 +1372,13 @@ h2 {
 // End Features Section Styles
 
 // Insurance Coverage Section
+// Underline under the first part of the title ("Insurance Coverage"), set via the translation markup
+::ng-deep .solutions-section .title-underline-text {
+  display: inline-block;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #3e2723;
+}
+
 .solutions-section {
   background-color: #fffbc9;
   color: #2d1c15;
@@ -1361,12 +1401,6 @@ h2 {
     }
   }
 
-  .title-underline {
-    width: 260px;
-    height: 3px;
-    background-color: #3e2723;
-    margin-top: 12px;
-  }
 
   .card-item {
     display: flex;
@@ -1788,6 +1822,14 @@ h2 {
     color: #3a3a3a;
   }
 
+  .carriers-title:has(+ .carriers-subtitle) {
+    margin-bottom: 0.75rem !important;
+  }
+
+  .carriers-subtitle {
+    color: #3a3a3a;
+  }
+
   .logo-slider-wrapper {
     width: 100%;
     overflow: hidden;
@@ -1877,11 +1919,6 @@ h2 {
 }
 
 @media (max-width: 768px) {
-  // Mobile: sab H2 section titles 30px (top ka 36px !important global override)
-  h2 {
-    font-size: 30px !important;
-  }
-
   .solutions-section {
     padding: 3rem 0;
   }
@@ -1911,9 +1948,4 @@ h2 {
     font-size: 28px !important;
   }
 
-  .features-section {
-    .section-title {
-      font-size: 24px !important;
-    }
-  }
 }

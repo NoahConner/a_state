@@ -8,17 +8,18 @@
             <span [innerHTML]="'HOME.BANNER.TITLE_LINE2' | translateHtml | async"></span><br />
             <strong [innerHTML]="'HOME.BANNER.TITLE_LINE3' | translateHtml | async"></strong>
           </h1>
+          <p class="banner-subtitle" [innerHTML]="'HOME.BANNER.SUBTITLE' | translateHtml | async"></p>
           <div class="banner-quote-card">
             <div class="quote-options">
               @for (item of chips; track item.name) {
-              <button type="button" class="quote-option" *ngIf="item.name" [class.selected]="bannerForm.selectedChip === item.name"
-                [attr.aria-pressed]="bannerForm.selectedChip === item.name" (click)="selectChip(bannerForm, item.name)">
+              <button type="button" class="quote-option" *ngIf="item.name" [class.selected]="isChipSelected(bannerForm, item.name)"
+                [attr.aria-pressed]="isChipSelected(bannerForm, item.name)" (click)="toggleChip(bannerForm, item.name)">
                 <span class="icon-badge">
                   <span class="icon-burst"></span>
                   <img [src]="item.image" [alt]="item.name | translate" class="quote-option-image" />
                 </span>
                 <span class="quote-option-label">
-                  <span class="radio-indicator" [class.checked]="bannerForm.selectedChip === item.name"></span>
+                  <span class="radio-indicator" [class.checked]="isChipSelected(bannerForm, item.name)"></span>
                   <span [innerHTML]="item.name | translateHtml | async"></span>
                 </span>
               </button>
@@ -32,8 +33,8 @@
               <input type="tel" appPhoneFormat [placeholder]="'HOME.BANNER.FORM.PHONE' | translate"
                 class="form-control" [value]="bannerForm.phone" (input)="bannerForm.phone = $any($event.target).value" />
 
-              <button class="quote-submit" [disabled]="bannerForm.isSubmitting || !bannerForm.selectedChip || !bannerForm.fullName.trim() || !bannerForm.phone.trim() || !termsAccepted" (click)="goToSelectedQuote(bannerForm)">
-                {{ bannerForm.isSubmitting ? ('HOME.BANNER.FORM.LOADING' | translate) : ('HOME.BANNER.FORM.BUTTON' | translate) }}
+              <button class="quote-submit" [disabled]="bannerForm.isSubmitting || !bannerForm.selectedChips.length || !bannerForm.fullName.trim() || !bannerForm.phone.trim() || !termsAccepted" (click)="goToSelectedQuote(bannerForm)">
+                {{ bannerForm.isSubmitting ? ('HOME.BANNER.FORM.LOADING' | translate) : ('HOME.BANNER.FORM.FREE_QUOTE_BUTTON' | translate) }}
               </button>
             </div>
 
@@ -139,7 +140,6 @@
     <div class="container py-4">
       <div class="mb-5">
         <h2 class="section-title" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.TITLE' | translateHtml | async"></h2>
-        <div class="title-underline"></div>
       </div>
       <div class="row g-4 g-lg-5">
         <div class="col-12 col-md-6 col-lg-4 coverage-card">
@@ -388,6 +388,7 @@
     
     <!-- Centered Header -->
     <h2 class="carriers-title text-center mb-0" [innerHTML]="'HOME.CARRIERS.TITLE' | translateHtml | async"></h2>
+    <p class="carriers-subtitle text-center mb-0" [innerHTML]="'HOME.CARRIERS.SUBTITLE' | translateHtml | async"></p>
 
     <!-- Infinite Marquee Slider -->
     <div class="logo-slider-wrapper mt-5">
@@ -475,8 +476,8 @@
             <div class="quote-options get-quote-options">
               @for (item of chips; track item.name) {
               <button type="button" class="quote-option" *ngIf="item.name"
-                [class.selected]="coveredForm.selectedChip === item.name" [attr.aria-pressed]="coveredForm.selectedChip === item.name"
-                (click)="selectChip(coveredForm, item.name)">
+                [class.selected]="isChipSelected(coveredForm, item.name)" [attr.aria-pressed]="isChipSelected(coveredForm, item.name)"
+                (click)="toggleChip(coveredForm, item.name)">
                 <span class="icon-badge">
                   <span class="icon-burst"></span>
                   <img [src]="item.image" [alt]="item.name | translate" class="quote-option-image" />
@@ -489,21 +490,21 @@
               }
             </div>
 
-            <div class="form-check mb-3">
-              <input class="form-check-input terms-check" type="checkbox" id="termsCheck2"
-                (change)="termsAccepted2 = $any($event.target).checked" [checked]="termsAccepted2" />
-              <label class="form-check-label terms-check-label small" for="termsCheck2"
-                [innerHTML]="'QUOTE_SMS_CONSENT_GET_QUOTE' | translateHtml | async"></label>
-            </div>
-
             <div class="quote-form-row get-quote-form-row">
               <input type="text" [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate"
                 class="form-control" [value]="coveredForm.fullName" (input)="coveredForm.fullName = $any($event.target).value" />
               <input type="tel" appPhoneFormat [placeholder]="'HOME.BANNER.FORM.PHONE' | translate"
                 class="form-control" [value]="coveredForm.phone" (input)="coveredForm.phone = $any($event.target).value" />
-              <button class="quote-submit" [disabled]="coveredForm.isSubmitting || !coveredForm.selectedChip || !coveredForm.fullName.trim() || !coveredForm.phone.trim() || !termsAccepted2" (click)="goToSelectedQuote(coveredForm)">
-                {{ coveredForm.isSubmitting ? ('HOME.BANNER.FORM.LOADING' | translate) : ('HOME.COVERDBANNER.FORM.BUTTON' | translate) }}
+              <button class="quote-submit" [disabled]="coveredForm.isSubmitting || !coveredForm.selectedChips.length || !coveredForm.fullName.trim() || !coveredForm.phone.trim() || !termsAccepted2" (click)="goToSelectedQuote(coveredForm)">
+                {{ coveredForm.isSubmitting ? ('HOME.BANNER.FORM.LOADING' | translate) : ('HOME.BANNER.FORM.FREE_QUOTE_BUTTON' | translate) }}
               </button>
+            </div>
+
+            <div class="form-check terms-consent mt-3 mb-0">
+              <input class="form-check-input terms-check" type="checkbox" id="termsCheck2"
+                (change)="termsAccepted2 = $any($event.target).checked" [checked]="termsAccepted2" />
+              <label class="form-check-label terms-check-label small" for="termsCheck2"
+                [innerHTML]="'QUOTE_SMS_CONSENT_GET_QUOTE' | translateHtml | async"></label>
             </div>
           </div>
         </div>
