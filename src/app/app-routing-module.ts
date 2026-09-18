@@ -20,10 +20,6 @@ import { GetHealthQuote } from './pages/get-health-quote/get-health-quote';
 import { GetSuretyQuote } from './pages/get-surety-quote/get-surety-quote';
 import { AutoInsurance } from './pages/auto-insurance/auto-insurance';
 import { HomeInsurance } from './pages/home-insurance/home-insurance';
-import { HomeownersHoustonTx } from './pages/home-insurance/houston-tx/houston-tx';
-import { HomeownersSanAntonioTx } from './pages/home-insurance/san-antonio-tx/san-antonio-tx';
-import { HomeownersDallasTx } from './pages/home-insurance/dallas-tx/dallas-tx';
-import { HomeownersAustinTx } from './pages/home-insurance/austin-tx/austin-tx';
 import { CommercialInsurance } from './pages/commercial-insurance/commercial-insurance';
 import { LifeInsurance } from './pages/life-insurance/life-insurance';
 import { HealthInsurance } from './pages/health-insurance/health-insurance';
@@ -420,26 +416,10 @@ const routes: Routes = [
     path: 'homeowners-insurance',
     children: [
       { path: '', component: HomeInsurance, data: { metaPage: 'homeInsurance' } },
-      {
-        path: 'houston-tx',
-        component: HomeownersHoustonTx,
-        data: { metaPage: 'homeownersHoustonTx' },
-      },
-      {
-        path: 'san-antonio-tx',
-        component: HomeownersSanAntonioTx,
-        data: { metaPage: 'homeownersSanAntonioTx' },
-      },
-      {
-        path: 'dallas-tx',
-        component: HomeownersDallasTx,
-        data: { metaPage: 'homeownersDallasTx' },
-      },
-      {
-        path: 'austin-tx',
-        component: HomeownersAustinTx,
-        data: { metaPage: 'homeownersAustinTx' },
-      },
+      { path: 'houston-tx', redirectTo: '', pathMatch: 'full' },
+      { path: 'san-antonio-tx', redirectTo: '', pathMatch: 'full' },
+      { path: 'dallas-tx', redirectTo: '', pathMatch: 'full' },
+      { path: 'austin-tx', redirectTo: '', pathMatch: 'full' },
       {
         path: 'renters-insurance',
         component: RentersInsurance,
@@ -686,26 +666,10 @@ const routes: Routes = [
         path: 'seguros-de-vivienda',
         children: [
           { path: '', component: HomeInsurance, data: { metaPage: 'homeInsurance' } },
-          {
-            path: 'houston-tx',
-            component: HomeownersHoustonTx,
-            data: { metaPage: 'homeownersHoustonTx' },
-          },
-          {
-            path: 'san-antonio-tx',
-            component: HomeownersSanAntonioTx,
-            data: { metaPage: 'homeownersSanAntonioTx' },
-          },
-          {
-            path: 'dallas-tx',
-            component: HomeownersDallasTx,
-            data: { metaPage: 'homeownersDallasTx' },
-          },
-          {
-            path: 'austin-tx',
-            component: HomeownersAustinTx,
-            data: { metaPage: 'homeownersAustinTx' },
-          },
+          { path: 'houston-tx', redirectTo: '', pathMatch: 'full' },
+          { path: 'san-antonio-tx', redirectTo: '', pathMatch: 'full' },
+          { path: 'dallas-tx', redirectTo: '', pathMatch: 'full' },
+          { path: 'austin-tx', redirectTo: '', pathMatch: 'full' },
           {
             path: 'seguros-para-inquilinos',
             component: RentersInsurance,
@@ -1034,22 +998,6 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   homeInsurance: {
     en: 'homeowners-insurance',
     es: 'seguros-de-vivienda',
-  },
-  homeownersHoustonTx: {
-    en: 'homeowners-insurance/houston-tx',
-    es: 'seguros-de-vivienda/houston-tx',
-  },
-  homeownersSanAntonioTx: {
-    en: 'homeowners-insurance/san-antonio-tx',
-    es: 'seguros-de-vivienda/san-antonio-tx',
-  },
-  homeownersDallasTx: {
-    en: 'homeowners-insurance/dallas-tx',
-    es: 'seguros-de-vivienda/dallas-tx',
-  },
-  homeownersAustinTx: {
-    en: 'homeowners-insurance/austin-tx',
-    es: 'seguros-de-vivienda/austin-tx',
   },
   commercialInsurance: {
     en: 'commercial-insurance',
