@@ -6,6 +6,7 @@ import {
   Inject,
   PLATFORM_ID,
   HostListener,
+  Input,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
@@ -17,6 +18,9 @@ import { TranslateService } from '@ngx-translate/core';
   standalone: false,
 })
 export class TestimonialSliderComponent implements OnInit {
+  /** Translation group holding TITLE_LINE1, TITLE_HIGHLIGHT and ITEMS; pages can supply their own copy. */
+  @Input() contentKey = 'HOME.TESTIMONIALS';
+
   testimonials: any[] = [];
   readonly stars = Array.from({ length: 5 });
   isMobile = false;
@@ -85,7 +89,7 @@ export class TestimonialSliderComponent implements OnInit {
   }
 
   loadTestimonials() {
-    this.translate.get('HOME.TESTIMONIALS.ITEMS').subscribe((res: any) => {
+    this.translate.get(`${this.contentKey}.ITEMS`).subscribe((res: any) => {
       this.testimonials = res;
 
       if (isPlatformBrowser(this.platformId)) {

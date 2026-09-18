@@ -56,26 +56,23 @@
       </h2>
       <span class="numbers-divider"></span>
 
-      <div class="numbers-grid">
-        <div class="numbers-cell numbers-cell--head">
-          <img src="/assets/images/about/number-section/metric.png"
-            [alt]="'ABOUT.BY_THE_NUMBERS.COL_METRIC' | translate" class="numbers-cell__icon" />
-          <span [innerHTML]="'ABOUT.BY_THE_NUMBERS.COL_METRIC' | translateHtml | async"></span>
-        </div>
-        <div class="numbers-cell numbers-cell--head numbers-cell--center">
-          <span [innerHTML]="'ABOUT.BY_THE_NUMBERS.COL_DETAILS' | translateHtml | async"></span>
-        </div>
-
-        @for (row of numberRows; track row.labelKey) {
-        <div class="numbers-cell numbers-cell--metric">
-          <img [src]="row.image" [alt]="row.labelKey | translate" class="numbers-cell__icon" />
-          <span class="numbers-cell__label" [innerHTML]="row.labelKey | translateHtml | async"></span>
-        </div>
-        <div class="numbers-cell numbers-cell--detail">
-          <img [src]="numbersArrowIcon" alt="" aria-hidden="true" class="numbers-cell__arrow" />
-          <span class="numbers-cell__value" [innerHTML]="row.valueKey | translateHtml | async"></span>
-        </div>
-        }
+      <div class="table-responsive card-table numbers-table-wrap">
+        <table class="table rates-table mb-0">
+          <thead>
+            <tr>
+              <th scope="col" [innerHTML]="'ABOUT.BY_THE_NUMBERS.COL_METRIC' | translateHtml | async"></th>
+              <th scope="col" [innerHTML]="'ABOUT.BY_THE_NUMBERS.COL_DETAILS' | translateHtml | async"></th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (row of numberRows; track row.labelKey) {
+            <tr>
+              <td [innerHTML]="row.labelKey | translateHtml | async"></td>
+              <td [innerHTML]="row.valueKey | translateHtml | async"></td>
+            </tr>
+            }
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -124,7 +121,7 @@
       </h2>
       <span class="offer-divider"></span>
 
-      <p class="offer-intro" [innerHTML]="'HOME.INSURANCE_SOLUTIONS.DESC1' | translateHtml | async"></p>
+      <p class="offer-intro" [innerHTML]="'ABOUT.SOLUTIONS.INTRO' | translateHtml | async"></p>
 
       <div class="row g-4 g-lg-5">
         @for (item of solutionCards; track item.titleKey) {
@@ -163,7 +160,7 @@
 
       <div class="row g-4">
         @for (card of featureHighlights; track card.titleKey) {
-        <div class="col-12 col-sm-6 col-lg-3">
+        <div class="col-6 col-lg-3">
           <div class="feature-card">
             <div class="icon-circle">
               @if (card.textKey) {
@@ -181,7 +178,7 @@
   </section>
 
   <!-- Testimonials Section -->
-  <app-testimonial-slider></app-testimonial-slider>
+  <app-testimonial-slider contentKey="ABOUT.TESTIMONIALS"></app-testimonial-slider>
 
   <!-- get covered -->
   <div class="get-quote-section">
@@ -208,21 +205,21 @@
               }
             </div>
 
-            <div class="form-check mb-3">
-              <input class="form-check-input terms-check" type="checkbox" id="termsCheck"
-                (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
-              <label class="form-check-label terms-check-label small" for="termsCheck"
-                [innerHTML]="'QUOTE_SMS_CONSENT_GET_QUOTE' | translateHtml | async"></label>
-            </div>
-
             <div class="quote-form-row get-quote-form-row">
               <input type="text" [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate" class="form-control"
                 [value]="coveredForm.fullName" (input)="coveredForm.fullName = $any($event.target).value" />
               <input type="tel" appPhoneFormat [placeholder]="'HOME.BANNER.FORM.PHONE' | translate"
                 class="form-control" [value]="coveredForm.phone" (input)="coveredForm.phone = $any($event.target).value" />
               <button class="quote-submit" [disabled]="coveredForm.isSubmitting || !coveredForm.selectedChip || !coveredForm.fullName.trim() || !coveredForm.phone.trim() || !termsAccepted" (click)="goToSelectedQuote(coveredForm)">
-                {{ coveredForm.isSubmitting ? ('HOME.BANNER.FORM.LOADING' | translate) : ('HOME.COVERDBANNER.FORM.BUTTON' | translate) }}
+                {{ coveredForm.isSubmitting ? ('HOME.BANNER.FORM.LOADING' | translate) : ('ABOUT.GET_QUOTE.BUTTON' | translate) }}
               </button>
+            </div>
+
+            <div class="form-check terms-consent mt-3 mb-0">
+              <input class="form-check-input terms-check" type="checkbox" id="termsCheck"
+                (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
+              <label class="form-check-label terms-check-label small" for="termsCheck"
+                [innerHTML]="'QUOTE_SMS_CONSENT_GET_QUOTE' | translateHtml | async"></label>
             </div>
           </div>
         </div>

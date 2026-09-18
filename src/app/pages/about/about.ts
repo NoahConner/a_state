@@ -62,41 +62,32 @@ export class About {
     },
   ];
 
-  readonly numbersArrowIcon = '/assets/images/about/number-section/arrow.png';
-
   numberRows = [
     {
-      image: '/assets/images/about/number-section/year-founded.png',
       labelKey: 'ABOUT.BY_THE_NUMBERS.ROW1.LABEL',
       valueKey: 'ABOUT.BY_THE_NUMBERS.ROW1.VALUE',
     },
     {
-      image: '/assets/images/about/number-section/carriers.png',
       labelKey: 'ABOUT.BY_THE_NUMBERS.ROW2.LABEL',
       valueKey: 'ABOUT.BY_THE_NUMBERS.ROW2.VALUE',
     },
     {
-      image: '/assets/images/about/number-section/clients-served.png',
       labelKey: 'ABOUT.BY_THE_NUMBERS.ROW3.LABEL',
       valueKey: 'ABOUT.BY_THE_NUMBERS.ROW3.VALUE',
     },
     {
-      image: '/assets/images/about/number-section/google-rating.png',
       labelKey: 'ABOUT.BY_THE_NUMBERS.ROW4.LABEL',
       valueKey: 'ABOUT.BY_THE_NUMBERS.ROW4.VALUE',
     },
     {
-      image: '/assets/images/about/number-section/licensed-agents.png',
       labelKey: 'ABOUT.BY_THE_NUMBERS.ROW5.LABEL',
       valueKey: 'ABOUT.BY_THE_NUMBERS.ROW5.VALUE',
     },
     {
-      image: '/assets/images/about/number-section/map.png',
       labelKey: 'ABOUT.BY_THE_NUMBERS.ROW6.LABEL',
       valueKey: 'ABOUT.BY_THE_NUMBERS.ROW6.VALUE',
     },
     {
-      image: '/assets/images/about/number-section/language.png',
       labelKey: 'ABOUT.BY_THE_NUMBERS.ROW7.LABEL',
       valueKey: 'ABOUT.BY_THE_NUMBERS.ROW7.VALUE',
     },
@@ -143,37 +134,37 @@ export class About {
     {
       image: '/assets/images/about/solutions/auto.png',
       routeKey: 'autoInsurance',
-      titleKey: 'HOME.INSURANCE_SOLUTIONS.AUTO.TITLE',
+      titleKey: 'ABOUT.SOLUTIONS.AUTO.TITLE',
       descKey: 'ABOUT.SOLUTIONS.AUTO.DESC',
     },
     {
       image: '/assets/images/about/solutions/house.png',
       routeKey: 'homeInsurance',
-      titleKey: 'HOME.INSURANCE_SOLUTIONS.HOME.TITLE',
+      titleKey: 'ABOUT.SOLUTIONS.HOME.TITLE',
       descKey: 'ABOUT.SOLUTIONS.HOME.DESC',
     },
     {
       image: '/assets/images/about/solutions/commercial.png',
       routeKey: 'commercialInsurance',
-      titleKey: 'HOME.INSURANCE_SOLUTIONS.COMMERCIAL.TITLE',
+      titleKey: 'ABOUT.SOLUTIONS.COMMERCIAL.TITLE',
       descKey: 'ABOUT.SOLUTIONS.COMMERCIAL.DESC',
     },
     {
       image: '/assets/images/about/solutions/life.png',
       routeKey: 'lifeInsurance',
-      titleKey: 'HOME.INSURANCE_SOLUTIONS.LIFE.TITLE',
+      titleKey: 'ABOUT.SOLUTIONS.LIFE.TITLE',
       descKey: 'ABOUT.SOLUTIONS.LIFE.DESC',
     },
     {
       image: '/assets/images/about/solutions/health.png',
       routeKey: 'healthInsurance',
-      titleKey: 'HOME.INSURANCE_SOLUTIONS.HEALTH.TITLE',
+      titleKey: 'ABOUT.SOLUTIONS.HEALTH.TITLE',
       descKey: 'ABOUT.SOLUTIONS.HEALTH.DESC',
     },
     {
       image: '/assets/images/about/solutions/surety.png',
       routeKey: 'suretyBondInsurance',
-      titleKey: 'HOME.INSURANCE_SOLUTIONS.SURETY.TITLE',
+      titleKey: 'ABOUT.SOLUTIONS.SURETY.TITLE',
       descKey: 'ABOUT.SOLUTIONS.SURETY.DESC',
     },
   ];
@@ -184,7 +175,7 @@ export class About {
     { name: 'HOME.BANNER.CHIPS.COMMERCIAL', image: '/assets/images/home/shop.png', routeKey: 'getCommercialQuote' },
     { name: 'HOME.BANNER.CHIPS.LIFE', image: '/assets/images/home/heart.png', routeKey: 'getLifeQuote' },
     { name: 'HOME.BANNER.CHIPS.HEALTH', image: '/assets/images/home/medical-cross.png', routeKey: 'getHealthQuote' },
-    { name: 'HOME.BANNER.CHIPS.SURETY', image: '/assets/images/home/other.png', routeKey: 'getSuretyQuote' },
+    { name: 'HOME.INSURANCE_SOLUTIONS.SURETY', image: '/assets/images/home/other.png', routeKey: 'getSuretyQuote' },
   ];
 
   getRoute(page: string) {

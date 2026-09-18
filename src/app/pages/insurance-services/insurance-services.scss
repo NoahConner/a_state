@@ -1,14 +1,42 @@
-h2 {
-  font-size: 36px !important;
-}
+// Typography scale from the design spec (same as the homepage). !important because older
+// section rules set their own sizes. The Texas-strategy bullets (li) are body copy, so they follow Paragraph.
+.InsuranceMain {
+  h1,
+  .h1 {
+    font-size: 60px !important;
+  }
 
-.InsuranceMain p {
-  font-size: 20px;
-}
+  h2 {
+    font-size: 36px !important;
+  }
 
-@media (min-width: 992px) {
-  .topBanner .h1 {
-    font-size: clamp(2.8rem, 4.8vw, 5.25rem) !important;
+  h3 {
+    font-size: 25px !important;
+  }
+
+  p,
+  li {
+    font-size: 20px !important;
+  }
+
+  @media (max-width: 767px) {
+    h1,
+    .h1 {
+      font-size: 36px !important;
+    }
+
+    h2 {
+      font-size: 25px !important;
+    }
+
+    h3 {
+      font-size: 20px !important;
+    }
+
+    p,
+    li {
+      font-size: 16px !important;
+    }
   }
 }
 
