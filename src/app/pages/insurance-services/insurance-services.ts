@@ -48,8 +48,14 @@ export class InsuranceServices {
     return this.languageService.getRoute(page);
   }
 
-  selectChip(form: QuoteFormState, chipName: string) {
-    form.selectedChip = chipName;
+  toggleChip(form: QuoteFormState, chipName: string) {
+    form.selectedChips = this.isChipSelected(form, chipName)
+      ? form.selectedChips.filter((name) => name !== chipName)
+      : [...form.selectedChips, chipName];
+  }
+
+  isChipSelected(form: QuoteFormState, chipName: string) {
+    return form.selectedChips.includes(chipName);
   }
 
   async goToSelectedQuote(form: QuoteFormState) {
@@ -57,16 +63,19 @@ export class InsuranceServices {
       return;
     }
 
-    const selected = this.chips.find((chip) => chip.name === form.selectedChip);
-    if (!selected) {
+    const selected = this.chips.filter((chip) => form.selectedChips.includes(chip.name));
+    if (!selected.length) {
       return;
     }
+
+    // One product goes to its own quote page; several go to the general quote page.
+    const routeKey = selected.length === 1 ? selected[0].routeKey : 'getAQuote';
 
     form.isSubmitting = true;
 
     try {
       const isSubmitted = await this.quoteLeadCaptureService.submitLead({
-        selected_chip: this.translate.instant(selected.name),
+        selected_chip: selected.map((chip) => this.translate.instant(chip.name)).join(', '),
         full_name: form.fullName,
         phone_number: form.phone,
       });
@@ -76,7 +85,7 @@ export class InsuranceServices {
       }
 
       this.resetQuoteForm(form);
-      await this.router.navigate(this.languageService.getRoute(selected.routeKey));
+      await this.router.navigate(this.languageService.getRoute(routeKey));
     } finally {
       form.isSubmitting = false;
       this.changeDetectorRef.detectChanges();
@@ -84,7 +93,7 @@ export class InsuranceServices {
   }
 
   private resetQuoteForm(form: QuoteFormState) {
-    form.selectedChip = null;
+    form.selectedChips = [];
     form.fullName = '';
     form.phone = '';
     this.changeDetectorRef.detectChanges();
@@ -92,7 +101,7 @@ export class InsuranceServices {
 
   private createQuoteFormState(): QuoteFormState {
     return {
-      selectedChip: null,
+      selectedChips: [],
       fullName: '',
       phone: '',
       isSubmitting: false,
@@ -101,7 +110,7 @@ export class InsuranceServices {
 }
 
 interface QuoteFormState {
-  selectedChip: string | null;
+  selectedChips: string[];
   fullName: string;
   phone: string;
   isSubmitting: boolean;
