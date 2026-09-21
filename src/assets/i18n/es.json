@@ -67,36 +67,41 @@
   },
   "HOME": {
     "BANNER": {
-      "TITLE_LINE1": "Seguro en Texas Hecho Simple –",
-      "TITLE_LINE2": "Cobertura Para Todos",
+      "TITLE_LINE1": "Agencia de Seguros",
+      "TITLE_LINE2": "Independiente",
       "CHIPS": {
         "AUTO": "Auto",
-        "HOMEOWNERS": "Propietarios",
+        "HOMEOWNERS": "Hogar",
         "COMMERCIAL": "Comercial",
         "LIFE": "Vida",
         "HEALTH": "Salud",
-        "SURETY": "Fianzas"
+        "SURETY": "Otros"
       },
       "FORM": {
         "FULL_NAME": "Nombre Completo",
         "PHONE": "Número de Teléfono",
-        "BUTTON": "Obtener Cotización"
-      }
+        "BUTTON": "Obtener Cotización",
+        "FREE_QUOTE_BUTTON": "Obtener Cotización",
+        "LOADING": "Cargando..."
+      },
+      "SUBTITLE": "La de Confianza de los Texanos por más de 5 Años",
+      "TITLE_LINE3": "de Texas"
     },
     "WHY_CHOOSE": {
-      "HEADING": "Por qué los texanos eligen",
-      "HEADING_STRONG": "A-State Insurance",
+      "HEADING": "Por Qué los Texanos Eligen",
+      "HEADING_STRONG": "&nbsp;Seguros A-State",
       "CARD1": {
         "TITLE": "Corredores con Licencia en Texas",
         "DESC": "Nuestra agencia compara aseguradoras confiables y lo guía hacia la cobertura correcta y confiable al mejor precio."
       },
       "CARD2": {
-        "TITLE": "Amigable con la Comunidad Hispana y Latina",
+        "TITLE": "Servicio Amigable para Hispanos y Latinos",
         "DESC": "Una agencia en Texas que respeta genuinamente a las comunidades hispanas y latinas, su cultura y prioridades."
       },
       "CARD3": {
-        "TITLE": "Más de 20 Años Sirviendo a Texas",
-        "DESC": "Más de dos décadas protegiendo a familias texanas, sus hogares, vehículos, negocios y bienestar personal."
+        "TITLE": "Más de 5 Años Sirviendo a los Texanos",
+        "DESC": "Más de dos décadas protegiendo a familias texanas, sus hogares, vehículos, negocios y bienestar personal.",
+        "STAT": "5+"
       },
       "CARD4": {
         "TITLE": "Planes de Cobertura Personalizados",
@@ -109,42 +114,59 @@
       "CARD6": {
         "TITLE": "Agentes Multilingües",
         "DESC": "Agentes profesionales explican cada opción claramente en inglés, español e hindi, garantizando confianza."
-      }
+      },
+      "CARD7": {
+        "TITLE": "Más de 50 Aseguradoras"
+      },
+      "CARD8": {
+        "TITLE": "Sin Favoritismos por Ninguna Aseguradora — Jamás"
+      },
+      "SUBHEADING": "<span>Independiente.</span><span>Local.</span><span>De Su Lado.</span>"
     },
     "INSURANCE_SOLUTIONS": {
-      "TITLE": "Nuestras Soluciones de Seguro",
+      "TITLE": "<span class='title-underline-text'><strong>Cobertura</strong> de Seguro</span> para <span class='highlight-red'>Todos los Texanos</span>",
       "DESC1": "A-State Insurance ofrece cobertura de seguros personalizada para hogares, vehículos, salud, vida, negocios y fianzas. Con soporte multilingüe, múltiples opciones de compañías aseguradoras y orientación personalizada, hacemos que elegir el plan adecuado sea simple, confiable y libre de estrés para todos. Confíe en nosotros para proteger lo que más le importa a usted y a su familia.",
       "SEE_ALL": "Ver Todos los Servicios",
       "AUTO": {
         "TITLE": "Seguro de Auto",
-        "DESC": "Desde viajes diarios hasta recorridos por Texas, la cobertura adecuada mantiene el enfoque en el camino y protege a usted y sus pasajeros."
+        "DESC": "Desde viajes diarios hasta rutas por Texas, la cobertura adecuada le permite enfocarse en el camino. Se trata de hallar protección confiable para usted y sus pasajeros."
       },
       "HOME": {
-        "TITLE": "Seguro de Hogar",
-        "DESC": "Su hogar es su refugio. La cobertura adecuada para sus pertenencias y familia brinda tranquilidad ante cualquier situación inesperada."
+        "TITLE": "Seguro de Vivienda",
+        "DESC": "Su hogar es su santuario. Hallar la cobertura ideal para sus bienes y familia le brinda paz mental, asegurando que esté preparado ante cualquier imprevisto en el camino."
       },
       "COMMERCIAL": {
         "TITLE": "Seguro Comercial",
-        "DESC": "Proteger lo que ha construido requiere más que esfuerzo. La cobertura adecuada ayuda a los empresarios de Texas a proteger su propiedad y equipo."
+        "DESC": "Proteger lo que ha construido requiere más que trabajo duro. La cobertura comercial ayuda a los dueños de negocios en Texas a cuidar su propiedad, equipos y su legado."
       },
       "LIFE": {
         "TITLE": "Seguro de Vida",
-        "DESC": "Proteger el futuro de su familia va más allá de las finanzas. El seguro adecuado garantiza que sus seres queridos estén protegidos."
+        "DESC": "Proteger el futuro de su familia es más que un tema financiero. El seguro de vida adecuado es la vía para asegurar que sus seres queridos estén cuidados pase lo que pase."
       },
       "HEALTH": {
         "TITLE": "Seguro de Salud",
-        "DESC": "Priorizar su salud es el primer paso hacia un futuro seguro. Un plan adecuado le garantiza acceso a la atención que necesita."
+        "DESC": "Priorizar su salud es el primer paso hacia un futuro seguro. Hallar un plan que se adapte a su estilo de vida le garantiza el acceso a la atención médica que usted necesita."
       },
       "SURETY": {
-        "TITLE": "Fianzas (Surety Bonds)",
-        "DESC": "Las fianzas son clave para generar confianza profesional y cumplir con requisitos legales y contractuales en Texas."
+        "TITLE": "Fianzas",
+        "DESC": "Las fianzas son vitales para generar confianza profesional. Contar con la fianza correcta ayuda a las empresas de Texas a cumplir con requisitos legales y contractuales."
+      },
+      "GET_A_QUOTE": "Obtén una Cotización",
+      "RENTERS": {
+        "DESC": "Protege tus pertenencias, muebles y aparatos electrónicos contra robo, incendios o el clima severo de Texas por solo centavos al día.",
+        "TITLE": "Seguro para Inquilinos"
+      },
+      "SR22": {
+        "DESC": "Trámites rápidos de SR-22 y cobertura flexible para conductores con un historial imperfecto. Vuelve a las carreteras de Texas de forma segura.",
+        "TITLE": "SR-22 / No Estándar"
       }
     },
     "EVERY_STORY": {
-      "TITLE_LINE1": "Cada Historia. Cada Idioma.",
-      "TITLE_LINE2": "Cada Texano Protegido.",
-      "PARA1": "En A-State Insurance, creemos que todos merecen una cobertura que se adapte a su vida, presupuesto y necesidades únicas. Desde familias hasta dueños de negocios, compradores por primera vez hasta asegurados de larga trayectoria, nuestro equipo garantiza protección confiable. Ofrecemos apoyo en inglés, español e hindi, con agentes multilingües listos para guiarlo con experiencia y atención.",
-      "PARA2": "Como una de las principales agencias de seguros en Texas, entendemos las necesidades de las comunidades hispanas y latinas y brindamos apoyo personalizado que respeta su cultura y prioridades. Sin importar su situación o tipo de seguro (auto, hogar, comercial, vida, salud o fianzas), hacemos que encontrar la cobertura adecuada sea simple. Nuestra misión es proteger lo que más importa mientras hacemos el proceso fácil para cada texano."
+      "TITLE_LINE1": "Cada Historia.",
+      "TITLE_LINE2": "Cada Idioma.",
+      "PARA1": "En <a class='inline-link' href='/es/' target='_blank'>Seguros A-State</a> creemos que todos merecen una cobertura que se adapte a su vida, presupuesto y necesidades únicas. Desde familias hasta dueños de negocios, compradores primerizos y clientes de muchos años, nuestro equipo asegura acceso a protección confiable. Ofrecemos apoyo en inglés, español e hindi, con agentes multilingües listos para guiarlo con experiencia y atención.",
+      "PARA2": "Como una de las agencias de seguros independientes en Texas, entendemos las necesidades de la comunidad hispana y latina y brindamos apoyo a la medida que respeta su cultura. Sin importar su situación o tipo de seguro, auto, hogar, comercial, vida, salud o fianzas, hacemos simple encontrar cobertura adecuada. Nuestra misión es proteger lo que más importa y facilitar el proceso para cada texano.",
+      "TITLE_LINE3": "Cada Texano Protegido."
     },
     "WORKING_PROCESS": {
       "TITLE_LINE1": "Trabajar Con",
@@ -168,384 +190,603 @@
       }
     },
     "TESTIMONIALS": {
-      "TITLE_LINE1": "Escucha a",
-      "TITLE_HIGHLIGHT": "Texanos",
-      "TITLE_LINE2": "Como Tú",
+      "TITLE_LINE1": "Lo que los Texanos Dicen Sobre",
+      "TITLE_HIGHLIGHT": "Seguros A-State",
+      "TITLE_LINE2": "",
+      "SATISFACTION": "100% Satisfecho",
+      "PREVIOUS": "Testimonios anteriores",
+      "NEXT": "Siguientes testimonios",
       "ITEMS": [
         {
           "NAME": "Valeria Esquivel",
-          "TEXT": "La verdad, me daba miedo buscar seguro de auto, pero Marisol lo hizo muy fácil. No solo me mostró muchas pólizas; se sentó conmigo y explicó cómo cada una protegía a mis hijos. Se sintió como recibir el consejo de una vecina que realmente se preocupa."
+          "CITY": "Houston",
+          "TEXT": "Honestamente temía buscar seguro de auto, pero Marisol lo hizo muy fácil. No me lanzó pólizas; se sentó y explicó cómo cada una protegía a mis hijos. Se sintió como el consejo de una vecina que se preocupa de verdad. Una experiencia sin estrés para nuestra familia."
         },
         {
           "NAME": "Camila Castañeda",
-          "TEXT": "Comprar nuestra primera casa fue una locura, y la parte del seguro fue la más confusa. Llamé y hablé con Diego, quien se tomó el tiempo de explicarme qué significaba realmente el 'costo de reemplazo' para nuestra pequeña casa de los años 50."
+          "CITY": "San Antonio",
+          "TEXT": "Comprar nuestra primera casa fue un torbellino y el seguro era lo más confuso. Diego me explicó qué significaba el costo de reemplazo para nuestra casa de los 50. No fue una venta, fue un amigo cuidando nuestro hogar. Salimos mucho más seguros."
         },
         {
           "NAME": "Lucia Benavidez",
-          "TEXT": "Siempre supe que necesitaba un seguro de vida para mis hijos, pero lo posponía porque el papeleo me intimidaba. Hablar con Gabriel cambió todo. Poder alternar entre inglés y español hizo que todo fuera mucho más sencillo."
+          "CITY": "Dallas",
+          "TEXT": "Sabía que necesitaba seguro de vida, pero el papeleo me intimidaba. Gabriel lo cambió todo. Poder alternar entre inglés y español me ayudó a entender la letra pequeña. Fue paciente y nunca me apuró. Ahora duermo mejor sabiendo a mi familia protegida."
         },
         {
           "NAME": "Ricardo Garza",
-          "TEXT": "Cuando expandimos nuestro restaurante familiar, sabía que nuestra cobertura anterior ya no era suficiente. Oscar se sentó conmigo y analizó nuestros riesgos específicos. No nos trató como una cuenta más, sino como un verdadero negocio local."
+          "CITY": "Austin",
+          "TEXT": "Al ampliar nuestro restaurante temía que la cobertura anterior no sirviera. Me preocupaba el costo, pero Oscar revisó nuestros riesgos reales. Nos trató como dueños locales, no como una cuenta más. Hoy trabajo tranquilo sabiendo todo protegido."
         },
         {
           "NAME": "Ximena Montoya",
-          "TEXT": "Con tres hijos, no puedo darme el lujo de adivinar cuando se trata de médicos. Lucía fue una bendición: se sentó conmigo y comparó los planes uno por uno hasta que entendí exactamente cómo serían mis copagos."
+          "CITY": "Fort Worth",
+          "TEXT": "Con tres hijos no puedo adivinar con médicos. Entré confundida por los planes ‘oro’ y ‘plata’. Lucia comparó todo hasta ver mis copagos reales. Es la primera vez que entiendo mis beneficios. Siento a mi familia en buenas manos."
         },
         {
           "NAME": "Travis Calhoun",
-          "TEXT": "Tenía la fecha de inicio de un proyecto muy cerca y me di cuenta de que no tenía la fianza correcta para obtener el permiso. El equipo no me dio vueltas; actuaron de inmediato y resolvieron todo a tiempo para que mi equipo pudiera comenzar."
+          "CITY": "El Paso",
+          "TEXT": "Tenía un proyecto por iniciar y me faltaba la fianza correcta. Estaba estresado. No me dieron vueltas; explicaron la indemnización en español claro y resolvieron a tiempo. Un salvavidas para contratistas pequeños."
         },
         {
           "NAME": "Sofia De La Cruz",
-          "TEXT": "Es difícil encontrar una oficina donde no te sientas como un número más. Gabriel realmente escuchó nuestras preocupaciones sobre mis padres y los niños. Salimos sintiendo que toda nuestra familia estaba finalmente protegida."
+          "CITY": "Arlington",
+          "TEXT": "Es difícil hallar una oficina donde no seas un número. Buscábamos a alguien que entendiera nuestro hogar multigeneracional. Gabriel escuchó sobre mis padres y mis hijos sin prisas. Salimos sintiendo a toda la familia protegida."
         },
         {
           "NAME": "Travis Calhoun",
-          "TEXT": "Me estaba preparando para una pesadilla cuando mi hijo obtuvo su licencia. Pero el equipo de A-State fue excelente. Me explicaron cómo funcionan los descuentos por buen estudiante. Se sintió más como una asesoría que como una venta."
+          "CITY": "Corpus Christi",
+          "TEXT": "Temía el caos cuando mi hijo obtuvo licencia y el golpe al presupuesto. No solo me dieron un precio; me mostraron descuentos y hablaron con él de manejo responsable. Fue más una guía que una venta. Estoy más tranquila."
         },
         {
           "NAME": "Cassidy Thorne",
-          "TEXT": "Había estado rentando en Austin durante años y me daba miedo dar el paso a ser propietario. El equipo de A-State Insurance no solo me dio una cotización; se sentaron conmigo y me mostraron exactamente lo que necesitaba para mi nueva casa."
+          "CITY": "Plano",
+          "TEXT": "Renté años en Austin y me asustaba comprar. No sabía que las necesidades de seguro eran tan distintas. En Seguros A-State me mostraron la diferencia real. La transición se sintió como un logro, no como una carga."
         },
         {
           "NAME": "Diego Hinojosa",
-          "TEXT": "Había estado pensando en obtener un seguro de vida desde que nació mi hijo menor. Marisol fue diferente. Habló conmigo sobre las metas de mi familia y explicó todo de una manera que finalmente entendí."
+          "CITY": "Lubbock",
+          "TEXT": "Quería seguro de vida desde que nació mi hijo, pero temía la letra pequeña. Marisol habló conmigo sobre metas familiares. Explicó todo de forma que por fin entendí y ya no vivo con ese ‘qué pasaría si’."
         }
       ]
     },
     "COVERDBANNER": {
-      "TITLE": "Obtenga Cobertura en Texas Hoy",
-      "DESC": "En <a class='inline-link white' href='/es/' target='_blank'>A Seguros A-State,</a> hacemos que proteger su hogar, auto, negocio o familia sea simple y sin preocupaciones. Nuestros expertos comparan múltiples compañías para encontrar la cobertura que se adapte perfectamente a su vida. Con una guía clara, apoyo multilingüe y servicio personalizado, brindamos confianza a los texanos. Seguros que se ajustan a su vida, respaldados por expertos que se preocupan; su tranquilidad comienza aquí con Seguros A-State. Puede llamar, enviar un correo electrónico, mensaje de texto, completar nuestro formulario o visitarnos en persona. Obtener la protección adecuada nunca ha sido tan fácil.",
+      "TITLE": "Obtén tu Cotización de Seguro Gratis en Texas Hoy",
+      "DESC": "Proteger lo que más importa es sencillo con Seguros A-State. Si necesita auto, hogar, vida, salud, cobertura comercial o fianzas, nuestro equipo como corredor de seguros en texas está listo para guiarlo en cada paso. Puede llamar, enviar correo, escribir por mensaje, completar el formulario o visitarnos en persona. Como su corredor de seguros de texas, hacemos que encontrar cobertura sea fácil, clara y personalizada para cada texano. ¡Contáctenos hoy mismo!",
       "FORM": {
         "BUTTON": "Obtener Cotización"
       }
+    },
+    "CARRIERS": {
+      "SUBTITLE": "Acceso a más aseguradoras = mejores tarifas para ti",
+      "TITLE": "Con el Respaldo de Más de 50 Aseguradoras Líderes"
+    },
+    "SIMPLE_STEPS": {
+      "STEP1": {
+        "LABEL": "Paso 01",
+        "TITLE": "Contáctanos"
+      },
+      "STEP2": {
+        "LABEL": "Paso 02",
+        "TITLE": "Obtén Asesoría de Expertos"
+      },
+      "STEP3": {
+        "LABEL": "Paso 03",
+        "TITLE": "Elige tu Plan"
+      },
+      "STEP4": {
+        "LABEL": "Paso 04",
+        "TITLE": "Estás Protegido"
+      },
+      "SUBTITLE": "4 Pasos",
+      "TITLE": "Obtener Cobertura Es Simple"
+    },
+    "TRUST_BADGES": {
+      "CARRIERS": "Más de 50 Aseguradoras",
+      "GOOGLE_RATING": "Calificación de 4.9 en Google",
+      "INDEPENDENT": "Independiente (No Cautiva)",
+      "LICENSED": "Con Licencia en Texas",
+      "SPANISH": "Hablamos Español"
     }
   },
   "INSURANCE_SERVICES": {
     "BANNER": {
-      "TITLE_LINE1": "Soluciones de Seguros para",
-      "TITLE_LINE2": "Cada Texano",
+      "TITLE_LINE1": "Servicios de Seguro en ",
+      "TITLE_LINE2": "Texas — Cobertura ",
+      "TITLE_LINE3": "para Todos los Texanos ",
       "CHIPS": {
         "AUTO": "Auto",
-        "HOMEOWNERS": "Propietarios de Vivienda",
+        "HOMEOWNERS": "Hogar",
         "COMMERCIAL": "Comercial",
         "LIFE": "Vida",
         "HEALTH": "Salud",
-        "SURETY": "Fianzas"
+        "SURETY": "Otros"
       },
       "FORM": {
         "FULL_NAME": "Nombre Completo",
         "PHONE": "Número de Teléfono",
-        "BUTTON": "Obtener Cotización"
+        "BUTTON": "Obtener Cotización",
+        "LOADING": "Cargando..."
       }
     },
     "WHY_CHOOSE": {
-      "HEADING": "Nuestros Servicios de Seguros",
+      "HEADING": "Nuestros Servicios de <span class='text-accent'>Seguro</span> en Texas",
       "HEADING_2": "Seguro de Auto",
-      "DESCRIPTION": "¿Conduce todos los días? ¿Viajes por carretera? ¿Salidas nocturnas por comida? A-State Insurance lo respalda. Ofrecemos servicios confiables de seguro de auto en todo Texas, brindando a los conductores una sólida protección contra accidentes, robo, responsabilidad civil y daños al vehículo. Trabajamos con aseguradoras de confianza para encontrar la cobertura que se adapte a usted. Nuestro equipo hace que el proceso sea sencillo con cotizaciones rápidas, pólizas claras y apoyo local en el que puede confiar. Con A-State Insurance, obtiene un seguro de auto confiable en Texas y un servicio que lo pone a usted primero.",
+      "DESCRIPTION": "¿Manejas todos los días? ¿Viajes por carretera? ¿Salidas a comer tarde en la noche? Seguros A-State te respalda. Ofrecemos servicios confiables de seguro de auto en todo Texas, brindando a los conductores una sólida protección contra accidentes, robos, responsabilidad civil y daños al vehículo. Trabajamos con aseguradoras de confianza para encontrar una cobertura que se adapte a ti. Nuestro equipo hace que el proceso sea simple, con cotizaciones rápidas, pólizas claras y un apoyo local con el que puedes contar. Con nosotros, obtienes un seguro de auto confiable y un servicio que te pone en primer lugar.",
       "CARD1": {
-        "TITLE": "Seguro de Auto",
-        "DESC": "Obtenga un seguro de auto profesional que cubre choques, robo, responsabilidad civil y daños a vidrios, con deducibles accesibles y comprobante cuando lo necesite."
+        "TITLE": "Seguro de Coche",
+        "DESC": "Obtenga cobertura para choques, robo y daños, con deducibles accesibles y comprobantes al instante. Protección profesional para usted y su vehículo."
       },
       "CARD2": {
         "TITLE": "Seguro de Motocicleta",
-        "DESC": "Cobertura para accidentes, lesiones, robo y daños a la motocicleta, diseñada para proteger a los conductores en autopistas, calles de la ciudad y viajes largos."
+        "DESC": "Cobertura para accidentes, lesiones, robo y daños a la moto, diseñada para proteger a los motociclistas en autopistas, calles urbanas y viajes largos."
       },
       "CARD3": {
-        "TITLE": "Seguro de Bote",
-        "DESC": "Protección para embarcaciones, pasajeros y responsabilidad civil contra tormentas, colisiones, robo y riesgos relacionados con el agua en marinas o aguas abiertas."
+        "TITLE": "Seguro de Barco",
+        "DESC": "Protección para embarcaciones, pasajeros y responsabilidad contra tormentas, colisiones, robo y riesgos acuáticos en marinas o aguas abiertas."
       },
       "CARD4": {
-        "TITLE": "Seguro para RV y Casa Rodante",
-        "DESC": "Protección especializada para vehículos recreativos con cobertura integral, asistencia en carretera y opciones adaptadas para viajes cortos o largos."
+        "TITLE": "Seguro de RV y Autocaravana",
+        "DESC": "Proteja su casa lejos de casa. Cubrimos clima, pertenencias y asistencia en carretera para que explore Texas con total tranquilidad."
       },
       "CARD5": {
-        "TITLE": "Seguro para Autos Clásicos",
-        "DESC": "Cobertura especializada para vehículos clásicos con valor acordado, protección para restauración y tarifas adaptadas para uso limitado."
+        "TITLE": "Seguro de Auto Clásico",
+        "DESC": "Protección especializada para vehículos antiguos con valor acordado, cobertura de restauración y precios adecuados para uso limitado."
       },
       "CARD6": {
         "TITLE": "Seguro Comercial de Auto",
-        "DESC": "Pólizas para vehículos comerciales que cubren conductores, carga, accidentes y responsabilidad civil para respaldar operaciones diarias y rutas de servicio."
+        "DESC": "Pólizas para vehículos empresariales que cubren conductores, carga, accidentes y responsabilidad para apoyar operaciones diarias."
       },
       "CARD7": {
         "TITLE": "Seguro SR-22",
-        "DESC": "Presentación profesional conforme a los requisitos del estado y cobertura que ayuda a los conductores a cumplir con las obligaciones legales y mantener privilegios de manejo válidos."
+        "DESC": "Presentación profesional conforme al estado y cobertura que ayuda a cumplir requisitos legales y mantener privilegios de conducción válidos."
       },
       "CARD8": {
-        "TITLE": "Seguro para ATV y UTV",
-        "DESC": "Cobertura para vehículos todoterreno que protege contra accidentes, robo, responsabilidad civil y riesgos relacionados con el transporte en senderos o propiedades."
+        "TITLE": "Seguro de ATV y UTV",
+        "DESC": "Cobertura para vehículos todo terreno que protege contra choques, robo, responsabilidad y riesgos de transporte."
       },
       "CARD9": {
-        "TITLE": "Seguro para Remolques",
-        "DESC": "Seguro integral para remolques utilitarios, de carga y equipo, protegiendo contra daños, pérdidas e incidentes durante el transporte."
+        "TITLE": "Seguro de Remolque",
+        "DESC": "Seguro integral para remolques utilitarios, de carga y equipo, protegiendo contra daños, pérdidas e incidentes de transporte."
       },
       "CARD10": {
-        "TITLE": "Seguro de Auto Mexicano",
-        "DESC": "Obtenga cobertura confiable de seguro de auto en México para cumplir con las leyes locales y protegerse financieramente mientras conduce en México."
+        "TITLE": "Seguro de Auto para México",
+        "DESC": "Obtenga cobertura confiable de seguro mexicano para cumplir con las leyes locales y protegerse financieramente al conducir en México."
       },
       "CARD11": {
         "TITLE": "Seguro para Rideshare",
-        "DESC": "Obtenga la cobertura adecuada para rideshare y asegúrese de estar completamente protegido y financieramente seguro mientras conduce para compañías como Uber o Lyft."
+        "DESC": "Obtenga cobertura adecuada para garantizar protección completa y seguridad financiera al conducir para Uber o Lyft."
       },
       "HOMEOWNERS": {
-        "HEADING": "Seguro para Propietarios de Vivienda",
-        "DESCRIPTION": "Con el seguro para propietarios de vivienda, A-State Insurance le brinda una sólida protección para su hogar, sus pertenencias y su presupuesto. Obtenga los mejores servicios de seguro para riesgos comunes como incendios, tormentas, robo y vandalismo, para que un daño inesperado no se convierta en un gasto mayor. Sus artículos personales, incluyendo muebles, electrodomésticos y equipos electrónicos, también están cubiertos, para que no tenga que reemplazarlos por su cuenta. Elija opciones a un precio que tenga sentido y tenga la tranquilidad de que su hogar está respaldado por A-State Insurance.",
+        "HEADING": "Seguro de Hogar y Propiedad",
+        "DESCRIPTION": "Con el seguro de hogar, Seguros A-State le brinda protección sólida para su vivienda, sus pertenencias y su presupuesto. Obtenga los mejores servicios contra riesgos comunes como incendios, tormentas, robo y vandalismo, para que los daños inesperados no se conviertan en un gasto mayor. Sus artículos personales, incluidos muebles, electrodomésticos y electrónicos, también están cubiertos. Elija opciones a un precio razonable y tenga la seguridad de que su hogar está respaldado.",
         "CARD1": {
-          "TITLE": "Seguro de Propiedad Comercial",
-          "DESC": "Proteja su edificio, equipo e inventario contra incendios, tormentas y robo con este seguro, manteniendo su negocio financieramente seguro."
+          "TITLE": "Seguro de Propietarios de Vivienda",
+          "DESC": "Protege tu hogar contra incendios, robos y clima severo. Cubre tu propiedad y pertenencias personales con pólizas flexibles y verdadera tranquilidad."
         },
         "CARD2": {
-          "TITLE": "Seguro para Propietarios (Landlord)",
-          "DESC": "Proteja su inversión y sus ingresos. Cubrimos daños causados por inquilinos, reclamaciones legales y pérdida de renta para que pueda hacer crecer su portafolio en Texas con confianza."
+          "TITLE": "Seguro para Inquilinos",
+          "DESC": "Proteja sus pertenencias contra robo e incendio. Incluimos responsabilidad civil y apoyo para gastos de vivienda tras cualquier daño imprevisto."
         },
         "CARD3": {
           "TITLE": "Seguro de Condominio",
-          "DESC": "Cobertura especializada para propietarios de condominios que protege su unidad, propiedad personal y responsabilidad civil, complementando la póliza maestra de su HOA."
+          "DESC": "Asegure su unidad, bienes personales y responsabilidad. Obtenga tranquilidad total ante reparaciones necesarias y pérdidas económicas inesperadas."
         },
         "CARD4": {
-          "TITLE": "Seguro contra Terremotos",
-          "DESC": "Obtenga cobertura premium para daños estructurales causados por terremotos, remoción de escombros y costos de reconstrucción después de actividad sísmica."
+          "TITLE": "Seguro para Vivienda Prefabricada / Móvil",
+          "DESC": "Proteja su vivienda móvil o prefabricada con este seguro para estructura, pertenencias y responsabilidad contra daños climáticos y riesgos comunes."
         },
         "CARD5": {
-          "TITLE": "Seguro para Casa Manufacturada / Casa Móvil",
-          "DESC": "Cobertura diseñada para casas manufacturadas y móviles que protege contra incendios, robo, daños climáticos y responsabilidad civil."
+          "TITLE": "Seguro para Propietarios",
+          "DESC": "Proteja su inversión y rentas. Cubrimos daños de inquilinos y reclamos legales para que su portafolio en Texas crezca con máxima seguridad."
         },
         "CARD6": {
-          "TITLE": "Seguro para Propietarios de Alquiler",
-          "DESC": "Cobertura diseñada para dueños de propiedades en renta que protege contra daños a la propiedad, pérdida de ingresos por alquiler y reclamaciones de responsabilidad civil."
+          "TITLE": "Seguro contra Inundaciones",
+          "DESC": "Cubra daños por lluvias y tormentas. Este seguro le permite reparar su hogar y reemplazar sus pertenencias dañadas por el agua rápidamente."
         },
         "CARD7": {
-          "TITLE": "Seguro contra Inundaciones",
-          "DESC": "Seguro especializado contra inundaciones para proteger su hogar y pertenencias de daños causados por eventos de inundación."
+          "TITLE": "Seguro contra Terremotos",
+          "DESC": "Obtenga cobertura para daños estructurales, remoción de escombros y costos de reconstrucción tras actividad sísmica con nuestra protección premium."
         }
       },
       "COMMERCIAL": {
         "HEADING": "Seguro Comercial",
-        "DESCRIPTION": "Con el seguro comercial, A-State Insurance ayuda a proteger a las empresas contra pérdidas financieras por daños a la propiedad, demandas, lesiones de empleados, accidentes de vehículos e interrupciones inesperadas. Respalda las operaciones diarias cubriendo edificios, equipos, inventario y responsabilidades legales. Con planes flexibles para diferentes industrias y tamaños de negocio, ayudamos a los propietarios a gestionar riesgos y controlar gastos. Nuestros planes de seguro brindan una protección sólida, permitiendo que las empresas crezcan con confianza.",
+        "DESCRIPTION": "Con el seguro comercial, Seguros A-State ayuda a proteger a las empresas contra pérdidas financieras por daños a la propiedad, demandas, lesiones de empleados, accidentes vehiculares e interrupciones inesperadas. Apoya las operaciones diarias al cubrir edificios, equipos, inventario y responsabilidades legales. Con planes flexibles para diferentes industrias y tamaños de negocio, ayudamos a los propietarios a manejar riesgos y controlar gastos. Nuestros planes de seguros brindan una protección sólida, permitiendo que las empresas crezcan con confianza.",
         "CARD1": {
-          "TITLE": "Seguro de Responsabilidad Profesional (E&O)",
-          "DESC": "Protege contra reclamaciones por errores, plazos incumplidos y fallas profesionales que podrían resultar en demandas o pérdidas financieras."
+          "TITLE": "Seguro de Responsabilidad Civil General",
+          "DESC": "Cubra lesiones a terceros, daños físicos y costos legales. Ayudamos a su empresa en Texas a evitar reclamos costosos y gastos judiciales graves."
         },
         "CARD2": {
-          "TITLE": "Seguro de Responsabilidad Civil General",
-          "DESC": "Cubre lesiones a terceros, daños a la propiedad y costos legales, ayudando a empresas de todos los tamaños a evitar reclamaciones y gastos judiciales costosos."
+          "TITLE": "Póliza para Propietarios de Negocios (BOP)",
+          "DESC": "Combine cobertura de propiedad y responsabilidad en un paquete accesible. Simplifique su protección y reduzca costos operativos significativamente."
         },
         "CARD3": {
           "TITLE": "Seguro de Compensación para Trabajadores",
-          "DESC": "Proporciona beneficios médicos y apoyo salarial para empleados lesionados en el trabajo, mientras protege a los empleadores de disputas legales o demandas."
+          "DESC": "Brinde beneficios médicos y apoyo salarial a empleados lesionados. Proteja a su empresa de disputas legales y demandas laborales inesperadas."
         },
         "CARD4": {
           "TITLE": "Seguro de Propiedad Comercial",
-          "DESC": "Protege su edificio, equipo, mobiliario, letreros e inventario contra incendios, tormentas, robo y vandalismo, ayudándole a continuar operaciones rápidamente."
+          "DESC": "Proteja su edificio, inventario y equipos contra incendio o robo. Asegure la continuidad de sus operaciones con una recuperación rápida y eficaz."
         },
         "CARD5": {
-          "TITLE": "Seguro Comercial de Auto",
-          "DESC": "Cubre vehículos propiedad de la empresa contra accidentes, reclamaciones de responsabilidad civil, reparaciones y gastos médicos, asegurando que sus conductores y entregas estén protegidos."
+          "TITLE": "Seguro de Auto Comercial",
+          "DESC": "Proteja los vehículos de su empresa contra accidentes y reclamos. Aseguramos que sus conductores y entregas lleguen siempre a su destino final."
         },
         "CARD6": {
-          "TITLE": "Póliza para Propietarios de Negocio (BOP)",
-          "DESC": "Combina cobertura de propiedad y responsabilidad civil en un paquete accesible para simplificar la protección, reducir costos y respaldar las necesidades de las empresas."
+          "TITLE": "Seguro de Responsabilidad Profesional (E&O)",
+          "DESC": "Protege contra reclamos por errores, plazos incumplidos y fallas profesionales que pueden provocar demandas o pérdidas financieras."
         },
         "CARD7": {
           "TITLE": "Seguro de Responsabilidad por Prácticas Laborales (EPLI)",
-          "DESC": "Protege a su empresa contra reclamaciones relacionadas con discriminación, acoso, despido injustificado y violaciones de políticas laborales."
+          "DESC": "Protege a su empresa contra reclamos relacionados con discriminación, acoso, despido injustificado y violaciones de políticas laborales."
         },
         "CARD8": {
           "TITLE": "Seguro de Responsabilidad Cibernética",
-          "DESC": "Ayuda después de filtraciones de datos, ciberataques o fallas del sistema cubriendo costos de recuperación, honorarios legales, notificación a clientes y gestión de reputación."
+          "DESC": "Recupérese de ciberataques y filtración de datos. Cubrimos honorarios legales, notificación a clientes y la gestión de su reputación profesional."
         },
         "CARD9": {
-          "TITLE": "Seguro para Constructores / Riesgo en Construcción",
+          "TITLE": "Seguro de Riesgo de Construcción / Durante la Construcción",
           "DESC": "Cubre estructuras en construcción contra incendios, daños climáticos, robo y vandalismo, protegiendo materiales, equipos e inversiones."
         },
         "CARD10": {
-          "TITLE": "Seguro de Responsabilidad para Directores y Ejecutivos (D&O)",
-          "DESC": "Protege a los líderes de la empresa contra pérdidas financieras personales causadas por decisiones administrativas, investigaciones regulatorias o demandas de accionistas."
+          "TITLE": "Seguro de Responsabilidad de Directores y Ejecutivos (D&O)",
+          "DESC": "Proteja a sus líderes contra pérdidas financieras por decisiones de mando. Ideal para afrontar investigaciones y demandas de accionistas con éxito."
+        },
+        "CARD11": {
+          "TITLE": "Seguro de Transporte y Equipo Comercial",
+          "DESC": "Protege tus herramientas, equipos y carga en tránsito o fuera de tu local. Cobertura clave para contratistas y transporte de mercancías."
+        },
+        "CARD12": {
+          "TITLE": "Seguro Umbrella Comercial",
+          "DESC": "Extiende tus límites de responsabilidad más allá de las pólizas estándar. Protege los activos de tu empresa contra demandas devastadoras."
         }
       },
       "LIFE": {
         "HEADING": "Seguro de Vida",
-        "DESCRIPTION": "En A-State Insurance, el seguro de vida le ayuda a asegurar una protección confiable para sus seres queridos con planes adaptados a sus necesidades y presupuesto. En caso de una pérdida, la cobertura puede ayudar a reemplazar ingresos, pagar deudas, cubrir hipoteca o renta y apoyar la educación y metas familiares a largo plazo. Le ayudamos a elegir el tipo de póliza y la cantidad de cobertura adecuada, para que no pague por lo que no necesita. Obtenga una cotización clara y sencilla y establezca hoy una sólida red de seguridad financiera.",
+        "DESCRIPTION": "En <a class='inline-link' href='/es' target='_blank'>Seguros A-State</a>, el seguro de vida le ayuda a asegurar una protección confiable para sus seres queridos con planes adaptados a sus necesidades y presupuesto. En caso de una pérdida, la cobertura puede ayudar a reemplazar ingresos, pagar deudas, manejar pagos de hipoteca o renta y apoyar la educación y metas familiares a largo plazo. Le ayudamos a elegir el tipo de póliza y el monto de cobertura adecuados, para que no pague por lo que no necesita. Obtenga una cotización clara y directa y establezca hoy una sólida red de seguridad financiera.",
         "CARD1": {
-          "TITLE": "Seguro de Vida a Término",
-          "DESC": "Proporciona cobertura accesible por un período determinado, ayudando a proteger los ingresos de su familia, la hipoteca y gastos importantes durante etapas clave de la vida."
+          "TITLE": "Seguro de Vida a Plazo",
+          "DESC": "Obtenga protección asequible por un tiempo fijo. Proteja los ingresos familiares, el pago de hipoteca y gastos clave durante etapas importantes."
         },
         "CARD2": {
           "TITLE": "Seguro de Vida Entera",
-          "DESC": "Ofrece cobertura de por vida con valor en efectivo acumulado, ayudándole a proteger a sus seres queridos mientras construye seguridad financiera a largo plazo."
+          "DESC": "Cobertura de por vida con valor en efectivo acumulado. Proteja a sus seres queridos mientras construye una base financiera sólida a largo plazo."
         },
         "CARD3": {
           "TITLE": "Seguro de Vida Universal",
-          "DESC": "Combina primas flexibles con protección de por vida, permitiéndole ajustar la cobertura y el ahorro según cambien sus necesidades financieras."
+          "DESC": "Combina primas flexibles con protección permanente, permitiéndole ajustar cobertura y ahorros según cambien sus necesidades financieras."
         },
         "CARD4": {
           "TITLE": "Seguro de Gastos Finales",
-          "DESC": "Ayuda a cubrir gastos funerarios y de entierro, facturas médicas y pequeñas deudas, reduciendo el estrés financiero para su familia."
+          "DESC": "Cubra costos funerarios, de entierro y deudas médicas pendientes. Este seguro reduce significativamente el estrés financiero de su familia."
         },
         "CARD5": {
           "TITLE": "Seguro de Vida Variable",
-          "DESC": "Ofrece cobertura de vida con opciones de inversión, permitiéndole aumentar el valor en efectivo mientras mantiene protección para sus beneficiarios."
+          "DESC": "Combine protección permanente con opciones de inversión. Esta póliza permite acumular valor en efectivo mediante cuentas en el mercado financiero."
         },
         "CARD6": {
-          "TITLE": "Seguro de Vida Colectivo",
-          "DESC": "Ofrece cobertura de vida accesible para empleados, ayudando a las empresas a respaldar a su personal mientras brindan seguridad financiera a sus familias."
+          "TITLE": "Seguro de Vida Grupal",
+          "DESC": "Brinde cobertura de vida asequible a sus empleados. Este beneficio ayuda a empresas en Texas a apoyar a su personal y asegurar a sus familias."
         }
       },
       "HEALTH": {
         "HEADING": "Seguro de Salud",
-        "DESCRIPTION": "Con la cobertura de salud de A-State Insurance, obtiene planes diseñados para mantener la atención médica accesible y reducir el estrés. Nuestro equipo de expertos le ayuda a elegir la cobertura que se adapte a su presupuesto y necesidades médicas, desde visitas al médico y medicamentos recetados hasta atención hospitalaria, servicios preventivos y emergencias. Ya sea que necesite un plan para usted, su familia o sus empleados, comparamos opciones y le guiamos hacia los beneficios adecuados. Obtenga una cotización clara, apoyo sencillo y una cobertura en la que puede confiar.",
+        "DESCRIPTION": "Con la cobertura médica de <a class='inline-link' href='/es' target='_blank'>Seguros A-State</a>, obtiene planes diseñados para mantener la atención accesible y el estrés bajo. Nuestros equipos de expertos le ayudan a elegir cobertura que se adapte a su presupuesto y necesidades médicas, desde visitas al médico y recetas hasta atención hospitalaria, servicios preventivos y emergencias. Ya sea que necesite un plan para usted, su familia o sus empleados, comparamos opciones y lo guiamos hacia los beneficios adecuados. Obtenga una cotización clara, apoyo sencillo y cobertura en la que puede confiar.",
         "CARD1": {
           "TITLE": "Seguro de Salud Individual",
-          "DESC": "Proporciona cobertura médica personal para visitas al médico, medicamentos recetados, atención preventiva y servicios de emergencia, ofreciendo apoyo financiero y acceso a la atención."
+          "DESC": "Obtenga cobertura para visitas médicas, recetas y servicios de emergencia. Brindamos apoyo financiero y acceso a atención preventiva de calidad."
         },
         "CARD2": {
           "TITLE": "Seguro de Salud Familiar",
-          "DESC": "Brinda cobertura médica para todos los miembros de la familia, incluyendo consultas, hospitalizaciones, medicamentos y atención preventiva, ayudando a reducir gastos médicos inesperados."
+          "DESC": "Cubre a padres e hijos bajo un solo plan, ayudando a administrar gastos médicos mientras garantiza atención constante para cada miembro."
         },
         "CARD3": {
           "TITLE": "Seguro de Salud para Pequeñas Empresas",
-          "DESC": "Ayuda a las pequeñas empresas a ofrecer beneficios médicos a sus empleados, mejorando la productividad y la satisfacción laboral mientras se controlan los costos de atención médica."
+          "DESC": "Ayuda a pequeñas empresas a ofrecer beneficios médicos, mejorando productividad y satisfacción laboral mientras controla costos de salud."
         },
         "CARD4": {
           "TITLE": "Seguro de Salud para Empleadores y Grupos",
-          "DESC": "Ofrece beneficios médicos para organizaciones, apoyando el bienestar de los empleados, reduciendo la rotación y fortaleciendo la estabilidad laboral a largo plazo."
+          "DESC": "Proporciona beneficios médicos para organizaciones, apoyando el bienestar del empleado, reduciendo rotación y fortaleciendo estabilidad laboral."
         },
         "CARD5": {
           "TITLE": "Seguro de Salud para Viajes",
-          "DESC": "Protege a los viajeros contra gastos médicos inesperados, tratamiento de emergencia y costos de evacuación al viajar a otros estados o países."
+          "DESC": "Proteja su bienestar contra gastos médicos inesperados y tratamientos de emergencia. Cubrimos costos de evacuación médica al viajar al extranjero."
         },
         "CARD6": {
-          "TITLE": "Seguro Suplementario de Medicare / Medigap",
-          "DESC": "Ayuda a cubrir gastos no pagados por Medicare Original, incluyendo deducibles, copagos y coseguro, reduciendo el estrés financiero relacionado con la atención médica."
+          "TITLE": "Seguro Complementario de Medicare / Medigap",
+          "DESC": "Ayuda a cubrir gastos no pagados por Medicare Original, incluidos deducibles, copagos y coseguro, reduciendo el estrés financiero."
         },
         "CARD7": {
           "TITLE": "Seguro de Salud a Corto Plazo",
-          "DESC": "Ofrece cobertura médica temporal durante cambios de empleo, períodos sin inscripción o transiciones de vida, brindando protección cuando no hay planes permanentes disponibles."
+          "DESC": "Obtenga cobertura médica temporal durante cambios de empleo o transiciones de vida. Una solución rápida mientras espera su seguro permanente."
         },
         "CARD8": {
           "TITLE": "Seguro Dental y de Visión",
-          "DESC": "Cubre exámenes de rutina, limpiezas, anteojos, lentes de contacto y tratamientos, ayudando a mantener la salud bucal y una visión clara a precios accesibles."
+          "DESC": "Cubra exámenes, limpiezas, anteojos y tratamientos. Ayudamos a mantener su salud oral y una visión clara con planes diseñados para su bienestar."
         },
         "CARD9": {
-          "TITLE": "Planes ACA / del Mercado de Seguros",
-          "DESC": "Proporciona acceso a planes de salud respaldados por el gobierno con beneficios, subsidios basados en ingresos y cobertura para servicios preventivos y médicos mayores."
+          "TITLE": "Planes ACA / del Mercado",
+          "DESC": "Acceda a planes con beneficios de ley y subsidios según sus ingresos. Obtenga cobertura médica completa y preventiva respaldada por el gobierno."
         }
       }
     },
     "SURETY": {
       "HEADING": "Fianzas",
-      "DESCRIPTION": "A-State Insurance le ayuda a obtener fianzas que cumplen con los requisitos de licencias y contratos, para que pueda licitar, construir y operar con confianza. Desde proyectos de construcción hasta permisos y contratos públicos, le ayudamos a obtener la fianza adecuada rápidamente, con tarifas competitivas y un proceso ágil. Estas fianzas protegen a los propietarios de proyectos y a las agencias si no se cumplen las obligaciones, ayudándole a generar confianza y ganar más contratos. Contáctenos hoy para solicitarla rápidamente y obtener su fianza sin complicaciones.",
+      "DESCRIPTION": "Seguros A-State le ayuda a obtener fianzas que cumplen con requisitos de licencias y contratos, para que pueda licitar, construir y operar con confianza. Desde proyectos de construcción hasta permisos y contratos públicos, le ayudamos a obtener la fianza correcta rápidamente, con tarifas competitivas y un proceso ágil. Estas fianzas protegen a propietarios de proyectos y agencias si no se cumplen las obligaciones, ayudándole a generar confianza y conseguir más trabajo. Contáctenos hoy para solicitar rápidamente y obtener su fianza sin complicaciones.",
       "CARD1": {
         "TITLE": "Fianzas de Cumplimiento / Fianzas de Pago",
-        "DESC": "Garantizan la finalización del proyecto y los pagos puntuales a proveedores y subcontratistas, protegiendo a los propietarios de pérdidas financieras y retrasos en la construcción."
+        "DESC": "Garantice la finalización del proyecto y pagos a proveedores. Proteja a los propietarios contra pérdidas financieras y retrasos en sus contratos."
       },
       "CARD2": {
         "TITLE": "Fianzas Comerciales",
-        "DESC": "Respaldan licencias comerciales, permisos y cumplimiento normativo, ayudando a las empresas a cumplir con los requisitos legales y mantener credibilidad profesional."
+        "DESC": "Respalde sus licencias, permisos y el cumplimiento normativo. Ayudamos a su empresa a cumplir requisitos legales y ganar credibilidad profesional."
       },
       "CARD3": {
         "TITLE": "Fianzas de Licitación",
-        "DESC": "Garantizan que los contratistas respeten las ofertas presentadas y firmen contratos cuando sean adjudicados, protegiendo a los propietarios de propuestas poco confiables."
+        "DESC": "Asegure que los contratistas respeten sus ofertas y firmen el contrato final. Evite propuestas poco confiables y proteja la integridad del proceso."
       },
       "CARD4": {
         "TITLE": "Fianzas para Notarios",
-        "DESC": "Protegen al público contra errores, mala conducta o negligencia por parte de notarios comisionados, asegurando un procesamiento de documentos ético y legal."
+        "DESC": "Protegen al público contra errores, mala conducta o negligencia de notarios comisionados, garantizando un procesamiento ético y legal."
+      },
+      "CARD5": {
+        "TITLE": "Fianzas de Licencias y Permisos",
+        "DESC": "Requeridas por el gobierno para operar legalmente. Garantizan el cumplimiento de las normas locales y protegen a tus consumidores."
+      },
+      "CARD6": {
+        "TITLE": "Fianzas de Contrato",
+        "DESC": "Garantizan que un proyecto de construcción se complete según lo acordado y que todos los subcontratistas, trabajadores y proveedores reciban su pago."
       }
     },
     "ADDITIONAL": {
-      "HEADING": "Seguros Adicionales",
-      "DESCRIPTION": "La protección adicional cubre vacíos importantes que las pólizas estándar pueden no incluir. Con los Seguros Adicionales de A-State Insurance, ayudamos a proteger activos valiosos, responsabilidades personales y riesgos únicos. Estas soluciones especializadas respaldan la seguridad a largo plazo, reducen la exposición financiera y fortalecen la protección general, facilitando su tranquilidad. Desde intereses personales hasta requisitos legales, nuestra cobertura integral y experiencia profesional brindan confianza tanto en el ámbito personal como empresarial.",
+      "HEADING": "Cobertura Adicional",
+      "DESCRIPTION": "La protección adicional cubre vacíos importantes que las pólizas estándar pueden no incluir. Con los seguros adicionales de Seguros A-State, ayudamos a proteger activos valiosos, responsabilidades personales y riesgos únicos. Estas soluciones especializadas respaldan la seguridad a largo plazo, reducen la exposición financiera y fortalecen la protección general, facilitando la vida. Desde intereses personales hasta requisitos legales, nuestra cobertura integral y conocimiento experto brindan tranquilidad en áreas personales y comerciales.",
       "CARD1": {
         "TITLE": "Seguro para Mascotas",
-        "DESC": "Ayuda a cubrir gastos veterinarios inesperados, tratamientos, emergencias y atención preventiva, protegiendo la salud de su mascota y su presupuesto."
+        "DESC": "Cubra visitas veterinarias, cirugías y emergencias médicas. Garantice un tratamiento de calidad para su mascota sin enfrentar cargas financieras pesadas."
       },
       "CARD2": {
         "TITLE": "Seguro de Título",
-        "DESC": "Protege a propietarios y prestamistas contra disputas de propiedad, gravámenes y problemas legales que puedan afectar transacciones inmobiliarias."
+        "DESC": "Protege a propietarios y prestamistas contra disputas de propiedad, gravámenes y problemas legales que pueden afectar transacciones inmobiliarias."
       },
       "CARD3": {
         "TITLE": "Seguro de Transferencia de Título",
         "DESC": "Asiste con cambios legales de propiedad, documentación y registro, asegurando una transferencia fluida y precisa de títulos de vehículos o propiedades."
-      }
-    },
-    "WHY_TEXANS_CHOOSE": {
-      "HEADING": "Por Qué los Texanos Eligen",
-      "HEADING2": "A-State Insurance",
-      "CARD1": {
-        "TITLE": "Corredores con Licencia en Texas",
-        "DESC": "Trabaje con profesionales totalmente autorizados que entienden las regulaciones estatales y brindan orientación confiable para sus necesidades de cobertura."
-      },
-      "CARD2": {
-        "TITLE": "Atención Amigable para la Comunidad Hispana y Latina",
-        "DESC": "Disfrute de un servicio respetuoso y culturalmente consciente, diseñado para que cada cliente se sienta cómodo, valorado y claramente entendido."
-      },
-      "CARD3": {
-        "TITLE": "Más de 20 Años Sirviendo a Texas",
-        "DESC": "Aproveche décadas de experiencia ayudando a familias y empresas a proteger lo que más importa en las comunidades de Texas."
       },
       "CARD4": {
-        "TITLE": "Planes de Cobertura Personalizados",
-        "DESC": "Obtenga soluciones de seguro personalizadas según su presupuesto, estilo de vida y objetivos de protección, sin coberturas innecesarias."
+        "TITLE": "Seguro Umbrella",
+        "DESC": "Obtén protección de responsabilidad adicional más allá de tus pólizas de auto y hogar. Resguarda tus ahorros y activos frente a demandas costosas."
       },
       "CARD5": {
-        "TITLE": "En Línea y Local",
-        "DESC": "Conéctese con nosotros en línea o visítenos en persona para un servicio conveniente que se adapte a su horario y ubicación."
+        "TITLE": "Protección de Identidad",
+        "DESC": "Monitorea tu crédito, detecta el fraude a tiempo y recibe ayuda experta para restaurar tu buen nombre si roban tu información personal."
+      }
+    },
+    "TEXAS_STRATEGY": {
+      "HEADING": "Por Qué Texas Requiere una Estrategia de Seguro Propia",
+      "INTRO": "Texas es un excelente lugar para vivir y hacer negocios, pero su geografía, clima y entorno legal exigen un enfoque de seguros altamente especializado. Una póliza genérica simplemente no es suficiente aquí. Para asegurar los mejores servicios de seguros en Texas, necesitas una estrategia adaptada específicamente a los riesgos del Estado de la Estrella Solitaria.",
+      "LIST_INTRO": "Desde la Costa del Golfo hasta el norte del estado, Texas enfrenta riesgos inigualables:",
+      "ITEM1": {
+        "LABEL": "Clima Extremo:",
+        "DESC": "Las pólizas estándar suelen dejar grandes vacíos ante los huracanes de la Costa del Golfo, las inundaciones y los daños por granizo."
       },
-      "CARD6": {
-        "TITLE": "Agentes Multilingües",
-        "DESC": "Comuníquese fácilmente con agentes expertos que hablan inglés, español e hindi para recibir apoyo claro y sin complicaciones."
+      "ITEM2": {
+        "LABEL": "Leyes Únicas:",
+        "DESC": "Texas es el único estado que permite a los empleadores ser \"no suscriptores\" de la compensación laboral, lo que requiere estrategias comerciales alternativas."
+      },
+      "ITEM3": {
+        "LABEL": "Riesgos Viales:",
+        "DESC": "Con un alto índice de conductores sin seguro y constantes viajes transfronterizos que requieren cobertura específica para autos en México, los límites estándar se quedan cortos."
+      }
+    },
+    "COVERDBANNER": {
+      "TITLE": "Encuentra la Cobertura de Seguro Adecuada en Texas Hoy Mismo",
+      "DESC": "Proteger su futuro comienza con un solo paso sencillo. <a class='inline-link red' href='/es/contacto' target='_blank'>Contáctenos</a> hoy llamando, enviando un correo electrónico, mensaje de texto, completando nuestro formulario en línea o visitando nuestra oficina en persona. Nuestro equipo está listo para comprender sus necesidades y guiarlo hacia la cobertura adecuada. Elija entre seguros de auto, hogar, comercial, vida, salud o fianzas, y obtenga un plan que se adapte a su estilo de vida y presupuesto.",
+      "DESC_1": "Comparta su nombre completo y número de teléfono, solicite una cotización y deje que <a class='inline-link red' href='/es' target='_blank'>Seguros A-State</a> se encargue del resto con un servicio rápido y confiable en el que puede confiar.",
+      "FORM": {
+        "BUTTON": "Obtener Cotización"
       }
     }
   },
   "ABOUT": {
     "HERO": {
-      "HEADING": "Protegiendo a las Familias y Negocios de Texas Desde 2018"
+      "TITLE_LINE1": "Protegiendo a Las Familias",
+      "TITLE_LINE2": "Y Empresas de Texas",
+      "TITLE_LINE3": "Desde 2018",
+      "BADGES": {
+        "LICENSED": "Licencia en Texas",
+        "INDEPENDENT": "Agencia Independiente",
+        "SPANISH": "Hablamos Español",
+        "CARRIERS": "Más de 50 Aseguradoras"
+      }
     },
     "TRUSTED_PARTNER": {
-      "TEXT1": "Tu",
-      "HIGHLIGHT": "Seguro de Confianza",
-      "TEXT2": "Aliado."
-    },
-    "WHY_TEXANS_CHOOSE": {
-      "HEADING": "Por Qué los Tejanos Eligen",
-      "HEADING2": "A-State Insurance?",
-      "CARD1": {
-        "TITLE": "Experiencia Local",
-        "DESC": "Nuestro profundo conocimiento de las comunidades y vecindarios de Texas nos permite recomendar opciones de seguro que se ajustan a los riesgos locales, regulaciones y necesidades de estilo de vida de cada cliente."
-      },
-      "CARD2": {
-        "TITLE": "Servicio Personalizado",
-        "DESC": "Adaptamos los planes de cobertura a tu vida, negocio y prioridades familiares, asegurando que pagues solo por lo que necesitas mientras permaneces completamente protegido y respaldado."
-      },
-      "CARD3": {
-        "TITLE": "Equipo con Experiencia",
-        "DESC": "Nuestro equipo cuenta con años de experiencia práctica en seguros, ofreciendo asesoramiento claro, orientación confiable y experiencia profesional para que nuestros clientes tomen decisiones con total confianza."
-      },
-      "CARD4": {
-        "TITLE": "Reputación de Confianza",
-        "DESC": "Los tejanos confían en nosotros por nuestra honestidad, integridad y servicio confiable; nuestra sólida reputación está basada en procesos transparentes, apoyo constante y resultados reales en todo tipo de cobertura."
-      },
-      "CARD5": {
-        "TITLE": "Atención Rápida y Eficiente",
-        "DESC": "Desde reclamos hasta consultas generales, nuestro equipo responde de manera rápida y eficiente para que nunca tengas que esperar cuando tu cobertura, protección o tranquilidad es lo más importante."
-      }
+      "TEXT1": "Su Socio de Seguros",
+      "HIGHLIGHT": "de Confianza"
     },
     "TRUSTED_INSURANCE": {
-      "HEADING": "Por Qué los Tejanos Eligen",
-      "HEADING2": "A-State Insurance?",
       "CARD1": {
-        "TITLE": "Historia de la Empresa y Año de Fundación",
-        "DESC": "Fundada en 2018, A-State Insurance nació con una misión clara y significativa: hacer que el seguro sea comprensible, accesible y confiable para todos los tejanos. Desde el inicio, nos asociamos con múltiples compañías aseguradoras para ofrecer cobertura personalizada para hogares, vehículos, negocios, salud, vida y fianzas. Con el paso de los años, hemos crecido de manera constante, manteniéndonos firmemente comprometidos con un servicio excepcional, atención bilingüe y la comprensión de las necesidades únicas de cada persona y comunidad a la que servimos con orgullo en todo Texas."
+        "TITLE": "Historia de la Empresa Y año de Fundación",
+        "DESC": "Fundada en 2018, Seguros A-State nació con una misión simple pero poderosa: hacer que el seguro sea claro, accesible y confiable para todos los texanos. Desde el inicio, colaboramos con múltiples compañías para ofrecer coberturas personalizadas para hogares, vehículos, negocios, salud, vida y fianzas. Con el paso de los años hemos crecido de forma constante, manteniendo un compromiso firme con el servicio excepcional, el apoyo multilingüe y la comprensión de las necesidades únicas de cada persona y comunidad a la que servimos con orgullo en todo Texas."
       },
       "CARD2": {
-        "TITLE": "Misión y Valores Fundamentales",
-        "DESC": "En A-State Insurance, nuestra misión es brindar a los tejanos soluciones de seguro basadas en la confianza, la claridad y la responsabilidad. Valoramos las relaciones sólidas, la orientación personalizada y el servicio respetuoso a cada comunidad. Combinando experiencia profesional con honestidad y compromiso, ayudamos a que nuestros clientes se sientan seguros, protegidos y comprendidos. Nuestro enfoque es apoyar a familias, negocios e individuos a obtener la cobertura que necesitan de manera simple y confiable."
+        "TITLE": "Misión Y Valores Fundamentales",
+        "DESC": "En Seguros A-State nuestra misión es brindar a los texanos soluciones de seguro basadas en confianza, solidez y claridad. Valoramos las relaciones cercanas, la orientación personalizada y el servicio a cada comunidad con respeto y dedicación. Al combinar experiencia profesional con un compromiso real de honestidad y apoyo, logramos que cada cliente se sienta seguro, protegido y comprendido. Nos enfocamos en ayudar a familias, negocios e individuos a obtener la cobertura adecuada mientras mantenemos el proceso simple y confiable."
       },
       "CARD3": {
-        "TITLE": "Tipos de Clientes que Atendemos",
-        "DESC": "A-State Insurance atiende con orgullo a una amplia variedad de clientes, incluyendo familias, propietarios de automóviles, dueños de viviendas y negocios de todos los tamaños. Nos enfocamos en generar confianza y ofrecer cobertura confiable adaptada a las necesidades únicas de cada cliente. Con un fuerte compromiso comunitario y servicio personalizado, nuestro equipo bilingüe garantiza que todos se sientan apoyados, comprendidos y seguros. Desde la protección de hogares y vehículos hasta la seguridad de negocios y vidas, ayudamos a los tejanos a proteger lo que más importa con integridad y dedicación."
+        "TITLE": "Tipos de Clientes Atendidos",
+        "DESC": "Seguros A-State atiende con orgullo a una amplia variedad de clientes, incluyendo familias, propietarios de autos, dueños de vivienda y empresas de todos los tamaños. Nos enfocamos en crear confianza y ofrecer coberturas confiables adaptadas a las necesidades únicas de cada persona. Con un fuerte compromiso comunitario y atención personalizada, nuestro equipo multilingüe se asegura de que todos se sientan apoyados y comprendidos. Desde la protección del hogar y los vehículos hasta el cuidado de negocios y vidas, ayudamos a los texanos a resguardar lo que más valoran con integridad."
+      },
+      "CARD4": {
+        "TITLE": "Por Qué se Fundó la Agencia",
+        "DESC": "Seguros A-State se fundó para cerrar una brecha crítica en el mercado de seguros de Texas: la necesidad de una protección profundamente local, accesible y culturalmente inclusiva. Al reconocer que las pólizas corporativas estándar a menudo no logran abordar los riesgos únicos de Texas —como las tormentas de la Costa del Golfo, las complejas regulaciones de no suscriptores y los viajes transfronterizos— nuestra agencia se estableció para crear estrategias de cobertura a la medida en lugar de ofrecer soluciones genéricas."
+      },
+      "CARD5": {
+        "TITLE": "La Diferencia de una Agencia Independiente",
+        "DESC": "Las agencias \"cautivas\" tradicionales solo venden pólizas de una sola compañía de seguros. Si las tarifas aumentan o las coberturas cambian, tus opciones son limitadas. Como agencia independiente, trabajamos directamente para ti, no para un gigante corporativo de seguros. Aprovechamos una amplia red de aseguradoras líderes para comparar múltiples cotizaciones, garantizándote la cobertura más sólida al precio más competitivo."
+      },
+      "CARD6": {
+        "TITLE": "Nuestra Identidad de \"Texas Primero\"",
+        "DESC": "En Seguros A-State, nuestras raíces son profundamente texanas. No solo hacemos negocios aquí; construimos toda nuestra agencia específicamente en función de los riesgos de Texas y de sus comunidades. Vivimos aquí, trabajamos aquí y entendemos de primera mano que manejar el panorama de seguros en Texas requiere una mentalidad completamente diferente a la de cualquier otra parte del país. No somos una marca corporativa genérica adaptándose a Texas; somos una agencia nacida en Texas y diseñada para proteger tu hogar, tu familia y tu negocio desde la raíz."
       }
+    },
+    "BY_THE_NUMBERS": {
+      "HEADING_HIGHLIGHT": "Seguros A-State",
+      "HEADING": "en Números",
+      "COL_METRIC": "Métrica",
+      "COL_DETAILS": "Detalles",
+      "ROW1": {
+        "LABEL": "Año de Fundación",
+        "VALUE": "2018"
+      },
+      "ROW2": {
+        "LABEL": "Número de Aseguradoras",
+        "VALUE": "Más de 50 compañías de primer nivel, tanto nacionales como regionales (incluyendo líneas de excedentes especializadas para Texas)"
+      },
+      "ROW3": {
+        "LABEL": "Clientes Servidos / Pólizas Emitidas",
+        "VALUE": "Más de 5,000+ texanos protegidos"
+      },
+      "ROW4": {
+        "LABEL": "Calificación en Google",
+        "VALUE": "★ 4.9 — Más de 500 reseñas"
+      },
+      "ROW5": {
+        "LABEL": "Agentes Licenciados",
+        "VALUE": "7 especialistas dedicados en riesgos"
+      },
+      "ROW6": {
+        "LABEL": "Ciudades / Áreas de Texas Servidas",
+        "VALUE": "Houston, San Antonio, Dallas, Austin y las principales áreas metropolitanas de todo el estado"
+      },
+      "ROW7": {
+        "LABEL": "Idiomas de Atención",
+        "VALUE": "Inglés, Español e Hindi"
+      }
+    },
+    "MISSION_VISION": {
+      "HEADING": "Nuestra Misión, Visión y Valores",
+      "MISSION": {
+        "TITLE": "Misión",
+        "TEXT": "Nuestra misión es brindar a cada comunidad de Texas soluciones de seguros accesibles, culturalmente inclusivas y transparentes a través de una amplia red de opciones independientes. Protegemos lo que más importa a nuestros clientes ofreciendo asesoría experta en su idioma de preferencia, garantizando que ningún texano se quede desatendido."
+      },
+      "VISION": {
+        "TITLE": "Visión",
+        "TEXT": "Convertirnos en la agencia de seguros independiente líder en Texas, reconocida por cerrar las brechas culturales y lingüísticas en la industria. A medida que Seguros A-State crezca, buscaremos expandir nuestra presencia digital y local en todo el estado, estableciendo el estándar en experiencia hiperlocal, confianza comunitaria y protección imparcial."
+      },
+      "VALUES": {
+        "TITLE": "Valores Fundamentales",
+        "CARD1": {
+          "TITLE": "Inclusión Cultural",
+          "DESC": "Creemos que una protección clara comienza por ser verdaderamente comprendido. Al ofrecer un servicio dedicado en inglés, español e hindi, eliminamos las barreras de comunicación y aseguramos que nuestras diversas comunidades en Texas manejen sus coberturas con absoluta confianza y dignidad."
+        },
+        "CARD2": {
+          "TITLE": "Opciones Imparciales",
+          "DESC": "Como agencia independiente, nuestra lealtad es con nuestros clientes, no con una corporación de seguros. Aprovechamos nuestra red de más de 50 aseguradoras de primer nivel para ofrecer soluciones objetivas y personalizadas que brinden el mejor valor posible para tus riesgos específicos."
+        },
+        "CARD3": {
+          "TITLE": "Integridad con Raíces Texanas",
+          "DESC": "Operamos con el espíritu trabajador y honesto del Estado de la Estrella Solitaria. Para nosotros, la integridad significa ser transparentes sobre las limitaciones de las pólizas, recomendar solo lo que realmente necesitas y estar firmemente a tu lado cuando llega una tormenta o surge un reclamo."
+        },
+        "CARD4": {
+          "TITLE": "Protección Proactiva",
+          "DESC": "No solo reaccionamos ante las pérdidas; te ayudamos a anticiparlas. Nuestros agentes adoptan un enfoque consultivo, analizando los riesgos locales de Texas —desde el clima de la Costa del Golfo hasta las complejas regulaciones comerciales del estado— para diseñar coberturas sólidas antes de que ocurra lo inesperado."
+        },
+        "CARD5": {
+          "TITLE": "Compromiso Comunitario",
+          "DESC": "Nos vemos como vecinos primero y como agentes de seguros después. Estamos profundamente comprometidos a retribuir y apoyar a los vecindarios locales que servimos, construyendo relaciones a largo plazo basadas en la confiabilidad, el respeto mutuo y la responsabilidad social."
+        }
+      }
+    },
+    "SOLUTIONS": {
+      "HEADING_HIGHLIGHT": "Soluciones de Seguros",
+      "HEADING": "que Ofrecemos",
+      "INTRO": "Seguros A-State ofrece coberturas de seguro personalizadas para hogares, vehículos, salud, vida, negocios y fianzas. Con apoyo multilingüe, opciones de múltiples compañías y asesoría cercana, hacemos que elegir el plan correcto sea simple y sin estrés para todos. Confíe en nuestra agencia de seguros en Texas para proteger lo que más importa para usted y su familia.",
+      "SEE_ALL": "Ver Todos los Servicios",
+      "AUTO": {
+        "TITLE": "Seguro de Auto",
+        "DESC": "Proteja su auto, su familia y sus finanzas con un seguro de auto personalizado. El equipo de Seguros A-State lo guía por cada opción para que obtenga la protección correcta según sus necesidades reales."
+      },
+      "HOME": {
+        "TITLE": "Seguro de Vivienda",
+        "DESC": "Resguarde su hogar y sus pertenencias con pólizas diseñadas a su medida. Brindamos orientación clara para que su cobertura proteja lo que más importa para usted y su familia."
+      },
+      "COMMERCIAL": {
+        "TITLE": "Seguro Comercial",
+        "DESC": "Mantenga su negocio seguro con cobertura comercial a la medida. Nuestros expertos lo ayudan a entender responsabilidad, propiedad y operaciones para lograr protección confiable en cualquier tipo de empresa."
+      },
+      "LIFE": {
+        "TITLE": "Seguro de Vida",
+        "DESC": "Planee el futuro de su familia con una cobertura acorde a sus metas. Nuestro equipo lo orienta en opciones de seguro de vida para que se sienta tranquilo y sus seres queridos protegidos."
+      },
+      "HEALTH": {
+        "TITLE": "Seguro de Salud",
+        "DESC": "Encuentre un plan de salud que funcione para usted y su familia. Como corredor de seguros en Texas le ayudamos a comparar beneficios y elegir opciones que se ajusten a su presupuesto."
+      },
+      "SURETY": {
+        "TITLE": "Fianzas",
+        "DESC": "Obtenga fianzas con facilidad y seguridad. Nuestros asesores ofrecen guía paso a paso para entender requisitos y asegurar los bonos correctos para contratos u obligaciones legales"
+      }
+    },
+    "TESTIMONIALS": {
+      "TITLE_LINE1": "Lo Que Dicen Nuestros",
+      "TITLE_HIGHLIGHT": "Clientes en Texas",
+      "ITEMS": [
+        {
+          "NAME": "Valeria Esquivel",
+          "CITY": "Houston",
+          "TEXT": "Sinceramente, me aterrorizaba la idea de buscar seguro de auto, pero Marisol lo hizo todo muy fácil. No se limitó a arrojarme un montón de pólizas; se sentó conmigo y me explicó cómo cada una protegía a mis hijos. Sentí que estaba recibiendo el consejo de un vecino al que realmente le importas. Fue una experiencia verdaderamente libre de estrés para nuestra familia."
+        },
+        {
+          "NAME": "Camila Castañeda",
+          "CITY": "San Antonio",
+          "TEXT": "Comprar nuestra primera casa fue un torbellino, y la parte del seguro era, honestamente, lo más confuso. Llamé y hablé con Diego, quien se tomó el tiempo para explicarme qué significaba realmente el 'costo de reemplazo' para nuestro pequeño bungalow de los años 50. No se sintió como un discurso de ventas; se sintió como un amigo asegurándose de que nuestro nuevo hogar estuviera a salvo. Nos fuimos sintiéndonos mucho más seguros."
+        },
+        {
+          "NAME": "Lucia Benavidez",
+          "CITY": "Dallas",
+          "TEXT": "Siempre supe que necesitaba un seguro de vida para mis hijos, pero lo seguía postergando porque el papeleo era muy intimidante. Hablar con Gabriel lo cambió todo. Poder alternar entre inglés y español hizo que fuera mucho más fácil entender la letra pequeña. Fue paciente y nunca me apresuró. Ahora, finalmente puedo dormir mejor sabiendo que mi familia está protegida."
+        },
+        {
+          "NAME": "Ricardo Garza",
+          "CITY": "Austin",
+          "TEXT": "Cuando ampliamos nuestro restaurante familiar, sabía que nuestra antigua cobertura no sería suficiente. Me preocupaba el costo del seguro de responsabilidad civil, pero Oscar se sentó conmigo y revisó nuestros riesgos específicos. No nos trató como a una cuenta más; nos trató como a un dueño de negocio local. Ahora puedo concentrarme en la cocina sabiendo que nuestro equipo y nuestra propiedad están realmente protegidos."
+        },
+        {
+          "NAME": "Ximena Montoya",
+          "CITY": "Fort Worth",
+          "TEXT": "Con tres hijos, no puedo darme el lujo de adivinar cuando se trata de los médicos. Entré a la oficina sintiéndome totalmente abrumada por toda esa charla de planes 'oro' y 'plata'. Lucía fue una bendición: se sentó conmigo y, literalmente, comparó los planes lado a lado hasta que supe exactamente cómo serían mis copagos. Es la primera vez que realmente entiendo mis beneficios. Siento que mi familia por fin está en buenas manos."
+        },
+        {
+          "NAME": "Travis Calhoun",
+          "CITY": "El Paso",
+          "TEXT": "Tenía encima la fecha de inicio de un proyecto y me di cuenta de que no tenía la fianza adecuada para tramitar el permiso. Estaba estresado, por decir lo menos. El equipo aquí no me dio vueltas; se pusieron a trabajar de inmediato, me explicaron la parte de la indemnización en un lenguaje sencillo y me resolvieron el problema a tiempo para que mi equipo pudiera empezar. Son un salvavidas para los pequeños contratistas."
+        },
+        {
+          "NAME": "Sofia De La Cruz",
+          "CITY": "Arlington",
+          "TEXT": "Es difícil encontrar una oficina donde no te sientas como un número más. Cuando entramos, no solo buscábamos una póliza; necesitábamos a alguien que entendiera nuestro hogar multigeneracional. Gabriel realmente escuchó nuestras preocupaciones sobre mis padres y los niños. No nos apresuró ni usó palabras técnicas para confundirnos. Nos fuimos sintiendo que toda nuestra familia finalmente era tomada en cuenta y protegida."
+        },
+        {
+          "NAME": "Travis Calhoun",
+          "CITY": "Corpus Christi",
+          "TEXT": "Me estaba preparando para una total pesadilla cuando mi hijo obtuvo su licencia, tanto por el estrés de que estuviera en la carretera como por el golpe a nuestra cuenta bancaria. Pero la gente de A-State fue fantástica. No solo me dieron una cifra; me enseñaron cómo funcionaban los descuentos por 'buen estudiante' y hablaron con mi hijo sobre la conducción responsable. Se sintió más como una sesión de orientación que como una reunión de ventas. Ahora estoy mucho menos nerviosa."
+        },
+        {
+          "NAME": "Cassidy Thorne",
+          "CITY": "Plano",
+          "TEXT": "Llevaba años alquilando en Austin y me aterrorizaba el salto a comprar casa propia. Ni siquiera me daba cuenta de lo diferentes que eran las necesidades de seguro. El equipo de Seguros A-State no solo me dio una cotización; se sentaron y me mostraron exactamente qué cubría mi antigua póliza de inquilino frente a lo que necesitaba para mi nuevo hogar. Hicieron que la transición se sintiera como un logro y no como una obligación. Finalmente siento que estoy en 'casa'."
+        },
+        {
+          "NAME": "Diego Hinojosa",
+          "CITY": "Lubbock",
+          "TEXT": "Había querido contratar un seguro de vida desde que nació mi hijo menor, pero siempre sentía que me iban a 'engañar' con la letra pequeña. Marisol fue muy diferente. No se limitó a hablarme; habló conmigo sobre las metas de mi familia. Explicó las cosas de una manera que finalmente entendí, y por primera vez, ya no tengo esa duda del 'qué pasaría si' rondando en mi cabeza. Mi hijos son mi mundo, y ahora sé que están asegurados."
+        }
+      ]
+    },
+    "GET_QUOTE": {
+      "TITLE": "Cobertura Confiable. Asesoría Experta. Tranquilidad.",
+      "DESC": "En <a class='inline-link red' href='/es/'>Seguros A-State</a>, hacemos que proteger su hogar, auto, negocio o familia sea simple y sin preocupaciones. Nuestros expertos comparan múltiples compañías para encontrar la cobertura que se adapte perfectamente a su vida. Con una guía clara, apoyo multilingüe y servicio personalizado, brindamos confianza a los texanos. Seguros que se ajustan a su vida, respaldados por expertos que se preocupan; su tranquilidad comienza aquí con Seguros A-State. Puede llamar, enviar un correo electrónico, mensaje de texto, completar nuestro formulario o visitarnos en persona. Obtener la protección adecuada nunca ha sido tan fácil.",
+      "BUTTON": "Obtener Cotización"
     }
   },
   "CONTACT": {

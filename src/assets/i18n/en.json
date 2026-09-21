@@ -71,25 +71,29 @@
   },
   "HOME": {
     "BANNER": {
-      "TITLE_LINE1": "Texas Insurance Made Simple –",
-      "TITLE_LINE2": "Coverage for Everyone",
+      "TITLE_LINE1": "Texas's",
+      "TITLE_LINE2": "Independent",
       "CHIPS": {
         "AUTO": "Auto",
         "HOMEOWNERS": "Homeowners",
         "COMMERCIAL": "Commercial",
         "LIFE": "Life",
         "HEALTH": "Health",
-        "SURETY": "Surety Bonds"
+        "SURETY": "Other"
       },
       "FORM": {
         "FULL_NAME": "Full Name",
         "PHONE": "Phone Number",
-        "BUTTON": "Get a Quote"
-      }
+        "BUTTON": "Get a Quote",
+        "FREE_QUOTE_BUTTON": "Get a Free Quote",
+        "LOADING": "Loading..."
+      },
+      "SUBTITLE": "Trusted by Texans for 5+ Years",
+      "TITLE_LINE3": "Insurance Agency"
     },
     "WHY_CHOOSE": {
       "HEADING": "Why Texans Choose",
-      "HEADING_STRONG": "A-State Insurance",
+      "HEADING_STRONG": "&nbsp;A-State Insurance",
       "CARD1": {
         "TITLE": "Texas Licensed Brokers",
         "DESC": "Our insurance agency compares trusted carriers and guides you to the right, reliable coverage at the best rates."
@@ -99,8 +103,9 @@
         "DESC": "A supportive insurance agency in Texas that genuinely respects Hispanic and Latino communities, culture, and priorities."
       },
       "CARD3": {
-        "TITLE": "20+ Years Serving Texans",
-        "DESC": "Over two decades of experience protecting Texas families, their homes, vehicles, businesses, and personal well-being."
+        "TITLE": "5+ Years Serving Texans",
+        "DESC": "Over two decades of experience protecting Texas families, their homes, vehicles, businesses, and personal well-being.",
+        "STAT": "5+"
       },
       "CARD4": {
         "TITLE": "Custom Coverage Plans",
@@ -113,10 +118,17 @@
       "CARD6": {
         "TITLE": "Multilingual Agents",
         "DESC": "Professional multilingual agents explain every option clearly in English, Spanish, and Hindi, ensuring understanding and confidence."
-      }
+      },
+      "CARD7": {
+        "TITLE": "50+ Carriers"
+      },
+      "CARD8": {
+        "TITLE": "No Carrier Bias — Ever"
+      },
+      "SUBHEADING": "<span>Independent.</span><span>Local.</span><span>On Your Side.</span>"
     },
     "INSURANCE_SOLUTIONS": {
-      "TITLE": "Our Insurance Solutions",
+      "TITLE": "<span class='title-underline-text'><strong>Insurance</strong> Coverage</span> for <span class='highlight-red'>Every Texan</span>",
       "DESC1": " A-State Insurance offers customized insurance coverage for homes, vehicles, health, life, businesses, and bonds. With multilingual support, multiple carrier options, and personalized guidance, we make choosing the right plan simple, reliable, and stress-free for everyone. Trust us to protect what matters most to you and your family.",
       "SEE_ALL": "See All Services",
       "AUTO": {
@@ -133,7 +145,7 @@
       },
       "LIFE": {
         "TITLE": "Life Insurance",
-        "DESC": "Protecting your family’s future is about more than just finances. The right life insurance offers a way to ensure your loved ones are cared for, no matter what."
+        "DESC": "Protecting your family’s future is about more than just finances. The right life insurance helps ensure your loved ones are cared for, no matter what."
       },
       "HEALTH": {
         "TITLE": "Health Insurance",
@@ -142,13 +154,23 @@
       "SURETY": {
         "TITLE": "Surety Bonds",
         "DESC": "Surety bonds play a vital role in building professional trust. Having the right bond in place helps Texas businesses meet legal and contract requirements."
+      },
+      "GET_A_QUOTE": "Get a Quote",
+      "RENTERS": {
+        "DESC": "Protect your personal belongings, furniture, and electronics from theft, fire, or severe Texas weather for just pennies a day.",
+        "TITLE": "Renters Insurance"
+      },
+      "SR22": {
+        "DESC": "Quick SR-22 filings and flexible coverage for drivers with a less-than-perfect record. Get back on the Texas roads safely.",
+        "TITLE": "SR-22 / Non-Standard"
       }
     },
     "EVERY_STORY": {
-      "TITLE_LINE1": "Every Story. Every Language.",
-      "TITLE_LINE2": "Every Texan Protected.",
+      "TITLE_LINE1": "Every Story.",
+      "TITLE_LINE2": "Every Language.",
       "PARA1": "At <a class='inline-link' href='/' target='_blank'>A-State Insurance</a>, we believe everyone deserves coverage that fits their life, budget, and unique needs. From families to business owners, first-time buyers to long-time policyholders, our team ensures you have access to reliable protection. We offer support in English, Spanish, and Hindi, with multilingual agents ready to guide you through every insurance option with expertise and care.",
-      "PARA2": "As one of Texas's top insurance agencies, we understand the needs of the Hispanic and Latino communities and provide tailored support that respects their culture and priorities. No matter your background, situation, or type of insurance (auto, home, commercial, life, health, or bonds), we make it simple to find coverage that works for you. Our mission is to protect what matters most while making the process easy for every Texan."
+      "PARA2": "As one of Texas's top insurance agencies, we understand the needs of the Hispanic and Latino communities and provide tailored support that respects their culture and priorities. No matter your background, situation, or type of insurance (auto, home, commercial, life, health, or bonds), we make it simple to find coverage that works for you. Our mission is to protect what matters most while making the process easy for every Texan.",
+      "TITLE_LINE3": "Every Texan Protected."
     },
     "WORKING_PROCESS": {
       "TITLE_LINE1": "Working With",
@@ -172,82 +194,128 @@
       }
     },
     "TESTIMONIALS": {
-      "TITLE_LINE1": "Hear From",
-      "TITLE_HIGHLIGHT": "Texans",
-      "TITLE_LINE2": "Like You",
+      "TITLE_LINE1": "What Texans Are Saying About",
+      "TITLE_HIGHLIGHT": "A-State Insurance",
+      "TITLE_LINE2": "",
+      "SATISFACTION": "100% Satisfied",
+      "PREVIOUS": "Previous testimonials",
+      "NEXT": "Next testimonials",
       "ITEMS": [
         {
           "NAME": "Valeria Esquivel",
-          "TEXT": "Honestly, I was dreading shopping for car insurance, but Marisol made it so easy. She didn't just dump a bunch of policies on me; she sat down and explained how each one protected my kids. It felt like getting advice from a neighbor who actually cares."
+          "CITY": "Houston",
+          "TEXT": "Honestly, I was dreading shopping for car insurance, but Marisol made it so easy. She didn't just dump a bunch of policies on me; she sat down and explained how each one protected my kids. It felt like getting advice from a neighbor who actually cares. Truly a stress-free experience for our family."
         },
         {
           "NAME": "Camila Castañeda",
-          "TEXT": "Buying our first home was a whirlwind, and the insurance part was honestly the most confusing. I called and spoke with Diego, who took the time to explain what 'replacement cost' actually meant for our little 1950s bungalow."
+          "CITY": "San Antonio",
+          "TEXT": "Buying our first home was a whirlwind, and the insurance part was honestly the most confusing. I called and spoke with Diego, who took the time to explain what 'replacement cost' actually meant for our little 1950s bungalow. It didn't feel like a sales pitch; it felt like a friend making sure our new home was safe. We walked away feeling so much more confident."
         },
         {
           "NAME": "Lucia Benavidez",
-          "TEXT": "I’ve always known I needed life insurance for my kids, but I kept putting it off because the paperwork was so intimidating. Speaking with Gabriel changed everything. Being able to go back and forth between English and Spanish made it so much easier."
+          "CITY": "Dallas",
+          "TEXT": "I’ve always known I needed life insurance for my kids, but I kept putting it off because the paperwork was so intimidating. Speaking with Gabriel changed everything. Being able to go back and forth between English and Spanish made it so much easier to understand the fine print. He was patient and never rushed me. Now, I can finally sleep better knowing my family is taken care of."
         },
         {
           "NAME": "Ricardo Garza",
-          "TEXT": "When we expanded our family restaurant, I knew our old coverage wouldn't cut it. Oscar sat down with me and looked at our specific risks. He didn't treat us like just another account; he treated us like a local business owner."
+          "CITY": "Austin",
+          "TEXT": "When we expanded our family restaurant, I knew our old coverage wouldn't cut it. I was worried about the cost of liability insurance, but Oscar sat down with me and reviewed our specific risks. He didn't treat us like just another account; he treated us like a local business owner. Now I can focus on the kitchen knowing our team and our property are actually protected."
         },
         {
           "NAME": "Ximena Montoya",
-          "TEXT": "With three kids, I can’t afford to guess when it comes to doctors. Lucia was a godsend—she sat with me and literally compared the plans side-by-side until I knew exactly what my co-pays would look like."
+          "CITY": "Fort Worth",
+          "TEXT": "With three kids, I can’t afford to guess when it comes to doctors. I walked in feeling totally overwhelmed by all the 'gold' and 'silver' plan talk. Lucia was a godsend—she sat with me and literally compared the plans side by side until I knew exactly what my co-pays would look like. It’s the first time I’ve actually understood my benefits. I feel like my family is finally in good hands."
         },
         {
           "NAME": "Travis Calhoun",
-          "TEXT": "I had a project start date looming and realized I didn't have the right bond to pull the permit. The team here didn't give me the runaround; they jumped right on it and got me squared away in time for my crew to start."
+          "CITY": "El Paso",
+          "TEXT": "I had a project start date looming and realized I didn't have the right bond to pull the permit. I was stressed, to say the least. The team here didn't give me the runaround; they jumped right on it, explained the indemnity part in plain English, and got me squared away in time for my crew to start. They’re a lifesaver for small contractors."
         },
         {
           "NAME": "Sofia De La Cruz",
-          "TEXT": "It’s hard to find an office where you don't feel like just another number. Gabriel really listened to our concerns about my parents and the kids. We left feeling like our whole family was finally seen and protected."
+          "CITY": "Arlington",
+          "TEXT": "It’s hard to find an office where you don't feel like just another number. When we walked in, we weren't just looking for a policy; we needed someone who understood our multi-generational household. Gabriel really listened to our concerns about my parents and the kids. He didn't rush us or use big words to confuse us. We left feeling like our whole family was finally seen and protected."
         },
         {
           "NAME": "Travis Calhoun",
-          "TEXT": "I was bracing myself for a total nightmare when my son got his license. But the folks at A-State were great. They showed me how 'good student' discounts worked. It felt more like a coaching session than a sales meeting."
+          "CITY": "Corpus Christi",
+          "TEXT": "I was bracing myself for a total nightmare when my son got his license—both the stress of him being on the road and the hit to our bank account. But the folks at A-State were great. They didn't just give me a number; they showed me how 'good student' discounts worked and talked to my son about responsible driving. It felt more like a coaching session than a sales meeting. I’m a lot less nervous now."
         },
         {
           "NAME": "Cassidy Thorne",
-          "TEXT": "I’d been renting in Austin for years and was terrified of the jump to owning. The team at A-State Insurance didn't just give me a quote; they sat down and showed me exactly what I needed for my new place."
+          "CITY": "Plano",
+          "TEXT": "I’d been renting in Austin for years and was terrified of the jump to owning. I didn't even realize how different the insurance needs were. The team at A-State Insurance didn't just give me a quote; they sat down and showed me exactly what my old renters policy covered versus what I needed for my new place. They made the transition feel like a milestone rather than a chore. I finally feel like I’m 'home'."
         },
         {
           "NAME": "Diego Hinojosa",
-          "TEXT": "I’ve been meaning to get life insurance since my youngest was born. Marisol was so different. She talked with me about my family’s goals. She explained things in a way that finally clicked."
+          "CITY": "Lubbock",
+          "TEXT": "I’ve been meaning to get life insurance since my youngest was born, but I always felt like I’d get 'tricked' by the fine print. Marisol was so different. She didn’t just talk at me; she talked with me about my family’s goals. She explained things in a way that finally clicked, and for the first time, I don’t have that 'what if' hanging over my head. My kids are my world, and now I know they’re set."
         }
       ]
     },
     "COVERDBANNER": {
-      "TITLE": "Get Covered in Texas Today",
-      "DESC": "At <a class='inline-link white' href='/' target='_blank'>A-State Insurance</a>, we make protecting your home, car, business, or family simple and worry-free. Our experts compare multiple carriers to find coverage that fits your life perfectly. With clear guidance, multilingual support, and personalized service, we give Texans confidence. Insurance that fits your life, backed by experts who care, peace of mind starts here with A-State Insurance. You can call, email, text, fill out the form, or visit us in person. Getting the right protection has never been easier.",
+      "TITLE": "Get Your Free Texas Insurance Quote Today",
+      "DESC": "Protecting what matters most is simple with A-State Insurance. Whether you need auto, home, life, health, commercial insurance coverage, or surety bonds, our Texas insurance team is ready to guide you every step of the way. You can call, email, text, fill out our online form, or visit us in person anytime. We make finding the right insurance coverage easy, clear, and customized for every Texan, helping you feel confident and fully secure every day. Reach out to us today!",
       "FORM": {
         "BUTTON": "Get a Quote"
       }
+    },
+    "CARRIERS": {
+      "SUBTITLE": "Access to more carriers = better rates for you",
+      "TITLE": "Trusted by 50+ Leading Insurance Carriers"
+    },
+    "SIMPLE_STEPS": {
+      "STEP1": {
+        "LABEL": "Step 01",
+        "TITLE": "Reach Out"
+      },
+      "STEP2": {
+        "LABEL": "Step 02",
+        "TITLE": "Get Expert Advice"
+      },
+      "STEP3": {
+        "LABEL": "Step 03",
+        "TITLE": "Pick Your Plan"
+      },
+      "STEP4": {
+        "LABEL": "Step 04",
+        "TITLE": "You're Covered"
+      },
+      "SUBTITLE": "4 Steps",
+      "TITLE": "Getting Covered Is Simple"
+    },
+    "TRUST_BADGES": {
+      "CARRIERS": "50+ Carriers",
+      "GOOGLE_RATING": "4.9 Google Rating",
+      "INDEPENDENT": "Independent (Not Captive)",
+      "LICENSED": "Licensed in Texas",
+      "SPANISH": "Hablamos Español"
     }
   },
   "INSURANCE_SERVICES": {
     "BANNER": {
-      "TITLE_LINE1": "Insurance Solutions for ",
-      "TITLE_LINE2": "Every Texan",
+      "TITLE_LINE1": "Texas Insurance ",
+      "TITLE_LINE2": "Services — Coverage ",
+      "TITLE_LINE3": "for Every Texan ",
       "CHIPS": {
         "AUTO": "Auto",
         "HOMEOWNERS": "Homeowners",
         "COMMERCIAL": "Commercial",
         "LIFE": "Life",
         "HEALTH": "Health",
-        "SURETY": "Surety Bonds"
+        "SURETY": "Other"
       },
       "FORM": {
         "FULL_NAME": "Full Name",
         "PHONE": "Phone Number",
-        "BUTTON": "Get a Quote"
+        "BUTTON": "Get Quote",
+        "LOADING": "Loading..."
       }
     },
     "WHY_CHOOSE": {
-      "HEADING": "Our Insurance Services",
+      "HEADING": "Our Texas <span class='text-accent'>Insurance</span> Services",
       "HEADING_2": "Auto Insurance",
-      "DESCRIPTION": "Driving every day? Road trips? Late-night food runs? A-State Insurance has your back. We provide reliable auto insurance services across Texas, offering drivers strong protection for accidents, theft, liability, and vehicle damage. We work with trusted carriers to find coverage that fits you. Our team makes the process simple with fast quotes, clear policies, and local support you can count on. With A-State Insurance, you get dependable Texas auto insurance and service that puts you first.",
+      "DESCRIPTION": "Driving every day? Road trips? Late-night food runs? A-State Insurance has your back. We provide reliable auto insurance services across Texas, offering drivers strong protection for accidents, theft, liability, and vehicle damage. We work with trusted carriers to find coverage that fits you. Our team makes the process simple with fast quotes, clear policies, and local support you can count on. With us, you get dependable auto insurance and service that puts you first.",
       "CARD1": {
         "TITLE": "Car Insurance",
         "DESC": "Get professional car insurance that covers crashes, theft, liability, and glass damage, with easy deductibles and proof when you need it."
@@ -262,11 +330,11 @@
       },
       "CARD4": {
         "TITLE": "RV & Motorhome Insurance",
-        "DESC": "Specialized protection for vintage vehicles with agreed value, restoration coverage, and pricing suited for limited-use driving."
+        "DESC": "Protect your motorhome away from home. We cover weather, belongings, and roadside help so you can explore with total peace of mind."
       },
       "CARD5": {
         "TITLE": "Classic Car Insurance",
-        "DESC": "Get expert advice online or visit a familiar face at our local TX office—neighbors who know your community's needs."
+        "DESC": "Specialized protection for vintage vehicles with agreed value, restoration coverage, and pricing suited for limited-use driving."
       },
       "CARD6": {
         "TITLE": "Commercial Auto Insurance",
@@ -293,51 +361,51 @@
         "DESC": "Get proper rideshare insurance coverage to ensure you are fully protected and financially secure while driving for companies like Uber or Lyft."
       },
       "HOMEOWNERS": {
-        "HEADING": "Homeowners Insurance",
-        "DESCRIPTION": "With homeowners' insurance, A-State Insurance gives you strong protection for your home, your belongings, and your budget. Get the best insurance services for common risks like fire, storms, theft, and vandalism, so unexpected damage doesn’t turn into a major expense. Your personal items, including furniture, appliances, and electronics, are also covered, so you’re not left replacing them on your own. Choose options at a price that makes sense, and know your home is backed by A-State Insurance.",
+        "HEADING": "Home & Property Insurance",
+        "DESCRIPTION": "With home and property insurance, A-State Insurance gives you strong protection for your home, your belongings, and your budget. Get the best insurance services for common risks like fire, storms, theft, and vandalism, so unexpected damage doesn’t turn into a major expense. Your personal items, including furniture, appliances, and electronics, are also covered, so you’re not left replacing them on your own. Choose options at a price that makes sense, and know your home is backed by us.",
         "CARD1": {
-          "TITLE": "Commercial Property Insurance",
-          "DESC": "Safeguard your building, equipment, and inventory from fire, storms, and theft with this insurance, keeping your business financially secure."
+          "TITLE": "Homeowners Insurance",
+          "DESC": "Protect your home against fires, theft, and severe weather. Cover your property and personal belongings with flexible policies and true peace of mind."
         },
         "CARD2": {
-          "TITLE": "Landlord Insurance",
-          "DESC": "Protect your investment and your income. We cover tenant damage, legal claims, and lost rent so you can grow your Texas portfolio with confidence."
+          "TITLE": "Renters Insurance",
+          "DESC": "Protect your personal belongings from theft, fire, and other damage, and get liability coverage and support for temporary living expenses."
         },
         "CARD3": {
           "TITLE": "Condo Insurance",
-          "DESC": "Specialized coverage for condo owners that protects your unit, personal property, and liability while complementing your HOA's master policy."
+          "DESC": "Get condo insurance that protects your unit, personal property, and liability, giving you peace of mind in the event of unexpected repairs or losses."
         },
         "CARD4": {
-          "TITLE": "Earthquake Insurance",
-          "DESC": "Get premium coverage with this insurance for earthquake-caused structural damage, debris removal, and rebuilding costs after seismic activity."
+          "TITLE": "Manufactured Home / Mobile Home Insurance",
+          "DESC": "Protect your mobile or manufactured home with this insurance for structure, belongings, and liability against weather damage and common risks."
         },
         "CARD5": {
-          "TITLE": "Manufactured Home / Mobile Home Insurance",
-          "DESC": "Tailored insurance coverage for manufactured and mobile homes that protects against fire, theft, weather damage, and liability."
+          "TITLE": "Landlord Insurance",
+          "DESC": "Protect your investment and your income. We cover tenant damage, legal claims, and lost rent so you can grow your portfolio with confidence."
         },
         "CARD6": {
-          "TITLE": "Renters Insurance",
-          "DESC": "Coverage designed for rental property owners that protects against property damage, loss of rental income, and liability claims."
+          "TITLE": "Flood Insurance",
+          "DESC": "Covers your water damage from heavy rain, storms, and rising water. This insurance lets you repair your home and replace damaged items."
         },
         "CARD7": {
-          "TITLE": "Flood Insurance",
-          "DESC": "Specialized flood insurance to protect your home and belongings from water damage caused by flooding events."
+          "TITLE": "Earthquake Insurance",
+          "DESC": "Get premium coverage with this insurance for earthquake-caused structural damage, debris removal, and rebuilding costs after seismic activity."
         }
       },
       "COMMERCIAL": {
         "HEADING": "Commercial Insurance",
         "DESCRIPTION": "With Commercial insurance, A-State Insurance helps protect businesses against financial losses from property damage, lawsuits, employee injuries, vehicle accidents, and unexpected interruptions. It supports daily operations by covering buildings, equipment, inventory, and legal responsibilities. With flexible plans for different industries and business sizes, we help owners manage risks and control expenses. Our insurance plans provide strong protection, enabling companies to grow with confidence.",
         "CARD1": {
-          "TITLE": "Professional Liability (E&O) Insurance",
-          "DESC": "Protects against claims of mistakes, missed deadlines, and professional errors that could lead to lawsuits or financial losses."
-        },
-        "CARD2": {
           "TITLE": "General Liability Insurance",
           "DESC": "Covers third-party injuries, property damage, and legal costs, helping businesses of all sizes to avoid costly claims and court expenses."
         },
+        "CARD2": {
+          "TITLE": "Business Owner’s Policy (BOP)",
+          "DESC": "Combines property and liability coverage into a single affordable package to simplify protection, reduce costs, and better support business needs."
+        },
         "CARD3": {
           "TITLE": "Workers’ Compensation Insurance",
-          "DESC": "Provides medical benefits and wage support for employees injured at work while protecting employers from legal disputes or lawsuits."
+          "DESC": "Provides medical benefits and wage support for employees injured on the job, while protecting employers from legal disputes or lawsuits."
         },
         "CARD4": {
           "TITLE": "Commercial Property Insurance",
@@ -348,8 +416,8 @@
           "DESC": "Covers company-owned vehicles against accidents, liability claims, repairs, and medical expenses, ensuring your drivers and deliveries stay protected."
         },
         "CARD6": {
-          "TITLE": "Business Owner’s Policy (BOP)",
-          "DESC": "Combines property and liability coverage into one affordable package to simplify protection, reduce costs, and support the needs of businesses."
+          "TITLE": "Professional Liability (E&O) Insurance",
+          "DESC": "Protects against claims of mistakes, missed deadlines, and professional errors that could lead to lawsuits or financial losses."
         },
         "CARD7": {
           "TITLE": "Employment Practices Liability (EPLI) Insurance",
@@ -366,6 +434,14 @@
         "CARD10": {
           "TITLE": "Directors & Officers (D&O) Liability Insurance",
           "DESC": "Protects company leaders from personal financial loss caused by management decisions, regulatory investigations, or shareholder lawsuits."
+        },
+        "CARD11": {
+          "TITLE": "Inland Marine Insurance",
+          "DESC": "Protect your business tools, equipment, and cargo while in transit or stored off-site. Crucial coverage for contractors and moving goods."
+        },
+        "CARD12": {
+          "TITLE": "Commercial Umbrella Insurance",
+          "DESC": "Extend your liability limits beyond standard policies. Protect your business assets against devastating lawsuits and catastrophic claims."
         }
       },
       "LIFE": {
@@ -389,23 +465,23 @@
         },
         "CARD5": {
           "TITLE": "Variable Life Insurance",
-          "DESC": "Get affordable life coverage for employees, helping businesses support staff while providing financial security for their families."
+          "DESC": "Combine permanent protection with investment options. This policy allows you to build cash value through market accounts to meet long-term goals."
         },
         "CARD6": {
           "TITLE": "Group Life Insurance",
-          "DESC": "Offers affordable life coverage for employees, helping businesses support staff while providing financial security for their families."
+          "DESC": "Provide affordable coverage for your employees. This benefit helps Texas businesses support their staff and ensures financial security for families."
         }
       },
       "HEALTH": {
         "HEADING": "Health Insurance",
-        "DESCRIPTION": "At <a class='inline-link' href='/' target='_blank'>A-State Insurance</a>, life insurance helps you secure dependable protection for your loved ones with plans matched to your needs and budget. In the event of a loss, coverage can help replace income, pay off debts, handle mortgagWith health coverage from A-State Insurance, you get plans built to keep care affordable and stress low. Our teams of experts help you choose coverage that fits your budget and medical needs, from doctor visits and prescriptions to hospital care, preventive services, and emergencies. Whether you need a plan for yourself, your family, or your employees, we compare options and guide you to the right benefits. Get a clear quote, simple support, and coverage you can count on.",
+        "DESCRIPTION": "With health coverage from <a class='inline-link' href='/' target='_blank'>A-State Insurance</a>, you get plans built to keep care affordable and stress low. Our teams of experts help you choose coverage that fits your budget and medical needs, from doctor visits and prescriptions to hospital care, preventive services, and emergencies. Whether you need a plan for yourself, your family, or your employees, we compare options and guide you to the right benefits. Get a clear quote, simple support, and coverage you can count on.",
         "CARD1": {
           "TITLE": "Individual Health Insurance",
           "DESC": "Provides personal medical coverage for doctor visits, prescriptions, preventive care, and emergency services, offering financial support and access."
         },
         "CARD2": {
           "TITLE": "Family Health Insurance",
-          "DESC": "Covers third-party injuries, property damage, and legal costs, helping businesses of all sizes to avoid costly claims and court expenses."
+          "DESC": "Covers parents and children under one plan, helping manage medical expenses while ensuring every family member receives consistent care."
         },
         "CARD3": {
           "TITLE": "Small Business Health Insurance",
@@ -450,19 +526,27 @@
       },
       "CARD3": {
         "TITLE": "Bid Bonds",
-        "DESC": "Ensure contractors honor submitted bids and sign contracts when awarded, protecting project owners from unreliable proposals."
+        "DESC": "Ensure contractors honor their submitted bids and sign contracts upon award to protect project owners from unreliable proposals."
       },
       "CARD4": {
         "TITLE": "Notary Bonds",
         "DESC": "Protect the public from errors, misconduct, or negligence by commissioned notaries, ensuring ethical and lawful document processing."
+      },
+      "CARD5": {
+        "TITLE": "License & Permit Bonds",
+        "DESC": "Required by government agencies to legally operate your business. They guarantee you follow local regulations and protect your consumers."
+      },
+      "CARD6": {
+        "TITLE": "Contract Bonds",
+        "DESC": "Guarantee that a construction project gets completed according to contract terms and that all subcontractors, laborers, and suppliers are paid."
       }
     },
     "ADDITIONAL": {
-      "HEADING": "Additional Insurance",
-      "DESCRIPTION": "Extra protection fills important gaps that standard policies may not cover. With A-State Insurance's Additional insurance, we help safeguard valuable assets, personal responsibilities, and unique risks. These specialized solutions support long-term security, reduce financial exposure, and strengthen overall protection, making life easy. From personal interests to legal requirements, our comprehensive coverage and expert knowledge provide peace of mind across personal and business areas.",
+      "HEADING": "Additional Coverage",
+      "DESCRIPTION": "Extra protection fills important gaps that standard policies may not cover. With A-State Insurance’s additional insurance, we help safeguard valuable assets, personal responsibilities, and unique risks. These specialized solutions support long-term security, reduce financial exposure, and strengthen overall protection, making life easy. From personal interests to legal requirements, our comprehensive coverage and expert knowledge provide peace of mind across personal and business areas.",
       "CARD1": {
         "TITLE": "Pet Insurance",
-        "DESC": "Guarantee project completion and timely payments to suppliers and subcontractors, protecting owners from financial loss and construction delays."
+        "DESC": "Helps cover veterinary visits, surgeries, medications, and emergency care, ensuring pets receive quality treatment without a heavy financial burden."
       },
       "CARD2": {
         "TITLE": "Title Insurance",
@@ -471,93 +555,242 @@
       "CARD3": {
         "TITLE": "Title Transfer Insurance",
         "DESC": "Assists with legal ownership changes, documentation, and registration, ensuring smooth and accurate transfer of vehicle or property titles."
-      }
-    },
-    "WHY_TEXANS_CHOOSE": {
-      "HEADING": "Why Texans Choose",
-      "HEADING2": "A-State Insurance?",
-      "CARD1": {
-        "TITLE": "Texas Licensed Brokers",
-        "DESC": "Work with fully licensed professionals who understand state regulations and provide reliable guidance for your coverage needs."
-      },
-      "CARD2": {
-        "TITLE": "Hispanic & Latino Friendly",
-        "DESC": "Enjoy respectful, culturally aware service designed to make every client feel comfortable, valued, and clearly understood."
-      },
-      "CARD3": {
-        "TITLE": "20+ Years Serving Texans",
-        "DESC": "Benefit from decades of experience helping families and businesses protect what matters most across Texas communities."
       },
       "CARD4": {
-        "TITLE": "Custom Coverage Plans",
-        "DESC": "Get personalized insurance solutions built around your budget, lifestyle, and protection goals without unnecessary extras."
+        "TITLE": "Umbrella Insurance",
+        "DESC": "Get extra liability protection beyond your auto and home policies. Safeguard your savings and assets from costly, unexpected lawsuits."
       },
       "CARD5": {
-        "TITLE": "Online & Local",
-        "DESC": "Connect with us online or visit in person for convenient service that fits your schedule and location."
+        "TITLE": "Identity Theft Protection",
+        "DESC": "Monitor your credit, detect fraud early, and get expert help to restore your good name if your personal information is stolen."
+      }
+    },
+    "TEXAS_STRATEGY": {
+      "HEADING": "Why Texas Requires Its Own Insurance Strategy",
+      "INTRO": "Texas is a great place to live and do business, but its unique landscape, weather, and legal environment require a highly specialized approach to insurance. A generic, one-size-fits-all policy simply won’t cut it here. To secure the best Texas insurance services, you need a strategy tailored specifically to the Lone Star State's distinct risks.",
+      "LIST_INTRO": "From the Gulf Coast to the panhandle, Texas faces unparalleled exposures:",
+      "ITEM1": {
+        "LABEL": "Extreme Weather:",
+        "DESC": "Standard policies often leave massive gaps when it comes to Gulf Coast hurricanes, flooding, and the notorious hail belt damage."
       },
-      "CARD6": {
-        "TITLE": "Multilingual Agents",
-        "DESC": "Communicate easily with knowledgeable agents who speak English, Spanish, and Hindi for clear, stress-free support."
+      "ITEM2": {
+        "LABEL": "Unique Legal Frameworks:",
+        "DESC": "Texas is the only state that allows employers to be \"non-subscribers\" to workers' compensation, requiring alternative commercial strategies."
+      },
+      "ITEM3": {
+        "LABEL": "Roadway Risks:",
+        "DESC": "With a high rate of uninsured motorists and constant cross-border travel requiring specific Mexican car coverage, standard auto limits fall short."
       }
     },
     "COVERDBANNER": {
-      "TITLE": "Protect What’s Yours in Texas",
-      "DESC": "At <a class='inline-link white' href='/' target='_blank'>A-State Insurance</a>, we make protecting your home, car, business, or family simple and worry-free. Our experts compare multiple carriers to find coverage that fits your life perfectly. With clear guidance, multilingual support, and personalized seProtecting your future starts with one simple step. Reach out today by calling, emailing, texting, filling out our online form, or visiting our office in person. Our team is ready to understand your needs and guide you toward the right coverage. Choose from auto, homeowners, commercial, life, health, or surety bonds, and get a plan that fits your lifestyle and budget. ",
-      "DESC_1": "Share your full name and phone number, request a quote, and let A-State Insurance handle the rest with fast, reliable service you can trust.",
+      "TITLE": "Find the Right Texas Insurance Coverage Today",
+      "DESC": "Protecting your future starts with one simple step. <a class='inline-link red' href='/contact-us' target='_blank'>Reach out</a> today by calling, emailing, texting, filling out our online form, or visiting our office in person. Our team is ready to understand your needs and guide you toward the right coverage. Choose from auto, homeowners, commercial, life, health, or surety bonds, and get a plan that fits your lifestyle and budget.",
+      "DESC_1": "Share your full name and phone number, request a quote, and let <a class='inline-link red' href='/' target='_blank'>A-State Insurance</a> handle the rest with fast, reliable service you can trust.",
       "FORM": {
-        "BUTTON": "Get a Quote"
+        "BUTTON": "Get Quote"
       }
     }
   },
   "ABOUT": {
     "HERO": {
-      "HEADING": "Protecting Texas Families and Businesses Since 2018"
-    },
-    "TRUSTED_PARTNER": {
-      "TEXT1": "Your",
-      "HIGHLIGHT": "Trusted Insurance",
-      "TEXT2": "Partner."
-    },
-    "WHY_TEXANS_CHOOSE": {
-      "HEADING": "Why Texans Choose",
-      "HEADING2": "A-State Insurance?",
-      "CARD1": {
-        "TITLE": "Local Expertise",
-        "DESC": "Our deep understanding of Texas communities and neighborhoods helps us reliably recommend insurance options that match local risks, regulations, and lifestyle needs for every client."
-      },
-      "CARD2": {
-        "TITLE": "Personalized Service",
-        "DESC": "We tailor coverage plans to your life, business, and family priorities, ensuring you pay only for what you need while staying fully protected and supported."
-      },
-      "CARD3": {
-        "TITLE": "Experienced Team",
-        "DESC": "Our team brings years of hands-on insurance knowledge, offering practical advice, clear guidance, and trusted expertise so clients feel confident in every coverage decision they make."
-      },
-      "CARD4": {
-        "TITLE": "Trusted Reputation",
-        "DESC": "Texans rely on us for honesty, integrity, and dependable service; our strong reputation is built on transparent processes, consistent support, and real results across all coverage types."
-      },
-      "CARD5": {
-        "TITLE": "Fast, Responsive Support",
-        "DESC": "From claims to general questions, our team responds quickly and efficiently, so you never have to wait for answers when your coverage, protection, or peace of mind matters most."
+      "TITLE_LINE1": "Protecting Texas",
+      "TITLE_LINE2": "Families and Businesses ",
+      "TITLE_LINE3": "Since 2018 ",
+      "BADGES": {
+        "LICENSED": "Texas Licensed",
+        "INDEPENDENT": "Independent Agency",
+        "SPANISH": "Hablamos Español",
+        "CARRIERS": "50+ Carriers"
       }
     },
+    "TRUSTED_PARTNER": {
+      "TEXT1": "Your Trusted Texas Insurance Partner —",
+      "HIGHLIGHT": "Our Story"
+    },
     "TRUSTED_INSURANCE": {
-      "HEADING": "Why Texans Choose",
-      "HEADING2": "A-State Insurance?",
       "CARD1": {
         "TITLE": "Company History and Establishment Year",
         "DESC": "Founded in 2018, A-State Insurance began with a simple but impactful mission: to make insurance clear, accessible, and reliable for all Texans. From the start, we partnered with multiple carriers to provide personalized coverage for homes, vehicles, businesses, health, life, and surety bonds. Over the years, we’ve grown steadily while remaining fully committed to exceptional service, multilingual support, and an understanding of the unique needs of every individual and community we proudly serve across Texas."
       },
       "CARD2": {
         "TITLE": "Core Mission & Values",
-        "DESC": "At <a class='inline-link' href='/' target='_blank'>A-State Insurance</a>, our mission is to provide Texans with insurance solutions built on trust, reliability, and clarity. We value strong relationships, personalized guidance, and serving every community with respect and care. By combining professional expertise with a commitment to honesty and support, we ensure clients feel confident, protected, and understood. Our focus is on helping families, businesses, and individuals secure the coverage they need while keeping the process simple and dependable."
+        "DESC": "At A-State Insurance, our mission is to provide Texans with insurance solutions built on trust, reliability, and clarity. We value strong relationships, personalized guidance, and serving every community with respect and care. By combining professional expertise with a commitment to honesty and support, we ensure clients feel confident, protected, and understood. Our focus is on helping families, businesses, and individuals secure the coverage they need while keeping the process simple and dependable."
       },
       "CARD3": {
         "TITLE": "Types of Clients Served",
         "DESC": "A-State Insurance proudly serves a wide range of clients, including families, automobile owners, homeowners, and businesses of all sizes. We focus on building trust and providing reliable coverage tailored to each client’s unique needs. With a commitment to community and personalized service, our multilingual team ensures everyone feels supported, understood, and confident. From protecting homes and vehicles to safeguarding businesses and lives, we help Texans secure what matters most with care and integrity."
+      },
+      "CARD4": {
+        "TITLE": "Why the Agency was Founded",
+        "DESC": "A-State Insurance was founded to bridge a critical gap in the Texas insurance market: the need for deeply localized, accessible, and culturally inclusive protection. Recognizing that standard, corporate policies often fail to address unique Texas risks—like Gulf Coast storms, complex non-subscriber regulations, and cross-border travel—our agency was established to build tailored coverage strategies rather than offering generic solutions."
+      },
+      "CARD5": {
+        "TITLE": "The Independent Agency Difference",
+        "DESC": "Traditional \"captive\" agencies only sell policies from a single insurance company. If those rates increase or coverage changes, your options are limited. As an independent agency, we work directly for <strong>you</strong>, not a corporate insurance giant. We leverage a vast network of top-rated carriers to compare multiple quotes, securing you the strongest coverage at the most competitive price."
+      },
+      "CARD6": {
+        "TITLE": "Our Texas-First Identity",
+        "DESC": "At A-State Insurance, our roots run deep in the Lone Star State. We don't just happen to do business here; we built our entire agency specifically around Texas risks and Texas communities. We live here, work here, and understand firsthand that navigating the insurance landscape in Texas requires a completely different mindset than anywhere else in the country. We aren't a generic corporate brand adjusting to Texas; we are a Texas-built agency designed to protect your home, your family, and your business from the ground up."
       }
+    },
+    "BY_THE_NUMBERS": {
+      "HEADING_HIGHLIGHT": "A-State Insurance",
+      "HEADING": "by the Numbers",
+      "COL_METRIC": "Metric",
+      "COL_DETAILS": "Details",
+      "ROW1": {
+        "LABEL": "Year Founded",
+        "VALUE": "2018"
+      },
+      "ROW2": {
+        "LABEL": "Number of Carriers",
+        "VALUE": "50+ Top-Rated National &amp; Regional Carriers (including specialized Texas surplus lines)"
+      },
+      "ROW3": {
+        "LABEL": "Clients Served / Policies Written",
+        "VALUE": "Over 5,000+ Texans Protected"
+      },
+      "ROW4": {
+        "LABEL": "Google Rating",
+        "VALUE": "★ 4.9 — 500+ Reviews"
+      },
+      "ROW5": {
+        "LABEL": "Licensed Agents",
+        "VALUE": "7 Dedicated Risk Specialists"
+      },
+      "ROW6": {
+        "LABEL": "Texas Cities / Areas Served",
+        "VALUE": "Houston, San Antonio, Dallas, Austin, and surrounding major metropolitan areas statewide"
+      },
+      "ROW7": {
+        "LABEL": "Languages Served",
+        "VALUE": "English, Spanish, and Hindi"
+      }
+    },
+    "MISSION_VISION": {
+      "HEADING": "Our Mission, Vision &amp; Values",
+      "MISSION": {
+        "TITLE": "Mission Statement",
+        "TEXT": "Our mission is to provide every Texas community with accessible, culturally inclusive, and transparent insurance solutions through a wide network of independent choices. We protect what matters most to our clients by delivering expert guidance in their preferred language, ensuring no Texan is left underserved."
+      },
+      "VISION": {
+        "TITLE": "Vision Statement",
+        "TEXT": "To become the premier independent insurance brokerage in Texas, recognized for bridging cultural and linguistic gaps in the industry. As A-State Insurance grows, we aim to expand our digital and local footprint across the state, setting the benchmark for hyper-local expertise, community trust, and unbiased protection."
+      },
+      "VALUES": {
+        "TITLE": "Core Values",
+        "CARD1": {
+          "TITLE": "Cultural Inclusivity",
+          "DESC": "We believe that clear protection starts with being truly understood. By offering dedicated service in English, Spanish, and Hindi, we actively dismantle communication barriers and ensure that our diverse Texas communities can navigate their coverage with absolute confidence and dignity."
+        },
+        "CARD2": {
+          "TITLE": "Unbiased Choice",
+          "DESC": "As an independent broker, our loyalty belongs to our clients, not a single corporate carrier. We leverage our network of over 50 top-rated insurers to deliver objective, customized solutions that provide the best possible value for your unique risks."
+        },
+        "CARD3": {
+          "TITLE": "Texas-Rooted Integrity",
+          "DESC": "We operate with the hard-working, honest spirit of the Lone Star State. To us, integrity means being transparent about policy limitations, recommending only what you truly need, and standing firmly by your side when a storm hits or a claim arises."
+        },
+        "CARD4": {
+          "TITLE": "Proactive Protection",
+          "DESC": "We don’t just react to losses; we help you anticipate them. Our agents take a consultative approach, analyzing local Texas risks—from Gulf Coast weather to complex state commercial regulations—to build resilient coverage before the unexpected happens."
+        },
+        "CARD5": {
+          "TITLE": "Community Stewardship",
+          "DESC": "We view ourselves as neighbors first and insurance agents second. We are deeply committed to investing back into the local neighborhoods we serve, establishing long-term relationships built on reliability, mutual respect, and social responsibility."
+        }
+      }
+    },
+    "SOLUTIONS": {
+      "HEADING_HIGHLIGHT": "Insurance",
+      "HEADING": "Solutions We Offer",
+      "INTRO": "A-State Insurance offers customized insurance coverage for homes, vehicles, health, life, businesses, and bonds. With multilingual support, multiple carrier options, and personalized guidance, we make choosing the right plan simple, reliable, and stress-free for everyone. Trust us to protect what matters most to you and your family.",
+      "SEE_ALL": "See All Services",
+      "AUTO": {
+        "TITLE": "Auto Insurance",
+        "DESC": "Protect your car, family, and finances with personalized auto insurance. The A-State Insurance team guides you through coverage options so you get the right protection for your needs."
+      },
+      "HOME": {
+        "TITLE": "Homeowners Insurance",
+        "DESC": "Safeguard your home and belongings with customized policies. We provide clear guidance and support to ensure your insurance coverage protects what matters most to you and your family."
+      },
+      "COMMERCIAL": {
+        "TITLE": "Commercial Insurance",
+        "DESC": "Keep your business secure with tailored commercial coverage. Our experts help you navigate liability, property, and operations coverage options, ensuring reliable protection for every business type."
+      },
+      "LIFE": {
+        "TITLE": "Life Insurance",
+        "DESC": "Plan for your family’s future with coverage that fits your goals. Our team guides you through customized life insurance choices so you can feel confident and your loved ones feel protected."
+      },
+      "HEALTH": {
+        "TITLE": "Health Insurance",
+        "DESC": "Find health coverage that works for you and your family. We offer reliable health insurance to compare plans, understand benefits, and choose options that meet your health needs and budget."
+      },
+      "SURETY": {
+        "TITLE": "Surety Bonds",
+        "DESC": "Obtain surety bonds with ease and confidence. Our experts provide step-by-step guidance to help you understand requirements and secure the right bonds for contracts or legal obligations."
+      }
+    },
+    "TESTIMONIALS": {
+      "TITLE_LINE1": "What Our",
+      "TITLE_HIGHLIGHT": "Texas Clients Say",
+      "ITEMS": [
+        {
+          "NAME": "Valeria Esquivel",
+          "CITY": "Houston",
+          "TEXT": "Honestly, I was dreading shopping for car insurance, but Marisol made it so easy. She didn't just dump a bunch of policies on me; she sat down and explained how each one protected my kids. It felt like getting advice from a neighbor who actually cares. Truly a stress-free experience for our family."
+        },
+        {
+          "NAME": "Camila Castañeda",
+          "CITY": "San Antonio",
+          "TEXT": "Buying our first home was a whirlwind, and the insurance part was honestly the most confusing. I called and spoke with Diego, who took the time to explain what 'replacement cost' actually meant for our little 1950s bungalow. It didn't feel like a sales pitch; it felt like a friend making sure our new home was safe. We walked away feeling so much more confident."
+        },
+        {
+          "NAME": "Lucia Benavidez",
+          "CITY": "Dallas",
+          "TEXT": "I’ve always known I needed life insurance for my kids, but I kept putting it off because the paperwork was so intimidating. Speaking with Gabriel changed everything. Being able to go back and forth between English and Spanish made it so much easier to understand the fine print. He was patient and never rushed me. Now, I can finally sleep better knowing my family is taken care of."
+        },
+        {
+          "NAME": "Ricardo Garza",
+          "CITY": "Austin",
+          "TEXT": "When we expanded our family restaurant, I knew our old coverage wouldn't cut it. I was worried about the cost of liability insurance, but Oscar sat down with me and reviewed our specific risks. He didn't treat us like just another account; he treated us like a local business owner. Now I can focus on the kitchen knowing our team and our property are actually protected."
+        },
+        {
+          "NAME": "Ximena Montoya",
+          "CITY": "Fort Worth",
+          "TEXT": "With three kids, I can’t afford to guess when it comes to doctors. I walked in feeling totally overwhelmed by all the 'gold' and 'silver' plan talk. Lucia was a godsend—she sat with me and literally compared the plans side by side until I knew exactly what my co-pays would look like. It’s the first time I’ve actually understood my benefits. I feel like my family is finally in good hands."
+        },
+        {
+          "NAME": "Travis Calhoun",
+          "CITY": "El Paso",
+          "TEXT": "I had a project start date looming and realized I didn't have the right bond to pull the permit. I was stressed, to say the least. The team here didn't give me the runaround; they jumped right on it, explained the indemnity part in plain English, and got me squared away in time for my crew to start. They’re a lifesaver for small contractors."
+        },
+        {
+          "NAME": "Sofia De La Cruz",
+          "CITY": "Arlington",
+          "TEXT": "It’s hard to find an office where you don't feel like just another number. When we walked in, we weren't just looking for a policy; we needed someone who understood our multi-generational household. Gabriel really listened to our concerns about my parents and the kids. He didn't rush us or use big words to confuse us. We left feeling like our whole family was finally seen and protected."
+        },
+        {
+          "NAME": "Travis Calhoun",
+          "CITY": "Corpus Christi",
+          "TEXT": "I was bracing myself for a total nightmare when my son got his license—both the stress of him being on the road and the hit to our bank account. But the folks at A-State were great. They didn't just give me a number; they showed me how 'good student' discounts worked and talked to my son about responsible driving. It felt more like a coaching session than a sales meeting. I’m a lot less nervous now."
+        },
+        {
+          "NAME": "Cassidy Thorne",
+          "CITY": "Plano",
+          "TEXT": "I’d been renting in Austin for years and was terrified of the jump to owning. I didn't even realize how different the insurance needs were. The team at A-State Insurance didn't just give me a quote; they sat down and showed me exactly what my old renters policy covered versus what I needed for my new place. They made the transition feel like a milestone rather than a chore. I finally feel like I’m 'home'."
+        },
+        {
+          "NAME": "Diego Hinojosa",
+          "CITY": "Lubbock",
+          "TEXT": "I’ve been meaning to get life insurance since my youngest was born, but I always felt like I’d get 'tricked' by the fine print. Marisol was so different. She didn’t just talk at me; she talked with me about my family’s goals. She explained things in a way that finally clicked, and for the first time, I don’t have that 'what if' hanging over my head. My kids are my world, and now I know they’re set."
+        }
+      ]
+    },
+    "GET_QUOTE": {
+      "TITLE": "Reliable Coverage. Expert Guidance. Peace of Mind.",
+      "DESC": "At <a class='inline-link red' href='/'>A-State Insurance</a>, we make protecting your home, car, business, or family simple and worry-free. Our experts compare multiple carriers to find coverage that fits your life perfectly. With clear guidance, multilingual support, and personalized service, we give Texans confidence. Insurance that fits your life, backed by experts who care, peace of mind starts here with A-State Insurance. You can call, email, text, fill out the form, or visit us in person. Getting the right protection has never been easier.",
+      "BUTTON": "Get Quote"
     }
   },
   "CONTACT": {
