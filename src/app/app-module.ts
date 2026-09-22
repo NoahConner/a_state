@@ -60,6 +60,19 @@ import { HomeownersMesquiteTx } from './pages/home-insurance/mesquite-tx/mesquit
 import { HomeownersMcallenTx } from './pages/home-insurance/mcallen-tx/mcallen-tx';
 import { HomeownersWacoTx } from './pages/home-insurance/waco-tx/waco-tx';
 import { HomeownersMidlandTx } from './pages/home-insurance/midland-tx/midland-tx';
+import { HomeownersCarrolltonTx } from './pages/home-insurance/carrollton-tx/carrollton-tx';
+import { HomeownersLewisvilleTx } from './pages/home-insurance/lewisville-tx/lewisville-tx';
+import { HomeownersAbileneTx } from './pages/home-insurance/abilene-tx/abilene-tx';
+import { HomeownersRoundRockTx } from './pages/home-insurance/round-rock-tx/round-rock-tx';
+import { HomeownersPearlandTx } from './pages/home-insurance/pearland-tx/pearland-tx';
+import { HomeownersCollegeStationTx } from './pages/home-insurance/college-station-tx/college-station-tx';
+import { HomeownersTheWoodlandsTx } from './pages/home-insurance/the-woodlands-tx/the-woodlands-tx';
+import { HomeownersRichardsonTx } from './pages/home-insurance/richardson-tx/richardson-tx';
+import { HomeownersLeagueCityTx } from './pages/home-insurance/league-city-tx/league-city-tx';
+import { HomeownersOdessaTx } from './pages/home-insurance/odessa-tx/odessa-tx';
+import { HomeownersBeaumontTx } from './pages/home-insurance/beaumont-tx/beaumont-tx';
+import { HomeownersAllenTx } from './pages/home-insurance/allen-tx/allen-tx';
+import { HomeownersSugarLandTx } from './pages/home-insurance/sugar-land-tx/sugar-land-tx';
 import { CommercialInsurance } from './pages/commercial-insurance/commercial-insurance';
 import { LifeInsurance } from './pages/life-insurance/life-insurance';
 import { HealthInsurance } from './pages/health-insurance/health-insurance';
@@ -237,6 +250,19 @@ export function initializeTranslations(
     HomeownersMcallenTx,
     HomeownersWacoTx,
     HomeownersMidlandTx,
+    HomeownersCarrolltonTx,
+    HomeownersLewisvilleTx,
+    HomeownersAbileneTx,
+    HomeownersRoundRockTx,
+    HomeownersPearlandTx,
+    HomeownersCollegeStationTx,
+    HomeownersTheWoodlandsTx,
+    HomeownersRichardsonTx,
+    HomeownersLeagueCityTx,
+    HomeownersOdessaTx,
+    HomeownersBeaumontTx,
+    HomeownersAllenTx,
+    HomeownersSugarLandTx,
     CommercialInsurance,
     LifeInsurance,
     HealthInsurance,

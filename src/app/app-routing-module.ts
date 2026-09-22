@@ -45,6 +45,19 @@ import { HomeownersMesquiteTx } from './pages/home-insurance/mesquite-tx/mesquit
 import { HomeownersMcallenTx } from './pages/home-insurance/mcallen-tx/mcallen-tx';
 import { HomeownersWacoTx } from './pages/home-insurance/waco-tx/waco-tx';
 import { HomeownersMidlandTx } from './pages/home-insurance/midland-tx/midland-tx';
+import { HomeownersCarrolltonTx } from './pages/home-insurance/carrollton-tx/carrollton-tx';
+import { HomeownersLewisvilleTx } from './pages/home-insurance/lewisville-tx/lewisville-tx';
+import { HomeownersAbileneTx } from './pages/home-insurance/abilene-tx/abilene-tx';
+import { HomeownersRoundRockTx } from './pages/home-insurance/round-rock-tx/round-rock-tx';
+import { HomeownersPearlandTx } from './pages/home-insurance/pearland-tx/pearland-tx';
+import { HomeownersCollegeStationTx } from './pages/home-insurance/college-station-tx/college-station-tx';
+import { HomeownersTheWoodlandsTx } from './pages/home-insurance/the-woodlands-tx/the-woodlands-tx';
+import { HomeownersRichardsonTx } from './pages/home-insurance/richardson-tx/richardson-tx';
+import { HomeownersLeagueCityTx } from './pages/home-insurance/league-city-tx/league-city-tx';
+import { HomeownersOdessaTx } from './pages/home-insurance/odessa-tx/odessa-tx';
+import { HomeownersBeaumontTx } from './pages/home-insurance/beaumont-tx/beaumont-tx';
+import { HomeownersAllenTx } from './pages/home-insurance/allen-tx/allen-tx';
+import { HomeownersSugarLandTx } from './pages/home-insurance/sugar-land-tx/sugar-land-tx';
 import { CommercialInsurance } from './pages/commercial-insurance/commercial-insurance';
 import { LifeInsurance } from './pages/life-insurance/life-insurance';
 import { HealthInsurance } from './pages/health-insurance/health-insurance';
@@ -567,6 +580,71 @@ const routes: Routes = [
         data: { metaPage: 'homeownersMidlandTx' },
       },
       {
+        path: 'carrollton-tx',
+        component: HomeownersCarrolltonTx,
+        data: { metaPage: 'homeownersCarrolltonTx' },
+      },
+      {
+        path: 'lewisville-tx',
+        component: HomeownersLewisvilleTx,
+        data: { metaPage: 'homeownersLewisvilleTx' },
+      },
+      {
+        path: 'abilene-tx',
+        component: HomeownersAbileneTx,
+        data: { metaPage: 'homeownersAbileneTx' },
+      },
+      {
+        path: 'round-rock-tx',
+        component: HomeownersRoundRockTx,
+        data: { metaPage: 'homeownersRoundRockTx' },
+      },
+      {
+        path: 'pearland-tx',
+        component: HomeownersPearlandTx,
+        data: { metaPage: 'homeownersPearlandTx' },
+      },
+      {
+        path: 'college-station-tx',
+        component: HomeownersCollegeStationTx,
+        data: { metaPage: 'homeownersCollegeStationTx' },
+      },
+      {
+        path: 'the-woodlands-tx',
+        component: HomeownersTheWoodlandsTx,
+        data: { metaPage: 'homeownersTheWoodlandsTx' },
+      },
+      {
+        path: 'richardson-tx',
+        component: HomeownersRichardsonTx,
+        data: { metaPage: 'homeownersRichardsonTx' },
+      },
+      {
+        path: 'league-city-tx',
+        component: HomeownersLeagueCityTx,
+        data: { metaPage: 'homeownersLeagueCityTx' },
+      },
+      {
+        path: 'odessa-tx',
+        component: HomeownersOdessaTx,
+        data: { metaPage: 'homeownersOdessaTx' },
+      },
+      {
+        path: 'beaumont-tx',
+        component: HomeownersBeaumontTx,
+        data: { metaPage: 'homeownersBeaumontTx' },
+      },
+      {
+        path: 'allen-tx',
+        component: HomeownersAllenTx,
+        data: { metaPage: 'homeownersAllenTx' },
+      },
+      {
+        path: 'sugar-land-tx',
+        component: HomeownersSugarLandTx,
+        data: { metaPage: 'homeownersSugarLandTx' },
+      },
+      {
         path: 'renters-insurance',
         component: RentersInsurance,
         data: { metaPage: 'rentersInsurance' },
@@ -936,6 +1014,71 @@ const routes: Routes = [
             path: 'midland-tx',
             component: HomeownersMidlandTx,
             data: { metaPage: 'homeownersMidlandTx' },
+          },
+          {
+            path: 'carrollton-tx',
+            component: HomeownersCarrolltonTx,
+            data: { metaPage: 'homeownersCarrolltonTx' },
+          },
+          {
+            path: 'lewisville-tx',
+            component: HomeownersLewisvilleTx,
+            data: { metaPage: 'homeownersLewisvilleTx' },
+          },
+          {
+            path: 'abilene-tx',
+            component: HomeownersAbileneTx,
+            data: { metaPage: 'homeownersAbileneTx' },
+          },
+          {
+            path: 'round-rock-tx',
+            component: HomeownersRoundRockTx,
+            data: { metaPage: 'homeownersRoundRockTx' },
+          },
+          {
+            path: 'pearland-tx',
+            component: HomeownersPearlandTx,
+            data: { metaPage: 'homeownersPearlandTx' },
+          },
+          {
+            path: 'college-station-tx',
+            component: HomeownersCollegeStationTx,
+            data: { metaPage: 'homeownersCollegeStationTx' },
+          },
+          {
+            path: 'the-woodlands-tx',
+            component: HomeownersTheWoodlandsTx,
+            data: { metaPage: 'homeownersTheWoodlandsTx' },
+          },
+          {
+            path: 'richardson-tx',
+            component: HomeownersRichardsonTx,
+            data: { metaPage: 'homeownersRichardsonTx' },
+          },
+          {
+            path: 'league-city-tx',
+            component: HomeownersLeagueCityTx,
+            data: { metaPage: 'homeownersLeagueCityTx' },
+          },
+          {
+            path: 'odessa-tx',
+            component: HomeownersOdessaTx,
+            data: { metaPage: 'homeownersOdessaTx' },
+          },
+          {
+            path: 'beaumont-tx',
+            component: HomeownersBeaumontTx,
+            data: { metaPage: 'homeownersBeaumontTx' },
+          },
+          {
+            path: 'allen-tx',
+            component: HomeownersAllenTx,
+            data: { metaPage: 'homeownersAllenTx' },
+          },
+          {
+            path: 'sugar-land-tx',
+            component: HomeownersSugarLandTx,
+            data: { metaPage: 'homeownersSugarLandTx' },
           },
           {
             path: 'seguros-para-inquilinos',
@@ -1365,6 +1508,58 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   homeownersMidlandTx: {
     en: 'homeowners-insurance/midland-tx',
     es: 'seguros-de-vivienda/midland-tx',
+  },
+  homeownersCarrolltonTx: {
+    en: 'homeowners-insurance/carrollton-tx',
+    es: 'seguros-de-vivienda/carrollton-tx',
+  },
+  homeownersLewisvilleTx: {
+    en: 'homeowners-insurance/lewisville-tx',
+    es: 'seguros-de-vivienda/lewisville-tx',
+  },
+  homeownersAbileneTx: {
+    en: 'homeowners-insurance/abilene-tx',
+    es: 'seguros-de-vivienda/abilene-tx',
+  },
+  homeownersRoundRockTx: {
+    en: 'homeowners-insurance/round-rock-tx',
+    es: 'seguros-de-vivienda/round-rock-tx',
+  },
+  homeownersPearlandTx: {
+    en: 'homeowners-insurance/pearland-tx',
+    es: 'seguros-de-vivienda/pearland-tx',
+  },
+  homeownersCollegeStationTx: {
+    en: 'homeowners-insurance/college-station-tx',
+    es: 'seguros-de-vivienda/college-station-tx',
+  },
+  homeownersTheWoodlandsTx: {
+    en: 'homeowners-insurance/the-woodlands-tx',
+    es: 'seguros-de-vivienda/the-woodlands-tx',
+  },
+  homeownersRichardsonTx: {
+    en: 'homeowners-insurance/richardson-tx',
+    es: 'seguros-de-vivienda/richardson-tx',
+  },
+  homeownersLeagueCityTx: {
+    en: 'homeowners-insurance/league-city-tx',
+    es: 'seguros-de-vivienda/league-city-tx',
+  },
+  homeownersOdessaTx: {
+    en: 'homeowners-insurance/odessa-tx',
+    es: 'seguros-de-vivienda/odessa-tx',
+  },
+  homeownersBeaumontTx: {
+    en: 'homeowners-insurance/beaumont-tx',
+    es: 'seguros-de-vivienda/beaumont-tx',
+  },
+  homeownersAllenTx: {
+    en: 'homeowners-insurance/allen-tx',
+    es: 'seguros-de-vivienda/allen-tx',
+  },
+  homeownersSugarLandTx: {
+    en: 'homeowners-insurance/sugar-land-tx',
+    es: 'seguros-de-vivienda/sugar-land-tx',
   },
   commercialInsurance: {
     en: 'commercial-insurance',
