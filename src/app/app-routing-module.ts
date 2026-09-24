@@ -58,6 +58,10 @@ import { HomeownersOdessaTx } from './pages/home-insurance/odessa-tx/odessa-tx';
 import { HomeownersBeaumontTx } from './pages/home-insurance/beaumont-tx/beaumont-tx';
 import { HomeownersAllenTx } from './pages/home-insurance/allen-tx/allen-tx';
 import { HomeownersSugarLandTx } from './pages/home-insurance/sugar-land-tx/sugar-land-tx';
+import { HomeownersTylerTx } from './pages/home-insurance/tyler-tx/tyler-tx';
+import { HomeownersNewBraunfelsTx } from './pages/home-insurance/new-braunfels-tx/new-braunfels-tx';
+import { HomeownersEdinburgTx } from './pages/home-insurance/edinburg-tx/edinburg-tx';
+import { HomeownersWichitaFallsTx } from './pages/home-insurance/wichita-falls-tx/wichita-falls-tx';
 import { CommercialInsurance } from './pages/commercial-insurance/commercial-insurance';
 import { LifeInsurance } from './pages/life-insurance/life-insurance';
 import { HealthInsurance } from './pages/health-insurance/health-insurance';
@@ -645,6 +649,26 @@ const routes: Routes = [
         data: { metaPage: 'homeownersSugarLandTx' },
       },
       {
+        path: 'tyler-tx',
+        component: HomeownersTylerTx,
+        data: { metaPage: 'homeownersTylerTx' },
+      },
+      {
+        path: 'new-braunfels-tx',
+        component: HomeownersNewBraunfelsTx,
+        data: { metaPage: 'homeownersNewBraunfelsTx' },
+      },
+      {
+        path: 'edinburg-tx',
+        component: HomeownersEdinburgTx,
+        data: { metaPage: 'homeownersEdinburgTx' },
+      },
+      {
+        path: 'wichita-falls-tx',
+        component: HomeownersWichitaFallsTx,
+        data: { metaPage: 'homeownersWichitaFallsTx' },
+      },
+      {
         path: 'renters-insurance',
         component: RentersInsurance,
         data: { metaPage: 'rentersInsurance' },
@@ -1079,6 +1103,26 @@ const routes: Routes = [
             path: 'sugar-land-tx',
             component: HomeownersSugarLandTx,
             data: { metaPage: 'homeownersSugarLandTx' },
+          },
+          {
+            path: 'tyler-tx',
+            component: HomeownersTylerTx,
+            data: { metaPage: 'homeownersTylerTx' },
+          },
+          {
+            path: 'new-braunfels-tx',
+            component: HomeownersNewBraunfelsTx,
+            data: { metaPage: 'homeownersNewBraunfelsTx' },
+          },
+          {
+            path: 'edinburg-tx',
+            component: HomeownersEdinburgTx,
+            data: { metaPage: 'homeownersEdinburgTx' },
+          },
+          {
+            path: 'wichita-falls-tx',
+            component: HomeownersWichitaFallsTx,
+            data: { metaPage: 'homeownersWichitaFallsTx' },
           },
           {
             path: 'seguros-para-inquilinos',
@@ -1560,6 +1604,22 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   homeownersSugarLandTx: {
     en: 'homeowners-insurance/sugar-land-tx',
     es: 'seguros-de-vivienda/sugar-land-tx',
+  },
+  homeownersTylerTx: {
+    en: 'homeowners-insurance/tyler-tx',
+    es: 'seguros-de-vivienda/tyler-tx',
+  },
+  homeownersNewBraunfelsTx: {
+    en: 'homeowners-insurance/new-braunfels-tx',
+    es: 'seguros-de-vivienda/new-braunfels-tx',
+  },
+  homeownersEdinburgTx: {
+    en: 'homeowners-insurance/edinburg-tx',
+    es: 'seguros-de-vivienda/edinburg-tx',
+  },
+  homeownersWichitaFallsTx: {
+    en: 'homeowners-insurance/wichita-falls-tx',
+    es: 'seguros-de-vivienda/wichita-falls-tx',
   },
   commercialInsurance: {
     en: 'commercial-insurance',
