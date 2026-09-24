@@ -73,6 +73,10 @@ import { HomeownersOdessaTx } from './pages/home-insurance/odessa-tx/odessa-tx';
 import { HomeownersBeaumontTx } from './pages/home-insurance/beaumont-tx/beaumont-tx';
 import { HomeownersAllenTx } from './pages/home-insurance/allen-tx/allen-tx';
 import { HomeownersSugarLandTx } from './pages/home-insurance/sugar-land-tx/sugar-land-tx';
+import { HomeownersTylerTx } from './pages/home-insurance/tyler-tx/tyler-tx';
+import { HomeownersNewBraunfelsTx } from './pages/home-insurance/new-braunfels-tx/new-braunfels-tx';
+import { HomeownersEdinburgTx } from './pages/home-insurance/edinburg-tx/edinburg-tx';
+import { HomeownersWichitaFallsTx } from './pages/home-insurance/wichita-falls-tx/wichita-falls-tx';
 import { CommercialInsurance } from './pages/commercial-insurance/commercial-insurance';
 import { LifeInsurance } from './pages/life-insurance/life-insurance';
 import { HealthInsurance } from './pages/health-insurance/health-insurance';
@@ -263,6 +267,10 @@ export function initializeTranslations(
     HomeownersBeaumontTx,
     HomeownersAllenTx,
     HomeownersSugarLandTx,
+    HomeownersTylerTx,
+    HomeownersNewBraunfelsTx,
+    HomeownersEdinburgTx,
+    HomeownersWichitaFallsTx,
     CommercialInsurance,
     LifeInsurance,
     HealthInsurance,
