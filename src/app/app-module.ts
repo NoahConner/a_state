@@ -77,6 +77,12 @@ import { HomeownersTylerTx } from './pages/home-insurance/tyler-tx/tyler-tx';
 import { HomeownersNewBraunfelsTx } from './pages/home-insurance/new-braunfels-tx/new-braunfels-tx';
 import { HomeownersEdinburgTx } from './pages/home-insurance/edinburg-tx/edinburg-tx';
 import { HomeownersWichitaFallsTx } from './pages/home-insurance/wichita-falls-tx/wichita-falls-tx';
+import { HomeownersConroeTx } from './pages/home-insurance/conroe-tx/conroe-tx';
+import { HomeownersSanAngeloTx } from './pages/home-insurance/san-angelo-tx/san-angelo-tx';
+import { HomeownersAtascocitaTx } from './pages/home-insurance/atascocita-tx/atascocita-tx';
+import { HomeownersTempleTx } from './pages/home-insurance/temple-tx/temple-tx';
+import { HomeownersMissionTx } from './pages/home-insurance/mission-tx/mission-tx';
+import { HomeownersBaytownTx } from './pages/home-insurance/baytown-tx/baytown-tx';
 import { CommercialInsurance } from './pages/commercial-insurance/commercial-insurance';
 import { LifeInsurance } from './pages/life-insurance/life-insurance';
 import { HealthInsurance } from './pages/health-insurance/health-insurance';
@@ -271,6 +277,12 @@ export function initializeTranslations(
     HomeownersNewBraunfelsTx,
     HomeownersEdinburgTx,
     HomeownersWichitaFallsTx,
+    HomeownersConroeTx,
+    HomeownersSanAngeloTx,
+    HomeownersAtascocitaTx,
+    HomeownersTempleTx,
+    HomeownersMissionTx,
+    HomeownersBaytownTx,
     CommercialInsurance,
     LifeInsurance,
     HealthInsurance,
