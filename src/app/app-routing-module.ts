@@ -62,6 +62,12 @@ import { HomeownersTylerTx } from './pages/home-insurance/tyler-tx/tyler-tx';
 import { HomeownersNewBraunfelsTx } from './pages/home-insurance/new-braunfels-tx/new-braunfels-tx';
 import { HomeownersEdinburgTx } from './pages/home-insurance/edinburg-tx/edinburg-tx';
 import { HomeownersWichitaFallsTx } from './pages/home-insurance/wichita-falls-tx/wichita-falls-tx';
+import { HomeownersConroeTx } from './pages/home-insurance/conroe-tx/conroe-tx';
+import { HomeownersSanAngeloTx } from './pages/home-insurance/san-angelo-tx/san-angelo-tx';
+import { HomeownersAtascocitaTx } from './pages/home-insurance/atascocita-tx/atascocita-tx';
+import { HomeownersTempleTx } from './pages/home-insurance/temple-tx/temple-tx';
+import { HomeownersMissionTx } from './pages/home-insurance/mission-tx/mission-tx';
+import { HomeownersBaytownTx } from './pages/home-insurance/baytown-tx/baytown-tx';
 import { CommercialInsurance } from './pages/commercial-insurance/commercial-insurance';
 import { LifeInsurance } from './pages/life-insurance/life-insurance';
 import { HealthInsurance } from './pages/health-insurance/health-insurance';
@@ -669,6 +675,36 @@ const routes: Routes = [
         data: { metaPage: 'homeownersWichitaFallsTx' },
       },
       {
+        path: 'conroe-tx',
+        component: HomeownersConroeTx,
+        data: { metaPage: 'homeownersConroeTx' },
+      },
+      {
+        path: 'san-angelo-tx',
+        component: HomeownersSanAngeloTx,
+        data: { metaPage: 'homeownersSanAngeloTx' },
+      },
+      {
+        path: 'atascocita-tx',
+        component: HomeownersAtascocitaTx,
+        data: { metaPage: 'homeownersAtascocitaTx' },
+      },
+      {
+        path: 'temple-tx',
+        component: HomeownersTempleTx,
+        data: { metaPage: 'homeownersTempleTx' },
+      },
+      {
+        path: 'mission-tx',
+        component: HomeownersMissionTx,
+        data: { metaPage: 'homeownersMissionTx' },
+      },
+      {
+        path: 'baytown-tx',
+        component: HomeownersBaytownTx,
+        data: { metaPage: 'homeownersBaytownTx' },
+      },
+      {
         path: 'renters-insurance',
         component: RentersInsurance,
         data: { metaPage: 'rentersInsurance' },
@@ -1123,6 +1159,36 @@ const routes: Routes = [
             path: 'wichita-falls-tx',
             component: HomeownersWichitaFallsTx,
             data: { metaPage: 'homeownersWichitaFallsTx' },
+          },
+          {
+            path: 'conroe-tx',
+            component: HomeownersConroeTx,
+            data: { metaPage: 'homeownersConroeTx' },
+          },
+          {
+            path: 'san-angelo-tx',
+            component: HomeownersSanAngeloTx,
+            data: { metaPage: 'homeownersSanAngeloTx' },
+          },
+          {
+            path: 'atascocita-tx',
+            component: HomeownersAtascocitaTx,
+            data: { metaPage: 'homeownersAtascocitaTx' },
+          },
+          {
+            path: 'temple-tx',
+            component: HomeownersTempleTx,
+            data: { metaPage: 'homeownersTempleTx' },
+          },
+          {
+            path: 'mission-tx',
+            component: HomeownersMissionTx,
+            data: { metaPage: 'homeownersMissionTx' },
+          },
+          {
+            path: 'baytown-tx',
+            component: HomeownersBaytownTx,
+            data: { metaPage: 'homeownersBaytownTx' },
           },
           {
             path: 'seguros-para-inquilinos',
@@ -1620,6 +1686,30 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   homeownersWichitaFallsTx: {
     en: 'homeowners-insurance/wichita-falls-tx',
     es: 'seguros-de-vivienda/wichita-falls-tx',
+  },
+  homeownersConroeTx: {
+    en: 'homeowners-insurance/conroe-tx',
+    es: 'seguros-de-vivienda/conroe-tx',
+  },
+  homeownersSanAngeloTx: {
+    en: 'homeowners-insurance/san-angelo-tx',
+    es: 'seguros-de-vivienda/san-angelo-tx',
+  },
+  homeownersAtascocitaTx: {
+    en: 'homeowners-insurance/atascocita-tx',
+    es: 'seguros-de-vivienda/atascocita-tx',
+  },
+  homeownersTempleTx: {
+    en: 'homeowners-insurance/temple-tx',
+    es: 'seguros-de-vivienda/temple-tx',
+  },
+  homeownersMissionTx: {
+    en: 'homeowners-insurance/mission-tx',
+    es: 'seguros-de-vivienda/mission-tx',
+  },
+  homeownersBaytownTx: {
+    en: 'homeowners-insurance/baytown-tx',
+    es: 'seguros-de-vivienda/baytown-tx',
   },
   commercialInsurance: {
     en: 'commercial-insurance',
