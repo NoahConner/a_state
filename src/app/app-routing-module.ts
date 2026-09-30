@@ -68,6 +68,8 @@ import { HomeownersAtascocitaTx } from './pages/home-insurance/atascocita-tx/ata
 import { HomeownersTempleTx } from './pages/home-insurance/temple-tx/temple-tx';
 import { HomeownersMissionTx } from './pages/home-insurance/mission-tx/mission-tx';
 import { HomeownersBaytownTx } from './pages/home-insurance/baytown-tx/baytown-tx';
+import { HomeownersBryanTx } from './pages/home-insurance/bryan-tx/bryan-tx';
+import { HomeownersGeorgetownTx } from './pages/home-insurance/georgetown-tx/georgetown-tx';
 import { CommercialInsurance } from './pages/commercial-insurance/commercial-insurance';
 import { LifeInsurance } from './pages/life-insurance/life-insurance';
 import { HealthInsurance } from './pages/health-insurance/health-insurance';
@@ -705,6 +707,16 @@ const routes: Routes = [
         data: { metaPage: 'homeownersBaytownTx' },
       },
       {
+        path: 'bryan-tx',
+        component: HomeownersBryanTx,
+        data: { metaPage: 'homeownersBryanTx' },
+      },
+      {
+        path: 'georgetown-tx',
+        component: HomeownersGeorgetownTx,
+        data: { metaPage: 'homeownersGeorgetownTx' },
+      },
+      {
         path: 'renters-insurance',
         component: RentersInsurance,
         data: { metaPage: 'rentersInsurance' },
@@ -1189,6 +1201,16 @@ const routes: Routes = [
             path: 'baytown-tx',
             component: HomeownersBaytownTx,
             data: { metaPage: 'homeownersBaytownTx' },
+          },
+          {
+            path: 'bryan-tx',
+            component: HomeownersBryanTx,
+            data: { metaPage: 'homeownersBryanTx' },
+          },
+          {
+            path: 'georgetown-tx',
+            component: HomeownersGeorgetownTx,
+            data: { metaPage: 'homeownersGeorgetownTx' },
           },
           {
             path: 'seguros-para-inquilinos',
@@ -1710,6 +1732,14 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   homeownersBaytownTx: {
     en: 'homeowners-insurance/baytown-tx',
     es: 'seguros-de-vivienda/baytown-tx',
+  },
+  homeownersBryanTx: {
+    en: 'homeowners-insurance/bryan-tx',
+    es: 'seguros-de-vivienda/bryan-tx',
+  },
+  homeownersGeorgetownTx: {
+    en: 'homeowners-insurance/georgetown-tx',
+    es: 'seguros-de-vivienda/georgetown-tx',
   },
   commercialInsurance: {
     en: 'commercial-insurance',

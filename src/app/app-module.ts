@@ -83,6 +83,8 @@ import { HomeownersAtascocitaTx } from './pages/home-insurance/atascocita-tx/ata
 import { HomeownersTempleTx } from './pages/home-insurance/temple-tx/temple-tx';
 import { HomeownersMissionTx } from './pages/home-insurance/mission-tx/mission-tx';
 import { HomeownersBaytownTx } from './pages/home-insurance/baytown-tx/baytown-tx';
+import { HomeownersBryanTx } from './pages/home-insurance/bryan-tx/bryan-tx';
+import { HomeownersGeorgetownTx } from './pages/home-insurance/georgetown-tx/georgetown-tx';
 import { CommercialInsurance } from './pages/commercial-insurance/commercial-insurance';
 import { LifeInsurance } from './pages/life-insurance/life-insurance';
 import { HealthInsurance } from './pages/health-insurance/health-insurance';
@@ -283,6 +285,8 @@ export function initializeTranslations(
     HomeownersTempleTx,
     HomeownersMissionTx,
     HomeownersBaytownTx,
+    HomeownersBryanTx,
+    HomeownersGeorgetownTx,
     CommercialInsurance,
     LifeInsurance,
     HealthInsurance,
