@@ -2,6 +2,15 @@ h2 {
   font-size: 36px !important;
 }
 
+// Risk headings keep their original responsive sizes.
+h3:not(.risks__heading) {
+  font-size: 25px !important;
+}
+
+.faq__heading {
+  margin: 0;
+}
+
 .rates-meta,
 .rates-meta .source-label,
 .rates-meta .source-name,
@@ -45,6 +54,15 @@ h2 {
 ::ng-deep .lead-text .inline-link {
   text-decoration: underline !important;
   color: #df4135 !important;
+}
+
+// Body-copy links stay regular weight (global .inline-link is bold); cost and risk links keep the bold.
+::ng-deep .cover-quote-shell__copy .inline-link,
+::ng-deep .rates-lead .inline-link,
+::ng-deep .footer-text .inline-link,
+::ng-deep .coverage-option-card__text .inline-link,
+::ng-deep .lead-text .inline-link {
+  font-weight: inherit;
 }
 
 .toc-link {
@@ -111,7 +129,7 @@ section[id^="toc-section-"] {
   }
 
   .topBanner .h1 {
-    font-size: clamp(2.3rem, 3vw, 3.3rem) !important;
+    font-size: 60px !important;
   }
 
   .topBanner .banner-quote-card {
@@ -121,7 +139,8 @@ section[id^="toc-section-"] {
 
 ::ng-deep .rates-table .company-name {
   text-decoration: underline !important;
-    color: #CA2B28 !important;
+    color: #df4135 !important;
+    font-weight: 700 !important;
   }
 
 /* Hero Banner Section Start */
@@ -3411,7 +3430,7 @@ color: #ed1c24;
   }
 
   .topBanner .h1 {
-    font-size: clamp(2.8rem, 4.8vw, 5.25rem) !important;
+    font-size: 60px !important;
   }
 
   .topBanner .banner-quote-card {
@@ -3429,6 +3448,13 @@ color: #ed1c24;
   }
 }
 
+@media only screen and (max-width: 767.98px) {
+  /* Mobile paragraph standard: 16px (fine print excluded) */
+  .homeMain p:not(.rates-disclaimer):not(.source-line):not(.updated-line) {
+    font-size: 16px !important;
+  }
+}
+
 /* "Cover" (toc-3) aur "NOT Cover" (toc-4) sections ke beech ka gap kam karo —
    id specificity class wali 4.375rem !important paddings ko sirf yahan override
    karti hai, page ke baaki section-gaps waise hi rehte hain */
@@ -3438,4 +3464,11 @@ color: #ed1c24;
 
 #toc-section-4 {
   padding-top: 2.5rem !important;
+}
+
+// Mobile H1: overrides the global 28px/24px hero rules (styles.scss) for homeowners city pages only.
+@media only screen and (max-width: 767.98px) {
+  .topBanner .container .topSub .topSub2 .h1 {
+    font-size: 36px !important;
+  }
 }

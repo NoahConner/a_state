@@ -318,7 +318,7 @@
         <div class="col-lg-9">
           <div class="section-content-shell">
       <div class="text-center penalties-header">
-        <h2 class="penalties-title mb-3">{{ 'GLOBAL_TX.UNINSURED.TITLE' | translate }}</h2>
+        <h3 class="penalties-title mb-3">{{ 'GLOBAL_TX.UNINSURED.TITLE' | translate }}</h3>
         <p class="penalties-copy mx-auto mb-0">{{ 'EDINBURG_TX.UNINSURED.COPY' | translate }}</p>
       </div>
 
@@ -1208,16 +1208,18 @@
         @for (item of faqItems; track item.question; let i = $index) {
         <div class="faq__entry">
           <div class="faq__item" [class.faq__item--open]="openFaqIndex === i">
-            <button class="faq__question" type="button" [attr.aria-expanded]="openFaqIndex === i"
-              (click)="toggleFaq(i)">
-              <span class="faq__question-text">{{ item.question }}</span>
-              <span class="faq__icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                  <path d="M6 9l6 6 6-6" stroke="#1f1f24" stroke-width="2.2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                </svg>
-              </span>
-            </button>
+            <h3 class="faq__heading">
+              <button class="faq__question" type="button" [attr.aria-expanded]="openFaqIndex === i"
+                (click)="toggleFaq(i)">
+                <span class="faq__question-text">{{ item.question }}</span>
+                <span class="faq__icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9l6 6 6-6" stroke="#1f1f24" stroke-width="2.2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </button>
+            </h3>
           </div>
 
           @if (openFaqIndex === i) {
