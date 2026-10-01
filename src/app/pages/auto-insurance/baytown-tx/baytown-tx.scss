@@ -2,6 +2,15 @@ h2 {
   font-size: 36px !important;
 }
 
+// Risk headings keep their original responsive sizes.
+h3:not(.risks__heading) {
+  font-size: 25px !important;
+}
+
+.faq__heading {
+  margin: 0;
+}
+
 .rates-meta,
 .rates-meta .source-label,
 .rates-meta .source-name,
@@ -108,7 +117,7 @@ section[id^="toc-section-"] {
   }
 
   .topBanner .h1 {
-    font-size: clamp(2.8rem, 4.8vw, 5.25rem) !important;
+    font-size: 60px !important;
   }
 
   .topBanner .banner-quote-card {
@@ -119,6 +128,7 @@ section[id^="toc-section-"] {
 ::ng-deep .rates-table .company-name {
   text-decoration: underline !important;
   color: #df4135 !important;
+  font-weight: 700 !important;
 }
 
 /* Hero Banner Section Start */
@@ -3183,5 +3193,12 @@ color: #ed1c24;
     font-size: 20px;
     font-weight: 400;
     line-height: 24px;
+  }
+}
+
+// Mobile H1: overrides the global 28px/24px hero rules (styles.scss) for auto city pages only.
+@media only screen and (max-width: 767.98px) {
+  .topBanner .container .topSub .topSub2 .h1 {
+    font-size: 35px !important;
   }
 }
