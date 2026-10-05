@@ -1,742 +1,1183 @@
+$red: #ca2b28;
+$yellow: #fff22f;
+$text: #272424;
+
 .locationMain {
-  .topBanner {
-    background-image: url('/assets/images/our-location-banner.png');
-    height: 38rem;
-    background-size: cover;
-    background-position: bottom;
-
-    .container {
-      display: flex;
-      align-items: end;
-      height: 100%;
-
-      .h1 {
-        color: #fff22f;
-        font-weight: 600;
-        font-size: 54px;
-        padding-right: 35rem;
-        margin-bottom: 5rem;
-      }
-    }
-  }
+  font-family: 'Afacad', sans-serif;
+  overflow-x: hidden;
 }
 
-
-.neighborhood-section {
-  padding: 80px 0;
-  font-family: 'Inter', sans-serif; // Closest to the Figma font
-
-     .title {
-      color: #CA2B28;
-      font-weight: 700;
-      font-size: 50px;
-      margin-bottom: 50px;
-    }
-
-    .desc {
-      max-width: 1100px;
-      margin: 0 auto 10px;
-      color: #272424;
-      font-size: 19px;
-      margin-bottom: 10px;
-      line-height: 1.7;
-    }
-
-    .offices-title {
-      color: #272424;
-      font-weight: 700;
-      font-size: 34px;
-      margin: 50px 0 0;
-    }
-
-
-  .location-card {
-    margin: 40px auto;
-    max-width: 1000px;
-    background: #fff;
-    border-radius: 20px; // Softer corners
-    display: flex;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    position: relative;
-
- 
-    .map {
-      width: 40%; // Map is slightly narrower in design
-      min-height: 400px;
-      position: relative;
-
-      // The branded marker is anchored to the centre of the embed, which is where
-      // Google draws its own pin. Panning would break that alignment, so the map
-      // itself is not interactive — the marker links out to the full map instead.
-      iframe {
-        pointer-events: none;
-      }
-    }
-
-    .map-pin {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 44px;
-      height: 54px; // 44px badge + 10px tail
-      transform: translate(-50%, -100%); // tail tip sits on the map centre
-      z-index: 2;
-      display: block;
-      text-decoration: none;
-
-      .map-pin__badge {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 44px;
-        height: 44px;
-        padding: 7px;
-        border-radius: 50%;
-        background: #ca2b28;
-        border: 2px solid #ca2b28;
-        box-shadow: 0 3px 9px rgba(0, 0, 0, 0.3);
-
-        img {
-          width: 100%;
-          height: auto;
-          display: block;
-        }
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 42px;
-        left: 50%;
-        transform: translateX(-50%);
-        border-left: 7px solid transparent;
-        border-right: 7px solid transparent;
-        border-top: 12px solid #ca2b28;
-      }
-    }
-
-    .info {
-      width: 60%;
-      padding: 40px 60px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: relative;
-      z-index: 1;
-
-  &::after {
-    content: "";
-    position: absolute;
-    right: -20px; 
-    top: 50%;
-    transform: translateY(-50%);
-    width: 350px;  
-    height: 350px;
-    background-image: url('/assets/images/our-location-locator.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 1; 
-    z-index: -3;
-    pointer-events: none;
-  }
-      h4 {
-        font-size: 28px;
-        font-weight: 700;
-        margin-bottom: 40px;
-        color: #333;
-      }
-
-      .details {
-        list-style: none;
-        padding: 0;
-        margin-bottom: 40px;
-
-        li {
-          // Top-aligned so the icon and label stay on the first line when the
-          // value wraps (parking blurbs are often two lines).
-          display: flex;
-          align-items: flex-start;
-          gap: 15px;
-          margin-bottom: 20px;
-          font-size: 18px; // Larger text
-          font-weight: 500;
-          line-height: 1.5;
-          color: #333;
-
-          .icon {
-            flex: 0 0 25px;
-            font-size: 20px;
-            line-height: 1.5;
-            text-align: center;
-          }
-
-          // Label and value share one inline flow, so wrapped lines run the
-          // full width instead of forming a narrow column beside the label.
-          .text {
-            flex: 1 1 auto;
-            min-width: 0;
-
-            strong {
-              margin-right: 4px;
-            }
-          }
-        }
-      }
-
-      .buttons {
-        display: flex;
-        gap: 15px;
-        flex-wrap: nowrap;
-        align-items: stretch;
-
-        .btn {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 8px;
-          padding: 12px 24px;
-          font-size: 17px;
-          font-weight: 700;
-          border: none;
-          transition: transform 0.2s;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          text-align: center;
-          min-height: 50px;
-          flex: 1 1 0;
-          white-space: normal;
-
-          &:hover {
-            transform: translateY(-2px);
-          }
-        }
-
-        .quote {
-          background: #fff12c;
-          color: #444;
-        }
-
-        .directions {
-          background: #ffeb3b;
-          color: #444;
-        }
-
-        .details-btn {
-          background: #d32f2f;
-          color: #fff;
-        }
-      }
-    }
-  }
-
-  @media (max-width: 992px) {
-    .location-card {
-      flex-direction: column;
-
-      .map,
-      .info {
-        width: 100%;
-      }
-
-      .info {
-        padding: 32px 28px;
-
-        .buttons {
-          .btn {
-            flex: 1 1 calc(50% - 8px);
-            white-space: normal;
-          }
-
-          .details-btn {
-            flex-basis: 100%;
-          }
-        }
-      }
-
-      .info::after {
-        display: none;
-      }
-
-      // Remove watermark on mobile for clarity
-    }
-  }
-
-  @media (max-width: 576px) {
-    .location-card {
-      .map {
-        min-height: 280px;
-      }
-
-      .info {
-        padding: 24px 18px;
-
-        h4 {
-          margin-bottom: 24px;
-          font-size: 24px;
-        }
-
-        .details {
-          margin-bottom: 28px;
-
-          li {
-            align-items: flex-start;
-            font-size: 16px;
-          }
-        }
-
-        .buttons {
-          flex-direction: column;
-
-          .btn {
-            width: 100%;
-            flex: 1 1 100%;
-          }
-        }
-      }
-    }
-  }
+// Content column of the design: 1234px card width centred on a 1920px frame.
+.ol-container {
+  max-width: 1266px;
+  margin: 0 auto;
+  padding: 0 16px;
+  position: relative;
 }
 
-
-.why-visit-section {
-  padding: 80px 0;
-
-  .section-title {
-    color: #CA2B28; // Specific A-State Red
-    font-weight: 700;
-    font-size: 40px;
-    margin-bottom: 30px;
-  }
-
-  .header-desc {
-    max-width: 1180px;
-    p {
-      color: #272424;
-      font-size: 20px;
-      line-height: 1.6;
-      margin-bottom: 15px;
-    }
-  }
-
-  .feature-row {
-    margin-top: 50px;
-  }
-
-  .feature-col {
-    padding: 0 40px;
-    border-right: 1px solid #ddd; // Vertical Dividers
-
-    &.no-border {
-      border-right: none;
-    }
-
-    .feature-title {
-      font-size: 28px;
-      font-weight: 600;
-      color: #2A2929;
-      margin-bottom: 20px;
-      line-height: 1.3;
-      min-height: 50px; // Keeps titles aligned if text wraps
-    }
-
-    .feature-text {
-      font-size: 18px;
-      line-height: 1.7;
-      color: #272424;
-      text-align: justify; // Optional, helps match the clean block look
-    }
-  }
-
-  // Responsive: Remove borders on mobile
-  @media (max-width: 767px) {
-    .feature-col {
-      border-right: none;
-      border-bottom: 1px solid #ddd;
-      padding: 30px 15px;
-
-      &.no-border {
-        border-bottom: none;
-      }
-    }
-  }
+.ol-heading {
+  color: $red;
+  font-weight: 600;
+  font-size: 40.93px;
+  line-height: 50.232px;
+  margin: 0;
 }
 
+::ng-deep .ol-intro__text .inline-link {
+  color: $red !important;
+  font-weight: 400;
+  text-decoration: underline !important;
+}
 
-
-
-
-.footUpper {
-  height: 130px;
-  width: 100%;
-  background-color: #ca2b28;
+/* ---------------------------------- Hero ---------------------------------- */
+// Not positioned: the global header is absolutely positioned without a z-index,
+// so a positioned hero would paint over it and hide the logo.
+.ol-hero {
+  min-height: 1110px;
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  background:
+    linear-gradient(180deg, #1a1a1a 0%, rgba(39, 0, 0, 0.79) 45.673%, rgba(96, 9, 9, 0.59) 100%),
+    url('/assets/images/our-locations/hero-bg.png') center / cover no-repeat;
+
+  .ol-hero__inner {
+    width: 100%;
+    padding: 160px 6.51% 80px;
+  }
+
+  .ol-hero__title {
+    max-width: 1049px;
+    margin: 0 0 26px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 105px;
+    line-height: 95px;
+  }
+
+  .ol-hero__subtitle {
+    max-width: 784px;
+    margin: 0;
+    color: #fff;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31px;
+  }
+}
+
+/* ------------------------------ Neighborhood ------------------------------ */
+.ol-intro {
+  background: #fffffa;
+  padding: 80px 0 82px;
+
+  .ol-heading {
+    max-width: 897px;
+    margin: 0 auto 27px;
+  }
+
+  .ol-intro__text {
+    max-width: 1095px;
+    margin: 0 auto 30.7px;
+    color: $text;
+    font-size: 20.465px;
+    line-height: 30.698px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* --------------------------------- Offices -------------------------------- */
+.ol-offices {
+  padding: 69px 0 124px;
+  overflow: hidden;
+
+  > .ol-container > .ol-heading {
+    margin-bottom: 57px;
+  }
+
+  .ol-offices__divider {
+    width: 1363.5px;
+    max-width: 100vw;
+    margin: 98px 0 98px 50%;
+    transform: translateX(-50%);
+    border: 0;
+    border-top: 1px solid #a78e8e;
+    opacity: 1;
+  }
+}
+
+.ol-office {
   position: relative;
 
-  .left {
-    width: 55%;
-    height: 100%;
-  }
-
-  .right {
-    height: 100%;
-    background-color: #e62e2a;
-    width: 50%;
-  }
-
-  .clipp {
+  .ol-office__number {
     position: absolute;
-    clip-path: polygon(67% 0, 100% 0, 100% 99%, 20% 100%);
-    height: 130px;
-    width: 130px;
-    background-color: #e62e2a;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: -87px;
+    left: calc(50% - 1141px);
+    z-index: 0;
+    color: #f5f5cd;
+    font-weight: 700;
+    font-size: 577.938px;
+    line-height: 751.32px;
+    pointer-events: none;
+    user-select: none;
   }
 
-  .contain {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
+  &.ol-office--reverse .ol-office__number {
+    left: calc(50% + 399px);
+  }
 
-    .col-lg-6 {
+  .ol-office__card {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 20px;
+    height: 598px;
+    padding: 23px 25px 27px;
+    background: #fffffa;
+    border-radius: 16px;
+    box-shadow: 0 4px 18.1px rgba(0, 0, 0, 0.25);
+  }
+
+  &.ol-office--reverse .ol-office__card {
+    flex-direction: row-reverse;
+  }
+
+  .ol-office__panel {
+    flex: 0 0 462px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: $red;
+    border-radius: 10px;
+    color: #fff;
+  }
+
+  .ol-office__name {
+    max-width: 390px; // 46px side padding + ~298px text, so "A-State Insurance" stays on one line
+    margin: 0;
+    padding: 36px 46px 0;
+    color: #fff;
+    font-weight: 400;
+    font-size: 40.93px;
+    line-height: 34px;
+
+    .ol-office__area {
+      font-weight: 600;
+      font-size: 30.93px;
+    }
+  }
+
+  .ol-office__details {
+    list-style: none;
+    margin: 0;
+    padding: 30px 30px 20px 43px;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      min-height: 40px;
+      margin-bottom: 13px;
+      font-size: 20px;
+      line-height: 34px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a,
+    .ol-office__reviews {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+
+  .ol-office__icon {
+    flex: 0 0 30px;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    margin-top: 5px;
+  }
+
+  .ol-office__languages {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 6px;
+  }
+
+  .ol-office__language {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  // Explicit size: the global `img { width/height: 100% }` rule would otherwise stretch it.
+  .ol-office__flag {
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .ol-office__parking {
+    margin-top: auto;
+    min-height: 75px;
+    padding: 9px 46px;
+    display: flex;
+    align-items: center;
+    background: $yellow;
+    border-radius: 10px;
+    color: #1f1d1d;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .ol-office__map {
+    position: relative;
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 10px;
+
+    // The branded marker is anchored to the centre of the embed, which is where
+    // Google draws its own pin. Panning would break that alignment, so the map
+    // itself is not interactive — the marker links out to the full map instead.
+    iframe {
+      display: block;
+      pointer-events: none;
+    }
+  }
+
+  .map-pin {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 44px;
+    height: 54px; // 44px badge + 10px tail
+    transform: translate(-50%, -100%); // tail tip sits on the map centre
+    z-index: 2;
+    display: block;
+    text-decoration: none;
+
+    .map-pin__badge {
       display: flex;
       align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      padding: 7px;
+      border-radius: 50%;
+      background: $red;
+      border: 2px solid $red;
+      box-shadow: 0 3px 9px rgba(0, 0, 0, 0.3);
 
-      .icon {
-        height: 80%;
-        width: fit-content;
-      }
-
-      .h4 {
-        font-weight: 700;
-        color: #fff;
-        font-size: 42px;
-        margin: 0;
-      }
-    }
-  }
-}
-
-.getCovver {
-  background-image: url('/assets/images/our-location-coverd-banner.png') !important;
-  height: 45rem;
-  background-size: cover;
-
-  .container {
-    height: 100%;
-
-    .topSub {
-      height: 100%;
-      display: flex;
-      align-items: flex-end;
-      padding-bottom: 7rem;
-
-      .topSub2 {
-        .h1 {
-          font-weight: 700;
-          color: #fff;
-          font-size: 3rem;
-        }
-
-        .paragraph {
-          color: #fff;
-          max-width: 800px;
-          width: 100%;
-          line-height: 1.6;
-        }
-
-        .selectable {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          gap: 10px;
-
-          .chip {
-            background-color: #ffffffa1;
-            border-radius: 8px;
-            width: 136px;
-            height: 43px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.5s all ease-in-out;
-
-            &:hover {
-              background-color: #fff22e;
-              color: #000;
-            }
-          }
-        }
-
-        .inps {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          gap: 10px;
-          margin: 1rem 0;
-          width: 60%;
-        }
-
-        button {
-          font-family: 'Afacad', sans-serif;
-          font-size: 16px;
-          font-weight: 700 !important;
-          padding: 10px 24px;
-          border-radius: 8px !important;
-          transition: 0.5s all ease-in-out;
-          background-color: #fff22e;
-          color: #ca2b28;
-          box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
-            rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
-            rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-          border: 0;
-
-          &:hover {
-            background-color: #ca2b28;
-            color: #000;
-          }
-        }
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
       }
     }
-  }
-}
 
-@media only screen and (max-width: 540px) {
-
-  .getCovver {
-    height: auto !important;
-    padding: 3rem 1rem;
-    background-position: center;
-  }
-
-  .getCovver .container {
-    height: auto;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 42px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-top: 12px solid $red;
+    }
   }
 
-  .getCovver .topSub {
-    flex-direction: column;
+  // Tabs hang off the bottom edge of the card.
+  .ol-office__actions {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 11px;
+    padding-left: 25px;
+  }
+
+  .ol-office__action {
+    flex: 0 0 226px;
+    min-height: 48px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0;
+    padding: 0 12px;
+    background: $red;
+    border-radius: 0 0 7px 7px;
+    color: #fff;
+    font-size: 20px;
+    line-height: 34px;
+    text-align: center;
+    text-decoration: underline;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background: #b02422;
+    }
+  }
+}
+
+/* --------------------------------- Cities --------------------------------- */
+.ol-cities {
+  background: #f8f8f8;
+  padding: 78px 0 183px;
+
+  .ol-cities__search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 19px;
+    margin: 27px auto 115px;
+    max-width: 586px;
   }
 
-  .getCovver .topSub2 {
+  .ol-cities__input {
     width: 100%;
+    height: 48px;
+    padding: 0 18px;
+    border: 0;
+    border-radius: 7px;
+    background: #bcbcbc;
+    color: #1f1d1d;
+    font-size: 16px;
+    outline: none;
+
+    &::placeholder {
+      color: #6c6262;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px rgba($red, 0.45);
+    }
+  }
+
+  .ol-cities__button {
+    width: 164px;
+    height: 44px;
+    border: 0;
+    border-radius: 7px;
+    background: $red;
+    color: #fff;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background: #b02422;
+    }
+  }
+
+  .ol-cities__list {
+    columns: 5;
+    column-gap: 40px;
+    margin: 0;
+    padding: 0 0 0 58px;
+    list-style: disc;
+
+    li {
+      break-inside: avoid;
+      margin-left: 29.3px;
+      color: #000;
+      font-weight: 500;
+      font-size: 19.535px;
+      line-height: 30px;
+      text-decoration: underline;
+    }
+  }
+
+  .ol-cities__empty {
+    margin: 0;
+    color: $text;
+    font-size: 20px;
     text-align: center;
   }
+}
 
-  .getCovver .h1 {
-    font-size: 26px;
+/* -------------------------------- Why Visit ------------------------------- */
+.ol-why {
+  padding: 202px 0 150px;
+
+  .ol-why__grid {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    padding-left: 25px;
   }
 
-  .getCovver .paragraph {
-    font-size: 14px;
-    padding: 0 10px;
+  .ol-why__visual {
+    flex: 0 0 550px;
   }
 
-  /* 🔥 CHIPS FIX PROPER */
-  .getCovver .selectable {
+  .ol-why__image {
+    display: block;
+    width: 100%;
+    height: 774px;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+
+  .ol-why__content {
+    flex: 0 1 621px;
+  }
+
+  .ol-why__title {
+    max-width: 537px;
+    margin: 0 0 22px;
+    color: $red;
+    font-weight: 600;
+    font-size: 49.53px;
+    line-height: 47px;
+  }
+
+  .ol-why__text {
+    max-width: 593px;
+    margin: 0 0 30.7px;
+    color: $text;
+    font-size: 20.465px;
+    line-height: 30.698px;
+  }
+
+  .ol-why__points {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      min-height: 48px;
+      margin-bottom: 13px;
+      padding: 8px 32px 10px;
+      background: $red;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 20.465px;
+      line-height: 30.698px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+/* ------------------------------ Contact/Quote ----------------------------- */
+.ol-contact {
+  padding: 0 0 168px;
+
+  .ol-contact__title {
+    max-width: 808px;
+    margin: 0 auto 32px;
+    color: $red;
+    font-weight: 600;
+    font-size: 59.056px;
+    line-height: 72.478px;
+  }
+
+  .ol-contact__links {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 16px 51px;
+    margin-bottom: 48px;
   }
 
-  .getCovver .chip {
-    flex: 0 0 48%;
-    width: 48%;
-    height: 42px;
-    font-size: 14px;
-  }
-
-  .inps {
-    display: flex;
-    flex-direction: row;
+  .ol-contact__link {
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
-    margin: 1rem 0;
-    width: 99% !important;
+    gap: 6px;
+    color: #252525;
+    font-size: 20.465px;
+    line-height: 30.698px;
+    letter-spacing: 1.2279px;
+    text-decoration: underline;
   }
 
+  // Each icon is a filled layer with an outline layer stacked on top.
+  .ol-contact__icon {
+    position: relative;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
 
+    // Layers keep their native SVG sizes (the global img rule would stretch them).
+    img {
+      grid-area: 1 / 1;
+      display: block;
+    }
 
-}
+    &--phone {
+      width: 36px;
+      height: 36px;
 
-@media only screen and (max-width: 1024px) {
-  .locationMain {
-    .topBanner {
-      height: 22rem;
+      img:first-child { width: 28.3044px; height: 21.5281px; }
+      img:last-child { width: 29.5601px; height: 23.024px; }
+    }
 
-      .container {
-        .h1 {
-          padding-right: 14rem;
-        }
-      }
+    &--chat {
+      width: 31px;
+      height: 31px;
+
+      img:first-child { width: 21.5328px; height: 19.6537px; }
+      img:last-child { width: 22.394px; height: 20.5156px; }
+    }
+
+    &--mail {
+      width: 33px;
+      height: 33px;
+
+      img:first-child { width: 16.7776px; height: 27.3606px; }
+      img:last-child { width: 17.4256px; height: 27.5918px; }
     }
   }
-}
 
-@media only screen and (max-width: 820px) {
-  .locationMain {
-    .topBanner {
-      height: 22rem;
+  .quote-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 26px;
+    margin-bottom: 26px;
 
-      .container {
+    .quote-option {
+      appearance: none;
+      background: transparent;
+      border: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+
+      .icon-badge {
+        position: relative;
+        width: 120px;
+        height: 88px;
+        display: grid;
+        place-items: center;
+
+        .icon-burst {
+          position: absolute;
+          inset: 0 16px;
+          background: #f9c9cf;
+          clip-path: polygon(50% 0%, 61% 18%, 82% 8%, 76% 29%, 100% 32%, 82% 50%, 100% 68%, 76% 71%, 82% 92%,
+              61% 82%, 50% 100%, 39% 82%, 18% 92%, 24% 71%, 0% 68%, 18% 50%, 0% 32%, 24% 29%, 18% 8%, 39% 18%);
+        }
+
+        .quote-option-image {
+          position: relative;
+          max-width: 54px;
+          max-height: 50px;
+          object-fit: contain;
+        }
+      }
+
+      .quote-option-label {
+        display: inline-flex;
         align-items: center;
-        justify-content: center;
+        gap: 8px;
+        color: #000;
+        font-size: 20.465px;
+        line-height: 31.93px;
+      }
 
-        .h1 {
-          padding-right: 0rem;
-          margin-bottom: 0;
-          text-align: center;
+      .radio-indicator {
+        width: 15px;
+        height: 15px;
+        flex: 0 0 15px;
+        border-radius: 50%;
+        border: 0.8px solid #000;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 4px;
+          top: -1px;
+          width: 6px;
+          height: 11px;
+          border-right: 2px solid #000;
+          border-bottom: 2px solid #000;
+          transform: rotate(45deg) scale(0.65);
+          opacity: 0;
+          transition: transform 0.2s ease, opacity 0.2s ease;
         }
+      }
+
+      &.selected .radio-indicator::after {
+        transform: rotate(45deg) scale(1);
+        opacity: 1;
+      }
+
+      &:hover {
+        transform: translateY(-1px);
       }
     }
   }
 
-  .container {
-    .topSub {
-      padding-bottom: 3rem;
+  .quote-form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 11px 12px;
+    max-width: 900px;
+    margin: 0 auto;
+
+    .form-control {
+      flex: 0 1 308px;
+      height: 64px;
+      border-radius: 8px;
+      border: 1px solid #e6e6e6;
+      background: #f4f4f4;
+      padding: 0 23px;
+      color: #333;
+      font-size: 20.465px;
+
+      &::placeholder {
+        color: #8b8b8b;
+      }
+    }
+
+    .quote-submit {
+      flex: 0 0 202px;
+      height: 49px;
+      margin-left: 25px;
+      font-family: 'Inter', sans-serif;
+      font-size: 16.75px;
+      font-weight: 900;
+      border-radius: 32px;
+      border: 2px solid #ff7f24;
+      background: #fff22e;
+      color: #000;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.28), inset -5px 5px 5px rgba(255, 255, 255, 0.74);
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: translateY(-1px);
+      }
+
+      &:disabled {
+        background: #efe7a5;
+        border-color: #d3c86b;
+        color: #8a7d2f;
+        transform: none;
+      }
+    }
+  }
+
+  .terms-consent {
+    max-width: 900px;
+    margin: 20px auto 0;
+    text-align: left;
+  }
+}
+
+/* ----------------------------------- FAQ ---------------------------------- */
+.ol-faq {
+  background: #ffffef;
+  padding: 107px 0 119px;
+  margin-bottom: 35px;
+  overflow: hidden;
+
+  .ol-faq__container {
+    max-width: 1135px;
+  }
+
+  > .ol-container > .ol-heading {
+    margin-bottom: 87px;
+  }
+
+  .ol-faq__list {
+    position: relative;
+    z-index: 1;
+  }
+
+  .ol-faq__entry {
+    margin-bottom: 35px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .ol-faq__heading {
+    margin: 0;
+  }
+
+  .ol-faq__question {
+    width: 100%;
+    min-height: 66.7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 12px 0 12px 50.5px;
+    background: #fff;
+    border: 0;
+    border-radius: 8.372px;
+    box-shadow: 0 3.721px 0 3.721px #ff0404;
+    color: #2d2d2d;
+    font-family: 'Afacad', sans-serif;
+    font-weight: 600;
+    font-size: 27.907px;
+    line-height: 23.545px;
+    text-align: left;
+  }
+
+  // Explicit size: the global `img { width/height: 100% }` rule would otherwise stretch it.
+  .ol-faq__arrow {
+    flex: 0 0 20.465px;
+    width: 20.465px;
+    height: 40.93px;
+    margin-right: 30px;
+    transform: rotate(90deg);
+    transition: transform 0.2s ease;
+  }
+
+  .ol-faq__question--open .ol-faq__arrow {
+    transform: rotate(-90deg);
+  }
+
+  .ol-faq__answer {
+    margin: 17px 0 0;
+    padding: 0 31px 0 50.5px;
+    color: #44110e;
+    font-size: 20.465px;
+    line-height: 29.767px;
+  }
+
+  .ol-faq__decor {
+    position: absolute;
+    top: 9px;
+    left: calc(50% + 652px);
+    width: 199.785px;
+    height: 283.807px;
+    object-fit: contain;
+    transform: rotate(14.92deg);
+    pointer-events: none;
+  }
+}
+
+/* ------------------------------- Responsive ------------------------------- */
+@media only screen and (max-width: 1600px) {
+  .ol-faq .ol-faq__decor {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .ol-hero {
+    min-height: 860px;
+
+    .ol-hero__title {
+      max-width: 860px;
+      font-size: 84px;
+      line-height: 80px;
+    }
+  }
+
+  .ol-office .ol-office__number {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .ol-offices .ol-offices__divider {
+    width: 100%;
+    margin: 72px 0;
+    transform: none;
+  }
+
+  .ol-office {
+    .ol-office__panel {
+      flex-basis: 400px;
+    }
+
+    .ol-office__name {
+      padding: 30px 32px 0;
+    }
+
+    .ol-office__details {
+      padding-left: 30px;
+    }
+
+    .ol-office__parking {
+      padding: 9px 32px;
+    }
+  }
+
+  .ol-cities .ol-cities__list {
+    columns: 4;
+    padding-left: 0;
+  }
+
+  .ol-why {
+    padding-top: 140px;
+
+    .ol-why__grid {
+      gap: 40px;
+      padding-left: 0;
+    }
+
+    .ol-why__visual {
+      flex-basis: 42%;
+    }
+
+    .ol-why__image {
+      height: auto;
+      aspect-ratio: 550 / 774;
     }
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .solutions-section {
-    padding: 3rem 0;
+@media only screen and (max-width: 991px) {
+  .ol-heading {
+    font-size: 34px;
+    line-height: 42px;
+  }
 
-    .solution-card {
-      padding: 20px 25px 14px 20px;
+  .ol-hero {
+    min-height: 680px;
 
-      .icon-box img {
-        width: 44px;
-        height: auto;
+    .ol-hero__title {
+      font-size: 64px;
+      line-height: 64px;
+    }
+
+    .ol-hero__subtitle {
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+
+  .ol-office {
+    .ol-office__card,
+    &.ol-office--reverse .ol-office__card {
+      flex-direction: column;
+      height: auto;
+      padding: 20px;
+    }
+
+    .ol-office__panel {
+      flex-basis: auto;
+    }
+
+    .ol-office__parking {
+      margin-top: 8px;
+    }
+
+    .ol-office__map {
+      flex: 0 0 auto;
+      height: 380px;
+    }
+
+    .ol-office__actions {
+      padding-left: 20px;
+    }
+
+    .ol-office__action {
+      flex: 1 1 0;
+    }
+  }
+
+  .ol-cities {
+    padding-bottom: 120px;
+
+    .ol-cities__search {
+      margin-bottom: 70px;
+    }
+
+    .ol-cities__list {
+      columns: 3;
+    }
+  }
+
+  .ol-why {
+    padding: 110px 0 110px;
+
+    .ol-why__grid {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .ol-why__visual {
+      flex-basis: auto;
+      max-width: 550px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .ol-why__content {
+      flex-basis: auto;
+    }
+
+    .ol-why__title {
+      max-width: none;
+      font-size: 40px;
+      line-height: 44px;
+    }
+  }
+
+  .ol-contact {
+    padding-bottom: 110px;
+
+    .ol-contact__title {
+      font-size: 44px;
+      line-height: 54px;
+    }
+
+    .quote-form-row .quote-submit {
+      margin-left: 0;
+    }
+  }
+
+  .ol-faq {
+    padding: 80px 0 90px;
+
+    > .ol-container > .ol-heading {
+      margin-bottom: 56px;
+    }
+
+    .ol-faq__question {
+      font-size: 22px;
+      line-height: 26px;
+      padding-left: 28px;
+      padding-right: 8px;
+    }
+
+    .ol-faq__answer {
+      padding: 0 16px 0 28px;
+      font-size: 18px;
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .ol-heading {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .ol-hero {
+    min-height: 0;
+
+    .ol-hero__inner {
+      padding: 150px 16px 70px;
+      text-align: center;
+    }
+
+    .ol-hero__title {
+      font-size: 40px;
+      line-height: 44px;
+    }
+
+    .ol-hero__subtitle {
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+
+  .ol-intro {
+    padding: 56px 0;
+
+    .ol-intro__text {
+      font-size: 17px;
+      line-height: 27px;
+    }
+  }
+
+  .ol-offices {
+    padding: 56px 0 80px;
+
+    > .ol-container > .ol-heading {
+      margin-bottom: 36px;
+    }
+
+    .ol-offices__divider {
+      margin: 48px 0;
+    }
+  }
+
+  .ol-office {
+    .ol-office__card,
+    &.ol-office--reverse .ol-office__card {
+      padding: 12px;
+    }
+
+    .ol-office__name {
+      padding: 24px 20px 0;
+      font-size: 32px;
+      line-height: 32px;
+
+      .ol-office__area {
+        font-size: 24px;
       }
+    }
 
-      .card-content {
-        .solution-title {
-          font-size: 22px;
+    .ol-office__details {
+      padding: 22px 16px 16px 18px;
+
+      li {
+        font-size: 17px;
+        line-height: 28px;
+        word-break: break-word;
+      }
+    }
+
+    .ol-office__icon {
+      flex-basis: 26px;
+      width: 26px;
+      height: 26px;
+      margin-top: 1px;
+    }
+
+    .ol-office__parking {
+      padding: 12px 20px;
+      font-size: 17px;
+      line-height: 23px;
+    }
+
+    .ol-office__map {
+      height: 280px;
+    }
+
+    .ol-office__actions {
+      gap: 6px;
+      padding: 0 12px;
+    }
+
+    .ol-office__action {
+      padding: 6px;
+      font-size: 15px;
+      line-height: 20px;
+    }
+  }
+
+  .ol-cities {
+    padding: 56px 0 80px;
+
+    .ol-cities__search {
+      margin-bottom: 48px;
+    }
+
+    .ol-cities__list {
+      columns: 2;
+      column-gap: 16px;
+
+      li {
+        margin-left: 20px;
+        font-size: 17px;
+        line-height: 28px;
+      }
+    }
+  }
+
+  .ol-why {
+    padding: 80px 0;
+
+    .ol-why__title {
+      font-size: 32px;
+      line-height: 36px;
+    }
+
+    .ol-why__text {
+      font-size: 17px;
+      line-height: 27px;
+    }
+
+    .ol-why__points li {
+      padding: 9px 18px;
+      font-size: 17px;
+      line-height: 25px;
+    }
+  }
+
+  .ol-contact {
+    padding-bottom: 80px;
+
+    .ol-contact__title {
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    .ol-contact__link {
+      font-size: 17px;
+      letter-spacing: 0.5px;
+    }
+
+    .quote-options {
+      gap: 4px 6px;
+
+      .quote-option {
+        flex: 0 0 calc(33.333% - 4px);
+
+        .icon-badge {
+          width: 92px;
+          height: 72px;
+
+          .icon-burst {
+            inset: 0 12px;
+          }
+
+          .quote-option-image {
+            max-width: 42px;
+            max-height: 40px;
+          }
         }
 
-        .solution-text {
+        .quote-option-label {
           font-size: 16px;
         }
       }
     }
-  }
-}
 
-@media only screen and (max-width: 540px) {
-  .locationMain {
-    .topBanner {
-      height: 15rem;
+    .quote-form-row {
+      .form-control {
+        flex: 1 1 100%;
+        height: 54px;
+        font-size: 17px;
+      }
 
-      .container {
-        .h1 {
-          font-size: 2rem;
-        }
+      .quote-submit {
+        flex: 1 1 100%;
       }
     }
   }
 
-  .solutions-section {
-    padding: 2rem 0;
+  .ol-faq {
+    padding: 56px 0 64px;
 
-    .side-strip {
-      display: none;
+    > .ol-container > .ol-heading {
+      margin-bottom: 40px;
     }
 
-    .section-title {
-      font-size: 1.6rem;
-      text-align: center;
+    .ol-faq__entry {
+      margin-bottom: 24px;
     }
 
-    .solution-card {
-      padding: 14px 14px;
-
-      .d-flex {
-        flex-direction: row;
-        gap: 12px;
-        align-items: center;
-      }
-
-      .icon-box {
-        margin-right: 12px;
-
-        img {
-          width: 40px;
-          height: 40px;
-        }
-      }
-
-      .card-content {
-        .solution-title {
-          font-size: 18px;
-        }
-
-        .solution-text {
-          font-size: 15px;
-        }
-      }
-    }
-  }
-
-  .footUpper {
-    height: 270px;
-    flex-direction: column;
-
-    .left {
-      width: 100%;
+    .ol-faq__question {
+      font-size: 19px;
+      line-height: 24px;
+      padding-left: 18px;
     }
 
-    .right {
-      width: 100%;
+    .ol-faq__arrow {
+      flex-basis: 14px;
+      width: 14px;
+      height: 28px;
+      margin-right: 12px;
     }
 
-    .clipp {
-      display: none;
-    }
-
-    .contain {
-      .col-lg-6 {
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-
-        .icon {
-          transform: translateY(-15px);
-        }
-
-        .h4 {
-          font-size: 40px;
-          margin: 0;
-          transform: translateY(10px);
-        }
-      }
-    }
-  }
-
-  .topBanner.getCovver {
-    height: 30rem;
-
-    .topSub {
-      .topSub2 {
-        .selectable.mt-5 {
-          margin-top: 0 !important;
-        }
-
-        .h1 {
-          font-size: 30px;
-        }
-      }
+    .ol-faq__answer {
+      padding: 0 12px 0 18px;
+      font-size: 17px;
+      line-height: 26px;
     }
   }
 }

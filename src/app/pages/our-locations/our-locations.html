@@ -1,181 +1,250 @@
 <div class="locationMain">
-  <div class="topBanner">
-    <div class="container">
-      <h1 class="h1" [innerHTML]="'OUR_LOCATION.HEADING' | translateHtml | async"></h1>
+  <!-- Hero Section Start -->
+  <section class="ol-hero">
+    <div class="ol-hero__inner">
+      <h1 class="ol-hero__title" [innerHTML]="'OUR_LOCATION.HEADING' | translateHtml | async"></h1>
+      <p class="ol-hero__subtitle" [innerHTML]="'OUR_LOCATION.SUBHEADING' | translateHtml | async"></p>
     </div>
-  </div>
+  </section>
+  <!-- Hero Section End -->
 
-  <section class="neighborhood-section">
-    <div class="container text-center">
-      <h2 class="title" [innerHTML]="'OUR_LOCATION.SESSION1.TITLE' | translateHtml | async"></h2>
+  <!-- Neighborhood Intro Section Start -->
+  <section class="ol-intro">
+    <div class="ol-container text-center">
+      <h2 class="ol-heading" [innerHTML]="'OUR_LOCATION.SESSION1.TITLE' | translateHtml | async"></h2>
+      <p class="ol-intro__text" [innerHTML]="'OUR_LOCATION.SESSION1.DEC1' | translateHtml | async"></p>
+      <p class="ol-intro__text" [innerHTML]="'OUR_LOCATION.SESSION1.DEC2' | translateHtml | async"></p>
+    </div>
+  </section>
+  <!-- Neighborhood Intro Section End -->
 
-      <p class="desc" [innerHTML]="'OUR_LOCATION.SESSION1.DEC1' | translateHtml | async"></p>
+  <!-- Offices Section Start -->
+  <section class="ol-offices">
+    <div class="ol-container">
+      <h2 class="ol-heading text-center" [innerHTML]="'OUR_LOCATION.SESSION1.OFFICES_TITLE' | translateHtml | async"></h2>
 
-      <p class="desc" [innerHTML]="'OUR_LOCATION.SESSION1.DEC2' | translateHtml | async"></p>
+      @for (loc of locations; track loc.id; let i = $index; let last = $last) {
+      <div class="ol-office" [class.ol-office--reverse]="i % 2 === 1">
+        <span class="ol-office__number" aria-hidden="true">{{ officeNumber(i) }}</span>
 
-      <h2 class="offices-title" [innerHTML]="'OUR_LOCATION.SESSION1.OFFICES_TITLE' | translateHtml | async"></h2>
+        <div class="ol-office__card">
+          <div class="ol-office__panel">
+            <h3 class="ol-office__name">
+              A-State Insurance <span class="ol-office__area">({{ loc.neighborhood || loc.name }})</span>
+            </h3>
 
-      <div class="location-card shadow" *ngFor="let loc of locations">
-        <div class="map">
-          <iframe [src]="loc.safeMapUrl" width="100%" height="100%" style="border: 0" loading="lazy">
-          </iframe>
-          <a class="map-pin" [href]="loc.link" target="_blank" rel="noopener noreferrer"
-            [attr.aria-label]="'A-State Insurance (' + loc.name + ') on Google Maps'">
-            <span class="map-pin__badge">
-              <img src="/assets/images/logo.png" alt="A-State Insurance" />
-            </span>
+            <ul class="ol-office__details">
+              <li>
+                <img src="/assets/images/our-locations/icon-location.png" alt="" class="ol-office__icon" />
+                <a [href]="loc.link" target="_blank" rel="noopener noreferrer">{{ loc.address }}</a>
+              </li>
+              <li>
+                <img src="/assets/images/our-locations/icon-phone.png" alt="" class="ol-office__icon" />
+                <a href="tel:{{ loc.phone }}">{{ loc.phone }}</a>
+              </li>
+              <li>
+                <img src="/assets/images/our-locations/icon-clock.png" alt="" class="ol-office__icon" />
+                <span>{{ loc.officeHours }}</span>
+              </li>
+              <li>
+                <img src="/assets/images/our-locations/icon-language.png" alt="" class="ol-office__icon" />
+                <span class="ol-office__languages">
+                  @for (language of loc.languageItems; track language.label; let lastLanguage = $last) {
+                  <span class="ol-office__language">
+                    <img *ngIf="language.flag" [src]="language.flag" alt="" class="ol-office__flag" />{{ language.label }}
+                  </span>
+                  @if (!lastLanguage) {
+                  <span class="ol-office__language-sep">|</span>
+                  }
+                  }
+                </span>
+              </li>
+              <li *ngIf="loc.googleReviews">
+                <img src="/assets/images/our-locations/icon-star.png" alt="" class="ol-office__icon" />
+                <span class="ol-office__reviews">{{ loc.googleReviews }}</span>
+              </li>
+            </ul>
+
+            <div class="ol-office__parking" *ngIf="loc.parking">
+              {{ 'OUR_LOCATION.SESSION1.CARD.PARKING_LABEL' | translate }}: {{ loc.parking }}
+            </div>
+          </div>
+
+          <div class="ol-office__map">
+            <iframe [src]="loc.safeMapUrl" width="100%" height="100%" style="border: 0" loading="lazy"
+              [title]="'A-State Insurance (' + (loc.neighborhood || loc.name) + ') map'">
+            </iframe>
+            <a class="map-pin" [href]="loc.link" target="_blank" rel="noopener noreferrer"
+              [attr.aria-label]="'A-State Insurance (' + loc.name + ') on Google Maps'">
+              <span class="map-pin__badge">
+                <img src="/assets/images/logo.png" alt="A-State Insurance" />
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div class="ol-office__actions">
+          <a class="ol-office__action" [routerLink]="getRoute('getAQuote')">{{ loc.ctaButtons[0] }}</a>
+          <a class="ol-office__action" [href]="loc.directionsLink" target="_blank" rel="noopener noreferrer">
+            {{ loc.ctaButtons[1] }}
+          </a>
+          <a class="ol-office__action"
+            [routerLink]="currentLang == 'es' ? ['/es/nuestras-ubicaciones', loc.id] : ['/our-locations', loc.id]">
+            {{ loc.ctaButtons[2] }}
           </a>
         </div>
+      </div>
 
-        <!-- INFO -->
-        <div class="info text-start">
-          <h4>A-State Insurance ({{ loc.name }})</h4>
+      @if (!last) {
+      <hr class="ol-offices__divider" />
+      }
+      }
+    </div>
+  </section>
+  <!-- Offices Section End -->
 
-          <ul class="details">
-            <li >
-              <span class="icon">📍</span>
-              <span class="text">
-                <a class="inline-link" href="{{ loc.link }}" target="_blank" rel="noopener noreferrer">{{ loc.address }}</a>
-              </span>
-            </li>
-            <li>
-              <span class="icon">📞</span>
-              <span class="text">
-                <a class="inline-link" style="color: inherit; text-decoration: underline;" href="tel:{{ loc.phone }}">
-                  {{ loc.phone }}
-                </a>
-              </span>
-            </li>
-            <li>
-              <span class="icon">🌐</span>
-              <span class="text">{{ loc.languages.join(' | ') }}</span>
-            </li>
-            <li>
-              <span class="icon">⏰</span>
-              <span class="text">{{ loc.officeHours }}</span>
-            </li>
-            <li *ngIf="loc.googleReviews">
-              <span class="icon">⭐</span>
-              <span class="text">
-                <strong>{{ 'OUR_LOCATION.SESSION1.CARD.REVIEWS_LABEL' | translate }}:</strong>
-                {{ loc.googleReviews }}
-              </span>
-            </li>
-            <li *ngIf="loc.parking">
-              <span class="icon">🅿️</span>
-              <span class="text">
-                <strong>{{ 'OUR_LOCATION.SESSION1.CARD.PARKING_LABEL' | translate }}:</strong>
-                {{ loc.parking }}
-              </span>
-            </li>
+  <!-- Texas Cities Section Start -->
+  <section class="ol-cities">
+    <div class="ol-container">
+      <h2 class="ol-heading text-center" [innerHTML]="'OUR_LOCATION.CITIES.TITLE' | translateHtml | async"></h2>
+
+      <form class="ol-cities__search" role="search" (submit)="$event.preventDefault(); searchCities()">
+        <input type="search" class="ol-cities__input" [placeholder]="'OUR_LOCATION.CITIES.SEARCH_PLACEHOLDER' | translate"
+          [attr.aria-label]="'OUR_LOCATION.CITIES.SEARCH_PLACEHOLDER' | translate" [value]="citySearch"
+          (input)="citySearch = $any($event.target).value; searchCities()" />
+        <button type="submit" class="ol-cities__button">{{ 'OUR_LOCATION.CITIES.SEARCH_BUTTON' | translate }}</button>
+      </form>
+
+      @if (filteredCities.length) {
+      <ul class="ol-cities__list">
+        @for (city of filteredCities; track city) {
+        <li>{{ city }}</li>
+        }
+      </ul>
+      } @else {
+      <p class="ol-cities__empty">{{ 'OUR_LOCATION.CITIES.NO_RESULTS' | translate }}</p>
+      }
+    </div>
+  </section>
+  <!-- Texas Cities Section End -->
+
+  <!-- Why Visit Section Start -->
+  <section class="ol-why">
+    <div class="ol-container">
+      <div class="ol-why__grid">
+        <div class="ol-why__visual">
+          <img src="/assets/images/our-locations/why-visit.png" alt="A-State Insurance agent" class="ol-why__image" />
+        </div>
+
+        <div class="ol-why__content">
+          <h2 class="ol-why__title" [innerHTML]="'OUR_LOCATION.SESSION2.TITLE' | translateHtml | async"></h2>
+          <p class="ol-why__text" [innerHTML]="'OUR_LOCATION.SESSION2.DEC1' | translateHtml | async"></p>
+          <p class="ol-why__text" [innerHTML]="'OUR_LOCATION.SESSION2.DEC2' | translateHtml | async"></p>
+
+          <ul class="ol-why__points">
+            @for (point of whyVisitPoints; track point) {
+            <li>{{ point }}</li>
+            }
           </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Why Visit Section End -->
 
-          <div class="buttons">
-          <button class="btn quote" [routerLink]="
-                currentLang == 'es'
-                  ? ['/es/obtener-una-cotizacion']
-                  : ['/get-a-quote']
-              ">{{ loc.ctaButtons[0] }}</button>
-            <a  class="btn directions" [href]="loc.directionsLink" target="_blank" rel="noopener noreferrer">
-              {{ loc.ctaButtons[1] }}
-            </a>
-            <button class="btn details-btn" [routerLink]="
-                currentLang == 'es'
-                  ? ['/es/nuestras-ubicaciones', loc.id]
-                  : ['/our-locations', loc.id]
-              ">
-              {{ loc.ctaButtons[2] }}
+  <!-- Contact & Quote Section Start -->
+  <section class="ol-contact">
+    <div class="ol-container text-center">
+      <h2 class="ol-contact__title" [innerHTML]="'OUR_LOCATION.SESSION3.TITLE' | translateHtml | async"></h2>
+
+      <div class="ol-contact__links">
+        <a class="ol-contact__link" href="tel:7133577771">
+          <span class="ol-contact__icon ol-contact__icon--phone" aria-hidden="true">
+            <img src="/assets/images/our-locations/contact-1-color.svg" alt="" />
+            <img src="/assets/images/our-locations/contact-1-line.svg" alt="" />
+          </span>
+          (713) 357-7771
+        </a>
+        <a class="ol-contact__link" href="sms:7133577771">
+          <span class="ol-contact__icon ol-contact__icon--chat" aria-hidden="true">
+            <img src="/assets/images/our-locations/contact-2-color.svg" alt="" />
+            <img src="/assets/images/our-locations/contact-2-line.svg" alt="" />
+          </span>
+          (713) 357-7771
+        </a>
+        <a class="ol-contact__link" href="mailto:save@astateinsurance.com">
+          <span class="ol-contact__icon ol-contact__icon--mail" aria-hidden="true">
+            <img src="/assets/images/our-locations/contact-3-color.svg" alt="" />
+            <img src="/assets/images/our-locations/contact-3-line.svg" alt="" />
+          </span>
+          save&#64;astateinsurance.com
+        </a>
+      </div>
+
+      <div class="quote-options">
+        @for (item of chips; track item.name) {
+        <button type="button" class="quote-option" [class.selected]="isChipSelected(coveredForm, item.name)"
+          [attr.aria-pressed]="isChipSelected(coveredForm, item.name)" (click)="toggleChip(coveredForm, item.name)">
+          <span class="icon-badge">
+            <span class="icon-burst"></span>
+            <img [src]="item.image" [alt]="item.name | translate" class="quote-option-image" />
+          </span>
+          <span class="quote-option-label">
+            <span class="radio-indicator"></span>
+            <span [innerHTML]="item.name | translateHtml | async"></span>
+          </span>
+        </button>
+        }
+      </div>
+
+      <div class="quote-form-row">
+        <input type="text" [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate" class="form-control"
+          [value]="coveredForm.fullName" (input)="coveredForm.fullName = $any($event.target).value" />
+        <input type="tel" appPhoneFormat [placeholder]="'HOME.BANNER.FORM.PHONE' | translate" class="form-control"
+          [value]="coveredForm.phone" (input)="coveredForm.phone = $any($event.target).value" />
+        <button class="quote-submit"
+          [disabled]="coveredForm.isSubmitting || !coveredForm.selectedChips.length || !coveredForm.fullName.trim() || !coveredForm.phone.trim() || !termsAccepted"
+          (click)="goToSelectedQuote(coveredForm)">
+          {{ coveredForm.isSubmitting ? ('HOME.BANNER.FORM.LOADING' | translate) : ('HOME.BANNER.FORM.BUTTON' | translate) }}
+        </button>
+      </div>
+
+      <div class="form-check terms-consent">
+        <input class="form-check-input terms-check" type="checkbox" id="termsCheck"
+          (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
+        <label class="form-check-label terms-check-label small" for="termsCheck"
+          [innerHTML]="'QUOTE_SMS_CONSENT_GET_QUOTE' | translateHtml | async"></label>
+      </div>
+    </div>
+  </section>
+  <!-- Contact & Quote Section End -->
+
+  <!-- FAQ Section Start -->
+  <section class="ol-faq">
+    <div class="ol-container ol-faq__container">
+      <h2 class="ol-heading text-center" [innerHTML]="'OUR_LOCATION.FAQ.TITLE' | translateHtml | async"></h2>
+
+      <div class="ol-faq__list">
+        @for (item of faqItems; track item.question; let i = $index) {
+        <div class="ol-faq__entry">
+          <h3 class="ol-faq__heading">
+            <button class="ol-faq__question" type="button" [class.ol-faq__question--open]="openFaqIndex === i"
+              [attr.aria-expanded]="openFaqIndex === i" (click)="toggleFaq(i)">
+              <span>{{ item.question }}</span>
+              <img src="/assets/images/our-locations/faq-arrow.svg" alt="" class="ol-faq__arrow" width="20.465"
+                height="40.93" />
             </button>
-          </div>
+          </h3>
+
+          @if (openFaqIndex === i) {
+          <p class="ol-faq__answer" [innerHTML]="item.answer"></p>
+          }
         </div>
+        }
       </div>
+
+      <img src="/assets/images/our-locations/question.png" alt="" class="ol-faq__decor" aria-hidden="true" />
     </div>
   </section>
-
-  <section class="why-visit-section">
-    <div class="container">
-      <!-- Header -->
-      <div class="text-center mb-5">
-        <h2 class="section-title" [innerHTML]="'OUR_LOCATION.SESSION2.TITLE' | translateHtml | async"></h2>
-        <div class="header-desc mx-auto">
-          <p [innerHTML]="'OUR_LOCATION.SESSION2.DEC1' | translateHtml | async"></p>
-          <p [innerHTML]="'OUR_LOCATION.SESSION2.DEC2' | translateHtml | async"></p>
-        </div>
-      </div>
-
-      <!-- Features Grid -->
-      <div class="row feature-row">
-        <!-- Feature 1 -->
-        <div class="col-md-4 feature-col">
-          <h3 class="feature-title" [innerHTML]="'OUR_LOCATION.SESSION2.CARD1.TITLE' | translateHtml | async"></h3>
-          <p class="feature-text">
-            <span [innerHTML]="'OUR_LOCATION.SESSION2.CARD1.DESCRIPTION_PART1' | translateHtml | async"></span>
-            <a  class="inline-link" [routerLink]="getRoute('autoInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.AUTO' | translateHtml | async"></a>,
-            <a class="inline-link" [routerLink]="getRoute('homeInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.HOMEOWNERS' | translateHtml | async"></a>,
-            <a class="inline-link" [routerLink]="getRoute('commercialInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.COMMERCIAL' | translateHtml | async"></a>,
-            <a class="inline-link" [routerLink]="getRoute('lifeInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.LIFE' | translateHtml | async"></a>,
-            <span [innerHTML]="'OUR_LOCATION.SESSION2.CARD1.DESCRIPTION_PART2' | translateHtml | async"></span>
-            <a class="inline-link" [routerLink]="getRoute('healthInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.HEALTH' | translateHtml | async"></a>
-            <span [innerHTML]="'OUR_LOCATION.SESSION2.CARD1.DESCRIPTION_PART3' | translateHtml | async"></span>
-          </p>
-        </div>
-
-        <!-- Feature 2 -->
-        <div class="col-md-4 feature-col">
-          <h3 class="feature-title" [innerHTML]="'OUR_LOCATION.SESSION2.CARD2.TITLE' | translateHtml | async"></h3>
-          <p class="feature-text" [innerHTML]="'OUR_LOCATION.SESSION2.CARD2.DESCRIPTION' | translateHtml | async"></p>
-        </div>
-
-        <!-- Feature 3 -->
-        <div class="col-md-4 feature-col no-border">
-          <h3 class="feature-title" [innerHTML]="'OUR_LOCATION.SESSION2.CARD3.TITLE' | translateHtml | async"></h3>
-          <p class="feature-text" [innerHTML]="'OUR_LOCATION.SESSION2.CARD3.DESCRIPTION' | translateHtml | async"></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- get covered -->
-  <div class="getCovver">
-    <div class="container">
-      <div class="topSub">
-        <div class="topSub2">
-          <h2 class="h1" [innerHTML]="'OUR_LOCATION.SESSION3.TITLE' | translateHtml | async"></h2>
-          <p class="paragraph" [innerHTML]="'OUR_LOCATION.SESSION3.DEC1' | translateHtml | async"></p>
-
-          <div class="selectable mt-5">
-            @for (item of chips.slice(0, 3); track item.name) {
-            <div class="chip" [appChipNav]="item.name" *ngIf="item.name">
-              <i class="{{ item?.icon }}"></i>
-              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
-            </div>
-            }
-          </div>
-          <div class="selectable mt-2">
-            @for (item of chips.slice(3, 6); track item.name) {
-            <div class="chip" [appChipNav]="item.name" *ngIf="item.name">
-              <i class="{{ item?.icon }}"></i>
-              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
-            </div>
-            }
-          </div>
-          <div class="inps">
-            <input type="text" [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate" class="form-control" />
-            <input type="tel" appPhoneFormat [placeholder]="'HOME.BANNER.FORM.PHONE' | translate" class="form-control" />
-          </div>
-
-          <div class="form-check mb-4">
-          <input class="form-check-input terms-check" type="checkbox" id="termsCheck"
-            (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
-          <label class="form-check-label terms-check-label small text-light" for="termsCheck"
-            [innerHTML]="'QUOTE_SMS_CONSENT_GET_QUOTE' | translateHtml | async"></label>
-          </div>
-
-          <button class="btn" type="button" appBannerQuoteSubmit [disabled]="!termsAccepted">{{ 'HOME.COVERDBANNER.FORM.BUTTON' | translate }}</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- footuper -->
-  <app-foot-upper></app-foot-upper>
+  <!-- FAQ Section End -->
+</div>
