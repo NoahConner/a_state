@@ -1,359 +1,278 @@
-<div class="homeMain" *ngIf="location as loc">
-  <div class="topBanner">
-    <div class="container">
-      <div class="topSub">
-        <div class="topSub2">
-          <h1 class="h1">
-            @if (loc?.detailPage?.banner?.heading) {
-            {{ loc.detailPage.banner.heading }}
-            } @else {
-            {{ loc?.detailPage?.banner?.heroHeading }} <br />
-            {{ loc?.name }}
-            }
-          </h1>
+<div class="ldMain" *ngIf="location as loc">
+  <!-- Hero Section Start -->
+  <section class="ld-hero" [style.background-image]="loc.heroBackground">
+    <div class="ld-hero__inner">
+      <h1 class="ld-hero__title">
+        @if (loc.detailPage?.banner?.heading) {
+        {{ loc.detailPage.banner.heading }}
+        } @else {
+        {{ loc.detailPage?.banner?.heroHeading }} {{ loc.name }}
+        }
+      </h1>
+      @if (loc.detailPage?.banner?.subheading) {
+      <p class="ld-hero__subtitle">{{ loc.detailPage.banner.subheading }}</p>
+      }
+    </div>
+  </section>
+  <!-- Hero Section End -->
 
-          @if (loc?.detailPage?.banner?.subheading) {
-          <p class="banner-subheading">{{ loc.detailPage.banner.subheading }}</p>
-          }
+  <!-- Visit Office Section Start -->
+  <section class="ld-visit">
+    <div class="ld-container text-center">
+      <h2 class="ld-visit__heading">{{ loc.detailPage?.session1?.title }}</h2>
 
-          <div class="selectable mt-5">
-            @for (item of chips.slice(0, 3); track item.name) {
-            <div class="chip" [appChipNav]="item.name" *ngIf="item.name">
-              <i class="{{ item?.icon }}"></i>
-              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
-            </div>
-            }
-          </div>
-          <div class="selectable mt-2">
-            @for (item of chips.slice(3, 6); track item.name) {
-            <div class="chip" [appChipNav]="item.name" *ngIf="item.name">
-              <i class="{{ item?.icon }}"></i>
-              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
-            </div>
-            }
-          </div>
-
-          <div class="inps">
-            <input type="text" [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate" class="form-control" />
-
-            <input type="tel" appPhoneFormat [placeholder]="'HOME.BANNER.FORM.PHONE' | translate"
-              class="form-control" />
-          </div>
-
-
-          <div class="form-check mb-4">
-            <input class="form-check-input terms-check" type="checkbox" id="termsCheck"
-              (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
-            <label class="form-check-label terms-check-label small text-light" for="termsCheck"
-              [innerHTML]="'QUOTE_SMS_CONSENT_GET_QUOTE' | translateHtml | async"></label>
-          </div>
-
-          <button class="btn" type="button" appBannerQuoteSubmit [disabled]="!termsAccepted">
-            {{ 'HOME.BANNER.FORM.BUTTON' | translate }}
-          </button>
+      <div class="ld-visit__card ld-visit__card--address">
+        <h3 class="ld-visit__card-title">{{ 'LOCATION_DETAIL.ADDRESS' | translate }}</h3>
+        <p class="ld-visit__line">
+          <img src="/assets/images/our-locations/icon-location.png" alt="" class="ld-visit__icon" />
+          <a [href]="loc.detailPage?.session1?.contact?.link || loc.link" target="_blank" rel="noopener noreferrer">
+            {{ loc.detailPage?.session1?.contact?.address || loc.address }}
+          </a>
+        </p>
+        <div class="ld-visit__actions">
+          <a class="ld-visit__button" [href]="loc.directionsLink" target="_blank" rel="noopener noreferrer">
+            {{ 'LOCATION_DETAIL.GET_DIRECTIONS' | translate }}
+          </a>
         </div>
       </div>
-    </div>
-  </div>
 
-  <section class="office-section py-5" *ngIf="location as loc">
-    <div class="container text-center mb-4">
-      <h2 class="title">
-        {{ loc.detailPage?.session1?.title }}
-        <!-- Visit Our <span class="highlight">{{ loc.name }}</span> Office -->
+      <div class="ld-visit__card ld-visit__card--phone">
+        <h3 class="ld-visit__card-title">{{ 'LOCATION_DETAIL.PHONE_TEXT' | translate }}</h3>
+        <p class="ld-visit__line">
+          <img src="/assets/images/our-locations/icon-phone.png" alt="" class="ld-visit__icon" />
+          <a href="tel:{{ loc.phoneDigits }}">{{ loc.detailPage?.session1?.contact?.phone || loc.phone }}</a>
+        </p>
+        <div class="ld-visit__actions">
+          <a class="ld-visit__button" href="sms:{{ loc.phoneDigits }}">{{ 'LOCATION_DETAIL.TEXT_US' | translate }}</a>
+          <a class="ld-visit__button" href="tel:{{ loc.phoneDigits }}">{{ 'LOCATION_DETAIL.CALL_US' | translate }}</a>
+        </div>
+      </div>
+
+      <h2 class="ld-visit__heading ld-visit__heading--hours">{{ loc.detailPage?.session1?.OfficeHoursHeading }}</h2>
+      <div class="ld-visit__hours">
+        <p class="ld-visit__hours-bar">{{ loc.officeHours }}</p>
+        <div class="ld-visit__closed">
+          <p><strong>{{ loc.closedDay.day }}</strong>{{ loc.closedDay.status }}</p>
+        </div>
+      </div>
+
+      <h2 class="ld-visit__heading ld-visit__heading--languages">
+        {{ loc.detailPage?.session1?.LanguagesSpokenHeading }}
       </h2>
-      <p class="subtitle">{{ loc.detailPage?.session1?.intro }}</p>
+      <div class="ld-visit__languages">
+        <p class="ld-visit__language-list">
+          @for (language of loc.languageItems; track language.label; let last = $last) {
+          <span class="ld-visit__language">
+            <img *ngIf="language.flag" [src]="language.flag" alt="" class="ld-visit__flag" />{{ language.label }}
+          </span>
+          @if (!last) {
+          <span class="ld-visit__language-sep">|</span>
+          }
+          }
+        </p>
+        <p class="ld-visit__language-note">{{ 'LOCATION_DETAIL.MULTILINGUAL' | translate }}</p>
+      </div>
     </div>
+  </section>
+  <!-- Visit Office Section End -->
 
-    <div class="container">
-      <div class="card office-card p-3 p-md-4">
-        <div class="row g-4">
-          <div class="col-lg-6">
-            <div class="map-wrapper">
-              <iframe [src]="loc.mapUrl" loading="lazy"> </iframe>
-              <a class="map-pin" href="{{ loc?.link }}" target="_blank" rel="noopener noreferrer"
-                [attr.aria-label]="'A-State Insurance (' + loc.name + ') on Google Maps'">
-                <span class="map-pin__badge">
-                  <img src="/assets/images/logo.png" alt="A-State Insurance" />
-                </span>
-              </a>
-            </div>
-          </div>
+  <!-- Getting Here Section Start -->
+  <section class="ld-map">
+    <div class="ld-container">
+      <div class="ld-map__frame">
+        <iframe [src]="loc.mapUrl" loading="lazy" [title]="'A-State Insurance (' + loc.name + ') map'"></iframe>
+        <a class="map-pin" [href]="loc.link" target="_blank" rel="noopener noreferrer"
+          [attr.aria-label]="'A-State Insurance (' + loc.name + ') on Google Maps'">
+          <span class="map-pin__badge">
+            <img src="/assets/images/logo.png" alt="A-State Insurance" />
+          </span>
+        </a>
+      </div>
 
-          <div class="col-lg-6">
-            <div class="content">
-              <div class="section">
-                <h3 class="section-heading">{{ loc.detailPage?.session1?.LocationAndHeading }}</h3>
+      <h2 class="ld-heading ld-map__heading">{{ loc.detailPage?.session1?.GettingHereHeading }}</h2>
+      <p class="ld-map__text">
+        <strong>{{ loc.detailPage?.session1?.NearbyLandmarksHeading }}:</strong>
+        {{ loc.detailPage?.session1?.contact?.NearbyLandmarks }}
+      </p>
+      <p class="ld-map__text">
+        <strong>{{ loc.detailPage?.session1?.ParkingHeading }}:</strong>
+        {{ loc.detailPage?.session1?.contact?.parking || loc.parking }}
+      </p>
+      @if (loc.googleReviews) {
+      <p class="ld-map__reviews">
+        <img src="/assets/images/our-locations/icon-star.png" alt="Google" class="ld-map__google" />
+        {{ loc.googleReviews }}
+      </p>
+      }
+    </div>
+  </section>
+  <!-- Getting Here Section End -->
 
-                <p>
-                  <img src="/assets/images/detailLocation.png" alt="" />
-                  <a class="inline-link" href="{{ loc?.link }}" target="_blank" rel="noopener noreferrer">
-                    {{ loc.detailPage?.session1?.contact?.address }}
-                  </a>
-                </p>
-                <p>
-                  <img src="/assets/images/phone.png" alt="" />
-                  <a class="inline-link" style="color: inherit; text-decoration: underline;     margin-left: 3px;"
-                    href="tel:{{ loc.detailPage?.session1?.contact?.phone }}">
-                    {{ loc.detailPage?.session1?.contact?.phone }}
-                  </a>
-                </p>
-                <p>
-                  <img src="/assets/images/detailMail.png" alt="" />
-                  <a class="inline-link" style="color: inherit; text-decoration: underline;     margin-left: 3px;"
-                    href="mailto:{{ loc.detailPage?.session1?.contact?.email }}">
-                    {{ loc.detailPage?.session1?.contact?.email }}
-                  </a>
-                </p>
-              </div>
+  <!-- Experience Section Start -->
+  <section class="ld-experience">
+    <span class="ld-experience__strip" aria-hidden="true"></span>
+    <div class="ld-container ld-experience__grid">
+      <img [src]="loc.detailPage?.experienceImage || '/assets/images/location-detail/experience.jpg'" alt="A-State Insurance office"
+        class="ld-experience__image" />
 
-              <hr />
+      <div class="ld-experience__content">
+        <h2 class="ld-experience__title">{{ loc.detailPage?.session2?.title }}</h2>
+        <p class="ld-experience__text">
+          {{ loc.intro.before }}@if (loc.intro.brand) {<a [routerLink]="homeRoute"
+            class="ld-experience__link">{{ loc.intro.brand }}</a>}{{ loc.intro.after }}
+        </p>
 
-              <div class="section">
-                <h3 class="section-heading">{{ loc.detailPage?.session1?.OfficeHoursHeading }}</h3>
-                <p>
-                  <img src="/assets/images/clock.png" alt="" />
-                  {{ loc.detailPage?.session1?.contact?.hours }}
-                </p>
-                <p>
-                  <i class="bi bi-clock"></i> {{ loc.detailPage?.session1?.contact?.closedDay }}
-                </p>
-              </div>
+        <ul class="ld-experience__points">
+          @for (point of points; track point) {
+          <li>
+            <img src="/assets/images/location-detail/check.svg" alt="" width="19.5158" height="17.4761" />
+            {{ point }}
+          </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- Experience Section End -->
 
-              <hr />
+  <!-- Neighborhoods Section Start -->
+  @if (loc.detailPage?.neighborhoods?.length) {
+  <section class="ld-neighborhoods">
+    <div class="ld-container text-center">
+      <h2 class="ld-heading">{{ 'LOCATION_DETAIL.NEIGHBORHOODS_TITLE' | translate }}</h2>
+      <ul class="ld-neighborhoods__grid">
+        @for (hood of loc.detailPage.neighborhoods; track hood; let i = $index) {
+        <li [class]="'ld-neighborhoods__item ld-neighborhoods__item--tint' + neighborhoodTint(i)">{{ hood }}</li>
+        }
+      </ul>
+    </div>
+  </section>
+  }
+  <!-- Neighborhoods Section End -->
 
-              <div class="section">
-                <h3 class="section-heading">{{ loc.detailPage?.session1?.LanguagesSpokenHeading }}</h3>
-                <p>{{ loc.languagesHeading }}</p>
-                <p>
-                  <img src="/assets/images/language.png" alt="" /> {{ loc.languages.join(' | ') }}
-                </p>
-              </div>
+  <!-- Coverage Section Start -->
+  <section class="ld-coverage">
+    <div class="ld-container text-center">
+      <h2 class="ld-heading ld-coverage__title">{{ loc.detailPage?.session3?.title }}</h2>
+      <p class="ld-coverage__intro">{{ loc.detailPage?.session3?.intro }}</p>
+    </div>
+    <ng-container [ngTemplateOutlet]="coverageGrid" [ngTemplateOutletContext]="{ items: coverageGroups[0] }">
+    </ng-container>
+  </section>
 
-              <hr />
+  <section class="ld-coverage ld-coverage--future">
+    <div class="ld-container text-center">
+      <h2 class="ld-heading">{{ loc.detailPage?.session3?.groups?.[1]?.groupTitle }}</h2>
+    </div>
+    <ng-container [ngTemplateOutlet]="coverageGrid" [ngTemplateOutletContext]="{ items: coverageGroups[1] }">
+    </ng-container>
+  </section>
 
-              <div class="section">
-                <h3 class="section-heading">{{ loc.detailPage?.session1?.GettingHereHeading }}</h3>
+  <ng-template #coverageGrid let-items="items">
+    <ul class="ld-coverage__grid">
+      @for (item of items; track item.name) {
+      <li>
+        <a class="ld-coverage__item" [routerLink]="getRoute(item.route)">
+          <span class="ld-coverage__icon" [class.ld-coverage__icon--stacked]="item.icons.length > 1">
+            @for (icon of item.icons; track $index) {
+            <img [src]="icon" alt="" [style.width.px]="item.size[0]" [style.height.px]="item.size[1]" />
+            }
+          </span>
+          <span class="ld-coverage__name">{{ 'LOCATION_DETAIL.COVERAGE.' + item.name | translate }}</span>
+        </a>
+      </li>
+      }
+    </ul>
+  </ng-template>
+  <!-- Coverage Section End -->
 
-                <p>
-                  <strong>{{ loc.detailPage?.session1?.NearbyLandmarksHeading }}:</strong>
-                  {{ loc?.detailPage?.session1?.contact?.NearbyLandmarks }}
-                </p>
-                <p>
-                  <strong>{{ loc.detailPage?.session1?.ParkingHeading }}:</strong>
-                  {{ loc?.detailPage?.session1?.contact?.parking }}
-                </p>
-              </div>
-
-              <div class="btn-group-custom mt-4">
-                <a class="btn btn-yellow" href="{{ loc?.directionsLink }}" target="_blank" rel="noopener noreferrer">
-                  {{ loc.detailPage?.session1?.ctaButtons[0] }}
-                </a>
-                <a class="btn btn-yellow" href="#quote-section" (click)="scrollToQuote($event)">
-                  {{ loc.detailPage?.session1?.ctaButtons[1] }}
-                </a>
-                <a href class="btn btn-red" href="tel:{{ loc.detailPage?.session1?.contact?.phone }}">
-                  {{ loc.detailPage?.session1?.ctaButtons[2] }}
-                </a>
-              </div>
-            </div>
-          </div>
+  <!-- Hablamos Español Section Start -->
+  @if (loc.detailPage?.spanishSection; as spanish) {
+  <section class="ld-spanish">
+    <div class="ld-container">
+      <h2 class="ld-heading ld-spanish__title">{{ spanish.title }}</h2>
+      <div class="ld-spanish__body">
+        <img src="/assets/images/location-detail/hablamos.png" alt="" class="ld-spanish__image" />
+        <div class="ld-spanish__text">
+          @for (paragraph of spanish.paragraphs; track $index) {
+          <p>{{ paragraph }}</p>
+          }
         </div>
       </div>
     </div>
   </section>
+  }
+  <!-- Hablamos Español Section End -->
 
-  <div class="experience-section">
-    <div class="container">
-      <div class="row justify-content-center text-center mb-5">
-        <div class="col-lg-9">
-          <h2 class="main-heading">
-            {{ loc.detailPage.session2.title }}
-          </h2>
+  <!-- Testimonials Section Start -->
+  <app-testimonial-slider></app-testimonial-slider>
+  <!-- Testimonials Section End -->
 
-          <p class="main-description">
-            {{ loc.detailPage.session2.intro }}
-          </p>
-        </div>
-      </div>
+  <!-- Quote Section Start -->
+  <section class="ld-quote" id="quote-section">
+    <div class="ld-container">
+      <h2 class="ld-heading ld-quote__title">{{ loc.detailPage?.session4?.title }}</h2>
+      <span class="ld-quote__rule" aria-hidden="true"></span>
 
-      <div class="row justify-content-center g-2">
-        <div class="col-md-4">
-          <div class="experience-card">
-            <div class="vertical-line"></div>
+      <form class="ld-quote__form" (submit)="$event.preventDefault(); submitQuote()">
+        <input type="text" class="ld-quote__field" [placeholder]="loc.detailPage?.session4?.formFields[0] + '*'"
+          [attr.aria-label]="loc.detailPage?.session4?.formFields[0]" [value]="quoteForm.fullName"
+          (input)="quoteForm.fullName = $any($event.target).value" />
+        <input type="tel" appPhoneFormat class="ld-quote__field"
+          [placeholder]="loc.detailPage?.session4?.formFields[1] + '*'"
+          [attr.aria-label]="loc.detailPage?.session4?.formFields[1]" [value]="quoteForm.phone"
+          (input)="quoteForm.phone = $any($event.target).value" />
 
-            <div class="card-box">
-              <div class="card-title">{{ loc.detailPage.session2.blocks[0].heading }}</div>
+        <select class="ld-quote__field" [class.ld-quote__field--empty]="quoteForm.insuranceType === null"
+          [attr.aria-label]="loc.detailPage?.session4?.formFields[2]"
+          (change)="quoteForm.insuranceType = +$any($event.target).value">
+          <option value="" disabled [selected]="quoteForm.insuranceType === null">
+            {{ loc.detailPage?.session4?.formFields[2] }}
+          </option>
+          @for (type of ('LOCATION_DETAIL.FORM.INSURANCE_TYPES' | translate); track $index) {
+          <option [value]="$index" [selected]="quoteForm.insuranceType === $index">{{ type }}</option>
+          }
+        </select>
+        <select class="ld-quote__field" [class.ld-quote__field--empty]="!quoteForm.language"
+          [attr.aria-label]="loc.detailPage?.session4?.formFields[3]"
+          (change)="quoteForm.language = $any($event.target).value">
+          <option value="" disabled [selected]="!quoteForm.language">{{ loc.detailPage?.session4?.formFields[3] }}</option>
+          @for (option of ('LOCATION_DETAIL.FORM.LANGUAGES' | translate); track option) {
+          <option [value]="option" [selected]="quoteForm.language === option">{{ option }}</option>
+          }
+        </select>
+        <select class="ld-quote__field" [class.ld-quote__field--empty]="!quoteForm.bestTime"
+          [attr.aria-label]="loc.detailPage?.session4?.formFields[4]"
+          (change)="quoteForm.bestTime = $any($event.target).value">
+          <option value="" disabled [selected]="!quoteForm.bestTime">{{ loc.detailPage?.session4?.formFields[4] }}</option>
+          @for (option of ('LOCATION_DETAIL.FORM.TIMES' | translate); track option) {
+          <option [value]="option" [selected]="quoteForm.bestTime === option">{{ option }}</option>
+          }
+        </select>
+        <select class="ld-quote__field" [class.ld-quote__field--empty]="!quoteForm.contactMethod"
+          [attr.aria-label]="loc.detailPage?.session4?.formFields[5]"
+          (change)="quoteForm.contactMethod = $any($event.target).value">
+          <option value="" disabled [selected]="!quoteForm.contactMethod">
+            {{ loc.detailPage?.session4?.formFields[5] }}
+          </option>
+          @for (option of ('LOCATION_DETAIL.FORM.METHODS' | translate); track option) {
+          <option [value]="option" [selected]="quoteForm.contactMethod === option">{{ option }}</option>
+          }
+        </select>
 
-              <p>
-                {{ loc.detailPage.session2.blocks[0].text }}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="experience-card">
-            <div class="vertical-line"></div>
-
-            <div class="card-box">
-              <div class="card-title">{{ loc.detailPage.session2.blocks[1].heading }}</div>
-
-              <p>
-                {{ loc.detailPage.session2.blocks[1].text }}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Our Insurance Solutions -->
-  <div class="solutions-section" *ngIf="loc?.detailPage?.session3 as s3">
-    <div class="side-strip"></div>
-    <div class="container position-relative">
-      <div class="row text-center justify-content-center mb-5">
-        <div class="col-lg-8">
-          <h2 class="main-heading">
-            {{ loc.detailPage.session3.title }}
-          </h2>
-
-          <p class="main-subtext">
-            {{ loc.detailPage.session3.intro }}
-          </p>
-        </div>
-      </div>
-
-      <!-- EXISTING TITLE -->
-      <ng-container *ngFor="let group of s3.groups">
-        <!-- GROUP TITLE -->
-        <div class="row mb-4 mt-4 text-center">
-          <div class="col-12">
-            <h2 class="section-title">
-              {{ group.groupTitle }}
-            </h2>
-          </div>
+        <div class="form-check ld-quote__consent">
+          <input class="form-check-input terms-check" type="checkbox" id="smsConsentCheck"
+            (change)="smsConsentAccepted = $any($event.target).checked" [checked]="smsConsentAccepted" />
+          <label class="form-check-label terms-check-label small" for="smsConsentCheck"
+            [innerHTML]="'CONTACT_SMS_CONSENT' | translateHtml | async"></label>
         </div>
 
-        <!-- ITEMS -->
-        <div class="row g-4">
-          <div class="col-md-4" *ngFor="let item of group.items; let i = index">
-            <div class="solution-card">
-              <div class="d-flex align-items-start">
-                <!-- ICON (dynamic optional) -->
-                <div class="icon-box">
-                  <img [src]="getIcon(item.key)" alt="icon" />
-                </div>
-
-                <!-- CONTENT -->
-                <div class="card-content">
-                  <h3 class="solution-title" [routerLink]="getRoute(item.route)">
-                    {{ item.name }}
-                  </h3>
-
-                  <p class="solution-text">
-                    {{ item.text }}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </ng-container>
-      <div class="row mt-5 text-center">
-        <div class="col-12">
-          <button class="btn btn-see-all" [routerLink]="getRoute('insuranceServices')">
-            {{ 'HOME.INSURANCE_SOLUTIONS.SEE_ALL' | translate }}
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <section class="quote-section">
-    <div class="container" id="quote-section">
-      <!-- HEADER -->
-      <div class="text-center mb-5">
-        <h2 class="title">{{ loc.detailPage?.session4?.title }}</h2>
-        <p class="subtitle">
-          {{ loc.detailPage?.session4?.subtitle }}
-        </p>
-      </div>
-
-      <!-- FORM -->
-      <form>
-        <div class="row g-4 justify-content-center">
-          <div class="col-md-5">
-            <label>{{ loc.detailPage?.session4?.formFields[0] }}</label>
-            <input type="text" class="form-control custom-input" placeholder="John Doe" />
-          </div>
-
-          <div class="col-md-5">
-            <label>{{ loc.detailPage?.session4?.formFields[1] }}</label>
-            <input type="text" class="form-control custom-input" placeholder="+1 265 789 8900" />
-          </div>
-
-          <div class="col-md-5">
-            <label>{{ loc.detailPage?.session4?.formFields[2] }}</label>
-            <select class="form-control custom-input">
-              <option>Auto</option>
-              <option>Home</option>
-              <option>Commercial</option>
-              <option>Life</option>
-              <option>Health</option>
-              <option>Surety Bonds</option>
-            </select>
-          </div>
-
-          <div class="col-md-5">
-            <label>{{ loc.detailPage?.session4?.formFields[3] }}</label>
-            <select class="form-control custom-input">
-              <option>English</option>
-              <option>Spanish</option>
-              <option>Hindi</option>
-            </select>
-          </div>
-
-          <div class="col-md-5">
-            <label>{{ loc.detailPage?.session4?.formFields[4] }}</label>
-            <select class="form-control custom-input">
-              <option>Morning</option>
-              <option>Afternoon</option>
-              <option>Evening</option>
-            </select>
-          </div>
-
-          <div class="col-md-5">
-            <label>{{ loc.detailPage?.session4?.formFields[5] }}</label>
-            <select class="form-control custom-input">
-              <option>Text</option>
-              <option>Call</option>
-              <option>Email</option>
-            </select>
-          </div>
-          <div class="col-lg-10 mt-4">
-            <div class="form-check">
-              <input class="form-check-input terms-check" type="checkbox" id="smsConsentCheck"
-                (change)="smsConsentAccepted = $any($event.target).checked" [checked]="smsConsentAccepted" />
-              <label class="form-check-label terms-check-label small" for="smsConsentCheck"
-                [innerHTML]="'CONTACT_SMS_CONSENT' | translateHtml | async"></label>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- BUTTON -->
-        <div class="text-center mt-5">
-          <button type="submit" class="submit-btn" [disabled]="!smsConsentAccepted">
-            {{ loc.detailPage?.session4?.submitText }}
-          </button>
-        </div>
+        <button type="submit" class="ld-quote__submit"
+          [disabled]="isSubmitting || !smsConsentAccepted || quoteForm.insuranceType === null || !quoteForm.fullName.trim() || !quoteForm.phone.trim()">
+          {{ isSubmitting ? ('HOME.BANNER.FORM.LOADING' | translate) : loc.detailPage?.session4?.submitText }}
+        </button>
       </form>
     </div>
   </section>
-
-  <!-- footuper -->
-  <app-foot-upper></app-foot-upper>
-  <!--  -->
+  <!-- Quote Section End -->
 </div>

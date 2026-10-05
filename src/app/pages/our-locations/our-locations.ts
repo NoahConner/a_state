@@ -7,7 +7,7 @@ import { Language } from '../../services/language';
 import { QuoteLeadCaptureService } from '../../services/quote-lead-capture.service';
 
 // Flag images instead of emoji: Windows renders flag emoji as plain letters ("US", "MX").
-const LANGUAGE_FLAGS: Record<string, string> = {
+export const LANGUAGE_FLAGS: Record<string, string> = {
   English: '/assets/images/our-locations/flag-us.svg',
   Inglés: '/assets/images/our-locations/flag-us.svg',
   Español: '/assets/images/our-locations/flag-mx.svg',
