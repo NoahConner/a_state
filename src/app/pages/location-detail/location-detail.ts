@@ -101,10 +101,6 @@ export class LocationDetail implements OnInit {
     return this.location?.detailPage?.session2?.points || this.defaultPoints;
   }
 
-  // Neighborhood chips are tinted row by row: pink, grey, rose.
-  neighborhoodTint(index: number): number {
-    return Math.floor(index / 5) % 3;
-  }
 
   async submitQuote() {
     if (this.isSubmitting) {

@@ -141,8 +141,8 @@
     <div class="ld-container text-center">
       <h2 class="ld-heading">{{ 'LOCATION_DETAIL.NEIGHBORHOODS_TITLE' | translate }}</h2>
       <ul class="ld-neighborhoods__grid">
-        @for (hood of loc.detailPage.neighborhoods; track hood; let i = $index) {
-        <li [class]="'ld-neighborhoods__item ld-neighborhoods__item--tint' + neighborhoodTint(i)">{{ hood }}</li>
+        @for (hood of loc.detailPage.neighborhoods; track hood) {
+        <li class="ld-neighborhoods__item">{{ hood }}</li>
         }
       </ul>
     </div>
