@@ -9,8 +9,6 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './aca-marketplace-plans-insurance.scss',
 })
 export class AcaMarketplacePlansInsurance {
-  termsAccepted = false;
-  termsAccepted2 = false;
 
   constructor(public languageService: Language, private translate: TranslateService) { }
 

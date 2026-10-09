@@ -23,7 +23,6 @@ interface Location {
   standalone: false,
 })
 export class OurLocations implements OnInit {
-  termsAccepted = false;
   chips = [
     { name: 'HOME.BANNER.CHIPS.AUTO', icon: 'fas fa-car' },
     { name: 'HOME.BANNER.CHIPS.HOMEOWNERS', icon: 'fas fa-house' },

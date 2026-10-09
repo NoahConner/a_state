@@ -24,7 +24,6 @@ export class GetHomeQuote {
   totalSteps = 5;
   loading = false;
   submitted = false;
-  termsAccepted = false;
 
   constructor(
     private fb: FormBuilder,
@@ -219,7 +218,6 @@ export class GetHomeQuote {
     this.homeQuoteForm.patchValue({ type: 'home' });
     this.currentStep = 1;
     this.submitted = false;
-    this.termsAccepted = false;
 
   }
 }

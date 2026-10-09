@@ -9,8 +9,6 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './family-health-insurance.scss',
 })
 export class FamilyHealthInsurance {
-  termsAccepted = false;
-  termsAccepted2 = false;
 
   constructor(public languageService: Language, private translate: TranslateService) { }
 

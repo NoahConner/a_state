@@ -9,8 +9,6 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './performance-bonds-payment-bonds.scss',
 })
 export class PerformanceBondsPaymentBonds {
-  termsAccepted = false;
-  termsAccepted2 = false;
 
   constructor(public languageService: Language, private translate: TranslateService) { }
 

@@ -22,7 +22,6 @@ export class GetCustomQuote {
   totalSteps = 4;
   loading = false;
   submitted = false;
-  termsAccepted = false;
 
   constructor(
     private fb: FormBuilder,
@@ -213,7 +212,6 @@ export class GetCustomQuote {
     });
     this.currentStep = 1;
     this.submitted = false;
-    this.termsAccepted = false;
 
   }
 }

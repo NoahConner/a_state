@@ -9,8 +9,6 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './title-transfer.scss',
 })
 export class TitleTransfer {
-  termsAccepted = false;
-  termsAccepted2 = false;
 
   constructor(public languageService: Language, private translate: TranslateService) { }
 

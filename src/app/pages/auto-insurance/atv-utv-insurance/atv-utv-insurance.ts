@@ -9,8 +9,6 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './atv-utv-insurance.scss',
 })
 export class AtvAndUtvInsurance {
-  termsAccepted = false;
-  termsAccepted2 = false;
   optionalCoveragesChunks: any[][] = [];
 
   constructor(public languageService: Language, private translate: TranslateService) { }

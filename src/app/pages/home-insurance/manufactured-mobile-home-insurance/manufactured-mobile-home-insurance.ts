@@ -9,8 +9,6 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './manufactured-mobile-home-insurance.scss',
 })
 export class ManufacturedMobileHomeInsurance {
-  termsAccepted = false;
-  termsAccepted2 = false;
   constructor(public languageService: Language) {}
 
 

@@ -64,7 +64,7 @@ export class Footer {
     { routeKey: 'getAQuote', labelKey: 'HEADER.GET_A_QUOTE' },
   ];
 
-  // Rendered above the footer card as an 8-column grid; order matches the design.
+  // Rendered above the footer card as two side-by-side city sections; order matches the design.
   cityLinks: CityLink[] = [
     { routeKey: 'houstonTx', label: 'Houston' },
     { routeKey: 'sanAntonioTx', label: 'San Antonio' },
@@ -74,22 +74,25 @@ export class Footer {
     { routeKey: 'elPasoTx', label: 'El Paso' },
     { routeKey: 'arlingtonTx', label: 'Arlington' },
     { routeKey: 'corpusChristiTx', label: 'Corpus Christi' },
+    { routeKey: 'planoTx', label: 'Plano' },
     { routeKey: 'lubbockTx', label: 'Lubbock' },
     { routeKey: 'laredoTx', label: 'Laredo' },
     { routeKey: 'irvingTx', label: 'Irving' },
-    { routeKey: 'garlandTx', label: 'Garland' },
-    { routeKey: 'friscoTx', label: 'Frisco' },
-    { routeKey: 'mckinneyTx', label: 'McKinney' },
-    { routeKey: 'amarilloTx', label: 'Amarillo' },
-    { routeKey: 'grandPrairieTx', label: 'Grand Prairie' },
-    { routeKey: 'killeenTx', label: 'Killeen' },
-    { routeKey: 'dentonTx', label: 'Denton' },
-    { routeKey: 'pasadenaTx', label: 'Pasadena' },
-    { routeKey: 'mesquiteTx', label: 'Mesquite' },
-    { routeKey: 'mcallenTx', label: 'McAllen' },
-    { routeKey: 'wacoTx', label: 'Waco' },
-    { routeKey: 'planoTx', label: 'Plano' },
-    { routeKey: 'brownsvilleTx', label: 'Brownsville' },
+  ];
+
+  homeownersCityLinks: CityLink[] = [
+    { routeKey: 'homeownersHoustonTx', label: 'Houston' },
+    { routeKey: 'homeownersSanAntonioTx', label: 'San Antonio' },
+    { routeKey: 'homeownersDallasTx', label: 'Dallas' },
+    { routeKey: 'homeownersAustinTx', label: 'Austin' },
+    { routeKey: 'homeownersFortWorthTx', label: 'Fort Worth' },
+    { routeKey: 'homeownersElPasoTx', label: 'El Paso' },
+    { routeKey: 'homeownersArlingtonTx', label: 'Arlington' },
+    { routeKey: 'homeownersCorpusChristiTx', label: 'Corpus Christi' },
+    { routeKey: 'homeownersPlanoTx', label: 'Plano' },
+    { routeKey: 'homeownersLubbockTx', label: 'Lubbock' },
+    { routeKey: 'homeownersLaredoTx', label: 'Laredo' },
+    { routeKey: 'homeownersIrvingTx', label: 'Irving' },
   ];
 
   socialLinks = [

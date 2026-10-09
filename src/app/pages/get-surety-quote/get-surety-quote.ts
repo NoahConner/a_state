@@ -22,7 +22,6 @@ export class GetSuretyQuote {
   totalSteps = 4;
   loading = false;
   submitted = false;
-  termsAccepted = false;
 
   constructor(
     private fb: FormBuilder,
@@ -194,7 +193,6 @@ export class GetSuretyQuote {
     this.suretyQuoteForm.patchValue({ type: 'surety' });
     this.currentStep = 1;
     this.submitted = false;
-    this.termsAccepted = false;
 
   }
 }

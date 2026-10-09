@@ -35,6 +35,56 @@ import { GetSuretyQuote } from './pages/get-surety-quote/get-surety-quote';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AutoInsurance } from './pages/auto-insurance/auto-insurance';
 import { HomeInsurance } from './pages/home-insurance/home-insurance';
+import { HomeownersHoustonTx } from './pages/home-insurance/houston-tx/houston-tx';
+import { HomeownersSanAntonioTx } from './pages/home-insurance/san-antonio-tx/san-antonio-tx';
+import { HomeownersDallasTx } from './pages/home-insurance/dallas-tx/dallas-tx';
+import { HomeownersAustinTx } from './pages/home-insurance/austin-tx/austin-tx';
+import { HomeownersFortWorthTx } from './pages/home-insurance/fort-worth-tx/fort-worth-tx';
+import { HomeownersElPasoTx } from './pages/home-insurance/el-paso-tx/el-paso-tx';
+import { HomeownersArlingtonTx } from './pages/home-insurance/arlington-tx/arlington-tx';
+import { HomeownersCorpusChristiTx } from './pages/home-insurance/corpus-christi-tx/corpus-christi-tx';
+import { HomeownersPlanoTx } from './pages/home-insurance/plano-tx/plano-tx';
+import { HomeownersLubbockTx } from './pages/home-insurance/lubbock-tx/lubbock-tx';
+import { HomeownersLaredoTx } from './pages/home-insurance/laredo-tx/laredo-tx';
+import { HomeownersIrvingTx } from './pages/home-insurance/irving-tx/irving-tx';
+import { HomeownersFriscoTx } from './pages/home-insurance/frisco-tx/frisco-tx';
+import { HomeownersGarlandTx } from './pages/home-insurance/garland-tx/garland-tx';
+import { HomeownersMckinneyTx } from './pages/home-insurance/mckinney-tx/mckinney-tx';
+import { HomeownersAmarilloTx } from './pages/home-insurance/amarillo-tx/amarillo-tx';
+import { HomeownersGrandPrairieTx } from './pages/home-insurance/grand-prairie-tx/grand-prairie-tx';
+import { HomeownersBrownsvilleTx } from './pages/home-insurance/brownsville-tx/brownsville-tx';
+import { HomeownersKilleenTx } from './pages/home-insurance/killeen-tx/killeen-tx';
+import { HomeownersDentonTx } from './pages/home-insurance/denton-tx/denton-tx';
+import { HomeownersPasadenaTx } from './pages/home-insurance/pasadena-tx/pasadena-tx';
+import { HomeownersMesquiteTx } from './pages/home-insurance/mesquite-tx/mesquite-tx';
+import { HomeownersMcallenTx } from './pages/home-insurance/mcallen-tx/mcallen-tx';
+import { HomeownersWacoTx } from './pages/home-insurance/waco-tx/waco-tx';
+import { HomeownersMidlandTx } from './pages/home-insurance/midland-tx/midland-tx';
+import { HomeownersCarrolltonTx } from './pages/home-insurance/carrollton-tx/carrollton-tx';
+import { HomeownersLewisvilleTx } from './pages/home-insurance/lewisville-tx/lewisville-tx';
+import { HomeownersAbileneTx } from './pages/home-insurance/abilene-tx/abilene-tx';
+import { HomeownersRoundRockTx } from './pages/home-insurance/round-rock-tx/round-rock-tx';
+import { HomeownersPearlandTx } from './pages/home-insurance/pearland-tx/pearland-tx';
+import { HomeownersCollegeStationTx } from './pages/home-insurance/college-station-tx/college-station-tx';
+import { HomeownersTheWoodlandsTx } from './pages/home-insurance/the-woodlands-tx/the-woodlands-tx';
+import { HomeownersRichardsonTx } from './pages/home-insurance/richardson-tx/richardson-tx';
+import { HomeownersLeagueCityTx } from './pages/home-insurance/league-city-tx/league-city-tx';
+import { HomeownersOdessaTx } from './pages/home-insurance/odessa-tx/odessa-tx';
+import { HomeownersBeaumontTx } from './pages/home-insurance/beaumont-tx/beaumont-tx';
+import { HomeownersAllenTx } from './pages/home-insurance/allen-tx/allen-tx';
+import { HomeownersSugarLandTx } from './pages/home-insurance/sugar-land-tx/sugar-land-tx';
+import { HomeownersTylerTx } from './pages/home-insurance/tyler-tx/tyler-tx';
+import { HomeownersNewBraunfelsTx } from './pages/home-insurance/new-braunfels-tx/new-braunfels-tx';
+import { HomeownersEdinburgTx } from './pages/home-insurance/edinburg-tx/edinburg-tx';
+import { HomeownersWichitaFallsTx } from './pages/home-insurance/wichita-falls-tx/wichita-falls-tx';
+import { HomeownersConroeTx } from './pages/home-insurance/conroe-tx/conroe-tx';
+import { HomeownersSanAngeloTx } from './pages/home-insurance/san-angelo-tx/san-angelo-tx';
+import { HomeownersAtascocitaTx } from './pages/home-insurance/atascocita-tx/atascocita-tx';
+import { HomeownersTempleTx } from './pages/home-insurance/temple-tx/temple-tx';
+import { HomeownersMissionTx } from './pages/home-insurance/mission-tx/mission-tx';
+import { HomeownersBaytownTx } from './pages/home-insurance/baytown-tx/baytown-tx';
+import { HomeownersBryanTx } from './pages/home-insurance/bryan-tx/bryan-tx';
+import { HomeownersGeorgetownTx } from './pages/home-insurance/georgetown-tx/georgetown-tx';
 import { CommercialInsurance } from './pages/commercial-insurance/commercial-insurance';
 import { LifeInsurance } from './pages/life-insurance/life-insurance';
 import { HealthInsurance } from './pages/health-insurance/health-insurance';
@@ -187,6 +237,56 @@ export function initializeTranslations(
     GetSuretyQuote,
     AutoInsurance,
     HomeInsurance,
+    HomeownersHoustonTx,
+    HomeownersSanAntonioTx,
+    HomeownersDallasTx,
+    HomeownersAustinTx,
+    HomeownersFortWorthTx,
+    HomeownersElPasoTx,
+    HomeownersArlingtonTx,
+    HomeownersCorpusChristiTx,
+    HomeownersPlanoTx,
+    HomeownersLubbockTx,
+    HomeownersLaredoTx,
+    HomeownersIrvingTx,
+    HomeownersFriscoTx,
+    HomeownersGarlandTx,
+    HomeownersMckinneyTx,
+    HomeownersAmarilloTx,
+    HomeownersGrandPrairieTx,
+    HomeownersBrownsvilleTx,
+    HomeownersKilleenTx,
+    HomeownersDentonTx,
+    HomeownersPasadenaTx,
+    HomeownersMesquiteTx,
+    HomeownersMcallenTx,
+    HomeownersWacoTx,
+    HomeownersMidlandTx,
+    HomeownersCarrolltonTx,
+    HomeownersLewisvilleTx,
+    HomeownersAbileneTx,
+    HomeownersRoundRockTx,
+    HomeownersPearlandTx,
+    HomeownersCollegeStationTx,
+    HomeownersTheWoodlandsTx,
+    HomeownersRichardsonTx,
+    HomeownersLeagueCityTx,
+    HomeownersOdessaTx,
+    HomeownersBeaumontTx,
+    HomeownersAllenTx,
+    HomeownersSugarLandTx,
+    HomeownersTylerTx,
+    HomeownersNewBraunfelsTx,
+    HomeownersEdinburgTx,
+    HomeownersWichitaFallsTx,
+    HomeownersConroeTx,
+    HomeownersSanAngeloTx,
+    HomeownersAtascocitaTx,
+    HomeownersTempleTx,
+    HomeownersMissionTx,
+    HomeownersBaytownTx,
+    HomeownersBryanTx,
+    HomeownersGeorgetownTx,
     CommercialInsurance,
     LifeInsurance,
     HealthInsurance,

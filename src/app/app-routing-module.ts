@@ -20,6 +20,56 @@ import { GetHealthQuote } from './pages/get-health-quote/get-health-quote';
 import { GetSuretyQuote } from './pages/get-surety-quote/get-surety-quote';
 import { AutoInsurance } from './pages/auto-insurance/auto-insurance';
 import { HomeInsurance } from './pages/home-insurance/home-insurance';
+import { HomeownersHoustonTx } from './pages/home-insurance/houston-tx/houston-tx';
+import { HomeownersSanAntonioTx } from './pages/home-insurance/san-antonio-tx/san-antonio-tx';
+import { HomeownersDallasTx } from './pages/home-insurance/dallas-tx/dallas-tx';
+import { HomeownersAustinTx } from './pages/home-insurance/austin-tx/austin-tx';
+import { HomeownersFortWorthTx } from './pages/home-insurance/fort-worth-tx/fort-worth-tx';
+import { HomeownersElPasoTx } from './pages/home-insurance/el-paso-tx/el-paso-tx';
+import { HomeownersArlingtonTx } from './pages/home-insurance/arlington-tx/arlington-tx';
+import { HomeownersCorpusChristiTx } from './pages/home-insurance/corpus-christi-tx/corpus-christi-tx';
+import { HomeownersPlanoTx } from './pages/home-insurance/plano-tx/plano-tx';
+import { HomeownersLubbockTx } from './pages/home-insurance/lubbock-tx/lubbock-tx';
+import { HomeownersLaredoTx } from './pages/home-insurance/laredo-tx/laredo-tx';
+import { HomeownersIrvingTx } from './pages/home-insurance/irving-tx/irving-tx';
+import { HomeownersFriscoTx } from './pages/home-insurance/frisco-tx/frisco-tx';
+import { HomeownersGarlandTx } from './pages/home-insurance/garland-tx/garland-tx';
+import { HomeownersMckinneyTx } from './pages/home-insurance/mckinney-tx/mckinney-tx';
+import { HomeownersAmarilloTx } from './pages/home-insurance/amarillo-tx/amarillo-tx';
+import { HomeownersGrandPrairieTx } from './pages/home-insurance/grand-prairie-tx/grand-prairie-tx';
+import { HomeownersBrownsvilleTx } from './pages/home-insurance/brownsville-tx/brownsville-tx';
+import { HomeownersKilleenTx } from './pages/home-insurance/killeen-tx/killeen-tx';
+import { HomeownersDentonTx } from './pages/home-insurance/denton-tx/denton-tx';
+import { HomeownersPasadenaTx } from './pages/home-insurance/pasadena-tx/pasadena-tx';
+import { HomeownersMesquiteTx } from './pages/home-insurance/mesquite-tx/mesquite-tx';
+import { HomeownersMcallenTx } from './pages/home-insurance/mcallen-tx/mcallen-tx';
+import { HomeownersWacoTx } from './pages/home-insurance/waco-tx/waco-tx';
+import { HomeownersMidlandTx } from './pages/home-insurance/midland-tx/midland-tx';
+import { HomeownersCarrolltonTx } from './pages/home-insurance/carrollton-tx/carrollton-tx';
+import { HomeownersLewisvilleTx } from './pages/home-insurance/lewisville-tx/lewisville-tx';
+import { HomeownersAbileneTx } from './pages/home-insurance/abilene-tx/abilene-tx';
+import { HomeownersRoundRockTx } from './pages/home-insurance/round-rock-tx/round-rock-tx';
+import { HomeownersPearlandTx } from './pages/home-insurance/pearland-tx/pearland-tx';
+import { HomeownersCollegeStationTx } from './pages/home-insurance/college-station-tx/college-station-tx';
+import { HomeownersTheWoodlandsTx } from './pages/home-insurance/the-woodlands-tx/the-woodlands-tx';
+import { HomeownersRichardsonTx } from './pages/home-insurance/richardson-tx/richardson-tx';
+import { HomeownersLeagueCityTx } from './pages/home-insurance/league-city-tx/league-city-tx';
+import { HomeownersOdessaTx } from './pages/home-insurance/odessa-tx/odessa-tx';
+import { HomeownersBeaumontTx } from './pages/home-insurance/beaumont-tx/beaumont-tx';
+import { HomeownersAllenTx } from './pages/home-insurance/allen-tx/allen-tx';
+import { HomeownersSugarLandTx } from './pages/home-insurance/sugar-land-tx/sugar-land-tx';
+import { HomeownersTylerTx } from './pages/home-insurance/tyler-tx/tyler-tx';
+import { HomeownersNewBraunfelsTx } from './pages/home-insurance/new-braunfels-tx/new-braunfels-tx';
+import { HomeownersEdinburgTx } from './pages/home-insurance/edinburg-tx/edinburg-tx';
+import { HomeownersWichitaFallsTx } from './pages/home-insurance/wichita-falls-tx/wichita-falls-tx';
+import { HomeownersConroeTx } from './pages/home-insurance/conroe-tx/conroe-tx';
+import { HomeownersSanAngeloTx } from './pages/home-insurance/san-angelo-tx/san-angelo-tx';
+import { HomeownersAtascocitaTx } from './pages/home-insurance/atascocita-tx/atascocita-tx';
+import { HomeownersTempleTx } from './pages/home-insurance/temple-tx/temple-tx';
+import { HomeownersMissionTx } from './pages/home-insurance/mission-tx/mission-tx';
+import { HomeownersBaytownTx } from './pages/home-insurance/baytown-tx/baytown-tx';
+import { HomeownersBryanTx } from './pages/home-insurance/bryan-tx/bryan-tx';
+import { HomeownersGeorgetownTx } from './pages/home-insurance/georgetown-tx/georgetown-tx';
 import { CommercialInsurance } from './pages/commercial-insurance/commercial-insurance';
 import { LifeInsurance } from './pages/life-insurance/life-insurance';
 import { HealthInsurance } from './pages/health-insurance/health-insurance';
@@ -416,10 +466,256 @@ const routes: Routes = [
     path: 'homeowners-insurance',
     children: [
       { path: '', component: HomeInsurance, data: { metaPage: 'homeInsurance' } },
-      { path: 'houston-tx', redirectTo: '', pathMatch: 'full' },
-      { path: 'san-antonio-tx', redirectTo: '', pathMatch: 'full' },
-      { path: 'dallas-tx', redirectTo: '', pathMatch: 'full' },
-      { path: 'austin-tx', redirectTo: '', pathMatch: 'full' },
+      {
+        path: 'houston-tx',
+        component: HomeownersHoustonTx,
+        data: { metaPage: 'homeownersHoustonTx' },
+      },
+      {
+        path: 'san-antonio-tx',
+        component: HomeownersSanAntonioTx,
+        data: { metaPage: 'homeownersSanAntonioTx' },
+      },
+      {
+        path: 'dallas-tx',
+        component: HomeownersDallasTx,
+        data: { metaPage: 'homeownersDallasTx' },
+      },
+      {
+        path: 'austin-tx',
+        component: HomeownersAustinTx,
+        data: { metaPage: 'homeownersAustinTx' },
+      },
+      {
+        path: 'fort-worth-tx',
+        component: HomeownersFortWorthTx,
+        data: { metaPage: 'homeownersFortWorthTx' },
+      },
+      {
+        path: 'el-paso-tx',
+        component: HomeownersElPasoTx,
+        data: { metaPage: 'homeownersElPasoTx' },
+      },
+      {
+        path: 'arlington-tx',
+        component: HomeownersArlingtonTx,
+        data: { metaPage: 'homeownersArlingtonTx' },
+      },
+      {
+        path: 'corpus-christi-tx',
+        component: HomeownersCorpusChristiTx,
+        data: { metaPage: 'homeownersCorpusChristiTx' },
+      },
+      {
+        path: 'plano-tx',
+        component: HomeownersPlanoTx,
+        data: { metaPage: 'homeownersPlanoTx' },
+      },
+      {
+        path: 'lubbock-tx',
+        component: HomeownersLubbockTx,
+        data: { metaPage: 'homeownersLubbockTx' },
+      },
+      {
+        path: 'laredo-tx',
+        component: HomeownersLaredoTx,
+        data: { metaPage: 'homeownersLaredoTx' },
+      },
+      {
+        path: 'irving-tx',
+        component: HomeownersIrvingTx,
+        data: { metaPage: 'homeownersIrvingTx' },
+      },
+      {
+        path: 'frisco-tx',
+        component: HomeownersFriscoTx,
+        data: { metaPage: 'homeownersFriscoTx' },
+      },
+      {
+        path: 'garland-tx',
+        component: HomeownersGarlandTx,
+        data: { metaPage: 'homeownersGarlandTx' },
+      },
+      {
+        path: 'mckinney-tx',
+        component: HomeownersMckinneyTx,
+        data: { metaPage: 'homeownersMckinneyTx' },
+      },
+      {
+        path: 'amarillo-tx',
+        component: HomeownersAmarilloTx,
+        data: { metaPage: 'homeownersAmarilloTx' },
+      },
+      {
+        path: 'grand-prairie-tx',
+        component: HomeownersGrandPrairieTx,
+        data: { metaPage: 'homeownersGrandPrairieTx' },
+      },
+      {
+        path: 'brownsville-tx',
+        component: HomeownersBrownsvilleTx,
+        data: { metaPage: 'homeownersBrownsvilleTx' },
+      },
+      {
+        path: 'killeen-tx',
+        component: HomeownersKilleenTx,
+        data: { metaPage: 'homeownersKilleenTx' },
+      },
+      {
+        path: 'denton-tx',
+        component: HomeownersDentonTx,
+        data: { metaPage: 'homeownersDentonTx' },
+      },
+      {
+        path: 'pasadena-tx',
+        component: HomeownersPasadenaTx,
+        data: { metaPage: 'homeownersPasadenaTx' },
+      },
+      {
+        path: 'mesquite-tx',
+        component: HomeownersMesquiteTx,
+        data: { metaPage: 'homeownersMesquiteTx' },
+      },
+      {
+        path: 'mcallen-tx',
+        component: HomeownersMcallenTx,
+        data: { metaPage: 'homeownersMcallenTx' },
+      },
+      {
+        path: 'waco-tx',
+        component: HomeownersWacoTx,
+        data: { metaPage: 'homeownersWacoTx' },
+      },
+      {
+        path: 'midland-tx',
+        component: HomeownersMidlandTx,
+        data: { metaPage: 'homeownersMidlandTx' },
+      },
+      {
+        path: 'carrollton-tx',
+        component: HomeownersCarrolltonTx,
+        data: { metaPage: 'homeownersCarrolltonTx' },
+      },
+      {
+        path: 'lewisville-tx',
+        component: HomeownersLewisvilleTx,
+        data: { metaPage: 'homeownersLewisvilleTx' },
+      },
+      {
+        path: 'abilene-tx',
+        component: HomeownersAbileneTx,
+        data: { metaPage: 'homeownersAbileneTx' },
+      },
+      {
+        path: 'round-rock-tx',
+        component: HomeownersRoundRockTx,
+        data: { metaPage: 'homeownersRoundRockTx' },
+      },
+      {
+        path: 'pearland-tx',
+        component: HomeownersPearlandTx,
+        data: { metaPage: 'homeownersPearlandTx' },
+      },
+      {
+        path: 'college-station-tx',
+        component: HomeownersCollegeStationTx,
+        data: { metaPage: 'homeownersCollegeStationTx' },
+      },
+      {
+        path: 'the-woodlands-tx',
+        component: HomeownersTheWoodlandsTx,
+        data: { metaPage: 'homeownersTheWoodlandsTx' },
+      },
+      {
+        path: 'richardson-tx',
+        component: HomeownersRichardsonTx,
+        data: { metaPage: 'homeownersRichardsonTx' },
+      },
+      {
+        path: 'league-city-tx',
+        component: HomeownersLeagueCityTx,
+        data: { metaPage: 'homeownersLeagueCityTx' },
+      },
+      {
+        path: 'odessa-tx',
+        component: HomeownersOdessaTx,
+        data: { metaPage: 'homeownersOdessaTx' },
+      },
+      {
+        path: 'beaumont-tx',
+        component: HomeownersBeaumontTx,
+        data: { metaPage: 'homeownersBeaumontTx' },
+      },
+      {
+        path: 'allen-tx',
+        component: HomeownersAllenTx,
+        data: { metaPage: 'homeownersAllenTx' },
+      },
+      {
+        path: 'sugar-land-tx',
+        component: HomeownersSugarLandTx,
+        data: { metaPage: 'homeownersSugarLandTx' },
+      },
+      {
+        path: 'tyler-tx',
+        component: HomeownersTylerTx,
+        data: { metaPage: 'homeownersTylerTx' },
+      },
+      {
+        path: 'new-braunfels-tx',
+        component: HomeownersNewBraunfelsTx,
+        data: { metaPage: 'homeownersNewBraunfelsTx' },
+      },
+      {
+        path: 'edinburg-tx',
+        component: HomeownersEdinburgTx,
+        data: { metaPage: 'homeownersEdinburgTx' },
+      },
+      {
+        path: 'wichita-falls-tx',
+        component: HomeownersWichitaFallsTx,
+        data: { metaPage: 'homeownersWichitaFallsTx' },
+      },
+      {
+        path: 'conroe-tx',
+        component: HomeownersConroeTx,
+        data: { metaPage: 'homeownersConroeTx' },
+      },
+      {
+        path: 'san-angelo-tx',
+        component: HomeownersSanAngeloTx,
+        data: { metaPage: 'homeownersSanAngeloTx' },
+      },
+      {
+        path: 'atascocita-tx',
+        component: HomeownersAtascocitaTx,
+        data: { metaPage: 'homeownersAtascocitaTx' },
+      },
+      {
+        path: 'temple-tx',
+        component: HomeownersTempleTx,
+        data: { metaPage: 'homeownersTempleTx' },
+      },
+      {
+        path: 'mission-tx',
+        component: HomeownersMissionTx,
+        data: { metaPage: 'homeownersMissionTx' },
+      },
+      {
+        path: 'baytown-tx',
+        component: HomeownersBaytownTx,
+        data: { metaPage: 'homeownersBaytownTx' },
+      },
+      {
+        path: 'bryan-tx',
+        component: HomeownersBryanTx,
+        data: { metaPage: 'homeownersBryanTx' },
+      },
+      {
+        path: 'georgetown-tx',
+        component: HomeownersGeorgetownTx,
+        data: { metaPage: 'homeownersGeorgetownTx' },
+      },
       {
         path: 'renters-insurance',
         component: RentersInsurance,
@@ -666,10 +962,256 @@ const routes: Routes = [
         path: 'seguros-de-vivienda',
         children: [
           { path: '', component: HomeInsurance, data: { metaPage: 'homeInsurance' } },
-          { path: 'houston-tx', redirectTo: '', pathMatch: 'full' },
-          { path: 'san-antonio-tx', redirectTo: '', pathMatch: 'full' },
-          { path: 'dallas-tx', redirectTo: '', pathMatch: 'full' },
-          { path: 'austin-tx', redirectTo: '', pathMatch: 'full' },
+          {
+            path: 'houston-tx',
+            component: HomeownersHoustonTx,
+            data: { metaPage: 'homeownersHoustonTx' },
+          },
+          {
+            path: 'san-antonio-tx',
+            component: HomeownersSanAntonioTx,
+            data: { metaPage: 'homeownersSanAntonioTx' },
+          },
+          {
+            path: 'dallas-tx',
+            component: HomeownersDallasTx,
+            data: { metaPage: 'homeownersDallasTx' },
+          },
+          {
+            path: 'austin-tx',
+            component: HomeownersAustinTx,
+            data: { metaPage: 'homeownersAustinTx' },
+          },
+          {
+            path: 'fort-worth-tx',
+            component: HomeownersFortWorthTx,
+            data: { metaPage: 'homeownersFortWorthTx' },
+          },
+          {
+            path: 'el-paso-tx',
+            component: HomeownersElPasoTx,
+            data: { metaPage: 'homeownersElPasoTx' },
+          },
+          {
+            path: 'arlington-tx',
+            component: HomeownersArlingtonTx,
+            data: { metaPage: 'homeownersArlingtonTx' },
+          },
+          {
+            path: 'corpus-christi-tx',
+            component: HomeownersCorpusChristiTx,
+            data: { metaPage: 'homeownersCorpusChristiTx' },
+          },
+          {
+            path: 'plano-tx',
+            component: HomeownersPlanoTx,
+            data: { metaPage: 'homeownersPlanoTx' },
+          },
+          {
+            path: 'lubbock-tx',
+            component: HomeownersLubbockTx,
+            data: { metaPage: 'homeownersLubbockTx' },
+          },
+          {
+            path: 'laredo-tx',
+            component: HomeownersLaredoTx,
+            data: { metaPage: 'homeownersLaredoTx' },
+          },
+          {
+            path: 'irving-tx',
+            component: HomeownersIrvingTx,
+            data: { metaPage: 'homeownersIrvingTx' },
+          },
+          {
+            path: 'frisco-tx',
+            component: HomeownersFriscoTx,
+            data: { metaPage: 'homeownersFriscoTx' },
+          },
+          {
+            path: 'garland-tx',
+            component: HomeownersGarlandTx,
+            data: { metaPage: 'homeownersGarlandTx' },
+          },
+          {
+            path: 'mckinney-tx',
+            component: HomeownersMckinneyTx,
+            data: { metaPage: 'homeownersMckinneyTx' },
+          },
+          {
+            path: 'amarillo-tx',
+            component: HomeownersAmarilloTx,
+            data: { metaPage: 'homeownersAmarilloTx' },
+          },
+          {
+            path: 'grand-prairie-tx',
+            component: HomeownersGrandPrairieTx,
+            data: { metaPage: 'homeownersGrandPrairieTx' },
+          },
+          {
+            path: 'brownsville-tx',
+            component: HomeownersBrownsvilleTx,
+            data: { metaPage: 'homeownersBrownsvilleTx' },
+          },
+          {
+            path: 'killeen-tx',
+            component: HomeownersKilleenTx,
+            data: { metaPage: 'homeownersKilleenTx' },
+          },
+          {
+            path: 'denton-tx',
+            component: HomeownersDentonTx,
+            data: { metaPage: 'homeownersDentonTx' },
+          },
+          {
+            path: 'pasadena-tx',
+            component: HomeownersPasadenaTx,
+            data: { metaPage: 'homeownersPasadenaTx' },
+          },
+          {
+            path: 'mesquite-tx',
+            component: HomeownersMesquiteTx,
+            data: { metaPage: 'homeownersMesquiteTx' },
+          },
+          {
+            path: 'mcallen-tx',
+            component: HomeownersMcallenTx,
+            data: { metaPage: 'homeownersMcallenTx' },
+          },
+          {
+            path: 'waco-tx',
+            component: HomeownersWacoTx,
+            data: { metaPage: 'homeownersWacoTx' },
+          },
+          {
+            path: 'midland-tx',
+            component: HomeownersMidlandTx,
+            data: { metaPage: 'homeownersMidlandTx' },
+          },
+          {
+            path: 'carrollton-tx',
+            component: HomeownersCarrolltonTx,
+            data: { metaPage: 'homeownersCarrolltonTx' },
+          },
+          {
+            path: 'lewisville-tx',
+            component: HomeownersLewisvilleTx,
+            data: { metaPage: 'homeownersLewisvilleTx' },
+          },
+          {
+            path: 'abilene-tx',
+            component: HomeownersAbileneTx,
+            data: { metaPage: 'homeownersAbileneTx' },
+          },
+          {
+            path: 'round-rock-tx',
+            component: HomeownersRoundRockTx,
+            data: { metaPage: 'homeownersRoundRockTx' },
+          },
+          {
+            path: 'pearland-tx',
+            component: HomeownersPearlandTx,
+            data: { metaPage: 'homeownersPearlandTx' },
+          },
+          {
+            path: 'college-station-tx',
+            component: HomeownersCollegeStationTx,
+            data: { metaPage: 'homeownersCollegeStationTx' },
+          },
+          {
+            path: 'the-woodlands-tx',
+            component: HomeownersTheWoodlandsTx,
+            data: { metaPage: 'homeownersTheWoodlandsTx' },
+          },
+          {
+            path: 'richardson-tx',
+            component: HomeownersRichardsonTx,
+            data: { metaPage: 'homeownersRichardsonTx' },
+          },
+          {
+            path: 'league-city-tx',
+            component: HomeownersLeagueCityTx,
+            data: { metaPage: 'homeownersLeagueCityTx' },
+          },
+          {
+            path: 'odessa-tx',
+            component: HomeownersOdessaTx,
+            data: { metaPage: 'homeownersOdessaTx' },
+          },
+          {
+            path: 'beaumont-tx',
+            component: HomeownersBeaumontTx,
+            data: { metaPage: 'homeownersBeaumontTx' },
+          },
+          {
+            path: 'allen-tx',
+            component: HomeownersAllenTx,
+            data: { metaPage: 'homeownersAllenTx' },
+          },
+          {
+            path: 'sugar-land-tx',
+            component: HomeownersSugarLandTx,
+            data: { metaPage: 'homeownersSugarLandTx' },
+          },
+          {
+            path: 'tyler-tx',
+            component: HomeownersTylerTx,
+            data: { metaPage: 'homeownersTylerTx' },
+          },
+          {
+            path: 'new-braunfels-tx',
+            component: HomeownersNewBraunfelsTx,
+            data: { metaPage: 'homeownersNewBraunfelsTx' },
+          },
+          {
+            path: 'edinburg-tx',
+            component: HomeownersEdinburgTx,
+            data: { metaPage: 'homeownersEdinburgTx' },
+          },
+          {
+            path: 'wichita-falls-tx',
+            component: HomeownersWichitaFallsTx,
+            data: { metaPage: 'homeownersWichitaFallsTx' },
+          },
+          {
+            path: 'conroe-tx',
+            component: HomeownersConroeTx,
+            data: { metaPage: 'homeownersConroeTx' },
+          },
+          {
+            path: 'san-angelo-tx',
+            component: HomeownersSanAngeloTx,
+            data: { metaPage: 'homeownersSanAngeloTx' },
+          },
+          {
+            path: 'atascocita-tx',
+            component: HomeownersAtascocitaTx,
+            data: { metaPage: 'homeownersAtascocitaTx' },
+          },
+          {
+            path: 'temple-tx',
+            component: HomeownersTempleTx,
+            data: { metaPage: 'homeownersTempleTx' },
+          },
+          {
+            path: 'mission-tx',
+            component: HomeownersMissionTx,
+            data: { metaPage: 'homeownersMissionTx' },
+          },
+          {
+            path: 'baytown-tx',
+            component: HomeownersBaytownTx,
+            data: { metaPage: 'homeownersBaytownTx' },
+          },
+          {
+            path: 'bryan-tx',
+            component: HomeownersBryanTx,
+            data: { metaPage: 'homeownersBryanTx' },
+          },
+          {
+            path: 'georgetown-tx',
+            component: HomeownersGeorgetownTx,
+            data: { metaPage: 'homeownersGeorgetownTx' },
+          },
           {
             path: 'seguros-para-inquilinos',
             component: RentersInsurance,
@@ -998,6 +1540,206 @@ export const routeTranslations: Record<string, Record<string, string>> = {
   homeInsurance: {
     en: 'homeowners-insurance',
     es: 'seguros-de-vivienda',
+  },
+  homeownersHoustonTx: {
+    en: 'homeowners-insurance/houston-tx',
+    es: 'seguros-de-vivienda/houston-tx',
+  },
+  homeownersSanAntonioTx: {
+    en: 'homeowners-insurance/san-antonio-tx',
+    es: 'seguros-de-vivienda/san-antonio-tx',
+  },
+  homeownersDallasTx: {
+    en: 'homeowners-insurance/dallas-tx',
+    es: 'seguros-de-vivienda/dallas-tx',
+  },
+  homeownersAustinTx: {
+    en: 'homeowners-insurance/austin-tx',
+    es: 'seguros-de-vivienda/austin-tx',
+  },
+  homeownersFortWorthTx: {
+    en: 'homeowners-insurance/fort-worth-tx',
+    es: 'seguros-de-vivienda/fort-worth-tx',
+  },
+  homeownersElPasoTx: {
+    en: 'homeowners-insurance/el-paso-tx',
+    es: 'seguros-de-vivienda/el-paso-tx',
+  },
+  homeownersArlingtonTx: {
+    en: 'homeowners-insurance/arlington-tx',
+    es: 'seguros-de-vivienda/arlington-tx',
+  },
+  homeownersCorpusChristiTx: {
+    en: 'homeowners-insurance/corpus-christi-tx',
+    es: 'seguros-de-vivienda/corpus-christi-tx',
+  },
+  homeownersPlanoTx: {
+    en: 'homeowners-insurance/plano-tx',
+    es: 'seguros-de-vivienda/plano-tx',
+  },
+  homeownersLubbockTx: {
+    en: 'homeowners-insurance/lubbock-tx',
+    es: 'seguros-de-vivienda/lubbock-tx',
+  },
+  homeownersLaredoTx: {
+    en: 'homeowners-insurance/laredo-tx',
+    es: 'seguros-de-vivienda/laredo-tx',
+  },
+  homeownersIrvingTx: {
+    en: 'homeowners-insurance/irving-tx',
+    es: 'seguros-de-vivienda/irving-tx',
+  },
+  homeownersFriscoTx: {
+    en: 'homeowners-insurance/frisco-tx',
+    es: 'seguros-de-vivienda/frisco-tx',
+  },
+  homeownersGarlandTx: {
+    en: 'homeowners-insurance/garland-tx',
+    es: 'seguros-de-vivienda/garland-tx',
+  },
+  homeownersMckinneyTx: {
+    en: 'homeowners-insurance/mckinney-tx',
+    es: 'seguros-de-vivienda/mckinney-tx',
+  },
+  homeownersAmarilloTx: {
+    en: 'homeowners-insurance/amarillo-tx',
+    es: 'seguros-de-vivienda/amarillo-tx',
+  },
+  homeownersGrandPrairieTx: {
+    en: 'homeowners-insurance/grand-prairie-tx',
+    es: 'seguros-de-vivienda/grand-prairie-tx',
+  },
+  homeownersBrownsvilleTx: {
+    en: 'homeowners-insurance/brownsville-tx',
+    es: 'seguros-de-vivienda/brownsville-tx',
+  },
+  homeownersKilleenTx: {
+    en: 'homeowners-insurance/killeen-tx',
+    es: 'seguros-de-vivienda/killeen-tx',
+  },
+  homeownersDentonTx: {
+    en: 'homeowners-insurance/denton-tx',
+    es: 'seguros-de-vivienda/denton-tx',
+  },
+  homeownersPasadenaTx: {
+    en: 'homeowners-insurance/pasadena-tx',
+    es: 'seguros-de-vivienda/pasadena-tx',
+  },
+  homeownersMesquiteTx: {
+    en: 'homeowners-insurance/mesquite-tx',
+    es: 'seguros-de-vivienda/mesquite-tx',
+  },
+  homeownersMcallenTx: {
+    en: 'homeowners-insurance/mcallen-tx',
+    es: 'seguros-de-vivienda/mcallen-tx',
+  },
+  homeownersWacoTx: {
+    en: 'homeowners-insurance/waco-tx',
+    es: 'seguros-de-vivienda/waco-tx',
+  },
+  homeownersMidlandTx: {
+    en: 'homeowners-insurance/midland-tx',
+    es: 'seguros-de-vivienda/midland-tx',
+  },
+  homeownersCarrolltonTx: {
+    en: 'homeowners-insurance/carrollton-tx',
+    es: 'seguros-de-vivienda/carrollton-tx',
+  },
+  homeownersLewisvilleTx: {
+    en: 'homeowners-insurance/lewisville-tx',
+    es: 'seguros-de-vivienda/lewisville-tx',
+  },
+  homeownersAbileneTx: {
+    en: 'homeowners-insurance/abilene-tx',
+    es: 'seguros-de-vivienda/abilene-tx',
+  },
+  homeownersRoundRockTx: {
+    en: 'homeowners-insurance/round-rock-tx',
+    es: 'seguros-de-vivienda/round-rock-tx',
+  },
+  homeownersPearlandTx: {
+    en: 'homeowners-insurance/pearland-tx',
+    es: 'seguros-de-vivienda/pearland-tx',
+  },
+  homeownersCollegeStationTx: {
+    en: 'homeowners-insurance/college-station-tx',
+    es: 'seguros-de-vivienda/college-station-tx',
+  },
+  homeownersTheWoodlandsTx: {
+    en: 'homeowners-insurance/the-woodlands-tx',
+    es: 'seguros-de-vivienda/the-woodlands-tx',
+  },
+  homeownersRichardsonTx: {
+    en: 'homeowners-insurance/richardson-tx',
+    es: 'seguros-de-vivienda/richardson-tx',
+  },
+  homeownersLeagueCityTx: {
+    en: 'homeowners-insurance/league-city-tx',
+    es: 'seguros-de-vivienda/league-city-tx',
+  },
+  homeownersOdessaTx: {
+    en: 'homeowners-insurance/odessa-tx',
+    es: 'seguros-de-vivienda/odessa-tx',
+  },
+  homeownersBeaumontTx: {
+    en: 'homeowners-insurance/beaumont-tx',
+    es: 'seguros-de-vivienda/beaumont-tx',
+  },
+  homeownersAllenTx: {
+    en: 'homeowners-insurance/allen-tx',
+    es: 'seguros-de-vivienda/allen-tx',
+  },
+  homeownersSugarLandTx: {
+    en: 'homeowners-insurance/sugar-land-tx',
+    es: 'seguros-de-vivienda/sugar-land-tx',
+  },
+  homeownersTylerTx: {
+    en: 'homeowners-insurance/tyler-tx',
+    es: 'seguros-de-vivienda/tyler-tx',
+  },
+  homeownersNewBraunfelsTx: {
+    en: 'homeowners-insurance/new-braunfels-tx',
+    es: 'seguros-de-vivienda/new-braunfels-tx',
+  },
+  homeownersEdinburgTx: {
+    en: 'homeowners-insurance/edinburg-tx',
+    es: 'seguros-de-vivienda/edinburg-tx',
+  },
+  homeownersWichitaFallsTx: {
+    en: 'homeowners-insurance/wichita-falls-tx',
+    es: 'seguros-de-vivienda/wichita-falls-tx',
+  },
+  homeownersConroeTx: {
+    en: 'homeowners-insurance/conroe-tx',
+    es: 'seguros-de-vivienda/conroe-tx',
+  },
+  homeownersSanAngeloTx: {
+    en: 'homeowners-insurance/san-angelo-tx',
+    es: 'seguros-de-vivienda/san-angelo-tx',
+  },
+  homeownersAtascocitaTx: {
+    en: 'homeowners-insurance/atascocita-tx',
+    es: 'seguros-de-vivienda/atascocita-tx',
+  },
+  homeownersTempleTx: {
+    en: 'homeowners-insurance/temple-tx',
+    es: 'seguros-de-vivienda/temple-tx',
+  },
+  homeownersMissionTx: {
+    en: 'homeowners-insurance/mission-tx',
+    es: 'seguros-de-vivienda/mission-tx',
+  },
+  homeownersBaytownTx: {
+    en: 'homeowners-insurance/baytown-tx',
+    es: 'seguros-de-vivienda/baytown-tx',
+  },
+  homeownersBryanTx: {
+    en: 'homeowners-insurance/bryan-tx',
+    es: 'seguros-de-vivienda/bryan-tx',
+  },
+  homeownersGeorgetownTx: {
+    en: 'homeowners-insurance/georgetown-tx',
+    es: 'seguros-de-vivienda/georgetown-tx',
   },
   commercialInsurance: {
     en: 'commercial-insurance',

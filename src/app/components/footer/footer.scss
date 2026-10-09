@@ -17,11 +17,29 @@
   pointer-events: none;
 }
 
+.footer-cities-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px 40px;
+  margin: 0 0 26px;
+}
+
 .footer-cities {
   position: relative;
   z-index: 1;
-  margin: 0 0 26px;
+  min-width: 0;
   padding: 0 26px;
+}
+
+// Light divider centred in the 40px column gap between the two city sections.
+.footer-cities + .footer-cities::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -20px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.14);
 }
 
 .footer-cities__head {
@@ -48,7 +66,7 @@
 
 .footer-cities__grid {
   display: grid;
-  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px 20px;
 }
 
@@ -283,8 +301,12 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .footer-cities__grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+  .footer-cities-row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-cities + .footer-cities::before {
+    display: none;
   }
 }
 
@@ -311,8 +333,12 @@
     gap: 18px;
   }
 
-  .footer-cities {
+  .footer-cities-row {
+    gap: 18px;
     margin-bottom: 18px;
+  }
+
+  .footer-cities {
     padding: 0 16px;
   }
 

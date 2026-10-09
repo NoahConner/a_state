@@ -24,7 +24,6 @@ export class GetAutoQuote {
   totalSteps = 5;
   loading = false;
   submitted = false;
-  termsAccepted = false;
 
   constructor(
     private fb: FormBuilder,
@@ -254,6 +253,5 @@ export class GetAutoQuote {
     this.addDriver();
     this.currentStep = 1;
     this.submitted = false;
-    this.termsAccepted = false;
   }
 }
