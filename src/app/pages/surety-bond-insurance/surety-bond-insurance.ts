@@ -9,8 +9,6 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './surety-bond-insurance.scss',
 })
 export class SuretyBondInsurance implements OnInit {
-  termsAccepted = false;
-  termsAccepted2 = false;
   optionalCoveragesChunks: any[][] = [];
   whoRequiresChunks: any[][] = [];
 

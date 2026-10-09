@@ -11,7 +11,6 @@ import { QuoteLeadCaptureService } from '../../services/quote-lead-capture.servi
   styleUrl: './about.scss',
 })
 export class About {
-  termsAccepted = false;
   readonly coveredForm = this.createQuoteFormState();
 
   constructor(

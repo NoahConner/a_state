@@ -11,8 +11,6 @@ import { Router } from '@angular/router';
   styleUrl: './home.scss',
 })
 export class Home {
-  termsAccepted = false;
-  termsAccepted2 = false;
   readonly bannerForm = this.createQuoteFormState();
   readonly coveredForm = this.createQuoteFormState();
 

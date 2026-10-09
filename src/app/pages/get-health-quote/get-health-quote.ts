@@ -22,7 +22,6 @@ export class GetHealthQuote {
   totalSteps = 3;
   loading = false;
   submitted = false;
-  termsAccepted = false;
 
   constructor(
     private fb: FormBuilder,
@@ -211,7 +210,6 @@ export class GetHealthQuote {
 
     this.currentStep = 1;
     this.submitted = false;
-    this.termsAccepted = false;
 
   }
 }

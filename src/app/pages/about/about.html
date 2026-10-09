@@ -210,17 +210,11 @@
                 [value]="coveredForm.fullName" (input)="coveredForm.fullName = $any($event.target).value" />
               <input type="tel" appPhoneFormat [placeholder]="'HOME.BANNER.FORM.PHONE' | translate"
                 class="form-control" [value]="coveredForm.phone" (input)="coveredForm.phone = $any($event.target).value" />
-              <button class="quote-submit" [disabled]="coveredForm.isSubmitting || !coveredForm.selectedChip || !coveredForm.fullName.trim() || !coveredForm.phone.trim() || !termsAccepted" (click)="goToSelectedQuote(coveredForm)">
+              <button class="quote-submit" [disabled]="coveredForm.isSubmitting || !coveredForm.selectedChip || !coveredForm.fullName.trim() || !coveredForm.phone.trim()" (click)="goToSelectedQuote(coveredForm)">
                 {{ coveredForm.isSubmitting ? ('HOME.BANNER.FORM.LOADING' | translate) : ('ABOUT.GET_QUOTE.BUTTON' | translate) }}
               </button>
             </div>
 
-            <div class="form-check terms-consent mt-3 mb-0">
-              <input class="form-check-input terms-check" type="checkbox" id="termsCheck"
-                (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
-              <label class="form-check-label terms-check-label small" for="termsCheck"
-                [innerHTML]="'QUOTE_SMS_CONSENT_GET_QUOTE' | translateHtml | async"></label>
-            </div>
           </div>
         </div>
 

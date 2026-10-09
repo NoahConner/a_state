@@ -41,14 +41,8 @@
           </div>
 
 
-          <div class="form-check mb-4">
-            <input class="form-check-input terms-check" type="checkbox" id="termsCheck"
-              (change)="termsAccepted = $any($event.target).checked" [checked]="termsAccepted" />
-            <label class="form-check-label terms-check-label small text-light" for="termsCheck"
-              [innerHTML]="'QUOTE_SMS_CONSENT_GET_QUOTE' | translateHtml | async"></label>
-          </div>
 
-          <button class="btn" type="button" appBannerQuoteSubmit [disabled]="!termsAccepted">
+          <button class="btn" type="button" appBannerQuoteSubmit>
             {{ 'HOME.BANNER.FORM.BUTTON' | translate }}
           </button>
         </div>
@@ -332,20 +326,12 @@
               <option>Email</option>
             </select>
           </div>
-          <div class="col-lg-10 mt-4">
-            <div class="form-check">
-              <input class="form-check-input terms-check" type="checkbox" id="smsConsentCheck"
-                (change)="smsConsentAccepted = $any($event.target).checked" [checked]="smsConsentAccepted" />
-              <label class="form-check-label terms-check-label small" for="smsConsentCheck"
-                [innerHTML]="'CONTACT_SMS_CONSENT' | translateHtml | async"></label>
-            </div>
-          </div>
         </div>
 
 
         <!-- BUTTON -->
         <div class="text-center mt-5">
-          <button type="submit" class="submit-btn" [disabled]="!smsConsentAccepted">
+          <button type="submit" class="submit-btn">
             {{ loc.detailPage?.session4?.submitText }}
           </button>
         </div>

@@ -9,8 +9,6 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './home-insurance.scss',
 })
 export class HomeInsurance implements OnInit {
-  termsAccepted = false;
-  termsAccepted2 = false;
   optionalCoveragesChunks: any[][] = [];
   typesOfHomeInsurance: any[] = [];
   constructor(public languageService: Language, private translate: TranslateService) { }

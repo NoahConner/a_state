@@ -9,7 +9,6 @@ import { Language } from '../../services/language';
   styleUrl: './contact.scss',
 })
 export class Contact {
-  smsConsentAccepted = false;
 
   constructor(private router: Router, public languageService: Language) { }
   goToThankYou() {
