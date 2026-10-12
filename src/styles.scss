@@ -5,9 +5,23 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap');
+
+// `clip` (not `hidden`) so the sticky site header keeps working; `hidden` is the fallback for old browsers.
 html,
 body {
   overflow-x: hidden;
+  overflow-x: clip;
+}
+
+html {
+  scroll-padding-top: 88px;
+}
+
+// The header used to float over the page banners, so every banner reserved ~9rem at the top for it.
+// It now sits above the page (sticky), so that space is no longer needed.
+.topBanner .topSub {
+  padding-top: 3rem !important;
 }
 
 img {

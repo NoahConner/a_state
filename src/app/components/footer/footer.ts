@@ -1,25 +1,9 @@
-import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { Component, DestroyRef, Inject, OnInit, PLATFORM_ID, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Language } from '../../services/language';
-import { routeTranslations } from '../../app-routing-module';
+import { OFFICES, buildRoute } from '../header/header';
 
-type FooterLink = {
-  routeKey: string;
-  labelKey?: string;
-};
-
-type CityLink = {
-  routeKey: string;
-  label: string;
-};
-
-type InsuranceMenuSection = {
-  TITLE?: string;
-  ITEMS?: Array<{
-    KEY: string;
-    LABEL: string;
-  }>;
-};
+type FooterLink = { routeKey: string; labelKey: string };
 
 @Component({
   selector: 'app-footer',
@@ -27,162 +11,66 @@ type InsuranceMenuSection = {
   templateUrl: './footer.html',
   styleUrl: './footer.scss',
 })
-export class Footer {
+export class Footer implements OnInit {
+  readonly offices = OFFICES;
+  readonly year = new Date().getFullYear();
+
+  readonly insuranceLinks: FooterLink[] = [
+    { routeKey: 'autoInsurance', labelKey: 'SITE_FOOTER.LINKS.AUTO' },
+    { routeKey: 'homeInsurance', labelKey: 'SITE_FOOTER.LINKS.HOME' },
+    { routeKey: 'commercialInsurance', labelKey: 'SITE_FOOTER.LINKS.BUSINESS' },
+    { routeKey: 'lifeInsurance', labelKey: 'SITE_FOOTER.LINKS.LIFE' },
+    { routeKey: 'healthInsurance', labelKey: 'SITE_FOOTER.LINKS.HEALTH' },
+    { routeKey: 'suretyBondInsurance', labelKey: 'SITE_FOOTER.LINKS.BONDS' },
+  ];
+
+  readonly companyLinks: FooterLink[] = [
+    { routeKey: 'about', labelKey: 'SITE_NAV.ABOUT' },
+    { routeKey: 'careers', labelKey: 'SITE_FOOTER.CAREERS' },
+    { routeKey: 'contact', labelKey: 'SITE_NAV.CONTACT' },
+  ];
+
+  /** Columns are accordions on phones and always open from 768px. Rendered open on the server. */
+  columnsOpen = true;
+  isDesktop = true;
+
+  private readonly isBrowser: boolean;
+  private readonly destroyRef = inject(DestroyRef);
+
   constructor(
     public languageService: Language,
-    private translate: TranslateService,
-  ) {}
-
-  personalInsuranceLinks: FooterLink[] = [
-    { routeKey: 'carInsurance' },
-    { routeKey: 'sr22Insurance' },
-    { routeKey: 'homeInsurance', labelKey: 'HEADER.HOME_INSURANCE' },
-    { routeKey: 'rentersInsurance' },
-    { routeKey: 'floodInsurance' },
-    { routeKey: 'healthInsurance', labelKey: 'HEADER.HEALTH_INSURANCE' },
-    { routeKey: 'lifeInsurance', labelKey: 'HEADER.LIFE_INSURANCE' },
-    { routeKey: 'medicareSupplementInsurance' },
-  ];
-
-  commercialInsuranceLinks: FooterLink[] = [
-    { routeKey: 'generalLiabilityInsurance' },
-    { routeKey: 'workersCompensationInsurance' },
-    { routeKey: 'commercialAutoInsurance' },
-    { routeKey: 'businessOwnerInsurance' },
-    { routeKey: 'commercialPropertyInsurance' },
-    { routeKey: 'professionalLiabilityInsurance' },
-    { routeKey: 'cyberLiabilityInsurance' },
-    { routeKey: 'buildersRiskInsurance' },
-  ];
-
-  companyLinks: FooterLink[] = [
-    { routeKey: 'about', labelKey: 'HEADER.ABOUT' },
-    { routeKey: 'insuranceServices', labelKey: 'HEADER.INSURANCE_SERVICES' },
-    { routeKey: 'careers', labelKey: 'FOOTER.POLICIES.CAREERS' },
-    { routeKey: 'ourLocations', labelKey: 'HEADER.OFFICE_LOCATOR' },
-    { routeKey: 'contact', labelKey: 'HEADER.CONTACT' },
-    { routeKey: 'getAQuote', labelKey: 'HEADER.GET_A_QUOTE' },
-  ];
-
-  // Rendered above the footer card as two side-by-side city sections; order matches the design.
-  cityLinks: CityLink[] = [
-    { routeKey: 'houstonTx', label: 'Houston' },
-    { routeKey: 'sanAntonioTx', label: 'San Antonio' },
-    { routeKey: 'dallasTx', label: 'Dallas' },
-    { routeKey: 'austinTx', label: 'Austin' },
-    { routeKey: 'fortWorthTx', label: 'Fort Worth' },
-    { routeKey: 'elPasoTx', label: 'El Paso' },
-    { routeKey: 'arlingtonTx', label: 'Arlington' },
-    { routeKey: 'corpusChristiTx', label: 'Corpus Christi' },
-    { routeKey: 'planoTx', label: 'Plano' },
-    { routeKey: 'lubbockTx', label: 'Lubbock' },
-    { routeKey: 'laredoTx', label: 'Laredo' },
-    { routeKey: 'irvingTx', label: 'Irving' },
-  ];
-
-  homeownersCityLinks: CityLink[] = [
-    { routeKey: 'homeownersHoustonTx', label: 'Houston' },
-    { routeKey: 'homeownersSanAntonioTx', label: 'San Antonio' },
-    { routeKey: 'homeownersDallasTx', label: 'Dallas' },
-    { routeKey: 'homeownersAustinTx', label: 'Austin' },
-    { routeKey: 'homeownersFortWorthTx', label: 'Fort Worth' },
-    { routeKey: 'homeownersElPasoTx', label: 'El Paso' },
-    { routeKey: 'homeownersArlingtonTx', label: 'Arlington' },
-    { routeKey: 'homeownersCorpusChristiTx', label: 'Corpus Christi' },
-    { routeKey: 'homeownersPlanoTx', label: 'Plano' },
-    { routeKey: 'homeownersLubbockTx', label: 'Lubbock' },
-    { routeKey: 'homeownersLaredoTx', label: 'Laredo' },
-    { routeKey: 'homeownersIrvingTx', label: 'Irving' },
-  ];
-
-  socialLinks = [
-    {
-      icon: 'fa-brands fa-facebook-f',
-      href: 'https://www.facebook.com/astateinsurancetx',
-      label: 'Facebook',
-    },
-    {
-      icon: 'fa-brands fa-instagram',
-      href: 'https://www.instagram.com/astateinsurance/',
-      label: 'Instagram',
-    },
-    {
-      icon: 'fa-brands fa-youtube',
-      href: 'https://www.youtube.com/@a-state-insurance',
-      label: 'YouTube',
-    },
-    {
-      icon: 'fa-brands fa-tiktok',
-      href: 'https://www.tiktok.com/@astateinsurancetx',
-      label: 'TikTok',
-    },
-    {
-      icon: 'fa-brands fa-pinterest-p',
-      href: 'https://www.pinterest.com/astateinsurance/',
-      label: 'Pinterest',
-    },
-    {
-      icon: 'fa-brands fa-snapchat-ghost',
-      href: 'https://www.snapchat.com/@astateinsurance',
-      label: 'Snapchat',
-    },
-    {
-      icon: 'fa-brands fa-x-twitter',
-      href: 'https://x.com/astateinsurance',
-      label: 'X',
-    },
-    {
-      icon: 'fa-brands fa-linkedin-in',
-      href: null,
-      label: 'LinkedIn',
-    },
-  ];
-
-  get currentLang() {
-    return this.languageService.getCurrentLanguage();
+    @Inject(PLATFORM_ID) platformId: object,
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
   }
 
-  getLinkLabel(link: FooterLink): string {
-    if (link.labelKey) {
-      return this.translate.instant(link.labelKey);
-    }
-
-    const sections = this.translate.instant('FOOTER.INSURANCE_MENU') as InsuranceMenuSection[];
-
-    if (Array.isArray(sections)) {
-      for (const section of sections) {
-        const item = section.ITEMS?.find((entry) => entry.KEY === link.routeKey);
-
-        if (item?.LABEL) {
-          return item.LABEL;
-        }
-      }
-    }
-
-    return link.routeKey;
+  ngOnInit() {
+    if (!this.isBrowser) return;
+    const mq = window.matchMedia('(min-width:768px)');
+    const sync = () => {
+      this.isDesktop = mq.matches;
+      this.columnsOpen = mq.matches;
+    };
+    sync();
+    mq.addEventListener('change', sync);
+    this.destroyRef.onDestroy(() => mq.removeEventListener('change', sync));
   }
 
-  getRoute(page: string): string[] {
-    const lang = this.languageService.getCurrentLanguage();
-
-    if (page === 'home') {
-      return lang === 'en' ? ['/'] : ['/', lang];
-    }
-
-    const slug = routeTranslations[page]?.[lang] || routeTranslations[page]?.['en'];
-
-    if (!slug) return ['/'];
-
-    const segments = slug.split('/');
-
-    return lang === 'en' ? ['/', ...segments] : ['/', lang, ...segments];
+  get currentLang(): 'en' | 'es' {
+    return (this.languageService.getCurrentLanguage() as 'en' | 'es') || 'en';
   }
 
-  changeLang(lang: string) {
-    this.languageService.setLanguage(lang);
+  route(page: string, officeId?: string): string[] {
+    return buildRoute(this.languageService, page, officeId);
   }
 
-  trackByValue(_index: number, value: string): string {
-    return value;
+  /** On desktop the column headings are not toggles. */
+  onSummaryClick(event: Event) {
+    if (this.isDesktop) event.preventDefault();
+  }
+
+  switchLang(event: Event) {
+    event.preventDefault();
+    this.languageService.setLanguage(this.currentLang === 'es' ? 'en' : 'es');
   }
 }

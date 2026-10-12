@@ -1,156 +1,69 @@
-<footer class="footer-shell">
-  <div class="container">
-    <div class="footer-cities-row">
-      <section class="footer-cities">
-        <div class="footer-cities__head">
-          <h2 class="footer-cities__title">
-            {{ 'FOOTER.SECTIONS.AUTO_INSURANCE_BY_CITY' | translate }}
-          </h2>
-          <span class="footer-cities__rule" aria-hidden="true"></span>
-        </div>
+<footer class="footer on-red" id="footer">
+  <div class="hf-container">
+    <div class="f-grid">
+      <div class="f-brand">
+        <a class="brand" [routerLink]="route('home')" [attr.aria-label]="'SITE_NAV.HOME_ARIA' | translate">
+          <img class="logo" src="/assets/images/logo.png" alt="" />
+          <span class="name">A-State Insurance</span>
+        </a>
+        <a class="big" href="tel:+17133577771">(713) 357-7771</a>
+        <a href="mailto:save@astateinsurance.com">save&#64;astateinsurance.com</a>
+        <span>{{ 'SITE_NAV.HOURS' | translate }}</span>
+      </div>
 
-        <div class="footer-cities__grid">
-          <a
-            *ngFor="let city of cityLinks"
-            class="footer-cities__item"
-            [routerLink]="getRoute(city.routeKey)"
-          >
-            {{ city.label }}
-          </a>
-        </div>
-      </section>
+      <div class="f-col">
+        <details [open]="columnsOpen">
+          <summary (click)="onSummaryClick($event)">
+            <h3>{{ 'SITE_NAV.INSURANCE' | translate }}</h3>
+            <svg class="icon-sm" aria-hidden="true"><use href="#i-chev" /></svg>
+          </summary>
+          <ul>
+            <li *ngFor="let link of insuranceLinks">
+              <a [routerLink]="route(link.routeKey)">{{ link.labelKey | translate }}</a>
+            </li>
+          </ul>
+        </details>
+      </div>
 
-      <section class="footer-cities">
-        <div class="footer-cities__head">
-          <h2 class="footer-cities__title">
-            {{ 'FOOTER.SECTIONS.HOMEOWNERS_INSURANCE_BY_CITY' | translate }}
-          </h2>
-          <span class="footer-cities__rule" aria-hidden="true"></span>
-        </div>
+      <div class="f-col">
+        <details [open]="columnsOpen">
+          <summary (click)="onSummaryClick($event)">
+            <h3>{{ 'SITE_FOOTER.OFFICES' | translate }}</h3>
+            <svg class="icon-sm" aria-hidden="true"><use href="#i-chev" /></svg>
+          </summary>
+          <ul>
+            <li *ngFor="let office of offices">
+              <a [routerLink]="route('ourLocations/:id', office.id)">{{ office.name }}</a>
+            </li>
+          </ul>
+        </details>
+      </div>
 
-        <div class="footer-cities__grid">
-          <a
-            *ngFor="let city of homeownersCityLinks"
-            class="footer-cities__item"
-            [routerLink]="getRoute(city.routeKey)"
-          >
-            {{ city.label }}
-          </a>
-        </div>
-      </section>
+      <div class="f-col">
+        <details [open]="columnsOpen">
+          <summary (click)="onSummaryClick($event)">
+            <h3>{{ 'SITE_FOOTER.COMPANY' | translate }}</h3>
+            <svg class="icon-sm" aria-hidden="true"><use href="#i-chev" /></svg>
+          </summary>
+          <ul>
+            <li *ngFor="let link of companyLinks">
+              <a [routerLink]="route(link.routeKey)">{{ link.labelKey | translate }}</a>
+            </li>
+            <li>
+              <a *ngIf="currentLang === 'en'" href="/es/" hreflang="es" lang="es" (click)="switchLang($event)">Español</a>
+              <a *ngIf="currentLang === 'es'" href="/" hreflang="en" lang="en" (click)="switchLang($event)">English</a>
+            </li>
+          </ul>
+        </details>
+      </div>
     </div>
 
-    <div class="footer-card">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a class="footer-brand__logo" [routerLink]="getRoute('home')">
-            <img src="/assets/images/logo.png" alt="A-State Insurance" />
-          </a>
-
-          <p class="footer-brand__copy" [innerHTML]="'FOOTER.BRAND_COPY' | translate"></p>
-
-          <div class="footer-brand__divider" aria-hidden="true"></div>
-
-          <div class="footer-brand__meta">
-            <div class="footer-meta__item">
-              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-              <span>Texas - All Cities & Counties</span>
-            </div>
-
-            <div class="footer-meta__item">
-              <i class="fa-regular fa-clock" aria-hidden="true"></i>
-              <span>{{ 'FOOTER.CONTACT.HOURS' | translate }}</span>
-            </div>
-
-            <div class="footer-meta__item">
-              <i class="fa-solid fa-phone" aria-hidden="true"></i>
-              <a
-                href="tel:7133577771"
-                *ngFor="let phone of 'FOOTER.CONTACT.PHONE' | translate; trackBy: trackByValue"
-              >
-                {{ phone }}
-              </a>
-            </div>
-
-            <div class="footer-meta__item">
-              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
-              <a href="mailto:save@astateinsurance.com">{{ 'FOOTER.CONTACT.EMAIL' | translate }}</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="footer-right">
-          <div class="footer-links">
-            <section class="footer-links__column">
-              <h3 class="footer-links__title">{{ 'FOOTER.SECTIONS.PERSONAL_INSURANCE' | translate }}</h3>
-              <a
-                *ngFor="let link of personalInsuranceLinks"
-                class="footer-links__item"
-                [routerLink]="getRoute(link.routeKey)"
-              >
-                {{ getLinkLabel(link) }}
-              </a>
-            </section>
-
-            <section class="footer-links__column">
-              <h3 class="footer-links__title">{{ 'FOOTER.SECTIONS.COMMERCIAL_INSURANCE' | translate }}</h3>
-              <a
-                *ngFor="let link of commercialInsuranceLinks"
-                class="footer-links__item"
-                [routerLink]="getRoute(link.routeKey)"
-              >
-                {{ getLinkLabel(link) }}
-              </a>
-            </section>
-
-            <section class="footer-links__column footer-links__column--company">
-              <h3 class="footer-links__title">{{ 'FOOTER.SECTIONS.COMPANY' | translate }}</h3>
-              <a
-                *ngFor="let link of companyLinks"
-                class="footer-links__item"
-                [routerLink]="getRoute(link.routeKey)"
-              >
-                {{ getLinkLabel(link) }}
-              </a>
-            </section>
-          </div>
-
-          <div class="footer-social">
-            <div class="footer-social__title">{{ 'FOOTER.SOCIAL_TITLE' | translate }}</div>
-            <div class="footer-social__icons">
-              <ng-container *ngFor="let social of socialLinks">
-                <a
-                  *ngIf="social.href; else staticSocial"
-                  class="footer-social__icon"
-                  [href]="social.href"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  [attr.aria-label]="social.label"
-                >
-                  <i [class]="social.icon" aria-hidden="true"></i>
-                </a>
-
-                <ng-template #staticSocial>
-                  <span class="footer-social__icon is-static" [attr.aria-label]="social.label">
-                    <i [class]="social.icon" aria-hidden="true"></i>
-                  </span>
-                </ng-template>
-              </ng-container>
-            </div>
-          </div>
-
-          <div class="footer-bottom">
-            <div class="footer-bottom__copyright">
-              <span [innerHTML]="'FOOTER.COPYRIGHT' | translate"></span>
-            </div>
-
-            <div class="footer-bottom__links">
-              <a [routerLink]="getRoute('privacyPolicy')">{{ 'FOOTER.POLICIES.PRIVACY' | translate }}</a>
-              <a [routerLink]="getRoute('termsAndConditions')">{{ 'FOOTER.POLICIES.TERMS' | translate }}</a>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="f-bottom">
+      <span>&copy; {{ year }} A-State Insurance</span>
+      <nav [attr.aria-label]="'SITE_FOOTER.LEGAL_ARIA' | translate">
+        <a [routerLink]="route('privacyPolicy')">{{ 'SITE_FOOTER.PRIVACY' | translate }}</a>
+        <a [routerLink]="route('termsAndConditions')">{{ 'SITE_FOOTER.TERMS' | translate }}</a>
+      </nav>
     </div>
   </div>
 </footer>
