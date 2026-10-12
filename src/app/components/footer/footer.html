@@ -49,10 +49,6 @@
             <li *ngFor="let link of companyLinks">
               <a [routerLink]="route(link.routeKey)">{{ link.labelKey | translate }}</a>
             </li>
-            <li>
-              <a *ngIf="currentLang === 'en'" href="/es/" hreflang="es" lang="es" (click)="switchLang($event)">Español</a>
-              <a *ngIf="currentLang === 'es'" href="/" hreflang="en" lang="en" (click)="switchLang($event)">English</a>
-            </li>
           </ul>
         </details>
       </div>

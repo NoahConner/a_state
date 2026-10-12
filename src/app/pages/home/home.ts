@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { Language } from '../../services/language';
 import { QuoteLeadCaptureService } from '../../services/quote-lead-capture.service';
-import { OFFICES, Office, buildRoute } from '../../components/header/header';
+import { NAV_GROUPS, NavLink, OFFICES, buildRoute } from '../../components/header/header';
 
 type ProductKey = 'auto' | 'home' | 'business' | 'life' | 'health' | 'other';
 
@@ -21,10 +21,10 @@ interface Product {
 
 interface QuoteForm {
   id: 'hero' | 'final';
-  product: ProductKey | null;
+  /** Visitors can pick several products. */
+  products: ProductKey[];
   name: string;
   phone: string;
-  note: string | null;
   errors: { product?: string; name?: string; phone?: string };
   isSubmitting: boolean;
 }
@@ -38,9 +38,6 @@ const PRODUCTS: Product[] = [
   { key: 'health', icon: 'i-health', labelKey: P + 'HEALTH', finalLabelKey: P + 'HEALTH', quoteRouteKey: 'getHealthQuote' },
   { key: 'other', icon: 'i-more', labelKey: P + 'OTHER', finalLabelKey: P + 'OTHER', quoteRouteKey: 'getAQuote' },
 ];
-
-type Link = { routeKey: string; labelKey: string };
-const N = 'SITE_NAV.LINKS.';
 
 const SCHEMA_ID = 'home-structured-data';
 
@@ -57,76 +54,21 @@ export class Home implements AfterViewInit, OnDestroy {
   readonly finalForm = this.createForm('final');
 
   /**
-   * Product cards, in order. `titleRoute` follows the content doc: the Home title is not a link,
-   * and only "Surety Bonds" is linked in the bonds title.
+   * Product cards, in the same order as the header's NAV_GROUPS, whose links they reuse.
+   * `titleRoute` follows the content doc: the Home title is not a link, and only "Surety Bonds"
+   * is linked in the bonds title. `quoteRoute` is the detailed quote page for the card's CTA.
    */
-  readonly productCards: Array<{ key: string; icon: string; pick: ProductKey; titleRoute?: string; links: Link[] }> = [
-    {
-      key: 'AUTO', icon: 'i-car', pick: 'auto', titleRoute: 'autoInsurance',
-      links: [
-        { routeKey: 'carInsurance', labelKey: N + 'CAR' },
-        { routeKey: 'sr22Insurance', labelKey: N + 'SR22' },
-        { routeKey: 'motorcycleInsurance', labelKey: N + 'MOTORCYCLE' },
-        { routeKey: 'rideshareInsurance', labelKey: N + 'RIDESHARE' },
-        { routeKey: 'mexicanCarInsurance', labelKey: N + 'MEXICO' },
-        { routeKey: 'autoInsurance', labelKey: 'HOME_PAGE.PRODUCTS.MORE_AUTO' },
-      ],
-    },
-    {
-      key: 'HOME', icon: 'i-home', pick: 'home',
-      links: [
-        { routeKey: 'homeInsurance', labelKey: N + 'HOMEOWNERS' },
-        { routeKey: 'rentersInsurance', labelKey: N + 'RENTERS' },
-        { routeKey: 'condoInsurance', labelKey: N + 'CONDO' },
-        { routeKey: 'landlordInsurance', labelKey: N + 'LANDLORD' },
-        { routeKey: 'manufacturedMobileHomeInsurance', labelKey: N + 'MOBILE_HOME' },
-        { routeKey: 'floodInsurance', labelKey: N + 'FLOOD' },
-      ],
-    },
-    {
-      key: 'BUSINESS', icon: 'i-briefcase', pick: 'business', titleRoute: 'commercialInsurance',
-      links: [
-        { routeKey: 'generalLiabilityInsurance', labelKey: N + 'GENERAL_LIABILITY' },
-        { routeKey: 'workersCompensationInsurance', labelKey: N + 'WORKERS_COMP' },
-        { routeKey: 'commercialAutoInsurance', labelKey: N + 'COMMERCIAL_AUTO' },
-        { routeKey: 'businessOwnerInsurance', labelKey: N + 'BOP' },
-        { routeKey: 'professionalLiabilityInsurance', labelKey: N + 'PROFESSIONAL_LIABILITY' },
-        { routeKey: 'cyberLiabilityInsurance', labelKey: N + 'CYBER' },
-      ],
-    },
-    {
-      key: 'LIFE', icon: 'i-heart', pick: 'life', titleRoute: 'lifeInsurance',
-      links: [
-        { routeKey: 'termLifeInsurance', labelKey: N + 'TERM_LIFE' },
-        { routeKey: 'wholeLifeInsurance', labelKey: N + 'WHOLE_LIFE' },
-        { routeKey: 'universalLifeInsurance', labelKey: N + 'UNIVERSAL_LIFE' },
-        { routeKey: 'finalExpenseInsurance', labelKey: N + 'FINAL_EXPENSE' },
-      ],
-    },
-    {
-      key: 'HEALTH', icon: 'i-health', pick: 'health', titleRoute: 'healthInsurance',
-      links: [
-        { routeKey: 'individualHealthInsurance', labelKey: N + 'INDIVIDUAL_FAMILY' },
-        { routeKey: 'acaMarketplacePlansInsurance', labelKey: N + 'ACA' },
-        { routeKey: 'medicareSupplementInsurance', labelKey: N + 'MEDICARE' },
-        { routeKey: 'employerGroupHealthInsurance', labelKey: N + 'GROUP_HEALTH' },
-        { routeKey: 'dentalVisionInsurance', labelKey: N + 'DENTAL_VISION' },
-      ],
-    },
-    {
-      key: 'BONDS', icon: 'i-shield', pick: 'other', titleRoute: 'suretyBondInsurance',
-      links: [
-        { routeKey: 'notaryBonds', labelKey: N + 'NOTARY' },
-        { routeKey: 'performanceBondsPaymentBonds', labelKey: N + 'CONTRACTOR' },
-        { routeKey: 'commercialSuretyBonds', labelKey: N + 'LICENSE_PERMIT' },
-        { routeKey: 'petInsurance', labelKey: N + 'PET' },
-        { routeKey: 'titleInsurance', labelKey: N + 'TITLE' },
-      ],
-    },
+  readonly productCards: Array<{ key: string; icon: string; titleRoute?: string; quoteRoute: string; links: NavLink[] }> = [
+    { key: 'AUTO', icon: 'i-car', titleRoute: 'autoInsurance', quoteRoute: 'getAutoQuote', links: NAV_GROUPS[0].links },
+    { key: 'HOME', icon: 'i-home', quoteRoute: 'getHomeQuote', links: NAV_GROUPS[1].links },
+    { key: 'BUSINESS', icon: 'i-briefcase', titleRoute: 'commercialInsurance', quoteRoute: 'getCommercialQuote', links: NAV_GROUPS[2].links },
+    { key: 'LIFE', icon: 'i-heart', titleRoute: 'lifeInsurance', quoteRoute: 'getLifeQuote', links: NAV_GROUPS[3].links },
+    { key: 'HEALTH', icon: 'i-health', titleRoute: 'healthInsurance', quoteRoute: 'getHealthQuote', links: NAV_GROUPS[4].links },
+    { key: 'BONDS', icon: 'i-shield', titleRoute: 'suretyBondInsurance', quoteRoute: 'getSuretyQuote', links: NAV_GROUPS[5].links },
   ];
 
   /** Same order as HOME_PAGE.SITUATIONS.ITEMS. */
-  readonly situationProducts: ProductKey[] = ['auto', 'auto', 'home', 'home', 'business', 'business', 'health', 'auto'];
+  readonly situationRoutes = ['getAutoQuote', 'getAutoQuote', 'getHomeQuote', 'getHomeQuote', 'getCommercialQuote', 'getCommercialQuote', 'getHealthQuote', 'getAutoQuote'];
   readonly trustIcons = ['i-list', 'i-shield', 'i-chat', 'i-star-c'];
   readonly whyIcons = ['i-list', 'i-user', 'i-chat', 'i-layers'];
   readonly carriers = ['Progressive', 'GEICO', 'National General', 'Kemper (Infinity)', 'GAINSCO', 'Texas Mutual', 'NEXT Insurance', 'Hiscox', 'CNA', 'Tower Hill', 'Neptune Flood', 'Wellington'];
@@ -139,7 +81,6 @@ export class Home implements AfterViewInit, OnDestroy {
     { office: 'Southwest Fwy', text: 'Great customer service and good auto insurance price.' },
     { office: 'Airline', text: 'Customer service is great and is always respectful.' },
   ];
-  readonly reviewsUrl = 'https://www.google.com/maps/search/A-State+Insurance+Houston';
   readonly autoCities = this.cities('');
   readonly homeCities = this.cities('homeowners');
   readonly stars = [1, 2, 3, 4, 5];
@@ -198,11 +139,6 @@ export class Home implements AfterViewInit, OnDestroy {
     return value;
   }
 
-  directionsUrl(office: Office): string {
-    const destination = `${office.street} ${office.city}`.replace(/,/g, '').replace(/\s+/g, '+');
-    return `https://www.google.com/maps/dir/?api=1&destination=${destination}`;
-  }
-
   ngAfterViewInit() {
     if (!this.isBrowser) return;
 
@@ -253,9 +189,13 @@ export class Home implements AfterViewInit, OnDestroy {
 
   // ---------- Quote forms ----------
 
-  selectProduct(form: QuoteForm, key: ProductKey) {
-    form.product = key;
-    form.errors.product = undefined;
+  isSelected(form: QuoteForm, key: ProductKey): boolean {
+    return form.products.includes(key);
+  }
+
+  toggleProduct(form: QuoteForm, key: ProductKey) {
+    form.products = this.isSelected(form, key) ? form.products.filter((p) => p !== key) : [...form.products, key];
+    if (form.products.length) form.errors.product = undefined;
   }
 
   onNameInput(form: QuoteForm, event: Event) {
@@ -278,18 +218,13 @@ export class Home implements AfterViewInit, OnDestroy {
     if (form[field]) this.validate(form, [field]);
   }
 
-  /** Product cards and situation chips preselect the hero form and scroll to it. */
-  goToQuote(product: ProductKey | null, note?: string, event?: Event) {
-    event?.preventDefault();
-    if (product) this.selectProduct(this.heroForm, product);
-    if (note) this.heroForm.note = note;
+  /** The sticky bar's "Get a Quote" scrolls to the hero form. */
+  goToQuote(event: Event) {
+    event.preventDefault();
     if (!this.isBrowser) return;
     this.host.nativeElement.querySelector('#quote')?.scrollIntoView({ block: 'start' });
     setTimeout(() => {
-      const target = product
-        ? this.host.nativeElement.querySelector<HTMLElement>('#hero-name')
-        : this.host.nativeElement.querySelector<HTMLElement>('input[name="hero-product"]');
-      target?.focus({ preventScroll: true });
+      this.host.nativeElement.querySelector<HTMLElement>('input[name="hero-product"]')?.focus({ preventScroll: true });
     }, 350);
   }
 
@@ -303,20 +238,24 @@ export class Home implements AfterViewInit, OnDestroy {
       return;
     }
 
-    const product = PRODUCTS.find((p) => p.key === form.product)!;
-    const label = this.translate.instant(form.id === 'final' ? product.finalLabelKey : product.labelKey);
+    const selected = PRODUCTS.filter((p) => form.products.includes(p.key));
+    const label = selected
+      .map((p) => this.translate.instant(form.id === 'final' ? p.finalLabelKey : p.labelKey))
+      .join(', ');
+    // One product goes to its own quote page; several go to the general quote page.
+    const quoteRouteKey = selected.length === 1 ? selected[0].quoteRouteKey : 'getAQuote';
 
     form.isSubmitting = true;
     try {
       const isSubmitted = await this.quoteLeadCaptureService.submitLead({
-        selected_chip: form.note ? `${label} (${form.note})` : label,
+        selected_chip: label,
         full_name: form.name,
         phone_number: form.phone,
       });
       if (!isSubmitted) return;
 
       this.resetForm(form);
-      await this.router.navigate(this.route(product.quoteRouteKey));
+      await this.router.navigate(this.route(quoteRouteKey));
     } finally {
       form.isSubmitting = false;
       this.cdr.detectChanges();
@@ -330,8 +269,8 @@ export class Home implements AfterViewInit, OnDestroy {
     const t = (key: string) => this.translate.instant('HOME_PAGE.FORM.' + key);
 
     if (want('product')) {
-      form.errors.product = form.product ? undefined : t('ERR_PRODUCT');
-      if (!form.product) bad.push(`input[name="${form.id}-product"]`);
+      form.errors.product = form.products.length ? undefined : t('ERR_PRODUCT');
+      if (!form.products.length) bad.push(`input[name="${form.id}-product"]`);
     }
     if (want('name')) {
       form.errors.name = form.name.trim().length < 2 ? t('ERR_NAME') : undefined;
@@ -350,15 +289,14 @@ export class Home implements AfterViewInit, OnDestroy {
   }
 
   private resetForm(form: QuoteForm) {
-    form.product = null;
+    form.products = [];
     form.name = '';
     form.phone = '';
-    form.note = null;
     form.errors = {};
   }
 
   private createForm(id: QuoteForm['id']): QuoteForm {
-    return { id, product: null, name: '', phone: '', note: null, errors: {}, isSubmitting: false };
+    return { id, products: [], name: '', phone: '', errors: {}, isSubmitting: false };
   }
 
   private cities(prefix: '' | 'homeowners'):Array<{ routeKey: string; label: string }> {
@@ -366,6 +304,7 @@ export class Home implements AfterViewInit, OnDestroy {
       ['HoustonTx', 'Houston'], ['SanAntonioTx', 'San Antonio'], ['DallasTx', 'Dallas'], ['AustinTx', 'Austin'],
       ['FortWorthTx', 'Fort Worth'], ['ElPasoTx', 'El Paso'], ['ArlingtonTx', 'Arlington'], ['CorpusChristiTx', 'Corpus Christi'],
       ['PlanoTx', 'Plano'], ['LubbockTx', 'Lubbock'], ['LaredoTx', 'Laredo'], ['IrvingTx', 'Irving'],
+      ['GarlandTx', 'Garland'], ['FriscoTx', 'Frisco'],
     ];
     return names.map(([key, label]) => ({
       routeKey: prefix ? prefix + key : key.charAt(0).toLowerCase() + key.slice(1),

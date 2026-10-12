@@ -56,10 +56,6 @@ export class Footer implements OnInit {
     this.destroyRef.onDestroy(() => mq.removeEventListener('change', sync));
   }
 
-  get currentLang(): 'en' | 'es' {
-    return (this.languageService.getCurrentLanguage() as 'en' | 'es') || 'en';
-  }
-
   route(page: string, officeId?: string): string[] {
     return buildRoute(this.languageService, page, officeId);
   }
@@ -67,10 +63,4 @@ export class Footer implements OnInit {
   /** On desktop the column headings are not toggles. */
   onSummaryClick(event: Event) {
     if (this.isDesktop) event.preventDefault();
-  }
-
-  switchLang(event: Event) {
-    event.preventDefault();
-    this.languageService.setLanguage(this.currentLang === 'es' ? 'en' : 'es');
-  }
-}
+  }}

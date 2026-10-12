@@ -41,7 +41,10 @@
           <div class="mega" id="mega-ins" [hidden]="openPanel !== 'insurance'">
             <div class="hf-container">
               <div *ngFor="let group of groups">
-                <h4><a [routerLink]="route(group.routeKey)">{{ group.titleKey | translate }}</a></h4>
+                <h4>
+                  <a *ngIf="group.routeKey; else plainTitle" [routerLink]="route(group.routeKey)">{{ group.titleKey | translate }}</a>
+                  <ng-template #plainTitle>{{ group.titleKey | translate }}</ng-template>
+                </h4>
                 <ul>
                   <li *ngFor="let link of group.links">
                     <a [routerLink]="route(link.routeKey)">{{ link.labelKey | translate }}</a>
@@ -66,12 +69,12 @@
             <div class="hf-container">
               <div *ngFor="let office of offices">
                 <h4><a [routerLink]="route('ourLocations/:id', office.id)">{{ office.name }}</a></h4>
-                <p class="addr">{{ office.street }}<br />{{ office.city }}</p>
+                <p class="addr"><a [href]="office.mapUrl" target="_blank" rel="noopener">{{ office.street }}<br />{{ office.city }}</a></p>
               </div>
               <div class="promo">
                 <b>{{ 'SITE_NAV.LOC_PROMO_TITLE' | translate }}</b>
                 <p>{{ 'SITE_NAV.LOC_PROMO_TEXT' | translate }}</p>
-                <a class="arrow-link" [routerLink]="route('ourLocations')">
+                <a class="arrow-link" [routerLink]="route('insuranceServices')">
                   {{ 'SITE_NAV.LOC_PROMO_LINK' | translate }}
                   <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg>
                 </a>
@@ -142,7 +145,7 @@
       <details *ngFor="let group of groups; let first = first" [open]="first">
         <summary>{{ group.titleKey | translate }}<svg class="icon-sm" aria-hidden="true"><use href="#i-chev" /></svg></summary>
         <div class="links">
-          <a class="all" [routerLink]="route(group.routeKey)">{{ 'SITE_NAV.ALL' | translate: { group: (group.titleKey | translate) } }}</a>
+          <a class="all" *ngIf="group.routeKey" [routerLink]="route(group.routeKey)">{{ 'SITE_NAV.ALL' | translate: { group: (group.titleKey | translate) } }}</a>
           <a *ngFor="let link of group.links" [routerLink]="route(link.routeKey)">{{ link.labelKey | translate }}</a>
         </div>
       </details>
@@ -150,7 +153,7 @@
         <summary>{{ 'SITE_NAV.LOCATIONS' | translate }}<svg class="icon-sm" aria-hidden="true"><use href="#i-chev" /></svg></summary>
         <div class="links">
           <a *ngFor="let office of offices" [routerLink]="route('ourLocations/:id', office.id)">{{ office.name }}</a>
-          <a [routerLink]="route('ourLocations')">{{ 'SITE_NAV.ACROSS_TEXAS' | translate }}</a>
+          <a [routerLink]="route('insuranceServices')">{{ 'SITE_NAV.ACROSS_TEXAS' | translate }}</a>
         </div>
       </details>
       <a class="flat" [routerLink]="route('about')">{{ 'SITE_NAV.ABOUT' | translate }}</a>

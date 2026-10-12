@@ -28,8 +28,8 @@
       <legend>{{ 'HOME_PAGE.FORM.LEGEND' | translate }}</legend>
       <div class="tiles">
         <div class="tile" *ngFor="let p of products">
-          <input type="radio" [name]="form.id + '-product'" [id]="form.id + '-p-' + p.key" [value]="p.key"
-            [checked]="form.product === p.key" (change)="selectProduct(form, p.key)" />
+          <input type="checkbox" [name]="form.id + '-product'" [id]="form.id + '-p-' + p.key" [value]="p.key"
+            [checked]="isSelected(form, p.key)" (change)="toggleProduct(form, p.key)" />
           <label [for]="form.id + '-p-' + p.key">
             <span class="dot"><svg class="icon" aria-hidden="true"><use [attr.href]="'#' + p.icon" /></svg></span>
             {{ (final ? p.finalLabelKey : p.labelKey) | translate }}
@@ -38,10 +38,6 @@
       </div>
       <p class="err" role="alert">{{ form.errors.product }}</p>
     </fieldset>
-    <p class="picked" *ngIf="form.note">
-      <svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg>
-      {{ 'HOME_PAGE.FORM.PICKED' | translate: { note: form.note } }}
-    </p>
     <div class="fields">
       <div class="field">
         <label [for]="form.id + '-name'">{{ 'HOME_PAGE.FORM.NAME' | translate }}</label>
@@ -94,8 +90,8 @@
     </div>
 
     <figure class="hero-photo">
-      <img src="/assets/images/home/get-coverd/poster.png" [alt]="'HOME_PAGE.HERO.PHOTO_ALT' | translate"
-        width="1881" height="1254" loading="lazy" decoding="async" />
+      <img src="/assets/images/home/hero-agent.jpg" [alt]="'HOME_PAGE.HERO.PHOTO_ALT' | translate"
+        width="1920" height="819" loading="lazy" decoding="async" />
     </figure>
   </div>
 </section>
@@ -138,7 +134,7 @@
           <p class="sublinks">
             <a *ngFor="let link of card.links" [routerLink]="route(link.routeKey)">{{ link.labelKey | translate }}</a>
           </p>
-          <a class="arrow-link" href="#quote" (click)="goToQuote(card.pick, undefined, $event)">
+          <a class="arrow-link" [routerLink]="route(card.quoteRoute)">
             {{ 'HOME_PAGE.PRODUCTS.' + card.key + '.CTA' | translate }}
             <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg>
           </a>
@@ -153,8 +149,8 @@
       <h3>{{ 'HOME_PAGE.SITUATIONS.TITLE' | translate }}</h3>
       <p>{{ 'HOME_PAGE.SITUATIONS.TEXT' | translate }}</p>
       <div class="chips">
-        <button class="chip" type="button" *ngFor="let s of list('HOME_PAGE.SITUATIONS.ITEMS'); let i = index"
-          (click)="goToQuote(situationProducts[i], s.NOTE)">{{ s.LABEL }}</button>
+        <a class="chip" *ngFor="let s of list('HOME_PAGE.SITUATIONS.ITEMS'); let i = index"
+          [routerLink]="route(situationRoutes[i])">{{ s.LABEL }}</a>
       </div>
     </div>
   </div>
@@ -224,7 +220,7 @@
         </li>
       </ol>
       <div class="cta-row">
-        <a class="hf-btn btn-outline" href="#quote" (click)="goToQuote(null, undefined, $event)">{{ 'HOME_PAGE.STEPS.CTA' | translate }}</a>
+        <a class="hf-btn btn-outline" [routerLink]="route('getAQuote')">{{ 'HOME_PAGE.STEPS.CTA' | translate }}</a>
         <span>{{ 'HOME_PAGE.STEPS.OR_CALL' | translate }} <a class="tel" href="tel:+17133577771">(713) 357-7771</a></span>
       </div>
     </div>
@@ -263,10 +259,6 @@
       </li>
     </ul>
     <p class="swipe-hint">{{ 'HOME_PAGE.REVIEWS.SWIPE' | translate }}</p>
-    <div class="rev-links">
-      <a [href]="reviewsUrl" target="_blank" rel="noopener">{{ 'HOME_PAGE.REVIEWS.READ_ALL' | translate }}</a>
-      <a [href]="reviewsUrl" target="_blank" rel="noopener">{{ 'HOME_PAGE.REVIEWS.LEAVE' | translate }}</a>
-    </div>
   </div>
 </section>
 
@@ -300,10 +292,10 @@
 
       <article class="office" *ngFor="let office of offices">
         <h3><a class="title-link" [routerLink]="route('ourLocations/:id', office.id)"><span class="nw">A-State</span> Insurance {{ office.name }}</a></h3>
-        <address><svg class="icon-sm" aria-hidden="true"><use href="#i-pin" /></svg><a [href]="directionsUrl(office)" target="_blank" rel="noopener">{{ office.street }}, {{ office.city }}</a></address>
+        <address><svg class="icon-sm" aria-hidden="true"><use href="#i-pin" /></svg><a [href]="office.mapUrl" target="_blank" rel="noopener">{{ office.street }}, {{ office.city }}</a></address>
         <a class="ph" [href]="'tel:' + office.tel">{{ office.phone }}</a>
         <div class="acts">
-          <a [href]="directionsUrl(office)" target="_blank" rel="noopener">{{ 'HOME_PAGE.OFFICES.DIRECTIONS' | translate }}</a>
+          <a [href]="office.directionsUrl" target="_blank" rel="noopener">{{ 'HOME_PAGE.OFFICES.DIRECTIONS' | translate }}</a>
           <a [routerLink]="route('ourLocations/:id', office.id)">{{ 'HOME_PAGE.OFFICES.DETAILS' | translate }}</a>
         </div>
       </article>
@@ -383,7 +375,7 @@
 
 <!-- Sticky mobile bar -->
 <div class="sticky-cta" [class.show]="showSticky" [attr.aria-hidden]="!showSticky">
-  <a class="hf-btn btn-primary" href="#quote" [tabIndex]="showSticky ? 0 : -1" (click)="goToQuote(null, undefined, $event)">{{ 'HOME_PAGE.STICKY.QUOTE' | translate }}</a>
+  <a class="hf-btn btn-primary" href="#quote" [tabIndex]="showSticky ? 0 : -1" (click)="goToQuote($event)">{{ 'HOME_PAGE.STICKY.QUOTE' | translate }}</a>
   <a class="hf-btn btn-outline" href="tel:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'HOME_PAGE.STICKY.CALL' | translate }}</a>
   <a class="hf-btn btn-outline" href="sms:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-chat" /></svg>{{ 'HOME_PAGE.STICKY.TEXT' | translate }}</a>
 </div>

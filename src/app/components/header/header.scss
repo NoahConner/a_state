@@ -76,6 +76,8 @@
 .mega .promo p{font-size:14px}
 .mega.loc .hf-container{grid-template-columns:repeat(5,1fr) 1.3fr}
 .mega .addr{font-size:13.5px;color:var(--stone-500);line-height:1.45}
+.mega .addr a{display:inline;padding:0;color:inherit;font-size:inherit;text-decoration:none}
+.mega .addr a:hover{color:var(--red-700);text-decoration:underline}
 .mega .promo a[href^="tel:"]{white-space:nowrap}
 // Small laptops / iPad landscape: promo moves to a full-width row so columns are not squeezed
 @media (min-width:1024px) and (max-width:1279px){

@@ -7,12 +7,18 @@ import { Language } from '../../services/language';
 import { routeTranslations } from '../../app-routing-module';
 
 export type NavLink = { routeKey: string; labelKey: string };
-export type NavGroup = { routeKey: string; titleKey: string; links: NavLink[] };
-export type Office = { id: string; name: string; street: string; city: string; phone: string; tel: string };
+/** `routeKey` is the group's own page; groups without one have a plain (unlinked) heading. */
+export type NavGroup = { routeKey?: string; titleKey: string; links: NavLink[] };
+/** `mapUrl` opens the office on Google Maps; `directionsUrl` opens directions to it. */
+export type Office = { id: string; name: string; street: string; city: string; phone: string; tel: string; mapUrl: string; directionsUrl: string };
 
 const L = 'SITE_NAV.LINKS.';
 
-/** Insurance groups shared by the desktop mega menu and the mobile drawer. */
+/**
+ * Insurance groups shared by the desktop mega menu and the mobile drawer, in the order of the
+ * "Header and Footer" sheet. Not added yet because the site has no page for them:
+ * Windstorm & hail, Inland marine, Commercial umbrella, Umbrella, Identity theft protection.
+ */
 export const NAV_GROUPS: NavGroup[] = [
   {
     routeKey: 'autoInsurance',
@@ -26,19 +32,20 @@ export const NAV_GROUPS: NavGroup[] = [
       { routeKey: 'boatInsurance', labelKey: L + 'BOAT' },
       { routeKey: 'rvInsurance', labelKey: L + 'RV' },
       { routeKey: 'classicCarInsurance', labelKey: L + 'CLASSIC_CAR' },
-      { routeKey: 'atvAndUtvInsurance', labelKey: L + 'ATV_UTV_TRAILER' },
+      { routeKey: 'atvAndUtvInsurance', labelKey: L + 'ATV_UTV' },
+      { routeKey: 'trailerInsurance', labelKey: L + 'TRAILER' },
     ],
   },
   {
-    routeKey: 'homeInsurance',
     titleKey: 'SITE_NAV.GROUPS.HOME',
     links: [
       { routeKey: 'homeInsurance', labelKey: L + 'HOMEOWNERS' },
       { routeKey: 'rentersInsurance', labelKey: L + 'RENTERS' },
+      { routeKey: 'floodInsurance', labelKey: L + 'FLOOD' },
       { routeKey: 'condoInsurance', labelKey: L + 'CONDO' },
       { routeKey: 'landlordInsurance', labelKey: L + 'LANDLORD' },
       { routeKey: 'manufacturedMobileHomeInsurance', labelKey: L + 'MOBILE_HOME' },
-      { routeKey: 'floodInsurance', labelKey: L + 'FLOOD' },
+      { routeKey: 'earthquakeInsurance', labelKey: L + 'EARTHQUAKE' },
     ],
   },
   {
@@ -49,8 +56,11 @@ export const NAV_GROUPS: NavGroup[] = [
       { routeKey: 'workersCompensationInsurance', labelKey: L + 'WORKERS_COMP' },
       { routeKey: 'commercialAutoInsurance', labelKey: L + 'COMMERCIAL_AUTO' },
       { routeKey: 'businessOwnerInsurance', labelKey: L + 'BOP' },
+      { routeKey: 'commercialPropertyInsurance', labelKey: L + 'COMMERCIAL_PROPERTY' },
       { routeKey: 'professionalLiabilityInsurance', labelKey: L + 'PROFESSIONAL_LIABILITY' },
       { routeKey: 'cyberLiabilityInsurance', labelKey: L + 'CYBER' },
+      { routeKey: 'employmentPracticesLiabilityInsurance', labelKey: L + 'EPLI' },
+      { routeKey: 'buildersRiskInsurance', labelKey: L + 'BUILDERS_RISK' },
     ],
   },
   {
@@ -61,26 +71,30 @@ export const NAV_GROUPS: NavGroup[] = [
       { routeKey: 'wholeLifeInsurance', labelKey: L + 'WHOLE_LIFE' },
       { routeKey: 'universalLifeInsurance', labelKey: L + 'UNIVERSAL_LIFE' },
       { routeKey: 'finalExpenseInsurance', labelKey: L + 'FINAL_EXPENSE' },
+      { routeKey: 'groupLifeInsurance', labelKey: L + 'GROUP_LIFE' },
+      { routeKey: 'variableLifeInsurance', labelKey: L + 'VARIABLE_LIFE' },
     ],
   },
   {
     routeKey: 'healthInsurance',
     titleKey: 'SITE_NAV.GROUPS.HEALTH',
     links: [
-      { routeKey: 'individualHealthInsurance', labelKey: L + 'INDIVIDUAL_FAMILY' },
+      { routeKey: 'individualHealthInsurance', labelKey: L + 'INDIVIDUAL' },
+      { routeKey: 'familyHealthInsurance', labelKey: L + 'FAMILY' },
       { routeKey: 'acaMarketplacePlansInsurance', labelKey: L + 'ACA' },
+      { routeKey: 'smallBusinessHealthInsurance', labelKey: L + 'SMALL_BUSINESS_GROUP' },
       { routeKey: 'medicareSupplementInsurance', labelKey: L + 'MEDICARE' },
-      { routeKey: 'employerGroupHealthInsurance', labelKey: L + 'GROUP_HEALTH' },
+      { routeKey: 'shortTermHealthInsurance', labelKey: L + 'SHORT_TERM' },
       { routeKey: 'dentalVisionInsurance', labelKey: L + 'DENTAL_VISION' },
+      { routeKey: 'travelHealthInsurance', labelKey: L + 'TRAVEL_HEALTH' },
     ],
   },
   {
-    routeKey: 'suretyBondInsurance',
     titleKey: 'SITE_NAV.GROUPS.BONDS',
     links: [
-      { routeKey: 'notaryBonds', labelKey: L + 'NOTARY' },
-      { routeKey: 'performanceBondsPaymentBonds', labelKey: L + 'CONTRACTOR' },
-      { routeKey: 'commercialSuretyBonds', labelKey: L + 'LICENSE_PERMIT' },
+      { routeKey: 'suretyBondInsurance', labelKey: L + 'SURETY_BONDS' },
+      { routeKey: 'performanceBondsPaymentBonds', labelKey: L + 'CONTRACT_BONDS' },
+      { routeKey: 'commercialSuretyBonds', labelKey: L + 'COMMERCIAL_BONDS' },
       { routeKey: 'petInsurance', labelKey: L + 'PET' },
       { routeKey: 'titleInsurance', labelKey: L + 'TITLE' },
     ],
@@ -88,11 +102,37 @@ export const NAV_GROUPS: NavGroup[] = [
 ];
 
 export const OFFICES: Office[] = [
-  { id: '707-shotwell-st-a-houston-tx-77020', name: 'Shotwell', street: '707 Shotwell St, Suite A', city: 'Houston, TX 77020', phone: '(281) 749-1900', tel: '+12817491900' },
-  { id: '11503-southwest-fwy-b-houston-tx-77031', name: 'Southwest Fwy', street: '11503 Southwest Fwy, Suite B', city: 'Houston, TX 77031', phone: '(281) 506-4200', tel: '+12815064200' },
-  { id: '10547-s-post-oak-rd-houston-tx-77035', name: 'Post Oak', street: '10547 S Post Oak Rd', city: 'Houston, TX 77035', phone: '(281) 406-1900', tel: '+12814061900' },
-  { id: '5712-antoine-dr-houston-tx-77091', name: 'Antoine', street: '5712 Antoine Dr', city: 'Houston, TX 77091', phone: '(713) 263-9800', tel: '+17132639800' },
-  { id: '5206-airline-dr-g-houston-tx-77022', name: 'Airline', street: '5206 Airline Dr, Suite G', city: 'Houston, TX 77022', phone: '(281) 504-7444', tel: '+12815047444' },
+  {
+    id: '707-shotwell-st-a-houston-tx-77020', name: 'Shotwell', street: '707 Shotwell St, Suite A', city: 'Houston, TX 77020',
+    phone: '(281) 749-1900', tel: '+12817491900',
+    mapUrl: 'https://maps.app.goo.gl/3yoEc7gXFuw8LyPv6',
+    directionsUrl: 'https://www.google.com/maps/dir//A-State+Insurance,+707+Shotwell+St+a,+Houston,+TX+77020,+United+States/@29.7761569,-95.313911,17z/data=!4m16!1m7!3m6!1s0x8640b94e64abe0e5:0xbcbe087a2f223041!2sA-State+Insurance!8m2!3d29.7761007!4d-95.3113357!16s%2Fg%2F11f6551bq8!4m7!1m0!1m5!1m1!1s0x8640b94e64abe0e5:0xbcbe087a2f223041!2m2!1d-95.3113357!2d29.7761007?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D',
+  },
+  {
+    id: '11503-southwest-fwy-b-houston-tx-77031', name: 'Southwest Fwy', street: '11503 Southwest Fwy, Suite B', city: 'Houston, TX 77031',
+    phone: '(281) 506-4200', tel: '+12815064200',
+    mapUrl: 'https://maps.app.goo.gl/oH5KCuta4nn7abMY9',
+    directionsUrl: 'https://www.google.com/maps/dir//A-State+Insurance,+11503+Southwest+Fwy+B,+Houston,+TX+77031,+United+States/@29.6533537,-95.5678314,17z/data=!4m16!1m7!3m6!1s0x8640e742e1e45833:0x1013137366abdc82!2sA-State+Insurance!8m2!3d29.6532517!4d-95.5654155!16s%2Fg%2F11g2xg58g5!4m7!1m0!1m5!1m1!1s0x8640e742e1e45833:0x1013137366abdc82!2m2!1d-95.5654155!2d29.6532517?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D',
+  },
+  {
+    id: '10547-s-post-oak-rd-houston-tx-77035', name: 'Post Oak', street: '10547 S Post Oak Rd', city: 'Houston, TX 77035',
+    phone: '(281) 406-1900', tel: '+12814061900',
+    mapUrl: 'https://maps.app.goo.gl/MAbDwTLuTRNMPBrSA',
+    directionsUrl: 'https://www.google.com/maps/dir//A-State+Insurance,+10547+S+Post+Oak+Rd,+Houston,+TX+77035,+United+States/@29.66628,-95.4653412,17z/data=!4m16!1m7!3m6!1s0x8640ebc87cb9e9cb:0x189839a7af3d6bdb!2sA-State+Insurance!8m2!3d29.66628!4d-95.4627609!16s%2Fg%2F11fsmn16xm!4m7!1m0!1m5!1m1!1s0x8640ebc87cb9e9cb:0x189839a7af3d6bdb!2m2!1d-95.4627609!2d29.66628?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D',
+  },
+  {
+    id: '5712-antoine-dr-houston-tx-77091', name: 'Antoine', street: '5712 Antoine Dr', city: 'Houston, TX 77091',
+    phone: '(713) 263-9800', tel: '+17132639800',
+    mapUrl: 'https://maps.app.goo.gl/cRWTB37f6emACzkCA',
+    directionsUrl: 'https://www.google.com/maps/dir//A-State+Insurance,+5712+Antoine+Dr,+Houston,+TX+77091,+United+States/@29.8483849,-95.475385,16z/data=!4m16!1m7!3m6!1s0x8640c608c61ef783:0xe3848480e5c382fd!2sA-State+Insurance!8m2!3d29.8483865!4d-95.4728116!16s%2Fg%2F1tgqjt8j!4m7!1m0!1m5!1m1!1s0x8640c608c61ef783:0xe3848480e5c382fd!2m2!1d-95.4728116!2d29.8483865?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D',
+  },
+  {
+    id: '5206-airline-dr-g-houston-tx-77022', name: 'Airline', street: '5206 Airline Dr, Suite G', city: 'Houston, TX 77022',
+    phone: '(281) 504-7444', tel: '+12815047444',
+    mapUrl: 'https://maps.app.goo.gl/wJS36746W1P3XZCfA',
+    // Supplied as a "place" link (not a directions link) and without https://; the scheme was added.
+    directionsUrl: 'https://www.google.com/maps/place/A-State+Insurance/@29.8423603,-95.386512,17z/data=!4m6!3m5!1s0x8640b9c87d8b4ba5:0x9f74c0c87f80aa47!8m2!3d29.842283!4d-95.3837829!16s%2Fg%2F11scsjf5kd?entry=tts&g_ep=EgoyMDI2MDkzMC4wIPu8ASoASAFQAw%3D%3D&skid=789b3228-ed3d-41f2-ab00-3860b6446d17',
+  },
 ];
 
 /** Localized router commands for a route key, or for an office detail page. */
