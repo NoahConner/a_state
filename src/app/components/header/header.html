@@ -47,7 +47,8 @@
                 </h4>
                 <ul>
                   <li *ngFor="let link of group.links">
-                    <a [routerLink]="route(link.routeKey)">{{ link.labelKey | translate }}</a>
+                    <a *ngIf="link.routeKey; else plainLink" [routerLink]="route(link.routeKey)">{{ link.labelKey | translate }}</a>
+                    <ng-template #plainLink><span class="nolink">{{ link.labelKey | translate }}</span></ng-template>
                   </li>
                 </ul>
               </div>
@@ -146,7 +147,10 @@
         <summary>{{ group.titleKey | translate }}<svg class="icon-sm" aria-hidden="true"><use href="#i-chev" /></svg></summary>
         <div class="links">
           <a class="all" *ngIf="group.routeKey" [routerLink]="route(group.routeKey)">{{ 'SITE_NAV.ALL' | translate: { group: (group.titleKey | translate) } }}</a>
-          <a *ngFor="let link of group.links" [routerLink]="route(link.routeKey)">{{ link.labelKey | translate }}</a>
+          <ng-container *ngFor="let link of group.links">
+            <a *ngIf="link.routeKey; else plainDrawerLink" [routerLink]="route(link.routeKey)">{{ link.labelKey | translate }}</a>
+            <ng-template #plainDrawerLink><span class="nolink">{{ link.labelKey | translate }}</span></ng-template>
+          </ng-container>
         </div>
       </details>
       <details>

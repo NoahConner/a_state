@@ -1,43 +1,9 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnDestroy, PLATFORM_ID } from '@angular/core';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { Language } from '../../services/language';
-import { QuoteLeadCaptureService } from '../../services/quote-lead-capture.service';
 import { NAV_GROUPS, NavLink, OFFICES, buildRoute } from '../../components/header/header';
-
-type ProductKey = 'auto' | 'home' | 'business' | 'life' | 'health' | 'other';
-
-interface Product {
-  key: ProductKey;
-  icon: string;
-  /** Tile label in the hero form; the final form uses `finalLabelKey`. */
-  labelKey: string;
-  finalLabelKey: string;
-  /** Detailed quote page the visitor continues to after the short form. */
-  quoteRouteKey: string;
-}
-
-interface QuoteForm {
-  id: 'hero' | 'final';
-  /** Visitors can pick several products. */
-  products: ProductKey[];
-  name: string;
-  phone: string;
-  errors: { product?: string; name?: string; phone?: string };
-  isSubmitting: boolean;
-}
-
-const P = 'HOME_PAGE.FORM.PRODUCTS.';
-const PRODUCTS: Product[] = [
-  { key: 'auto', icon: 'i-car', labelKey: P + 'AUTO', finalLabelKey: P + 'AUTO', quoteRouteKey: 'getAutoQuote' },
-  { key: 'home', icon: 'i-home', labelKey: P + 'HOME', finalLabelKey: P + 'HOMEOWNERS', quoteRouteKey: 'getHomeQuote' },
-  { key: 'business', icon: 'i-briefcase', labelKey: P + 'BUSINESS', finalLabelKey: P + 'COMMERCIAL', quoteRouteKey: 'getCommercialQuote' },
-  { key: 'life', icon: 'i-heart', labelKey: P + 'LIFE', finalLabelKey: P + 'LIFE', quoteRouteKey: 'getLifeQuote' },
-  { key: 'health', icon: 'i-health', labelKey: P + 'HEALTH', finalLabelKey: P + 'HEALTH', quoteRouteKey: 'getHealthQuote' },
-  { key: 'other', icon: 'i-more', labelKey: P + 'OTHER', finalLabelKey: P + 'OTHER', quoteRouteKey: 'getAQuote' },
-];
 
 const SCHEMA_ID = 'home-structured-data';
 
@@ -48,19 +14,17 @@ const SCHEMA_ID = 'home-structured-data';
   styleUrl: './home.scss',
 })
 export class Home implements AfterViewInit, OnDestroy {
-  readonly products = PRODUCTS;
   readonly offices = OFFICES;
-  readonly heroForm = this.createForm('hero');
-  readonly finalForm = this.createForm('final');
 
   /**
    * Product cards, in the same order as the header's NAV_GROUPS, whose links they reuse.
-   * `titleRoute` follows the content doc: the Home title is not a link, and only "Surety Bonds"
-   * is linked in the bonds title. `quoteRoute` is the detailed quote page for the card's CTA.
+   * `titleRoute` follows the content docs: only "Surety Bonds" is linked in the bonds title, and
+   * the Home title is a link only on the Spanish page (`titleLangs`). `quoteRoute` is the detailed
+   * quote page for the card's CTA.
    */
-  readonly productCards: Array<{ key: string; icon: string; titleRoute?: string; quoteRoute: string; links: NavLink[] }> = [
+  readonly productCards: Array<{ key: string; icon: string; titleRoute?: string; titleLangs?: string[]; quoteRoute: string; links: NavLink[] }> = [
     { key: 'AUTO', icon: 'i-car', titleRoute: 'autoInsurance', quoteRoute: 'getAutoQuote', links: NAV_GROUPS[0].links },
-    { key: 'HOME', icon: 'i-home', quoteRoute: 'getHomeQuote', links: NAV_GROUPS[1].links },
+    { key: 'HOME', icon: 'i-home', titleRoute: 'homeInsurance', titleLangs: ['es'], quoteRoute: 'getHomeQuote', links: NAV_GROUPS[1].links },
     { key: 'BUSINESS', icon: 'i-briefcase', titleRoute: 'commercialInsurance', quoteRoute: 'getCommercialQuote', links: NAV_GROUPS[2].links },
     { key: 'LIFE', icon: 'i-heart', titleRoute: 'lifeInsurance', quoteRoute: 'getLifeQuote', links: NAV_GROUPS[3].links },
     { key: 'HEALTH', icon: 'i-health', titleRoute: 'healthInsurance', quoteRoute: 'getHealthQuote', links: NAV_GROUPS[4].links },
@@ -72,14 +36,14 @@ export class Home implements AfterViewInit, OnDestroy {
   readonly trustIcons = ['i-list', 'i-shield', 'i-chat', 'i-star-c'];
   readonly whyIcons = ['i-list', 'i-user', 'i-chat', 'i-layers'];
   readonly carriers = ['Progressive', 'GEICO', 'National General', 'Kemper (Infinity)', 'GAINSCO', 'Texas Mutual', 'NEXT Insurance', 'Hiscox', 'CNA', 'Tower Hill', 'Neptune Flood', 'Wellington'];
-  // Real customer quotes, shown in the original English on both language versions.
+  // Real customer quotes in the original English, with the content doc's Spanish translation.
   readonly reviews = [
-    { office: 'Shotwell', text: 'She helped me find the best insurance company for my needs' },
-    { office: 'Antoine', text: 'They have so many options for everyone.' },
-    { office: 'Post Oak', text: 'took time to explain all my options' },
-    { office: 'Airline', text: 'Fast and friendly service... I will recommend Ana, she is bilingual.' },
-    { office: 'Southwest Fwy', text: 'Great customer service and good auto insurance price.' },
-    { office: 'Airline', text: 'Customer service is great and is always respectful.' },
+    { office: 'Shotwell', text: 'She helped me find the best insurance company for my needs', es: 'Me ayudó a encontrar la mejor compañía de seguros para mis necesidades' },
+    { office: 'Antoine', text: 'They have so many options for everyone.', es: 'Tienen muchísimas opciones para todos.' },
+    { office: 'Post Oak', text: 'took time to explain all my options', es: 'se tomó el tiempo de explicarme todas mis opciones' },
+    { office: 'Airline', text: 'Fast and friendly service... I will recommend Ana, she is bilingual.', es: 'Servicio rápido y amable... Recomiendo a Ana, es bilingüe.' },
+    { office: 'Southwest Fwy', text: 'Great customer service and good auto insurance price.', es: 'Excelente servicio al cliente y buen precio en el seguro de auto.' },
+    { office: 'Airline', text: 'Customer service is great and is always respectful.', es: 'El servicio al cliente es excelente y siempre respetuoso.' },
   ];
   readonly autoCities = this.cities('');
   readonly homeCities = this.cities('homeowners');
@@ -87,7 +51,7 @@ export class Home implements AfterViewInit, OnDestroy {
 
   /** Product cards and footer-style accordions: open on desktop, collapsible on phones. */
   isDesktop = true;
-  cardOpen = PRODUCTS.map((_, i) => i === 0);
+  cardOpen = this.productCards.map((_, i) => i === 0);
   faqOpen = 0;
   showSticky = false;
 
@@ -98,16 +62,14 @@ export class Home implements AfterViewInit, OnDestroy {
   private mq?: MediaQueryList;
   private readonly onMqChange = () => {
     this.isDesktop = !!this.mq?.matches;
-    this.cardOpen = PRODUCTS.map((_, i) => i === 0);
+    this.cardOpen = this.productCards.map((_, i) => i === 0);
     this.cdr.detectChanges();
   };
 
   constructor(
     public languageService: Language,
     private translate: TranslateService,
-    private quoteLeadCaptureService: QuoteLeadCaptureService,
     private cdr: ChangeDetectorRef,
-    private router: Router,
     private host: ElementRef<HTMLElement>,
     @Inject(PLATFORM_ID) platformId: object,
     @Inject(DOCUMENT) private document: Document,
@@ -123,6 +85,12 @@ export class Home implements AfterViewInit, OnDestroy {
 
   route(page: string, officeId?: string): string[] {
     return buildRoute(this.languageService, page, officeId);
+  }
+
+  /** The card title's route, if its title is a link in the current language. */
+  titleRoute(card: { titleRoute?: string; titleLangs?: string[] }): string | undefined {
+    if (card.titleLangs && !card.titleLangs.includes(this.currentLang)) return undefined;
+    return card.titleRoute;
   }
 
   /**
@@ -187,37 +155,6 @@ export class Home implements AfterViewInit, OnDestroy {
     else if (this.faqOpen === index) this.faqOpen = -1;
   }
 
-  // ---------- Quote forms ----------
-
-  isSelected(form: QuoteForm, key: ProductKey): boolean {
-    return form.products.includes(key);
-  }
-
-  toggleProduct(form: QuoteForm, key: ProductKey) {
-    form.products = this.isSelected(form, key) ? form.products.filter((p) => p !== key) : [...form.products, key];
-    if (form.products.length) form.errors.product = undefined;
-  }
-
-  onNameInput(form: QuoteForm, event: Event) {
-    form.name = (event.target as HTMLInputElement).value;
-    if (form.errors.name) this.validate(form, ['name']);
-  }
-
-  onPhoneInput(form: QuoteForm, event: Event) {
-    const input = event.target as HTMLInputElement;
-    const d = this.digits(input.value).slice(0, 10);
-    let out = d;
-    if (d.length > 6) out = `(${d.slice(0, 3)}) ${d.slice(3, 6)}-${d.slice(6)}`;
-    else if (d.length > 3) out = `(${d.slice(0, 3)}) ${d.slice(3)}`;
-    input.value = out;
-    form.phone = out;
-    if (form.errors.phone) this.validate(form, ['phone']);
-  }
-
-  onBlur(form: QuoteForm, field: 'name' | 'phone') {
-    if (form[field]) this.validate(form, [field]);
-  }
-
   /** The sticky bar's "Get a Quote" scrolls to the hero form. */
   goToQuote(event: Event) {
     event.preventDefault();
@@ -226,77 +163,6 @@ export class Home implements AfterViewInit, OnDestroy {
     setTimeout(() => {
       this.host.nativeElement.querySelector<HTMLElement>('input[name="hero-product"]')?.focus({ preventScroll: true });
     }, 350);
-  }
-
-  async submit(form: QuoteForm, event: Event) {
-    event.preventDefault();
-    if (form.isSubmitting) return;
-
-    const invalid = this.validate(form);
-    if (invalid.length) {
-      this.host.nativeElement.querySelector<HTMLElement>(invalid[0])?.focus();
-      return;
-    }
-
-    const selected = PRODUCTS.filter((p) => form.products.includes(p.key));
-    const label = selected
-      .map((p) => this.translate.instant(form.id === 'final' ? p.finalLabelKey : p.labelKey))
-      .join(', ');
-    // One product goes to its own quote page; several go to the general quote page.
-    const quoteRouteKey = selected.length === 1 ? selected[0].quoteRouteKey : 'getAQuote';
-
-    form.isSubmitting = true;
-    try {
-      const isSubmitted = await this.quoteLeadCaptureService.submitLead({
-        selected_chip: label,
-        full_name: form.name,
-        phone_number: form.phone,
-      });
-      if (!isSubmitted) return;
-
-      this.resetForm(form);
-      await this.router.navigate(this.route(quoteRouteKey));
-    } finally {
-      form.isSubmitting = false;
-      this.cdr.detectChanges();
-    }
-  }
-
-  /** Returns selectors of the invalid fields, in page order. */
-  private validate(form: QuoteForm, only?: Array<'product' | 'name' | 'phone'>): string[] {
-    const want = (f: 'product' | 'name' | 'phone') => !only || only.includes(f);
-    const bad: string[] = [];
-    const t = (key: string) => this.translate.instant('HOME_PAGE.FORM.' + key);
-
-    if (want('product')) {
-      form.errors.product = form.products.length ? undefined : t('ERR_PRODUCT');
-      if (!form.products.length) bad.push(`input[name="${form.id}-product"]`);
-    }
-    if (want('name')) {
-      form.errors.name = form.name.trim().length < 2 ? t('ERR_NAME') : undefined;
-      if (form.errors.name) bad.push(`#${form.id}-name`);
-    }
-    if (want('phone')) {
-      const d = this.digits(form.phone);
-      form.errors.phone = !d ? t('ERR_PHONE_EMPTY') : d.length !== 10 ? t('ERR_PHONE_INVALID') : undefined;
-      if (form.errors.phone) bad.push(`#${form.id}-phone`);
-    }
-    return bad;
-  }
-
-  private digits(value: string): string {
-    return value.replace(/\D/g, '').replace(/^1(?=\d{10})/, '');
-  }
-
-  private resetForm(form: QuoteForm) {
-    form.products = [];
-    form.name = '';
-    form.phone = '';
-    form.errors = {};
-  }
-
-  private createForm(id: QuoteForm['id']): QuoteForm {
-    return { id, products: [], name: '', phone: '', errors: {}, isSubmitting: false };
   }
 
   private cities(prefix: '' | 'homeowners'):Array<{ routeKey: string; label: string }> {

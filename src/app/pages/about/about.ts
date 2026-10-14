@@ -1,8 +1,18 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnDestroy, PLATFORM_ID } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 import { Language } from '../../services/language';
-import { QuoteLeadCaptureService } from '../../services/quote-lead-capture.service';
+import { buildRoute } from '../../components/header/header';
+import { Seg } from '../insurance-services/insurance-services';
+
+type Text = string | Seg[];
+
+/** Sections listed in the "On this page" bar, in the order of ABOUT_PAGE.OTP.ITEMS. */
+const OTP_IDS = ['our-story', 'numbers', 'mission', 'services', 'why-astate', 'reviews', 'faqs'];
+
+const SCHEMA_ID = 'about-structured-data';
+const SITE = 'https://astateinsurance.com';
 
 @Component({
   selector: 'app-about',
@@ -10,238 +20,236 @@ import { QuoteLeadCaptureService } from '../../services/quote-lead-capture.servi
   templateUrl: './about.html',
   styleUrl: './about.scss',
 })
-export class About {
-  readonly coveredForm = this.createQuoteFormState();
+export class About implements AfterViewInit, OnDestroy {
+  readonly otpIds = OTP_IDS;
+  readonly valueIcons = ['i-globe', 'i-scale', 'i-shield', 'i-storm', 'i-home'];
+  readonly whyIcons = ['i-list', 'i-shield', 'i-chat', 'i-cal', 'i-layers', 'i-pin', 'i-globe', 'i-search'];
+  /** Same order as ABOUT_PAGE.SERVICES.ITEMS. */
+  readonly services = [
+    { icon: 'i-car', routeKey: 'autoInsurance' },
+    { icon: 'i-home', routeKey: 'homeInsurance' },
+    { icon: 'i-briefcase', routeKey: 'commercialInsurance' },
+    { icon: 'i-heart', routeKey: 'lifeInsurance' },
+    { icon: 'i-health', routeKey: 'healthInsurance' },
+    { icon: 'i-doc', routeKey: 'suretyBondInsurance' },
+  ];
+  // Real customer quotes, shown in the original English on both language versions.
+  readonly reviews = [
+    { office: 'Shotwell', text: 'She helped me find the best insurance company for my needs' },
+    { office: 'Antoine', text: 'They have so many options for everyone.' },
+    { office: 'Post Oak', text: 'took time to explain all my options' },
+    { office: 'Airline', text: 'Fast and friendly service... I will recommend Ana, she is bilingual.' },
+    { office: 'Southwest Fwy', text: 'Great customer service and good auto insurance price.' },
+    { office: 'Airline', text: 'Customer service is great and is always respectful.' },
+  ];
+  readonly stars = [1, 2, 3, 4, 5];
+
+  /** The "On this page" box is open from 768px and collapsible on phones. */
+  isTablet = true;
+  otpOpen = true;
+  faqOpen = 0;
+  activeSection: string | null = null;
+  showSticky = false;
+
+  private readonly isBrowser: boolean;
+  private readonly listCache = new Map<string, any[]>();
+  private readonly segCache = new Map<string, Seg[]>();
+  private readonly subs = new Subscription();
+  private stickyObserver?: IntersectionObserver;
+  private spyObserver?: IntersectionObserver;
+  private mq?: MediaQueryList;
+  private readonly onMqChange = () => {
+    this.isTablet = !!this.mq?.matches;
+    this.otpOpen = this.isTablet;
+    this.cdr.detectChanges();
+  };
 
   constructor(
     public languageService: Language,
     private translate: TranslateService,
-    private quoteLeadCaptureService: QuoteLeadCaptureService,
-    private changeDetectorRef: ChangeDetectorRef,
-    private router: Router,
-  ) {}
-
-  heroBadges = [
-    { image: '/assets/images/about/id.png', labelKey: 'ABOUT.HERO.BADGES.LICENSED' },
-    { image: '/assets/images/about/feedback.png', labelKey: 'ABOUT.HERO.BADGES.INDEPENDENT' },
-    { image: '/assets/images/about/hola.png', labelKey: 'ABOUT.HERO.BADGES.SPANISH' },
-    { image: '/assets/images/about/letter.png', labelKey: 'ABOUT.HERO.BADGES.CARRIERS' },
-  ];
-
-  storyCards = [
-    {
-      image: '/assets/images/about/trust-section/company-history.png',
-      titleKey: 'ABOUT.TRUSTED_INSURANCE.CARD1.TITLE',
-      descKey: 'ABOUT.TRUSTED_INSURANCE.CARD1.DESC',
-    },
-    {
-      image: '/assets/images/about/trust-section/mission.png',
-      titleKey: 'ABOUT.TRUSTED_INSURANCE.CARD2.TITLE',
-      descKey: 'ABOUT.TRUSTED_INSURANCE.CARD2.DESC',
-    },
-    {
-      image: '/assets/images/about/trust-section/clients-served.png',
-      titleKey: 'ABOUT.TRUSTED_INSURANCE.CARD3.TITLE',
-      descKey: 'ABOUT.TRUSTED_INSURANCE.CARD3.DESC',
-    },
-    {
-      image: '/assets/images/about/trust-section/why-founded.png',
-      titleKey: 'ABOUT.TRUSTED_INSURANCE.CARD4.TITLE',
-      descKey: 'ABOUT.TRUSTED_INSURANCE.CARD4.DESC',
-    },
-    {
-      image: '/assets/images/about/trust-section/independent-difference.png',
-      titleKey: 'ABOUT.TRUSTED_INSURANCE.CARD5.TITLE',
-      descKey: 'ABOUT.TRUSTED_INSURANCE.CARD5.DESC',
-    },
-    {
-      image: '/assets/images/about/trust-section/texas-identity.png',
-      titleKey: 'ABOUT.TRUSTED_INSURANCE.CARD6.TITLE',
-      descKey: 'ABOUT.TRUSTED_INSURANCE.CARD6.DESC',
-    },
-  ];
-
-  numberRows = [
-    {
-      labelKey: 'ABOUT.BY_THE_NUMBERS.ROW1.LABEL',
-      valueKey: 'ABOUT.BY_THE_NUMBERS.ROW1.VALUE',
-    },
-    {
-      labelKey: 'ABOUT.BY_THE_NUMBERS.ROW2.LABEL',
-      valueKey: 'ABOUT.BY_THE_NUMBERS.ROW2.VALUE',
-    },
-    {
-      labelKey: 'ABOUT.BY_THE_NUMBERS.ROW3.LABEL',
-      valueKey: 'ABOUT.BY_THE_NUMBERS.ROW3.VALUE',
-    },
-    {
-      labelKey: 'ABOUT.BY_THE_NUMBERS.ROW4.LABEL',
-      valueKey: 'ABOUT.BY_THE_NUMBERS.ROW4.VALUE',
-    },
-    {
-      labelKey: 'ABOUT.BY_THE_NUMBERS.ROW5.LABEL',
-      valueKey: 'ABOUT.BY_THE_NUMBERS.ROW5.VALUE',
-    },
-    {
-      labelKey: 'ABOUT.BY_THE_NUMBERS.ROW6.LABEL',
-      valueKey: 'ABOUT.BY_THE_NUMBERS.ROW6.VALUE',
-    },
-    {
-      labelKey: 'ABOUT.BY_THE_NUMBERS.ROW7.LABEL',
-      valueKey: 'ABOUT.BY_THE_NUMBERS.ROW7.VALUE',
-    },
-  ];
-
-  readonly quoteOpenIcon = '/assets/images/about/vision/1.png';
-  readonly quoteCloseIcon = '/assets/images/about/vision/2.png';
-
-  valueCards = [
-    {
-      titleKey: 'ABOUT.MISSION_VISION.VALUES.CARD1.TITLE',
-      descKey: 'ABOUT.MISSION_VISION.VALUES.CARD1.DESC',
-    },
-    {
-      titleKey: 'ABOUT.MISSION_VISION.VALUES.CARD2.TITLE',
-      descKey: 'ABOUT.MISSION_VISION.VALUES.CARD2.DESC',
-    },
-    {
-      titleKey: 'ABOUT.MISSION_VISION.VALUES.CARD3.TITLE',
-      descKey: 'ABOUT.MISSION_VISION.VALUES.CARD3.DESC',
-    },
-    {
-      titleKey: 'ABOUT.MISSION_VISION.VALUES.CARD4.TITLE',
-      descKey: 'ABOUT.MISSION_VISION.VALUES.CARD4.DESC',
-    },
-    {
-      titleKey: 'ABOUT.MISSION_VISION.VALUES.CARD5.TITLE',
-      descKey: 'ABOUT.MISSION_VISION.VALUES.CARD5.DESC',
-    },
-  ];
-
-  featureHighlights: FeatureHighlight[] = [
-    { icon: 'fa-building', titleKey: 'HOME.WHY_CHOOSE.CARD7.TITLE' },
-    { icon: 'fa-id-card', titleKey: 'HOME.WHY_CHOOSE.CARD1.TITLE' },
-    { icon: 'fa-users', titleKey: 'HOME.WHY_CHOOSE.CARD2.TITLE' },
-    { textKey: 'HOME.WHY_CHOOSE.CARD3.STAT', titleKey: 'HOME.WHY_CHOOSE.CARD3.TITLE' },
-    { icon: 'fa-box-open', titleKey: 'HOME.WHY_CHOOSE.CARD4.TITLE' },
-    { icon: 'fa-map-marker-alt', titleKey: 'HOME.WHY_CHOOSE.CARD5.TITLE' },
-    { icon: 'fa-headset', titleKey: 'HOME.WHY_CHOOSE.CARD6.TITLE' },
-    { icon: 'fa-user', titleKey: 'HOME.WHY_CHOOSE.CARD8.TITLE' },
-  ];
-
-  solutionCards = [
-    {
-      image: '/assets/images/about/solutions/auto.png',
-      routeKey: 'autoInsurance',
-      titleKey: 'ABOUT.SOLUTIONS.AUTO.TITLE',
-      descKey: 'ABOUT.SOLUTIONS.AUTO.DESC',
-    },
-    {
-      image: '/assets/images/about/solutions/house.png',
-      routeKey: 'homeInsurance',
-      titleKey: 'ABOUT.SOLUTIONS.HOME.TITLE',
-      descKey: 'ABOUT.SOLUTIONS.HOME.DESC',
-    },
-    {
-      image: '/assets/images/about/solutions/commercial.png',
-      routeKey: 'commercialInsurance',
-      titleKey: 'ABOUT.SOLUTIONS.COMMERCIAL.TITLE',
-      descKey: 'ABOUT.SOLUTIONS.COMMERCIAL.DESC',
-    },
-    {
-      image: '/assets/images/about/solutions/life.png',
-      routeKey: 'lifeInsurance',
-      titleKey: 'ABOUT.SOLUTIONS.LIFE.TITLE',
-      descKey: 'ABOUT.SOLUTIONS.LIFE.DESC',
-    },
-    {
-      image: '/assets/images/about/solutions/health.png',
-      routeKey: 'healthInsurance',
-      titleKey: 'ABOUT.SOLUTIONS.HEALTH.TITLE',
-      descKey: 'ABOUT.SOLUTIONS.HEALTH.DESC',
-    },
-    {
-      image: '/assets/images/about/solutions/surety.png',
-      routeKey: 'suretyBondInsurance',
-      titleKey: 'ABOUT.SOLUTIONS.SURETY.TITLE',
-      descKey: 'ABOUT.SOLUTIONS.SURETY.DESC',
-    },
-  ];
-
-  chips = [
-    { name: 'HOME.BANNER.CHIPS.AUTO', image: '/assets/images/home/car.png', routeKey: 'getAutoQuote' },
-    { name: 'HOME.BANNER.CHIPS.HOMEOWNERS', image: '/assets/images/home/home.png', routeKey: 'getHomeQuote' },
-    { name: 'HOME.BANNER.CHIPS.COMMERCIAL', image: '/assets/images/home/shop.png', routeKey: 'getCommercialQuote' },
-    { name: 'HOME.BANNER.CHIPS.LIFE', image: '/assets/images/home/heart.png', routeKey: 'getLifeQuote' },
-    { name: 'HOME.BANNER.CHIPS.HEALTH', image: '/assets/images/home/medical-cross.png', routeKey: 'getHealthQuote' },
-    { name: 'HOME.INSURANCE_SOLUTIONS.SURETY.TITLE', image: '/assets/images/home/other.png', routeKey: 'getSuretyQuote' },
-  ];
-
-  getRoute(page: string) {
-    return this.languageService.getRoute(page);
+    private cdr: ChangeDetectorRef,
+    private host: ElementRef<HTMLElement>,
+    @Inject(PLATFORM_ID) platformId: object,
+    @Inject(DOCUMENT) private document: Document,
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
+    this.subs.add(
+      this.translate.onLangChange.subscribe(() => {
+        this.listCache.clear();
+        this.segCache.clear();
+        this.addStructuredData();
+      }),
+    );
+    this.addStructuredData();
   }
 
-  selectChip(form: QuoteFormState, chipName: string) {
-    form.selectedChip = chipName;
+  route(page: string, officeId?: string): string[] {
+    return buildRoute(this.languageService, page, officeId);
   }
 
-  async goToSelectedQuote(form: QuoteFormState) {
-    if (form.isSubmitting) {
-      return;
-    }
+  /**
+   * A translated array (e.g. FAQ items); empty until the translations have loaded.
+   * Cached because `instant()` returns a new array on every call, which would make
+   * *ngFor rebuild the <details> on each change detection and undo their open state.
+   */
+  list<T = any>(key: string): T[] {
+    const cached = this.listCache.get(key);
+    if (cached) return cached;
+    const value = this.translate.instant(key);
+    if (!Array.isArray(value)) return [];
+    this.listCache.set(key, value);
+    return value;
+  }
 
-    const selected = this.chips.find((chip) => chip.name === form.selectedChip);
-    if (!selected) {
-      return;
-    }
+  /** Text as segments, so plain strings and linked text render the same way. */
+  segs(value: Text | undefined): Seg[] {
+    if (Array.isArray(value)) return value;
+    if (!value) return [];
+    let cached = this.segCache.get(value);
+    if (!cached) this.segCache.set(value, (cached = [{ t: value }]));
+    return cached;
+  }
 
-    form.isSubmitting = true;
+  ngAfterViewInit() {
+    if (!this.isBrowser) return;
 
-    try {
-      const isSubmitted = await this.quoteLeadCaptureService.submitLead({
-        selected_chip: this.translate.instant(selected.name),
-        full_name: form.fullName,
-        phone_number: form.phone,
-      });
+    this.mq = window.matchMedia('(min-width:768px)');
+    this.mq.addEventListener('change', this.onMqChange);
+    this.onMqChange();
 
-      if (!isSubmitted) {
-        return;
-      }
+    if (!('IntersectionObserver' in window)) return;
 
-      this.resetQuoteForm(form);
-      await this.router.navigate(this.languageService.getRoute(selected.routeKey));
-    } finally {
-      form.isSubmitting = false;
-      this.changeDetectorRef.detectChanges();
+    // Sticky mobile bar: only while neither the hero buttons, the quote form nor the footer is on screen.
+    const watched = [
+      this.host.nativeElement.querySelector('.btn-row'),
+      this.host.nativeElement.querySelector('#final-cta'),
+      this.document.getElementById('footer'),
+    ].filter((el): el is HTMLElement => !!el);
+    const visible = new Set<Element>(watched);
+    this.stickyObserver = new IntersectionObserver((entries) => {
+      entries.forEach((e) => (e.isIntersecting ? visible.add(e.target) : visible.delete(e.target)));
+      this.showSticky = visible.size === 0;
+      this.cdr.detectChanges();
+    });
+    watched.forEach((el) => this.stickyObserver!.observe(el));
+
+    // "On this page": highlight the section in the middle of the screen.
+    this.spyObserver = new IntersectionObserver(
+      (entries) => {
+        const hit = entries.find((e) => e.isIntersecting);
+        if (!hit) return;
+        this.activeSection = hit.target.id;
+        this.cdr.detectChanges();
+        this.scrollOtpLinkIntoView(hit.target.id);
+      },
+      { rootMargin: '-35% 0px -60% 0px' },
+    );
+    OTP_IDS.forEach((id) => {
+      const el = this.host.nativeElement.querySelector(`#${id}`);
+      if (el) this.spyObserver!.observe(el);
+    });
+  }
+
+  ngOnDestroy() {
+    this.subs.unsubscribe();
+    this.mq?.removeEventListener('change', this.onMqChange);
+    this.stickyObserver?.disconnect();
+    this.spyObserver?.disconnect();
+    this.document.getElementById(SCHEMA_ID)?.remove();
+  }
+
+  /** In-page links: scroll without changing the route. */
+  goToSection(id: string, event: Event) {
+    event.preventDefault();
+    if (!this.isTablet) this.otpOpen = false;
+    if (!this.isBrowser) return;
+    setTimeout(() => this.host.nativeElement.querySelector(`#${id}`)?.scrollIntoView({ block: 'start' }));
+  }
+
+  /** The sticky bar's "Get a Quote" scrolls to the quote form at the end of the page. */
+  goToQuote(event: Event) {
+    event.preventDefault();
+    if (!this.isBrowser) return;
+    this.host.nativeElement.querySelector('#quote')?.scrollIntoView({ block: 'start' });
+    setTimeout(() => {
+      this.host.nativeElement.querySelector<HTMLElement>('input[name="about-product"]')?.focus({ preventScroll: true });
+    }, 350);
+  }
+
+  onOtpToggle(event: Event) {
+    if (!this.isTablet) this.otpOpen = (event.target as HTMLDetailsElement).open;
+  }
+
+  /** One FAQ open at a time keeps the list short on phones. */
+  onFaqToggle(index: number, event: Event) {
+    const open = (event.target as HTMLDetailsElement).open;
+    if (open) this.faqOpen = index;
+    else if (this.faqOpen === index) this.faqOpen = -1;
+  }
+
+  private scrollOtpLinkIntoView(id: string) {
+    if (!this.isTablet) return;
+    const link = this.host.nativeElement.querySelector<HTMLElement>(`.otp a[href="#${id}"]`);
+    const li = link?.parentElement;
+    const ol = link?.closest('ol');
+    if (!li || !ol) return;
+    if (li.offsetLeft < ol.scrollLeft || li.offsetLeft + li.offsetWidth > ol.scrollLeft + ol.clientWidth) {
+      ol.scrollLeft = li.offsetLeft - 24;
     }
   }
 
-  private resetQuoteForm(form: QuoteFormState) {
-    form.selectedChip = null;
-    form.fullName = '';
-    form.phone = '';
-    this.changeDetectorRef.detectChanges();
+  // ---------- Structured data (rendered on the server for crawlers) ----------
+
+  private url(page: string): string {
+    const path = this.route(page).join('/').replace(/^\/+/, '');
+    return `${SITE}/${path ? path + '/' : ''}`;
   }
 
-  private createQuoteFormState(): QuoteFormState {
-    return {
-      selectedChip: null,
-      fullName: '',
-      phone: '',
-      isSubmitting: false,
+  private addStructuredData() {
+    const p = 'ABOUT_PAGE.';
+    const faq = this.list<{ Q: string; A: Text }>(p + 'FAQ.ITEMS');
+    if (!faq.length) return; // translations not loaded yet; runs again on language change
+    this.document.getElementById(SCHEMA_ID)?.remove();
+
+    const pageUrl = this.url('about');
+    const plain = (v: Text) => this.segs(v).map((s) => s.t).join('');
+    const lang = this.languageService.getCurrentLanguage() === 'es' ? 'es-US' : 'en-US';
+    const data = {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'AboutPage',
+          '@id': pageUrl + '#webpage',
+          url: pageUrl,
+          name: this.translate.instant(p + 'BREADCRUMB.CURRENT'),
+          inLanguage: lang,
+          isPartOf: { '@id': SITE + '/#website' },
+          about: { '@id': SITE + '/#agency' },
+          breadcrumb: { '@id': pageUrl + '#breadcrumb' },
+        },
+        {
+          '@type': 'BreadcrumbList',
+          '@id': pageUrl + '#breadcrumb',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: this.translate.instant(p + 'BREADCRUMB.HOME'), item: this.url('home') },
+            { '@type': 'ListItem', position: 2, name: this.translate.instant(p + 'BREADCRUMB.CURRENT'), item: pageUrl },
+          ],
+        },
+        {
+          '@type': 'FAQPage',
+          '@id': pageUrl + '#faq',
+          mainEntity: faq.map((f) => ({
+            '@type': 'Question',
+            name: f.Q,
+            acceptedAnswer: { '@type': 'Answer', text: plain(f.A) },
+          })),
+        },
+      ],
     };
+    const script = this.document.createElement('script');
+    script.id = SCHEMA_ID;
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(data);
+    this.document.head.appendChild(script);
   }
-}
-
-interface QuoteFormState {
-  selectedChip: string | null;
-  fullName: string;
-  phone: string;
-  isSubmitting: boolean;
-}
-
-interface FeatureHighlight {
-  icon?: string;
-  textKey?: string;
-  titleKey: string;
 }

@@ -1,0 +1,93 @@
+<!-- Icon sprite (phone, check, chev and arrow come from the header sprite) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8.5 10.5h7"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-print" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></symbol>
+  </defs>
+</svg>
+
+<!-- Renders legal text segments (links, bold). Kept on one line so no spaces creep in. -->
+<ng-template #segsTpl let-value><ng-container *ngFor="let s of value"><a *ngIf="s.r" [routerLink]="route(s.r, s.id)">{{ s.t }}</a><a *ngIf="s.h" [href]="s.h" [attr.target]="isExternal(s.h) ? '_blank' : null" [attr.rel]="isExternal(s.h) ? 'noopener' : null">{{ s.t }}</a><strong *ngIf="s.b && !s.r && !s.h">{{ s.t }}</strong><ng-container *ngIf="!s.r && !s.h && !s.b">{{ s.t }}</ng-container></ng-container></ng-template>
+
+<!-- Title + summary -->
+<section class="legal-hero" aria-labelledby="legal-title">
+  <div class="hf-container">
+    <nav class="crumbs" [attr.aria-label]="'LEGAL_PAGE.BREADCRUMB_ARIA' | translate">
+      <ol>
+        <li><a [routerLink]="route('home')">{{ 'LEGAL_PAGE.HOME' | translate }}</a></li>
+        <li aria-current="page">{{ ns + 'TITLE' | translate }}</li>
+      </ol>
+    </nav>
+    <h1 id="legal-title">{{ ns + 'TITLE' | translate }}</h1>
+    <div class="legal-meta">
+      <span class="date"><svg class="icon-sm" aria-hidden="true"><use href="#i-cal" /></svg>{{ 'LEGAL_PAGE.EFFECTIVE' | translate }} <time [attr.datetime]="effectiveIso">{{ 'LEGAL_PAGE.EFFECTIVE_DATE' | translate }}</time></span>
+      <span class="date"><svg class="icon-sm" aria-hidden="true"><use href="#i-cal" /></svg>{{ 'LEGAL_PAGE.UPDATED' | translate }} <time [attr.datetime]="updatedIso">{{ 'LEGAL_PAGE.UPDATED_DATE' | translate }}</time></span>
+      <button class="print" type="button" (click)="print()"><svg class="icon-sm" aria-hidden="true"><use href="#i-print" /></svg>{{ 'LEGAL_PAGE.PRINT' | translate }}</button>
+    </div>
+    <aside class="glance" aria-labelledby="glance-h">
+      <h2 id="glance-h"><span class="ic" aria-hidden="true"><svg class="icon-sm"><use href="#i-shield" /></svg></span>{{ 'LEGAL_PAGE.SUMMARY' | translate }}</h2>
+      <ul>
+        <li *ngFor="let item of list(ns + 'SUMMARY_ITEMS')"><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg><span><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: item }"></ng-container></span></li>
+      </ul>
+      <p class="q" *ngIf="list(ns + 'QUESTIONS').length"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list(ns + 'QUESTIONS') }"></ng-container></p>
+    </aside>
+  </div>
+</section>
+
+<!-- Policy text + table of contents -->
+<section class="legal-body" [attr.aria-label]="ns + 'TITLE' | translate">
+  <div class="hf-container legal-grid">
+    <details class="ltoc" id="contents" [open]="tocOpen" (toggle)="onTocToggle($event)">
+      <summary (click)="onTocSummaryClick($event)">{{ 'LEGAL_PAGE.TOC' | translate }}<span class="count">{{ sections.length }} {{ 'LEGAL_PAGE.SECTIONS' | translate }}</span><svg class="icon-sm chev" aria-hidden="true"><use href="#i-chev" /></svg></summary>
+      <nav [attr.aria-label]="'LEGAL_PAGE.TOC' | translate">
+        <ol>
+          <li *ngFor="let s of sections"><a [href]="'#' + s.ID" [attr.aria-current]="activeSection === s.ID ? 'true' : null" (click)="goToSection(s.ID, $event)"><span class="n" aria-hidden="true">{{ tocNum(s) }}</span>{{ s.TITLE }}</a></li>
+        </ol>
+      </nav>
+      <div class="help">
+        <b>{{ ns + 'HELP' | translate }}</b>
+        <a href="mailto:save@astateinsurance.com"><svg class="icon-sm" aria-hidden="true"><use href="#i-mail" /></svg>save&#64;astateinsurance.com</a>
+        <a href="tel:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>(713) 357-7771</a>
+      </div>
+    </details>
+
+    <article class="legal-doc">
+      <section *ngFor="let s of sections" [attr.aria-labelledby]="s.ID">
+        <h2 [id]="s.ID"><span class="num" *ngIf="s.NUM" aria-hidden="true">{{ s.NUM }}</span> <span>{{ s.TITLE }}</span></h2>
+        <ng-container *ngFor="let b of s.BLOCKS">
+          <p *ngIf="b.P"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: b.P }"></ng-container></p>
+          <ul *ngIf="b.UL">
+            <li *ngFor="let item of b.UL"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: item }"></ng-container></li>
+          </ul>
+          <div *ngIf="b.TABLE" class="table-wrap" role="region" [attr.aria-label]="b.TABLE.LABEL" tabindex="0">
+            <table class="stack">
+              <thead><tr><th scope="col" *ngFor="let h of b.TABLE.HEAD">{{ h }}</th></tr></thead>
+              <tbody>
+                <tr *ngFor="let row of b.TABLE.ROWS">
+                  <th scope="row" [attr.data-label]="b.TABLE.HEAD[0]">{{ row[0] }}</th>
+                  <td [attr.data-label]="b.TABLE.HEAD[1]">{{ row[1] }}</td>
+                  <td [attr.data-label]="b.TABLE.HEAD[2]">{{ row[2] }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <address *ngIf="b.ADDRESS" class="address">
+            <span *ngFor="let line of b.ADDRESS"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: line }"></ng-container></span>
+          </address>
+          <p *ngIf="b.NOTE" [class.es-line]="b.STYLE === 'band'" [class.note]="b.STYLE === 'italic'" [attr.lang]="b.LANG || null"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: b.NOTE }"></ng-container></p>
+        </ng-container>
+        <a class="to-toc" href="#contents" (click)="backToContents($event)"><svg class="icon-sm up" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'LEGAL_PAGE.BACK' | translate }}</a>
+      </section>
+    </article>
+  </div>
+</section>
+
+<!-- Sticky mobile bar -->
+<div class="sticky-cta" [class.show]="showSticky" [attr.aria-hidden]="!showSticky">
+  <a class="hf-btn btn-primary" [routerLink]="route('getAQuote')" [tabIndex]="showSticky ? 0 : -1">{{ 'HOME_PAGE.STICKY.QUOTE' | translate }}</a>
+  <a class="hf-btn btn-outline" href="tel:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'HOME_PAGE.STICKY.CALL' | translate }}</a>
+  <a class="hf-btn btn-outline" href="sms:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-chat" /></svg>{{ 'HOME_PAGE.STICKY.TEXT' | translate }}</a>
+</div>

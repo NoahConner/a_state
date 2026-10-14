@@ -71,6 +71,7 @@
 .mega h4 a:hover{color:var(--red-700)}
 .mega li a{display:block;padding:5px 0;color:var(--stone-700);text-decoration:none;font-size:14.5px}
 .mega li a:hover{color:var(--red-700);text-decoration:underline}
+.mega li .nolink{display:block;padding:5px 0;color:var(--stone-700);font-size:14.5px}
 .mega .promo{background:var(--cream);border-radius:var(--r-md);padding:18px;display:flex;flex-direction:column;gap:10px;align-self:start}
 .mega .promo b{color:var(--stone-700)}
 .mega .promo p{font-size:14px}
@@ -103,6 +104,7 @@
 .drawer .flat{border-bottom:1px solid var(--stone-200)}
 .drawer .links{display:grid;grid-template-columns:1fr 1fr;gap:2px 16px;padding:0 0 16px}
 .drawer .links a{display:flex;align-items:center;min-height:44px;color:var(--stone-700);text-decoration:none;font-size:16px}
+.drawer .links .nolink{display:flex;align-items:center;min-height:44px;color:var(--stone-700);font-size:16px}
 .drawer .links a.all{font-weight:700}
 .drawer .foot{border-top:1px solid var(--stone-200);padding:16px 20px calc(16px + env(safe-area-inset-bottom,0px));background:var(--cream);display:flex;flex-direction:column;gap:10px}
 .drawer .foot .row-2{display:grid;grid-template-columns:1fr 1fr;gap:8px}

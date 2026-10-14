@@ -1,24 +1,213 @@
-<div class="thankyouMain">
-  <div class="topBanner">
-    <div class="container">
-      <div class="h1">
-        <span [innerHTML]="titleLine1 | translateHtml | async"></span> <br />
-        <span [innerHTML]="titleLine2 | translateHtml | async"></span>
-      </div>
+<ng-container *ngIf="type === 'career'; else contactTpl">
+<div class="cty">
+<!-- Icon sprite (phone, check and arrow come from the header sprite) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-9-9a4.5 4.5 0 0 1 8-4l1 1.2 1-1.2a4.5 4.5 0 0 1 8 4c-2 4.6-9 9-9 9z"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></symbol>
+  </defs>
+</svg>
+
+<!-- Confirmation -->
+<section class="ty-hero" aria-labelledby="hero-title">
+  <div class="hf-container">
+    <nav class="crumbs" [attr.aria-label]="'CAREERS_THANKS_PAGE.BREADCRUMB.ARIA' | translate">
+      <ol class="crumbs-full">
+        <li><a [routerLink]="routeTo('home')">{{ 'CAREERS_THANKS_PAGE.BREADCRUMB.HOME' | translate }}</a></li>
+        <li><a [routerLink]="routeTo('careers')">{{ 'CAREERS_THANKS_PAGE.BREADCRUMB.CAREERS' | translate }}</a></li>
+        <li aria-current="page">{{ 'CAREERS_THANKS_PAGE.BREADCRUMB.CURRENT' | translate }}</li>
+      </ol>
+      <a class="crumbs-back" [routerLink]="routeTo('careers')">‹ {{ 'CAREERS_THANKS_PAGE.BREADCRUMB.CAREERS' | translate }}</a>
+    </nav>
+    <span class="ty-badge" aria-hidden="true"><svg class="icon"><use href="#i-check" /></svg></span>
+    <h1 id="hero-title" tabindex="-1">{{ 'CAREERS_THANKS_PAGE.TITLE_START' | translate }}<ng-container *ngIf="application?.first">, {{ application!.first }}</ng-container>{{ 'CAREERS_THANKS_PAGE.TITLE_END' | translate }}</h1>
+    <p class="hf-lead">{{ 'CAREERS_THANKS_PAGE.LEAD' | translate }}</p>
+    <div class="ty-meta" *ngIf="application?.ref">
+      <span><svg class="icon-sm" aria-hidden="true"><use href="#i-doc" /></svg>{{ 'CAREERS_THANKS_PAGE.REF' | translate }} <b>{{ application!.ref }}</b></span>
+      <span *ngIf="areaLabel()"><svg class="icon-sm" aria-hidden="true"><use href="#i-briefcase" /></svg><b>{{ areaLabel() }}</b></span>
+      <span *ngIf="officeLabel()"><svg class="icon-sm" aria-hidden="true"><use href="#i-pin" /></svg><b>{{ officeLabel() }}</b></span>
+      <span><svg class="icon-sm" aria-hidden="true"><use href="#i-cal" /></svg>{{ 'CAREERS_THANKS_PAGE.SENT' | translate }} <b>{{ sentLabel }}</b></span>
     </div>
-  </div>
-</div>
-
-<section class="thank-you-section py-5">
-  <div class="container">
-    <p>
-      <span [innerHTML]="description | translateHtml | async"></span>
-    </p>
-
-    <button class="btn send-btn" [routerLink]="type === 'career' ? '/careers' : '/'">
-      {{ button | translate }}
-    </button>
+    <div class="btn-row">
+      <a class="hf-btn btn-primary btn-lg" [routerLink]="routeTo('careers')">{{ 'CAREERS_THANKS_PAGE.CTA_BACK' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+      <a class="hf-btn btn-outline btn-lg" [routerLink]="routeTo('about')">{{ 'CAREERS_THANKS_PAGE.CTA_ABOUT' | translate }}</a>
+    </div>
   </div>
 </section>
 
-  <app-foot-upper></app-foot-upper>
+<!-- What happens next -->
+<section class="section bg-white" aria-labelledby="next-h">
+  <div class="hf-container">
+    <div class="section-head"><h2 id="next-h">{{ 'CAREERS_THANKS_PAGE.NEXT.TITLE' | translate }}</h2></div>
+    <ol class="next">
+      <li *ngFor="let step of list('CAREERS_THANKS_PAGE.NEXT.STEPS'); let i = index; let first = first" [class.done]="first">
+        <span class="n" aria-hidden="true"><svg *ngIf="first" class="icon-sm"><use href="#i-check" /></svg><ng-container *ngIf="!first">{{ i + 1 }}</ng-container></span>
+        <h3>{{ step.TITLE }}</h3>
+        <p>{{ step.TEXT }}<ng-container *ngIf="first"><br /><span class="when">{{ 'CAREERS_THANKS_PAGE.NEXT.DONE' | translate }}</span></ng-container></p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Get ready -->
+<section class="section sooner" aria-labelledby="ready-h">
+  <div class="hf-container">
+    <h2 id="ready-h">{{ 'CAREERS_THANKS_PAGE.READY.TITLE' | translate }}</h2>
+    <ul class="prep">
+      <li *ngFor="let item of list('CAREERS_THANKS_PAGE.READY.ITEMS'); let i = index"><svg class="icon-sm" aria-hidden="true"><use [attr.href]="'#' + prepIcons[i]" /></svg>{{ item }}</li>
+    </ul>
+    <p class="small">{{ 'CAREERS_THANKS_PAGE.READY.UPDATE_START' | translate }}<a href="mailto:save@astateinsurance.com">save&#64;astateinsurance.com</a>{{ 'CAREERS_THANKS_PAGE.READY.UPDATE_END' | translate }}</p>
+  </div>
+</section>
+
+<!-- While you wait -->
+<section class="section bg-cream" aria-labelledby="wait-h">
+  <div class="hf-container">
+    <div class="section-head"><h2 id="wait-h">{{ 'CAREERS_THANKS_PAGE.WAIT.TITLE' | translate }}</h2></div>
+    <ul class="wait">
+      <li>
+        <span class="ic" aria-hidden="true"><svg class="icon"><use href="#i-heart" /></svg></span>
+        <h3>{{ 'CAREERS_THANKS_PAGE.WAIT.KNOW_TITLE' | translate }}</h3>
+        <ul class="links">
+          <li><a [routerLink]="routeTo('about')">{{ 'CAREERS_THANKS_PAGE.WAIT.KNOW_ABOUT' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a></li>
+          <li><a [routerLink]="routeTo('careers')" fragment="culture">{{ 'CAREERS_THANKS_PAGE.WAIT.KNOW_CULTURE' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a></li>
+          <li><a [routerLink]="routeTo('insuranceServices')">{{ 'CAREERS_THANKS_PAGE.WAIT.KNOW_SERVICES' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a></li>
+        </ul>
+      </li>
+      <li>
+        <span class="ic" aria-hidden="true"><svg class="icon"><use href="#i-pin" /></svg></span>
+        <h3>{{ 'CAREERS_THANKS_PAGE.WAIT.OFFICES_TITLE' | translate }}</h3>
+        <p>{{ 'CAREERS_THANKS_PAGE.WAIT.OFFICES_TEXT' | translate }}</p>
+        <a class="arrow-link" [routerLink]="routeTo('ourLocations')">{{ 'CAREERS_THANKS_PAGE.WAIT.OFFICES_LINK' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+      </li>
+      <li>
+        <span class="ic" aria-hidden="true"><svg class="icon"><use href="#i-user" /></svg></span>
+        <h3>{{ 'CAREERS_THANKS_PAGE.WAIT.SHARE_TITLE' | translate }}</h3>
+        <p>{{ 'CAREERS_THANKS_PAGE.WAIT.SHARE_TEXT' | translate }}</p>
+        <button class="hf-btn btn-outline share-btn" type="button" (click)="share()"><svg class="icon-sm" aria-hidden="true"><use href="#i-share" /></svg>{{ 'CAREERS_THANKS_PAGE.WAIT.SHARE_BTN' | translate }}</button>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<div class="toast" role="status" [hidden]="!toast">{{ toast }}</div>
+</div>
+</ng-container>
+
+<!-- Contact thank-you (?type=contact, the default) -->
+<ng-template #contactTpl>
+<div class="cty">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8.5 10.5h7"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h10M4 17h7"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  </defs>
+</svg>
+
+<!-- Confirmation -->
+<section class="ty-hero" aria-labelledby="hero-title">
+  <div class="hf-container">
+    <nav class="crumbs" [attr.aria-label]="'CONTACT_THANKS_PAGE.BREADCRUMB.ARIA' | translate">
+      <ol class="crumbs-full">
+        <li><a [routerLink]="routeTo('home')">{{ 'CONTACT_THANKS_PAGE.BREADCRUMB.HOME' | translate }}</a></li>
+        <li><a [routerLink]="routeTo('contact')">{{ 'CONTACT_THANKS_PAGE.BREADCRUMB.CONTACT' | translate }}</a></li>
+        <li aria-current="page">{{ 'CONTACT_THANKS_PAGE.BREADCRUMB.CURRENT' | translate }}</li>
+      </ol>
+      <a class="crumbs-back" [routerLink]="routeTo('contact')">‹ {{ 'CONTACT_THANKS_PAGE.BREADCRUMB.CONTACT' | translate }}</a>
+    </nav>
+    <span class="ty-badge" aria-hidden="true"><svg class="icon"><use href="#i-check" /></svg></span>
+    <h1 id="hero-title" tabindex="-1">{{ 'CONTACT_THANKS_PAGE.TITLE_START' | translate }}<ng-container *ngIf="contact?.first">, {{ contact!.first }}</ng-container>{{ 'CONTACT_THANKS_PAGE.TITLE_END' | translate }}</h1>
+    <p class="hf-lead">{{ 'CONTACT_THANKS_PAGE.LEAD_START' | translate }}{{ howKey() | translate }}{{ 'CONTACT_THANKS_PAGE.LEAD_END' | translate }}</p>
+    <div class="ty-meta" *ngIf="contact?.ref">
+      <span><svg class="icon-sm" aria-hidden="true"><use href="#i-doc" /></svg>{{ 'CONTACT_THANKS_PAGE.REF' | translate }} <b>{{ contact!.ref }}</b></span>
+      <span><svg class="icon-sm" aria-hidden="true"><use href="#i-cal" /></svg>{{ 'CONTACT_THANKS_PAGE.SENT' | translate }} <b>{{ sentLabel }}</b></span>
+    </div>
+    <p class="ty-status" [attr.data-state]="status" role="status"><span class="dot" aria-hidden="true"></span><span>{{ statusKey | translate }}</span></p>
+    <div class="btn-row">
+      <a class="hf-btn btn-primary btn-lg" href="tel:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'CONTACT_THANKS_PAGE.CTA_CALL' | translate }}</a>
+      <a class="hf-btn btn-outline btn-lg" [routerLink]="routeTo('home')">{{ 'CONTACT_THANKS_PAGE.CTA_HOME' | translate }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- What happens next -->
+<section class="section bg-white" aria-labelledby="next-h">
+  <div class="hf-container">
+    <div class="section-head"><h2 id="next-h">{{ 'CONTACT_THANKS_PAGE.NEXT.TITLE' | translate }}</h2></div>
+    <ol class="next next-3">
+      <li class="done">
+        <span class="n" aria-hidden="true"><svg class="icon-sm"><use href="#i-check" /></svg></span>
+        <h3>{{ 'CONTACT_THANKS_PAGE.NEXT.STEP1_TITLE' | translate }}</h3>
+        <p>{{ 'CONTACT_THANKS_PAGE.NEXT.STEP1_TEXT' | translate }}<br /><span class="when">{{ 'CONTACT_THANKS_PAGE.NEXT.DONE' | translate }}</span></p>
+      </li>
+      <li>
+        <span class="n" aria-hidden="true">2</span>
+        <h3>{{ 'CONTACT_THANKS_PAGE.NEXT.STEP2_TITLE' | translate }}</h3>
+        <p>{{ 'CONTACT_THANKS_PAGE.NEXT.STEP2_TEXT' | translate }}</p>
+      </li>
+      <li>
+        <span class="n" aria-hidden="true">3</span>
+        <h3>{{ 'CONTACT_THANKS_PAGE.NEXT.STEP3_TITLE' | translate }} {{ howKey() | translate }}</h3>
+        <p>{{ 'CONTACT_THANKS_PAGE.NEXT.STEP3_TEXT' | translate }}</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Need help sooner -->
+<section class="section sooner" aria-labelledby="sooner-h">
+  <div class="hf-container sooner-grid">
+    <div>
+      <h2 id="sooner-h">{{ 'CONTACT_THANKS_PAGE.SOONER.TITLE' | translate }}</h2>
+      <p class="sooner-text">{{ 'CONTACT_THANKS_PAGE.SOONER.TEXT' | translate }}</p>
+      <p class="small">{{ 'CONTACT_THANKS_PAGE.SOONER.SMALL' | translate }}</p>
+      <span class="lang-line" [attr.lang]="'CONTACT_THANKS_PAGE.SOONER.LANG' | translate">{{ 'CONTACT_THANKS_PAGE.SOONER.LANG_LINE' | translate }}</span>
+    </div>
+    <div class="btns">
+      <a class="hf-btn btn-primary btn-lg" href="tel:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'CONTACT_THANKS_PAGE.SOONER.CALL' | translate }}</a>
+      <a class="hf-btn btn-outline btn-lg" href="sms:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-chat" /></svg>{{ 'CONTACT_THANKS_PAGE.SOONER.TEXT_US' | translate }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- While you wait -->
+<section class="section bg-cream" aria-labelledby="wait-h">
+  <div class="hf-container">
+    <div class="section-head"><h2 id="wait-h">{{ 'CONTACT_THANKS_PAGE.WAIT.TITLE' | translate }}</h2></div>
+    <ul class="wait">
+      <li>
+        <span class="ic" aria-hidden="true"><svg class="icon"><use href="#i-list" /></svg></span>
+        <h3>{{ 'CONTACT_THANKS_PAGE.WAIT.READY_TITLE' | translate }}</h3>
+        <dl>
+          <div *ngFor="let row of list('CONTACT_THANKS_PAGE.WAIT.READY')"><dt>{{ row.L }}</dt><dd>{{ row.T }}</dd></div>
+        </dl>
+      </li>
+      <li>
+        <span class="ic" aria-hidden="true"><svg class="icon"><use href="#i-search" /></svg></span>
+        <h3>{{ 'CONTACT_THANKS_PAGE.WAIT.QUOTE_TITLE' | translate }}</h3>
+        <p>{{ 'CONTACT_THANKS_PAGE.WAIT.QUOTE_TEXT' | translate }}</p>
+        <a class="arrow-link" [routerLink]="routeTo('getAQuote')">{{ 'CONTACT_THANKS_PAGE.WAIT.QUOTE_LINK' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+      </li>
+      <li>
+        <span class="ic" aria-hidden="true"><svg class="icon"><use href="#i-layers" /></svg></span>
+        <h3>{{ 'CONTACT_THANKS_PAGE.WAIT.LEARN_TITLE' | translate }}</h3>
+        <ul class="links">
+          <li><a [routerLink]="routeTo('insuranceServices')">{{ 'CONTACT_THANKS_PAGE.WAIT.LEARN_SERVICES' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a></li>
+          <li><a [routerLink]="routeTo('about')">{{ 'CONTACT_THANKS_PAGE.WAIT.LEARN_ABOUT' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a></li>
+          <li><a [routerLink]="routeTo('ourLocations')">{{ 'CONTACT_THANKS_PAGE.WAIT.LEARN_OFFICES' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>
+</div>
+</ng-template>

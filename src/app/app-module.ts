@@ -12,6 +12,8 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
+import { QuoteForm } from './components/quote-form/quote-form';
+import { LegalPage } from './components/legal-page/legal-page';
 import { FootUpper } from './components/foot-upper/foot-upper';
 import { Home } from './pages/home/home';
 import { Contact } from './pages/contact/contact';
@@ -215,6 +217,8 @@ export function initializeTranslations(
     App,
     Header,
     Footer,
+    QuoteForm,
+    LegalPage,
     FootUpper,
     Home,
     Contact,

@@ -21,52 +21,6 @@
   </defs>
 </svg>
 
-<!-- Shared quote form (hero and final CTA) -->
-<ng-template #quoteFormTpl let-form let-submitKey="submitKey" let-final="final">
-  <form novalidate [attr.aria-describedby]="form.id + '-call'" (submit)="submit(form, $event)">
-    <fieldset>
-      <legend>{{ 'HOME_PAGE.FORM.LEGEND' | translate }}</legend>
-      <div class="tiles">
-        <div class="tile" *ngFor="let p of products">
-          <input type="checkbox" [name]="form.id + '-product'" [id]="form.id + '-p-' + p.key" [value]="p.key"
-            [checked]="isSelected(form, p.key)" (change)="toggleProduct(form, p.key)" />
-          <label [for]="form.id + '-p-' + p.key">
-            <span class="dot"><svg class="icon" aria-hidden="true"><use [attr.href]="'#' + p.icon" /></svg></span>
-            {{ (final ? p.finalLabelKey : p.labelKey) | translate }}
-          </label>
-        </div>
-      </div>
-      <p class="err" role="alert">{{ form.errors.product }}</p>
-    </fieldset>
-    <div class="fields">
-      <div class="field">
-        <label [for]="form.id + '-name'">{{ 'HOME_PAGE.FORM.NAME' | translate }}</label>
-        <input [id]="form.id + '-name'" name="name" autocomplete="name" required [value]="form.name"
-          [attr.aria-invalid]="form.errors.name ? 'true' : null" [attr.aria-describedby]="form.id + '-name-err'"
-          (input)="onNameInput(form, $event)" (blur)="onBlur(form, 'name')" />
-        <p class="err" [id]="form.id + '-name-err'">{{ form.errors.name }}</p>
-      </div>
-      <div class="field">
-        <label [for]="form.id + '-phone'">{{ 'HOME_PAGE.FORM.PHONE' | translate }}</label>
-        <input [id]="form.id + '-phone'" name="phone" type="tel" inputmode="tel" autocomplete="tel" required
-          placeholder="(713) 555-0123" [value]="form.phone"
-          [attr.aria-invalid]="form.errors.phone ? 'true' : null" [attr.aria-describedby]="form.id + '-phone-err'"
-          (input)="onPhoneInput(form, $event)" (blur)="onBlur(form, 'phone')" />
-        <p class="err" [id]="form.id + '-phone-err'">{{ form.errors.phone }}</p>
-      </div>
-    </div>
-    <button class="hf-btn btn-primary btn-lg btn-block" type="submit" [disabled]="form.isSubmitting">
-      {{ (form.isSubmitting ? 'HOME_PAGE.FORM.SUBMITTING' : submitKey) | translate }}
-      <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg>
-    </button>
-    <p class="or-call" [id]="form.id + '-call'">
-      <span><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'HOME_PAGE.FORM.OR_CALL' | translate }}
-        <a class="tel" href="tel:+17133577771">(713) 357-7771</a></span>
-      <span class="hrs">{{ 'HOME_PAGE.FORM.HOURS' | translate }}</span>
-    </p>
-  </form>
-</ng-template>
-
 <!-- Hero -->
 <section class="hero" aria-labelledby="hero-title">
   <div class="hf-container hero-grid">
@@ -86,7 +40,7 @@
     </div>
 
     <div class="quote-card quote" id="quote">
-      <ng-container *ngTemplateOutlet="quoteFormTpl; context: { $implicit: heroForm, submitKey: 'HOME_PAGE.FORM.SUBMIT_HERO', final: false }"></ng-container>
+      <app-quote-form formId="hero"></app-quote-form>
     </div>
 
     <figure class="hero-photo">
@@ -123,16 +77,19 @@
             <a class="title-link" [routerLink]="route(card.titleRoute!)">{{ 'HOME_PAGE.PRODUCTS.BONDS.TITLE_LINK' | translate }}</a>
             {{ 'HOME_PAGE.PRODUCTS.BONDS.TITLE_REST' | translate }}
           </h3>
-          <h3 *ngIf="card.key !== 'BONDS' && card.titleRoute">
-            <a class="title-link" [routerLink]="route(card.titleRoute)">{{ 'HOME_PAGE.PRODUCTS.' + card.key + '.TITLE' | translate }}</a>
+          <h3 *ngIf="card.key !== 'BONDS' && titleRoute(card)">
+            <a class="title-link" [routerLink]="route(titleRoute(card)!)">{{ 'HOME_PAGE.PRODUCTS.' + card.key + '.TITLE' | translate }}</a>
           </h3>
-          <h3 *ngIf="!card.titleRoute">{{ 'HOME_PAGE.PRODUCTS.' + card.key + '.TITLE' | translate }}</h3>
+          <h3 *ngIf="!titleRoute(card)">{{ 'HOME_PAGE.PRODUCTS.' + card.key + '.TITLE' | translate }}</h3>
           <svg class="icon chev" aria-hidden="true"><use href="#i-chev" /></svg>
         </summary>
         <div class="pbody">
           <p>{{ 'HOME_PAGE.PRODUCTS.' + card.key + '.TEXT' | translate }}</p>
           <p class="sublinks">
-            <a *ngFor="let link of card.links" [routerLink]="route(link.routeKey)">{{ link.labelKey | translate }}</a>
+            <ng-container *ngFor="let link of card.links">
+              <a *ngIf="link.routeKey; else plainSublink" [routerLink]="route(link.routeKey)">{{ link.labelKey | translate }}</a>
+              <ng-template #plainSublink><span class="nolink">{{ link.labelKey | translate }}</span></ng-template>
+            </ng-container>
           </p>
           <a class="arrow-link" [routerLink]="route(card.quoteRoute)">
             {{ 'HOME_PAGE.PRODUCTS.' + card.key + '.CTA' | translate }}
@@ -253,8 +210,8 @@
         <figure class="review">
           <span class="stars" aria-hidden="true"><svg *ngFor="let s of stars"><use href="#i-star" /></svg></span>
           <span class="sr-only">{{ 'HOME_PAGE.REVIEWS.RATED' | translate }}</span>
-          <blockquote lang="en">"{{ review.text }}"</blockquote>
-          <figcaption><b>{{ review.office }}</b> · {{ 'HOME_PAGE.REVIEWS.SOURCE' | translate }}</figcaption>
+          <blockquote [attr.lang]="currentLang">"{{ currentLang === 'es' ? review.es : review.text }}"</blockquote>
+          <figcaption><b>{{ review.office }}</b> · {{ 'HOME_PAGE.REVIEWS.SOURCE' | translate }}<ng-container *ngIf="currentLang === 'es'"> · {{ 'HOME_PAGE.REVIEWS.TRANSLATED' | translate }}</ng-container></figcaption>
         </figure>
       </li>
     </ul>
@@ -336,6 +293,21 @@
   </div>
 </section>
 
+<!-- English band (Spanish site only) -->
+<section class="es on-red" lang="en" aria-labelledby="en-title" *ngIf="currentLang === 'es'">
+  <div class="hf-container">
+    <span class="eic" aria-hidden="true"><svg class="icon"><use href="#i-chat" /></svg></span>
+    <div>
+      <h2 id="en-title">Prefer to speak in English?</h2>
+      <p>Our Texas-licensed agents explain your insurance options in English, by phone or at any of our five Houston offices.</p>
+    </div>
+    <div class="btns">
+      <a class="hf-btn btn-white" href="/" hreflang="en" (click)="$event.preventDefault(); languageService.setLanguage('en')">View the site in English</a>
+      <a class="hf-btn btn-yellow" href="tel:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>Call (713) 357-7771</a>
+    </div>
+  </div>
+</section>
+
 <!-- About + FAQ -->
 <section class="section bg-white" [attr.aria-label]="'HOME_PAGE.ABOUT.SECTION_ARIA' | translate">
   <div class="hf-container af-grid">
@@ -368,7 +340,7 @@
       </ul>
     </div>
     <div class="quote-card quote">
-      <ng-container *ngTemplateOutlet="quoteFormTpl; context: { $implicit: finalForm, submitKey: 'HOME_PAGE.FORM.SUBMIT_FINAL', final: true }"></ng-container>
+      <app-quote-form formId="final" variant="final"></app-quote-form>
     </div>
   </div>
 </section>

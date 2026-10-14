@@ -62066,7 +62066,12 @@
       "TRAVEL_HEALTH": "Travel health",
       "SURETY_BONDS": "Surety bonds",
       "CONTRACT_BONDS": "Contract bonds",
-      "COMMERCIAL_BONDS": "Commercial bonds"
+      "COMMERCIAL_BONDS": "Commercial bonds",
+      "WINDSTORM_HAIL": "Windstorm & hail",
+      "INLAND_MARINE": "Inland marine",
+      "COMMERCIAL_UMBRELLA": "Commercial umbrella",
+      "UMBRELLA": "Umbrella",
+      "IDENTITY_THEFT": "Identity theft protection"
     }
   },
   "SITE_FOOTER": {
@@ -62371,6 +62376,2689 @@
       "QUOTE": "Get a Quote",
       "CALL": "Call",
       "TEXT": "Text"
+    }
+  },
+  "SERVICES_PAGE": {
+    "BREADCRUMB": {
+      "ARIA": "Breadcrumb",
+      "HOME": "Home",
+      "CURRENT": "Insurance Services"
+    },
+    "HERO": {
+      "TITLE": [
+        {
+          "t": "Texas "
+        },
+        {
+          "t": "Insurance Services",
+          "hl": true
+        },
+        {
+          "t": " — Coverage for Every Texan"
+        }
+      ],
+      "LEAD": [
+        {
+          "t": "A-State Insurance",
+          "r": "home"
+        },
+        {
+          "t": " is an independent agency that compares policies from multiple carriers to find coverage that fits your life, your business, and your budget."
+        }
+      ],
+      "CHECK_FREE": "Free quotes",
+      "CHECK_CARRIERS": "50+ carriers"
+    },
+    "FORM": {
+      "LEGEND": "What would you like to insure?",
+      "NAME": "Full name",
+      "PHONE": "Phone number",
+      "SUBMIT_HERO": "Get My Free Quote",
+      "SUBMIT_FINAL": "Get a Free Quote",
+      "SUBMITTING": "Sending…",
+      "OR_CALL": "Or call",
+      "HOURS": "Mon–Sat, 9 AM–7 PM",
+      "ERR_PRODUCT": "Choose what you would like to insure.",
+      "ERR_NAME": "Enter your full name.",
+      "ERR_PHONE_EMPTY": "Enter your phone number.",
+      "ERR_PHONE_INVALID": "Enter a 10-digit phone number, like (713) 555-0123.",
+      "PRODUCTS": {
+        "AUTO": "Auto",
+        "HOME": "Home",
+        "BUSINESS": "Business",
+        "LIFE": "Life",
+        "HEALTH": "Health",
+        "OTHER": "Other",
+        "HOMEOWNERS": "Homeowners",
+        "COMMERCIAL": "Commercial"
+      }
+    },
+    "OTP": {
+      "LABEL": "On this page",
+      "ITEMS": [
+        "Auto",
+        "Home & Property",
+        "Commercial",
+        "Life",
+        "Health",
+        "Surety Bonds",
+        "Additional Coverage",
+        "Why Texas Is Different",
+        "Why A-State",
+        "4 Steps",
+        "FAQs"
+      ]
+    },
+    "INTRO": {
+      "TITLE": "Our Texas Insurance Services",
+      "TEXT": [
+        {
+          "t": "A-State Insurance",
+          "r": "home"
+        },
+        {
+          "t": " is an independent insurance agency serving all of Texas from 5 offices in Houston. Because we aren't tied to one company, our Texas-licensed agents compare quotes from 50+ carriers for auto, home, commercial, life, and health insurance and surety bonds, then explain the differences in English, Spanish, or Hindi. Founded in 2018, we serve families, drivers, and business owners from every background, with a focus on Hispanic and Latino communities."
+        }
+      ]
+    },
+    "CATS": {
+      "AUTO": {
+        "TITLE": "Auto Insurance",
+        "TEXT": "Texas requires every driver to carry at least 30/60/25 liability coverage: $30,000 per injured person, $60,000 per accident, and $25,000 for property damage. We help you meet the law and decide how much more protection makes sense.",
+        "CTA": "Get an auto quote",
+        "SEE_ALL": "See all 10 types of auto insurance",
+        "ITEMS": [
+          {
+            "TITLE": "Car Insurance",
+            "TEXT": "Liability, collision, comprehensive, glass, and uninsured-motorist coverage, with proof of insurance sent the same day."
+          },
+          {
+            "TITLE": "Motorcycle Insurance",
+            "TEXT": "Covers accidents, injuries, theft, and damage to your bike and gear."
+          },
+          {
+            "TITLE": "Boat Insurance",
+            "TEXT": "Protects your boat, passengers, and liability on Texas lakes and the Gulf."
+          },
+          {
+            "TITLE": "RV & Motorhome Insurance",
+            "TEXT": "Covers your RV, belongings inside, and roadside help."
+          },
+          {
+            "TITLE": "Classic Car Insurance",
+            "TEXT": "Agreed-value coverage for collector cars driven on a limited basis."
+          },
+          {
+            "TITLE": "SR-22 Insurance",
+            "TEXT": "We file the SR-22 with the Texas Department of Public Safety so you can keep or reinstate your license."
+          },
+          {
+            "TITLE": "ATV & UTV Insurance",
+            "TEXT": "Covers off-road vehicles for crashes, theft, and liability."
+          },
+          {
+            "TITLE": "Trailer Insurance",
+            "TEXT": "Covers utility, cargo, and equipment trailers."
+          },
+          {
+            "TITLE": "Mexico Car Insurance",
+            "TEXT": "U.S. policies generally aren't recognized in Mexico, so you need Mexican liability coverage before you cross."
+          },
+          {
+            "TITLE": "Rideshare Insurance",
+            "TEXT": "Fills the gap between your personal policy and Uber or Lyft's coverage."
+          }
+        ]
+      },
+      "HOME": {
+        "TITLE": "Home & Property Insurance",
+        "TEXT": "Hail, hurricanes, and flooding make Texas one of the costliest states for property claims. We help you choose limits and deductibles that hold up when it counts.",
+        "CTA": "Get a home quote",
+        "SEE_ALL": "See all 8 types of home & property insurance",
+        "ITEMS": [
+          {
+            "TITLE": "Homeowners Insurance",
+            "TEXT": "Protects your home and belongings from fire, theft, wind, and hail."
+          },
+          {
+            "TITLE": "Windstorm & Hail Insurance",
+            "TEXT": [
+              {
+                "t": "In coastal counties, wind may be excluded from your home policy; we help you add coverage, including through the "
+              },
+              {
+                "t": "Texas Windstorm Insurance Association (TWIA)",
+                "h": "https://www.twia.org/"
+              },
+              {
+                "t": " where eligible."
+              }
+            ]
+          },
+          {
+            "TITLE": "Flood Insurance",
+            "TEXT": "Standard homeowners and renters policies don't cover flood. NFIP policies usually have a 30-day waiting period, so buy before storm season."
+          },
+          {
+            "TITLE": "Renters Insurance",
+            "TEXT": "Covers your belongings, liability, and temporary living costs."
+          },
+          {
+            "TITLE": "Condo Insurance",
+            "TEXT": "Covers your unit's interior, belongings, and liability."
+          },
+          {
+            "TITLE": "Manufactured Home / Mobile Home Insurance",
+            "TEXT": "Covers the structure, belongings, and liability."
+          },
+          {
+            "TITLE": "Landlord Insurance",
+            "TEXT": "Covers rental property damage, liability, and lost rent."
+          },
+          {
+            "TITLE": "Earthquake Insurance",
+            "TEXT": "Covers structural damage, debris removal, and rebuilding. Most home policies exclude it."
+          }
+        ]
+      },
+      "COMMERCIAL": {
+        "TITLE": "Commercial Insurance",
+        "TEXT": "From food trucks to contractors, we build business coverage around your industry, your contracts, and your employees.",
+        "CTA": "Get a business quote",
+        "SEE_ALL": "See all 12 types of commercial insurance",
+        "ITEMS": [
+          {
+            "TITLE": "General Liability",
+            "TEXT": "Third-party injury, property damage, and legal costs."
+          },
+          {
+            "TITLE": "Business Owner’s Policy (BOP)",
+            "TEXT": "Property and liability together for small businesses."
+          },
+          {
+            "TITLE": "Workers’ Compensation",
+            "TEXT": "Medical and wage benefits for injured employees. Texas is the only state that lets private employers opt out as \"non-subscribers\", but non-subscribers lose key legal defenses in injury lawsuits. We help you weigh both options."
+          },
+          {
+            "TITLE": "Commercial Property",
+            "TEXT": "Buildings, equipment, inventory, and signage."
+          },
+          {
+            "TITLE": "Commercial Auto",
+            "TEXT": "Business vehicles, drivers, cargo, and liability."
+          },
+          {
+            "TITLE": "Professional Liability (E&O)",
+            "TEXT": "Claims of errors or missed deadlines."
+          },
+          {
+            "TITLE": "Employment Practices Liability (EPLI)",
+            "TEXT": "Discrimination, harassment, and wrongful-termination claims."
+          },
+          {
+            "TITLE": "Cyber Liability Insurance",
+            "TEXT": "Breach response, legal costs, and customer notification."
+          },
+          {
+            "TITLE": "Builders Risk",
+            "TEXT": "Structures and materials under construction."
+          },
+          {
+            "TITLE": "Directors & Officers (D&O)",
+            "TEXT": "Protects leaders from claims over management decisions."
+          },
+          {
+            "TITLE": "Inland Marine",
+            "TEXT": "Tools, equipment, and cargo in transit or off-site."
+          },
+          {
+            "TITLE": "Commercial Umbrella",
+            "TEXT": "Extra liability above your other business policies."
+          }
+        ]
+      },
+      "LIFE": {
+        "TITLE": "Life Insurance",
+        "TEXT": "Life insurance can replace income, pay off a mortgage or debts, and fund your children's education.",
+        "CTA": "Get a life quote",
+        "SEE_ALL": "See all 6 types of life insurance",
+        "ITEMS": [
+          {
+            "TITLE": "Term Life",
+            "TEXT": "Affordable coverage for a set period, such as 10, 20, or 30 years."
+          },
+          {
+            "TITLE": "Whole Life",
+            "TEXT": "Lifelong coverage with guaranteed cash value."
+          },
+          {
+            "TITLE": "Universal Life",
+            "TEXT": "Permanent coverage with flexible premiums."
+          },
+          {
+            "TITLE": "Final Expense",
+            "TEXT": "Helps your family pay for funeral and burial costs, medical bills, and small debts."
+          },
+          {
+            "TITLE": "Variable Life",
+            "TEXT": "Permanent coverage with investment-linked cash value."
+          },
+          {
+            "TITLE": "Group Life",
+            "TEXT": "Employer-sponsored coverage for your team."
+          }
+        ]
+      },
+      "HEALTH": {
+        "TITLE": "Health Insurance",
+        "TEXT": [
+          {
+            "t": "We help individuals, families, and employers compare plans for doctor visits, prescriptions, and hospital care. Open Enrollment on "
+          },
+          {
+            "t": "HealthCare.gov",
+            "h": "https://www.healthcare.gov/"
+          },
+          {
+            "t": " usually runs Nov 1 – Jan 15."
+          }
+        ],
+        "CTA": "Get a health quote",
+        "SEE_ALL": "See all 7 types of health insurance",
+        "ITEMS": [
+          {
+            "TITLE": [
+              {
+                "t": "Individual",
+                "r": "individualHealthInsurance"
+              },
+              {
+                "t": " and "
+              },
+              {
+                "t": "Family",
+                "r": "familyHealthInsurance"
+              },
+              {
+                "t": " Plans"
+              }
+            ],
+            "TEXT": "Coverage for you alone, or parents and children on one plan."
+          },
+          {
+            "TITLE": "ACA Marketplace Plans",
+            "TEXT": "Plans with income-based subsidies that can lower your premium."
+          },
+          {
+            "TITLE": "Small Business and Group Health",
+            "TEXT": "Medical benefits for employees."
+          },
+          {
+            "TITLE": "Medicare Supplement (Medigap)",
+            "TEXT": "Helps pay costs Original Medicare doesn't, like deductibles and coinsurance."
+          },
+          {
+            "TITLE": "Short-Term Health",
+            "TEXT": "Temporary coverage between jobs or plans. It doesn't have to cover pre-existing conditions."
+          },
+          {
+            "TITLE": "Dental & Vision",
+            "TEXT": "Cleanings, exams, glasses, and contacts."
+          },
+          {
+            "TITLE": "Travel Health",
+            "TEXT": "Medical and evacuation costs abroad."
+          }
+        ]
+      },
+      "BONDS": {
+        "TITLE": "Surety Bonds",
+        "TEXT": "Need a bond to bid, build, or get licensed? We work with surety companies to get you bonded quickly.",
+        "CTA": "Request a bond",
+        "SEE_ALL": "See all 3 types of surety bonds",
+        "ITEMS": [
+          {
+            "TITLE": "Contract Bonds",
+            "TEXT": [
+              {
+                "t": "Bid",
+                "r": "bidBonds"
+              },
+              {
+                "t": ", "
+              },
+              {
+                "t": "Performance and Payment bonds",
+                "r": "performanceBondsPaymentBonds"
+              },
+              {
+                "t": " that guarantee you'll honor your bid, finish the job, and pay subcontractors and suppliers."
+              }
+            ]
+          },
+          {
+            "TITLE": "Commercial Bonds",
+            "TEXT": [
+              {
+                "t": "License & Permit bonds",
+                "r": "commercialSuretyBonds"
+              },
+              {
+                "t": " required by Texas agencies and cities, plus other compliance bonds."
+              }
+            ]
+          },
+          {
+            "TITLE": "Notary Bonds",
+            "TEXT": "The $10,000 bond required to become a Texas notary public."
+          }
+        ]
+      },
+      "ADDITIONAL": {
+        "TITLE": "Additional Coverage",
+        "TEXT": "Specialty coverage for the gaps standard policies leave.",
+        "CTA": "Ask about additional coverage",
+        "SEE_ALL": "See all 4 types of additional coverage",
+        "ITEMS": [
+          {
+            "TITLE": "Umbrella Insurance",
+            "TEXT": "Get extra liability protection beyond your auto and home policies. Safeguard your savings and assets from costly, unexpected lawsuits."
+          },
+          {
+            "TITLE": "Pet Insurance",
+            "TEXT": "Helps cover veterinary visits, surgeries, medications, and emergency care, ensuring pets receive quality treatment without a heavy financial burden."
+          },
+          {
+            "TITLE": "Identity Theft Protection",
+            "TEXT": "Monitor your credit, detect fraud early, and get expert help to restore your good name if your personal information is stolen."
+          },
+          {
+            "TITLE": "Title Insurance",
+            "TEXT": "Protects property owners and lenders from ownership disputes, liens, and legal issues that may affect real estate transactions."
+          }
+        ]
+      }
+    },
+    "TEXAS": {
+      "TITLE": "Why Texas Requires Its Own Insurance Strategy",
+      "CARDS": [
+        {
+          "TITLE": "Extreme weather",
+          "TEXT": "From Gulf Coast hurricanes to hail across North Texas and the Panhandle, wind, hail, and flood are leading causes of property claims here. Flood is excluded from standard home policies."
+        },
+        {
+          "TITLE": "Unique laws",
+          "TEXT": "Texas is the only state where private employers can opt out of workers' compensation. Drivers must carry at least 30/60/25 liability."
+        },
+        {
+          "TITLE": "Road risks",
+          "TEXT": [
+            {
+              "t": "Roughly 14.5% of Texas drivers are uninsured ("
+            },
+            {
+              "t": "Insurance Research Council, 2025",
+              "h": "https://insurance-research.org/news/one-three-drivers-are-either-uninsured-or-underinsured-us-exposing-themselves-and-other"
+            },
+            {
+              "t": "), which is why uninsured-motorist coverage matters. Trips into Mexico need separate Mexican liability coverage."
+            }
+          ]
+        }
+      ]
+    },
+    "WHY": {
+      "TITLE_1": "Why Texans Choose",
+      "TITLE_2": "Insurance",
+      "ITEMS": [
+        {
+          "TITLE": "50+ Carriers",
+          "TEXT": "More choices means a better chance at the right price."
+        },
+        {
+          "TITLE": "Texas-Licensed Agents",
+          "TEXT": "Licensed by the Texas Department of Insurance."
+        },
+        {
+          "TITLE": "Hispanic & Latino Friendly",
+          "TEXT": "Hablamos español, from quote to claim."
+        },
+        {
+          "TITLE": "Serving Texans Since 2018",
+          "TEXT": "8 years helping Houston families and businesses."
+        },
+        {
+          "TITLE": "Custom Coverage Plans",
+          "TEXT": "Built around your life, not a one-size template."
+        },
+        {
+          "TITLE": "Online & Local",
+          "TEXT": "Get quotes online or visit one of our 5 Houston offices."
+        },
+        {
+          "TITLE": "Multilingual Agents",
+          "TEXT": "English, Spanish, and Hindi."
+        },
+        {
+          "TITLE": "We Shop, You Choose",
+          "TEXT": "We compare carriers and explain the trade-offs."
+        }
+      ]
+    },
+    "STEPS": {
+      "TITLE": "Getting Covered Is Simple — 4 Steps",
+      "ITEMS": [
+        {
+          "TITLE": "Reach Out",
+          "TEXT": "Call, text, fill out the form, or walk in."
+        },
+        {
+          "TITLE": "Get Expert Advice",
+          "TEXT": "A licensed agent reviews your needs and compares carriers."
+        },
+        {
+          "TITLE": "Pick Your Plan",
+          "TEXT": "Choose the coverage and price that fit."
+        },
+        {
+          "TITLE": "You're Covered",
+          "TEXT": "Get your policy documents and proof of insurance, often the same day."
+        }
+      ],
+      "CTA": "Start my quote",
+      "OR_CALL": "or call"
+    },
+    "FAQ": {
+      "TITLE": "Texas Insurance FAQs",
+      "ITEMS": [
+        {
+          "Q": "What insurance services does A-State Insurance offer?",
+          "A": "Auto, homeowners, commercial, life and health insurance, surety bonds, and specialty coverage such as SR-22, flood, rideshare, and Mexico car insurance, all for Texas."
+        },
+        {
+          "Q": "Is A-State an insurance company or an agency?",
+          "A": "An independent agency. We don't write policies ourselves; we compare and place coverage with 50+ carriers."
+        },
+        {
+          "Q": "What is the minimum car insurance in Texas?",
+          "A": "30/60/25 liability: $30,000 per person, $60,000 per accident for injuries, and $25,000 for property damage."
+        },
+        {
+          "Q": "Does homeowners insurance cover flooding in Texas?",
+          "A": "No. Flood needs a separate policy, usually with a 30-day waiting period."
+        },
+        {
+          "Q": "Do Texas businesses have to carry workers' comp?",
+          "A": "Most private employers don't have to, but non-subscribers lose important legal protections and must file notices with the state."
+        },
+        {
+          "Q": "Do you have Spanish-speaking agents?",
+          "A": "Sí. Our agents speak English, Spanish, and Hindi."
+        },
+        {
+          "Q": "Where are your offices?",
+          "A": [
+            {
+              "t": "5 offices in Houston: "
+            },
+            {
+              "t": "Shotwell",
+              "r": "ourLocations/:id",
+              "id": "707-shotwell-st-a-houston-tx-77020"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "t": "Southwest Fwy",
+              "r": "ourLocations/:id",
+              "id": "11503-southwest-fwy-b-houston-tx-77031"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "t": "Post Oak",
+              "r": "ourLocations/:id",
+              "id": "10547-s-post-oak-rd-houston-tx-77035"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "t": "Antoine",
+              "r": "ourLocations/:id",
+              "id": "5712-antoine-dr-houston-tx-77091"
+            },
+            {
+              "t": ", and "
+            },
+            {
+              "t": "Airline",
+              "r": "ourLocations/:id",
+              "id": "5206-airline-dr-g-houston-tx-77022"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "Q": "How fast can I get a quote?",
+          "A": "Most quotes take 60 minutes by phone or form."
+        }
+      ]
+    },
+    "FINAL": {
+      "TITLE": "Find the Right Texas Insurance Coverage Today",
+      "TEXT": "Call, text, or email us, fill out the form, or visit any of our Houston offices. A licensed agent will compare your options for auto, home, business, life, health, or surety bonds.",
+      "TEXT_US": "Text us",
+      "OFFICES": "Houston offices"
+    },
+    "LANG_BAND": {
+      "LANG": "es",
+      "TITLE": "¿Prefiere hablar en español?",
+      "TEXT": "Nuestros agentes le ayudan a comparar seguros de auto, casa, negocio, vida y salud en Texas.",
+      "SWITCH": "Ver servicios en español",
+      "CALL": "Llame al (713) 357-7771"
+    }
+  },
+  "ABOUT_PAGE": {
+    "BREADCRUMB": {
+      "ARIA": "Breadcrumb",
+      "HOME": "Home",
+      "CURRENT": "About Us"
+    },
+    "HERO": {
+      "TITLE": [
+        {
+          "t": "Protecting Texas Families and Businesses "
+        },
+        {
+          "t": "Since 2018",
+          "hl": true
+        }
+      ],
+      "LEAD": "A-State Insurance is an independent insurance agency in Houston. Our licensed agents compare coverage from 50+ carriers and explain your options in English, Spanish, or Hindi.",
+      "CHECKS": [
+        {
+          "t": "Texas-Licensed Agents"
+        },
+        {
+          "t": "Independent Agency"
+        },
+        {
+          "t": "Hablamos Español",
+          "chip": true
+        },
+        {
+          "t": "50+ Carriers"
+        }
+      ],
+      "CTA_QUOTE": "Get a Free Quote",
+      "CTA_CALL": "Call (713) 357-7771",
+      "PHOTO_ALT": "The A-State team in red A-State polos at the office"
+    },
+    "OTP": {
+      "LABEL": "On this page",
+      "ITEMS": [
+        "Our Story",
+        "By the Numbers",
+        "Mission & Values",
+        "Our Services",
+        "Why A-State",
+        "Reviews",
+        "FAQs"
+      ]
+    },
+    "STORY": {
+      "KICKER": "Houston, Texas · Since 2018",
+      "TITLE": "Your Trusted Texas Insurance Partner — Our Story",
+      "ITEMS": [
+        {
+          "TITLE": "Why we started",
+          "TEXT": [
+            {
+              "t": "Farhaan founded "
+            },
+            {
+              "t": "A-State Insurance",
+              "r": "home"
+            },
+            {
+              "t": " in Houston in 2018 to give Texas families, including Hispanic and Latino communities, real choices in their own language. Texas adds its own risks: Gulf Coast storms, hail, flood, a workers' comp system employers can opt out of, and frequent trips into Mexico. Generic coverage often misses these."
+            }
+          ]
+        },
+        {
+          "TITLE": "How we work",
+          "TEXT": "As an independent agency, we don't work for one insurance company. A captive agent can only offer their company's policies; we compare quotes from 50+ carriers, explain what each policy covers and doesn't, and help you choose. We'll also be clear when a cheaper policy leaves a gap."
+        },
+        {
+          "TITLE": "Who we serve",
+          "TEXT": "Families, drivers, homeowners, renters, and businesses of every size, across Texas. We're a Texas-built agency: we live here, work here, and know the neighborhoods we serve."
+        }
+      ]
+    },
+    "NUMBERS": {
+      "TITLE_1": "",
+      "TITLE_2": "Insurance by the Numbers",
+      "STATS": [
+        {
+          "LABEL": "Founded",
+          "VALUE": "2018",
+          "SMALL": "Houston"
+        },
+        {
+          "LABEL": "Offices",
+          "VALUE": "5",
+          "SMALL": "in Houston"
+        },
+        {
+          "LABEL": "Carriers",
+          "VALUE": "50+",
+          "SMALL": "national and regional insurers"
+        },
+        {
+          "LABEL": "Clients",
+          "VALUE": "5,000+",
+          "SMALL": "clients served"
+        },
+        {
+          "LABEL": "Google rating",
+          "VALUE": "4.8 ★",
+          "SMALL": "from 256 reviews"
+        },
+        {
+          "LABEL": "Licensed agents",
+          "VALUE": "7",
+          "SMALL": ""
+        },
+        {
+          "LABEL": "Languages",
+          "VALUE": "English · Español · हिंदी",
+          "SMALL": "",
+          "WIDE": true
+        }
+      ]
+    },
+    "MISSION": {
+      "TITLE": "Our Mission, Vision & Values",
+      "MISSION_TAG": "Mission",
+      "MISSION": "To make insurance accessible, transparent, and culturally inclusive, so no Texan is left without the right coverage.",
+      "VISION_TAG": "Vision",
+      "VISION": "To be the independent agency Texans trust most, in their own language, online and in their neighborhood.",
+      "VALUES_TITLE": "Our values",
+      "VALUES": [
+        {
+          "TITLE": "Cultural Inclusivity",
+          "TEXT": "We serve you in English, Spanish, and Hindi, from quote to claim."
+        },
+        {
+          "TITLE": "Unbiased Choice",
+          "TEXT": "We compare carriers and explain the trade-offs, so the decision is yours."
+        },
+        {
+          "TITLE": "Texas-Rooted Integrity",
+          "TEXT": "We're clear about what a policy doesn't cover before you buy."
+        },
+        {
+          "TITLE": "Proactive Protection",
+          "TEXT": "We plan for Texas risks like storms, floods, and state regulations, not just react to them."
+        },
+        {
+          "TITLE": "Community Stewardship",
+          "TEXT": "We're neighbors first and insurance agents second."
+        }
+      ]
+    },
+    "SERVICES": {
+      "TITLE": "Insurance Solutions We Offer",
+      "ITEMS": [
+        "Auto",
+        "Homeowners",
+        "Commercial",
+        "Life",
+        "Health",
+        "Surety Bonds"
+      ],
+      "SEE_ALL": "See All Services"
+    },
+    "REVIEWS": {
+      "TITLE": "What Our Texas Clients Say"
+    },
+    "FAQ": {
+      "TITLE": "Frequently Asked Questions",
+      "ITEMS": [
+        {
+          "Q": "Is A-State Insurance an insurance company?",
+          "A": "No. A-State is an independent insurance agency. We compare and place policies with 50+ insurance companies."
+        },
+        {
+          "Q": "When was A-State Insurance founded?",
+          "A": "In 2018, in Houston, Texas."
+        },
+        {
+          "Q": "Where are your offices?",
+          "A": [
+            {
+              "t": "We have 5 offices in Houston: "
+            },
+            {
+              "t": "Shotwell",
+              "r": "ourLocations/:id",
+              "id": "707-shotwell-st-a-houston-tx-77020"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "t": "Southwest Fwy",
+              "r": "ourLocations/:id",
+              "id": "11503-southwest-fwy-b-houston-tx-77031"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "t": "Post Oak",
+              "r": "ourLocations/:id",
+              "id": "10547-s-post-oak-rd-houston-tx-77035"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "t": "Antoine",
+              "r": "ourLocations/:id",
+              "id": "5712-antoine-dr-houston-tx-77091"
+            },
+            {
+              "t": ", and "
+            },
+            {
+              "t": "Airline",
+              "r": "ourLocations/:id",
+              "id": "5206-airline-dr-g-houston-tx-77022"
+            },
+            {
+              "t": ". We serve clients across Texas by phone and online."
+            }
+          ]
+        },
+        {
+          "Q": "Do your agents speak Spanish or Hindi?",
+          "A": "Yes. Our agents speak English, Spanish, and Hindi."
+        },
+        {
+          "Q": "Is A-State Insurance licensed?",
+          "A": "Yes. Our agents are licensed by the Texas Department of Insurance."
+        },
+        {
+          "Q": "What does it cost to get a quote?",
+          "A": "Nothing. Quotes are free, and there's no obligation to buy."
+        }
+      ]
+    },
+    "FINAL": {
+      "TITLE": "Reliable Coverage. Expert Guidance. Peace of Mind.",
+      "TEXT_1": "Insurance that fits your life, backed by agents who care. Peace of mind starts here.",
+      "TEXT_2": "Our agents compare multiple carriers to find the coverage that fits. Call, email, or text us, fill out the form, or visit any of our Houston offices."
+    },
+    "FORM": {
+      "LEGEND": "What would you like to insure?",
+      "NAME": "Full name",
+      "PHONE": "Phone number",
+      "SUBMIT_HERO": "Get a Free Quote",
+      "SUBMIT_FINAL": "Get a Free Quote",
+      "SUBMITTING": "Sending…",
+      "OR_CALL": "Or call",
+      "HOURS": "Mon–Sat, 9 AM–7 PM",
+      "ERR_PRODUCT": "Choose what you would like to insure.",
+      "ERR_NAME": "Enter your full name.",
+      "ERR_PHONE_EMPTY": "Enter your phone number.",
+      "ERR_PHONE_INVALID": "Enter a 10-digit phone number, like (713) 555-0123.",
+      "PRODUCTS": {
+        "AUTO": "Auto",
+        "HOME": "Homeowners",
+        "BUSINESS": "Commercial",
+        "LIFE": "Life",
+        "HEALTH": "Health",
+        "OTHER": "Other",
+        "HOMEOWNERS": "Homeowners",
+        "COMMERCIAL": "Commercial"
+      }
+    }
+  },
+  "LEGAL_PAGE": {
+    "HOME": "Home",
+    "BREADCRUMB_ARIA": "Breadcrumb",
+    "EFFECTIVE": "Effective",
+    "UPDATED": "Last updated",
+    "EFFECTIVE_DATE": "Feb 10, 2026",
+    "UPDATED_DATE": "Oct 12, 2026",
+    "PRINT": "Print or save as PDF",
+    "SUMMARY": "Summary",
+    "TOC": "On this page",
+    "SECTIONS": "sections",
+    "BACK": "Back to contents",
+    "PRIVACY": {
+      "TITLE": "Privacy Policy",
+      "HELP": "Privacy questions?",
+      "SUMMARY_ITEMS": [
+        [
+          {
+            "t": "We collect the information you give us to quote and service your insurance, plus basic website usage data."
+          }
+        ],
+        [
+          {
+            "t": "We share it with insurance companies and service providers only as needed to quote, place, and service your coverage, or when the law requires."
+          }
+        ],
+        [
+          {
+            "t": "We do not sell your personal information",
+            "b": true
+          },
+          {
+            "t": ", and we don't share your mobile number or text consent for third-party marketing."
+          }
+        ],
+        [
+          {
+            "t": "You can ask to see, correct, or delete your information, or opt out of marketing, at any time."
+          }
+        ]
+      ],
+      "QUESTIONS": [
+        {
+          "t": "Questions:",
+          "b": true
+        },
+        {
+          "t": " "
+        },
+        {
+          "t": "save@astateinsurance.com",
+          "h": "mailto:save@astateinsurance.com"
+        },
+        {
+          "t": " or "
+        },
+        {
+          "t": "(713) 357-7771",
+          "h": "tel:+17133577771"
+        },
+        {
+          "t": "."
+        }
+      ],
+      "SECTIONS": [
+        {
+          "ID": "introduction",
+          "NUM": "01",
+          "TITLE": "Introduction",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "This Privacy Policy explains how "
+                },
+                {
+                  "t": "A-State Insurance",
+                  "r": "home"
+                },
+                {
+                  "t": ", LLC (\"A-State\", \"we\", \"us\"), an independent insurance agency based in Houston, Texas, collects, uses, shares, and protects personal information. It covers our website astateinsurance.com, our offices, and our phone, text, and email communications."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "information-we-collect",
+          "NUM": "02",
+          "TITLE": "Information We Collect",
+          "BLOCKS": [
+            {
+              "TABLE": {
+                "LABEL": "Information we collect",
+                "HEAD": [
+                  "Category",
+                  "Examples",
+                  "When"
+                ],
+                "ROWS": [
+                  [
+                    "Contact details",
+                    "Name, phone, email, mailing address, preferred language",
+                    "Forms, calls, texts, office visits"
+                  ],
+                  [
+                    "Quote and policy information",
+                    "Date of birth; driver's license numbers; VINs; vehicle, home and business details; prior insurance; claims history",
+                    "When you request a quote or coverage"
+                  ],
+                  [
+                    "Information about others",
+                    "Drivers, household members, dependents, beneficiaries or employees you list",
+                    "When you add them to a quote or policy"
+                  ],
+                  [
+                    "Financial information",
+                    "Payment details, business revenue and payroll (and SSN, only if needed by a carrier)",
+                    "Applications, billing"
+                  ],
+                  [
+                    "Health information",
+                    "Medical history or conditions, for life and health insurance only",
+                    "Life and health applications, with your permission"
+                  ],
+                  [
+                    "Consumer reports",
+                    "Driving records, claims history reports, credit-based insurance scores, ordered by carriers as allowed by law",
+                    "During underwriting"
+                  ],
+                  [
+                    "Website and device data",
+                    "IP address, browser, device, pages viewed, referring site",
+                    "Automatically, via cookies"
+                  ]
+                ]
+              }
+            },
+            {
+              "P": [
+                {
+                  "t": "If you give us information about another person, please make sure they agree."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "how-we-collect-information",
+          "NUM": "03",
+          "TITLE": "How We Collect Information",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "From you (online forms, phone, text, email, and in person), from insurance carriers and their reporting agencies during underwriting, and automatically through cookies on our website."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "how-we-use-your-information",
+          "NUM": "04",
+          "TITLE": "How We Use Your Information",
+          "BLOCKS": [
+            {
+              "UL": [
+                [
+                  {
+                    "t": "To answer questions and prepare insurance quotes"
+                  }
+                ],
+                [
+                  {
+                    "t": "To place, renew, and service policies, and help with claims"
+                  }
+                ],
+                [
+                  {
+                    "t": "To send policy reminders and service updates"
+                  }
+                ],
+                [
+                  {
+                    "t": "To send offers and tips, only with your consent; you can opt out at any time"
+                  }
+                ],
+                [
+                  {
+                    "t": "To prevent fraud and keep our systems secure"
+                  }
+                ],
+                [
+                  {
+                    "t": "To improve our website and services"
+                  }
+                ],
+                [
+                  {
+                    "t": "To meet legal, regulatory and licensing requirements"
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "cookies",
+          "NUM": "05",
+          "TITLE": "Cookies & Tracking Technologies",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "We use cookies and similar tools for site functions, analytics (Google Analytics), and advertising measurement (e.g., Meta Pixel, Google Ads). You can manage cookies in your browser or through our cookie banner if used. Blocking some cookies may affect how the site works."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "information-sharing",
+          "NUM": "06",
+          "TITLE": "Information Sharing & Disclosure",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "We do not sell your personal information.",
+                  "b": true
+                },
+                {
+                  "t": " We share it only:"
+                }
+              ]
+            },
+            {
+              "UL": [
+                [
+                  {
+                    "t": "With insurance companies and wholesale brokers",
+                    "b": true
+                  },
+                  {
+                    "t": " to get quotes, place coverage, and service policies."
+                  }
+                ],
+                [
+                  {
+                    "t": "With service providers",
+                    "b": true
+                  },
+                  {
+                    "t": " who help us run our business (agency management system, email, texting, phone, website hosting, and IT). They're bound by contract to use it only for our purposes."
+                  }
+                ],
+                [
+                  {
+                    "t": "When required by law",
+                    "b": true
+                  },
+                  {
+                    "t": ", such as to the Texas Department of Insurance, courts or law enforcement, or to protect rights and prevent fraud."
+                  }
+                ],
+                [
+                  {
+                    "t": "In a business transfer",
+                    "b": true
+                  },
+                  {
+                    "t": ", if our agency is merged or sold, under the same protections."
+                  }
+                ]
+              ]
+            },
+            {
+              "P": [
+                {
+                  "t": "We don't share health information without your written authorization, except as the law allows."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "text-messages",
+          "NUM": "07",
+          "TITLE": "Text Messages (SMS)",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "If you give us your mobile number and agree to receive texts, we may text you about your quote, policy, payments and service. Message frequency varies. Message and data rates may apply. Reply "
+                },
+                {
+                  "t": "STOP",
+                  "b": true
+                },
+                {
+                  "t": " to opt out or "
+                },
+                {
+                  "t": "HELP",
+                  "b": true
+                },
+                {
+                  "t": " for help."
+                }
+              ]
+            },
+            {
+              "P": [
+                {
+                  "t": "No mobile information will be shared with third parties or affiliates for marketing or promotional purposes.",
+                  "b": true
+                },
+                {
+                  "t": " Text opt-in data and consent will not be shared with any third parties, except service providers that deliver our messages."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "insurance-privacy-notice",
+          "NUM": "08",
+          "TITLE": "Insurance Privacy Notice (GLBA & Texas)",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "As an insurance agency, we follow the federal "
+                },
+                {
+                  "t": "Gramm-Leach-Bliley Act",
+                  "h": "https://www.ftc.gov/business-guidance/privacy-security/gramm-leach-bliley-act"
+                },
+                {
+                  "t": " and "
+                },
+                {
+                  "t": "Texas Department of Insurance",
+                  "h": "https://www.tdi.texas.gov/"
+                },
+                {
+                  "t": " privacy rules. We collect nonpublic personal information only to provide insurance services, share it with non-affiliated parties only as these laws allow, and do not share it for third parties' own marketing. The insurance company that issues your policy will also give you its own privacy notice."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "data-retention",
+          "NUM": "09",
+          "TITLE": "Data Retention",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "We keep your information as long as needed to quote and service your insurance and to meet legal and carrier record-keeping requirements, generally 5 years after your policy ends or your last quote. Then we securely delete or anonymize it."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "data-security",
+          "NUM": "10",
+          "TITLE": "Data Security",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "We use reasonable administrative, technical and physical safeguards, including encrypted forms (HTTPS), access controls and staff training. No online transmission or storage system can be guaranteed fully secure. If a breach affects your personal information, we'll notify you and the authorities as Texas law requires."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "your-privacy-rights",
+          "NUM": "11",
+          "TITLE": "Your Privacy Rights",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "You can ask us to:"
+                }
+              ]
+            },
+            {
+              "UL": [
+                [
+                  {
+                    "t": "See the personal information we hold about you"
+                  }
+                ],
+                [
+                  {
+                    "t": "Correct inaccurate information"
+                  }
+                ],
+                [
+                  {
+                    "t": "Delete your information, unless we must keep it by law or under a policy contract"
+                  }
+                ],
+                [
+                  {
+                    "t": "Stop marketing emails or texts at any time"
+                  }
+                ]
+              ]
+            },
+            {
+              "P": [
+                {
+                  "t": "How to make a request:",
+                  "b": true
+                },
+                {
+                  "t": " email "
+                },
+                {
+                  "t": "save@astateinsurance.com",
+                  "h": "mailto:save@astateinsurance.com"
+                },
+                {
+                  "t": ", call "
+                },
+                {
+                  "t": "(713) 357-7771",
+                  "h": "tel:+17133577771"
+                },
+                {
+                  "t": ", or use our privacy request form. We'll verify your identity and respond within 45 days. Depending on where you live, you may have further rights under state privacy laws, including the right to appeal a decision. Reply to our decision to start an appeal."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "third-party-links",
+          "NUM": "12",
+          "TITLE": "Third-Party Links",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "Our site may link to carrier and other websites. We aren't responsible for their privacy practices; please review their policies."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "childrens-privacy",
+          "NUM": "13",
+          "TITLE": "Children's Privacy",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "Our website isn't directed to children under 13, and we don't knowingly collect information from them online. Information about minors, such as dependents or teen drivers, is collected only from a parent or guardian to quote or service a policy."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "updates",
+          "NUM": "14",
+          "TITLE": "Updates to This Privacy Policy",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "We may update this policy. We'll post changes here with a new \"Last updated\" date and notify customers by email of material changes."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "contact-information",
+          "NUM": "15",
+          "TITLE": "Contact Information",
+          "BLOCKS": [
+            {
+              "ADDRESS": [
+                [
+                  {
+                    "t": "A-State Insurance, LLC",
+                    "b": true
+                  }
+                ],
+                [
+                  {
+                    "t": "707 Shotwell St, Suite A, Houston, TX 77020",
+                    "h": "https://maps.app.goo.gl/3yoEc7gXFuw8LyPv6"
+                  }
+                ],
+                [
+                  {
+                    "t": "Phone:",
+                    "b": true
+                  },
+                  {
+                    "t": " "
+                  },
+                  {
+                    "t": "(713) 357-7771",
+                    "h": "tel:+17133577771"
+                  }
+                ],
+                [
+                  {
+                    "t": "Email:",
+                    "b": true
+                  },
+                  {
+                    "t": " "
+                  },
+                  {
+                    "t": "save@astateinsurance.com",
+                    "h": "mailto:save@astateinsurance.com"
+                  }
+                ]
+              ]
+            },
+            {
+              "P": [
+                {
+                  "t": "We respond to privacy questions within 30 days."
+                }
+              ]
+            },
+            {
+              "NOTE": [
+                {
+                  "t": "Una versión en español de esta política está disponible "
+                },
+                {
+                  "t": "aquí",
+                  "h": "/es/politica-de-privacidad/"
+                },
+                {
+                  "t": "."
+                }
+              ],
+              "LANG": "es",
+              "STYLE": "band"
+            }
+          ]
+        }
+      ]
+    },
+    "TERMS": {
+      "TITLE": "Terms and Conditions",
+      "HELP": "Questions about these Terms?",
+      "SUMMARY_ITEMS": [
+        [
+          {
+            "t": "A-State Insurance is an independent insurance "
+          },
+          {
+            "t": "agency",
+            "b": true
+          },
+          {
+            "t": ", not an insurance company."
+          }
+        ],
+        [
+          {
+            "t": "Online quotes are estimates. Coverage starts only when a carrier issues your policy and payment is confirmed."
+          }
+        ],
+        [
+          {
+            "t": "The insurance company, not A-State, decides underwriting, claims, and cancellations."
+          }
+        ],
+        [
+          {
+            "t": "We contact you by call or text for marketing only with your separate consent. Reply "
+          },
+          {
+            "t": "STOP",
+            "b": true
+          },
+          {
+            "t": " to opt out."
+          }
+        ],
+        [
+          {
+            "t": "These terms are governed by Texas law."
+          }
+        ]
+      ],
+      "SECTIONS": [
+        {
+          "ID": "acceptance-of-terms",
+          "NUM": "1.",
+          "TITLE": "Acceptance of Terms",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "These Terms apply to your use of astateinsurance.com and to quote and service requests made to "
+                },
+                {
+                  "t": "A-State Insurance",
+                  "r": "home"
+                },
+                {
+                  "t": ", LLC (\"A-State\", \"we\", \"us\"). By using the site or requesting a quote, you agree to these Terms. If you don't agree, please don't use the site."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "eligibility",
+          "NUM": "2.",
+          "TITLE": "Eligibility",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "You must be at least 18 and able to enter a binding contract to request a quote or apply for coverage."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "about-a-state-insurance",
+          "NUM": "3.",
+          "TITLE": "About A-State Insurance",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "A-State is an independent insurance agency licensed in Texas. We are not an insurance company and do not underwrite or issue policies. We help you compare and apply for coverage from third-party insurance companies \"carriers\" for "
+                },
+                {
+                  "t": "auto",
+                  "r": "autoInsurance"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "t": "home",
+                  "r": "homeInsurance"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "t": "commercial",
+                  "r": "commercialInsurance"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "t": "life",
+                  "r": "lifeInsurance"
+                },
+                {
+                  "t": ", and "
+                },
+                {
+                  "t": "health",
+                  "r": "healthInsurance"
+                },
+                {
+                  "t": " insurance and "
+                },
+                {
+                  "t": "surety bonds",
+                  "r": "suretyBondInsurance"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "use-of-website",
+          "NUM": "4.",
+          "TITLE": "Use of Website",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "The site provides general information and quote tools. Website content is general information, not legal, tax, or financial advice, and not a contract or guarantee of coverage. Personal recommendations come only from a licensed agent who has reviewed your situation."
+                }
+              ]
+            },
+            {
+              "P": [
+                {
+                  "t": "You agree not to",
+                  "b": true
+                },
+                {
+                  "t": ": give false information; use the site for unlawful purposes; scrape, overload, or try to access it without authorization; or upload malicious code."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "quotes-and-coverage",
+          "NUM": "5.",
+          "TITLE": "Quotes & Coverage Disclaimer",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "Quotes are estimates based on the information you provide and carrier rates at the time. Final premiums and eligibility are set by the carrier after underwriting. "
+                },
+                {
+                  "t": "Coverage does not begin until the carrier issues the policy and payment is confirmed.",
+                  "b": true
+                },
+                {
+                  "t": " A quote, form submission, or conversation does not create coverage."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "your-information",
+          "NUM": "6.",
+          "TITLE": "Your Information & Policy Review",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "You agree to give complete and accurate information. Inaccurate information can change your premium or lead a carrier to deny a claim or cancel a policy. Please review your policy documents, including limits, deductibles, and exclusions, and tell us about any error within 30 days of receiving them."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "third-party-insurance-providers",
+          "NUM": "7.",
+          "TITLE": "Third-Party Insurance Providers",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "Your policy is a contract between you and the carrier. The carrier is responsible for underwriting, claims, payments of claims, cancellations, and its own financial obligations. We'll help you contact your carrier and advocate on your behalf where we can."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "payment-terms",
+          "NUM": "8.",
+          "TITLE": "Payment Terms",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "Premiums are paid to the carrier or its approved payment processor. Missed or late payments may lead the carrier to cancel your policy. We may send reminders, but paying on time is your responsibility. We do not charge a fee for quotes. Any agency fee will be disclosed in writing before you agree to it."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "text-messages",
+          "NUM": "9.",
+          "TITLE": "Communications & Text Messages",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "We'll contact you by phone, text, or email about quotes, policies, renewals, and service. "
+                },
+                {
+                  "t": "We'll send marketing calls or texts using automated technology only if you give separate consent on our forms.",
+                  "b": true
+                },
+                {
+                  "t": " Consent isn't required to buy. For texts, message frequency varies, and message and data rates may apply. Reply "
+                },
+                {
+                  "t": "STOP",
+                  "b": true
+                },
+                {
+                  "t": " to opt out or "
+                },
+                {
+                  "t": "HELP",
+                  "b": true
+                },
+                {
+                  "t": " for help. To opt out of marketing emails, use the unsubscribe link, or call or email us."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "language-and-translations",
+          "NUM": "10.",
+          "TITLE": "Language & Translations",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "We serve clients in English, Spanish, and Hindi. Translations of these Terms, our website, and policy documents are provided for convenience; if there's a conflict, the English version controls."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "privacy",
+          "NUM": "11.",
+          "TITLE": "Privacy",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "Our "
+                },
+                {
+                  "t": "Privacy Policy",
+                  "r": "privacyPolicy"
+                },
+                {
+                  "t": " explains how we collect, use and protect your information, and is part of these Terms."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "intellectual-property",
+          "NUM": "12.",
+          "TITLE": "Intellectual Property",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "© 2026 A-State Insurance. All site content, logos and branding belong to A-State or its licensors. Carrier names and logos are trademarks of their owners and are used to identify carriers we work with. You may not copy or reuse our content without written permission."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "third-party-links",
+          "NUM": "13.",
+          "TITLE": "Third-Party Links",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "The site may link to carrier and other websites. We don't control them and aren't responsible for their content or privacy practices."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "limitation-of-liability",
+          "NUM": "14.",
+          "TITLE": "Disclaimers & Limitation of Liability",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "The site is provided \"as is\". We work to keep information accurate but don't guarantee it's complete or current. To the extent permitted by law, A-State isn't liable for indirect, incidental, or consequential damages from using the site, or for carrier decisions on underwriting, claims, or cancellations. Our total liability for claims about your use of the website is limited to $100. Nothing in these Terms limits any right or duty that Texas law doesn't allow to be limited."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "indemnification",
+          "NUM": "15.",
+          "TITLE": "Indemnification",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "You agree to defend, indemnify, and hold harmless A-State and its staff from claims arising from your misuse of the site, false information you provide, or your breach of these Terms."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "termination",
+          "NUM": "16.",
+          "TITLE": "Termination",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "We may suspend access to the site for misuse. Sections that by their nature should survive (such as liability and governing law) continue to apply."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "changes-to-these-terms",
+          "NUM": "17.",
+          "TITLE": "Changes to These Terms",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "We may update these Terms. We'll post the new version with its \"Last updated\" date and email customers about material changes. Continued use after that date means you accept the updated Terms."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "governing-law",
+          "NUM": "18.",
+          "TITLE": "Governing Law & Venue",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "These Terms are governed by the laws of the State of Texas. Any dispute will be brought in the state or federal courts located in Harris County, Texas."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "general",
+          "NUM": "19.",
+          "TITLE": "General",
+          "BLOCKS": [
+            {
+              "P": [
+                {
+                  "t": "If any part of these Terms is found unenforceable, the rest stays in effect. These Terms and our Privacy Policy are the entire agreement about use of the site. Our failure to enforce a term isn't a waiver."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "contact-information",
+          "NUM": "",
+          "TITLE": "Contact Information",
+          "BLOCKS": [
+            {
+              "ADDRESS": [
+                [
+                  {
+                    "t": "A-State Insurance, LLC",
+                    "b": true
+                  }
+                ],
+                [
+                  {
+                    "t": "707 Shotwell St, Suite A, Houston, TX 77020",
+                    "h": "https://maps.app.goo.gl/3yoEc7gXFuw8LyPv6"
+                  }
+                ],
+                [
+                  {
+                    "t": "Phone:",
+                    "b": true
+                  },
+                  {
+                    "t": " "
+                  },
+                  {
+                    "t": "(713) 357-7771",
+                    "h": "tel:+17133577771"
+                  }
+                ],
+                [
+                  {
+                    "t": "Email:",
+                    "b": true
+                  },
+                  {
+                    "t": " "
+                  },
+                  {
+                    "t": "save@astateinsurance.com",
+                    "h": "mailto:save@astateinsurance.com"
+                  }
+                ],
+                [
+                  {
+                    "t": "Hours:",
+                    "b": true
+                  },
+                  {
+                    "t": " Mon–Sat, 9 AM–7 PM Central Time"
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "CONTACT_PAGE": {
+    "BREADCRUMB": {
+      "ARIA": "Breadcrumb",
+      "HOME": "Home",
+      "CURRENT": "Contact Us"
+    },
+    "HERO": {
+      "TITLE": [
+        {
+          "t": "Get in Touch with "
+        },
+        {
+          "t": "A-State Insurance",
+          "hl": true
+        }
+      ],
+      "LEAD": "Call, text, email, or visit us. Open Monday–Saturday, 9 AM–7 PM Central Time. We reply to most messages within 1 business hour, in English, Spanish, or Hindi.",
+      "CTA_CALL": "Call (713) 357-7771",
+      "CTA_QUOTE": "Get a Free Quote"
+    },
+    "HOURS": {
+      "ARIA": "Office hours",
+      "TITLE": "Office hours · Central Time",
+      "WEEK": "Monday–Saturday",
+      "WEEK_TIME": "9:00 AM–7:00 PM",
+      "SUNDAY": "Sunday",
+      "CLOSED": "Closed",
+      "DEFAULT": "Mon–Sat, 9 AM–7 PM",
+      "OPEN": "Open now · until 7 PM",
+      "OPENS_TODAY": "Closed now · opens today at 9 AM",
+      "OPENS_MONDAY": "Closed now · opens Monday at 9 AM",
+      "OPENS_TOMORROW": "Closed now · opens tomorrow at 9 AM",
+      "REPLY": "We reply to most messages within 1 business hour."
+    },
+    "OTP": {
+      "LABEL": "On this page",
+      "ITEMS": [
+        "Call, Text, Email",
+        "Send a Message",
+        "Offices",
+        "Quick Answers",
+        "Social"
+      ]
+    },
+    "REACH": {
+      "TITLE": "Reach A-State Insurance Directly",
+      "CARDS": [
+        {
+          "LABEL": "Call",
+          "VALUE": "(713) 357-7771",
+          "TEXT": "talk to a licensed agent now"
+        },
+        {
+          "LABEL": "Text",
+          "VALUE": "(713) 357-7771",
+          "TEXT": "quick answers by SMS"
+        },
+        {
+          "LABEL": "Email",
+          "VALUE": "save@astateinsurance.com",
+          "TEXT": "reply within 1 business hour"
+        },
+        {
+          "LABEL": "Visit",
+          "VALUE": "5 Houston offices",
+          "TEXT": "walk-ins welcome Mon–Sat, 9 AM–7 PM · closed Sunday"
+        }
+      ],
+      "NOTE": [
+        {
+          "t": "¿Prefiere español? Llámenos o envíenos un texto al "
+        },
+        {
+          "t": "(713) 357-7771",
+          "h": "tel:+17133577771"
+        },
+        {
+          "t": "."
+        }
+      ],
+      "NOTE_LANG": "es"
+    },
+    "FORM": {
+      "TITLE": "Send Us a Message — We'll Reply Within 1 Business Hour",
+      "NAME": "Full name",
+      "PHONE": "Phone number",
+      "EMAIL": "Email address",
+      "OPTIONAL": "(optional)",
+      "METHOD": "Preferred contact method",
+      "METHODS": [
+        {
+          "V": "call",
+          "L": "Call"
+        },
+        {
+          "V": "text",
+          "L": "Text"
+        },
+        {
+          "V": "email",
+          "L": "Email"
+        }
+      ],
+      "TYPE": "Insurance type",
+      "TYPES": [
+        {
+          "V": "auto",
+          "L": "Auto"
+        },
+        {
+          "V": "home",
+          "L": "Homeowners"
+        },
+        {
+          "V": "commercial",
+          "L": "Commercial"
+        },
+        {
+          "V": "life",
+          "L": "Life"
+        },
+        {
+          "V": "health",
+          "L": "Health"
+        },
+        {
+          "V": "bond",
+          "L": "Surety Bond"
+        },
+        {
+          "V": "other",
+          "L": "Other"
+        }
+      ],
+      "LANG": "Preferred language",
+      "LANGS": [
+        {
+          "V": "en",
+          "L": "English"
+        },
+        {
+          "V": "es",
+          "L": "Español"
+        },
+        {
+          "V": "hi",
+          "L": "हिंदी"
+        }
+      ],
+      "TIME": "Best time to reach you",
+      "TIMES": [
+        {
+          "V": "morning",
+          "L": "Morning"
+        },
+        {
+          "V": "afternoon",
+          "L": "Afternoon"
+        },
+        {
+          "V": "evening",
+          "L": "Evening"
+        }
+      ],
+      "MESSAGE": "Message",
+      "PRIVACY": "Please don't send license, policy, or payment numbers through this form.",
+      "SUBMIT": "Send Message",
+      "ERR_NAME": "Enter your full name.",
+      "ERR_PHONE_EMPTY": "Enter your phone number.",
+      "ERR_PHONE_INVALID": "Enter a 10-digit phone number, like (713) 555-0123.",
+      "ERR_EMAIL": "Enter an email like name@example.com, or leave it blank.",
+      "ERR_EMAIL_NEEDED": "Add an email address so we can reply by email."
+    },
+    "OFFICES": {
+      "TITLE": "Find Your Nearest A-State Insurance Office",
+      "LEAD": "All offices are open Mon–Sat, 9:00 AM–7:00 PM and closed Sunday.",
+      "DIRECTIONS": "Get Directions",
+      "VIEW": "View Office",
+      "ADDRESS_LABEL": "Address:",
+      "PHONE_LABEL": "Phone:",
+      "ITEMS": [
+        {
+          "NAME": "A-State Insurance (Denver Harbor)",
+          "ALIAS": "Shotwell office",
+          "ADDRESS": "707 Shotwell St, Suite A, Houston, TX 77020"
+        },
+        {
+          "NAME": "A-State Insurance (Fondren Southwest)",
+          "ALIAS": "Southwest Fwy office",
+          "ADDRESS": "11503 Southwest Fwy B, Houston, TX 77031"
+        },
+        {
+          "NAME": "A-State Insurance (Westbury)",
+          "ALIAS": "Post Oak office",
+          "ADDRESS": "10547 S Post Oak Rd, Houston, TX 77035"
+        },
+        {
+          "NAME": "A-State Insurance (Greater Inwood)",
+          "ALIAS": "Antoine office",
+          "ADDRESS": "5712 Antoine Dr, Houston, TX 77091"
+        },
+        {
+          "NAME": "A-State Insurance (Northside-Northline)",
+          "ALIAS": "Airline office",
+          "ADDRESS": "5206 Airline Dr G, Houston, TX 77022"
+        }
+      ]
+    },
+    "FAQ": {
+      "TITLE": "Before You Reach Out — Quick Answers",
+      "ITEMS": [
+        {
+          "Q": "How quickly will someone get back to me?",
+          "A": "Calls and texts are answered right away during business hours. We reply to most emails and form messages within 1 business hour. Messages after 7 PM or on Sunday get a reply the next business morning."
+        },
+        {
+          "Q": "Can I get a quote over the phone?",
+          "A": "Yes. A licensed agent can quote you by phone, comparing 50+ carriers to find coverage that fits your budget."
+        },
+        {
+          "Q": "Do you have Spanish-speaking agents?",
+          "A": "Yes. Our agents speak English, Spanish, and Hindi. Sí, hablamos español."
+        },
+        {
+          "Q": "What should I have ready before I call?",
+          "LIST": [
+            {
+              "L": "Auto",
+              "r": "autoInsurance",
+              "T": "your current declarations page, driver's license numbers, and VINs"
+            },
+            {
+              "L": "Homeowners",
+              "r": "homeInsurance",
+              "T": "property address, roof age, and any safety upgrades"
+            },
+            {
+              "L": "Commercial",
+              "r": "commercialInsurance",
+              "T": "business address, estimated annual revenue, and payroll"
+            }
+          ]
+        },
+        {
+          "Q": "Can I visit without an appointment?",
+          "A": "Yes. Walk-ins are welcome at any of our 5 Houston offices, Monday–Saturday, 9 AM–7 PM."
+        },
+        {
+          "Q": "Do you serve my city or ZIP code?",
+          "A": "Our offices are in Houston, and our licensed agents serve clients anywhere in Texas by phone, text, and email, including Dallas, San Antonio, Austin, Fort Worth, El Paso, and Corpus Christi."
+        }
+      ]
+    },
+    "SOCIAL": {
+      "TITLE": "Connect With A-State Online",
+      "NEW_TAB": "(opens in a new tab)"
+    },
+    "FINAL": {
+      "TITLE": "Ready to Get Covered? We're One Call Away.",
+      "TEXT": [
+        {
+          "t": "Call or text "
+        },
+        {
+          "t": "(713) 357-7771",
+          "h": "tel:+17133577771"
+        },
+        {
+          "t": ", or get a free quote online."
+        }
+      ],
+      "SMALL": "No obligation. No pressure. Just answers.",
+      "CTA": "Get a Free Quote Online",
+      "CALL": "Call (713) 357-7771"
+    }
+  },
+  "CAREERS_PAGE": {
+    "BREADCRUMB": {
+      "ARIA": "Breadcrumb",
+      "HOME": "Home",
+      "CURRENT": "Careers"
+    },
+    "HERO": {
+      "TITLE": "Join the A-State Insurance Family",
+      "LEAD": "We're an independent insurance agency with 5 offices in Houston, helping Texans in English, Spanish, and Hindi. If you love helping people, we'll help you build a career in insurance, even if you're not licensed yet.",
+      "CHECKS": [
+        "Paid licensing",
+        "Bilingual pay",
+        "5 Houston offices"
+      ],
+      "CTA_APPLY": "Apply Now",
+      "CTA_OPENINGS": "See Open Positions",
+      "PHOTO_ALT": "An A-State agent helping clients at a Houston office"
+    },
+    "OTP": {
+      "LABEL": "On this page",
+      "ITEMS": [
+        "Why an Agency",
+        "Our Pillars",
+        "Culture & Values",
+        "Benefits",
+        "How We Hire",
+        "Open Positions",
+        "FAQ",
+        "Apply"
+      ]
+    },
+    "ADVANTAGE": {
+      "TITLE": "The Agency Advantage: Where Your Work Matters",
+      "TEXT": [
+        {
+          "t": "At a large call center or a captive agency, you're often one number among thousands, selling one company's products from a script. At "
+        },
+        {
+          "t": "A-State",
+          "r": "home"
+        },
+        {
+          "t": ", you compare options from 50+ carriers across "
+        },
+        {
+          "t": "Auto",
+          "r": "autoInsurance"
+        },
+        {
+          "t": ", "
+        },
+        {
+          "t": "Home",
+          "r": "homeInsurance"
+        },
+        {
+          "t": ", "
+        },
+        {
+          "t": "Commercial",
+          "r": "commercialInsurance"
+        },
+        {
+          "t": ", "
+        },
+        {
+          "t": "Life",
+          "r": "lifeInsurance"
+        },
+        {
+          "t": ", and "
+        },
+        {
+          "t": "Health",
+          "r": "healthInsurance"
+        },
+        {
+          "t": ", and help each client choose what fits."
+        }
+      ],
+      "COMPARE_ARIA": "Call center or captive agency compared with A-State",
+      "THEM_TITLE": "Call center or captive agency",
+      "THEM": [
+        "One number among thousands",
+        "One company's products",
+        "Selling from a script"
+      ],
+      "US_TITLE": "A-State Insurance",
+      "US": [
+        "Your work matters",
+        "50+ carriers to compare",
+        "Help each client choose what fits"
+      ]
+    },
+    "PILLARS": {
+      "TITLE": "Our Three Pillars",
+      "ITEMS": [
+        {
+          "TITLE": "Texas Roots, Local Heart",
+          "TEXT": "From our 5 Houston offices, we serve clients across Texas. You'll be helping protect the community you live in."
+        },
+        {
+          "TITLE": "Inclusive by Design",
+          "TEXT": "We're committed to serving Hispanic, Latino, and South Asian communities, and to making sure language and culture are never a barrier to good coverage."
+        },
+        {
+          "TITLE": "Multilingual Excellence",
+          "TEXT": "Our team speaks English, Spanish, and Hindi every day. Your language skills are a strength here."
+        }
+      ]
+    },
+    "CULTURE": {
+      "TITLE": "Our Culture & Values: The A-State \"Vibe\"",
+      "QUOTE": "\"We aren’t looking for cogs in a machine. We’re looking for community advocates.\"",
+      "TEXT": "Culture shows in the small moments, like how you handle a client's call at 4:55 PM on a Friday. We take care of our team so our team can take care of Texas."
+    },
+    "STAND": {
+      "TITLE": "What We Stand For",
+      "ITEMS": [
+        {
+          "TITLE": "A Growth Mindset",
+          "TEXT": [
+            {
+              "t": "We hire for potential. We pay for your pre-licensing course and Texas license exam, offer continuing-education / certification support, e.g., "
+            },
+            {
+              "t": "CISR",
+              "h": "https://www.scic.com/cisr/"
+            },
+            {
+              "t": ", and pair you with a mentor in Commercial or Life & Health."
+            }
+          ]
+        },
+        {
+          "TITLE": "Real-World Flexibility",
+          "TEXT": "Set schedules, Mon–Sat with alternate Saturdays per month. We value results over desk time."
+        },
+        {
+          "TITLE": "Mission-Driven Work",
+          "TEXT": "You'll explain coverage to first-time homebuyers, help a contractor get the surety bond they need for a job, and close the policies that protect families. Teacher, protector, and closer, all in one role.",
+          "ROLES": [
+            "Teacher",
+            "Protector",
+            "Closer"
+          ]
+        }
+      ]
+    },
+    "BENEFITS": {
+      "TITLE": "Benefits",
+      "ITEMS": [
+        "Base pay + commission",
+        "Paid licensing",
+        "Paid time off",
+        "Paid training and mentorship",
+        "Bilingual pay"
+      ],
+      "PATH": "Career path from CSR to licensed agent to account manager",
+      "PATH_STEPS": [
+        "CSR",
+        "Licensed agent",
+        "Account manager"
+      ]
+    },
+    "HIRE": {
+      "TITLE": "How We Hire",
+      "STEPS": [
+        {
+          "TITLE": "Apply:",
+          "TEXT": "online in 2 minutes"
+        },
+        {
+          "TITLE": "Phone chat:",
+          "TEXT": "a 15-minute call with our team, within 5 business days"
+        },
+        {
+          "TITLE": "Interview:",
+          "TEXT": "in person at one of our Houston offices"
+        },
+        {
+          "TITLE": "Offer & onboarding:",
+          "TEXT": "licensing support starts in week one"
+        }
+      ]
+    },
+    "OPENINGS": {
+      "TITLE": "Open Positions",
+      "EMPTY_TITLE": "No openings are posted right now",
+      "EMPTY_TEXT": "Send a general application and we'll keep it on file for 6 months.",
+      "EMPTY_CTA": "Send a General Application"
+    },
+    "FAQ": {
+      "TITLE": "Careers FAQ",
+      "ITEMS": [
+        {
+          "Q": "Do I need an insurance license to apply?",
+          "A": "No. For many roles, we'll help you get your Texas license and cover the costs."
+        },
+        {
+          "Q": "Do I need to speak Spanish or Hindi?",
+          "A": "Not for every role, but bilingual candidates are in high demand on our team."
+        },
+        {
+          "Q": "How are agents paid?",
+          "A": "Base pay plus commission; details on each job posting."
+        },
+        {
+          "Q": "Where would I work?",
+          "A": [
+            {
+              "t": "At one of our 5 Houston offices: "
+            },
+            {
+              "t": "Denver Harbor",
+              "r": "ourLocations/:id",
+              "id": "707-shotwell-st-a-houston-tx-77020"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "t": "Fondren Southwest",
+              "r": "ourLocations/:id",
+              "id": "11503-southwest-fwy-b-houston-tx-77031"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "t": "Westbury",
+              "r": "ourLocations/:id",
+              "id": "10547-s-post-oak-rd-houston-tx-77035"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "t": "Greater Inwood",
+              "r": "ourLocations/:id",
+              "id": "5712-antoine-dr-houston-tx-77091"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "t": "Northside-Northline",
+              "r": "ourLocations/:id",
+              "id": "5206-airline-dr-g-houston-tx-77022"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "Q": "Is there room to grow?",
+          "A": "Yes. Many of our account managers started as CSRs, with mentoring and licensing support."
+        }
+      ]
+    },
+    "APPLY": {
+      "TITLE": "Don't See a Specific Opening? We Still Want to Meet You!",
+      "TEXT": "If you're passionate about helping people with auto, home, life, health, or commercial insurance, send us your resume. We review every application and keep it on file for 6 months.",
+      "POINTS": [
+        "No license needed to apply",
+        "Phone chat within 5 business days"
+      ],
+      "NAME": "Full Name",
+      "PHONE": "Phone",
+      "EMAIL": "Email",
+      "LANGS": "Languages Spoken",
+      "LANG_OPTIONS": [
+        {
+          "V": "en",
+          "L": "English"
+        },
+        {
+          "V": "es",
+          "L": "Español"
+        },
+        {
+          "V": "hi",
+          "L": "हिन्दी"
+        },
+        {
+          "V": "other",
+          "L": "Other"
+        }
+      ],
+      "AREA": "Area of Interest",
+      "AREAS": [
+        {
+          "V": "sales",
+          "L": "Sales"
+        },
+        {
+          "V": "customer-service",
+          "L": "Customer Service"
+        },
+        {
+          "V": "commercial",
+          "L": "Commercial"
+        },
+        {
+          "V": "life-health",
+          "L": "Life & Health"
+        },
+        {
+          "V": "other",
+          "L": "Other"
+        }
+      ],
+      "OFFICE": "Preferred Office",
+      "OFFICES": [
+        {
+          "V": "any",
+          "L": "No preference"
+        },
+        {
+          "V": "denver-harbor",
+          "L": "Denver Harbor"
+        },
+        {
+          "V": "fondren-southwest",
+          "L": "Fondren Southwest"
+        },
+        {
+          "V": "westbury",
+          "L": "Westbury"
+        },
+        {
+          "V": "greater-inwood",
+          "L": "Greater Inwood"
+        },
+        {
+          "V": "northside-northline",
+          "L": "Northside-Northline"
+        }
+      ],
+      "RESUME": "Resume",
+      "DROP_MAIN": "Choose a file or drag it here",
+      "DROP_SUB": "PDF or DOCX, up to 5 MB",
+      "SUBMIT": "Submit Application",
+      "CONSENT": [
+        {
+          "t": "By submitting, you agree that A-State Insurance may contact you about job opportunities and store your application as described in our "
+        },
+        {
+          "t": "Privacy Policy",
+          "r": "privacyPolicy"
+        },
+        {
+          "t": "."
+        }
+      ],
+      "ERR_NAME": "Enter your full name.",
+      "ERR_PHONE_EMPTY": "Enter your phone number.",
+      "ERR_PHONE_INVALID": "Enter a 10-digit phone number, like (713) 555-0123.",
+      "ERR_EMAIL_EMPTY": "Enter your email.",
+      "ERR_EMAIL_INVALID": "Enter an email like name@example.com.",
+      "ERR_AREA": "Choose an area of interest.",
+      "ERR_FILE_EMPTY": "Attach your resume (PDF or DOCX).",
+      "ERR_FILE_TYPE": "Use a PDF or DOCX file.",
+      "ERR_FILE_SIZE": "That file is {{size}} MB. The limit is 5 MB."
+    },
+    "STICKY": {
+      "APPLY": "Apply Now"
+    }
+  },
+  "CAREERS_THANKS_PAGE": {
+    "META_TITLE": "Application Received | A-State Insurance Careers",
+    "META_DESCRIPTION": "Thanks for applying to A-State Insurance. Our team will call you for a 15-minute phone chat within 5 business days.",
+    "BREADCRUMB": {
+      "ARIA": "Breadcrumb",
+      "HOME": "Home",
+      "CAREERS": "Careers",
+      "CURRENT": "Thank You"
+    },
+    "TITLE_START": "Thanks",
+    "TITLE_END": ". We got your application.",
+    "LEAD": "Our team will call you for a 15-minute phone chat within 5 business days. We keep every application on file for 6 months.",
+    "REF": "Reference",
+    "SENT": "Sent",
+    "TIME_ZONE": "CT",
+    "AREAS": {
+      "sales": "Sales",
+      "customer-service": "Customer Service",
+      "commercial": "Commercial",
+      "life-health": "Life & Health",
+      "other": "Other"
+    },
+    "OFFICES": {
+      "denver-harbor": "Denver Harbor office",
+      "fondren-southwest": "Fondren Southwest office",
+      "westbury": "Westbury office",
+      "greater-inwood": "Greater Inwood office",
+      "northside-northline": "Northside-Northline office"
+    },
+    "CTA_BACK": "Back to Careers",
+    "CTA_ABOUT": "About A‑State",
+    "NEXT": {
+      "TITLE": "What Happens Next",
+      "DONE": "Done",
+      "STEPS": [
+        {
+          "TITLE": "Application received",
+          "TEXT": "Your resume is in, so you don't need to apply again."
+        },
+        {
+          "TITLE": "Phone chat",
+          "TEXT": "A 15-minute call with our team, within 5 business days."
+        },
+        {
+          "TITLE": "Interview",
+          "TEXT": "In person at one of our Houston offices."
+        },
+        {
+          "TITLE": "Offer & onboarding",
+          "TEXT": "Licensing support starts in week one."
+        }
+      ]
+    },
+    "READY": {
+      "TITLE": "Get Ready for Your Phone Chat",
+      "ITEMS": [
+        "Keep your phone nearby. We may call from (713) 357-7771.",
+        "Know which days and hours you're available, Monday–Saturday.",
+        "Think about which of our 5 Houston offices is easiest to reach.",
+        "Not licensed yet? That's fine. We pay for your pre-licensing course and Texas license exam."
+      ],
+      "UPDATE_START": "Need to update your application? Email ",
+      "UPDATE_END": " and mention your reference number."
+    },
+    "WAIT": {
+      "TITLE": "While You Wait",
+      "KNOW_TITLE": "Get to know us",
+      "KNOW_ABOUT": "About A‑State",
+      "KNOW_CULTURE": "Our culture & values",
+      "KNOW_SERVICES": "What we insure",
+      "OFFICES_TITLE": "See our offices",
+      "OFFICES_TEXT": "Your interview will be in person at one of our 5 Houston offices.",
+      "OFFICES_LINK": "Our 5 Houston offices",
+      "SHARE_TITLE": "Know someone who'd fit?",
+      "SHARE_TEXT": "Share our Careers page with a friend who loves helping people.",
+      "SHARE_BTN": "Share Careers page",
+      "SHARE_TEXT_NATIVE": "A-State Insurance is hiring in Houston.",
+      "SHARE_SHARE_TITLE": "Careers at A-State Insurance",
+      "COPIED": "Link copied"
+    }
+  },
+  "CONTACT_THANKS_PAGE": {
+    "META_TITLE": "Thank You | A-State Insurance",
+    "META_DESCRIPTION": "Thanks for contacting A-State Insurance. A licensed agent will reply within 1 business hour, Monday–Saturday, 9 AM–7 PM Central.",
+    "BREADCRUMB": {
+      "ARIA": "Breadcrumb",
+      "HOME": "Home",
+      "CONTACT": "Contact Us",
+      "CURRENT": "Thank You"
+    },
+    "TITLE_START": "Thanks",
+    "TITLE_END": ". We got your message.",
+    "LEAD_START": "A licensed agent will reply ",
+    "LEAD_END": " within 1 business hour, Monday–Saturday, 9 AM–7 PM Central Time.",
+    "HOW": {
+      "DEFAULT": "by phone or text",
+      "call": "by phone",
+      "text": "by text",
+      "email": "by email"
+    },
+    "REF": "Reference",
+    "SENT": "Sent",
+    "TIME_ZONE": "CT",
+    "STATUS": {
+      "DEFAULT": "We reply Monday–Saturday, 9 AM–7 PM Central Time.",
+      "OPEN": "We're open now. Expect a reply within 1 business hour.",
+      "OPEN_LATE": "We're open until 7 PM. If we can't reply before then, you'll hear from us at 9 AM the next business day.",
+      "CLOSED_TODAY": "We're closed right now. You'll hear from us after we open at 9 AM today.",
+      "CLOSED_MONDAY": "We're closed right now. You'll hear from us after we open at 9 AM Monday.",
+      "CLOSED_TOMORROW": "We're closed right now. You'll hear from us after we open at 9 AM tomorrow."
+    },
+    "CTA_CALL": "Call (713) 357-7771",
+    "CTA_HOME": "Back to homepage",
+    "NEXT": {
+      "TITLE": "What Happens Next",
+      "DONE": "Done",
+      "STEP1_TITLE": "Your message is in",
+      "STEP1_TEXT": "It's in our queue, so you don't need to send it again.",
+      "STEP2_TITLE": "A licensed agent reviews it",
+      "STEP2_TEXT": "They read your message and look at the coverage you asked about, so the first reply is useful.",
+      "STEP3_TITLE": "We reply",
+      "STEP3_TEXT": "Within 1 business hour, Monday–Saturday, 9 AM–7 PM Central. Messages after 7 PM or on Sunday get a reply the next business morning."
+    },
+    "SOONER": {
+      "TITLE": "Need an Answer Sooner?",
+      "TEXT": "Call or text (713) 357-7771 and a licensed agent can help right away during business hours.",
+      "SMALL": "Need to change something you sent? Call us and mention your reference number.",
+      "LANG_LINE": "¿Prefiere español? Llámenos o envíenos un texto al (713) 357-7771.",
+      "LANG": "es",
+      "CALL": "Call (713) 357-7771",
+      "TEXT_US": "Text us"
+    },
+    "WAIT": {
+      "TITLE": "While You Wait",
+      "READY_TITLE": "Have these ready",
+      "READY": [
+        {
+          "L": "Auto",
+          "T": "Your current declarations page, driver's license numbers, and VINs"
+        },
+        {
+          "L": "Homeowners",
+          "T": "Property address, roof age, and any safety upgrades"
+        },
+        {
+          "L": "Commercial",
+          "T": "Business address, estimated annual revenue, and payroll"
+        }
+      ],
+      "QUOTE_TITLE": "Want a quote too?",
+      "QUOTE_TEXT": "We compare 50+ carriers for auto, home, business, life, health and bonds. Start online in about two minutes.",
+      "QUOTE_LINK": "Get a free quote",
+      "LEARN_TITLE": "Learn more about us",
+      "LEARN_SERVICES": "All insurance services",
+      "LEARN_ABOUT": "About A-State",
+      "LEARN_OFFICES": "Our 5 Houston offices"
     }
   }
 }

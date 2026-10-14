@@ -1,141 +1,259 @@
-<div class="careerMain">
-  <div class="topBanner">
-    <div class="container">
-      <h1 class="banner-title">
-        <span [innerHTML]="'CAREERS.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
-        <span [innerHTML]="'CAREERS.BANNER.TITLE_LINE2' | translateHtml | async"></span>
-      </h1>
+<!-- Icon sprite (phone, check, chev, arrow, globe and x come from the header sprite) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-9-9a4.5 4.5 0 0 1 8-4l1 1.2 1-1.2a4.5 4.5 0 0 1 8 4c-2 4.6-9 9-9 9z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8.5 10.5h7"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></symbol>
+    <symbol id="i-grow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-dollar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></symbol>
+    <symbol id="i-no" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  </defs>
+</svg>
+
+<!-- Renders translated text that may contain links (see Seg in insurance-services.ts). Kept on one line so no spaces creep in. -->
+<ng-template #segsTpl let-value><ng-container *ngFor="let s of segs(value)"><a *ngIf="s.r" [routerLink]="route(s.r, s.id)">{{ s.t }}</a><a *ngIf="s.h" [href]="s.h" [attr.target]="isExternal(s.h) ? '_blank' : null" [attr.rel]="isExternal(s.h) ? 'noopener' : null">{{ s.t }}</a><ng-container *ngIf="!s.r && !s.h">{{ s.t }}</ng-container></ng-container></ng-template>
+
+<!-- Hero -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hf-container hero-grid">
+    <div class="hero-copy">
+      <nav class="crumbs" [attr.aria-label]="'CAREERS_PAGE.BREADCRUMB.ARIA' | translate">
+        <ol>
+          <li><a [routerLink]="route('home')">{{ 'CAREERS_PAGE.BREADCRUMB.HOME' | translate }}</a></li>
+          <li aria-current="page">{{ 'CAREERS_PAGE.BREADCRUMB.CURRENT' | translate }}</li>
+        </ol>
+      </nav>
+      <h1 id="hero-title">{{ 'CAREERS_PAGE.HERO.TITLE' | translate }}</h1>
+      <p class="hf-lead">{{ 'CAREERS_PAGE.HERO.LEAD' | translate }}</p>
+      <ul class="checks">
+        <li *ngFor="let c of list('CAREERS_PAGE.HERO.CHECKS')"><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg>{{ c }}</li>
+      </ul>
+      <div class="btn-row">
+        <a class="hf-btn btn-primary btn-lg" href="#apply" (click)="goToSection('apply', $event)">{{ 'CAREERS_PAGE.HERO.CTA_APPLY' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+        <a class="hf-btn btn-outline btn-lg" href="#openings" (click)="goToSection('openings', $event)">{{ 'CAREERS_PAGE.HERO.CTA_OPENINGS' | translate }}</a>
+      </div>
     </div>
+    <figure class="hero-photo">
+      <img src="/assets/images/home/hero-agent.jpg" [alt]="'CAREERS_PAGE.HERO.PHOTO_ALT' | translate" width="1920" height="819" decoding="async" />
+    </figure>
   </div>
-</div>
+</section>
 
-<section class="agency-section py-5">
-  <div class="container">
-    <!-- Header -->
-    <div class="row">
-      <div class="col-lg-10">
-        <h2 class="main-title" [innerHTML]="'CAREERS.AGENCY.MAIN_TITLE' | translateHtml | async"></h2>
-        <!-- <p class="section-text" [innerHTML]="'CAREERS.AGENCY.DESCRIPTION' | translateHtml | async"></p> -->
-        <p
-          class="section-text"
-          [innerHTML]="'CAREERS.AGENCY.DESCRIPTION' | translateHtml | async"
-        ></p>
-      </div>
+<!-- On this page: collapsed box on phones, sticky bar from 768px -->
+<details class="otp" id="on-this-page" [open]="otpOpen" (toggle)="onOtpToggle($event)">
+  <summary>{{ 'CAREERS_PAGE.OTP.LABEL' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-chev" /></svg></summary>
+  <nav [attr.aria-label]="'CAREERS_PAGE.OTP.LABEL' | translate">
+    <ol>
+      <li *ngFor="let label of list('CAREERS_PAGE.OTP.ITEMS'); let i = index">
+        <a [href]="'#' + otpIds[i]" [attr.aria-current]="activeSection === otpIds[i] ? 'true' : null"
+          (click)="goToSection(otpIds[i], $event)">{{ label }}</a>
+      </li>
+    </ol>
+  </nav>
+</details>
+
+<!-- The agency advantage -->
+<section class="section bg-white" id="advantage" aria-labelledby="adv-h">
+  <div class="hf-container adv-grid">
+    <div class="adv-copy">
+      <h2 id="adv-h">{{ 'CAREERS_PAGE.ADVANTAGE.TITLE' | translate }}</h2>
+      <p><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('CAREERS_PAGE.ADVANTAGE.TEXT') }"></ng-container></p>
     </div>
-
-    <!-- Three Pillars -->
-    <div class="row mt-5">
-      <div class="col-lg-10">
-        <h2 class="section-heading" [innerHTML]="'CAREERS.THREE_PILLARS.TITLE' | translateHtml | async"></h2>
-
-        <h3 class="pillar-title" [innerHTML]="'CAREERS.THREE_PILLARS.PILLAR1.TITLE' | translateHtml | async"></h3>
-        <p class="section-text" [innerHTML]="'CAREERS.THREE_PILLARS.PILLAR1.DESCRIPTION' | translateHtml | async"></p>
-
-        <h3 class="pillar-title" [innerHTML]="'CAREERS.THREE_PILLARS.PILLAR2.TITLE' | translateHtml | async"></h3>
-        <p class="section-text" [innerHTML]="'CAREERS.THREE_PILLARS.PILLAR2.DESCRIPTION' | translateHtml | async"></p>
-
-        <h3 class="pillar-title" [innerHTML]="'CAREERS.THREE_PILLARS.PILLAR3.TITLE' | translateHtml | async"></h3>
-        <p class="section-text" [innerHTML]="'CAREERS.THREE_PILLARS.PILLAR3.DESCRIPTION' | translateHtml | async"></p>
+    <div class="compare" role="group" [attr.aria-label]="'CAREERS_PAGE.ADVANTAGE.COMPARE_ARIA' | translate">
+      <div class="col them">
+        <h3>{{ 'CAREERS_PAGE.ADVANTAGE.THEM_TITLE' | translate }}</h3>
+        <ul>
+          <li *ngFor="let item of list('CAREERS_PAGE.ADVANTAGE.THEM')"><svg class="icon-sm" aria-hidden="true"><use href="#i-no" /></svg>{{ item }}</li>
+        </ul>
       </div>
-    </div>
-
-    <!-- Culture Section -->
-    <div class="row mt-5">
-      <div class="col-lg-10">
-        <h2 class="culture-title" [innerHTML]="'CAREERS.CULTURE.TITLE' | translateHtml | async"></h2>
-
-        <blockquote class="culture-quote">"<span [innerHTML]="'CAREERS.CULTURE.QUOTE' | translateHtml | async"></span>"</blockquote>
-
-        <p class="section-text" [innerHTML]="'CAREERS.CULTURE.DESCRIPTION' | translateHtml | async"></p>
-      </div>
-    </div>
-
-    <!-- What We Stand For -->
-    <div class="row mt-5">
-      <div class="col-lg-10">
-        <h2 class="section-heading" [innerHTML]="'CAREERS.STAND_FOR.TITLE' | translateHtml | async"></h2>
-
-        <p class="section-text" [innerHTML]="'CAREERS.STAND_FOR.DESCRIPTION' | translateHtml | async"></p>
-
-        <h3 class="pillar-title" [innerHTML]="'CAREERS.STAND_FOR.GROWTH.TITLE' | translateHtml | async"></h3>
-        <p class="section-text" [innerHTML]="'CAREERS.STAND_FOR.GROWTH.DESCRIPTION' | translateHtml | async"></p>
-
-        <h3 class="pillar-title" [innerHTML]="'CAREERS.STAND_FOR.FLEXIBILITY.TITLE' | translateHtml | async"></h3>
-        <p class="section-text" [innerHTML]="'CAREERS.STAND_FOR.FLEXIBILITY.DESCRIPTION' | translateHtml | async"></p>
-
-        <h3 class="pillar-title" [innerHTML]="'CAREERS.STAND_FOR.MISSION.TITLE' | translateHtml | async"></h3>
-        <p class="section-text" [innerHTML]="'CAREERS.STAND_FOR.MISSION.DESCRIPTION' | translateHtml | async"></p>
-      </div>
-    </div>
-
-    <!-- Form Section -->
-    <div class="row mt-5">
-      <div class="col-lg-8">
-        <h2 class="section-heading-form">
-          <span [innerHTML]="'CAREERS.FORM.TITLE_LINE1' | translateHtml | async"></span> <br />
-          <span [innerHTML]="'CAREERS.FORM.TITLE_LINE2' | translateHtml | async"></span>
-        </h2>
-
-        <form class="mt-4">
-          <div class="row g-3">
-            <div class="col-md-6">
-              <input
-                type="text"
-                class="form-control custom-input"
-                [placeholder]="'CAREERS.FORM.FIELDS.FULL_NAME' | translate"
-              />
-            </div>
-
-            <div class="col-md-6">
-              <input
-                type="text"
-                class="form-control custom-input"
-                [placeholder]="'CAREERS.FORM.FIELDS.PHONE' | translate"
-              />
-            </div>
-
-            <div class="col-md-6">
-              <input
-                type="email"
-                class="form-control custom-input"
-                [placeholder]="'CAREERS.FORM.FIELDS.EMAIL' | translate"
-              />
-            </div>
-
-            <div class="col-md-6">
-              <input
-                type="text"
-                class="form-control custom-input"
-                [placeholder]="'CAREERS.FORM.FIELDS.LANGUAGES' | translate"
-              />
-            </div>
-
-            <div class="col-md-6">
-              <input
-                type="text"
-                class="form-control custom-input"
-                [placeholder]="'CAREERS.FORM.FIELDS.INTEREST' | translate"
-              />
-            </div>
-
-            <div class="col-md-6">
-              <input
-                type="file"
-                class="form-control custom-input"
-                [placeholder]="'CAREERS.FORM.FIELDS.UPLOAD' | translate"
-              />
-            </div>
-          </div>
-
-
-
-          <button type="submit" class="btn submit-btn mt-4" (click)="goToThankYou()">
-            {{ 'CAREERS.FORM.SUBMIT_BUTTON' | translate }}
-          </button>
-        </form>
+      <div class="col us">
+        <h3>{{ 'CAREERS_PAGE.ADVANTAGE.US_TITLE' | translate }}</h3>
+        <ul>
+          <li *ngFor="let item of list('CAREERS_PAGE.ADVANTAGE.US')"><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg>{{ item }}</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-  <app-foot-upper></app-foot-upper>
+<!-- Three pillars -->
+<section class="section bg-cream" id="pillars" aria-labelledby="pil-h">
+  <div class="hf-container">
+    <div class="section-head"><h2 id="pil-h">{{ 'CAREERS_PAGE.PILLARS.TITLE' | translate }}</h2></div>
+    <ul class="cards pillars">
+      <li *ngFor="let p of list('CAREERS_PAGE.PILLARS.ITEMS'); let i = index; let last = last">
+        <span class="ic" aria-hidden="true"><svg class="icon"><use [attr.href]="'#' + pillarIcons[i]" /></svg></span>
+        <h3>{{ p.TITLE }}</h3>
+        <p>{{ p.TEXT }}</p>
+        <span class="tags" *ngIf="last"><span lang="en">English</span><span lang="es">Español</span><span lang="hi">हिन्दी</span></span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Culture -->
+<section class="section culture" id="culture" aria-labelledby="cul-h">
+  <div class="hf-container culture-grid">
+    <h2 id="cul-h">{{ 'CAREERS_PAGE.CULTURE.TITLE' | translate }}</h2>
+    <blockquote><p>{{ 'CAREERS_PAGE.CULTURE.QUOTE' | translate }}</p></blockquote>
+    <p class="culture-p">{{ 'CAREERS_PAGE.CULTURE.TEXT' | translate }}</p>
+  </div>
+</section>
+
+<!-- What we stand for -->
+<section class="section bg-white" id="values" aria-labelledby="val-h">
+  <div class="hf-container">
+    <div class="section-head"><h2 id="val-h">{{ 'CAREERS_PAGE.STAND.TITLE' | translate }}</h2></div>
+    <ul class="cards stand">
+      <li *ngFor="let s of list('CAREERS_PAGE.STAND.ITEMS'); let i = index">
+        <span class="ic" aria-hidden="true"><svg class="icon"><use [attr.href]="'#' + standIcons[i]" /></svg></span>
+        <h3>{{ s.TITLE }}</h3>
+        <p><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: s.TEXT }"></ng-container></p>
+        <span class="tags" *ngIf="s.ROLES"><span *ngFor="let r of s.ROLES">{{ r }}</span></span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Benefits -->
+<section class="section bg-cream" id="benefits" aria-labelledby="ben-h">
+  <div class="hf-container">
+    <div class="section-head"><h2 id="ben-h">{{ 'CAREERS_PAGE.BENEFITS.TITLE' | translate }}</h2></div>
+    <ul class="benefits">
+      <li *ngFor="let b of list('CAREERS_PAGE.BENEFITS.ITEMS'); let i = index"><span class="ic" aria-hidden="true"><svg class="icon"><use [attr.href]="'#' + benefitIcons[i]" /></svg></span>{{ b }}</li>
+      <li class="path-li">
+        <span class="ic" aria-hidden="true"><svg class="icon"><use href="#i-grow" /></svg></span>
+        <span>{{ 'CAREERS_PAGE.BENEFITS.PATH' | translate }}</span>
+        <ol class="path" aria-hidden="true"><li *ngFor="let step of list('CAREERS_PAGE.BENEFITS.PATH_STEPS')">{{ step }}</li></ol>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- How we hire -->
+<section class="section bg-white" id="hiring" aria-labelledby="hire-h">
+  <div class="hf-container">
+    <div class="section-head"><h2 id="hire-h">{{ 'CAREERS_PAGE.HIRE.TITLE' | translate }}</h2></div>
+    <ol class="hire">
+      <li *ngFor="let step of list('CAREERS_PAGE.HIRE.STEPS'); let i = index"><span class="n" aria-hidden="true">{{ i + 1 }}</span><h3>{{ step.TITLE }}</h3><p>{{ step.TEXT }}</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- Open positions -->
+<section class="section bg-cream" id="openings" aria-labelledby="open-h">
+  <div class="hf-container">
+    <div class="section-head"><h2 id="open-h">{{ 'CAREERS_PAGE.OPENINGS.TITLE' | translate }}</h2></div>
+    <div class="openings-empty">
+      <span class="ic" aria-hidden="true"><svg class="icon"><use href="#i-briefcase" /></svg></span>
+      <div>
+        <h3>{{ 'CAREERS_PAGE.OPENINGS.EMPTY_TITLE' | translate }}</h3>
+        <p>{{ 'CAREERS_PAGE.OPENINGS.EMPTY_TEXT' | translate }}</p>
+      </div>
+      <a class="hf-btn btn-primary" href="#apply" (click)="goToSection('apply', $event)">{{ 'CAREERS_PAGE.OPENINGS.EMPTY_CTA' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section bg-white" id="faqs" aria-labelledby="faq-h">
+  <div class="hf-container faq faq-wrap">
+    <h2 id="faq-h">{{ 'CAREERS_PAGE.FAQ.TITLE' | translate }}</h2>
+    <details *ngFor="let item of list('CAREERS_PAGE.FAQ.ITEMS'); let i = index" [open]="faqOpen === i" (toggle)="onFaqToggle(i, $event)">
+      <summary><h3>{{ item.Q }}</h3><span class="pm" aria-hidden="true"><svg class="icon-sm"><use href="#i-plus" /></svg></span></summary>
+      <div class="ans"><p><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: item.A }"></ng-container></p></div>
+    </details>
+  </div>
+</section>
+
+<!-- General application -->
+<section class="section apply-band" id="apply" aria-labelledby="apply-h">
+  <div class="hf-container apply-grid">
+    <div class="apply-copy">
+      <h2 id="apply-h">{{ 'CAREERS_PAGE.APPLY.TITLE' | translate }}</h2>
+      <p>{{ 'CAREERS_PAGE.APPLY.TEXT' | translate }}</p>
+      <ul class="apply-points">
+        <li *ngFor="let pt of list('CAREERS_PAGE.APPLY.POINTS')"><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg>{{ pt }}</li>
+      </ul>
+    </div>
+    <form class="aform" novalidate aria-labelledby="apply-h" (submit)="submit($event)">
+      <div class="row2">
+        <div class="field">
+          <label for="a-name">{{ 'CAREERS_PAGE.APPLY.NAME' | translate }} <span class="req" aria-hidden="true">*</span></label>
+          <input id="a-name" name="name" type="text" autocomplete="name" placeholder="John Doe" required [value]="form.name"
+            [attr.aria-invalid]="errors.name ? 'true' : null" aria-describedby="a-name-err" (input)="onInput('name', $event)" (blur)="onBlur('name')" />
+          <p class="err" id="a-name-err">{{ errors.name }}</p>
+        </div>
+        <div class="field">
+          <label for="a-phone">{{ 'CAREERS_PAGE.APPLY.PHONE' | translate }} <span class="req" aria-hidden="true">*</span></label>
+          <input id="a-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="(713) 555-0123" required [value]="form.phone"
+            [attr.aria-invalid]="errors.phone ? 'true' : null" aria-describedby="a-phone-err" (input)="onPhoneInput($event)" (blur)="onBlur('phone')" />
+          <p class="err" id="a-phone-err">{{ errors.phone }}</p>
+        </div>
+      </div>
+      <div class="field">
+        <label for="a-email">{{ 'CAREERS_PAGE.APPLY.EMAIL' | translate }} <span class="req" aria-hidden="true">*</span></label>
+        <input id="a-email" name="email" type="email" autocomplete="email" required [value]="form.email"
+          [attr.aria-invalid]="errors.email ? 'true' : null" aria-describedby="a-email-err" (input)="onInput('email', $event)" (blur)="onBlur('email')" />
+        <p class="err" id="a-email-err">{{ errors.email }}</p>
+      </div>
+      <fieldset>
+        <legend>{{ 'CAREERS_PAGE.APPLY.LANGS' | translate }}</legend>
+        <div class="opts">
+          <div class="opt-chip" *ngFor="let o of list('CAREERS_PAGE.APPLY.LANG_OPTIONS')">
+            <input type="checkbox" name="lang" [id]="'al-' + o.V" [value]="o.V" [checked]="form.langs.includes(o.V)" (change)="toggleLang(o.V, $event)" />
+            <label [for]="'al-' + o.V">{{ o.L }}</label>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>{{ 'CAREERS_PAGE.APPLY.AREA' | translate }} <span class="req" aria-hidden="true">*</span></legend>
+        <div class="opts">
+          <div class="opt-chip" *ngFor="let o of list('CAREERS_PAGE.APPLY.AREAS')">
+            <input type="radio" name="area" [id]="'aa-' + o.V" [value]="o.V" [checked]="form.area === o.V" (change)="setArea(o.V)" aria-describedby="a-area-err" />
+            <label [for]="'aa-' + o.V">{{ o.L }}</label>
+          </div>
+        </div>
+        <p class="err" id="a-area-err">{{ errors.area }}</p>
+      </fieldset>
+      <fieldset>
+        <legend>{{ 'CAREERS_PAGE.APPLY.OFFICE' | translate }}</legend>
+        <div class="opts">
+          <div class="opt-chip" *ngFor="let o of list('CAREERS_PAGE.APPLY.OFFICES')">
+            <input type="radio" name="office" [id]="'ao-' + o.V" [value]="o.V" [checked]="form.office === o.V" (change)="form.office = o.V" />
+            <label [for]="'ao-' + o.V">{{ o.L }}</label>
+          </div>
+        </div>
+      </fieldset>
+      <div class="field">
+        <span class="flabel" id="a-file-l">{{ 'CAREERS_PAGE.APPLY.RESUME' | translate }} <span class="req" aria-hidden="true">*</span></span>
+        <label class="drop" for="a-file" [class.is-over]="dragOver" [class.has-file]="file && !errors.file" [class.is-bad]="!!errors.file"
+          (dragenter)="onDragOver($event)" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)" (drop)="onDrop($event)">
+          <svg class="icon" aria-hidden="true"><use href="#i-upload" /></svg>
+          <span class="drop-main">{{ file ? file.name : ('CAREERS_PAGE.APPLY.DROP_MAIN' | translate) }}</span>
+          <span class="drop-sub">{{ 'CAREERS_PAGE.APPLY.DROP_SUB' | translate }}</span>
+        </label>
+        <input class="sr-file" id="a-file" name="resume" type="file" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+          aria-labelledby="a-file-l" aria-describedby="a-file-err" required [attr.aria-invalid]="errors.file ? 'true' : null" (change)="onFileChange($event)" />
+        <p class="err" id="a-file-err">{{ errors.file }}</p>
+      </div>
+      <button class="hf-btn btn-primary btn-lg" type="submit">{{ 'CAREERS_PAGE.APPLY.SUBMIT' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+      <p class="consent"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('CAREERS_PAGE.APPLY.CONSENT') }"></ng-container></p>
+    </form>
+  </div>
+</section>
+
+<!-- Sticky mobile bar -->
+<div class="sticky-cta" [class.show]="showSticky" [attr.aria-hidden]="!showSticky">
+  <a class="hf-btn btn-primary" href="#apply" [tabIndex]="showSticky ? 0 : -1" (click)="goToSection('apply', $event)">{{ 'CAREERS_PAGE.STICKY.APPLY' | translate }}</a>
+  <a class="hf-btn btn-outline" href="tel:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'HOME_PAGE.STICKY.CALL' | translate }}</a>
+  <a class="hf-btn btn-outline" href="sms:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-chat" /></svg>{{ 'HOME_PAGE.STICKY.TEXT' | translate }}</a>
+</div>

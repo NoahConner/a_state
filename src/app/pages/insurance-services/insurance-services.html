@@ -1,698 +1,220 @@
-<div class="InsuranceMain">
-  <div class="topBanner">
-    <div class="container">
-      <div class="topSub">
-        <div class="topSub2">
-          <h1 class="h1">
-            <span [innerHTML]="'INSURANCE_SERVICES.BANNER.TITLE_LINE1' | translateHtml | async"></span> <br />
-            <span [innerHTML]="'INSURANCE_SERVICES.BANNER.TITLE_LINE2' | translateHtml | async"></span> <br />
-            <span [innerHTML]="'INSURANCE_SERVICES.BANNER.TITLE_LINE3' | translateHtml | async"></span>
-          </h1>
-          <div class="banner-quote-card">
-            <div class="quote-options">
-              @for (item of chips; track item.name) {
-              <button type="button" class="quote-option" *ngIf="item.name" [class.selected]="isChipSelected(bannerForm, item.name)"
-                [attr.aria-pressed]="isChipSelected(bannerForm, item.name)" (click)="toggleChip(bannerForm, item.name)">
-                <span class="icon-badge">
-                  <span class="icon-burst"></span>
-                  <img [src]="item.image" [alt]="item.name | translate" class="quote-option-image" />
-                </span>
-                <span class="quote-option-label">
-                  <span class="radio-indicator" [class.checked]="isChipSelected(bannerForm, item.name)"></span>
-                  <span [innerHTML]="item.name | translateHtml | async"></span>
-                </span>
-              </button>
-              }
-            </div>
+<!-- Icon sprite (phone, check, chev, arrow and globe come from the header sprite) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2-5.5A2 2 0 0 1 6.9 6h10.2a2 2 0 0 1 1.9 1.5L21 13v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M3 13h18M7 15.5h.01M17 15.5h.01M6 18v2M18 18v2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-9-9a4.5 4.5 0 0 1 8-4l1 1.2 1-1.2a4.5 4.5 0 0 1 8 4c-2 4.6-9 9-9 9z"/></symbol>
+    <symbol id="i-health" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M12 8v8M8 12h8"/></symbol>
+    <symbol id="i-more" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h10M4 17h7"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8.5 10.5h7"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+    <symbol id="i-storm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16a4.5 4.5 0 1 1 .9-8.9A5.5 5.5 0 0 1 18.5 9 3.5 3.5 0 0 1 18 16"/><path d="M12.5 13l-2 4h3l-2 4"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14"/><path d="M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18h.01"/></symbol>
+    <symbol id="i-umbrella" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 18 0z"/><path d="M12 12v7a2 2 0 0 0 4 0M12 3v0"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></symbol>
+  </defs>
+</svg>
 
-            <div class="quote-form-row">
-              <input type="text" [placeholder]="'INSURANCE_SERVICES.BANNER.FORM.FULL_NAME' | translate" class="form-control"
-                [value]="bannerForm.fullName" (input)="bannerForm.fullName = $any($event.target).value" />
+<!-- Renders translated text that may contain links (see Seg in insurance-services.ts). Kept on one line so no spaces creep in. -->
+<ng-template #segsTpl let-value><ng-container *ngFor="let s of segs(value)"><a *ngIf="s.r" [routerLink]="route(s.r, s.id)">{{ s.t }}</a><a *ngIf="s.h" [href]="s.h" target="_blank" rel="noopener">{{ s.t }}</a><span *ngIf="s.hl" class="hl">{{ s.t }}</span><ng-container *ngIf="!s.r && !s.h && !s.hl">{{ s.t }}</ng-container></ng-container></ng-template>
 
-              <input type="tel" appPhoneFormat [placeholder]="'INSURANCE_SERVICES.BANNER.FORM.PHONE' | translate"
-                class="form-control" [value]="bannerForm.phone" (input)="bannerForm.phone = $any($event.target).value" />
+<!-- Hero -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hf-container hero-grid">
+    <div class="hero-copy">
+      <nav class="crumbs" [attr.aria-label]="'SERVICES_PAGE.BREADCRUMB.ARIA' | translate">
+        <ol>
+          <li><a [routerLink]="route('home')">{{ 'SERVICES_PAGE.BREADCRUMB.HOME' | translate }}</a></li>
+          <li aria-current="page">{{ 'SERVICES_PAGE.BREADCRUMB.CURRENT' | translate }}</li>
+        </ol>
+      </nav>
+      <h1 id="hero-title"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: text('SERVICES_PAGE.HERO.TITLE') }"></ng-container></h1>
+      <p class="hf-lead"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: text('SERVICES_PAGE.HERO.LEAD') }"></ng-container></p>
+      <ul class="checks">
+        <li><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg>{{ 'SERVICES_PAGE.HERO.CHECK_FREE' | translate }}</li>
+        <li><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg>{{ 'SERVICES_PAGE.HERO.CHECK_CARRIERS' | translate }}</li>
+        <li><span class="chip-yellow" lang="es">Se habla español</span></li>
+      </ul>
+    </div>
 
-              <button class="quote-submit" [disabled]="bannerForm.isSubmitting || !bannerForm.selectedChips.length || !bannerForm.fullName.trim() || !bannerForm.phone.trim()" (click)="goToSelectedQuote(bannerForm)">
-                {{ bannerForm.isSubmitting ? ('INSURANCE_SERVICES.BANNER.FORM.LOADING' | translate) : ('INSURANCE_SERVICES.BANNER.FORM.BUTTON' | translate) }}
-              </button>
-            </div>
+    <div class="quote-card" id="quote">
+      <app-quote-form formId="hero" ns="SERVICES_PAGE.FORM"></app-quote-form>
+    </div>
+  </div>
+</section>
 
-          </div>
-        </div>
-      </div>
+<!-- On this page: collapsed box on phones, sticky bar from 768px -->
+<details class="otp" id="on-this-page" [open]="otpOpen" (toggle)="onOtpToggle($event)">
+  <summary>{{ 'SERVICES_PAGE.OTP.LABEL' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-chev" /></svg></summary>
+  <nav [attr.aria-label]="'SERVICES_PAGE.OTP.LABEL' | translate">
+    <ol>
+      <li *ngFor="let label of list('SERVICES_PAGE.OTP.ITEMS'); let i = index">
+        <a [href]="'#' + otpIds[i]" [attr.aria-current]="activeSection === otpIds[i] ? 'true' : null"
+          (click)="goToSection(otpIds[i], $event)">{{ label }}</a>
+      </li>
+    </ol>
+  </nav>
+</details>
+
+<!-- Catalog -->
+<section aria-labelledby="svc-title">
+  <div class="svc-intro">
+    <div class="hf-container section-head">
+      <h2 id="svc-title">{{ 'SERVICES_PAGE.INTRO.TITLE' | translate }}</h2>
+      <p class="hf-lead"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: text('SERVICES_PAGE.INTRO.TEXT') }"></ng-container></p>
     </div>
   </div>
 
-  <div class="texan-choose-image">
-    <div class="container py-5 mt-5">
-      <div class="row mb-5 text-center">
-        <div class="col-12">
-          <h2 class="insurance-heading" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEADING' | translateHtml | async"></h2>
-        </div>
+  <section *ngFor="let cat of categories; let ci = index; let even = even" class="cat"
+    [class.cat-white]="even" [class.cat-ivory]="!even" [id]="cat.id" [attr.aria-labelledby]="cat.id + '-h'">
+    <div class="hf-container cat-grid">
+      <div class="cat-head">
+        <span class="cat-ic" aria-hidden="true"><svg class="icon"><use [attr.href]="'#' + cat.icon" /></svg></span>
+        <h3 [id]="cat.id + '-h'">
+          <a *ngIf="cat.titleRoute; else plainCatTitle" [routerLink]="route(cat.titleRoute)">{{ 'SERVICES_PAGE.CATS.' + cat.key + '.TITLE' | translate }}</a>
+          <ng-template #plainCatTitle>{{ 'SERVICES_PAGE.CATS.' + cat.key + '.TITLE' | translate }}</ng-template>
+        </h3>
+        <p><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: text('SERVICES_PAGE.CATS.' + cat.key + '.TEXT') }"></ng-container></p>
+        <a *ngIf="cat.quoteRoute; else scrollCta" class="arrow-link" [routerLink]="route(cat.quoteRoute)">
+          {{ 'SERVICES_PAGE.CATS.' + cat.key + '.CTA' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg>
+        </a>
+        <ng-template #scrollCta>
+          <a class="arrow-link" href="#quote" (click)="goToQuote($event)">
+            {{ 'SERVICES_PAGE.CATS.' + cat.key + '.CTA' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg>
+          </a>
+        </ng-template>
       </div>
-
-      <div class="row mb-5 text-center">
-        <div class="col-12 mt-3 mx-auto main-content">
-          <h2 class="insurance-heading-2" [routerLink]="getRoute('autoInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEADING_2' | translateHtml | async"></h2>
-          <!-- Added a class to target specifically -->
-          <p class="description-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.DESCRIPTION' | translateHtml | async"></p>
-        </div>
-      </div>
-
-      <div class="services-flat-grid">
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/car.png" alt="Car Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('carInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD1.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD1.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/motorcycle.png" alt="Motorcycle Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('motorcycleInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD2.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD2.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/boat.png" alt="Boat Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('boatInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD3.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD3.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/tourist-van.png" alt="RV Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('rvInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD4.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD4.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/classic-car.png" alt="Classic Car Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('classicCarInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD5.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD5.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/delivery-truck.png" alt="Commercial Auto Icon" /></div>
-          <h3 class="service-title" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD6.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD6.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/plane.png" alt="SR-22 Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('sr22Insurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD7.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD7.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/atv.png" alt="ATV Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('atvAndUtvInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD8.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD8.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/food-truck.png" alt="Trailer Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('trailerInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD9.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD9.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/mexican-car.png" alt="Mexican Car Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('mexicanCarInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD10.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD10.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/rideshare.png" alt="Rideshare Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('rideshareInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD11.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.CARD11.DESC' | translateHtml | async"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="homeowners-insurance">
-    <div class="side-strip"></div>
-    <div class="container">
-      <div class="row mb-5 text-center">
-        <div class="col-12 mt-3 mx-auto main-content">
-          <h2 class="insurance-heading-homeowners" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.HEADING' | translateHtml | async"></h2>
-          <!-- Added a class to target specifically -->
-          <p class="description-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.DESCRIPTION' | translateHtml | async"></p>
-        </div>
-      </div>
-
-      <div class="services-flat-grid">
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/homeowners.png" alt="Homeowners Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('homeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD1.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD1.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/renters.png" alt="Renters Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('rentersInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD2.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD2.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/condo.png" alt="Condo Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('condoInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD3.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD3.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/manufactured-home.png" alt="Manufactured Home Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('manufacturedMobileHomeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD4.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD4.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/landlord.png" alt="Landlord Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('landlordInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD5.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD5.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/flood.png" alt="Flood Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('floodInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD6.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD6.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/earthquake.png" alt="Earthquake Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('earthquakeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD7.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HOMEOWNERS.CARD7.DESC' | translateHtml | async"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="texan-choose-image">
-    <div class="container py-5 mt-5">
-      <div class="row mb-5 text-center">
-        <!-- Changed col-12 to col-lg-8 to make the text area narrower and centered -->
-        <div class="col-12 col-md-10 mt-3 mx-auto main-content">
-          <h2 class="insurance-heading-homeowners insurance-heading-link" [routerLink]="getRoute('commercialInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.HEADING' | translateHtml | async"></h2>
-          <!-- Added a class to target specifically -->
-          <p class="description-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.DESCRIPTION' | translateHtml | async"></p>
-        </div>
-      </div>
-
-      <div class="services-flat-grid">
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/commercial/general-liability.png" alt="General Liability Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('generalLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD1.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD1.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/commercial/bop.png" alt="Business Owner's Policy Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('businessOwnerInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD2.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD2.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/commercial/workers-compensation.png" alt="Workers Compensation Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('workersCompensationInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD3.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD3.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/commercial/commercial-property.png" alt="Commercial Property Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('commercialPropertyInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD4.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD4.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/commercial/commercial-auto.png" alt="Commercial Auto Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('commercialAutoInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD5.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD5.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/commercial/professional-liability.png" alt="Professional Liability Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('professionalLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD6.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD6.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/commercial/epli.png" alt="EPLI Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('employmentPracticesLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD7.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD7.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/commercial/cyber-liability.png" alt="Cyber Liability Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('cyberLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD8.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD8.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/commercial/builders-risk.png" alt="Builders Risk Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('buildersRiskInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD9.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD9.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/commercial/directors-officers.png" alt="Directors and Officers Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('directorsOfficersLiabilityInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD10.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD10.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/commercial/inland-marine.png" alt="Inland Marine Icon" /></div>
-          <h3 class="service-title service-title--plain" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD11.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD11.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/commercial/commercial-umbrella.png" alt="Commercial Umbrella Icon" /></div>
-          <h3 class="service-title service-title--plain" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD12.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.COMMERCIAL.CARD12.DESC' | translateHtml | async"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="homeowners-insurance">
-    <div class="side-strip"></div>
-    <div class="container">
-      <div class="row mb-5 text-center">
-        <!-- Changed col-12 to col-lg-8 to make the text area narrower and centered -->
-        <div class="col-12 col-md-9 mt-3 mx-auto main-content">
-          <h2 class="insurance-heading-homeowners insurance-heading-link" [routerLink]="getRoute('lifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.HEADING' | translateHtml | async"></h2>
-          <!-- Added a class to target specifically -->
-          <p class="description-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.DESCRIPTION' | translateHtml | async"></p>
-        </div>
-      </div>
-
-      <div class="services-flat-grid">
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/life/term-life.png" alt="Term Life Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('termLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD1.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD1.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/life/whole-life.png" alt="Whole Life Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('wholeLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD2.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD2.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/life/universal-life.png" alt="Universal Life Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('universalLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD3.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD3.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/life/final-expense.png" alt="Final Expense Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('finalExpenseInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD4.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD4.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/life/variable-life.png" alt="Variable Life Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('variableLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD5.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD5.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/life/group-life.png" alt="Group Life Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('groupLifeInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD6.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.LIFE.CARD6.DESC' | translateHtml | async"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="texan-choose-image">
-    <div class="container py-5 mt-5">
-      <div class="row mb-5 text-center">
-        <!-- Changed col-12 to col-lg-8 to make the text area narrower and centered -->
-        <div class="col-12 col-md-9 mt-3 mx-auto main-content">
-          <h2 class="insurance-heading-homeowners insurance-heading-link" [routerLink]="getRoute('healthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.HEADING' | translateHtml | async"></h2>
-          <!-- Added a class to target specifically -->
-          <p class="description-text" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.DESCRIPTION' | translateHtml | async"></p>
-        </div>
-      </div>
-
-      <div class="services-flat-grid">
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/health/individual-health.png" alt="Individual Health Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('individualHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD1.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD1.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/health/family-health.png" alt="Family Health Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('familyHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD2.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD2.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/health/small-business.png" alt="Small Business Health Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('smallBusinessHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD3.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD3.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/health/employer-group.png" alt="Employer and Group Health Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('employerGroupHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD4.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD4.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/health/travel-health.png" alt="Travel Health Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('travelHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD5.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD5.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/health/medicare-supplement.png" alt="Medicare Supplement Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('medicareSupplementInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD6.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD6.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/health/short-term.png" alt="Short-Term Health Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('shortTermHealthInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD7.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD7.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/health/dental-vision.png" alt="Dental and Vision Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('dentalVisionInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD8.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD8.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/health/aca-marketplace.png" alt="ACA Marketplace Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('acaMarketplacePlansInsurance')" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD9.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.WHY_CHOOSE.HEALTH.CARD9.DESC' | translateHtml | async"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Surety Bonds -->
-  <div class="surety-bonds">
-    <div class="side-strip"></div>
-    <div class="container">
-      <div class="row mb-5 text-center">
-        <div class="col-10  mt-5 mx-auto surety-content">
-          <h2 class="surety-title insurance-heading-link" [routerLink]="getRoute('suretyBondInsurance')" [innerHTML]="'INSURANCE_SERVICES.SURETY.HEADING' | translateHtml | async"></h2>
-          <!-- Added a class to target specifically -->
-          <p class="description-text justify-content-center" [innerHTML]="'INSURANCE_SERVICES.SURETY.DESCRIPTION' | translateHtml | async"></p>
-        </div>
-      </div>
-
-      <div class="services-flat-grid">
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/surety/performance-payment-bonds.png" alt="Performance and Payment Bonds Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('performanceBondsPaymentBonds')" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD1.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD1.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/surety/commercial-surety-bonds.png" alt="Commercial Surety Bonds Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('commercialSuretyBonds')" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD2.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD2.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/surety/bid-bonds.png" alt="Bid Bonds Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('bidBonds')" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD3.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD3.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/surety/notary-bonds.png" alt="Notary Bonds Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('notaryBonds')" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD4.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD4.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/surety/license-permit-bonds.png" alt="License and Permit Bonds Icon" /></div>
-          <h3 class="service-title service-title--plain" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD5.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD5.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/surety/contract-bonds.png" alt="Contract Bonds Icon" /></div>
-          <h3 class="service-title service-title--plain" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD6.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.SURETY.CARD6.DESC' | translateHtml | async"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <section class="additional-insurance py-5">
-    <div class="container">
-      <!-- Header Section -->
-      <div class="row justify-content-center mb-5">
-        <div class="col-lg-10 text-center additional-content">
-          <h2 class="fw-bold mb-3" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.HEADING' | translateHtml | async"></h2>
-          <p class="text-dark small" style="line-height: 1.6;" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.DESCRIPTION' | translateHtml | async"></p>
-        </div>
-      </div>
-
-      <!-- Cards Section -->
-      <div class="services-flat-grid">
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/additional/pet-insurance.png" alt="Pet Insurance Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('petInsurance')" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD1.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD1.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/additional/title-insurance.png" alt="Title Insurance Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('titleInsurance')" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD2.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD2.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/tabler_transfer.png" alt="Title Transfer Icon" /></div>
-          <h3 class="service-title" [routerLink]="getRoute('titleTransfer')" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD3.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD3.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/additional/umbrella-insurance.png" alt="Umbrella Insurance Icon" /></div>
-          <h3 class="service-title service-title--plain" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD4.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD4.DESC' | translateHtml | async"></p>
-        </div>
-
-        <div class="service-item">
-          <div class="service-icon"><img src="/assets/images/insurance-service/additional/identity-theft.png" alt="Identity Theft Protection Icon" /></div>
-          <h3 class="service-title service-title--plain" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD5.TITLE' | translateHtml | async"></h3>
-          <p class="service-desc" [innerHTML]="'INSURANCE_SERVICES.ADDITIONAL.CARD5.DESC' | translateHtml | async"></p>
-        </div>
-      </div>
+      <details class="cat-list" [open]="listOpen[ci]" (toggle)="onListToggle(ci, $event)">
+        <summary (click)="onListSummaryClick($event)">
+          {{ 'SERVICES_PAGE.CATS.' + cat.key + '.SEE_ALL' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-chev" /></svg>
+        </summary>
+        <ul class="items">
+          <li *ngFor="let item of list('SERVICES_PAGE.CATS.' + cat.key + '.ITEMS'); let ii = index" class="item"
+            [class.multi]="!cat.items[ii] && segs(item.TITLE).length > 1" [class.linked]="!!cat.items[ii]">
+            <h4>
+              <a *ngIf="cat.items[ii]; else itemTitle" [routerLink]="route(cat.items[ii]!)">{{ item.TITLE }}</a>
+              <ng-template #itemTitle><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: item.TITLE }"></ng-container></ng-template>
+            </h4>
+            <p><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: item.TEXT }"></ng-container></p>
+            <svg *ngIf="cat.items[ii]" class="go" aria-hidden="true"><use href="#i-arrow" /></svg>
+          </li>
+        </ul>
+      </details>
     </div>
   </section>
+</section>
 
-  <!-- everystory -->
-  <section class="story-section py-5">
-    <div class="container py-lg-4">
-      <div class="row align-items-center g-4 g-lg-5">
-
-        <!-- Left Content Column -->
-        <div class="col-12 col-lg-7 col-xl-6">
-          <div class="content-wrapper">
-
-            <!-- Heading -->
-            <h2 class="section-title mb-3" [innerHTML]="'INSURANCE_SERVICES.TEXAS_STRATEGY.HEADING' | translateHtml | async"></h2>
-
-            <!-- Underline Divider -->
-            <div class="title-underline mb-4"></div>
-
-            <!-- Paragraphs -->
-            <div class="story-copy">
-              <p class="mb-3" [innerHTML]="'INSURANCE_SERVICES.TEXAS_STRATEGY.INTRO' | translateHtml | async"></p>
-              <p class="mb-3 fw-bold" [innerHTML]="'INSURANCE_SERVICES.TEXAS_STRATEGY.LIST_INTRO' | translateHtml | async"></p>
-              <ul class="story-list mb-0">
-                <li>
-                  <strong [innerHTML]="'INSURANCE_SERVICES.TEXAS_STRATEGY.ITEM1.LABEL' | translateHtml | async"></strong>
-                  <span [innerHTML]="'INSURANCE_SERVICES.TEXAS_STRATEGY.ITEM1.DESC' | translateHtml | async"></span>
-                </li>
-                <li>
-                  <strong [innerHTML]="'INSURANCE_SERVICES.TEXAS_STRATEGY.ITEM2.LABEL' | translateHtml | async"></strong>
-                  <span [innerHTML]="'INSURANCE_SERVICES.TEXAS_STRATEGY.ITEM2.DESC' | translateHtml | async"></span>
-                </li>
-                <li>
-                  <strong [innerHTML]="'INSURANCE_SERVICES.TEXAS_STRATEGY.ITEM3.LABEL' | translateHtml | async"></strong>
-                  <span [innerHTML]="'INSURANCE_SERVICES.TEXAS_STRATEGY.ITEM3.DESC' | translateHtml | async"></span>
-                </li>
-              </ul>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Right Image Column -->
-        <div class="col-12 col-lg-5 col-xl-6">
-          <div class="image-wrapper ms-lg-auto">
-            <img src="assets/images/home/story/poster.png" alt="Texas Flag Floating in Sky" class="img-fluid rounded-image" />
-          </div>
-        </div>
-
-      </div>
+<!-- Why Texas is different -->
+<section class="section texas" id="texas" aria-labelledby="texas-h">
+  <div class="hf-container">
+    <div class="section-head">
+      <h2 id="texas-h">{{ 'SERVICES_PAGE.TEXAS.TITLE' | translate }}</h2>
     </div>
-  </section>
+    <ul class="tx-cards">
+      <li class="tx-card" *ngFor="let card of list('SERVICES_PAGE.TEXAS.CARDS'); let i = index">
+        <span class="wic" aria-hidden="true"><svg class="icon"><use [attr.href]="'#' + texasIcons[i]" /></svg></span>
+        <h3>{{ card.TITLE }}</h3>
+        <p><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: card.TEXT }"></ng-container></p>
+      </li>
+    </ul>
+  </div>
+</section>
 
- 
-
-  <section class="features-section">
-    <div class="container">
-      <!-- Title & Sub-header -->
-      <div class="mb-5 text-start">
-        <h2 class="section-title mb-3">
-          <span [innerHTML]="'HOME.WHY_CHOOSE.HEADING' | translateHtml | async"></span>
-          <span class="brand-red" [innerHTML]="'HOME.WHY_CHOOSE.HEADING_STRONG' | translateHtml | async"></span>
-        </h2>
-        <div class="row g-3 sub-features">
-          <div class="col-12">
-            <p><strong [innerHTML]="'HOME.WHY_CHOOSE.SUBHEADING' | translateHtml | async"></strong></p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Cards Grid -->
-      <div class="row g-4">
-        @for (card of featureHighlights; track card.titleKey) {
-        <div class="col-6 col-lg-3">
-          <div class="feature-card">
-            <div class="icon-circle">
-              @if (card.textKey) {
-              <span class="stat-text">{{ card.textKey | translate }}</span>
-              } @else {
-              <i class="fa-solid {{ card.icon }}"></i>
-              }
-            </div>
-            <h3 class="card-title-text" [innerHTML]="card.titleKey | translateHtml | async"></h3>
-          </div>
-        </div>
-        }
-      </div>
+<!-- Why A-State -->
+<section class="section bg-white" id="why-astate" aria-labelledby="why-h">
+  <div class="hf-container">
+    <div class="section-head">
+      <h2 id="why-h">{{ 'SERVICES_PAGE.WHY.TITLE_1' | translate }} <span class="nw">A-State</span> {{ 'SERVICES_PAGE.WHY.TITLE_2' | translate }}</h2>
     </div>
-  </section>
+    <ul class="why8">
+      <li *ngFor="let item of list('SERVICES_PAGE.WHY.ITEMS'); let i = index">
+        <span class="ic" aria-hidden="true"><svg class="icon"><use [attr.href]="'#' + whyIcons[i]" /></svg></span>
+        <h3>{{ item.TITLE }}</h3>
+        <p>{{ item.TEXT }}</p>
+      </li>
+    </ul>
+  </div>
+</section>
 
-  <section class="steps-section py-5 position-relative overflow-hidden">
-
-    <!-- Background Circles -->
-    <div class="bg-circle bg-circle-left"></div>
-    <div class="bg-circle bg-circle-right"></div>
-
-    <div class="container py-4 position-relative z-1">
-
-      <!-- Section Header -->
-      <div class="text-center text-white mb-5">
-        <h2 class="section-title fw-bold mb-1" [innerHTML]="'HOME.SIMPLE_STEPS.TITLE' | translateHtml | async"></h2>
-        <p class="section-subtitle mb-0" [innerHTML]="'HOME.SIMPLE_STEPS.SUBTITLE' | translateHtml | async"></p>
-      </div>
-
-      <!-- Cards Grid -->
-      <div class="row g-3 justify-content-center">
-
-        <!-- Step 01 -->
-        <div class="col-6 col-md-auto d-flex justify-content-center">
-          <div class="step-card text-center">
-            <div class="icon-circle mx-auto d-flex align-items-center justify-content-center">
-              <img src="assets/images/home/steps/hand.png" alt="Reach Out" width="33" height="33" />
-            </div>
-            <span class="step-number text-uppercase d-block" [innerHTML]="'HOME.SIMPLE_STEPS.STEP1.LABEL' | translateHtml | async"></span>
-            <h3 class="step-title fw-bold text-white mb-0" [innerHTML]="'HOME.SIMPLE_STEPS.STEP1.TITLE' | translateHtml | async"></h3>
-          </div>
-        </div>
-
-        <!-- Step 02 -->
-        <div class="col-6 col-md-auto d-flex justify-content-center">
-          <div class="step-card text-center">
-            <div class="icon-circle mx-auto d-flex align-items-center justify-content-center">
-              <img src="assets/images/home/steps/rocket.png" alt="Get Expert Advice" width="33" height="33" />
-            </div>
-            <span class="step-number text-uppercase d-block" [innerHTML]="'HOME.SIMPLE_STEPS.STEP2.LABEL' | translateHtml | async"></span>
-            <h3 class="step-title fw-bold text-white mb-0" [innerHTML]="'HOME.SIMPLE_STEPS.STEP2.TITLE' | translateHtml | async"></h3>
-          </div>
-        </div>
-
-        <!-- Step 03 -->
-        <div class="col-6 col-md-auto d-flex justify-content-center">
-          <div class="step-card text-center">
-            <div class="icon-circle mx-auto d-flex align-items-center justify-content-center">
-              <img src="assets/images/home/steps/notepad.png" alt="Pick Your Plan" width="33" height="33" />
-            </div>
-            <span class="step-number text-uppercase d-block" [innerHTML]="'HOME.SIMPLE_STEPS.STEP3.LABEL' | translateHtml | async"></span>
-            <h3 class="step-title fw-bold text-white mb-0" [innerHTML]="'HOME.SIMPLE_STEPS.STEP3.TITLE' | translateHtml | async"></h3>
-          </div>
-        </div>
-
-        <!-- Step 04 -->
-        <div class="col-6 col-md-auto d-flex justify-content-center">
-          <div class="step-card text-center">
-            <div class="icon-circle mx-auto d-flex align-items-center justify-content-center">
-              <img src="assets/images/home/steps/lightning.png" alt="You're Covered" width="33" height="33" />
-            </div>
-            <span class="step-number text-uppercase d-block" [innerHTML]="'HOME.SIMPLE_STEPS.STEP4.LABEL' | translateHtml | async"></span>
-            <h3 class="step-title fw-bold text-white mb-0" [innerHTML]="'HOME.SIMPLE_STEPS.STEP4.TITLE' | translateHtml | async"></h3>
-          </div>
-        </div>
-
-      </div>
+<!-- 4 steps -->
+<section class="section bg-cream" id="steps" aria-labelledby="steps-h">
+  <div class="hf-container">
+    <div class="section-head">
+      <h2 id="steps-h">{{ 'SERVICES_PAGE.STEPS.TITLE' | translate }}</h2>
     </div>
-  </section>
-
-
-  <!-- get covered -->
-  <div class="get-quote-section">
-    <div class="container">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-6">
-          <div class="get-quote-text">
-            <h2 class="get-quote-title mb-0" [innerHTML]="'INSURANCE_SERVICES.COVERDBANNER.TITLE' | translateHtml | async"></h2>
-            <p class="get-quote-desc" [innerHTML]="'INSURANCE_SERVICES.COVERDBANNER.DESC' | translateHtml | async"></p>
-            <p class="get-quote-desc" [innerHTML]="'INSURANCE_SERVICES.COVERDBANNER.DESC_1' | translateHtml | async"></p>
-
-            <div class="quote-options get-quote-options">
-              @for (item of chips; track item.name) {
-              <button type="button" class="quote-option" *ngIf="item.name"
-                [class.selected]="isChipSelected(coveredForm, item.name)" [attr.aria-pressed]="isChipSelected(coveredForm, item.name)"
-                (click)="toggleChip(coveredForm, item.name)">
-                <span class="icon-badge">
-                  <span class="icon-burst"></span>
-                  <img [src]="item.image" [alt]="item.name | translate" class="quote-option-image" />
-                </span>
-                <span class="quote-option-label">
-                  <span class="radio-indicator" [class.checked]="isChipSelected(coveredForm, item.name)"></span>
-                  <span [innerHTML]="item.name | translateHtml | async"></span>
-                </span>
-              </button>
-              }
-            </div>
-
-            <div class="quote-form-row get-quote-form-row">
-              <input type="text" [placeholder]="'INSURANCE_SERVICES.BANNER.FORM.FULL_NAME' | translate"
-                class="form-control" [value]="coveredForm.fullName" (input)="coveredForm.fullName = $any($event.target).value" />
-              <input type="tel" appPhoneFormat [placeholder]="'INSURANCE_SERVICES.BANNER.FORM.PHONE' | translate"
-                class="form-control" [value]="coveredForm.phone" (input)="coveredForm.phone = $any($event.target).value" />
-              <button class="quote-submit" [disabled]="coveredForm.isSubmitting || !coveredForm.selectedChips.length || !coveredForm.fullName.trim() || !coveredForm.phone.trim()" (click)="goToSelectedQuote(coveredForm)">
-                {{ coveredForm.isSubmitting ? ('INSURANCE_SERVICES.BANNER.FORM.LOADING' | translate) : ('INSURANCE_SERVICES.COVERDBANNER.FORM.BUTTON' | translate) }}
-              </button>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="col-12 col-lg-5 col-xl-6">
-          <div class="image-wrapper ms-lg-auto">
-            <img src="/assets/images/home/get-coverd/poster.png" alt="Get covered visual" class="img-fluid rounded-image" />
-          </div>
-        </div>
-      </div>
+    <ol class="steps4">
+      <li *ngFor="let step of list('SERVICES_PAGE.STEPS.ITEMS'); let i = index">
+        <span class="n" aria-hidden="true">{{ i + 1 }}</span>
+        <h3>{{ step.TITLE }}</h3>
+        <p>{{ step.TEXT }}</p>
+      </li>
+    </ol>
+    <div class="cta-row">
+      <a class="hf-btn btn-outline" [routerLink]="route('getAQuote')">{{ 'SERVICES_PAGE.STEPS.CTA' | translate }}</a>
+      <span>{{ 'SERVICES_PAGE.STEPS.OR_CALL' | translate }} <a class="tel" href="tel:+17133577771">(713) 357-7771</a></span>
     </div>
   </div>
+</section>
 
-  <!-- footuper -->
-  <app-foot-upper></app-foot-upper>
-  <!--  -->
+<!-- FAQs -->
+<section class="section bg-white" id="faqs" aria-labelledby="faq-h">
+  <div class="hf-container faq faq-wrap">
+    <h2 id="faq-h">{{ 'SERVICES_PAGE.FAQ.TITLE' | translate }}</h2>
+    <details *ngFor="let item of list('SERVICES_PAGE.FAQ.ITEMS'); let i = index" [open]="faqOpen === i" (toggle)="onFaqToggle(i, $event)">
+      <summary><h3>{{ item.Q }}</h3><span class="pm" aria-hidden="true"><svg class="icon-sm"><use href="#i-plus" /></svg></span></summary>
+      <div class="ans"><p><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: item.A }"></ng-container></p></div>
+    </details>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="section final" id="final-cta" aria-labelledby="final-title">
+  <div class="hf-container final-grid">
+    <div class="intro">
+      <h2 id="final-title">{{ 'SERVICES_PAGE.FINAL.TITLE' | translate }}</h2>
+      <p>{{ 'SERVICES_PAGE.FINAL.TEXT' | translate }}</p>
+      <ul class="reach">
+        <li><a href="tel:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>(713) 357-7771</a></li>
+        <li><a href="sms:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-chat" /></svg>{{ 'SERVICES_PAGE.FINAL.TEXT_US' | translate }}</a></li>
+        <li><a href="mailto:save@astateinsurance.com"><svg class="icon-sm" aria-hidden="true"><use href="#i-mail" /></svg>save&#64;astateinsurance.com</a></li>
+        <li><a [routerLink]="route('ourLocations')"><svg class="icon-sm" aria-hidden="true"><use href="#i-pin" /></svg>{{ 'SERVICES_PAGE.FINAL.OFFICES' | translate }}</a></li>
+      </ul>
+    </div>
+    <div class="quote-card">
+      <app-quote-form formId="final" variant="final" ns="SERVICES_PAGE.FORM"></app-quote-form>
+    </div>
+  </div>
+</section>
+
+<!-- Other-language band (ivory: it sits directly above the maroon footer) -->
+<section class="es es-light" [attr.lang]="'SERVICES_PAGE.LANG_BAND.LANG' | translate" aria-labelledby="lang-band-title">
+  <div class="hf-container">
+    <span class="eic" aria-hidden="true"><svg class="icon"><use href="#i-chat" /></svg></span>
+    <div>
+      <h2 id="lang-band-title">{{ 'SERVICES_PAGE.LANG_BAND.TITLE' | translate }}</h2>
+      <p>{{ 'SERVICES_PAGE.LANG_BAND.TEXT' | translate }}</p>
+    </div>
+    <div class="btns">
+      <a class="hf-btn btn-outline" [href]="currentLang === 'en' ? '/es/servicios-de-seguros/' : '/insurance-services/'"
+        [attr.hreflang]="currentLang === 'en' ? 'es' : 'en'"
+        (click)="$event.preventDefault(); languageService.setLanguage(currentLang === 'en' ? 'es' : 'en')">{{ 'SERVICES_PAGE.LANG_BAND.SWITCH' | translate }}</a>
+      <a class="hf-btn btn-yellow" href="tel:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'SERVICES_PAGE.LANG_BAND.CALL' | translate }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- Sticky mobile bar -->
+<div class="sticky-cta" [class.show]="showSticky" [attr.aria-hidden]="!showSticky">
+  <a class="hf-btn btn-primary" href="#quote" [tabIndex]="showSticky ? 0 : -1" (click)="goToQuote($event)">{{ 'HOME_PAGE.STICKY.QUOTE' | translate }}</a>
+  <a class="hf-btn btn-outline" href="tel:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'HOME_PAGE.STICKY.CALL' | translate }}</a>
+  <a class="hf-btn btn-outline" href="sms:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-chat" /></svg>{{ 'HOME_PAGE.STICKY.TEXT' | translate }}</a>
 </div>

@@ -1,0 +1,42 @@
+<form novalidate [attr.aria-describedby]="formId + '-call'" (submit)="submit($event)">
+  <fieldset>
+    <legend>{{ key('LEGEND') | translate }}</legend>
+    <div class="tiles">
+      <div class="tile" *ngFor="let p of products">
+        <input type="checkbox" [name]="formId + '-product'" [id]="formId + '-p-' + p.key" [value]="p.key"
+          [checked]="isSelected(p.key)" (change)="toggleProduct(p.key)" />
+        <label [for]="formId + '-p-' + p.key">
+          <span class="dot"><svg class="icon" aria-hidden="true"><use [attr.href]="'#' + p.icon" /></svg></span>
+          {{ labelKey(p) | translate }}
+        </label>
+      </div>
+    </div>
+    <p class="err" role="alert">{{ errors.product }}</p>
+  </fieldset>
+  <div class="fields">
+    <div class="field">
+      <label [for]="formId + '-name'">{{ key('NAME') | translate }}</label>
+      <input [id]="formId + '-name'" name="name" autocomplete="name" required placeholder="John Doe" [value]="name"
+        [attr.aria-invalid]="errors.name ? 'true' : null" [attr.aria-describedby]="formId + '-name-err'"
+        (input)="onNameInput($event)" (blur)="onBlur('name')" />
+      <p class="err" [id]="formId + '-name-err'">{{ errors.name }}</p>
+    </div>
+    <div class="field">
+      <label [for]="formId + '-phone'">{{ key('PHONE') | translate }}</label>
+      <input [id]="formId + '-phone'" name="phone" type="tel" inputmode="tel" autocomplete="tel" required
+        placeholder="(713) 555-0123" [value]="phone"
+        [attr.aria-invalid]="errors.phone ? 'true' : null" [attr.aria-describedby]="formId + '-phone-err'"
+        (input)="onPhoneInput($event)" (blur)="onBlur('phone')" />
+      <p class="err" [id]="formId + '-phone-err'">{{ errors.phone }}</p>
+    </div>
+  </div>
+  <button class="hf-btn btn-primary btn-lg btn-block" type="submit" [disabled]="isSubmitting">
+    {{ key(isSubmitting ? 'SUBMITTING' : variant === 'final' ? 'SUBMIT_FINAL' : 'SUBMIT_HERO') | translate }}
+    <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg>
+  </button>
+  <p class="or-call" [id]="formId + '-call'">
+    <span><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ key('OR_CALL') | translate }}
+      <a class="tel" href="tel:+17133577771">(713) 357-7771</a></span>
+    <span class="hrs">{{ key('HOURS') | translate }}</span>
+  </p>
+</form>

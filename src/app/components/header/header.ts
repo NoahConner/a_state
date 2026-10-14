@@ -6,7 +6,8 @@ import { filter } from 'rxjs/operators';
 import { Language } from '../../services/language';
 import { routeTranslations } from '../../app-routing-module';
 
-export type NavLink = { routeKey: string; labelKey: string };
+/** A link without `routeKey` has no page yet and is shown as plain text. */
+export type NavLink = { routeKey?: string; labelKey: string };
 /** `routeKey` is the group's own page; groups without one have a plain (unlinked) heading. */
 export type NavGroup = { routeKey?: string; titleKey: string; links: NavLink[] };
 /** `mapUrl` opens the office on Google Maps; `directionsUrl` opens directions to it. */
@@ -16,8 +17,8 @@ const L = 'SITE_NAV.LINKS.';
 
 /**
  * Insurance groups shared by the desktop mega menu and the mobile drawer, in the order of the
- * "Header and Footer" sheet. Not added yet because the site has no page for them:
- * Windstorm & hail, Inland marine, Commercial umbrella, Umbrella, Identity theft protection.
+ * "Header and Footer" sheet. Items without a page yet (Windstorm & hail, Inland marine,
+ * Commercial umbrella, Umbrella, Identity theft protection) are listed without a link.
  */
 export const NAV_GROUPS: NavGroup[] = [
   {
@@ -42,6 +43,7 @@ export const NAV_GROUPS: NavGroup[] = [
       { routeKey: 'homeInsurance', labelKey: L + 'HOMEOWNERS' },
       { routeKey: 'rentersInsurance', labelKey: L + 'RENTERS' },
       { routeKey: 'floodInsurance', labelKey: L + 'FLOOD' },
+      { labelKey: L + 'WINDSTORM_HAIL' },
       { routeKey: 'condoInsurance', labelKey: L + 'CONDO' },
       { routeKey: 'landlordInsurance', labelKey: L + 'LANDLORD' },
       { routeKey: 'manufacturedMobileHomeInsurance', labelKey: L + 'MOBILE_HOME' },
@@ -61,6 +63,8 @@ export const NAV_GROUPS: NavGroup[] = [
       { routeKey: 'cyberLiabilityInsurance', labelKey: L + 'CYBER' },
       { routeKey: 'employmentPracticesLiabilityInsurance', labelKey: L + 'EPLI' },
       { routeKey: 'buildersRiskInsurance', labelKey: L + 'BUILDERS_RISK' },
+      { labelKey: L + 'INLAND_MARINE' },
+      { labelKey: L + 'COMMERCIAL_UMBRELLA' },
     ],
   },
   {
@@ -95,7 +99,9 @@ export const NAV_GROUPS: NavGroup[] = [
       { routeKey: 'suretyBondInsurance', labelKey: L + 'SURETY_BONDS' },
       { routeKey: 'performanceBondsPaymentBonds', labelKey: L + 'CONTRACT_BONDS' },
       { routeKey: 'commercialSuretyBonds', labelKey: L + 'COMMERCIAL_BONDS' },
+      { labelKey: L + 'UMBRELLA' },
       { routeKey: 'petInsurance', labelKey: L + 'PET' },
+      { labelKey: L + 'IDENTITY_THEFT' },
       { routeKey: 'titleInsurance', labelKey: L + 'TITLE' },
     ],
   },
