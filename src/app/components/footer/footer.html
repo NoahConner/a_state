@@ -14,7 +14,7 @@
       <div class="f-col">
         <details [open]="columnsOpen">
           <summary (click)="onSummaryClick($event)">
-            <h3>{{ 'SITE_NAV.INSURANCE' | translate }}</h3>
+            <h3><a [routerLink]="route('insuranceServices')">{{ 'SITE_NAV.INSURANCE' | translate }}</a></h3>
             <svg class="icon-sm" aria-hidden="true"><use href="#i-chev" /></svg>
           </summary>
           <ul>
@@ -28,7 +28,7 @@
       <div class="f-col">
         <details [open]="columnsOpen">
           <summary (click)="onSummaryClick($event)">
-            <h3>{{ 'SITE_FOOTER.OFFICES' | translate }}</h3>
+            <h3><a [routerLink]="route('ourLocations')">{{ 'SITE_FOOTER.OFFICES' | translate }}</a></h3>
             <svg class="icon-sm" aria-hidden="true"><use href="#i-chev" /></svg>
           </summary>
           <ul>

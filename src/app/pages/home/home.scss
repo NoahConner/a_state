@@ -232,7 +232,7 @@ img{display:block;max-width:100%}
 .map figcaption{position:absolute;left:12px;bottom:10px;font-size:12.5px;color:var(--stone-700);background:rgba(255,255,255,.85);padding:2px 8px;border-radius:6px}
 .office{background:var(--white);border:1px solid var(--stone-200);border-radius:var(--r-card);padding:20px;display:flex;flex-direction:column;gap:8px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
 .office h3{font-size:18px}
-.office address{display:flex;gap:8px;font-size:15px;color:var(--stone-700);line-height:1.45}
+.office address{display:flex;gap:8px;font-size:15px;color:var(--stone-700);line-height:1.45;min-height:2.9em}
 .office address .icon-sm{color:var(--red-600);margin-top:2px}
 .office .ph{font-weight:800;color:var(--stone-700);font-size:17px;text-decoration:underline;text-decoration-thickness:1.5px;align-self:flex-start;min-height:32px;display:inline-flex;align-items:center}
 .office .acts{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:auto;padding-top:4px}

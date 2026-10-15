@@ -136,8 +136,7 @@ export const OFFICES: Office[] = [
     id: '5206-airline-dr-g-houston-tx-77022', name: 'Airline', street: '5206 Airline Dr, Suite G', city: 'Houston, TX 77022',
     phone: '(281) 504-7444', tel: '+12815047444',
     mapUrl: 'https://maps.app.goo.gl/wJS36746W1P3XZCfA',
-    // Supplied as a "place" link (not a directions link) and without https://; the scheme was added.
-    directionsUrl: 'https://www.google.com/maps/place/A-State+Insurance/@29.8423603,-95.386512,17z/data=!4m6!3m5!1s0x8640b9c87d8b4ba5:0x9f74c0c87f80aa47!8m2!3d29.842283!4d-95.3837829!16s%2Fg%2F11scsjf5kd?entry=tts&g_ep=EgoyMDI2MDkzMC4wIPu8ASoASAFQAw%3D%3D&skid=789b3228-ed3d-41f2-ab00-3860b6446d17',
+    directionsUrl: 'https://www.google.com/maps/dir//A-State+Insurance,+5206+Airline+Dr+g,+Houston,+TX+77022,+United+States/@29.8423603,-95.386512,17z/data=!4m16!1m7!3m6!1s0x8640b9c87d8b4ba5:0x9f74c0c87f80aa47!2sA-State+Insurance!8m2!3d29.842283!4d-95.3837829!16s%2Fg%2F11scsjf5kd!4m7!1m0!1m5!1m1!1s0x8640b9c87d8b4ba5:0x9f74c0c87f80aa47!2m2!1d-95.3837829!2d29.842283?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D',
   },
 ];
 
