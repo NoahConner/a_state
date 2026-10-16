@@ -9,7 +9,15 @@ type QuoteLeadPayload = {
   selected_chip: string;
   full_name: string;
   phone_number: string;
+  /** Sent only by forms that ask for them (the Our Locations and office page quote forms). */
+  email?: string;
+  preferred_office?: string;
+  preferred_language?: string;
+  best_time?: string;
+  contact_method?: string;
 };
+
+const OPTIONAL_FIELDS = ['email', 'preferred_office', 'preferred_language', 'best_time', 'contact_method'] as const;
 
 @Injectable({
   providedIn: 'root',
@@ -43,6 +51,7 @@ export class QuoteLeadCaptureService {
         selected_chip: selectedChip,
         full_name: fullName,
         phone_number: phoneNumber,
+        ...this.optionalFields(payload),
         ...this.pageSource.getSourceFields(),
       }),
     );
@@ -58,6 +67,16 @@ export class QuoteLeadCaptureService {
     });
 
     return true;
+  }
+
+  /** The optional fields that have a value; empty ones are left out of the request. */
+  private optionalFields(payload: QuoteLeadPayload): Partial<QuoteLeadPayload> {
+    const out: Partial<QuoteLeadPayload> = {};
+    for (const key of OPTIONAL_FIELDS) {
+      const value = payload[key]?.trim();
+      if (value) out[key] = value;
+    }
+    return out;
   }
 
   private async showWarning(message: string) {

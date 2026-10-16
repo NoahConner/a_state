@@ -201,18 +201,19 @@
       </div>
       <div class="field">
         <label for="a-email">{{ 'CAREERS_PAGE.APPLY.EMAIL' | translate }} <span class="req" aria-hidden="true">*</span></label>
-        <input id="a-email" name="email" type="email" autocomplete="email" required [value]="form.email"
+        <input id="a-email" name="email" type="email" autocomplete="email" placeholder="johndoe@gmail.com" required [value]="form.email"
           [attr.aria-invalid]="errors.email ? 'true' : null" aria-describedby="a-email-err" (input)="onInput('email', $event)" (blur)="onBlur('email')" />
         <p class="err" id="a-email-err">{{ errors.email }}</p>
       </div>
       <fieldset>
-        <legend>{{ 'CAREERS_PAGE.APPLY.LANGS' | translate }}</legend>
+        <legend>{{ 'CAREERS_PAGE.APPLY.LANGS' | translate }} <span class="req" aria-hidden="true">*</span></legend>
         <div class="opts">
           <div class="opt-chip" *ngFor="let o of list('CAREERS_PAGE.APPLY.LANG_OPTIONS')">
-            <input type="checkbox" name="lang" [id]="'al-' + o.V" [value]="o.V" [checked]="form.langs.includes(o.V)" (change)="toggleLang(o.V, $event)" />
+            <input type="checkbox" name="lang" [id]="'al-' + o.V" [value]="o.V" [checked]="form.langs.includes(o.V)" (change)="toggleLang(o.V, $event)" aria-describedby="a-langs-err" />
             <label [for]="'al-' + o.V">{{ o.L }}</label>
           </div>
         </div>
+        <p class="err" id="a-langs-err">{{ errors.langs }}</p>
       </fieldset>
       <fieldset>
         <legend>{{ 'CAREERS_PAGE.APPLY.AREA' | translate }} <span class="req" aria-hidden="true">*</span></legend>
@@ -225,13 +226,14 @@
         <p class="err" id="a-area-err">{{ errors.area }}</p>
       </fieldset>
       <fieldset>
-        <legend>{{ 'CAREERS_PAGE.APPLY.OFFICE' | translate }}</legend>
+        <legend>{{ 'CAREERS_PAGE.APPLY.OFFICE' | translate }} <span class="req" aria-hidden="true">*</span></legend>
         <div class="opts">
           <div class="opt-chip" *ngFor="let o of list('CAREERS_PAGE.APPLY.OFFICES')">
-            <input type="radio" name="office" [id]="'ao-' + o.V" [value]="o.V" [checked]="form.office === o.V" (change)="form.office = o.V" />
+            <input type="radio" name="office" [id]="'ao-' + o.V" [value]="o.V" [checked]="form.office === o.V" (change)="setOffice(o.V)" aria-describedby="a-office-err" />
             <label [for]="'ao-' + o.V">{{ o.L }}</label>
           </div>
         </div>
+        <p class="err" id="a-office-err">{{ errors.office }}</p>
       </fieldset>
       <div class="field">
         <span class="flabel" id="a-file-l">{{ 'CAREERS_PAGE.APPLY.RESUME' | translate }} <span class="req" aria-hidden="true">*</span></span>

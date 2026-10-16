@@ -62094,15 +62094,7 @@
           "t": ": cobertura para cada texano"
         }
       ],
-      "LEAD": [
-        {
-          "t": "A-State Insurance",
-          "r": "home"
-        },
-        {
-          "t": " es una agencia independiente que compara pólizas de varias compañías para encontrar la cobertura que se ajuste a su vida, su negocio y su presupuesto."
-        }
-      ],
+      "LEAD": "A-State Insurance es una agencia independiente que compara pólizas de varias compañías para encontrar la cobertura que se ajuste a su vida, su negocio y su presupuesto.",
       "CHECK_FREE": "Cotizaciones gratis",
       "CHECK_CARRIERS": "Más de 50 compañías"
     },
@@ -62730,8 +62722,7 @@
         {
           "LABEL": "Idiomas",
           "VALUE": "Español · English · हिंदी",
-          "SMALL": "",
-          "WIDE": true
+          "SMALL": ""
         }
       ]
     },
@@ -63385,7 +63376,8 @@
                 [
                   {
                     "t": "707 Shotwell St, Suite A, Houston, TX 77020",
-                    "h": "https://maps.app.goo.gl/3yoEc7gXFuw8LyPv6"
+                    "r": "ourLocations/:id",
+                    "id": "707-shotwell-st-a-houston-tx-77020"
                   }
                 ],
                 [
@@ -63864,7 +63856,8 @@
                 [
                   {
                     "t": "707 Shotwell St, Suite A, Houston, TX 77020",
-                    "h": "https://maps.app.goo.gl/3yoEc7gXFuw8LyPv6"
+                    "r": "ourLocations/:id",
+                    "id": "707-shotwell-st-a-houston-tx-77020"
                   }
                 ],
                 [
@@ -64080,7 +64073,10 @@
       "ERR_PHONE_EMPTY": "Escriba su número de teléfono.",
       "ERR_PHONE_INVALID": "Escriba un número de 10 dígitos, como (713) 555-0123.",
       "ERR_EMAIL": "Escriba un correo como nombre@ejemplo.com, o déjelo en blanco.",
-      "ERR_EMAIL_NEEDED": "Agregue un correo para que podamos responderle por correo."
+      "ERR_EMAIL_NEEDED": "Agregue un correo para que podamos responderle por correo.",
+      "ERR_METHOD": "Elija cómo prefiere que lo contactemos.",
+      "ERR_TYPE": "Elija un tipo de seguro.",
+      "ERR_LANG": "Elija su idioma preferido."
     },
     "OFFICES": {
       "TITLE": "Encuentre la oficina de A-State Insurance más cercana",
@@ -64547,6 +64543,8 @@
       "ERR_EMAIL_EMPTY": "Escriba su correo electrónico.",
       "ERR_EMAIL_INVALID": "Escriba un correo como nombre@ejemplo.com.",
       "ERR_AREA": "Elija un área de interés.",
+      "ERR_LANGS": "Elija al menos un idioma que hable.",
+      "ERR_OFFICE": "Elija una oficina preferida.",
       "ERR_FILE_EMPTY": "Adjunte su currículum (PDF o DOCX).",
       "ERR_FILE_TYPE": "Use un archivo PDF o DOCX.",
       "ERR_FILE_SIZE": "Ese archivo pesa {{size}} MB. El límite es 5 MB."
@@ -64711,6 +64709,1162 @@
       "LEARN_SERVICES": "Todos los servicios de seguros",
       "LEARN_ABOUT": "Sobre A-State",
       "LEARN_OFFICES": "Nuestras 5 oficinas en Houston"
+    }
+  },
+  "LOCATIONS_PAGE": {
+    "BREADCRUMB": {
+      "ARIA": "Ruta de navegación",
+      "HOME": "Inicio",
+      "CURRENT": "Nuestras ubicaciones"
+    },
+    "HERO": {
+      "TITLE": "Encuentre una oficina de A-State Insurance cerca de usted en Houston, TX",
+      "CTA_MAP": "Encontrar mi oficina más cercana",
+      "CTA_QUOTE": "Cotizar gratis",
+      "LEAD": [
+        {
+          "t": "Cinco oficinas en su vecindario, agentes con licencia, estacionamiento gratis y sin necesidad de cita. Visítenos de lunes a sábado, de 9 a.m. a 7 p.m., o llame al "
+        },
+        {
+          "t": "(713) 357-7771",
+          "h": "tel:+17133577771"
+        },
+        {
+          "t": "."
+        }
+      ]
+    },
+    "HOURS": {
+      "ARIA": "Horario de oficina",
+      "TITLE": "Horario de oficina · hora del centro",
+      "WEEK": "Lunes a sábado",
+      "WEEK_TIME": "9:00 a.m.–7:00 p.m.",
+      "SUNDAY": "Domingo",
+      "CLOSED": "Cerrado",
+      "DEFAULT": "Lun–Sáb, 9 a.m.–7 p.m.",
+      "OPEN": "Abierto ahora · hasta las 7 p.m.",
+      "OPENS_TODAY": "Cerrado ahora · abre hoy a las 9 a.m.",
+      "OPENS_MONDAY": "Cerrado ahora · abre el lunes a las 9 a.m.",
+      "OPENS_TOMORROW": "Cerrado ahora · abre mañana a las 9 a.m.",
+      "NOTE": "Estacionamiento gratis · Sin cita"
+    },
+    "OTP": {
+      "LABEL": "En esta página",
+      "ITEMS": [
+        "Mapa",
+        "Oficinas",
+        "Área de servicio",
+        "Por qué visitarnos",
+        "Cotizar",
+        "Preguntas frecuentes"
+      ]
+    },
+    "MAP": {
+      "TITLE": "Estamos en su vecindario: cinco oficinas en Houston",
+      "LEAD": "Desde Denver Harbor en el East Side hasta Fondren Southwest, Westbury, Greater Inwood y Northside-Northline, hay una oficina de A-State cerca de su casa o su trabajo.",
+      "LEGEND_ARIA": "Oficinas en el mapa",
+      "MAP_ARIA": "Mapa esquemático de Houston con las cinco oficinas de A-State",
+      "DOWNTOWN": "Centro",
+      "CAPTION": "Esquema, no a escala"
+    },
+    "OFFICES": {
+      "TITLE": "Nuestras oficinas de seguros en Houston",
+      "META_ARIA": "Horario y servicios en todas las oficinas",
+      "META": {
+        "HOURS_LABEL": "Horario:",
+        "HOURS": "Lun–Sáb, 9:00 a.m.–7:00 p.m.",
+        "LANG_LABEL": "Idiomas:",
+        "LANGS": [
+          {
+            "t": "Español",
+            "es": true
+          },
+          {
+            "t": "English"
+          },
+          {
+            "t": "Hindi"
+          }
+        ],
+        "CLOSED": "Cerrado el domingo",
+        "PARKING": "Estacionamiento gratis",
+        "WALK_INS": "Sin cita"
+      },
+      "ADDRESS": "Dirección:",
+      "PHONE": "Teléfono:",
+      "REVIEWS": "Reseñas de Google:",
+      "REVIEWS_COUNT": "{{n}} reseñas",
+      "PARKING": "Estacionamiento:",
+      "QUOTE": "Cotizar",
+      "DIRECTIONS": "Cómo llegar",
+      "DETAILS": "Ver detalles de la oficina",
+      "ITEMS": [
+        {
+          "NAME": "Shotwell",
+          "HOOD": "Denver Harbor",
+          "ADDRESS": "707 Shotwell St, Suite A, Houston, TX 77020",
+          "PARKING": "Gratis, justo frente a la Suite A."
+        },
+        {
+          "NAME": "Southwest",
+          "HOOD": "Fondren Southwest",
+          "ADDRESS": "11503 Southwest Fwy B, Houston, TX 77031",
+          "PARKING": "Gratis para todos nuestros clientes, justo frente a la Suite B."
+        },
+        {
+          "NAME": "Post Oak",
+          "HOOD": "Westbury",
+          "ADDRESS": "10547 S Post Oak Rd, Houston, TX 77035",
+          "PARKING": "Gratis, en el estacionamiento privado frente al edificio."
+        },
+        {
+          "NAME": "Antoine",
+          "HOOD": "Greater Inwood",
+          "ADDRESS": "5712 Antoine Dr, Houston, TX 77091",
+          "PARKING": "Gratis, justo frente a la oficina."
+        },
+        {
+          "NAME": "Airline",
+          "HOOD": "Northside-Northline",
+          "ADDRESS": "5206 Airline Dr G, Houston, TX 77022",
+          "PARKING": "Gratis, justo frente a la Suite G."
+        }
+      ]
+    },
+    "AREA": {
+      "TITLE": "Atendemos a todo Texas desde Houston",
+      "LEAD": "¿No puede venir a Houston? Nuestros agentes con licencia atienden a clientes en todo Texas por teléfono, texto y correo electrónico.",
+      "POPULAR": "Ciudades más grandes que atendemos",
+      "SEARCH": "Encuentre su ciudad",
+      "CLEAR": "Borrar búsqueda",
+      "COUNT": "{{n}} ciudades de Texas",
+      "COUNT_FILTERED": "{{n}} de {{t}} ciudades de Texas",
+      "BROWSE": "Ver las {{t}} ciudades de la A a la Z",
+      "HIDE": "Ocultar la lista de ciudades",
+      "LETTERS_ARIA": "Ir a la letra",
+      "EMPTY": [
+        {
+          "t": "No hay coincidencias, pero atendemos a clientes en todo Texas. Llámenos o envíenos un texto al "
+        },
+        {
+          "t": "(713) 357-7771",
+          "h": "tel:+17133577771"
+        },
+        {
+          "t": "."
+        }
+      ]
+    },
+    "WHY": {
+      "TITLE": "¿Por qué visitar una oficina de A-State Insurance en persona?",
+      "ITEMS": [
+        {
+          "TITLE": "Compare compañías cara a cara",
+          "TEXT": "Siéntese con un agente con licencia y compare cotizaciones de más de 50 compañías lado a lado."
+        },
+        {
+          "TITLE": "Venga sin cita",
+          "TEXT": "Lun–Sáb, 9 a.m.–7 p.m. Traiga sus preguntas y nosotros nos encargamos del resto."
+        },
+        {
+          "TITLE": "Su idioma, su comunidad",
+          "TEXT": "Nuestros agentes hablan español, inglés e hindi, y conocen los vecindarios que atienden."
+        },
+        {
+          "TITLE": "Ayuda cuando necesite hacer un reclamo",
+          "TEXT": "Le ayudamos a reportarlo, reunir documentos y dar seguimiento con su compañía. La compañía decide sobre el reclamo, pero usted no estará solo."
+        }
+      ]
+    },
+    "QUOTE": {
+      "TITLE": "¿No puede venir? Estamos a una llamada o un clic.",
+      "TEXT": [
+        {
+          "t": "Llámenos o envíenos un texto al "
+        },
+        {
+          "t": "(713) 357-7771",
+          "h": "tel:+17133577771"
+        },
+        {
+          "t": ", u obtenga en línea una cotización gratis y sin compromiso."
+        }
+      ],
+      "CALL": "Llamar al (713) 357-7771",
+      "TEXT_US": "Envíenos un texto",
+      "NAME": "Nombre completo",
+      "PHONE": "Número de teléfono",
+      "EMAIL": "Correo electrónico",
+      "OPTIONAL": "(opcional)",
+      "TYPE": "Tipo de seguro",
+      "TYPES": [
+        {
+          "V": "auto",
+          "L": "Auto"
+        },
+        {
+          "V": "home",
+          "L": "Casa"
+        },
+        {
+          "V": "business",
+          "L": "Negocio"
+        },
+        {
+          "V": "life",
+          "L": "Vida"
+        },
+        {
+          "V": "health",
+          "L": "Salud"
+        },
+        {
+          "V": "other",
+          "L": "Otro"
+        }
+      ],
+      "OFFICE": "Oficina preferida",
+      "NO_PREFERENCE": "Sin preferencia",
+      "SUBMIT": "Cotizar gratis",
+      "ERR_NAME": "Escriba su nombre completo.",
+      "ERR_PHONE_EMPTY": "Escriba su número de teléfono.",
+      "ERR_PHONE_INVALID": "Escriba un número de 10 dígitos, como (713) 555-0123.",
+      "ERR_EMAIL": "Escriba un correo como nombre@ejemplo.com, o déjelo en blanco.",
+      "ERR_TYPE": "Elija un tipo de seguro."
+    },
+    "FAQ": {
+      "TITLE": "Preguntas frecuentes sobre nuestras oficinas",
+      "ITEMS": [
+        {
+          "Q": "¿Necesito cita para visitar una oficina de A-State?",
+          "A": "No. Puede visitar sin cita cualquiera de nuestras 5 oficinas en Houston, de lunes a sábado, de 9 a.m. a 7 p.m."
+        },
+        {
+          "Q": "¿Todas las oficinas tienen agentes que hablan español?",
+          "A": "Sí. Todas las oficinas tienen agentes que hablan español. También tenemos agentes que hablan hindi."
+        },
+        {
+          "Q": "¿Qué debo traer en mi primera visita?",
+          "A": [
+            {
+              "t": "Para "
+            },
+            {
+              "t": "auto",
+              "r": "autoInsurance"
+            },
+            {
+              "t": ": la página de declaraciones de su póliza actual, los números de licencia de conducir de todos los conductores de su hogar y los VIN. Para "
+            },
+            {
+              "t": "casa",
+              "r": "homeInsurance"
+            },
+            {
+              "t": ": la dirección de la propiedad, la antigüedad del techo y cualquier mejora de seguridad. Para un "
+            },
+            {
+              "t": "negocio",
+              "r": "commercialInsurance"
+            },
+            {
+              "t": ": la dirección del negocio, los ingresos anuales estimados y la nómina."
+            }
+          ]
+        },
+        {
+          "Q": "¿Cuál es su horario?",
+          "A": "De lunes a sábado, de 9:00 a.m. a 7:00 p.m. Cerrado el domingo. El horario de días festivos se publica en el perfil de Google de cada oficina."
+        },
+        {
+          "Q": "¿Hay estacionamiento?",
+          "A": "Sí. Todas las oficinas tienen estacionamiento gratis justo enfrente."
+        },
+        {
+          "Q": "¿Cuál es la oficina más cercana a mí?",
+          "A": [
+            {
+              "t": "Use el "
+            },
+            {
+              "t": "mapa de arriba",
+              "h": "#map"
+            },
+            {
+              "t": " o llame al "
+            },
+            {
+              "t": "(713) 357-7771",
+              "h": "tel:+17133577771"
+            },
+            {
+              "t": " y le indicaremos la oficina más cercana."
+            }
+          ]
+        },
+        {
+          "Q": "¿Puedo obtener una cotización sin ir en persona?",
+          "A": "Sí. Llame, envíe un texto o llene nuestro formulario en línea, y un agente con licencia comparará cotizaciones por usted."
+        }
+      ]
+    }
+  },
+  "OFFICE_PAGE": {
+    "COMMON": {
+      "BREADCRUMB": {
+        "ARIA": "Ruta de navegación",
+        "HOME": "Inicio",
+        "LOCATIONS": "Nuestras ubicaciones"
+      },
+      "CTA_QUOTE": "Cotizar gratis",
+      "CTA_CALL": "Llamar al {{phone}}",
+      "CTA_DIRECTIONS": "Cómo llegar",
+      "RATING_LINK": "· {{n}} reseñas en Google",
+      "HOURS": {
+        "ARIA": "Horario de oficina",
+        "TITLE": "Oficina de {{name}} · hora del centro",
+        "WEEK": "Lunes a sábado",
+        "WEEK_TIME": "9:00 a.m.–7:00 p.m.",
+        "SUNDAY": "Domingo",
+        "CLOSED": "Cerrado",
+        "DEFAULT": "Lun–Sáb, 9 a.m.–7 p.m.",
+        "OPEN": "Abierto ahora · hasta las 7 p.m.",
+        "OPENS_TODAY": "Cerrado ahora · abre hoy a las 9 a.m.",
+        "OPENS_MONDAY": "Cerrado ahora · abre el lunes a las 9 a.m.",
+        "OPENS_TOMORROW": "Cerrado ahora · abre mañana a las 9 a.m.",
+        "NOTE": "Estacionamiento gratis · Sin cita"
+      },
+      "OTP": {
+        "LABEL": "En esta página",
+        "ITEMS": [
+          "Visítenos",
+          "Por qué nosotros",
+          "Vecindarios",
+          "Seguros",
+          "Reseñas",
+          "Preguntas",
+          "Cotizar"
+        ]
+      },
+      "FACTS": {
+        "ADDRESS": "Dirección:",
+        "PHONE": "Teléfono y texto:",
+        "TEXT_US": "Envíenos un texto",
+        "HOURS": "Horario:",
+        "HOURS_VALUE": "Lunes a sábado, 9 a.m.–7 p.m. · Cerrado el domingo",
+        "LANGS": "Idiomas:",
+        "LANGS_VALUE": [
+          {
+            "t": "Español",
+            "lang": "es"
+          },
+          {
+            "t": "English",
+            "lang": "en"
+          },
+          {
+            "t": "Hindi",
+            "lang": "hi"
+          }
+        ],
+        "GETTING_HERE": "Cómo llegar:",
+        "PARKING": "Estacionamiento:",
+        "RATING": "Calificación en Google:",
+        "RATING_FROM": "con",
+        "REVIEWS_N": "{{n}} reseñas"
+      },
+      "MAP": {
+        "SHOW": "Ver mapa",
+        "OPEN": "Abrir en Google Maps",
+        "TITLE": "Mapa de la oficina de {{name}}"
+      },
+      "HOODS": {
+        "ALL": "Ver las 5 oficinas en Houston",
+        "ZIP": "Códigos postales:",
+        "ZIP_ARIA": "Códigos postales"
+      },
+      "COVERAGE": {
+        "PERSONAL": "Personales",
+        "BUSINESS": "Negocios",
+        "VIEW_ALL": "Ver todos los seguros",
+        "ITEMS": {
+          "auto": "Auto",
+          "home": "Casa",
+          "renters": "Inquilinos",
+          "flood": "Inundación",
+          "sr22": "SR-22",
+          "life": "Vida",
+          "health": "Salud",
+          "finalExpense": "Gastos finales",
+          "medicare": "Medicare Supplement",
+          "commercial": "Comercial",
+          "commercialAuto": "Auto comercial",
+          "surety": "Fianzas (surety bonds)"
+        }
+      },
+      "REVIEWS": {
+        "SCORE": "con {{n}} reseñas en Google",
+        "ARIA": "Reseñas de Google",
+        "RATED": "Calificación: 5 de 5.",
+        "READ_ALL": "Ver todas las reseñas en Google"
+      },
+      "FAQ_TITLE": "Preguntas frecuentes",
+      "QUOTE": {
+        "TEXT_US": "Envíenos un texto",
+        "NAME": "Nombre completo",
+        "PHONE": "Número de teléfono",
+        "TYPE": "Tipo de seguro",
+        "TYPES": [
+          {
+            "V": "auto",
+            "L": "Auto"
+          },
+          {
+            "V": "home",
+            "L": "Casa"
+          },
+          {
+            "V": "commercial",
+            "L": "Comercial"
+          },
+          {
+            "V": "life",
+            "L": "Vida"
+          },
+          {
+            "V": "health",
+            "L": "Salud"
+          },
+          {
+            "V": "bond",
+            "L": "Fianza"
+          },
+          {
+            "V": "other",
+            "L": "Otro"
+          }
+        ],
+        "LANG": "Idioma preferido",
+        "LANGS": [
+          {
+            "V": "es",
+            "L": "Español"
+          },
+          {
+            "V": "en",
+            "L": "English"
+          },
+          {
+            "V": "hi",
+            "L": "हिंदी"
+          }
+        ],
+        "TIME": "Mejor hora para contactarlo",
+        "OPTIONAL": "(opcional)",
+        "TIMES": [
+          {
+            "V": "morning",
+            "L": "Mañana"
+          },
+          {
+            "V": "afternoon",
+            "L": "Tarde"
+          },
+          {
+            "V": "evening",
+            "L": "Noche"
+          }
+        ],
+        "METHOD": "Método de contacto preferido",
+        "METHODS": [
+          {
+            "V": "call",
+            "L": "Llamada"
+          },
+          {
+            "V": "text",
+            "L": "Texto"
+          }
+        ],
+        "SUBMIT": "Cotizar gratis",
+        "ERR_NAME": "Escriba su nombre completo.",
+        "ERR_PHONE_EMPTY": "Escriba su número de teléfono.",
+        "ERR_PHONE_INVALID": "Escriba un número de 10 dígitos, como (713) 555-0123.",
+        "ERR_TYPE": "Elija un tipo de seguro."
+      }
+    },
+    "OFFICES": {
+      "antoine": {
+        "NAME": "Greater Inwood",
+        "TITLE": "A-State Insurance – Greater Inwood, Houston, TX",
+        "LEAD": [
+          {
+            "t": "Su agencia de seguros local en 5712 Antoine Dr, en Greater Inwood. Venga sin cita de lunes a sábado, o llame o envíe un texto al "
+          },
+          {
+            "t": "(713) 263-9800",
+            "h": "tel:+17132639800"
+          },
+          {
+            "t": "."
+          }
+        ],
+        "VISIT_TITLE": "Visite nuestra oficina de Greater Inwood",
+        "ADDRESS": "5712 Antoine Dr, Houston, TX 77091",
+        "GETTING_HERE": "En Antoine Dr, justo al norte de W Tidwell Rd, en Greater Inwood.",
+        "PARKING": "Gratis, justo frente a la oficina.",
+        "WHY_TITLE": "Seguros sin complicaciones en Greater Inwood",
+        "WHY": [
+          {
+            "TITLE": "Venga sin cita.",
+            "TEXT": "Visítenos de lunes a sábado, de 9 a.m. a 7 p.m. No necesita cita."
+          },
+          {
+            "TITLE": "Ayuda en su idioma.",
+            "TEXT": "Nuestros agentes hablan español e inglés, y también atendemos en hindi, para que pueda hacer todas sus preguntas y entender cada respuesta."
+          },
+          {
+            "TITLE": "Atendemos a Greater Inwood y el noroeste de Houston.",
+            "TEXT": "Las familias del noroeste de Houston confían en nosotros para conseguir coberturas sencillas. Ayudamos a quienes manejan por Antoine y W Tidwell a encontrar seguro de auto económico, a los propietarios de Inwood Forest y Candlelight Plaza a proteger su casa, y a las familias a elegir planes de vida y de gastos finales explicados con claridad, en español o en inglés."
+          },
+          {
+            "TITLE": "Comparamos más de 50 compañías por usted.",
+            "TEXT": "Como agencia independiente, comparamos cotizaciones de muchas aseguradoras y le mostramos las opciones lado a lado."
+          },
+          {
+            "TITLE": "Sin presión, solo respuestas claras.",
+            "TEXT": "Le explicamos qué cubre cada póliza y qué no cubre, y usted decide."
+          }
+        ],
+        "HOODS_TITLE": "Vecindarios que atiende esta oficina",
+        "HOODS_TEXT": "Greater Inwood, Inwood Forest, Candlelight Plaza, Acres Homes, Oak Forest, Central Northwest, Highland Heights y Carverdale.",
+        "COV_TITLE": "Seguros en nuestra oficina de Greater Inwood",
+        "BAND": {
+          "LANG": "es",
+          "TITLE": "También le atendemos en inglés e hindi",
+          "TEXT": [
+            {
+              "t": "En nuestra oficina de Antoine Dr, los agentes con licencia también atienden en inglés e hindi. Si alguien de su familia prefiere leer en inglés, comparta con ellos la versión en inglés de esta página."
+            }
+          ],
+          "SWITCH": "View this page in English"
+        },
+        "REV_TITLE": "Lo que dicen nuestros clientes de Greater Inwood",
+        "REVIEWS": [
+          {
+            "T": "Un proceso fluido, claro y transparente",
+            "TEXT": "Totalmente agradecido y satisfecho con el respaldo . No Es muy común encontrarse con procesos complicados al tratar temas de seguros Meylin Marquina convirtió todo en un proceso fluido, claro y transparente. Su amabilidad, paciencia y disposición para ayudar en todo momento son ejemplares. Se nota de inmediato el compromiso y la calidad humana con la que trabaja. Sin duda alguna, contar con profesionales de su nivel marca completamente la diferencia. Recomiendo este servicio al 100% y felicito a Meylin por su labor tan impecable. ¡Definitivamente 5 estrellas!",
+            "LANG": "es",
+            "BY": "— Alexzaid C., reseña de Google, agosto de 2026"
+          },
+          {
+            "T": "Los mejores precios para mi situación económica",
+            "TEXT": "Fue un excelente servicio por parte de la señorita Meylin y me brindó los mejores precios para mi situación económica y fue respetuosa en todo momento y es 100% recomendable.",
+            "LANG": "es",
+            "BY": "— Miguel O., reseña de Google, agosto de 2026"
+          },
+          {
+            "T": "They will always find you a better deal!",
+            "TEXT": "They have so many options for everyone. They will always find you a better deal! A special thanks to Ana! Truly she goes above and beyond to help you. Thank you Ana for everything you do for your customers! Frank the owner is lucky to have you! Good luck to you guys! Keep up the amazing work Ana!",
+            "LANG": "en",
+            "BY": "— Emi M., reseña de Google (en inglés), 2022"
+          },
+          {
+            "T": "She took the time to explain policies and options",
+            "TEXT": "Ana was great!?!! She took the time to explain policies and options… very friendly and helpful reps",
+            "LANG": "en",
+            "BY": "— Ismael C., reseña de Google (en inglés), 2023"
+          },
+          {
+            "T": "Meylin really went the extra mile",
+            "TEXT": "I really enjoyed how well I was treated. This one person in particular was very helpful, Meylin really went the extra mile to help me.",
+            "LANG": "en",
+            "BY": "— Leo G., reseña de Google (en inglés), agosto de 2026"
+          },
+          {
+            "T": "Definitely recommend!",
+            "TEXT": "Best insurance! Place they are really helpful! Definitely recommend ! Ana has a great customer service she answer any questions you have! Thank y’all so much!",
+            "LANG": "en",
+            "BY": "— Yasmin C., reseña de Google (en inglés), 2022"
+          }
+        ],
+        "FAQ": [
+          {
+            "Q": "¿Necesito cita?",
+            "A": "No. Venga sin cita de lunes a sábado, de 9 a.m. a 7 p.m."
+          },
+          {
+            "Q": "¿Hay agentes que hablan español en esta oficina?",
+            "A": "Sí. Nuestros agentes de Greater Inwood hablan español, inglés e hindi."
+          },
+          {
+            "Q": "¿Hay estacionamiento?",
+            "A": "Sí, gratis y justo frente a la oficina."
+          },
+          {
+            "Q": "¿Qué debo traer?",
+            "A": "Para auto: su póliza actual, las licencias de conducir y los números VIN. Para casa: la dirección de la propiedad y la antigüedad del techo."
+          },
+          {
+            "Q": "¿Puedo cotizar por teléfono?",
+            "A": [
+              {
+                "t": "Sí. Llame o envíe un texto al "
+              },
+              {
+                "t": "(713) 263-9800",
+                "h": "tel:+17132639800"
+              },
+              {
+                "t": "."
+              }
+            ]
+          },
+          {
+            "Q": "¿Qué vecindarios atiende esta oficina?",
+            "A": "Greater Inwood, Inwood Forest, Candlelight Plaza, Acres Homes, Oak Forest y otras zonas del noroeste de Houston. Además, aseguramos a clientes en todo Texas."
+          }
+        ],
+        "QUOTE_TITLE": "Cotice gratis en nuestra oficina de Greater Inwood",
+        "QUOTE_TEXT": "Díganos qué necesita y un agente con licencia de esta oficina comparará compañías y le devolverá la llamada."
+      },
+      "postOak": {
+        "NAME": "Westbury",
+        "TITLE": "A-State Insurance – Westbury, Houston, TX",
+        "LEAD": [
+          {
+            "t": "Su agencia de seguros local en 10547 S Post Oak Rd, en Westbury. Venga sin cita de lunes a sábado, o llame o envíe un texto al "
+          },
+          {
+            "t": "(281) 406-1900",
+            "h": "tel:+12814061900"
+          },
+          {
+            "t": "."
+          }
+        ],
+        "VISIT_TITLE": "Visite nuestra oficina de Westbury",
+        "ADDRESS": "10547 S Post Oak Rd, Houston, TX 77035",
+        "GETTING_HERE": "En S Post Oak Rd, justo al norte de W Bellfort Ave, en Westbury.",
+        "PARKING": "Gratis, en el estacionamiento privado frente al edificio.",
+        "WHY_TITLE": "Seguros sin complicaciones en Westbury",
+        "WHY": [
+          {
+            "TITLE": "Venga sin cita.",
+            "TEXT": "Visítenos de lunes a sábado, de 9 a.m. a 7 p.m. No necesita cita."
+          },
+          {
+            "TITLE": "Ayuda en su idioma.",
+            "TEXT": "Nuestros agentes hablan español e inglés, y también atendemos en hindi, para que pueda hacer todas sus preguntas y entender cada respuesta."
+          },
+          {
+            "TITLE": "Atendemos a Westbury y el suroeste de Houston.",
+            "TEXT": "De Westbury y Willow Meadows a Meyerland y Brays Oaks, nuestros vecinos quieren una cobertura pensada para la vida real. Ayudamos a quienes manejan por S Post Oak y W Bellfort a encontrar seguro de auto económico, a los propietarios a comparar seguros de casa y contra inundaciones, y a las familias que crecen a elegir planes de vida y salud que entienden."
+          },
+          {
+            "TITLE": "Comparamos más de 50 compañías por usted.",
+            "TEXT": "Como agencia independiente, comparamos cotizaciones de muchas aseguradoras y le mostramos las opciones lado a lado."
+          },
+          {
+            "TITLE": "Sin presión, solo respuestas claras.",
+            "TEXT": "Le explicamos qué cubre cada póliza y qué no cubre, y usted decide."
+          }
+        ],
+        "HOODS_TITLE": "Vecindarios que atiende esta oficina",
+        "HOODS_TEXT": "Westbury, Willow Meadows, Willowbend, Post Oak Manor, Brays Oaks, Meyerland, Fondren Southwest y Central Southwest.",
+        "COV_TITLE": "Seguros en nuestra oficina de Westbury",
+        "BAND": {
+          "LANG": "es",
+          "TITLE": "También le atendemos en inglés e hindi",
+          "TEXT": [
+            {
+              "t": "En nuestra oficina de S Post Oak Rd, los agentes con licencia también atienden en inglés e hindi. Si alguien de su familia prefiere leer en inglés, comparta con ellos la versión en inglés de esta página."
+            }
+          ],
+          "SWITCH": "View this page in English"
+        },
+        "REV_TITLE": "Lo que dicen nuestros clientes de Westbury",
+        "REVIEWS": [
+          {
+            "T": "She also speaks Spanish!",
+            "TEXT": "Great place! Sana helped me and my dad get the best rates for auto insurance. Wouldn’t go anywhere else. Very professional and helpful. She also speaks Spanish!",
+            "LANG": "en",
+            "BY": "— Jose M., reseña de Google (en inglés), 2023"
+          },
+          {
+            "T": "The only place where the agent actually listens",
+            "TEXT": "the only place where the agent actually listens to your needs and gets you the insurance you need. i used to get charged extras because of my young age and i used to pay for things that i dont need to the point i couldn't afford it anymore. this place got me affordable insurance and sana is always there to help. 5 stars. highly recommend 👌",
+            "LANG": "en",
+            "BY": "— Esteban G., reseña de Google (en inglés), 2022"
+          },
+          {
+            "T": "Took time to explain all my options",
+            "TEXT": "Sana handles her position and office very well. Owner should be very proud. She got me what I needed and took time to explain all my options and got me a secure very good rate. She was an excellent salesperson and I felt taken care of and that I could trust her. She not only sold quality but customer service thanks Sana really appreciate it Frfr",
+            "LANG": "en",
+            "BY": "— Zubayr H. E., reseña de Google (en inglés), 2023"
+          },
+          {
+            "T": "The most affordable and best option for me and my family",
+            "TEXT": "Great location for affordable insurance! After searching and quoting with so many places this is the most affordable and best option for me and my family. Appreciate Sana for your patience and explaining me all the steps and things I need to know! Thank you for making things much smoother and easily accesible to me.",
+            "LANG": "en",
+            "BY": "— Brenda S., reseña de Google (en inglés), 2024"
+          },
+          {
+            "T": "Best at finding the lowest quote",
+            "TEXT": "I’ve been with them more than a year now and have never had an issue they are best at finding the lowest quote for your car insurance.",
+            "LANG": "en",
+            "BY": "— Gabi S., reseña de Google (en inglés), septiembre de 2026"
+          },
+          {
+            "T": "Made sure to find my parents cheapest rate",
+            "TEXT": "Came to post oak, after driving to many insurance place, met the nice lady there Sana. She was very friendly, kind, and tried so hard to help us, gave us discounts and made sure to find my parents cheapest rate! We were so happy! She’s very professional and nice lady. We will be sending all our family and uncles here! Recommend! Thank you Mrs. Sana! :) -Christine Uwimana God bless",
+            "LANG": "en",
+            "BY": "— Christine U., reseña de Google (en inglés), 2023"
+          }
+        ],
+        "FAQ": [
+          {
+            "Q": "¿Necesito cita?",
+            "A": "No. Venga sin cita de lunes a sábado, de 9 a.m. a 7 p.m."
+          },
+          {
+            "Q": "¿Hay agentes que hablan español en esta oficina?",
+            "A": "Sí. Nuestros agentes de Westbury hablan español, inglés e hindi."
+          },
+          {
+            "Q": "¿Hay estacionamiento?",
+            "A": "Sí, gratis, en el estacionamiento privado frente al edificio."
+          },
+          {
+            "Q": "¿Qué debo traer?",
+            "A": "Para auto: su póliza actual, las licencias de conducir y los números VIN. Para casa: la dirección de la propiedad y la antigüedad del techo."
+          },
+          {
+            "Q": "¿Puedo cotizar por teléfono?",
+            "A": [
+              {
+                "t": "Sí. Llame o envíe un texto al "
+              },
+              {
+                "t": "(281) 406-1900",
+                "h": "tel:+12814061900"
+              },
+              {
+                "t": "."
+              }
+            ]
+          },
+          {
+            "Q": "¿Qué vecindarios atiende esta oficina?",
+            "A": "Westbury, Willow Meadows, Willowbend, Meyerland, Brays Oaks y otras zonas del suroeste de Houston. Además, aseguramos a clientes en todo Texas."
+          }
+        ],
+        "QUOTE_TITLE": "Cotice gratis en nuestra oficina de Westbury",
+        "QUOTE_TEXT": "Díganos qué necesita y un agente con licencia de esta oficina comparará compañías y le devolverá la llamada."
+      },
+      "southwest": {
+        "NAME": "Fondren Southwest",
+        "TITLE": "A-State Insurance – Fondren Southwest, Houston, TX",
+        "LEAD": [
+          {
+            "t": "Su agencia de seguros local en 11503 Southwest Fwy, Suite B, cerca de W Bellfort Ave. Venga sin cita de lunes a sábado, o llame o envíe un texto al "
+          },
+          {
+            "t": "(281) 506-4200",
+            "h": "tel:+12815064200"
+          },
+          {
+            "t": "."
+          }
+        ],
+        "VISIT_TITLE": "Visite nuestra oficina de Fondren Southwest",
+        "ADDRESS": "11503 Southwest Fwy, Suite B, Houston, TX 77031",
+        "GETTING_HERE": "En la calle lateral de la Southwest Freeway (I-69/US-59), cerca de W Bellfort Ave y Wilcrest Dr.",
+        "PARKING": "Gratis, justo frente a la Suite B.",
+        "WHY_TITLE": "Seguros sin complicaciones en el suroeste de Houston",
+        "WHY": [
+          {
+            "TITLE": "Venga sin cita.",
+            "TEXT": "Visítenos de lunes a sábado, de 9 a.m. a 7 p.m. No necesita cita."
+          },
+          {
+            "TITLE": "Ayuda en su idioma.",
+            "TEXT": "El suroeste de Houston es una de las zonas más diversas de la ciudad, y nuestros agentes la atienden en español, inglés e hindi."
+          },
+          {
+            "TITLE": "Atendemos a Fondren Southwest y comunidades cercanas.",
+            "TEXT": "Quienes viajan a diario por la Southwest Freeway y W Bellfort confían en nosotros para conseguir seguro de auto económico. Las familias que viven en apartamentos y casas de la zona vienen por seguros de inquilino, de casa y contra inundaciones. Los pequeños negocios de Wilcrest y W Bellfort obtienen cotizaciones de responsabilidad civil, auto comercial y compensación al trabajador (workers' comp) con un solo agente."
+          },
+          {
+            "TITLE": "Comparamos más de 50 compañías por usted.",
+            "TEXT": "Como agencia independiente, comparamos cotizaciones de muchas aseguradoras y le mostramos las opciones lado a lado."
+          },
+          {
+            "TITLE": "Sin presión, solo respuestas claras.",
+            "TEXT": "Le explicamos qué cubre cada póliza y qué no cubre, y usted decide."
+          }
+        ],
+        "HOODS_TITLE": "Vecindarios que atiende esta oficina",
+        "HOODS_TEXT": "Fondren Southwest, Brays Oaks, Alief, Westwood, Braeburn y Sharpstown, además de Meadows Place, Stafford y Missouri City.",
+        "COV_TITLE": "Seguros en nuestra oficina de Fondren Southwest",
+        "BAND": {
+          "LANG": "es",
+          "TITLE": "También le atendemos en inglés e hindi",
+          "TEXT": [
+            {
+              "t": "En nuestra oficina de la Southwest Freeway, los agentes con licencia también atienden en inglés e hindi. Si alguien de su familia prefiere leer en inglés, comparta con ellos la versión en inglés de esta página."
+            }
+          ],
+          "SWITCH": "View this page in English"
+        },
+        "REV_TITLE": "Lo que dicen nuestros clientes de Fondren Southwest",
+        "REVIEWS": [
+          {
+            "T": "El precio más bajo",
+            "TEXT": "Crystal me ayudó a conseguir el precio más bajo excelente servicio.",
+            "BY": "— Jose R., reseña de Google, septiembre de 2026",
+            "LANG": "es"
+          },
+          {
+            "T": "She made it happen when no other companies could",
+            "TEXT": "Crystal is the best!! I have been looking for quality insurance at a fair price for almost a month now and she made it happen when no other companies could. She is definitely a super star and I highly recommend her!! You will not be disappointed!! Thank you for being so helpful and understanding, it is appreciated.",
+            "BY": "— Katrina E., reseña de Google (en inglés), 2024",
+            "LANG": "en"
+          },
+          {
+            "T": "A tremendous help with our insurance needs",
+            "TEXT": "Crystal was and continues to be a tremendous help with our insurance needs. She's always very professional and knowledgeable when we have any questions or concerns.",
+            "BY": "— Eric C., reseña de Google (en inglés), agosto de 2026",
+            "LANG": "en"
+          },
+          {
+            "T": "Within a short amount of time and at a very good price",
+            "TEXT": "Great customer service! Shana was able to do everything I needed within a short amount of time and at a very good price thank you for all the help!",
+            "BY": "— Ronald J., reseña de Google (en inglés), 2023",
+            "LANG": "en"
+          },
+          {
+            "T": "Answering every question I had with great patience",
+            "TEXT": "I want to thank Sana for her great service and her amazing attitude! thank you so much for helping me! And I always wanted to thank you for answering every question I had with great patience!",
+            "BY": "— Angel R., reseña de Google (en inglés), 2022",
+            "LANG": "en"
+          },
+          {
+            "T": "Really good affordable prices",
+            "TEXT": "Very great place to go I purchase an auto policy they have really good affordable prices . friendly customer service I will definitely recommend my family and friends.",
+            "BY": "— Victor S., reseña de Google (en inglés), 2019",
+            "LANG": "en"
+          }
+        ],
+        "FAQ": [
+          {
+            "Q": "¿Necesito cita?",
+            "A": "No. Venga sin cita de lunes a sábado, de 9 a.m. a 7 p.m."
+          },
+          {
+            "Q": "¿Hay agentes que hablan español en esta oficina?",
+            "A": "Sí. Nuestros agentes de Fondren Southwest hablan español, inglés e hindi."
+          },
+          {
+            "Q": "¿Hay estacionamiento?",
+            "A": "Sí, gratis y justo frente a la Suite B."
+          },
+          {
+            "Q": "¿Qué debo traer?",
+            "A": "Para auto: su póliza actual, las licencias de conducir y los números VIN. Para casa: la dirección de la propiedad y la antigüedad del techo."
+          },
+          {
+            "Q": "¿Puedo cotizar por teléfono?",
+            "A": [
+              {
+                "t": "Sí. Llame o envíe un texto al "
+              },
+              {
+                "t": "(281) 506-4200",
+                "h": "tel:+12815064200"
+              },
+              {
+                "t": "."
+              }
+            ]
+          },
+          {
+            "Q": "¿Qué vecindarios atiende esta oficina?",
+            "A": "Fondren Southwest, Brays Oaks, Alief, Westwood, Meadows Place y Stafford. Además, aseguramos a clientes en todo Texas."
+          }
+        ],
+        "QUOTE_TITLE": "Cotice gratis en nuestra oficina de Fondren Southwest",
+        "QUOTE_TEXT": "Díganos qué necesita y un agente con licencia de esta oficina comparará compañías y le devolverá la llamada."
+      },
+      "shotwell": {
+        "NAME": "Denver Harbor",
+        "TITLE": "A-State Insurance – Denver Harbor, Houston, TX",
+        "LEAD": [
+          {
+            "t": "Su agencia de seguros local en 707 Shotwell St, Suite A, en el corazón de Denver Harbor. Pase de camino a casa, o llame o envíe un texto al "
+          },
+          {
+            "t": "(281) 749-1900",
+            "h": "tel:+12817491900"
+          },
+          {
+            "t": "."
+          }
+        ],
+        "VISIT_TITLE": "Visite nuestra oficina de Denver Harbor",
+        "ADDRESS": "707 Shotwell St, Suite A, Houston, TX 77020",
+        "GETTING_HERE": "En Shotwell St, esquina con Lyons Ave, a unas cuadras al norte de Market St y a minutos de la I-10 Este.",
+        "PARKING": "Gratis, justo frente a la Suite A.",
+        "WHY_TITLE": "Seguros sin complicaciones en Denver Harbor",
+        "WHY": [
+          {
+            "TITLE": "Venga sin cita.",
+            "TEXT": "Visítenos de lunes a sábado, de 9 a.m. a 7 p.m. No necesita cita."
+          },
+          {
+            "TITLE": "Ayuda en su idioma.",
+            "TEXT": "Nuestros agentes hablan español e inglés, y también atendemos en hindi, para que pueda hacer todas sus preguntas y entender cada respuesta."
+          },
+          {
+            "TITLE": "Atendemos a Denver Harbor y el East End.",
+            "TEXT": "Desde 2018, ayudamos a familias y negocios de Denver Harbor a encontrar una cobertura que se ajuste a su presupuesto. Los conductores de la zona confían en nosotros para conseguir seguro de auto económico para sus trayectos diarios por la I-10 y Market St. Propietarios e inquilinos vienen por coberturas que incluyen protección contra inundaciones. Contratistas y pequeños negocios obtienen seguro de responsabilidad civil, auto comercial y fianzas en un solo lugar."
+          },
+          {
+            "TITLE": "Comparamos más de 50 compañías por usted.",
+            "TEXT": "Como agencia independiente, comparamos cotizaciones de muchas aseguradoras y le mostramos las opciones lado a lado."
+          },
+          {
+            "TITLE": "Sin presión, solo respuestas claras.",
+            "TEXT": "Le explicamos qué cubre cada póliza y qué no cubre, y usted decide."
+          }
+        ],
+        "HOODS_TITLE": "Vecindarios que atiende esta oficina",
+        "HOODS_TEXT": "Denver Harbor, Magnolia Park, Pleasantville, Fifth Ward, Kashmere Gardens, Second Ward, Clinton Park y el East End.",
+        "COV_TITLE": "Seguros en nuestra oficina de Denver Harbor",
+        "BAND": {
+          "LANG": "es",
+          "TITLE": "También le atendemos en inglés e hindi",
+          "TEXT": [
+            {
+              "t": "En nuestra oficina de Shotwell St, los agentes con licencia también atienden en inglés e hindi. Si alguien de su familia prefiere leer en inglés, comparta con ellos la versión en inglés de esta página."
+            }
+          ],
+          "SWITCH": "View this page in English"
+        },
+        "REV_TITLE": "Lo que dicen nuestros clientes de Denver Harbor",
+        "REVIEWS": [
+          {
+            "T": "Siempre atenta, paciente",
+            "TEXT": "Estoy muy agradecida con Crystal Marina Alvarado por toda la ayuda con mi aseguranza de carro. Siempre atenta, paciente y con un trato excelente y rápido. Sin duda la recomiendo al 100%",
+            "BY": "— Maria S., reseña de Google, diciembre de 2025",
+            "LANG": "es"
+          },
+          {
+            "T": "One of the best insurance companies in Houston!",
+            "TEXT": "One of the best insurance companies in Houston! I had a great experience, and I especially want to recognize Crystal, who is one of the most knowledgeable and helpful insurance agents I’ve worked with. She took the time to explain everything clearly, answered all my questions, and made the whole process easy and stress-free. Highly recommend this company and Crystal for anyone looking for excellent insurance service! 👏",
+            "BY": "— Shawn B., reseña de Google (en inglés), agosto de 2026",
+            "LANG": "en"
+          },
+          {
+            "T": "She helped me find the best insurance company for my needs",
+            "TEXT": "Crystal was great! She helped me find the best insurance company for my needs and took the time to answer all of my questions. She was very patient, knowledgeable, and made the whole process easy. I’m very pleased with the service I received and would definitely recommend her. 5 stars! ⭐⭐⭐⭐⭐",
+            "BY": "— Ivan M., reseña de Google (en inglés), agosto de 2026",
+            "LANG": "en"
+          },
+          {
+            "T": "A commercial policy that allowed me to launch my business",
+            "TEXT": "Crystal is the absolute best. She set me up a commercial policy that allowed me to launch my business to the next level. And I just got my personal vehicle insured, cheaper than I had.",
+            "BY": "— Celzo T., reseña de Google (en inglés), agosto de 2026",
+            "LANG": "en"
+          },
+          {
+            "T": "Explains everything so well",
+            "TEXT": "Crystal is always so helpful when I call and have questions about my insurance or if I’m needing to add a vehicle. Explains everything so well to me and my husband! Great customer service !!",
+            "BY": "— Melinda G., reseña de Google (en inglés), agosto de 2026",
+            "LANG": "en"
+          },
+          {
+            "T": "Crystal found me a lower price",
+            "TEXT": "Just renewed my insurance policy crystal found me a lower price. Thank you for helping always been coming for years!",
+            "BY": "— Tammy C., reseña de Google (en inglés), septiembre de 2026",
+            "LANG": "en"
+          }
+        ],
+        "FAQ": [
+          {
+            "Q": "¿Necesito cita?",
+            "A": "No. Venga sin cita de lunes a sábado, de 9 a.m. a 7 p.m."
+          },
+          {
+            "Q": "¿Hay agentes que hablan español en esta oficina?",
+            "A": "Sí. Nuestros agentes de Denver Harbor hablan español, inglés e hindi."
+          },
+          {
+            "Q": "¿Hay estacionamiento?",
+            "A": "Sí, gratis y justo frente a la Suite A."
+          },
+          {
+            "Q": "¿Qué debo traer?",
+            "A": "Para auto: su póliza actual, las licencias de conducir y los números VIN. Para casa: la dirección de la propiedad y la antigüedad del techo."
+          },
+          {
+            "Q": "¿Puedo cotizar por teléfono?",
+            "A": [
+              {
+                "t": "Sí. Llame o envíe un texto al "
+              },
+              {
+                "t": "(281) 749-1900",
+                "h": "tel:+12817491900"
+              },
+              {
+                "t": "."
+              }
+            ]
+          },
+          {
+            "Q": "¿Qué vecindarios atiende esta oficina?",
+            "A": "Denver Harbor, Magnolia Park, Pleasantville, Fifth Ward y otros vecindarios del East End. Además, aseguramos a clientes en todo Texas."
+          }
+        ],
+        "QUOTE_TITLE": "Cotice gratis en nuestra oficina de Denver Harbor",
+        "QUOTE_TEXT": "Díganos qué necesita y un agente con licencia de esta oficina comparará compañías y le devolverá la llamada."
+      },
+      "airline": {
+        "NAME": "Northside-Northline",
+        "TITLE": "A-State Insurance – Northside-Northline, Houston, TX",
+        "LEAD": [
+          {
+            "t": "Su agencia de seguros local en 5206 Airline Dr, Suite G, en Northside-Northline. Venga sin cita de lunes a sábado, o llame o envíe un texto al "
+          },
+          {
+            "t": "(281) 504-7444",
+            "h": "tel:+12815047444"
+          },
+          {
+            "t": "."
+          }
+        ],
+        "VISIT_TITLE": "Visite nuestra oficina de Northside-Northline",
+        "ADDRESS": "5206 Airline Dr, Suite G, Houston, TX 77022",
+        "GETTING_HERE": "En Airline Dr, justo al sur de Tidwell Rd, a una milla al oeste de la I-45 (North Freeway).",
+        "PARKING": "Gratis, justo frente a la Suite G.",
+        "WHY_TITLE": "Seguros sin complicaciones en Northside-Northline",
+        "WHY": [
+          {
+            "TITLE": "Venga sin cita.",
+            "TEXT": "Visítenos de lunes a sábado, de 9 a.m. a 7 p.m. No necesita cita."
+          },
+          {
+            "TITLE": "Ayuda en su idioma.",
+            "TEXT": "Nuestros agentes hablan español e inglés, y también atendemos en hindi, para que pueda hacer todas sus preguntas y entender cada respuesta."
+          },
+          {
+            "TITLE": "Atendemos a Northside-Northline e Independence Heights.",
+            "TEXT": "Conductores y familias del norte de Houston vienen a nosotros por seguro de auto económico para sus trayectos por la I-45, Airline y Tidwell, por certificados SR-22 para volver a manejar, y por seguros de inquilino y de casa para los vecindarios cercanos a Airline Dr, todo explicado en español o en inglés."
+          },
+          {
+            "TITLE": "Comparamos más de 50 compañías por usted.",
+            "TEXT": "Como agencia independiente, comparamos cotizaciones de muchas aseguradoras y le mostramos las opciones lado a lado."
+          },
+          {
+            "TITLE": "Sin presión, solo respuestas claras.",
+            "TEXT": "Le explicamos qué cubre cada póliza y qué no cubre, y usted decide."
+          }
+        ],
+        "HOODS_TITLE": "Vecindarios que atiende esta oficina",
+        "HOODS_TEXT": "Northside-Northline, Independence Heights, Lindale Park, Brooke Smith, Sunset Heights, Melrose Park y Near Northside.",
+        "COV_TITLE": "Seguros en nuestra oficina de Northside-Northline",
+        "BAND": {
+          "LANG": "es",
+          "TITLE": "También le atendemos en inglés e hindi",
+          "TEXT": [
+            {
+              "t": "En nuestra oficina de Airline Dr, los agentes con licencia también atienden en inglés e hindi. Si alguien de su familia prefiere leer en inglés, comparta con ellos la versión en inglés de esta página."
+            }
+          ],
+          "SWITCH": "View this page in English",
+          "SWITCH_LANG": "en"
+        },
+        "REV_TITLE": "Lo que dicen nuestros clientes de Northside-Northline",
+        "REVIEWS": [
+          {
+            "T": "Habla los dos idiomas",
+            "TEXT": "Excelente calidad de servicio! Ana muy amable y te atiende super bien. Habla los dos idiomas,Definitivamente 💯 por ciento recomendada..😊",
+            "BY": "— Restiven G., reseña de Google, septiembre de 2026",
+            "LANG": "es"
+          },
+          {
+            "T": "Ana explained in details the policy",
+            "TEXT": "Fast and friendly service. Ana explained in details the policy and provided with 24 hours service phone numbers. I will recommend Ana, she is bilingual.",
+            "BY": "— Punta Sur Travel, reseña de Google (en inglés), agosto de 2026",
+            "LANG": "en"
+          },
+          {
+            "T": "As a young driver this was the best deal",
+            "TEXT": "Ana assisted me with my first car insurance at a great price, highly recommended as a young driver this was the best deal",
+            "BY": "— Marisol, reseña de Google (en inglés), agosto de 2026",
+            "LANG": "en"
+          },
+          {
+            "T": "Easy and stress-free",
+            "TEXT": "I had a great experience. The staff was friendly, helpful, and professional. They answered all my questions and made the process easy and stress-free. I would definitely recommend them to others.",
+            "BY": "— Lucero S., reseña de Google (en inglés), agosto de 2026",
+            "LANG": "en"
+          },
+          {
+            "T": "Affordable car insurance",
+            "TEXT": "Great experience. The girl named Crystal was very friendly, helpful, and explained everything clearly. I definitely recommend this place for anyone looking for affordable car insurance",
+            "BY": "— Mariela S., reseña de Google (en inglés), septiembre de 2026",
+            "LANG": "en"
+          },
+          {
+            "T": "Always respectful",
+            "TEXT": "Customer service is great and is always respectful. I would definitely recommend this service to others!",
+            "BY": "— Veronica R., reseña de Google (en inglés), agosto de 2026",
+            "LANG": "en"
+          }
+        ],
+        "FAQ": [
+          {
+            "Q": "¿Necesito cita?",
+            "A": "No. Venga sin cita de lunes a sábado, de 9 a.m. a 7 p.m."
+          },
+          {
+            "Q": "¿Hay agentes que hablan español en esta oficina?",
+            "A": "Sí. Nuestros agentes de Northside-Northline hablan español, inglés e hindi."
+          },
+          {
+            "Q": "¿Hay estacionamiento?",
+            "A": "Sí, gratis y justo frente a la Suite G."
+          },
+          {
+            "Q": "¿Qué debo traer?",
+            "A": "Para auto: su póliza actual, las licencias de conducir y los números VIN. Para casa: la dirección de la propiedad y la antigüedad del techo."
+          },
+          {
+            "Q": "¿Puedo cotizar por teléfono?",
+            "A": [
+              {
+                "t": "Sí. Llame o envíe un texto al "
+              },
+              {
+                "t": "(281) 504-7444",
+                "h": "tel:+12815047444"
+              },
+              {
+                "t": "."
+              }
+            ]
+          },
+          {
+            "Q": "¿Qué vecindarios atiende esta oficina?",
+            "A": "Northside-Northline, Independence Heights, Lindale Park y otras zonas del norte de Houston. Además, aseguramos a clientes en todo Texas."
+          }
+        ],
+        "QUOTE_TITLE": "Cotice gratis en nuestra oficina de Northside-Northline",
+        "QUOTE_TEXT": "Díganos qué necesita y un agente con licencia de esta oficina comparará compañías y le devolverá la llamada."
+      }
     }
   }
 }

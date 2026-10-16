@@ -1,175 +1,262 @@
-<div class="locationMain">
-  <div class="topBanner">
-    <div class="container">
-      <h1 class="h1" [innerHTML]="'OUR_LOCATION.HEADING' | translateHtml | async"></h1>
+<!-- Icon sprite (phone, check, chev, arrow, globe and x come from the header sprite) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2-5.5A2 2 0 0 1 6.9 6h10.2a2 2 0 0 1 1.9 1.5L21 13v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M3 13h18M7 15.5h.01M17 15.5h.01M6 18v2M18 18v2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z" fill="#F6C945"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8.5 10.5h7"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14"/><path d="M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+  </defs>
+</svg>
+
+<!-- Renders translated text that may contain links (see Seg in insurance-services.ts). Kept on one line so no spaces creep in. -->
+<ng-template #segsTpl let-value><ng-container *ngFor="let s of segs(value)"><a *ngIf="s.r" [routerLink]="route(s.r, s.id)">{{ s.t }}</a><a *ngIf="s.h" [href]="s.h" [attr.target]="isExternal(s.h) ? '_blank' : null" [attr.rel]="isExternal(s.h) ? 'noopener' : null" (click)="onSegLink(s.h, $event)">{{ s.t }}</a><span *ngIf="s.hl" class="hl">{{ s.t }}</span><ng-container *ngIf="!s.r && !s.h && !s.hl">{{ s.t }}</ng-container></ng-container></ng-template>
+
+<!-- Hero -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hf-container hero-grid">
+    <div class="hero-copy">
+      <nav class="crumbs" [attr.aria-label]="'LOCATIONS_PAGE.BREADCRUMB.ARIA' | translate">
+        <ol>
+          <li><a [routerLink]="route('home')">{{ 'LOCATIONS_PAGE.BREADCRUMB.HOME' | translate }}</a></li>
+          <li aria-current="page">{{ 'LOCATIONS_PAGE.BREADCRUMB.CURRENT' | translate }}</li>
+        </ol>
+      </nav>
+      <h1 id="hero-title">{{ 'LOCATIONS_PAGE.HERO.TITLE' | translate }}</h1>
+      <!-- Buttons come before the lead on phones and tablets; from 1024px the lead moves above them. -->
+      <div class="btn-row">
+        <a class="hf-btn btn-primary btn-lg" href="#map" (click)="goToSection('map', $event)"><svg class="icon-sm" aria-hidden="true"><use href="#i-pin" /></svg>{{ 'LOCATIONS_PAGE.HERO.CTA_MAP' | translate }}</a>
+        <a class="hf-btn btn-outline btn-lg" href="#quote" (click)="goToSection('quote', $event)">{{ 'LOCATIONS_PAGE.HERO.CTA_QUOTE' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+      </div>
+      <p class="hf-lead"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('LOCATIONS_PAGE.HERO.LEAD') }"></ng-container></p>
     </div>
+    <aside class="hours-card" [attr.aria-label]="'LOCATIONS_PAGE.HOURS.ARIA' | translate">
+      <span class="hc-title">{{ 'LOCATIONS_PAGE.HOURS.TITLE' | translate }}</span>
+      <span class="status" [attr.data-state]="status"><span class="dot" aria-hidden="true"></span><span>{{ statusKey | translate }}</span></span>
+      <dl class="hours">
+        <div [class.today]="today >= 1 && today <= 6"><dt>{{ 'LOCATIONS_PAGE.HOURS.WEEK' | translate }}</dt><dd>{{ 'LOCATIONS_PAGE.HOURS.WEEK_TIME' | translate }}</dd></div>
+        <div [class.today]="today === 0"><dt>{{ 'LOCATIONS_PAGE.HOURS.SUNDAY' | translate }}</dt><dd>{{ 'LOCATIONS_PAGE.HOURS.CLOSED' | translate }}</dd></div>
+      </dl>
+      <p class="reply"><svg class="icon-sm" aria-hidden="true"><use href="#i-car" /></svg>{{ 'LOCATIONS_PAGE.HOURS.NOTE' | translate }}</p>
+    </aside>
   </div>
+</section>
 
-  <section class="neighborhood-section">
-    <div class="container text-center">
-      <h2 class="title" [innerHTML]="'OUR_LOCATION.SESSION1.TITLE' | translateHtml | async"></h2>
+<!-- On this page: collapsed box on phones, sticky bar from 768px -->
+<details class="otp" id="on-this-page" [open]="otpOpen" (toggle)="onOtpToggle($event)">
+  <summary>{{ 'LOCATIONS_PAGE.OTP.LABEL' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-chev" /></svg></summary>
+  <nav [attr.aria-label]="'LOCATIONS_PAGE.OTP.LABEL' | translate">
+    <ol>
+      <li *ngFor="let label of list('LOCATIONS_PAGE.OTP.ITEMS'); let i = index">
+        <a [href]="'#' + otpIds[i]" [attr.aria-current]="activeSection === otpIds[i] ? 'true' : null"
+          (click)="goToSection(otpIds[i], $event)">{{ label }}</a>
+      </li>
+    </ol>
+  </nav>
+</details>
 
-      <p class="desc" [innerHTML]="'OUR_LOCATION.SESSION1.DEC1' | translateHtml | async"></p>
-
-      <p class="desc" [innerHTML]="'OUR_LOCATION.SESSION1.DEC2' | translateHtml | async"></p>
-
-      <h2 class="offices-title" [innerHTML]="'OUR_LOCATION.SESSION1.OFFICES_TITLE' | translateHtml | async"></h2>
-
-      <div class="location-card shadow" *ngFor="let loc of locations">
-        <div class="map">
-          <iframe [src]="loc.safeMapUrl" width="100%" height="100%" style="border: 0" loading="lazy">
-          </iframe>
-          <a class="map-pin" [href]="loc.link" target="_blank" rel="noopener noreferrer"
-            [attr.aria-label]="'A-State Insurance (' + loc.name + ') on Google Maps'">
-            <span class="map-pin__badge">
-              <img src="/assets/images/logo.png" alt="A-State Insurance" />
-            </span>
+<!-- Map -->
+<section class="section bg-white" id="map" aria-labelledby="map-h">
+  <div class="hf-container map-grid">
+    <div class="map-copy">
+      <h2 id="map-h">{{ 'LOCATIONS_PAGE.MAP.TITLE' | translate }}</h2>
+      <p class="hf-lead">{{ 'LOCATIONS_PAGE.MAP.LEAD' | translate }}</p>
+      <ol class="pin-legend" [attr.aria-label]="'LOCATIONS_PAGE.MAP.LEGEND_ARIA' | translate">
+        <li *ngFor="let item of list('LOCATIONS_PAGE.OFFICES.ITEMS'); let i = index">
+          <a [href]="'#' + extras[i].anchor" (click)="goToSection(extras[i].anchor, $event)">
+            <span class="pin" aria-hidden="true"></span>
+            <span><b>{{ item.NAME }}</b><small>{{ item.HOOD }}</small></span>
+            <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg>
           </a>
-        </div>
-
-        <!-- INFO -->
-        <div class="info text-start">
-          <h4>A-State Insurance ({{ loc.name }})</h4>
-
-          <ul class="details">
-            <li >
-              <span class="icon">📍</span>
-              <span class="text">
-                <a class="inline-link" href="{{ loc.link }}" target="_blank" rel="noopener noreferrer">{{ loc.address }}</a>
-              </span>
-            </li>
-            <li>
-              <span class="icon">📞</span>
-              <span class="text">
-                <a class="inline-link" style="color: inherit; text-decoration: underline;" href="tel:{{ loc.phone }}">
-                  {{ loc.phone }}
-                </a>
-              </span>
-            </li>
-            <li>
-              <span class="icon">🌐</span>
-              <span class="text">{{ loc.languages.join(' | ') }}</span>
-            </li>
-            <li>
-              <span class="icon">⏰</span>
-              <span class="text">{{ loc.officeHours }}</span>
-            </li>
-            <li *ngIf="loc.googleReviews">
-              <span class="icon">⭐</span>
-              <span class="text">
-                <strong>{{ 'OUR_LOCATION.SESSION1.CARD.REVIEWS_LABEL' | translate }}:</strong>
-                {{ loc.googleReviews }}
-              </span>
-            </li>
-            <li *ngIf="loc.parking">
-              <span class="icon">🅿️</span>
-              <span class="text">
-                <strong>{{ 'OUR_LOCATION.SESSION1.CARD.PARKING_LABEL' | translate }}:</strong>
-                {{ loc.parking }}
-              </span>
-            </li>
-          </ul>
-
-          <div class="buttons">
-          <button class="btn quote" [routerLink]="
-                currentLang == 'es'
-                  ? ['/es/obtener-una-cotizacion']
-                  : ['/get-a-quote']
-              ">{{ loc.ctaButtons[0] }}</button>
-            <a  class="btn directions" [href]="loc.directionsLink" target="_blank" rel="noopener noreferrer">
-              {{ loc.ctaButtons[1] }}
-            </a>
-            <button class="btn details-btn" [routerLink]="
-                currentLang == 'es'
-                  ? ['/es/nuestras-ubicaciones', loc.id]
-                  : ['/our-locations', loc.id]
-              ">
-              {{ loc.ctaButtons[2] }}
-            </button>
-          </div>
-        </div>
-      </div>
+        </li>
+      </ol>
     </div>
-  </section>
+    <figure class="map">
+      <svg viewBox="0 0 400 300" role="img" [attr.aria-label]="'LOCATIONS_PAGE.MAP.MAP_ARIA' | translate">
+        <rect width="400" height="300" fill="#F8EFD6" />
+        <path d="M0 210 C80 190 120 230 200 200 S330 160 400 180" stroke="#DCD3C4" stroke-width="10" fill="none" />
+        <ellipse cx="200" cy="150" rx="168" ry="122" fill="none" stroke="#D6CBB8" stroke-width="5" />
+        <ellipse cx="205" cy="140" rx="74" ry="62" fill="none" stroke="#D6CBB8" stroke-width="5" />
+        <path d="M40 150 H360 M205 20 V280 M70 270 L330 40" stroke="#E4DCCD" stroke-width="4" fill="none" />
+        <circle cx="210" cy="140" r="5" fill="#78716C" />
+        <text x="218" y="145" font-family="Figtree,Arial,sans-serif" font-size="11" fill="#44403C">{{ 'LOCATIONS_PAGE.MAP.DOWNTOWN' | translate }}</text>
+        <g font-family="Figtree,Arial,sans-serif" font-size="12" font-weight="700" fill="#44403C">
+          <svg:a *ngFor="let p of pins" [attr.href]="'#' + extras[p.office].anchor" tabindex="-1" aria-hidden="true" (click)="goToSection(extras[p.office].anchor, $event)">
+            <svg:g [attr.transform]="'translate(' + p.x + ' ' + p.y + ')'">
+              <svg:path d="M0 0c-7 0-11 5-11 10 0 8 11 18 11 18s11-10 11-18c0-5-4-10-11-10z" fill="#CA2B28" transform="translate(0 -28)" />
+              <svg:circle cy="-18" r="4" fill="#F6C945" />
+              <svg:text [attr.x]="p.tx" [attr.y]="p.ty" [attr.text-anchor]="p.anchor">{{ p.label }}</svg:text>
+            </svg:g>
+          </svg:a>
+        </g>
+      </svg>
+      <figcaption>{{ 'LOCATIONS_PAGE.MAP.CAPTION' | translate }}</figcaption>
+    </figure>
+  </div>
+</section>
 
-  <section class="why-visit-section">
-    <div class="container">
-      <!-- Header -->
-      <div class="text-center mb-5">
-        <h2 class="section-title" [innerHTML]="'OUR_LOCATION.SESSION2.TITLE' | translateHtml | async"></h2>
-        <div class="header-desc mx-auto">
-          <p [innerHTML]="'OUR_LOCATION.SESSION2.DEC1' | translateHtml | async"></p>
-          <p [innerHTML]="'OUR_LOCATION.SESSION2.DEC2' | translateHtml | async"></p>
+<!-- Offices -->
+<section class="section bg-cream" id="offices" aria-labelledby="off-h">
+  <div class="hf-container">
+    <div class="section-head"><h2 id="off-h">{{ 'LOCATIONS_PAGE.OFFICES.TITLE' | translate }}</h2></div>
+    <ul class="loc-meta" [attr.aria-label]="'LOCATIONS_PAGE.OFFICES.META_ARIA' | translate">
+      <li><svg class="icon-sm" aria-hidden="true"><use href="#i-cal" /></svg><span><b>{{ 'LOCATIONS_PAGE.OFFICES.META.HOURS_LABEL' | translate }}</b> {{ 'LOCATIONS_PAGE.OFFICES.META.HOURS' | translate }}</span></li>
+      <li><svg class="icon-sm" aria-hidden="true"><use href="#i-chat" /></svg><span><b>{{ 'LOCATIONS_PAGE.OFFICES.META.LANG_LABEL' | translate }}</b>&ngsp;<ng-container *ngFor="let l of list('LOCATIONS_PAGE.OFFICES.META.LANGS'); let last = last"><span [attr.lang]="l.es ? 'es' : null">{{ l.t }}</span><ng-container *ngIf="!last"> · </ng-container></ng-container></span></li>
+      <li><svg class="icon-sm" aria-hidden="true"><use href="#i-x" /></svg><span>{{ 'LOCATIONS_PAGE.OFFICES.META.CLOSED' | translate }}</span></li>
+      <li><svg class="icon-sm" aria-hidden="true"><use href="#i-car" /></svg><span>{{ 'LOCATIONS_PAGE.OFFICES.META.PARKING' | translate }}</span></li>
+      <li><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg><span>{{ 'LOCATIONS_PAGE.OFFICES.META.WALK_INS' | translate }}</span></li>
+    </ul>
+    <div class="loc-grid">
+      <article class="loc-card" *ngFor="let item of list('LOCATIONS_PAGE.OFFICES.ITEMS'); let i = index" [id]="extras[i].anchor" [attr.aria-labelledby]="extras[i].anchor + '-h'">
+        <h3 [id]="extras[i].anchor + '-h'"><span class="nw">A-State</span> Insurance ({{ item.NAME }})</h3>
+        <address><svg class="icon-sm" aria-hidden="true"><use href="#i-pin" /></svg><span><span class="lbl">{{ 'LOCATIONS_PAGE.OFFICES.ADDRESS' | translate }}</span>&ngsp;<a class="addr" [href]="offices[i].mapUrl" target="_blank" rel="noopener">{{ item.ADDRESS }}</a></span></address>
+        <p class="line"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg><span><span class="lbl">{{ 'LOCATIONS_PAGE.OFFICES.PHONE' | translate }}</span>&ngsp;<a class="ph" [href]="'tel:' + offices[i].tel">{{ offices[i].phone }}</a></span></p>
+        <p class="line rev"><svg class="icon-sm" aria-hidden="true"><use href="#i-star" /></svg><span><span class="lbl">{{ 'LOCATIONS_PAGE.OFFICES.REVIEWS' | translate }}</span> <span class="stars" aria-hidden="true"><span [style.width]="starWidth(extras[i].rating)"></span></span><b>{{ extras[i].rating.toFixed(1) }}/5.0</b> · {{ 'LOCATIONS_PAGE.OFFICES.REVIEWS_COUNT' | translate: { n: extras[i].reviews } }}</span></p>
+        <p class="line"><svg class="icon-sm" aria-hidden="true"><use href="#i-car" /></svg><span><span class="lbl">{{ 'LOCATIONS_PAGE.OFFICES.PARKING' | translate }}</span> {{ item.PARKING }}</span></p>
+        <div class="loc-acts">
+          <a class="hf-btn btn-primary" href="#quote" (click)="pickOffice(i, $event)">{{ 'LOCATIONS_PAGE.OFFICES.QUOTE' | translate }}</a>
+          <a class="hf-btn btn-outline" [href]="offices[i].directionsUrl" target="_blank" rel="noopener">{{ 'LOCATIONS_PAGE.OFFICES.DIRECTIONS' | translate }}</a>
+          <a class="arrow-link" [routerLink]="route('ourLocations/:id', offices[i].id)">{{ 'LOCATIONS_PAGE.OFFICES.DETAILS' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
         </div>
-      </div>
-
-      <!-- Features Grid -->
-      <div class="row feature-row">
-        <!-- Feature 1 -->
-        <div class="col-md-4 feature-col">
-          <h3 class="feature-title" [innerHTML]="'OUR_LOCATION.SESSION2.CARD1.TITLE' | translateHtml | async"></h3>
-          <p class="feature-text">
-            <span [innerHTML]="'OUR_LOCATION.SESSION2.CARD1.DESCRIPTION_PART1' | translateHtml | async"></span>
-            <a  class="inline-link" [routerLink]="getRoute('autoInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.AUTO' | translateHtml | async"></a>,
-            <a class="inline-link" [routerLink]="getRoute('homeInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.HOMEOWNERS' | translateHtml | async"></a>,
-            <a class="inline-link" [routerLink]="getRoute('commercialInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.COMMERCIAL' | translateHtml | async"></a>,
-            <a class="inline-link" [routerLink]="getRoute('lifeInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.LIFE' | translateHtml | async"></a>,
-            <span [innerHTML]="'OUR_LOCATION.SESSION2.CARD1.DESCRIPTION_PART2' | translateHtml | async"></span>
-            <a class="inline-link" [routerLink]="getRoute('healthInsurance')" [innerHTML]="'HOME.BANNER.CHIPS.HEALTH' | translateHtml | async"></a>
-            <span [innerHTML]="'OUR_LOCATION.SESSION2.CARD1.DESCRIPTION_PART3' | translateHtml | async"></span>
-          </p>
-        </div>
-
-        <!-- Feature 2 -->
-        <div class="col-md-4 feature-col">
-          <h3 class="feature-title" [innerHTML]="'OUR_LOCATION.SESSION2.CARD2.TITLE' | translateHtml | async"></h3>
-          <p class="feature-text" [innerHTML]="'OUR_LOCATION.SESSION2.CARD2.DESCRIPTION' | translateHtml | async"></p>
-        </div>
-
-        <!-- Feature 3 -->
-        <div class="col-md-4 feature-col no-border">
-          <h3 class="feature-title" [innerHTML]="'OUR_LOCATION.SESSION2.CARD3.TITLE' | translateHtml | async"></h3>
-          <p class="feature-text" [innerHTML]="'OUR_LOCATION.SESSION2.CARD3.DESCRIPTION' | translateHtml | async"></p>
-        </div>
-      </div>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- get covered -->
-  <div class="getCovver">
-    <div class="container">
-      <div class="topSub">
-        <div class="topSub2">
-          <h2 class="h1" [innerHTML]="'OUR_LOCATION.SESSION3.TITLE' | translateHtml | async"></h2>
-          <p class="paragraph" [innerHTML]="'OUR_LOCATION.SESSION3.DEC1' | translateHtml | async"></p>
-
-          <div class="selectable mt-5">
-            @for (item of chips.slice(0, 3); track item.name) {
-            <div class="chip" [appChipNav]="item.name" *ngIf="item.name">
-              <i class="{{ item?.icon }}"></i>
-              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
-            </div>
-            }
-          </div>
-          <div class="selectable mt-2">
-            @for (item of chips.slice(3, 6); track item.name) {
-            <div class="chip" [appChipNav]="item.name" *ngIf="item.name">
-              <i class="{{ item?.icon }}"></i>
-              <span><span [innerHTML]="item.name | translateHtml | async"></span></span>
-            </div>
-            }
-          </div>
-          <div class="inps">
-            <input type="text" [placeholder]="'HOME.BANNER.FORM.FULL_NAME' | translate" class="form-control" />
-            <input type="tel" appPhoneFormat [placeholder]="'HOME.BANNER.FORM.PHONE' | translate" class="form-control" />
-          </div>
-
-
-          <button class="btn" type="button" appBannerQuoteSubmit>{{ 'HOME.COVERDBANNER.FORM.BUTTON' | translate }}</button>
+<!-- Serving all of Texas -->
+<section class="section bg-white" id="service-area" aria-labelledby="tx-h">
+  <div class="hf-container">
+    <div class="section-head">
+      <h2 id="tx-h">{{ 'LOCATIONS_PAGE.AREA.TITLE' | translate }}</h2>
+      <p class="hf-lead">{{ 'LOCATIONS_PAGE.AREA.LEAD' | translate }}</p>
+    </div>
+    <div class="cdir" [class.has-q]="query.trim()">
+      <h3 class="pop-h">{{ 'LOCATIONS_PAGE.AREA.POPULAR' | translate }}</h3>
+      <ul class="pop-cities"><li *ngFor="let c of popularCities">{{ c }}</li></ul>
+      <div class="cdir-tools">
+        <label class="cdir-search">
+          <span class="sr-only">{{ 'LOCATIONS_PAGE.AREA.SEARCH' | translate }}</span>
+          <svg class="icon-sm" aria-hidden="true"><use href="#i-search" /></svg>
+          <input #cityInput type="search" [placeholder]="'LOCATIONS_PAGE.AREA.SEARCH' | translate" autocomplete="off" aria-describedby="cdir-count" (input)="onQuery($event)" />
+          <button class="clear" type="button" [attr.aria-label]="'LOCATIONS_PAGE.AREA.CLEAR' | translate" [hidden]="!query" (click)="clearQuery(cityInput)"><svg class="icon-sm" aria-hidden="true"><use href="#i-x" /></svg></button>
+        </label>
+        <p class="cdir-count" id="cdir-count" aria-live="polite">
+          <ng-container *ngIf="query.trim(); else allCount">{{ 'LOCATIONS_PAGE.AREA.COUNT_FILTERED' | translate: { n: matchCount, t: cityTotal } }}</ng-container>
+          <ng-template #allCount>{{ 'LOCATIONS_PAGE.AREA.COUNT' | translate: { n: cityTotal } }}</ng-template>
+        </p>
+        <button *ngIf="!query.trim()" class="hf-btn btn-outline cdir-toggle" type="button" aria-controls="cdir-body" [attr.aria-expanded]="dirOpen" (click)="toggleDirectory()">
+          {{ (dirOpen ? 'LOCATIONS_PAGE.AREA.HIDE' : 'LOCATIONS_PAGE.AREA.BROWSE') | translate: { t: cityTotalText } }} <svg class="icon-sm" aria-hidden="true"><use href="#i-chev" /></svg>
+        </button>
+      </div>
+      <div class="cdir-body" id="cdir-body" [hidden]="!dirOpen && !query.trim()">
+        <ul class="cdir-letters" [attr.aria-label]="'LOCATIONS_PAGE.AREA.LETTERS_ARIA' | translate">
+          <li *ngFor="let l of letters"><a [href]="'#cities-' + l.toLowerCase()" [attr.aria-disabled]="!hasLetter(l)" (click)="goToLetter(l, $event)">{{ l }}</a></li>
+        </ul>
+        <div class="cdir-group" *ngFor="let g of groups; trackBy: trackGroup" [id]="g.id">
+          <h3>{{ g.letter }}</h3>
+          <ul><li *ngFor="let c of g.cities; trackBy: trackCity"><span>{{ c.pre }}<mark *ngIf="c.hit" class="cdir-hit">{{ c.hit }}</mark>{{ c.post }}</span></li></ul>
         </div>
+        <p class="cdir-empty" *ngIf="!matchCount"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('LOCATIONS_PAGE.AREA.EMPTY') }"></ng-container></p>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- footuper -->
-  <app-foot-upper></app-foot-upper>
+<!-- Why visit -->
+<section class="section bg-cream" id="why-visit" aria-labelledby="why-h">
+  <div class="hf-container">
+    <div class="section-head"><h2 id="why-h">{{ 'LOCATIONS_PAGE.WHY.TITLE' | translate }}</h2></div>
+    <ul class="why-visit">
+      <li *ngFor="let w of list('LOCATIONS_PAGE.WHY.ITEMS'); let i = index">
+        <span class="ic" aria-hidden="true"><svg class="icon"><use [attr.href]="'#' + ['i-scale', 'i-cal', 'i-globe', 'i-shield'][i]" /></svg></span>
+        <h3>{{ w.TITLE }}</h3>
+        <p>{{ w.TEXT }}</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Quote -->
+<section class="section final" id="quote" aria-labelledby="lq-h">
+  <div class="hf-container lq-grid">
+    <div class="lq-copy">
+      <h2 id="lq-h">{{ 'LOCATIONS_PAGE.QUOTE.TITLE' | translate }}</h2>
+      <p><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('LOCATIONS_PAGE.QUOTE.TEXT') }"></ng-container></p>
+      <div class="btn-row">
+        <a class="hf-btn btn-white" href="tel:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'LOCATIONS_PAGE.QUOTE.CALL' | translate }}</a>
+        <a class="hf-btn btn-white" href="sms:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-chat" /></svg>{{ 'LOCATIONS_PAGE.QUOTE.TEXT_US' | translate }}</a>
+      </div>
+    </div>
+    <form class="cform" novalidate aria-labelledby="lq-h" (submit)="submit($event)">
+      <div class="row2">
+        <div class="field">
+          <label for="lq-name">{{ 'LOCATIONS_PAGE.QUOTE.NAME' | translate }} <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="lq-name" name="name" autocomplete="name" required [value]="form.name"
+            [attr.aria-invalid]="errors.name ? 'true' : null" aria-describedby="lq-name-err"
+            (input)="onNameInput($event)" (blur)="onBlur('name')" />
+          <p class="err" id="lq-name-err" aria-live="polite">{{ errors.name }}</p>
+        </div>
+        <div class="field">
+          <label for="lq-phone">{{ 'LOCATIONS_PAGE.QUOTE.PHONE' | translate }} <span class="req" aria-hidden="true">*</span></label>
+          <input type="tel" id="lq-phone" name="phone" inputmode="tel" autocomplete="tel-national" required [value]="form.phone"
+            [attr.aria-invalid]="errors.phone ? 'true' : null" aria-describedby="lq-phone-err"
+            (input)="onPhoneInput($event)" (blur)="onBlur('phone')" />
+          <p class="err" id="lq-phone-err" aria-live="polite">{{ errors.phone }}</p>
+        </div>
+      </div>
+      <div class="field">
+        <label for="lq-email">{{ 'LOCATIONS_PAGE.QUOTE.EMAIL' | translate }} <span class="opt">{{ 'LOCATIONS_PAGE.QUOTE.OPTIONAL' | translate }}</span></label>
+        <input type="email" id="lq-email" name="email" autocomplete="email" [value]="form.email"
+          [attr.aria-invalid]="errors.email ? 'true' : null" aria-describedby="lq-email-err"
+          (input)="onEmailInput($event)" (blur)="onBlur('email')" />
+        <p class="err" id="lq-email-err" aria-live="polite">{{ errors.email }}</p>
+      </div>
+      <fieldset>
+        <legend>{{ 'LOCATIONS_PAGE.QUOTE.TYPE' | translate }} <span class="req" aria-hidden="true">*</span></legend>
+        <div class="opts">
+          <div class="opt-chip" *ngFor="let o of list('LOCATIONS_PAGE.QUOTE.TYPES')">
+            <input type="radio" name="lq-type" [id]="'lq-' + o.V" [value]="o.V" [checked]="form.type === o.V" (change)="setType(o.V)" />
+            <label [for]="'lq-' + o.V">{{ o.L }}</label>
+          </div>
+        </div>
+        <p class="err" id="lq-type-err" aria-live="polite">{{ errors.type }}</p>
+      </fieldset>
+      <fieldset>
+        <legend>{{ 'LOCATIONS_PAGE.QUOTE.OFFICE' | translate }}</legend>
+        <div class="opts">
+          <div class="opt-chip">
+            <input type="radio" name="lq-office" id="lo-any" value="any" [checked]="form.office === 'any'" (change)="form.office = 'any'" />
+            <label for="lo-any">{{ 'LOCATIONS_PAGE.QUOTE.NO_PREFERENCE' | translate }}</label>
+          </div>
+          <div class="opt-chip" *ngFor="let item of list('LOCATIONS_PAGE.OFFICES.ITEMS'); let i = index">
+            <input type="radio" name="lq-office" [id]="'lo-' + extras[i].anchor" [value]="offices[i].id" [checked]="form.office === offices[i].id" (change)="form.office = offices[i].id" />
+            <label [for]="'lo-' + extras[i].anchor">{{ item.NAME }}</label>
+          </div>
+        </div>
+      </fieldset>
+      <button class="hf-btn btn-primary btn-lg" type="submit" [disabled]="isSubmitting">{{ 'LOCATIONS_PAGE.QUOTE.SUBMIT' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+    </form>
+  </div>
+</section>
+
+<!-- FAQs -->
+<section class="section bg-white" id="faqs" aria-labelledby="faq-h">
+  <div class="hf-container faq faq-wrap">
+    <h2 id="faq-h">{{ 'LOCATIONS_PAGE.FAQ.TITLE' | translate }}</h2>
+    <details *ngFor="let item of list('LOCATIONS_PAGE.FAQ.ITEMS'); let i = index" [open]="faqOpen === i" (toggle)="onFaqToggle(i, $event)">
+      <summary><h3>{{ item.Q }}</h3><span class="pm" aria-hidden="true"><svg class="icon-sm"><use href="#i-plus" /></svg></span></summary>
+      <div class="ans"><p><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: item.A }"></ng-container></p></div>
+    </details>
+  </div>
+</section>
+
+<!-- Sticky mobile bar -->
+<div class="sticky-cta" [class.show]="showSticky" [attr.aria-hidden]="!showSticky">
+  <a class="hf-btn btn-primary" href="#quote" [tabIndex]="showSticky ? 0 : -1" (click)="goToSection('quote', $event)">{{ 'HOME_PAGE.STICKY.QUOTE' | translate }}</a>
+  <a class="hf-btn btn-outline" href="tel:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'HOME_PAGE.STICKY.CALL' | translate }}</a>
+  <a class="hf-btn btn-outline" href="sms:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-chat" /></svg>{{ 'HOME_PAGE.STICKY.TEXT' | translate }}</a>
+</div>

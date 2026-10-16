@@ -140,10 +140,11 @@ legend{float:none;width:auto;padding:0;margin:0 0 8px;font-size:15px;font-weight
 @media (hover:hover){.opt-chip input:hover + label{border-color:var(--red-600)}}
 .err{display:flex;align-items:flex-start;gap:6px;color:var(--error);font-size:14px;font-weight:600;line-height:1.4;margin:0}
 .err:empty{display:none}
+fieldset .err{margin-top:8px}
 .privacy{display:flex;gap:10px;align-items:flex-start;background:var(--cream);border-radius:var(--r-md);padding:12px 14px;font-size:14.5px}
 .privacy .icon-sm{color:var(--red-600);flex:none;margin-top:3px}
 .cform .hf-btn{align-self:stretch}
-@media (min-width:640px){.cform .hf-btn{align-self:flex-start;min-width:240px}}
+@media (min-width:640px){.cform .hf-btn{align-self:center;min-width:240px}}
 
 /* Offices */
 .off-grid{display:grid;gap:16px}

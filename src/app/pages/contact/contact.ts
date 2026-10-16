@@ -27,7 +27,9 @@ const SCHEMA_ID = 'contact-structured-data';
 const SITE = 'https://astateinsurance.com';
 
 type OpenStatus = 'unknown' | 'open' | 'closed';
-type Field = 'name' | 'phone' | 'email';
+type Field = 'name' | 'phone' | 'email' | 'method' | 'type' | 'lang';
+/** Fields picked from option chips (radio groups); focus goes to the first option on error. */
+const CHOICE_FIELDS: Field[] = ['method', 'type', 'lang'];
 
 @Component({
   selector: 'app-contact',
@@ -43,7 +45,8 @@ export class Contact implements AfterViewInit, OnDestroy {
     { icon: 'i-phone', href: 'tel:+17133577771' },
     { icon: 'i-chat', href: 'sms:+17133577771' },
     { icon: 'i-mail', href: 'mailto:save@astateinsurance.com' },
-    { icon: 'i-pin', href: '#offices' },
+    // The Visit card links to the Our Locations page (see the template).
+    { icon: 'i-pin', href: '' },
   ];
 
   /** The "On this page" box is open from 768px and collapsible on phones. */
@@ -216,20 +219,28 @@ export class Contact implements AfterViewInit, OnDestroy {
     if (this.errors.email) this.validate(['email']);
   }
 
-  onBlur(field: Field) {
+  onBlur(field: 'name' | 'phone' | 'email') {
     if (this.form[field]) this.validate([field]);
   }
 
   setMethod(value: string) {
     this.form.method = value;
+    this.errors.method = '';
     if (this.errors.email) this.validate(['email']);
+  }
+
+  /** Insurance type and preferred language chips. */
+  setChoice(field: 'type' | 'lang', value: string) {
+    this.form[field] = value;
+    this.errors[field] = '';
   }
 
   submit(event: Event) {
     event.preventDefault();
     const bad = this.validate();
     if (bad.length) {
-      this.host.nativeElement.querySelector<HTMLElement>(`#c-${bad[0]}`)?.focus();
+      const target = CHOICE_FIELDS.includes(bad[0]) ? `input[name="${bad[0]}"]` : `#c-${bad[0]}`;
+      this.host.nativeElement.querySelector<HTMLElement>(target)?.focus();
       return;
     }
     // Hand the details to the thank-you page (personal greeting, reply method, reference).
@@ -266,6 +277,13 @@ export class Contact implements AfterViewInit, OnDestroy {
       if (!msg && !e && this.form.method === 'email') msg = t('ERR_EMAIL_NEEDED');
       this.errors.email = msg;
       if (msg) bad.push('email');
+    }
+    // Required choices, in page order.
+    const choices: [Field, string][] = [['method', 'ERR_METHOD'], ['type', 'ERR_TYPE'], ['lang', 'ERR_LANG']];
+    for (const [field, key] of choices) {
+      if (!want(field)) continue;
+      this.errors[field] = this.form[field as 'method' | 'type' | 'lang'] ? '' : t(key);
+      if (this.errors[field]) bad.push(field);
     }
     return bad;
   }

@@ -9,7 +9,9 @@ import { Seg } from '../insurance-services/insurance-services';
 import { CAREERS_APPLICATION_KEY, CareersApplication } from '../thank-you/thank-you';
 
 type Text = string | Seg[];
-type Field = 'name' | 'phone' | 'email' | 'area' | 'file';
+type Field = 'name' | 'phone' | 'email' | 'langs' | 'area' | 'office' | 'file';
+/** Option-chip groups: on error, focus goes to the first option (radio/checkbox name). */
+const CHOICE_INPUTS: Partial<Record<Field, string>> = { langs: 'lang', area: 'area', office: 'office' };
 
 /** Sections listed in the "On this page" bar, in the order of CAREERS_PAGE.OTP.ITEMS. */
 const OTP_IDS = ['advantage', 'pillars', 'culture', 'benefits', 'hiring', 'openings', 'faqs', 'apply'];
@@ -153,7 +155,21 @@ export class Careers implements AfterViewInit, OnDestroy {
     event.preventDefault();
     if (!this.isTablet) this.otpOpen = false;
     if (!this.isBrowser) return;
-    setTimeout(() => this.host.nativeElement.querySelector(`#${id}`)?.scrollIntoView({ block: 'start' }));
+    setTimeout(() => this.scrollToSection(id));
+  }
+
+  /**
+   * Scrolls so the section starts right under the sticky header (and the sticky "On this page" bar from 768px).
+   * scrollIntoView() would also add the site-wide scroll-padding-top on <html>, stopping too high.
+   */
+  private scrollToSection(id: string) {
+    const el = this.host.nativeElement.querySelector<HTMLElement>(`#${id}`);
+    if (!el) return;
+    const otp = this.host.nativeElement.querySelector<HTMLElement>('.otp');
+    const headerH = parseFloat(getComputedStyle(this.host.nativeElement).getPropertyValue('--header-h')) || 64;
+    const otpSticky = !!otp && getComputedStyle(otp).position === 'sticky';
+    const offset = headerH + (otpSticky ? otp!.offsetHeight : 0);
+    window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
   }
 
   onOtpToggle(event: Event) {
@@ -192,6 +208,12 @@ export class Careers implements AfterViewInit, OnDestroy {
   toggleLang(value: string, event: Event) {
     const checked = (event.target as HTMLInputElement).checked;
     this.form.langs = checked ? [...this.form.langs, value] : this.form.langs.filter((v) => v !== value);
+    if (this.errors.langs) this.validate(['langs']);
+  }
+
+  setOffice(value: string) {
+    this.form.office = value;
+    if (this.errors.office) this.validate(['office']);
   }
 
   setArea(value: string) {
@@ -224,7 +246,8 @@ export class Careers implements AfterViewInit, OnDestroy {
     event.preventDefault();
     const bad = this.validate();
     if (bad.length) {
-      const target = bad[0] === 'area' ? 'input[name="area"]' : `#a-${bad[0]}`;
+      const choice = CHOICE_INPUTS[bad[0]];
+      const target = choice ? `input[name="${choice}"]` : `#a-${bad[0]}`;
       const el = this.host.nativeElement.querySelector<HTMLElement>(target);
       if (bad[0] === 'file') this.host.nativeElement.querySelector('.drop')?.scrollIntoView({ block: 'center' });
       el?.focus();
@@ -276,7 +299,9 @@ export class Careers implements AfterViewInit, OnDestroy {
       const e = this.form.email.trim();
       set('email', !e ? t('ERR_EMAIL_EMPTY') : !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e) ? t('ERR_EMAIL_INVALID') : '');
     }
+    if (want('langs')) set('langs', this.form.langs.length ? '' : t('ERR_LANGS'));
     if (want('area')) set('area', this.form.area ? '' : t('ERR_AREA'));
+    if (want('office')) set('office', this.form.office ? '' : t('ERR_OFFICE'));
     if (want('file')) set('file', this.fileError());
     return bad;
   }

@@ -32,6 +32,9 @@ export class Thankyou implements OnInit, AfterViewInit, OnDestroy {
   status: 'unknown' | 'open' | 'closed' = 'unknown';
   statusKey = 'CONTACT_THANKS_PAGE.STATUS.DEFAULT';
 
+  // Contact thank-you: insurance pages for the "Have these ready" rows (Auto, Homeowners, Commercial), in content order.
+  readonly readyRoutes = ['autoInsurance', 'homeInsurance', 'commercialInsurance'];
+
   // Careers thank-you
   readonly prepIcons = ['i-phone', 'i-cal', 'i-pin', 'i-doc'];
   application: CareersApplication | null = null;

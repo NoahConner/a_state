@@ -188,7 +188,7 @@
         <span class="ic" aria-hidden="true"><svg class="icon"><use href="#i-list" /></svg></span>
         <h3>{{ 'CONTACT_THANKS_PAGE.WAIT.READY_TITLE' | translate }}</h3>
         <dl>
-          <div *ngFor="let row of list('CONTACT_THANKS_PAGE.WAIT.READY')"><dt>{{ row.L }}</dt><dd>{{ row.T }}</dd></div>
+          <div *ngFor="let row of list('CONTACT_THANKS_PAGE.WAIT.READY'); let i = index"><dt><a [routerLink]="routeTo(readyRoutes[i])">{{ row.L }}</a></dt><dd>{{ row.T }}</dd></div>
         </dl>
       </li>
       <li>

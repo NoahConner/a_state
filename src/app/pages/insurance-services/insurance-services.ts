@@ -59,7 +59,7 @@ const CATEGORIES: Category[] = [
     items: ['performanceBondsPaymentBonds', 'commercialSuretyBonds', 'notaryBonds'],
   },
   {
-    id: 'additional', key: 'ADDITIONAL', icon: 'i-umbrella',
+    id: 'additional', key: 'ADDITIONAL', icon: 'i-umbrella', quoteRoute: 'requestACustomQuote',
     // Umbrella and Identity Theft Protection have no pages yet.
     items: [null, 'petInsurance', null, 'titleInsurance'],
   },

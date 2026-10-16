@@ -63,7 +63,7 @@
         <span class="ic" aria-hidden="true"><svg class="icon"><use [attr.href]="'#' + reachCards[i].icon" /></svg></span>
         <h3>{{ c.LABEL }}</h3>
         <a *ngIf="i < 3" class="main" [href]="reachCards[i].href">{{ c.VALUE }}</a>
-        <a *ngIf="i === 3" class="main" href="#offices" (click)="goToSection('offices', $event)">{{ c.VALUE }}</a>
+        <a *ngIf="i === 3" class="main" [routerLink]="route('ourLocations')">{{ c.VALUE }}</a>
         <p>{{ c.TEXT }}</p>
       </li>
     </ul>
@@ -95,39 +95,42 @@
       <div class="row2">
         <div class="field">
           <label for="c-email">{{ 'CONTACT_PAGE.FORM.EMAIL' | translate }} <span class="opt">{{ 'CONTACT_PAGE.FORM.OPTIONAL' | translate }}</span></label>
-          <input type="email" id="c-email" name="email" autocomplete="email" [value]="form.email"
+          <input type="email" id="c-email" name="email" autocomplete="email" placeholder="johndoe@gmail.com" [value]="form.email"
             [attr.aria-invalid]="errors.email ? 'true' : null" aria-describedby="c-email-err"
             (input)="onEmailInput($event)" (blur)="onBlur('email')" />
           <p class="err" id="c-email-err">{{ errors.email }}</p>
         </div>
         <fieldset>
-          <legend>{{ 'CONTACT_PAGE.FORM.METHOD' | translate }}</legend>
+          <legend>{{ 'CONTACT_PAGE.FORM.METHOD' | translate }} <span class="req" aria-hidden="true">*</span></legend>
           <div class="opts">
             <div class="opt-chip" *ngFor="let o of list('CONTACT_PAGE.FORM.METHODS')">
               <input type="radio" name="method" [id]="'m-' + o.V" [value]="o.V" [checked]="form.method === o.V" (change)="setMethod(o.V)" />
               <label [for]="'m-' + o.V">{{ o.L }}</label>
             </div>
           </div>
+          <p class="err" id="c-method-err" aria-live="polite">{{ errors.method }}</p>
         </fieldset>
       </div>
       <fieldset>
-        <legend>{{ 'CONTACT_PAGE.FORM.TYPE' | translate }}</legend>
+        <legend>{{ 'CONTACT_PAGE.FORM.TYPE' | translate }} <span class="req" aria-hidden="true">*</span></legend>
         <div class="opts">
           <div class="opt-chip" *ngFor="let o of list('CONTACT_PAGE.FORM.TYPES')">
-            <input type="radio" name="type" [id]="'t-' + o.V" [value]="o.V" [checked]="form.type === o.V" (change)="form.type = o.V" />
+            <input type="radio" name="type" [id]="'t-' + o.V" [value]="o.V" [checked]="form.type === o.V" (change)="setChoice('type', o.V)" />
             <label [for]="'t-' + o.V">{{ o.L }}</label>
           </div>
         </div>
+        <p class="err" id="c-type-err" aria-live="polite">{{ errors.type }}</p>
       </fieldset>
       <div class="row2">
         <fieldset>
-          <legend>{{ 'CONTACT_PAGE.FORM.LANG' | translate }}</legend>
+          <legend>{{ 'CONTACT_PAGE.FORM.LANG' | translate }} <span class="req" aria-hidden="true">*</span></legend>
           <div class="opts">
             <div class="opt-chip" *ngFor="let o of list('CONTACT_PAGE.FORM.LANGS')">
-              <input type="radio" name="lang" [id]="'l-' + o.V" [value]="o.V" [checked]="form.lang === o.V" (change)="form.lang = o.V" />
+              <input type="radio" name="lang" [id]="'l-' + o.V" [value]="o.V" [checked]="form.lang === o.V" (change)="setChoice('lang', o.V)" />
               <label [for]="'l-' + o.V" [attr.lang]="o.V">{{ o.L }}</label>
             </div>
           </div>
+          <p class="err" id="c-lang-err" aria-live="polite">{{ errors.lang }}</p>
         </fieldset>
         <fieldset>
           <legend>{{ 'CONTACT_PAGE.FORM.TIME' | translate }} <span class="opt">{{ 'CONTACT_PAGE.FORM.OPTIONAL' | translate }}</span></legend>
@@ -180,8 +183,8 @@
       <article class="office" *ngFor="let item of list('CONTACT_PAGE.OFFICES.ITEMS'); let i = index">
         <h3><a class="title-link" [routerLink]="route('ourLocations/:id', offices[i].id)">{{ item.NAME }}</a></h3>
         <span class="alias">{{ item.ALIAS }}</span>
-        <address><svg class="icon-sm" aria-hidden="true"><use href="#i-pin" /></svg><span><b>{{ 'CONTACT_PAGE.OFFICES.ADDRESS_LABEL' | translate }}</b> <a [href]="offices[i].mapUrl" target="_blank" rel="noopener">{{ item.ADDRESS }}</a></span></address>
-        <span class="ph-row"><b>{{ 'CONTACT_PAGE.OFFICES.PHONE_LABEL' | translate }}</b> <a class="ph" [href]="'tel:' + offices[i].tel">{{ offices[i].phone }}</a></span>
+        <address><svg class="icon-sm" aria-hidden="true"><use href="#i-pin" /></svg><span><a [href]="offices[i].mapUrl" target="_blank" rel="noopener">{{ item.ADDRESS }}</a></span></address>
+        <a class="ph" [href]="'tel:' + offices[i].tel">{{ offices[i].phone }}</a>
         <div class="acts">
           <a [href]="offices[i].directionsUrl" target="_blank" rel="noopener">{{ 'CONTACT_PAGE.OFFICES.DIRECTIONS' | translate }}</a>
           <a [routerLink]="route('ourLocations/:id', offices[i].id)">{{ 'CONTACT_PAGE.OFFICES.VIEW' | translate }}</a>

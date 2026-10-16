@@ -229,7 +229,7 @@ legend{float:none;width:auto;padding:0;margin:0 0 8px;font-size:15px;font-weight
 .sr-file{position:absolute;left:0;top:0;width:1px;height:1px;opacity:0;overflow:hidden;clip:rect(0 0 0 0)}
 .aform .field:focus-within .drop{outline:3px solid var(--stone-700);outline-offset:2px}
 .aform .hf-btn{align-self:stretch}
-@media (min-width:640px){.aform .hf-btn{align-self:flex-start;min-width:240px}}
+@media (min-width:640px){.aform .hf-btn{align-self:center;min-width:240px}}
 .consent{font-size:14px;line-height:1.5;color:var(--stone-700)}
 .consent a{color:var(--red-700);font-weight:700}
 

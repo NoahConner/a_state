@@ -25,6 +25,7 @@ import { TestimonialSliderComponent } from './components/testimonial-slider/test
 import { Careers } from './pages/careers/careers';
 import { Thankyou } from './pages/thank-you/thank-you';
 import { OurLocations } from './pages/our-locations/our-locations';
+import { OfficeDetail } from './pages/office-detail/office-detail';
 import { LocationDetail } from './pages/location-detail/location-detail';
 import { GetAQuote } from './pages/get-a-quote/get-a-quote';
 import { GetCustomQuote } from './pages/get-custom-quote/get-custom-quote';
@@ -231,6 +232,7 @@ export function initializeTranslations(
     Thankyou,
     OurLocations,
     LocationDetail,
+    OfficeDetail,
     GetAQuote,
     GetCustomQuote,
     GetAutoQuote,
