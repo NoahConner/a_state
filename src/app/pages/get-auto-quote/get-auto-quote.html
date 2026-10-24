@@ -1,503 +1,426 @@
-<div class="quoteMain">
-  <div class="topBanner">
-    <div class="container">
-      <h1 class="h1">
-        <span [innerHTML]="'GET_AUTO_QUOTE.HEADING' | translateHtml | async"></span>
-      </h1>
-      <p class="heroDesc" [innerHTML]="'GET_AUTO_QUOTE.DESCRIPTION' | translateHtml | async"></p>
+<!-- Icon sprite (phone, check, chev, arrow, globe and x come from the header sprite) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2-5.5A2 2 0 0 1 6.9 6h10.2a2 2 0 0 1 1.9 1.5L21 13v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M3 13h18M7 15.5h.01M17 15.5h.01M6 18v2M18 18v2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-9-9a4.5 4.5 0 0 1 8-4l1 1.2 1-1.2a4.5 4.5 0 0 1 8 4c-2 4.6-9 9-9 9z"/></symbol>
+    <symbol id="i-health" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M12 8v8M8 12h8"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8.5 10.5h7"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z" fill="#F6C945"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14"/><path d="M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18h.01"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></symbol>
+  </defs>
+</svg>
+
+<!-- Renders translated text pieces (see AqSeg in get-auto-quote.ts). Kept on one line so no spaces creep in. -->
+<ng-template #segsTpl let-value><ng-container *ngFor="let s of value"><a *ngIf="s.h && !s.x" [href]="s.h" [class.tel]="s.h.startsWith('tel:')" (click)="onSegLink(s.h, $event)">{{ s.t }}</a><a *ngIf="s.h && s.x" [href]="s.h" target="_blank" rel="noopener">{{ s.t }}<span class="sr-only"> {{ 'AUTO_QUOTE_PAGE.NEW_TAB' | translate }}</span></a><a *ngIf="s.r" [routerLink]="route(s.r)">{{ s.t }}</a><span *ngIf="s.hl" class="hl">{{ s.t }}</span><b *ngIf="s.b">{{ s.t }}</b><span *ngIf="s.l" [attr.lang]="s.l">{{ s.t }}</span><ng-container *ngIf="!s.h && !s.r && !s.hl && !s.b && !s.l">{{ s.t }}</ng-container></ng-container></ng-template>
+
+<!-- Group of radio chips. store[key] holds the chosen value. Radios keep `name` for grouping only; they are never submitted natively. -->
+<ng-template #chips let-legend="legend" let-name="name" let-opts="opts" let-store="store" let-key="key" let-cls="cls" let-hint="hint" let-hintId="hintId">
+  <fieldset [attr.aria-describedby]="hint ? hintId : null">
+    <legend>{{ legend }}</legend>
+    <div class="opts" [ngClass]="cls">
+      <div class="opt-chip" *ngFor="let o of opts">
+        <input type="radio" [name]="name" [id]="name + '-' + o.V" [value]="o.V" [checked]="store[key] === o.V" (change)="store[key] = o.V" />
+        <label [for]="name + '-' + o.V" [attr.lang]="o.LG || null">{{ o.L }}</label>
+      </div>
+    </div>
+    <p class="aq-sub aq-help" *ngIf="hint" [id]="hintId">{{ hint }}</p>
+  </fieldset>
+</ng-template>
+
+<!-- One row of the review step -->
+<ng-template #rrow let-k="k" let-v="v"><div><dt>{{ k }}</dt><dd [class.none]="!v">{{ v || ('AUTO_QUOTE_PAGE.FORM.NOT_GIVEN' | translate) }}</dd></div></ng-template>
+
+<!-- Hero + 6-step form -->
+<section class="hero cq-hero aq-hero has-sub" aria-labelledby="hero-title">
+  <div class="hf-container crumbs-row">
+    <nav class="crumbs" [attr.aria-label]="'AUTO_QUOTE_PAGE.BREADCRUMB.ARIA' | translate">
+      <ol>
+        <li><a [routerLink]="route('home')">{{ 'AUTO_QUOTE_PAGE.BREADCRUMB.HOME' | translate }}</a></li>
+        <li><a [routerLink]="route('autoInsurance')">{{ 'AUTO_QUOTE_PAGE.BREADCRUMB.SECTION' | translate }}</a></li>
+        <li aria-current="page">{{ 'AUTO_QUOTE_PAGE.BREADCRUMB.CURRENT' | translate }}</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="hf-container hero-grid">
+    <div class="hero-copy">
+      <h1 id="hero-title"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('AUTO_QUOTE_PAGE.HERO.TITLE') }"></ng-container></h1>
+    </div>
+
+    <div class="cq-card aq-card" id="quote">
+      <p class="sr-only" aria-live="polite">{{ live }}</p>
+
+      <ng-container *ngIf="!sent">
+        <div class="cq-progress" aria-hidden="true"><span [style.width.%]="step * 100 / 6"></span></div>
+        <ol class="cq-steps aq-steps" [attr.aria-label]="'AUTO_QUOTE_PAGE.FORM.STEPS_ARIA' | translate">
+          <li *ngFor="let n of stepNumbers; let i = index" [class.done]="n < step" [attr.aria-current]="n === step ? 'step' : null">
+            <span>{{ n }}</span><b>{{ list('AUTO_QUOTE_PAGE.FORM.STEP_DOTS')[i] }}</b>
+          </li>
+        </ol>
+
+        <form class="cform cqform aqform" novalidate [attr.aria-label]="'AUTO_QUOTE_PAGE.FORM.ARIA' | translate" (submit)="submit($event)" (keydown.enter)="onEnter($event)">
+
+          <!-- Step 1: About you -->
+          <div class="cq-step" [hidden]="step !== 1">
+            <div class="cq-step-h"><p class="cq-count">{{ 'AUTO_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 1 } }}</p><h3 id="aq-h1" tabindex="-1">{{ list('AUTO_QUOTE_PAGE.FORM.STEP_TITLES')[0] }}</h3></div>
+            <div class="cq-row">
+              <div class="field">
+                <label for="aq-name">{{ 'AUTO_QUOTE_PAGE.FORM.NAME' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="aq-name" autocomplete="name" required [value]="form.name"
+                  [attr.aria-invalid]="errors['name'] ? 'true' : null" aria-describedby="aq-name-err" (input)="onText('name', $event)" />
+                <p class="err" id="aq-name-err">{{ errors['name'] }}</p>
+              </div>
+              <div class="field">
+                <label for="aq-phone">{{ 'AUTO_QUOTE_PAGE.FORM.PHONE' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                <input type="tel" id="aq-phone" inputmode="tel" autocomplete="tel-national" required [value]="form.phone"
+                  [attr.aria-invalid]="errors['phone'] ? 'true' : null" aria-describedby="aq-phone-err" (input)="onPhoneInput($event)" />
+                <p class="err" id="aq-phone-err">{{ errors['phone'] }}</p>
+              </div>
+            </div>
+            <div class="cq-row">
+              <div class="field">
+                <label for="aq-email">{{ 'AUTO_QUOTE_PAGE.FORM.EMAIL' | translate }} <span class="opt">{{ 'AUTO_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
+                <input type="email" id="aq-email" autocomplete="email" [value]="form.email"
+                  [attr.aria-invalid]="errors['email'] ? 'true' : null" aria-describedby="aq-email-err" (input)="onText('email', $event)" />
+                <p class="err" id="aq-email-err">{{ errors['email'] }}</p>
+              </div>
+              <div class="field">
+                <label for="aq-zip">{{ 'AUTO_QUOTE_PAGE.FORM.ZIP' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="aq-zip" inputmode="numeric" autocomplete="postal-code" maxlength="5" required [value]="form.zip"
+                  [attr.aria-invalid]="errors['zip'] ? 'true' : null" aria-describedby="aq-zip-err" (input)="onZipInput($event)" />
+                <p class="err" id="aq-zip-err">{{ errors['zip'] }}</p>
+              </div>
+            </div>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-ghost" *ngIf="editing" (click)="backToReview()">{{ 'AUTO_QUOTE_PAGE.FORM.TO_REVIEW' | translate }}</button>
+              <button type="button" class="hf-btn btn-primary" (click)="next()">{{ list('AUTO_QUOTE_PAGE.FORM.NEXT')[0] }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+
+          <!-- Step 2: Vehicles -->
+          <div class="cq-step" [hidden]="step !== 2">
+            <div class="cq-step-h"><p class="cq-count">{{ 'AUTO_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 2 } }}</p><h3 id="aq-h2" tabindex="-1">{{ list('AUTO_QUOTE_PAGE.FORM.STEP_TITLES')[1] }}</h3></div>
+            <div class="aq-list">
+              <div class="aq-item" *ngFor="let v of form.vehicles; let vi = index; trackBy: trackById">
+                <div class="aq-item-h">
+                  <h4 [id]="'aq-v' + v.id + '-h'" tabindex="-1">{{ 'AUTO_QUOTE_PAGE.FORM.VEHICLE_N' | translate: { n: vi + 1 } }}</h4>
+                  <button type="button" class="aq-remove" *ngIf="form.vehicles.length > 1" (click)="removeBlock('vehicle', vi)"><svg class="icon-sm" aria-hidden="true"><use href="#i-x" /></svg>{{ 'AUTO_QUOTE_PAGE.FORM.REMOVE' | translate }}<span class="sr-only"> {{ 'AUTO_QUOTE_PAGE.FORM.REMOVE_V' | translate: { n: vi + 1 } }}</span></button>
+                </div>
+                <div class="aq-ymm">
+                  <div class="field">
+                    <label [for]="'aq-v' + v.id + '-year'">{{ 'AUTO_QUOTE_PAGE.FORM.YEAR' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                    <select [id]="'aq-v' + v.id + '-year'" required [attr.aria-invalid]="errors['v' + v.id + '.year'] ? 'true' : null"
+                      [attr.aria-describedby]="'aq-v' + v.id + '-year-err'" (change)="onVehicle(v, 'year', $event)">
+                      <option value="" [selected]="!v.year">{{ 'AUTO_QUOTE_PAGE.FORM.YEAR_SELECT' | translate }}</option>
+                      <option *ngFor="let y of years" [value]="y" [selected]="v.year === y">{{ y }}</option>
+                      <option value="1989" [selected]="v.year === '1989'">{{ 'AUTO_QUOTE_PAGE.FORM.YEAR_OLD' | translate }}</option>
+                    </select>
+                    <p class="err" [id]="'aq-v' + v.id + '-year-err'">{{ errors['v' + v.id + '.year'] }}</p>
+                  </div>
+                  <div class="field">
+                    <label [for]="'aq-v' + v.id + '-make'">{{ 'AUTO_QUOTE_PAGE.FORM.MAKE' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                    <input type="text" [id]="'aq-v' + v.id + '-make'" list="aq-makes" autocomplete="off" autocapitalize="words" required [value]="v.make"
+                      [attr.aria-invalid]="errors['v' + v.id + '.make'] ? 'true' : null" [attr.aria-describedby]="'aq-v' + v.id + '-make-err'" (input)="onVehicle(v, 'make', $event)" />
+                    <p class="err" [id]="'aq-v' + v.id + '-make-err'">{{ errors['v' + v.id + '.make'] }}</p>
+                  </div>
+                  <div class="field">
+                    <label [for]="'aq-v' + v.id + '-model'">{{ 'AUTO_QUOTE_PAGE.FORM.MODEL' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                    <input type="text" [id]="'aq-v' + v.id + '-model'" autocomplete="off" autocapitalize="words" required [value]="v.model"
+                      [attr.aria-invalid]="errors['v' + v.id + '.model'] ? 'true' : null" [attr.aria-describedby]="'aq-v' + v.id + '-model-err'" (input)="onVehicle(v, 'model', $event)" />
+                    <p class="err" [id]="'aq-v' + v.id + '-model-err'">{{ errors['v' + v.id + '.model'] }}</p>
+                  </div>
+                </div>
+                <div class="field">
+                  <label [for]="'aq-v' + v.id + '-vin'">{{ 'AUTO_QUOTE_PAGE.FORM.VIN' | translate }} <span class="opt">{{ 'AUTO_QUOTE_PAGE.FORM.VIN_OPT' | translate }}</span></label>
+                  <input type="text" class="vin" [id]="'aq-v' + v.id + '-vin'" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="17" [value]="v.vin"
+                    [attr.aria-invalid]="errors['v' + v.id + '.vin'] ? 'true' : null" [attr.aria-describedby]="'aq-v' + v.id + '-vin-err'" (input)="onVehicle(v, 'vin', $event)" />
+                  <p class="err" [id]="'aq-v' + v.id + '-vin-err'">{{ errors['v' + v.id + '.vin'] }}</p>
+                </div>
+                <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.OWN_LEGEND' | translate), name: 'aq-v' + v.id + '-own', opts: list('AUTO_QUOTE_PAGE.FORM.OWNS'), store: v, key: 'own', cls: '' }"></ng-container>
+                <p class="aq-lender" *ngIf="isLoan(v)"><svg class="icon-sm" aria-hidden="true"><use href="#i-shield" /></svg>{{ 'AUTO_QUOTE_PAGE.FORM.LENDER' | translate }}</p>
+                <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.USE_LEGEND' | translate), name: 'aq-v' + v.id + '-use', opts: list('AUTO_QUOTE_PAGE.FORM.USES'), store: v, key: 'use', cls: 'stack aq-two' }"></ng-container>
+                <div class="cq-row">
+                  <div class="field">
+                    <label [for]="'aq-v' + v.id + '-miles'">{{ 'AUTO_QUOTE_PAGE.FORM.MILES' | translate }} <span class="opt">{{ 'AUTO_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
+                    <input type="text" [id]="'aq-v' + v.id + '-miles'" inputmode="numeric" autocomplete="off" maxlength="7" [value]="v.miles" (input)="onVehicle(v, 'miles', $event)" />
+                  </div>
+                  <div class="field">
+                    <label [for]="'aq-v' + v.id + '-pzip'">{{ 'AUTO_QUOTE_PAGE.FORM.PARKED' | translate }}</label>
+                    <p class="aq-sub" [id]="'aq-v' + v.id + '-pzip-hint'">{{ 'AUTO_QUOTE_PAGE.FORM.PARKED_HINT' | translate }}</p>
+                    <input type="text" [id]="'aq-v' + v.id + '-pzip'" inputmode="numeric" autocomplete="off" maxlength="5" [value]="v.pzip"
+                      [attr.aria-invalid]="errors['v' + v.id + '.pzip'] ? 'true' : null" [attr.aria-describedby]="'aq-v' + v.id + '-pzip-hint aq-v' + v.id + '-pzip-err'" (input)="onVehicle(v, 'pzip', $event)" />
+                    <p class="err" [id]="'aq-v' + v.id + '-pzip-err'">{{ errors['v' + v.id + '.pzip'] }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <datalist id="aq-makes"><option *ngFor="let m of makes" [value]="m"></option></datalist>
+            <button type="button" class="aq-add" id="aq-add-vehicle" *ngIf="form.vehicles.length < maxBlocks" (click)="addBlock('vehicle')"><svg class="icon-sm" aria-hidden="true"><use href="#i-plus" /></svg>{{ 'AUTO_QUOTE_PAGE.FORM.ADD_VEHICLE' | translate }}</button>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-outline" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'AUTO_QUOTE_PAGE.FORM.BACK' | translate }}</button>
+              <button type="button" class="hf-btn btn-ghost" *ngIf="editing" (click)="backToReview()">{{ 'AUTO_QUOTE_PAGE.FORM.TO_REVIEW' | translate }}</button>
+              <button type="button" class="hf-btn btn-primary" (click)="next()">{{ list('AUTO_QUOTE_PAGE.FORM.NEXT')[1] }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+
+          <!-- Step 3: Drivers -->
+          <div class="cq-step" [hidden]="step !== 3">
+            <div class="cq-step-h"><p class="cq-count">{{ 'AUTO_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 3 } }}</p><h3 id="aq-h3" tabindex="-1">{{ list('AUTO_QUOTE_PAGE.FORM.STEP_TITLES')[2] }}</h3></div>
+            <div class="aq-list">
+              <div class="aq-item" *ngFor="let d of form.drivers; let di = index; trackBy: trackById">
+                <div class="aq-item-h">
+                  <h4 [id]="'aq-d' + d.id + '-h'" tabindex="-1">{{ 'AUTO_QUOTE_PAGE.FORM.DRIVER_N' | translate: { n: di + 1 } }}</h4>
+                  <button type="button" class="aq-remove" *ngIf="form.drivers.length > 1" (click)="removeBlock('driver', di)"><svg class="icon-sm" aria-hidden="true"><use href="#i-x" /></svg>{{ 'AUTO_QUOTE_PAGE.FORM.REMOVE' | translate }}<span class="sr-only"> {{ 'AUTO_QUOTE_PAGE.FORM.REMOVE_D' | translate: { n: di + 1 } }}</span></button>
+                </div>
+                <div class="cq-row">
+                  <div class="field">
+                    <label [for]="'aq-d' + d.id + '-name'">{{ 'AUTO_QUOTE_PAGE.FORM.NAME' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                    <input type="text" [id]="'aq-d' + d.id + '-name'" autocomplete="off" required [value]="d.name"
+                      [attr.aria-invalid]="errors['d' + d.id + '.name'] ? 'true' : null" [attr.aria-describedby]="'aq-d' + d.id + '-name-err'" (input)="onDriver(d, 'name', $event)" />
+                    <p class="err" [id]="'aq-d' + d.id + '-name-err'">{{ errors['d' + d.id + '.name'] }}</p>
+                  </div>
+                  <div class="field">
+                    <label [for]="'aq-d' + d.id + '-dob'">{{ 'AUTO_QUOTE_PAGE.FORM.DOB' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                    <input type="date" [id]="'aq-d' + d.id + '-dob'" autocomplete="off" min="1920-01-01" required [value]="d.dob"
+                      [attr.aria-invalid]="errors['d' + d.id + '.dob'] ? 'true' : null" [attr.aria-describedby]="'aq-d' + d.id + '-dob-err'" (input)="onDriver(d, 'dob', $event)" />
+                    <p class="err" [id]="'aq-d' + d.id + '-dob-err'">{{ errors['d' + d.id + '.dob'] }}</p>
+                  </div>
+                </div>
+                <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.MARITAL_LEGEND' | translate), name: 'aq-d' + d.id + '-marital', opts: list('AUTO_QUOTE_PAGE.FORM.MARITALS'), store: d, key: 'marital', cls: '' }"></ng-container>
+                <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.LICENSE_LEGEND' | translate), name: 'aq-d' + d.id + '-license', opts: list('AUTO_QUOTE_PAGE.FORM.LICENSES'), store: d, key: 'license', cls: 'stack aq-two' }"></ng-container>
+                <div class="field aq-short">
+                  <label [for]="'aq-d' + d.id + '-age'">{{ 'AUTO_QUOTE_PAGE.FORM.FIRST_AGE' | translate }} <span class="opt">{{ 'AUTO_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
+                  <input type="text" [id]="'aq-d' + d.id + '-age'" inputmode="numeric" autocomplete="off" maxlength="2" [value]="d.age"
+                    [attr.aria-invalid]="errors['d' + d.id + '.age'] ? 'true' : null" [attr.aria-describedby]="'aq-d' + d.id + '-age-err'" (input)="onDriver(d, 'age', $event)" />
+                  <p class="err" [id]="'aq-d' + d.id + '-age-err'">{{ errors['d' + d.id + '.age'] }}</p>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="aq-add" id="aq-add-driver" *ngIf="form.drivers.length < maxBlocks" (click)="addBlock('driver')"><svg class="icon-sm" aria-hidden="true"><use href="#i-plus" /></svg>{{ 'AUTO_QUOTE_PAGE.FORM.ADD_DRIVER' | translate }}</button>
+            <p class="privacy"><svg class="icon-sm" aria-hidden="true"><use href="#i-shield" /></svg><em>{{ 'AUTO_QUOTE_PAGE.FORM.NO_LICENSE_NO' | translate }}</em></p>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-outline" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'AUTO_QUOTE_PAGE.FORM.BACK' | translate }}</button>
+              <button type="button" class="hf-btn btn-ghost" *ngIf="editing" (click)="backToReview()">{{ 'AUTO_QUOTE_PAGE.FORM.TO_REVIEW' | translate }}</button>
+              <button type="button" class="hf-btn btn-primary" (click)="next()">{{ list('AUTO_QUOTE_PAGE.FORM.NEXT')[2] }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+
+          <!-- Step 4: Coverage and driving history -->
+          <div class="cq-step" [hidden]="step !== 4">
+            <div class="cq-step-h"><p class="cq-count">{{ 'AUTO_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 4 } }}</p><h3 id="aq-h4" tabindex="-1">{{ list('AUTO_QUOTE_PAGE.FORM.STEP_TITLES')[3] }}</h3></div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.COV_LEGEND' | translate), name: 'aq-cov', opts: list('AUTO_QUOTE_PAGE.FORM.COVS'), store: form.pick, key: 'coverage', cls: 'stack' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.ACC_LEGEND' | translate), name: 'aq-acc', opts: list('AUTO_QUOTE_PAGE.FORM.COUNTS'), store: form.pick, key: 'accidents', cls: '' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.TIX_LEGEND' | translate), name: 'aq-tix', opts: list('AUTO_QUOTE_PAGE.FORM.COUNTS'), store: form.pick, key: 'tickets', cls: '' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.SR_LEGEND' | translate), name: 'aq-sr', opts: list('AUTO_QUOTE_PAGE.FORM.YNU'), store: form.pick, key: 'sr22', cls: '', hint: ('AUTO_QUOTE_PAGE.FORM.SR_HELP' | translate), hintId: 'aq-sr-help' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.INSURED_LEGEND' | translate), name: 'aq-ins', opts: list('AUTO_QUOTE_PAGE.FORM.YN'), store: form.pick, key: 'insured', cls: '' }"></ng-container>
+            <div class="cq-row" [hidden]="form.pick['insured'] !== 'yes'">
+              <div class="field">
+                <label for="aq-carrier">{{ 'AUTO_QUOTE_PAGE.FORM.CARRIER' | translate }} <span class="opt">{{ 'AUTO_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
+                <input type="text" id="aq-carrier" autocomplete="off" maxlength="100" [value]="form.carrier" (input)="onText('carrier', $event)" />
+              </div>
+              <div class="field">
+                <label for="aq-renew">{{ 'AUTO_QUOTE_PAGE.FORM.RENEWAL' | translate }} <span class="opt">{{ 'AUTO_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
+                <input type="date" id="aq-renew" autocomplete="off" [value]="form.renewal" (input)="onText('renewal', $event)" />
+              </div>
+            </div>
+            <fieldset>
+              <legend>{{ 'AUTO_QUOTE_PAGE.FORM.ALSO_LEGEND' | translate }} <span class="opt">{{ 'AUTO_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></legend>
+              <div class="cq-grid aq-also">
+                <div class="cq-check" *ngFor="let o of list('AUTO_QUOTE_PAGE.FORM.ALSO'); let i = index">
+                  <input type="checkbox" name="aq-also" [id]="'aq-a-' + o.V" [value]="o.V" [checked]="!!form.also[o.V]" (change)="onAlso(o.V, $event)" />
+                  <label [for]="'aq-a-' + o.V"><span class="ic" aria-hidden="true"><svg class="icon-sm"><use [attr.href]="'#' + alsoIcons[i]" /></svg></span>{{ o.L }}<span class="box" aria-hidden="true"><svg class="icon-sm"><use href="#i-check" /></svg></span></label>
+                </div>
+              </div>
+            </fieldset>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-outline" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'AUTO_QUOTE_PAGE.FORM.BACK' | translate }}</button>
+              <button type="button" class="hf-btn btn-ghost" *ngIf="editing" (click)="backToReview()">{{ 'AUTO_QUOTE_PAGE.FORM.TO_REVIEW' | translate }}</button>
+              <button type="button" class="hf-btn btn-primary" (click)="next()">{{ list('AUTO_QUOTE_PAGE.FORM.NEXT')[3] }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+
+          <!-- Step 5: How to reach you -->
+          <div class="cq-step" [hidden]="step !== 5">
+            <div class="cq-step-h"><p class="cq-count">{{ 'AUTO_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 5 } }}</p><h3 id="aq-h5" tabindex="-1">{{ list('AUTO_QUOTE_PAGE.FORM.STEP_TITLES')[4] }}</h3></div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.LANG_LEGEND' | translate), name: 'aq-lang', opts: list('AUTO_QUOTE_PAGE.FORM.LANGS'), store: form.pick, key: 'lang', cls: '' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.METHOD_LEGEND' | translate), name: 'aq-method', opts: list('AUTO_QUOTE_PAGE.FORM.METHODS'), store: form.pick, key: 'method', cls: '' }"></ng-container>
+            <div class="field cq-more" [hidden]="!needEmail">
+              <label for="aq-email2">{{ 'AUTO_QUOTE_PAGE.FORM.EMAIL' | translate }} <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="aq-email2" autocomplete="email" [attr.aria-required]="needEmail ? 'true' : null" [value]="form.email2"
+                [attr.aria-invalid]="errors['email2'] ? 'true' : null" aria-describedby="aq-email2-err" (input)="onText('email2', $event)" />
+              <p class="err" id="aq-email2-err">{{ errors['email2'] }}</p>
+            </div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.TIME_LEGEND' | translate), name: 'aq-time', opts: list('AUTO_QUOTE_PAGE.FORM.TIMES'), store: form.pick, key: 'time', cls: 'stack' }"></ng-container>
+            <div class="field">
+              <label for="aq-office">{{ 'AUTO_QUOTE_PAGE.FORM.OFFICE' | translate }} <span class="opt">{{ 'AUTO_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
+              <select id="aq-office" (change)="form.office = $any($event.target).value">
+                <option value="" [selected]="!form.office">{{ 'AUTO_QUOTE_PAGE.FORM.NO_PREFERENCE' | translate }}</option>
+                <option *ngFor="let name of list('AUTO_QUOTE_PAGE.FORM.OFFICES'); let i = index" [value]="offices[i].id" [selected]="form.office === offices[i].id">{{ name }}</option>
+              </select>
+            </div>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-outline" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'AUTO_QUOTE_PAGE.FORM.BACK' | translate }}</button>
+              <button type="button" class="hf-btn btn-ghost" *ngIf="editing" (click)="backToReview()">{{ 'AUTO_QUOTE_PAGE.FORM.TO_REVIEW' | translate }}</button>
+              <button type="button" class="hf-btn btn-primary" (click)="next()">{{ list('AUTO_QUOTE_PAGE.FORM.NEXT')[4] }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+
+          <!-- Step 6: Review. The submit button exists only on this step, so a stray Enter before hydration cannot submit the form natively. -->
+          <div class="cq-step" [hidden]="step !== 6">
+            <div class="cq-step-h"><p class="cq-count">{{ 'AUTO_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 6 } }}</p><h3 id="aq-h6" tabindex="-1">{{ list('AUTO_QUOTE_PAGE.FORM.STEP_TITLES')[5] }}</h3></div>
+            <div class="cq-review" *ngIf="step === 6">
+              <div class="cq-rev">
+                <div class="cq-rev-h"><h4>{{ list('AUTO_QUOTE_PAGE.FORM.R_TITLES')[0] }}</h4><button type="button" class="cq-edit" (click)="edit(1)">{{ 'AUTO_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('AUTO_QUOTE_PAGE.FORM.R_TITLES')[0] }}</span></button></div>
+                <dl>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.NAME' | translate), v: form.name.trim() }"></ng-container>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.PHONE' | translate), v: form.phone }"></ng-container>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.EMAIL' | translate), v: form.email.trim() }"></ng-container>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.ZIP' | translate), v: form.zip }"></ng-container>
+                </dl>
+              </div>
+              <div class="cq-rev">
+                <div class="cq-rev-h"><h4>{{ list('AUTO_QUOTE_PAGE.FORM.R_TITLES')[1] }}</h4><button type="button" class="cq-edit" (click)="edit(2)">{{ 'AUTO_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('AUTO_QUOTE_PAGE.FORM.R_TITLES')[1] }}</span></button></div>
+                <dl>
+                  <ng-container *ngFor="let v of form.vehicles; let vi = index; trackBy: trackById">
+                    <div class="aq-rev-sub" *ngIf="form.vehicles.length > 1">{{ 'AUTO_QUOTE_PAGE.FORM.VEHICLE_N' | translate: { n: vi + 1 } }}</div>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.YMM' | translate), v: ymm(v) }"></ng-container>
+                    <ng-container *ngIf="v.vin"><ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.VIN' | translate), v: v.vin }"></ng-container></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.OWN' | translate), v: label('FORM.OWNS', v.own) }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.USE' | translate), v: label('FORM.USES', v.use) }"></ng-container>
+                    <ng-container *ngIf="v.miles"><ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.MILES' | translate), v: v.miles }"></ng-container></ng-container>
+                    <ng-container *ngIf="v.pzip"><ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.PARKED' | translate), v: ('AUTO_QUOTE_PAGE.FORM.R.PARKED_V' | translate: { zip: v.pzip }) }"></ng-container></ng-container>
+                  </ng-container>
+                </dl>
+              </div>
+              <div class="cq-rev">
+                <div class="cq-rev-h"><h4>{{ list('AUTO_QUOTE_PAGE.FORM.R_TITLES')[2] }}</h4><button type="button" class="cq-edit" (click)="edit(3)">{{ 'AUTO_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('AUTO_QUOTE_PAGE.FORM.R_TITLES')[2] }}</span></button></div>
+                <dl>
+                  <ng-container *ngFor="let d of form.drivers; let di = index; trackBy: trackById">
+                    <div class="aq-rev-sub" *ngIf="form.drivers.length > 1">{{ 'AUTO_QUOTE_PAGE.FORM.DRIVER_N' | translate: { n: di + 1 } }}</div>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.D_NAME' | translate), v: d.name.trim() }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.DOB' | translate), v: dateLabel(d.dob) }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.MARITAL' | translate), v: label('FORM.MARITALS', d.marital) }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.LICENSE' | translate), v: label('FORM.LICENSES', d.license) }"></ng-container>
+                    <ng-container *ngIf="d.age"><ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.FIRST_AGE' | translate), v: ('AUTO_QUOTE_PAGE.FORM.R.FIRST_AGE_V' | translate: { age: d.age }) }"></ng-container></ng-container>
+                  </ng-container>
+                </dl>
+              </div>
+              <div class="cq-rev">
+                <div class="cq-rev-h"><h4>{{ list('AUTO_QUOTE_PAGE.FORM.R_TITLES')[3] }}</h4><button type="button" class="cq-edit" (click)="edit(4)">{{ 'AUTO_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('AUTO_QUOTE_PAGE.FORM.R_TITLES')[3] }}</span></button></div>
+                <dl>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.COVERAGE' | translate), v: label('FORM.COVS', form.pick['coverage'] || '') }"></ng-container>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.ACCIDENTS' | translate), v: label('FORM.COUNTS', form.pick['accidents'] || '') }"></ng-container>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.TICKETS' | translate), v: label('FORM.COUNTS', form.pick['tickets'] || '') }"></ng-container>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.SR22' | translate), v: label('FORM.YNU', form.pick['sr22'] || '') }"></ng-container>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.INSURED' | translate), v: label('FORM.YN', form.pick['insured'] || '') }"></ng-container>
+                  <ng-container *ngIf="form.pick['insured'] === 'yes'">
+                    <ng-container *ngIf="form.carrier.trim()"><ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.CARRIER' | translate), v: form.carrier.trim() }"></ng-container></ng-container>
+                    <ng-container *ngIf="form.renewal"><ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.RENEWAL' | translate), v: dateLabel(form.renewal) }"></ng-container></ng-container>
+                  </ng-container>
+                  <div><dt>{{ 'AUTO_QUOTE_PAGE.FORM.R.ALSO' | translate }}</dt><dd>{{ alsoSummary() || ('AUTO_QUOTE_PAGE.FORM.NONE' | translate) }}</dd></div>
+                </dl>
+              </div>
+              <div class="cq-rev">
+                <div class="cq-rev-h"><h4>{{ list('AUTO_QUOTE_PAGE.FORM.R_TITLES')[4] }}</h4><button type="button" class="cq-edit" (click)="edit(5)">{{ 'AUTO_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('AUTO_QUOTE_PAGE.FORM.R_TITLES')[4] }}</span></button></div>
+                <dl>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.LANG' | translate), v: label('FORM.LANGS', form.pick['lang'] || '') }"></ng-container>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.METHOD' | translate), v: label('FORM.METHODS', form.pick['method'] || '') }"></ng-container>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.TIME' | translate), v: label('FORM.TIMES', form.pick['time'] || '') }"></ng-container>
+                  <div><dt>{{ 'AUTO_QUOTE_PAGE.FORM.R.OFFICE' | translate }}</dt><dd>{{ officeLabel() || ('AUTO_QUOTE_PAGE.FORM.NO_PREFERENCE' | translate) }}</dd></div>
+                </dl>
+              </div>
+            </div>
+            <div class="privacy cq-consent">
+              <svg class="icon-sm" aria-hidden="true"><use href="#i-shield" /></svg>
+              <div>
+                <p><em><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('AUTO_QUOTE_PAGE.FORM.CONSENT') }"></ng-container></em></p>
+                <p class="never"><b>{{ 'AUTO_QUOTE_PAGE.FORM.NEVER_SOLD' | translate }}</b></p>
+              </div>
+            </div>
+            <p class="err cq-submit-err" role="alert">{{ submitError }}</p>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-outline" [disabled]="isSubmitting" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'AUTO_QUOTE_PAGE.FORM.BACK' | translate }}</button>
+              <button type="submit" class="hf-btn btn-primary btn-lg" *ngIf="step === 6" [disabled]="isSubmitting" [attr.aria-busy]="isSubmitting ? 'true' : null">{{ (isSubmitting ? 'AUTO_QUOTE_PAGE.FORM.SENDING' : 'AUTO_QUOTE_PAGE.FORM.SUBMIT') | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+        </form>
+      </ng-container>
+
+      <div class="csuccess" id="aq-success" tabindex="-1" *ngIf="sent">
+        <span class="badge" aria-hidden="true"><svg class="icon"><use href="#i-check" /></svg></span>
+        <h3>{{ 'AUTO_QUOTE_PAGE.FORM.SUCCESS.TITLE' | translate }}</h3>
+        <p>{{ 'AUTO_QUOTE_PAGE.FORM.SUCCESS.TEXT' | translate }}</p>
+      </div>
+    </div>
+
+    <div class="hero-sub">
+      <p class="hf-lead">{{ 'AUTO_QUOTE_PAGE.HERO.LEAD' | translate }}</p>
+      <p class="q-trust"><span class="q-star" aria-hidden="true"><svg class="icon-sm"><use href="#i-star" /></svg></span><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('AUTO_QUOTE_PAGE.HERO.TRUST') }"></ng-container></p>
     </div>
   </div>
+</section>
 
-  <div class="container my-5 quote-wrapper">
-    <div class="card border-0 p-4 mb-5">
-      <div class="d-flex justify-content-between align-items-center stepper">
-        <div class="step" [class.active]="currentStep === 1" [class.completed]="canEditStep(1)">
-          <div class="circle"><img src="/assets/images/quote-step-1.png" alt="" /></div>
-          <p [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP1.TITLE' | translateHtml | async"></p>
-        </div>
-        <div class="step" [class.active]="currentStep === 2" [class.completed]="canEditStep(2)">
-          <div class="circle"><img src="/assets/images/quote-step-2.png" alt="" /></div>
-          <p [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP2.TITLE' | translateHtml | async"></p>
-        </div>
-        <div class="step" [class.active]="currentStep === 3" [class.completed]="canEditStep(3)">
-          <div class="circle"><img src="/assets/images/quote-step-3.png" alt="" /></div>
-          <p [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP3.TITLE' | translateHtml | async"></p>
-        </div>
-        <div class="step" [class.active]="currentStep === 4" [class.completed]="canEditStep(4)">
-          <div class="circle"><img src="/assets/images/quote-step-4.png" alt="" /></div>
-          <p [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP4.TITLE' | translateHtml | async"></p>
-        </div>
-        <div class="step" [class.active]="currentStep === 5" [class.completed]="canEditStep(5)">
-          <div class="circle"><img src="/assets/images/quote-step-5.png" alt="" /></div>
-          <p [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP5.TITLE' | translateHtml | async"></p>
-        </div>
-      </div>
-    </div>
-    <form [formGroup]="autoQuoteForm">
-      <div class="steps-for-custom-quote">
-        <div class="container" *ngIf="currentStep === 1">
-          <div class="form-wrapper">
-            <h2 class="form-title" [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP1.TITLE' | translateHtml | async"></h2>
+<!-- What you'll need -->
+<section class="section bg-white" id="what-you-need" aria-labelledby="need-h">
+  <div class="hf-container aq-need">
+    <h2 id="need-h">{{ 'AUTO_QUOTE_PAGE.NEED.TITLE' | translate }}</h2>
+    <ul class="aq-need-list">
+      <li *ngFor="let item of list('AUTO_QUOTE_PAGE.NEED.ITEMS'); let i = index">
+        <span class="ic" aria-hidden="true"><svg class="icon"><use [attr.href]="'#' + needIcons[i]" /></svg></span>
+        <span>{{ item }}</span>
+      </li>
+    </ul>
+    <p class="aq-need-tail"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('AUTO_QUOTE_PAGE.NEED.TAIL') }"></ng-container></p>
+  </div>
+</section>
 
-            <div class="form-content-border">
-              <div class="row gy-3 mb-3">
-                <div class="col-md-4">
-                  <label class="form-label"><span [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP1.FIELDS.FULL_NAME' | translateHtml | async"></span><span>*</span></label>
-                  <input type="text" class="form-control" formControlName="first_name" placeholder="John Doe"
-                    [class.is-invalid]="autoQuoteForm.get('first_name')?.invalid && autoQuoteForm.get('first_name')?.touched" />
-                  <div class="invalid-feedback"
-                    *ngIf="autoQuoteForm.get('first_name')?.invalid && autoQuoteForm.get('first_name')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-                <div class="col-md-4">
-                  <label class="form-label"><span [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP1.FIELDS.ZIPCODE' | translateHtml | async"></span><span>*</span></label>
-                  <input type="text" class="form-control" placeholder="12345" formControlName="zip_code"
-                    [class.is-invalid]="autoQuoteForm.get('zip_code')?.invalid && autoQuoteForm.get('zip_code')?.touched" />
-                  <div class="invalid-feedback"
-                    *ngIf="autoQuoteForm.get('zip_code')?.invalid && autoQuoteForm.get('zip_code')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-              </div>
+<!-- Texas basics -->
+<section class="section bg-cream" id="texas-basics" aria-labelledby="tx-h">
+  <div class="hf-container">
+    <div class="section-head"><h2 id="tx-h">{{ 'AUTO_QUOTE_PAGE.BASICS.TITLE' | translate }}</h2></div>
+    <ul class="aq-basics">
+      <li *ngFor="let b of list('AUTO_QUOTE_PAGE.BASICS.ITEMS'); let i = index">
+        <span class="ic" aria-hidden="true"><svg class="icon"><use [attr.href]="'#' + basicsIcons[i]" /></svg></span>
+        <div><h3>{{ b.TITLE }}</h3><p><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: b.TEXT }"></ng-container></p></div>
+      </li>
+    </ul>
+    <p class="cq-know"><a class="arrow-link" [routerLink]="route('autoInsurance')">{{ 'AUTO_QUOTE_PAGE.BASICS.MORE' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a></p>
+  </div>
+</section>
 
-              <div class="row gy-3">
-                <div class="col-md-4">
-                  <label class="form-label"><span [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP1.FIELDS.EMAIL' | translateHtml | async"></span><span>*</span></label>
-                  <input type="email" class="form-control" id="email_address" formControlName="email_address"
-                    [class.is-invalid]="autoQuoteForm.get('email_address')?.invalid && autoQuoteForm.get('email_address')?.touched"
-                    placeholder="example@domain.com" />
-                  <div class="invalid-feedback"
-                    *ngIf="autoQuoteForm.get('email_address')?.invalid && autoQuoteForm.get('email_address')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.EMAIL' | translateHtml | async"></div>
-                </div>
-                <div class="col-md-4">
-                  <label class="form-label"><span [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP1.FIELDS.PHONE' | translateHtml | async"></span><span>*</span></label>
-                  <input type="text" class="form-control" placeholder="+1 265 789 8900" formControlName="phone_number"
-                    [class.is-invalid]="autoQuoteForm.get('phone_number')?.invalid && autoQuoteForm.get('phone_number')?.touched" />
-                  <div class="invalid-feedback"
-                    *ngIf="autoQuoteForm.get('phone_number')?.invalid && autoQuoteForm.get('phone_number')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-              </div>
-              <div class="d-flex gap-3 mt-4">
-          <button type="button" class="btn btn-next" (click)="nextStep()">
-                  {{ 'GET_AUTO_QUOTE.NEXT_BUTTON' | translate }}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+<!-- FAQs -->
+<section class="section bg-white" id="faqs" aria-labelledby="faq-h">
+  <div class="hf-container faq faq-wrap">
+    <h2 id="faq-h">{{ 'AUTO_QUOTE_PAGE.FAQ.TITLE' | translate }}</h2>
+    <details *ngFor="let item of list('AUTO_QUOTE_PAGE.FAQ.ITEMS'); let i = index" [open]="faqOpen === i" (toggle)="onFaqToggle(i, $event)">
+      <summary><h3>{{ item.Q }}</h3><span class="pm" aria-hidden="true"><svg class="icon-sm"><use href="#i-plus" /></svg></span></summary>
+      <div class="ans"><p>{{ item.A }}</p></div>
+    </details>
+  </div>
+</section>
 
-        <div class="container mt-4 mb-4" *ngIf="currentStep === 2">
-          <div class="form-wrapper">
-            <h2 class="form-title" [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP2.TITLE' | translateHtml | async"></h2>
-
-            <div class="form-content-border" formArrayName="vehicles">
-              <div *ngFor="let vehicle of vehicles.controls; let i = index" [formGroupName]="i">
-                <div class="d-flex align-items-center justify-content-between mb-3 mt-3">
-                  <h5 class="vehicle-title mb-0">Vehicle {{ i + 1 }}</h5>
-                  <a *ngIf="vehicles.length > 1" (click)="removeVehicle(i)" class="remove-vehicle"
-                    title="Remove Vehicle">
-                    <i class="fa fa-times text-danger"></i>
-                  </a>
-                </div>
-
-                <div class="row gy-3 mb-3">
-                  <div class="col-md-3">
-                    <label class="form-label"><span [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.YEAR' | translateHtml | async"></span><span>*</span></label>
-                    <input type="text" class="form-control" placeholder="2025" formControlName="year"
-                      [class.is-invalid]="vehicle.get('year')?.invalid && vehicle.get('year')?.touched" />
-                    <div class="invalid-feedback" *ngIf="vehicle.get('year')?.invalid && vehicle.get('year')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                  </div>
-                  <div class="col-md-3">
-                    <label class="form-label"><span [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.MAKE' | translateHtml | async"></span><span>*</span></label>
-                    <input type="text" class="form-control" placeholder="BMW" formControlName="make"
-                      [class.is-invalid]="vehicle.get('make')?.invalid && vehicle.get('make')?.touched" />
-                    <div class="invalid-feedback" *ngIf="vehicle.get('make')?.invalid && vehicle.get('make')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                  </div>
-                  <div class="col-md-3">
-                    <label class="form-label"><span [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.MODEL' | translateHtml | async"></span><span>*</span></label>
-                    <input type="text" class="form-control" placeholder="X3" formControlName="model"
-                      [class.is-invalid]="vehicle.get('model')?.invalid && vehicle.get('model')?.touched" />
-                    <div class="invalid-feedback"
-                      *ngIf="vehicle.get('model')?.invalid && vehicle.get('model')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                  </div>
-                </div>
-
-                <div class="row gy-3">
-                  <div class="col-md-4">
-                    <label class="form-label"><span [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.OWNERSHIP' | translateHtml | async"></span><span>*</span></label>
-                    <input type="text" class="form-control" placeholder="Owned" formControlName="ownership"
-                      [class.is-invalid]="vehicle.get('ownership')?.invalid && vehicle.get('ownership')?.touched" />
-                    <div class="invalid-feedback"
-                      *ngIf="vehicle.get('ownership')?.invalid && vehicle.get('ownership')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                  </div>
-                  <div class="col-md-4">
-                    <label class="form-label"><span [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP2.FIELDS.PRIMARY_USE' | translateHtml | async"></span><span>*</span></label>
-                    <input type="text" class="form-control" placeholder="Personal" formControlName="primary_use"
-                      [class.is-invalid]="vehicle.get('primary_use')?.invalid && vehicle.get('primary_use')?.touched" />
-                    <div class="invalid-feedback"
-                      *ngIf="vehicle.get('primary_use')?.invalid && vehicle.get('primary_use')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="mt-3">
-                <a class="add-vehicle" (click)="addVehicle()"> Add More Vehicle </a>
-              </div>
-
-              <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous" (click)="previousStep()">
-                  {{ 'GET_AUTO_QUOTE.PREVIOUS_BUTTON' | translate }}
-                </button>
-                <button type="button" class="btn btn-next" (click)="nextStep()">
-                  {{ 'GET_AUTO_QUOTE.NEXT_BUTTON' | translate }}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="container mb-4" *ngIf="currentStep === 3">
-          <div class="form-wrapper">
-            <h2 class="form-title" [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP3.TITLE' | translateHtml | async"></h2>
-
-            <div class="form-content-border" formArrayName="drivers">
-              <div *ngFor="let driver of drivers.controls; let i = index" [formGroupName]="i">
-                <!-- Heading with remove option -->
-                <div class="d-flex align-items-center justify-content-between mb-3 mt-3">
-                  <h5 class="vehicle-title mb-0">Driver {{ i + 1 }}</h5>
-                  <a *ngIf="drivers.length > 1" (click)="removeDriver(i)" class="remove-vehicle" title="Remove Driver">
-                    <i class="fa fa-times text-danger"></i>
-                  </a>
-                </div>
-
-                <div class="row gy-3 mb-3">
-                  <div class="col-md-4">
-                    <label class="form-label">
-                      <span [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP3.FIELDS.FULL_NAME' | translateHtml | async"></span><span>*</span>
-                    </label>
-                    <input type="text" class="form-control" formControlName="full_name" placeholder="John Doe"
-                      [class.is-invalid]="driver.get('full_name')?.invalid && driver.get('full_name')?.touched" />
-                    <div class="invalid-feedback"
-                      *ngIf="driver.get('full_name')?.invalid && driver.get('full_name')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                  </div>
-                  <div class="col-md-4">
-                    <label class="form-label">
-                      <span [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP3.FIELDS.DATE_OF_BIRTH' | translateHtml | async"></span><span>*</span>
-                    </label>
-                    <input type="date" class="form-control" formControlName="date_of_birth" lang="en-GB" [max]="maxDate"
-                      [class.is-invalid]="driver.get('date_of_birth')?.invalid && driver.get('date_of_birth')?.touched" />
-                    <div class="invalid-feedback"
-                      *ngIf="driver.get('date_of_birth')?.invalid && driver.get('date_of_birth')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                  </div>
-                </div>
-
-                <div class="row gy-3">
-                  <div class="col-md-4">
-                    <label class="form-label">
-                      <span [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP3.FIELDS.MARTIAL_STATUS' | translateHtml | async"></span><span>*</span>
-                    </label>
-                    <input type="text" class="form-control" formControlName="marital_status" placeholder="Single"
-                      [class.is-invalid]="driver.get('marital_status')?.invalid && driver.get('marital_status')?.touched" />
-                    <div class="invalid-feedback"
-                      *ngIf="driver.get('marital_status')?.invalid && driver.get('marital_status')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Add More Driver -->
-              <div class="mt-3">
-                <a class="add-vehicle" (click)="addDriver()">Add More Driver</a>
-              </div>
-
-              <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous" (click)="previousStep()">
-                  {{ 'GET_AUTO_QUOTE.PREVIOUS_BUTTON' | translate }}
-                </button>
-                <button type="button" class="btn btn-next" (click)="nextStep()">
-                  {{ 'GET_AUTO_QUOTE.NEXT_BUTTON' | translate }}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="container mt-4 mb-4" *ngIf="currentStep === 4">
-          <div class="form-wrapper">
-            <h2 class="form-title" [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP4.TITLE' | translateHtml | async"></h2>
-
-            <div class="form-content-border">
-              <div class="selection-group">
-                <h4 class="selection-heading" [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP4.INSURED_TITLE' | translateHtml | async"></h4>
-
-                <div class="coverage-options">
-                  <div class="form-check">
-                    <input type="radio" class="form-check-input" id="currently_issued_yes"
-                      formControlName="currently_issued" value="Yes" />
-                    <label class="form-check-label" for="currently_issued_yes" [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP4.INSURED_YES' | translateHtml | async"></label><br />
-                  </div>
-
-                  <div class="form-check">
-                    <input type="radio" class="form-check-input" id="currently_issued_no"
-                      formControlName="currently_issued" value="No" />
-                    <label class="form-check-label" for="currently_issued_no" [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP4.INSURED_NO' | translateHtml | async"></label>
-                  </div>
-
-                  <div class="invalid-feedback d-block"
-                    *ngIf="autoQuoteForm.get('currently_issued')?.invalid && autoQuoteForm.get('currently_issued')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-              </div>
-
-              <div class="selection-group mt-4">
-                <h4 class="selection-heading" [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP4.SR22_TITLE' | translateHtml | async"></h4>
-
-                <div class="coverage-options">
-                  <div class="form-check">
-                    <input type="radio" class="form-check-input" id="sr22_yes" formControlName="sr_22_needed"
-                      value="Yes" />
-                    <label class="form-check-label" for="sr22_yes" [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP4.SR22_YES' | translateHtml | async"></label><br />
-                  </div>
-
-                  <div class="form-check">
-                    <input type="radio" class="form-check-input" id="sr22_no" formControlName="sr_22_needed"
-                      value="No" />
-                    <label class="form-check-label" for="sr22_no" [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP4.SR22_NO' | translateHtml | async"></label>
-                  </div>
-
-                  <div class="invalid-feedback d-block"
-                    *ngIf="autoQuoteForm.get('sr_22_needed')?.invalid && autoQuoteForm.get('sr_22_needed')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-              </div>
-
-              <div class="selection-group mt-4">
-                <h4 class="selection-heading" [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP4.BUNDLE_TITLE' | translateHtml | async"></h4>
-
-                <div class="coverage-options">
-                  <div class="form-check"
-                    *ngFor="let option of 'GET_AUTO_QUOTE.STEPPER.STEP4.BUNDLE_OPTIONS' | translate">
-                    <input class="form-check-input" type="radio" [id]="option" [name]="'bundle'"
-                      [checked]="autoQuoteForm.get('bundle')?.value === option"
-                      (change)="autoQuoteForm.get('bundle')?.setValue(option)" />
-
-                    <label class="form-check-label" [for]="option">
-                      {{ option }}
-                    </label>
-                  </div>
-                </div>
-
-                <div class="invalid-feedback d-block"
-                  *ngIf="autoQuoteForm.get('bundle')?.invalid && autoQuoteForm.get('bundle')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-              </div>
-
-              <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous" (click)="previousStep()">
-                  {{ 'GET_AUTO_QUOTE.PREVIOUS_BUTTON' | translate }}
-                </button>
-                <button type="button" class="btn btn-next" (click)="nextStep()">
-                  {{ 'GET_AUTO_QUOTE.NEXT_BUTTON' | translate }}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="container mt-4 mb-4" *ngIf="currentStep === 5">
-          <div class="form-wrapper">
-            <h2 class="form-title" [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP5.TITLE' | translateHtml | async"></h2>
-
-            <div class="form-content-border">
-              <div class="selection-group">
-                <h4 class="selection-heading" [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP5.LANGUAGE_TITLE' | translateHtml | async"></h4>
-
-                <div class="coverage-options">
-                  <div class="form-check" *ngFor="
-                      let option of 'GET_AUTO_QUOTE.STEPPER.STEP5.LANGUAGE_OPTIONS' | translate
-                    ">
-                    <input class="form-check-input" type="radio" [id]="option" [name]="'language'"
-                      [checked]="autoQuoteForm.get('preferred_language')?.value === option"
-                      (change)="autoQuoteForm.get('preferred_language')?.setValue(option)" />
-
-                    <label class="form-check-label" [for]="option">
-                      {{ option }}
-                    </label>
-                  </div>
-                </div>
-
-                <div class="invalid-feedback d-block"
-                  *ngIf="autoQuoteForm.get('preferred_language')?.invalid && autoQuoteForm.get('preferred_language')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-              </div>
-
-              <div class="selection-group mt-4">
-                <h4 class="selection-heading" [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP5.CONTACT_TITLE' | translateHtml | async"></h4>
-
-                <div class="coverage-options">
-                  <div class="form-check" *ngFor="let option of contactOptions">
-                    <input class="form-check-input" type="radio" [id]="option" [name]="'contact'"
-                      [checked]="autoQuoteForm.get('contact_method')?.value === option"
-                      (change)="autoQuoteForm.get('contact_method')?.setValue(option)" />
-                    <label class="form-check-label" [for]="option">
-                      {{ option }}
-                    </label>
-                  </div>
-                </div>
-
-                <div class="invalid-feedback d-block"
-                  *ngIf="autoQuoteForm.get('contact_method')?.invalid && autoQuoteForm.get('contact_method')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-              </div>
-
-              <div class="selection-group mt-4">
-                <h4 class="selection-heading" [innerHTML]="'GET_AUTO_QUOTE.STEPPER.STEP5.TIME_TITLE' | translateHtml | async"></h4>
-
-                <div class="coverage-options">
-                  <div class="form-check" *ngFor="let option of timeOptions">
-                    <input class="form-check-input" type="radio" [id]="option" [name]="'time'"
-                      [checked]="autoQuoteForm.get('best_time_to_connect')?.value === option"
-                      (change)="autoQuoteForm.get('best_time_to_connect')?.setValue(option)" />
-                    <label class="form-check-label" [for]="option">
-                      {{ option }}
-                    </label>
-                  </div>
-                </div>
-
-                <div class="invalid-feedback d-block"
-                  *ngIf="autoQuoteForm.get('best_time_to_connect')?.invalid && autoQuoteForm.get('best_time_to_connect')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-              </div>
-
-              <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous" (click)="previousStep()">
-                  {{ 'GET_AUTO_QUOTE.PREVIOUS_BUTTON' | translate }}
-                </button>
-                <button type="button" class="btn btn-next" (click)="nextStep()">
-                  {{ 'GET_AUTO_QUOTE.NEXT_BUTTON' | translate }}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </form>
-
-    <div class="quote-summary-container p-4 p-md-5 mt-5" *ngIf="currentStep > totalSteps">
-      <div class="container max-width-700">
-        <h2 class="text-center mb-4 section-title" [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.MAIN_TITLE' | translateHtml | async"></h2>
-        <p class="text-center mb-4" [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.MAIN_DESC' | translateHtml | async"></p>
-
-        <h2 class="text-center mb-4 section-title" [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.TITLE' | translateHtml | async"></h2>
-
-        <div class="summary-card mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="summary-card-title m-0" [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.TITLE' | translateHtml | async"></h3>
-            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(1)" [attr.aria-disabled]="!canEditStep(1)" (click)="canEditStep(1) && goToStep(1)">
-              <i class="bi bi-pencil-square"></i>
-              <span [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.EDIT' | translateHtml | async"></span></a>
-          </div>
-          <ul class="list-unstyled mb-0">
-            <li>
-              <strong [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.NAME' | translateHtml | async"></strong>
-              {{ autoQuoteForm.get('first_name')?.value }}
-            </li>
-            <li>
-              <strong [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.ZIP' | translateHtml | async"></strong>
-              {{ autoQuoteForm.get('zip_code')?.value }}
-            </li>
-            <li>
-              <strong [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.EMAIL' | translateHtml | async"></strong>
-              {{ autoQuoteForm.get('email_address')?.value }}
-            </li>
-            <li>
-              <strong [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.PHONE' | translateHtml | async"></strong>
-              {{ autoQuoteForm.get('phone_number')?.value }}
-            </li>
-          </ul>
-        </div>
-
-        <div class="summary-card mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="summary-card-title m-0" [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD2.TITLE' | translateHtml | async"></h3>
-            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(2)" [attr.aria-disabled]="!canEditStep(2)" (click)="canEditStep(2) && goToStep(2)">
-              <i class="bi bi-pencil-square"></i>
-              <span [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD2.EDIT' | translateHtml | async"></span></a>
-          </div>
-          <ul class="list-unstyled mb-0">
-            <li *ngFor="let vehicle of vehicles.controls; let i = index">
-              <strong><span [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.VEHICLE' | translateHtml | async"></span>
-                {{ i + 1 }}</strong>
-              {{ vehicle.get('year')?.value }} {{ vehicle.get('make')?.value }}
-              {{ vehicle.get('model')?.value }} ({{ vehicle.get('ownership')?.value }},
-              {{ vehicle.get('primary_use')?.value }})
-            </li>
-          </ul>
-        </div>
-
-        <div class="summary-card mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="summary-card-title m-0" [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD3.TITLE' | translateHtml | async"></h3>
-            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(3)" [attr.aria-disabled]="!canEditStep(3)" (click)="canEditStep(3) && goToStep(3)">
-              <i class="bi bi-pencil-square"></i>
-              <span [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD3.EDIT' | translateHtml | async"></span></a>
-          </div>
-          <ul class="list-unstyled mb-0">
-            <li *ngFor="let driver of drivers.controls; let i = index">
-              <strong><span [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.DRIVER' | translateHtml | async"></span>
-                {{ i + 1 }}</strong>
-              {{ driver.get('full_name')?.value }} (DOB: {{ formatDate(driver.get('date_of_birth')?.value) }},
-              {{ driver.get('marital_status')?.value }})
-            </li>
-          </ul>
-        </div>
-
-        <div class="summary-card mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="summary-card-title m-0" [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD4.TITLE' | translateHtml | async"></h3>
-            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(4)" [attr.aria-disabled]="!canEditStep(4)" (click)="canEditStep(4) && goToStep(4)">
-              <i class="bi bi-pencil-square"></i>
-              <span [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD4.EDIT' | translateHtml | async"></span></a>
-          </div>
-          <ul class="list-unstyled mb-0">
-            <li>
-              <strong [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.INSURED' | translateHtml | async"></strong>
-              {{ autoQuoteForm.get('currently_issued')?.value }}
-            </li>
-            <li>
-              <strong [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.SR22' | translateHtml | async"></strong>
-              {{ autoQuoteForm.get('sr_22_needed')?.value }}
-            </li>
-            <li>
-              <strong [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.BUNDLE' | translateHtml | async"></strong>
-              {{ autoQuoteForm.get('bundle')?.value || 'None' }}
-            </li>
-          </ul>
-        </div>
-
-        <div class="summary-card mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="summary-card-title m-0" [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD5.TITLE' | translateHtml | async"></h3>
-            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(5)" [attr.aria-disabled]="!canEditStep(5)" (click)="canEditStep(5) && goToStep(5)">
-              <i class="bi bi-pencil-square"></i>
-              <span [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD5.EDIT' | translateHtml | async"></span></a>
-          </div>
-          <ul class="list-unstyled mb-0">
-            <li>
-              <strong [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.LANGUAGE' | translateHtml | async"></strong>
-              {{ autoQuoteForm.get('preferred_language')?.value }}
-            </li>
-            <li>
-              <strong [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.METHOD' | translateHtml | async"></strong>
-              {{ autoQuoteForm.get('contact_method')?.value }}
-            </li>
-            <li>
-              <strong [innerHTML]="'GET_AUTO_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.TIME' | translateHtml | async"></strong>
-              {{ autoQuoteForm.get('best_time_to_connect')?.value }}
-            </li>
-          </ul>
-        </div>
-
-        <!-- Form Footer -->
-        <div class="mt-4">
-
-          <button class="btn btn-submit" (click)="sendAutoQuote()" [disabled]="loading">
-            <span *ngIf="loading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-            {{ loading ? 'Submitting...' : ('GET_AUTO_QUOTE.QUOTE_SUMMARY.SUBMIT_BUTTON' | translate) }}
-          </button>
-        </div>
-      </div>
+<!-- Final CTA (grey) -->
+<section class="section q-final" id="final-cta" aria-labelledby="fin-h">
+  <div class="hf-container ready-band">
+    <h2 id="fin-h">{{ 'AUTO_QUOTE_PAGE.FINAL.TITLE' | translate }}</h2>
+    <p><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('AUTO_QUOTE_PAGE.FINAL.TEXT') }"></ng-container></p>
+    <div class="btn-row">
+      <a class="hf-btn btn-primary btn-lg" href="#quote" (click)="goToForm($event)">{{ 'AUTO_QUOTE_PAGE.FINAL.START' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+      <a class="hf-btn btn-outline btn-lg" [routerLink]="route('ourLocations')"><svg class="icon-sm" aria-hidden="true"><use href="#i-pin" /></svg>{{ 'AUTO_QUOTE_PAGE.FINAL.FIND' | translate }}</a>
     </div>
   </div>
+</section>
 
-  <!-- footuper -->
-  <app-foot-upper></app-foot-upper>
+<!-- Sticky mobile bar -->
+<div class="sticky-cta" [class.show]="showSticky" [attr.aria-hidden]="!showSticky">
+  <a class="hf-btn btn-primary" href="#quote" [tabIndex]="showSticky ? 0 : -1" (click)="goToForm($event)">{{ 'HOME_PAGE.STICKY.QUOTE' | translate }}</a>
+  <a class="hf-btn btn-outline" href="tel:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'HOME_PAGE.STICKY.CALL' | translate }}</a>
+  <a class="hf-btn btn-outline" href="sms:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-chat" /></svg>{{ 'HOME_PAGE.STICKY.TEXT' | translate }}</a>
+</div>

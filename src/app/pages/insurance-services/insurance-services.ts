@@ -6,7 +6,7 @@ import { Language } from '../../services/language';
 import { buildRoute } from '../../components/header/header';
 
 /** A piece of translated text: plain, a site link (`r` route key, optional office `id`), an external link (`h`) or highlighted (`hl`). */
-export interface Seg { t: string; r?: string; id?: string; h?: string; hl?: boolean }
+export interface Seg { t: string; r?: string; id?: string; h?: string; hl?: boolean | string }
 type Text = string | Seg[];
 
 interface Category {

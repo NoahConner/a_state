@@ -3,7 +3,9 @@
 :host {
   display: block;
   --gold-300:#F9D971;
-  --bg-white:#FFFFFF; --bg-cream:#FFFAEB; --bg-red:#CA2B28; --bg-gold:#F6C945;
+  // Brand kit (Oct 2026): Red 50 is for hover states only; section panels use the neutral --bg-cream
+  --cream:#FDF1F0;
+  --bg-white:#FFFFFF; --bg-cream:#F5F5F4; --bg-red:#CA2B28;
   --error:#B42318; --error-bg:#FEF3F2;
   --r-card:20px; --r-xl:24px;
   --section:56px;
@@ -48,26 +50,22 @@ img{display:block;max-width:100%}
 }
 
 /* Hero */
-.hero{background:var(--cream);padding-block:32px 48px}
+.hero{background:var(--bg-cream);padding-block:32px 48px}
 @media (min-width:1024px){.hero{padding-block:64px 88px}}
-.hero-grid{display:grid;gap:28px}
+/* Source order is heading, quote form, lead + checks, photo, so phones get the form right under the heading.
+   From 1024px the heading and lead stack on the left of the form and the photo spans the full width below. */
+.hero-grid{display:grid;gap:22px}
 @media (min-width:1024px){
-  .hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);grid-template-areas:"copy card" "photo photo";gap:40px 56px;align-items:start}
-  .hero-copy{grid-area:copy;align-self:center}
+  .hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);grid-template-areas:"copy card" "sub card" "photo photo";gap:18px 56px;align-items:start}
+  .hero-copy{grid-area:copy;align-self:end}
+  .hero-sub{grid-area:sub;gap:18px}
   #quote{grid-area:card}
-  .hero-photo{grid-area:photo}
+  .hero-photo{grid-area:photo;margin-top:22px}
 }
 @media (min-width:1024px) and (max-width:1179px){.hero h1{font-size:46px}}
-/* Below 1024px the quote form sits right under the heading: the copy block dissolves into the grid so its items can be reordered */
-@media (max-width:1023px){
-  .hero-grid{gap:18px}
-  .hero-grid > .hero-copy{display:contents}
-  .hero-grid > #quote{order:1;margin-block:4px 10px}
-  .hero-copy > .hf-lead,.hero-copy > .checks{order:2}
-  .hero-grid > .hero-photo{order:3}
-}
 @media (max-width:399px){.hero-grid{gap:14px}}
 .hero-copy{display:flex;flex-direction:column;gap:18px;min-width:0}
+.hero-sub{display:flex;flex-direction:column;gap:14px;min-width:0}
 .pill{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;background:var(--white);border:1px solid var(--stone-200);border-radius:999px;padding:6px 14px 6px 10px;font-size:14px;font-weight:600;color:var(--stone-700)}
 .pill .icon-sm{color:var(--red-600)}
 .hl{background:linear-gradient(transparent 64%,var(--gold) 64%,var(--gold) 92%,transparent 92%);-webkit-box-decoration-break:clone;box-decoration-break:clone}
@@ -153,7 +151,7 @@ img{display:block;max-width:100%}
 .compare table{width:100%;border-collapse:collapse;table-layout:fixed}
 .compare thead th{padding:14px 16px;font-size:15px;font-weight:800;text-align:left;vertical-align:middle}
 .compare thead th.us{background:var(--red-600);color:var(--white)}
-.compare thead th.them{background:#FFFAEB;color:var(--stone-700)}
+.compare thead th.them{background:var(--bg-cream);color:var(--stone-700)}
 .compare thead .hd{display:flex;align-items:center;gap:8px}
 .compare thead .hd .logo{width:22px}
 .compare thead .hd svg{width:22px;height:22px;flex:none}
@@ -163,7 +161,7 @@ img{display:block;max-width:100%}
 .compare tbody td.them{font-weight:500}
 .compare .mark{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;margin-right:8px;vertical-align:-5px;flex:none}
 .compare td.us .mark{background:var(--red-600);color:var(--white)}
-.compare td.them .mark{background:#FFFAEB;color:var(--stone-500)}
+.compare td.them .mark{background:var(--bg-cream);color:var(--stone-500)}
 .compare .mark svg{width:13px;height:13px}
 // Phones: the label row spans both columns
 .compare thead tr,.compare tbody tr{display:grid;grid-template-columns:1fr 1fr}
@@ -225,7 +223,7 @@ img{display:block;max-width:100%}
 .off-grid{display:grid;gap:16px}
 @media (min-width:768px){.off-grid{grid-template-columns:1fr 1fr}}
 @media (min-width:1024px){.off-grid{grid-template-columns:repeat(3,1fr);gap:20px}}
-.map{border-radius:var(--r-card);background:#F8EFD6;overflow:hidden;position:relative;min-height:240px;transition:box-shadow .2s ease}
+.map{border-radius:var(--r-card);background:var(--white);overflow:hidden;position:relative;min-height:240px;transition:box-shadow .2s ease}
 @media (min-width:1024px){.map{grid-row:span 3}}
 .map svg{width:100%;height:100%}
 .map text{font-size:12px}
@@ -320,4 +318,51 @@ img{display:block;max-width:100%}
 @media (orientation:landscape) and (max-height:500px){
   .sticky-cta{padding-block:6px calc(6px + env(safe-area-inset-bottom,0px))}
   .sticky-cta .hf-btn{min-height:44px}
+}
+
+/* ===== Brand kit (Oct 2026, homepage): red primary, white secondary, yellow only for icons and buttons ===== */
+// Icon circles: red with a gold symbol
+.checks .icon-sm,.trust .ic,.pic{background:var(--red-600);color:var(--gold)}
+.hl{background:none;color:var(--red-600)}
+.chip-yellow{background:var(--white);color:var(--red-700);border:1.5px solid var(--red-600)}
+.steps .n{background:var(--red-600);color:var(--white)}
+
+// Quote form on this page (the component is shared, so the brand kit is applied from here)
+:host ::ng-deep app-quote-form {
+  .tile .dot{background:var(--red-600);color:var(--gold)}
+  .tile input:checked + label{background:var(--white)}
+  .field input:focus{border-color:var(--red-700);box-shadow:0 0 0 3px rgba(202,43,40,.28)}
+}
+
+// Why Texans Choose: Red 600 band with white text; cards and the table stay white
+.why{background:var(--red-600);color:var(--white)}
+.why h2,.why-copy p{color:var(--white)}
+.why .wcard{color:var(--stone-700)}
+.why :focus-visible{outline-color:var(--yellow-400,#FFF22F)}
+.why .wcard :focus-visible,.why .compare :focus-visible{outline-color:var(--stone-700)}
+
+/* Red boxes: product, review and office cards are Red 600 with white text.
+   Inside red: icon circles are Maroon 800 with a gold symbol, links stay white and underlined, arrows, pins and stars are gold.
+   The map, the "Start with your situation" panel and the form cards stay white. */
+.product,.review,.office,.mainline,.rating{background:var(--red-600);border-color:var(--red-600);color:var(--white);box-shadow:none}
+.product h3,.product p,.product summary .chev,.review blockquote,.review figcaption,.office h3,.office address,.office .ph,.mainline,.mainline h3,.mainline a,.rating b,.rating span,.rating strong,.sublinks .nolink{color:var(--white)}
+.product .pic{background:var(--red-800);color:var(--gold)}
+.product .sublinks a,.product .arrow-link,.office .acts a,.office .ph,.mainline a{color:var(--white);text-decoration-color:rgba(255,255,255,.75)}
+.product .arrow-link .icon-sm,.office address .icon-sm{color:var(--gold)}
+.product .title-link:hover,.office .title-link:hover,.office address a:hover,
+.product .sublinks a:hover,.product .arrow-link:hover,.office .acts a:hover,.office .ph:hover,.mainline a:hover{color:var(--white);text-decoration:underline;text-decoration-color:var(--white);text-decoration-thickness:2px}
+.product :focus-visible,.review :focus-visible,.office :focus-visible,.mainline :focus-visible{outline-color:var(--yellow-400,#FFF22F)}
+
+// Spanish band: gold symbol on a translucent tile
+.es .eic{background:rgba(255,255,255,.14);color:var(--gold);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35)}
+.es p{color:var(--white)}
+
+// Final quote: neutral background so it never sits next to the maroon footer in the same color family
+.final{background:var(--bg-cream)}
+.final .points .icon-sm{background:var(--red-600);color:var(--gold)}
+
+@media (hover:hover){
+  .steps li:hover .n{background:var(--red-800);color:var(--white)}
+  .wcard:hover{box-shadow:0 10px 24px rgba(101,13,12,.28)}
+  .product:hover,.review:hover,.office:hover,.mainline:hover,.rating:hover{background:var(--red-700);border-color:var(--red-700);box-shadow:0 10px 24px rgba(101,13,12,.25)}
 }

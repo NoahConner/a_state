@@ -1,0 +1,17 @@
+// Brand kit 2026-10-21 overrides for the shared LegalPage component, used by Privacy and Terms.
+// Applied from the page host so shared component files stay untouched. The component's own
+// selectors carry _ngcontent attributes (higher specificity), hence !important on declarations.
+:host ::ng-deep app-legal-page {
+  --cream: #F5F5F4;
+  --bg-cream: #F5F5F4;
+
+  .glance h2 .ic { background: var(--red-600) !important; color: var(--gold) !important; }
+  .legal-doc .es-line { background: var(--white) !important; border: 1.5px solid var(--red-600) !important; color: var(--stone-700); }
+  .legal-doc .callout { border-left-color: var(--red-600) !important; }
+  .legal-doc .pending { background: var(--white) !important; border: 1.5px dashed var(--red-600) !important; }
+  .legal-doc .pending-inline { background: var(--white) !important; outline: 1px dashed var(--red-600) !important; }
+}
+@media (hover: hover) {
+  :host ::ng-deep app-legal-page .ltoc ol a:hover,
+  :host ::ng-deep app-legal-page .btn-outline:hover { background: var(--red-50) !important; }
+}

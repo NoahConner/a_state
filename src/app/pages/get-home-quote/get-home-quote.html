@@ -1,618 +1,371 @@
-<div class="quoteMain">
-  <div class="topBanner">
-    <div class="container">
-      <h1 class="h1">
-        <span [innerHTML]="'GET_HOME_QUOTE.HEADING' | translateHtml | async"></span>
-      </h1>
-      <p class="heroDesc" [innerHTML]="'GET_HOME_QUOTE.DESCRIPTION' | translateHtml | async"></p>
+<!-- Icon sprite (phone, check, chev, arrow, globe and x come from the header sprite) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2-5.5A2 2 0 0 1 6.9 6h10.2a2 2 0 0 1 1.9 1.5L21 13v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M3 13h18M7 15.5h.01M17 15.5h.01M6 18v2M18 18v2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l8-5 8 5v12M9 21v-6h6v6"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-9-9a4.5 4.5 0 0 1 8-4l1 1.2 1-1.2a4.5 4.5 0 0 1 8 4c-2 4.6-9 9-9 9z"/></symbol>
+    <symbol id="i-umbrella" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 18 0z"/><path d="M12 12v7a2 2 0 0 0 4 0M12 3v0"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8.5 10.5h7"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z" fill="#F6C945"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18h.01"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-storm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16a4.5 4.5 0 1 1 .9-8.9A5.5 5.5 0 0 1 18.5 9 3.5 3.5 0 0 1 18 16"/><path d="M12.5 13l-2 4h3l-2 4"/></symbol>
+  </defs>
+</svg>
+
+<!-- Renders translated text pieces: `hl` red text, `b` bold, `l` language code, `h` link (tel:, "#quote" or external), `x` new tab, `r` route key. Kept on one line so no spaces creep in. -->
+<ng-template #segsTpl let-value><ng-container *ngFor="let s of value"><a *ngIf="s.h && !s.x" [href]="s.h" [class.tel]="s.h.startsWith('tel:')" (click)="onSegLink(s.h, $event)">{{ s.t }}</a><a *ngIf="s.h && s.x" [href]="s.h" target="_blank" rel="noopener">{{ s.t }}<span class="sr-only"> {{ 'HOME_QUOTE_PAGE.NEW_TAB' | translate }}</span></a><a *ngIf="s.r" [routerLink]="route(s.r)">{{ s.t }}</a><span *ngIf="s.hl" class="hl">{{ s.t }}</span><b *ngIf="s.b">{{ s.t }}</b><span *ngIf="s.l" [attr.lang]="s.l">{{ s.t }}</span><ng-container *ngIf="!s.h && !s.r && !s.hl && !s.b && !s.l">{{ s.t }}</ng-container></ng-container></ng-template>
+
+<!-- Group of radio chips. store[key] holds the chosen value. Radios keep `name` for grouping only; they are never submitted natively. -->
+<ng-template #chips let-legend="legend" let-opt="opt" let-name="name" let-opts="opts" let-store="store" let-key="key" let-cls="cls" let-hint="hint" let-hintId="hintId" let-hintIcon="hintIcon">
+  <fieldset [attr.aria-describedby]="hint ? hintId : null">
+    <legend>{{ legend }}<ng-container *ngIf="opt"> <span class="opt">{{ 'HOME_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></ng-container></legend>
+    <div class="opts" [ngClass]="cls">
+      <div class="opt-chip" *ngFor="let o of opts">
+        <input type="radio" [name]="name" [id]="name + '-' + o.V" [value]="o.V" [checked]="store[key] === o.V" (change)="store[key] = o.V" />
+        <label [for]="name + '-' + o.V" [attr.lang]="o.LG || null">{{ o.L }}</label>
+      </div>
+    </div>
+    <p class="aq-sub aq-help hq-flood" *ngIf="hint" [id]="hintId"><svg class="icon-sm" aria-hidden="true" *ngIf="hintIcon"><use [attr.href]="'#' + hintIcon" /></svg><span>{{ hint }}</span></p>
+  </fieldset>
+</ng-template>
+
+<!-- One row of the review step -->
+<ng-template #rrow let-k="k" let-v="v"><div><dt>{{ k }}</dt><dd [class.none]="!v">{{ v || ('HOME_QUOTE_PAGE.FORM.NOT_GIVEN' | translate) }}</dd></div></ng-template>
+<!-- Same, but only when an answer exists (optional questions) -->
+<ng-template #orow let-k="k" let-v="v"><div *ngIf="v"><dt>{{ k }}</dt><dd>{{ v }}</dd></div></ng-template>
+
+<!-- Hero + 6-step form -->
+<section class="hero cq-hero aq-hero hq-hero has-sub" aria-labelledby="hero-title">
+  <div class="hf-container crumbs-row">
+    <nav class="crumbs" [attr.aria-label]="'HOME_QUOTE_PAGE.BREADCRUMB.ARIA' | translate">
+      <ol>
+        <li><a [routerLink]="route('home')">{{ 'HOME_QUOTE_PAGE.BREADCRUMB.HOME' | translate }}</a></li>
+        <li><a [routerLink]="route('homeInsurance')">{{ 'HOME_QUOTE_PAGE.BREADCRUMB.SECTION' | translate }}</a></li>
+        <li aria-current="page">{{ 'HOME_QUOTE_PAGE.BREADCRUMB.CURRENT' | translate }}</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="hf-container hero-grid">
+    <div class="hero-copy">
+      <h1 id="hero-title"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('HOME_QUOTE_PAGE.HERO.TITLE') }"></ng-container></h1>
+    </div>
+
+    <div class="cq-card aq-card hq-card" id="quote">
+      <p class="sr-only" aria-live="polite">{{ live }}</p>
+
+      <ng-container *ngIf="!sent">
+        <div class="cq-progress" aria-hidden="true"><span [style.width.%]="step * 100 / 6"></span></div>
+        <ol class="cq-steps aq-steps" [attr.aria-label]="'HOME_QUOTE_PAGE.FORM.STEPS_ARIA' | translate">
+          <li *ngFor="let n of stepNumbers; let i = index" [class.done]="n < step" [attr.aria-current]="n === step ? 'step' : null">
+            <span>{{ n }}</span><b>{{ list('HOME_QUOTE_PAGE.FORM.STEP_DOTS')[i] }}</b>
+          </li>
+        </ol>
+
+        <form class="cform cqform aqform hqform" novalidate [attr.aria-label]="'HOME_QUOTE_PAGE.FORM.ARIA' | translate" (submit)="submit($event)" (keydown.enter)="onEnter($event)">
+
+          <!-- Step 1: Your property -->
+          <div class="cq-step" [hidden]="step !== 1">
+            <div class="cq-step-h"><p class="cq-count">{{ 'HOME_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 1 } }}</p><h3 id="hq-h1" tabindex="-1">{{ list('HOME_QUOTE_PAGE.FORM.STEP_TITLES')[0] }}</h3></div>
+            <div class="field">
+              <label for="hq-addr">{{ 'HOME_QUOTE_PAGE.FORM.ADDRESS' | translate }} <span class="opt">{{ 'HOME_QUOTE_PAGE.FORM.ADDRESS_HINT' | translate }}</span> <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="hq-addr" autocomplete="street-address" maxlength="200" required [value]="form.address" [placeholder]="'HOME_QUOTE_PAGE.FORM.ADDRESS_PH' | translate"
+                [attr.aria-invalid]="errors['address'] ? 'true' : null" aria-describedby="hq-addr-err" (input)="onText('address', $event)" />
+              <p class="err" id="hq-addr-err">{{ errors['address'] }}</p>
+            </div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('HOME_QUOTE_PAGE.FORM.USAGE_LEGEND' | translate), name: 'hq-u', opts: list('HOME_QUOTE_PAGE.FORM.USAGES'), store: form.pick, key: 'usage', cls: 'stack' }"></ng-container>
+            <p class="aq-lender" *ngIf="form.pick['usage'] === 'rental'"><svg class="icon-sm" aria-hidden="true"><use href="#i-building" /></svg>{{ 'HOME_QUOTE_PAGE.FORM.RENTAL_NOTE' | translate }}</p>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('HOME_QUOTE_PAGE.FORM.PTYPE_LEGEND' | translate), name: 'hq-t', opts: list('HOME_QUOTE_PAGE.FORM.PTYPES'), store: form.pick, key: 'ptype', cls: 'stack aq-two' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('HOME_QUOTE_PAGE.FORM.STATUS_LEGEND' | translate), name: 'hq-s', opts: list('HOME_QUOTE_PAGE.FORM.STATUSES'), store: form.pick, key: 'status', cls: 'stack' }"></ng-container>
+            <div class="field cq-more aq-short-more" *ngIf="form.pick['status'] === 'buying'">
+              <label for="hq-close">{{ 'HOME_QUOTE_PAGE.FORM.CLOSING' | translate }}</label>
+              <input type="date" id="hq-close" autocomplete="off" [value]="form.close"
+                [attr.aria-invalid]="errors['close'] ? 'true' : null" aria-describedby="hq-close-err" (input)="onText('close', $event)" />
+              <p class="err" id="hq-close-err">{{ errors['close'] }}</p>
+            </div>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-ghost" *ngIf="editing" (click)="backToReview()">{{ 'HOME_QUOTE_PAGE.FORM.TO_REVIEW' | translate }}</button>
+              <button type="button" class="hf-btn btn-primary" (click)="next()">{{ list('HOME_QUOTE_PAGE.FORM.NEXT')[0] }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+
+          <!-- Step 2: About the home -->
+          <div class="cq-step" [hidden]="step !== 2">
+            <div class="cq-step-h"><p class="cq-count">{{ 'HOME_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 2 } }}</p><h3 id="hq-h2" tabindex="-1">{{ list('HOME_QUOTE_PAGE.FORM.STEP_TITLES')[1] }}</h3></div>
+            <p class="cq-hint hq-hint">{{ 'HOME_QUOTE_PAGE.FORM.HINT2' | translate }}</p>
+            <div class="cq-row">
+              <div class="field">
+                <label for="hq-year">{{ 'HOME_QUOTE_PAGE.FORM.YEAR' | translate }} <span class="opt">{{ 'HOME_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
+                <input type="text" id="hq-year" inputmode="numeric" autocomplete="off" maxlength="4" [value]="form.year" [placeholder]="'HOME_QUOTE_PAGE.FORM.YEAR_PH' | translate"
+                  [attr.aria-invalid]="errors['year'] ? 'true' : null" aria-describedby="hq-year-err" (input)="onYearInput($event)" />
+                <p class="err" id="hq-year-err">{{ errors['year'] }}</p>
+              </div>
+              <div class="field">
+                <label for="hq-sqft">{{ 'HOME_QUOTE_PAGE.FORM.SQFT' | translate }} <span class="opt">{{ 'HOME_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
+                <input type="text" id="hq-sqft" inputmode="numeric" autocomplete="off" maxlength="6" [value]="form.sqft" [placeholder]="'HOME_QUOTE_PAGE.FORM.SQFT_PH' | translate"
+                  [attr.aria-invalid]="errors['sqft'] ? 'true' : null" aria-describedby="hq-sqft-err" (input)="onSqftInput($event)" />
+                <p class="err" id="hq-sqft-err">{{ errors['sqft'] }}</p>
+              </div>
+            </div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('HOME_QUOTE_PAGE.FORM.STORIES_LEGEND' | translate), name: 'hq-st', opts: list('HOME_QUOTE_PAGE.FORM.STORIES'), store: form.pick, key: 'stories', cls: '' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('HOME_QUOTE_PAGE.FORM.ROOF_AGE_LEGEND' | translate), name: 'hq-ra', opts: list('HOME_QUOTE_PAGE.FORM.ROOF_AGES'), store: form.pick, key: 'roofAge', cls: 'stack aq-two' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('HOME_QUOTE_PAGE.FORM.ROOF_TYPE_LEGEND' | translate), name: 'hq-rt', opts: list('HOME_QUOTE_PAGE.FORM.ROOF_TYPES'), store: form.pick, key: 'roofType', cls: 'stack aq-two' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('HOME_QUOTE_PAGE.FORM.CONSTRUCTION_LEGEND' | translate), name: 'hq-c', opts: list('HOME_QUOTE_PAGE.FORM.CONSTRUCTIONS'), store: form.pick, key: 'construction', cls: 'stack aq-two' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('HOME_QUOTE_PAGE.FORM.FOUNDATION_LEGEND' | translate), opt: true, name: 'hq-f', opts: list('HOME_QUOTE_PAGE.FORM.FOUNDATIONS'), store: form.pick, key: 'foundation', cls: 'stack aq-two' }"></ng-container>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-outline" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'HOME_QUOTE_PAGE.FORM.BACK' | translate }}</button>
+              <button type="button" class="hf-btn btn-ghost" *ngIf="editing" (click)="backToReview()">{{ 'HOME_QUOTE_PAGE.FORM.TO_REVIEW' | translate }}</button>
+              <button type="button" class="hf-btn btn-primary" (click)="next()">{{ list('HOME_QUOTE_PAGE.FORM.NEXT')[1] }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+
+          <!-- Step 3: Safety and claims -->
+          <div class="cq-step" [hidden]="step !== 3">
+            <div class="cq-step-h"><p class="cq-count">{{ 'HOME_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 3 } }}</p><h3 id="hq-h3" tabindex="-1">{{ list('HOME_QUOTE_PAGE.FORM.STEP_TITLES')[2] }}</h3></div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('HOME_QUOTE_PAGE.FORM.ALARM_LEGEND' | translate), name: 'hq-al', opts: list('HOME_QUOTE_PAGE.FORM.YN'), store: form.pick, key: 'alarm', cls: '' }"></ng-container>
+            <div class="hq-pair">
+              <ng-container *ngTemplateOutlet="chips; context: { legend: ('HOME_QUOTE_PAGE.FORM.POOL_LEGEND' | translate), name: 'hq-p', opts: list('HOME_QUOTE_PAGE.FORM.YN'), store: form.pick, key: 'pool', cls: '' }"></ng-container>
+              <ng-container *ngTemplateOutlet="chips; context: { legend: ('HOME_QUOTE_PAGE.FORM.TRAMP_LEGEND' | translate), name: 'hq-tr', opts: list('HOME_QUOTE_PAGE.FORM.YN'), store: form.pick, key: 'tramp', cls: '' }"></ng-container>
+            </div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('HOME_QUOTE_PAGE.FORM.DOGS_LEGEND' | translate), name: 'hq-d', opts: list('HOME_QUOTE_PAGE.FORM.YN'), store: form.pick, key: 'dogs', cls: '' }"></ng-container>
+            <div class="field cq-more" *ngIf="form.pick['dogs'] === 'yes'">
+              <label for="hq-breed">{{ 'HOME_QUOTE_PAGE.FORM.BREED' | translate }} <span class="opt">{{ 'HOME_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
+              <input type="text" id="hq-breed" autocomplete="off" maxlength="100" [value]="form.breed" (input)="onText('breed', $event)" />
+            </div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('HOME_QUOTE_PAGE.FORM.CLAIMS_LEGEND' | translate), name: 'hq-cl', opts: list('HOME_QUOTE_PAGE.FORM.YNU'), store: form.pick, key: 'claims', cls: '' }"></ng-container>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-outline" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'HOME_QUOTE_PAGE.FORM.BACK' | translate }}</button>
+              <button type="button" class="hf-btn btn-ghost" *ngIf="editing" (click)="backToReview()">{{ 'HOME_QUOTE_PAGE.FORM.TO_REVIEW' | translate }}</button>
+              <button type="button" class="hf-btn btn-primary" (click)="next()">{{ list('HOME_QUOTE_PAGE.FORM.NEXT')[2] }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+
+          <!-- Step 4: Current coverage and flood -->
+          <div class="cq-step" [hidden]="step !== 4">
+            <div class="cq-step-h"><p class="cq-count">{{ 'HOME_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 4 } }}</p><h3 id="hq-h4" tabindex="-1">{{ list('HOME_QUOTE_PAGE.FORM.STEP_TITLES')[3] }}</h3></div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('HOME_QUOTE_PAGE.FORM.INSURED_LEGEND' | translate), name: 'hq-i', opts: list('HOME_QUOTE_PAGE.FORM.YN'), store: form.pick, key: 'insured', cls: '' }"></ng-container>
+            <div class="cq-row" *ngIf="form.pick['insured'] === 'yes'">
+              <div class="field">
+                <label for="hq-carrier">{{ 'HOME_QUOTE_PAGE.FORM.CARRIER' | translate }} <span class="opt">{{ 'HOME_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
+                <input type="text" id="hq-carrier" autocomplete="off" maxlength="100" [value]="form.carrier" (input)="onText('carrier', $event)" />
+              </div>
+              <div class="field">
+                <label for="hq-renew">{{ 'HOME_QUOTE_PAGE.FORM.RENEWAL' | translate }} <span class="opt">{{ 'HOME_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
+                <input type="date" id="hq-renew" autocomplete="off" [value]="form.renewal" (input)="onText('renewal', $event)" />
+              </div>
+            </div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('HOME_QUOTE_PAGE.FORM.FLOOD_LEGEND' | translate), name: 'hq-fl', opts: list('HOME_QUOTE_PAGE.FORM.YNU'), store: form.pick, key: 'flood', cls: '', hint: ('HOME_QUOTE_PAGE.FORM.FLOOD_HELP' | translate), hintId: 'hq-flood-help', hintIcon: 'i-storm' }"></ng-container>
+            <fieldset>
+              <legend>{{ 'HOME_QUOTE_PAGE.FORM.ALSO_LEGEND' | translate }} <span class="opt">{{ 'HOME_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></legend>
+              <div class="cq-grid aq-also hq-also">
+                <div class="cq-check" *ngFor="let o of list('HOME_QUOTE_PAGE.FORM.ALSO')">
+                  <input type="checkbox" [id]="'hq-a-' + o.V" [value]="o.V" [checked]="!!form.also[o.V]" (change)="onAlso(o.V, $event)" />
+                  <label [for]="'hq-a-' + o.V"><span class="ic" aria-hidden="true"><svg class="icon-sm"><use [attr.href]="'#' + alsoIcons[o.V]" /></svg></span>{{ o.L }}<span class="box" aria-hidden="true"><svg class="icon-sm"><use href="#i-check" /></svg></span></label>
+                </div>
+              </div>
+            </fieldset>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-outline" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'HOME_QUOTE_PAGE.FORM.BACK' | translate }}</button>
+              <button type="button" class="hf-btn btn-ghost" *ngIf="editing" (click)="backToReview()">{{ 'HOME_QUOTE_PAGE.FORM.TO_REVIEW' | translate }}</button>
+              <button type="button" class="hf-btn btn-primary" (click)="next()">{{ list('HOME_QUOTE_PAGE.FORM.NEXT')[3] }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+
+          <!-- Step 5: About you and how to reach you -->
+          <div class="cq-step" [hidden]="step !== 5">
+            <div class="cq-step-h"><p class="cq-count">{{ 'HOME_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 5 } }}</p><h3 id="hq-h5" tabindex="-1">{{ list('HOME_QUOTE_PAGE.FORM.STEP_TITLES')[4] }}</h3></div>
+            <div class="cq-row">
+              <div class="field">
+                <label for="hq-name">{{ 'HOME_QUOTE_PAGE.FORM.NAME' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="hq-name" autocomplete="name" maxlength="255" required [value]="form.name"
+                  [attr.aria-invalid]="errors['name'] ? 'true' : null" aria-describedby="hq-name-err" (input)="onText('name', $event)" />
+                <p class="err" id="hq-name-err">{{ errors['name'] }}</p>
+              </div>
+              <div class="field">
+                <label for="hq-phone">{{ 'HOME_QUOTE_PAGE.FORM.PHONE' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                <input type="tel" id="hq-phone" inputmode="tel" autocomplete="tel-national" required [value]="form.phone"
+                  [attr.aria-invalid]="errors['phone'] ? 'true' : null" aria-describedby="hq-phone-err" (input)="onPhoneInput($event)" />
+                <p class="err" id="hq-phone-err">{{ errors['phone'] }}</p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="hq-email">{{ 'HOME_QUOTE_PAGE.FORM.EMAIL' | translate }} <span *ngIf="form.pick['method'] !== 'email'" class="opt">{{ 'HOME_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span><span *ngIf="form.pick['method'] === 'email'" class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="hq-email" autocomplete="email" maxlength="254" [attr.aria-required]="form.pick['method'] === 'email' ? 'true' : null" [value]="form.email"
+                [attr.aria-invalid]="errors['email'] ? 'true' : null" aria-describedby="hq-email-err" (input)="onText('email', $event)" />
+              <p class="err" id="hq-email-err">{{ errors['email'] }}</p>
+            </div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('HOME_QUOTE_PAGE.FORM.LANG_LEGEND' | translate), name: 'hq-l', opts: list('HOME_QUOTE_PAGE.FORM.LANGS'), store: form.pick, key: 'lang', cls: '' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('HOME_QUOTE_PAGE.FORM.METHOD_LEGEND' | translate), name: 'hq-m', opts: list('HOME_QUOTE_PAGE.FORM.METHODS'), store: form.pick, key: 'method', cls: '' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('HOME_QUOTE_PAGE.FORM.TIME_LEGEND' | translate), name: 'hq-b', opts: list('HOME_QUOTE_PAGE.FORM.TIMES'), store: form.pick, key: 'time', cls: 'stack' }"></ng-container>
+            <div class="field">
+              <label for="hq-office">{{ 'HOME_QUOTE_PAGE.FORM.OFFICE' | translate }} <span class="opt">{{ 'HOME_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
+              <select id="hq-office" (change)="form.office = $any($event.target).value">
+                <option value="" [selected]="!form.office">{{ 'HOME_QUOTE_PAGE.FORM.NO_PREFERENCE' | translate }}</option>
+                <option *ngFor="let name of list('HOME_QUOTE_PAGE.FORM.OFFICES'); let i = index" [value]="offices[i].id" [selected]="form.office === offices[i].id">{{ name }}</option>
+              </select>
+            </div>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-outline" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'HOME_QUOTE_PAGE.FORM.BACK' | translate }}</button>
+              <button type="button" class="hf-btn btn-ghost" *ngIf="editing" (click)="backToReview()">{{ 'HOME_QUOTE_PAGE.FORM.TO_REVIEW' | translate }}</button>
+              <button type="button" class="hf-btn btn-primary" (click)="next()">{{ list('HOME_QUOTE_PAGE.FORM.NEXT')[4] }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+
+          <!-- Step 6: Review. The submit button exists only on this step, so a stray Enter before hydration cannot submit the form natively. -->
+          <div class="cq-step" [hidden]="step !== 6">
+            <div class="cq-step-h"><p class="cq-count">{{ 'HOME_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 6 } }}</p><h3 id="hq-h6" tabindex="-1">{{ list('HOME_QUOTE_PAGE.FORM.STEP_TITLES')[5] }}</h3></div>
+            <ng-container *ngIf="step === 6">
+              <p class="hq-flags" *ngIf="tags().length" role="group" [attr.aria-label]="'HOME_QUOTE_PAGE.FORM.FLAGS_ARIA' | translate"><span *ngFor="let tag of tags()">{{ flagLabel(tag) }}</span></p>
+              <div class="cq-review">
+                <div class="cq-rev">
+                  <div class="cq-rev-h"><h4>{{ list('HOME_QUOTE_PAGE.FORM.R_TITLES')[0] }}</h4><button type="button" class="cq-edit" (click)="edit(1)">{{ 'HOME_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('HOME_QUOTE_PAGE.FORM.R_TITLES')[0] }}</span></button></div>
+                  <dl>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.ADDRESS' | translate), v: form.address.trim() }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.USAGE' | translate), v: label('FORM.USAGES', form.pick['usage'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.PTYPE' | translate), v: label('FORM.PTYPES', form.pick['ptype'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.STATUS' | translate), v: label('FORM.STATUSES', form.pick['status'] || '') }"></ng-container>
+                    <ng-container *ngIf="form.pick['status'] === 'buying'"><ng-container *ngTemplateOutlet="rrow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.CLOSING' | translate), v: dateLabel(form.close) }"></ng-container></ng-container>
+                  </dl>
+                </div>
+                <div class="cq-rev">
+                  <div class="cq-rev-h"><h4>{{ list('HOME_QUOTE_PAGE.FORM.R_TITLES')[1] }}</h4><button type="button" class="cq-edit" (click)="edit(2)">{{ 'HOME_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('HOME_QUOTE_PAGE.FORM.R_TITLES')[1] }}</span></button></div>
+                  <dl>
+                    <ng-container *ngTemplateOutlet="orow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.YEAR' | translate), v: form.year }"></ng-container>
+                    <ng-container *ngTemplateOutlet="orow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.SQFT' | translate), v: form.sqft }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.STORIES' | translate), v: label('FORM.STORIES', form.pick['stories'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.ROOF_AGE' | translate), v: label('FORM.ROOF_AGES', form.pick['roofAge'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.ROOF_TYPE' | translate), v: label('FORM.ROOF_TYPES', form.pick['roofType'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.CONSTRUCTION' | translate), v: label('FORM.CONSTRUCTIONS', form.pick['construction'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="orow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.FOUNDATION' | translate), v: label('FORM.FOUNDATIONS', form.pick['foundation'] || '') }"></ng-container>
+                  </dl>
+                </div>
+                <div class="cq-rev">
+                  <div class="cq-rev-h"><h4>{{ list('HOME_QUOTE_PAGE.FORM.R_TITLES')[2] }}</h4><button type="button" class="cq-edit" (click)="edit(3)">{{ 'HOME_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('HOME_QUOTE_PAGE.FORM.R_TITLES')[2] }}</span></button></div>
+                  <dl>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.ALARM' | translate), v: label('FORM.YN', form.pick['alarm'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.POOL' | translate), v: label('FORM.YN', form.pick['pool'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.TRAMP' | translate), v: label('FORM.YN', form.pick['tramp'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.DOGS' | translate), v: label('FORM.YN', form.pick['dogs'] || '') }"></ng-container>
+                    <ng-container *ngIf="form.pick['dogs'] === 'yes'"><ng-container *ngTemplateOutlet="orow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.BREED' | translate), v: form.breed.trim() }"></ng-container></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.CLAIMS' | translate), v: label('FORM.YNU', form.pick['claims'] || '') }"></ng-container>
+                  </dl>
+                </div>
+                <div class="cq-rev">
+                  <div class="cq-rev-h"><h4>{{ list('HOME_QUOTE_PAGE.FORM.R_TITLES')[3] }}</h4><button type="button" class="cq-edit" (click)="edit(4)">{{ 'HOME_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('HOME_QUOTE_PAGE.FORM.R_TITLES')[3] }}</span></button></div>
+                  <dl>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.INSURED' | translate), v: label('FORM.YN', form.pick['insured'] || '') }"></ng-container>
+                    <ng-container *ngIf="form.pick['insured'] === 'yes'">
+                      <ng-container *ngTemplateOutlet="orow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.CARRIER' | translate), v: form.carrier.trim() }"></ng-container>
+                      <ng-container *ngTemplateOutlet="orow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.RENEWAL' | translate), v: dateLabel(form.renewal) }"></ng-container>
+                    </ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.FLOOD' | translate), v: label('FORM.YNU', form.pick['flood'] || '') }"></ng-container>
+                    <div><dt>{{ 'HOME_QUOTE_PAGE.FORM.R.ALSO' | translate }}</dt><dd>{{ alsoSummary() || ('HOME_QUOTE_PAGE.FORM.NONE' | translate) }}</dd></div>
+                  </dl>
+                </div>
+                <div class="cq-rev">
+                  <div class="cq-rev-h"><h4>{{ list('HOME_QUOTE_PAGE.FORM.R_TITLES')[4] }}</h4><button type="button" class="cq-edit" (click)="edit(5)">{{ 'HOME_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('HOME_QUOTE_PAGE.FORM.R_TITLES')[4] }}</span></button></div>
+                  <dl>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.NAME' | translate), v: form.name.trim() }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.PHONE' | translate), v: form.phone }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.EMAIL' | translate), v: form.email.trim() }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.LANG' | translate), v: label('FORM.LANGS', form.pick['lang'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.METHOD' | translate), v: label('FORM.METHODS', form.pick['method'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('HOME_QUOTE_PAGE.FORM.R.TIME' | translate), v: label('FORM.TIMES', form.pick['time'] || '') }"></ng-container>
+                    <div><dt>{{ 'HOME_QUOTE_PAGE.FORM.R.OFFICE' | translate }}</dt><dd>{{ officeLabel() || ('HOME_QUOTE_PAGE.FORM.NO_PREFERENCE' | translate) }}</dd></div>
+                  </dl>
+                </div>
+              </div>
+            </ng-container>
+            <div class="privacy cq-consent">
+              <svg class="icon-sm" aria-hidden="true"><use href="#i-shield" /></svg>
+              <div>
+                <p><em><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('HOME_QUOTE_PAGE.FORM.CONSENT') }"></ng-container></em></p>
+                <p class="never"><b>{{ 'HOME_QUOTE_PAGE.FORM.NEVER_SOLD' | translate }}</b></p>
+              </div>
+            </div>
+            <p class="err cq-submit-err" role="alert">{{ submitError }}</p>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-outline" [disabled]="isSubmitting" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'HOME_QUOTE_PAGE.FORM.BACK' | translate }}</button>
+              <button type="submit" class="hf-btn btn-primary btn-lg" *ngIf="step === 6" [disabled]="isSubmitting" [attr.aria-busy]="isSubmitting ? 'true' : null">{{ (isSubmitting ? 'HOME_QUOTE_PAGE.FORM.SENDING' : 'HOME_QUOTE_PAGE.FORM.SUBMIT') | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+        </form>
+      </ng-container>
+
+      <div class="csuccess" id="hq-success" tabindex="-1" *ngIf="sent">
+        <span class="badge" aria-hidden="true"><svg class="icon"><use href="#i-check" /></svg></span>
+        <h3>{{ 'HOME_QUOTE_PAGE.FORM.SUCCESS.TITLE' | translate }}</h3>
+        <p>{{ 'HOME_QUOTE_PAGE.FORM.SUCCESS.TEXT' | translate }}</p>
+        <p class="cq-multi" *ngIf="sentBuying"><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg>{{ 'HOME_QUOTE_PAGE.FORM.SUCCESS.CLOSING' | translate }}</p>
+        <p class="cq-multi" *ngIf="sentAlso"><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg>{{ 'HOME_QUOTE_PAGE.FORM.SUCCESS.ALSO' | translate }}</p>
+      </div>
+    </div>
+
+    <div class="hero-sub">
+      <p class="hf-lead">{{ 'HOME_QUOTE_PAGE.HERO.LEAD' | translate }}</p>
+      <p class="q-trust"><span class="q-star" aria-hidden="true"><svg class="icon-sm"><use href="#i-star" /></svg></span><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('HOME_QUOTE_PAGE.HERO.TRUST') }"></ng-container></p>
     </div>
   </div>
+</section>
 
-  <div class="container my-5 quote-wrapper">
-    <div class="card border-0 p-4 mb-5">
-      <div class="d-flex justify-content-between align-items-center stepper">
-        <div class="step" [class.active]="currentStep === 1" [class.completed]="canEditStep(1)">
-          <div class="circle"><img src="/assets/images/quote-step-1.png" alt="" /></div>
-          <p [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP1.TITLE' | translateHtml | async"></p>
-        </div>
-        <div class="step" [class.active]="currentStep === 2" [class.completed]="canEditStep(2)">
-          <div class="circle"><img src="/assets/images/quote-step-2.png" alt="" /></div>
-          <p [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP2.TITLE' | translateHtml | async"></p>
-        </div>
-        <div class="step" [class.active]="currentStep === 3" [class.completed]="canEditStep(3)">
-          <div class="circle"><img src="/assets/images/quote-step-3.png" alt="" /></div>
-          <p [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.TITLE' | translateHtml | async"></p>
-        </div>
-        <div class="step" [class.active]="currentStep === 4" [class.completed]="canEditStep(4)">
-          <div class="circle"><img src="/assets/images/quote-step-4.png" alt="" /></div>
-          <p [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP4.TITLE' | translateHtml | async"></p>
-        </div>
-        <div class="step" [class.active]="currentStep === 5" [class.completed]="canEditStep(5)">
-          <div class="circle"><img src="/assets/images/quote-step-5.png" alt="" /></div>
-          <p [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP5.TITLE' | translateHtml | async"></p>
-        </div>
-      </div>
-    </div>
-    <form [formGroup]="homeQuoteForm">
-      <div class="steps-for-custom-quote">
-        <div class="container" *ngIf="currentStep === 1">
-          <div class="form-wrapper">
-            <h2 class="form-title" [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP1.TITLE' | translateHtml | async"></h2>
+<!-- What you'll need -->
+<section class="section bg-white" id="what-you-need" aria-labelledby="need-h">
+  <div class="hf-container aq-need">
+    <h2 id="need-h">{{ 'HOME_QUOTE_PAGE.NEED.TITLE' | translate }}</h2>
+    <ul class="aq-need-list">
+      <li *ngFor="let item of list('HOME_QUOTE_PAGE.NEED.ITEMS'); let i = index">
+        <span class="ic" aria-hidden="true"><svg class="icon"><use [attr.href]="'#' + needIcons[i]" /></svg></span>
+        <span>{{ item }}</span>
+      </li>
+    </ul>
+  </div>
+</section>
 
-            <div class="form-content-border">
-              <div class="row gy-3 mb-2">
-                <div class="col-md-8">
-                  <label class="form-label"><span
-                      [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP1.FIELDS.PROPERTY_ADDRESS' | translateHtml | async"></span><span>*</span></label>
-                  <input type="text" formControlName="property_address" [class.is-invalid]="
-                      homeQuoteForm.get('property_address')?.invalid &&
-                      homeQuoteForm.get('property_address')?.touched
-                    " class="form-control" placeholder="Street, City, Zip" />
+<!-- Texas basics -->
+<section class="section bg-cream" id="texas-basics" aria-labelledby="tx-h">
+  <div class="hf-container">
+    <div class="section-head"><h2 id="tx-h">{{ 'HOME_QUOTE_PAGE.BASICS.TITLE' | translate }}</h2></div>
+    <ul class="aq-basics hq-basics">
+      <li *ngFor="let b of list('HOME_QUOTE_PAGE.BASICS.ITEMS'); let i = index">
+        <span class="ic" aria-hidden="true"><svg class="icon"><use [attr.href]="'#' + basicsIcons[i]" /></svg></span>
+        <div><h3><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: b.TITLE }"></ng-container></h3><p><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: b.TEXT }"></ng-container></p></div>
+      </li>
+    </ul>
+    <p class="cq-know"><a class="arrow-link" [routerLink]="route('homeInsurance')">{{ 'HOME_QUOTE_PAGE.BASICS.MORE' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a></p>
+  </div>
+</section>
 
-                  <div class="invalid-feedback" *ngIf="
-                      homeQuoteForm.get('property_address')?.invalid &&
-                      homeQuoteForm.get('property_address')?.touched
-                    " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-              </div>
+<!-- FAQs -->
+<section class="section bg-white" id="faqs" aria-labelledby="faq-h">
+  <div class="hf-container faq faq-wrap">
+    <h2 id="faq-h">{{ 'HOME_QUOTE_PAGE.FAQ.TITLE' | translate }}</h2>
+    <details *ngFor="let item of list('HOME_QUOTE_PAGE.FAQ.ITEMS'); let i = index" [open]="faqOpen === i" (toggle)="onFaqToggle(i, $event)">
+      <summary><h3>{{ item.Q }}</h3><span class="pm" aria-hidden="true"><svg class="icon-sm"><use href="#i-plus" /></svg></span></summary>
+      <div class="ans"><p>{{ item.A }}</p></div>
+    </details>
+  </div>
+</section>
 
-              <div class="row gy-3 mt-2">
-                <div class="selection-group">
-                  <h4 class="selection-heading"
-                    [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP1.FIELDS.PRIMARY_RESIDENCE' | translateHtml | async"></h4>
-
-                  <div class="coverage-options">
-                    <div class="form-check">
-                      <input type="radio" class="form-check-input" id="is_primary_residence"
-                        formControlName="is_primary_residence" value="Yes, I live here." />
-                      <label class="form-check-label" for="is_primary_residence"
-                        [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP1.FIELDS.PRIMARY_RESIDENCE_YES' | translateHtml | async"></label><br />
-                    </div>
-
-                    <div class="form-check">
-                      <input type="radio" class="form-check-input" id="is_primary_residence"
-                        formControlName="is_primary_residence" value="No, it’s a rental property / second home." />
-                      <label class="form-check-label" for="is_primary_residence"
-                        [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP1.FIELDS.PRIMARY_RESIDENCE_NO' | translateHtml | async"></label>
-                    </div>
-
-                    <div class="invalid-feedback d-block" *ngIf="
-                        homeQuoteForm.get('is_primary_residence')?.invalid &&
-                        homeQuoteForm.get('is_primary_residence')?.touched
-                      " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row gy-3 mb-3 mt-2">
-                <div class="col-md-8">
-                  <label class="form-label"><span
-                      [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP1.FIELDS.PROPERTY_TYPE' | translateHtml | async"></span><span>*</span></label>
-                  <select class="form-select" formControlName="property_type" [class.is-invalid]="homeQuoteForm.get('property_type')?.invalid && homeQuoteForm.get('property_type')?.touched">
-                    <option *ngFor="
-                        let option of 'GET_HOME_QUOTE.STEPPER.STEP1.FIELDS.PROPERTY_TYPE_OPTIONS' | translate
-                      " [value]="option">
-                      {{ option }}
-                    </option>
-                  </select>
-                  <div class="invalid-feedback" *ngIf="
-                      homeQuoteForm.get('property_type')?.invalid &&
-                      homeQuoteForm.get('property_type')?.touched
-                    " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-              </div>
-              <div class="d-flex gap-3 mt-4">
-          <button type="submit" class="btn btn-next" (click)="nextStep()">
-                  {{ 'GET_HOME_QUOTE.NEXT_BUTTON' | translate }}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="container mt-4 mb-4" *ngIf="currentStep === 2">
-          <div class="form-wrapper">
-            <h2 class="form-title" [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP2.TITLE' | translateHtml | async"></h2>
-
-            <div class="form-content-border">
-              <div class="row gy-3 mb-3">
-                <div class="col-md-4">
-                  <label class="form-label">
-                    <span
-                      [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP2.FIELDS.YEAR_BUILT' | translateHtml | async"></span><span>*</span>
-                  </label>
-                  <input type="text" class="form-control" formControlName="year_built" [class.is-invalid]="
-                      homeQuoteForm.get('year_built')?.invalid &&
-                      homeQuoteForm.get('year_built')?.touched
-                    " placeholder="2025" />
-                  <div class="invalid-feedback" *ngIf="
-                      homeQuoteForm.get('year_built')?.invalid &&
-                      homeQuoteForm.get('year_built')?.touched
-                    " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-                <div class="col-md-4">
-                  <label class="form-label">
-                    <span
-                      [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP2.FIELDS.SQUARE_FOOTAGE' | translateHtml | async"></span><span>*</span>
-                  </label>
-                  <input type="text" class="form-control" formControlName="square_footage" [class.is-invalid]="
-                      homeQuoteForm.get('square_footage')?.invalid &&
-                      homeQuoteForm.get('square_footage')?.touched
-                    " placeholder="1500" />
-                  <div class="invalid-feedback" *ngIf="
-                      homeQuoteForm.get('square_footage')?.invalid &&
-                      homeQuoteForm.get('square_footage')?.touched
-                    " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-              </div>
-
-              <div class="row gy-3">
-                <div class="col-md-4">
-                  <label class="form-label">
-                    <span
-                      [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP2.FIELDS.NUMBER_OF_STORIES' | translateHtml | async"></span><span>*</span>
-                  </label>
-                  <input type="text" class="form-control" formControlName="number_of_stories" [class.is-invalid]="
-                      homeQuoteForm.get('number_of_stories')?.invalid &&
-                      homeQuoteForm.get('number_of_stories')?.touched
-                    " placeholder="2" />
-                  <div class="invalid-feedback" *ngIf="
-                      homeQuoteForm.get('number_of_stories')?.invalid &&
-                      homeQuoteForm.get('number_of_stories')?.touched
-                    " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-                <div class="col-md-4">
-                  <label class="form-label">
-                    <span
-                      [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP2.FIELDS.ROOF_AGE' | translateHtml | async"></span><span>*</span>
-                  </label>
-                   <select class="form-select" formControlName="roof_age" [class.is-invalid]="homeQuoteForm.get('roof_age')?.invalid && homeQuoteForm.get('roof_age')?.touched">
-                    <option *ngFor="
-                        let option of 'GET_HOME_QUOTE.STEPPER.STEP1.FIELDS.ROOF_AGE' | translate
-                      " [value]="option">
-                      {{ option }}
-                    </option>
-                  </select>
-                  <div class="invalid-feedback" *ngIf="
-                      homeQuoteForm.get('roof_age')?.invalid &&
-                      homeQuoteForm.get('roof_age')?.touched
-                    " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-               
-                </div>
-              </div>
-              <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous" (click)="previousStep()">
-                  {{ 'GET_HOME_QUOTE.PREVIOUS_BUTTON' | translate }}
-                </button>
-                <button type="button" class="btn btn-next" (click)="nextStep()">
-                  {{ 'GET_HOME_QUOTE.NEXT_BUTTON' | translate }}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="container mt-4 mb-4" *ngIf="currentStep === 3">
-          <div class="form-wrapper">
-            <h2 class="form-title" [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.TITLE' | translateHtml | async"></h2>
-
-            <div class="form-content-border">
-              <div class="selection-group">
-                <h4 class="selection-heading"
-                  [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.MONITORED_ALARM' | translateHtml | async"></h4>
-
-                <div class="coverage-options">
-                  <div class="form-check">
-                    <input type="radio" class="form-check-input" id="has_alarm_system"
-                      formControlName="has_alarm_system" value="Yes" />
-                    <label class="form-check-label" for="has_alarm_system"
-                      [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.MONITORED_ALARM_YES' | translateHtml | async"></label><br />
-                  </div>
-
-                  <div class="form-check">
-                    <input type="radio" class="form-check-input" id="has_alarm_system"
-                      formControlName="has_alarm_system" value="No" />
-                    <label class="form-check-label" for="has_alarm_system"
-                      [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.MONITORED_ALARM_NO' | translateHtml | async"></label>
-                  </div>
-
-                  <div class="invalid-feedback d-block" *ngIf="
-                      homeQuoteForm.get('has_alarm_system')?.invalid &&
-                      homeQuoteForm.get('has_alarm_system')?.touched
-                    " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-              </div>
-
-              <div class="selection-group mt-4">
-                <h4 class="selection-heading"
-                  [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.SWIMMING_POOL' | translateHtml | async"></h4>
-
-                <div class="coverage-options">
-                  <div class="form-check">
-                    <input type="radio" class="form-check-input" id="has_swimming_pool"
-                      formControlName="has_swimming_pool" value="Yes" />
-                    <label class="form-check-label" for="has_swimming_pool"
-                      [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.SWIMMING_POOL_YES' | translateHtml | async"></label><br />
-                  </div>
-
-                  <div class="form-check">
-                    <input type="radio" class="form-check-input" id="has_swimming_pool"
-                      formControlName="has_swimming_pool" value="No" />
-                    <label class="form-check-label" for="has_swimming_pool"
-                      [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.SWIMMING_POOL_NO' | translateHtml | async"></label>
-                  </div>
-
-                  <div class="invalid-feedback d-block" *ngIf="
-                      homeQuoteForm.get('has_swimming_pool')?.invalid &&
-                      homeQuoteForm.get('has_swimming_pool')?.touched
-                    " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-              </div>
-
-              <div class="selection-group mt-4">
-                <h4 class="selection-heading"
-                  [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.PETS' | translateHtml | async"></h4>
-
-                <div class="coverage-options">
-                  <div class="form-check">
-                    <input type="radio" class="form-check-input" id="has_pets" formControlName="has_pets" value="Yes" />
-                    <label class="form-check-label" for="has_pets"
-                      [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.PETS_YES' | translateHtml | async"></label><br />
-                  </div>
-
-                  <div class="form-check">
-                    <input type="radio" class="form-check-input" id="has_pets" formControlName="has_pets" value="No" />
-                    <label class="form-check-label" for="has_pets"
-                      [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP3.FIELDS.PETS_NO' | translateHtml | async"></label>
-                  </div>
-
-                  <div class="invalid-feedback d-block" *ngIf="
-                      homeQuoteForm.get('has_pets')?.invalid &&
-                      homeQuoteForm.get('has_pets')?.touched
-                    " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-              </div>
-
-              <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous" (click)="previousStep()">
-                  {{ 'GET_HOME_QUOTE.PREVIOUS_BUTTON' | translate }}
-                </button>
-                <button type="button" class="btn btn-next" (click)="nextStep()">
-                  {{ 'GET_HOME_QUOTE.NEXT_BUTTON' | translate }}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="container mb-4" *ngIf="currentStep === 4">
-          <div class="form-wrapper">
-            <h2 class="form-title" [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP4.TITLE' | translateHtml | async"></h2>
-
-            <div class="form-content-border">
-              <div class="row gy-3 mb-2">
-                <div class="col-md-8">
-                  <label class="form-label"
-                    [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP4.INSURED_TITLE' | translateHtml | async"></label>
-                  <select class="form-select" formControlName="current_insurance_status">
-                    <option *ngFor="
-                        let option of 'GET_HOME_QUOTE.STEPPER.STEP4.INSURED_OPTIONS' | translate
-                      " [value]="option">
-                      {{ option }}
-                    </option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="row gy-3 mt-2">
-                <div class="selection-group">
-                  <h4 class="selection-heading"
-                    [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP4.BUNDLE_TITLE' | translateHtml | async"></h4>
-
-                  <div class="coverage-options">
-                    <div class="form-check" *ngFor="let option of bundleOptions">
-                      <input type="radio" class="form-check-input" [id]="option" formControlName="bundle_option"
-                        [value]="option" />
-                      <label class="form-check-label" [for]="option">
-                        {{ option }}
-                      </label>
-                    </div>
-                    <div class="invalid-feedback d-block" *ngIf="
-                        homeQuoteForm.get('bundle_option')?.invalid &&
-                        homeQuoteForm.get('bundle_option')?.touched
-                      " [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous" (click)="previousStep()">
-                  {{ 'GET_HOME_QUOTE.PREVIOUS_BUTTON' | translate }}
-                </button>
-                <button type="button" class="btn btn-next" (click)="nextStep()">
-                  {{ 'GET_HOME_QUOTE.NEXT_BUTTON' | translate }}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="container mt-4 mb-4" *ngIf="currentStep === 5">
-          <div class="form-wrapper">
-            <h2 class="form-title" [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP5.TITLE' | translateHtml | async"></h2>
-
-            <div class="form-content-border">
-              <div class="row gy-3 mb-3">
-                <div class="col-md-4">
-                  <label class="form-label"><span
-                      [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP5.FIELDS.FULL_NAME' | translateHtml | async"></span><span>*</span></label>
-                  <input type="text" formControlName="full_name" [class.is-invalid]="
-                      homeQuoteForm.get('full_name')?.invalid &&
-                      homeQuoteForm.get('full_name')?.touched
-                    " class="form-control" placeholder="John Doe" />
-
-                  <div class="invalid-feedback" *ngIf="
-                      homeQuoteForm.get('full_name')?.invalid &&
-                      homeQuoteForm.get('full_name')?.touched
-                    " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-                <div class="col-md-4">
-                  <label class="form-label"><span
-                      [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP5.FIELDS.EMAIL' | translateHtml | async"></span><span>*</span></label>
-                  <input type="email" formControlName="email_address" [class.is-invalid]="
-                      homeQuoteForm.get('email_address')?.invalid &&
-                      homeQuoteForm.get('email_address')?.touched
-                    " class="form-control" placeholder="abc@gmail.com" />
-
-                  <div class="invalid-feedback" *ngIf="
-                      homeQuoteForm.get('email_address')?.invalid &&
-                      homeQuoteForm.get('email_address')?.touched
-                    " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-
-              </div>
-
-              <div class="row gy-3 mb-4">
-                <div class="col-md-4">
-                  <label class="form-label"><span
-                      [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP5.FIELDS.PHONE' | translateHtml | async"></span><span>*</span></label>
-                  <input type="text" formControlName="phone_number" [class.is-invalid]="
-                      homeQuoteForm.get('phone_number')?.invalid &&
-                      homeQuoteForm.get('phone_number')?.touched
-                    " class="form-control" placeholder="+123456789" />
-
-                  <div class="invalid-feedback" *ngIf="
-                      homeQuoteForm.get('phone_number')?.invalid &&
-                      homeQuoteForm.get('phone_number')?.touched
-                    " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-
-                <div class="col-md-4">
-                  <label class="form-label"
-                    [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP5.LANGUAGE_TITLE' | translateHtml | async"></label>
-                  <select class="form-select" formControlName="preferred_language">
-                    <option *ngFor="
-                        let option of 'GET_HOME_QUOTE.STEPPER.STEP5.LANGUAGE_OPTIONS' | translate
-                      " [value]="option">
-                      {{ option }}
-                    </option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="selection-group">
-                <h4 class="selection-heading"
-                  [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP5.CONTACT_TITLE' | translateHtml | async"></h4>
-
-                <div class="coverage-options">
-                  <div class="form-check" *ngFor="let option of reachOption">
-                    <input type="radio" class="form-check-input" [id]="option" formControlName="contact_method"
-                      [value]="option" />
-                    <label class="form-check-label" [for]="option">
-                      {{ option }}
-                    </label>
-                  </div>
-                  <div class="invalid-feedback d-block" *ngIf="
-                      homeQuoteForm.get('contact_method')?.invalid &&
-                      homeQuoteForm.get('contact_method')?.touched
-                    " [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-              </div>
-
-              <div class="selection-group mt-4">
-                <h4 class="selection-heading"
-                  [innerHTML]="'GET_HOME_QUOTE.STEPPER.STEP5.TIME_TITLE' | translateHtml | async"></h4>
-
-                <div class="coverage-options">
-                  <div class="form-check" *ngFor="let option of timeOptions">
-                    <input type="radio" class="form-check-input" [id]="option" formControlName="best_time_to_connect"
-                      [value]="option" />
-                    <label class="form-check-label" [for]="option">
-                      {{ option }}
-                    </label>
-                  </div>
-                </div>
-              </div>
-
-              <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous" (click)="previousStep()">
-                  {{ 'GET_HOME_QUOTE.PREVIOUS_BUTTON' | translate }}
-                </button>
-                <button type="button" class="btn btn-next" (click)="nextStep()">
-                  {{ 'GET_HOME_QUOTE.NEXT_BUTTON' | translate }}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </form>
-    <div class="quote-summary-container p-4 p-md-5 mt-5" *ngIf="currentStep > totalSteps">
-      <div class="container max-width-700">
-        <h2 class="text-center mb-4 section-title"
-          [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.MAIN_TITLE' | translateHtml | async"></h2>
-        <p class="text-center mb-4" [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.MAIN_DESC' | translateHtml | async"></p>
-
-        <h2 class="text-center mb-4 section-title"
-          [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.TITLE' | translateHtml | async"></h2>
-
-        <div class="summary-card mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="summary-card-title m-0" [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD1.TITLE' | translateHtml | async"></h3>
-            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(1)" [attr.aria-disabled]="!canEditStep(1)" (click)="canEditStep(1) && goToStep(1)">
-              <i class="bi bi-pencil-square"></i>
-              <span [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD1.EDIT' | translateHtml | async"></span></a>
-          </div>
-          <ul class="list-unstyled mb-0">
-            <li>
-              <strong
-                [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.ADDRESS' | translateHtml | async"></strong>: {{
-              homeQuoteForm.get('property_address')?.value }}
-            </li>
-            <li>
-              <strong
-                [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.RESIDENCE_TYPE' | translateHtml | async"></strong>:
-              {{ homeQuoteForm.get('is_primary_residence')?.value }}
-            </li>
-            <li>
-              <strong
-                [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.PROPERTY_TYPE' | translateHtml | async"></strong>:
-              {{ homeQuoteForm.get('property_type')?.value }}
-            </li>
-          </ul>
-        </div>
-
-        <div class="summary-card mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="summary-card-title m-0" [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD2.TITLE' | translateHtml | async"></h3>
-            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(2)" [attr.aria-disabled]="!canEditStep(2)" (click)="canEditStep(2) && goToStep(2)">
-              <i class="bi bi-pencil-square"></i>
-              <span [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD2.EDIT' | translateHtml | async"></span></a>
-          </div>
-          <ul class="list-unstyled mb-0">
-            <li>
-              <strong
-                [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.YEAR_BUILT' | translateHtml | async"></strong>:
-              {{ homeQuoteForm.get('year_built')?.value }}
-            </li>
-            <li>
-              <strong
-                [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.SQUARE_FOOTAGE' | translateHtml | async"></strong>:
-              {{ homeQuoteForm.get('square_footage')?.value }}
-            </li>
-            <li>
-              <strong
-                [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.STORIES' | translateHtml | async"></strong>: {{
-              homeQuoteForm.get('number_of_stories')?.value }}
-            </li>
-            <li>
-              <strong
-                [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.ROOF_AGE' | translateHtml | async"></strong>: {{
-              homeQuoteForm.get('roof_age')?.value }}
-            </li>
-          </ul>
-        </div>
-
-        <div class="summary-card mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="summary-card-title m-0" [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD3.TITLE' | translateHtml | async"></h3>
-            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(3)" [attr.aria-disabled]="!canEditStep(3)" (click)="canEditStep(3) && goToStep(3)">
-              <i class="bi bi-pencil-square"></i>
-              <span [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD3.EDIT' | translateHtml | async"></span></a>
-          </div>
-          <ul class="list-unstyled mb-0">
-            <li>
-              <strong [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.ALARM' | translateHtml | async"></strong>:
-              {{
-              homeQuoteForm.get('has_alarm_system')?.value }}
-            </li>
-            <li>
-              <strong [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.POOL' | translateHtml | async"></strong>:
-              {{
-              homeQuoteForm.get('has_swimming_pool')?.value }}
-            </li>
-            <li>
-              <strong [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.PETS' | translateHtml | async"></strong>:
-              {{
-              homeQuoteForm.get('has_pets')?.value }}
-            </li>
-          </ul>
-        </div>
-
-        <div class="summary-card mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="summary-card-title m-0" [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD4.TITLE' | translateHtml | async"></h3>
-            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(4)" [attr.aria-disabled]="!canEditStep(4)" (click)="canEditStep(4) && goToStep(4)">
-              <i class="bi bi-pencil-square"></i>
-              <span [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD4.EDIT' | translateHtml | async"></span></a>
-          </div>
-          <ul class="list-unstyled mb-0">
-            <li>
-              <strong
-                [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.INSURED' | translateHtml | async"></strong>: {{
-              homeQuoteForm.get('current_insurance_status')?.value }}
-            </li>
-            <li>
-              <strong
-                [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.BUNDLE' | translateHtml | async"></strong>: {{
-              homeQuoteForm.get('bundle_option')?.value }}
-            </li>
-          </ul>
-        </div>
-
-        <div class="summary-card mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="summary-card-title m-0" [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD5.TITLE' | translateHtml | async"></h3>
-            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(5)" [attr.aria-disabled]="!canEditStep(5)" (click)="canEditStep(5) && goToStep(5)">
-              <i class="bi bi-pencil-square"></i>
-              <span [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD5.EDIT' | translateHtml | async"></span></a>
-          </div>
-          <ul class="list-unstyled mb-0">
-            <li>
-              <strong [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.NAME' | translateHtml | async"></strong>:
-              {{
-              homeQuoteForm.get('full_name')?.value }}
-            </li>
-            <li>
-              <strong [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.EMAIL' | translateHtml | async"></strong>:
-              {{
-              homeQuoteForm.get('email_address')?.value }}
-            </li>
-            <li>
-              <strong [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.PHONE' | translateHtml | async"></strong>:
-              {{
-              homeQuoteForm.get('phone_number')?.value }}
-            </li>
-            <li>
-              <strong
-                [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.LANGUAGE' | translateHtml | async"></strong>: {{
-              homeQuoteForm.get('preferred_language')?.value }}
-            </li>
-            <li>
-              <strong
-                [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.CONTACT_METHOD' | translateHtml | async"></strong>:
-              {{
-              homeQuoteForm.get('contact_method')?.value }}
-            </li>
-            <li>
-              <strong
-                [innerHTML]="'GET_HOME_QUOTE.QUOTE_SUMMARY.CARD5.FIELDS.BEST_TIME' | translateHtml | async"></strong>:
-              {{
-              homeQuoteForm.get('best_time_to_connect')?.value }}
-            </li>
-          </ul>
-        </div>
-
-        <!-- Form Footer -->
-        <div class="mt-4">
-
-          <button class="btn btn-submit" (click)="sendHomeQuote()" [disabled]="loading">
-            <span *ngIf="loading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-            {{ loading ? 'Submitting...' : ('GET_HOME_QUOTE.QUOTE_SUMMARY.SUBMIT_BUTTON' | translate) }}
-          </button>
-        </div>
-      </div>
+<!-- Final CTA (grey) -->
+<section class="section q-final" id="final-cta" aria-labelledby="fin-h">
+  <div class="hf-container ready-band">
+    <h2 id="fin-h">{{ 'HOME_QUOTE_PAGE.FINAL.TITLE' | translate }}</h2>
+    <p><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('HOME_QUOTE_PAGE.FINAL.TEXT') }"></ng-container></p>
+    <div class="btn-row">
+      <a class="hf-btn btn-primary btn-lg" href="#quote" (click)="goToForm($event)">{{ 'HOME_QUOTE_PAGE.FINAL.START' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+      <a class="hf-btn btn-outline btn-lg" [routerLink]="route('ourLocations')"><svg class="icon-sm" aria-hidden="true"><use href="#i-pin" /></svg>{{ 'HOME_QUOTE_PAGE.FINAL.FIND' | translate }}</a>
     </div>
   </div>
+</section>
 
-  <!-- footuper -->
-  <app-foot-upper></app-foot-upper>
+<!-- Sticky mobile bar -->
+<div class="sticky-cta" [class.show]="showSticky" [attr.aria-hidden]="!showSticky">
+  <a class="hf-btn btn-primary" href="#quote" [tabIndex]="showSticky ? 0 : -1" (click)="goToForm($event)">{{ 'HOME_PAGE.STICKY.QUOTE' | translate }}</a>
+  <a class="hf-btn btn-outline" href="tel:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'HOME_PAGE.STICKY.CALL' | translate }}</a>
+  <a class="hf-btn btn-outline" href="sms:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-chat" /></svg>{{ 'HOME_PAGE.STICKY.TEXT' | translate }}</a>
+</div>

@@ -4,7 +4,7 @@
 
 :host {
   display: block;
-  --bg-white:#FFFFFF; --bg-cream:#FFFAEB; --bg-gold:#F6C945;
+  --bg-white:#FFFFFF; --bg-cream:#F5F5F4; --bg-red:#CA2B28;
   --r-xl:24px;
   --section:56px;
   background:var(--white);
@@ -58,7 +58,7 @@
   /* What happens next */
   .next{display:grid;gap:14px}
   .next li{position:relative;display:grid;grid-template-columns:44px 1fr;gap:4px 14px;padding:20px;border:1px solid var(--stone-200);border-radius:var(--r-md);background:var(--white);color:var(--stone-700)}
-  .next .n{grid-row:span 2;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--stone-700);color:var(--gold);font-weight:800}
+  .next .n{grid-row:span 2;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--red-600);color:var(--white);font-weight:800}
   .next li.done .n{background:#1E7A46;color:var(--white)}
   .next h3{font-size:18px}
   .next p{font-size:15.5px}
@@ -66,20 +66,26 @@
   @media (min-width:768px){.next{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.next li{grid-template-columns:1fr;padding:24px}.next .n{grid-row:auto;margin-bottom:8px}}
   @media (min-width:1024px){.next{grid-template-columns:repeat(4,minmax(0,1fr))}}
 
-  /* Get ready (gold) */
-  .sooner{background:var(--bg-gold);color:var(--stone-700)}
+  /* Red band (bk-R): white text, gold icons, gold primary button, white-outline secondary */
+  .sooner{background:var(--bg-red);color:var(--white)}
+  .sooner h2,.sooner p,.sooner li,.sooner a:not(.hf-btn){color:var(--white)}
+  .sooner .btn-primary{background:var(--gold);color:var(--stone-700);border-color:var(--gold)}
+  .sooner .btn-primary .icon-sm{color:var(--stone-700)}
+  .sooner .btn-outline,.sooner .btn-outline:hover{background:transparent;color:var(--white);border-color:var(--white);box-shadow:inset 0 0 0 1.5px var(--white)}
+  .sooner .btn-outline .icon-sm{color:var(--gold)}
+  .sooner :focus-visible{outline-color:#FFF22F}
   .sooner h2{font-size:clamp(26px,1.4rem + 1vw,34px);margin-bottom:10px}
   .prep{margin:12px 0 10px;display:grid;gap:10px;font-size:17px;max-width:64ch}
   .prep li{display:flex;gap:12px;align-items:flex-start}
   .prep .icon-sm{flex:none;width:30px;height:30px;padding:7px;border-radius:50%;background:var(--white);color:var(--red-600)}
   @media (min-width:1024px){.prep{grid-template-columns:1fr 1fr;max-width:none;column-gap:32px}}
   .sooner .small{font-size:15px;margin-top:6px}
-  .sooner .small a{color:var(--stone-700);font-weight:700;display:inline-block;padding:11px 0;margin:-11px 0;overflow-wrap:anywhere}
+  .sooner .small a{color:var(--white);text-decoration:underline;font-weight:700;display:inline-block;padding:11px 0;margin:-11px 0;overflow-wrap:anywhere}
 
   /* While you wait */
   .wait{display:grid;gap:14px}
   .wait > li{background:var(--white);border-radius:var(--r-xl);padding:22px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--sh-sm);min-width:0;color:var(--stone-700)}
-  .wait .ic{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--gold);color:var(--red-600)}
+  .wait .ic{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--red-600);color:var(--gold)}
   .wait .ic .icon{width:22px;height:22px}
   .wait h3{font-size:19px}
   .wait .links{display:flex;flex-direction:column}

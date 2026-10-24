@@ -23,23 +23,25 @@
 
 <!-- Hero -->
 <section class="hero" aria-labelledby="hero-title">
+  <div class="hf-container crumbs-row">
+    <nav class="crumbs" [attr.aria-label]="'CAREERS_PAGE.BREADCRUMB.ARIA' | translate">
+      <ol>
+        <li><a [routerLink]="route('home')">{{ 'CAREERS_PAGE.BREADCRUMB.HOME' | translate }}</a></li>
+        <li aria-current="page">{{ 'CAREERS_PAGE.BREADCRUMB.CURRENT' | translate }}</li>
+      </ol>
+    </nav>
+  </div>
   <div class="hf-container hero-grid">
     <div class="hero-copy">
-      <nav class="crumbs" [attr.aria-label]="'CAREERS_PAGE.BREADCRUMB.ARIA' | translate">
-        <ol>
-          <li><a [routerLink]="route('home')">{{ 'CAREERS_PAGE.BREADCRUMB.HOME' | translate }}</a></li>
-          <li aria-current="page">{{ 'CAREERS_PAGE.BREADCRUMB.CURRENT' | translate }}</li>
-        </ol>
-      </nav>
       <h1 id="hero-title">{{ 'CAREERS_PAGE.HERO.TITLE' | translate }}</h1>
-      <p class="hf-lead">{{ 'CAREERS_PAGE.HERO.LEAD' | translate }}</p>
-      <ul class="checks">
-        <li *ngFor="let c of list('CAREERS_PAGE.HERO.CHECKS')"><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg>{{ c }}</li>
-      </ul>
       <div class="btn-row">
         <a class="hf-btn btn-primary btn-lg" href="#apply" (click)="goToSection('apply', $event)">{{ 'CAREERS_PAGE.HERO.CTA_APPLY' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
         <a class="hf-btn btn-outline btn-lg" href="#openings" (click)="goToSection('openings', $event)">{{ 'CAREERS_PAGE.HERO.CTA_OPENINGS' | translate }}</a>
       </div>
+      <p class="hf-lead">{{ 'CAREERS_PAGE.HERO.LEAD' | translate }}</p>
+      <ul class="checks">
+        <li *ngFor="let c of list('CAREERS_PAGE.HERO.CHECKS')"><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg>{{ c }}</li>
+      </ul>
     </div>
     <figure class="hero-photo">
       <img src="/assets/images/careers/careers-hero.jpg" [alt]="'CAREERS_PAGE.HERO.PHOTO_ALT' | translate" width="1402" height="1122" decoding="async" />

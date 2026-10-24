@@ -1095,148 +1095,851 @@
     }
   },
   "GET_QUOTE": {
-    "HEADING": "Seguro Simplificado. Obtén Tu Mejor Tarifa Hoy",
-    "QUOTE_TYPE": {
-      "TITLE": "Selecciona Tu Tipo de Cotización",
-      "DESCRIPTION": "Comparamos múltiples compañías para encontrar la mejor tarifa para ti en Texas.",
-      "CARD1": {
-        "TITLE": "Seguro de Auto",
-        "DESC": "Tarifas accesibles para todos los conductores, sin importar su historial o reclamos previos.",
-        "BUTTON": "Comenzar Cotización de Auto"
-      },
-      "CARD2": {
-        "TITLE": "Seguro de Vivienda",
-        "DESC": "Protege tu hogar contra el clima impredecible de Texas.",
-        "BUTTON": "Comenzar Cotización de Hogar"
-      },
-      "CARD3": {
-        "TITLE": "Seguro Comercial",
-        "DESC": "Cobertura personalizada de responsabilidad y protección de activos para empresarios locales en Texas.",
-        "BUTTON": "Comenzar Cotización Comercial"
-      },
-      "CARD4": {
-        "TITLE": "Seguro de Vida",
-        "DESC": "Pólizas flexibles de Vida a Término y Vida Entera para proteger el futuro de tu familia.",
-        "BUTTON": "Comenzar Cotización de Vida"
-      },
-      "CARD5": {
-        "TITLE": "Seguro de Salud",
-        "DESC": "Cobertura médica simplificada para individuos y familias en nuestra comunidad.",
-        "BUTTON": "Comenzar Cotización de Salud"
-      },
-      "CARD6": {
-        "TITLE": "Fianzas (Surety Bonds)",
-        "DESC": "Fianzas esenciales para mantener el cumplimiento y ganar proyectos comerciales.",
-        "BUTTON": "Comenzar Cotización de Fianza"
-      },
-      "CARD7": {
-        "TITLE": "Cotización Personalizada",
-        "DESC": "¿Deseas combinar pólizas para ahorrar más o no encuentras la cobertura que buscas? Permítenos crearla para ti.",
-        "BUTTON": "Solicitar Cotización Personalizada"
+    "BREADCRUMB": {
+      "ARIA": "Ruta de navegación",
+      "HOME": "Inicio",
+      "CURRENT": "Obtener una cotización"
+    },
+    "HERO": {
+      "TITLE": [
+        {
+          "t": "Obtenga una "
+        },
+        {
+          "t": "cotización de seguro",
+          "hl": "true"
+        },
+        {
+          "t": " gratis en Texas"
+        }
+      ],
+      "CTA_QUOTE": "Cotizar gratis",
+      "CTA_CALL": "Llamar al (713) 357-7771",
+      "LEAD": [
+        {
+          "t": "Díganos qué necesita asegurar. Un agente con licencia compara cotizaciones de más de 50 compañías de seguros y le muestra las opciones lado a lado. Sin costo y sin compromiso. Hablamos español."
+        }
+      ],
+      "TRUST": [
+        {
+          "t": "4.8",
+          "b": "true"
+        },
+        {
+          "t": " en Google con más de 250 reseñas · Agencia con licencia en Texas · "
+        },
+        {
+          "t": "Español",
+          "es": "true"
+        },
+        {
+          "t": " · English · Hindi"
+        }
+      ]
+    },
+    "HOURS": {
+      "ARIA": "Horario de agentes",
+      "TITLE": "Agentes disponibles · hora del centro",
+      "WEEK": "Lunes a sábado",
+      "WEEK_TIME": "9:00 a.m.–7:00 p.m.",
+      "SUNDAY": "Domingo",
+      "CLOSED": "Cerrado",
+      "DEFAULT": "Lun–Sáb, 9 a.m.–7 p.m.",
+      "OPEN": "Abierto ahora · hasta las 7 p.m.",
+      "OPENS_TODAY": "Cerrado ahora · abre hoy a las 9 a.m.",
+      "OPENS_MONDAY": "Cerrado ahora · abre el lunes a las 9 a.m.",
+      "OPENS_TOMORROW": "Cerrado ahora · abre mañana a las 9 a.m.",
+      "REPLY": "Sin costo y sin compromiso"
+    },
+    "OTP": {
+      "LABEL": "En esta página",
+      "ITEMS": [
+        "Seguros",
+        "Cómo funciona",
+        "Pedir cotización",
+        "Por qué A-State",
+        "Lo que necesita",
+        "Oficinas",
+        "Preguntas"
+      ]
+    },
+    "COVERAGE": {
+      "TITLE": "Elija su seguro para empezar su cotización en Texas",
+      "ITEMS": [
+        {
+          "TITLE": "Seguro de auto",
+          "TEXT": "Carro, motocicleta, certificados SR-22 y más.",
+          "CTA": "Cotizar auto"
+        },
+        {
+          "TITLE": "Seguro de casa",
+          "TEXT": "Casa, inquilinos, condominio e inundación.",
+          "CTA": "Cotizar casa"
+        },
+        {
+          "TITLE": "Seguro comercial",
+          "TEXT": "Responsabilidad civil general, póliza para dueños de negocio (BOP), auto comercial y compensación al trabajador (workers' comp).",
+          "CTA": "Cotizar negocio"
+        },
+        {
+          "TITLE": "Seguro de vida",
+          "TEXT": "Vida a plazo, vida entera y gastos finales.",
+          "CTA": "Cotizar vida"
+        },
+        {
+          "TITLE": "Seguro de salud",
+          "TEXT": "Planes individuales y familiares, y Medicare Supplement.",
+          "CTA": "Cotizar salud"
+        },
+        {
+          "TITLE": "Fianzas (surety bonds)",
+          "TEXT": "Fianzas de licencia y permiso, de contrato y de notario.",
+          "CTA": "Cotizar fianza"
+        }
+      ],
+      "UNSURE": {
+        "TITLE": "¿No sabe qué necesita?",
+        "TEXT": "Cuéntenos su situación y un agente le recomendará la cobertura adecuada.",
+        "CTA": "Pedir una cotización personalizada"
       }
     },
-    "ADVANTAGE": {
-      "HEADING": "La Ventaja A-State",
-      "CARD1": {
-        "TITLE": "Experiencia en Tu Idioma",
-        "DESC": "El seguro es más fácil cuando hablas el mismo idioma. Nuestros agentes profesionales dominan inglés, español e hindi, asegurando que entiendas completamente tu cobertura, tus derechos y tus costos—sin que se pierda ningún detalle en la traducción."
-      },
-      "CARD2": {
-        "TITLE": "Profundamente Arraigados en la Comunidad",
-        "DESC": "No solo trabajamos en Texas; vivimos aquí. Nos enorgullece ser un recurso confiable para nuestros vecinos en Houston y áreas cercanas. Ya sea que visites una de nuestras oficinas o nos llames desde casa, entendemos las necesidades específicas de nuestra comunidad y estamos aquí para ayudarte."
-      },
-      "CARD3": {
-        "TITLE": "Elección Independiente",
-        "DESC": "Como agencia y corredor independiente, no trabajamos para las compañías de seguros—trabajamos para ti. Mientras que una sola compañía solo puede ofrecer un precio, nosotros comparamos múltiples aseguradoras de alta calificación para encontrar las tarifas más competitivas y la prima ideal para tu presupuesto."
-      }
+    "STEPS": {
+      "TITLE": "Cómo obtener su cotización de seguro en 3 pasos",
+      "ITEMS": [
+        {
+          "TITLE": "Díganos qué necesita.",
+          "TEXT": "Elija un tipo de seguro y conteste unas preguntas rápidas en línea, por teléfono o en cualquiera de nuestras oficinas."
+        },
+        {
+          "TITLE": "Comparamos compañías por usted.",
+          "TEXT": "Un agente con licencia revisa precios y coberturas con nuestras más de 50 compañías."
+        },
+        {
+          "TITLE": "Elija sin presión.",
+          "TEXT": "Revise sus opciones lado a lado, pregunte lo que quiera y compre solo si le conviene."
+        }
+      ]
     },
-    "VISIT": {
-      "HEADING1": "Visítanos Hoy",
-      "HEADING2": "Atendemos Sin Cita Previa",
-      "DESC": "Evita el estrés de programar citas y recibe el servicio personalizado que mereces. Ya sea que tengas una pregunta rápida o necesites una revisión completa de tu póliza, nuestras puertas están abiertas en todas nuestras ubicaciones en el área de Houston para una consulta en persona. Nuestros agentes están listos para ayudarte en inglés, español o hindi, asegurando que vivas la experiencia A-State—donde nuestra comunidad siempre es primero.",
-      "BUTTON": "Encuentra una Oficina A-State Cerca de Ti"
+    "FORM": {
+      "TITLE": "Pida su cotización gratis",
+      "NEXT_LABEL": "Qué pasa después:",
+      "NEXT": "Un agente de la oficina más cercana le llamará o le enviará un texto con sus opciones, por lo general en 5 horas hábiles.",
+      "CALL": "Llamar al (713) 357-7771",
+      "TEXT_US": "Envíenos un texto",
+      "NAME": "Nombre completo",
+      "PHONE": "Número de teléfono",
+      "EMAIL": "Correo electrónico",
+      "ZIP": "Código postal",
+      "OPTIONAL": "(opcional)",
+      "TYPE": "Tipo de seguro",
+      "TYPES": [
+        {
+          "V": "auto",
+          "L": "Auto"
+        },
+        {
+          "V": "home",
+          "L": "Casa"
+        },
+        {
+          "V": "commercial",
+          "L": "Comercial"
+        },
+        {
+          "V": "life",
+          "L": "Vida"
+        },
+        {
+          "V": "health",
+          "L": "Salud"
+        },
+        {
+          "V": "bond",
+          "L": "Fianza"
+        },
+        {
+          "V": "unsure",
+          "L": "No sé"
+        }
+      ],
+      "LANG": "Idioma preferido",
+      "LANGS": [
+        {
+          "V": "es",
+          "L": "Español"
+        },
+        {
+          "V": "en",
+          "L": "English"
+        },
+        {
+          "V": "hi",
+          "L": "Hindi"
+        }
+      ],
+      "OFFICE": "Oficina preferida",
+      "NO_PREFERENCE": "Sin preferencia",
+      "TIME": "Mejor hora para contactarlo",
+      "TIMES": [
+        {
+          "V": "morning",
+          "L": "Mañana"
+        },
+        {
+          "V": "afternoon",
+          "L": "Tarde"
+        },
+        {
+          "V": "evening",
+          "L": "Noche"
+        }
+      ],
+      "MESSAGE": "¿Algo que debamos saber?",
+      "PRIVACY": "Por favor no envíe números de licencia, póliza o pago por este formulario.",
+      "SUBMIT": "Cotizar gratis",
+      "ERR_NAME": "Escriba su nombre completo.",
+      "ERR_PHONE_EMPTY": "Escriba su número de teléfono.",
+      "ERR_PHONE_INVALID": "Escriba un número de 10 dígitos, como (713) 555-0123.",
+      "ERR_EMAIL": "Escriba un correo como nombre@ejemplo.com, o déjelo en blanco.",
+      "ERR_ZIP_EMPTY": "Escriba su código postal.",
+      "ERR_ZIP_INVALID": "Escriba un código postal de 5 dígitos.",
+      "ERR_TYPE": "Elija un tipo de seguro."
+    },
+    "WHY": {
+      "TITLE": "Por qué los texanos cotizan su seguro con A-State",
+      "ITEMS": [
+        {
+          "TITLE": "Trabajamos para usted, no para una sola aseguradora.",
+          "TEXT": "Como agencia independiente, comparamos más de 50 compañías, así que usted ve más de un precio y más de una póliza."
+        },
+        {
+          "TITLE": "Ayuda en su idioma.",
+          "TEXT": "Nuestros agentes hablan español, inglés e hindi, para que pueda hacer todas sus preguntas y entender cada respuesta."
+        },
+        {
+          "TITLE": "Oficinas locales en Houston.",
+          "TEXT": "Cinco oficinas de vecindario, abiertas de lunes a sábado, de 9 a.m. a 7 p.m. Venga sin cita."
+        },
+        {
+          "TITLE": "Sin spam ni presión de ventas.",
+          "TEXT": "Solo le contactamos sobre la cotización que pidió, y nunca está obligado a comprar."
+        },
+        {
+          "TITLE": "Ayuda después de comprar.",
+          "TEXT": "Seguimos siendo su agente para renovaciones, cambios a su póliza y el papeleo de reclamos."
+        }
+      ]
+    },
+    "TRUST": {
+      "TITLE": "La confianza de los texanos",
+      "ITEMS": [
+        [
+          {
+            "t": "4.8 en Google con más de 250 reseñas en nuestras 5 oficinas"
+          }
+        ],
+        [
+          {
+            "t": "Más de 50 compañías aseguradoras"
+          }
+        ],
+        [
+          {
+            "t": "Con licencia del Departamento de Seguros de Texas, licencia n.º "
+          },
+          {
+            "t": "[número]",
+            "p": "true"
+          }
+        ],
+        [
+          {
+            "t": "Al servicio de Texas desde 2018"
+          }
+        ]
+      ]
+    },
+    "NEED": {
+      "TITLE": "Lo que necesita para su cotización",
+      "LEAD": "Tener esto a la mano hace su cotización más rápida y precisa.",
+      "START": "¿No tiene todo? Empiece de todos modos. Su agente le ayudará con lo que falte.",
+      "CTA": "Cotizar gratis",
+      "ITEMS": [
+        {
+          "TITLE": "Auto",
+          "TEXT": "la licencia de conducir de cada conductor, el VIN de cada vehículo (o año, marca y modelo) y la página de declaraciones de su póliza actual, si tiene una."
+        },
+        {
+          "TITLE": "Casa o inquilinos",
+          "TEXT": "la dirección de la propiedad, el año de construcción, la antigüedad del techo y su póliza actual, si tiene una."
+        },
+        {
+          "TITLE": "Negocio",
+          "TEXT": "el tipo y la dirección de su negocio, los ingresos anuales, el número de empleados y la nómina (para compensación al trabajador)."
+        },
+        {
+          "TITLE": "Vida",
+          "TEXT": "su fecha de nacimiento, el monto de cobertura que está considerando e información básica de salud."
+        },
+        {
+          "TITLE": "Salud",
+          "TEXT": "el código postal y la fecha de nacimiento de cada persona que se va a asegurar."
+        }
+      ]
+    },
+    "OFFICES": {
+      "TITLE": "¿Prefiere hablar con alguien? Visítenos o llámenos.",
+      "LEAD": [
+        {
+          "t": "Llame al "
+        },
+        {
+          "t": "(713) 357-7771",
+          "h": "tel:+17133577771"
+        },
+        {
+          "t": " para hablar con un agente bilingüe, o visite cualquier oficina de lunes a sábado, de 9 a.m. a 7 p.m. No necesita cita."
+        }
+      ],
+      "CTA": "Encontrar la oficina más cercana",
+      "ITEMS": [
+        {
+          "NAME": "Denver Harbor",
+          "ADDRESS": "707 Shotwell St, Suite A, Houston, TX 77020",
+          "PHONE": "(281) 749-1900"
+        },
+        {
+          "NAME": "Fondren Southwest",
+          "ADDRESS": "11503 Southwest Fwy, Suite B, Houston, TX 77031",
+          "PHONE": "(281) 506-4200"
+        },
+        {
+          "NAME": "Westbury",
+          "ADDRESS": "10547 S Post Oak Rd, Houston, TX 77035",
+          "PHONE": "(281) 406-1900"
+        },
+        {
+          "NAME": "Greater Inwood",
+          "ADDRESS": "5712 Antoine Dr, Houston, TX 77091",
+          "PHONE": "(713) 263-9800"
+        },
+        {
+          "NAME": "Northside-Northline",
+          "ADDRESS": "5206 Airline Dr, Suite G, Houston, TX 77022",
+          "PHONE": "(281) 504-7444"
+        }
+      ]
+    },
+    "FAQ": {
+      "TITLE": "Preguntas frecuentes sobre cómo cotizar",
+      "ITEMS": [
+        {
+          "Q": "¿La cotización de seguro es realmente gratis?",
+          "A": [
+            {
+              "t": "Sí. La cotización no le cuesta nada y no está obligado a comprar."
+            }
+          ]
+        },
+        {
+          "Q": "¿Cuánto tarda una cotización?",
+          "A": [
+            {
+              "t": "El formulario en línea toma unos "
+            },
+            {
+              "t": "[3]",
+              "p": "true"
+            },
+            {
+              "t": " minutos. Después, un agente compara compañías y le contacta con sus opciones, por lo general en "
+            },
+            {
+              "t": "[X horas hábiles]",
+              "p": "true"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "Q": "¿Pedir una cotización afecta mi puntaje de crédito?",
+          "A": [
+            {
+              "t": "No. Algunas compañías revisan un puntaje de seguro basado en el crédito al cotizar seguro de auto o de casa. Esa revisión es una consulta suave y no afecta su puntaje de crédito."
+            }
+          ]
+        },
+        {
+          "Q": "¿Tengo que comprar una póliza después de cotizar?",
+          "A": [
+            {
+              "t": "No. Puede revisar sus opciones, hacer preguntas y decidir sin presión y sin compromiso."
+            }
+          ]
+        },
+        {
+          "Q": "¿Qué información necesito para cotizar?",
+          "A": [
+            {
+              "t": "Depende del seguro. Para auto, su licencia de conducir y los datos del vehículo. Para casa, la dirección de la propiedad y la antigüedad del techo. Vea la lista completa en "
+            },
+            {
+              "t": "\"Lo que necesita para su cotización\"",
+              "h": "#what-you-need"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "Q": "¿Todas las oficinas tienen agentes que hablan español?",
+          "A": [
+            {
+              "t": "Sí. Todas las oficinas de A-State tienen agentes que hablan español, y también atendemos en inglés e hindi."
+            }
+          ]
+        },
+        {
+          "Q": "¿Cuál es el seguro de auto mínimo que exige Texas?",
+          "A": [
+            {
+              "t": "Texas exige un seguro de responsabilidad civil de al menos $30,000 por persona lesionada, hasta $60,000 por accidente y $25,000 por daños a la propiedad. Se conoce como 30/60/25. Podemos cotizar el mínimo estatal o una protección mayor."
+            }
+          ]
+        },
+        {
+          "Q": "¿Pueden ayudarme si necesito un SR-22?",
+          "A": [
+            {
+              "t": "Sí. Podemos cotizar un seguro de auto con SR-22 y pedir a la compañía que lo presente ante el estado por usted."
+            }
+          ]
+        },
+        {
+          "Q": "¿Solo aseguran a personas en Houston?",
+          "A": [
+            {
+              "t": "No. Nuestras oficinas están en Houston, pero aseguramos a clientes en todo Texas por teléfono, texto o correo electrónico."
+            }
+          ]
+        },
+        {
+          "Q": "¿Pueden comparar mi póliza actual antes de renovarla?",
+          "A": [
+            {
+              "t": "Sí. Traiga o envíenos la página de declaraciones de su póliza actual y la compararemos con cotizaciones de otras compañías antes de que renueve."
+            }
+          ]
+        }
+      ]
+    },
+    "FINAL": {
+      "TITLE": "¿Listo para comparar? Obtenga su cotización de seguro gratis en Texas.",
+      "TEXT": "Una sola solicitud, cotizaciones de más de 50 compañías y un agente con licencia que se las explica en su idioma.",
+      "CTA": "Cotizar gratis",
+      "CALL": "Llamar al (713) 357-7771"
     }
   },
   "GET_CUSTOM_QUOTE": {
-    "HEADING": "Cotizaciones de Seguros Personalizadas y Paquetes: Una Cotización, Ahorro Total",
-    "DESCRIPTION": "Máxima Protección. Mínimo Estrés. Grandes Ahorros.",
-    "NEXT_BUTTON": "Siguiente",
-    "PREVIOUS_BUTTON": "Anterior",
-    "STEPPER": {
-      "STEP1": {
-        "TITLE": "Datos Personales",
-        "FIELDS": {
-          "FULL_NAME": "Nombre y Apellido",
-          "EMAIL": "Correo Electrónico",
-          "PHONE": "Número de Teléfono",
-          "PREFERRED_LANGUAGE": "Idioma Preferido",
-          "FULL_ADDRESS": "Dirección Completa"
+    "BREADCRUMB": {
+      "ARIA": "Ruta de navegación",
+      "HOME": "Inicio",
+      "QUOTE": "Obtener una cotización",
+      "CURRENT": "Cotización personalizada"
+    },
+    "HERO": {
+      "TITLE": [
+        {
+          "t": "Pida una "
+        },
+        {
+          "t": "cotización de seguro personalizada",
+          "hl": "true"
         }
+      ],
+      "LEAD": "¿Necesita más de una póliza, un seguro que no está en nuestra lista o ayuda para decidir? Cuéntenos su situación y un agente con licencia comparará más de 50 compañías para armar una cotización a su medida. Gratis y sin compromiso.",
+      "TRUST": [
+        {
+          "t": "4.8",
+          "b": "true"
+        },
+        {
+          "t": " en Google con más de 250 reseñas · Español · "
+        },
+        {
+          "t": "English",
+          "l": "en"
+        },
+        {
+          "t": " · Hindi · Llame al "
+        },
+        {
+          "t": "(713) 357-7771",
+          "h": "tel:+17133577771"
+        }
+      ]
+    },
+    "USE": {
+      "TITLE": "Use este formulario si…",
+      "ITEMS": [
+        {
+          "TITLE": "Quiere más de una póliza.",
+          "TEXT": "Auto y casa, casa y vida, o negocio y personal. Las cotizamos juntas y revisamos si califica para un descuento por varias pólizas."
+        },
+        {
+          "TITLE": "No está seguro de qué necesita.",
+          "TEXT": "Díganos qué quiere proteger y un agente le recomendará la cobertura adecuada."
+        },
+        {
+          "TITLE": "Su seguro no está en nuestra lista principal.",
+          "TEXT": "Bote, RV, seguro de auto para México u otra cosa: descríbalo y buscaremos una compañía que lo cubra."
+        }
+      ],
+      "KNOW": "¿Ya sabe exactamente qué necesita?",
+      "KNOW_LINK": "Cotizar por tipo de seguro"
+    },
+    "FORM": {
+      "ARIA": "Pedir una cotización personalizada",
+      "STEPS_ARIA": "Pasos del formulario",
+      "STEP_OF": "Paso {{n}} de 5",
+      "LIVE": "Paso {{n}} de 5: {{title}}",
+      "STEP_TITLES": [
+        "Sus datos",
+        "¿Qué necesita?",
+        "Su seguro actual",
+        "¿Cómo prefiere que lo contactemos?",
+        "Revise su solicitud"
+      ],
+      "NEXT": [
+        "Siguiente: Su seguro",
+        "Siguiente: Su seguro actual",
+        "Siguiente: Cómo contactarlo",
+        "Siguiente: Revisar"
+      ],
+      "BACK": "Atrás",
+      "TO_REVIEW": "Volver a la revisión",
+      "EDIT": "Editar",
+      "SUBMIT": "Enviar mi solicitud",
+      "SENDING": "Enviando…",
+      "OPTIONAL": "(opcional)",
+      "NAME": "Nombre y apellido",
+      "PHONE": "Número de teléfono",
+      "EMAIL": "Correo electrónico",
+      "ZIP": "Código postal",
+      "LANG": "Idioma preferido",
+      "LANGS": [
+        {
+          "V": "es",
+          "L": "Español"
+        },
+        {
+          "V": "en",
+          "L": "English",
+          "LG": "en"
+        },
+        {
+          "V": "hi",
+          "L": "Hindi"
+        }
+      ],
+      "HINT": "Marque todas las opciones que correspondan.",
+      "COVERAGE": [
+        {
+          "V": "auto",
+          "L": "Auto"
+        },
+        {
+          "V": "home",
+          "L": "Casa o inquilinos"
+        },
+        {
+          "V": "commercial",
+          "L": "Comercial"
+        },
+        {
+          "V": "life",
+          "L": "Vida"
+        },
+        {
+          "V": "health",
+          "L": "Salud"
+        },
+        {
+          "V": "bond",
+          "L": "Fianza"
+        }
+      ],
+      "OTHER_L": "Otro",
+      "OTHER_Q": "Díganos qué necesita asegurar (por ejemplo, un bote, un RV o seguro de auto para México).",
+      "UNSURE_L": "No estoy seguro, ayúdenme a elegir",
+      "UNSURE_Q": "Cuéntenos un poco sobre su situación.",
+      "MULTI": "Buenas noticias: su agente revisará si califica para un descuento por varias pólizas.",
+      "GOAL": "¿Qué le gustaría hacer?",
+      "GOALS": [
+        {
+          "V": "new",
+          "L": "Contratar un seguro nuevo"
+        },
+        {
+          "V": "compare",
+          "L": "Comparar mi póliza actual para conseguir un mejor precio"
+        },
+        {
+          "V": "unsure",
+          "L": "Todavía no estoy seguro"
+        }
+      ],
+      "INSURED": "¿Tiene seguro actualmente?",
+      "INSUREDS": [
+        {
+          "V": "yes",
+          "L": "Sí"
+        },
+        {
+          "V": "no",
+          "L": "No"
+        }
+      ],
+      "CARRIER": "Compañía de seguros actual",
+      "RENEWAL": "Fecha de renovación",
+      "CLIENT": [
+        {
+          "t": "¿Ya es cliente de A-State y necesita cambiar su póliza? Llame a su oficina o al "
+        },
+        {
+          "t": "(713) 357-7771",
+          "h": "tel:+17133577771"
+        },
+        {
+          "t": "."
+        }
+      ],
+      "METHOD": "Medio preferido",
+      "METHODS": [
+        {
+          "V": "text",
+          "L": "Mensaje de texto"
+        },
+        {
+          "V": "call",
+          "L": "Llamada"
+        },
+        {
+          "V": "email",
+          "L": "Correo electrónico"
+        }
+      ],
+      "TIME": "Mejor hora",
+      "TIMES": [
+        {
+          "V": "morning",
+          "L": "Mañana (9 a.m.–12 p.m.)"
+        },
+        {
+          "V": "afternoon",
+          "L": "Tarde (12 p.m.–4 p.m.)"
+        },
+        {
+          "V": "evening",
+          "L": "Tarde-noche (4 p.m.–7 p.m.)"
+        }
+      ],
+      "OFFICE": "Oficina preferida",
+      "NO_PREFERENCE": "Cualquiera",
+      "OFFICES": [
+        "Denver Harbor",
+        "Fondren Southwest",
+        "Westbury",
+        "Greater Inwood",
+        "Northside-Northline"
+      ],
+      "R_TITLES": [
+        "Sus datos",
+        "Seguro solicitado",
+        "Seguro actual",
+        "Preferencias de contacto"
+      ],
+      "R": {
+        "NAME": "Nombre",
+        "PHONE": "Teléfono",
+        "EMAIL": "Correo",
+        "ZIP": "Código postal",
+        "LANG": "Idioma",
+        "COVERAGE": "Tipos de seguro",
+        "OTHER": "Otro",
+        "SITUATION": "Su situación",
+        "GOAL": "Objetivo",
+        "INSURED": "Tiene seguro",
+        "CARRIER": "Compañía actual",
+        "RENEWAL": "Fecha de renovación",
+        "METHOD": "Medio",
+        "TIME": "Mejor hora",
+        "OFFICE": "Oficina"
       },
-      "STEP2": {
-        "TITLE": "Personaliza tu Cobertura",
-        "DESC": "¿Qué estás buscando? (Selecciona todo lo que aplique)",
-        "OPTIONS": [
-          "Auto",
-          "Hogar",
-          "Comercial",
-          "Vida",
-          "Salud",
-          "Fianzas",
-          "Paquete y Ahorra"
-        ],
-        "DESC1": "¿No ves tu póliza en la lista? Dinos lo que necesitas a continuación:"
+      "NOT_GIVEN": "No indicado",
+      "CONSENT": [
+        {
+          "t": "Al hacer clic en \"Enviar mi solicitud\", acepta que A-State Insurance le contacte por teléfono, mensaje de texto o correo electrónico sobre su solicitud. Su consentimiento no es una condición de compra. Pueden aplicarse tarifas de mensajes y datos. Responda STOP para dejar de recibir mensajes. Solo compartimos su información con las compañías de seguros a las que pedimos cotizaciones. Consulte nuestra "
+        },
+        {
+          "t": "Política de privacidad",
+          "r": "privacyPolicy"
+        },
+        {
+          "t": "."
+        }
+      ],
+      "NEVER_SOLD": "Nunca vendemos su información.",
+      "ERR": {
+        "NAME": "Escriba su nombre y apellido.",
+        "PHONE_EMPTY": "Escriba su número de teléfono.",
+        "PHONE_INVALID": "Escriba un número de 10 dígitos, como (713) 555-0123.",
+        "EMAIL": "Escriba un correo como nombre@ejemplo.com, o déjelo en blanco.",
+        "ZIP_EMPTY": "Escriba su código postal.",
+        "ZIP_INVALID": "Escriba un código postal de 5 dígitos.",
+        "COVERAGE": "Elija al menos una opción.",
+        "OTHER": "Díganos qué necesita asegurar.",
+        "UNSURE": "Cuéntenos un poco sobre su situación.",
+        "EMAIL_NEEDED": "Agregue su correo o elija Mensaje de texto o Llamada.",
+        "EMAIL_NEEDED_INVALID": "Escriba un correo como nombre@ejemplo.com.",
+        "SUBMIT": "No pudimos enviar su solicitud. Sus respuestas siguen aquí. Inténtelo de nuevo o llame al (713) 357-7771."
       },
-      "STEP3": {
-        "TITLE": "Estado de la Póliza",
-        "FIELDLABEL1": "Estoy buscando:",
-        "FIELDLABEL2": "Estado actual del seguro:"
-      },
-      "STEP4": {
-        "TITLE": "Preferencias de Contacto",
-        "DESC": "¿Cómo te gustaría ser contactado?",
-        "OPTIONS": [
-          "Teléfono",
-          "Mensaje de texto",
-          "Correo electrónico"
-        ],
-        "DESC1": "Mejor hora para contactarte:",
-        "TIME_OPTIONS": [
-          "Mañana",
-          "Tarde",
-          "Noche"
-        ]
-      },
-      "STEP5": {
-        "TITLE": "Revisa tu Solicitud de Cotización Personalizada"
+      "SUCCESS": {
+        "TITLE": "Gracias. Recibimos su solicitud de cotización personalizada.",
+        "TEXT": "Un agente con licencia revisará sus respuestas, comparará compañías y le contactará, de lunes a sábado, de 9 a.m. a 7 p.m."
       }
     },
-    "QUOTE_SUMMARY": {
-      "TITLE": "Resumen de tu Cotización",
-      "DESC": "Al hacer clic en 'Enviar mi solicitud de cotización', aceptas ser contactado por un agente de A-State Insurance. Como corredor independiente, compartiremos esta información solo con nuestras compañías de seguros mejor calificadas para encontrar la mejor tarifa para ti.",
-      "SUBMIT_BUTTON": "Enviar mi solicitud de cotización",
-      "CARD1": {
-        "TITLE": "1. Información de Contacto",
-        "EDIT": "Editar Información"
-      },
-      "CARD2": {
-        "TITLE": "2. Cobertura Solicitada",
-        "EDIT": "Editar Cobertura",
-        "OPTION": "Interés Principal:",
-        "OPTION1": "Necesidades Específicas:"
-      },
-      "CARD3": {
-        "TITLE": "3. Estado Actual del Seguro",
-        "EDIT": "Editar Detalles",
-        "OPTION1": "Objetivo",
-        "OPTION2": "Estado"
-      },
-      "CARD4": {
-        "TITLE": "4. Preferencias de Contacto",
-        "EDIT": "Editar Detalles",
-        "OPTION1": "Método Preferido:",
-        "OPTION2": "Mejor hora para contactarte:"
-      }
+    "BUNDLE": {
+      "TITLE": "Cómo funciona combinar sus seguros",
+      "P1": "Combinar pólizas significa contratar dos o más seguros, como auto y casa, con la misma compañía. Muchas compañías dan un descuento por varias pólizas cuando lo hace. Además, tiene una sola fecha de renovación y menos facturas que pagar.",
+      "P2": "Combinar no siempre es lo más barato. A veces dos pólizas con compañías distintas cuestan menos, aun sin descuento. Como somos una agencia independiente, cotizamos de las dos formas y le mostramos la diferencia. Luego usted decide."
+    },
+    "OTHER": {
+      "TITLE": "Otros seguros que podemos cotizar",
+      "LEAD": [
+        {
+          "t": "Además de "
+        },
+        {
+          "t": "auto",
+          "r": "autoInsurance"
+        },
+        {
+          "t": ", "
+        },
+        {
+          "t": "casa",
+          "r": "homeInsurance"
+        },
+        {
+          "t": ", "
+        },
+        {
+          "t": "comercial",
+          "r": "commercialInsurance"
+        },
+        {
+          "t": ", "
+        },
+        {
+          "t": "vida",
+          "r": "lifeInsurance"
+        },
+        {
+          "t": ", "
+        },
+        {
+          "t": "salud",
+          "r": "healthInsurance"
+        },
+        {
+          "t": " y "
+        },
+        {
+          "t": "fianzas",
+          "r": "suretyBondInsurance"
+        },
+        {
+          "t": ", le ayudamos con:"
+        }
+      ],
+      "ITEMS": [
+        "Inquilinos",
+        "Condominio",
+        "Inundación",
+        "Motocicleta",
+        "Bote",
+        "RV y tráiler de viaje",
+        "Seguro de auto para México",
+        "Certificados SR-22",
+        "Póliza paraguas (umbrella)",
+        "Gastos finales"
+      ],
+      "TAIL": [
+        {
+          "t": "¿No lo ve en la lista? Elija "
+        },
+        {
+          "t": "\"Otro\" en el formulario",
+          "h": "#other"
+        },
+        {
+          "t": " o llame al "
+        },
+        {
+          "t": "(713) 357-7771",
+          "h": "tel:+17133577771"
+        },
+        {
+          "t": "."
+        }
+      ]
+    },
+    "FAQ": {
+      "TITLE": "Preguntas frecuentes sobre cotizaciones personalizadas y pólizas combinadas",
+      "ITEMS": [
+        {
+          "Q": "¿Qué es una cotización de seguro personalizada?",
+          "A": "Es una cotización hecha a la medida de su situación, no de un solo tipo de seguro. Úsela si necesita más de una póliza, no sabe qué necesita o busca un seguro que no está en nuestra lista principal."
+        },
+        {
+          "Q": "¿Qué significa combinar seguros?",
+          "A": "Significa contratar dos o más pólizas, como auto y casa, con la misma compañía de seguros. Muchas compañías dan un descuento por varias pólizas."
+        },
+        {
+          "Q": "¿Combinar mis seguros siempre me ahorra dinero?",
+          "A": "No siempre. El descuento depende de la compañía, y a veces las pólizas por separado cuestan menos en total. Comparamos las dos opciones y le mostramos los precios lado a lado."
+        },
+        {
+          "Q": "¿Puedo combinar pólizas de compañías distintas?",
+          "A": "Por lo general, el descuento solo aplica cuando las pólizas están con la misma compañía. Aun así, sus pólizas pueden estar con compañías distintas y A-State puede ser su único agente para todas."
+        },
+        {
+          "Q": "¿Qué pasa si el seguro que necesito no está en la lista?",
+          "A": "Elija \"Otro\" en el formulario y describa lo que necesita asegurar. Revisaremos cuáles de nuestras más de 50 compañías pueden cubrirlo."
+        },
+        {
+          "Q": "No sé qué seguro necesito. ¿Me pueden ayudar?",
+          "A": "Sí. Elija \"No estoy seguro\" y cuéntenos un poco sobre su situación. Un agente le explicará sus opciones en palabras sencillas."
+        },
+        {
+          "Q": "¿La cotización personalizada es gratis?",
+          "A": "Sí. La cotización es gratis y no está obligado a comprar nada."
+        },
+        {
+          "Q": "¿Me pueden atender en español?",
+          "A": "Sí. Elija \"Español\" en el paso 1 y le contactará un agente que habla español. También atendemos en inglés e hindi."
+        }
+      ]
+    },
+    "FINAL": {
+      "TITLE": "¿Prefiere hablarlo con alguien?",
+      "TEXT": "Llame al (713) 357-7771 o visite cualquiera de nuestras 5 oficinas en Houston, de lunes a sábado, de 9 a.m. a 7 p.m. No necesita cita.",
+      "FIND": "Encontrar una oficina cerca de usted",
+      "CALL": "Llamar al (713) 357-7771"
     }
   },
   "GET_AUTO_QUOTE": {
@@ -1363,6 +2066,1115 @@
         }
       }
     }
+  },
+  "AUTO_QUOTE_PAGE": {
+    "BREADCRUMB": {
+      "ARIA": "Ruta de navegación",
+      "HOME": "Inicio",
+      "SECTION": "Seguros de auto",
+      "CURRENT": "Cotización"
+    },
+    "HERO": {
+      "TITLE": [
+        {
+          "t": "Cotice su "
+        },
+        {
+          "t": "seguro de auto en Texas",
+          "hl": "true"
+        }
+      ],
+      "LEAD": "Díganos sobre sus vehículos y conductores. Un agente con licencia compara más de 50 compañías y le muestra sus opciones lado a lado. Gratis y sin compromiso.",
+      "TRUST": [
+        {
+          "t": "4.8",
+          "b": "true"
+        },
+        {
+          "t": " en Google con más de 250 reseñas · Español · "
+        },
+        {
+          "t": "English",
+          "l": "en"
+        },
+        {
+          "t": " · Hindi · ¿Prefiere hablar con alguien? "
+        },
+        {
+          "t": "Llame al (713) 357-7771",
+          "h": "tel:+17133577771"
+        }
+      ]
+    },
+    "FORM": {
+      "ARIA": "Cotización de seguro de auto",
+      "STEPS_ARIA": "Pasos del formulario",
+      "STEP_OF": "Paso {{n}} de 6",
+      "LIVE": "Paso {{n}} de 6: {{title}}",
+      "STEP_TITLES": [
+        "Sus datos",
+        "Sus vehículos",
+        "Sus conductores",
+        "Cobertura e historial de manejo",
+        "¿Cómo prefiere que lo contactemos?",
+        "Revise su solicitud de cotización de auto"
+      ],
+      "STEP_DOTS": [
+        "Sus datos",
+        "Vehículos",
+        "Conductores",
+        "Cobertura",
+        "Contacto",
+        "Revisar"
+      ],
+      "NEXT": [
+        "Siguiente: Sus vehículos",
+        "Siguiente: Sus conductores",
+        "Siguiente: Su cobertura",
+        "Siguiente: Cómo contactarlo",
+        "Siguiente: Revisar"
+      ],
+      "BACK": "Atrás",
+      "TO_REVIEW": "Volver a la revisión",
+      "EDIT": "Editar",
+      "SUBMIT": "Enviar mi solicitud",
+      "SENDING": "Enviando…",
+      "OPTIONAL": "(opcional)",
+      "NOT_GIVEN": "No indicado",
+      "NONE": "Nada más",
+      "NAME": "Nombre y apellido",
+      "PHONE": "Número de teléfono",
+      "EMAIL": "Correo electrónico",
+      "ZIP": "Código postal",
+      "VEHICLE_N": "Vehículo {{n}}",
+      "DRIVER_N": "Conductor {{n}}",
+      "REMOVE": "Eliminar",
+      "REMOVE_V": "vehículo {{n}}",
+      "REMOVE_D": "conductor {{n}}",
+      "ADD_VEHICLE": "Agregar otro vehículo",
+      "ADD_DRIVER": "Agregar otro conductor",
+      "ADDED_V": "Se agregó el vehículo {{n}}.",
+      "REMOVED_V": "Se eliminó el vehículo {{n}}.",
+      "ADDED_D": "Se agregó el conductor {{n}}.",
+      "REMOVED_D": "Se eliminó el conductor {{n}}.",
+      "YEAR": "Año",
+      "YEAR_SELECT": "Elija",
+      "YEAR_OLD": "1989 o anterior",
+      "MAKE": "Marca",
+      "MODEL": "Modelo",
+      "VIN": "VIN",
+      "VIN_OPT": "(opcional: hace su cotización más precisa)",
+      "OWN_LEGEND": "El vehículo es",
+      "OWNS": [
+        {
+          "V": "owned",
+          "L": "Propio, ya pagado"
+        },
+        {
+          "V": "financed",
+          "L": "Financiado"
+        },
+        {
+          "V": "leased",
+          "L": "Arrendado (lease)"
+        }
+      ],
+      "LENDER": "Su prestamista normalmente exige cobertura completa. La cotizaremos para este vehículo.",
+      "USE_LEGEND": "Uso principal",
+      "USES": [
+        {
+          "V": "personal",
+          "L": "Personal"
+        },
+        {
+          "V": "commuting",
+          "L": "Ir al trabajo"
+        },
+        {
+          "V": "business",
+          "L": "Negocio"
+        },
+        {
+          "V": "rideshare",
+          "L": "Rideshare o entregas"
+        }
+      ],
+      "MILES": "Millas que maneja al año",
+      "PARKED": "¿Dónde lo estaciona de noche?",
+      "PARKED_HINT": "Código postal, si es distinto al suyo (opcional)",
+      "DOB": "Fecha de nacimiento",
+      "MARITAL_LEGEND": "Estado civil",
+      "MARITALS": [
+        {
+          "V": "single",
+          "L": "Soltero(a)"
+        },
+        {
+          "V": "married",
+          "L": "Casado(a)"
+        },
+        {
+          "V": "other",
+          "L": "Otro"
+        }
+      ],
+      "LICENSE_LEGEND": "Licencia de conducir",
+      "LICENSES": [
+        {
+          "V": "texas",
+          "L": "De Texas"
+        },
+        {
+          "V": "us",
+          "L": "De otro estado de EE. UU."
+        },
+        {
+          "V": "foreign",
+          "L": "Extranjera o internacional"
+        },
+        {
+          "V": "none",
+          "L": "Todavía no tengo licencia"
+        }
+      ],
+      "FIRST_AGE": "Edad cuando obtuvo su primera licencia",
+      "NO_LICENSE_NO": "No escriba números de licencia aquí. Su agente se los pedirá de forma segura si decide comprar.",
+      "COV_LEGEND": "¿Qué cobertura busca?",
+      "COVS": [
+        {
+          "V": "minimum",
+          "L": "Mínimo del estado (solo responsabilidad civil)"
+        },
+        {
+          "V": "full",
+          "L": "Cobertura completa"
+        },
+        {
+          "V": "unsure",
+          "L": "No estoy seguro: ayúdenme a elegir"
+        }
+      ],
+      "ACC_LEGEND": "Accidentes en los últimos 3 años (cualquier conductor)",
+      "TIX_LEGEND": "Multas de tránsito en los últimos 3 años (cualquier conductor)",
+      "COUNTS": [
+        {
+          "V": "0",
+          "L": "0"
+        },
+        {
+          "V": "1",
+          "L": "1"
+        },
+        {
+          "V": "2+",
+          "L": "2 o más"
+        },
+        {
+          "V": "unsure",
+          "L": "No estoy seguro"
+        }
+      ],
+      "SR_LEGEND": "¿Necesita un SR-22?",
+      "YNU": [
+        {
+          "V": "yes",
+          "L": "Sí"
+        },
+        {
+          "V": "no",
+          "L": "No"
+        },
+        {
+          "V": "unsure",
+          "L": "No estoy seguro"
+        }
+      ],
+      "SR_HELP": "El SR-22 es un formulario que su compañía de seguros presenta ante el estado para comprobar que usted tiene seguro. Un juez o el DPS de Texas le avisa si lo necesita.",
+      "INSURED_LEGEND": "¿Tiene seguro de auto actualmente?",
+      "YN": [
+        {
+          "V": "yes",
+          "L": "Sí"
+        },
+        {
+          "V": "no",
+          "L": "No"
+        }
+      ],
+      "CARRIER": "Compañía actual",
+      "RENEWAL": "Fecha de renovación",
+      "ALSO_LEGEND": "Cotícenme también",
+      "ALSO": [
+        {
+          "V": "home",
+          "L": "Casa o inquilinos"
+        },
+        {
+          "V": "commercial",
+          "L": "Comercial"
+        },
+        {
+          "V": "life",
+          "L": "Vida"
+        },
+        {
+          "V": "health",
+          "L": "Salud"
+        }
+      ],
+      "LANG_LEGEND": "Idioma preferido",
+      "LANGS": [
+        {
+          "V": "es",
+          "L": "Español"
+        },
+        {
+          "V": "en",
+          "L": "English",
+          "LG": "en"
+        },
+        {
+          "V": "hi",
+          "L": "Hindi"
+        }
+      ],
+      "METHOD_LEGEND": "Medio preferido",
+      "METHODS": [
+        {
+          "V": "text",
+          "L": "Mensaje de texto"
+        },
+        {
+          "V": "call",
+          "L": "Llamada"
+        },
+        {
+          "V": "email",
+          "L": "Correo electrónico"
+        }
+      ],
+      "TIME_LEGEND": "Mejor hora",
+      "TIMES": [
+        {
+          "V": "morning",
+          "L": "Mañana (9 a.m.–12 p.m.)"
+        },
+        {
+          "V": "afternoon",
+          "L": "Tarde (12 p.m.–4 p.m.)"
+        },
+        {
+          "V": "evening",
+          "L": "Tarde-noche (4 p.m.–7 p.m.)"
+        }
+      ],
+      "OFFICE": "Oficina preferida",
+      "NO_PREFERENCE": "Cualquiera",
+      "OFFICES": [
+        "Denver Harbor",
+        "Fondren Southwest",
+        "Westbury",
+        "Greater Inwood",
+        "Northside-Northline"
+      ],
+      "R_TITLES": [
+        "Sus datos",
+        "Vehículos",
+        "Conductores",
+        "Cobertura e historial",
+        "Preferencias de contacto"
+      ],
+      "R": {
+        "NAME": "Nombre",
+        "PHONE": "Teléfono",
+        "EMAIL": "Correo",
+        "ZIP": "Código postal",
+        "YMM": "Año, marca y modelo",
+        "VIN": "VIN",
+        "OWN": "El vehículo es",
+        "USE": "Uso principal",
+        "MILES": "Millas al año",
+        "PARKED": "Se estaciona de noche en",
+        "PARKED_V": "código postal {{zip}}",
+        "D_NAME": "Nombre",
+        "DOB": "Fecha de nacimiento",
+        "MARITAL": "Estado civil",
+        "LICENSE": "Licencia de conducir",
+        "FIRST_AGE": "Primera licencia",
+        "FIRST_AGE_V": "A los {{age}} años",
+        "COVERAGE": "Cobertura",
+        "ACCIDENTS": "Accidentes (3 años)",
+        "TICKETS": "Multas (3 años)",
+        "SR22": "SR-22",
+        "INSURED": "Tiene seguro",
+        "CARRIER": "Compañía actual",
+        "RENEWAL": "Fecha de renovación",
+        "ALSO": "Cotícenme también",
+        "LANG": "Idioma",
+        "METHOD": "Medio",
+        "TIME": "Mejor hora",
+        "OFFICE": "Oficina"
+      },
+      "CONSENT": [
+        {
+          "t": "Al hacer clic en \"Enviar mi solicitud\", acepta que A-State Insurance le contacte por teléfono, mensaje de texto o correo electrónico sobre su solicitud. Su consentimiento no es una condición de compra. Pueden aplicarse tarifas de mensajes y datos. Responda STOP para dejar de recibir mensajes. Solo compartimos su información con las compañías de seguros a las que pedimos cotizaciones. Consulte nuestra "
+        },
+        {
+          "t": "Política de privacidad",
+          "r": "privacyPolicy"
+        },
+        {
+          "t": "."
+        }
+      ],
+      "NEVER_SOLD": "Nunca vendemos su información.",
+      "ERR": {
+        "NAME": "Escriba su nombre y apellido.",
+        "PHONE_EMPTY": "Escriba su número de teléfono.",
+        "PHONE_INVALID": "Escriba un número de 10 dígitos, como (713) 555-0123.",
+        "EMAIL": "Escriba un correo como nombre@ejemplo.com, o déjelo en blanco.",
+        "ZIP_EMPTY": "Escriba su código postal.",
+        "ZIP_INVALID": "Escriba un código postal de 5 dígitos.",
+        "YEAR": "Elija el año.",
+        "MAKE": "Escriba la marca, como Toyota.",
+        "MODEL": "Escriba el modelo, como Camry.",
+        "VIN_LENGTH": "El VIN tiene 17 letras y números. Usted escribió {{n}}. O déjelo en blanco.",
+        "VIN_CHARS": "El VIN nunca usa las letras I, O ni Q. Revíselo o déjelo en blanco.",
+        "PZIP": "Escriba un código postal de 5 dígitos, o déjelo en blanco.",
+        "D_NAME": "Escriba el nombre y apellido del conductor.",
+        "DOB_EMPTY": "Escriba la fecha de nacimiento.",
+        "DOB_AGE": "Revise la fecha de nacimiento. El conductor debe tener al menos 15 años.",
+        "D_AGE": "Escriba una edad entre 14 y la edad actual del conductor, o déjelo en blanco.",
+        "EMAIL_NEEDED": "Agregue su correo o elija Mensaje de texto o Llamada.",
+        "EMAIL_NEEDED_INVALID": "Escriba un correo como nombre@ejemplo.com.",
+        "SUBMIT": "No pudimos enviar su solicitud. Sus respuestas siguen aquí. Inténtelo de nuevo o llame al (713) 357-7771."
+      },
+      "SUCCESS": {
+        "TITLE": "Gracias. Recibimos su solicitud de cotización de auto.",
+        "TEXT": "Un agente con licencia comparará compañías para su cotización y le contactará con sus opciones, por lo general en 5 horas hábiles."
+      }
+    },
+    "NEED": {
+      "TITLE": "Lo que necesita para cotizar su seguro de auto",
+      "ITEMS": [
+        "El nombre, la fecha de nacimiento y el tipo de licencia de cada conductor",
+        "El año, la marca y el modelo de cada vehículo, o su VIN",
+        "La página de declaraciones de su póliza actual, si tiene una",
+        "Los accidentes o multas de tránsito de los últimos 3 años"
+      ],
+      "TAIL": [
+        {
+          "t": "¿No tiene todo?",
+          "b": "true"
+        },
+        {
+          "t": " "
+        },
+        {
+          "t": "Empiece de todos modos.",
+          "h": "#quote"
+        },
+        {
+          "t": " Su agente le ayudará con lo que falte."
+        }
+      ]
+    },
+    "BASICS": {
+      "TITLE": "Lo básico del seguro de auto en Texas",
+      "ITEMS": [
+        {
+          "TITLE": "Cobertura mínima de Texas (30/60/25)",
+          "TEXT": [
+            {
+              "t": "Todo conductor en Texas debe tener un seguro de responsabilidad civil de al menos "
+            },
+            {
+              "t": "$30,000",
+              "b": "true"
+            },
+            {
+              "t": " por persona lesionada, hasta "
+            },
+            {
+              "t": "$60,000",
+              "b": "true"
+            },
+            {
+              "t": " por accidente y "
+            },
+            {
+              "t": "$25,000",
+              "b": "true"
+            },
+            {
+              "t": " por daños a la propiedad. Paga los daños que usted cause a otros. No repara su propio carro."
+            }
+          ]
+        },
+        {
+          "TITLE": "Cobertura completa (full coverage)",
+          "TEXT": [
+            {
+              "t": "Por lo general, incluye responsabilidad civil más colisión (daños a su carro en un accidente) y cobertura integral o comprehensive (robo, granizo, inundación, vandalismo). Los prestamistas normalmente la exigen en carros financiados o arrendados."
+            }
+          ]
+        },
+        {
+          "TITLE": "PIP y cobertura contra conductores sin seguro",
+          "TEXT": [
+            {
+              "t": "En Texas, las aseguradoras deben ofrecerle protección contra lesiones personales (PIP) y cobertura contra conductores sin seguro o con seguro insuficiente. Se incluyen a menos que usted las rechace por escrito. Le explicamos cuánto cuesta y qué cubre cada una para que usted decida."
+            }
+          ]
+        },
+        {
+          "TITLE": "SR-22",
+          "TEXT": [
+            {
+              "t": "Si un juez o el "
+            },
+            {
+              "t": "Departamento de Seguridad Pública de Texas (DPS)",
+              "h": "https://www.dps.texas.gov/",
+              "x": "true"
+            },
+            {
+              "t": " se lo exige, podemos cotizar un seguro de auto con "
+            },
+            {
+              "t": "SR-22",
+              "r": "sr22Insurance"
+            },
+            {
+              "t": " y pedir a la compañía que lo presente por usted. En Texas, normalmente se exige por 2 años."
+            }
+          ]
+        }
+      ],
+      "MORE": "Más información sobre el seguro de auto"
+    },
+    "FAQ": {
+      "TITLE": "Preguntas frecuentes sobre la cotización de seguro de auto",
+      "ITEMS": [
+        {
+          "Q": "¿Cuánto tarda una cotización de seguro de auto?",
+          "A": "El formulario toma unos 5 minutos. Después, un agente compara compañías y le contacta con sus opciones, por lo general en 5 horas hábiles."
+        },
+        {
+          "Q": "¿Puedo cotizar sin licencia de conducir de Texas?",
+          "A": "Sí. Algunas de nuestras compañías aseguran a conductores con licencia de otro estado o de otro país. Si todavía no tiene licencia, llámenos y le explicamos sus opciones."
+        },
+        {
+          "Q": "¿Cuál es la diferencia entre la cobertura mínima y la cobertura completa?",
+          "A": "La cobertura mínima (responsabilidad civil 30/60/25) paga los daños que usted cause a otras personas. La cobertura completa agrega colisión y cobertura integral, que también pagan la reparación o el reemplazo de su propio carro."
+        },
+        {
+          "Q": "¿La cotización afecta mi puntaje de crédito?",
+          "A": "No. Algunas compañías revisan un puntaje de seguro basado en el crédito al cotizar seguro de auto. Es una consulta suave y no afecta su puntaje de crédito."
+        },
+        {
+          "Q": "¿Necesito una cobertura especial para manejar con Uber, Lyft o hacer entregas?",
+          "A": "Normalmente, sí. La mayoría de las pólizas personales no le cubren mientras trabaja para una aplicación de viajes o entregas. Elija \"Rideshare o entregas\" en el formulario y le cotizaremos la cobertura correcta."
+        },
+        {
+          "Q": "¿Qué tan rápido puedo tener mi comprobante de seguro?",
+          "A": "En la mayoría de los casos, el mismo día en que compra su póliza. Su agente le puede enviar su tarjeta de seguro por mensaje de texto o correo electrónico."
+        },
+        {
+          "Q": "¿Puedo cotizar en persona en una de sus oficinas?",
+          "A": "Sí. Visite cualquiera de nuestras 5 oficinas en Houston, de lunes a sábado, de 9 a.m. a 7 p.m. No necesita cita. Traiga su licencia de conducir y los datos de su vehículo."
+        }
+      ]
+    },
+    "FINAL": {
+      "TITLE": "¿Prefiere hablar con un agente?",
+      "TEXT": [
+        {
+          "t": "Llame al "
+        },
+        {
+          "t": "(713) 357-7771",
+          "h": "tel:+17133577771"
+        },
+        {
+          "t": " o visite cualquiera de nuestras 5 oficinas en Houston. Comparamos con usted cotizaciones de seguro de auto en Texas, en español, inglés o hindi."
+        }
+      ],
+      "START": "Cotizar mi auto",
+      "FIND": "Encontrar una oficina cerca de usted"
+    },
+    "NEW_TAB": "(se abre en una pestaña nueva)"
+  },
+  "HOME_QUOTE_PAGE": {
+    "BREADCRUMB": {
+      "ARIA": "Ruta de navegación",
+      "HOME": "Inicio",
+      "SECTION": "Seguros de vivienda",
+      "CURRENT": "Cotización"
+    },
+    "HERO": {
+      "TITLE": [
+        {
+          "t": "Cotice su "
+        },
+        {
+          "t": "seguro de casa en Texas",
+          "hl": "true"
+        }
+      ],
+      "LEAD": "Díganos sobre su casa. Un agente con licencia compara más de 50 compañías, le explica qué cubre cada póliza, incluidos viento, granizo e inundación, y le muestra las opciones lado a lado. Gratis y sin compromiso.",
+      "TRUST": [
+        {
+          "t": "4.8",
+          "b": "true"
+        },
+        {
+          "t": " en Google con más de 250 reseñas · Español · "
+        },
+        {
+          "t": "English",
+          "l": "en"
+        },
+        {
+          "t": " · Hindi · ¿Prefiere hablar con alguien? "
+        },
+        {
+          "t": "Llame al (713) 357-7771",
+          "h": "tel:+17133577771"
+        }
+      ]
+    },
+    "FORM": {
+      "ARIA": "Cotización de seguro de casa",
+      "STEPS_ARIA": "Pasos del formulario",
+      "STEP_OF": "Paso {{n}} de 6",
+      "LIVE": "Paso {{n}} de 6: {{title}}",
+      "STEP_TITLES": [
+        "Su propiedad",
+        "Sobre la casa",
+        "Seguridad y reclamos",
+        "Cobertura actual e inundación",
+        "Sus datos y cómo contactarlo",
+        "Revise su solicitud de cotización de casa"
+      ],
+      "STEP_DOTS": [
+        "Propiedad",
+        "Casa",
+        "Seguridad",
+        "Cobertura",
+        "Contacto",
+        "Revisar"
+      ],
+      "NEXT": [
+        "Siguiente: Sobre la casa",
+        "Siguiente: Seguridad y reclamos",
+        "Siguiente: Su cobertura",
+        "Siguiente: Sus datos",
+        "Siguiente: Revisar"
+      ],
+      "BACK": "Atrás",
+      "TO_REVIEW": "Volver a la revisión",
+      "EDIT": "Editar",
+      "SUBMIT": "Enviar mi solicitud",
+      "SENDING": "Enviando…",
+      "OPTIONAL": "(opcional)",
+      "NOT_GIVEN": "No indicado",
+      "NONE": "Ninguno",
+      "ADDRESS": "Dirección de la propiedad",
+      "ADDRESS_HINT": "(calle, ciudad, código postal)",
+      "ADDRESS_PH": "123 Main St, Houston, TX 77020",
+      "USAGE_LEGEND": "¿Cómo usa la casa?",
+      "USAGES": [
+        {
+          "V": "primary",
+          "L": "Vivo aquí (casa principal)"
+        },
+        {
+          "V": "second",
+          "L": "Segunda casa o casa de vacaciones"
+        },
+        {
+          "V": "rental",
+          "L": "La rento a inquilinos"
+        }
+      ],
+      "RENTAL_NOTE": "Las casas de renta necesitan una póliza para propietarios que rentan (dwelling). Se la cotizamos.",
+      "PTYPE_LEGEND": "Tipo de propiedad",
+      "PTYPES": [
+        {
+          "V": "single-family",
+          "L": "Casa unifamiliar"
+        },
+        {
+          "V": "condo",
+          "L": "Condominio"
+        },
+        {
+          "V": "townhome",
+          "L": "Townhome"
+        },
+        {
+          "V": "mobile",
+          "L": "Casa móvil o prefabricada"
+        },
+        {
+          "V": "other",
+          "L": "Otro"
+        }
+      ],
+      "STATUS_LEGEND": "Usted",
+      "STATUSES": [
+        {
+          "V": "owner",
+          "L": "Ya es el dueño"
+        },
+        {
+          "V": "buying",
+          "L": "Está comprando esta casa"
+        },
+        {
+          "V": "refinancing",
+          "L": "Está refinanciando"
+        }
+      ],
+      "CLOSING": "Fecha estimada de cierre (closing)",
+      "HINT2": "Está bien si sus respuestas son aproximadas. Elija \"No estoy seguro\" si no lo sabe.",
+      "YEAR": "Año de construcción",
+      "YEAR_PH": "p. ej. 1998",
+      "SQFT": "Pies cuadrados",
+      "SQFT_PH": "p. ej. 1,800",
+      "STORIES_LEGEND": "Pisos",
+      "STORIES": [
+        {
+          "V": "1",
+          "L": "1"
+        },
+        {
+          "V": "2",
+          "L": "2"
+        },
+        {
+          "V": "3+",
+          "L": "3 o más"
+        }
+      ],
+      "ROOF_AGE_LEGEND": "Antigüedad del techo",
+      "ROOF_AGES": [
+        {
+          "V": "under-1",
+          "L": "Menos de 1 año"
+        },
+        {
+          "V": "1-10",
+          "L": "1–10 años"
+        },
+        {
+          "V": "11-20",
+          "L": "11–20 años"
+        },
+        {
+          "V": "20-plus",
+          "L": "Más de 20 años"
+        },
+        {
+          "V": "unsure",
+          "L": "No estoy seguro"
+        }
+      ],
+      "ROOF_TYPE_LEGEND": "Tipo de techo",
+      "ROOF_TYPES": [
+        {
+          "V": "asphalt",
+          "L": "Tejas de asfalto (shingles)"
+        },
+        {
+          "V": "metal",
+          "L": "Metal"
+        },
+        {
+          "V": "tile",
+          "L": "Teja"
+        },
+        {
+          "V": "wood",
+          "L": "Madera"
+        },
+        {
+          "V": "other",
+          "L": "Otro"
+        },
+        {
+          "V": "unsure",
+          "L": "No estoy seguro"
+        }
+      ],
+      "CONSTRUCTION_LEGEND": "Construcción",
+      "CONSTRUCTIONS": [
+        {
+          "V": "frame",
+          "L": "Madera (frame)"
+        },
+        {
+          "V": "brick",
+          "L": "Ladrillo o mampostería"
+        },
+        {
+          "V": "mixed",
+          "L": "Mixta"
+        },
+        {
+          "V": "unsure",
+          "L": "No estoy seguro"
+        }
+      ],
+      "FOUNDATION_LEGEND": "Cimiento",
+      "FOUNDATIONS": [
+        {
+          "V": "slab",
+          "L": "Losa de concreto (slab)"
+        },
+        {
+          "V": "pier",
+          "L": "Pilotes (pier and beam)"
+        },
+        {
+          "V": "unsure",
+          "L": "No estoy seguro"
+        }
+      ],
+      "ALARM_LEGEND": "¿Sistema de alarma monitoreado?",
+      "POOL_LEGEND": "¿Piscina?",
+      "TRAMP_LEGEND": "¿Trampolín?",
+      "DOGS_LEGEND": "¿Hay perros en la casa?",
+      "BREED": "Raza",
+      "CLAIMS_LEGEND": "¿Ha hecho reclamos al seguro de casa en los últimos 5 años?",
+      "YN": [
+        {
+          "V": "yes",
+          "L": "Sí"
+        },
+        {
+          "V": "no",
+          "L": "No"
+        }
+      ],
+      "YNU": [
+        {
+          "V": "yes",
+          "L": "Sí"
+        },
+        {
+          "V": "no",
+          "L": "No"
+        },
+        {
+          "V": "unsure",
+          "L": "No estoy seguro"
+        }
+      ],
+      "INSURED_LEGEND": "¿Tiene seguro de casa en esta propiedad ahora?",
+      "CARRIER": "Compañía actual",
+      "RENEWAL": "Fecha de renovación",
+      "FLOOD_LEGEND": "¿Quiere una cotización de seguro contra inundaciones?",
+      "FLOOD_HELP": "El seguro de casa no cubre los daños por inundación. La inundación necesita su propia póliza, y normalmente hay que esperar 30 días para que empiece.",
+      "ALSO_LEGEND": "Cotícenme también",
+      "ALSO": [
+        {
+          "V": "auto",
+          "L": "Auto"
+        },
+        {
+          "V": "life",
+          "L": "Vida"
+        },
+        {
+          "V": "umbrella",
+          "L": "Póliza paraguas (umbrella)"
+        }
+      ],
+      "NAME": "Nombre completo",
+      "PHONE": "Número de teléfono",
+      "EMAIL": "Correo electrónico",
+      "LANG_LEGEND": "Idioma preferido",
+      "LANGS": [
+        {
+          "V": "es",
+          "L": "Español"
+        },
+        {
+          "V": "en",
+          "L": "English",
+          "LG": "en"
+        },
+        {
+          "V": "hi",
+          "L": "Hindi"
+        }
+      ],
+      "METHOD_LEGEND": "Medio preferido",
+      "METHODS": [
+        {
+          "V": "text",
+          "L": "Mensaje de texto"
+        },
+        {
+          "V": "call",
+          "L": "Llamada"
+        },
+        {
+          "V": "email",
+          "L": "Correo electrónico"
+        }
+      ],
+      "TIME_LEGEND": "Mejor hora",
+      "TIMES": [
+        {
+          "V": "morning",
+          "L": "Mañana (9 a.m.–12 p.m.)"
+        },
+        {
+          "V": "afternoon",
+          "L": "Tarde (12 p.m.–4 p.m.)"
+        },
+        {
+          "V": "evening",
+          "L": "Tarde-noche (4 p.m.–7 p.m.)"
+        }
+      ],
+      "OFFICE": "Oficina preferida",
+      "NO_PREFERENCE": "Cualquiera",
+      "OFFICES": [
+        "Denver Harbor",
+        "Fondren Southwest",
+        "Westbury",
+        "Greater Inwood",
+        "Northside-Northline"
+      ],
+      "FLAGS": {
+        "rental": "Casa de renta: póliza para propietarios que rentan",
+        "mobile": "Casa móvil o prefabricada",
+        "buying": "Comprando: cierre pronto"
+      },
+      "FLAGS_ARIA": "Notas para su agente",
+      "R_TITLES": [
+        "Su propiedad",
+        "Sobre la casa",
+        "Seguridad y reclamos",
+        "Cobertura actual e inundación",
+        "Sus datos y preferencias de contacto"
+      ],
+      "R": {
+        "ADDRESS": "Dirección",
+        "USAGE": "Cómo usa la casa",
+        "PTYPE": "Tipo de propiedad",
+        "STATUS": "Usted",
+        "CLOSING": "Fecha de cierre",
+        "YEAR": "Año de construcción",
+        "SQFT": "Pies cuadrados",
+        "STORIES": "Pisos",
+        "ROOF_AGE": "Antigüedad del techo",
+        "ROOF_TYPE": "Tipo de techo",
+        "CONSTRUCTION": "Construcción",
+        "FOUNDATION": "Cimiento",
+        "ALARM": "Alarma monitoreada",
+        "POOL": "Piscina",
+        "TRAMP": "Trampolín",
+        "DOGS": "Perros",
+        "BREED": "Raza",
+        "CLAIMS": "Reclamos (5 años)",
+        "INSURED": "Tiene seguro",
+        "CARRIER": "Compañía actual",
+        "RENEWAL": "Fecha de renovación",
+        "FLOOD": "Cotización de inundación",
+        "ALSO": "Cotícenme también",
+        "NAME": "Nombre",
+        "PHONE": "Teléfono",
+        "EMAIL": "Correo",
+        "LANG": "Idioma",
+        "METHOD": "Medio",
+        "TIME": "Mejor hora",
+        "OFFICE": "Oficina"
+      },
+      "CONSENT": [
+        {
+          "t": "Al hacer clic en \"Enviar mi solicitud\", acepta que A-State Insurance le contacte por teléfono, mensaje de texto o correo electrónico sobre su solicitud. Su consentimiento no es una condición de compra. Pueden aplicarse tarifas de mensajes y datos. Responda STOP para dejar de recibir mensajes. Solo compartimos su información con las compañías de seguros a las que pedimos cotizaciones. Consulte nuestra "
+        },
+        {
+          "t": "Política de privacidad",
+          "r": "privacyPolicy"
+        },
+        {
+          "t": "."
+        }
+      ],
+      "NEVER_SOLD": "Nunca vendemos su información.",
+      "ERR": {
+        "ADDR_EMPTY": "Escriba la dirección de la propiedad.",
+        "ADDR_ZIP": "Agregue el código postal al final, como 123 Main St, Houston, TX 77020.",
+        "CLOSE_PAST": "Elija una fecha que todavía no haya pasado.",
+        "YEAR": "Escriba un año como 1998, o déjelo en blanco.",
+        "SQFT": "Escriba los pies cuadrados, como 1,800, o déjelo en blanco.",
+        "NAME": "Escriba su nombre completo.",
+        "PHONE_EMPTY": "Escriba su número de teléfono.",
+        "PHONE_INVALID": "Escriba un número de 10 dígitos, como (713) 555-0123.",
+        "EMAIL": "Escriba un correo como nombre@ejemplo.com, o déjelo en blanco.",
+        "EMAIL_NEEDED": "Agregue su correo o elija Mensaje de texto o Llamada.",
+        "SUBMIT": "No pudimos enviar su solicitud. Sus respuestas siguen aquí. Inténtelo de nuevo o llame al (713) 357-7771."
+      },
+      "SUCCESS": {
+        "TITLE": "Gracias. Recibimos su solicitud de cotización de casa.",
+        "TEXT": "Un agente con licencia comparará compañías para su casa y le contactará con sus opciones, por lo general en 5 horas hábiles.",
+        "CLOSING": "Daremos prioridad a su cotización antes de su cierre.",
+        "ALSO": "También cotizaremos sus otros seguros y revisaremos si califica para un descuento por varias pólizas."
+      }
+    },
+    "NEED": {
+      "TITLE": "Lo que necesita para cotizar su seguro de casa",
+      "ITEMS": [
+        "La dirección de la propiedad",
+        "La antigüedad y el tipo de techo, aproximados",
+        "El año de construcción y los pies cuadrados, si los sabe",
+        "La página de declaraciones de su póliza actual, si tiene una",
+        "Si está comprando: la fecha de cierre y, cuando esté listo para contratar, el nombre de su prestamista y su número de préstamo"
+      ]
+    },
+    "BASICS": {
+      "TITLE": "Lo básico del seguro de casa en Texas",
+      "ITEMS": [
+        {
+          "TITLE": [
+            {
+              "t": "Qué cubre una póliza de casa"
+            }
+          ],
+          "TEXT": [
+            {
+              "t": "La mayoría de las pólizas cubren la casa, otras estructuras como cercas y garajes, sus pertenencias, la responsabilidad civil si alguien se lastima en su propiedad y los gastos adicionales de vivienda si no puede vivir en su casa después de un daño cubierto."
+            }
+          ]
+        },
+        {
+          "TITLE": [
+            {
+              "t": "Qué no cubre: "
+            },
+            {
+              "t": "inundaciones",
+              "r": "floodInsurance"
+            }
+          ],
+          "TEXT": [
+            {
+              "t": "Una póliza de casa normal en Texas no cubre los daños por subida de agua. Necesita una póliza de inundación aparte, a través del "
+            },
+            {
+              "t": "Programa Nacional de Seguro contra Inundaciones (NFIP)",
+              "h": "https://www.floodsmart.gov/",
+              "x": "true"
+            },
+            {
+              "t": " o de una compañía privada. La mayoría de estas pólizas tienen un periodo de espera de 30 días, así que no espere a la temporada de huracanes."
+            }
+          ]
+        },
+        {
+          "TITLE": [
+            {
+              "t": "Deducibles por viento y granizo"
+            }
+          ],
+          "TEXT": [
+            {
+              "t": "Muchas pólizas en Texas tienen un deducible aparte para viento y granizo, que suele ser un porcentaje del valor asegurado de su casa, como 1% o 2%. En una casa asegurada por $300,000, un deducible de 2% es de $6,000. Le mostramos el deducible en cada cotización."
+            }
+          ]
+        },
+        {
+          "TITLE": [
+            {
+              "t": "¿Vive cerca de la costa?"
+            }
+          ],
+          "TEXT": [
+            {
+              "t": "En algunas zonas costeras, las compañías normales excluyen los daños por viento, y esa cobertura la da la "
+            },
+            {
+              "t": "Asociación de Seguros contra Tormentas de Texas (TWIA)",
+              "h": "https://www.twia.org/",
+              "x": "true"
+            },
+            {
+              "t": ". Le diremos si su dirección la necesita."
+            }
+          ]
+        },
+        {
+          "TITLE": [
+            {
+              "t": "¿Va a comprar casa?"
+            }
+          ],
+          "TEXT": [
+            {
+              "t": "Su prestamista le pedirá comprobante de seguro antes del cierre. Empiece a cotizar 2 o 3 semanas antes de la fecha de cierre."
+            }
+          ]
+        }
+      ],
+      "MORE": "Más información sobre el seguro de casa"
+    },
+    "FAQ": {
+      "TITLE": "Preguntas frecuentes sobre la cotización de seguro de casa",
+      "ITEMS": [
+        {
+          "Q": "¿Cuánto tarda una cotización de seguro de casa?",
+          "A": "El formulario toma unos 5 minutos. Después, un agente compara compañías y le contacta, por lo general en 5 horas hábiles."
+        },
+        {
+          "Q": "¿El seguro de casa cubre inundaciones en Texas?",
+          "A": "No. Las pólizas de casa normales no cubren los daños por inundación. Necesita una póliza de inundación aparte, y la mayoría tienen un periodo de espera de 30 días antes de empezar."
+        },
+        {
+          "Q": "¿Por qué importa la antigüedad de mi techo?",
+          "A": "En Texas, el granizo y el viento son las causas más comunes de reclamos de casa, así que la antigüedad y el tipo de techo afectan el precio y la cobertura. Algunas compañías pagan menos por un techo viejo o no lo cubren."
+        },
+        {
+          "Q": "Voy a cerrar la compra de una casa pronto. ¿Qué tan rápido me pueden cotizar?",
+          "A": "Indique su fecha de cierre en el formulario o llame al (713) 357-7771. Le daremos prioridad a su cotización y enviaremos el comprobante de seguro a su prestamista."
+        },
+        {
+          "Q": "¿Pueden asegurar una casa que rento?",
+          "A": "Sí. Las casas de renta necesitan una póliza para propietarios que rentan (dwelling), no una póliza de casa normal. Elija \"La rento a inquilinos\" y le cotizaremos la correcta."
+        },
+        {
+          "Q": "¿Aseguran casas móviles y prefabricadas?",
+          "A": "Sí. Elija \"Casa móvil o prefabricada\" en el formulario y su agente cotizará con compañías que se especializan en ellas."
+        },
+        {
+          "Q": "¿La cotización afecta mi puntaje de crédito?",
+          "A": "No. Algunas compañías revisan un puntaje de seguro basado en el crédito al cotizar seguro de casa. Es una consulta suave y no afecta su puntaje de crédito."
+        }
+      ]
+    },
+    "FINAL": {
+      "TITLE": "¿Prefiere hablar con un agente?",
+      "TEXT": [
+        {
+          "t": "Llame al "
+        },
+        {
+          "t": "(713) 357-7771",
+          "h": "tel:+17133577771"
+        },
+        {
+          "t": " o visite cualquiera de nuestras 5 oficinas en Houston. Comparamos con usted cotizaciones de seguro de casa en Texas, en español, inglés o hindi."
+        }
+      ],
+      "START": "Cotizar mi casa",
+      "FIND": "Encontrar una oficina cerca de usted"
+    },
+    "NEW_TAB": "(se abre en una pestaña nueva)"
   },
   "GET_HOME_QUOTE": {
     "HEADING": "Compare Cotizaciones de Seguro de Hogar y Ahorre",
@@ -62088,7 +63900,7 @@
       "TITLE": [
         {
           "t": "Servicios de seguros en Texas",
-          "hl": true
+          "hl": "true"
         },
         {
           "t": ": cobertura para cada texano"
@@ -62621,7 +64433,7 @@
         },
         {
           "t": "desde 2018",
-          "hl": true
+          "hl": "true"
         }
       ],
       "LEAD": "A-State Insurance es una agencia de seguros independiente en Houston. Nuestros agentes con licencia comparan coberturas de más de 50 compañías y le explican sus opciones en español, inglés o hindi.",
@@ -63915,7 +65727,7 @@
         },
         {
           "t": "A-State Insurance",
-          "hl": true
+          "hl": "true"
         }
       ],
       "LEAD": "Llámenos, envíenos un texto o un correo, o visítenos. Abierto de lunes a sábado, de 9 a.m. a 7 p.m., hora del centro. Respondemos la mayoría de los mensajes en 1 hora hábil, en español, inglés o hindi.",

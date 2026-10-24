@@ -14,20 +14,22 @@
 
 <!-- Hero -->
 <section class="hero" aria-labelledby="hero-title">
+  <div class="hf-container crumbs-row">
+    <nav class="crumbs" [attr.aria-label]="'CONTACT_PAGE.BREADCRUMB.ARIA' | translate">
+      <ol>
+        <li><a [routerLink]="route('home')">{{ 'CONTACT_PAGE.BREADCRUMB.HOME' | translate }}</a></li>
+        <li aria-current="page">{{ 'CONTACT_PAGE.BREADCRUMB.CURRENT' | translate }}</li>
+      </ol>
+    </nav>
+  </div>
   <div class="hf-container hero-grid">
     <div class="hero-copy">
-      <nav class="crumbs" [attr.aria-label]="'CONTACT_PAGE.BREADCRUMB.ARIA' | translate">
-        <ol>
-          <li><a [routerLink]="route('home')">{{ 'CONTACT_PAGE.BREADCRUMB.HOME' | translate }}</a></li>
-          <li aria-current="page">{{ 'CONTACT_PAGE.BREADCRUMB.CURRENT' | translate }}</li>
-        </ol>
-      </nav>
       <h1 id="hero-title"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('CONTACT_PAGE.HERO.TITLE') }"></ng-container></h1>
-      <p class="hf-lead">{{ 'CONTACT_PAGE.HERO.LEAD' | translate }}</p>
       <div class="btn-row">
         <a class="hf-btn btn-primary btn-lg" href="tel:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'CONTACT_PAGE.HERO.CTA_CALL' | translate }}</a>
         <a class="hf-btn btn-outline btn-lg" [routerLink]="route('getAQuote')">{{ 'CONTACT_PAGE.HERO.CTA_QUOTE' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
       </div>
+      <p class="hf-lead">{{ 'CONTACT_PAGE.HERO.LEAD' | translate }}</p>
     </div>
     <aside class="hours-card" [attr.aria-label]="'CONTACT_PAGE.HOURS.ARIA' | translate">
       <span class="hc-title">{{ 'CONTACT_PAGE.HOURS.TITLE' | translate }}</span>
@@ -230,7 +232,7 @@
 </section>
 
 <!-- Final CTA -->
-<section class="section final" id="final-cta" aria-labelledby="final-title">
+<section class="section final bk-G" id="final-cta" aria-labelledby="final-title">
   <div class="hf-container ready-band">
     <h2 id="final-title">{{ 'CONTACT_PAGE.FINAL.TITLE' | translate }}</h2>
     <p><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('CONTACT_PAGE.FINAL.TEXT') }"></ng-container></p>

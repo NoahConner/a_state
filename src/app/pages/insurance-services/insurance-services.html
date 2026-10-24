@@ -29,25 +29,30 @@
 
 <!-- Hero -->
 <section class="hero" aria-labelledby="hero-title">
+  <div class="hf-container crumbs-row">
+    <nav class="crumbs" [attr.aria-label]="'SERVICES_PAGE.BREADCRUMB.ARIA' | translate">
+      <ol>
+        <li><a [routerLink]="route('home')">{{ 'SERVICES_PAGE.BREADCRUMB.HOME' | translate }}</a></li>
+        <li aria-current="page">{{ 'SERVICES_PAGE.BREADCRUMB.CURRENT' | translate }}</li>
+      </ol>
+    </nav>
+  </div>
   <div class="hf-container hero-grid">
     <div class="hero-copy">
-      <nav class="crumbs" [attr.aria-label]="'SERVICES_PAGE.BREADCRUMB.ARIA' | translate">
-        <ol>
-          <li><a [routerLink]="route('home')">{{ 'SERVICES_PAGE.BREADCRUMB.HOME' | translate }}</a></li>
-          <li aria-current="page">{{ 'SERVICES_PAGE.BREADCRUMB.CURRENT' | translate }}</li>
-        </ol>
-      </nav>
       <h1 id="hero-title"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: text('SERVICES_PAGE.HERO.TITLE') }"></ng-container></h1>
+    </div>
+
+    <div class="quote-card" id="quote">
+      <app-quote-form formId="hero" ns="SERVICES_PAGE.FORM"></app-quote-form>
+    </div>
+
+    <div class="hero-sub">
       <p class="hf-lead"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: text('SERVICES_PAGE.HERO.LEAD') }"></ng-container></p>
       <ul class="checks">
         <li><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg>{{ 'SERVICES_PAGE.HERO.CHECK_FREE' | translate }}</li>
         <li><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg>{{ 'SERVICES_PAGE.HERO.CHECK_CARRIERS' | translate }}</li>
         <li><span class="chip-yellow" lang="es">Se habla español</span></li>
       </ul>
-    </div>
-
-    <div class="quote-card" id="quote">
-      <app-quote-form formId="hero" ns="SERVICES_PAGE.FORM"></app-quote-form>
     </div>
   </div>
 </section>
@@ -114,7 +119,7 @@
 </section>
 
 <!-- Why Texas is different -->
-<section class="section texas" id="texas" aria-labelledby="texas-h">
+<section class="section texas bk-R" id="texas" aria-labelledby="texas-h">
   <div class="hf-container">
     <div class="section-head">
       <h2 id="texas-h">{{ 'SERVICES_PAGE.TEXAS.TITLE' | translate }}</h2>
@@ -177,7 +182,7 @@
 </section>
 
 <!-- Final CTA -->
-<section class="section final" id="final-cta" aria-labelledby="final-title">
+<section class="section final bk-R" id="final-cta" aria-labelledby="final-title">
   <div class="hf-container final-grid">
     <div class="intro">
       <h2 id="final-title">{{ 'SERVICES_PAGE.FINAL.TITLE' | translate }}</h2>

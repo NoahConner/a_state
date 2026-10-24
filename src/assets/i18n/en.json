@@ -1099,148 +1099,845 @@
     }
   },
   "GET_QUOTE": {
-    "HEADING": "Insurance Made Simple. Get Your Best Rate Today",
-    "QUOTE_TYPE": {
-      "TITLE": "Select Your Quote Type",
-      "DESCRIPTION": "We shop multiple carriers to find your best rate in Texas",
-      "CARD1": {
-        "TITLE": "Auto Insurance",
-        "DESC": "Affordable rates for all drivers, regardless of past records or claims.",
-        "BUTTON": "Start Auto Quote"
-      },
-      "CARD2": {
-        "TITLE": "Homeowners Insurance",
-        "DESC": "Protecting your homes from unpredictable Texas weather.",
-        "BUTTON": "Start Home Quote"
-      },
-      "CARD3": {
-        "TITLE": "Commercial Insurance",
-        "DESC": "Custom liability and asset protection for local Texas entrepreneurs.",
-        "BUTTON": "Start Business Quote"
-      },
-      "CARD4": {
-        "TITLE": "Life Insurance",
-        "DESC": "Flexible Term and Whole Life policies to secure your family’s legacy.",
-        "BUTTON": "Start Life Quote"
-      },
-      "CARD5": {
-        "TITLE": "Health Insurance",
-        "DESC": "Simplified medical coverage for individuals and families in our community.",
-        "BUTTON": "Start Health Quote"
-      },
-      "CARD6": {
-        "TITLE": "Surety Bonds",
-        "DESC": "Essential bonds for trade to stay compliant and win projects.",
-        "BUTTON": "Start Bond Quote"
-      },
-      "CARD7": {
-        "TITLE": "Custom Quote",
-        "DESC": "Need to bundle for extra savings, or can't find your specific policy? Let us build it.",
-        "BUTTON": "Request Custom Quote"
+    "BREADCRUMB": {
+      "ARIA": "Breadcrumb",
+      "HOME": "Home",
+      "CURRENT": "Get a Quote"
+    },
+    "HERO": {
+      "TITLE": [
+        {
+          "t": "Get a Free "
+        },
+        {
+          "t": "Insurance Quote",
+          "hl": "true"
+        },
+        {
+          "t": " in Texas"
+        }
+      ],
+      "CTA_QUOTE": "Start My Free Quote",
+      "CTA_CALL": "Call (713) 357-7771",
+      "LEAD": [
+        {
+          "t": "Tell us what you need to cover. A licensed agent compares quotes from 50+ insurance carriers and shows you the options side by side. No cost, no obligation. "
+        },
+        {
+          "t": "Se habla español.",
+          "es": "true"
+        }
+      ],
+      "TRUST": [
+        {
+          "t": "4.8",
+          "b": "true"
+        },
+        {
+          "t": " on Google from 250+ reviews · Texas-licensed agency · English · "
+        },
+        {
+          "t": "Español",
+          "es": "true"
+        },
+        {
+          "t": " · Hindi"
+        }
+      ]
+    },
+    "HOURS": {
+      "ARIA": "Agent hours",
+      "TITLE": "Agents available · Central Time",
+      "WEEK": "Monday–Saturday",
+      "WEEK_TIME": "9:00 AM–7:00 PM",
+      "SUNDAY": "Sunday",
+      "CLOSED": "Closed",
+      "DEFAULT": "Mon–Sat, 9 AM–7 PM",
+      "OPEN": "Open now · until 7 PM",
+      "OPENS_TODAY": "Closed now · opens today at 9 AM",
+      "OPENS_MONDAY": "Closed now · opens Monday at 9 AM",
+      "OPENS_TOMORROW": "Closed now · opens tomorrow at 9 AM",
+      "REPLY": "No cost, no obligation"
+    },
+    "OTP": {
+      "LABEL": "On this page",
+      "ITEMS": [
+        "Coverage",
+        "How It Works",
+        "Request a Quote",
+        "Why A-State",
+        "What You'll Need",
+        "Offices",
+        "FAQs"
+      ]
+    },
+    "COVERAGE": {
+      "TITLE": "Choose Your Coverage to Start a Texas Insurance Quote",
+      "ITEMS": [
+        {
+          "TITLE": "Auto Insurance",
+          "TEXT": "Car, motorcycle, SR-22 filings & more",
+          "CTA": "Start Auto Quote"
+        },
+        {
+          "TITLE": "Homeowners Insurance",
+          "TEXT": "Home, renters, condo, and flood.",
+          "CTA": "Start Home Quote"
+        },
+        {
+          "TITLE": "Commercial Insurance",
+          "TEXT": "General liability, business owner's policy (BOP), commercial auto and workers' comp.",
+          "CTA": "Start Business Quote"
+        },
+        {
+          "TITLE": "Life Insurance",
+          "TEXT": "Term, whole life, and final expense.",
+          "CTA": "Start Life Quote"
+        },
+        {
+          "TITLE": "Health Insurance",
+          "TEXT": "Individual and family plans, and Medicare Supplement.",
+          "CTA": "Start Health Quote"
+        },
+        {
+          "TITLE": "Surety Bonds",
+          "TEXT": "License and permit, contract and notary bonds.",
+          "CTA": "Request Bond Quote"
+        }
+      ],
+      "UNSURE": {
+        "TITLE": "Not Sure What You Need?",
+        "TEXT": "Tell us about your situation and an agent will recommend the right coverage.",
+        "CTA": "Request A Custom Quote"
       }
     },
-    "ADVANTAGE": {
-      "HEADING": "The A-State Advantage",
-      "CARD1": {
-        "TITLE": "Expertise in Your Language ",
-        "DESC": "Insurance is easier when you speak the same language. Our professional agents are fluent in English, Spanish, and Hindi, ensuring you fully understand your coverage, your rights, and your costs—no details lost in translation."
-      },
-      "CARD2": {
-        "TITLE": "Deeply Rooted in the Community",
-        "DESC": "We don’t just work in Texas; we live here. We are proud to be a trusted resource for our neighbors across Houston and the surrounding areas. Whether you visit one of our local offices in person or call us from home, we understand the specific needs of our community and are here to help."
-      },
-      "CARD3": {
-        "TITLE": "Independent Choice",
-        "DESC": "As an independent agency and broker, we don’t work for the insurance companies—we work for you. While a single company can only offer one price, we compare multiple top-rated carriers to find the most competitive rates and the ideal premium for your budget."
-      }
+    "STEPS": {
+      "TITLE": "How to Get Your Insurance Quote in 3 Steps",
+      "ITEMS": [
+        {
+          "TITLE": "Tell us what you need.",
+          "TEXT": "Choose a coverage type and answer a few quick questions online, by phone or at any of our offices."
+        },
+        {
+          "TITLE": "We compare carriers for you.",
+          "TEXT": "A licensed agent checks rates and coverage with our 50+ carrier partners."
+        },
+        {
+          "TITLE": "Choose with no pressure.",
+          "TEXT": "Review your options side by side, ask anything, and buy only if it's right for you."
+        }
+      ]
     },
-    "VISIT": {
-      "HEADING1": "Visit Us Today",
-      "HEADING2": "Walk-Ins Always Welcome",
-      "DESC": "Skip the stress of scheduling appointments and get the personal service you deserve. Whether you have a quick question or need a comprehensive policy review, our doors are open at all our Houston-area locations for a face-to-face consultation. Our agents are ready to assist you in English, Spanish, or Hindi, ensuring you experience the A-State difference—where our community always comes first.",
-      "BUTTON": "Find A-State Near You"
+    "FORM": {
+      "TITLE": "Request Your Free Quote",
+      "NEXT_LABEL": "What happens next:",
+      "NEXT": "An agent from the office closest to you will call or text you, usually within 5 business hours, with your options.",
+      "CALL": "Call (713) 357-7771",
+      "TEXT_US": "Text us",
+      "NAME": "Full Name",
+      "PHONE": "Phone Number",
+      "EMAIL": "Email",
+      "ZIP": "ZIP Code",
+      "OPTIONAL": "(optional)",
+      "TYPE": "Insurance Type",
+      "TYPES": [
+        {
+          "V": "auto",
+          "L": "Auto"
+        },
+        {
+          "V": "home",
+          "L": "Homeowners"
+        },
+        {
+          "V": "commercial",
+          "L": "Commercial"
+        },
+        {
+          "V": "life",
+          "L": "Life"
+        },
+        {
+          "V": "health",
+          "L": "Health"
+        },
+        {
+          "V": "bond",
+          "L": "Surety Bond"
+        },
+        {
+          "V": "unsure",
+          "L": "Not sure"
+        }
+      ],
+      "LANG": "Preferred Language",
+      "LANGS": [
+        {
+          "V": "en",
+          "L": "English"
+        },
+        {
+          "V": "es",
+          "L": "Español"
+        },
+        {
+          "V": "hi",
+          "L": "Hindi"
+        }
+      ],
+      "OFFICE": "Preferred Office",
+      "NO_PREFERENCE": "No preference",
+      "TIME": "Best Time to Contact",
+      "TIMES": [
+        {
+          "V": "morning",
+          "L": "Morning"
+        },
+        {
+          "V": "afternoon",
+          "L": "Afternoon"
+        },
+        {
+          "V": "evening",
+          "L": "Evening"
+        }
+      ],
+      "MESSAGE": "Anything we should know?",
+      "PRIVACY": "Please don't send license, policy, or payment numbers through this form.",
+      "SUBMIT": "Get My Free Quote",
+      "ERR_NAME": "Enter your full name.",
+      "ERR_PHONE_EMPTY": "Enter your phone number.",
+      "ERR_PHONE_INVALID": "Enter a 10-digit phone number, like (713) 555-0123.",
+      "ERR_EMAIL": "Enter an email like name@example.com, or leave it blank.",
+      "ERR_ZIP_EMPTY": "Enter your ZIP code.",
+      "ERR_ZIP_INVALID": "Enter a 5-digit ZIP code.",
+      "ERR_TYPE": "Choose an insurance type."
+    },
+    "WHY": {
+      "TITLE": "Why Texans Get Their Insurance Quotes at A-State",
+      "ITEMS": [
+        {
+          "TITLE": "We work for you, not one insurance company.",
+          "TEXT": "As an independent agency, we compare 50+ carriers, so you see more than one price and more than one policy."
+        },
+        {
+          "TITLE": "Help in your language.",
+          "TEXT": "Our agents speak English, Spanish and Hindi, so you can ask every question and understand every answer."
+        },
+        {
+          "TITLE": "Local offices in Houston.",
+          "TEXT": "Five neighborhood offices, open Monday–Saturday, 9 AM–7 PM. Walk in, no appointment needed."
+        },
+        {
+          "TITLE": "No spam, no sales pressure.",
+          "TEXT": "We only contact you about the quote you asked for, and you never have to buy."
+        },
+        {
+          "TITLE": "Help after you buy.",
+          "TEXT": "We stay your agent for renewals, policy changes and claims paperwork."
+        }
+      ]
+    },
+    "TRUST": {
+      "TITLE": "Trusted by Texans",
+      "ITEMS": [
+        [
+          {
+            "t": "4.8 on Google from 250+ reviews across our 5 offices"
+          }
+        ],
+        [
+          {
+            "t": "50+ carrier partners"
+          }
+        ],
+        [
+          {
+            "t": "Licensed by the Texas Department of Insurance, license "
+          },
+          {
+            "t": "#[number]",
+            "p": "true"
+          }
+        ],
+        [
+          {
+            "t": "Serving Texas since 2018"
+          }
+        ]
+      ]
+    },
+    "NEED": {
+      "TITLE": "What You'll Need for Your Quote",
+      "LEAD": "Having these ready makes your quote faster and more accurate.",
+      "START": "Don't have everything? Start anyway. Your agent will help you fill in the rest.",
+      "CTA": "Start My Free Quote",
+      "ITEMS": [
+        {
+          "TITLE": "Auto",
+          "TEXT": "a driver's license for each driver, each vehicle's VIN (or year, make, and model), and your current policy's declarations page if you have one."
+        },
+        {
+          "TITLE": "Home or renters",
+          "TEXT": "the property address, the year the home was built, the roof's age, and your current policy if you have one."
+        },
+        {
+          "TITLE": "Business",
+          "TEXT": "your business type and address, annual revenue, number of employees, and payroll (for workers' comp)."
+        },
+        {
+          "TITLE": "Life",
+          "TEXT": "your date of birth, the coverage amount you're considering, and basic health information."
+        },
+        {
+          "TITLE": "Health",
+          "TEXT": "the ZIP code and date of birth for each person to be covered."
+        }
+      ]
+    },
+    "OFFICES": {
+      "TITLE": "Prefer to Talk to Someone? Visit or Call.",
+      "LEAD": [
+        {
+          "t": "Call "
+        },
+        {
+          "t": "(713) 357-7771",
+          "h": "tel:+17133577771"
+        },
+        {
+          "t": " to speak with a bilingual agent, or walk in to any office Monday–Saturday, 9 AM–7 PM. No appointment needed."
+        }
+      ],
+      "CTA": "Find the Office Nearest You",
+      "ITEMS": [
+        {
+          "NAME": "Denver Harbor",
+          "ADDRESS": "707 Shotwell St, Suite A, Houston, TX 77020",
+          "PHONE": "(281) 749-1900"
+        },
+        {
+          "NAME": "Fondren Southwest",
+          "ADDRESS": "11503 Southwest Fwy, Suite B, Houston, TX 77031",
+          "PHONE": "(281) 506-4200"
+        },
+        {
+          "NAME": "Westbury",
+          "ADDRESS": "10547 S Post Oak Rd, Houston, TX 77035",
+          "PHONE": "(281) 406-1900"
+        },
+        {
+          "NAME": "Greater Inwood",
+          "ADDRESS": "5712 Antoine Dr, Houston, TX 77091",
+          "PHONE": "(713) 263-9800"
+        },
+        {
+          "NAME": "Northside-Northline",
+          "ADDRESS": "5206 Airline Dr, Suite G, Houston, TX 77022",
+          "PHONE": "(281) 504-7444"
+        }
+      ]
+    },
+    "FAQ": {
+      "TITLE": "Frequently Asked Questions About Getting a Quote",
+      "ITEMS": [
+        {
+          "Q": "Is an insurance quote really free?",
+          "A": [
+            {
+              "t": "Yes. Getting a quote costs nothing, and you don't have to buy anything."
+            }
+          ]
+        },
+        {
+          "Q": "How long does it take to get a quote?",
+          "A": [
+            {
+              "t": "The online form takes about 5 minutes. An agent then compares carriers and contacts you with your options, usually within 5 business hours."
+            }
+          ]
+        },
+        {
+          "Q": "Will requesting a quote affect my credit score?",
+          "A": [
+            {
+              "t": "No. Some carriers check a credit-based insurance score when quoting auto or home insurance. That check is a soft inquiry, and it does not affect your credit score."
+            }
+          ]
+        },
+        {
+          "Q": "Do I have to buy a policy after getting a quote?",
+          "A": [
+            {
+              "t": "No. You can review your options, ask questions, and decide with no pressure and no obligation."
+            }
+          ]
+        },
+        {
+          "Q": "What information do I need to get a quote?",
+          "A": [
+            {
+              "t": "It depends on the coverage. For auto, it's your driver's license and vehicle details. For home, it's the property address and roof age. See "
+            },
+            {
+              "t": "\"What You'll Need for Your Quote\"",
+              "h": "#what-you-need"
+            },
+            {
+              "t": " above for the full list."
+            }
+          ]
+        },
+        {
+          "Q": "Can I get a quote in Spanish?",
+          "A": [
+            {
+              "t": "Yes. Every A-State office has Spanish-speaking agents, and Hindi is available too. "
+            },
+            {
+              "t": "¡Hablamos español!",
+              "es": "true"
+            }
+          ]
+        },
+        {
+          "Q": "What is the minimum car insurance required in Texas?",
+          "A": [
+            {
+              "t": "Texas requires liability coverage of at least $30,000 per injured person, up to $60,000 per accident, and $25,000 for property damage. This is often written as 30/60/25. We can quote the state minimum or more protection."
+            }
+          ]
+        },
+        {
+          "Q": "Can you help if I need an SR-22?",
+          "A": [
+            {
+              "t": "Yes. We can quote auto insurance with an SR-22 and have the carrier file it with the state for you."
+            }
+          ]
+        },
+        {
+          "Q": "Do you only insure people in Houston?",
+          "A": [
+            {
+              "t": "No. Our offices are in Houston, but we insure clients anywhere in Texas by phone, text, or email."
+            }
+          ]
+        },
+        {
+          "Q": "Can you compare my current policy at renewal?",
+          "A": [
+            {
+              "t": "Yes. Bring or send your current declarations page, and we'll compare it with quotes from other carriers before you renew."
+            }
+          ]
+        }
+      ]
+    },
+    "FINAL": {
+      "TITLE": "Ready to Compare? Get Your Free Texas Insurance Quote.",
+      "TEXT": "One request, quotes from 50+ carriers, and a licensed agent who explains them in your language.",
+      "CTA": "Start My Free Quote",
+      "CALL": "Call (713) 357-7771"
     }
   },
   "GET_CUSTOM_QUOTE": {
-    "HEADING": "Custom Insurance Quotes & Bundling: One Quote, Total Savings",
-    "DESCRIPTION": "Maximum Protection. Minimum Stress. Major Savings.",
-    "NEXT_BUTTON": "Next",
-    "PREVIOUS_BUTTON": "Previous",
-    "STEPPER": {
-      "STEP1": {
-        "TITLE": "Personal Details",
-        "FIELDS": {
-          "FULL_NAME": "First & Last Name",
-          "EMAIL": "Email Address",
-          "PHONE": "Phone Number",
-          "PREFERRED_LANGUAGE": "Preferred Language",
-          "FULL_ADDRESS": "Full Address"
+    "BREADCRUMB": {
+      "ARIA": "Breadcrumb",
+      "HOME": "Home",
+      "QUOTE": "Get a Quote",
+      "CURRENT": "Request a Custom Quote"
+    },
+    "HERO": {
+      "TITLE": [
+        {
+          "t": "Request a "
+        },
+        {
+          "t": "Custom Insurance Quote",
+          "hl": "true"
         }
+      ],
+      "LEAD": "Need more than one policy, something we don't list, or help deciding? Tell us about your situation, and a licensed agent will compare 50+ carriers and build a quote around you. Free, with no obligation.",
+      "TRUST": [
+        {
+          "t": "4.8",
+          "b": "true"
+        },
+        {
+          "t": " on Google from 250+ reviews · English · "
+        },
+        {
+          "t": "Español",
+          "l": "es"
+        },
+        {
+          "t": " · Hindi · "
+        },
+        {
+          "t": "Call (713) 357-7771",
+          "h": "tel:+17133577771"
+        }
+      ]
+    },
+    "USE": {
+      "TITLE": "Use This Form If…",
+      "ITEMS": [
+        {
+          "TITLE": "You want more than one policy.",
+          "TEXT": "Auto and home, home and life, or business and personal. We'll quote them together and check for multi-policy discounts."
+        },
+        {
+          "TITLE": "You're not sure what you need.",
+          "TEXT": "Tell us what you want to protect, and an agent will recommend the right coverage."
+        },
+        {
+          "TITLE": "Your insurance isn't in our main list.",
+          "TEXT": "Boat, RV, Mexico auto insurance or something else: describe it, and we'll find a carrier that covers it."
+        }
+      ],
+      "KNOW": "Know exactly what you need?",
+      "KNOW_LINK": "Get a quote by coverage type"
+    },
+    "FORM": {
+      "ARIA": "Request a custom quote",
+      "STEPS_ARIA": "Form steps",
+      "STEP_OF": "Step {{n}} of 5",
+      "LIVE": "Step {{n}} of 5: {{title}}",
+      "STEP_TITLES": [
+        "About You",
+        "What Do You Need?",
+        "Your Current Coverage",
+        "How Should We Reach You?",
+        "Review Your Request"
+      ],
+      "NEXT": [
+        "Next: Your Coverage",
+        "Next: Your Current Coverage",
+        "Next: How to Reach You",
+        "Next: Review"
+      ],
+      "BACK": "Back",
+      "TO_REVIEW": "Back to review",
+      "EDIT": "Edit",
+      "SUBMIT": "Submit My Quote Request",
+      "SENDING": "Sending…",
+      "OPTIONAL": "(optional)",
+      "NAME": "First & Last Name",
+      "PHONE": "Phone Number",
+      "EMAIL": "Email Address",
+      "ZIP": "ZIP Code",
+      "LANG": "Preferred Language",
+      "LANGS": [
+        {
+          "V": "en",
+          "L": "English"
+        },
+        {
+          "V": "es",
+          "L": "Español",
+          "LG": "es"
+        },
+        {
+          "V": "hi",
+          "L": "Hindi"
+        }
+      ],
+      "HINT": "Select all that apply.",
+      "COVERAGE": [
+        {
+          "V": "auto",
+          "L": "Auto"
+        },
+        {
+          "V": "home",
+          "L": "Home or Renters"
+        },
+        {
+          "V": "commercial",
+          "L": "Commercial"
+        },
+        {
+          "V": "life",
+          "L": "Life"
+        },
+        {
+          "V": "health",
+          "L": "Health"
+        },
+        {
+          "V": "bond",
+          "L": "Surety Bond"
+        }
+      ],
+      "OTHER_L": "Other",
+      "OTHER_Q": "Tell us what you need to insure (for example, a boat, an RV or Mexico auto insurance).",
+      "UNSURE_L": "I'm not sure — help me choose",
+      "UNSURE_Q": "Tell us a little about your situation.",
+      "MULTI": "Good news: your agent will check whether you qualify for a multi-policy discount.",
+      "GOAL": "What would you like to do?",
+      "GOALS": [
+        {
+          "V": "new",
+          "L": "Get new coverage"
+        },
+        {
+          "V": "compare",
+          "L": "Compare my current policy for a better rate"
+        },
+        {
+          "V": "unsure",
+          "L": "Not sure yet"
+        }
+      ],
+      "INSURED": "Do you have insurance now?",
+      "INSUREDS": [
+        {
+          "V": "yes",
+          "L": "Yes"
+        },
+        {
+          "V": "no",
+          "L": "No"
+        }
+      ],
+      "CARRIER": "Current insurance company",
+      "RENEWAL": "Renewal date",
+      "CLIENT": [
+        {
+          "t": "Already an A-State client and need to change a policy? Call your office or "
+        },
+        {
+          "t": "(713) 357-7771",
+          "h": "tel:+17133577771"
+        },
+        {
+          "t": "."
+        }
+      ],
+      "METHOD": "Preferred contact",
+      "METHODS": [
+        {
+          "V": "text",
+          "L": "Text"
+        },
+        {
+          "V": "call",
+          "L": "Call"
+        },
+        {
+          "V": "email",
+          "L": "Email"
+        }
+      ],
+      "TIME": "Best time",
+      "TIMES": [
+        {
+          "V": "morning",
+          "L": "Morning (9 AM–12 PM)"
+        },
+        {
+          "V": "afternoon",
+          "L": "Afternoon (12 PM–4 PM)"
+        },
+        {
+          "V": "evening",
+          "L": "Evening (4 PM–7 PM)"
+        }
+      ],
+      "OFFICE": "Preferred office",
+      "NO_PREFERENCE": "No preference",
+      "OFFICES": [
+        "Denver Harbor",
+        "Fondren Southwest",
+        "Westbury",
+        "Greater Inwood",
+        "Northside-Northline"
+      ],
+      "R_TITLES": [
+        "About You",
+        "Coverage Requested",
+        "Current Coverage",
+        "Contact Preferences"
+      ],
+      "R": {
+        "NAME": "Name",
+        "PHONE": "Phone",
+        "EMAIL": "Email",
+        "ZIP": "ZIP code",
+        "LANG": "Language",
+        "COVERAGE": "Coverage",
+        "OTHER": "Other",
+        "SITUATION": "Your situation",
+        "GOAL": "Goal",
+        "INSURED": "Insured now",
+        "CARRIER": "Current company",
+        "RENEWAL": "Renewal date",
+        "METHOD": "Contact by",
+        "TIME": "Best time",
+        "OFFICE": "Office"
       },
-      "STEP2": {
-        "TITLE": "Customizing Your Coverage",
-        "DESC": "What are you looking for? (Select all that apply)",
-        "OPTIONS": [
-          "Auto",
-          "Home",
-          "Commercial",
-          "Life",
-          "Health",
-          "Surety Bonds",
-          "Bundle & Save"
-        ],
-        "DESC1": "Don't see your policy listed? Tell us what you need below:"
+      "NOT_GIVEN": "Not given",
+      "CONSENT": [
+        {
+          "t": "By clicking \"Submit My Quote Request,\" you agree that A-State Insurance may contact you by phone, text or email about your request. Consent is not a condition of purchase. Message and data rates may apply. Reply STOP to opt out. We share your information only with the insurance carriers we request quotes from. See our "
+        },
+        {
+          "t": "Privacy Policy",
+          "r": "privacyPolicy"
+        },
+        {
+          "t": "."
+        }
+      ],
+      "NEVER_SOLD": "Your information is never sold.",
+      "ERR": {
+        "NAME": "Enter your first and last name.",
+        "PHONE_EMPTY": "Enter your phone number.",
+        "PHONE_INVALID": "Enter a 10-digit phone number, like (713) 555-0123.",
+        "EMAIL": "Enter an email like name@example.com, or leave it blank.",
+        "ZIP_EMPTY": "Enter your ZIP code.",
+        "ZIP_INVALID": "Enter a 5-digit ZIP code.",
+        "COVERAGE": "Choose at least one option.",
+        "OTHER": "Tell us what you need to insure.",
+        "UNSURE": "Tell us a little about your situation.",
+        "EMAIL_NEEDED": "Add your email, or choose Text or Call.",
+        "EMAIL_NEEDED_INVALID": "Enter an email like name@example.com.",
+        "SUBMIT": "We couldn't send your request. Your answers are saved here. Please try again, or call (713) 357-7771."
       },
-      "STEP3": {
-        "TITLE": "Policy Status",
-        "FIELDLABEL1": "I am looking for:",
-        "FIELDLABEL2": "Current Insurance Status:"
-      },
-      "STEP4": {
-        "TITLE": "Contact Preferences",
-        "DESC": "How would you like to be contacted?",
-        "OPTIONS": [
-          "Phone",
-          "Text Message",
-          "Email"
-        ],
-        "DESC1": "Best time to reach you:",
-        "TIME_OPTIONS": [
-          "Morning",
-          "Afternoon",
-          "Evening"
-        ]
-      },
-      "STEP5": {
-        "TITLE": "Review Your Custom Quote Request"
+      "SUCCESS": {
+        "TITLE": "Thanks. Your custom quote request is in.",
+        "TEXT": "A licensed agent will review your answers, compare carriers and contact you, Monday to Saturday, 9 AM to 7 PM."
       }
     },
-    "QUOTE_SUMMARY": {
-      "TITLE": "Your Quote Summary",
-      "DESC": "By clicking Submit My Quote Request, you agree to be contacted by an A-State Insurance agent. As an independent broker, we will share this information only with our top-rated insurance carriers to find your best rate.",
-      "SUBMIT_BUTTON": "Submit My Quote Request",
-      "CARD1": {
-        "TITLE": "1. Contact Information",
-        "EDIT": "Edit Information"
-      },
-      "CARD2": {
-        "TITLE": "2. Coverage Requested",
-        "EDIT": "Edit Coverage",
-        "OPTION": "Primary Interest:",
-        "OPTION1": "Specific Needs:"
-      },
-      "CARD3": {
-        "TITLE": "3. Current Insurance Status",
-        "EDIT": "Edit Details",
-        "OPTION1": "Goal",
-        "OPTION2": "Status"
-      },
-      "CARD4": {
-        "TITLE": "4. Contact Preferences",
-        "EDIT": "Edit Details",
-        "OPTION1": "Preferred Method:",
-        "OPTION2": "Best Time to Reach You:"
-      }
+    "BUNDLE": {
+      "TITLE": "How Insurance Bundling Works",
+      "P1": "Bundling means buying two or more policies, such as auto and home, from the same insurance company. Many carriers give a multi-policy discount when you do. You also get one renewal date and fewer bills to track.",
+      "P2": "Bundling isn't always the cheapest choice. Sometimes two policies from different carriers cost less, even without a discount. Because we're an independent agency, we quote both ways and show you the difference. Then you choose."
+    },
+    "OTHER": {
+      "TITLE": "Other Insurance We Can Quote",
+      "LEAD": [
+        {
+          "t": "Besides "
+        },
+        {
+          "t": "auto",
+          "r": "autoInsurance"
+        },
+        {
+          "t": ", "
+        },
+        {
+          "t": "home",
+          "r": "homeInsurance"
+        },
+        {
+          "t": ", "
+        },
+        {
+          "t": "commercial",
+          "r": "commercialInsurance"
+        },
+        {
+          "t": ", "
+        },
+        {
+          "t": "life",
+          "r": "lifeInsurance"
+        },
+        {
+          "t": ", "
+        },
+        {
+          "t": "health",
+          "r": "healthInsurance"
+        },
+        {
+          "t": " and "
+        },
+        {
+          "t": "surety bonds",
+          "r": "suretyBondInsurance"
+        },
+        {
+          "t": ", we can help with:"
+        }
+      ],
+      "ITEMS": [
+        "Renters",
+        "Condo",
+        "Flood",
+        "Motorcycle",
+        "Boat",
+        "RV and travel trailer",
+        "Mexico auto insurance",
+        "SR-22 filings",
+        "Umbrella",
+        "Final expense"
+      ],
+      "TAIL": [
+        {
+          "t": "Don't see it? Choose "
+        },
+        {
+          "t": "\"Other\" in the form",
+          "h": "#other"
+        },
+        {
+          "t": " or call "
+        },
+        {
+          "t": "(713) 357-7771",
+          "h": "tel:+17133577771"
+        },
+        {
+          "t": "."
+        }
+      ]
+    },
+    "FAQ": {
+      "TITLE": "Custom Quote and Bundling FAQs",
+      "ITEMS": [
+        {
+          "Q": "What is a custom insurance quote?",
+          "A": "It's a quote built around your situation instead of one coverage type. Use it when you need more than one policy, aren't sure what you need, or need coverage that isn't in our main list."
+        },
+        {
+          "Q": "What does it mean to bundle insurance?",
+          "A": "Bundling means buying two or more policies, like auto and home, from the same insurance company. Many companies give a multi-policy discount for it."
+        },
+        {
+          "Q": "Will bundling always save me money?",
+          "A": "Not always. The discount depends on the carrier, and sometimes separate policies cost less overall. We compare both options and show you the prices side by side."
+        },
+        {
+          "Q": "Can I bundle policies from different insurance companies?",
+          "A": "The discount usually applies only when the policies are with the same company. Your policies can still be with different companies, and A-State can be your one agent for all of them."
+        },
+        {
+          "Q": "What if the insurance I need isn't listed?",
+          "A": "Choose \"Other\" in the form and describe what you need to insure. We'll check which of our 50+ carriers can cover it."
+        },
+        {
+          "Q": "I'm not sure what coverage I need. Can you help?",
+          "A": "Yes. Choose \"I'm not sure\" and tell us a little about your situation. An agent will explain your options in plain language."
+        },
+        {
+          "Q": "Is a custom quote free?",
+          "A": "Yes. The quote is free, and you don't have to buy anything."
+        },
+        {
+          "Q": "Can I request a custom quote in Spanish or Hindi?",
+          "A": "Yes. Choose your preferred language in step 1, and an agent who speaks it will contact you."
+        }
+      ]
+    },
+    "FINAL": {
+      "TITLE": "Prefer to Talk It Through?",
+      "TEXT": "Call (713) 357-7771 or walk in to any of our 5 Houston offices, Monday–Saturday, 9 AM–7 PM. No appointment needed.",
+      "FIND": "Find an Office Near You",
+      "CALL": "Call (713) 357-7771"
     }
   },
   "GET_AUTO_QUOTE": {
@@ -1367,6 +2064,1115 @@
         }
       }
     }
+  },
+  "AUTO_QUOTE_PAGE": {
+    "BREADCRUMB": {
+      "ARIA": "Breadcrumb",
+      "HOME": "Home",
+      "SECTION": "Auto Insurance",
+      "CURRENT": "Get a Quote"
+    },
+    "HERO": {
+      "TITLE": [
+        {
+          "t": "Get a Texas "
+        },
+        {
+          "t": "Auto Insurance Quote",
+          "hl": "true"
+        }
+      ],
+      "LEAD": "Tell us about your vehicles and drivers. A licensed agent compares 50+ carriers and shows you your options side by side. Free, with no obligation.",
+      "TRUST": [
+        {
+          "t": "4.8",
+          "b": "true"
+        },
+        {
+          "t": " on Google from 250+ reviews · English · "
+        },
+        {
+          "t": "Español",
+          "l": "es"
+        },
+        {
+          "t": " · Hindi · Prefer to talk? "
+        },
+        {
+          "t": "Call (713) 357-7771",
+          "h": "tel:+17133577771"
+        }
+      ]
+    },
+    "FORM": {
+      "ARIA": "Auto insurance quote",
+      "STEPS_ARIA": "Form steps",
+      "STEP_OF": "Step {{n}} of 6",
+      "LIVE": "Step {{n}} of 6: {{title}}",
+      "STEP_TITLES": [
+        "About You",
+        "Your Vehicles",
+        "Your Drivers",
+        "Coverage & Driving History",
+        "How Should We Reach You?",
+        "Review Your Auto Quote Request"
+      ],
+      "STEP_DOTS": [
+        "About You",
+        "Vehicles",
+        "Drivers",
+        "Coverage",
+        "Contact",
+        "Review"
+      ],
+      "NEXT": [
+        "Next: Your Vehicles",
+        "Next: Your Drivers",
+        "Next: Your Coverage",
+        "Next: How to Reach You",
+        "Next: Review"
+      ],
+      "BACK": "Back",
+      "TO_REVIEW": "Back to review",
+      "EDIT": "Edit",
+      "SUBMIT": "Submit My Quote Request",
+      "SENDING": "Sending…",
+      "OPTIONAL": "(optional)",
+      "NOT_GIVEN": "Not given",
+      "NONE": "None",
+      "NAME": "First & Last Name",
+      "PHONE": "Phone Number",
+      "EMAIL": "Email Address",
+      "ZIP": "ZIP Code",
+      "VEHICLE_N": "Vehicle {{n}}",
+      "DRIVER_N": "Driver {{n}}",
+      "REMOVE": "Remove",
+      "REMOVE_V": "vehicle {{n}}",
+      "REMOVE_D": "driver {{n}}",
+      "ADD_VEHICLE": "Add Another Vehicle",
+      "ADD_DRIVER": "Add Another Driver",
+      "ADDED_V": "Vehicle {{n}} added.",
+      "REMOVED_V": "Vehicle {{n}} removed.",
+      "ADDED_D": "Driver {{n}} added.",
+      "REMOVED_D": "Driver {{n}} removed.",
+      "YEAR": "Year",
+      "YEAR_SELECT": "Select",
+      "YEAR_OLD": "1989 or older",
+      "MAKE": "Make",
+      "MODEL": "Model",
+      "VIN": "VIN",
+      "VIN_OPT": "(optional: makes your quote more accurate)",
+      "OWN_LEGEND": "Ownership",
+      "OWNS": [
+        {
+          "V": "owned",
+          "L": "Owned"
+        },
+        {
+          "V": "financed",
+          "L": "Financed"
+        },
+        {
+          "V": "leased",
+          "L": "Leased"
+        }
+      ],
+      "LENDER": "Your lender usually requires full coverage. We'll quote that for this vehicle.",
+      "USE_LEGEND": "Primary use",
+      "USES": [
+        {
+          "V": "personal",
+          "L": "Personal"
+        },
+        {
+          "V": "commuting",
+          "L": "Commuting"
+        },
+        {
+          "V": "business",
+          "L": "Business"
+        },
+        {
+          "V": "rideshare",
+          "L": "Rideshare or delivery"
+        }
+      ],
+      "MILES": "Miles driven per year",
+      "PARKED": "Where is it parked overnight?",
+      "PARKED_HINT": "ZIP code, if different from yours (optional)",
+      "DOB": "Date of Birth",
+      "MARITAL_LEGEND": "Marital Status",
+      "MARITALS": [
+        {
+          "V": "single",
+          "L": "Single"
+        },
+        {
+          "V": "married",
+          "L": "Married"
+        },
+        {
+          "V": "other",
+          "L": "Other"
+        }
+      ],
+      "LICENSE_LEGEND": "Driver's license",
+      "LICENSES": [
+        {
+          "V": "texas",
+          "L": "Texas"
+        },
+        {
+          "V": "us",
+          "L": "Other U.S. state"
+        },
+        {
+          "V": "foreign",
+          "L": "Foreign or international"
+        },
+        {
+          "V": "none",
+          "L": "No license yet"
+        }
+      ],
+      "FIRST_AGE": "Age when first licensed",
+      "NO_LICENSE_NO": "Please don't enter license numbers here. Your agent will ask for them securely if you decide to buy.",
+      "COV_LEGEND": "What coverage are you looking for?",
+      "COVS": [
+        {
+          "V": "minimum",
+          "L": "State minimum (liability only)"
+        },
+        {
+          "V": "full",
+          "L": "Full coverage"
+        },
+        {
+          "V": "unsure",
+          "L": "Not sure: help me choose"
+        }
+      ],
+      "ACC_LEGEND": "Accidents in the last 3 years (any driver)",
+      "TIX_LEGEND": "Tickets in the last 3 years (any driver)",
+      "COUNTS": [
+        {
+          "V": "0",
+          "L": "0"
+        },
+        {
+          "V": "1",
+          "L": "1"
+        },
+        {
+          "V": "2+",
+          "L": "2+"
+        },
+        {
+          "V": "unsure",
+          "L": "Not sure"
+        }
+      ],
+      "SR_LEGEND": "Do you need an SR-22?",
+      "YNU": [
+        {
+          "V": "yes",
+          "L": "Yes"
+        },
+        {
+          "V": "no",
+          "L": "No"
+        },
+        {
+          "V": "unsure",
+          "L": "Not sure"
+        }
+      ],
+      "SR_HELP": "An SR-22 is a form your insurance company files with the state to prove you have coverage. A court or the Texas DPS tells you if you need one.",
+      "INSURED_LEGEND": "Do you have car insurance now?",
+      "YN": [
+        {
+          "V": "yes",
+          "L": "Yes"
+        },
+        {
+          "V": "no",
+          "L": "No"
+        }
+      ],
+      "CARRIER": "Current company",
+      "RENEWAL": "Renewal date",
+      "ALSO_LEGEND": "Also quote these for me",
+      "ALSO": [
+        {
+          "V": "home",
+          "L": "Home or Renters"
+        },
+        {
+          "V": "commercial",
+          "L": "Commercial"
+        },
+        {
+          "V": "life",
+          "L": "Life"
+        },
+        {
+          "V": "health",
+          "L": "Health"
+        }
+      ],
+      "LANG_LEGEND": "Preferred language",
+      "LANGS": [
+        {
+          "V": "en",
+          "L": "English"
+        },
+        {
+          "V": "es",
+          "L": "Español",
+          "LG": "es"
+        },
+        {
+          "V": "hi",
+          "L": "Hindi"
+        }
+      ],
+      "METHOD_LEGEND": "Preferred contact",
+      "METHODS": [
+        {
+          "V": "text",
+          "L": "Text"
+        },
+        {
+          "V": "call",
+          "L": "Call"
+        },
+        {
+          "V": "email",
+          "L": "Email"
+        }
+      ],
+      "TIME_LEGEND": "Best time",
+      "TIMES": [
+        {
+          "V": "morning",
+          "L": "Morning (9 AM–12 PM)"
+        },
+        {
+          "V": "afternoon",
+          "L": "Afternoon (12 PM–4 PM)"
+        },
+        {
+          "V": "evening",
+          "L": "Evening (4 PM–7 PM)"
+        }
+      ],
+      "OFFICE": "Preferred office",
+      "NO_PREFERENCE": "No preference",
+      "OFFICES": [
+        "Denver Harbor",
+        "Fondren Southwest",
+        "Westbury",
+        "Greater Inwood",
+        "Northside-Northline"
+      ],
+      "R_TITLES": [
+        "About You",
+        "Vehicles",
+        "Drivers",
+        "Coverage & History",
+        "Contact Preferences"
+      ],
+      "R": {
+        "NAME": "Name",
+        "PHONE": "Phone",
+        "EMAIL": "Email",
+        "ZIP": "ZIP code",
+        "YMM": "Year, make, model",
+        "VIN": "VIN",
+        "OWN": "Ownership",
+        "USE": "Primary use",
+        "MILES": "Miles per year",
+        "PARKED": "Parked overnight",
+        "PARKED_V": "ZIP {{zip}}",
+        "D_NAME": "Name",
+        "DOB": "Date of birth",
+        "MARITAL": "Marital status",
+        "LICENSE": "Driver's license",
+        "FIRST_AGE": "First licensed at",
+        "FIRST_AGE_V": "Age {{age}}",
+        "COVERAGE": "Coverage",
+        "ACCIDENTS": "Accidents (3 years)",
+        "TICKETS": "Tickets (3 years)",
+        "SR22": "SR-22",
+        "INSURED": "Insured now",
+        "CARRIER": "Current company",
+        "RENEWAL": "Renewal date",
+        "ALSO": "Also quote",
+        "LANG": "Language",
+        "METHOD": "Contact by",
+        "TIME": "Best time",
+        "OFFICE": "Office"
+      },
+      "CONSENT": [
+        {
+          "t": "By clicking \"Submit My Quote Request,\" you agree that A-State Insurance may contact you by phone, text or email about your request. Consent is not a condition of purchase. Message and data rates may apply. Reply STOP to opt out. We share your information only with the insurance carriers we request quotes from. See our "
+        },
+        {
+          "t": "Privacy Policy",
+          "r": "privacyPolicy"
+        },
+        {
+          "t": "."
+        }
+      ],
+      "NEVER_SOLD": "Your information is never sold.",
+      "ERR": {
+        "NAME": "Enter your first and last name.",
+        "PHONE_EMPTY": "Enter your phone number.",
+        "PHONE_INVALID": "Enter a 10-digit phone number, like (713) 555-0123.",
+        "EMAIL": "Enter an email like name@example.com, or leave it blank.",
+        "ZIP_EMPTY": "Enter your ZIP code.",
+        "ZIP_INVALID": "Enter a 5-digit ZIP code.",
+        "YEAR": "Choose the year.",
+        "MAKE": "Enter the make, like Toyota.",
+        "MODEL": "Enter the model, like Camry.",
+        "VIN_LENGTH": "A VIN has 17 letters and numbers. You entered {{n}}. Or leave it blank.",
+        "VIN_CHARS": "A VIN never uses the letters I, O or Q. Check it, or leave it blank.",
+        "PZIP": "Enter a 5-digit ZIP code, or leave it blank.",
+        "D_NAME": "Enter the driver’s first and last name.",
+        "DOB_EMPTY": "Enter the date of birth.",
+        "DOB_AGE": "Check the date of birth. Drivers must be at least 15.",
+        "D_AGE": "Enter an age between 14 and the driver’s current age, or leave it blank.",
+        "EMAIL_NEEDED": "Add your email, or choose Text or Call.",
+        "EMAIL_NEEDED_INVALID": "Enter an email like name@example.com.",
+        "SUBMIT": "We couldn't send your request. Your answers are saved here. Please try again, or call (713) 357-7771."
+      },
+      "SUCCESS": {
+        "TITLE": "Thanks. Your auto quote request is in.",
+        "TEXT": "A licensed agent will compare carriers for your quote and contact you with your options, usually within 5 business hours."
+      }
+    },
+    "NEED": {
+      "TITLE": "What You'll Need for Your Auto Quote",
+      "ITEMS": [
+        "Each driver's name, date of birth and license type",
+        "Each vehicle's year, make and model, or its VIN",
+        "Your current policy's declarations page, if you have one",
+        "Any accidents or tickets in the last 3 years"
+      ],
+      "TAIL": [
+        {
+          "t": "Don't have everything?",
+          "b": "true"
+        },
+        {
+          "t": " "
+        },
+        {
+          "t": "Start anyway.",
+          "h": "#quote"
+        },
+        {
+          "t": " Your agent will help with the rest."
+        }
+      ]
+    },
+    "BASICS": {
+      "TITLE": "Texas Auto Insurance Basics",
+      "ITEMS": [
+        {
+          "TITLE": "Texas minimum coverage (30/60/25)",
+          "TEXT": [
+            {
+              "t": "Every Texas driver must carry liability insurance of at least "
+            },
+            {
+              "t": "$30,000",
+              "b": "true"
+            },
+            {
+              "t": " per injured person, up to "
+            },
+            {
+              "t": "$60,000",
+              "b": "true"
+            },
+            {
+              "t": " per accident, and "
+            },
+            {
+              "t": "$25,000",
+              "b": "true"
+            },
+            {
+              "t": " for property damage. It pays for damage you cause to others. It doesn't fix your own car."
+            }
+          ]
+        },
+        {
+          "TITLE": "Full coverage",
+          "TEXT": [
+            {
+              "t": "Usually means liability plus collision (your car's damage in an accident) and comprehensive (theft, hail, flooding, vandalism). Lenders usually require it on financed and leased cars."
+            }
+          ]
+        },
+        {
+          "TITLE": "PIP and uninsured motorist coverage",
+          "TEXT": [
+            {
+              "t": "Texas insurers must offer you personal injury protection (PIP) and uninsured/underinsured motorist coverage. They're included unless you reject them in writing. We'll explain what each one costs and covers so you can decide."
+            }
+          ]
+        },
+        {
+          "TITLE": "SR-22",
+          "TEXT": [
+            {
+              "t": "If a court or the "
+            },
+            {
+              "t": "Texas Department of Public Safety",
+              "h": "https://www.dps.texas.gov/",
+              "x": "true"
+            },
+            {
+              "t": " requires one, we can quote auto insurance with an "
+            },
+            {
+              "t": "SR-22",
+              "r": "sr22Insurance"
+            },
+            {
+              "t": " and have the carrier file it for you. In Texas, it's usually required for 2 years."
+            }
+          ]
+        }
+      ],
+      "MORE": "Learn more about auto insurance"
+    },
+    "FAQ": {
+      "TITLE": "Auto Insurance Quote FAQs",
+      "ITEMS": [
+        {
+          "Q": "How long does an auto insurance quote take?",
+          "A": "The form takes about 5 minutes. An agent then compares carriers and contacts you with options, usually within 5 business hours."
+        },
+        {
+          "Q": "Can I get a quote without a Texas driver's license?",
+          "A": "Yes. Some of our carriers insure drivers with a license from another state or another country. If you don't have a license yet, call us and we'll explain your options."
+        },
+        {
+          "Q": "What's the difference between minimum and full coverage?",
+          "A": "Minimum coverage (30/60/25 liability) pays for damage you cause to other people. Full coverage adds collision and comprehensive, which also pay to repair or replace your own car."
+        },
+        {
+          "Q": "Will a quote affect my credit score?",
+          "A": "No. Some carriers check a credit-based insurance score when quoting auto insurance. That's a soft inquiry, and it doesn't affect your credit score."
+        },
+        {
+          "Q": "Do I need special coverage for Uber, Lyft, or delivery driving?",
+          "A": "Usually, yes. Most personal auto policies don't cover you while you're working for a rideshare or delivery app. Choose \"Rideshare or delivery\" in the form, and we'll quote the right coverage."
+        },
+        {
+          "Q": "How fast can I get proof of insurance?",
+          "A": "In most cases, the same day you buy your policy. Your agent can send your ID card by text or email."
+        },
+        {
+          "Q": "Can I get an auto quote at one of your offices?",
+          "A": "Yes. Walk into any of our 5 Houston offices, Monday–Saturday, 9 AM–7 PM. No appointment needed. Bring your driver's license and vehicle information."
+        }
+      ]
+    },
+    "FINAL": {
+      "TITLE": "Rather Talk to an Agent?",
+      "TEXT": [
+        {
+          "t": "Call "
+        },
+        {
+          "t": "(713) 357-7771",
+          "h": "tel:+17133577771"
+        },
+        {
+          "t": " or visit any of our 5 Houston offices. We'll compare Texas auto insurance quotes with you in English, Spanish, or Hindi."
+        }
+      ],
+      "START": "Start My Auto Quote",
+      "FIND": "Find an Office Near You"
+    },
+    "NEW_TAB": "(opens in a new tab)"
+  },
+  "HOME_QUOTE_PAGE": {
+    "BREADCRUMB": {
+      "ARIA": "Breadcrumb",
+      "HOME": "Home",
+      "SECTION": "Homeowners Insurance",
+      "CURRENT": "Get a Quote"
+    },
+    "HERO": {
+      "TITLE": [
+        {
+          "t": "Get a Texas "
+        },
+        {
+          "t": "Homeowners Insurance Quote",
+          "hl": "true"
+        }
+      ],
+      "LEAD": "Tell us about your home. A licensed agent compares 50+ carriers, explains what each policy covers, including wind, hail, and flood, and shows you the options side by side. Free, with no obligation.",
+      "TRUST": [
+        {
+          "t": "4.8",
+          "b": "true"
+        },
+        {
+          "t": " on Google from 250+ reviews · English · "
+        },
+        {
+          "t": "Español",
+          "l": "es"
+        },
+        {
+          "t": " · Hindi · Prefer to talk? "
+        },
+        {
+          "t": "Call (713) 357-7771",
+          "h": "tel:+17133577771"
+        }
+      ]
+    },
+    "FORM": {
+      "ARIA": "Homeowners insurance quote",
+      "STEPS_ARIA": "Form steps",
+      "STEP_OF": "Step {{n}} of 6",
+      "LIVE": "Step {{n}} of 6: {{title}}",
+      "STEP_TITLES": [
+        "Your Property",
+        "About the Home",
+        "Safety & Claims",
+        "Current Coverage & Flood",
+        "About You & How to Reach You",
+        "Review Your Home Quote Request"
+      ],
+      "STEP_DOTS": [
+        "Property",
+        "Home",
+        "Safety",
+        "Coverage",
+        "Contact",
+        "Review"
+      ],
+      "NEXT": [
+        "Next: About the Home",
+        "Next: Safety & Claims",
+        "Next: Your Coverage",
+        "Next: About You",
+        "Next: Review"
+      ],
+      "BACK": "Back",
+      "TO_REVIEW": "Back to review",
+      "EDIT": "Edit",
+      "SUBMIT": "Submit My Quote Request",
+      "SENDING": "Sending…",
+      "OPTIONAL": "(optional)",
+      "NOT_GIVEN": "Not given",
+      "NONE": "None",
+      "ADDRESS": "Property address",
+      "ADDRESS_HINT": "(street, city, ZIP)",
+      "ADDRESS_PH": "123 Main St, Houston, TX 77020",
+      "USAGE_LEGEND": "How is the home used?",
+      "USAGES": [
+        {
+          "V": "primary",
+          "L": "I live here (primary home)"
+        },
+        {
+          "V": "second",
+          "L": "Second or vacation home"
+        },
+        {
+          "V": "rental",
+          "L": "I rent it out to tenants"
+        }
+      ],
+      "RENTAL_NOTE": "Rental homes need a landlord (dwelling) policy. We'll quote that for you.",
+      "PTYPE_LEGEND": "Property type",
+      "PTYPES": [
+        {
+          "V": "single-family",
+          "L": "Single-family"
+        },
+        {
+          "V": "condo",
+          "L": "Condo"
+        },
+        {
+          "V": "townhome",
+          "L": "Townhome"
+        },
+        {
+          "V": "mobile",
+          "L": "Mobile or manufactured home"
+        },
+        {
+          "V": "other",
+          "L": "Other"
+        }
+      ],
+      "STATUS_LEGEND": "Are you",
+      "STATUSES": [
+        {
+          "V": "owner",
+          "L": "Already the owner"
+        },
+        {
+          "V": "buying",
+          "L": "Buying this home"
+        },
+        {
+          "V": "refinancing",
+          "L": "Refinancing"
+        }
+      ],
+      "CLOSING": "Expected closing date",
+      "HINT2": "Approximate answers are fine. Choose \"Not sure\" if you don't know.",
+      "YEAR": "Year built",
+      "YEAR_PH": "e.g. 1998",
+      "SQFT": "Square footage",
+      "SQFT_PH": "e.g. 1,800",
+      "STORIES_LEGEND": "Stories",
+      "STORIES": [
+        {
+          "V": "1",
+          "L": "1"
+        },
+        {
+          "V": "2",
+          "L": "2"
+        },
+        {
+          "V": "3+",
+          "L": "3+"
+        }
+      ],
+      "ROOF_AGE_LEGEND": "Roof age",
+      "ROOF_AGES": [
+        {
+          "V": "under-1",
+          "L": "Under 1 year"
+        },
+        {
+          "V": "1-10",
+          "L": "1–10 years"
+        },
+        {
+          "V": "11-20",
+          "L": "11–20 years"
+        },
+        {
+          "V": "20-plus",
+          "L": "20+ years"
+        },
+        {
+          "V": "unsure",
+          "L": "Not sure"
+        }
+      ],
+      "ROOF_TYPE_LEGEND": "Roof type",
+      "ROOF_TYPES": [
+        {
+          "V": "asphalt",
+          "L": "Asphalt shingle"
+        },
+        {
+          "V": "metal",
+          "L": "Metal"
+        },
+        {
+          "V": "tile",
+          "L": "Tile"
+        },
+        {
+          "V": "wood",
+          "L": "Wood"
+        },
+        {
+          "V": "other",
+          "L": "Other"
+        },
+        {
+          "V": "unsure",
+          "L": "Not sure"
+        }
+      ],
+      "CONSTRUCTION_LEGEND": "Construction",
+      "CONSTRUCTIONS": [
+        {
+          "V": "frame",
+          "L": "Frame"
+        },
+        {
+          "V": "brick",
+          "L": "Brick or masonry"
+        },
+        {
+          "V": "mixed",
+          "L": "Mixed"
+        },
+        {
+          "V": "unsure",
+          "L": "Not sure"
+        }
+      ],
+      "FOUNDATION_LEGEND": "Foundation",
+      "FOUNDATIONS": [
+        {
+          "V": "slab",
+          "L": "Slab"
+        },
+        {
+          "V": "pier",
+          "L": "Pier and beam"
+        },
+        {
+          "V": "unsure",
+          "L": "Not sure"
+        }
+      ],
+      "ALARM_LEGEND": "Monitored alarm system?",
+      "POOL_LEGEND": "Swimming pool?",
+      "TRAMP_LEGEND": "Trampoline?",
+      "DOGS_LEGEND": "Dogs at the home?",
+      "BREED": "Breed",
+      "CLAIMS_LEGEND": "Any home insurance claims in the last 5 years?",
+      "YN": [
+        {
+          "V": "yes",
+          "L": "Yes"
+        },
+        {
+          "V": "no",
+          "L": "No"
+        }
+      ],
+      "YNU": [
+        {
+          "V": "yes",
+          "L": "Yes"
+        },
+        {
+          "V": "no",
+          "L": "No"
+        },
+        {
+          "V": "unsure",
+          "L": "Not sure"
+        }
+      ],
+      "INSURED_LEGEND": "Do you have home insurance on this property now?",
+      "CARRIER": "Current company",
+      "RENEWAL": "Renewal date",
+      "FLOOD_LEGEND": "Would you like a flood insurance quote?",
+      "FLOOD_HELP": "Home insurance doesn't cover flood damage. Flood needs its own policy, and there's usually a 30-day wait before it starts.",
+      "ALSO_LEGEND": "Also quote these for me",
+      "ALSO": [
+        {
+          "V": "auto",
+          "L": "Auto"
+        },
+        {
+          "V": "life",
+          "L": "Life"
+        },
+        {
+          "V": "umbrella",
+          "L": "Umbrella"
+        }
+      ],
+      "NAME": "Full Name",
+      "PHONE": "Phone Number",
+      "EMAIL": "Email Address",
+      "LANG_LEGEND": "Preferred language",
+      "LANGS": [
+        {
+          "V": "en",
+          "L": "English"
+        },
+        {
+          "V": "es",
+          "L": "Español",
+          "LG": "es"
+        },
+        {
+          "V": "hi",
+          "L": "Hindi"
+        }
+      ],
+      "METHOD_LEGEND": "Preferred contact",
+      "METHODS": [
+        {
+          "V": "text",
+          "L": "Text"
+        },
+        {
+          "V": "call",
+          "L": "Call"
+        },
+        {
+          "V": "email",
+          "L": "Email"
+        }
+      ],
+      "TIME_LEGEND": "Best time",
+      "TIMES": [
+        {
+          "V": "morning",
+          "L": "Morning (9 AM–12 PM)"
+        },
+        {
+          "V": "afternoon",
+          "L": "Afternoon (12 PM–4 PM)"
+        },
+        {
+          "V": "evening",
+          "L": "Evening (4 PM–7 PM)"
+        }
+      ],
+      "OFFICE": "Preferred office",
+      "NO_PREFERENCE": "No preference",
+      "OFFICES": [
+        "Denver Harbor",
+        "Fondren Southwest",
+        "Westbury",
+        "Greater Inwood",
+        "Northside-Northline"
+      ],
+      "FLAGS": {
+        "rental": "Rental: landlord policy",
+        "mobile": "Mobile or manufactured home",
+        "buying": "Buying: closing soon"
+      },
+      "FLAGS_ARIA": "Flags for your agent",
+      "R_TITLES": [
+        "Your Property",
+        "About the Home",
+        "Safety & Claims",
+        "Current Coverage & Flood",
+        "About You & Contact Preferences"
+      ],
+      "R": {
+        "ADDRESS": "Address",
+        "USAGE": "How it’s used",
+        "PTYPE": "Property type",
+        "STATUS": "You are",
+        "CLOSING": "Closing date",
+        "YEAR": "Year built",
+        "SQFT": "Square feet",
+        "STORIES": "Stories",
+        "ROOF_AGE": "Roof age",
+        "ROOF_TYPE": "Roof type",
+        "CONSTRUCTION": "Construction",
+        "FOUNDATION": "Foundation",
+        "ALARM": "Monitored alarm",
+        "POOL": "Pool",
+        "TRAMP": "Trampoline",
+        "DOGS": "Dogs",
+        "BREED": "Breed",
+        "CLAIMS": "Claims (5 years)",
+        "INSURED": "Insured now",
+        "CARRIER": "Current company",
+        "RENEWAL": "Renewal date",
+        "FLOOD": "Flood quote",
+        "ALSO": "Also quote",
+        "NAME": "Name",
+        "PHONE": "Phone",
+        "EMAIL": "Email",
+        "LANG": "Language",
+        "METHOD": "Contact by",
+        "TIME": "Best time",
+        "OFFICE": "Office"
+      },
+      "CONSENT": [
+        {
+          "t": "By clicking \"Submit My Quote Request,\" you agree that A-State Insurance may contact you by phone, text, or email about your request. Consent is not a condition of purchase. Message and data rates may apply. Reply STOP to opt out. We share your information only with the insurance carriers we request quotes from. See our "
+        },
+        {
+          "t": "Privacy Policy",
+          "r": "privacyPolicy"
+        },
+        {
+          "t": "."
+        }
+      ],
+      "NEVER_SOLD": "Your information is never sold.",
+      "ERR": {
+        "ADDR_EMPTY": "Enter the property address.",
+        "ADDR_ZIP": "Add the ZIP code at the end, like 123 Main St, Houston, TX 77020.",
+        "CLOSE_PAST": "Choose a date that hasn’t passed yet.",
+        "YEAR": "Enter a year like 1998, or leave it blank.",
+        "SQFT": "Enter the square footage, like 1,800, or leave it blank.",
+        "NAME": "Enter your full name.",
+        "PHONE_EMPTY": "Enter your phone number.",
+        "PHONE_INVALID": "Enter a 10-digit phone number, like (713) 555-0123.",
+        "EMAIL": "Enter an email like name@example.com, or leave it blank.",
+        "EMAIL_NEEDED": "Add your email, or choose Text or Call.",
+        "SUBMIT": "We couldn't send your request. Your answers are saved here. Please try again, or call (713) 357-7771."
+      },
+      "SUCCESS": {
+        "TITLE": "Thanks. Your home quote request is in.",
+        "TEXT": "A licensed agent will compare carriers for your home and contact you with your options, usually within 5 business hours.",
+        "CLOSING": "We’ll prioritize your quote before your closing.",
+        "ALSO": "We’ll quote your other coverage too, and check whether you qualify for a multi-policy discount."
+      }
+    },
+    "NEED": {
+      "TITLE": "What You'll Need for Your Home Quote",
+      "ITEMS": [
+        "The property address",
+        "The roof's approximate age and type",
+        "Year built and square footage, if you know them",
+        "Your current policy's declarations page, if you have one",
+        "If you're buying: your closing date, plus your lender's name and loan number when you're ready to bind"
+      ]
+    },
+    "BASICS": {
+      "TITLE": "Texas Home Insurance Basics",
+      "ITEMS": [
+        {
+          "TITLE": [
+            {
+              "t": "What a homeowners policy covers"
+            }
+          ],
+          "TEXT": [
+            {
+              "t": "Most policies cover the home itself, other structures like fences and garages, your belongings, liability if someone is hurt on your property, and extra living costs if you can't live at home after a covered loss."
+            }
+          ]
+        },
+        {
+          "TITLE": [
+            {
+              "t": "What it doesn't cover: "
+            },
+            {
+              "t": "flood",
+              "r": "floodInsurance"
+            }
+          ],
+          "TEXT": [
+            {
+              "t": "Damage from rising water isn't covered by a standard Texas home policy. You need a separate flood policy through the "
+            },
+            {
+              "t": "National Flood Insurance Program (NFIP)",
+              "h": "https://www.floodsmart.gov/",
+              "x": "true"
+            },
+            {
+              "t": " or a private carrier. Most flood policies have a 30-day waiting period, so don't wait for hurricane season."
+            }
+          ]
+        },
+        {
+          "TITLE": [
+            {
+              "t": "Wind and hail deductibles"
+            }
+          ],
+          "TEXT": [
+            {
+              "t": "Many Texas policies have a separate deductible for wind and hail, often a percentage of your home's insured value, such as 1% or 2%. On a home insured for $300,000, a 2% deductible is $6,000. We'll show you the deductible on every quote."
+            }
+          ]
+        },
+        {
+          "TITLE": [
+            {
+              "t": "Near the coast?"
+            }
+          ],
+          "TEXT": [
+            {
+              "t": "In some coastal areas, regular carriers exclude wind damage, and wind coverage comes from the "
+            },
+            {
+              "t": "Texas Windstorm Insurance Association (TWIA)",
+              "h": "https://www.twia.org/",
+              "x": "true"
+            },
+            {
+              "t": ". We'll tell you if your address needs it."
+            }
+          ]
+        },
+        {
+          "TITLE": [
+            {
+              "t": "Buying a home?"
+            }
+          ],
+          "TEXT": [
+            {
+              "t": "Your lender will require proof of home insurance before closing. Start your quote 2–3 weeks before your closing date."
+            }
+          ]
+        }
+      ],
+      "MORE": "Learn more about homeowners insurance"
+    },
+    "FAQ": {
+      "TITLE": "Homeowners Insurance Quote FAQs",
+      "ITEMS": [
+        {
+          "Q": "How long does a home insurance quote take?",
+          "A": "The form takes about 5 minutes. An agent then compares carriers and contacts you, usually within 5 business hours."
+        },
+        {
+          "Q": "Does homeowners insurance cover flooding in Texas?",
+          "A": "No. Standard home policies don't cover flood damage. You need a separate flood policy, and most have a 30-day waiting period before coverage starts."
+        },
+        {
+          "Q": "Why does my roof's age matter?",
+          "A": "In Texas, hail and wind are the most common causes of home claims, so the age and type of your roof affect your price and coverage. Some carriers pay less for an older roof or won't cover it at all."
+        },
+        {
+          "Q": "I'm closing on a home soon. How fast can you quote it?",
+          "A": "Tell us your closing date in the form or call (713) 357-7771. We'll prioritize your quote and send proof of insurance to your lender."
+        },
+        {
+          "Q": "Can you insure a home I rent out?",
+          "A": "Yes. Rental homes need a landlord (dwelling) policy instead of a homeowners policy. Choose \"I rent it out to tenants,\" and we'll quote the right one."
+        },
+        {
+          "Q": "Do you insure mobile and manufactured homes?",
+          "A": "Yes. Choose \"Mobile or manufactured home\" in the form, and your agent will quote carriers that specialize in them."
+        },
+        {
+          "Q": "Will a quote affect my credit score?",
+          "A": "No. Some carriers check a credit-based insurance score when quoting home insurance. That's a soft inquiry, and it doesn't affect your credit score."
+        }
+      ]
+    },
+    "FINAL": {
+      "TITLE": "Rather Talk to an Agent?",
+      "TEXT": [
+        {
+          "t": "Call "
+        },
+        {
+          "t": "(713) 357-7771",
+          "h": "tel:+17133577771"
+        },
+        {
+          "t": " or visit any of our 5 Houston offices. We'll compare Texas home insurance quotes with you in English, Spanish, or Hindi."
+        }
+      ],
+      "START": "Start My Home Quote",
+      "FIND": "Find an Office Near You"
+    },
+    "NEW_TAB": "(opens in a new tab)"
   },
   "GET_HOME_QUOTE": {
     "HEADING": "Compare Homeowners Insurance Quotes and Save",
@@ -62391,7 +64197,7 @@
         },
         {
           "t": "Insurance Services",
-          "hl": true
+          "hl": "true"
         },
         {
           "t": " — Coverage for Every Texan"
@@ -62968,7 +64774,7 @@
         },
         {
           "t": "Since 2018",
-          "hl": true
+          "hl": "true"
         }
       ],
       "LEAD": "A-State Insurance is an independent insurance agency in Houston. Our licensed agents compare coverage from 50+ carriers and explain your options in English, Spanish, or Hindi.",
@@ -64263,7 +66069,7 @@
         },
         {
           "t": "A-State Insurance",
-          "hl": true
+          "hl": "true"
         }
       ],
       "LEAD": "Call, text, email, or visit us. Open Monday–Saturday, 9 AM–7 PM Central Time. We reply to most messages within 1 business hour, in English, Spanish, or Hindi.",

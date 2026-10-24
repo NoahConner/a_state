@@ -1,167 +1,286 @@
-<div class="quoteMain">
-  <div class="topBanner">
-    <div class="container">
-      <h1 class="h1" [innerHTML]="'GET_QUOTE.HEADING' | translateHtml | async"></h1>
+<!-- Icon sprite (phone, check, chev, arrow, globe and x come from the header sprite) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2-5.5A2 2 0 0 1 6.9 6h10.2a2 2 0 0 1 1.9 1.5L21 13v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M3 13h18M7 15.5h.01M17 15.5h.01M6 18v2M18 18v2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-9-9a4.5 4.5 0 0 1 8-4l1 1.2 1-1.2a4.5 4.5 0 0 1 8 4c-2 4.6-9 9-9 9z"/></symbol>
+    <symbol id="i-health" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M12 8v8M8 12h8"/></symbol>
+    <symbol id="i-more" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8.5 10.5h7"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z" fill="#F6C945"/></symbol>
+    <symbol id="i-star-c" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z" fill="currentColor"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14"/><path d="M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+  </defs>
+</svg>
+
+<!-- Renders translated text pieces (see GqSeg in get-a-quote.ts). Kept on one line so no spaces creep in. -->
+<ng-template #segsTpl let-value><ng-container *ngFor="let s of value"><a *ngIf="s.h" [href]="s.h" (click)="onSegLink(s.h, $event)">{{ s.t }}</a><span *ngIf="s.hl" class="hl">{{ s.t }}</span><span *ngIf="s.p" class="pending-inline">{{ s.t }}</span><b *ngIf="s.b">{{ s.t }}</b><span *ngIf="s.es" lang="es">{{ s.t }}</span><ng-container *ngIf="!s.h && !s.hl && !s.p && !s.b && !s.es">{{ s.t }}</ng-container></ng-container></ng-template>
+
+<!-- Hero -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hf-container crumbs-row">
+    <nav class="crumbs" [attr.aria-label]="'GET_QUOTE.BREADCRUMB.ARIA' | translate">
+      <ol>
+        <li><a [routerLink]="route('home')">{{ 'GET_QUOTE.BREADCRUMB.HOME' | translate }}</a></li>
+        <li aria-current="page">{{ 'GET_QUOTE.BREADCRUMB.CURRENT' | translate }}</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="hf-container hero-grid">
+    <div class="hero-copy">
+      <h1 id="hero-title"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('GET_QUOTE.HERO.TITLE') }"></ng-container></h1>
+      <!-- Buttons come before the lead on phones and tablets; from 1024px the lead moves above them. -->
+      <div class="btn-row">
+        <a class="hf-btn btn-primary btn-lg" href="#quote" (click)="goToForm($event)">{{ 'GET_QUOTE.HERO.CTA_QUOTE' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+        <a class="hf-btn btn-outline btn-lg" href="tel:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'GET_QUOTE.HERO.CTA_CALL' | translate }}</a>
+      </div>
+      <p class="hf-lead"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('GET_QUOTE.HERO.LEAD') }"></ng-container></p>
+      <p class="q-trust"><span class="q-star" aria-hidden="true"><svg class="icon-sm"><use href="#i-star" /></svg></span><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('GET_QUOTE.HERO.TRUST') }"></ng-container></p>
+    </div>
+    <aside class="hours-card" [attr.aria-label]="'GET_QUOTE.HOURS.ARIA' | translate">
+      <span class="hc-title">{{ 'GET_QUOTE.HOURS.TITLE' | translate }}</span>
+      <span class="status" [attr.data-state]="status"><span class="dot" aria-hidden="true"></span><span>{{ statusKey | translate }}</span></span>
+      <dl class="hours">
+        <div [class.today]="today >= 1 && today <= 6"><dt>{{ 'GET_QUOTE.HOURS.WEEK' | translate }}</dt><dd>{{ 'GET_QUOTE.HOURS.WEEK_TIME' | translate }}</dd></div>
+        <div [class.today]="today === 0"><dt>{{ 'GET_QUOTE.HOURS.SUNDAY' | translate }}</dt><dd>{{ 'GET_QUOTE.HOURS.CLOSED' | translate }}</dd></div>
+      </dl>
+      <p class="reply"><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg>{{ 'GET_QUOTE.HOURS.REPLY' | translate }}</p>
+    </aside>
+  </div>
+</section>
+
+<!-- On this page: collapsed box on phones, sticky bar from 768px -->
+<details class="otp" id="on-this-page" [open]="otpOpen" (toggle)="onOtpToggle($event)">
+  <summary>{{ 'GET_QUOTE.OTP.LABEL' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-chev" /></svg></summary>
+  <nav [attr.aria-label]="'GET_QUOTE.OTP.LABEL' | translate">
+    <ol>
+      <li *ngFor="let label of list('GET_QUOTE.OTP.ITEMS'); let i = index">
+        <a [href]="'#' + otpIds[i]" [attr.aria-current]="activeSection === otpIds[i] ? 'true' : null"
+          (click)="goToSection(otpIds[i], $event)">{{ label }}</a>
+      </li>
+    </ol>
+  </nav>
+</details>
+
+<!-- Coverage chooser -->
+<section class="section bg-white" id="coverage" aria-labelledby="cov-h">
+  <div class="hf-container">
+    <div class="section-head"><h2 id="cov-h">{{ 'GET_QUOTE.COVERAGE.TITLE' | translate }}</h2></div>
+    <ul class="qc-grid">
+      <li class="qc-card" *ngFor="let c of list('GET_QUOTE.COVERAGE.ITEMS'); let i = index">
+        <span class="ic" aria-hidden="true"><svg class="icon"><use [attr.href]="'#' + coverage[i].icon" /></svg></span>
+        <h3><a [routerLink]="route(coverage[i].page)">{{ c.TITLE }}</a></h3>
+        <p>{{ c.TEXT }}</p>
+        <a class="hf-btn btn-outline" [routerLink]="route(coverage[i].quote)">{{ c.CTA }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+      </li>
+    </ul>
+    <div class="qc-unsure">
+      <span class="ic" aria-hidden="true"><svg class="icon"><use href="#i-more" /></svg></span>
+      <div><h3>{{ 'GET_QUOTE.COVERAGE.UNSURE.TITLE' | translate }}</h3><p>{{ 'GET_QUOTE.COVERAGE.UNSURE.TEXT' | translate }}</p></div>
+      <a class="hf-btn btn-primary" [routerLink]="route('requestACustomQuote')">{{ 'GET_QUOTE.COVERAGE.UNSURE.CTA' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
     </div>
   </div>
+</section>
 
-  <section class="quote-section py-5 mt-3">
-    <div class="container text-center">
-      <h2 class="title" [innerHTML]="'GET_QUOTE.QUOTE_TYPE.TITLE' | translateHtml | async"></h2>
-      <p class="subtitle" [innerHTML]="'GET_QUOTE.QUOTE_TYPE.DESCRIPTION' | translateHtml | async"></p>
-
-      <div class="row g-5 justify-content-center">
-        <!-- CARD -->
-        <div class="col-md-4 mb-4">
-          <div class="quote-card">
-            <div class="card-header" [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD1.TITLE' | translateHtml | async"></div>
-            <div class="card-body">
-              <p [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD1.DESC' | translateHtml | async"></p>
-              <button class="btn quote-btn"
-                [routerLink]="languageService.getCurrentLanguage() === 'en' ? '/auto-insurance/quote' : '/es/seguros-de-auto/cotizacion'">
-                {{ 'GET_QUOTE.QUOTE_TYPE.CARD1.BUTTON' | translate }}
-              </button>
-            </div>
-          </div>
-        </div>
-
-<div class="col-md-4">
-  <div class="quote-card">
-    <div class="card-header" [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD2.TITLE' | translateHtml | async"></div>
-    <div class="card-body">
-      <p [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD2.DESC' | translateHtml | async"></p>
-      <button class="btn quote-btn"
-        [routerLink]="languageService.getCurrentLanguage() === 'en' ? '/homeowners-insurance/quote' : '/es/seguros-de-vivienda/cotizacion'">
-        {{ 'GET_QUOTE.QUOTE_TYPE.CARD2.BUTTON' | translate }}
-      </button>
-    </div>
+<!-- Steps -->
+<section class="section bg-cream" id="how-it-works" aria-labelledby="steps-h">
+  <div class="hf-container">
+    <div class="section-head"><h2 id="steps-h">{{ 'GET_QUOTE.STEPS.TITLE' | translate }}</h2></div>
+    <ol class="q-steps">
+      <li *ngFor="let s of list('GET_QUOTE.STEPS.ITEMS'); let i = index">
+        <span class="n" aria-hidden="true">{{ i + 1 }}</span>
+        <div><h3>{{ s.TITLE }}</h3><p>{{ s.TEXT }}</p></div>
+      </li>
+    </ol>
   </div>
-</div>
+</section>
 
-<div class="col-md-4">
-  <div class="quote-card">
-    <div class="card-header" [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD3.TITLE' | translateHtml | async"></div>
-    <div class="card-body">
-      <p [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD3.DESC' | translateHtml | async"></p>
-      <button class="btn quote-btn"
-        [routerLink]="languageService.getCurrentLanguage() === 'en' ? '/commercial-insurance/quote' : '/es/seguros-comerciales/cotizacion'">
-        {{ 'GET_QUOTE.QUOTE_TYPE.CARD3.BUTTON' | translate }}
-      </button>
-    </div>
-  </div>
-</div>
-
-<div class="col-md-4">
-  <div class="quote-card">
-    <div class="card-header" [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD4.TITLE' | translateHtml | async"></div>
-    <div class="card-body">
-      <p [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD4.DESC' | translateHtml | async"></p>
-      <button class="btn quote-btn"
-        [routerLink]="languageService.getCurrentLanguage() === 'en' ? '/life-insurance/quote' : '/es/seguros-de-vida/cotizacion'">
-        {{ 'GET_QUOTE.QUOTE_TYPE.CARD4.BUTTON' | translate }}
-      </button>
-    </div>
-  </div>
-</div>
-
-<div class="col-md-4 mb-4">
-  <div class="quote-card">
-    <div class="card-header" [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD5.TITLE' | translateHtml | async"></div>
-    <div class="card-body">
-      <p [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD5.DESC' | translateHtml | async"></p>
-      <button class="btn quote-btn"
-        [routerLink]="languageService.getCurrentLanguage() === 'en' ? '/health-insurance/quote' : '/es/seguros-de-salud/cotizacion'">
-        {{ 'GET_QUOTE.QUOTE_TYPE.CARD5.BUTTON' | translate }}
-      </button>
-    </div>
-  </div>
-</div>
-
-<div class="col-md-4">
-  <div class="quote-card">
-    <div class="card-header" [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD6.TITLE' | translateHtml | async"></div>
-    <div class="card-body">
-      <p [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD6.DESC' | translateHtml | async"></p>
-      <button class="btn quote-btn"
-        [routerLink]="languageService.getCurrentLanguage() === 'en' ? '/surety-bonds/quote' : '/es/fianzas/cotizacion'">
-        {{ 'GET_QUOTE.QUOTE_TYPE.CARD6.BUTTON' | translate }}
-      </button>
-    </div>
-  </div>
-</div>
-        <!-- CUSTOM -->
-        <div class="col-md-4">
-          <div class="quote-card custom">
-            <div class="card-header" [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD7.TITLE' | translateHtml | async"></div>
-            <div class="card-body">
-              <p [innerHTML]="'GET_QUOTE.QUOTE_TYPE.CARD7.DESC' | translateHtml | async"></p>
-               <button class="btn quote-btn"
-                [routerLink]="languageService.getCurrentLanguage() === 'en' ? '/request-a-custom-quote' : '/es/solicitar-una-cotizacion-personalizada'">
-                {{ 'GET_QUOTE.QUOTE_TYPE.CARD7.BUTTON' | translate }}
-              </button>
-            </div>
-          </div>
-        </div>
+<!-- Quote form -->
+<section class="section final q-form" id="quote" aria-labelledby="qf-h">
+  <div class="hf-container lq-grid">
+    <div class="lq-copy">
+      <h2 id="qf-h">{{ 'GET_QUOTE.FORM.TITLE' | translate }}</h2>
+      <p class="q-next"><b>{{ 'GET_QUOTE.FORM.NEXT_LABEL' | translate }}</b> {{ 'GET_QUOTE.FORM.NEXT' | translate }}</p>
+      <div class="btn-row">
+        <a class="hf-btn btn-white" href="tel:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'GET_QUOTE.FORM.CALL' | translate }}</a>
+        <a class="hf-btn btn-white" href="sms:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-chat" /></svg>{{ 'GET_QUOTE.FORM.TEXT_US' | translate }}</a>
       </div>
     </div>
-  </section>
-
-  <section class="advantage-section py-5 mt-3">
-    <div class="container text-center">
-      <h2 class="title mb-5" [innerHTML]="'GET_QUOTE.ADVANTAGE.HEADING' | translateHtml | async"></h2>
-
-      <div class="row g-5 justify-content-center">
-        <div class="col-md-4 d-flex">
-          <div class="advantage-card w-100">
-            <div class="card-header" [innerHTML]="'GET_QUOTE.ADVANTAGE.CARD1.TITLE' | translateHtml | async"></div>
-            <div class="card-body">
-              <p [innerHTML]="'GET_QUOTE.ADVANTAGE.CARD1.DESC' | translateHtml | async"></p>
-            </div>
-          </div>
+    <form class="cform" novalidate aria-labelledby="qf-h" (submit)="submit($event)">
+      <div class="row2">
+        <div class="field">
+          <label for="qf-name">{{ 'GET_QUOTE.FORM.NAME' | translate }} <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="qf-name" name="name" autocomplete="name" required [value]="form.name"
+            [attr.aria-invalid]="errors.name ? 'true' : null" aria-describedby="qf-name-err"
+            (input)="onNameInput($event)" (blur)="onBlur('name')" />
+          <p class="err" id="qf-name-err" aria-live="polite">{{ errors.name }}</p>
         </div>
-
-        <div class="col-md-4 d-flex">
-          <div class="advantage-card w-100">
-            <div class="card-header" [innerHTML]="'GET_QUOTE.ADVANTAGE.CARD2.TITLE' | translateHtml | async"></div>
-            <div class="card-body">
-              <p [innerHTML]="'GET_QUOTE.ADVANTAGE.CARD2.DESC' | translateHtml | async"></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 d-flex">
-          <div class="advantage-card w-100">
-            <div class="card-header" [innerHTML]="'GET_QUOTE.ADVANTAGE.CARD3.TITLE' | translateHtml | async"></div>
-            <div class="card-body">
-              <p [innerHTML]="'GET_QUOTE.ADVANTAGE.CARD3.DESC' | translateHtml | async"></p>
-            </div>
-          </div>
+        <div class="field">
+          <label for="qf-phone">{{ 'GET_QUOTE.FORM.PHONE' | translate }} <span class="req" aria-hidden="true">*</span></label>
+          <input type="tel" id="qf-phone" name="phone" inputmode="tel" autocomplete="tel-national" required [value]="form.phone"
+            [attr.aria-invalid]="errors.phone ? 'true' : null" aria-describedby="qf-phone-err"
+            (input)="onPhoneInput($event)" (blur)="onBlur('phone')" />
+          <p class="err" id="qf-phone-err" aria-live="polite">{{ errors.phone }}</p>
         </div>
       </div>
+      <div class="row2">
+        <div class="field">
+          <label for="qf-email">{{ 'GET_QUOTE.FORM.EMAIL' | translate }} <span class="opt">{{ 'GET_QUOTE.FORM.OPTIONAL' | translate }}</span></label>
+          <input type="email" id="qf-email" name="email" autocomplete="email" [value]="form.email"
+            [attr.aria-invalid]="errors.email ? 'true' : null" aria-describedby="qf-email-err"
+            (input)="onEmailInput($event)" (blur)="onBlur('email')" />
+          <p class="err" id="qf-email-err" aria-live="polite">{{ errors.email }}</p>
+        </div>
+        <div class="field">
+          <label for="qf-zip">{{ 'GET_QUOTE.FORM.ZIP' | translate }} <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="qf-zip" name="zip" inputmode="numeric" autocomplete="postal-code" maxlength="5" required [value]="form.zip"
+            [attr.aria-invalid]="errors.zip ? 'true' : null" aria-describedby="qf-zip-err"
+            (input)="onZipInput($event)" (blur)="onBlur('zip')" />
+          <p class="err" id="qf-zip-err" aria-live="polite">{{ errors.zip }}</p>
+        </div>
+      </div>
+      <fieldset>
+        <legend>{{ 'GET_QUOTE.FORM.TYPE' | translate }} <span class="req" aria-hidden="true">*</span></legend>
+        <div class="opts">
+          <div class="opt-chip" *ngFor="let o of list('GET_QUOTE.FORM.TYPES')">
+            <input type="radio" name="type" [id]="'qf-t-' + o.V" [value]="o.V" [checked]="form.type === o.V" (change)="setType(o.V)" />
+            <label [for]="'qf-t-' + o.V">{{ o.L }}</label>
+          </div>
+        </div>
+        <p class="err" id="qf-type-err" aria-live="polite">{{ errors.type }}</p>
+      </fieldset>
+      <fieldset>
+        <legend>{{ 'GET_QUOTE.FORM.LANG' | translate }}</legend>
+        <div class="opts">
+          <div class="opt-chip" *ngFor="let o of list('GET_QUOTE.FORM.LANGS')">
+            <input type="radio" name="lang" [id]="'qf-l-' + o.V" [value]="o.V" [checked]="form.lang === o.V" (change)="form.lang = o.V" />
+            <label [for]="'qf-l-' + o.V" [attr.lang]="o.V">{{ o.L }}</label>
+          </div>
+        </div>
+      </fieldset>
+      <div class="row2">
+        <div class="field">
+          <label for="qf-office">{{ 'GET_QUOTE.FORM.OFFICE' | translate }} <span class="opt">{{ 'GET_QUOTE.FORM.OPTIONAL' | translate }}</span></label>
+          <select id="qf-office" name="office" (change)="form.office = $any($event.target).value">
+            <option value="" [selected]="!form.office">{{ 'GET_QUOTE.FORM.NO_PREFERENCE' | translate }}</option>
+            <option *ngFor="let item of list('GET_QUOTE.OFFICES.ITEMS'); let i = index" [value]="offices[i].id" [selected]="form.office === offices[i].id">{{ item.NAME }} ({{ offices[i].name }})</option>
+          </select>
+        </div>
+        <fieldset>
+          <legend>{{ 'GET_QUOTE.FORM.TIME' | translate }}</legend>
+          <div class="opts">
+            <div class="opt-chip" *ngFor="let o of list('GET_QUOTE.FORM.TIMES')">
+              <input type="radio" name="time" [id]="'qf-b-' + o.V" [value]="o.V" [checked]="form.time === o.V" (change)="form.time = o.V" />
+              <label [for]="'qf-b-' + o.V">{{ o.L }}</label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="field">
+        <label for="qf-msg">{{ 'GET_QUOTE.FORM.MESSAGE' | translate }} <span class="opt">{{ 'GET_QUOTE.FORM.OPTIONAL' | translate }}</span></label>
+        <textarea id="qf-msg" name="message" rows="3" [value]="form.message" (input)="form.message = $any($event.target).value"></textarea>
+      </div>
+      <p class="privacy"><svg class="icon-sm" aria-hidden="true"><use href="#i-shield" /></svg>{{ 'GET_QUOTE.FORM.PRIVACY' | translate }}</p>
+      <button class="hf-btn btn-primary btn-lg" type="submit" [disabled]="isSubmitting">{{ 'GET_QUOTE.FORM.SUBMIT' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+    </form>
+  </div>
+</section>
+
+<!-- Why A-State -->
+<section class="section bg-white" id="why-astate" aria-labelledby="why-h">
+  <div class="hf-container">
+    <div class="section-head"><h2 id="why-h">{{ 'GET_QUOTE.WHY.TITLE' | translate }}</h2></div>
+    <ul class="q-why">
+      <li *ngFor="let w of list('GET_QUOTE.WHY.ITEMS'); let i = index">
+        <span class="ic" aria-hidden="true"><svg class="icon"><use [attr.href]="'#' + whyIcons[i]" /></svg></span>
+        <div><h3>{{ w.TITLE }}</h3><p>{{ w.TEXT }}</p></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Trusted by Texans -->
+<section class="section bg-cream q-trusted" aria-labelledby="trust-h">
+  <div class="hf-container">
+    <h2 id="trust-h">{{ 'GET_QUOTE.TRUST.TITLE' | translate }}</h2>
+    <ul class="q-stats">
+      <li *ngFor="let item of list('GET_QUOTE.TRUST.ITEMS'); let i = index">
+        <span class="ic" aria-hidden="true"><svg class="icon"><use [attr.href]="'#' + trustIcons[i]" /></svg></span>
+        <span><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: item }"></ng-container></span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- What you'll need -->
+<section class="section bg-white" id="what-you-need" aria-labelledby="need-h">
+  <div class="hf-container q-need-grid">
+    <div class="need-head">
+      <h2 id="need-h">{{ 'GET_QUOTE.NEED.TITLE' | translate }}</h2>
+      <p class="hf-lead">{{ 'GET_QUOTE.NEED.LEAD' | translate }}</p>
+      <p class="q-start"><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg>{{ 'GET_QUOTE.NEED.START' | translate }}</p>
+      <a class="hf-btn btn-primary" href="#quote" (click)="goToForm($event)">{{ 'GET_QUOTE.NEED.CTA' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
     </div>
-  </section>
+    <ul class="q-need">
+      <li *ngFor="let n of list('GET_QUOTE.NEED.ITEMS'); let i = index">
+        <span class="ic" aria-hidden="true"><svg class="icon-sm"><use [attr.href]="'#' + needIcons[i]" /></svg></span>
+        <div><h3>{{ n.TITLE }}</h3><p>{{ n.TEXT }}</p></div>
+      </li>
+    </ul>
+  </div>
+</section>
 
-  <!-- get covered -->
-  <div class="getCovver">
-    <div class="container h-100">
-      <div class="row h-100 justify-content-center align-items-center text-center">
-        <div class="col-lg-10 col-xl-8">
-          <div class="topSub2">
-            <h2 class="h1 mb-4">
-              <span [innerHTML]="'GET_QUOTE.VISIT.HEADING1' | translateHtml | async"></span> :<br />
-              <strong [innerHTML]="'GET_QUOTE.VISIT.HEADING2' | translateHtml | async"></strong>
-            </h2>
+<!-- Visit or call -->
+<section class="section bg-cream" id="offices" aria-labelledby="off-h">
+  <div class="hf-container q-off-grid">
+    <div class="off-head">
+      <h2 id="off-h">{{ 'GET_QUOTE.OFFICES.TITLE' | translate }}</h2>
+      <p class="hf-lead"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('GET_QUOTE.OFFICES.LEAD') }"></ng-container></p>
+      <a class="hf-btn btn-outline" [routerLink]="route('ourLocations')">{{ 'GET_QUOTE.OFFICES.CTA' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+    </div>
+    <ul class="q-offices">
+      <li *ngFor="let o of list('GET_QUOTE.OFFICES.ITEMS'); let i = index">
+        <a class="q-off" [routerLink]="route('ourLocations/:id', offices[i].id)"><b>{{ o.NAME }}</b><span>{{ o.ADDRESS }}</span></a>
+        <a class="q-ph" [href]="'tel:' + offices[i].tel"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ o.PHONE }}</a>
+      </li>
+    </ul>
+  </div>
+</section>
 
-            <p class="paragraph mb-4" [innerHTML]="'GET_QUOTE.VISIT.DESC' | translateHtml | async"></p>
+<!-- FAQs -->
+<section class="section bg-white" id="faqs" aria-labelledby="faq-h">
+  <div class="hf-container faq faq-wrap">
+    <h2 id="faq-h">{{ 'GET_QUOTE.FAQ.TITLE' | translate }}</h2>
+    <details *ngFor="let item of list('GET_QUOTE.FAQ.ITEMS'); let i = index" [open]="faqOpen === i" (toggle)="onFaqToggle(i, $event)">
+      <summary><h3>{{ item.Q }}</h3><span class="pm" aria-hidden="true"><svg class="icon-sm"><use href="#i-plus" /></svg></span></summary>
+      <div class="ans"><p><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: item.A }"></ng-container></p></div>
+    </details>
+  </div>
+</section>
 
-            <button class="btn custom-btn">
-              {{ 'GET_QUOTE.VISIT.BUTTON' | translate }}
-            </button>
-          </div>
-        </div>
-      </div>
+<!-- Final CTA -->
+<section class="section final q-final" id="final-cta" aria-labelledby="fin-h">
+  <div class="hf-container ready-band">
+    <h2 id="fin-h">{{ 'GET_QUOTE.FINAL.TITLE' | translate }}</h2>
+    <p>{{ 'GET_QUOTE.FINAL.TEXT' | translate }}</p>
+    <div class="btn-row">
+      <a class="hf-btn btn-primary btn-lg" href="#quote" (click)="goToForm($event)">{{ 'GET_QUOTE.FINAL.CTA' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+      <a class="hf-btn btn-outline btn-lg" href="tel:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'GET_QUOTE.FINAL.CALL' | translate }}</a>
     </div>
   </div>
+</section>
 
-  <!-- footuper -->
-  <app-foot-upper></app-foot-upper>
+<!-- Sticky mobile bar -->
+<div class="sticky-cta" [class.show]="showSticky" [attr.aria-hidden]="!showSticky">
+  <a class="hf-btn btn-primary" href="#quote" [tabIndex]="showSticky ? 0 : -1" (click)="goToForm($event)">{{ 'HOME_PAGE.STICKY.QUOTE' | translate }}</a>
+  <a class="hf-btn btn-outline" href="tel:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'HOME_PAGE.STICKY.CALL' | translate }}</a>
+  <a class="hf-btn btn-outline" href="sms:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-chat" /></svg>{{ 'HOME_PAGE.STICKY.TEXT' | translate }}</a>
+</div>

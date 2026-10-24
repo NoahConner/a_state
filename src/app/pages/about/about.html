@@ -29,15 +29,21 @@
 
 <!-- Hero -->
 <section class="hero" aria-labelledby="hero-title">
+  <div class="hf-container crumbs-row">
+    <nav class="crumbs" [attr.aria-label]="'ABOUT_PAGE.BREADCRUMB.ARIA' | translate">
+      <ol>
+        <li><a [routerLink]="route('home')">{{ 'ABOUT_PAGE.BREADCRUMB.HOME' | translate }}</a></li>
+        <li aria-current="page">{{ 'ABOUT_PAGE.BREADCRUMB.CURRENT' | translate }}</li>
+      </ol>
+    </nav>
+  </div>
   <div class="hf-container hero-grid">
     <div class="hero-copy">
-      <nav class="crumbs" [attr.aria-label]="'ABOUT_PAGE.BREADCRUMB.ARIA' | translate">
-        <ol>
-          <li><a [routerLink]="route('home')">{{ 'ABOUT_PAGE.BREADCRUMB.HOME' | translate }}</a></li>
-          <li aria-current="page">{{ 'ABOUT_PAGE.BREADCRUMB.CURRENT' | translate }}</li>
-        </ol>
-      </nav>
       <h1 id="hero-title"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('ABOUT_PAGE.HERO.TITLE') }"></ng-container></h1>
+      <div class="btn-row">
+        <a class="hf-btn btn-primary btn-lg" [routerLink]="route('getAQuote')">{{ 'ABOUT_PAGE.HERO.CTA_QUOTE' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+        <a class="hf-btn btn-outline btn-lg" href="tel:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'ABOUT_PAGE.HERO.CTA_CALL' | translate }}</a>
+      </div>
       <p class="hf-lead">{{ 'ABOUT_PAGE.HERO.LEAD' | translate }}</p>
       <ul class="checks">
         <li *ngFor="let c of list('ABOUT_PAGE.HERO.CHECKS')">
@@ -45,10 +51,6 @@
           <ng-template #checkItem><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg>{{ c.t }}</ng-template>
         </li>
       </ul>
-      <div class="btn-row">
-        <a class="hf-btn btn-primary btn-lg" [routerLink]="route('getAQuote')">{{ 'ABOUT_PAGE.HERO.CTA_QUOTE' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
-        <a class="hf-btn btn-outline btn-lg" href="tel:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'ABOUT_PAGE.HERO.CTA_CALL' | translate }}</a>
-      </div>
     </div>
     <figure class="about-photo">
       <img src="/assets/images/about/about-team.jpg" [alt]="'ABOUT_PAGE.HERO.PHOTO_ALT' | translate" width="1402" height="1122" decoding="async" />

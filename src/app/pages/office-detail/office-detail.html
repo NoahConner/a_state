@@ -26,15 +26,17 @@
 
 <!-- Hero -->
 <section class="hero" aria-labelledby="hero-title">
+  <div class="hf-container crumbs-row">
+    <nav class="crumbs" [attr.aria-label]="'OFFICE_PAGE.COMMON.BREADCRUMB.ARIA' | translate">
+      <ol>
+        <li><a [routerLink]="route('home')">{{ 'OFFICE_PAGE.COMMON.BREADCRUMB.HOME' | translate }}</a></li>
+        <li><a [routerLink]="route('ourLocations')">{{ 'OFFICE_PAGE.COMMON.BREADCRUMB.LOCATIONS' | translate }}</a></li>
+        <li aria-current="page">{{ o + 'NAME' | translate }}</li>
+      </ol>
+    </nav>
+  </div>
   <div class="hf-container hero-grid">
     <div class="hero-copy">
-      <nav class="crumbs" [attr.aria-label]="'OFFICE_PAGE.COMMON.BREADCRUMB.ARIA' | translate">
-        <ol>
-          <li><a [routerLink]="route('home')">{{ 'OFFICE_PAGE.COMMON.BREADCRUMB.HOME' | translate }}</a></li>
-          <li><a [routerLink]="route('ourLocations')">{{ 'OFFICE_PAGE.COMMON.BREADCRUMB.LOCATIONS' | translate }}</a></li>
-          <li aria-current="page">{{ o + 'NAME' | translate }}</li>
-        </ol>
-      </nav>
       <h1 id="hero-title">{{ o + 'TITLE' | translate }}</h1>
       <!-- Buttons come before the lead on phones and tablets; from 1024px the lead moves above them. -->
       <div class="btn-row">
@@ -196,7 +198,7 @@
 </section>
 
 <!-- Quote -->
-<section class="section final" id="quote" aria-labelledby="oq-h">
+<section class="section final bk-W" id="quote" aria-labelledby="oq-h">
   <div class="hf-container lq-grid">
     <div class="lq-copy">
       <h2 id="oq-h">{{ o + 'QUOTE_TITLE' | translate }}</h2>
