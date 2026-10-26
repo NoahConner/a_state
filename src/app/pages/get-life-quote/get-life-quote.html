@@ -1,375 +1,351 @@
-<div class="quoteMain">
-  <div class="topBanner">
-    <div class="container">
-      <h1 class="h1"><span [innerHTML]="'GET_LIFE_QUOTE.HEADING' | translateHtml | async"></span></h1>
-      <p class="heroDesc" [innerHTML]="'GET_LIFE_QUOTE.DESCRIPTION' | translateHtml | async"></p>
+<!-- Icon sprite (phone, check, chev, arrow, globe and x come from the header sprite) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2-5.5A2 2 0 0 1 6.9 6h10.2a2 2 0 0 1 1.9 1.5L21 13v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M3 13h18M7 15.5h.01M17 15.5h.01M6 18v2M18 18v2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-9-9a4.5 4.5 0 0 1 8-4l1 1.2 1-1.2a4.5 4.5 0 0 1 8 4c-2 4.6-9 9-9 9z"/></symbol>
+    <symbol id="i-health" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M12 8v8M8 12h8"/></symbol>
+    <symbol id="i-more" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8.5 10.5h7"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z" fill="#F6C945"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14"/><path d="M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  </defs>
+</svg>
+
+<!-- Renders translated text pieces: `hl` red text, `b` bold, `l` language code, `h` link (tel:, "#quote" or external), `x` new tab, `r` route key, `k` answer a "#quote" link pre-selects. Kept on one line so no spaces creep in. -->
+<ng-template #segsTpl let-value><ng-container *ngFor="let s of value"><a *ngIf="s.h && !s.x" [href]="s.h" [class.tel]="s.h.startsWith('tel:')" (click)="onSegLink(s, $event)">{{ s.t }}</a><a *ngIf="s.h && s.x" [href]="s.h" target="_blank" rel="noopener">{{ s.t }}<span class="sr-only"> {{ 'LIFE_QUOTE_PAGE.NEW_TAB' | translate }}</span></a><a *ngIf="s.r" [routerLink]="route(s.r)">{{ s.t }}</a><span *ngIf="s.hl" class="hl">{{ s.t }}</span><b *ngIf="s.b">{{ s.t }}</b><span *ngIf="s.l" [attr.lang]="s.l">{{ s.t }}</span><ng-container *ngIf="!s.h && !s.r && !s.hl && !s.b && !s.l">{{ s.t }}</ng-container></ng-container></ng-template>
+
+<!-- Group of radio chips. form.answers[key] holds the chosen value. Radios keep `name` for grouping only; they are never submitted natively. -->
+<ng-template #chips let-legend="legend" let-name="name" let-opts="opts" let-key="key" let-cls="cls" let-hintId="hintId" let-fcls="fcls">
+  <fieldset [attr.aria-describedby]="hintId || null" [ngClass]="fcls">
+    <legend>{{ legend }}</legend>
+    <div class="opts" [ngClass]="cls">
+      <div class="opt-chip" *ngFor="let o of opts">
+        <input type="radio" [name]="name" [id]="name + '-' + o.V" [value]="o.V" [checked]="isAnswer(key, o.V)" (change)="setAnswer(key, o.V)" />
+        <label [for]="name + '-' + o.V" [attr.lang]="o.LG || null">{{ o.L }}</label>
+      </div>
+    </div>
+  </fieldset>
+</ng-template>
+
+<!-- Group of checkboxes with an icon (group is form.purpose or form.also). -->
+<ng-template #checks let-legend="legend" let-name="name" let-opts="opts" let-group="group" let-icons="icons" let-cls="cls">
+  <fieldset>
+    <legend>{{ legend }} <span class="opt">{{ 'LIFE_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></legend>
+    <div class="cq-grid" [ngClass]="cls">
+      <div class="cq-check" *ngFor="let o of opts">
+        <input type="checkbox" [id]="name + '-' + o.V" [value]="o.V" [checked]="isChecked(group, o.V)" (change)="onCheck(group, o.V, $event)" />
+        <label [for]="name + '-' + o.V"><span class="ic" aria-hidden="true"><svg class="icon-sm"><use [attr.href]="'#' + icons[o.V]" /></svg></span>{{ o.L }}<span class="box" aria-hidden="true"><svg class="icon-sm"><use href="#i-check" /></svg></span></label>
+      </div>
+    </div>
+  </fieldset>
+</ng-template>
+
+<!-- One row of the review step -->
+<ng-template #rrow let-k="k" let-v="v"><div><dt>{{ k }}</dt><dd [class.none]="!v">{{ v || ('LIFE_QUOTE_PAGE.FORM.NOT_GIVEN' | translate) }}</dd></div></ng-template>
+<!-- Same, but only when an answer exists (optional questions) -->
+<ng-template #orow let-k="k" let-v="v"><div *ngIf="v"><dt>{{ k }}</dt><dd>{{ v }}</dd></div></ng-template>
+
+<!-- Hero + 5-step form -->
+<section class="hero cq-hero aq-hero lq-hero has-sub" aria-labelledby="hero-title">
+  <div class="hf-container crumbs-row">
+    <nav class="crumbs" [attr.aria-label]="'LIFE_QUOTE_PAGE.BREADCRUMB.ARIA' | translate">
+      <ol>
+        <li><a [routerLink]="route('home')">{{ 'LIFE_QUOTE_PAGE.BREADCRUMB.HOME' | translate }}</a></li>
+        <li><a [routerLink]="route('lifeInsurance')">{{ 'LIFE_QUOTE_PAGE.BREADCRUMB.SECTION' | translate }}</a></li>
+        <li aria-current="page">{{ 'LIFE_QUOTE_PAGE.BREADCRUMB.CURRENT' | translate }}</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="hf-container hero-grid">
+    <div class="hero-copy">
+      <h1 id="hero-title"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('LIFE_QUOTE_PAGE.HERO.TITLE') }"></ng-container></h1>
+    </div>
+
+    <div class="cq-card aq-card lq-card" id="quote">
+      <p class="sr-only" aria-live="polite">{{ liveMessage }}</p>
+
+      <ng-container *ngIf="!sent">
+        <div class="cq-progress" aria-hidden="true"><span [style.width.%]="step * 20"></span></div>
+        <ol class="cq-steps" [attr.aria-label]="'LIFE_QUOTE_PAGE.FORM.STEPS_ARIA' | translate">
+          <li *ngFor="let n of stepNumbers; let i = index" [class.done]="n < step" [attr.aria-current]="n === step ? 'step' : null">
+            <span>{{ n }}</span><b>{{ list('LIFE_QUOTE_PAGE.FORM.STEP_DOTS')[i] }}</b>
+          </li>
+        </ol>
+
+        <form class="cform cqform aqform lqform" novalidate [attr.aria-label]="'LIFE_QUOTE_PAGE.FORM.ARIA' | translate" (submit)="submit($event)" (keydown.enter)="onEnter($event)">
+
+          <!-- Step 1: Who is the coverage for? -->
+          <div class="cq-step" [hidden]="step !== 1">
+            <div class="cq-step-h"><p class="cq-count">{{ 'LIFE_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 1 } }}</p><h3 id="lq-h1" tabindex="-1">{{ list('LIFE_QUOTE_PAGE.FORM.STEP_TITLES')[0] }}</h3></div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('LIFE_QUOTE_PAGE.FORM.WHO_LEGEND' | translate), name: 'lq-w', opts: list('LIFE_QUOTE_PAGE.FORM.WHOS'), key: 'who', cls: 'stack aq-two' }"></ng-container>
+            <p class="aq-lender" *ngIf="buyingForSomeoneElse"><svg class="icon-sm" aria-hidden="true"><use href="#i-user" /></svg>{{ 'LIFE_QUOTE_PAGE.FORM.FOR_OTHER' | translate }}</p>
+            <div class="cq-row">
+              <div class="field">
+                <label for="lq-p-dob">{{ 'LIFE_QUOTE_PAGE.FORM.DOB' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                <input type="date" id="lq-p-dob" min="1920-01-01" required [value]="form.dob"
+                  [attr.aria-invalid]="errors['dob'] ? 'true' : null" aria-describedby="lq-p-dob-err" (input)="onText('dob', $event)" />
+                <p class="err" id="lq-p-dob-err">{{ errors['dob'] }}</p>
+              </div>
+              <ng-container *ngTemplateOutlet="chips; context: { legend: ('LIFE_QUOTE_PAGE.FORM.SEX_LEGEND' | translate), name: 'lq-p-x', opts: list('LIFE_QUOTE_PAGE.FORM.SEXES'), key: 'sex', cls: '', hintId: 'lq-sex-note' }"></ng-container>
+            </div>
+            <div class="lq-spouse" *ngIf="coversSpouse">
+              <p class="lq-sub">{{ 'LIFE_QUOTE_PAGE.FORM.SPOUSE' | translate }}</p>
+              <div class="cq-row">
+                <div class="field">
+                  <label for="lq-s-dob">{{ 'LIFE_QUOTE_PAGE.FORM.SPOUSE_DOB' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                  <input type="date" id="lq-s-dob" min="1920-01-01" required [value]="form.spouseDob"
+                    [attr.aria-invalid]="errors['spouseDob'] ? 'true' : null" aria-describedby="lq-s-dob-err" (input)="onText('spouseDob', $event)" />
+                  <p class="err" id="lq-s-dob-err">{{ errors['spouseDob'] }}</p>
+                </div>
+                <ng-container *ngTemplateOutlet="chips; context: { legend: ('LIFE_QUOTE_PAGE.FORM.SEX_LEGEND' | translate), name: 'lq-s-x', opts: list('LIFE_QUOTE_PAGE.FORM.SEXES'), key: 'spouseSex', cls: '', hintId: 'lq-sex-note' }"></ng-container>
+              </div>
+            </div>
+            <p class="aq-sub aq-help" id="lq-sex-note">{{ 'LIFE_QUOTE_PAGE.FORM.SEX_NOTE' | translate }}</p>
+            <div class="field aq-short">
+              <label for="lq-zip">{{ 'LIFE_QUOTE_PAGE.FORM.ZIP' | translate }} <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="lq-zip" inputmode="numeric" autocomplete="postal-code" maxlength="5" required [value]="form.zip"
+                [attr.aria-invalid]="errors['zip'] ? 'true' : null" aria-describedby="lq-zip-err" (input)="onDigits('zip', 5, $event)" />
+              <p class="err" id="lq-zip-err">{{ errors['zip'] }}</p>
+            </div>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-ghost" *ngIf="editing" (click)="backToReview()">{{ 'LIFE_QUOTE_PAGE.FORM.TO_REVIEW' | translate }}</button>
+              <button type="button" class="hf-btn btn-primary" (click)="next()">{{ list('LIFE_QUOTE_PAGE.FORM.NEXT')[0] }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+
+          <!-- Step 2: Health & lifestyle (no free-text health field, per the content brief) -->
+          <div class="cq-step" [hidden]="step !== 2">
+            <div class="cq-step-h"><p class="cq-count">{{ 'LIFE_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 2 } }}</p><h3 id="lq-h2" tabindex="-1">{{ list('LIFE_QUOTE_PAGE.FORM.STEP_TITLES')[1] }}</h3></div>
+            <p class="lq-why"><svg class="icon-sm" aria-hidden="true"><use href="#i-shield" /></svg><span><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('LIFE_QUOTE_PAGE.FORM.WHY') }"></ng-container></span></p>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('LIFE_QUOTE_PAGE.FORM.TOBACCO_LEGEND' | translate), name: 'lq-t', opts: list('LIFE_QUOTE_PAGE.FORM.YN'), key: 'tobacco', cls: '' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('LIFE_QUOTE_PAGE.FORM.HEALTH_LEGEND' | translate), name: 'lq-hl', opts: list('LIFE_QUOTE_PAGE.FORM.HEALTHS'), key: 'health', cls: '' }"></ng-container>
+            <div class="cq-row">
+              <fieldset class="lq-height">
+                <legend>{{ 'LIFE_QUOTE_PAGE.FORM.HEIGHT' | translate }} <span class="opt">{{ 'LIFE_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></legend>
+                <div class="lq-hw">
+                  <label class="sr-only" for="lq-ft">{{ 'LIFE_QUOTE_PAGE.FORM.FEET' | translate }}</label>
+                  <select id="lq-ft" (change)="onText('heightFeet', $event)">
+                    <option value="" [selected]="!form.heightFeet">{{ 'LIFE_QUOTE_PAGE.FORM.FT' | translate }}</option>
+                    <option *ngFor="let v of heightFeetOptions" [value]="v" [selected]="form.heightFeet === v">{{ v }} {{ 'LIFE_QUOTE_PAGE.FORM.FT' | translate }}</option>
+                  </select>
+                  <label class="sr-only" for="lq-in">{{ 'LIFE_QUOTE_PAGE.FORM.INCHES' | translate }}</label>
+                  <select id="lq-in" (change)="onText('heightInches', $event)">
+                    <option value="" [selected]="!form.heightInches">{{ 'LIFE_QUOTE_PAGE.FORM.IN' | translate }}</option>
+                    <option *ngFor="let v of heightInchOptions" [value]="v" [selected]="form.heightInches === v">{{ v }} {{ 'LIFE_QUOTE_PAGE.FORM.IN' | translate }}</option>
+                  </select>
+                </div>
+              </fieldset>
+              <div class="field">
+                <label for="lq-wt">{{ 'LIFE_QUOTE_PAGE.FORM.WEIGHT' | translate }} <span class="opt">{{ 'LIFE_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
+                <div class="lq-unit">
+                  <input type="text" id="lq-wt" inputmode="numeric" autocomplete="off" maxlength="3" [value]="form.weight"
+                    [attr.aria-invalid]="errors['weight'] ? 'true' : null" aria-describedby="lq-wt-err" (input)="onDigits('weight', 3, $event)" />
+                  <span aria-hidden="true">{{ 'LIFE_QUOTE_PAGE.FORM.LBS' | translate }}</span>
+                </div>
+                <p class="err" id="lq-wt-err">{{ errors['weight'] }}</p>
+              </div>
+            </div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('LIFE_QUOTE_PAGE.FORM.CONDITIONS_LEGEND' | translate), name: 'lq-c', opts: list('LIFE_QUOTE_PAGE.FORM.CONDITIONS'), key: 'conditions', cls: '' }"></ng-container>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-outline" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'LIFE_QUOTE_PAGE.FORM.BACK' | translate }}</button>
+              <button type="button" class="hf-btn btn-ghost" *ngIf="editing" (click)="backToReview()">{{ 'LIFE_QUOTE_PAGE.FORM.TO_REVIEW' | translate }}</button>
+              <button type="button" class="hf-btn btn-primary" (click)="next()">{{ list('LIFE_QUOTE_PAGE.FORM.NEXT')[1] }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+
+          <!-- Step 3: Coverage you want -->
+          <div class="cq-step" [hidden]="step !== 3">
+            <div class="cq-step-h"><p class="cq-count">{{ 'LIFE_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 3 } }}</p><h3 id="lq-h3" tabindex="-1">{{ list('LIFE_QUOTE_PAGE.FORM.STEP_TITLES')[2] }}</h3></div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('LIFE_QUOTE_PAGE.FORM.TYPE_LEGEND' | translate), name: 'lq-ty', opts: list('LIFE_QUOTE_PAGE.FORM.TYPES'), key: 'type', cls: 'stack aq-two' }"></ng-container>
+            <ng-container *ngIf="form.answers['type'] === 'term'"><ng-container *ngTemplateOutlet="chips; context: { legend: ('LIFE_QUOTE_PAGE.FORM.TERM_LEGEND' | translate), name: 'lq-tm', opts: list('LIFE_QUOTE_PAGE.FORM.TERMS'), key: 'term', cls: '', fcls: 'cq-more' }"></ng-container></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('LIFE_QUOTE_PAGE.FORM.AMOUNT_LEGEND' | translate), name: 'lq-a', opts: list('LIFE_QUOTE_PAGE.FORM.AMOUNTS'), key: 'amount', cls: 'stack aq-two lq-amt' }"></ng-container>
+            <ng-container *ngTemplateOutlet="checks; context: { legend: ('LIFE_QUOTE_PAGE.FORM.PURPOSE_LEGEND' | translate), name: 'lq-pu', opts: list('LIFE_QUOTE_PAGE.FORM.PURPOSES'), group: 'purpose', icons: purposeIcons, cls: 'lq-purp' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('LIFE_QUOTE_PAGE.FORM.HAS_LIFE_LEGEND' | translate), name: 'lq-n', opts: list('LIFE_QUOTE_PAGE.FORM.YNU'), key: 'hasLife', cls: '' }"></ng-container>
+            <ng-container *ngTemplateOutlet="checks; context: { legend: ('LIFE_QUOTE_PAGE.FORM.ALSO_LEGEND' | translate), name: 'lq-al', opts: list('LIFE_QUOTE_PAGE.FORM.ALSO'), group: 'alsoQuote', icons: alsoQuoteIcons, cls: 'aq-also hq-also' }"></ng-container>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-outline" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'LIFE_QUOTE_PAGE.FORM.BACK' | translate }}</button>
+              <button type="button" class="hf-btn btn-ghost" *ngIf="editing" (click)="backToReview()">{{ 'LIFE_QUOTE_PAGE.FORM.TO_REVIEW' | translate }}</button>
+              <button type="button" class="hf-btn btn-primary" (click)="next()">{{ list('LIFE_QUOTE_PAGE.FORM.NEXT')[2] }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+
+          <!-- Step 4: How should we reach you? -->
+          <div class="cq-step" [hidden]="step !== 4">
+            <div class="cq-step-h"><p class="cq-count">{{ 'LIFE_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 4 } }}</p><h3 id="lq-h4" tabindex="-1">{{ list('LIFE_QUOTE_PAGE.FORM.STEP_TITLES')[3] }}</h3></div>
+            <div class="cq-row">
+              <div class="field">
+                <label for="lq-name">{{ 'LIFE_QUOTE_PAGE.FORM.NAME' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="lq-name" autocomplete="name" maxlength="255" required [value]="form.name"
+                  [attr.aria-invalid]="errors['name'] ? 'true' : null" aria-describedby="lq-name-err" (input)="onText('name', $event)" />
+                <p class="err" id="lq-name-err">{{ errors['name'] }}</p>
+              </div>
+              <div class="field">
+                <label for="lq-phone">{{ 'LIFE_QUOTE_PAGE.FORM.PHONE' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                <input type="tel" id="lq-phone" inputmode="tel" autocomplete="tel-national" required [value]="form.phone"
+                  [attr.aria-invalid]="errors['phone'] ? 'true' : null" aria-describedby="lq-phone-err" (input)="onPhoneInput($event)" />
+                <p class="err" id="lq-phone-err">{{ errors['phone'] }}</p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="lq-email">{{ 'LIFE_QUOTE_PAGE.FORM.EMAIL' | translate }} <span *ngIf="form.answers['method'] !== 'email'" class="opt">{{ 'LIFE_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span><span *ngIf="form.answers['method'] === 'email'" class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="lq-email" autocomplete="email" maxlength="254" [attr.aria-required]="form.answers['method'] === 'email' ? 'true' : null" [value]="form.email"
+                [attr.aria-invalid]="errors['email'] ? 'true' : null" aria-describedby="lq-email-err" (input)="onText('email', $event)" />
+              <p class="err" id="lq-email-err">{{ errors['email'] }}</p>
+            </div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('LIFE_QUOTE_PAGE.FORM.LANG_LEGEND' | translate), name: 'lq-l', opts: list('LIFE_QUOTE_PAGE.FORM.LANGS'), key: 'lang', cls: '' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('LIFE_QUOTE_PAGE.FORM.METHOD_LEGEND' | translate), name: 'lq-m', opts: list('LIFE_QUOTE_PAGE.FORM.METHODS'), key: 'method', cls: '' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('LIFE_QUOTE_PAGE.FORM.TIME_LEGEND' | translate), name: 'lq-b', opts: list('LIFE_QUOTE_PAGE.FORM.TIMES'), key: 'time', cls: 'stack' }"></ng-container>
+            <div class="field">
+              <label for="lq-office">{{ 'LIFE_QUOTE_PAGE.FORM.OFFICE' | translate }} <span class="opt">{{ 'LIFE_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
+              <select id="lq-office" (change)="form.office = $any($event.target).value">
+                <option value="" [selected]="!form.office">{{ 'LIFE_QUOTE_PAGE.FORM.NO_PREFERENCE' | translate }}</option>
+                <option *ngFor="let name of list('LIFE_QUOTE_PAGE.FORM.OFFICES'); let i = index" [value]="offices[i].id" [selected]="form.office === offices[i].id">{{ name }}</option>
+              </select>
+            </div>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-outline" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'LIFE_QUOTE_PAGE.FORM.BACK' | translate }}</button>
+              <button type="button" class="hf-btn btn-ghost" *ngIf="editing" (click)="backToReview()">{{ 'LIFE_QUOTE_PAGE.FORM.TO_REVIEW' | translate }}</button>
+              <button type="button" class="hf-btn btn-primary" (click)="next()">{{ list('LIFE_QUOTE_PAGE.FORM.NEXT')[3] }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+
+          <!-- Step 5: Review. The submit button exists only on this step, so a stray Enter before hydration cannot submit the form natively. -->
+          <div class="cq-step" [hidden]="step !== 5">
+            <div class="cq-step-h"><p class="cq-count">{{ 'LIFE_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 5 } }}</p><h3 id="lq-h5" tabindex="-1">{{ list('LIFE_QUOTE_PAGE.FORM.STEP_TITLES')[4] }}</h3></div>
+            <div class="cq-review" *ngIf="step === 5">
+              <div class="cq-rev">
+                <div class="cq-rev-h"><h4>{{ list('LIFE_QUOTE_PAGE.FORM.R_TITLES')[0] }}</h4><button type="button" class="cq-edit" (click)="edit(1)">{{ 'LIFE_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('LIFE_QUOTE_PAGE.FORM.R_TITLES')[0] }}</span></button></div>
+                <dl>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('LIFE_QUOTE_PAGE.FORM.R.WHO' | translate), v: label('FORM.WHOS', form.answers['who'] || '') }"></ng-container>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ((coversSpouse ? 'LIFE_QUOTE_PAGE.FORM.R.YOUR_DOB' : 'LIFE_QUOTE_PAGE.FORM.R.DOB') | translate), v: dateLabel(form.dob) }"></ng-container>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ((coversSpouse ? 'LIFE_QUOTE_PAGE.FORM.R.YOUR_SEX' : 'LIFE_QUOTE_PAGE.FORM.R.SEX') | translate), v: label('FORM.SEXES', form.answers['sex'] || '') }"></ng-container>
+                  <ng-container *ngIf="coversSpouse">
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('LIFE_QUOTE_PAGE.FORM.R.SPOUSE_DOB' | translate), v: dateLabel(form.spouseDob) }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('LIFE_QUOTE_PAGE.FORM.R.SPOUSE_SEX' | translate), v: label('FORM.SEXES', form.answers['spouseSex'] || '') }"></ng-container>
+                  </ng-container>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('LIFE_QUOTE_PAGE.FORM.R.ZIP' | translate), v: form.zip }"></ng-container>
+                </dl>
+              </div>
+              <div class="cq-rev">
+                <div class="cq-rev-h"><h4>{{ list('LIFE_QUOTE_PAGE.FORM.R_TITLES')[1] }}</h4><button type="button" class="cq-edit" (click)="edit(2)">{{ 'LIFE_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('LIFE_QUOTE_PAGE.FORM.R_TITLES')[1] }}</span></button></div>
+                <dl>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('LIFE_QUOTE_PAGE.FORM.R.TOBACCO' | translate), v: label('FORM.YN', form.answers['tobacco'] || '') }"></ng-container>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('LIFE_QUOTE_PAGE.FORM.R.HEALTH' | translate), v: label('FORM.HEALTHS', form.answers['health'] || '') }"></ng-container>
+                  <ng-container *ngTemplateOutlet="orow; context: { k: ('LIFE_QUOTE_PAGE.FORM.R.HEIGHT' | translate), v: heightLabel() }"></ng-container>
+                  <ng-container *ngTemplateOutlet="orow; context: { k: ('LIFE_QUOTE_PAGE.FORM.R.WEIGHT' | translate), v: weightLabel() }"></ng-container>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('LIFE_QUOTE_PAGE.FORM.R.CONDITIONS' | translate), v: label('FORM.CONDITIONS', form.answers['conditions'] || '') }"></ng-container>
+                </dl>
+              </div>
+              <div class="cq-rev">
+                <div class="cq-rev-h"><h4>{{ list('LIFE_QUOTE_PAGE.FORM.R_TITLES')[2] }}</h4><button type="button" class="cq-edit" (click)="edit(3)">{{ 'LIFE_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('LIFE_QUOTE_PAGE.FORM.R_TITLES')[2] }}</span></button></div>
+                <dl>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('LIFE_QUOTE_PAGE.FORM.R.TYPE' | translate), v: label('FORM.TYPES', form.answers['type'] || '') }"></ng-container>
+                  <ng-container *ngIf="form.answers['type'] === 'term'"><ng-container *ngTemplateOutlet="rrow; context: { k: ('LIFE_QUOTE_PAGE.FORM.R.TERM' | translate), v: label('FORM.TERMS', form.answers['term'] || '') }"></ng-container></ng-container>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('LIFE_QUOTE_PAGE.FORM.R.AMOUNT' | translate), v: label('FORM.AMOUNTS', form.answers['amount'] || '') }"></ng-container>
+                  <ng-container *ngTemplateOutlet="orow; context: { k: ('LIFE_QUOTE_PAGE.FORM.R.PURPOSE' | translate), v: checkedLabels('FORM.PURPOSES', 'purpose') }"></ng-container>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('LIFE_QUOTE_PAGE.FORM.R.HAS_LIFE' | translate), v: label('FORM.YNU', form.answers['hasLife'] || '') }"></ng-container>
+                  <div><dt>{{ 'LIFE_QUOTE_PAGE.FORM.R.ALSO' | translate }}</dt><dd>{{ checkedLabels('FORM.ALSO', 'alsoQuote') || ('LIFE_QUOTE_PAGE.FORM.NONE' | translate) }}</dd></div>
+                </dl>
+              </div>
+              <div class="cq-rev">
+                <div class="cq-rev-h"><h4>{{ list('LIFE_QUOTE_PAGE.FORM.R_TITLES')[3] }}</h4><button type="button" class="cq-edit" (click)="edit(4)">{{ 'LIFE_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('LIFE_QUOTE_PAGE.FORM.R_TITLES')[3] }}</span></button></div>
+                <dl>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('LIFE_QUOTE_PAGE.FORM.R.NAME' | translate), v: form.name.trim() }"></ng-container>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('LIFE_QUOTE_PAGE.FORM.R.PHONE' | translate), v: form.phone }"></ng-container>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('LIFE_QUOTE_PAGE.FORM.R.EMAIL' | translate), v: form.email.trim() }"></ng-container>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('LIFE_QUOTE_PAGE.FORM.R.LANG' | translate), v: label('FORM.LANGS', form.answers['lang'] || '') }"></ng-container>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('LIFE_QUOTE_PAGE.FORM.R.METHOD' | translate), v: label('FORM.METHODS', form.answers['method'] || '') }"></ng-container>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('LIFE_QUOTE_PAGE.FORM.R.TIME' | translate), v: label('FORM.TIMES', form.answers['time'] || '') }"></ng-container>
+                  <div><dt>{{ 'LIFE_QUOTE_PAGE.FORM.R.OFFICE' | translate }}</dt><dd>{{ officeLabel() || ('LIFE_QUOTE_PAGE.FORM.NO_PREFERENCE' | translate) }}</dd></div>
+                </dl>
+              </div>
+            </div>
+            <p class="aq-consent"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('LIFE_QUOTE_PAGE.FORM.CONSENT') }"></ng-container></p>
+            <p class="aq-never"><svg class="icon-sm" aria-hidden="true"><use href="#i-shield" /></svg>{{ 'LIFE_QUOTE_PAGE.FORM.NEVER_SOLD' | translate }}</p>
+            <p class="err cq-submit-err" role="alert">{{ submitError }}</p>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-outline" [disabled]="isSubmitting" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'LIFE_QUOTE_PAGE.FORM.BACK' | translate }}</button>
+              <button type="submit" class="hf-btn btn-primary btn-lg" *ngIf="step === 5" [disabled]="isSubmitting" [attr.aria-busy]="isSubmitting ? 'true' : null">{{ (isSubmitting ? 'LIFE_QUOTE_PAGE.FORM.SENDING' : 'LIFE_QUOTE_PAGE.FORM.SUBMIT') | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+        </form>
+      </ng-container>
+
+      <div class="csuccess" id="lq-success" tabindex="-1" *ngIf="sent">
+        <span class="badge" aria-hidden="true"><svg class="icon"><use href="#i-check" /></svg></span>
+        <h3>{{ 'LIFE_QUOTE_PAGE.FORM.SUCCESS.TITLE' | translate: { first: sentFirstName } }}</h3>
+        <p>{{ 'LIFE_QUOTE_PAGE.FORM.SUCCESS.PRE' | translate }}{{ 'LIFE_QUOTE_PAGE.FORM.SUCCESS.HOW.' + sentContactMethod | translate }} <b>{{ sentContactValue }}</b>{{ 'LIFE_QUOTE_PAGE.FORM.SUCCESS.POST' | translate }}</p>
+        <p class="cq-multi" *ngIf="sentAlsoQuote"><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg>{{ 'LIFE_QUOTE_PAGE.FORM.SUCCESS.ALSO' | translate }}</p>
+      </div>
+    </div>
+
+    <div class="hero-sub">
+      <p class="hf-lead">{{ 'LIFE_QUOTE_PAGE.HERO.LEAD' | translate }}</p>
+      <p class="q-trust"><span class="q-star" aria-hidden="true"><svg class="icon-sm"><use href="#i-star" /></svg></span><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('LIFE_QUOTE_PAGE.HERO.TRUST') }"></ng-container></p>
     </div>
   </div>
+</section>
 
-  <div class="container my-5 quote-wrapper">
-    <div class="card border-0 p-4 mb-5">
-      <div class="d-flex justify-content-between align-items-center stepper">
-        <div class="step" [class.active]="currentStep === 1" [class.completed]="canEditStep(1)">
-          <div class="circle"><img src="/assets/images/quote-step-1.png" alt="" /></div>
-          <p [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP1.TITLE' | translateHtml | async"></p>
-        </div>
-        <div class="step" [class.active]="currentStep === 2" [class.completed]="canEditStep(2)">
-          <div class="circle"><img src="/assets/images/quote-step-2.png" alt="" /></div>
-          <p [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP2.TITLE' | translateHtml | async"></p>
-        </div>
-        <div class="step" [class.active]="currentStep === 3" [class.completed]="canEditStep(3)">
-          <div class="circle"><img src="/assets/images/quote-step-3.png" alt="" /></div>
-          <p [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP3.TITLE' | translateHtml | async"></p>
-        </div>
-        <div class="step" [class.active]="currentStep === 4" [class.completed]="canEditStep(4)">
-          <div class="circle"><img src="/assets/images/quote-step-4.png" alt="" /></div>
-          <p [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP4.TITLE' | translateHtml | async"></p>
-        </div>
+<!-- Term vs whole vs final expense -->
+<section class="section bg-white" id="types" aria-labelledby="types-h">
+  <div class="hf-container">
+    <div class="section-head"><h2 id="types-h">{{ 'LIFE_QUOTE_PAGE.TYPES.TITLE' | translate }}</h2></div>
+    <ul class="lq-types">
+      <li *ngFor="let item of list('LIFE_QUOTE_PAGE.TYPES.ITEMS'); let i = index">
+        <span class="ic" aria-hidden="true"><svg class="icon"><use [attr.href]="'#' + typeSectionIcons[i]" /></svg></span>
+        <h3><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: item.TITLE }"></ng-container></h3>
+        <p>{{ item.TEXT }}</p>
+        <a class="lq-pick" href="#quote" (click)="pickType(item.V, $event)">{{ item.PICK }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+      </li>
+    </ul>
+  </div>
+</section>
 
-      </div>
-    </div>
-
-    <form [formGroup]="lifeQuoteForm">
-      <div class="steps-for-custom-quote">
-        <div class="container" *ngIf="currentStep === 1">
-          <div class="form-wrapper">
-            <h2 class="form-title" [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP1.TITLE' | translateHtml | async"></h2>
-
-            <div class="form-content-border">
-              <div class="row gy-3 mb-2">
-                <div class="col-md-4">
-                  <label class="form-label"><span [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP1.FIELDS.FULL_NAME' | translateHtml | async"></span><span>*</span></label>
-                  <input type="text" formControlName="full_name"
-                    [class.is-invalid]="lifeQuoteForm.get('full_name')?.invalid && lifeQuoteForm.get('full_name')?.touched"
-                    class="form-control" placeholder="John Doe" />
-                  <div class="invalid-feedback"
-                    *ngIf="lifeQuoteForm.get('full_name')?.invalid && lifeQuoteForm.get('full_name')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-                <div class="col-md-4">
-                  <label class="form-label"><span [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP1.FIELDS.EMAIL' | translateHtml | async"></span><span>*</span></label>
-                  <input type="email" formControlName="email_address"
-                    [class.is-invalid]="lifeQuoteForm.get('email_address')?.invalid && lifeQuoteForm.get('email_address')?.touched"
-                    class="form-control" id="email_address" placeholder="johndoe@email.com" />
-                  <div class="invalid-feedback"
-                    *ngIf="lifeQuoteForm.get('email_address')?.invalid && lifeQuoteForm.get('email_address')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.EMAIL' | translateHtml | async"></div>
-                </div>
-              </div>
-
-              <div class="row gy-3 mb-3 mt-2">
-                <div class="col-md-4">
-                  <label class="form-label"><span [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP1.FIELDS.PHONE' | translateHtml | async"></span><span>*</span></label>
-                  <input type="text" formControlName="phone_number"
-                    [class.is-invalid]="lifeQuoteForm.get('phone_number')?.invalid && lifeQuoteForm.get('phone_number')?.touched"
-                    class="form-control" placeholder="+1 234 567 8900" />
-                  <div class="invalid-feedback"
-                    *ngIf="lifeQuoteForm.get('phone_number')?.invalid && lifeQuoteForm.get('phone_number')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-                <div class="col-md-4">
-                  <label class="form-label"><span [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP1.FIELDS.GENDER' | translateHtml | async"></span><span>*</span></label>
-                  <select class="form-select" formControlName="gender"
-                    [class.is-invalid]="lifeQuoteForm.get('gender')?.invalid && lifeQuoteForm.get('gender')?.touched">
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Other">Other</option>
-                  </select>
-                  <div class="invalid-feedback"
-                    *ngIf="lifeQuoteForm.get('gender')?.invalid && lifeQuoteForm.get('gender')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-              </div>
-
-              <div class="row gy-3 mb-3 mt-2">
-                <div class="col-md-4">
-                  <label class="form-label"><span [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP1.FIELDS.DATE_OF_BIRTH' | translateHtml | async"></span><span>*</span></label>
-                  <input type="date" formControlName="date_of_birth" lang="en-GB" [max]="maxDate"
-                    [class.is-invalid]="lifeQuoteForm.get('date_of_birth')?.invalid && lifeQuoteForm.get('date_of_birth')?.touched"
-                    class="form-control" />
-                  <div class="invalid-feedback"
-                    *ngIf="lifeQuoteForm.get('date_of_birth')?.invalid && lifeQuoteForm.get('date_of_birth')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-                <div class="col-md-4">
-                  <label class="form-label"><span [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP1.FIELDS.ZIPCODE' | translateHtml | async"></span><span>*</span></label>
-                  <input type="text" formControlName="zip_code"
-                    [class.is-invalid]="lifeQuoteForm.get('zip_code')?.invalid && lifeQuoteForm.get('zip_code')?.touched"
-                    class="form-control" placeholder="10001" />
-                  <div class="invalid-feedback"
-                    *ngIf="lifeQuoteForm.get('zip_code')?.invalid && lifeQuoteForm.get('zip_code')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-              </div>
-              <div class="d-flex gap-3 mt-4">
-          <button type="button" class="btn btn-next" (click)="nextStep()">{{ 'GET_LIFE_QUOTE.NEXT_BUTTON' |
-                  translate }}</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="container mb-4 mt-4" *ngIf="currentStep === 2">
-          <div class="form-wrapper">
-            <h2 class="form-title" [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP2.TITLE' | translateHtml | async"></h2>
-
-            <div class="form-content-border">
-              <div class="row gy-3 mt-2">
-                <div class="selection-group">
-                  <h4 class="selection-heading" [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP2.FIELDS.TOBACCO_USE' | translateHtml | async"></h4>
-
-                  <div class="coverage-options">
-                    <div class="form-check"
-                      *ngFor="let option of ('GET_LIFE_QUOTE.STEPPER.STEP2.TOBACCO_OPTIONS' | translate)">
-                      <input class="form-check-input" type="radio" [value]="option" [id]="'tobacco_' + option"
-                        formControlName="uses_tobacco" />
-
-                      <label class="form-check-label" [for]="'tobacco_' + option">
-                        {{ option }}
-                      </label>
-                    </div>
-                    <div class="invalid-feedback d-block"
-                      *ngIf="lifeQuoteForm.get('uses_tobacco')?.invalid && lifeQuoteForm.get('uses_tobacco')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row gy-3 mt-2">
-                <div class="selection-group">
-                  <h4 class="selection-heading" [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP2.FIELDS.HEALTH_STATUS' | translateHtml | async"></h4>
-
-                  <div class="coverage-options">
-                    <div class="form-check"
-                      *ngFor="let option of ('GET_LIFE_QUOTE.STEPPER.STEP2.HEALTH_OPTIONS' | translate)">
-                      <input class="form-check-input" type="radio" [value]="option" [id]="'health_' + option"
-                        formControlName="general_health" />
-
-                      <label class="form-check-label" [for]="'health_' + option">
-                        {{ option }}
-                      </label>
-                    </div>
-                    <div class="invalid-feedback d-block"
-                      *ngIf="lifeQuoteForm.get('general_health')?.invalid && lifeQuoteForm.get('general_health')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous" (click)="previousStep()">{{
-                  'GET_LIFE_QUOTE.PREVIOUS_BUTTON' | translate
-                  }}</button>
-                <button type="button" class="btn btn-next" (click)="nextStep()">{{ 'GET_LIFE_QUOTE.NEXT_BUTTON' |
-                  translate }}</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="container mb-4" *ngIf="currentStep === 3">
-          <div class="form-wrapper">
-            <h2 class="form-title" [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP3.TITLE' | translateHtml | async"></h2>
-
-            <div class="form-content-border">
-              <div class="row gy-3 mt-2">
-                <div class="selection-group">
-                  <h4 class="selection-heading" [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP3.COVERAGE_TITLE' | translateHtml | async"></h4>
-
-                  <div class="coverage-options">
-                    <div class="form-check"
-                      *ngFor="let option of ('GET_LIFE_QUOTE.STEPPER.STEP3.COVERAGE_OPTIONS' | translate)">
-                      <input class="form-check-input" type="radio" [value]="option" [id]="option"
-                        formControlName="coverage_amount" />
-
-                      <label class="form-check-label" [for]="option">
-                        {{ option }}
-                      </label>
-                    </div>
-                    <div class="invalid-feedback d-block"
-                      *ngIf="lifeQuoteForm.get('coverage_amount')?.invalid && lifeQuoteForm.get('coverage_amount')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row gy-3 mt-2">
-                <div class="selection-group">
-                  <h4 class="selection-heading" [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP3.BUNDLE_TITLE' | translateHtml | async"></h4>
-
-                  <div class="coverage-options">
-                    <div class="form-check"
-                      *ngFor="let option of ('GET_LIFE_QUOTE.STEPPER.STEP3.BUNDLE_OPTIONS' | translate)">
-                      <input class="form-check-input" type="radio" [value]="option" [id]="'bundle_' + option"
-                        formControlName="bundle_option" />
-
-                      <label class="form-check-label" [for]="'bundle_' + option">
-                        {{ option }}
-                      </label>
-                    </div>
-                    <div class="invalid-feedback d-block"
-                      *ngIf="lifeQuoteForm.get('bundle_option')?.invalid && lifeQuoteForm.get('bundle_option')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous" (click)="previousStep()">{{
-                  'GET_LIFE_QUOTE.PREVIOUS_BUTTON' | translate
-                  }}</button>
-                <button type="button" class="btn btn-next" (click)="nextStep()">{{ 'GET_LIFE_QUOTE.NEXT_BUTTON' |
-                  translate }}</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-        <div class="container mt-4 mb-4" *ngIf="currentStep === 4">
-          <div class="form-wrapper">
-            <h2 class="form-title" [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP4.TITLE' | translateHtml | async"></h2>
-
-            <div class="form-content-border">
-              <div class="row gy-3 mb-3">
-                <div class="col-md-8">
-                  <label class="form-label" [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP4.LANGUAGE_TITLE' | translateHtml | async"></label>
-                  <select class="form-select" formControlName="preferred_language"
-                    [class.is-invalid]="lifeQuoteForm.get('preferred_language')?.invalid && lifeQuoteForm.get('preferred_language')?.touched">
-                    <option *ngFor="let option of ('GET_LIFE_QUOTE.STEPPER.STEP4.LANGUAGE_OPTIONS' | translate)"
-                      [value]="option">{{ option }}</option>
-                  </select>
-                  <div class="invalid-feedback"
-                    *ngIf="lifeQuoteForm.get('preferred_language')?.invalid && lifeQuoteForm.get('preferred_language')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-
-              </div>
-
-              <div class="row gy-3 mb-3">
-                <div class="col-md-8">
-                  <label class="form-label" [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP4.CONTACT_TITLE' | translateHtml | async"></label>
-                  <select class="form-select" formControlName="contact_method"
-                    [class.is-invalid]="lifeQuoteForm.get('contact_method')?.invalid && lifeQuoteForm.get('contact_method')?.touched">
-                    <option *ngFor="let option of ('GET_LIFE_QUOTE.STEPPER.STEP4.CONTACT_OPTIONS' | translate)"
-                      [value]="option">{{ option }}</option>
-                  </select>
-                  <div class="invalid-feedback"
-                    *ngIf="lifeQuoteForm.get('contact_method')?.invalid && lifeQuoteForm.get('contact_method')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-
-              </div>
-
-              <div class="selection-group mb-3">
-                <h4 class="selection-heading" [innerHTML]="'GET_LIFE_QUOTE.STEPPER.STEP4.TIME_TITLE' | translateHtml | async"></h4>
-
-                <div class="coverage-options">
-                  <div class="form-check"
-                    *ngFor="let option of ('GET_LIFE_QUOTE.STEPPER.STEP4.TIME_OPTIONS' | translate)">
-                    <input class="form-check-input" type="radio" [value]="option" [id]="'time_' + option"
-                      formControlName="best_time_to_connect" />
-
-                    <label class="form-check-label" [for]="'time_' + option">
-                      {{ option }}
-                    </label>
-                  </div>
-                  <div class="invalid-feedback d-block"
-                    *ngIf="lifeQuoteForm.get('best_time_to_connect')?.invalid && lifeQuoteForm.get('best_time_to_connect')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-              </div>
-
-
-
-              <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous" (click)="previousStep()">{{
-                  'GET_LIFE_QUOTE.PREVIOUS_BUTTON' | translate
-                  }}</button>
-                <button type="button" class="btn btn-next" (click)="nextStep()">{{ 'GET_LIFE_QUOTE.NEXT_BUTTON' |
-                  translate }}</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </form>
-
-    <div class="quote-summary-container p-4 p-md-5 mt-5" *ngIf="currentStep > totalSteps">
-      <div class="container max-width-700">
-        <h2 class="text-center mb-4 section-title" [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.MAIN_TITLE' | translateHtml | async"></h2>
-        <p class="text-center mb-4" [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.MAIN_DESC' | translateHtml | async"></p>
-
-        <h2 class="text-center mb-4 section-title" [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.SUMMARY_TITLE' | translateHtml | async"></h2>
-
-        <div class="summary-card mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="summary-card-title m-0" [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD1.TITLE' | translateHtml | async"></h3>
-            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(1)" [attr.aria-disabled]="!canEditStep(1)" (click)="canEditStep(1) && goToStep(1)"><i class="bi bi-pencil-square"></i> <span [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD1.EDIT' | translateHtml | async"></span></a>
-          </div>
-          <ul class="list-unstyled mb-0">
-            <li><strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.FULL_NAME' | translateHtml | async"></strong>: {{ lifeQuoteForm.get('full_name')?.value }}
-            </li>
-            <li><strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.EMAIL' | translateHtml | async"></strong>:
-              {{ lifeQuoteForm.get('email_address')?.value }}</li>
-            <li><strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.PHONE' | translateHtml | async"></strong>:
-              {{ lifeQuoteForm.get('phone_number')?.value }}
-            </li>
-            <li><strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.GENDER' | translateHtml | async"></strong>:
-              {{ lifeQuoteForm.get('gender')?.value }}
-            </li>
-            <li><strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.DOB' | translateHtml | async"></strong>:
-              {{ formatDate(lifeQuoteForm.get('date_of_birth')?.value) }}
-            </li>
-            <li><strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.ZIP' | translateHtml | async"></strong>:
-              {{ lifeQuoteForm.get('zip_code')?.value }}
-            </li>
-          </ul>
-        </div>
-
-        <div class="summary-card mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="summary-card-title m-0" [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD2.TITLE' | translateHtml | async"></h3>
-            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(2)" [attr.aria-disabled]="!canEditStep(2)" (click)="canEditStep(2) && goToStep(2)"><i class="bi bi-pencil-square"></i> <span [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD2.EDIT' | translateHtml | async"></span></a>
-          </div>
-          <ul class="list-unstyled mb-0">
-            <li><strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.TOBACCO' | translateHtml | async"></strong>:
-              {{ lifeQuoteForm.get('uses_tobacco')?.value }}</li>
-            <li>
-              <strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.HEALTH' | translateHtml | async"></strong>:
-              {{ lifeQuoteForm.get('general_health')?.value }}
-            </li>
-          </ul>
-        </div>
-
-        <div class="summary-card mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="summary-card-title m-0" [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD3.TITLE' | translateHtml | async"></h3>
-            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(3)" [attr.aria-disabled]="!canEditStep(3)" (click)="canEditStep(3) && goToStep(3)"><i class="bi bi-pencil-square"></i> <span [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD3.EDIT' | translateHtml | async"></span></a>
-          </div>
-          <ul class="list-unstyled mb-0">
-            <li><strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.COVERAGE_AMOUNT' | translateHtml | async"></strong>:
-              {{ lifeQuoteForm.get('coverage_amount')?.value || 'None' }}</li>
-            <li><strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.BUNDLE_SAVE' | translateHtml | async"></strong>: {{
-              lifeQuoteForm.get('bundle_option')?.value || 'None' }}
-            </li>
-
-          </ul>
-        </div>
-
-        <div class="summary-card mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="summary-card-title m-0" [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD4.TITLE' | translateHtml | async"></h3>
-            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(4)" [attr.aria-disabled]="!canEditStep(4)" (click)="canEditStep(4) && goToStep(4)"><i class="bi bi-pencil-square"></i> <span [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD4.EDIT' | translateHtml | async"></span></a>
-          </div>
-          <ul class="list-unstyled mb-0">
-            <li><strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.LANGUAGE' | translateHtml | async"></strong>:
-              {{ lifeQuoteForm.get('preferred_language')?.value }}</li>
-            <li><strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.CONTACT_METHOD' | translateHtml | async"></strong>:
-              {{ lifeQuoteForm.get('contact_method')?.value }}
-            </li>
-            <li><strong [innerHTML]="'GET_LIFE_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.BEST_TIME' | translateHtml | async"></strong>:
-              {{ lifeQuoteForm.get('best_time_to_connect')?.value }}</li>
-          </ul>
-        </div>
-
-        <!-- Form Footer -->
-        <div class="mt-4">
-
-          <button class="btn btn-submit" (click)="sendLifeQuote()" [disabled]="loading">
-            <span *ngIf="loading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-            {{ loading ? 'Submitting...' : ('GET_LIFE_QUOTE.QUOTE_SUMMARY.SUBMIT_BUTTON' | translate) }}
-          </button>
-        </div>
-      </div>
+<!-- How much -->
+<section class="section bg-cream" id="how-much" aria-labelledby="much-h">
+  <div class="hf-container lq-much">
+    <span class="ic" aria-hidden="true"><svg class="icon"><use href="#i-scale" /></svg></span>
+    <div>
+      <h2 id="much-h">{{ 'LIFE_QUOTE_PAGE.MUCH.TITLE' | translate }}</h2>
+      <p><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('LIFE_QUOTE_PAGE.MUCH.TEXT') }"></ng-container></p>
+      <p class="cq-know"><a class="arrow-link" [routerLink]="route('lifeInsurance')">{{ 'LIFE_QUOTE_PAGE.MUCH.MORE' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a></p>
     </div>
   </div>
+</section>
 
-  <!-- footuper -->
-  <app-foot-upper></app-foot-upper>
+<!-- FAQs -->
+<section class="section bg-white" id="faqs" aria-labelledby="faq-h">
+  <div class="hf-container faq faq-wrap">
+    <h2 id="faq-h">{{ 'LIFE_QUOTE_PAGE.FAQ.TITLE' | translate }}</h2>
+    <details *ngFor="let item of list('LIFE_QUOTE_PAGE.FAQ.ITEMS'); let i = index" [open]="openFaq === i" (toggle)="onFaqToggle(i, $event)">
+      <summary><h3>{{ item.Q }}</h3><span class="pm" aria-hidden="true"><svg class="icon-sm"><use href="#i-plus" /></svg></span></summary>
+      <div class="ans"><p><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: item.A }"></ng-container></p></div>
+    </details>
+  </div>
+</section>
+
+<!-- Talk to an agent (grey) -->
+<section class="section q-final" id="final-cta" aria-labelledby="fin-h">
+  <div class="hf-container ready-band">
+    <h2 id="fin-h">{{ 'LIFE_QUOTE_PAGE.FINAL.TITLE' | translate }}</h2>
+    <p><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('LIFE_QUOTE_PAGE.FINAL.TEXT') }"></ng-container></p>
+    <div class="btn-row">
+      <a class="hf-btn btn-primary btn-lg" href="#quote" (click)="goToForm($event)">{{ 'LIFE_QUOTE_PAGE.FINAL.START' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+      <a class="hf-btn btn-white btn-lg" [routerLink]="route('ourLocations')"><svg class="icon-sm" aria-hidden="true"><use href="#i-pin" /></svg>{{ 'LIFE_QUOTE_PAGE.FINAL.FIND' | translate }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- Sticky mobile bar -->
+<div class="sticky-cta" [class.show]="showStickyBar" [attr.aria-hidden]="!showStickyBar">
+  <a class="hf-btn btn-primary" href="#quote" [tabIndex]="showStickyBar ? 0 : -1" (click)="goToForm($event)">{{ 'HOME_PAGE.STICKY.QUOTE' | translate }}</a>
+  <a class="hf-btn btn-outline" href="tel:+17133577771" [tabIndex]="showStickyBar ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'HOME_PAGE.STICKY.CALL' | translate }}</a>
+  <a class="hf-btn btn-outline" href="sms:+17133577771" [tabIndex]="showStickyBar ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-chat" /></svg>{{ 'HOME_PAGE.STICKY.TEXT' | translate }}</a>
+</div>

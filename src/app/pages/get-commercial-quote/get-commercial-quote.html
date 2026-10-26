@@ -1,353 +1,379 @@
-<div class="quoteMain">
-  <div class="topBanner">
-    <div class="container">
-      <h1 class="h1"><span [innerHTML]="'GET_COMMERCIAL_QUOTE.HEADING' | translateHtml | async"></span></h1>
-      <p class="heroDesc" [innerHTML]="'GET_COMMERCIAL_QUOTE.DESCRIPTION' | translateHtml | async"></p>
+<!-- Icon sprite (phone, check, chev, arrow, globe and x come from the header sprite) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2-5.5A2 2 0 0 1 6.9 6h10.2a2 2 0 0 1 1.9 1.5L21 13v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M3 13h18M7 15.5h.01M17 15.5h.01M6 18v2M18 18v2"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
+    <symbol id="i-health" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M12 8v8M8 12h8"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h10M4 17h7"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8.5 10.5h7"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z" fill="#F6C945"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l8-5 8 5v12M9 21v-6h6v6"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14"/><path d="M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z"/></symbol>
+    <symbol id="i-umbrella" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 18 0z"/><path d="M12 12v7a2 2 0 0 0 4 0M12 3v0"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></symbol>
+  </defs>
+</svg>
+
+<!-- Renders translated text pieces: `hl` red text, `b` bold, `l` language code, `h` link (tel:, "#quote" or external), `x` new tab, `r` route key. Kept on one line so no spaces creep in. -->
+<ng-template #segsTpl let-value><ng-container *ngFor="let s of value"><a *ngIf="s.h && !s.x" [href]="s.h" [class.tel]="s.h.startsWith('tel:')" (click)="onSegLink(s.h, $event)">{{ s.t }}</a><a *ngIf="s.h && s.x" [href]="s.h" target="_blank" rel="noopener">{{ s.t }}<span class="sr-only"> {{ 'COMMERCIAL_QUOTE_PAGE.NEW_TAB' | translate }}</span></a><a *ngIf="s.r" [routerLink]="route(s.r)">{{ s.t }}</a><span *ngIf="s.hl" class="hl">{{ s.t }}</span><b *ngIf="s.b">{{ s.t }}</b><span *ngIf="s.l" [attr.lang]="s.l">{{ s.t }}</span><ng-container *ngIf="!s.h && !s.r && !s.hl && !s.b && !s.l">{{ s.t }}</ng-container></ng-container></ng-template>
+
+<!-- Group of radio chips. form.pick[key] holds the chosen value. Radios keep `name` for grouping only; they are never submitted natively. -->
+<ng-template #chips let-legend="legend" let-name="name" let-opts="opts" let-key="key" let-cls="cls">
+  <fieldset>
+    <legend>{{ legend }}</legend>
+    <div class="opts" [ngClass]="cls">
+      <div class="opt-chip" *ngFor="let o of opts">
+        <input type="radio" [name]="name" [id]="name + '-' + o.V" [value]="o.V" [checked]="form.pick[key] === o.V" (change)="pick(key, o.V)" />
+        <label [for]="name + '-' + o.V" [attr.lang]="o.LG || null">{{ o.L }}</label>
+      </div>
+    </div>
+  </fieldset>
+</ng-template>
+
+<!-- One row of the review step -->
+<ng-template #rrow let-k="k" let-v="v"><div><dt>{{ k }}</dt><dd [class.none]="!v">{{ v || ('COMMERCIAL_QUOTE_PAGE.FORM.NOT_GIVEN' | translate) }}</dd></div></ng-template>
+<!-- Same, but only when an answer exists (optional questions) -->
+<ng-template #orow let-k="k" let-v="v"><div *ngIf="v"><dt>{{ k }}</dt><dd>{{ v }}</dd></div></ng-template>
+
+<!-- Hero + 5-step form -->
+<section class="hero cq-hero aq-hero bq-hero has-sub" aria-labelledby="hero-title">
+  <div class="hf-container crumbs-row">
+    <nav class="crumbs" [attr.aria-label]="'COMMERCIAL_QUOTE_PAGE.BREADCRUMB.ARIA' | translate">
+      <ol>
+        <li><a [routerLink]="route('home')">{{ 'COMMERCIAL_QUOTE_PAGE.BREADCRUMB.HOME' | translate }}</a></li>
+        <li><a [routerLink]="route('commercialInsurance')">{{ 'COMMERCIAL_QUOTE_PAGE.BREADCRUMB.SECTION' | translate }}</a></li>
+        <li aria-current="page">{{ 'COMMERCIAL_QUOTE_PAGE.BREADCRUMB.CURRENT' | translate }}</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="hf-container hero-grid">
+    <div class="hero-copy">
+      <h1 id="hero-title"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('COMMERCIAL_QUOTE_PAGE.HERO.TITLE') }"></ng-container></h1>
+    </div>
+
+    <div class="cq-card aq-card bq-card" id="quote">
+      <p class="sr-only" aria-live="polite">{{ live }}</p>
+
+      <ng-container *ngIf="!sent">
+        <div class="cq-progress" aria-hidden="true"><span [style.width.%]="step * 20"></span></div>
+        <ol class="cq-steps" [attr.aria-label]="'COMMERCIAL_QUOTE_PAGE.FORM.STEPS_ARIA' | translate">
+          <li *ngFor="let n of stepNumbers; let i = index" [class.done]="n < step" [attr.aria-current]="n === step ? 'step' : null">
+            <span>{{ n }}</span><b>{{ list('COMMERCIAL_QUOTE_PAGE.FORM.STEP_DOTS')[i] }}</b>
+          </li>
+        </ol>
+
+        <form class="cform cqform aqform bqform" novalidate [attr.aria-label]="'COMMERCIAL_QUOTE_PAGE.FORM.ARIA' | translate" (submit)="submit($event)" (keydown.enter)="onEnter($event)">
+
+          <!-- Step 1: Your business -->
+          <div class="cq-step" [hidden]="step !== 1">
+            <div class="cq-step-h"><p class="cq-count">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 1 } }}</p><h3 id="bq-h1" tabindex="-1">{{ list('COMMERCIAL_QUOTE_PAGE.FORM.STEP_TITLES')[0] }}</h3></div>
+            <div class="cq-row">
+              <div class="field">
+                <label for="bq-name">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.BIZ_NAME' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                <p class="aq-sub" id="bq-name-hint">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.BIZ_NAME_HINT' | translate }}</p>
+                <input type="text" id="bq-name" autocomplete="organization" maxlength="255" required [value]="form.bizName"
+                  [attr.aria-invalid]="errors['bizName'] ? 'true' : null" aria-describedby="bq-name-hint bq-name-err" (input)="onText('bizName', $event)" />
+                <p class="err" id="bq-name-err">{{ errors['bizName'] }}</p>
+              </div>
+              <div class="field">
+                <label for="bq-dba">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.DBA' | translate }} <span class="opt">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
+                <p class="aq-sub bq-sub-spacer" aria-hidden="true">&nbsp;</p>
+                <input type="text" id="bq-dba" autocomplete="off" maxlength="255" [value]="form.dba" (input)="onText('dba', $event)" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="bq-ind">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.INDUSTRY' | translate }} <span class="req" aria-hidden="true">*</span></label>
+              <select id="bq-ind" required [attr.aria-invalid]="errors['industry'] ? 'true' : null" aria-describedby="bq-ind-err" (change)="onText('industry', $event)">
+                <option value="" [selected]="!form.industry">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.INDUSTRY_PH' | translate }}</option>
+                <option *ngFor="let o of list('COMMERCIAL_QUOTE_PAGE.FORM.INDUSTRIES')" [value]="o.V" [selected]="form.industry === o.V">{{ o.L }}</option>
+              </select>
+              <p class="err" id="bq-ind-err">{{ errors['industry'] }}</p>
+            </div>
+            <div class="field">
+              <label for="bq-desc">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.DESC' | translate }} <span class="req" aria-hidden="true">*</span></label>
+              <p class="aq-sub" id="bq-desc-hint">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.DESC_HINT' | translate }}</p>
+              <textarea id="bq-desc" rows="2" maxlength="300" required [value]="form.desc"
+                [attr.aria-invalid]="errors['desc'] ? 'true' : null" aria-describedby="bq-desc-hint bq-desc-err" (input)="onText('desc', $event)"></textarea>
+              <p class="err" id="bq-desc-err">{{ errors['desc'] }}</p>
+            </div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('COMMERCIAL_QUOTE_PAGE.FORM.STRUCTURE_LEGEND' | translate), name: 'bq-st', opts: list('COMMERCIAL_QUOTE_PAGE.FORM.STRUCTURES'), key: 'structure', cls: 'stack aq-two' }"></ng-container>
+            <div class="field aq-short">
+              <label for="bq-zip">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.ZIP' | translate }} <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="bq-zip" inputmode="numeric" autocomplete="postal-code" maxlength="5" required [value]="form.zip"
+                [attr.aria-invalid]="errors['zip'] ? 'true' : null" aria-describedby="bq-zip-err" (input)="onDigits('zip', $event)" />
+              <p class="err" id="bq-zip-err">{{ errors['zip'] }}</p>
+            </div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('COMMERCIAL_QUOTE_PAGE.FORM.OUTSIDE_LEGEND' | translate), name: 'bq-tx', opts: list('COMMERCIAL_QUOTE_PAGE.FORM.OUTSIDE'), key: 'outside', cls: '' }"></ng-container>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-ghost" *ngIf="editing" (click)="backToReview()">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.TO_REVIEW' | translate }}</button>
+              <button type="button" class="hf-btn btn-primary" (click)="next()">{{ list('COMMERCIAL_QUOTE_PAGE.FORM.NEXT')[0] }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+
+          <!-- Step 2: Size of your business -->
+          <div class="cq-step" [hidden]="step !== 2">
+            <div class="cq-step-h"><p class="cq-count">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 2 } }}</p><h3 id="bq-h2" tabindex="-1">{{ list('COMMERCIAL_QUOTE_PAGE.FORM.STEP_TITLES')[1] }}</h3></div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('COMMERCIAL_QUOTE_PAGE.FORM.YEARS_LEGEND' | translate), name: 'bq-y', opts: list('COMMERCIAL_QUOTE_PAGE.FORM.YEARS'), key: 'years', cls: 'stack aq-two' }"></ng-container>
+            <div class="field aq-short">
+              <label for="bq-emp">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.EMPLOYEES' | translate }} <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="bq-emp" inputmode="numeric" autocomplete="off" maxlength="5" required [value]="form.employees"
+                [attr.aria-invalid]="errors['employees'] ? 'true' : null" aria-describedby="bq-emp-err" (input)="onDigits('employees', $event)" />
+              <p class="err" id="bq-emp-err">{{ errors['employees'] }}</p>
+            </div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('COMMERCIAL_QUOTE_PAGE.FORM.REVENUE_LEGEND' | translate), name: 'bq-r', opts: list('COMMERCIAL_QUOTE_PAGE.FORM.REVENUES'), key: 'revenue', cls: 'stack aq-two' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('COMMERCIAL_QUOTE_PAGE.FORM.VEHICLES_LEGEND' | translate), name: 'bq-v', opts: list('COMMERCIAL_QUOTE_PAGE.FORM.VEHICLES'), key: 'vehicles', cls: '' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('COMMERCIAL_QUOTE_PAGE.FORM.WORK_LEGEND' | translate), name: 'bq-w', opts: list('COMMERCIAL_QUOTE_PAGE.FORM.WORKS'), key: 'works', cls: 'stack aq-two' }"></ng-container>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-outline" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'COMMERCIAL_QUOTE_PAGE.FORM.BACK' | translate }}</button>
+              <button type="button" class="hf-btn btn-ghost" *ngIf="editing" (click)="backToReview()">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.TO_REVIEW' | translate }}</button>
+              <button type="button" class="hf-btn btn-primary" (click)="next()">{{ list('COMMERCIAL_QUOTE_PAGE.FORM.NEXT')[1] }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+
+          <!-- Step 3: Coverage you need -->
+          <div class="cq-step" [hidden]="step !== 3">
+            <div class="cq-step-h"><p class="cq-count">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 3 } }}</p><h3 id="bq-h3" tabindex="-1">{{ list('COMMERCIAL_QUOTE_PAGE.FORM.STEP_TITLES')[2] }}</h3></div>
+            <fieldset aria-describedby="bq-cov-err">
+              <legend>{{ 'COMMERCIAL_QUOTE_PAGE.FORM.COVERAGE_LEGEND' | translate }} <span class="opt">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.SELECT_ALL' | translate }}</span></legend>
+              <div class="cq-grid bq-cov">
+                <div class="cq-check" *ngFor="let o of list('COMMERCIAL_QUOTE_PAGE.FORM.COVERAGES')" [class.bq-wide]="wideCoverages.includes(o.V)">
+                  <input type="checkbox" [id]="'bq-c-' + o.V" [value]="o.V" [checked]="covered(o.V)" [attr.aria-invalid]="errors['coverage'] ? 'true' : null" (change)="onCoverage(o.V, $event)" />
+                  <label [for]="'bq-c-' + o.V"><span class="ic" aria-hidden="true"><svg class="icon-sm"><use [attr.href]="'#' + coverageIcons[o.V]" /></svg></span><span class="bq-ct">{{ o.L }}<small *ngIf="o.S">{{ o.S }}</small></span><span class="box" aria-hidden="true"><svg class="icon-sm"><use href="#i-check" /></svg></span></label>
+                </div>
+              </div>
+              <p class="err" id="bq-cov-err">{{ errors['coverage'] }}</p>
+            </fieldset>
+            <div class="field cq-more" *ngIf="covered('workers-comp')">
+              <label for="bq-payroll">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.PAYROLL' | translate }}</label>
+              <div class="bq-money"><span aria-hidden="true">$</span><input type="text" id="bq-payroll" inputmode="numeric" autocomplete="off" maxlength="11" [value]="form.payroll" (input)="onPayrollInput($event)" /></div>
+            </div>
+            <p class="aq-lender" *ngIf="groupHealth"><svg class="icon-sm" aria-hidden="true"><use href="#i-health" /></svg>{{ 'COMMERCIAL_QUOTE_PAGE.FORM.GROUP_HEALTH' | translate }}</p>
+            <div class="field cq-more" *ngIf="covered('bond')">
+              <label for="bq-bond">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.BOND_FOR' | translate }} <span class="opt">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
+              <input type="text" id="bq-bond" autocomplete="off" maxlength="255" [value]="form.bondFor" [placeholder]="'COMMERCIAL_QUOTE_PAGE.FORM.BOND_PH' | translate" (input)="onText('bondFor', $event)" />
+            </div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('COMMERCIAL_QUOTE_PAGE.FORM.INSURED_LEGEND' | translate), name: 'bq-i', opts: list('COMMERCIAL_QUOTE_PAGE.FORM.INSURED'), key: 'insured', cls: 'stack aq-two' }"></ng-container>
+            <div class="cq-row" *ngIf="form.pick['insured'] === 'yes'">
+              <div class="field">
+                <label for="bq-carrier">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.CARRIER' | translate }} <span class="opt">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
+                <input type="text" id="bq-carrier" autocomplete="off" maxlength="100" [value]="form.carrier" (input)="onText('carrier', $event)" />
+              </div>
+              <div class="field">
+                <label for="bq-exp">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.EXPIRATION' | translate }} <span class="opt">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
+                <input type="date" id="bq-exp" autocomplete="off" [value]="form.expiration" (input)="onText('expiration', $event)" />
+              </div>
+            </div>
+            <fieldset>
+              <legend>{{ 'COMMERCIAL_QUOTE_PAGE.FORM.START_LEGEND' | translate }}</legend>
+              <div class="opts stack aq-two">
+                <div class="opt-chip" *ngFor="let o of list('COMMERCIAL_QUOTE_PAGE.FORM.STARTS')">
+                  <input type="radio" name="bq-s" [id]="'bq-s-' + o.V" [value]="o.V" [checked]="form.pick['start'] === o.V" (change)="pick('start', o.V)" />
+                  <label [for]="'bq-s-' + o.V">{{ o.L }}</label>
+                </div>
+              </div>
+              <div class="field bq-date">
+                <label for="bq-sdate">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.START_DATE' | translate }} <span class="opt">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
+                <input type="date" id="bq-sdate" autocomplete="off" [value]="form.startDate"
+                  [attr.aria-invalid]="errors['startDate'] ? 'true' : null" aria-describedby="bq-sdate-err" (input)="onText('startDate', $event)" />
+                <p class="err" id="bq-sdate-err">{{ errors['startDate'] }}</p>
+              </div>
+            </fieldset>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('COMMERCIAL_QUOTE_PAGE.FORM.COI_LEGEND' | translate), name: 'bq-coi', opts: list('COMMERCIAL_QUOTE_PAGE.FORM.YN'), key: 'coi', cls: '' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('COMMERCIAL_QUOTE_PAGE.FORM.CLAIMS_LEGEND' | translate), name: 'bq-cl', opts: list('COMMERCIAL_QUOTE_PAGE.FORM.YNU'), key: 'claims', cls: '' }"></ng-container>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-outline" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'COMMERCIAL_QUOTE_PAGE.FORM.BACK' | translate }}</button>
+              <button type="button" class="hf-btn btn-ghost" *ngIf="editing" (click)="backToReview()">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.TO_REVIEW' | translate }}</button>
+              <button type="button" class="hf-btn btn-primary" (click)="next()">{{ list('COMMERCIAL_QUOTE_PAGE.FORM.NEXT')[2] }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+
+          <!-- Step 4: How should we reach you? -->
+          <div class="cq-step" [hidden]="step !== 4">
+            <div class="cq-step-h"><p class="cq-count">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 4 } }}</p><h3 id="bq-h4" tabindex="-1">{{ list('COMMERCIAL_QUOTE_PAGE.FORM.STEP_TITLES')[3] }}</h3></div>
+            <div class="field">
+              <label for="bq-cname">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.NAME' | translate }} <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="bq-cname" autocomplete="name" maxlength="255" required [value]="form.name"
+                [attr.aria-invalid]="errors['name'] ? 'true' : null" aria-describedby="bq-cname-err" (input)="onText('name', $event)" />
+              <p class="err" id="bq-cname-err">{{ errors['name'] }}</p>
+            </div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('COMMERCIAL_QUOTE_PAGE.FORM.ROLE_LEGEND' | translate), name: 'bq-ro', opts: list('COMMERCIAL_QUOTE_PAGE.FORM.ROLES'), key: 'role', cls: '' }"></ng-container>
+            <div class="cq-row">
+              <div class="field">
+                <label for="bq-phone">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.PHONE' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                <input type="tel" id="bq-phone" inputmode="tel" autocomplete="tel-national" required [value]="form.phone"
+                  [attr.aria-invalid]="errors['phone'] ? 'true' : null" aria-describedby="bq-phone-err" (input)="onPhoneInput($event)" />
+                <p class="err" id="bq-phone-err">{{ errors['phone'] }}</p>
+              </div>
+              <div class="field">
+                <label for="bq-email">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.EMAIL' | translate }} <span *ngIf="form.pick['method'] !== 'email'" class="opt">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span><span *ngIf="form.pick['method'] === 'email'" class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="bq-email" autocomplete="email" maxlength="254" [attr.aria-required]="form.pick['method'] === 'email' ? 'true' : null" [value]="form.email"
+                  [attr.aria-invalid]="errors['email'] ? 'true' : null" aria-describedby="bq-email-err" (input)="onText('email', $event)" />
+                <p class="err" id="bq-email-err">{{ errors['email'] }}</p>
+              </div>
+            </div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('COMMERCIAL_QUOTE_PAGE.FORM.LANG_LEGEND' | translate), name: 'bq-l', opts: list('COMMERCIAL_QUOTE_PAGE.FORM.LANGS'), key: 'lang', cls: '' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('COMMERCIAL_QUOTE_PAGE.FORM.METHOD_LEGEND' | translate), name: 'bq-m', opts: list('COMMERCIAL_QUOTE_PAGE.FORM.METHODS'), key: 'method', cls: '' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('COMMERCIAL_QUOTE_PAGE.FORM.TIME_LEGEND' | translate), name: 'bq-b', opts: list('COMMERCIAL_QUOTE_PAGE.FORM.TIMES'), key: 'time', cls: 'stack' }"></ng-container>
+            <div class="field">
+              <label for="bq-office">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.OFFICE' | translate }} <span class="opt">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
+              <select id="bq-office" (change)="form.office = $any($event.target).value">
+                <option value="" [selected]="!form.office">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.NO_PREFERENCE' | translate }}</option>
+                <option *ngFor="let name of list('COMMERCIAL_QUOTE_PAGE.FORM.OFFICES'); let i = index" [value]="offices[i].id" [selected]="form.office === offices[i].id">{{ name }}</option>
+              </select>
+            </div>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-outline" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'COMMERCIAL_QUOTE_PAGE.FORM.BACK' | translate }}</button>
+              <button type="button" class="hf-btn btn-ghost" *ngIf="editing" (click)="backToReview()">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.TO_REVIEW' | translate }}</button>
+              <button type="button" class="hf-btn btn-primary" (click)="next()">{{ list('COMMERCIAL_QUOTE_PAGE.FORM.NEXT')[3] }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+
+          <!-- Step 5: Review. The submit button exists only on this step, so a stray Enter before hydration cannot submit the form natively. -->
+          <div class="cq-step" [hidden]="step !== 5">
+            <div class="cq-step-h"><p class="cq-count">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 5 } }}</p><h3 id="bq-h5" tabindex="-1">{{ list('COMMERCIAL_QUOTE_PAGE.FORM.STEP_TITLES')[4] }}</h3></div>
+            <ng-container *ngIf="step === 5">
+              <p class="hq-flags" *ngIf="tags().length" role="group" [attr.aria-label]="'COMMERCIAL_QUOTE_PAGE.FORM.FLAGS_ARIA' | translate"><span *ngFor="let tag of tags()">{{ flagLabel(tag) }}</span></p>
+              <div class="cq-review">
+                <div class="cq-rev">
+                  <div class="cq-rev-h"><h4>{{ list('COMMERCIAL_QUOTE_PAGE.FORM.R_TITLES')[0] }}</h4><button type="button" class="cq-edit" (click)="edit(1)">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('COMMERCIAL_QUOTE_PAGE.FORM.R_TITLES')[0] }}</span></button></div>
+                  <dl>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.BIZ_NAME' | translate), v: form.bizName.trim() }"></ng-container>
+                    <ng-container *ngTemplateOutlet="orow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.DBA' | translate), v: form.dba.trim() }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.INDUSTRY' | translate), v: label('FORM.INDUSTRIES', form.industry) }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.DESC' | translate), v: form.desc.trim() }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.STRUCTURE' | translate), v: label('FORM.STRUCTURES', form.pick['structure'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.ZIP' | translate), v: form.zip }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.OUTSIDE' | translate), v: label('FORM.OUTSIDE', form.pick['outside'] || '') }"></ng-container>
+                  </dl>
+                </div>
+                <div class="cq-rev">
+                  <div class="cq-rev-h"><h4>{{ list('COMMERCIAL_QUOTE_PAGE.FORM.R_TITLES')[1] }}</h4><button type="button" class="cq-edit" (click)="edit(2)">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('COMMERCIAL_QUOTE_PAGE.FORM.R_TITLES')[1] }}</span></button></div>
+                  <dl>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.YEARS' | translate), v: label('FORM.YEARS', form.pick['years'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.EMPLOYEES' | translate), v: form.employees }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.REVENUE' | translate), v: label('FORM.REVENUES', form.pick['revenue'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.VEHICLES' | translate), v: label('FORM.VEHICLES', form.pick['vehicles'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.WORKS' | translate), v: label('FORM.WORKS', form.pick['works'] || '') }"></ng-container>
+                  </dl>
+                </div>
+                <div class="cq-rev">
+                  <div class="cq-rev-h"><h4>{{ list('COMMERCIAL_QUOTE_PAGE.FORM.R_TITLES')[2] }}</h4><button type="button" class="cq-edit" (click)="edit(3)">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('COMMERCIAL_QUOTE_PAGE.FORM.R_TITLES')[2] }}</span></button></div>
+                  <dl>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.QUOTE' | translate), v: coverageSummary() }"></ng-container>
+                    <ng-container *ngIf="covered('workers-comp')"><ng-container *ngTemplateOutlet="orow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.PAYROLL' | translate), v: form.payroll ? '$' + form.payroll : '' }"></ng-container></ng-container>
+                    <ng-container *ngIf="covered('bond')"><ng-container *ngTemplateOutlet="orow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.BOND' | translate), v: form.bondFor.trim() }"></ng-container></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.INSURED' | translate), v: label('FORM.INSURED', form.pick['insured'] || '') }"></ng-container>
+                    <ng-container *ngIf="form.pick['insured'] === 'yes'">
+                      <ng-container *ngTemplateOutlet="orow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.CARRIER' | translate), v: form.carrier.trim() }"></ng-container>
+                      <ng-container *ngTemplateOutlet="orow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.EXPIRATION' | translate), v: dateLabel(form.expiration) }"></ng-container>
+                    </ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.START' | translate), v: label('FORM.STARTS', form.pick['start'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="orow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.START_DATE' | translate), v: dateLabel(form.startDate) }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.COI' | translate), v: label('FORM.YN', form.pick['coi'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.CLAIMS' | translate), v: label('FORM.YNU', form.pick['claims'] || '') }"></ng-container>
+                  </dl>
+                </div>
+                <div class="cq-rev">
+                  <div class="cq-rev-h"><h4>{{ list('COMMERCIAL_QUOTE_PAGE.FORM.R_TITLES')[3] }}</h4><button type="button" class="cq-edit" (click)="edit(4)">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('COMMERCIAL_QUOTE_PAGE.FORM.R_TITLES')[3] }}</span></button></div>
+                  <dl>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.NAME' | translate), v: form.name.trim() }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.ROLE' | translate), v: label('FORM.ROLES', form.pick['role'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.PHONE' | translate), v: form.phone }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.EMAIL' | translate), v: form.email.trim() }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.LANG' | translate), v: label('FORM.LANGS', form.pick['lang'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.METHOD' | translate), v: label('FORM.METHODS', form.pick['method'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.TIME' | translate), v: label('FORM.TIMES', form.pick['time'] || '') }"></ng-container>
+                    <div><dt>{{ 'COMMERCIAL_QUOTE_PAGE.FORM.R.OFFICE' | translate }}</dt><dd>{{ officeLabel() || ('COMMERCIAL_QUOTE_PAGE.FORM.NO_PREFERENCE' | translate) }}</dd></div>
+                  </dl>
+                </div>
+              </div>
+            </ng-container>
+            <p class="aq-consent"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('COMMERCIAL_QUOTE_PAGE.FORM.CONSENT') }"></ng-container></p>
+            <p class="aq-never"><svg class="icon-sm" aria-hidden="true"><use href="#i-shield" /></svg>{{ 'COMMERCIAL_QUOTE_PAGE.FORM.NEVER_SOLD' | translate }}</p>
+            <p class="err cq-submit-err" role="alert">{{ submitError }}</p>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-outline" [disabled]="isSubmitting" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'COMMERCIAL_QUOTE_PAGE.FORM.BACK' | translate }}</button>
+              <button type="submit" class="hf-btn btn-primary btn-lg" *ngIf="step === 5" [disabled]="isSubmitting" [attr.aria-busy]="isSubmitting ? 'true' : null">{{ (isSubmitting ? 'COMMERCIAL_QUOTE_PAGE.FORM.SENDING' : 'COMMERCIAL_QUOTE_PAGE.FORM.SUBMIT') | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+        </form>
+      </ng-container>
+
+      <div class="csuccess" id="bq-success" tabindex="-1" *ngIf="sent">
+        <span class="badge" aria-hidden="true"><svg class="icon"><use href="#i-check" /></svg></span>
+        <h3>{{ 'COMMERCIAL_QUOTE_PAGE.FORM.SUCCESS.TITLE' | translate: { first: sentFirst } }}</h3>
+        <p>{{ 'COMMERCIAL_QUOTE_PAGE.FORM.SUCCESS.PRE' | translate }}{{ 'COMMERCIAL_QUOTE_PAGE.FORM.SUCCESS.HOW.' + sentHow | translate }} <b>{{ sentContact }}</b>{{ 'COMMERCIAL_QUOTE_PAGE.FORM.SUCCESS.POST' | translate }}</p>
+        <p class="cq-multi" *ngIf="sentBond"><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg>{{ 'COMMERCIAL_QUOTE_PAGE.FORM.SUCCESS.BOND' | translate }}</p>
+        <p class="cq-multi" *ngIf="sentCoi"><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg>{{ 'COMMERCIAL_QUOTE_PAGE.FORM.SUCCESS.COI' | translate }}</p>
+      </div>
+    </div>
+
+    <div class="hero-sub">
+      <p class="hf-lead">{{ 'COMMERCIAL_QUOTE_PAGE.HERO.LEAD' | translate }}</p>
+      <p class="q-trust"><span class="q-star" aria-hidden="true"><svg class="icon-sm"><use href="#i-star" /></svg></span><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('COMMERCIAL_QUOTE_PAGE.HERO.TRUST') }"></ng-container></p>
     </div>
   </div>
+</section>
 
-  <div class="container my-5 quote-wrapper">
-    <div class="card border-0 p-4 mb-5">
-      <div class="d-flex justify-content-between align-items-center stepper">
-        <div class="step" [class.active]="currentStep === 1" [class.completed]="canEditStep(1)">
-          <div class="circle"><img src="/assets/images/quote-step-1.png" alt="" /></div>
-          <p [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP1.TITLE' | translateHtml | async"></p>
-        </div>
-        <div class="step" [class.active]="currentStep === 2" [class.completed]="canEditStep(2)">
-          <div class="circle"><img src="/assets/images/quote-step-2.png" alt="" /></div>
-          <p [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP2.TITLE' | translateHtml | async"></p>
-        </div>
-        <div class="step" [class.active]="currentStep === 3" [class.completed]="canEditStep(3)">
-          <div class="circle"><img src="/assets/images/quote-step-3.png" alt="" /></div>
-          <p [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP3.TITLE' | translateHtml | async"></p>
-        </div>
-        <div class="step" [class.active]="currentStep === 4" [class.completed]="canEditStep(4)">
-          <div class="circle"><img src="/assets/images/quote-step-4.png" alt="" /></div>
-          <p [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP4.TITLE' | translateHtml | async"></p>
-        </div>
+<!-- What you'll need -->
+<section class="section bg-white" id="what-you-need" aria-labelledby="need-h">
+  <div class="hf-container aq-need">
+    <h2 id="need-h">{{ 'COMMERCIAL_QUOTE_PAGE.NEED.TITLE' | translate }}</h2>
+    <ul class="aq-need-list">
+      <li *ngFor="let item of list('COMMERCIAL_QUOTE_PAGE.NEED.ITEMS'); let i = index">
+        <span class="ic" aria-hidden="true"><svg class="icon"><use [attr.href]="'#' + needIcons[i]" /></svg></span>
+        <span>{{ item }}</span>
+      </li>
+    </ul>
+  </div>
+</section>
 
-      </div>
-    </div>
+<!-- Coverage basics -->
+<section class="section bg-cream" id="coverage-basics" aria-labelledby="cov-h">
+  <div class="hf-container">
+    <div class="section-head"><h2 id="cov-h">{{ 'COMMERCIAL_QUOTE_PAGE.BASICS.TITLE' | translate }}</h2></div>
+    <ul class="aq-basics hq-basics">
+      <li *ngFor="let b of list('COMMERCIAL_QUOTE_PAGE.BASICS.ITEMS'); let i = index">
+        <span class="ic" aria-hidden="true"><svg class="icon"><use [attr.href]="'#' + basicsIcons[i]" /></svg></span>
+        <div><h3><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: b.TITLE }"></ng-container></h3><p><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: b.TEXT }"></ng-container></p></div>
+      </li>
+    </ul>
+    <p class="cq-know"><a class="arrow-link" [routerLink]="route('commercialInsurance')">{{ 'COMMERCIAL_QUOTE_PAGE.BASICS.MORE' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a></p>
+  </div>
+</section>
 
-    <form [formGroup]="commercialQuoteForm">
-      <div class="steps-for-custom-quote">
-        <div class="container" *ngIf="currentStep === 1">
-          <div class="form-wrapper">
-            <h2 class="form-title" [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP1.TITLE' | translateHtml | async"></h2>
+<!-- FAQs -->
+<section class="section bg-white" id="faqs" aria-labelledby="faq-h">
+  <div class="hf-container faq faq-wrap">
+    <h2 id="faq-h">{{ 'COMMERCIAL_QUOTE_PAGE.FAQ.TITLE' | translate }}</h2>
+    <details *ngFor="let item of list('COMMERCIAL_QUOTE_PAGE.FAQ.ITEMS'); let i = index" [open]="faqOpen === i" (toggle)="onFaqToggle(i, $event)">
+      <summary><h3>{{ item.Q }}</h3><span class="pm" aria-hidden="true"><svg class="icon-sm"><use href="#i-plus" /></svg></span></summary>
+      <div class="ans"><p>{{ item.A }}</p></div>
+    </details>
+  </div>
+</section>
 
-            <div class="form-content-border">
-              <div class="row gy-3 mb-2">
-                <div class="col-md-8">
-                  <label class="form-label"><span [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP1.FIELDS.LEGAL_BUSINESS_NAME' | translateHtml | async"></span><span>*</span></label>
-                  <input type="text" 
-                         formControlName="business_name"
-                         [class.is-invalid]="commercialQuoteForm.get('business_name')?.invalid && commercialQuoteForm.get('business_name')?.touched"
-                         class="form-control" 
-                         placeholder="John Doe" />
-                  <div class="invalid-feedback" *ngIf="commercialQuoteForm.get('business_name')?.invalid && commercialQuoteForm.get('business_name')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-              </div>
-
-
-              <div class="row gy-3 mb-3 mt-2">
-                <div class="col-md-4">
-                  <label class="form-label"><span [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP1.FIELDS.INDUSTRY_TYPE' | translateHtml | async"></span><span>*</span></label>
-                   <select class="form-select" formControlName="industry_type" [class.is-invalid]="commercialQuoteForm.get('industry_type')?.invalid && commercialQuoteForm.get('industry_type')?.touched">
-                    <option *ngFor="
-                        let option of 'GET_COMMERCIAL_QUOTE.STEPPER.STEP1.FIELDS.INDUSTRY_TYPE_OPTIONS' | translate
-                      " [value]="option">
-                      {{ option }}
-                    </option>
-                  </select>
-                  <div class="invalid-feedback" *ngIf="
-                      commercialQuoteForm.get('industry_type')?.invalid &&
-                      commercialQuoteForm.get('industry_type')?.touched
-                    " [innerHTML]="'GET_HOME_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                  <!-- <input type="text"
-                         formControlName="industry_type"
-                         [class.is-invalid]="commercialQuoteForm.get('industry_type')?.invalid && commercialQuoteForm.get('industry_type')?.touched"  
-                         class="form-control" 
-                         placeholder="Technology" />
-                  <div class="invalid-feedback" *ngIf="commercialQuoteForm.get('industry_type')?.invalid && commercialQuoteForm.get('industry_type')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div> -->
-                </div>
-                <div class="col-md-4">
-                  <label class="form-label"><span [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP1.FIELDS.BUSINESS_ZIP_CODE' | translateHtml | async"></span><span>*</span></label>
-                  <input type="text" 
-                         formControlName="business_zip_code"
-                         [class.is-invalid]="commercialQuoteForm.get('business_zip_code')?.invalid && commercialQuoteForm.get('business_zip_code')?.touched"
-                         class="form-control" 
-                         placeholder="10001" />
-                  <div class="invalid-feedback" *ngIf="commercialQuoteForm.get('business_zip_code')?.invalid && commercialQuoteForm.get('business_zip_code')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-              </div>
-              <div class="d-flex gap-3 mt-4">
-          <button type="button" class="btn btn-next" (click)="nextStep()">{{ 'GET_COMMERCIAL_QUOTE.NEXT_BUTTON' | translate }}</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="container mt-4 mb-4" *ngIf="currentStep === 2">
-          <div class="form-wrapper">
-            <h2 class="form-title" [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP2.TITLE' | translateHtml | async"></h2>
-
-            <div class="form-content-border">
-                <div class="row gy-3 mb-3">
-                  <div class="col-md-4">
-                    <label class="form-label" [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP2.FIELDS.YEARS_IN_BUSINESS' | translateHtml | async"></label>
-                    <select class="form-select" formControlName="years_in_business"
-                            [class.is-invalid]="commercialQuoteForm.get('years_in_business')?.invalid && commercialQuoteForm.get('years_in_business')?.touched">
-                      <option
-                        *ngFor="let option of ('GET_COMMERCIAL_QUOTE.STEPPER.STEP2.FIELDS.YEARS_OPTIONS' | translate)"
-                        [value]="option">{{ option }}</option>
-                    </select>
-                    <div class="invalid-feedback" *ngIf="commercialQuoteForm.get('years_in_business')?.invalid && commercialQuoteForm.get('years_in_business')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                  </div>
-
-                  <div class="col-md-4">
-                    <label class="form-label" [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP2.FIELDS.NUMBER_OF_EMPLOYEES' | translateHtml | async"></label>
-                    <select class="form-select" formControlName="number_of_employees"
-                            [class.is-invalid]="commercialQuoteForm.get('number_of_employees')?.invalid && commercialQuoteForm.get('number_of_employees')?.touched">
-                      <option
-                        *ngFor="let option of ('GET_COMMERCIAL_QUOTE.STEPPER.STEP2.FIELDS.EMPLOYEES_OPTIONS' | translate)"
-                        [value]="option">{{ option }}</option>
-                    </select>
-                    <div class="invalid-feedback" *ngIf="commercialQuoteForm.get('number_of_employees')?.invalid && commercialQuoteForm.get('number_of_employees')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                  </div>
-
-
-                </div>
-
-                <div class="row gy-3">
-                  <div class="col-md-4">
-                    <label class="form-label" [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP2.FIELDS.ANNUAL_REVENUE' | translateHtml | async"></label>
-                    <select class="form-select" formControlName="estimated_annual_revenue"
-                            [class.is-invalid]="commercialQuoteForm.get('estimated_annual_revenue')?.invalid && commercialQuoteForm.get('estimated_annual_revenue')?.touched">
-                      <option
-                        *ngFor="let option of ('GET_COMMERCIAL_QUOTE.STEPPER.STEP2.FIELDS.REVENUE_OPTIONS' | translate)"
-                        [value]="option">{{ option }}</option>
-                    </select>
-                    <div class="invalid-feedback" *ngIf="commercialQuoteForm.get('estimated_annual_revenue')?.invalid && commercialQuoteForm.get('estimated_annual_revenue')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                  </div>
-                </div>
-                <div class="d-flex gap-3 mt-4">
-                  <button type="button" class="btn btn-previous" (click)="previousStep()">{{ 'GET_COMMERCIAL_QUOTE.PREVIOUS_BUTTON' | translate
-                    }}</button>
-                  <button type="button" class="btn btn-next" (click)="nextStep()">{{ 'GET_COMMERCIAL_QUOTE.NEXT_BUTTON' | translate }}</button>
-                </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="container mb-4" *ngIf="currentStep === 3">
-          <div class="form-wrapper">
-            <h2 class="form-title" [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP3.TITLE' | translateHtml | async"></h2>
-
-            <div class="form-content-border">
-                <div class="row gy-3 mt-2">
-                  <div class="selection-group">
-                    <h4 class="selection-heading" [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP3.COVERAGE_TITLE' | translateHtml | async"></h4>
-
-                    <div class="coverage-options">
-                      <div class="form-check"
-                        *ngFor="let option of ('GET_COMMERCIAL_QUOTE.STEPPER.STEP3.COVERAGE_OPTIONS' | translate)">
-                        <input class="form-check-input" type="checkbox" [value]="option" [id]="option" (change)="onCheckboxChange($event, 'coverage_items')" [checked]="commercialQuoteForm.value.coverage_items.includes(option)" />
-
-                        <label class="form-check-label" [for]="option">
-                          {{ option }}
-                        </label>
-                      </div>
-                      <div class="invalid-feedback d-block" *ngIf="commercialQuoteForm.get('coverage_items')?.invalid && commercialQuoteForm.get('coverage_items')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row gy-3 mt-2">
-                  <div class="selection-group">
-                    <h4 class="selection-heading" [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP3.BUNDLE_TITLE' | translateHtml | async"></h4>
-
-                    <div class="coverage-options">
-                      <div class="form-check"
-                        *ngFor="let option of ('GET_COMMERCIAL_QUOTE.STEPPER.STEP3.BUNDLE_OPTIONS' | translate)">
-                        <input class="form-check-input" type="radio" [value]="option" [id]="option" formControlName="bundle_option" />
-
-                        <label class="form-check-label" [for]="option">
-                          {{ option }}
-                        </label>
-                      </div>
-                      <div class="invalid-feedback d-block" *ngIf="commercialQuoteForm.get('bundle_option')?.invalid && commercialQuoteForm.get('bundle_option')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="d-flex gap-3 mt-4">
-                  <button type="button" class="btn btn-previous" (click)="previousStep()">{{ 'GET_COMMERCIAL_QUOTE.PREVIOUS_BUTTON' | translate
-                    }}</button>
-                  <button type="button" class="btn btn-next" (click)="nextStep()">{{ 'GET_COMMERCIAL_QUOTE.NEXT_BUTTON' | translate }}</button>
-                </div>
-            </div>
-          </div>
-        </div>
-
-
-
-        <div class="container mt-4 mb-4" *ngIf="currentStep === 4">
-          <div class="form-wrapper">
-            <h2 class="form-title" [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP4.TITLE' | translateHtml | async"></h2>
-
-            <div class="form-content-border">
-                <div class="row gy-3 mb-3">
-                  <div class="col-md-4">
-                    <label class="form-label"><span [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP4.FIELDS.CONTACT_NAME' | translateHtml | async"></span><span>*</span></label>
-                    <input type="text" 
-                           formControlName="contact_name"
-                           [class.is-invalid]="commercialQuoteForm.get('contact_name')?.invalid && commercialQuoteForm.get('contact_name')?.touched"
-                           class="form-control" 
-                           placeholder="John Doe" />
-                    <div class="invalid-feedback" *ngIf="commercialQuoteForm.get('contact_name')?.invalid && commercialQuoteForm.get('contact_name')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                  </div>
-                  <div class="col-md-4">
-                    <label class="form-label"><span [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP4.FIELDS.EMAIL_ADDRESS' | translateHtml | async"></span><span>*</span></label>
-                    <input type="email" 
-                           formControlName="email_address"
-                           [class.is-invalid]="commercialQuoteForm.get('email_address')?.invalid && commercialQuoteForm.get('email_address')?.touched"
-                           class="form-control" 
-                           id="email_address"
-                           placeholder="johndoe@email.com" />
-                    <div class="invalid-feedback" *ngIf="commercialQuoteForm.get('email_address')?.invalid && commercialQuoteForm.get('email_address')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.EMAIL' | translateHtml | async"></div>
-                  </div>
-
-                </div>
-
-                <div class="row gy-3 mb-4">
-                  <div class="col-md-4">
-                    <label class="form-label"><span [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP4.FIELDS.PHONE_NUMBER' | translateHtml | async"></span><span>*</span></label>
-                    <input type="text" 
-                           formControlName="phone_number"
-                           [class.is-invalid]="commercialQuoteForm.get('phone_number')?.invalid && commercialQuoteForm.get('phone_number')?.touched"
-                           class="form-control" 
-                           placeholder="+1 234 567 8900" />
-                    <div class="invalid-feedback" *ngIf="commercialQuoteForm.get('phone_number')?.invalid && commercialQuoteForm.get('phone_number')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                  </div>
-                  <div class="col-md-4">
-                    <label class="form-label" [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP4.LANGUAGE_TITLE' | translateHtml | async"></label>
-                    <select class="form-select" formControlName="preferred_language"
-                            [class.is-invalid]="commercialQuoteForm.get('preferred_language')?.invalid && commercialQuoteForm.get('preferred_language')?.touched">
-                      <option *ngFor="let option of ('GET_COMMERCIAL_QUOTE.STEPPER.STEP4.LANGUAGE_OPTIONS' | translate)"
-                        [value]="option">{{ option }}</option>
-                    </select>
-                    <div class="invalid-feedback" *ngIf="commercialQuoteForm.get('preferred_language')?.invalid && commercialQuoteForm.get('preferred_language')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                  </div>
-                </div>
-
-                <div class="row gy-3 mb-4">
-                  <div class="col-md-4">
-                    <label class="form-label" [innerHTML]="'GET_COMMERCIAL_QUOTE.STEPPER.STEP4.TIME_TITLE' | translateHtml | async"></label>
-                    <select class="form-select" formControlName="best_time_to_connect"
-                            [class.is-invalid]="commercialQuoteForm.get('best_time_to_connect')?.invalid && commercialQuoteForm.get('best_time_to_connect')?.touched">
-                      <option *ngFor="let option of ('GET_COMMERCIAL_QUOTE.STEPPER.STEP4.TIME_OPTIONS' | translate)"
-                        [value]="option">{{ option }}</option>
-                    </select>
-                    <div class="invalid-feedback" *ngIf="commercialQuoteForm.get('best_time_to_connect')?.invalid && commercialQuoteForm.get('best_time_to_connect')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                  </div>
-                </div>
-
-                <div class="d-flex gap-3 mt-4">
-                  <button type="button" class="btn btn-previous" (click)="previousStep()">{{ 'GET_COMMERCIAL_QUOTE.PREVIOUS_BUTTON' | translate
-                    }}</button>
-                  <button type="button" class="btn btn-next" (click)="nextStep()">{{ 'GET_COMMERCIAL_QUOTE.NEXT_BUTTON' | translate }}</button>
-                </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </form>
-
-
-    <div class="quote-summary-container p-4 p-md-5 mt-5" *ngIf="currentStep > totalSteps">
-      <div class="container max-width-700">
-        <h2 class="text-center mb-4 section-title" [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.MAIN_TITLE' | translateHtml | async"></h2>
-        <p class="text-center mb-4" [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.MAIN_DESC' | translateHtml | async"></p>
-
-        <h2 class="text-center mb-4 section-title" [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.TITLE' | translateHtml | async"></h2>
-
-        <div class="summary-card mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="summary-card-title m-0" [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD1.TITLE' | translateHtml | async"></h3>
-            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(1)" [attr.aria-disabled]="!canEditStep(1)" (click)="canEditStep(1) && goToStep(1)"><i class="bi bi-pencil-square"></i> <span [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD1.EDIT' | translateHtml | async"></span></a>
-          </div>
-          <ul class="list-unstyled mb-0">
-            <li><strong [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.LEGAL_BUSINESS_NAME' | translateHtml | async"></strong>: {{ commercialQuoteForm.get('business_name')?.value }}
-            </li>
-            <li><strong [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.INDUSTRY_TYPE' | translateHtml | async"></strong>:
-              {{ commercialQuoteForm.get('industry_type')?.value }}
-            </li>
-            <li><strong [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.BUSINESS_ZIP_CODE' | translateHtml | async"></strong>:
-              {{ commercialQuoteForm.get('business_zip_code')?.value }}
-            </li>
-          </ul>
-        </div>
-
-        <div class="summary-card mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="summary-card-title m-0" [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD2.TITLE' | translateHtml | async"></h3>
-            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(2)" [attr.aria-disabled]="!canEditStep(2)" (click)="canEditStep(2) && goToStep(2)"><i class="bi bi-pencil-square"></i> <span [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD2.EDIT' | translateHtml | async"></span></a>
-          </div>
-          <ul class="list-unstyled mb-0">
-            <li><strong [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.YEARS_IN_BUSINESS' | translateHtml | async"></strong>:
-            {{ commercialQuoteForm.get('years_in_business')?.value }}</li>
-            <li>
-              <strong [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.NUMBER_OF_EMPLOYEES' | translateHtml | async"></strong>:
-            {{ commercialQuoteForm.get('number_of_employees')?.value }}
-            </li>
-
-            <li>
-              <strong [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.ANNUAL_REVENUE' | translateHtml | async"></strong>: 
-            {{ commercialQuoteForm.get('estimated_annual_revenue')?.value }}
-            </li>
-          </ul>
-        </div>
-
-        <div class="summary-card mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="summary-card-title m-0" [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD3.TITLE' | translateHtml | async"></h3>
-            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(3)" [attr.aria-disabled]="!canEditStep(3)" (click)="canEditStep(3) && goToStep(3)"><i class="bi bi-pencil-square"></i> <span [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD3.EDIT' | translateHtml | async"></span></a>
-          </div>
-          <ul class="list-unstyled mb-0">
-            <li><strong [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.COVERAGE_SELECTION' | translateHtml | async"></strong>: {{ commercialQuoteForm.value.coverage_items.join(', ') || 'None' }}</li>
-            <li><strong [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.BUNDLE_SAVE' | translateHtml | async"></strong>: {{ commercialQuoteForm.get('bundle_option')?.value || 'None' }}
-            </li>
-
-          </ul>
-        </div>
-
-        <div class="summary-card mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="summary-card-title m-0" [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD4.TITLE' | translateHtml | async"></h3>
-            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(4)" [attr.aria-disabled]="!canEditStep(4)" (click)="canEditStep(4) && goToStep(4)"><i class="bi bi-pencil-square"></i> <span [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD4.EDIT' | translateHtml | async"></span></a>
-          </div>
-          <ul class="list-unstyled mb-0">
-            <li><strong [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.CONTACT_NAME' | translateHtml | async"></strong>: {{ commercialQuoteForm.get('contact_name')?.value }}</li>
-            <li><strong [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.EMAIL_ADDRESS' | translateHtml | async"></strong>: {{ commercialQuoteForm.get('email_address')?.value }}</li>
-            <li><strong [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.PHONE_NUMBER' | translateHtml | async"></strong>: {{ commercialQuoteForm.get('phone_number')?.value }}</li>
-            <li><strong [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.PREFERRED_LANGUAGE' | translateHtml | async"></strong>: {{ commercialQuoteForm.get('preferred_language')?.value }}
-            </li>
-            <li><strong [innerHTML]="'GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.BEST_TIME' | translateHtml | async"></strong>: {{ commercialQuoteForm.get('best_time_to_connect')?.value }}
-            </li>
-          </ul>
-        </div>
-
-        <!-- Form Footer -->
-        <div class="mt-4">
-
-          <button class="btn btn-submit" (click)="sendCommercialQuote()" [disabled]="loading">
-             <span *ngIf="loading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-             {{ loading ? 'Submitting...' : ('GET_COMMERCIAL_QUOTE.QUOTE_SUMMARY.SUBMIT_BUTTON' | translate) }}
-          </button>
-        </div>
-      </div>
+<!-- Talk to an agent (grey) -->
+<section class="section q-final" id="final-cta" aria-labelledby="fin-h">
+  <div class="hf-container ready-band">
+    <h2 id="fin-h">{{ 'COMMERCIAL_QUOTE_PAGE.FINAL.TITLE' | translate }}</h2>
+    <p><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('COMMERCIAL_QUOTE_PAGE.FINAL.TEXT') }"></ng-container></p>
+    <div class="btn-row">
+      <a class="hf-btn btn-primary btn-lg" href="#quote" (click)="goToForm($event)">{{ 'COMMERCIAL_QUOTE_PAGE.FINAL.START' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+      <a class="hf-btn btn-white btn-lg" [routerLink]="route('ourLocations')"><svg class="icon-sm" aria-hidden="true"><use href="#i-pin" /></svg>{{ 'COMMERCIAL_QUOTE_PAGE.FINAL.FIND' | translate }}</a>
     </div>
   </div>
+</section>
 
-  <!-- footuper -->
-  <app-foot-upper></app-foot-upper>
+<!-- Sticky mobile bar -->
+<div class="sticky-cta" [class.show]="showSticky" [attr.aria-hidden]="!showSticky">
+  <a class="hf-btn btn-primary" href="#quote" [tabIndex]="showSticky ? 0 : -1" (click)="goToForm($event)">{{ 'HOME_PAGE.STICKY.QUOTE' | translate }}</a>
+  <a class="hf-btn btn-outline" href="tel:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'HOME_PAGE.STICKY.CALL' | translate }}</a>
+  <a class="hf-btn btn-outline" href="sms:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-chat" /></svg>{{ 'HOME_PAGE.STICKY.TEXT' | translate }}</a>
+</div>

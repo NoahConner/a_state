@@ -3176,6 +3176,1205 @@
     },
     "NEW_TAB": "(se abre en una pestaña nueva)"
   },
+  "COMMERCIAL_QUOTE_PAGE": {
+    "NEW_TAB": "(se abre en una pestaña nueva)",
+    "BREADCRUMB": {
+      "ARIA": "Ruta de navegación",
+      "HOME": "Inicio",
+      "SECTION": "Seguro comercial",
+      "CURRENT": "Cotizar"
+    },
+    "HERO": {
+      "TITLE": [
+        {
+          "t": "Cotice "
+        },
+        {
+          "t": "el seguro de su negocio en Texas",
+          "hl": "true"
+        }
+      ],
+      "LEAD": "Díganos sobre su negocio. Un agente con licencia compara más de 50 compañías y le explica sus opciones en palabras sencillas, en español, inglés o hindi. Gratis y sin compromiso.",
+      "TRUST": [
+        {
+          "t": "4.8",
+          "b": "true"
+        },
+        {
+          "t": " en Google con más de 250 reseñas · ¿Necesita un certificado de seguro rápido? "
+        },
+        {
+          "t": "Llame al (713) 357-7771",
+          "h": "tel:+17133577771"
+        }
+      ]
+    },
+    "FORM": {
+      "ARIA": "Cotización de seguro para negocio",
+      "STEPS_ARIA": "Pasos del formulario",
+      "STEP_OF": "Paso {{n}} de 5",
+      "LIVE": "Paso {{n}} de 5: {{title}}",
+      "STEP_TITLES": [
+        "Su negocio",
+        "Tamaño de su negocio",
+        "La cobertura que necesita",
+        "¿Cómo prefiere que lo contactemos?",
+        "Revise su solicitud de cotización para su negocio"
+      ],
+      "STEP_DOTS": [
+        "Negocio",
+        "Tamaño",
+        "Cobertura",
+        "Contacto",
+        "Revisar"
+      ],
+      "NEXT": [
+        "Siguiente: Tamaño de su negocio",
+        "Siguiente: Cobertura",
+        "Siguiente: Cómo contactarlo",
+        "Siguiente: Revisar"
+      ],
+      "BACK": "Atrás",
+      "TO_REVIEW": "Volver a revisar",
+      "EDIT": "Editar",
+      "SUBMIT": "Enviar mi solicitud",
+      "SENDING": "Enviando...",
+      "OPTIONAL": "(opcional)",
+      "NOT_GIVEN": "Sin respuesta",
+      "BIZ_NAME": "Nombre del negocio",
+      "BIZ_NAME_HINT": "o escriba \"Todavía no está registrado\"",
+      "NOT_FORMED": "Todavía no está registrado",
+      "DBA": "Nombre comercial (DBA), si es distinto",
+      "INDUSTRY": "Industria",
+      "INDUSTRY_PH": "Elija su industria",
+      "INDUSTRIES": [
+        {
+          "V": "construction-contractors",
+          "L": "Construcción y contratistas"
+        },
+        {
+          "V": "restaurant-food",
+          "L": "Restaurantes y comida"
+        },
+        {
+          "V": "retail",
+          "L": "Tiendas"
+        },
+        {
+          "V": "trucking-transportation",
+          "L": "Transporte y camiones"
+        },
+        {
+          "V": "cleaning-janitorial",
+          "L": "Limpieza"
+        },
+        {
+          "V": "landscaping",
+          "L": "Jardinería y paisajismo"
+        },
+        {
+          "V": "auto-repair",
+          "L": "Taller mecánico"
+        },
+        {
+          "V": "professional-services",
+          "L": "Servicios profesionales"
+        },
+        {
+          "V": "real-estate",
+          "L": "Bienes raíces"
+        },
+        {
+          "V": "other",
+          "L": "Otro"
+        }
+      ],
+      "DESC": "Describa brevemente a qué se dedica su negocio",
+      "DESC_HINT": "Por ejemplo, \"framing y drywall residencial\" o \"taquería con servicio en el local y catering\"",
+      "STRUCTURE_LEGEND": "Tipo de negocio",
+      "STRUCTURES": [
+        {
+          "V": "sole-proprietor",
+          "L": "Dueño único (sole proprietor)"
+        },
+        {
+          "V": "llc",
+          "L": "LLC"
+        },
+        {
+          "V": "corporation",
+          "L": "Corporación"
+        },
+        {
+          "V": "partnership",
+          "L": "Sociedad"
+        },
+        {
+          "V": "nonprofit",
+          "L": "Sin fines de lucro"
+        },
+        {
+          "V": "not-formed-yet",
+          "L": "Todavía no está registrado"
+        }
+      ],
+      "ZIP": "Código postal del negocio",
+      "OUTSIDE_LEGEND": "¿Trabaja fuera de Texas?",
+      "OUTSIDE": [
+        {
+          "V": "no",
+          "L": "No, solo en Texas"
+        },
+        {
+          "V": "yes",
+          "L": "Sí"
+        }
+      ],
+      "YEARS_LEGEND": "Años en el negocio",
+      "YEARS": [
+        {
+          "V": "starting",
+          "L": "Apenas empezando"
+        },
+        {
+          "V": "under-1",
+          "L": "Menos de 1 año"
+        },
+        {
+          "V": "1-3",
+          "L": "1–3 años"
+        },
+        {
+          "V": "4-plus",
+          "L": "4 años o más"
+        }
+      ],
+      "EMPLOYEES": "Número de empleados, incluyéndose a usted",
+      "REVENUE_LEGEND": "Ingresos anuales estimados",
+      "REVENUES": [
+        {
+          "V": "under-100k",
+          "L": "Menos de $100k"
+        },
+        {
+          "V": "100k-500k",
+          "L": "$100k–$500k"
+        },
+        {
+          "V": "500k-1m",
+          "L": "$500k–$1M"
+        },
+        {
+          "V": "1m-5m",
+          "L": "$1M–$5M"
+        },
+        {
+          "V": "5m-plus",
+          "L": "Más de $5M"
+        }
+      ],
+      "VEHICLES_LEGEND": "Vehículos del negocio",
+      "VEHICLES": [
+        {
+          "V": "0",
+          "L": "0"
+        },
+        {
+          "V": "1-3",
+          "L": "1–3"
+        },
+        {
+          "V": "4-10",
+          "L": "4–10"
+        },
+        {
+          "V": "11-plus",
+          "L": "11 o más"
+        }
+      ],
+      "WORK_LEGEND": "¿Desde dónde trabaja?",
+      "WORKS": [
+        {
+          "V": "office",
+          "L": "Oficina, taller o tienda"
+        },
+        {
+          "V": "home",
+          "L": "Desde casa"
+        },
+        {
+          "V": "jobsites",
+          "L": "En obras o en la calle"
+        },
+        {
+          "V": "multiple",
+          "L": "Varias ubicaciones"
+        }
+      ],
+      "COVERAGE_LEGEND": "¿Qué quiere cotizar?",
+      "SELECT_ALL": "(Marque todas las opciones que correspondan)",
+      "COVERAGES": [
+        {
+          "V": "gl",
+          "L": "Responsabilidad civil general (general liability)"
+        },
+        {
+          "V": "bop",
+          "L": "Póliza para dueños de negocio (BOP)",
+          "S": "responsabilidad civil y propiedad juntas, para muchos negocios pequeños"
+        },
+        {
+          "V": "property",
+          "L": "Propiedad comercial"
+        },
+        {
+          "V": "tools",
+          "L": "Herramientas y equipo (inland marine)"
+        },
+        {
+          "V": "auto",
+          "L": "Auto comercial / camionetas de trabajo"
+        },
+        {
+          "V": "workers-comp",
+          "L": "Compensación al trabajador (workers' comp)"
+        },
+        {
+          "V": "professional",
+          "L": "Responsabilidad profesional / E&O"
+        },
+        {
+          "V": "cyber",
+          "L": "Responsabilidad cibernética (cyber)"
+        },
+        {
+          "V": "liquor",
+          "L": "Responsabilidad por venta de alcohol (liquor liability)"
+        },
+        {
+          "V": "umbrella",
+          "L": "Póliza paraguas comercial (umbrella)"
+        },
+        {
+          "V": "unsure",
+          "L": "No estoy seguro: ayúdenme a elegir"
+        },
+        {
+          "V": "bond",
+          "L": "También necesito una fianza (de licencia, permiso o contrato)",
+          "R": "Fianza"
+        }
+      ],
+      "PAYROLL": "Nómina anual estimada",
+      "GROUP_HEALTH": "Usted preguntó por un seguro médico de grupo para sus empleados. Su agente lo incluirá en su cotización.",
+      "BOND_FOR": "¿Para qué es la fianza?",
+      "BOND_PH": "p. ej., fianza de licencia de contratista",
+      "INSURED_LEGEND": "¿Tiene seguro para su negocio ahora?",
+      "INSURED": [
+        {
+          "V": "no",
+          "L": "No, necesito cobertura nueva"
+        },
+        {
+          "V": "yes",
+          "L": "Sí, quiero comparar"
+        }
+      ],
+      "CARRIER": "Compañía actual",
+      "EXPIRATION": "Fecha de vencimiento",
+      "START_LEGEND": "¿Cuándo necesita que empiece la cobertura?",
+      "STARTS": [
+        {
+          "V": "asap",
+          "L": "Lo antes posible"
+        },
+        {
+          "V": "30-days",
+          "L": "En los próximos 30 días"
+        },
+        {
+          "V": "30-plus",
+          "L": "En más de 30 días"
+        }
+      ],
+      "START_DATE": "Fecha específica",
+      "COI_LEGEND": "¿Necesita un certificado de seguro (COI) para un cliente o contrato?",
+      "YN": [
+        {
+          "V": "yes",
+          "L": "Sí"
+        },
+        {
+          "V": "no",
+          "L": "No"
+        }
+      ],
+      "CLAIMS_LEGEND": "¿Ha tenido reclamos al seguro del negocio en los últimos 3 años?",
+      "YNU": [
+        {
+          "V": "yes",
+          "L": "Sí"
+        },
+        {
+          "V": "no",
+          "L": "No"
+        },
+        {
+          "V": "not-sure",
+          "L": "No estoy seguro"
+        }
+      ],
+      "NAME": "Su nombre",
+      "ROLE_LEGEND": "Su puesto",
+      "ROLES": [
+        {
+          "V": "owner",
+          "L": "Dueño"
+        },
+        {
+          "V": "manager",
+          "L": "Gerente"
+        },
+        {
+          "V": "other",
+          "L": "Otro"
+        }
+      ],
+      "PHONE": "Número de teléfono",
+      "EMAIL": "Correo electrónico",
+      "LANG_LEGEND": "Idioma preferido",
+      "LANGS": [
+        {
+          "V": "es",
+          "L": "Español"
+        },
+        {
+          "V": "en",
+          "L": "English",
+          "LG": "en"
+        },
+        {
+          "V": "hi",
+          "L": "Hindi"
+        }
+      ],
+      "METHOD_LEGEND": "Medio preferido",
+      "METHODS": [
+        {
+          "V": "call",
+          "L": "Llamada"
+        },
+        {
+          "V": "text",
+          "L": "Mensaje de texto"
+        },
+        {
+          "V": "email",
+          "L": "Correo electrónico"
+        }
+      ],
+      "TIME_LEGEND": "Mejor hora",
+      "TIMES": [
+        {
+          "V": "morning",
+          "L": "Mañana (9 a.m.–12 p.m.)"
+        },
+        {
+          "V": "afternoon",
+          "L": "Tarde (12 p.m.–4 p.m.)"
+        },
+        {
+          "V": "evening",
+          "L": "Tarde-noche (4 p.m.–7 p.m.)"
+        }
+      ],
+      "OFFICE": "Oficina preferida",
+      "NO_PREFERENCE": "Cualquiera",
+      "OFFICES": [
+        "Denver Harbor",
+        "Fondren Southwest",
+        "Westbury",
+        "Greater Inwood",
+        "Northside-Northline"
+      ],
+      "FLAGS_ARIA": "Notas para su agente",
+      "FLAGS": {
+        "bond": "Fianza: para el equipo de fianzas",
+        "coi": "Necesita un certificado de seguro",
+        "group-health": "Seguro médico de grupo para empleados"
+      },
+      "R_TITLES": [
+        "Su negocio",
+        "Tamaño de su negocio",
+        "Cobertura, incluidos fianza, fecha de inicio y COI",
+        "Preferencias de contacto"
+      ],
+      "R": {
+        "BIZ_NAME": "Nombre del negocio",
+        "DBA": "DBA",
+        "INDUSTRY": "Industria",
+        "DESC": "A qué se dedica",
+        "STRUCTURE": "Tipo de negocio",
+        "ZIP": "Código postal",
+        "OUTSIDE": "Trabaja fuera de Texas",
+        "YEARS": "Años en el negocio",
+        "EMPLOYEES": "Empleados",
+        "REVENUE": "Ingresos anuales",
+        "VEHICLES": "Vehículos del negocio",
+        "WORKS": "Trabaja desde",
+        "QUOTE": "Cotizar",
+        "PAYROLL": "Nómina anual",
+        "BOND": "Fianza para",
+        "INSURED": "Tiene seguro",
+        "CARRIER": "Compañía actual",
+        "EXPIRATION": "Fecha de vencimiento",
+        "START": "Inicio",
+        "START_DATE": "Fecha de inicio",
+        "COI": "Certificado de seguro",
+        "CLAIMS": "Reclamos (3 años)",
+        "NAME": "Nombre",
+        "ROLE": "Puesto",
+        "PHONE": "Teléfono",
+        "EMAIL": "Correo",
+        "LANG": "Idioma",
+        "METHOD": "Contactar por",
+        "TIME": "Mejor hora",
+        "OFFICE": "Oficina"
+      },
+      "CONSENT": [
+        {
+          "t": "Al hacer clic en \"Enviar mi solicitud\", acepta que A-State Insurance le contacte por teléfono, mensaje de texto o correo electrónico sobre su solicitud. Su consentimiento no es una condición de compra. Pueden aplicarse tarifas de mensajes y datos. Responda STOP para dejar de recibir mensajes. Solo compartimos su información con las compañías de seguros a las que pedimos cotizaciones. Consulte nuestra "
+        },
+        {
+          "t": "Política de privacidad",
+          "r": "privacyPolicy"
+        },
+        {
+          "t": "."
+        }
+      ],
+      "NEVER_SOLD": "Nunca vendemos su información.",
+      "ERR": {
+        "BIZ_NAME": "Escriba el nombre de su negocio, o “Todavía no está registrado.”",
+        "INDUSTRY": "Elija su industria.",
+        "DESC": "Díganos en pocas palabras a qué se dedica su negocio.",
+        "ZIP_EMPTY": "Escriba el código postal de su negocio.",
+        "ZIP": "Escriba un código postal de 5 dígitos.",
+        "EMP_EMPTY": "Escriba el número de empleados, incluyéndose a usted.",
+        "EMP_MIN": "Escriba al menos 1 (usted).",
+        "COVERAGE": "Elija al menos una opción, o “No estoy seguro: ayúdenme a elegir.”",
+        "DATE_PAST": "Elija una fecha que todavía no haya pasado.",
+        "NAME": "Escriba su nombre.",
+        "PHONE_EMPTY": "Escriba su número de teléfono.",
+        "PHONE_INVALID": "Escriba un número de 10 dígitos, como (713) 555-0123.",
+        "EMAIL": "Escriba un correo como nombre@ejemplo.com, o déjelo en blanco.",
+        "EMAIL_NEEDED": "Agregue su correo, o elija Mensaje de texto o Llamada.",
+        "SUBMIT": "No pudimos enviar su solicitud. Sus respuestas están guardadas aquí. Inténtelo de nuevo o llame al (713) 357-7771."
+      },
+      "SUCCESS": {
+        "TITLE": "Gracias, {{first}}. Recibimos su solicitud de cotización para su negocio.",
+        "PRE": "Un agente comercial comparará compañías y ",
+        "HOW": {
+          "email": "le escribirá a",
+          "call": "le llamará al",
+          "text": "le enviará un mensaje al",
+          "any": "le llamará o enviará un mensaje al"
+        },
+        "POST": " con sus opciones, por lo general en 5 horas hábiles.",
+        "BOND": "Cotizaremos su fianza al mismo tiempo.",
+        "COI": "Una vez que su póliza esté activa, normalmente podemos enviarle su certificado de seguro el mismo día."
+      }
+    },
+    "NEED": {
+      "TITLE": "Lo que necesita para cotizar el seguro de su negocio",
+      "ITEMS": [
+        "A qué se dedica su negocio y dónde trabaja",
+        "Número de empleados y nómina anual estimada",
+        "Ingresos anuales estimados",
+        "Datos de los vehículos (año, marca, modelo o VIN) y de los conductores, para el auto comercial",
+        "La página de declaraciones de su póliza actual, si tiene una",
+        "Cualquier contrato que pida requisitos de seguro, como límites mínimos o asegurado adicional (additional insured)"
+      ]
+    },
+    "BASICS": {
+      "TITLE": "¿Qué seguro necesita mi negocio en Texas?",
+      "MORE": "Más información sobre el seguro comercial",
+      "ITEMS": [
+        {
+          "TITLE": [
+            {
+              "t": "Responsabilidad civil general (general liability)",
+              "r": "generalLiabilityInsurance"
+            }
+          ],
+          "TEXT": [
+            {
+              "t": "Paga si su negocio lesiona a alguien o daña su propiedad. La mayoría de los contratos y dueños de locales la exigen."
+            }
+          ]
+        },
+        {
+          "TITLE": [
+            {
+              "t": "Póliza para dueños de negocio (BOP)",
+              "r": "businessOwnerInsurance"
+            }
+          ],
+          "TEXT": [
+            {
+              "t": "Junta la responsabilidad civil general y la propiedad del negocio en una sola póliza, normalmente a un precio menor que comprarlas por separado. Es buena opción para muchas oficinas, tiendas y restaurantes pequeños."
+            }
+          ]
+        },
+        {
+          "TITLE": [
+            {
+              "t": "Auto comercial",
+              "r": "commercialAutoInsurance"
+            }
+          ],
+          "TEXT": [
+            {
+              "t": "Cubre los vehículos que usa para el negocio. Una póliza de auto personal podría no pagar si usted se lastima o causa un accidente mientras trabaja, sobre todo con una troca o van que usa para sus trabajos."
+            }
+          ]
+        },
+        {
+          "TITLE": [
+            {
+              "t": "Compensación al trabajador (workers' comp)",
+              "r": "workersCompensationInsurance"
+            }
+          ],
+          "TEXT": [
+            {
+              "t": "Texas es el único estado donde la mayoría de los empleadores privados pueden elegir no tenerla. Los negocios que no la tienen pierden protecciones legales importantes si un empleado los demanda por una lesión en el trabajo, y muchos contratistas generales y contratos de gobierno la exigen. Le ayudamos a evaluar la decisión."
+            }
+          ]
+        },
+        {
+          "TITLE": [
+            {
+              "t": "Fianzas (surety bonds)",
+              "r": "suretyBondInsurance"
+            }
+          ],
+          "TEXT": [
+            {
+              "t": "Muchas licencias, permisos y contratos exigen una fianza. La fianza garantiza su trabajo o sus obligaciones ante otra persona. No es un seguro para su negocio, pero podemos cotizarla al mismo tiempo."
+            }
+          ]
+        }
+      ]
+    },
+    "FAQ": {
+      "TITLE": "Preguntas frecuentes sobre la cotización de seguro comercial",
+      "ITEMS": [
+        {
+          "Q": "¿Cuánto tarda una cotización de seguro para negocio?",
+          "A": "El formulario toma unos 5 minutos. Después, un agente comercial compara compañías y le contacta, por lo general en 5 horas hábiles. Los negocios más grandes o complejos pueden tardar más."
+        },
+        {
+          "Q": "¿Es obligatoria la compensación al trabajador en Texas?",
+          "A": "Para la mayoría de los empleadores privados, no. Texas les deja elegir. Pero los negocios sin workers' comp pierden defensas legales importantes en demandas por lesiones, y muchos contratos la exigen. Le explicamos las ventajas y desventajas para su negocio."
+        },
+        {
+          "Q": "¿Pueden darme un certificado de seguro rápido?",
+          "A": "Sí. Una vez que su póliza está activa, normalmente podemos enviarle el certificado de seguro (COI) el mismo día, incluida la redacción de asegurado adicional si su contrato la pide."
+        },
+        {
+          "Q": "¿Necesito auto comercial si uso mi propia troca para trabajar?",
+          "A": "Muchas veces, sí. Las pólizas personales pueden excluir el uso para el negocio, sobre todo para cargar herramientas o materiales o ir a las obras. Díganos cómo usa el vehículo y le cotizaremos la cobertura correcta."
+        },
+        {
+          "Q": "¿Qué es una póliza para dueños de negocio (BOP)?",
+          "A": "Una BOP junta la responsabilidad civil general y la propiedad del negocio en una sola póliza. Normalmente cuesta menos que comprarlas por separado y le sirve a muchos negocios pequeños."
+        },
+        {
+          "Q": "¿Puedo asegurar un negocio que apenas estoy empezando?",
+          "A": "Sí. Elija \"Apenas empezando\" en el formulario. Cotizamos negocios nuevos, incluso los que todavía no han registrado su LLC."
+        },
+        {
+          "Q": "¿También cotizan fianzas?",
+          "A": "Sí. Marque \"También necesito una fianza\" y díganos para qué es. La fianza es aparte del seguro, pero podemos encargarnos de las dos al mismo tiempo."
+        }
+      ]
+    },
+    "FINAL": {
+      "TITLE": "¿Prefiere hablar con un agente comercial?",
+      "TEXT": [
+        {
+          "t": "Llame al "
+        },
+        {
+          "t": "(713) 357-7771",
+          "h": "tel:+17133577771"
+        },
+        {
+          "t": " o visite cualquiera de nuestras 5 oficinas en Houston. Comparamos con usted cotizaciones de seguro para negocios en Texas, en español, inglés o hindi."
+        }
+      ],
+      "START": "Cotizar mi negocio",
+      "FIND": "Encontrar una oficina cerca de usted"
+    }
+  },
+  "LIFE_QUOTE_PAGE": {
+    "NEW_TAB": "(se abre en una pestaña nueva)",
+    "BREADCRUMB": {
+      "ARIA": "Ruta de navegación",
+      "HOME": "Inicio",
+      "SECTION": "Seguro de vida",
+      "CURRENT": "Cotizar"
+    },
+    "HERO": {
+      "TITLE": [
+        {
+          "t": "Cotice su "
+        },
+        {
+          "t": "seguro de vida en Texas",
+          "hl": "true"
+        }
+      ],
+      "LEAD": "A plazo, vida entera o gastos finales: un agente con licencia compara compañías y le ayuda a elegir el tipo y el monto adecuados para su familia. Gratis y sin compromiso, en español, inglés o hindi.",
+      "TRUST": [
+        {
+          "t": "4.8",
+          "b": "true"
+        },
+        {
+          "t": " en Google con más de 250 reseñas · ¿Prefiere hablar con alguien? "
+        },
+        {
+          "t": "Llame al (713) 357-7771",
+          "h": "tel:+17133577771"
+        }
+      ]
+    },
+    "FORM": {
+      "ARIA": "Cotización de seguro de vida",
+      "STEPS_ARIA": "Pasos del formulario",
+      "STEP_OF": "Paso {{n}} de 5",
+      "LIVE": "Paso {{n}} de 5: {{title}}",
+      "STEP_TITLES": [
+        "¿Para quién es la cobertura?",
+        "Salud y estilo de vida",
+        "La cobertura que quiere",
+        "¿Cómo prefiere que lo contactemos?",
+        "Revise su solicitud de cotización de vida"
+      ],
+      "STEP_DOTS": [
+        "Quién",
+        "Salud",
+        "Cobertura",
+        "Contacto",
+        "Revisar"
+      ],
+      "NEXT": [
+        "Siguiente: Salud y estilo de vida",
+        "Siguiente: Cobertura",
+        "Siguiente: Cómo contactarlo",
+        "Siguiente: Revisar"
+      ],
+      "BACK": "Atrás",
+      "TO_REVIEW": "Volver a revisar",
+      "EDIT": "Editar",
+      "SUBMIT": "Enviar mi solicitud",
+      "SENDING": "Enviando...",
+      "OPTIONAL": "(opcional)",
+      "NOT_GIVEN": "Sin respuesta",
+      "NONE": "Ninguno",
+      "WHO_LEGEND": "¿Quién estaría asegurado?",
+      "WHOS": [
+        {
+          "V": "me",
+          "L": "Yo"
+        },
+        {
+          "V": "spouse",
+          "L": "Mi esposo(a)"
+        },
+        {
+          "V": "both",
+          "L": "Mi esposo(a) y yo"
+        },
+        {
+          "V": "parent",
+          "L": "Mi mamá o mi papá"
+        },
+        {
+          "V": "other",
+          "L": "Otra persona"
+        }
+      ],
+      "FOR_OTHER": "Si compra para otra persona, esa persona tendrá que aceptar la póliza y contestar ella misma las preguntas de salud. Su agente le explicará cómo hacerlo.",
+      "DOB": "Fecha de nacimiento de la persona asegurada",
+      "SEX_LEGEND": "Sexo",
+      "SEXES": [
+        {
+          "V": "female",
+          "L": "Femenino"
+        },
+        {
+          "V": "male",
+          "L": "Masculino"
+        }
+      ],
+      "SPOUSE": "Su esposo(a)",
+      "SPOUSE_DOB": "Fecha de nacimiento de su esposo(a)",
+      "SEX_NOTE": "Las compañías de seguros usan este dato para calcular el precio del seguro de vida. Si ninguna opción le corresponde, elija una y dígaselo a su agente. Él o ella le explicará sus opciones.",
+      "ZIP": "Código postal",
+      "WHY": [
+        {
+          "t": "Por qué preguntamos:",
+          "b": "true"
+        },
+        {
+          "t": " el precio del seguro de vida depende de la edad, la salud y el uso de tabaco. Sus respuestas nos ayudan a mostrarle opciones realistas. Solo compartirá información detallada de salud con la compañía si decide solicitar la póliza."
+        }
+      ],
+      "TOBACCO_LEGEND": "¿Ha usado tabaco o nicotina (incluido vapear) en los últimos 12 meses?",
+      "YN": [
+        {
+          "V": "yes",
+          "L": "Sí"
+        },
+        {
+          "V": "no",
+          "L": "No"
+        }
+      ],
+      "HEALTH_LEGEND": "Salud en general",
+      "HEALTHS": [
+        {
+          "V": "excellent",
+          "L": "Excelente"
+        },
+        {
+          "V": "good",
+          "L": "Buena"
+        },
+        {
+          "V": "fair",
+          "L": "Regular"
+        },
+        {
+          "V": "poor",
+          "L": "Mala"
+        }
+      ],
+      "HEIGHT": "Estatura",
+      "FEET": "Pies",
+      "INCHES": "Pulgadas",
+      "FT": "pies",
+      "IN": "pulg.",
+      "WEIGHT": "Peso",
+      "LBS": "lb",
+      "CONDITIONS_LEGEND": "¿Algún problema de salud importante en los últimos 10 años?",
+      "CONDITIONS": [
+        {
+          "V": "yes",
+          "L": "Sí"
+        },
+        {
+          "V": "no",
+          "L": "No"
+        },
+        {
+          "V": "discuss",
+          "L": "Prefiero hablarlo con un agente"
+        }
+      ],
+      "TYPE_LEGEND": "Tipo de seguro de vida",
+      "TYPES": [
+        {
+          "V": "term",
+          "L": "A plazo (term)"
+        },
+        {
+          "V": "whole",
+          "L": "Vida entera"
+        },
+        {
+          "V": "final",
+          "L": "Gastos finales"
+        },
+        {
+          "V": "unsure",
+          "L": "No estoy seguro: ayúdenme a elegir"
+        }
+      ],
+      "TERM_LEGEND": "¿Por cuánto tiempo?",
+      "TERMS": [
+        {
+          "V": "10y",
+          "L": "10 años"
+        },
+        {
+          "V": "15y",
+          "L": "15 años"
+        },
+        {
+          "V": "20y",
+          "L": "20 años"
+        },
+        {
+          "V": "25y",
+          "L": "25 años"
+        },
+        {
+          "V": "30y",
+          "L": "30 años"
+        },
+        {
+          "V": "not-sure",
+          "L": "No estoy seguro"
+        }
+      ],
+      "AMOUNT_LEGEND": "Monto de cobertura",
+      "AMOUNTS": [
+        {
+          "V": "under-25k",
+          "L": "Menos de $25k"
+        },
+        {
+          "V": "25-50k",
+          "L": "$25k–$50k"
+        },
+        {
+          "V": "50-100k",
+          "L": "$50k–$100k"
+        },
+        {
+          "V": "100-250k",
+          "L": "$100k–$250k"
+        },
+        {
+          "V": "250-500k",
+          "L": "$250k–$500k"
+        },
+        {
+          "V": "500k-plus",
+          "L": "Más de $500k"
+        },
+        {
+          "V": "unsure",
+          "L": "No estoy seguro: ayúdenme a calcularlo"
+        }
+      ],
+      "PURPOSE_LEGEND": "¿Para qué es principalmente la cobertura?",
+      "PURPOSES": [
+        {
+          "V": "funeral",
+          "L": "Funeral y gastos finales"
+        },
+        {
+          "V": "income",
+          "L": "Reemplazar mis ingresos para mi familia"
+        },
+        {
+          "V": "mortgage",
+          "L": "Pagar la hipoteca"
+        },
+        {
+          "V": "other",
+          "L": "Otro"
+        }
+      ],
+      "HAS_LIFE_LEGEND": "¿Tiene seguro de vida ahora, incluido el del trabajo?",
+      "YNU": [
+        {
+          "V": "yes",
+          "L": "Sí"
+        },
+        {
+          "V": "no",
+          "L": "No"
+        },
+        {
+          "V": "not-sure",
+          "L": "No estoy seguro"
+        }
+      ],
+      "ALSO_LEGEND": "Cotícenme también",
+      "ALSO": [
+        {
+          "V": "auto",
+          "L": "Auto"
+        },
+        {
+          "V": "home",
+          "L": "Casa o inquilinos"
+        },
+        {
+          "V": "health",
+          "L": "Salud"
+        }
+      ],
+      "NAME": "Su nombre completo",
+      "PHONE": "Número de teléfono",
+      "EMAIL": "Correo electrónico",
+      "LANG_LEGEND": "Idioma preferido",
+      "LANGS": [
+        {
+          "V": "es",
+          "L": "Español"
+        },
+        {
+          "V": "en",
+          "L": "English",
+          "LG": "en"
+        },
+        {
+          "V": "hi",
+          "L": "Hindi"
+        }
+      ],
+      "METHOD_LEGEND": "Medio preferido",
+      "METHODS": [
+        {
+          "V": "call",
+          "L": "Llamada"
+        },
+        {
+          "V": "text",
+          "L": "Mensaje de texto"
+        },
+        {
+          "V": "email",
+          "L": "Correo electrónico"
+        }
+      ],
+      "TIME_LEGEND": "Mejor hora",
+      "TIMES": [
+        {
+          "V": "morning",
+          "L": "Mañana (9 a.m.–12 p.m.)"
+        },
+        {
+          "V": "afternoon",
+          "L": "Tarde (12 p.m.–4 p.m.)"
+        },
+        {
+          "V": "evening",
+          "L": "Tarde-noche (4 p.m.–7 p.m.)"
+        }
+      ],
+      "OFFICE": "Oficina preferida",
+      "NO_PREFERENCE": "Cualquiera",
+      "OFFICES": [
+        "Denver Harbor",
+        "Fondren Southwest",
+        "Westbury",
+        "Greater Inwood",
+        "Northside-Northline"
+      ],
+      "R_TITLES": [
+        "Quién está cubierto",
+        "Salud y estilo de vida",
+        "Cobertura, incluido \"Cotícenme también\"",
+        "Preferencias de contacto"
+      ],
+      "R": {
+        "WHO": "Quién",
+        "DOB": "Fecha de nacimiento",
+        "SEX": "Sexo",
+        "YOUR_DOB": "Su fecha de nacimiento",
+        "YOUR_SEX": "Su sexo",
+        "SPOUSE_DOB": "Fecha de nacimiento de su esposo(a)",
+        "SPOUSE_SEX": "Sexo de su esposo(a)",
+        "ZIP": "Código postal",
+        "TOBACCO": "Tabaco o nicotina (12 meses)",
+        "HEALTH": "Salud en general",
+        "HEIGHT": "Estatura",
+        "WEIGHT": "Peso",
+        "CONDITIONS": "Problemas de salud (10 años)",
+        "TYPE": "Tipo",
+        "TERM": "Plazo",
+        "AMOUNT": "Monto de cobertura",
+        "PURPOSE": "Principalmente para",
+        "HAS_LIFE": "Seguro de vida ahora",
+        "ALSO": "Cotícenme también",
+        "NAME": "Nombre",
+        "PHONE": "Teléfono",
+        "EMAIL": "Correo",
+        "LANG": "Idioma",
+        "METHOD": "Contactar por",
+        "TIME": "Mejor hora",
+        "OFFICE": "Oficina"
+      },
+      "CONSENT": [
+        {
+          "t": "Al hacer clic en \"Enviar mi solicitud\", acepta que A-State Insurance le contacte por teléfono, mensaje de texto o correo electrónico sobre su solicitud. Su consentimiento no es una condición de compra. Pueden aplicarse tarifas de mensajes y datos. Responda STOP para dejar de recibir mensajes. Usamos sus respuestas de salud solo para preparar su cotización, y solo compartimos su información con las compañías de seguros a las que pedimos cotizaciones. Consulte nuestra "
+        },
+        {
+          "t": "Política de privacidad",
+          "r": "privacyPolicy"
+        },
+        {
+          "t": "."
+        }
+      ],
+      "NEVER_SOLD": "Nunca vendemos su información.",
+      "ERR": {
+        "DOB_EMPTY": "Escriba la fecha de nacimiento.",
+        "DOB": "Revise la fecha de nacimiento.",
+        "ZIP_EMPTY": "Escriba su código postal.",
+        "ZIP": "Escriba un código postal de 5 dígitos.",
+        "WEIGHT": "Escriba el peso en libras, como 165, o déjelo en blanco.",
+        "NAME": "Escriba su nombre completo.",
+        "PHONE_EMPTY": "Escriba su número de teléfono.",
+        "PHONE_INVALID": "Escriba un número de 10 dígitos, como (713) 555-0123.",
+        "EMAIL": "Escriba un correo como nombre@ejemplo.com, o déjelo en blanco.",
+        "EMAIL_NEEDED": "Agregue su correo, o elija Mensaje de texto o Llamada.",
+        "SUBMIT": "No pudimos enviar su solicitud. Sus respuestas están guardadas aquí. Inténtelo de nuevo o llame al (713) 357-7771."
+      },
+      "SUCCESS": {
+        "TITLE": "Gracias, {{first}}. Recibimos su solicitud de cotización de vida.",
+        "PRE": "Un agente con licencia comparará compañías y ",
+        "HOW": {
+          "email": "le escribirá a",
+          "call": "le llamará al",
+          "text": "le enviará un mensaje al",
+          "any": "le llamará o enviará un mensaje al"
+        },
+        "POST": " con sus opciones, por lo general en 5 horas hábiles. El precio final lo fija la compañía después de que usted presenta la solicitud.",
+        "ALSO": "También cotizaremos sus otras coberturas y veremos si califica para un descuento por varias pólizas."
+      }
+    },
+    "TYPES": {
+      "TITLE": "Seguro a plazo, vida entera o gastos finales",
+      "ITEMS": [
+        {
+          "V": "term",
+          "TITLE": [
+            {
+              "t": "Seguro a plazo (term)",
+              "r": "termLifeInsurance"
+            }
+          ],
+          "TEXT": "Le cubre por un número fijo de años, como 10, 20 o 30. Normalmente es la forma más económica de tener mucha cobertura, por ejemplo mientras cría a sus hijos o paga una hipoteca. Si el plazo termina y usted sigue con vida, la cobertura se acaba.",
+          "PICK": "Cotizar seguro a plazo"
+        },
+        {
+          "V": "whole",
+          "TITLE": [
+            {
+              "t": "Vida entera",
+              "r": "wholeLifeInsurance"
+            }
+          ],
+          "TEXT": "Le cubre toda la vida mientras pague las primas, y acumula un valor en efectivo del que puede pedir prestado. Cuesta más que el seguro a plazo por el mismo monto de cobertura.",
+          "PICK": "Cotizar vida entera"
+        },
+        {
+          "V": "final",
+          "TITLE": [
+            {
+              "t": "Gastos finales",
+              "r": "finalExpenseInsurance"
+            }
+          ],
+          "TEXT": "Una póliza de vida entera más pequeña, muchas veces de $5,000 a $50,000, para pagar el funeral, el entierro y las últimas cuentas. Es popular entre personas de 50 a 80 y tantos años, y muchas pólizas no piden examen médico.",
+          "PICK": "Cotizar gastos finales"
+        }
+      ]
+    },
+    "MUCH": {
+      "TITLE": "¿Cuánto seguro de vida necesito?",
+      "TEXT": [
+        {
+          "t": "Un buen punto de partida es 10 veces sus ingresos anuales. Después, ajústelo según su hipoteca, sus deudas, la educación de sus hijos y cualquier ahorro o seguro que ya tenga en su trabajo. Para gastos finales, muchas familias empiezan con el costo de un funeral en su zona. Su agente puede hacer las cuentas con usted. Elija "
+        },
+        {
+          "t": "\"No estoy seguro: ayúdenme a calcularlo\"",
+          "h": "#quote",
+          "k": "amount"
+        },
+        {
+          "t": " en el formulario."
+        }
+      ],
+      "MORE": "Más información sobre el seguro de vida"
+    },
+    "FAQ": {
+      "TITLE": "Preguntas frecuentes sobre la cotización de seguro de vida",
+      "ITEMS": [
+        {
+          "Q": "¿Necesito un examen médico para tener seguro de vida?",
+          "A": [
+            {
+              "t": "No siempre. Muchas pólizas a plazo y de gastos finales solo hacen preguntas de salud, sin examen. Las pólizas más grandes muchas veces lo piden, y normalmente la compañía lo organiza sin costo para usted."
+            }
+          ]
+        },
+        {
+          "Q": "¿Puedo comprar un seguro de vida para mis papás?",
+          "A": [
+            {
+              "t": "Sí, siempre que su mamá o su papá esté de acuerdo y firme la solicitud. El seguro de gastos finales es una opción común. Elija \"Mi mamá o mi papá\" en el formulario y le guiaremos."
+            }
+          ]
+        },
+        {
+          "Q": "¿Me alcanza con el seguro de vida de mi trabajo?",
+          "A": [
+            {
+              "t": "Muchas veces no. Muchos planes de empleador pagan 1 o 2 veces su salario, y la cobertura normalmente termina cuando deja el trabajo. Una póliza personal se queda con usted."
+            }
+          ]
+        },
+        {
+          "Q": "¿Cuánto tarda una cotización de seguro de vida?",
+          "A": [
+            {
+              "t": "El formulario toma unos 5 minutos. Después, un agente con licencia le contacta, por lo general en 5 horas hábiles. El precio final lo fija la compañía después de que usted presenta la solicitud."
+            }
+          ]
+        },
+        {
+          "Q": "¿Compartirán mi información?",
+          "A": [
+            {
+              "t": "Solo con las compañías de seguros a las que pedimos cotizaciones, y solo para preparar su cotización. Nunca vendemos su información."
+            }
+          ]
+        },
+        {
+          "Q": "¿Puedo hablar con un agente en español?",
+          "A": [
+            {
+              "t": "Sí. Todas nuestras oficinas tienen agentes que hablan español, y también atendemos en inglés e hindi. Elija su idioma en el formulario o llame al "
+            },
+            {
+              "t": "(713) 357-7771",
+              "h": "tel:+17133577771"
+            },
+            {
+              "t": "."
+            }
+          ]
+        }
+      ]
+    },
+    "FINAL": {
+      "TITLE": "¿Prefiere hablarlo con un agente?",
+      "TEXT": [
+        {
+          "t": "Llame al "
+        },
+        {
+          "t": "(713) 357-7771",
+          "h": "tel:+17133577771"
+        },
+        {
+          "t": " o visite cualquiera de nuestras 5 oficinas en Houston. Comparamos con usted opciones de seguro de vida en español, inglés o hindi."
+        }
+      ],
+      "START": "Cotizar mi seguro de vida",
+      "FIND": "Encontrar una oficina cerca de usted"
+    }
+  },
   "GET_HOME_QUOTE": {
     "HEADING": "Compare Cotizaciones de Seguro de Hogar y Ahorre",
     "DESCRIPTION": "Deje de pagar de más por la protección de su hogar. Buscamos en múltiples aseguradoras mejor calificadas para encontrarle las mejores tarifas y cobertura total.",
