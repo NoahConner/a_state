@@ -1,300 +1,304 @@
-<div class="quoteMain">
-  <div class="topBanner">
-    <div class="container">
-      <h1 class="h1"><span [innerHTML]="'SURETY_BOND_QUOTE.HEADING' | translateHtml | async"></span></h1>
-      <p class="heroDesc" [innerHTML]="'SURETY_BOND_QUOTE.DESCRIPTION' | translateHtml | async"></p>
+<!-- Icon sprite (phone, check, chev, arrow, globe and x come from the header sprite) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8.5 10.5h7"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z" fill="#F6C945"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14"/><path d="M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  </defs>
+</svg>
+
+<!-- Renders translated text pieces: `hl` red text, `b` bold, `l` language code, `h` link (tel:, "#quote" or external), `x` new tab, `r` route key. Kept on one line so no spaces creep in. -->
+<ng-template #segsTpl let-value><ng-container *ngFor="let s of value"><a *ngIf="s.h && !s.x" [href]="s.h" [class.tel]="s.h.startsWith('tel:')" (click)="onSegLink(s.h, $event)">{{ s.t }}</a><a *ngIf="s.h && s.x" [href]="s.h" target="_blank" rel="noopener">{{ s.t }}<span class="sr-only"> {{ 'SURETY_QUOTE_PAGE.NEW_TAB' | translate }}</span></a><a *ngIf="s.r" [routerLink]="route(s.r)">{{ s.t }}</a><span *ngIf="s.hl" class="hl">{{ s.t }}</span><b *ngIf="s.b">{{ s.t }}</b><span *ngIf="s.l" [attr.lang]="s.l">{{ s.t }}</span><ng-container *ngIf="!s.h && !s.r && !s.hl && !s.b && !s.l">{{ s.t }}</ng-container></ng-container></ng-template>
+
+<!-- Group of radio chips. form.pick[key] holds the chosen value. Radios keep `name` for grouping only; they are never submitted natively. -->
+<ng-template #chips let-legend="legend" let-name="name" let-opts="opts" let-key="key" let-cls="cls" let-errId="errId">
+  <fieldset [attr.aria-describedby]="errId || null">
+    <legend>{{ legend }}</legend>
+    <div class="opts" [ngClass]="cls">
+      <div class="opt-chip" *ngFor="let o of opts">
+        <input type="radio" [name]="name" [id]="name + '-' + o.V" [value]="o.V" [checked]="form.pick[key] === o.V" (change)="pick(key, o.V)" />
+        <label [for]="name + '-' + o.V" [attr.lang]="o.LG || null">{{ o.L }}</label>
+      </div>
+    </div>
+    <p class="err" *ngIf="errId" [id]="errId">{{ errors[key] }}</p>
+  </fieldset>
+</ng-template>
+
+<!-- One row of the review step -->
+<ng-template #rrow let-k="k" let-v="v"><div><dt>{{ k }}</dt><dd [class.none]="!v">{{ v || ('SURETY_QUOTE_PAGE.FORM.NOT_GIVEN' | translate) }}</dd></div></ng-template>
+<!-- Same, but only when an answer exists (optional questions) -->
+<ng-template #orow let-k="k" let-v="v"><div *ngIf="v"><dt>{{ k }}</dt><dd>{{ v }}</dd></div></ng-template>
+
+<!-- Hero + 5-step form -->
+<section class="hero cq-hero aq-hero sq-hero has-sub" aria-labelledby="hero-title">
+  <div class="hf-container crumbs-row">
+    <nav class="crumbs" [attr.aria-label]="'SURETY_QUOTE_PAGE.BREADCRUMB.ARIA' | translate">
+      <ol>
+        <li><a [routerLink]="route('home')">{{ 'SURETY_QUOTE_PAGE.BREADCRUMB.HOME' | translate }}</a></li>
+        <li><a [routerLink]="route('suretyBondInsurance')">{{ 'SURETY_QUOTE_PAGE.BREADCRUMB.SECTION' | translate }}</a></li>
+        <li aria-current="page">{{ 'SURETY_QUOTE_PAGE.BREADCRUMB.CURRENT' | translate }}</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="hf-container hero-grid">
+    <div class="hero-copy">
+      <h1 id="hero-title"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('SURETY_QUOTE_PAGE.HERO.TITLE') }"></ng-container></h1>
+    </div>
+
+    <div class="cq-card aq-card sq-card" id="quote">
+      <p class="sr-only" aria-live="polite">{{ live }}</p>
+
+      <ng-container *ngIf="!sent">
+        <div class="cq-progress" aria-hidden="true"><span [style.width.%]="step * 100 / 5"></span></div>
+        <ol class="cq-steps" [attr.aria-label]="'SURETY_QUOTE_PAGE.FORM.STEPS_ARIA' | translate">
+          <li *ngFor="let n of stepNumbers; let i = index" [class.done]="n < step" [attr.aria-current]="n === step ? 'step' : null">
+            <span>{{ n }}</span><b>{{ list('SURETY_QUOTE_PAGE.FORM.STEP_DOTS')[i] }}</b>
+          </li>
+        </ol>
+
+        <form class="cform cqform aqform sqform" novalidate [attr.aria-label]="'SURETY_QUOTE_PAGE.FORM.ARIA' | translate" (submit)="submit($event)" (keydown.enter)="onEnter($event)">
+
+          <!-- Step 1: About you -->
+          <div class="cq-step" [hidden]="step !== 1">
+            <div class="cq-step-h"><p class="cq-count">{{ 'SURETY_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 1 } }}</p><h3 id="sq-h1" tabindex="-1">{{ list('SURETY_QUOTE_PAGE.FORM.STEP_TITLES')[0] }}</h3></div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('SURETY_QUOTE_PAGE.FORM.APPLICANT_LEGEND' | translate), name: 'sq-a', opts: list('SURETY_QUOTE_PAGE.FORM.APPLICANTS'), key: 'applicant', cls: '' }"></ng-container>
+            <div class="cq-row">
+              <div class="field">
+                <label for="sq-name">{{ 'SURETY_QUOTE_PAGE.FORM.NAME' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="sq-name" autocomplete="name" maxlength="255" required [value]="form.name"
+                  [attr.aria-invalid]="errors['name'] ? 'true' : null" aria-describedby="sq-name-err" (input)="onText('name', $event)" />
+                <p class="err" id="sq-name-err">{{ errors['name'] }}</p>
+              </div>
+              <div class="field" *ngIf="isBusiness">
+                <label for="sq-biz">{{ 'SURETY_QUOTE_PAGE.FORM.BIZ' | translate }} <span class="opt">{{ 'SURETY_QUOTE_PAGE.FORM.BIZ_HINT' | translate }}</span></label>
+                <input type="text" id="sq-biz" autocomplete="organization" maxlength="200" [value]="form.biz" (input)="onText('biz', $event)" />
+              </div>
+            </div>
+            <div class="cq-row">
+              <div class="field">
+                <label for="sq-phone">{{ 'SURETY_QUOTE_PAGE.FORM.PHONE' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                <input type="tel" id="sq-phone" inputmode="tel" autocomplete="tel-national" required [value]="form.phone"
+                  [attr.aria-invalid]="errors['phone'] ? 'true' : null" aria-describedby="sq-phone-err" (input)="onPhoneInput($event)" />
+                <p class="err" id="sq-phone-err">{{ errors['phone'] }}</p>
+              </div>
+              <div class="field">
+                <label for="sq-email">{{ 'SURETY_QUOTE_PAGE.FORM.EMAIL' | translate }} <span class="opt">{{ 'SURETY_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
+                <input type="email" id="sq-email" autocomplete="email" maxlength="254" [value]="form.email"
+                  [attr.aria-invalid]="errors['email'] ? 'true' : null" aria-describedby="sq-email-err" (input)="onText('email', $event)" />
+                <p class="err" id="sq-email-err">{{ errors['email'] }}</p>
+              </div>
+            </div>
+            <div class="field aq-short">
+              <label for="sq-zip">{{ 'SURETY_QUOTE_PAGE.FORM.ZIP' | translate }} <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="sq-zip" inputmode="numeric" autocomplete="postal-code" maxlength="5" required [value]="form.zip"
+                [attr.aria-invalid]="errors['zip'] ? 'true' : null" aria-describedby="sq-zip-err" (input)="onZipInput($event)" />
+              <p class="err" id="sq-zip-err">{{ errors['zip'] }}</p>
+            </div>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-ghost" *ngIf="editing" (click)="backToReview()">{{ 'SURETY_QUOTE_PAGE.FORM.TO_REVIEW' | translate }}</button>
+              <button type="button" class="hf-btn btn-primary" (click)="next()">{{ list('SURETY_QUOTE_PAGE.FORM.NEXT')[0] }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+
+          <!-- Step 2: Your bond -->
+          <div class="cq-step" [hidden]="step !== 2">
+            <div class="cq-step-h"><p class="cq-count">{{ 'SURETY_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 2 } }}</p><h3 id="sq-h2" tabindex="-1">{{ list('SURETY_QUOTE_PAGE.FORM.STEP_TITLES')[1] }}</h3></div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('SURETY_QUOTE_PAGE.FORM.BOND_LEGEND' | translate), name: 'sq-b', opts: list('SURETY_QUOTE_PAGE.FORM.BONDS'), key: 'bond', cls: 'stack aq-two', errId: 'sq-bond-err' }"></ng-container>
+            <div class="field">
+              <label for="sq-ob">{{ 'SURETY_QUOTE_PAGE.FORM.OBLIGEE' | translate }} <span class="opt">{{ 'SURETY_QUOTE_PAGE.FORM.OBLIGEE_HINT' | translate }}</span></label>
+              <input type="text" id="sq-ob" autocomplete="off" maxlength="200" [value]="form.obligee" [placeholder]="'SURETY_QUOTE_PAGE.FORM.OBLIGEE_PH' | translate" (input)="onText('obligee', $event)" />
+            </div>
+            <fieldset class="sq-amt" aria-describedby="sq-amt-help">
+              <legend>{{ 'SURETY_QUOTE_PAGE.FORM.AMOUNT_LEGEND' | translate }}</legend>
+              <div class="sq-amt-row">
+                <div class="bq-money"><span aria-hidden="true">$</span><input type="text" id="sq-amt" inputmode="numeric" autocomplete="off" maxlength="11" [attr.aria-label]="'SURETY_QUOTE_PAGE.FORM.AMOUNT_ARIA' | translate" [value]="form.amount" [disabled]="form.amountUnsure" (input)="onAmountInput($event)" /></div>
+                <div class="opt-chip"><input type="checkbox" id="sq-amt-unsure" [checked]="form.amountUnsure" (change)="onAmountUnsure($event)" /><label for="sq-amt-unsure">{{ 'SURETY_QUOTE_PAGE.FORM.AMOUNT_UNSURE' | translate }}</label></div>
+              </div>
+              <p class="aq-sub" id="sq-amt-help"><em>{{ 'SURETY_QUOTE_PAGE.FORM.AMOUNT_HELP' | translate }}</em></p>
+            </fieldset>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('SURETY_QUOTE_PAGE.FORM.WHEN_LEGEND' | translate), name: 'sq-w', opts: list('SURETY_QUOTE_PAGE.FORM.WHENS'), key: 'when', cls: 'stack aq-two' }"></ng-container>
+            <div class="field cq-more aq-short-more" *ngIf="form.pick['when'] === 'date'">
+              <label for="sq-date">{{ 'SURETY_QUOTE_PAGE.FORM.DATE' | translate }}</label>
+              <input type="date" id="sq-date" autocomplete="off" [value]="form.date"
+                [attr.aria-invalid]="errors['date'] ? 'true' : null" aria-describedby="sq-date-err" (input)="onText('date', $event)" />
+              <p class="err" id="sq-date-err">{{ errors['date'] }}</p>
+            </div>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-outline" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'SURETY_QUOTE_PAGE.FORM.BACK' | translate }}</button>
+              <button type="button" class="hf-btn btn-ghost" *ngIf="editing" (click)="backToReview()">{{ 'SURETY_QUOTE_PAGE.FORM.TO_REVIEW' | translate }}</button>
+              <button type="button" class="hf-btn btn-primary" (click)="next()">{{ list('SURETY_QUOTE_PAGE.FORM.NEXT')[1] }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+
+          <!-- Step 3: Quick background -->
+          <div class="cq-step" [hidden]="step !== 3">
+            <div class="cq-step-h"><p class="cq-count">{{ 'SURETY_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 3 } }}</p><h3 id="sq-h3" tabindex="-1">{{ list('SURETY_QUOTE_PAGE.FORM.STEP_TITLES')[2] }}</h3></div>
+            <fieldset aria-describedby="sq-credit-note">
+              <legend>{{ 'SURETY_QUOTE_PAGE.FORM.CREDIT_LEGEND' | translate }}</legend>
+              <div class="opts stack aq-two">
+                <div class="opt-chip" *ngFor="let o of list('SURETY_QUOTE_PAGE.FORM.CREDITS')">
+                  <input type="radio" name="sq-c" [id]="'sq-c-' + o.V" [value]="o.V" [checked]="form.pick['credit'] === o.V" (change)="pick('credit', o.V)" />
+                  <label [for]="'sq-c-' + o.V">{{ o.L }}</label>
+                </div>
+              </div>
+              <p class="lq-why sq-credit-note" id="sq-credit-note"><svg class="icon-sm" aria-hidden="true"><use href="#i-shield" /></svg><span><em>{{ 'SURETY_QUOTE_PAGE.FORM.CREDIT_NOTE' | translate }}</em></span></p>
+            </fieldset>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('SURETY_QUOTE_PAGE.FORM.RENEWAL_LEGEND' | translate), name: 'sq-n', opts: list('SURETY_QUOTE_PAGE.FORM.RENEWALS'), key: 'renewal', cls: '' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('SURETY_QUOTE_PAGE.FORM.CLAIMS_LEGEND' | translate), name: 'sq-cl', opts: list('SURETY_QUOTE_PAGE.FORM.CLAIMS'), key: 'claims', cls: '' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('SURETY_QUOTE_PAGE.FORM.JUDGMENTS_LEGEND' | translate), name: 'sq-j', opts: list('SURETY_QUOTE_PAGE.FORM.JUDGMENTS'), key: 'judgments', cls: '' }"></ng-container>
+            <div class="field aq-short" *ngIf="isBusiness">
+              <label for="sq-years">{{ 'SURETY_QUOTE_PAGE.FORM.YEARS' | translate }}</label>
+              <input type="text" id="sq-years" inputmode="numeric" autocomplete="off" maxlength="3" [value]="form.years" (input)="onYearsInput($event)" />
+            </div>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-outline" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'SURETY_QUOTE_PAGE.FORM.BACK' | translate }}</button>
+              <button type="button" class="hf-btn btn-ghost" *ngIf="editing" (click)="backToReview()">{{ 'SURETY_QUOTE_PAGE.FORM.TO_REVIEW' | translate }}</button>
+              <button type="button" class="hf-btn btn-primary" (click)="next()">{{ list('SURETY_QUOTE_PAGE.FORM.NEXT')[2] }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+
+          <!-- Step 4: How should we reach you? -->
+          <div class="cq-step" [hidden]="step !== 4">
+            <div class="cq-step-h"><p class="cq-count">{{ 'SURETY_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 4 } }}</p><h3 id="sq-h4" tabindex="-1">{{ list('SURETY_QUOTE_PAGE.FORM.STEP_TITLES')[3] }}</h3></div>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('SURETY_QUOTE_PAGE.FORM.LANG_LEGEND' | translate), name: 'sq-l', opts: list('SURETY_QUOTE_PAGE.FORM.LANGS'), key: 'lang', cls: '' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('SURETY_QUOTE_PAGE.FORM.METHOD_LEGEND' | translate), name: 'sq-m', opts: list('SURETY_QUOTE_PAGE.FORM.METHODS'), key: 'method', cls: '', errId: 'sq-method-err' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('SURETY_QUOTE_PAGE.FORM.TIME_LEGEND' | translate), name: 'sq-t', opts: list('SURETY_QUOTE_PAGE.FORM.TIMES'), key: 'time', cls: 'stack' }"></ng-container>
+            <div class="field">
+              <label for="sq-office">{{ 'SURETY_QUOTE_PAGE.FORM.OFFICE' | translate }} <span class="opt">{{ 'SURETY_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
+              <select id="sq-office" (change)="form.office = $any($event.target).value">
+                <option value="" [selected]="!form.office">{{ 'SURETY_QUOTE_PAGE.FORM.NO_PREFERENCE' | translate }}</option>
+                <option *ngFor="let name of list('SURETY_QUOTE_PAGE.FORM.OFFICES'); let i = index" [value]="offices[i].id" [selected]="form.office === offices[i].id">{{ name }}</option>
+              </select>
+            </div>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-outline" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'SURETY_QUOTE_PAGE.FORM.BACK' | translate }}</button>
+              <button type="button" class="hf-btn btn-primary" (click)="next()">{{ list('SURETY_QUOTE_PAGE.FORM.NEXT')[3] }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+
+          <!-- Step 5: Review. The submit button exists only on this step, so a stray Enter before hydration cannot submit the form natively. -->
+          <div class="cq-step" [hidden]="step !== 5">
+            <div class="cq-step-h"><p class="cq-count">{{ 'SURETY_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 5 } }}</p><h3 id="sq-h5" tabindex="-1">{{ list('SURETY_QUOTE_PAGE.FORM.STEP_TITLES')[4] }}</h3></div>
+            <ng-container *ngIf="step === 5">
+              <div class="cq-review">
+                <div class="cq-rev">
+                  <div class="cq-rev-h"><h4>{{ list('SURETY_QUOTE_PAGE.FORM.R_TITLES')[0] }}</h4><button type="button" class="cq-edit" (click)="edit(1)">{{ 'SURETY_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('SURETY_QUOTE_PAGE.FORM.R_TITLES')[0] }}</span></button></div>
+                  <dl>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('SURETY_QUOTE_PAGE.FORM.R.APPLICANT' | translate), v: label('FORM.APPLICANTS', form.pick['applicant'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('SURETY_QUOTE_PAGE.FORM.R.NAME' | translate), v: form.name.trim() }"></ng-container>
+                    <ng-container *ngIf="isBusiness"><ng-container *ngTemplateOutlet="orow; context: { k: ('SURETY_QUOTE_PAGE.FORM.R.BIZ' | translate), v: form.biz.trim() }"></ng-container></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('SURETY_QUOTE_PAGE.FORM.R.PHONE' | translate), v: form.phone }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('SURETY_QUOTE_PAGE.FORM.R.EMAIL' | translate), v: form.email.trim() }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('SURETY_QUOTE_PAGE.FORM.R.ZIP' | translate), v: form.zip }"></ng-container>
+                  </dl>
+                </div>
+                <div class="cq-rev">
+                  <div class="cq-rev-h"><h4>{{ list('SURETY_QUOTE_PAGE.FORM.R_TITLES')[1] }}</h4><button type="button" class="cq-edit" (click)="edit(2)">{{ 'SURETY_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('SURETY_QUOTE_PAGE.FORM.R_TITLES')[1] }}</span></button></div>
+                  <dl>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('SURETY_QUOTE_PAGE.FORM.R.BOND' | translate), v: label('FORM.BONDS', form.pick['bond'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="orow; context: { k: ('SURETY_QUOTE_PAGE.FORM.R.OBLIGEE' | translate), v: form.obligee.trim() }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('SURETY_QUOTE_PAGE.FORM.R.AMOUNT' | translate), v: amountLabel() }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('SURETY_QUOTE_PAGE.FORM.R.WHEN' | translate), v: label('FORM.WHENS', form.pick['when'] || '') }"></ng-container>
+                    <ng-container *ngIf="form.pick['when'] === 'date'"><ng-container *ngTemplateOutlet="orow; context: { k: ('SURETY_QUOTE_PAGE.FORM.R.DATE' | translate), v: dateLabel(form.date) }"></ng-container></ng-container>
+                  </dl>
+                </div>
+                <div class="cq-rev">
+                  <div class="cq-rev-h"><h4>{{ list('SURETY_QUOTE_PAGE.FORM.R_TITLES')[2] }}</h4><button type="button" class="cq-edit" (click)="edit(3)">{{ 'SURETY_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('SURETY_QUOTE_PAGE.FORM.R_TITLES')[2] }}</span></button></div>
+                  <dl>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('SURETY_QUOTE_PAGE.FORM.R.CREDIT' | translate), v: label('FORM.CREDITS', form.pick['credit'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('SURETY_QUOTE_PAGE.FORM.R.RENEWAL' | translate), v: label('FORM.RENEWALS', form.pick['renewal'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('SURETY_QUOTE_PAGE.FORM.R.CLAIMS' | translate), v: label('FORM.CLAIMS', form.pick['claims'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('SURETY_QUOTE_PAGE.FORM.R.JUDGMENTS' | translate), v: label('FORM.JUDGMENTS', form.pick['judgments'] || '') }"></ng-container>
+                    <ng-container *ngIf="isBusiness"><ng-container *ngTemplateOutlet="orow; context: { k: ('SURETY_QUOTE_PAGE.FORM.R.YEARS' | translate), v: form.years }"></ng-container></ng-container>
+                  </dl>
+                </div>
+                <div class="cq-rev">
+                  <div class="cq-rev-h"><h4>{{ list('SURETY_QUOTE_PAGE.FORM.R_TITLES')[3] }}</h4><button type="button" class="cq-edit" (click)="edit(4)">{{ 'SURETY_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('SURETY_QUOTE_PAGE.FORM.R_TITLES')[3] }}</span></button></div>
+                  <dl>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('SURETY_QUOTE_PAGE.FORM.R.LANG' | translate), v: label('FORM.LANGS', form.pick['lang'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('SURETY_QUOTE_PAGE.FORM.R.METHOD' | translate), v: label('FORM.METHODS', form.pick['method'] || '') }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('SURETY_QUOTE_PAGE.FORM.R.TIME' | translate), v: label('FORM.TIMES', form.pick['time'] || '') }"></ng-container>
+                    <div><dt>{{ 'SURETY_QUOTE_PAGE.FORM.R.OFFICE' | translate }}</dt><dd>{{ officeLabel() || ('SURETY_QUOTE_PAGE.FORM.NO_PREFERENCE' | translate) }}</dd></div>
+                  </dl>
+                </div>
+              </div>
+            </ng-container>
+            <div class="privacy cq-consent">
+              <svg class="icon-sm" aria-hidden="true"><use href="#i-shield" /></svg>
+              <div>
+                <p><em><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('SURETY_QUOTE_PAGE.FORM.CONSENT') }"></ng-container></em></p>
+                <p class="never"><b>{{ 'SURETY_QUOTE_PAGE.FORM.NEVER_SOLD' | translate }}</b></p>
+              </div>
+            </div>
+            <p class="err cq-submit-err" role="alert">{{ submitError }}</p>
+            <div class="cq-nav">
+              <button type="button" class="hf-btn btn-outline" [disabled]="isSubmitting" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'SURETY_QUOTE_PAGE.FORM.BACK' | translate }}</button>
+              <button type="submit" class="hf-btn btn-primary btn-lg" *ngIf="step === 5" [disabled]="isSubmitting" [attr.aria-busy]="isSubmitting ? 'true' : null">{{ (isSubmitting ? 'SURETY_QUOTE_PAGE.FORM.SENDING' : 'SURETY_QUOTE_PAGE.FORM.SUBMIT') | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+            </div>
+          </div>
+        </form>
+      </ng-container>
+
+      <div class="csuccess" id="sq-success" tabindex="-1" *ngIf="sent">
+        <span class="badge" aria-hidden="true"><svg class="icon"><use href="#i-check" /></svg></span>
+        <h3>{{ 'SURETY_QUOTE_PAGE.FORM.SUCCESS.TITLE' | translate }}</h3>
+        <p>{{ 'SURETY_QUOTE_PAGE.FORM.SUCCESS.TEXT' | translate }}</p>
+        <p class="cq-multi" *ngIf="sentAsap"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg><span><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('SURETY_QUOTE_PAGE.FORM.SUCCESS.ASAP') }"></ng-container></span></p>
+      </div>
+    </div>
+
+    <div class="hero-sub">
+      <p class="hf-lead">{{ 'SURETY_QUOTE_PAGE.HERO.LEAD' | translate }}</p>
+      <p class="q-trust"><span class="q-star" aria-hidden="true"><svg class="icon-sm"><use href="#i-star" /></svg></span><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('SURETY_QUOTE_PAGE.HERO.TRUST') }"></ng-container></p>
     </div>
   </div>
+</section>
 
-  <div class="container my-5 quote-wrapper">
-    <div class="card border-0 p-4 mb-5">
-      <div class="d-flex justify-content-between align-items-center stepper">
-        <div class="step" [class.active]="currentStep === 1" [class.completed]="canEditStep(1)">
-          <div class="circle"><img src="/assets/images/quote-step-1.png" alt="" /></div>
-          <p [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP1.TITLE' | translateHtml | async"></p>
-        </div>
-        <div class="step" [class.active]="currentStep === 2" [class.completed]="canEditStep(2)">
-          <div class="circle"><img src="/assets/images/quote-step-2.png" alt="" /></div>
-          <p [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP2.TITLE' | translateHtml | async"></p>
-        </div>
-        <div class="step" [class.active]="currentStep === 3" [class.completed]="canEditStep(3)">
-          <div class="circle"><img src="/assets/images/quote-step-3.png" alt="" /></div>
-          <p [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP3.TITLE' | translateHtml | async"></p>
-        </div>
-        <div class="step" [class.active]="currentStep === 4" [class.completed]="canEditStep(4)">
-          <div class="circle"><img src="/assets/images/quote-step-4.png" alt="" /></div>
-          <p [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP4.TITLE' | translateHtml | async"></p>
-        </div>
+<!-- How surety bonds work -->
+<section class="section bg-white" id="how-bonds-work" aria-labelledby="how-h">
+  <div class="hf-container">
+    <div class="section-head"><h2 id="how-h">{{ 'SURETY_QUOTE_PAGE.HOW.TITLE' | translate }}</h2></div>
+    <ul class="aq-basics">
+      <li *ngFor="let b of list('SURETY_QUOTE_PAGE.HOW.ITEMS'); let i = index">
+        <span class="ic" aria-hidden="true"><svg class="icon"><use [attr.href]="'#' + howIcons[i]" /></svg></span>
+        <div><h3>{{ b.TITLE }}</h3><p><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: b.TEXT }"></ng-container></p></div>
+      </li>
+    </ul>
+    <p class="cq-know"><a class="arrow-link" [routerLink]="route('suretyBondInsurance')">{{ 'SURETY_QUOTE_PAGE.HOW.MORE' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a></p>
+  </div>
+</section>
 
-      </div>
-    </div>
+<!-- FAQs -->
+<section class="section bg-cream" id="faqs" aria-labelledby="faq-h">
+  <div class="hf-container faq faq-wrap">
+    <h2 id="faq-h">{{ 'SURETY_QUOTE_PAGE.FAQ.TITLE' | translate }}</h2>
+    <details *ngFor="let item of list('SURETY_QUOTE_PAGE.FAQ.ITEMS'); let i = index" [open]="faqOpen === i" (toggle)="onFaqToggle(i, $event)">
+      <summary><h3>{{ item.Q }}</h3><span class="pm" aria-hidden="true"><svg class="icon-sm"><use href="#i-plus" /></svg></span></summary>
+      <div class="ans"><p><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: item.A }"></ng-container></p></div>
+    </details>
+  </div>
+</section>
 
-    <form [formGroup]="suretyQuoteForm">
-      <div class="steps-for-custom-quote">
-        <div class="container" *ngIf="currentStep === 1">
-          <div class="form-wrapper">
-            <h2 class="form-title" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP1.TITLE' | translateHtml | async"></h2>
-
-            <div class="form-content-border">
-              <div class="row gy-3 mb-2">
-                <div class="col-md-4">
-                  <label class="form-label"><span [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP1.FIELDS.FULL_NAME' | translateHtml | async"></span><span>*</span></label>
-                  <input type="text" formControlName="full_name"
-                    [class.is-invalid]="suretyQuoteForm.get('full_name')?.invalid && suretyQuoteForm.get('full_name')?.touched"
-                    class="form-control" placeholder="John Doe" />
-                  <div class="invalid-feedback"
-                    *ngIf="suretyQuoteForm.get('full_name')?.invalid && suretyQuoteForm.get('full_name')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-                <div class="col-md-4">
-                  <label class="form-label"><span [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP1.FIELDS.EMAIL' | translateHtml | async"></span><span>*</span></label>
-                  <input type="email" formControlName="email_address"
-                    [class.is-invalid]="suretyQuoteForm.get('email_address')?.invalid && suretyQuoteForm.get('email_address')?.touched"
-                    class="form-control" id="email_address" placeholder="johndoe@email.com" />
-                  <div class="invalid-feedback"
-                    *ngIf="suretyQuoteForm.get('email_address')?.invalid && suretyQuoteForm.get('email_address')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.EMAIL' | translateHtml | async"></div>
-                </div>
-              </div>
-
-              <div class="row gy-3 mb-3 mt-2">
-                <div class="col-md-4">
-                  <label class="form-label"><span [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP1.FIELDS.PHONE' | translateHtml | async"></span><span>*</span></label>
-                  <input type="text" formControlName="phone_number"
-                    [class.is-invalid]="suretyQuoteForm.get('phone_number')?.invalid && suretyQuoteForm.get('phone_number')?.touched"
-                    class="form-control" placeholder="+1 234 567 8900" />
-                  <div class="invalid-feedback"
-                    *ngIf="suretyQuoteForm.get('phone_number')?.invalid && suretyQuoteForm.get('phone_number')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-              </div>
-
-              <div class="d-flex gap-3 mt-4">
-          <button type="button" class="btn btn-next" (click)="nextStep()">{{ 'SURETY_BOND_QUOTE.NEXT_BUTTON' |
-                  translate }}</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="container mb-4 mt-4" *ngIf="currentStep === 2">
-          <div class="form-wrapper">
-            <h2 class="form-title" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP2.TITLE' | translateHtml | async"></h2>
-
-            <div class="form-content-border">
-              <div class="row gy-3 mb-3">
-                <div class="col-md-8">
-                  <label class="form-label"><span [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP2.FIELDS.BOND_TYPE' | translateHtml | async"></span><span>*</span></label>
-                  <input type="text" formControlName="bond_type"
-                    [class.is-invalid]="suretyQuoteForm.get('bond_type')?.invalid && suretyQuoteForm.get('bond_type')?.touched"
-                    class="form-control" placeholder="" />
-                  <div class="invalid-feedback"
-                    *ngIf="suretyQuoteForm.get('bond_type')?.invalid && suretyQuoteForm.get('bond_type')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-              </div>
-
-              <div class="row gy-3 mb-3">
-                <div class="col-md-8">
-                  <label class="form-label" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP2.FIELDS.BOND_AMOUNT' | translateHtml | async"></label>
-                  <input type="text" formControlName="bond_amount"
-                    [class.is-invalid]="suretyQuoteForm.get('bond_amount')?.invalid && suretyQuoteForm.get('bond_amount')?.touched"
-                    class="form-control" placeholder="" />
-                  <div class="invalid-feedback"
-                    *ngIf="suretyQuoteForm.get('bond_amount')?.invalid && suretyQuoteForm.get('bond_amount')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-              </div>
-
-              <div class="row gy-3 mb-3">
-                <div class="col-md-8">
-                  <label class="form-label" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP2.FIELDS.OBLIGEE_NAME' | translateHtml | async"></label>
-                  <input type="text" formControlName="obligee_name"
-                    [class.is-invalid]="suretyQuoteForm.get('obligee_name')?.invalid && suretyQuoteForm.get('obligee_name')?.touched"
-                    class="form-control" placeholder="" />
-                  <div class="invalid-feedback"
-                    *ngIf="suretyQuoteForm.get('obligee_name')?.invalid && suretyQuoteForm.get('obligee_name')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-              </div>
-
-              <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous" (click)="previousStep()">{{
-                  'SURETY_BOND_QUOTE.PREVIOUS_BUTTON' | translate
-                  }}</button>
-                <button type="button" class="btn btn-next" (click)="nextStep()">{{ 'SURETY_BOND_QUOTE.NEXT_BUTTON' |
-                  translate }}</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="container mb-4" *ngIf="currentStep === 3">
-          <div class="form-wrapper">
-            <h2 class="form-title" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP3.TITLE' | translateHtml | async"></h2>
-
-            <div class="form-content-border">
-              <div class="row gy-3 mt-2">
-                <div class="selection-group">
-                  <h4 class="selection-heading" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP3.FIELDS.CREDIT_SCORE_TITLE' | translateHtml | async"></h4>
-
-                  <div class="coverage-options">
-                    <div class="form-check"
-                      *ngFor="let option of ('SURETY_BOND_QUOTE.STEPPER.STEP3.FIELDS.CREDIT_SCORE_TITLE_OPTION' | translate)">
-                      <input class="form-check-input" type="radio" [value]="option" [id]="option"
-                        formControlName="estimated_credit_score" />
-
-                      <label class="form-check-label" [for]="option">
-                        {{ option }}
-                      </label>
-                    </div>
-                    <div class="invalid-feedback d-block"
-                      *ngIf="suretyQuoteForm.get('estimated_credit_score')?.invalid && suretyQuoteForm.get('estimated_credit_score')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row gy-3 mb-3 mt-4">
-                <div class="col-md-8">
-                  <label class="form-label" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP3.FIELDS.YEARS_IN_BUSINESS' | translateHtml | async"></label>
-                  <input type="text" formControlName="years_in_business"
-                    [class.is-invalid]="suretyQuoteForm.get('years_in_business')?.invalid && suretyQuoteForm.get('years_in_business')?.touched"
-                    class="form-control" placeholder="" />
-                  <div class="invalid-feedback"
-                    *ngIf="suretyQuoteForm.get('years_in_business')?.invalid && suretyQuoteForm.get('years_in_business')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-              </div>
-              <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous" (click)="previousStep()">{{
-                  'GET_LIFE_QUOTE.PREVIOUS_BUTTON' | translate
-                  }}</button>
-                <button type="button" class="btn btn-next" (click)="nextStep()">{{ 'GET_LIFE_QUOTE.NEXT_BUTTON' |
-                  translate }}</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="container mt-4 mb-4" *ngIf="currentStep === 4">
-          <div class="form-wrapper">
-            <h2 class="form-title" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP4.TITLE' | translateHtml | async"></h2>
-
-            <div class="form-content-border">
-              <div class="row gy-3 mb-3">
-                <div class="col-md-8">
-                  <label class="form-label" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP4.FIELDS.LANGUAGE' | translateHtml | async"></label>
-                  <select class="form-select" formControlName="preferred_language"
-                    [class.is-invalid]="suretyQuoteForm.get('preferred_language')?.invalid && suretyQuoteForm.get('preferred_language')?.touched">
-                    <option
-                      *ngFor="let option of ('SURETY_BOND_QUOTE.STEPPER.STEP4.FIELDS.LANGUAGE_OPTIONS' | translate)"
-                      [value]="option">{{ option }}</option>
-                  </select>
-                  <div class="invalid-feedback"
-                    *ngIf="suretyQuoteForm.get('preferred_language')?.invalid && suretyQuoteForm.get('preferred_language')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-              </div>
-
-              <div class="row gy-3 mb-3">
-                <div class="col-md-8">
-                  <label class="form-label" [innerHTML]="'SURETY_BOND_QUOTE.STEPPER.STEP4.FIELDS.BEST_TIME' | translateHtml | async"></label>
-                  <select class="form-select" formControlName="best_time_to_call"
-                    [class.is-invalid]="suretyQuoteForm.get('best_time_to_call')?.invalid && suretyQuoteForm.get('best_time_to_call')?.touched">
-                    <option *ngFor="let option of ('SURETY_BOND_QUOTE.STEPPER.STEP4.FIELDS.TIME_OPTIONS' | translate)"
-                      [value]="option">{{ option }}</option>
-                  </select>
-                  <div class="invalid-feedback"
-                    *ngIf="suretyQuoteForm.get('best_time_to_call')?.invalid && suretyQuoteForm.get('best_time_to_call')?.touched" [innerHTML]="'GET_AUTO_QUOTE.ERRORS.REQUIRED' | translateHtml | async"></div>
-                </div>
-              </div>
-
-              <div class="d-flex gap-3 mt-4">
-                <button type="button" class="btn btn-previous" (click)="previousStep()">{{
-                  'SURETY_BOND_QUOTE.PREVIOUS_BUTTON' | translate
-                  }}</button>
-                <button type="button" class="btn btn-next" (click)="nextStep()">{{ 'SURETY_BOND_QUOTE.NEXT_BUTTON' |
-                  translate }}</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </form>
-
-    <div class="quote-summary-container p-4 p-md-5 mt-5" *ngIf="currentStep > totalSteps">
-      <div class="container max-width-700">
-        <h2 class="text-center mb-4 section-title" [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.MAIN_TITLE' | translateHtml | async"></h2>
-        <p class="text-center mb-4" [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.MAIN_DESC' | translateHtml | async"></p>
-
-        <h2 class="text-center mb-4 section-title" [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.SUMMARY_TITLE' | translateHtml | async"></h2>
-
-        <div class="summary-card mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="summary-card-title m-0" [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD1.TITLE' | translateHtml | async"></h3>
-            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(1)" [attr.aria-disabled]="!canEditStep(1)" (click)="canEditStep(1) && goToStep(1)"><i class="bi bi-pencil-square"></i> <span [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD1.EDIT' | translateHtml | async"></span></a>
-          </div>
-          <ul class="list-unstyled mb-0">
-            <li><strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.NAME' | translateHtml | async"></strong>: {{ suretyQuoteForm.get('full_name')?.value }}
-            </li>
-            <li><strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.PHONE' | translateHtml | async"></strong>:
-              {{ suretyQuoteForm.get('phone_number')?.value }}
-            </li>
-            <li><strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD1.FIELDS.EMAIL' | translateHtml | async"></strong>:
-              {{ suretyQuoteForm.get('email_address')?.value }}</li>
-          </ul>
-        </div>
-
-        <div class="summary-card mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="summary-card-title m-0" [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD2.TITLE' | translateHtml | async"></h3>
-            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(2)" [attr.aria-disabled]="!canEditStep(2)" (click)="canEditStep(2) && goToStep(2)"><i class="bi bi-pencil-square"></i> <span [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD2.EDIT' | translateHtml | async"></span></a>
-          </div>
-          <ul class="list-unstyled mb-0">
-            <li><strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.BOND_TYPE' | translateHtml | async"></strong>:
-              {{ suretyQuoteForm.get('bond_type')?.value }}</li>
-            <li>
-              <strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.BOND_AMOUNT' | translateHtml | async"></strong>:
-              {{ suretyQuoteForm.get('bond_amount')?.value }}
-            </li>
-
-            <li>
-              <strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD2.FIELDS.OBLIGEE' | translateHtml | async"></strong>:
-              {{ suretyQuoteForm.get('obligee_name')?.value }}
-            </li>
-          </ul>
-        </div>
-
-        <div class="summary-card mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="summary-card-title m-0" [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD3.TITLE' | translateHtml | async"></h3>
-            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(3)" [attr.aria-disabled]="!canEditStep(3)" (click)="canEditStep(3) && goToStep(3)"><i class="bi bi-pencil-square"></i> <span [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD3.EDIT' | translateHtml | async"></span></a>
-          </div>
-          <ul class="list-unstyled mb-0">
-            <li><strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.CREDIT_SCORE' | translateHtml | async"></strong>:
-              {{ suretyQuoteForm.get('estimated_credit_score')?.value }}</li>
-            <li><strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD3.FIELDS.YEARS_IN_BUSINESS' | translateHtml | async"></strong>: {{
-              suretyQuoteForm.get('years_in_business')?.value }}
-            </li>
-          </ul>
-        </div>
-
-        <div class="summary-card mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="summary-card-title m-0" [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD4.TITLE' | translateHtml | async"></h3>
-            <a href="javascript:void(0)" class="edit-link" [class.disabled]="!canEditStep(4)" [attr.aria-disabled]="!canEditStep(4)" (click)="canEditStep(4) && goToStep(4)"><i class="bi bi-pencil-square"></i> <span [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD4.EDIT' | translateHtml | async"></span></a>
-          </div>
-          <ul class="list-unstyled mb-0">
-            <li><strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.LANGUAGE' | translateHtml | async"></strong>:
-              {{ suretyQuoteForm.get('preferred_language')?.value }}</li>
-            <li><strong [innerHTML]="'SURETY_BOND_QUOTE.QUOTE_SUMMARY.CARD4.FIELDS.BEST_TIME' | translateHtml | async"></strong>:
-              {{ suretyQuoteForm.get('best_time_to_call')?.value }}</li>
-          </ul>
-        </div>
-
-        <!-- Form Footer -->
-        <div class="mt-4">
-
-          <button class="btn btn-submit" (click)="sendSuretyQuote()" [disabled]="loading">
-            <span *ngIf="loading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-            {{ loading ? 'Submitting...' : ('SURETY_BOND_QUOTE.QUOTE_SUMMARY.SUBMIT_BUTTON' | translate) }}
-          </button>
-        </div>
-      </div>
+<!-- Final CTA (white) -->
+<section class="section q-final" id="final-cta" aria-labelledby="fin-h">
+  <div class="hf-container ready-band">
+    <h2 id="fin-h">{{ 'SURETY_QUOTE_PAGE.FINAL.TITLE' | translate }}</h2>
+    <p><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('SURETY_QUOTE_PAGE.FINAL.TEXT') }"></ng-container></p>
+    <div class="btn-row">
+      <a class="hf-btn btn-primary btn-lg" href="#quote" (click)="goToForm($event)">{{ 'SURETY_QUOTE_PAGE.FINAL.START' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+      <a class="hf-btn btn-outline btn-lg" [routerLink]="route('ourLocations')"><svg class="icon-sm" aria-hidden="true"><use href="#i-pin" /></svg>{{ 'SURETY_QUOTE_PAGE.FINAL.FIND' | translate }}</a>
     </div>
   </div>
+</section>
 
-  <!-- footuper -->
-  <app-foot-upper></app-foot-upper>
+<!-- Sticky mobile bar -->
+<div class="sticky-cta" [class.show]="showSticky" [attr.aria-hidden]="!showSticky">
+  <a class="hf-btn btn-primary" href="#quote" [tabIndex]="showSticky ? 0 : -1" (click)="goToForm($event)">{{ 'HOME_PAGE.STICKY.QUOTE' | translate }}</a>
+  <a class="hf-btn btn-outline" href="tel:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'HOME_PAGE.STICKY.CALL' | translate }}</a>
+  <a class="hf-btn btn-outline" href="sms:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-chat" /></svg>{{ 'HOME_PAGE.STICKY.TEXT' | translate }}</a>
+</div>

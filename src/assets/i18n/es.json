@@ -2605,6 +2605,1030 @@
     },
     "NEW_TAB": "(se abre en una pestaña nueva)"
   },
+  "SURETY_QUOTE_PAGE": {
+    "NEW_TAB": "(se abre en una pestaña nueva)",
+    "BREADCRUMB": {
+      "ARIA": "Ruta de navegación",
+      "HOME": "Inicio",
+      "SECTION": "Fianzas",
+      "CURRENT": "Cotización"
+    },
+    "HERO": {
+      "TITLE": [
+        {
+          "t": "Cotice su "
+        },
+        {
+          "t": "fianza en Texas",
+          "hl": "true"
+        }
+      ],
+      "LEAD": "Fianzas de notario, título con fianza, concesionario de autos, licencias y permisos, y contratos. Díganos qué fianza necesita y quién se la pide. Comparamos compañías de fianzas por usted y le explicamos cada paso en español, inglés o hindi. Opciones para todo tipo de crédito.",
+      "TRUST": [
+        {
+          "t": "4.8",
+          "b": "true"
+        },
+        {
+          "t": " en Google con más de 250 reseñas · ¿Necesita su fianza hoy? "
+        },
+        {
+          "t": "Llame al (713) 357-7771",
+          "h": "tel:+17133577771"
+        }
+      ]
+    },
+    "FORM": {
+      "ARIA": "Cotización de fianza",
+      "STEPS_ARIA": "Pasos del formulario",
+      "STEP_OF": "Paso {{n}} de 5",
+      "LIVE": "Paso {{n}} de 5: {{title}}",
+      "STEP_TITLES": [
+        "Sus datos",
+        "Su fianza",
+        "Información rápida",
+        "¿Cómo prefiere que lo contactemos?",
+        "Revise su solicitud de cotización de fianza"
+      ],
+      "STEP_DOTS": [
+        "Sus datos",
+        "Fianza",
+        "Información",
+        "Contacto",
+        "Revisar"
+      ],
+      "NEXT": [
+        "Siguiente: Su fianza",
+        "Siguiente: Información rápida",
+        "Siguiente: Cómo contactarlo",
+        "Siguiente: Revisar"
+      ],
+      "BACK": "Atrás",
+      "TO_REVIEW": "Volver a la revisión",
+      "EDIT": "Editar",
+      "SUBMIT": "Enviar mi solicitud",
+      "SENDING": "Enviando…",
+      "OPTIONAL": "(opcional)",
+      "NOT_GIVEN": "No indicado",
+      "APPLICANT_LEGEND": "Usted solicita como",
+      "APPLICANTS": [
+        {
+          "V": "individual",
+          "L": "Persona"
+        },
+        {
+          "V": "business",
+          "L": "Negocio"
+        },
+        {
+          "V": "unsure",
+          "L": "No estoy seguro"
+        }
+      ],
+      "NAME": "Su nombre completo",
+      "BIZ": "Nombre del negocio",
+      "BIZ_HINT": "(si solicita como negocio)",
+      "PHONE": "Número de teléfono",
+      "EMAIL": "Correo electrónico",
+      "ZIP": "Código postal",
+      "BOND_LEGEND": "¿Qué fianza necesita?",
+      "BONDS": [
+        {
+          "V": "notary",
+          "L": "Fianza de notario"
+        },
+        {
+          "V": "bonded-title",
+          "L": "Título con fianza (bonded title)"
+        },
+        {
+          "V": "auto-dealer",
+          "L": "Fianza de concesionario de autos"
+        },
+        {
+          "V": "contractor",
+          "L": "Fianza de contratista (ciudad u oficio)"
+        },
+        {
+          "V": "janitorial",
+          "L": "Fianza de limpieza o conserjería"
+        },
+        {
+          "V": "license-permit",
+          "L": "Otra fianza de licencia o permiso"
+        },
+        {
+          "V": "court-probate",
+          "L": "Fianza judicial o de sucesión"
+        },
+        {
+          "V": "performance-payment",
+          "L": "Fianza de cumplimiento o de pago (contratos)"
+        },
+        {
+          "V": "unsure",
+          "L": "No estoy seguro: ayúdenme a encontrar la fianza correcta"
+        }
+      ],
+      "OBLIGEE": "¿Quién le pide esta fianza?",
+      "OBLIGEE_HINT": "(el \"obligee\" o beneficiario)",
+      "OBLIGEE_PH": "Secretaría de Estado de Texas, TxDMV, TDLR, Ciudad de Houston",
+      "AMOUNT_LEGEND": "Monto de la fianza requerido",
+      "AMOUNT_ARIA": "Monto de la fianza en dólares",
+      "AMOUNT_UNSURE": "No estoy seguro",
+      "AMOUNT_HELP": "Búsquelo en los documentos de la agencia o del cliente que le pide la fianza.",
+      "WHEN_LEGEND": "¿Cuándo necesita la fianza?",
+      "WHENS": [
+        {
+          "V": "asap",
+          "L": "Lo antes posible"
+        },
+        {
+          "V": "30-days",
+          "L": "En los próximos 30 días"
+        },
+        {
+          "V": "date",
+          "L": "Fecha específica"
+        },
+        {
+          "V": "unsure",
+          "L": "No estoy seguro"
+        }
+      ],
+      "DATE": "Fecha en que la necesita",
+      "CREDIT_LEGEND": "Puntaje de crédito aproximado",
+      "CREDITS": [
+        {
+          "V": "excellent",
+          "L": "Excelente (720+)"
+        },
+        {
+          "V": "good",
+          "L": "Bueno (680–719)"
+        },
+        {
+          "V": "fair",
+          "L": "Regular (620–679)"
+        },
+        {
+          "V": "below-620",
+          "L": "Menos de 620"
+        },
+        {
+          "V": "unsure",
+          "L": "No estoy seguro"
+        }
+      ],
+      "CREDIT_NOTE": "Elegir un rango aquí no afecta su crédito. Si después la compañía de fianzas revisa su crédito, la mayoría de las fianzas pequeñas usan una consulta suave, que tampoco afecta su puntaje.",
+      "RENEWAL_LEGEND": "¿Es una fianza nueva o una renovación?",
+      "RENEWALS": [
+        {
+          "V": "new",
+          "L": "Nueva"
+        },
+        {
+          "V": "renewal",
+          "L": "Renovación"
+        }
+      ],
+      "CLAIMS_LEGEND": "¿Ha tenido reclamos en una fianza anterior?",
+      "CLAIMS": [
+        {
+          "V": "no",
+          "L": "No"
+        },
+        {
+          "V": "yes",
+          "L": "Sí"
+        },
+        {
+          "V": "unsure",
+          "L": "No estoy seguro"
+        }
+      ],
+      "JUDGMENTS_LEGEND": "¿Tiene fallos judiciales sin pagar, gravámenes de impuestos o una bancarrota reciente?",
+      "JUDGMENTS": [
+        {
+          "V": "no",
+          "L": "No"
+        },
+        {
+          "V": "yes",
+          "L": "Sí"
+        },
+        {
+          "V": "discuss",
+          "L": "Prefiero hablarlo con un agente"
+        }
+      ],
+      "YEARS": "Años en el negocio",
+      "LANG_LEGEND": "Idioma preferido",
+      "LANGS": [
+        {
+          "V": "es",
+          "L": "Español"
+        },
+        {
+          "V": "en",
+          "L": "English",
+          "LG": "en"
+        },
+        {
+          "V": "hi",
+          "L": "Hindi"
+        }
+      ],
+      "METHOD_LEGEND": "Medio preferido",
+      "METHODS": [
+        {
+          "V": "call",
+          "L": "Llamada"
+        },
+        {
+          "V": "text",
+          "L": "Mensaje de texto"
+        },
+        {
+          "V": "email",
+          "L": "Correo electrónico"
+        }
+      ],
+      "TIME_LEGEND": "Mejor hora",
+      "TIMES": [
+        {
+          "V": "morning",
+          "L": "Mañana (9 a.m.–12 p.m.)"
+        },
+        {
+          "V": "afternoon",
+          "L": "Tarde (12 p.m.–4 p.m.)"
+        },
+        {
+          "V": "evening",
+          "L": "Tarde-noche (4 p.m.–7 p.m.)"
+        }
+      ],
+      "OFFICE": "Oficina preferida",
+      "NO_PREFERENCE": "Cualquiera",
+      "OFFICES": [
+        "Denver Harbor",
+        "Fondren Southwest",
+        "Westbury",
+        "Greater Inwood",
+        "Northside-Northline"
+      ],
+      "R_TITLES": [
+        "Sus datos",
+        "Su fianza",
+        "Información rápida",
+        "Preferencias de contacto"
+      ],
+      "R": {
+        "APPLICANT": "Solicita como",
+        "NAME": "Nombre",
+        "BIZ": "Negocio",
+        "PHONE": "Teléfono",
+        "EMAIL": "Correo",
+        "ZIP": "Código postal",
+        "BOND": "Fianza",
+        "OBLIGEE": "La pide",
+        "AMOUNT": "Monto",
+        "WHEN": "La necesita",
+        "DATE": "Fecha",
+        "CREDIT": "Crédito",
+        "RENEWAL": "Nueva o renovación",
+        "CLAIMS": "Reclamos anteriores",
+        "JUDGMENTS": "Fallos, gravámenes o bancarrota",
+        "YEARS": "Años en el negocio",
+        "LANG": "Idioma",
+        "METHOD": "Medio",
+        "TIME": "Mejor hora",
+        "OFFICE": "Oficina"
+      },
+      "CONSENT": [
+        {
+          "t": "Al hacer clic en \"Enviar mi solicitud\", acepta que A-State Insurance le contacte por teléfono, mensaje de texto o correo electrónico sobre su solicitud. Su consentimiento no es una condición de compra. Pueden aplicarse tarifas de mensajes y datos. Responda STOP para dejar de recibir mensajes. Solo compartimos su información con las compañías de fianzas a las que pedimos cotizaciones. Consulte nuestra "
+        },
+        {
+          "t": "Política de privacidad",
+          "r": "privacyPolicy"
+        },
+        {
+          "t": "."
+        }
+      ],
+      "NEVER_SOLD": "Nunca vendemos su información.",
+      "ERR": {
+        "NAME": "Escriba su nombre completo.",
+        "PHONE_EMPTY": "Escriba su número de teléfono.",
+        "PHONE_INVALID": "Escriba un número de 10 dígitos, como (713) 555-0123.",
+        "EMAIL": "Escriba un correo como nombre@ejemplo.com, o déjelo en blanco.",
+        "ZIP_EMPTY": "Escriba su código postal.",
+        "ZIP": "Escriba un código postal de 5 dígitos.",
+        "BOND": "Elija una fianza, o “No estoy seguro: ayúdenme a encontrar la fianza correcta”.",
+        "DATE_PAST": "Elija una fecha que todavía no haya pasado.",
+        "EMAIL_NEEDED": "Agregue su correo en el paso 1, o elija Llamada o Mensaje de texto.",
+        "SUBMIT": "No pudimos enviar su solicitud. Sus respuestas siguen aquí. Inténtelo de nuevo o llame al (713) 357-7771."
+      },
+      "SUCCESS": {
+        "TITLE": "Gracias. Recibimos su solicitud de cotización de fianza.",
+        "TEXT": "Un agente con licencia comparará compañías de fianzas y le contactará con el precio exacto antes de que compre, de lunes a sábado, de 9 a.m. a 7 p.m.",
+        "ASAP": [
+          {
+            "t": "¿Necesita su fianza hoy? Llame al "
+          },
+          {
+            "t": "(713) 357-7771",
+            "h": "tel:+17133577771"
+          },
+          {
+            "t": "."
+          }
+        ]
+      }
+    },
+    "HOW": {
+      "TITLE": "Cómo funcionan las fianzas (surety bonds)",
+      "ITEMS": [
+        {
+          "TITLE": "Tres partes",
+          "TEXT": [
+            {
+              "t": "Una fianza es una promesa entre tres partes: "
+            },
+            {
+              "t": "usted",
+              "b": "true"
+            },
+            {
+              "t": " (el principal), el "
+            },
+            {
+              "t": "beneficiario u obligee",
+              "b": "true"
+            },
+            {
+              "t": " que exige la fianza (como el "
+            },
+            {
+              "t": "Estado de Texas",
+              "h": "https://www.sos.state.tx.us/",
+              "x": "true"
+            },
+            {
+              "t": ", el "
+            },
+            {
+              "t": "TxDMV",
+              "h": "https://www.txdmv.gov/",
+              "x": "true"
+            },
+            {
+              "t": " o una ciudad), y la "
+            },
+            {
+              "t": "compañía de fianzas",
+              "b": "true"
+            },
+            {
+              "t": " que respalda su promesa."
+            }
+          ]
+        },
+        {
+          "TITLE": "Protege al beneficiario, no a usted",
+          "TEXT": [
+            {
+              "t": "Si usted no cumple las reglas o no termina el trabajo, la persona o agencia afectada puede presentar un reclamo. Si la compañía de fianzas lo paga, usted tiene que devolverle el dinero. Esa es la diferencia principal con un seguro."
+            }
+          ]
+        },
+        {
+          "TITLE": "Lo que usted paga",
+          "TEXT": [
+            {
+              "t": "No paga el monto total de la fianza. Paga una prima, normalmente un porcentaje pequeño del monto de la fianza, según el tipo de fianza y su crédito. Muchas fianzas pequeñas, como la de notario, tienen un precio fijo bajo."
+            }
+          ]
+        },
+        {
+          "TITLE": "Cuánto dura",
+          "TEXT": [
+            {
+              "t": "La mayoría de las fianzas duran un año y se renuevan. Algunas, como la fianza de notario en Texas, duran lo mismo que su nombramiento."
+            }
+          ]
+        }
+      ],
+      "MORE": "Más información sobre las fianzas"
+    },
+    "FAQ": {
+      "TITLE": "Preguntas frecuentes sobre la cotización de fianzas",
+      "ITEMS": [
+        {
+          "Q": "¿Cuánto cuesta una fianza?",
+          "A": [
+            {
+              "t": "Depende del monto, del tipo de fianza y de su crédito. Normalmente paga un porcentaje pequeño del monto de la fianza, no el monto completo. Le mostramos el precio exacto antes de que compre."
+            }
+          ]
+        },
+        {
+          "Q": "¿Puedo obtener una fianza con mal crédito?",
+          "A": [
+            {
+              "t": "Muchas veces, sí. Muchas compañías de fianzas ofrecen opciones para personas con crédito bajo, a veces a un precio más alto. Elija \"Menos de 620\" o \"No estoy seguro\" en el formulario y buscaremos la mejor opción disponible para usted."
+            }
+          ]
+        },
+        {
+          "Q": "¿Qué tan rápido puedo tener mi fianza?",
+          "A": [
+            {
+              "t": "Muchas fianzas comunes, como las de notario y las de licencias pequeñas, se pueden emitir el mismo día una vez que está aprobado y paga. Las fianzas más grandes o de contratos pueden tardar más."
+            }
+          ]
+        },
+        {
+          "Q": "¿Qué es un título con fianza (bonded title) en Texas?",
+          "A": [
+            {
+              "t": "Si compró un vehículo pero no tiene un título válido, el Departamento de Vehículos Motorizados de Texas (TxDMV) puede permitirle obtener un título con fianza. Usted compra una fianza y el TxDMV emite el título con la fianza registrada. Le cotizamos la fianza y le explicamos los pasos."
+            }
+          ]
+        },
+        {
+          "Q": "¿Cuál es la diferencia entre una fianza y un seguro?",
+          "A": [
+            {
+              "t": "El seguro lo protege a usted. La fianza protege al beneficiario: el estado, la ciudad o el cliente que la exige. Si la compañía de fianzas paga un reclamo, usted tiene que devolver ese dinero."
+            }
+          ]
+        },
+        {
+          "Q": "¿Me ayudan con la fianza de notario en Texas?",
+          "A": [
+            {
+              "t": "Sí. Texas exige una fianza de notario de $10,000 para el nombramiento de cuatro años. Se la cotizamos y la emitimos rápido."
+            }
+          ]
+        }
+      ]
+    },
+    "FINAL": {
+      "TITLE": "¿Prefiere hablar con un especialista en fianzas?",
+      "TEXT": [
+        {
+          "t": "Llame al "
+        },
+        {
+          "t": "(713) 357-7771",
+          "h": "tel:+17133577771"
+        },
+        {
+          "t": " o visite cualquiera de nuestras 5 oficinas en Houston. Le ayudamos a encontrar la fianza correcta en español, inglés o hindi."
+        }
+      ],
+      "START": "Cotizar mi fianza",
+      "FIND": "Encontrar una oficina cerca de usted"
+    }
+  },
+  "HEALTH_QUOTE_PAGE": {
+    "NEW_TAB": "(se abre en una pestaña nueva)",
+    "BREADCRUMB": {
+      "ARIA": "Ruta de navegación",
+      "HOME": "Inicio",
+      "SECTION": "Seguros de salud",
+      "CURRENT": "Cotización"
+    },
+    "HERO": {
+      "TITLE": [
+        {
+          "t": "Cotice su "
+        },
+        {
+          "t": "seguro de salud en Texas",
+          "hl": "true"
+        }
+      ],
+      "LEAD": "Planes del Mercado de Seguros (ACA u Obamacare), Medicare Supplement, y dental y visión. Un agente con licencia compara sus opciones, revisa si califica para ahorros y le explica todo en español, inglés o hindi. Gratis y sin compromiso.",
+      "SEASON_OE": "La inscripción abierta empieza el 1 de noviembre.",
+      "SEASON_OFF": "¿Perdió su seguro? Puede que todavía pueda inscribirse",
+      "TRUST": [
+        {
+          "t": "4.8",
+          "b": "true"
+        },
+        {
+          "t": " en Google con más de 250 reseñas · ¿Prefiere hablar con alguien? "
+        },
+        {
+          "t": "Llame al (713) 357-7771",
+          "h": "tel:+17133577771"
+        }
+      ]
+    },
+    "FORM": {
+      "ARIA": "Cotización de seguro de salud",
+      "STEPS_ARIA": "Pasos del formulario",
+      "STEP_OF": "Paso {{n}} de 5",
+      "LIVE": "Paso {{n}} de 5: {{title}}",
+      "STEP_TITLES": [
+        "Quién necesita cobertura y cuándo",
+        "Su hogar",
+        "El plan que busca",
+        "¿Cómo prefiere que lo contactemos?",
+        "Revise su solicitud de cotización de salud"
+      ],
+      "STEP_DOTS": [
+        "Quién",
+        "Hogar",
+        "Plan",
+        "Contacto",
+        "Revisar"
+      ],
+      "NEXT": [
+        "Siguiente: Su hogar",
+        "Siguiente: Su plan",
+        "Siguiente: Cómo contactarlo",
+        "Siguiente: Revisar"
+      ],
+      "BACK": "Atrás",
+      "TO_REVIEW": "Volver a la revisión",
+      "EDIT": "Editar",
+      "SUBMIT": "Enviar mi solicitud",
+      "SENDING": "Enviando…",
+      "OPTIONAL": "(opcional)",
+      "NOT_GIVEN": "No indicado",
+      "WHO_LEGEND": "¿Quién necesita cobertura?",
+      "WHO": [
+        {
+          "V": "me",
+          "L": "Solo yo"
+        },
+        {
+          "V": "me-spouse",
+          "L": "Mi esposo(a) y yo"
+        },
+        {
+          "V": "me-children",
+          "L": "Mis hijos y yo"
+        },
+        {
+          "V": "family",
+          "L": "Toda mi familia"
+        },
+        {
+          "V": "children",
+          "L": "Solo mis hijos"
+        },
+        {
+          "V": "other",
+          "L": "Otra persona"
+        }
+      ],
+      "ZIP": "Código postal",
+      "COUNTY": "Condado",
+      "COUNTY_HINT": "(se llena con el código postal)",
+      "COUNTY_FILLED": "Se llenó con su código postal. Cámbielo si no es correcto.",
+      "COUNTY_SPLIT": "Este código postal está en el condado de {{counties}}. Elija el suyo.",
+      "COUNTY_TYPE": "Escriba su condado.",
+      "CURRENT_LEGEND": "¿Tiene seguro de salud ahora?",
+      "CURRENT": [
+        {
+          "V": "better",
+          "L": "Sí, busco un mejor plan"
+        },
+        {
+          "V": "ending",
+          "L": "Sí, pero se termina pronto"
+        },
+        {
+          "V": "no",
+          "L": "No"
+        }
+      ],
+      "ENDS": "Fecha en que termina la cobertura",
+      "EVENTS_LEGEND": "En los últimos 60 días, ¿le pasó algo de esto a alguien de su familia?",
+      "EVENTS": [
+        {
+          "V": "lost",
+          "L": "Perdió su seguro de salud (del trabajo, de Medicaid o CHIP, o del plan de sus papás por edad)"
+        },
+        {
+          "V": "married",
+          "L": "Se casó"
+        },
+        {
+          "V": "baby",
+          "L": "Tuvo o adoptó un bebé"
+        },
+        {
+          "V": "moved",
+          "L": "Se mudó a otro código postal"
+        },
+        {
+          "V": "none",
+          "L": "Nada de esto"
+        }
+      ],
+      "EVENTS_NOTE": "Estos cambios de vida pueden permitirle inscribirse fuera de la inscripción abierta.",
+      "HH": "Número de personas en el hogar",
+      "HH_HINT": "Todas las personas en su declaración de impuestos federales, incluso las que no necesitan cobertura",
+      "AGES_LEGEND": "Edades de las personas que necesitan cobertura",
+      "PERSON": "Persona {{n}}",
+      "REMOVE_PERSON": "Quitar persona {{n}}",
+      "ADD_PERSON": "Agregar otra persona",
+      "INCOME": "Ingreso anual estimado del hogar",
+      "WHY": [
+        {
+          "t": "Por qué preguntamos:",
+          "b": "true"
+        },
+        {
+          "t": " los ahorros en los planes del Mercado dependen del tamaño del hogar y de los ingresos. Está bien si es un cálculo aproximado."
+        }
+      ],
+      "TOBACCO_LEGEND": "¿Alguien que necesita cobertura usa tabaco?",
+      "MEDICARE_LEGEND": "¿Alguien que necesita cobertura tiene Medicare o está por empezar?",
+      "MEDICAID_LEGEND": "¿Alguien tiene Medicaid o CHIP ahora?",
+      "YN": [
+        {
+          "V": "yes",
+          "L": "Sí"
+        },
+        {
+          "V": "no",
+          "L": "No"
+        }
+      ],
+      "YNU": [
+        {
+          "V": "yes",
+          "L": "Sí"
+        },
+        {
+          "V": "no",
+          "L": "No"
+        },
+        {
+          "V": "unsure",
+          "L": "No estoy seguro"
+        }
+      ],
+      "MEDICARE_NOTE": "Las personas con Medicare no pueden comprar planes del Mercado. Le cotizaremos un Medicare Supplement.",
+      "PLAN_LEGEND": "¿Qué tipo de cobertura busca?",
+      "PLANS": [
+        {
+          "V": "aca",
+          "L": "Plan del Mercado (ACA u Obamacare)"
+        },
+        {
+          "V": "medsup",
+          "L": "Medicare Supplement"
+        },
+        {
+          "V": "dental-vision",
+          "L": "Solo dental y visión"
+        },
+        {
+          "V": "short-term",
+          "L": "Plan de salud a corto plazo"
+        },
+        {
+          "V": "unsure",
+          "L": "No estoy seguro: ayúdenme a elegir"
+        }
+      ],
+      "SHORT_TERM_NOTE": "Los planes a corto plazo cuestan menos, pero no tienen que cubrir condiciones preexistentes ni los beneficios que incluyen los planes ACA. Le explicamos la diferencia.",
+      "BIZ_TEXT": "¿Necesita seguro de salud para sus empleados?",
+      "BIZ_LINK": "Pida una cotización para su negocio",
+      "PRI_LEGEND": "¿Qué es lo más importante para usted?",
+      "PRI_HINT": "(Marque todas las que correspondan)",
+      "PRIORITIES": [
+        {
+          "V": "premium",
+          "L": "La prima mensual más baja"
+        },
+        {
+          "V": "oop",
+          "L": "Los gastos de bolsillo más bajos"
+        },
+        {
+          "V": "doctor",
+          "L": "Seguir con un doctor u hospital específico"
+        },
+        {
+          "V": "rx",
+          "L": "Cobertura de medicinas recetadas"
+        },
+        {
+          "V": "dental-vision",
+          "L": "Dental y visión"
+        },
+        {
+          "V": "mental",
+          "L": "Cobertura de salud mental"
+        }
+      ],
+      "KEEP": "Doctor, hospital o medicina que quiere mantener",
+      "NAME": "Su nombre completo",
+      "PHONE": "Número de teléfono",
+      "EMAIL": "Correo electrónico",
+      "LANG_LEGEND": "Idioma preferido",
+      "LANGS": [
+        {
+          "V": "es",
+          "L": "Español"
+        },
+        {
+          "V": "en",
+          "L": "English",
+          "LG": "en"
+        },
+        {
+          "V": "hi",
+          "L": "Hindi"
+        }
+      ],
+      "METHOD_LEGEND": "Medio preferido",
+      "METHODS": [
+        {
+          "V": "call",
+          "L": "Llamada"
+        },
+        {
+          "V": "text",
+          "L": "Mensaje de texto"
+        },
+        {
+          "V": "email",
+          "L": "Correo electrónico"
+        }
+      ],
+      "TIME_LEGEND": "Mejor hora",
+      "TIMES": [
+        {
+          "V": "morning",
+          "L": "Mañana (9 a.m.–12 p.m.)"
+        },
+        {
+          "V": "afternoon",
+          "L": "Tarde (12 p.m.–4 p.m.)"
+        },
+        {
+          "V": "evening",
+          "L": "Tarde-noche (4 p.m.–7 p.m.)"
+        }
+      ],
+      "OFFICE": "Oficina preferida",
+      "NO_PREFERENCE": "Cualquiera",
+      "OFFICES": [
+        "Denver Harbor",
+        "Fondren Southwest",
+        "Westbury",
+        "Greater Inwood",
+        "Northside-Northline"
+      ],
+      "R_TITLES": [
+        "Quién necesita cobertura y cuándo",
+        "Su hogar",
+        "El plan que busca",
+        "Preferencias de contacto"
+      ],
+      "R": {
+        "WHO": "Quién",
+        "ZIP": "Código postal",
+        "COUNTY": "Condado",
+        "CURRENT": "Tiene seguro",
+        "ENDS": "Termina la cobertura",
+        "EVENTS": "Últimos 60 días",
+        "HH": "Personas en el hogar",
+        "AGES": "Edades",
+        "INCOME": "Ingreso anual",
+        "TOBACCO": "Tabaco",
+        "MEDICARE": "Medicare",
+        "MEDICAID": "Medicaid o CHIP",
+        "PLAN": "Tipo de plan",
+        "PRI": "Lo más importante",
+        "KEEP": "Mantener",
+        "NAME": "Nombre",
+        "PHONE": "Teléfono",
+        "EMAIL": "Correo",
+        "LANG": "Idioma",
+        "METHOD": "Medio",
+        "TIME": "Mejor hora",
+        "OFFICE": "Oficina"
+      },
+      "CONSENT": [
+        {
+          "t": "Al hacer clic en \"Enviar mi solicitud\", acepta que A-State Insurance le contacte por teléfono, mensaje de texto o correo electrónico sobre su solicitud. Su consentimiento no es una condición de compra. Pueden aplicarse tarifas de mensajes y datos. Responda STOP para dejar de recibir mensajes. Usamos sus respuestas sobre su hogar, ingresos y salud solo para preparar su cotización y revisar si califica para ahorros, y solo compartimos su información con las compañías de seguros o el Mercado a los que pedimos cotizaciones. Consulte nuestra "
+        },
+        {
+          "t": "Política de privacidad",
+          "r": "privacyPolicy"
+        },
+        {
+          "t": "."
+        }
+      ],
+      "NEVER_SOLD": "Nunca vendemos su información.",
+      "ERR": {
+        "ZIP_EMPTY": "Escriba su código postal.",
+        "ZIP": "Escriba un código postal de 5 dígitos.",
+        "ENDS_PAST": "Elija una fecha que todavía no haya pasado.",
+        "HH_EMPTY": "Escriba el número de personas en su hogar.",
+        "HH_MIN": "Escriba por lo menos 1.",
+        "AGES_EMPTY": "Escriba la edad de cada persona que necesita cobertura.",
+        "AGES_RANGE": "Revise las edades. Escriba cada edad en años, como 34.",
+        "AGES_BLANK": "Escriba una edad para cada persona o quite la casilla vacía.",
+        "AGES_HH": "El número de personas en el hogar no puede ser menor que el número de personas que necesitan cobertura.",
+        "NAME": "Escriba su nombre completo.",
+        "PHONE_EMPTY": "Escriba su número de teléfono.",
+        "PHONE_INVALID": "Escriba un número de 10 dígitos, como (713) 555-0123.",
+        "EMAIL": "Escriba un correo como nombre@ejemplo.com, o déjelo en blanco.",
+        "EMAIL_NEEDED": "Agregue su correo o elija Mensaje de texto o Llamada.",
+        "SUBMIT": "No pudimos enviar su solicitud. Sus respuestas siguen aquí. Inténtelo de nuevo o llame al (713) 357-7771."
+      },
+      "SUCCESS": {
+        "TITLE": "Gracias. Recibimos su solicitud de cotización de salud.",
+        "TEXT": "Un agente con licencia comparará planes, revisará si califica para ahorros y le contactará con sus opciones, por lo general en 5 horas hábiles.",
+        "ENDS": "Haremos lo posible para que no se quede sin seguro antes de que termine su cobertura."
+      }
+    },
+    "ENROLL": {
+      "TITLE": "Cómo funciona la inscripción al seguro de salud en Texas",
+      "ITEMS": [
+        {
+          "TITLE": [
+            {
+              "t": "Inscripción abierta"
+            }
+          ],
+          "TEXT": [
+            {
+              "t": "Puede comprar o cambiar un "
+            },
+            {
+              "t": "plan del Mercado (ACA u Obamacare)",
+              "r": "acaMarketplacePlansInsurance"
+            },
+            {
+              "t": " durante la inscripción abierta, que empieza el 1 de noviembre de cada año y dura hasta el 15 de enero de 2027. Fuera de esas fechas, normalmente necesita un cambio de vida que le permita inscribirse."
+            }
+          ]
+        },
+        {
+          "TITLE": [
+            {
+              "t": "Inscripción especial"
+            }
+          ],
+          "TEXT": [
+            {
+              "t": "Perder otro seguro, casarse, tener un bebé o mudarse puede abrir un periodo de inscripción especial, normalmente de 60 días desde el cambio. Díganos la fecha y revisamos si califica."
+            }
+          ]
+        },
+        {
+          "TITLE": [
+            {
+              "t": "Ahorros en los planes del Mercado"
+            }
+          ],
+          "TEXT": [
+            {
+              "t": "Muchos texanos califican para créditos fiscales que bajan su prima mensual, según el tamaño de su hogar y sus ingresos. Lo revisamos por usted al cotizar."
+            }
+          ]
+        },
+        {
+          "TITLE": [
+            {
+              "t": "Condiciones preexistentes"
+            }
+          ],
+          "TEXT": [
+            {
+              "t": "Los planes del Mercado no pueden negarle la cobertura ni cobrarle más por un problema de salud."
+            }
+          ]
+        },
+        {
+          "TITLE": [
+            {
+              "t": "Medicaid y CHIP"
+            }
+          ],
+          "TEXT": [
+            {
+              "t": "En muchas familias trabajadoras, los niños califican para CHIP o Medicaid aunque sus papás no califiquen, y puede presentar la solicitud en cualquier momento del año. Le diremos si sus hijos podrían calificar."
+            }
+          ]
+        },
+        {
+          "TITLE": [
+            {
+              "t": "Medicare Supplement",
+              "r": "medicareSupplementInsurance"
+            }
+          ],
+          "TEXT": [
+            {
+              "t": "Si tiene Medicare, un plan Medicare Supplement puede ayudar a pagar los costos que Original Medicare no cubre, como deducibles y coaseguro."
+            }
+          ]
+        }
+      ],
+      "MORE": "Más información sobre el seguro de salud"
+    },
+    "FAQ": {
+      "TITLE": "Preguntas frecuentes sobre la cotización de seguro de salud",
+      "ITEMS": [
+        {
+          "Q": "¿Cuándo me puedo inscribir en un seguro de salud en Texas?",
+          "A": [
+            {
+              "t": "Durante la inscripción abierta, que empieza el 1 de noviembre, o unos 60 días después de un cambio de vida, como perder su seguro, casarse o tener un bebé. Medicaid y CHIP aceptan solicitudes todo el año."
+            }
+          ]
+        },
+        {
+          "Q": "¿Me pueden negar el seguro por una condición preexistente?",
+          "A": [
+            {
+              "t": "En un plan del Mercado (ACA u Obamacare), no. No pueden negarle la cobertura ni cobrarle más por su salud. Los planes a corto plazo sí pueden, y por eso le explicamos la diferencia antes de que elija."
+            }
+          ]
+        },
+        {
+          "Q": "¿Califico para ayuda con el pago de mi prima?",
+          "A": [
+            {
+              "t": "Depende del tamaño de su hogar y de sus ingresos. Escriba un cálculo aproximado de sus ingresos en el formulario, o llámenos, y revisamos para qué ahorros califica."
+            }
+          ]
+        },
+        {
+          "Q": "Acabo de perder el seguro de mi trabajo. ¿Qué puedo hacer?",
+          "A": [
+            {
+              "t": "Perder su seguro normalmente le permite inscribirse en un plan del Mercado dentro de 60 días, aun fuera de la inscripción abierta. Díganos la fecha en que termina su cobertura y le ayudamos a no quedarse sin seguro."
+            }
+          ]
+        },
+        {
+          "Q": "¿Puedo seguir con mi doctor?",
+          "A": [
+            {
+              "t": "Depende de la red del plan. Escriba en el formulario sus doctores, su hospital y sus medicinas, y revisamos qué planes los incluyen."
+            }
+          ]
+        },
+        {
+          "Q": "¿Cuánto tarda una cotización de seguro de salud?",
+          "A": [
+            {
+              "t": "El formulario toma unos 5 minutos. Después, un agente con licencia le contacta, por lo general en 5 horas hábiles. Durante la inscripción abierta, llamar es lo más rápido."
+            }
+          ]
+        },
+        {
+          "Q": "¿Me pueden atender en español?",
+          "A": [
+            {
+              "t": "Sí. Todas nuestras oficinas tienen agentes que hablan español, y también atendemos en inglés e hindi. Elija su idioma en el formulario o llame al "
+            },
+            {
+              "t": "(713) 357-7771",
+              "h": "tel:+17133577771"
+            },
+            {
+              "t": "."
+            }
+          ]
+        }
+      ]
+    },
+    "FINAL": {
+      "TITLE": "¿Prefiere hablarlo con un agente?",
+      "TEXT": [
+        {
+          "t": "Llame al "
+        },
+        {
+          "t": "(713) 357-7771",
+          "h": "tel:+17133577771"
+        },
+        {
+          "t": " o visite cualquiera de nuestras 5 oficinas en Houston. Comparamos con usted planes de salud en español, inglés o hindi."
+        }
+      ],
+      "START": "Cotizar mi seguro de salud",
+      "FIND": "Encontrar una oficina cerca de usted"
+    }
+  },
   "HOME_QUOTE_PAGE": {
     "BREADCRUMB": {
       "ARIA": "Ruta de navegación",
