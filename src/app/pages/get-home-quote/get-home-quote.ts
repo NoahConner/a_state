@@ -5,12 +5,12 @@ import { Subscription, firstValueFrom } from 'rxjs';
 import { Language } from '../../services/language';
 import { HttpService } from '../../services/http.service';
 import { PageSource, PageSourceFields } from '../../services/page-source';
-import { buildRoute, OFFICES } from '../../components/header/header';
+import { BAYTOWN_OFFICE, buildRoute, OFFICES } from '../../components/header/header';
 import { applyQuotePrefill } from '../../services/quote-prefill';
 
 interface HqForm {
   address: string; close: string; year: string; sqft: string; breed: string; carrier: string; renewal: string;
-  name: string; phone: string; email: string; office: string;
+  first: string; last: string; phone: string; email: string; office: string;
   /**
    * Single-choice answers by group: usage, ptype, status, stories, roofAge, roofType, construction, foundation,
    * alarm, pool, tramp, dogs, claims, insured, flood, lang, method, time.
@@ -99,7 +99,8 @@ export interface HomeQuotePayload extends PageSourceFields {
   styleUrl: './get-home-quote.scss',
 })
 export class GetHomeQuote implements AfterViewInit, OnDestroy {
-  readonly offices = OFFICES;
+  /** In the order of FORM.OFFICES. */
+  readonly offices = [...OFFICES, BAYTOWN_OFFICE];
   readonly stepNumbers = [1, 2, 3, 4, 5, 6];
   readonly needIcons = NEED_ICONS;
   readonly basicsIcons = BASICS_ICONS;
@@ -140,7 +141,12 @@ export class GetHomeQuote implements AfterViewInit, OnDestroy {
     this.isBrowser = isPlatformBrowser(platformId);
     this.form = this.emptyForm();
     // Name, phone and email from the short quote form the visitor just sent (browser only).
-    if (this.isBrowser) applyQuotePrefill(this.form);
+    if (this.isBrowser) {
+      const prefill = { name: '', phone: '', email: '' };
+      applyQuotePrefill(prefill);
+      const [first = '', ...rest] = prefill.name.trim().split(/\s+/);
+      Object.assign(this.form, { first, last: rest.join(' '), phone: prefill.phone, email: prefill.email });
+    }
     this.subs.add(
       this.translate.onLangChange.subscribe(() => {
         this.listCache.clear();
@@ -209,7 +215,7 @@ export class GetHomeQuote implements AfterViewInit, OnDestroy {
 
   // ---------- Inputs ----------
 
-  onText(field: 'address' | 'close' | 'breed' | 'carrier' | 'renewal' | 'name' | 'email', event: Event) {
+  onText(field: 'address' | 'close' | 'breed' | 'carrier' | 'renewal' | 'first' | 'last' | 'email', event: Event) {
     this.form[field] = (event.target as HTMLInputElement).value;
     if (this.errors[field]) this.errors[field] = this.fieldError(field);
   }
@@ -319,7 +325,8 @@ export class GetHomeQuote implements AfterViewInit, OnDestroy {
       check('year', 'hq-year');
       check('sqft', 'hq-sqft');
     } else if (n === 5) {
-      check('name', 'hq-name');
+      check('first', 'hq-first');
+      check('last', 'hq-last');
       check('phone', 'hq-phone');
       check('email', 'hq-email');
     }
@@ -350,8 +357,10 @@ export class GetHomeQuote implements AfterViewInit, OnDestroy {
         const s = Number(form.sqft.replace(/\D/g, ''));
         return s < 200 || s > 20000 ? this.err('SQFT') : '';
       }
-      case 'name':
-        return form.name.trim().length < 2 ? this.err('NAME') : '';
+      case 'first':
+        return form.first.trim() ? '' : this.err('FIRST');
+      case 'last':
+        return form.last.trim() ? '' : this.err('LAST');
       case 'phone': {
         const d = this.digits(form.phone);
         return !d ? this.err('PHONE_EMPTY') : d.length !== 10 ? this.err('PHONE_INVALID') : '';
@@ -417,7 +426,7 @@ export class GetHomeQuote implements AfterViewInit, OnDestroy {
     const p: Omit<HomeQuotePayload, keyof PageSourceFields> = {
       type: 'home',
       property_address: f.address.trim(),
-      full_name: f.name.trim(),
+      full_name: this.fullName(),
       phone_number: f.phone,
       preferred_language: LANG_VALUES[pick['lang']] ?? 'English',
     };
@@ -503,10 +512,14 @@ export class GetHomeQuote implements AfterViewInit, OnDestroy {
 
   // ---------- Helpers ----------
 
+  fullName(): string {
+    return `${this.form.first.trim()} ${this.form.last.trim()}`.trim();
+  }
+
   private emptyForm(): HqForm {
     return {
       address: '', close: '', year: '', sqft: '', breed: '', carrier: '', renewal: '',
-      name: '', phone: '', email: '', office: '',
+      first: '', last: '', phone: '', email: '', office: '',
       pick: { lang: this.languageService.getCurrentLanguage() === 'es' ? 'es' : 'en' },
       also: {},
     };

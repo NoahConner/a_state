@@ -23,6 +23,8 @@
 .brand:hover{color:var(--stone-700)}
 .brand .logo{width:36px}
 @media (min-width:768px){.brand .logo{width:40px}}
+.brand .name{display:none;white-space:nowrap}
+@media (min-width:400px){.brand .name{display:inline}}
 .hf-nav{display:none}
 .hf-nav > ul{display:flex;gap:4px;align-items:center}
 .hf-nav-link{display:inline-flex;align-items:center;gap:4px;min-height:44px;padding:0 12px;border:0;background:none;border-radius:10px;color:var(--stone-700);font-weight:600;font-size:15.5px;text-decoration:none;cursor:pointer}
@@ -72,7 +74,7 @@
 .mega .promo{background:var(--cream);border-radius:var(--r-md);padding:18px;display:flex;flex-direction:column;gap:10px;align-self:start}
 .mega .promo b{color:var(--stone-700)}
 .mega .promo p{font-size:14px}
-.mega.loc .hf-container{grid-template-columns:repeat(5,1fr) 1.3fr}
+.mega.loc .hf-container{grid-template-columns:repeat(6,1fr) 1.3fr}
 .mega .addr{font-size:13.5px;color:var(--stone-500);line-height:1.45}
 .mega .addr a{display:inline;padding:0;color:inherit;font-size:inherit;text-decoration:none}
 .mega .addr a:hover{color:var(--red-700);text-decoration:underline}
@@ -80,7 +82,7 @@
 // Small laptops / iPad landscape: promo moves to a full-width row so columns are not squeezed
 @media (min-width:1024px) and (max-width:1279px){
   .mega .hf-container{grid-template-columns:repeat(6,1fr);gap:20px}
-  .mega.loc .hf-container{grid-template-columns:repeat(5,1fr)}
+  .mega.loc .hf-container{grid-template-columns:repeat(6,1fr)}
   .mega .promo{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 16px}
 }
 

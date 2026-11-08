@@ -17,7 +17,8 @@ function setup(lang = 'en') {
     document,
   );
   c.form.address = ' 123 Test St, Houston, TX 77001 ';
-  c.form.name = ' Test User ';
+  c.form.first = ' Test ';
+  c.form.last = ' User ';
   c.form.phone = '(555) 010-0100';
   const payload = () => (c as any).buildPayload() as any;
   const validate = (n: number) => (c as any).validateStep(n) as string[];
@@ -292,12 +293,14 @@ describe('GetHomeQuote step validation', () => {
     }
   });
 
-  it('step 5 requires a name of at least 2 characters and a 10-digit phone', () => {
+  it('step 5 requires a first name, a last name and a 10-digit phone', () => {
     const { c, validate } = setup();
-    c.form.name = ' A ';
+    c.form.first = ' ';
+    c.form.last = '';
     c.form.phone = '555';
-    expect(validate(5)).toEqual(['hq-name', 'hq-phone']);
-    c.form.name = 'Al';
+    expect(validate(5)).toEqual(['hq-first', 'hq-last', 'hq-phone']);
+    c.form.first = 'Al';
+    c.form.last = 'B';
     c.form.phone = '(555) 010-0100';
     expect(validate(5)).toEqual([]);
     c.form.phone = '1 (555) 010-0100';
@@ -373,7 +376,7 @@ describe('GetHomeQuote inputs and navigation', () => {
   it('Back to review jumps to the first invalid step', () => {
     const { c } = setup();
     c.edit(2);
-    c.form.name = '';
+    c.form.first = '';
     c.backToReview();
     expect(c.step).toBe(5);
   });
@@ -393,7 +396,7 @@ describe('GetHomeQuote submit', () => {
     expect(args[2]).toBe(true);
     expect(c.sent).toBe(true);
     expect(c.sentBuying).toBe(true);
-    expect(c.form.name).toBe('');
+    expect(c.form.first).toBe('');
     expect(c.form.address).toBe('');
   });
 
@@ -434,7 +437,7 @@ describe('GetHomeQuote submit', () => {
     await c.submit(evt);
     expect(c.sent).toBe(false);
     expect(c.submitError).toBe('HOME_QUOTE_PAGE.FORM.ERR.SUBMIT');
-    expect(c.form.name).toBe(' Test User ');
+    expect(c.form.first).toBe(' Test ');
     expect(c.isSubmitting).toBe(false);
   });
 });
