@@ -1,7 +1,7 @@
 import { APP_INITIALIZER, NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideHttpClient, withFetch } from '@angular/common/http';
-import { firstValueFrom } from 'rxjs';
+import { firstValueFrom, switchMap } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -211,8 +211,12 @@ export function initializeTranslations(
 ): () => Promise<unknown> {
   return () => {
     const lang = language.getLanguageFromUrl();
+    translate.addLangs(language.availableLangs);
     translate.setDefaultLang('en');
-    return firstValueFrom(translate.use(lang));
+
+    // Load English first so ngx-translate always has a real fallback instead
+    // of rendering translation keys while the requested language is loading.
+    return firstValueFrom(translate.use('en').pipe(switchMap(() => translate.use(lang))));
   };
 }
 
