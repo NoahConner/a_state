@@ -139,8 +139,13 @@ export class Language {
     this.translate.addLangs(this.availableLangs);
     this.translate.setDefaultLang('en');
 
+    // Translation data is loaded once, awaited by APP_INITIALIZER. Starting
+    // translate.use() here as well creates a race during SSR and hydration,
+    // which can briefly render translation keys instead of text.
     const langToUse = this.getLanguageFromUrl();
-    this.applyLanguage(langToUse);
+    if (this.document?.documentElement) {
+      this.document.documentElement.lang = langToUse;
+    }
   }
 
   private listenToRouteChanges() {
