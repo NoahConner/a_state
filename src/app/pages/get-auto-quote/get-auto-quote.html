@@ -61,7 +61,7 @@
         <div class="cq-progress" aria-hidden="true"><span [style.width.%]="step * 100 / 6"></span></div>
         <ol class="cq-steps aq-steps" [attr.aria-label]="'AUTO_QUOTE_PAGE.FORM.STEPS_ARIA' | translate">
           <li *ngFor="let n of stepNumbers; let i = index" [class.done]="n < step" [attr.aria-current]="n === step ? 'step' : null">
-            <span>{{ n }}</span><b>{{ list('AUTO_QUOTE_PAGE.FORM.STEP_DOTS')[i] }}</b>
+            <span><app-step-icon [name]="$any(['user', 'car', 'license', 'shield', 'phone', 'review'])[i]"></app-step-icon></span><b>{{ list('AUTO_QUOTE_PAGE.FORM.STEP_DOTS')[i] }}</b>
           </li>
         </ol>
 
@@ -72,31 +72,38 @@
             <div class="cq-step-h"><p class="cq-count">{{ 'AUTO_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 1 } }}</p><h3 id="aq-h1" tabindex="-1">{{ list('AUTO_QUOTE_PAGE.FORM.STEP_TITLES')[0] }}</h3></div>
             <div class="cq-row">
               <div class="field">
-                <label for="aq-name">{{ 'AUTO_QUOTE_PAGE.FORM.NAME' | translate }} <span class="req" aria-hidden="true">*</span></label>
-                <input type="text" id="aq-name" autocomplete="name" required [value]="form.name"
-                  [attr.aria-invalid]="errors['name'] ? 'true' : null" aria-describedby="aq-name-err" (input)="onText('name', $event)" />
-                <p class="err" id="aq-name-err">{{ errors['name'] }}</p>
+                <label for="aq-first">{{ 'AUTO_QUOTE_PAGE.FORM.FIRST' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="aq-first" autocomplete="given-name" required [value]="form.first"
+                  [attr.aria-invalid]="errors['first'] ? 'true' : null" aria-describedby="aq-first-err" (input)="onText('first', $event)" />
+                <p class="err" id="aq-first-err">{{ errors['first'] }}</p>
               </div>
+              <div class="field">
+                <label for="aq-last">{{ 'AUTO_QUOTE_PAGE.FORM.LAST' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="aq-last" autocomplete="family-name" required [value]="form.last"
+                  [attr.aria-invalid]="errors['last'] ? 'true' : null" aria-describedby="aq-last-err" (input)="onText('last', $event)" />
+                <p class="err" id="aq-last-err">{{ errors['last'] }}</p>
+              </div>
+            </div>
+            <div class="cq-row">
               <div class="field">
                 <label for="aq-phone">{{ 'AUTO_QUOTE_PAGE.FORM.PHONE' | translate }} <span class="req" aria-hidden="true">*</span></label>
                 <input type="tel" id="aq-phone" inputmode="tel" autocomplete="tel-national" required [value]="form.phone"
                   [attr.aria-invalid]="errors['phone'] ? 'true' : null" aria-describedby="aq-phone-err" (input)="onPhoneInput($event)" />
                 <p class="err" id="aq-phone-err">{{ errors['phone'] }}</p>
               </div>
-            </div>
-            <div class="cq-row">
               <div class="field">
                 <label for="aq-email">{{ 'AUTO_QUOTE_PAGE.FORM.EMAIL' | translate }} <span class="opt">{{ 'AUTO_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
                 <input type="email" id="aq-email" autocomplete="email" [value]="form.email"
                   [attr.aria-invalid]="errors['email'] ? 'true' : null" aria-describedby="aq-email-err" (input)="onText('email', $event)" />
                 <p class="err" id="aq-email-err">{{ errors['email'] }}</p>
               </div>
-              <div class="field">
-                <label for="aq-zip">{{ 'AUTO_QUOTE_PAGE.FORM.ZIP' | translate }} <span class="req" aria-hidden="true">*</span></label>
-                <input type="text" id="aq-zip" inputmode="numeric" autocomplete="postal-code" maxlength="5" required [value]="form.zip"
-                  [attr.aria-invalid]="errors['zip'] ? 'true' : null" aria-describedby="aq-zip-err" (input)="onZipInput($event)" />
-                <p class="err" id="aq-zip-err">{{ errors['zip'] }}</p>
-              </div>
+            </div>
+            <div class="field">
+              <label for="aq-address">{{ 'AUTO_QUOTE_PAGE.FORM.ADDRESS' | translate }} <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="aq-address" appAddressAutocomplete [acLang]="languageService.getCurrentLanguage()" autocomplete="street-address" maxlength="255" required [value]="form.address"
+                [placeholder]="'AUTO_QUOTE_PAGE.FORM.ADDRESS_PH' | translate"
+                [attr.aria-invalid]="errors['address'] ? 'true' : null" aria-describedby="aq-address-err" (input)="onText('address', $event)" />
+              <p class="err" id="aq-address-err">{{ errors['address'] }}</p>
             </div>
             <div class="cq-nav">
               <button type="button" class="hf-btn btn-ghost" *ngIf="editing" (click)="backToReview()">{{ 'AUTO_QUOTE_PAGE.FORM.TO_REVIEW' | translate }}</button>
@@ -126,13 +133,30 @@
                   </div>
                   <div class="field">
                     <label [for]="'aq-v' + v.id + '-make'">{{ 'AUTO_QUOTE_PAGE.FORM.MAKE' | translate }} <span class="req" aria-hidden="true">*</span></label>
-                    <input type="text" [id]="'aq-v' + v.id + '-make'" list="aq-makes" autocomplete="off" autocapitalize="words" required [value]="v.make"
-                      [attr.aria-invalid]="errors['v' + v.id + '.make'] ? 'true' : null" [attr.aria-describedby]="'aq-v' + v.id + '-make-err'" (input)="onVehicle(v, 'make', $event)" />
+                    <select [id]="'aq-v' + v.id + '-make'" required [attr.aria-invalid]="errors['v' + v.id + '.make'] && !v.makeOther ? 'true' : null"
+                      [attr.aria-describedby]="'aq-v' + v.id + '-make-err'" (change)="onMakeSelect(v, $event)">
+                      <option value="" [selected]="!v.makeId && !v.makeOther">{{ 'AUTO_QUOTE_PAGE.FORM.YEAR_SELECT' | translate }}</option>
+                      <optgroup [label]="'AUTO_QUOTE_PAGE.FORM.MAKE_POPULAR' | translate">
+                        <option *ngFor="let m of popularMakes" [value]="m.id" [selected]="!v.makeOther && v.makeId === m.id">{{ m.name }}</option>
+                      </optgroup>
+                      <option value="other" [selected]="v.makeOther">{{ 'AUTO_QUOTE_PAGE.FORM.MAKE_OTHER' | translate }}</option>
+                    </select>
+                    <!-- Any other make: type to search all NHTSA makes (GetAllMakes). -->
+                    <input *ngIf="v.makeOther" type="text" class="aq-other" [id]="'aq-v' + v.id + '-make-other'" list="aq-makes" autocomplete="off" autocapitalize="words" required [value]="v.make"
+                      [attr.aria-label]="'AUTO_QUOTE_PAGE.FORM.MAKE_OTHER_PH' | translate" [placeholder]="'AUTO_QUOTE_PAGE.FORM.MAKE_OTHER_PH' | translate"
+                      [attr.aria-invalid]="errors['v' + v.id + '.make'] ? 'true' : null" [attr.aria-describedby]="'aq-v' + v.id + '-make-err'" (input)="onMakeOther(v, $event)" />
                     <p class="err" [id]="'aq-v' + v.id + '-make-err'">{{ errors['v' + v.id + '.make'] }}</p>
                   </div>
                   <div class="field">
-                    <label [for]="'aq-v' + v.id + '-model'">{{ 'AUTO_QUOTE_PAGE.FORM.MODEL' | translate }} <span class="req" aria-hidden="true">*</span></label>
-                    <input type="text" [id]="'aq-v' + v.id + '-model'" autocomplete="off" autocapitalize="words" required [value]="v.model"
+                    <label [for]="'aq-v' + v.id + (modelIsText(v) ? '-model-other' : '-model')">{{ 'AUTO_QUOTE_PAGE.FORM.MODEL' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                    <select *ngIf="!modelIsText(v)" [id]="'aq-v' + v.id + '-model'" required [disabled]="v.modelsState !== 'ready'"
+                      [attr.aria-invalid]="errors['v' + v.id + '.model'] ? 'true' : null" [attr.aria-describedby]="'aq-v' + v.id + '-model-err'" (change)="onModelSelect(v, $event)">
+                      <option value="" [selected]="!v.model">{{ (v.modelsState === 'loading' ? 'AUTO_QUOTE_PAGE.FORM.MODEL_LOADING' : v.modelsState === 'ready' ? 'AUTO_QUOTE_PAGE.FORM.YEAR_SELECT' : 'AUTO_QUOTE_PAGE.FORM.MODEL_FIRST') | translate }}</option>
+                      <option *ngFor="let m of v.models" [value]="m" [selected]="v.model === m">{{ m }}</option>
+                      <option *ngIf="v.modelsState === 'ready'" value="__other">{{ 'AUTO_QUOTE_PAGE.FORM.MODEL_OTHER' | translate }}</option>
+                    </select>
+                    <input *ngIf="modelIsText(v)" type="text" class="aq-other" [id]="'aq-v' + v.id + '-model-other'" autocomplete="off" autocapitalize="words" required [value]="v.model"
+                      [placeholder]="'AUTO_QUOTE_PAGE.FORM.MODEL_OTHER_PH' | translate"
                       [attr.aria-invalid]="errors['v' + v.id + '.model'] ? 'true' : null" [attr.aria-describedby]="'aq-v' + v.id + '-model-err'" (input)="onVehicle(v, 'model', $event)" />
                     <p class="err" [id]="'aq-v' + v.id + '-model-err'">{{ errors['v' + v.id + '.model'] }}</p>
                   </div>
@@ -146,7 +170,7 @@
                 <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.OWN_LEGEND' | translate), name: 'aq-v' + v.id + '-own', opts: list('AUTO_QUOTE_PAGE.FORM.OWNS'), store: v, key: 'own', cls: '' }"></ng-container>
                 <p class="aq-lender" *ngIf="isLoan(v)"><svg class="icon-sm" aria-hidden="true"><use href="#i-shield" /></svg>{{ 'AUTO_QUOTE_PAGE.FORM.LENDER' | translate }}</p>
                 <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.USE_LEGEND' | translate), name: 'aq-v' + v.id + '-use', opts: list('AUTO_QUOTE_PAGE.FORM.USES'), store: v, key: 'use', cls: 'stack aq-two' }"></ng-container>
-                <div class="cq-row">
+                <div class="cq-row aq-park">
                   <div class="field">
                     <label [for]="'aq-v' + v.id + '-miles'">{{ 'AUTO_QUOTE_PAGE.FORM.MILES' | translate }} <span class="opt">{{ 'AUTO_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
                     <input type="text" [id]="'aq-v' + v.id + '-miles'" inputmode="numeric" autocomplete="off" maxlength="7" [value]="v.miles" (input)="onVehicle(v, 'miles', $event)" />
@@ -161,7 +185,7 @@
                 </div>
               </div>
             </div>
-            <datalist id="aq-makes"><option *ngFor="let m of makes" [value]="m"></option></datalist>
+            <datalist id="aq-makes"><option *ngFor="let m of allMakes" [value]="m.name"></option></datalist>
             <button type="button" class="aq-add" id="aq-add-vehicle" *ngIf="form.vehicles.length < maxBlocks" (click)="addBlock('vehicle')"><svg class="icon-sm" aria-hidden="true"><use href="#i-plus" /></svg>{{ 'AUTO_QUOTE_PAGE.FORM.ADD_VEHICLE' | translate }}</button>
             <div class="cq-nav">
               <button type="button" class="hf-btn btn-outline" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'AUTO_QUOTE_PAGE.FORM.BACK' | translate }}</button>
@@ -181,11 +205,19 @@
                 </div>
                 <div class="cq-row">
                   <div class="field">
-                    <label [for]="'aq-d' + d.id + '-name'">{{ 'AUTO_QUOTE_PAGE.FORM.NAME' | translate }} <span class="req" aria-hidden="true">*</span></label>
-                    <input type="text" [id]="'aq-d' + d.id + '-name'" autocomplete="off" required [value]="d.name"
-                      [attr.aria-invalid]="errors['d' + d.id + '.name'] ? 'true' : null" [attr.aria-describedby]="'aq-d' + d.id + '-name-err'" (input)="onDriver(d, 'name', $event)" />
-                    <p class="err" [id]="'aq-d' + d.id + '-name-err'">{{ errors['d' + d.id + '.name'] }}</p>
+                    <label [for]="'aq-d' + d.id + '-first'">{{ 'AUTO_QUOTE_PAGE.FORM.FIRST' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                    <input type="text" [id]="'aq-d' + d.id + '-first'" autocomplete="off" required [value]="d.first"
+                      [attr.aria-invalid]="errors['d' + d.id + '.first'] ? 'true' : null" [attr.aria-describedby]="'aq-d' + d.id + '-first-err'" (input)="onDriver(d, 'first', $event)" />
+                    <p class="err" [id]="'aq-d' + d.id + '-first-err'">{{ errors['d' + d.id + '.first'] }}</p>
                   </div>
+                  <div class="field">
+                    <label [for]="'aq-d' + d.id + '-last'">{{ 'AUTO_QUOTE_PAGE.FORM.LAST' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                    <input type="text" [id]="'aq-d' + d.id + '-last'" autocomplete="off" required [value]="d.last"
+                      [attr.aria-invalid]="errors['d' + d.id + '.last'] ? 'true' : null" [attr.aria-describedby]="'aq-d' + d.id + '-last-err'" (input)="onDriver(d, 'last', $event)" />
+                    <p class="err" [id]="'aq-d' + d.id + '-last-err'">{{ errors['d' + d.id + '.last'] }}</p>
+                  </div>
+                </div>
+                <div class="cq-row">
                   <div class="field">
                     <label [for]="'aq-d' + d.id + '-dob'">{{ 'AUTO_QUOTE_PAGE.FORM.DOB' | translate }} <span class="req" aria-hidden="true">*</span></label>
                     <input type="date" [id]="'aq-d' + d.id + '-dob'" autocomplete="off" min="1920-01-01" required [value]="d.dob"
@@ -279,10 +311,10 @@
               <div class="cq-rev">
                 <div class="cq-rev-h"><h4>{{ list('AUTO_QUOTE_PAGE.FORM.R_TITLES')[0] }}</h4><button type="button" class="cq-edit" (click)="edit(1)">{{ 'AUTO_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('AUTO_QUOTE_PAGE.FORM.R_TITLES')[0] }}</span></button></div>
                 <dl>
-                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.NAME' | translate), v: form.name.trim() }"></ng-container>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.NAME' | translate), v: fullName(form) }"></ng-container>
                   <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.PHONE' | translate), v: form.phone }"></ng-container>
                   <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.EMAIL' | translate), v: form.email.trim() }"></ng-container>
-                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.ZIP' | translate), v: form.zip }"></ng-container>
+                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.ADDRESS' | translate), v: form.address.trim() }"></ng-container>
                 </dl>
               </div>
               <div class="cq-rev">
@@ -304,7 +336,7 @@
                 <dl>
                   <ng-container *ngFor="let d of form.drivers; let di = index; trackBy: trackById">
                     <div class="aq-rev-sub" *ngIf="form.drivers.length > 1">{{ 'AUTO_QUOTE_PAGE.FORM.DRIVER_N' | translate: { n: di + 1 } }}</div>
-                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.D_NAME' | translate), v: d.name.trim() }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.D_NAME' | translate), v: fullName(d) }"></ng-container>
                     <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.DOB' | translate), v: dateLabel(d.dob) }"></ng-container>
                     <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.MARITAL' | translate), v: label('FORM.MARITALS', d.marital) }"></ng-container>
                     <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.LICENSE' | translate), v: label('FORM.LICENSES', d.license) }"></ng-container>

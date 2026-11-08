@@ -182,6 +182,7 @@
       <div class="cta-row">
         <a class="hf-btn btn-outline" [routerLink]="route('getAQuote')">{{ 'HOME_PAGE.STEPS.CTA' | translate }}</a>
         <span>{{ 'HOME_PAGE.STEPS.OR_CALL' | translate }} <a class="tel" href="tel:+17133577771">(713) 357-7771</a></span>
+        <span>{{ 'HOME_PAGE.STEPS.WHATSAPP' | translate }} <a class="wa" href="https://wa.me/13464367283" target="_blank" rel="noopener">(346) 436-SAVE (7283)</a></span>
       </div>
     </div>
     <div class="ready">
@@ -230,33 +231,16 @@
       <p class="hf-lead">{{ 'HOME_PAGE.OFFICES.LEAD' | translate }}</p>
     </div>
     <div class="off-grid">
-      <figure class="map">
-        <svg viewBox="0 0 400 300" role="img" [attr.aria-label]="'HOME_PAGE.OFFICES.MAP_ARIA' | translate">
-          <rect width="400" height="300" fill="#FFFFFF" />
-          <path d="M0 210 C80 190 120 230 200 200 S330 160 400 180" stroke="#E7E5E4" stroke-width="10" fill="none" />
-          <ellipse cx="200" cy="150" rx="168" ry="122" fill="none" stroke="#D6D3D1" stroke-width="5" />
-          <ellipse cx="205" cy="140" rx="74" ry="62" fill="none" stroke="#D6D3D1" stroke-width="5" />
-          <path d="M40 150 H360 M205 20 V280 M70 270 L330 40" stroke="#EEEDEC" stroke-width="4" fill="none" />
-          <circle cx="210" cy="140" r="5" fill="#78716C" />
-          <text x="218" y="145" font-family="Figtree,Arial,sans-serif" font-size="11" fill="#44403C">{{ 'HOME_PAGE.OFFICES.DOWNTOWN' | translate }}</text>
-          <g font-family="Figtree,Arial,sans-serif" font-size="12" font-weight="700" fill="#44403C">
-            <g transform="translate(262 122)"><path d="M0 0c-7 0-11 5-11 10 0 8 11 18 11 18s11-10 11-18c0-5-4-10-11-10z" fill="#CA2B28" transform="translate(0 -28)" /><circle cy="-18" r="4" fill="#F6C945" /><text x="14" y="-12">Shotwell</text></g>
-            <g transform="translate(205 92)"><path d="M0 0c-7 0-11 5-11 10 0 8 11 18 11 18s11-10 11-18c0-5-4-10-11-10z" fill="#CA2B28" transform="translate(0 -28)" /><circle cy="-18" r="4" fill="#F6C945" /><text x="14" y="-12">Airline</text></g>
-            <g transform="translate(130 88)"><path d="M0 0c-7 0-11 5-11 10 0 8 11 18 11 18s11-10 11-18c0-5-4-10-11-10z" fill="#CA2B28" transform="translate(0 -28)" /><circle cy="-18" r="4" fill="#F6C945" /><text x="-14" y="-12" text-anchor="end">Antoine</text></g>
-            <g transform="translate(178 238)"><path d="M0 0c-7 0-11 5-11 10 0 8 11 18 11 18s11-10 11-18c0-5-4-10-11-10z" fill="#CA2B28" transform="translate(0 -28)" /><circle cy="-18" r="4" fill="#F6C945" /><text x="14" y="-12">Post Oak</text></g>
-            <g transform="translate(98 226)"><path d="M0 0c-7 0-11 5-11 10 0 8 11 18 11 18s11-10 11-18c0-5-4-10-11-10z" fill="#CA2B28" transform="translate(0 -28)" /><circle cy="-18" r="4" fill="#F6C945" /><text x="0" y="16" text-anchor="middle">Southwest Fwy</text></g>
-          </g>
-        </svg>
-        <figcaption>{{ 'HOME_PAGE.OFFICES.MAP_CAPTION' | translate }}</figcaption>
-      </figure>
+      <figure class="map"><app-office-map></app-office-map></figure>
 
       <article class="office" *ngFor="let office of offices">
-        <h3><a class="title-link" [routerLink]="route('ourLocations/:id', office.id)"><span class="nw">A-State</span> Insurance {{ office.name }}</a></h3>
+        <h3 *ngIf="office.hasPage !== false; else plainTitle"><a class="title-link" [routerLink]="route('ourLocations/:id', office.id)"><span class="nw">A-State</span> Insurance {{ office.name }}</a></h3>
+        <ng-template #plainTitle><h3>{{ office.title }}</h3></ng-template>
         <address><svg class="icon-sm" aria-hidden="true"><use href="#i-pin" /></svg><a [href]="office.mapUrl" target="_blank" rel="noopener">{{ office.street }}, {{ office.city }}</a></address>
         <a class="ph" [href]="'tel:' + office.tel">{{ office.phone }}</a>
         <div class="acts">
           <a [href]="office.directionsUrl" target="_blank" rel="noopener">{{ 'HOME_PAGE.OFFICES.DIRECTIONS' | translate }}</a>
-          <a [routerLink]="route('ourLocations/:id', office.id)">{{ 'HOME_PAGE.OFFICES.DETAILS' | translate }}</a>
+          <a *ngIf="office.hasPage !== false" [routerLink]="route('ourLocations/:id', office.id)">{{ 'HOME_PAGE.OFFICES.DETAILS' | translate }}</a>
         </div>
       </article>
 
@@ -264,6 +248,7 @@
         <h3>{{ 'HOME_PAGE.OFFICES.ALL_TITLE' | translate }}</h3>
         <span>{{ 'HOME_PAGE.OFFICES.MAIN_LINE' | translate }} <a class="tel" href="tel:+17133577771">(713) 357-7771</a></span>
         <span>{{ 'HOME_PAGE.OFFICES.EMAIL' | translate }} <a href="mailto:save@astateinsurance.com">save&#64;astateinsurance.com</a></span>
+        <span>{{ 'HOME_PAGE.OFFICES.WHATSAPP' | translate }} <a class="wa" href="https://wa.me/13464367283" target="_blank" rel="noopener">(346) 436-SAVE (7283)</a></span>
         <span>{{ 'HOME_PAGE.FORM.HOURS' | translate }}</span>
       </div>
     </div>
@@ -287,11 +272,12 @@
     <span class="eic" aria-hidden="true"><svg class="icon"><use href="#i-chat" /></svg></span>
     <div>
       <h2 id="es-title">¿Prefiere hablar en español?</h2>
-      <p>Nuestros agentes con licencia en Texas le explican sus opciones de seguro en español, por teléfono o en cualquiera de nuestras cinco oficinas en Houston.</p>
+      <p>Nuestros agentes con licencia en Texas le explican sus opciones de seguro en español, por teléfono o en cualquiera de nuestras seis oficinas en Texas.</p>
     </div>
     <div class="btns">
       <a class="hf-btn btn-white" href="/es/" hreflang="es" (click)="$event.preventDefault(); languageService.setLanguage('es')">Ver el sitio en español</a>
       <a class="hf-btn btn-yellow" href="tel:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>Llame al (713) 357-7771</a>
+      <a class="hf-btn btn-white" href="https://wa.me/13464367283" target="_blank" rel="noopener"><svg class="icon-sm" aria-hidden="true"><use href="#i-wa" /></svg>WhatsApp (346) 436-SAVE (7283)</a>
     </div>
   </div>
 </section>
@@ -302,11 +288,12 @@
     <span class="eic" aria-hidden="true"><svg class="icon"><use href="#i-chat" /></svg></span>
     <div>
       <h2 id="en-title">Prefer to speak in English?</h2>
-      <p>Our Texas-licensed agents explain your insurance options in English, by phone or at any of our five Houston offices.</p>
+      <p>Our Texas-licensed agents explain your insurance options in English, by phone or at any of our six offices in Texas.</p>
     </div>
     <div class="btns">
       <a class="hf-btn btn-white" href="/" hreflang="en" (click)="$event.preventDefault(); languageService.setLanguage('en')">View the site in English</a>
       <a class="hf-btn btn-yellow" href="tel:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>Call (713) 357-7771</a>
+      <a class="hf-btn btn-white" href="https://wa.me/13464367283" target="_blank" rel="noopener"><svg class="icon-sm" aria-hidden="true"><use href="#i-wa" /></svg>WhatsApp (346) 436-SAVE (7283)</a>
     </div>
   </div>
 </section>

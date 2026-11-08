@@ -11,7 +11,14 @@ export type NavLink = { routeKey?: string; labelKey: string };
 /** `routeKey` is the group's own page; groups without one have a plain (unlinked) heading. */
 export type NavGroup = { routeKey?: string; titleKey: string; links: NavLink[] };
 /** `mapUrl` opens the office on Google Maps; `directionsUrl` opens directions to it. */
-export type Office = { id: string; name: string; street: string; city: string; phone: string; tel: string; mapUrl: string; directionsUrl: string };
+/** `lat`/`lng` are the Google Maps pin of each office (from its directions URL); used by the contact page map. */
+export type Office = {
+  id: string; name: string; street: string; city: string; phone: string; tel: string; mapUrl: string; directionsUrl: string; lat: number; lng: number;
+  /** Full display name when it isn't "A-State Insurance <name>" (Baytown trades as "Baytown Insurance"). */
+  title?: string;
+  /** False while the office has no detail page under Our Locations: no "Office details" link is shown. */
+  hasPage?: boolean;
+};
 
 const L = 'SITE_NAV.LINKS.';
 
@@ -110,35 +117,47 @@ export const NAV_GROUPS: NavGroup[] = [
 export const OFFICES: Office[] = [
   {
     id: '707-shotwell-st-a-houston-tx-77020', name: 'Shotwell', street: '707 Shotwell St, Suite A', city: 'Houston, TX 77020',
-    phone: '(281) 749-1900', tel: '+12817491900',
+    phone: '(281) 749-1900', tel: '+12817491900', lat: 29.7761007, lng: -95.3113357,
     mapUrl: 'https://maps.app.goo.gl/3yoEc7gXFuw8LyPv6',
     directionsUrl: 'https://www.google.com/maps/dir//A-State+Insurance,+707+Shotwell+St+a,+Houston,+TX+77020,+United+States/@29.7761569,-95.313911,17z/data=!4m16!1m7!3m6!1s0x8640b94e64abe0e5:0xbcbe087a2f223041!2sA-State+Insurance!8m2!3d29.7761007!4d-95.3113357!16s%2Fg%2F11f6551bq8!4m7!1m0!1m5!1m1!1s0x8640b94e64abe0e5:0xbcbe087a2f223041!2m2!1d-95.3113357!2d29.7761007?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D',
   },
   {
     id: '11503-southwest-fwy-b-houston-tx-77031', name: 'Southwest Fwy', street: '11503 Southwest Fwy, Suite B', city: 'Houston, TX 77031',
-    phone: '(281) 506-4200', tel: '+12815064200',
+    phone: '(281) 506-4200', tel: '+12815064200', lat: 29.6532517, lng: -95.5654155,
     mapUrl: 'https://maps.app.goo.gl/oH5KCuta4nn7abMY9',
     directionsUrl: 'https://www.google.com/maps/dir//A-State+Insurance,+11503+Southwest+Fwy+B,+Houston,+TX+77031,+United+States/@29.6533537,-95.5678314,17z/data=!4m16!1m7!3m6!1s0x8640e742e1e45833:0x1013137366abdc82!2sA-State+Insurance!8m2!3d29.6532517!4d-95.5654155!16s%2Fg%2F11g2xg58g5!4m7!1m0!1m5!1m1!1s0x8640e742e1e45833:0x1013137366abdc82!2m2!1d-95.5654155!2d29.6532517?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D',
   },
   {
     id: '10547-s-post-oak-rd-houston-tx-77035', name: 'Post Oak', street: '10547 S Post Oak Rd', city: 'Houston, TX 77035',
-    phone: '(281) 406-1900', tel: '+12814061900',
+    phone: '(281) 406-1900', tel: '+12814061900', lat: 29.66628, lng: -95.4627609,
     mapUrl: 'https://maps.app.goo.gl/MAbDwTLuTRNMPBrSA',
     directionsUrl: 'https://www.google.com/maps/dir//A-State+Insurance,+10547+S+Post+Oak+Rd,+Houston,+TX+77035,+United+States/@29.66628,-95.4653412,17z/data=!4m16!1m7!3m6!1s0x8640ebc87cb9e9cb:0x189839a7af3d6bdb!2sA-State+Insurance!8m2!3d29.66628!4d-95.4627609!16s%2Fg%2F11fsmn16xm!4m7!1m0!1m5!1m1!1s0x8640ebc87cb9e9cb:0x189839a7af3d6bdb!2m2!1d-95.4627609!2d29.66628?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D',
   },
   {
     id: '5712-antoine-dr-houston-tx-77091', name: 'Antoine', street: '5712 Antoine Dr', city: 'Houston, TX 77091',
-    phone: '(713) 263-9800', tel: '+17132639800',
+    phone: '(713) 263-9800', tel: '+17132639800', lat: 29.8483865, lng: -95.4728116,
     mapUrl: 'https://maps.app.goo.gl/cRWTB37f6emACzkCA',
     directionsUrl: 'https://www.google.com/maps/dir//A-State+Insurance,+5712+Antoine+Dr,+Houston,+TX+77091,+United+States/@29.8483849,-95.475385,16z/data=!4m16!1m7!3m6!1s0x8640c608c61ef783:0xe3848480e5c382fd!2sA-State+Insurance!8m2!3d29.8483865!4d-95.4728116!16s%2Fg%2F1tgqjt8j!4m7!1m0!1m5!1m1!1s0x8640c608c61ef783:0xe3848480e5c382fd!2m2!1d-95.4728116!2d29.8483865?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D',
   },
   {
     id: '5206-airline-dr-g-houston-tx-77022', name: 'Airline', street: '5206 Airline Dr, Suite G', city: 'Houston, TX 77022',
-    phone: '(281) 504-7444', tel: '+12815047444',
+    phone: '(281) 504-7444', tel: '+12815047444', lat: 29.842283, lng: -95.3837829,
     mapUrl: 'https://maps.app.goo.gl/wJS36746W1P3XZCfA',
     directionsUrl: 'https://www.google.com/maps/dir//A-State+Insurance,+5206+Airline+Dr+g,+Houston,+TX+77022,+United+States/@29.8423603,-95.386512,17z/data=!4m16!1m7!3m6!1s0x8640b9c87d8b4ba5:0x9f74c0c87f80aa47!2sA-State+Insurance!8m2!3d29.842283!4d-95.3837829!16s%2Fg%2F11scsjf5kd!4m7!1m0!1m5!1m1!1s0x8640b9c87d8b4ba5:0x9f74c0c87f80aa47!2m2!1d-95.3837829!2d29.842283?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D',
   },
 ];
+
+/**
+ * Sixth office (home page content, Nov 2026). Only shown as a card in the home page office list;
+ * it has no detail page, map pin or quote-form option, so it stays out of OFFICES.
+ */
+export const BAYTOWN_OFFICE: Office = {
+  id: '123-e-texas-ave-baytown-tx-77520', name: 'Baytown', title: 'Baytown Insurance', hasPage: false,
+  street: '123 E Texas Ave', city: 'Baytown, TX 77520',
+  phone: '(281) 837-5729', tel: '+12818375729', lat: 29.7315813, lng: -94.9665137,
+  mapUrl: 'https://www.google.com/maps/search/?api=1&query=123+E+Texas+Ave+Baytown+TX+77520',
+  directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=123+E+Texas+Ave+Baytown+TX+77520',
+};
 
 /** Localized router commands for a route key, or for an office detail page. */
 export function buildRoute(languageService: Language, page: string, officeId?: string): string[] {
@@ -163,7 +182,7 @@ type Panel = 'insurance' | 'locations' | 'lang' | null;
 })
 export class Header {
   readonly groups = NAV_GROUPS;
-  readonly offices = OFFICES;
+  readonly offices = [...OFFICES, BAYTOWN_OFFICE];
 
   openPanel: Panel = null;
   drawerOpen = false;

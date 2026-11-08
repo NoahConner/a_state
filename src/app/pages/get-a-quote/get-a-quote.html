@@ -41,6 +41,7 @@
       <div class="btn-row">
         <a class="hf-btn btn-primary btn-lg" href="#quote" (click)="goToForm($event)">{{ 'GET_QUOTE.HERO.CTA_QUOTE' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
         <a class="hf-btn btn-outline btn-lg" href="tel:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'GET_QUOTE.HERO.CTA_CALL' | translate }}</a>
+        <a class="hf-btn btn-outline btn-lg" href="https://wa.me/13464367283" target="_blank" rel="noopener"><svg class="icon-sm" aria-hidden="true"><use href="#i-wa" /></svg>{{ 'GET_QUOTE.HERO.CTA_WA' | translate }}</a>
       </div>
       <p class="hf-lead"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('GET_QUOTE.HERO.LEAD') }"></ng-container></p>
       <p class="q-trust"><span class="q-star" aria-hidden="true"><svg class="icon-sm"><use href="#i-star" /></svg></span><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('GET_QUOTE.HERO.TRUST') }"></ng-container></p>
@@ -112,17 +113,27 @@
       <div class="btn-row">
         <a class="hf-btn btn-white" href="tel:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'GET_QUOTE.FORM.CALL' | translate }}</a>
         <a class="hf-btn btn-white" href="sms:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-chat" /></svg>{{ 'GET_QUOTE.FORM.TEXT_US' | translate }}</a>
+        <a class="hf-btn btn-white" href="https://wa.me/13464367283" target="_blank" rel="noopener"><svg class="icon-sm" aria-hidden="true"><use href="#i-wa" /></svg>{{ 'GET_QUOTE.FORM.WA' | translate }}</a>
       </div>
     </div>
     <form class="cform" novalidate aria-labelledby="qf-h" (submit)="submit($event)">
       <div class="row2">
         <div class="field">
-          <label for="qf-name">{{ 'GET_QUOTE.FORM.NAME' | translate }} <span class="req" aria-hidden="true">*</span></label>
-          <input type="text" id="qf-name" name="name" autocomplete="name" required [value]="form.name"
-            [attr.aria-invalid]="errors.name ? 'true' : null" aria-describedby="qf-name-err"
-            (input)="onNameInput($event)" (blur)="onBlur('name')" />
-          <p class="err" id="qf-name-err" aria-live="polite">{{ errors.name }}</p>
+          <label for="qf-first">{{ 'GET_QUOTE.FORM.FIRST' | translate }} <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="qf-first" name="first_name" autocomplete="given-name" required [value]="form.first"
+            [attr.aria-invalid]="errors.first ? 'true' : null" aria-describedby="qf-first-err"
+            (input)="onNameInput('first', $event)" (blur)="onBlur('first')" />
+          <p class="err" id="qf-first-err" aria-live="polite">{{ errors.first }}</p>
         </div>
+        <div class="field">
+          <label for="qf-last">{{ 'GET_QUOTE.FORM.LAST' | translate }} <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="qf-last" name="last_name" autocomplete="family-name" required [value]="form.last"
+            [attr.aria-invalid]="errors.last ? 'true' : null" aria-describedby="qf-last-err"
+            (input)="onNameInput('last', $event)" (blur)="onBlur('last')" />
+          <p class="err" id="qf-last-err" aria-live="polite">{{ errors.last }}</p>
+        </div>
+      </div>
+      <div class="row2">
         <div class="field">
           <label for="qf-phone">{{ 'GET_QUOTE.FORM.PHONE' | translate }} <span class="req" aria-hidden="true">*</span></label>
           <input type="tel" id="qf-phone" name="phone" inputmode="tel" autocomplete="tel-national" required [value]="form.phone"
@@ -130,8 +141,6 @@
             (input)="onPhoneInput($event)" (blur)="onBlur('phone')" />
           <p class="err" id="qf-phone-err" aria-live="polite">{{ errors.phone }}</p>
         </div>
-      </div>
-      <div class="row2">
         <div class="field">
           <label for="qf-email">{{ 'GET_QUOTE.FORM.EMAIL' | translate }} <span class="opt">{{ 'GET_QUOTE.FORM.OPTIONAL' | translate }}</span></label>
           <input type="email" id="qf-email" name="email" autocomplete="email" [value]="form.email"
@@ -139,13 +148,14 @@
             (input)="onEmailInput($event)" (blur)="onBlur('email')" />
           <p class="err" id="qf-email-err" aria-live="polite">{{ errors.email }}</p>
         </div>
-        <div class="field">
-          <label for="qf-zip">{{ 'GET_QUOTE.FORM.ZIP' | translate }} <span class="req" aria-hidden="true">*</span></label>
-          <input type="text" id="qf-zip" name="zip" inputmode="numeric" autocomplete="postal-code" maxlength="5" required [value]="form.zip"
-            [attr.aria-invalid]="errors.zip ? 'true' : null" aria-describedby="qf-zip-err"
-            (input)="onZipInput($event)" (blur)="onBlur('zip')" />
-          <p class="err" id="qf-zip-err" aria-live="polite">{{ errors.zip }}</p>
-        </div>
+      </div>
+      <div class="field">
+        <label for="qf-address">{{ 'GET_QUOTE.FORM.ADDRESS' | translate }} <span class="req" aria-hidden="true">*</span></label>
+        <input type="text" id="qf-address" name="address" appAddressAutocomplete [acLang]="languageService.getCurrentLanguage()" autocomplete="street-address" required [value]="form.address"
+          [placeholder]="'GET_QUOTE.FORM.ADDRESS_PH' | translate"
+          [attr.aria-invalid]="errors.address ? 'true' : null" aria-describedby="qf-address-err"
+          (input)="onAddressInput($event)" (blur)="onBlur('address')" />
+        <p class="err" id="qf-address-err" aria-live="polite">{{ errors.address }}</p>
       </div>
       <fieldset>
         <legend>{{ 'GET_QUOTE.FORM.TYPE' | translate }} <span class="req" aria-hidden="true">*</span></legend>
@@ -171,7 +181,7 @@
           <label for="qf-office">{{ 'GET_QUOTE.FORM.OFFICE' | translate }} <span class="opt">{{ 'GET_QUOTE.FORM.OPTIONAL' | translate }}</span></label>
           <select id="qf-office" name="office" (change)="form.office = $any($event.target).value">
             <option value="" [selected]="!form.office">{{ 'GET_QUOTE.FORM.NO_PREFERENCE' | translate }}</option>
-            <option *ngFor="let item of list('GET_QUOTE.OFFICES.ITEMS'); let i = index" [value]="offices[i].id" [selected]="form.office === offices[i].id">{{ item.NAME }} ({{ offices[i].name }})</option>
+            <option *ngFor="let item of list('GET_QUOTE.OFFICES.ITEMS'); let i = index" [value]="offices[i].id" [selected]="form.office === offices[i].id">{{ item.NAME }}</option>
           </select>
         </div>
         <fieldset>
@@ -244,11 +254,13 @@
     <div class="off-head">
       <h2 id="off-h">{{ 'GET_QUOTE.OFFICES.TITLE' | translate }}</h2>
       <p class="hf-lead"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('GET_QUOTE.OFFICES.LEAD') }"></ng-container></p>
+      <p class="q-wa"><svg class="icon-sm" aria-hidden="true"><use href="#i-wa" /></svg><span><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('GET_QUOTE.OFFICES.WA_ALL') }"></ng-container></span></p>
       <a class="hf-btn btn-outline" [routerLink]="route('ourLocations')">{{ 'GET_QUOTE.OFFICES.CTA' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
     </div>
     <ul class="q-offices">
       <li *ngFor="let o of list('GET_QUOTE.OFFICES.ITEMS'); let i = index">
-        <a class="q-off" [routerLink]="route('ourLocations/:id', offices[i].id)"><b>{{ o.NAME }}</b><span>{{ o.ADDRESS }}</span></a>
+        <a *ngIf="offices[i].hasPage !== false; else noPage" class="q-off" [routerLink]="route('ourLocations/:id', offices[i].id)"><b>{{ o.NAME }}</b><span>{{ o.ADDRESS }}</span></a>
+        <ng-template #noPage><span class="q-off q-off-plain"><b>{{ o.NAME }}</b><span>{{ o.ADDRESS }}</span></span></ng-template>
         <a class="q-ph" [href]="'tel:' + offices[i].tel"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ o.PHONE }}</a>
       </li>
     </ul>
@@ -274,6 +286,7 @@
     <div class="btn-row">
       <a class="hf-btn btn-primary btn-lg" href="#quote" (click)="goToForm($event)">{{ 'GET_QUOTE.FINAL.CTA' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
       <a class="hf-btn btn-outline btn-lg" href="tel:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'GET_QUOTE.FINAL.CALL' | translate }}</a>
+      <a class="hf-btn btn-outline btn-lg" href="https://wa.me/13464367283" target="_blank" rel="noopener"><svg class="icon-sm" aria-hidden="true"><use href="#i-wa" /></svg>{{ 'GET_QUOTE.FINAL.WA' | translate }}</a>
     </div>
   </div>
 </section>

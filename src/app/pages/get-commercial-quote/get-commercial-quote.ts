@@ -7,6 +7,7 @@ import { Language } from '../../services/language';
 import { HttpService } from '../../services/http.service';
 import { PageSource, PageSourceFields } from '../../services/page-source';
 import { buildRoute, OFFICES } from '../../components/header/header';
+import { applyQuotePrefill } from '../../services/quote-prefill';
 
 interface BqForm {
   bizName: string; dba: string; industry: string; desc: string; zip: string; employees: string;
@@ -165,6 +166,8 @@ export class GetCommercialQuote implements AfterViewInit, OnDestroy {
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
     this.form = this.emptyForm();
+    // Name, phone and email from the short quote form the visitor just sent (browser only).
+    if (this.isBrowser) applyQuotePrefill(this.form);
     this.applyQueryParams();
     this.subs.add(
       this.translate.onLangChange.subscribe(() => {

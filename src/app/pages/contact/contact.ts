@@ -4,9 +4,10 @@ import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { Language } from '../../services/language';
-import { buildRoute, OFFICES } from '../../components/header/header';
+import { BAYTOWN_OFFICE, buildRoute, OFFICES } from '../../components/header/header';
 import { Seg } from '../insurance-services/insurance-services';
 import { CONTACT_MESSAGE_KEY, ContactMessage } from '../thank-you/thank-you';
+import { SiteFormsService } from '../../services/site-forms.service';
 
 /** Sections listed in the "On this page" bar, in the order of CONTACT_PAGE.OTP.ITEMS. */
 const OTP_IDS = ['reach', 'message', 'offices', 'answers', 'social'];
@@ -27,7 +28,7 @@ const SCHEMA_ID = 'contact-structured-data';
 const SITE = 'https://astateinsurance.com';
 
 type OpenStatus = 'unknown' | 'open' | 'closed';
-type Field = 'name' | 'phone' | 'email' | 'method' | 'type' | 'lang';
+type Field = 'first' | 'last' | 'phone' | 'email' | 'method' | 'type' | 'lang';
 /** Fields picked from option chips (radio groups); focus goes to the first option on error. */
 const CHOICE_FIELDS: Field[] = ['method', 'type', 'lang'];
 
@@ -39,11 +40,12 @@ const CHOICE_FIELDS: Field[] = ['method', 'type', 'lang'];
 })
 export class Contact implements AfterViewInit, OnDestroy {
   readonly otpIds = OTP_IDS;
-  readonly offices = OFFICES;
+  readonly offices = [...OFFICES, BAYTOWN_OFFICE];
   readonly social = SOCIAL.filter((s) => s.url);
   readonly reachCards = [
     { icon: 'i-phone', href: 'tel:+17133577771' },
     { icon: 'i-chat', href: 'sms:+17133577771' },
+    { icon: 'i-wa', href: 'https://wa.me/13464367283' },
     { icon: 'i-mail', href: 'mailto:save@astateinsurance.com' },
     // The Visit card links to the Our Locations page (see the template).
     { icon: 'i-pin', href: '' },
@@ -61,8 +63,11 @@ export class Contact implements AfterViewInit, OnDestroy {
   today = -1;
 
   // Contact form
-  form = { name: '', phone: '', email: '', method: 'call', type: '', lang: '', time: '', message: '' };
+  form = { first: '', last: '', phone: '', email: '', method: 'call', type: '', lang: '', time: '', message: '' };
   errors: Partial<Record<Field, string>> = {};
+  isSubmitting = false;
+  /** Shown above the button when the API call fails; the answers stay in the form. */
+  submitError = '';
 
   private isTablet = true;
   private readonly isBrowser: boolean;
@@ -85,11 +90,12 @@ export class Contact implements AfterViewInit, OnDestroy {
     private router: Router,
     private cdr: ChangeDetectorRef,
     private host: ElementRef<HTMLElement>,
+    private siteForms: SiteFormsService,
     @Inject(PLATFORM_ID) platformId: object,
     @Inject(DOCUMENT) private document: Document,
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
-    this.form.lang = this.languageService.getCurrentLanguage() === 'es' ? 'es' : 'en';
+    this.form.lang =this.languageService.getCurrentLanguage() === 'es' ? 'es' : 'en';
     this.subs.add(
       this.translate.onLangChange.subscribe(() => {
         this.listCache.clear();
@@ -176,7 +182,6 @@ export class Contact implements AfterViewInit, OnDestroy {
     if (this.statusTimer) clearInterval(this.statusTimer);
     this.document.getElementById(SCHEMA_ID)?.remove();
   }
-
   /** In-page links: scroll without changing the route. */
   goToSection(id: string, event: Event) {
     event.preventDefault();
@@ -198,9 +203,10 @@ export class Contact implements AfterViewInit, OnDestroy {
 
   // ---------- Contact form ----------
 
-  onNameInput(event: Event) {
-    this.form.name = (event.target as HTMLInputElement).value;
-    if (this.errors.name) this.validate(['name']);
+  /** First and last name inputs. */
+  onNameInput(field: 'first' | 'last', event: Event) {
+    this.form[field] = (event.target as HTMLInputElement).value;
+    if (this.errors[field]) this.validate([field]);
   }
 
   onPhoneInput(event: Event) {
@@ -219,7 +225,7 @@ export class Contact implements AfterViewInit, OnDestroy {
     if (this.errors.email) this.validate(['email']);
   }
 
-  onBlur(field: 'name' | 'phone' | 'email') {
+  onBlur(field: 'first' | 'last' | 'phone' | 'email') {
     if (this.form[field]) this.validate([field]);
   }
 
@@ -235,17 +241,43 @@ export class Contact implements AfterViewInit, OnDestroy {
     this.errors[field] = '';
   }
 
-  submit(event: Event) {
+  async submit(event: Event) {
     event.preventDefault();
+    if (this.isSubmitting) return;
     const bad = this.validate();
     if (bad.length) {
       const target = CHOICE_FIELDS.includes(bad[0]) ? `input[name="${bad[0]}"]` : `#c-${bad[0]}`;
       this.host.nativeElement.querySelector<HTMLElement>(target)?.focus();
       return;
     }
+
+    // Send to the API first; only a saved message moves on to the thank-you page.
+    this.isSubmitting = true;
+    this.submitError = '';
+    try {
+      // The API takes one full_name: first and last name joined.
+      await this.siteForms.submitContact({
+        name: `${this.form.first.trim()} ${this.form.last.trim()}`,
+        phone: this.form.phone,
+        email: this.form.email,
+        method: this.form.method,
+        type: this.form.type,
+        lang: this.form.lang,
+        time: this.form.time,
+        message: this.form.message,
+      });
+    } catch {
+      // Nothing is logged: the request holds personal details.
+      this.submitError = this.translate.instant('CONTACT_PAGE.FORM.ERR_SUBMIT');
+      return;
+    } finally {
+      this.isSubmitting = false;
+      this.cdr.detectChanges();
+    }
+
     // Hand the details to the thank-you page (personal greeting, reply method, reference).
     const message: ContactMessage = {
-      first: this.form.name.trim().split(/\s+/)[0],
+      first: this.form.first.trim(),
       method: this.form.method,
       ref: 'AS-' + String(Date.now()).slice(-6),
       sent: Date.now(),
@@ -262,9 +294,10 @@ export class Contact implements AfterViewInit, OnDestroy {
     const want = (f: Field) => !only || only.includes(f);
     const t = (k: string) => this.translate.instant('CONTACT_PAGE.FORM.' + k);
     const bad: Field[] = [];
-    if (want('name')) {
-      this.errors.name = this.form.name.trim().length < 2 ? t('ERR_NAME') : '';
-      if (this.errors.name) bad.push('name');
+    for (const [field, key] of [['first', 'ERR_FIRST'], ['last', 'ERR_LAST']] as const) {
+      if (!want(field)) continue;
+      this.errors[field] = this.form[field].trim() ? '' : t(key);
+      if (this.errors[field]) bad.push(field);
     }
     if (want('phone')) {
       const d = this.digits(this.form.phone);

@@ -63,7 +63,7 @@
         <div class="cq-progress" aria-hidden="true"><span [style.width.%]="step * 100 / 6"></span></div>
         <ol class="cq-steps aq-steps" [attr.aria-label]="'HOME_QUOTE_PAGE.FORM.STEPS_ARIA' | translate">
           <li *ngFor="let n of stepNumbers; let i = index" [class.done]="n < step" [attr.aria-current]="n === step ? 'step' : null">
-            <span>{{ n }}</span><b>{{ list('HOME_QUOTE_PAGE.FORM.STEP_DOTS')[i] }}</b>
+            <span><app-step-icon [name]="$any(['pin', 'home', 'lock', 'shield', 'phone', 'review'])[i]"></app-step-icon></span><b>{{ list('HOME_QUOTE_PAGE.FORM.STEP_DOTS')[i] }}</b>
           </li>
         </ol>
 
@@ -74,7 +74,7 @@
             <div class="cq-step-h"><p class="cq-count">{{ 'HOME_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 1 } }}</p><h3 id="hq-h1" tabindex="-1">{{ list('HOME_QUOTE_PAGE.FORM.STEP_TITLES')[0] }}</h3></div>
             <div class="field">
               <label for="hq-addr">{{ 'HOME_QUOTE_PAGE.FORM.ADDRESS' | translate }} <span class="opt">{{ 'HOME_QUOTE_PAGE.FORM.ADDRESS_HINT' | translate }}</span> <span class="req" aria-hidden="true">*</span></label>
-              <input type="text" id="hq-addr" autocomplete="street-address" maxlength="200" required [value]="form.address" [placeholder]="'HOME_QUOTE_PAGE.FORM.ADDRESS_PH' | translate"
+              <input type="text" id="hq-addr" appAddressAutocomplete [acLang]="languageService.getCurrentLanguage()" autocomplete="street-address" maxlength="200" required [value]="form.address" [placeholder]="'HOME_QUOTE_PAGE.FORM.ADDRESS_PH' | translate"
                 [attr.aria-invalid]="errors['address'] ? 'true' : null" aria-describedby="hq-addr-err" (input)="onText('address', $event)" />
               <p class="err" id="hq-addr-err">{{ errors['address'] }}</p>
             </div>

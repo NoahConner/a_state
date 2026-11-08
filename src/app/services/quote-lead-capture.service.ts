@@ -4,6 +4,7 @@ import { firstValueFrom } from 'rxjs';
 import Swal from 'sweetalert2';
 import { environment } from '../../environments/environment';
 import { PageSource } from './page-source';
+import { saveQuotePrefill } from './quote-prefill';
 
 type QuoteLeadPayload = {
   selected_chip: string;
@@ -55,6 +56,9 @@ export class QuoteLeadCaptureService {
         ...this.pageSource.getSourceFields(),
       }),
     );
+
+    // The detailed quote page the visitor goes to next fills these in (see quote-prefill.ts).
+    saveQuotePrefill({ name: fullName, phone: phoneNumber, email: payload.email });
 
     await Swal.fire({
       toast: true,

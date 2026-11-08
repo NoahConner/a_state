@@ -3,7 +3,7 @@ import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { Language } from '../../services/language';
-import { NAV_GROUPS, NavLink, OFFICES, buildRoute } from '../../components/header/header';
+import { BAYTOWN_OFFICE, NAV_GROUPS, NavLink, OFFICES, buildRoute } from '../../components/header/header';
 
 const SCHEMA_ID = 'home-structured-data';
 
@@ -14,7 +14,7 @@ const SCHEMA_ID = 'home-structured-data';
   styleUrl: './home.scss',
 })
 export class Home implements AfterViewInit, OnDestroy {
-  readonly offices = OFFICES;
+  readonly offices = [...OFFICES, BAYTOWN_OFFICE];
 
   /**
    * Product cards, in the same order as the header's NAV_GROUPS, whose links they reuse.
@@ -43,7 +43,7 @@ export class Home implements AfterViewInit, OnDestroy {
     { office: 'Post Oak', text: 'took time to explain all my options', es: 'se tomó el tiempo de explicarme todas mis opciones' },
     { office: 'Airline', text: 'Fast and friendly service... I will recommend Ana, she is bilingual.', es: 'Servicio rápido y amable... Recomiendo a Ana, es bilingüe.' },
     { office: 'Southwest Fwy', text: 'Great customer service and good auto insurance price.', es: 'Excelente servicio al cliente y buen precio en el seguro de auto.' },
-    { office: 'Airline', text: 'Customer service is great and is always respectful.', es: 'El servicio al cliente es excelente y siempre respetuoso.' },
+    { office: 'Baytown', text: 'Super helpful. They really go the extra mile for you.', es: 'Muy serviciales. Realmente hacen todo lo posible por ayudarte.' },
   ];
   readonly autoCities = this.cities('');
   readonly homeCities = this.cities('homeowners');

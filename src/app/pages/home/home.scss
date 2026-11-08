@@ -225,9 +225,8 @@ img{display:block;max-width:100%}
 @media (min-width:1024px){.off-grid{grid-template-columns:repeat(3,1fr);gap:20px}}
 .map{border-radius:var(--r-card);background:var(--white);overflow:hidden;position:relative;min-height:240px;transition:box-shadow .2s ease}
 @media (min-width:1024px){.map{grid-row:span 3}}
-.map svg{width:100%;height:100%}
-.map text{font-size:12px}
-.map figcaption{position:absolute;left:12px;bottom:10px;font-size:12.5px;color:var(--stone-700);background:rgba(255,255,255,.85);padding:2px 8px;border-radius:6px}
+.map{margin:0;display:flex;flex-direction:column}
+.map app-office-map{flex:1}
 .office{background:var(--white);border:1px solid var(--stone-200);border-radius:var(--r-card);padding:20px;display:flex;flex-direction:column;gap:8px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
 .office h3{font-size:18px}
 .office address{display:flex;gap:8px;font-size:15px;color:var(--stone-700);line-height:1.45;min-height:2.9em}

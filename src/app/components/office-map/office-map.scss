@@ -1,0 +1,58 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.canvas {
+  height: 100%;
+  min-height: 320px;
+  width: 100%;
+  z-index: 0;
+  font-family: inherit;
+}
+
+/* Leaflet builds the markers and popups itself, outside Angular's style scoping. */
+:host ::ng-deep {
+  img.as-pin {
+    max-width: none;
+    max-height: none;
+    object-fit: contain;
+    filter: drop-shadow(0 0 1.5px #7a1513) drop-shadow(0 2px 3px rgba(0, 0, 0, 0.45));
+  }
+  /* No size change on hover: growing the icon moved its edge under the cursor and made it flicker. */
+  img.as-pin:hover {
+    filter: drop-shadow(0 0 1.5px #7a1513) drop-shadow(0 3px 6px rgba(0, 0, 0, 0.6)) brightness(1.08);
+  }
+  img.as-pin:focus-visible {
+    outline: 2px solid var(--red-600, #ca2b28);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  .as-pop {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-family: Figtree, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--stone-700, #44403c);
+  }
+  .as-pop strong {
+    font-size: 15px;
+    color: var(--stone-900, #1c1917);
+  }
+  .as-pop a {
+    color: var(--red-700, #a8201e);
+    font-weight: 700;
+  }
+  .as-pop-acts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+    margin-top: 4px;
+  }
+  .leaflet-popup-content {
+    margin: 14px 16px;
+  }
+}

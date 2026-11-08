@@ -1,7 +1,7 @@
 import { Component, DestroyRef, Inject, OnInit, PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Language } from '../../services/language';
-import { OFFICES, buildRoute } from '../header/header';
+import { BAYTOWN_OFFICE, OFFICES, buildRoute } from '../header/header';
 
 type FooterLink = { routeKey: string; labelKey: string };
 
@@ -12,7 +12,7 @@ type FooterLink = { routeKey: string; labelKey: string };
   styleUrl: './footer.scss',
 })
 export class Footer implements OnInit {
-  readonly offices = OFFICES;
+  readonly offices = [...OFFICES, BAYTOWN_OFFICE];
   readonly year = new Date().getFullYear();
 
   readonly insuranceLinks: FooterLink[] = [

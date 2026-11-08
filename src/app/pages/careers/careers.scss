@@ -244,3 +244,6 @@ legend{float:none;width:auto;padding:0;margin:0 0 8px;font-size:15px;font-weight
   .sticky-cta{padding-block:6px calc(6px + env(safe-area-inset-bottom,0px))}
   .sticky-cta .hf-btn{min-height:44px}
 }
+
+// Button while the form is being sent
+.hf-btn:disabled{opacity:.7;cursor:progress;transform:none}

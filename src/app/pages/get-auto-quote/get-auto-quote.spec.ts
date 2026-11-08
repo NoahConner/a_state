@@ -10,6 +10,7 @@ function setup() {
     { getCurrentLanguage: () => 'en' } as any,
     translate as any,
     { post } as any,
+    {} as any,
     { getSourceFields: () => ({ source_page: 'Auto Quote', source_url: '/' }) } as any,
     { snapshot: { queryParamMap: { get: () => null } } } as any,
     { detectChanges: () => {} } as any,
@@ -17,13 +18,14 @@ function setup() {
     'browser' as any,
     document,
   );
-  c.form.name = ' Test User ';
+  c.form.first = ' Test ';
+  c.form.last = ' User ';
   c.form.phone = '(555) 010-0100';
-  c.form.zip = '77001';
+  c.form.address = '123 Main St, Houston, TX 77001';
   const v = c.form.vehicles[0];
   v.year = '2020'; v.make = 'Toyota '; v.model = 'Camry';
   const d = c.form.drivers[0];
-  d.name = 'Test User'; d.dob = '1990-01-01';
+  d.first = 'Test'; d.last = 'User'; d.dob = '1990-01-01';
   const payload = () => (c as any).buildPayload() as any;
   return { c, post, payload, v, d };
 }
@@ -36,6 +38,8 @@ describe('GetAutoQuote payload', () => {
       expect(k in p).toBe(false);
     }
     expect(p.vehicles[0]).toEqual({ year: '2020', make: 'Toyota', model: 'Camry' });
+    expect(p.first_name).toBe('Test User');
+    expect(p.zip_code).toBe('77001');
     expect(p.drivers[0]).toEqual({ full_name: 'Test User', date_of_birth: '1990-01-01' });
     expect(p.bundle).toBe('No, just Auto for now.');
   });
@@ -59,7 +63,7 @@ describe('GetAutoQuote payload', () => {
   it('maps license type and age first licensed', () => {
     const { d, payload } = setup();
     const map: Record<string, string> = {
-      texas: 'Texas', us: 'Other U.S. state', foreign: 'Foreign or international', none: 'No license yet',
+      license: "Driver's license", state_id: 'Texas/State ID', intl: 'International ID/Matrícula',
     };
     d.age = '17';
     for (const [id, text] of Object.entries(map)) {

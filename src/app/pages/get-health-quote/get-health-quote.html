@@ -64,7 +64,7 @@
         <div class="cq-progress" aria-hidden="true"><span [style.width.%]="step * 100 / 5"></span></div>
         <ol class="cq-steps" [attr.aria-label]="'HEALTH_QUOTE_PAGE.FORM.STEPS_ARIA' | translate">
           <li *ngFor="let n of stepNumbers; let i = index" [class.done]="n < step" [attr.aria-current]="n === step ? 'step' : null">
-            <span>{{ n }}</span><b>{{ list('HEALTH_QUOTE_PAGE.FORM.STEP_DOTS')[i] }}</b>
+            <span><app-step-icon [name]="$any(['user', 'users', 'plan', 'phone', 'review'])[i]"></app-step-icon></span><b>{{ list('HEALTH_QUOTE_PAGE.FORM.STEP_DOTS')[i] }}</b>
           </li>
         </ol>
 

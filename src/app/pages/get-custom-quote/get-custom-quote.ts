@@ -5,7 +5,8 @@ import { Subscription, firstValueFrom } from 'rxjs';
 import { Language } from '../../services/language';
 import { HttpService } from '../../services/http.service';
 import { PageSource, PageSourceFields } from '../../services/page-source';
-import { buildRoute, OFFICES } from '../../components/header/header';
+import { BAYTOWN_OFFICE, buildRoute, OFFICES } from '../../components/header/header';
+import { applyQuotePrefill } from '../../services/quote-prefill';
 
 /**
  * A piece of translated text. Flags are strings ("true") because ngx-translate drops booleans
@@ -14,7 +15,7 @@ import { buildRoute, OFFICES } from '../../components/header/header';
  */
 export interface CqSeg { t: string; hl?: string; b?: string; l?: string; h?: string; r?: string }
 
-type Field = 'name' | 'phone' | 'email' | 'zip' | 'cov' | 'other' | 'unsure' | 'email2';
+type Field = 'first' | 'last' | 'phone' | 'email' | 'address' | 'cov' | 'other' | 'unsure' | 'email2';
 
 /** Coverage checkboxes in step 2 (icons in the order of FORM.COVERAGE), then "Other" and "I'm not sure". */
 const COVERAGE_ICONS = ['i-car', 'i-home', 'i-briefcase', 'i-heart', 'i-health', 'i-shield'];
@@ -28,10 +29,12 @@ const OTHER_ROUTES = [
 
 /** Ids of the element to focus for each field with an error. */
 const FOCUS_ID: Record<Field, string> = {
-  name: 'cq-name', phone: 'cq-phone', email: 'cq-email', zip: 'cq-zip',
+  first: 'cq-first', last: 'cq-last', phone: 'cq-phone', email: 'cq-email', address: 'cq-address',
   cov: 'cq-c-auto', other: 'cq-other', unsure: 'cq-unsure', email2: 'cq-email2',
 };
-const STEP_FIELDS: Record<number, Field[]> = { 1: ['name', 'phone', 'email', 'zip'], 2: ['cov', 'other', 'unsure'], 3: [], 4: ['email2'] };
+const STEP_FIELDS: Record<number, Field[]> = { 1: ['first', 'last', 'phone', 'email', 'address'], 2: ['cov', 'other', 'unsure'], 3: [], 4: ['email2'] };
+/** A 5-digit ZIP inside the full address (the backend also keeps zip_code on its own). */
+const ZIP_RE = /\b(\d{5})(?:-\d{4})?\b/;
 
 /** Values the existing /quotes/create payload already used for these two questions. */
 const CONTACT_VALUES: Record<string, string> = { text: 'Text Message', call: 'Phone', email: 'Email' };
@@ -43,7 +46,7 @@ const P = 'GET_CUSTOM_QUOTE.';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 interface CqForm {
-  name: string; phone: string; email: string; email2: string; zip: string; lang: string;
+  first: string; last: string; phone: string; email: string; email2: string; address: string; lang: string;
   cov: Record<string, boolean>; other: string; unsure: string;
   goal: string; insured: string; carrier: string; renewal: string;
   method: string; time: string; office: string;
@@ -62,6 +65,7 @@ interface CustomQuotePayload extends PageSourceFields {
   phone_number: string;
   email?: string;
   zip_code: string;
+  full_address: string;
   preferred_language: string;
   coverage_auto: 0 | 1;
   coverage_home: 0 | 1;
@@ -90,7 +94,8 @@ interface CustomQuotePayload extends PageSourceFields {
   styleUrl: './get-custom-quote.scss',
 })
 export class GetCustomQuote implements AfterViewInit, OnDestroy {
-  readonly offices = OFFICES;
+  /** In the order of FORM.OFFICES. */
+  readonly offices = [...OFFICES, BAYTOWN_OFFICE];
   readonly coverageIcons = COVERAGE_ICONS;
   readonly otherRoutes = OTHER_ROUTES;
   readonly stepNumbers = [1, 2, 3, 4, 5];
@@ -127,6 +132,13 @@ export class GetCustomQuote implements AfterViewInit, OnDestroy {
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
     this.form = this.emptyForm();
+    // Name, phone and email from the short quote form the visitor just sent (browser only).
+    if (this.isBrowser) {
+      const prefill = { name: '', phone: '', email: '' };
+      applyQuotePrefill(prefill);
+      const [first = '', ...rest] = prefill.name.trim().split(/\s+/);
+      Object.assign(this.form, { first, last: rest.join(' '), phone: prefill.phone, email: prefill.email });
+    }
     this.subs.add(
       this.translate.onLangChange.subscribe(() => {
         this.listCache.clear();
@@ -176,17 +188,16 @@ export class GetCustomQuote implements AfterViewInit, OnDestroy {
 
   // ---------- Links inside translated text and page buttons ----------
 
-  /** In-text links: "#other" checks the Other box and goes to the form; tel: links follow normally. */
+  /** In-text links: "#other" goes to the form; tel: links follow normally. */
   onSegLink(href: string, event: Event) {
     if (href === '#other') this.pickOther(event);
   }
 
+  /** Scrolls to the form without ticking "Other": the visitor chooses it themselves. On step 2 the box gets focus. */
   pickOther(event: Event) {
     event.preventDefault();
-    this.form.cov['other'] = true;
-    this.errors.cov = '';
     this.scrollToCard();
-    if (this.step === 2 && this.isBrowser) setTimeout(() => this.focusId('cq-other'), 400);
+    if (this.step === 2 && this.isBrowser) setTimeout(() => this.focusId('cq-c-other'), 400);
   }
 
   goToForm(event: Event) {
@@ -203,7 +214,7 @@ export class GetCustomQuote implements AfterViewInit, OnDestroy {
 
   // ---------- Form inputs ----------
 
-  onText(field: 'name' | 'email' | 'email2' | 'other' | 'unsure' | 'carrier' | 'renewal', event: Event) {
+  onText(field: 'first' | 'last' | 'address' | 'email' | 'email2' | 'other' | 'unsure' | 'carrier' | 'renewal', event: Event) {
     this.form[field] = (event.target as HTMLInputElement).value;
     const f = field as Field; // carrier and renewal never have an error, so they skip this
     if (this.errors[f]) this.errors[f] = this.fieldError(f);
@@ -220,11 +231,8 @@ export class GetCustomQuote implements AfterViewInit, OnDestroy {
     if (this.errors.phone) this.errors.phone = this.fieldError('phone');
   }
 
-  onZipInput(event: Event) {
-    const input = event.target as HTMLInputElement;
-    input.value = input.value.replace(/\D/g, '').slice(0, 5);
-    this.form.zip = input.value;
-    if (this.errors.zip) this.errors.zip = this.fieldError('zip');
+  fullName(): string {
+    return `${this.form.first.trim()} ${this.form.last.trim()}`.trim();
   }
 
   onCoverage(key: string, event: Event) {
@@ -309,8 +317,10 @@ export class GetCustomQuote implements AfterViewInit, OnDestroy {
   private fieldError(f: Field): string {
     const t = (k: string) => this.translate.instant(P + 'FORM.ERR.' + k);
     switch (f) {
-      case 'name':
-        return this.form.name.trim().length < 2 ? t('NAME') : '';
+      case 'first':
+        return this.form.first.trim() ? '' : t('FIRST');
+      case 'last':
+        return this.form.last.trim() ? '' : t('LAST');
       case 'phone': {
         const d = this.digits(this.form.phone);
         return !d ? t('PHONE_EMPTY') : d.length !== 10 ? t('PHONE_INVALID') : '';
@@ -319,8 +329,10 @@ export class GetCustomQuote implements AfterViewInit, OnDestroy {
         const e = this.form.email.trim();
         return e && !EMAIL_RE.test(e) ? t('EMAIL') : '';
       }
-      case 'zip':
-        return !this.form.zip ? t('ZIP_EMPTY') : !/^\d{5}$/.test(this.form.zip) ? t('ZIP_INVALID') : '';
+      case 'address': {
+        const a = this.form.address.trim();
+        return !a ? t('ADDRESS_EMPTY') : !ZIP_RE.test(a) ? t('ADDRESS_ZIP') : '';
+      }
       case 'cov':
         return this.selected().length ? '' : t('COVERAGE');
       case 'other':
@@ -379,10 +391,11 @@ export class GetCustomQuote implements AfterViewInit, OnDestroy {
     const office = this.offices.find((o) => o.id === f.office);
     return {
       type: 'custom',
-      name: f.name.trim(),
+      name: this.fullName(),
       phone_number: f.phone,
       ...(email ? { email } : {}),
-      zip_code: f.zip,
+      zip_code: ZIP_RE.exec(f.address)?.[1] ?? '',
+      full_address: f.address.trim(),
       preferred_language: LANG_VALUES[f.lang] ?? 'English',
       coverage_auto: flag('auto'),
       coverage_home: flag('home'),
@@ -441,7 +454,7 @@ export class GetCustomQuote implements AfterViewInit, OnDestroy {
 
   private emptyForm(): CqForm {
     return {
-      name: '', phone: '', email: '', email2: '', zip: '',
+      first: '', last: '', phone: '', email: '', email2: '', address: '',
       lang: this.languageService.getCurrentLanguage() === 'es' ? 'es' : 'en',
       cov: {}, other: '', unsure: '', goal: '', insured: '', carrier: '', renewal: '',
       method: '', time: '', office: '',

@@ -23,6 +23,7 @@ import {
 } from './life-quote.model';
 import { CheckedField, FIELD_INPUT_IDS, STEP_FIELDS, fieldErrorKey, phoneDigits } from './life-quote.validation';
 import { buildLifeQuotePayload } from './life-quote.payload';
+import { applyQuotePrefill } from '../../services/quote-prefill';
 
 /** One option in a translated list, e.g. { V: 'term', L: 'Term' }. `LG` is a lang attribute. */
 interface Option { V: string; L: string; LG?: string }
@@ -104,6 +105,8 @@ export class GetLifeQuote implements AfterViewInit, OnDestroy {
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
     this.form = emptyLifeQuoteForm(this.languageService.getCurrentLanguage());
+    // Name, phone and email from the short quote form the visitor just sent (browser only).
+    if (this.isBrowser) applyQuotePrefill(this.form);
     this.prefillFromQueryString();
 
     this.subscriptions.add(

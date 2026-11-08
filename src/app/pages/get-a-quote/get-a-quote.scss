@@ -244,6 +244,10 @@ fieldset .err{margin-top:8px}
 .q-off b{font-size:17px;color:var(--red-700);text-decoration:underline;text-underline-offset:3px}
 .q-off:hover{color:var(--stone-700)}
 .q-off span{font-size:15px}
+.q-off-plain b{color:var(--stone-700);text-decoration:none}
+.off-head .q-wa{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:16px}
+.off-head .q-wa .icon-sm{color:#1DA851}
+.off-head .q-wa a{color:var(--stone-700);font-weight:700;text-decoration:underline;text-decoration-thickness:1.5px;white-space:nowrap}
 .q-ph{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-weight:800;color:var(--stone-700);text-decoration:none}
 .q-ph:hover{color:var(--red-700)}
 .q-ph .icon-sm{color:var(--red-600)}

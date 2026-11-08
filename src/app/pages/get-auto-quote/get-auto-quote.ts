@@ -6,7 +6,9 @@ import { Subscription, firstValueFrom } from 'rxjs';
 import { Language } from '../../services/language';
 import { HttpService } from '../../services/http.service';
 import { PageSource, PageSourceFields } from '../../services/page-source';
-import { buildRoute, OFFICES } from '../../components/header/header';
+import { BAYTOWN_OFFICE, buildRoute, OFFICES } from '../../components/header/header';
+import { applyQuotePrefill } from '../../services/quote-prefill';
+import { POPULAR_MAKES, VehicleDataService, VehicleMake } from '../../services/vehicle-data.service';
 
 /**
  * A piece of translated text. Flags are strings ("true") because ngx-translate drops booleans
@@ -20,15 +22,17 @@ export interface AqSeg { t: string; hl?: string; b?: string; l?: string; h?: str
 export interface AqVehicle {
   id: number; year: string; make: string; model: string; vin: string;
   own: string; use: string; miles: string; pzip: string;
+  // Make/model dropdown state (not sent). makeId is the NHTSA id, 0 when the make was typed and not found.
+  makeId: number; makeOther: boolean; models: string[]; modelsState: 'idle' | 'loading' | 'ready'; modelOther: boolean;
 }
 
 /** One repeating driver block. */
 export interface AqDriver {
-  id: number; name: string; dob: string; marital: string; license: string; age: string;
+  id: number; first: string; last: string; dob: string; marital: string; license: string; age: string;
 }
 
 interface AqForm {
-  name: string; phone: string; email: string; email2: string; zip: string;
+  first: string; last: string; phone: string; email: string; email2: string; address: string;
   vehicles: AqVehicle[]; drivers: AqDriver[];
   /** Single-choice answers by group: coverage, accidents, tickets, sr22, insured, lang, method, time. */
   pick: Record<string, string>;
@@ -42,16 +46,13 @@ const MAX_BLOCKS = 6;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const VIN_RE = /^[A-HJ-NPR-Z0-9]{17}$/;
 const TOTAL_STEPS = 6;
+/** A 5-digit ZIP inside the full address. The backend keeps zip_code only (no address column yet). */
+const ZIP_RE = /\b(\d{5})(?:-\d{4})?\b/;
 
 const NEED_ICONS = ['i-user', 'i-car', 'i-doc', 'i-alert'];
 const BASICS_ICONS = ['i-scale', 'i-shield', 'i-health', 'i-doc'];
 const ALSO_ICONS = ['i-home', 'i-briefcase', 'i-heart', 'i-health'];
 
-const MAKES = [
-  'Acura', 'Audi', 'BMW', 'Buick', 'Cadillac', 'Chevrolet', 'Chrysler', 'Dodge', 'Ford', 'GMC', 'Honda', 'Hyundai',
-  'Infiniti', 'Jeep', 'Kia', 'Lexus', 'Lincoln', 'Mazda', 'Mercedes-Benz', 'Mitsubishi', 'Nissan', 'Ram', 'Subaru',
-  'Tesla', 'Toyota', 'Volkswagen', 'Volvo',
-];
 
 /** English values the existing /quotes/create payload used for these questions (labels shown to the visitor are translated). */
 const OWN_VALUES: Record<string, string> = { owned: 'Owned', financed: 'Financed', leased: 'Leased' };
@@ -61,7 +62,7 @@ const YNU_VALUES: Record<string, string> = { yes: 'Yes', no: 'No', unsure: 'Not 
 const LANG_VALUES: Record<string, string> = { en: 'English', es: 'Spanish', hi: 'Hindi' };
 const METHOD_VALUES: Record<string, string> = { call: 'Phone Call', text: 'Text Message', email: 'Email' };
 const TIME_VALUES: Record<string, string> = { morning: 'Morning (9 AM–12 PM)', afternoon: 'Afternoon (12 PM–4 PM)', evening: 'Evening (4 PM–7 PM)' };
-const LICENSE_VALUES: Record<string, string> = { texas: 'Texas', us: 'Other U.S. state', foreign: 'Foreign or international', none: 'No license yet' };
+const LICENSE_VALUES: Record<string, string> = { license: "Driver's license", state_id: 'Texas/State ID', intl: 'International ID/Matrícula' };
 const COVERAGE_VALUES: Record<string, string> = { minimum: 'State minimum (liability only)', full: 'Full coverage', unsure: 'Not sure' };
 const COUNT_VALUES: Record<string, string> = { '0': '0', '1': '1', '2+': '2+', unsure: 'Not sure' };
 /** "Bundle" answers, one per product that has a slot. BUNDLE_NONE is only sent when none is ticked. */
@@ -112,8 +113,11 @@ interface AutoQuotePayload extends PageSourceFields {
   styleUrl: './get-auto-quote.scss',
 })
 export class GetAutoQuote implements AfterViewInit, OnDestroy {
-  readonly offices = OFFICES;
-  readonly makes = MAKES;
+  /** In the order of FORM.OFFICES. */
+  readonly offices = [...OFFICES, BAYTOWN_OFFICE];
+  readonly popularMakes = POPULAR_MAKES;
+  /** Every NHTSA make, for the "Other make" search box; loaded the first time someone picks "Other make". */
+  allMakes: VehicleMake[] = [];
   readonly maxBlocks = MAX_BLOCKS;
   readonly stepNumbers = [1, 2, 3, 4, 5, 6];
   readonly needIcons = NEED_ICONS;
@@ -146,6 +150,7 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
     public languageService: Language,
     private translate: TranslateService,
     private http: HttpService,
+    private vehicleData: VehicleDataService,
     private pageSource: PageSource,
     private activatedRoute: ActivatedRoute,
     private cdr: ChangeDetectorRef,
@@ -156,6 +161,14 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
     this.isBrowser = isPlatformBrowser(platformId);
     for (let y = new Date().getFullYear() + 1; y >= 1990; y--) this.years.push(String(y));
     this.form = this.emptyForm();
+    // Name, phone and email from the short quote form the visitor just sent (browser only).
+    if (this.isBrowser) {
+      const prefill = { name: '', phone: '', email: '' };
+      applyQuotePrefill(prefill);
+      this.setName(prefill.name);
+      if (prefill.phone) this.form.phone = prefill.phone;
+      if (prefill.email) this.form.email = prefill.email;
+    }
     this.applyPrefill();
     this.subs.add(
       this.translate.onLangChange.subscribe(() => {
@@ -229,7 +242,7 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
 
   // ---------- Inputs ----------
 
-  onText(field: 'name' | 'email' | 'email2' | 'carrier' | 'renewal', event: Event) {
+  onText(field: 'first' | 'last' | 'address' | 'email' | 'email2' | 'carrier' | 'renewal', event: Event) {
     this.form[field] = (event.target as HTMLInputElement).value;
     if (this.errors[field]) this.errors[field] = this.fieldError(field);
   }
@@ -245,11 +258,8 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
     if (this.errors['phone']) this.errors['phone'] = this.fieldError('phone');
   }
 
-  onZipInput(event: Event) {
-    const input = event.target as HTMLInputElement;
-    input.value = input.value.replace(/\D/g, '').slice(0, 5);
-    this.form.zip = input.value;
-    if (this.errors['zip']) this.errors['zip'] = this.fieldError('zip');
+  fullName(p: { first: string; last: string }): string {
+    return `${p.first.trim()} ${p.last.trim()}`.trim();
   }
 
   onVehicle(v: AqVehicle, key: 'year' | 'make' | 'model' | 'vin' | 'miles' | 'pzip', event: Event) {
@@ -267,9 +277,103 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
     v[key] = value;
     const k = `v${v.id}.${key}`;
     if (this.errors[k]) this.errors[k] = this.vehicleError(v, key);
+    // Models depend on the year, so a new year reloads the model list.
+    if (key === 'year' && v.makeId) this.loadModels(v);
   }
 
-  onDriver(d: AqDriver, key: 'name' | 'dob' | 'age', event: Event) {
+  // ---------- Make / model dropdowns (NHTSA vPIC) ----------
+
+  /** Make dropdown: a popular make, or "other" to type any make. */
+  onMakeSelect(v: AqVehicle, event: Event) {
+    const value = (event.target as HTMLSelectElement).value;
+    v.model = '';
+    v.modelOther = false;
+    if (value === 'other') {
+      v.makeOther = true;
+      v.make = '';
+      v.makeId = 0;
+      v.models = [];
+      v.modelsState = 'idle';
+      this.loadAllMakes();
+      setTimeout(() => this.host.nativeElement.querySelector<HTMLElement>(`#aq-v${v.id}-make-other`)?.focus());
+    } else {
+      const make = this.popularMakes.find((m) => String(m.id) === value);
+      v.makeOther = false;
+      v.make = make?.name ?? '';
+      v.makeId = make?.id ?? 0;
+      this.loadModels(v);
+    }
+    this.clearVehicleErrors(v);
+  }
+
+  /** "Other make" box: typing searches all makes; an exact match unlocks the model dropdown. */
+  onMakeOther(v: AqVehicle, event: Event) {
+    const typed = (event.target as HTMLInputElement).value;
+    v.make = typed;
+    const match = this.allMakes.find((m) => m.name.toLowerCase() === typed.trim().toLowerCase());
+    const id = match?.id ?? 0;
+    if (id !== v.makeId) {
+      v.makeId = id;
+      v.model = '';
+      v.modelOther = false;
+      v.models = [];
+      v.modelsState = 'idle';
+      if (id) this.loadModels(v);
+    }
+    const k = `v${v.id}.make`;
+    if (this.errors[k]) this.errors[k] = this.vehicleError(v, 'make');
+  }
+
+  /** Model dropdown: a model from the list, or "other" to type it. */
+  onModelSelect(v: AqVehicle, event: Event) {
+    const value = (event.target as HTMLSelectElement).value;
+    if (value === '__other') {
+      v.modelOther = true;
+      v.model = '';
+      setTimeout(() => this.host.nativeElement.querySelector<HTMLElement>(`#aq-v${v.id}-model-other`)?.focus());
+    } else {
+      v.model = value;
+    }
+    const k = `v${v.id}.model`;
+    if (this.errors[k]) this.errors[k] = this.vehicleError(v, 'model');
+  }
+
+  /** The model is typed (no list for this make/year, the list failed, or the visitor chose "Other model"). */
+  modelIsText(v: AqVehicle): boolean {
+    return v.modelOther || (!!v.make.trim() && v.modelsState === 'ready' && !v.models.length) || (v.makeOther && !v.makeId && !!v.make.trim());
+  }
+
+  private loadAllMakes() {
+    if (this.allMakes.length) return;
+    this.vehicleData.getAllMakes().then((makes) => {
+      this.allMakes = makes;
+      this.cdr.detectChanges();
+    });
+  }
+
+  private loadModels(v: AqVehicle) {
+    const makeId = v.makeId;
+    const year = v.year;
+    v.modelsState = 'loading';
+    this.vehicleData.getModels(makeId, year).then((models) => {
+      // Ignore a late answer for a make or year that has changed since.
+      if (v.makeId !== makeId || v.year !== year) return;
+      v.models = models;
+      v.modelsState = 'ready';
+      // A model typed or picked earlier that isn't in the new list stays, as a typed model.
+      if (v.model && !models.includes(v.model)) v.modelOther = true;
+      this.cdr.detectChanges();
+    });
+  }
+
+  private clearVehicleErrors(v: AqVehicle) {
+    for (const key of ['make', 'model'] as const) {
+      const k = `v${v.id}.${key}`;
+      if (this.errors[k]) this.errors[k] = this.vehicleError(v, key);
+    }
+  }
+
+  onDriver(d: AqDriver, key: 'first' | 'last' | 'dob' | 'age', event: Event) {
     const input = event.target as HTMLInputElement;
     let value = input.value;
     if (key === 'age') {
@@ -306,7 +410,7 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
     this.live = this.translate.instant(P + (kind === 'vehicle' ? 'FORM.ADDED_V' : 'FORM.ADDED_D'), { n: list.length });
     this.cdr.detectChanges();
     if (!this.isBrowser) return;
-    const first = this.host.nativeElement.querySelector<HTMLElement>(`#aq-${kind === 'vehicle' ? 'v' : 'd'}${item.id}-${kind === 'vehicle' ? 'year' : 'name'}`);
+    const first = this.host.nativeElement.querySelector<HTMLElement>(`#aq-${kind === 'vehicle' ? 'v' : 'd'}${item.id}-${kind === 'vehicle' ? 'year' : 'first'}`);
     first?.closest<HTMLElement>('.aq-item')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     setTimeout(() => first?.focus({ preventScroll: true }), 30);
   }
@@ -362,7 +466,8 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
     this.step = n;
     if (n === TOTAL_STEPS) this.editing = false;
     // Driver 1 starts with the name from step 1.
-    if (n === 3 && !this.form.drivers[0].name.trim()) this.form.drivers[0].name = this.form.name.trim();
+    const d1 = this.form.drivers[0];
+    if (n === 3 && !d1.first.trim() && !d1.last.trim()) Object.assign(d1, { first: this.form.first.trim(), last: this.form.last.trim() });
     this.live = this.translate.instant(P + 'FORM.LIVE', { n, title: this.list<string>(P + 'FORM.STEP_TITLES')[n - 1] ?? '' });
     this.cdr.detectChanges();
     if (!this.isBrowser) return;
@@ -384,19 +489,21 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
       if (msg) bad.push(id);
     };
     if (n === 1) {
-      check('name', 'aq-name', this.fieldError('name'));
+      check('first', 'aq-first', this.fieldError('first'));
+      check('last', 'aq-last', this.fieldError('last'));
       check('phone', 'aq-phone', this.fieldError('phone'));
       check('email', 'aq-email', this.fieldError('email'));
-      check('zip', 'aq-zip', this.fieldError('zip'));
+      check('address', 'aq-address', this.fieldError('address'));
     } else if (n === 2) {
       for (const v of this.form.vehicles) {
         for (const key of ['year', 'make', 'model', 'vin', 'pzip'] as const) {
-          check(`v${v.id}.${key}`, `aq-v${v.id}-${key}`, this.vehicleError(v, key));
+          const other = (key === 'make' && v.makeOther) || (key === 'model' && this.modelIsText(v)) ? '-other' : '';
+          check(`v${v.id}.${key}`, `aq-v${v.id}-${key}${other}`, this.vehicleError(v, key));
         }
       }
     } else if (n === 3) {
       for (const d of this.form.drivers) {
-        for (const key of ['name', 'dob', 'age'] as const) {
+        for (const key of ['first', 'last', 'dob', 'age'] as const) {
           check(`d${d.id}.${key}`, `aq-d${d.id}-${key}`, this.driverError(d, key));
         }
       }
@@ -412,10 +519,12 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
     return this.translate.instant(P + 'FORM.ERR.' + k, params);
   }
 
-  private fieldError(f: 'name' | 'phone' | 'email' | 'zip' | 'email2' | 'carrier' | 'renewal'): string {
+  private fieldError(f: 'first' | 'last' | 'phone' | 'email' | 'address' | 'email2' | 'carrier' | 'renewal'): string {
     switch (f) {
-      case 'name':
-        return this.form.name.trim().length < 2 ? this.err('NAME') : '';
+      case 'first':
+        return this.form.first.trim() ? '' : this.err('FIRST');
+      case 'last':
+        return this.form.last.trim() ? '' : this.err('LAST');
       case 'phone': {
         const d = this.digits(this.form.phone);
         return !d ? this.err('PHONE_EMPTY') : d.length !== 10 ? this.err('PHONE_INVALID') : '';
@@ -424,8 +533,10 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
         const e = this.form.email.trim();
         return e && !EMAIL_RE.test(e) ? this.err('EMAIL') : '';
       }
-      case 'zip':
-        return !this.form.zip ? this.err('ZIP_EMPTY') : !/^\d{5}$/.test(this.form.zip) ? this.err('ZIP_INVALID') : '';
+      case 'address': {
+        const a = this.form.address.trim();
+        return !a ? this.err('ADDRESS_EMPTY') : !ZIP_RE.test(a) ? this.err('ADDRESS_ZIP') : '';
+      }
       case 'email2': {
         if (!this.needEmail) return '';
         const v = this.form.email2.trim();
@@ -455,10 +566,12 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
     }
   }
 
-  private driverError(d: AqDriver, key: 'name' | 'dob' | 'age'): string {
+  private driverError(d: AqDriver, key: 'first' | 'last' | 'dob' | 'age'): string {
     switch (key) {
-      case 'name':
-        return d.name.trim().length < 2 ? this.err('D_NAME') : '';
+      case 'first':
+        return d.first.trim() ? '' : this.err('D_FIRST');
+      case 'last':
+        return d.last.trim() ? '' : this.err('D_LAST');
       case 'dob': {
         if (!d.dob) return this.err('DOB_EMPTY');
         const a = this.ageOf(d.dob);
@@ -530,8 +643,8 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
     const office = this.offices.find((o) => o.id === f.office);
     return {
       type: 'auto',
-      first_name: f.name.trim(),
-      zip_code: f.zip,
+      first_name: this.fullName(f),
+      zip_code: ZIP_RE.exec(f.address)?.[1] ?? '',
       ...(email ? { email_address: email } : {}),
       phone_number: f.phone,
       vehicles: f.vehicles.map((v) => {
@@ -548,7 +661,7 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
         };
       }),
       drivers: f.drivers.map((d) => ({
-        full_name: d.name.trim(),
+        full_name: this.fullName(d),
         date_of_birth: d.dob,
         ...(d.marital ? { marital_status: MARITAL_VALUES[d.marital] } : {}),
         ...(LICENSE_VALUES[d.license] ? { license_type: LICENSE_VALUES[d.license] } : {}),
@@ -609,17 +722,20 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
   // ---------- Helpers ----------
 
   private newVehicle(): AqVehicle {
-    return { id: ++this.seq.vehicle, year: '', make: '', model: '', vin: '', own: '', use: '', miles: '', pzip: '' };
+    return {
+      id: ++this.seq.vehicle, year: '', make: '', model: '', vin: '', own: '', use: '', miles: '', pzip: '',
+      makeId: 0, makeOther: false, models: [], modelsState: 'idle', modelOther: false,
+    };
   }
 
   private newDriver(): AqDriver {
-    return { id: ++this.seq.driver, name: '', dob: '', marital: '', license: '', age: '' };
+    return { id: ++this.seq.driver, first: '', last: '', dob: '', marital: '', license: '', age: '' };
   }
 
   private emptyForm(): AqForm {
     this.seq = { vehicle: 0, driver: 0 };
     return {
-      name: '', phone: '', email: '', email2: '', zip: '',
+      first: '', last: '', phone: '', email: '', email2: '', address: '',
       vehicles: [this.newVehicle()], drivers: [this.newDriver()],
       pick: { lang: this.languageService.getCurrentLanguage() === 'es' ? 'es' : 'en' },
       carrier: '', renewal: '', also: {}, office: '',
@@ -631,11 +747,19 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
     const q = this.activatedRoute.snapshot.queryParamMap;
     const name = q.get('fullName')?.trim();
     const phone = q.get('phone')?.trim();
-    if (name) this.form.name = name;
+    if (name) this.setName(name);
     if (phone) {
       const d = this.digits(phone).slice(0, 10);
       this.form.phone = d.length > 6 ? `(${d.slice(0, 3)}) ${d.slice(3, 6)}-${d.slice(6)}` : d.length > 3 ? `(${d.slice(0, 3)}) ${d.slice(3)}` : d;
     }
+  }
+
+  /** Splits a full name from a short form into first and last name. */
+  private setName(name: string) {
+    const [first = '', ...rest] = name.trim().split(/\s+/);
+    if (!first) return;
+    this.form.first = first;
+    this.form.last = rest.join(' ');
   }
 
   private digits(v: string): string {

@@ -22,6 +22,8 @@ import { About } from './pages/about/about';
 import { Privacy } from './pages/privacy/privacy';
 import { Terms } from './pages/terms/terms';
 import { TestimonialSliderComponent } from './components/testimonial-slider/testimonial-slider';
+import { StepIconComponent } from './components/step-icon/step-icon';
+import { OfficeMap } from './components/office-map/office-map';
 import { Careers } from './pages/careers/careers';
 import { Thankyou } from './pages/thank-you/thank-you';
 import { OurLocations } from './pages/our-locations/our-locations';
@@ -145,6 +147,7 @@ import { AsyncPipe } from '@angular/common';
 import { PhoneFormatDirective } from './directives/phone-format.directive';
 import { ChipNavigationDirective } from './directives/chip-navigation.directive';
 import { BannerButtonNoRedirectDirective } from './directives/banner-button-no-redirect.directive';
+import { AddressAutocompleteDirective } from './directives/address-autocomplete.directive';
 import { UrlSerializer } from '@angular/router';
 import { TrailingSlashUrlSerializer } from './services/trailing-slash-url-serializer';
 import { TrailingSlashRedirect } from './services/trailing-slash-redirect';
@@ -229,6 +232,8 @@ export function initializeTranslations(
     Careers,
     Terms,
     TestimonialSliderComponent,
+    StepIconComponent,
+    OfficeMap,
     Thankyou,
     OurLocations,
     LocationDetail,
@@ -397,6 +402,7 @@ export function initializeTranslations(
     RichardsonTx,
     PhoneFormatDirective,
     ChipNavigationDirective,
+    AddressAutocompleteDirective,
     BannerButtonNoRedirectDirective,
   ],
   imports: [

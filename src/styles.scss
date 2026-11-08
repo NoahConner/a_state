@@ -731,3 +731,62 @@ body .selectable .chip[aria-disabled='true'] i {
 .card-table .penalties-grid-table {
   table-layout: fixed;
 }
+
+/* iOS Safari gives date/time inputs an intrinsic min-width and centred text, so on phones they
+   spill out of their box. Let them fill the box like the other inputs, text left-aligned. */
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  -webkit-appearance: none;
+  appearance: none;
+  min-width: 0;
+  max-width: 100%;
+  display: block;
+  text-align: left;
+}
+input[type="date"]::-webkit-date-and-time-value,
+input[type="time"]::-webkit-date-and-time-value,
+input[type="datetime-local"]::-webkit-date-and-time-value,
+input[type="month"]::-webkit-date-and-time-value {
+  text-align: left;
+  margin: 0;
+}
+
+/* Google address suggestions under an input (AddressAutocompleteDirective). The list is created by the
+   directive outside Angular, so its styles live here. */
+.as-ac-list {
+  position: absolute;
+  z-index: 30;
+  margin: 0;
+  padding: 6px 0 0;
+  list-style: none;
+  background: #fff;
+  border: 1px solid #e7e5e4;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(28, 25, 23, 0.14);
+  overflow: hidden;
+}
+.as-ac-list[hidden] {
+  display: none;
+}
+.as-ac-list li[data-i] {
+  padding: 10px 14px;
+  font-size: 15px;
+  line-height: 1.35;
+  color: #44403c;
+  cursor: pointer;
+}
+.as-ac-list li[data-i]:hover,
+.as-ac-list li[data-i].active {
+  background: #fdf1f0;
+  color: #b32522;
+}
+.as-ac-list .as-ac-brand {
+  padding: 6px 14px 8px;
+  font-size: 11px;
+  color: #78716c;
+  text-align: right;
+  border-top: 1px solid #e7e5e4;
+  margin-top: 4px;
+}

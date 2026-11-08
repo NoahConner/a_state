@@ -40,7 +40,7 @@ export class About implements AfterViewInit, OnDestroy {
     { office: 'Post Oak', text: 'took time to explain all my options' },
     { office: 'Airline', text: 'Fast and friendly service... I will recommend Ana, she is bilingual.' },
     { office: 'Southwest Fwy', text: 'Great customer service and good auto insurance price.' },
-    { office: 'Airline', text: 'Customer service is great and is always respectful.' },
+    { office: 'Baytown', text: 'Super helpful. They really go the extra mile for you.' },
   ];
   readonly stars = [1, 2, 3, 4, 5];
 

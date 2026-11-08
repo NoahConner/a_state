@@ -27,6 +27,7 @@
       <h1 id="hero-title"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('CONTACT_PAGE.HERO.TITLE') }"></ng-container></h1>
       <div class="btn-row">
         <a class="hf-btn btn-primary btn-lg" href="tel:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'CONTACT_PAGE.HERO.CTA_CALL' | translate }}</a>
+        <a class="hf-btn btn-outline btn-lg" href="https://wa.me/13464367283" target="_blank" rel="noopener"><svg class="icon-sm" aria-hidden="true"><use href="#i-wa" /></svg>{{ 'CONTACT_PAGE.HERO.CTA_WA' | translate }}</a>
         <a class="hf-btn btn-outline btn-lg" [routerLink]="route('getAQuote')">{{ 'CONTACT_PAGE.HERO.CTA_QUOTE' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
       </div>
       <p class="hf-lead">{{ 'CONTACT_PAGE.HERO.LEAD' | translate }}</p>
@@ -64,8 +65,9 @@
       <li class="reach-card" *ngFor="let c of list('CONTACT_PAGE.REACH.CARDS'); let i = index">
         <span class="ic" aria-hidden="true"><svg class="icon"><use [attr.href]="'#' + reachCards[i].icon" /></svg></span>
         <h3>{{ c.LABEL }}</h3>
-        <a *ngIf="i < 3" class="main" [href]="reachCards[i].href">{{ c.VALUE }}</a>
-        <a *ngIf="i === 3" class="main" [routerLink]="route('ourLocations')">{{ c.VALUE }}</a>
+        <a *ngIf="i < 4" class="main" [href]="reachCards[i].href"
+          [attr.target]="isExternal(reachCards[i].href) ? '_blank' : null" [attr.rel]="isExternal(reachCards[i].href) ? 'noopener' : null">{{ c.VALUE }}</a>
+        <a *ngIf="i === 4" class="main" [routerLink]="route('ourLocations')">{{ c.VALUE }}</a>
         <p>{{ c.TEXT }}</p>
       </li>
     </ul>
@@ -80,12 +82,21 @@
     <form class="cform" novalidate (submit)="submit($event)">
       <div class="row2">
         <div class="field">
-          <label for="c-name">{{ 'CONTACT_PAGE.FORM.NAME' | translate }} <span class="req" aria-hidden="true">*</span></label>
-          <input type="text" id="c-name" name="name" autocomplete="name" placeholder="John Doe" required [value]="form.name"
-            [attr.aria-invalid]="errors.name ? 'true' : null" aria-describedby="c-name-err"
-            (input)="onNameInput($event)" (blur)="onBlur('name')" />
-          <p class="err" id="c-name-err">{{ errors.name }}</p>
+          <label for="c-first">{{ 'CONTACT_PAGE.FORM.FIRST' | translate }} <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="c-first" name="first_name" autocomplete="given-name" required [value]="form.first"
+            [attr.aria-invalid]="errors.first ? 'true' : null" aria-describedby="c-first-err"
+            (input)="onNameInput('first', $event)" (blur)="onBlur('first')" />
+          <p class="err" id="c-first-err">{{ errors.first }}</p>
         </div>
+        <div class="field">
+          <label for="c-last">{{ 'CONTACT_PAGE.FORM.LAST' | translate }} <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="c-last" name="last_name" autocomplete="family-name" required [value]="form.last"
+            [attr.aria-invalid]="errors.last ? 'true' : null" aria-describedby="c-last-err"
+            (input)="onNameInput('last', $event)" (blur)="onBlur('last')" />
+          <p class="err" id="c-last-err">{{ errors.last }}</p>
+        </div>
+      </div>
+      <div class="row2">
         <div class="field">
           <label for="c-phone">{{ 'CONTACT_PAGE.FORM.PHONE' | translate }} <span class="req" aria-hidden="true">*</span></label>
           <input type="tel" id="c-phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="(713) 555-0123" required [value]="form.phone"
@@ -93,8 +104,6 @@
             (input)="onPhoneInput($event)" (blur)="onBlur('phone')" />
           <p class="err" id="c-phone-err">{{ errors.phone }}</p>
         </div>
-      </div>
-      <div class="row2">
         <div class="field">
           <label for="c-email">{{ 'CONTACT_PAGE.FORM.EMAIL' | translate }} <span class="opt">{{ 'CONTACT_PAGE.FORM.OPTIONAL' | translate }}</span></label>
           <input type="email" id="c-email" name="email" autocomplete="email" placeholder="johndoe@gmail.com" [value]="form.email"
@@ -102,7 +111,8 @@
             (input)="onEmailInput($event)" (blur)="onBlur('email')" />
           <p class="err" id="c-email-err">{{ errors.email }}</p>
         </div>
-        <fieldset>
+      </div>
+      <fieldset>
           <legend>{{ 'CONTACT_PAGE.FORM.METHOD' | translate }} <span class="req" aria-hidden="true">*</span></legend>
           <div class="opts">
             <div class="opt-chip" *ngFor="let o of list('CONTACT_PAGE.FORM.METHODS')">
@@ -112,7 +122,6 @@
           </div>
           <p class="err" id="c-method-err" aria-live="polite">{{ errors.method }}</p>
         </fieldset>
-      </div>
       <fieldset>
         <legend>{{ 'CONTACT_PAGE.FORM.TYPE' | translate }} <span class="req" aria-hidden="true">*</span></legend>
         <div class="opts">
@@ -149,7 +158,8 @@
         <textarea id="c-msg" name="message" rows="4" [value]="form.message" (input)="form.message = $any($event.target).value"></textarea>
       </div>
       <p class="privacy"><svg class="icon-sm" aria-hidden="true"><use href="#i-shield" /></svg>{{ 'CONTACT_PAGE.FORM.PRIVACY' | translate }}</p>
-      <button class="hf-btn btn-primary btn-lg" type="submit">{{ 'CONTACT_PAGE.FORM.SUBMIT' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+      <p class="err" role="alert">{{ submitError }}</p>
+      <button class="hf-btn btn-primary btn-lg" type="submit" [disabled]="isSubmitting" [attr.aria-busy]="isSubmitting ? 'true' : null">{{ (isSubmitting ? 'CONTACT_PAGE.FORM.SENDING' : 'CONTACT_PAGE.FORM.SUBMIT') | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></button>
     </form>
   </div>
 </section>
@@ -162,34 +172,17 @@
       <p class="hf-lead">{{ 'CONTACT_PAGE.OFFICES.LEAD' | translate }}</p>
     </div>
     <div class="off-grid">
-      <figure class="map">
-        <svg viewBox="0 0 400 300" role="img" [attr.aria-label]="'HOME_PAGE.OFFICES.MAP_ARIA' | translate">
-          <rect width="400" height="300" fill="#F8EFD6" />
-          <path d="M0 210 C80 190 120 230 200 200 S330 160 400 180" stroke="#DCD3C4" stroke-width="10" fill="none" />
-          <ellipse cx="200" cy="150" rx="168" ry="122" fill="none" stroke="#D6CBB8" stroke-width="5" />
-          <ellipse cx="205" cy="140" rx="74" ry="62" fill="none" stroke="#D6CBB8" stroke-width="5" />
-          <path d="M40 150 H360 M205 20 V280 M70 270 L330 40" stroke="#E4DCCD" stroke-width="4" fill="none" />
-          <circle cx="210" cy="140" r="5" fill="#78716C" />
-          <text x="218" y="145" font-family="Figtree,Arial,sans-serif" font-size="11" fill="#44403C">{{ 'HOME_PAGE.OFFICES.DOWNTOWN' | translate }}</text>
-          <g font-family="Figtree,Arial,sans-serif" font-size="12" font-weight="700" fill="#44403C">
-            <g transform="translate(262 122)"><path d="M0 0c-7 0-11 5-11 10 0 8 11 18 11 18s11-10 11-18c0-5-4-10-11-10z" fill="#CA2B28" transform="translate(0 -28)" /><circle cy="-18" r="4" fill="#F6C945" /><text x="14" y="-12">Shotwell</text></g>
-            <g transform="translate(205 92)"><path d="M0 0c-7 0-11 5-11 10 0 8 11 18 11 18s11-10 11-18c0-5-4-10-11-10z" fill="#CA2B28" transform="translate(0 -28)" /><circle cy="-18" r="4" fill="#F6C945" /><text x="14" y="-12">Airline</text></g>
-            <g transform="translate(130 88)"><path d="M0 0c-7 0-11 5-11 10 0 8 11 18 11 18s11-10 11-18c0-5-4-10-11-10z" fill="#CA2B28" transform="translate(0 -28)" /><circle cy="-18" r="4" fill="#F6C945" /><text x="-14" y="-12" text-anchor="end">Antoine</text></g>
-            <g transform="translate(178 238)"><path d="M0 0c-7 0-11 5-11 10 0 8 11 18 11 18s11-10 11-18c0-5-4-10-11-10z" fill="#CA2B28" transform="translate(0 -28)" /><circle cy="-18" r="4" fill="#F6C945" /><text x="14" y="-12">Post Oak</text></g>
-            <g transform="translate(98 226)"><path d="M0 0c-7 0-11 5-11 10 0 8 11 18 11 18s11-10 11-18c0-5-4-10-11-10z" fill="#CA2B28" transform="translate(0 -28)" /><circle cy="-18" r="4" fill="#F6C945" /><text x="0" y="16" text-anchor="middle">Southwest Fwy</text></g>
-          </g>
-        </svg>
-        <figcaption>{{ 'HOME_PAGE.OFFICES.MAP_CAPTION' | translate }}</figcaption>
-      </figure>
+      <figure class="map"><app-office-map></app-office-map></figure>
 
       <article class="office" *ngFor="let item of list('CONTACT_PAGE.OFFICES.ITEMS'); let i = index">
-        <h3><a class="title-link" [routerLink]="route('ourLocations/:id', offices[i].id)">{{ item.NAME }}</a></h3>
-        <span class="alias">{{ item.ALIAS }}</span>
+        <h3 *ngIf="offices[i].hasPage !== false; else plainOfficeTitle"><a class="title-link" [routerLink]="route('ourLocations/:id', offices[i].id)">{{ item.NAME }}</a></h3>
+        <ng-template #plainOfficeTitle><h3>{{ item.NAME }}</h3></ng-template>
         <address><svg class="icon-sm" aria-hidden="true"><use href="#i-pin" /></svg><span><a [href]="offices[i].mapUrl" target="_blank" rel="noopener">{{ item.ADDRESS }}</a></span></address>
         <a class="ph" [href]="'tel:' + offices[i].tel">{{ offices[i].phone }}</a>
+        <a class="wa-line" href="https://wa.me/13464367283" target="_blank" rel="noopener"><svg class="icon-sm" aria-hidden="true"><use href="#i-wa" /></svg>WhatsApp: (346) 436-SAVE (7283)</a>
         <div class="acts">
           <a [href]="offices[i].directionsUrl" target="_blank" rel="noopener">{{ 'CONTACT_PAGE.OFFICES.DIRECTIONS' | translate }}</a>
-          <a [routerLink]="route('ourLocations/:id', offices[i].id)">{{ 'CONTACT_PAGE.OFFICES.VIEW' | translate }}</a>
+          <a *ngIf="offices[i].hasPage !== false" [routerLink]="route('ourLocations/:id', offices[i].id)">{{ 'CONTACT_PAGE.OFFICES.VIEW' | translate }}</a>
         </div>
       </article>
 
@@ -197,6 +190,7 @@
         <h3>{{ 'HOME_PAGE.OFFICES.ALL_TITLE' | translate }}</h3>
         <span>{{ 'HOME_PAGE.OFFICES.MAIN_LINE' | translate }} <a class="tel" href="tel:+17133577771">(713) 357-7771</a></span>
         <span>{{ 'HOME_PAGE.OFFICES.EMAIL' | translate }} <a href="mailto:save@astateinsurance.com">save&#64;astateinsurance.com</a></span>
+        <span>{{ 'HOME_PAGE.OFFICES.WHATSAPP' | translate }} <a class="wa" href="https://wa.me/13464367283" target="_blank" rel="noopener">(346) 436-SAVE (7283)</a></span>
         <span>{{ 'CONTACT_PAGE.HOURS.DEFAULT' | translate }}</span>
       </div>
     </div>

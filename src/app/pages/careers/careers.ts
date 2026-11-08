@@ -7,9 +7,10 @@ import { Language } from '../../services/language';
 import { buildRoute } from '../../components/header/header';
 import { Seg } from '../insurance-services/insurance-services';
 import { CAREERS_APPLICATION_KEY, CareersApplication } from '../thank-you/thank-you';
+import { SiteFormsService } from '../../services/site-forms.service';
 
 type Text = string | Seg[];
-type Field = 'name' | 'phone' | 'email' | 'langs' | 'area' | 'office' | 'file';
+type Field = 'first' | 'last' | 'phone' | 'email' | 'langs' | 'area' | 'office' | 'file';
 /** Option-chip groups: on error, focus goes to the first option (radio/checkbox name). */
 const CHOICE_INPUTS: Partial<Record<Field, string>> = { langs: 'lang', area: 'area', office: 'office' };
 
@@ -39,10 +40,13 @@ export class Careers implements AfterViewInit, OnDestroy {
   showSticky = false;
 
   // General application form
-  form = { name: '', phone: '', email: '', langs: [] as string[], area: '', office: 'any' };
+  form = { first: '', last: '', phone: '', email: '', langs: [] as string[], area: '', office: 'any' };
   file: File | null = null;
   dragOver = false;
   errors: Partial<Record<Field, string>> = {};
+  isSubmitting = false;
+  /** Shown above the button when the API call fails; the answers and the file stay in the form. */
+  submitError = '';
 
   private isTablet = true;
   private readonly isBrowser: boolean;
@@ -64,11 +68,12 @@ export class Careers implements AfterViewInit, OnDestroy {
     private router: Router,
     private cdr: ChangeDetectorRef,
     private host: ElementRef<HTMLElement>,
+    private siteForms: SiteFormsService,
     @Inject(PLATFORM_ID) platformId: object,
     @Inject(DOCUMENT) private document: Document,
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
-    this.form.langs = [this.languageService.getCurrentLanguage() === 'es' ? 'es' : 'en'];
+    this.form.langs =[this.languageService.getCurrentLanguage() === 'es' ? 'es' : 'en'];
     this.subs.add(
       this.translate.onLangChange.subscribe(() => {
         this.listCache.clear();
@@ -185,7 +190,7 @@ export class Careers implements AfterViewInit, OnDestroy {
 
   // ---------- Application form ----------
 
-  onInput(field: 'name' | 'email', event: Event) {
+  onInput(field: 'first' | 'last' | 'email', event: Event) {
     this.form[field] = (event.target as HTMLInputElement).value;
     if (this.errors[field]) this.validate([field]);
   }
@@ -201,7 +206,7 @@ export class Careers implements AfterViewInit, OnDestroy {
     if (this.errors.phone) this.validate(['phone']);
   }
 
-  onBlur(field: 'name' | 'phone' | 'email') {
+  onBlur(field: 'first' | 'last' | 'phone' | 'email') {
     if (this.form[field]) this.validate([field]);
   }
 
@@ -242,10 +247,11 @@ export class Careers implements AfterViewInit, OnDestroy {
     if (dropped) this.setFile(dropped);
   }
 
-  submit(event: Event) {
+  async submit(event: Event) {
     event.preventDefault();
+    if (this.isSubmitting) return;
     const bad = this.validate();
-    if (bad.length) {
+    if (bad.length || !this.file) {
       const choice = CHOICE_INPUTS[bad[0]];
       const target = choice ? `input[name="${choice}"]` : `#a-${bad[0]}`;
       const el = this.host.nativeElement.querySelector<HTMLElement>(target);
@@ -253,9 +259,26 @@ export class Careers implements AfterViewInit, OnDestroy {
       el?.focus();
       return;
     }
+
+    // Send to the API first; only a saved application moves on to the thank-you page.
+    this.isSubmitting = true;
+    this.submitError = '';
+    try {
+      // The API takes one full_name: first and last name joined.
+      const { first, last, ...rest } = this.form;
+      await this.siteForms.submitCareer({ ...rest, name: `${first.trim()} ${last.trim()}` }, this.file);
+    } catch {
+      // Nothing is logged: the request holds personal details and a resume.
+      this.submitError = this.translate.instant('CAREERS_PAGE.APPLY.ERR_SUBMIT');
+      return;
+    } finally {
+      this.isSubmitting = false;
+      this.cdr.detectChanges();
+    }
+
     // Hand the details to the thank-you page (personal greeting, reference, chips).
     const application: CareersApplication = {
-      first: this.form.name.trim().split(/\s+/)[0],
+      first: this.form.first.trim(),
       area: this.form.area,
       office: this.form.office,
       ref: 'AP-' + String(Date.now()).slice(-6),
@@ -290,7 +313,8 @@ export class Careers implements AfterViewInit, OnDestroy {
       this.errors[f] = msg;
       if (msg) bad.push(f);
     };
-    if (want('name')) set('name', this.form.name.trim().length < 2 ? t('ERR_NAME') : '');
+    if (want('first')) set('first', this.form.first.trim() ? '' : t('ERR_FIRST'));
+    if (want('last')) set('last', this.form.last.trim() ? '' : t('ERR_LAST'));
     if (want('phone')) {
       const d = this.digits(this.form.phone);
       set('phone', !d ? t('ERR_PHONE_EMPTY') : d.length !== 10 ? t('ERR_PHONE_INVALID') : '');

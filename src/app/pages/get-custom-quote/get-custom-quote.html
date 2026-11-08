@@ -18,7 +18,7 @@
 </svg>
 
 <!-- Renders translated text pieces (see CqSeg in get-custom-quote.ts). Kept on one line so no spaces creep in. -->
-<ng-template #segsTpl let-value><ng-container *ngFor="let s of value"><a *ngIf="s.h" [href]="s.h" [class.tel]="s.h.startsWith('tel:')" (click)="onSegLink(s.h, $event)">{{ s.t }}</a><a *ngIf="s.r" [routerLink]="route(s.r)">{{ s.t }}</a><span *ngIf="s.hl" class="hl">{{ s.t }}</span><b *ngIf="s.b">{{ s.t }}</b><span *ngIf="s.l" [attr.lang]="s.l">{{ s.t }}</span><ng-container *ngIf="!s.h && !s.r && !s.hl && !s.b && !s.l">{{ s.t }}</ng-container></ng-container></ng-template>
+<ng-template #segsTpl let-value><ng-container *ngFor="let s of value"><a *ngIf="s.h" [href]="s.h" [class.tel]="s.h.startsWith('tel:') || s.h.startsWith('https://wa.me/')" [attr.target]="s.h.startsWith('https://') ? '_blank' : null" [attr.rel]="s.h.startsWith('https://') ? 'noopener' : null" (click)="onSegLink(s.h, $event)">{{ s.t }}</a><a *ngIf="s.r" [routerLink]="route(s.r)">{{ s.t }}</a><span *ngIf="s.hl" class="hl">{{ s.t }}</span><b *ngIf="s.b">{{ s.t }}</b><span *ngIf="s.l" [attr.lang]="s.l">{{ s.t }}</span><ng-container *ngIf="!s.h && !s.r && !s.hl && !s.b && !s.l">{{ s.t }}</ng-container></ng-container></ng-template>
 
 <!-- Hero + 5-step form -->
 <section class="hero cq-hero has-sub" aria-labelledby="hero-title">
@@ -43,7 +43,7 @@
         <div class="cq-progress" aria-hidden="true"><span [style.width.%]="step * 20"></span></div>
         <ol class="cq-steps" [attr.aria-label]="'GET_CUSTOM_QUOTE.FORM.STEPS_ARIA' | translate">
           <li *ngFor="let n of stepNumbers; let i = index" [class.done]="n < step" [attr.aria-current]="n === step ? 'step' : null">
-            <span>{{ n }}</span><b>{{ list('GET_CUSTOM_QUOTE.FORM.STEP_TITLES')[i] }}</b>
+            <span><app-step-icon [name]="$any(['user', 'list', 'shield', 'phone', 'review'])[i]"></app-step-icon></span><b>{{ list('GET_CUSTOM_QUOTE.FORM.STEP_TITLES')[i] }}</b>
           </li>
         </ol>
 
@@ -54,31 +54,38 @@
             <div class="cq-step-h"><p class="cq-count">{{ 'GET_CUSTOM_QUOTE.FORM.STEP_OF' | translate: { n: 1 } }}</p><h3 id="cq-h1" tabindex="-1">{{ list('GET_CUSTOM_QUOTE.FORM.STEP_TITLES')[0] }}</h3></div>
             <div class="cq-row">
               <div class="field">
-                <label for="cq-name">{{ 'GET_CUSTOM_QUOTE.FORM.NAME' | translate }} <span class="req" aria-hidden="true">*</span></label>
-                <input type="text" id="cq-name" name="name" autocomplete="name" required [value]="form.name"
-                  [attr.aria-invalid]="errors.name ? 'true' : null" aria-describedby="cq-name-err" (input)="onText('name', $event)" />
-                <p class="err" id="cq-name-err" aria-live="polite">{{ errors.name }}</p>
+                <label for="cq-first">{{ 'GET_CUSTOM_QUOTE.FORM.FIRST' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="cq-first" name="first_name" autocomplete="given-name" required [value]="form.first"
+                  [attr.aria-invalid]="errors.first ? 'true' : null" aria-describedby="cq-first-err" (input)="onText('first', $event)" />
+                <p class="err" id="cq-first-err" aria-live="polite">{{ errors.first }}</p>
               </div>
+              <div class="field">
+                <label for="cq-last">{{ 'GET_CUSTOM_QUOTE.FORM.LAST' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="cq-last" name="last_name" autocomplete="family-name" required [value]="form.last"
+                  [attr.aria-invalid]="errors.last ? 'true' : null" aria-describedby="cq-last-err" (input)="onText('last', $event)" />
+                <p class="err" id="cq-last-err" aria-live="polite">{{ errors.last }}</p>
+              </div>
+            </div>
+            <div class="cq-row">
               <div class="field">
                 <label for="cq-phone">{{ 'GET_CUSTOM_QUOTE.FORM.PHONE' | translate }} <span class="req" aria-hidden="true">*</span></label>
                 <input type="tel" id="cq-phone" name="phone" inputmode="tel" autocomplete="tel-national" required [value]="form.phone"
                   [attr.aria-invalid]="errors.phone ? 'true' : null" aria-describedby="cq-phone-err" (input)="onPhoneInput($event)" />
                 <p class="err" id="cq-phone-err" aria-live="polite">{{ errors.phone }}</p>
               </div>
-            </div>
-            <div class="cq-row">
               <div class="field">
                 <label for="cq-email">{{ 'GET_CUSTOM_QUOTE.FORM.EMAIL' | translate }} <span class="opt">{{ 'GET_CUSTOM_QUOTE.FORM.OPTIONAL' | translate }}</span></label>
                 <input type="email" id="cq-email" name="email" autocomplete="email" [value]="form.email"
                   [attr.aria-invalid]="errors.email ? 'true' : null" aria-describedby="cq-email-err" (input)="onText('email', $event)" />
                 <p class="err" id="cq-email-err" aria-live="polite">{{ errors.email }}</p>
               </div>
-              <div class="field">
-                <label for="cq-zip">{{ 'GET_CUSTOM_QUOTE.FORM.ZIP' | translate }} <span class="req" aria-hidden="true">*</span></label>
-                <input type="text" id="cq-zip" name="zip" inputmode="numeric" autocomplete="postal-code" maxlength="5" required [value]="form.zip"
-                  [attr.aria-invalid]="errors.zip ? 'true' : null" aria-describedby="cq-zip-err" (input)="onZipInput($event)" />
-                <p class="err" id="cq-zip-err" aria-live="polite">{{ errors.zip }}</p>
-              </div>
+            </div>
+            <div class="field">
+              <label for="cq-address">{{ 'GET_CUSTOM_QUOTE.FORM.ADDRESS' | translate }} <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="cq-address" name="address" appAddressAutocomplete [acLang]="languageService.getCurrentLanguage()" autocomplete="street-address" maxlength="255" required [value]="form.address"
+                [placeholder]="'GET_CUSTOM_QUOTE.FORM.ADDRESS_PH' | translate"
+                [attr.aria-invalid]="errors.address ? 'true' : null" aria-describedby="cq-address-err" (input)="onText('address', $event)" />
+              <p class="err" id="cq-address-err" aria-live="polite">{{ errors.address }}</p>
             </div>
             <fieldset>
               <legend>{{ 'GET_CUSTOM_QUOTE.FORM.LANG' | translate }}</legend>
@@ -227,10 +234,10 @@
               <div class="cq-rev">
                 <div class="cq-rev-h"><h4>{{ list('GET_CUSTOM_QUOTE.FORM.R_TITLES')[0] }}</h4><button type="button" class="cq-edit" (click)="edit(1)">{{ 'GET_CUSTOM_QUOTE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('GET_CUSTOM_QUOTE.FORM.R_TITLES')[0] }}</span></button></div>
                 <dl>
-                  <div><dt>{{ 'GET_CUSTOM_QUOTE.FORM.R.NAME' | translate }}</dt><dd [class.none]="!form.name.trim()">{{ form.name.trim() || ('GET_CUSTOM_QUOTE.FORM.NOT_GIVEN' | translate) }}</dd></div>
+                  <div><dt>{{ 'GET_CUSTOM_QUOTE.FORM.R.NAME' | translate }}</dt><dd [class.none]="!fullName()">{{ fullName() || ('GET_CUSTOM_QUOTE.FORM.NOT_GIVEN' | translate) }}</dd></div>
                   <div><dt>{{ 'GET_CUSTOM_QUOTE.FORM.R.PHONE' | translate }}</dt><dd [class.none]="!form.phone">{{ form.phone || ('GET_CUSTOM_QUOTE.FORM.NOT_GIVEN' | translate) }}</dd></div>
                   <div><dt>{{ 'GET_CUSTOM_QUOTE.FORM.R.EMAIL' | translate }}</dt><dd [class.none]="!form.email.trim()">{{ form.email.trim() || ('GET_CUSTOM_QUOTE.FORM.NOT_GIVEN' | translate) }}</dd></div>
-                  <div><dt>{{ 'GET_CUSTOM_QUOTE.FORM.R.ZIP' | translate }}</dt><dd [class.none]="!form.zip">{{ form.zip || ('GET_CUSTOM_QUOTE.FORM.NOT_GIVEN' | translate) }}</dd></div>
+                  <div><dt>{{ 'GET_CUSTOM_QUOTE.FORM.R.ADDRESS' | translate }}</dt><dd [class.none]="!form.address.trim()">{{ form.address.trim() || ('GET_CUSTOM_QUOTE.FORM.NOT_GIVEN' | translate) }}</dd></div>
                   <div><dt>{{ 'GET_CUSTOM_QUOTE.FORM.R.LANG' | translate }}</dt><dd [class.none]="!form.lang">{{ label('FORM.LANGS', form.lang) || ('GET_CUSTOM_QUOTE.FORM.NOT_GIVEN' | translate) }}</dd></div>
                 </dl>
               </div>
@@ -348,10 +355,11 @@
 <section class="section q-final" id="final-cta" aria-labelledby="fin-h">
   <div class="hf-container ready-band">
     <h2 id="fin-h">{{ 'GET_CUSTOM_QUOTE.FINAL.TITLE' | translate }}</h2>
-    <p>{{ 'GET_CUSTOM_QUOTE.FINAL.TEXT' | translate }}</p>
+    <p><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('GET_CUSTOM_QUOTE.FINAL.TEXT') }"></ng-container></p>
     <div class="btn-row">
       <a class="hf-btn btn-primary btn-lg" href="tel:+17133577771"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'GET_CUSTOM_QUOTE.FINAL.CALL' | translate }}</a>
       <a class="hf-btn btn-outline btn-lg" [routerLink]="route('ourLocations')"><svg class="icon-sm" aria-hidden="true"><use href="#i-pin" /></svg>{{ 'GET_CUSTOM_QUOTE.FINAL.FIND' | translate }}</a>
+      <a class="hf-btn btn-outline btn-lg" href="https://wa.me/13464367283" target="_blank" rel="noopener"><svg class="icon-sm" aria-hidden="true"><use href="#i-wa" /></svg>{{ 'GET_CUSTOM_QUOTE.FINAL.WA' | translate }}</a>
     </div>
   </div>
 </section>

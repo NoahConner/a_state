@@ -1061,7 +1061,7 @@
   "OUR_LOCATION": {
     "HEADING": "Encuentra una Oficina de Seguros A-State Cerca de Ti en Houston, TX",
     "SESSION1": {
-      "TITLE": "Estamos en tu Vecindario — Cinco Oficinas en Houston",
+      "TITLE": "Estamos en tu Vecindario — Seis Oficinas en Houston",
       "DEC1": "Encontrar la cobertura adecuada no debería sentirse como una tarea. En A-State Insurance, creemos en el poder de una conversación cara a cara. Como agencia de seguros dedicada en Texas, no trabajamos para una gran compañía de seguros: trabajamos para usted.",
       "DEC2": "Ya sea que busque proteger su primera vivienda, asegurar una fianza comercial o encontrar un seguro de auto asequible para un conductor nuevo, nuestros corredores locales están aquí para simplificar el proceso. Nos enorgullece ser un centro para nuestra diversa comunidad, ofreciendo asesoría experta en inglés, español e hindi, para que se sienta seguro en cada decisión que tome.",
       "OFFICES_TITLE": "Nuestras Oficinas de Seguros en Houston",
@@ -1126,7 +1126,7 @@
           "b": "true"
         },
         {
-          "t": " en Google con más de 250 reseñas · Agencia con licencia en Texas · "
+          "t": " en Google con más de 300 reseñas · Agencia con licencia en Texas · "
         },
         {
           "t": "Español",
@@ -1135,7 +1135,8 @@
         {
           "t": " · English · Hindi"
         }
-      ]
+      ],
+      "CTA_WA": "Escríbanos por WhatsApp"
     },
     "HOURS": {
       "ARIA": "Horario de agentes",
@@ -1226,10 +1227,13 @@
       "NEXT": "Un agente de la oficina más cercana le llamará o le enviará un texto con sus opciones, por lo general en 5 horas hábiles.",
       "CALL": "Llamar al (713) 357-7771",
       "TEXT_US": "Envíenos un texto",
-      "NAME": "Nombre completo",
+      "WA": "Escríbanos por WhatsApp",
+      "FIRST": "Nombre",
+      "LAST": "Apellido",
       "PHONE": "Número de teléfono",
       "EMAIL": "Correo electrónico",
-      "ZIP": "Código postal",
+      "ADDRESS": "Dirección completa",
+      "ADDRESS_PH": "Calle, ciudad, código postal",
       "OPTIONAL": "(opcional)",
       "TYPE": "Tipo de seguro",
       "TYPES": [
@@ -1278,7 +1282,7 @@
         }
       ],
       "OFFICE": "Oficina preferida",
-      "NO_PREFERENCE": "Sin preferencia",
+      "NO_PREFERENCE": "Cualquiera",
       "TIME": "Mejor hora para contactarlo",
       "TIMES": [
         {
@@ -1297,12 +1301,13 @@
       "MESSAGE": "¿Algo que debamos saber?",
       "PRIVACY": "Por favor no envíe números de licencia, póliza o pago por este formulario.",
       "SUBMIT": "Cotizar gratis",
-      "ERR_NAME": "Escriba su nombre completo.",
+      "ERR_FIRST": "Escriba su nombre.",
+      "ERR_LAST": "Escriba su apellido.",
       "ERR_PHONE_EMPTY": "Escriba su número de teléfono.",
       "ERR_PHONE_INVALID": "Escriba un número de 10 dígitos, como (713) 555-0123.",
       "ERR_EMAIL": "Escriba un correo como nombre@ejemplo.com, o déjelo en blanco.",
-      "ERR_ZIP_EMPTY": "Escriba su código postal.",
-      "ERR_ZIP_INVALID": "Escriba un código postal de 5 dígitos.",
+      "ERR_ADDRESS_EMPTY": "Escriba su dirección completa.",
+      "ERR_ADDRESS_ZIP": "Agregue su código postal de 5 dígitos, como 123 Main St, Houston, TX 77020.",
       "ERR_TYPE": "Elija un tipo de seguro."
     },
     "WHY": {
@@ -1317,8 +1322,8 @@
           "TEXT": "Nuestros agentes hablan español, inglés e hindi, para que pueda hacer todas sus preguntas y entender cada respuesta."
         },
         {
-          "TITLE": "Oficinas locales en Houston.",
-          "TEXT": "Cinco oficinas de vecindario, abiertas de lunes a sábado, de 9 a.m. a 7 p.m. Venga sin cita."
+          "TITLE": "Oficinas locales en Texas.",
+          "TEXT": "Seis oficinas de vecindario, abiertas de lunes a sábado, de 9 a.m. a 7 p.m. Venga sin cita."
         },
         {
           "TITLE": "Sin spam ni presión de ventas.",
@@ -1335,7 +1340,7 @@
       "ITEMS": [
         [
           {
-            "t": "4.8 en Google con más de 250 reseñas en nuestras 5 oficinas"
+            "t": "4.8 en Google con más de 300 reseñas en nuestras 6 oficinas"
           }
         ],
         [
@@ -1383,7 +1388,7 @@
         },
         {
           "TITLE": "Salud",
-          "TEXT": "el código postal y la fecha de nacimiento de cada persona que se va a asegurar."
+          "TEXT": "su dirección y la fecha de nacimiento de cada persona que se va a asegurar."
         }
       ]
     },
@@ -1399,34 +1404,62 @@
         },
         {
           "t": " para hablar con un agente bilingüe, o visite cualquier oficina de lunes a sábado, de 9 a.m. a 7 p.m. No necesita cita."
+        },
+        {
+          "t": " También puede escribirnos por WhatsApp al "
+        },
+        {
+          "t": "(346) 436-SAVE (7283)",
+          "h": "https://wa.me/13464367283"
+        },
+        {
+          "t": "."
         }
       ],
       "CTA": "Encontrar la oficina más cercana",
       "ITEMS": [
         {
-          "NAME": "Denver Harbor",
+          "NAME": "Shotwell",
           "ADDRESS": "707 Shotwell St, Suite A, Houston, TX 77020",
           "PHONE": "(281) 749-1900"
         },
         {
-          "NAME": "Fondren Southwest",
+          "NAME": "Southwest Fwy",
           "ADDRESS": "11503 Southwest Fwy, Suite B, Houston, TX 77031",
           "PHONE": "(281) 506-4200"
         },
         {
-          "NAME": "Westbury",
+          "NAME": "Post Oak",
           "ADDRESS": "10547 S Post Oak Rd, Houston, TX 77035",
           "PHONE": "(281) 406-1900"
         },
         {
-          "NAME": "Greater Inwood",
+          "NAME": "Antoine",
           "ADDRESS": "5712 Antoine Dr, Houston, TX 77091",
           "PHONE": "(713) 263-9800"
         },
         {
-          "NAME": "Northside-Northline",
+          "NAME": "Airline",
           "ADDRESS": "5206 Airline Dr, Suite G, Houston, TX 77022",
           "PHONE": "(281) 504-7444"
+        },
+        {
+          "NAME": "Baytown",
+          "ADDRESS": "123 E Texas Ave, Baytown, TX 77520",
+          "PHONE": "(281) 837-5729"
+        }
+      ],
+      "WA_ALL": [
+        {
+          "t": "WhatsApp (todas las oficinas):",
+          "b": "true"
+        },
+        {
+          "t": " "
+        },
+        {
+          "t": "(346) 436-SAVE (7283)",
+          "h": "https://wa.me/13464367283"
         }
       ]
     },
@@ -1445,21 +1478,7 @@
           "Q": "¿Cuánto tarda una cotización?",
           "A": [
             {
-              "t": "El formulario en línea toma unos "
-            },
-            {
-              "t": "[3]",
-              "p": "true"
-            },
-            {
-              "t": " minutos. Después, un agente compara compañías y le contacta con sus opciones, por lo general en "
-            },
-            {
-              "t": "[X horas hábiles]",
-              "p": "true"
-            },
-            {
-              "t": "."
+              "t": "El formulario en línea toma unos 5 minutos. Después, un agente compara compañías y le contacta con sus opciones, por lo general en 5 horas hábiles."
             }
           ]
         },
@@ -1519,10 +1538,10 @@
           ]
         },
         {
-          "Q": "¿Solo aseguran a personas en Houston?",
+          "Q": "¿Solo aseguran a personas cerca de sus oficinas?",
           "A": [
             {
-              "t": "No. Nuestras oficinas están en Houston, pero aseguramos a clientes en todo Texas por teléfono, texto o correo electrónico."
+              "t": "No. Aseguramos a clientes en todo Texas por teléfono, texto o correo electrónico."
             }
           ]
         },
@@ -1540,7 +1559,8 @@
       "TITLE": "¿Listo para comparar? Obtenga su cotización de seguro gratis en Texas.",
       "TEXT": "Una sola solicitud, cotizaciones de más de 50 compañías y un agente con licencia que se las explica en su idioma.",
       "CTA": "Cotizar gratis",
-      "CALL": "Llamar al (713) 357-7771"
+      "CALL": "Llamar al (713) 357-7771",
+      "WA": "Escríbanos por WhatsApp"
     }
   },
   "GET_CUSTOM_QUOTE": {
@@ -1567,7 +1587,7 @@
           "b": "true"
         },
         {
-          "t": " en Google con más de 250 reseñas · Español · "
+          "t": " en Google con más de 300 reseñas · Español · "
         },
         {
           "t": "English",
@@ -1579,6 +1599,13 @@
         {
           "t": "(713) 357-7771",
           "h": "tel:+17133577771"
+        },
+        {
+          "t": " · WhatsApp "
+        },
+        {
+          "t": "(346) 436-SAVE (7283)",
+          "h": "https://wa.me/13464367283"
         }
       ]
     },
@@ -1625,10 +1652,12 @@
       "SUBMIT": "Enviar mi solicitud",
       "SENDING": "Enviando…",
       "OPTIONAL": "(opcional)",
-      "NAME": "Nombre y apellido",
+      "FIRST": "Nombre",
+      "LAST": "Apellido",
       "PHONE": "Número de teléfono",
       "EMAIL": "Correo electrónico",
-      "ZIP": "Código postal",
+      "ADDRESS": "Dirección completa",
+      "ADDRESS_PH": "Calle, ciudad, código postal",
       "LANG": "Idioma preferido",
       "LANGS": [
         {
@@ -1714,6 +1743,13 @@
           "h": "tel:+17133577771"
         },
         {
+          "t": " También puede escribirnos por WhatsApp al "
+        },
+        {
+          "t": "(346) 436-SAVE (7283)",
+          "h": "https://wa.me/13464367283"
+        },
+        {
           "t": "."
         }
       ],
@@ -1750,11 +1786,12 @@
       "OFFICE": "Oficina preferida",
       "NO_PREFERENCE": "Cualquiera",
       "OFFICES": [
-        "Denver Harbor",
-        "Fondren Southwest",
-        "Westbury",
-        "Greater Inwood",
-        "Northside-Northline"
+        "Shotwell",
+        "Southwest Fwy",
+        "Post Oak",
+        "Antoine",
+        "Airline",
+        "Baytown"
       ],
       "R_TITLES": [
         "Sus datos",
@@ -1766,7 +1803,7 @@
         "NAME": "Nombre",
         "PHONE": "Teléfono",
         "EMAIL": "Correo",
-        "ZIP": "Código postal",
+        "ADDRESS": "Dirección",
         "LANG": "Idioma",
         "COVERAGE": "Tipos de seguro",
         "OTHER": "Otro",
@@ -1794,12 +1831,13 @@
       ],
       "NEVER_SOLD": "Nunca vendemos su información.",
       "ERR": {
-        "NAME": "Escriba su nombre y apellido.",
+        "FIRST": "Escriba su nombre.",
+        "LAST": "Escriba su apellido.",
         "PHONE_EMPTY": "Escriba su número de teléfono.",
         "PHONE_INVALID": "Escriba un número de 10 dígitos, como (713) 555-0123.",
         "EMAIL": "Escriba un correo como nombre@ejemplo.com, o déjelo en blanco.",
-        "ZIP_EMPTY": "Escriba su código postal.",
-        "ZIP_INVALID": "Escriba un código postal de 5 dígitos.",
+        "ADDRESS_EMPTY": "Escriba su dirección completa.",
+        "ADDRESS_ZIP": "Agregue su código postal de 5 dígitos, como 123 Main St, Houston, TX 77020.",
         "COVERAGE": "Elija al menos una opción.",
         "OTHER": "Díganos qué necesita asegurar.",
         "UNSURE": "Cuéntenos un poco sobre su situación.",
@@ -1894,6 +1932,13 @@
           "h": "tel:+17133577771"
         },
         {
+          "t": " También puede escribirnos por WhatsApp al "
+        },
+        {
+          "t": "(346) 436-SAVE (7283)",
+          "h": "https://wa.me/13464367283"
+        },
+        {
           "t": "."
         }
       ]
@@ -1937,9 +1982,28 @@
     },
     "FINAL": {
       "TITLE": "¿Prefiere hablarlo con alguien?",
-      "TEXT": "Llame al (713) 357-7771 o visite cualquiera de nuestras 5 oficinas en Houston, de lunes a sábado, de 9 a.m. a 7 p.m. No necesita cita.",
+      "TEXT": [
+        {
+          "t": "Llame al "
+        },
+        {
+          "t": "(713) 357-7771",
+          "h": "tel:+17133577771"
+        },
+        {
+          "t": " o visite cualquiera de nuestras 6 oficinas en Texas, de lunes a sábado, de 9 a.m. a 7 p.m. No necesita cita. También puede escribirnos por WhatsApp al "
+        },
+        {
+          "t": "(346) 436-SAVE (7283)",
+          "h": "https://wa.me/13464367283"
+        },
+        {
+          "t": "."
+        }
+      ],
       "FIND": "Encontrar una oficina cerca de usted",
-      "CALL": "Llamar al (713) 357-7771"
+      "CALL": "Llamar al (713) 357-7771",
+      "WA": "Escríbanos por WhatsApp"
     }
   },
   "GET_AUTO_QUOTE": {
@@ -2091,7 +2155,7 @@
           "b": "true"
         },
         {
-          "t": " en Google con más de 250 reseñas · Español · "
+          "t": " en Google con más de 300 reseñas · Español · "
         },
         {
           "t": "English",
@@ -2103,6 +2167,14 @@
         {
           "t": "Llame al (713) 357-7771",
           "h": "tel:+17133577771"
+        },
+        {
+          "t": " · WhatsApp "
+        },
+        {
+          "t": "(346) 436-SAVE (7283)",
+          "h": "https://wa.me/13464367283",
+          "x": "true"
         }
       ]
     },
@@ -2142,10 +2214,12 @@
       "OPTIONAL": "(opcional)",
       "NOT_GIVEN": "No indicado",
       "NONE": "Nada más",
-      "NAME": "Nombre y apellido",
+      "FIRST": "Nombre",
+      "LAST": "Apellido",
       "PHONE": "Número de teléfono",
       "EMAIL": "Correo electrónico",
-      "ZIP": "Código postal",
+      "ADDRESS": "Dirección completa",
+      "ADDRESS_PH": "Calle, ciudad, código postal",
       "VEHICLE_N": "Vehículo {{n}}",
       "DRIVER_N": "Conductor {{n}}",
       "REMOVE": "Eliminar",
@@ -2162,6 +2236,13 @@
       "YEAR_OLD": "1989 o anterior",
       "MAKE": "Marca",
       "MODEL": "Modelo",
+      "MAKE_POPULAR": "Marcas populares",
+      "MAKE_OTHER": "Otra marca…",
+      "MAKE_OTHER_PH": "Escriba para buscar la marca",
+      "MODEL_FIRST": "Primero elija la marca",
+      "MODEL_LOADING": "Cargando modelos…",
+      "MODEL_OTHER": "Otro modelo…",
+      "MODEL_OTHER_PH": "Escriba el modelo",
       "VIN": "VIN",
       "VIN_OPT": "(opcional: hace su cotización más precisa)",
       "OWN_LEGEND": "El vehículo es",
@@ -2218,23 +2299,19 @@
           "L": "Otro"
         }
       ],
-      "LICENSE_LEGEND": "Licencia de conducir",
+      "LICENSE_LEGEND": "Tipo de identificación",
       "LICENSES": [
         {
-          "V": "texas",
-          "L": "De Texas"
+          "V": "license",
+          "L": "Licencia de conducir"
         },
         {
-          "V": "us",
-          "L": "De otro estado de EE. UU."
+          "V": "state_id",
+          "L": "Identificación de Texas/estatal"
         },
         {
-          "V": "foreign",
-          "L": "Extranjera o internacional"
-        },
-        {
-          "V": "none",
-          "L": "Todavía no tengo licencia"
+          "V": "intl",
+          "L": "Identificación Internacional/Matrícula"
         }
       ],
       "FIRST_AGE": "Edad cuando obtuvo su primera licencia",
@@ -2371,11 +2448,12 @@
       "OFFICE": "Oficina preferida",
       "NO_PREFERENCE": "Cualquiera",
       "OFFICES": [
-        "Denver Harbor",
-        "Fondren Southwest",
-        "Westbury",
-        "Greater Inwood",
-        "Northside-Northline"
+        "Shotwell",
+        "Southwest Fwy",
+        "Post Oak",
+        "Antoine",
+        "Airline",
+        "Baytown"
       ],
       "R_TITLES": [
         "Sus datos",
@@ -2388,7 +2466,7 @@
         "NAME": "Nombre",
         "PHONE": "Teléfono",
         "EMAIL": "Correo",
-        "ZIP": "Código postal",
+        "ADDRESS": "Dirección",
         "YMM": "Año, marca y modelo",
         "VIN": "VIN",
         "OWN": "El vehículo es",
@@ -2399,7 +2477,7 @@
         "D_NAME": "Nombre",
         "DOB": "Fecha de nacimiento",
         "MARITAL": "Estado civil",
-        "LICENSE": "Licencia de conducir",
+        "LICENSE": "Tipo de identificación",
         "FIRST_AGE": "Primera licencia",
         "FIRST_AGE_V": "A los {{age}} años",
         "COVERAGE": "Cobertura",
@@ -2429,19 +2507,21 @@
       ],
       "NEVER_SOLD": "Nunca vendemos su información.",
       "ERR": {
-        "NAME": "Escriba su nombre y apellido.",
+        "FIRST": "Escriba su nombre.",
+        "LAST": "Escriba su apellido.",
         "PHONE_EMPTY": "Escriba su número de teléfono.",
         "PHONE_INVALID": "Escriba un número de 10 dígitos, como (713) 555-0123.",
         "EMAIL": "Escriba un correo como nombre@ejemplo.com, o déjelo en blanco.",
-        "ZIP_EMPTY": "Escriba su código postal.",
-        "ZIP_INVALID": "Escriba un código postal de 5 dígitos.",
+        "ADDRESS_EMPTY": "Escriba su dirección completa.",
+        "ADDRESS_ZIP": "Agregue su código postal de 5 dígitos, como 123 Main St, Houston, TX 77020.",
         "YEAR": "Elija el año.",
         "MAKE": "Escriba la marca, como Toyota.",
         "MODEL": "Escriba el modelo, como Camry.",
         "VIN_LENGTH": "El VIN tiene 17 letras y números. Usted escribió {{n}}. O déjelo en blanco.",
         "VIN_CHARS": "El VIN nunca usa las letras I, O ni Q. Revíselo o déjelo en blanco.",
         "PZIP": "Escriba un código postal de 5 dígitos, o déjelo en blanco.",
-        "D_NAME": "Escriba el nombre y apellido del conductor.",
+        "D_FIRST": "Escriba el nombre del conductor.",
+        "D_LAST": "Escriba el apellido del conductor.",
         "DOB_EMPTY": "Escriba la fecha de nacimiento.",
         "DOB_AGE": "Revise la fecha de nacimiento. El conductor debe tener al menos 15 años.",
         "D_AGE": "Escriba una edad entre 14 y la edad actual del conductor, o déjelo en blanco.",
@@ -2582,7 +2662,7 @@
         },
         {
           "Q": "¿Puedo cotizar en persona en una de sus oficinas?",
-          "A": "Sí. Visite cualquiera de nuestras 5 oficinas en Houston, de lunes a sábado, de 9 a.m. a 7 p.m. No necesita cita. Traiga su licencia de conducir y los datos de su vehículo."
+          "A": "Sí. Visite cualquiera de nuestras 6 oficinas en Texas, de lunes a sábado, de 9 a.m. a 7 p.m. No necesita cita. Traiga su licencia de conducir y los datos de su vehículo."
         }
       ]
     },
@@ -2597,7 +2677,15 @@
           "h": "tel:+17133577771"
         },
         {
-          "t": " o visite cualquiera de nuestras 5 oficinas en Houston. Comparamos con usted cotizaciones de seguro de auto en Texas, en español, inglés o hindi."
+          "t": " o visite cualquiera de nuestras 6 oficinas en Texas. Comparamos con usted cotizaciones de seguro de auto en Texas, en español, inglés o hindi. También puede escribirnos por WhatsApp al "
+        },
+        {
+          "t": "(346) 436-SAVE (7283)",
+          "h": "https://wa.me/13464367283",
+          "x": "true"
+        },
+        {
+          "t": "."
         }
       ],
       "START": "Cotizar mi auto",
@@ -2872,11 +2960,11 @@
       "OFFICE": "Oficina preferida",
       "NO_PREFERENCE": "Cualquiera",
       "OFFICES": [
-        "Denver Harbor",
-        "Fondren Southwest",
-        "Westbury",
-        "Greater Inwood",
-        "Northside-Northline"
+        "Shotwell",
+        "Southwest Fwy",
+        "Post Oak",
+        "Antoine",
+        "Airline"
       ],
       "R_TITLES": [
         "Sus datos",
@@ -3087,7 +3175,7 @@
           "h": "tel:+17133577771"
         },
         {
-          "t": " o visite cualquiera de nuestras 5 oficinas en Houston. Le ayudamos a encontrar la fianza correcta en español, inglés o hindi."
+          "t": " o visite cualquiera de nuestras 6 oficinas en Houston. Le ayudamos a encontrar la fianza correcta en español, inglés o hindi."
         }
       ],
       "START": "Cotizar mi fianza",
@@ -3385,11 +3473,11 @@
       "OFFICE": "Oficina preferida",
       "NO_PREFERENCE": "Cualquiera",
       "OFFICES": [
-        "Denver Harbor",
-        "Fondren Southwest",
-        "Westbury",
-        "Greater Inwood",
-        "Northside-Northline"
+        "Shotwell",
+        "Southwest Fwy",
+        "Post Oak",
+        "Antoine",
+        "Airline"
       ],
       "R_TITLES": [
         "Quién necesita cobertura y cuándo",
@@ -3622,7 +3710,7 @@
           "h": "tel:+17133577771"
         },
         {
-          "t": " o visite cualquiera de nuestras 5 oficinas en Houston. Comparamos con usted planes de salud en español, inglés o hindi."
+          "t": " o visite cualquiera de nuestras 6 oficinas en Houston. Comparamos con usted planes de salud en español, inglés o hindi."
         }
       ],
       "START": "Cotizar mi seguro de salud",
@@ -3968,11 +4056,11 @@
       "OFFICE": "Oficina preferida",
       "NO_PREFERENCE": "Cualquiera",
       "OFFICES": [
-        "Denver Harbor",
-        "Fondren Southwest",
-        "Westbury",
-        "Greater Inwood",
-        "Northside-Northline"
+        "Shotwell",
+        "Southwest Fwy",
+        "Post Oak",
+        "Antoine",
+        "Airline"
       ],
       "FLAGS": {
         "rental": "Casa de renta: póliza para propietarios que rentan",
@@ -4192,7 +4280,7 @@
           "h": "tel:+17133577771"
         },
         {
-          "t": " o visite cualquiera de nuestras 5 oficinas en Houston. Comparamos con usted cotizaciones de seguro de casa en Texas, en español, inglés o hindi."
+          "t": " o visite cualquiera de nuestras 6 oficinas en Houston. Comparamos con usted cotizaciones de seguro de casa en Texas, en español, inglés o hindi."
         }
       ],
       "START": "Cotizar mi casa",
@@ -4615,11 +4703,11 @@
       "OFFICE": "Oficina preferida",
       "NO_PREFERENCE": "Cualquiera",
       "OFFICES": [
-        "Denver Harbor",
-        "Fondren Southwest",
-        "Westbury",
-        "Greater Inwood",
-        "Northside-Northline"
+        "Shotwell",
+        "Southwest Fwy",
+        "Post Oak",
+        "Antoine",
+        "Airline"
       ],
       "FLAGS_ARIA": "Notas para su agente",
       "FLAGS": {
@@ -4835,7 +4923,7 @@
           "h": "tel:+17133577771"
         },
         {
-          "t": " o visite cualquiera de nuestras 5 oficinas en Houston. Comparamos con usted cotizaciones de seguro para negocios en Texas, en español, inglés o hindi."
+          "t": " o visite cualquiera de nuestras 6 oficinas en Houston. Comparamos con usted cotizaciones de seguro para negocios en Texas, en español, inglés o hindi."
         }
       ],
       "START": "Cotizar mi negocio",
@@ -5187,11 +5275,11 @@
       "OFFICE": "Oficina preferida",
       "NO_PREFERENCE": "Cualquiera",
       "OFFICES": [
-        "Denver Harbor",
-        "Fondren Southwest",
-        "Westbury",
-        "Greater Inwood",
-        "Northside-Northline"
+        "Shotwell",
+        "Southwest Fwy",
+        "Post Oak",
+        "Antoine",
+        "Airline"
       ],
       "R_TITLES": [
         "Quién está cubierto",
@@ -5392,7 +5480,7 @@
           "h": "tel:+17133577771"
         },
         {
-          "t": " o visite cualquiera de nuestras 5 oficinas en Houston. Comparamos con usted opciones de seguro de vida en español, inglés o hindi."
+          "t": " o visite cualquiera de nuestras 6 oficinas en Houston. Comparamos con usted opciones de seguro de vida en español, inglés o hindi."
         }
       ],
       "START": "Cotizar mi seguro de vida",
@@ -65718,7 +65806,7 @@
   },
   "SITE_NAV": {
     "SKIP": "Saltar al contenido principal",
-    "TOPBAR": "Lun–Sáb, 9 AM–7 PM · 5 oficinas en Houston · Servimos a todo Texas",
+    "TOPBAR": "Lun–Sáb, 9 a.m.–7 p.m. · 6 oficinas en Texas · Servimos a todo Texas",
     "HOME_ARIA": "Inicio de A-State Insurance",
     "MAIN_ARIA": "Principal",
     "MOBILE_ARIA": "Móvil",
@@ -65739,8 +65827,8 @@
     "ACROSS_TEXAS": "En todo Texas",
     "PROMO_TITLE": "¿No sabe qué necesita?",
     "PROMO_TEXT": "Cuéntele su situación a un agente con licencia. Le explicamos sus opciones en palabras sencillas.",
-    "LOC_PROMO_TITLE": "¿Fuera de Houston?",
-    "LOC_PROMO_TEXT": "Aseguramos a conductores, familias y negocios en todo Texas por teléfono y en línea.",
+    "LOC_PROMO_TITLE": "¿No puede visitar una oficina?",
+    "LOC_PROMO_TEXT": "Atendemos a conductores, familias y negocios en todo Texas por teléfono y en línea.",
     "LOC_PROMO_LINK": "Seguros en todo Texas",
     "GROUPS": {
       "AUTO": "Seguros de auto",
@@ -65830,14 +65918,14 @@
       "TITLE_1": "Su",
       "TITLE_HL": "agencia de seguros independiente",
       "TITLE_2": "en Texas",
-      "LEAD": "Comparamos más de 50 compañías para auto, casa, negocio, vida, salud y fianzas. Con 5 oficinas en Houston, atendemos a todo Texas en español e inglés.",
+      "LEAD": "Comparamos más de 50 compañías para auto, casa, negocio, vida, salud y fianzas. Con 6 oficinas, atendemos a todo Texas en español e inglés.",
       "CHECK_FREE": "Cotizaciones gratis",
       "CHECK_NO_OBLIGATION": "Sin compromiso",
       "PHOTO_ALT": "Una agente de A-State explicando opciones de seguro a una pareja en la oficina"
     },
     "FORM": {
       "LEGEND": "¿Qué desea asegurar?",
-      "NAME": "Nombre completo",
+      "NAME": "Nombre",
       "PHONE": "Número de teléfono",
       "SUBMIT_HERO": "Cotizar gratis",
       "SUBMIT_FINAL": "Cotizar gratis",
@@ -65858,7 +65946,10 @@
         "OTHER": "Otro",
         "HOMEOWNERS": "Casa",
         "COMMERCIAL": "Negocio"
-      }
+      },
+      "NAME_PH": "Nombre y apellido",
+      "WA_PREF": "¿Prefiere WhatsApp? Escríbanos al",
+      "OR_WA": "o escríbanos por WhatsApp al"
     },
     "TRUST": {
       "ARIA": "Por qué confían en A-State",
@@ -65866,7 +65957,7 @@
         "Agencia independiente: comparamos más de 50 compañías",
         "Con licencia del Departamento de Seguros de Texas",
         "Agentes que hablan español, inglés e hindi",
-        "Promedio de 4.8 en 256 reseñas de Google"
+        "Promedio de 4.8 en más de 300 reseñas de Google"
       ]
     },
     "PRODUCTS": {
@@ -65959,7 +66050,7 @@
         },
         {
           "TITLE": "Agentes locales que hablan su idioma",
-          "TEXT": "Hable con un agente con licencia en español, inglés o hindi, por teléfono o en una de nuestras cinco oficinas en Houston."
+          "TEXT": "Hable con un agente con licencia en español, inglés o hindi, por teléfono o en una de nuestras seis oficinas en Texas."
         },
         {
           "TITLE": "Cobertura hecha a su medida",
@@ -66028,12 +66119,13 @@
         "Año, marca y modelo del vehículo, o el VIN",
         "Su póliza actual, si tiene una",
         "Dirección de la propiedad para seguro de casa o de inquilino"
-      ]
+      ],
+      "WHATSAPP": "WhatsApp"
     },
     "REVIEWS": {
       "TITLE": "Lo que dicen nuestros clientes",
-      "OUT_OF": "de 5 en 256 reseñas de Google",
-      "ACROSS": "de nuestras oficinas en Houston",
+      "OUT_OF": "de 5 en más de 300 reseñas de Google",
+      "ACROSS": "de nuestras oficinas en Texas",
       "LIST_ARIA": "Reseñas de clientes",
       "RATED": "Calificación: 5 de 5.",
       "SOURCE": "Reseña de Google",
@@ -66044,24 +66136,23 @@
     },
     "OFFICES": {
       "TITLE_1": "Visite una oficina de",
-      "TITLE_2": "Insurance en Houston",
-      "LEAD": "Venga sin cita o llame a cualquiera de nuestras cinco oficinas en Houston, abiertas de lunes a sábado, de 9 a.m. a 7 p.m. ¿No está en Houston? Atendemos a conductores, familias y negocios en todo Texas por teléfono y en línea.",
-      "MAP_ARIA": "Mapa esquemático de Houston con las cinco oficinas de A-State",
-      "MAP_CAPTION": "Esquemático, no está a escala",
-      "DOWNTOWN": "Centro",
+      "TITLE_2": "Insurance en Texas",
+      "LEAD": "Venga sin cita o llame a cualquiera de nuestras seis oficinas en Texas, abiertas de lunes a sábado, de 9 a.m. a 7 p.m. ¿No puede visitar una oficina? Atendemos a conductores, familias y negocios en todo Texas por teléfono y en línea.",
+      "MAP_ARIA": "Mapa con las oficinas de A-State Insurance en Texas",
       "DIRECTIONS": "Cómo llegar",
       "DETAILS": "Detalles de la oficina",
       "ALL_TITLE": "Todas las oficinas",
       "MAIN_LINE": "Línea principal:",
       "EMAIL": "Correo:",
       "CITIES_AUTO": "Seguros de auto en todo Texas",
-      "CITIES_HOME": "Seguros de hogar en todo Texas"
+      "CITIES_HOME": "Seguros de hogar en todo Texas",
+      "WHATSAPP": "WhatsApp:"
     },
     "ABOUT": {
       "SECTION_ARIA": "Sobre nosotros y preguntas frecuentes",
       "TITLE_1": "Sobre",
       "TITLE_2": "Insurance",
-      "TEXT": "A-State Insurance es una agencia de seguros independiente con sede en Houston, Texas, fundada en 2018. Nuestros agentes con licencia comparan más de 50 compañías de seguros para encontrar seguros de auto, casa, negocio, vida y salud, y fianzas, para personas, familias y negocios en todo Texas. Atendemos en español, inglés e hindi desde cinco oficinas en Houston, y nos enorgullece servir a las comunidades hispanas y latinas de Texas y a toda familia que llama hogar a Texas.",
+      "TEXT": "A-State Insurance es una agencia de seguros independiente con sede en Texas, fundada en 2018. Nuestros agentes con licencia comparan más de 50 compañías de seguros para encontrar seguros de auto, casa, negocio, vida y salud, y fianzas, para personas, familias y negocios en todo Texas. Atendemos en español, inglés e hindi desde seis oficinas en Texas, y nos enorgullece servir a las comunidades hispanas y latinas de Texas y a toda familia que llama hogar a Texas.",
       "LINK": "Conozca a nuestro equipo"
     },
     "FAQ": {
@@ -66089,15 +66180,15 @@
         },
         {
           "Q": "¿Tienen agentes que hablan español?",
-          "A": "Sí. Nuestros agentes hablan español e inglés, y algunos también hablan hindi. Puede llamar, enviar un mensaje de texto o visitar cualquiera de nuestras oficinas en Houston y recibir atención en su idioma."
+          "A": "Sí. Nuestros agentes hablan español e inglés, y algunos también hablan hindi. Puede llamar, enviar un mensaje de texto o visitar cualquiera de nuestras oficinas en Texas y recibir atención en su idioma."
         },
         {
           "Q": "¿Qué necesito para obtener una cotización?",
           "A": "Para auto: licencia de conducir, datos del vehículo o el VIN y su póliza actual, si tiene una. Para casa: la dirección de la propiedad y datos básicos de la vivienda. Un agente le pedirá lo demás durante la llamada."
         },
         {
-          "Q": "¿Solo aseguran a personas en Houston?",
-          "A": "No. Nuestras oficinas están en Houston, pero aseguramos a personas y negocios en todo Texas por teléfono y en línea."
+          "Q": "¿Solo aseguran a personas cerca de sus oficinas?",
+          "A": "No. Aseguramos a personas y negocios en todo Texas por teléfono y en línea."
         }
       ]
     },
@@ -66135,7 +66226,7 @@
     },
     "FORM": {
       "LEGEND": "¿Qué le gustaría asegurar?",
-      "NAME": "Nombre completo",
+      "NAME": "Nombre",
       "PHONE": "Número de teléfono",
       "SUBMIT_HERO": "Cotizar gratis",
       "SUBMIT_FINAL": "Cotizar gratis",
@@ -66181,7 +66272,7 @@
           "r": "home"
         },
         {
-          "t": " es una agencia de seguros independiente que atiende a todo Texas desde 5 oficinas en Houston. Como no dependemos de una sola compañía, nuestros agentes con licencia en Texas comparan cotizaciones de más de 50 compañías para seguros de auto, casa, negocio, vida y salud, y fianzas, y le explican las diferencias en español, inglés o hindi. Desde 2018 servimos a familias, conductores y dueños de negocio de todos los orígenes, con un enfoque en las comunidades hispanas y latinas."
+          "t": " es una agencia de seguros independiente que atiende a todo Texas desde 6 oficinas. Como no dependemos de una sola compañía, nuestros agentes con licencia en Texas comparan cotizaciones de más de 50 compañías para seguros de auto, casa, negocio, vida y salud, y fianzas, y le explican las diferencias en español, inglés o hindi. Desde 2018 servimos a familias, conductores y dueños de negocio de todos los orígenes, con un enfoque en las comunidades hispanas y latinas."
         }
       ]
     },
@@ -66549,7 +66640,7 @@
         },
         {
           "TITLE": "Sirviendo a Texas desde 2018",
-          "TEXT": "8 años ayudando a familias y negocios de Houston."
+          "TEXT": "8 años ayudando a familias y negocios de Texas."
         },
         {
           "TITLE": "Planes de cobertura a su medida",
@@ -66557,7 +66648,7 @@
         },
         {
           "TITLE": "En línea y en persona",
-          "TEXT": "Cotice en línea o visite una de nuestras 5 oficinas en Houston."
+          "TEXT": "Cotice en línea o visite una de nuestras 6 oficinas en Texas."
         },
         {
           "TITLE": "Agentes multilingües",
@@ -66621,7 +66712,7 @@
         },
         {
           "Q": "¿Dónde están sus oficinas?",
-          "A": "Tenemos 5 oficinas en Houston: Shotwell, Southwest Fwy, Post Oak, Antoine y Airline."
+          "A": "Tenemos 6 oficinas en Texas: Shotwell, Southwest Fwy, Post Oak, Antoine, Airline y Baytown."
         },
         {
           "Q": "¿Qué tan rápido puedo obtener una cotización?",
@@ -66631,9 +66722,9 @@
     },
     "FINAL": {
       "TITLE": "Encuentre hoy la cobertura de seguro adecuada en Texas",
-      "TEXT": "Llámenos, envíenos un texto o un correo, llene el formulario o visite cualquiera de nuestras oficinas en Houston. Un agente con licencia comparará sus opciones de auto, casa, negocio, vida, salud o fianzas.",
+      "TEXT": "Llámenos, envíenos un texto o un correo, llene el formulario o visite cualquiera de nuestras oficinas en Texas. Un agente con licencia comparará sus opciones de auto, casa, negocio, vida, salud o fianzas.",
       "TEXT_US": "Envíenos un texto",
-      "OFFICES": "Oficinas en Houston"
+      "OFFICES": "Nuestras oficinas"
     },
     "LANG_BAND": {
       "LANG": "en",
@@ -66659,7 +66750,7 @@
           "hl": "true"
         }
       ],
-      "LEAD": "A-State Insurance es una agencia de seguros independiente en Houston. Nuestros agentes con licencia comparan coberturas de más de 50 compañías y le explican sus opciones en español, inglés o hindi.",
+      "LEAD": "A-State Insurance es una agencia de seguros independiente en Texas. Nuestros agentes con licencia comparan coberturas de más de 50 compañías y le explican sus opciones en español, inglés o hindi.",
       "CHECKS": [
         {
           "t": "Agentes con licencia en Texas"
@@ -66677,7 +66768,8 @@
       ],
       "CTA_QUOTE": "Cotizar gratis",
       "CTA_CALL": "Llame al (713) 357-7771",
-      "PHOTO_ALT": "El equipo de A-State con polos rojos de A-State en la oficina"
+      "PHOTO_ALT": "El equipo de A-State con polos rojos de A-State en la oficina",
+      "CTA_WA": "WhatsApp (346) 436-SAVE (7283)"
     },
     "OTP": {
       "LABEL": "En esta página",
@@ -66731,8 +66823,8 @@
         },
         {
           "LABEL": "Oficinas",
-          "VALUE": "5",
-          "SMALL": "en Houston"
+          "VALUE": "6",
+          "SMALL": "en Texas"
         },
         {
           "LABEL": "Compañías",
@@ -66747,7 +66839,7 @@
         {
           "LABEL": "Calificación en Google",
           "VALUE": "4.8 ★",
-          "SMALL": "en 256 reseñas"
+          "SMALL": "en más de 300 reseñas"
         },
         {
           "LABEL": "Agentes con licencia",
@@ -66821,7 +66913,7 @@
           "Q": "¿Dónde están sus oficinas?",
           "A": [
             {
-              "t": "Tenemos 5 oficinas en Houston: "
+              "t": "Tenemos 6 oficinas en Texas: "
             },
             {
               "t": "Shotwell",
@@ -66853,7 +66945,7 @@
               "id": "5712-antoine-dr-houston-tx-77091"
             },
             {
-              "t": " y "
+              "t": ", "
             },
             {
               "t": "Airline",
@@ -66861,7 +66953,7 @@
               "id": "5206-airline-dr-g-houston-tx-77022"
             },
             {
-              "t": ". Atendemos a clientes en todo Texas por teléfono y en línea."
+              "t": " y Baytown. Atendemos a clientes en todo Texas por teléfono y en línea."
             }
           ]
         },
@@ -66882,11 +66974,12 @@
     "FINAL": {
       "TITLE": "Cobertura confiable. Asesoría experta. Tranquilidad.",
       "TEXT_1": "Seguros que se ajustan a su vida, con agentes que se preocupan por usted. Su tranquilidad empieza aquí.",
-      "TEXT_2": "Nuestros agentes comparan varias compañías para encontrar la cobertura que le conviene. Llámenos, envíenos un correo o un texto, llene el formulario o visite cualquiera de nuestras oficinas en Houston."
+      "TEXT_2": "Nuestros agentes comparan varias compañías para encontrar la cobertura que le conviene. Llámenos, envíenos un correo o un texto, llene el formulario o visite cualquiera de nuestras oficinas en Texas.",
+      "OFFICES": "Nuestras oficinas"
     },
     "FORM": {
       "LEGEND": "¿Qué le gustaría asegurar?",
-      "NAME": "Nombre completo",
+      "NAME": "Nombre",
       "PHONE": "Número de teléfono",
       "SUBMIT_HERO": "Cotizar gratis",
       "SUBMIT_FINAL": "Cotizar gratis",
@@ -66989,7 +67082,7 @@
                   "r": "home"
                 },
                 {
-                  "t": ", LLC (\"A-State\", \"nosotros\"), una agencia de seguros independiente con sede en Houston, Texas, recopila, usa, comparte y protege la información personal. Se aplica a nuestro sitio web astateinsurance.com, nuestras oficinas y nuestras comunicaciones por teléfono, texto y correo electrónico."
+                  "t": ", LLC (\"A-State\", \"nosotros\"), una agencia de seguros independiente con sede en Texas, recopila, usa, comparte y protege la información personal. Se aplica a nuestro sitio web astateinsurance.com, nuestras oficinas y nuestras comunicaciones por teléfono, texto y correo electrónico."
                 }
               ]
             }
@@ -67426,6 +67519,19 @@
                   {
                     "t": "(713) 357-7771",
                     "h": "tel:+17133577771"
+                  }
+                ],
+                [
+                  {
+                    "t": "WhatsApp:",
+                    "b": true
+                  },
+                  {
+                    "t": " "
+                  },
+                  {
+                    "t": "(346) 436-SAVE (7283)",
+                    "h": "https://wa.me/13464367283"
                   }
                 ],
                 [
@@ -67910,6 +68016,19 @@
                 ],
                 [
                   {
+                    "t": "WhatsApp:",
+                    "b": true
+                  },
+                  {
+                    "t": " "
+                  },
+                  {
+                    "t": "(346) 436-SAVE (7283)",
+                    "h": "https://wa.me/13464367283"
+                  }
+                ],
+                [
+                  {
                     "t": "Correo:",
                     "b": true
                   },
@@ -67955,7 +68074,8 @@
       ],
       "LEAD": "Llámenos, envíenos un texto o un correo, o visítenos. Abierto de lunes a sábado, de 9 a.m. a 7 p.m., hora del centro. Respondemos la mayoría de los mensajes en 1 hora hábil, en español, inglés o hindi.",
       "CTA_CALL": "Llamar al (713) 357-7771",
-      "CTA_QUOTE": "Cotizar gratis"
+      "CTA_QUOTE": "Cotizar gratis",
+      "CTA_WA": "Escríbanos por WhatsApp"
     },
     "HOURS": {
       "ARIA": "Horario de oficina",
@@ -67995,13 +68115,18 @@
           "TEXT": "respuestas rápidas por SMS"
         },
         {
+          "LABEL": "WhatsApp",
+          "VALUE": "(346) 436-SAVE (7283)",
+          "TEXT": "escríbanos cuando quiera"
+        },
+        {
           "LABEL": "Correo",
           "VALUE": "save@astateinsurance.com",
           "TEXT": "respuesta en 1 hora hábil"
         },
         {
           "LABEL": "Visitar",
-          "VALUE": "5 oficinas en Houston",
+          "VALUE": "6 oficinas en Texas",
           "TEXT": "sin cita, Lun–Sáb, 9 a.m.–7 p.m. · cerrado el domingo"
         }
       ],
@@ -68012,6 +68137,13 @@
         {
           "t": "(713) 357-7771",
           "h": "tel:+17133577771"
+        },
+        {
+          "t": ". You can also WhatsApp us at "
+        },
+        {
+          "t": "(346) 436-SAVE (7283)",
+          "h": "https://wa.me/13464367283"
         },
         {
           "t": "."
@@ -68111,40 +68243,51 @@
       "ERR_EMAIL_NEEDED": "Agregue un correo para que podamos responderle por correo.",
       "ERR_METHOD": "Elija cómo prefiere que lo contactemos.",
       "ERR_TYPE": "Elija un tipo de seguro.",
-      "ERR_LANG": "Elija su idioma preferido."
+      "ERR_LANG": "Elija su idioma preferido.",
+      "SENDING": "Enviando...",
+      "ERR_SUBMIT": "No pudimos enviar su mensaje. Sus respuestas están guardadas aquí. Inténtelo de nuevo o llame al (713) 357-7771.",
+      "FIRST": "Nombre",
+      "LAST": "Apellido",
+      "ERR_FIRST": "Escriba su nombre.",
+      "ERR_LAST": "Escriba su apellido."
     },
     "OFFICES": {
       "TITLE": "Encuentre la oficina de A-State Insurance más cercana",
-      "LEAD": "Todas las oficinas abren de lunes a sábado, de 9:00 a.m. a 7:00 p.m., y cierran el domingo.",
+      "LEAD": "La mayoría de las oficinas abren de lunes a sábado, de 9:00 a.m. a 7:00 p.m. Baytown abre de lunes a viernes, de 9:00 a.m. a 6:00 p.m., y atiende por teléfono los sábados. Todas cierran el domingo.",
       "DIRECTIONS": "Cómo Llegar",
       "VIEW": "Ver Detalles de la Oficina",
       "ADDRESS_LABEL": "Dirección:",
       "PHONE_LABEL": "Teléfono:",
       "ITEMS": [
         {
-          "NAME": "Seguros A-State (Denver Harbor)",
+          "NAME": "Seguros A-State (Shotwell)",
           "ALIAS": "Oficina Shotwell",
           "ADDRESS": "707 Shotwell St, Suite A, Houston, TX 77020"
         },
         {
-          "NAME": "Seguros A-State (Fondren Southwest)",
+          "NAME": "Seguros A-State (Southwest Fwy)",
           "ALIAS": "Oficina Southwest Fwy",
           "ADDRESS": "11503 Southwest Fwy B, Houston, TX 77031"
         },
         {
-          "NAME": "Seguros A-State (Westbury)",
+          "NAME": "Seguros A-State (Post Oak)",
           "ALIAS": "Oficina Post Oak",
           "ADDRESS": "10547 S Post Oak Rd, Houston, TX 77035"
         },
         {
-          "NAME": "Seguros A-State (Greater Inwood)",
+          "NAME": "Seguros A-State (Antoine)",
           "ALIAS": "Oficina Antoine",
           "ADDRESS": "5712 Antoine Dr, Houston, TX 77091"
         },
         {
-          "NAME": "Seguros A-State (Northside-Northline)",
+          "NAME": "Seguros A-State (Airline)",
           "ALIAS": "Oficina Airline",
           "ADDRESS": "5206 Airline Dr G, Houston, TX 77022"
+        },
+        {
+          "NAME": "Seguros Baytown",
+          "ALIAS": "Oficina Baytown",
+          "ADDRESS": "123 E Texas Ave, Baytown, TX 77520"
         }
       ]
     },
@@ -68185,11 +68328,11 @@
         },
         {
           "Q": "¿Puedo ir sin cita?",
-          "A": "Sí. Puede visitar sin cita cualquiera de nuestras 5 oficinas en Houston, de lunes a sábado, de 9 a.m. a 7 p.m."
+          "A": "Sí. Puede visitar sin cita cualquiera de nuestras 6 oficinas en Texas, de lunes a sábado, de 9 a.m. a 7 p.m."
         },
         {
           "Q": "¿Atienden mi ciudad o código postal?",
-          "A": "Nuestras oficinas están en Houston, y nuestros agentes con licencia atienden a clientes en cualquier parte de Texas por teléfono, texto y correo, incluidos Dallas, San Antonio, Austin, Fort Worth, El Paso y Corpus Christi."
+          "A": "Sí. Nuestros agentes con licencia atienden a clientes en cualquier parte de Texas por teléfono, texto y correo, incluidos Dallas, San Antonio, Austin, Fort Worth, El Paso y Corpus Christi."
         }
       ]
     },
@@ -68208,7 +68351,14 @@
           "h": "tel:+17133577771"
         },
         {
-          "t": ", o cotice gratis en línea."
+          "t": ", o cotice gratis en línea. También puede escribirnos por WhatsApp al "
+        },
+        {
+          "t": "(346) 436-SAVE (7283)",
+          "h": "https://wa.me/13464367283"
+        },
+        {
+          "t": "."
         }
       ],
       "SMALL": "Sin compromiso. Sin presión. Solo respuestas.",
@@ -68224,11 +68374,11 @@
     },
     "HERO": {
       "TITLE": "Únase a la familia de A-State Insurance",
-      "LEAD": "Somos una agencia de seguros independiente con 5 oficinas en Houston que ayuda a los texanos en español, inglés e hindi. Si le gusta ayudar a la gente, le ayudamos a construir una carrera en seguros, aunque todavía no tenga licencia.",
+      "LEAD": "Somos una agencia de seguros independiente con 6 oficinas en Texas que ayuda a los texanos en español, inglés e hindi. Si le gusta ayudar a la gente, le ayudamos a construir una carrera en seguros, aunque todavía no tenga licencia.",
       "CHECKS": [
         "Licencia pagada",
         "Pago bilingüe",
-        "5 oficinas en Houston"
+        "6 oficinas en Texas"
       ],
       "CTA_APPLY": "Postular ahora",
       "CTA_OPENINGS": "Ver puestos abiertos",
@@ -68315,7 +68465,7 @@
       "ITEMS": [
         {
           "TITLE": "Raíces en Texas, corazón local",
-          "TEXT": "Desde nuestras 5 oficinas en Houston atendemos a clientes en todo Texas. Usted ayudará a proteger la comunidad donde vive."
+          "TEXT": "Desde nuestras 6 oficinas atendemos a clientes en todo Texas. Usted ayudará a proteger la comunidad donde vive."
         },
         {
           "TITLE": "Inclusivos por naturaleza",
@@ -68385,19 +68535,19 @@
       "TITLE": "Cómo contratamos",
       "STEPS": [
         {
-          "TITLE": "Postule:",
+          "TITLE": "Postule",
           "TEXT": "en línea en 2 minutos"
         },
         {
-          "TITLE": "Llamada:",
+          "TITLE": "Llamada",
           "TEXT": "una conversación de 15 minutos con nuestro equipo, dentro de 5 días hábiles"
         },
         {
-          "TITLE": "Entrevista:",
-          "TEXT": "en persona en una de nuestras oficinas en Houston"
+          "TITLE": "Entrevista",
+          "TEXT": "en persona en una de nuestras oficinas en Texas"
         },
         {
-          "TITLE": "Oferta e incorporación:",
+          "TITLE": "Oferta e incorporación",
           "TEXT": "el apoyo para su licencia empieza la primera semana"
         }
       ]
@@ -68427,10 +68577,10 @@
           "Q": "¿Dónde trabajaría?",
           "A": [
             {
-              "t": "En una de nuestras 5 oficinas en Houston: "
+              "t": "En una de nuestras 6 oficinas en Texas: "
             },
             {
-              "t": "Denver Harbor",
+              "t": "Shotwell",
               "r": "ourLocations/:id",
               "id": "707-shotwell-st-a-houston-tx-77020"
             },
@@ -68438,7 +68588,7 @@
               "t": ", "
             },
             {
-              "t": "Fondren Southwest",
+              "t": "Southwest Fwy",
               "r": "ourLocations/:id",
               "id": "11503-southwest-fwy-b-houston-tx-77031"
             },
@@ -68446,7 +68596,7 @@
               "t": ", "
             },
             {
-              "t": "Westbury",
+              "t": "Post Oak",
               "r": "ourLocations/:id",
               "id": "10547-s-post-oak-rd-houston-tx-77035"
             },
@@ -68454,7 +68604,7 @@
               "t": ", "
             },
             {
-              "t": "Greater Inwood",
+              "t": "Antoine",
               "r": "ourLocations/:id",
               "id": "5712-antoine-dr-houston-tx-77091"
             },
@@ -68462,12 +68612,12 @@
               "t": ", "
             },
             {
-              "t": "Northside-Northline",
+              "t": "Airline",
               "r": "ourLocations/:id",
               "id": "5206-airline-dr-g-houston-tx-77022"
             },
             {
-              "t": "."
+              "t": " y Baytown."
             }
           ]
         },
@@ -68536,24 +68686,24 @@
           "L": "Sin preferencia"
         },
         {
-          "V": "denver-harbor",
-          "L": "Denver Harbor"
+          "V": "shotwell",
+          "L": "Shotwell"
         },
         {
-          "V": "fondren-southwest",
-          "L": "Fondren Southwest"
+          "V": "southwest-fwy",
+          "L": "Southwest Fwy"
         },
         {
-          "V": "westbury",
-          "L": "Westbury"
+          "V": "post-oak",
+          "L": "Post Oak"
         },
         {
-          "V": "greater-inwood",
-          "L": "Greater Inwood"
+          "V": "antoine",
+          "L": "Antoine"
         },
         {
-          "V": "northside-northline",
-          "L": "Northside-Northline"
+          "V": "airline",
+          "L": "Airline"
         }
       ],
       "RESUME": "Currículum",
@@ -68582,7 +68732,13 @@
       "ERR_OFFICE": "Elija una oficina preferida.",
       "ERR_FILE_EMPTY": "Adjunte su currículum (PDF o DOCX).",
       "ERR_FILE_TYPE": "Use un archivo PDF o DOCX.",
-      "ERR_FILE_SIZE": "Ese archivo pesa {{size}} MB. El límite es 5 MB."
+      "ERR_FILE_SIZE": "Ese archivo pesa {{size}} MB. El límite es 5 MB.",
+      "SENDING": "Enviando...",
+      "ERR_SUBMIT": "No pudimos enviar su solicitud. Sus respuestas están guardadas aquí. Inténtelo de nuevo o escriba a save@astateinsurance.com.",
+      "FIRST": "Nombre",
+      "LAST": "Apellido",
+      "ERR_FIRST": "Escriba su nombre.",
+      "ERR_LAST": "Escriba su apellido."
     },
     "STICKY": {
       "APPLY": "Postular ahora"
@@ -68646,7 +68802,7 @@
       "ITEMS": [
         "Tenga su teléfono cerca. Es posible que le llamemos del (713) 357-7771.",
         "Sepa qué días y horarios tiene disponibles, de lunes a sábado.",
-        "Piense cuál de nuestras 5 oficinas en Houston le queda más cerca.",
+        "Piense cuál de nuestras 6 oficinas en Houston le queda más cerca.",
         "¿Todavía no tiene licencia? No hay problema. Pagamos su curso previo a la licencia y su examen de licencia de Texas."
       ],
       "UPDATE_START": "¿Necesita actualizar su solicitud? Escriba a ",
@@ -68659,8 +68815,8 @@
       "KNOW_CULTURE": "Nuestra cultura y valores",
       "KNOW_SERVICES": "Lo que aseguramos",
       "OFFICES_TITLE": "Vea nuestras oficinas",
-      "OFFICES_TEXT": "Su entrevista será en persona, en una de nuestras 5 oficinas en Houston.",
-      "OFFICES_LINK": "Nuestras 5 oficinas en Houston",
+      "OFFICES_TEXT": "Su entrevista será en persona, en una de nuestras 6 oficinas en Houston.",
+      "OFFICES_LINK": "Nuestras 6 oficinas en Houston",
       "SHARE_TITLE": "¿Conoce a alguien ideal para el equipo?",
       "SHARE_TEXT": "Comparta nuestra página de empleos con un amigo o amiga a quien le guste ayudar a la gente.",
       "SHARE_BTN": "Compartir página de empleos",
@@ -68743,7 +68899,7 @@
       "LEARN_TITLE": "Conozca más sobre nosotros",
       "LEARN_SERVICES": "Todos los servicios de seguros",
       "LEARN_ABOUT": "Sobre A-State",
-      "LEARN_OFFICES": "Nuestras 5 oficinas en Houston"
+      "LEARN_OFFICES": "Nuestras 6 oficinas en Houston"
     }
   },
   "LOCATIONS_PAGE": {
@@ -68758,7 +68914,7 @@
       "CTA_QUOTE": "Cotizar gratis",
       "LEAD": [
         {
-          "t": "Cinco oficinas en su vecindario, agentes con licencia, estacionamiento gratis y sin necesidad de cita. Visítenos de lunes a sábado, de 9 a.m. a 7 p.m., o llame al "
+          "t": "Seis oficinas en su vecindario, agentes con licencia, estacionamiento gratis y sin necesidad de cita. Visítenos de lunes a sábado, de 9 a.m. a 7 p.m., o llame al "
         },
         {
           "t": "(713) 357-7771",
@@ -68795,10 +68951,10 @@
       ]
     },
     "MAP": {
-      "TITLE": "Estamos en su vecindario: cinco oficinas en Houston",
+      "TITLE": "Estamos en su vecindario: seis oficinas en Houston",
       "LEAD": "Desde Denver Harbor en el East Side hasta Fondren Southwest, Westbury, Greater Inwood y Northside-Northline, hay una oficina de A-State cerca de su casa o su trabajo.",
       "LEGEND_ARIA": "Oficinas en el mapa",
-      "MAP_ARIA": "Mapa esquemático de Houston con las cinco oficinas de A-State",
+      "MAP_ARIA": "Mapa esquemático de Houston con las seis oficinas de A-State",
       "DOWNTOWN": "Centro",
       "CAPTION": "Esquema, no a escala"
     },
@@ -68972,7 +69128,7 @@
       "ITEMS": [
         {
           "Q": "¿Necesito cita para visitar una oficina de A-State?",
-          "A": "No. Puede visitar sin cita cualquiera de nuestras 5 oficinas en Houston, de lunes a sábado, de 9 a.m. a 7 p.m."
+          "A": "No. Puede visitar sin cita cualquiera de nuestras 6 oficinas en Houston, de lunes a sábado, de 9 a.m. a 7 p.m."
         },
         {
           "Q": "¿Todas las oficinas tienen agentes que hablan español?",
@@ -69114,7 +69270,7 @@
         "TITLE": "Mapa de la oficina de {{name}}"
       },
       "HOODS": {
-        "ALL": "Ver las 5 oficinas en Houston",
+        "ALL": "Ver las 6 oficinas en Houston",
         "ZIP": "Códigos postales:",
         "ZIP_ARIA": "Códigos postales"
       },
@@ -69230,8 +69386,8 @@
     },
     "OFFICES": {
       "antoine": {
-        "NAME": "Greater Inwood",
-        "TITLE": "A-State Insurance – Greater Inwood, Houston, TX",
+        "NAME": "Antoine",
+        "TITLE": "A-State Insurance – Antoine, Houston, TX",
         "LEAD": [
           {
             "t": "Su agencia de seguros local en 5712 Antoine Dr, en Greater Inwood. Venga sin cita de lunes a sábado, o llame o envíe un texto al "
@@ -69244,11 +69400,11 @@
             "t": "."
           }
         ],
-        "VISIT_TITLE": "Visite nuestra oficina de Greater Inwood",
+        "VISIT_TITLE": "Visite nuestra oficina de Antoine",
         "ADDRESS": "5712 Antoine Dr, Houston, TX 77091",
         "GETTING_HERE": "En Antoine Dr, justo al norte de W Tidwell Rd, en Greater Inwood.",
         "PARKING": "Gratis, justo frente a la oficina.",
-        "WHY_TITLE": "Seguros sin complicaciones en Greater Inwood",
+        "WHY_TITLE": "Seguros sin complicaciones en Antoine",
         "WHY": [
           {
             "TITLE": "Venga sin cita.",
@@ -69273,7 +69429,7 @@
         ],
         "HOODS_TITLE": "Vecindarios que atiende esta oficina",
         "HOODS_TEXT": "Greater Inwood, Inwood Forest, Candlelight Plaza, Acres Homes, Oak Forest, Central Northwest, Highland Heights y Carverdale.",
-        "COV_TITLE": "Seguros en nuestra oficina de Greater Inwood",
+        "COV_TITLE": "Seguros en nuestra oficina de Antoine",
         "BAND": {
           "LANG": "es",
           "TITLE": "También le atendemos en inglés e hindi",
@@ -69284,7 +69440,7 @@
           ],
           "SWITCH": "View this page in English"
         },
-        "REV_TITLE": "Lo que dicen nuestros clientes de Greater Inwood",
+        "REV_TITLE": "Lo que dicen nuestros clientes de Antoine",
         "REVIEWS": [
           {
             "T": "Un proceso fluido, claro y transparente",
@@ -69360,12 +69516,12 @@
             "A": "Greater Inwood, Inwood Forest, Candlelight Plaza, Acres Homes, Oak Forest y otras zonas del noroeste de Houston. Además, aseguramos a clientes en todo Texas."
           }
         ],
-        "QUOTE_TITLE": "Cotice gratis en nuestra oficina de Greater Inwood",
+        "QUOTE_TITLE": "Cotice gratis en nuestra oficina de Antoine",
         "QUOTE_TEXT": "Díganos qué necesita y un agente con licencia de esta oficina comparará compañías y le devolverá la llamada."
       },
       "postOak": {
-        "NAME": "Westbury",
-        "TITLE": "A-State Insurance – Westbury, Houston, TX",
+        "NAME": "Post Oak",
+        "TITLE": "A-State Insurance – Post Oak, Houston, TX",
         "LEAD": [
           {
             "t": "Su agencia de seguros local en 10547 S Post Oak Rd, en Westbury. Venga sin cita de lunes a sábado, o llame o envíe un texto al "
@@ -69378,11 +69534,11 @@
             "t": "."
           }
         ],
-        "VISIT_TITLE": "Visite nuestra oficina de Westbury",
+        "VISIT_TITLE": "Visite nuestra oficina de Post Oak",
         "ADDRESS": "10547 S Post Oak Rd, Houston, TX 77035",
         "GETTING_HERE": "En S Post Oak Rd, justo al norte de W Bellfort Ave, en Westbury.",
         "PARKING": "Gratis, en el estacionamiento privado frente al edificio.",
-        "WHY_TITLE": "Seguros sin complicaciones en Westbury",
+        "WHY_TITLE": "Seguros sin complicaciones en Post Oak",
         "WHY": [
           {
             "TITLE": "Venga sin cita.",
@@ -69407,7 +69563,7 @@
         ],
         "HOODS_TITLE": "Vecindarios que atiende esta oficina",
         "HOODS_TEXT": "Westbury, Willow Meadows, Willowbend, Post Oak Manor, Brays Oaks, Meyerland, Fondren Southwest y Central Southwest.",
-        "COV_TITLE": "Seguros en nuestra oficina de Westbury",
+        "COV_TITLE": "Seguros en nuestra oficina de Post Oak",
         "BAND": {
           "LANG": "es",
           "TITLE": "También le atendemos en inglés e hindi",
@@ -69418,7 +69574,7 @@
           ],
           "SWITCH": "View this page in English"
         },
-        "REV_TITLE": "Lo que dicen nuestros clientes de Westbury",
+        "REV_TITLE": "Lo que dicen nuestros clientes de Post Oak",
         "REVIEWS": [
           {
             "T": "She also speaks Spanish!",
@@ -69494,12 +69650,12 @@
             "A": "Westbury, Willow Meadows, Willowbend, Meyerland, Brays Oaks y otras zonas del suroeste de Houston. Además, aseguramos a clientes en todo Texas."
           }
         ],
-        "QUOTE_TITLE": "Cotice gratis en nuestra oficina de Westbury",
+        "QUOTE_TITLE": "Cotice gratis en nuestra oficina de Post Oak",
         "QUOTE_TEXT": "Díganos qué necesita y un agente con licencia de esta oficina comparará compañías y le devolverá la llamada."
       },
       "southwest": {
-        "NAME": "Fondren Southwest",
-        "TITLE": "A-State Insurance – Fondren Southwest, Houston, TX",
+        "NAME": "Southwest Fwy",
+        "TITLE": "A-State Insurance – Southwest Fwy, Houston, TX",
         "LEAD": [
           {
             "t": "Su agencia de seguros local en 11503 Southwest Fwy, Suite B, cerca de W Bellfort Ave. Venga sin cita de lunes a sábado, o llame o envíe un texto al "
@@ -69512,7 +69668,7 @@
             "t": "."
           }
         ],
-        "VISIT_TITLE": "Visite nuestra oficina de Fondren Southwest",
+        "VISIT_TITLE": "Visite nuestra oficina de Southwest Fwy",
         "ADDRESS": "11503 Southwest Fwy, Suite B, Houston, TX 77031",
         "GETTING_HERE": "En la calle lateral de la Southwest Freeway (I-69/US-59), cerca de W Bellfort Ave y Wilcrest Dr.",
         "PARKING": "Gratis, justo frente a la Suite B.",
@@ -69541,7 +69697,7 @@
         ],
         "HOODS_TITLE": "Vecindarios que atiende esta oficina",
         "HOODS_TEXT": "Fondren Southwest, Brays Oaks, Alief, Westwood, Braeburn y Sharpstown, además de Meadows Place, Stafford y Missouri City.",
-        "COV_TITLE": "Seguros en nuestra oficina de Fondren Southwest",
+        "COV_TITLE": "Seguros en nuestra oficina de Southwest Fwy",
         "BAND": {
           "LANG": "es",
           "TITLE": "También le atendemos en inglés e hindi",
@@ -69552,7 +69708,7 @@
           ],
           "SWITCH": "View this page in English"
         },
-        "REV_TITLE": "Lo que dicen nuestros clientes de Fondren Southwest",
+        "REV_TITLE": "Lo que dicen nuestros clientes de Southwest Fwy",
         "REVIEWS": [
           {
             "T": "El precio más bajo",
@@ -69628,12 +69784,12 @@
             "A": "Fondren Southwest, Brays Oaks, Alief, Westwood, Meadows Place y Stafford. Además, aseguramos a clientes en todo Texas."
           }
         ],
-        "QUOTE_TITLE": "Cotice gratis en nuestra oficina de Fondren Southwest",
+        "QUOTE_TITLE": "Cotice gratis en nuestra oficina de Southwest Fwy",
         "QUOTE_TEXT": "Díganos qué necesita y un agente con licencia de esta oficina comparará compañías y le devolverá la llamada."
       },
       "shotwell": {
-        "NAME": "Denver Harbor",
-        "TITLE": "A-State Insurance – Denver Harbor, Houston, TX",
+        "NAME": "Shotwell",
+        "TITLE": "A-State Insurance – Shotwell, Houston, TX",
         "LEAD": [
           {
             "t": "Su agencia de seguros local en 707 Shotwell St, Suite A, en el corazón de Denver Harbor. Pase de camino a casa, o llame o envíe un texto al "
@@ -69646,11 +69802,11 @@
             "t": "."
           }
         ],
-        "VISIT_TITLE": "Visite nuestra oficina de Denver Harbor",
+        "VISIT_TITLE": "Visite nuestra oficina de Shotwell",
         "ADDRESS": "707 Shotwell St, Suite A, Houston, TX 77020",
         "GETTING_HERE": "En Shotwell St, esquina con Lyons Ave, a unas cuadras al norte de Market St y a minutos de la I-10 Este.",
         "PARKING": "Gratis, justo frente a la Suite A.",
-        "WHY_TITLE": "Seguros sin complicaciones en Denver Harbor",
+        "WHY_TITLE": "Seguros sin complicaciones en Shotwell",
         "WHY": [
           {
             "TITLE": "Venga sin cita.",
@@ -69675,7 +69831,7 @@
         ],
         "HOODS_TITLE": "Vecindarios que atiende esta oficina",
         "HOODS_TEXT": "Denver Harbor, Magnolia Park, Pleasantville, Fifth Ward, Kashmere Gardens, Second Ward, Clinton Park y el East End.",
-        "COV_TITLE": "Seguros en nuestra oficina de Denver Harbor",
+        "COV_TITLE": "Seguros en nuestra oficina de Shotwell",
         "BAND": {
           "LANG": "es",
           "TITLE": "También le atendemos en inglés e hindi",
@@ -69686,7 +69842,7 @@
           ],
           "SWITCH": "View this page in English"
         },
-        "REV_TITLE": "Lo que dicen nuestros clientes de Denver Harbor",
+        "REV_TITLE": "Lo que dicen nuestros clientes de Shotwell",
         "REVIEWS": [
           {
             "T": "Siempre atenta, paciente",
@@ -69762,12 +69918,12 @@
             "A": "Denver Harbor, Magnolia Park, Pleasantville, Fifth Ward y otros vecindarios del East End. Además, aseguramos a clientes en todo Texas."
           }
         ],
-        "QUOTE_TITLE": "Cotice gratis en nuestra oficina de Denver Harbor",
+        "QUOTE_TITLE": "Cotice gratis en nuestra oficina de Shotwell",
         "QUOTE_TEXT": "Díganos qué necesita y un agente con licencia de esta oficina comparará compañías y le devolverá la llamada."
       },
       "airline": {
-        "NAME": "Northside-Northline",
-        "TITLE": "A-State Insurance – Northside-Northline, Houston, TX",
+        "NAME": "Airline",
+        "TITLE": "A-State Insurance – Airline, Houston, TX",
         "LEAD": [
           {
             "t": "Su agencia de seguros local en 5206 Airline Dr, Suite G, en Northside-Northline. Venga sin cita de lunes a sábado, o llame o envíe un texto al "
@@ -69780,11 +69936,11 @@
             "t": "."
           }
         ],
-        "VISIT_TITLE": "Visite nuestra oficina de Northside-Northline",
+        "VISIT_TITLE": "Visite nuestra oficina de Airline",
         "ADDRESS": "5206 Airline Dr, Suite G, Houston, TX 77022",
         "GETTING_HERE": "En Airline Dr, justo al sur de Tidwell Rd, a una milla al oeste de la I-45 (North Freeway).",
         "PARKING": "Gratis, justo frente a la Suite G.",
-        "WHY_TITLE": "Seguros sin complicaciones en Northside-Northline",
+        "WHY_TITLE": "Seguros sin complicaciones en Airline",
         "WHY": [
           {
             "TITLE": "Venga sin cita.",
@@ -69809,7 +69965,7 @@
         ],
         "HOODS_TITLE": "Vecindarios que atiende esta oficina",
         "HOODS_TEXT": "Northside-Northline, Independence Heights, Lindale Park, Brooke Smith, Sunset Heights, Melrose Park y Near Northside.",
-        "COV_TITLE": "Seguros en nuestra oficina de Northside-Northline",
+        "COV_TITLE": "Seguros en nuestra oficina de Airline",
         "BAND": {
           "LANG": "es",
           "TITLE": "También le atendemos en inglés e hindi",
@@ -69821,7 +69977,7 @@
           "SWITCH": "View this page in English",
           "SWITCH_LANG": "en"
         },
-        "REV_TITLE": "Lo que dicen nuestros clientes de Northside-Northline",
+        "REV_TITLE": "Lo que dicen nuestros clientes de Airline",
         "REVIEWS": [
           {
             "T": "Habla los dos idiomas",
@@ -69897,7 +70053,7 @@
             "A": "Northside-Northline, Independence Heights, Lindale Park y otras zonas del norte de Houston. Además, aseguramos a clientes en todo Texas."
           }
         ],
-        "QUOTE_TITLE": "Cotice gratis en nuestra oficina de Northside-Northline",
+        "QUOTE_TITLE": "Cotice gratis en nuestra oficina de Airline",
         "QUOTE_TEXT": "Díganos qué necesita y un agente con licencia de esta oficina comparará compañías y le devolverá la llamada."
       }
     }

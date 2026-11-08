@@ -33,7 +33,10 @@ input{font:inherit;color:inherit}
 .err::before{content:"";flex:none;width:16px;height:16px;margin-top:1px;border-radius:50%;background:var(--error) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 4v5M8 11.5v.5' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center/16px no-repeat}
 .hf-btn[disabled]{opacity:.7;cursor:progress}
 .or-call{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;font-size:14.5px;color:var(--stone-700);text-align:center}
-.or-call > span{display:inline-flex;align-items:center;gap:6px}
+.or-call > span{display:inline-flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px 6px}
+.or-call .wa,.wa-pref a{font-weight:700;white-space:nowrap}
+.wa-pref{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;margin:-4px 0 0;font-size:14.5px;color:var(--stone-700);text-align:center}
+.wa-pref .icon-sm{color:#1DA851}
 .or-call .hrs::before{content:"·";margin-right:6px}
 @media (max-width:479px){.or-call{flex-direction:column;gap:2px}.or-call .hrs::before{content:none}}
 @media (hover:hover){

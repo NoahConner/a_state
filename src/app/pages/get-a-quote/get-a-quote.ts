@@ -5,7 +5,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { Language } from '../../services/language';
 import { QuoteLeadCaptureService } from '../../services/quote-lead-capture.service';
-import { buildRoute, OFFICES } from '../../components/header/header';
+import { BAYTOWN_OFFICE, buildRoute, OFFICES } from '../../components/header/header';
+import { applyQuotePrefill } from '../../services/quote-prefill';
 
 /** Sections listed in the "On this page" bar, in the order of GET_QUOTE.OTP.ITEMS. */
 const OTP_IDS = ['coverage', 'how-it-works', 'quote', 'why-astate', 'what-you-need', 'offices', 'faqs'];
@@ -44,14 +45,14 @@ const QUOTE_ROUTES: Record<string, string> = {
 };
 
 /** Office names the backend already receives from the Our Locations form, in OFFICES order. */
-const LEAD_OFFICES = ['Shotwell', 'Southwest', 'Post Oak', 'Antoine', 'Airline'];
+const LEAD_OFFICES = ['Shotwell', 'Southwest', 'Post Oak', 'Antoine', 'Airline', 'Baytown'];
 
 const SCHEMA_ID = 'get-a-quote-structured-data';
 const SITE = 'https://astateinsurance.com';
 const P = 'GET_QUOTE.';
 
 type OpenStatus = 'unknown' | 'open' | 'closed';
-type Field = 'name' | 'phone' | 'email' | 'zip' | 'type';
+type Field = 'first' | 'last' | 'phone' | 'email' | 'address' | 'type';
 
 @Component({
   selector: 'app-get-a-quote',
@@ -61,7 +62,8 @@ type Field = 'name' | 'phone' | 'email' | 'zip' | 'type';
 })
 export class GetAQuote implements AfterViewInit, OnDestroy {
   readonly otpIds = OTP_IDS;
-  readonly offices = OFFICES;
+  /** In the order of GET_QUOTE.OFFICES.ITEMS; Baytown has no detail page, so it is shown without a link. */
+  readonly offices = [...OFFICES, BAYTOWN_OFFICE];
   readonly coverage = COVERAGE;
   readonly whyIcons = WHY_ICONS;
   readonly trustIcons = TRUST_ICONS;
@@ -79,7 +81,7 @@ export class GetAQuote implements AfterViewInit, OnDestroy {
   today = -1;
 
   // Quote form
-  form = { name: '', phone: '', email: '', zip: '', type: '', lang: '', office: '', time: '', message: '' };
+  form = this.emptyForm('');
   errors: Partial<Record<Field, string>> = {};
   isSubmitting = false;
 
@@ -108,6 +110,16 @@ export class GetAQuote implements AfterViewInit, OnDestroy {
     @Inject(DOCUMENT) private document: Document,
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
+    // Name and phone from the home page short form (several products picked) land here (browser only).
+    if (this.isBrowser) {
+      const prefill = { name: '', phone: '', email: '' };
+      applyQuotePrefill(prefill);
+      const [first = '', ...rest] = prefill.name.trim().split(/\s+/);
+      this.form.first = first;
+      this.form.last = rest.join(' ');
+      this.form.phone = prefill.phone;
+      this.form.email = prefill.email;
+    }
     this.form.lang = this.languageService.getCurrentLanguage() === 'es' ? 'es' : 'en';
     this.subs.add(
       this.translate.onLangChange.subscribe(() => {
@@ -195,7 +207,7 @@ export class GetAQuote implements AfterViewInit, OnDestroy {
   goToForm(event: Event) {
     this.goToSection('quote', event);
     if (!this.isBrowser) return;
-    setTimeout(() => this.host.nativeElement.querySelector<HTMLElement>('#qf-name')?.focus({ preventScroll: true }), 450);
+    setTimeout(() => this.host.nativeElement.querySelector<HTMLElement>('#qf-first')?.focus({ preventScroll: true }), 450);
   }
 
   /** In-page links inside translated text (e.g. the FAQ pointing to "What You'll Need"). */
@@ -216,9 +228,9 @@ export class GetAQuote implements AfterViewInit, OnDestroy {
 
   // ---------- Quote form ----------
 
-  onNameInput(event: Event) {
-    this.form.name = (event.target as HTMLInputElement).value;
-    if (this.errors.name) this.validate(['name']);
+  onNameInput(field: 'first' | 'last', event: Event) {
+    this.form[field] = (event.target as HTMLInputElement).value;
+    if (this.errors[field]) this.validate([field]);
   }
 
   onPhoneInput(event: Event) {
@@ -237,14 +249,12 @@ export class GetAQuote implements AfterViewInit, OnDestroy {
     if (this.errors.email) this.validate(['email']);
   }
 
-  onZipInput(event: Event) {
-    const input = event.target as HTMLInputElement;
-    input.value = input.value.replace(/\D/g, '').slice(0, 5);
-    this.form.zip = input.value;
-    if (this.errors.zip) this.validate(['zip']);
+  onAddressInput(event: Event) {
+    this.form.address = (event.target as HTMLInputElement).value;
+    if (this.errors.address) this.validate(['address']);
   }
 
-  onBlur(field: 'name' | 'phone' | 'email' | 'zip') {
+  onBlur(field: 'first' | 'last' | 'phone' | 'email' | 'address') {
     if (this.form[field]) this.validate([field]);
   }
 
@@ -268,10 +278,10 @@ export class GetAQuote implements AfterViewInit, OnDestroy {
 
     this.isSubmitting = true;
     try {
-      // The lead service has no slot for ZIP code or the free-text note, so those two stay on this page.
+      // The lead service has no slot for the address or the free-text note, so those two stay on this page.
       const sent = await this.quoteLeadCaptureService.submitLead({
         selected_chip: type?.L ?? this.form.type,
-        full_name: this.form.name,
+        full_name: `${this.form.first.trim()} ${this.form.last.trim()}`,
         phone_number: this.form.phone,
         email: this.form.email,
         preferred_office: officeIndex > -1 ? LEAD_OFFICES[officeIndex] : undefined,
@@ -281,7 +291,7 @@ export class GetAQuote implements AfterViewInit, OnDestroy {
       });
       if (!sent) return;
       const next = QUOTE_ROUTES[this.form.type] ?? 'getAQuote';
-      this.form = { name: '', phone: '', email: '', zip: '', type: '', lang: this.form.lang, office: '', time: '', message: '' };
+      this.form = this.emptyForm(this.form.lang);
       this.errors = {};
       await this.router.navigate(this.route(next));
     } finally {
@@ -294,9 +304,13 @@ export class GetAQuote implements AfterViewInit, OnDestroy {
     const want = (f: Field) => !only || only.includes(f);
     const t = (k: string) => this.translate.instant(P + 'FORM.' + k);
     const bad: Field[] = [];
-    if (want('name')) {
-      this.errors.name = this.form.name.trim().length < 2 ? t('ERR_NAME') : '';
-      if (this.errors.name) bad.push('name');
+    if (want('first')) {
+      this.errors.first = this.form.first.trim() ? '' : t('ERR_FIRST');
+      if (this.errors.first) bad.push('first');
+    }
+    if (want('last')) {
+      this.errors.last = this.form.last.trim() ? '' : t('ERR_LAST');
+      if (this.errors.last) bad.push('last');
     }
     if (want('phone')) {
       const d = this.digits(this.form.phone);
@@ -308,16 +322,20 @@ export class GetAQuote implements AfterViewInit, OnDestroy {
       this.errors.email = e && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e) ? t('ERR_EMAIL') : '';
       if (this.errors.email) bad.push('email');
     }
-    if (want('zip')) {
-      const z = this.form.zip;
-      this.errors.zip = !z ? t('ERR_ZIP_EMPTY') : !/^\d{5}$/.test(z) ? t('ERR_ZIP_INVALID') : '';
-      if (this.errors.zip) bad.push('zip');
+    if (want('address')) {
+      const a = this.form.address.trim();
+      this.errors.address = !a ? t('ERR_ADDRESS_EMPTY') : !/\b\d{5}(-\d{4})?\b/.test(a) ? t('ERR_ADDRESS_ZIP') : '';
+      if (this.errors.address) bad.push('address');
     }
     if (want('type')) {
       this.errors.type = this.form.type ? '' : t('ERR_TYPE');
       if (this.errors.type) bad.push('type');
     }
     return bad;
+  }
+
+  private emptyForm(lang: string) {
+    return { first: '', last: '', phone: '', email: '', address: '', type: '', lang, office: '', time: '', message: '' };
   }
 
   private digits(v: string): string {

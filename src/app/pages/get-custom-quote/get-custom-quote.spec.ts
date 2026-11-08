@@ -16,19 +16,21 @@ function setup(lang = 'en') {
     'browser' as any,
     document,
   );
-  c.form.name = ' Test User ';
+  c.form.first = ' Test ';
+  c.form.last = ' User ';
   c.form.phone = '(555) 010-0100';
-  c.form.zip = '77001';
+  c.form.address = ' 123 Main St, Houston, TX 77001 ';
   const payload = () => (c as any).buildPayload() as Record<string, unknown>;
   return { c, post, payload };
 }
 
 describe('GetCustomQuote payload', () => {
-  it('sends zip, flags and omits unanswered optional keys', () => {
+  it('sends address, zip, flags and omits unanswered optional keys', () => {
     const { c, payload } = setup();
     c.form.cov['auto'] = true;
     const p = payload();
     expect(p['zip_code']).toBe('77001');
+    expect(p['full_address']).toBe('123 Main St, Houston, TX 77001');
     expect(p['name']).toBe('Test User');
     expect(p['coverage_auto']).toBe(1);
     expect(p['coverage_health']).toBe(0);
