@@ -234,8 +234,6 @@ img{display:block;max-width:100%}
 .office .ph{font-weight:800;color:var(--stone-700);font-size:17px;text-decoration:underline;text-decoration-thickness:1.5px;align-self:flex-start;min-height:32px;display:inline-flex;align-items:center}
 .office .acts{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:auto;padding-top:4px}
 .office .acts a{font-size:14.5px;font-weight:700;min-height:40px;display:inline-flex;align-items:center}
-.mainline{background:var(--white);border-radius:var(--r-card);padding:20px;font-size:15px;color:var(--stone-700);display:flex;flex-direction:column;gap:6px;transition:transform .2s ease,box-shadow .2s ease}
-.mainline h3{font-size:18px}
 .cities{margin-top:28px;display:grid;gap:20px}
 @media (min-width:768px){.cities{grid-template-columns:1fr 1fr;gap:32px}}
 .cities h3{font-size:16px;margin-bottom:8px}
@@ -278,7 +276,9 @@ img{display:block;max-width:100%}
 .final .points .icon-sm{width:22px;height:22px;padding:4px;border-radius:50%;background:var(--white);color:var(--stone-700)}
 
 /* Sticky mobile bar */
-.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:1020;background:var(--white);border-top:1px solid var(--stone-200);box-shadow:0 -6px 16px rgba(68,64,60,.08);padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom,0px));display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:8px;transform:translateY(110%);transition:transform .2s ease}
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:1020;background:var(--white);border-top:1px solid var(--stone-200);box-shadow:0 -6px 16px rgba(68,64,60,.08);padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom,0px));display:grid;grid-template-columns:minmax(0,1fr) repeat(3,52px);gap:8px;transform:translateY(110%);transition:transform .2s ease}
+.sticky-cta .hf-btn.ic{padding:0}
+.sticky-cta .hf-btn.ic .icon{width:22px;height:22px}
 .sticky-cta.show{transform:none}
 .sticky-cta .hf-btn{padding:0 10px}
 @media (min-width:1024px){.sticky-cta{display:none}}
@@ -323,6 +323,13 @@ img{display:block;max-width:100%}
 // Icon circles: red with a gold symbol
 .checks .icon-sm,.trust .ic,.pic{background:var(--red-600);color:var(--gold)}
 .hl{background:none;color:var(--red-600)}
+// Hero: the product name types out on its own line, so the heading never changes height.
+.rot{display:block;white-space:nowrap;min-height:1.08em}
+.rot .caret{display:inline-block;width:.08em;height:.85em;margin-left:.06em;vertical-align:-.06em;background:currentColor;animation:rot-blink 1s steps(1) infinite}
+@keyframes rot-blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.rot .caret{display:none}}
+// "Commercial insurance" must fit one line on a 320 px phone.
+@media (max-width:479px){.hero h1{font-size:clamp(24px,7.6vw,32px)}}
 .chip-yellow{background:var(--white);color:var(--red-700);border:1.5px solid var(--red-600)}
 .steps .n{background:var(--red-600);color:var(--white)}
 

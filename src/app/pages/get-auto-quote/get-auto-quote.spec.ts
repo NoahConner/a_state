@@ -34,7 +34,7 @@ describe('GetAutoQuote payload', () => {
   it('omits unanswered optional keys', () => {
     const { payload } = setup();
     const p = payload();
-    for (const k of ['coverage_type', 'accidents', 'tickets', 'current_carrier', 'renewal_date', 'preferred_office', 'currently_issued']) {
+    for (const k of ['coverage_type', 'current_carrier', 'renewal_date', 'preferred_office', 'currently_issued']) {
       expect(k in p).toBe(false);
     }
     expect(p.vehicles[0]).toEqual({ year: '2020', make: 'Toyota', model: 'Camry' });
@@ -61,35 +61,23 @@ describe('GetAutoQuote payload', () => {
     expect(payload().vehicles[0].year).toBe('1989 or older');
   });
 
-  it('maps license type and age first licensed', () => {
+  it('maps license type', () => {
     const { d, payload } = setup();
     const map: Record<string, string> = {
       license: "Driver's license", state_id: 'Texas/State ID', intl: 'International ID/Matrícula',
     };
-    d.age = '17';
     for (const [id, text] of Object.entries(map)) {
       d.license = id;
       expect(payload().drivers[0].license_type).toBe(text);
     }
-    expect(payload().drivers[0].age_first_licensed).toBe('17');
   });
 
-  it('maps coverage type, accidents and tickets', () => {
+  it('maps coverage type', () => {
     const { c, payload } = setup();
     c.form.pick['coverage'] = 'minimum';
-    c.form.pick['accidents'] = '2+';
-    c.form.pick['tickets'] = 'unsure';
-    let p = payload();
-    expect(p.coverage_type).toBe('State minimum (liability only)');
-    expect(p.accidents).toBe('2+');
-    expect(p.tickets).toBe('Not sure');
+    expect(payload().coverage_type).toBe('State minimum (liability only)');
     c.form.pick['coverage'] = 'full';
-    c.form.pick['accidents'] = '0';
-    c.form.pick['tickets'] = '1';
-    p = payload();
-    expect(p.coverage_type).toBe('Full coverage');
-    expect(p.accidents).toBe('0');
-    expect(p.tickets).toBe('1');
+    expect(payload().coverage_type).toBe('Full coverage');
   });
 
   it('sends carrier and renewal_date only when insured', () => {

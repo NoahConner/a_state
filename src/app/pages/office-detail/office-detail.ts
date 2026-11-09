@@ -52,6 +52,8 @@ export class OfficeDetail implements AfterViewInit, OnDestroy {
   /** Prefix of this office's text in the translation files */
   readonly o: string;
   readonly directionsUrl: string;
+  /** "A-State Insurance (Shotwell)"; Baytown trades as "Baytown Insurance" */
+  readonly agencyName: string;
 
   otpOpen = true;
   faqOpen = 0;
@@ -98,7 +100,9 @@ export class OfficeDetail implements AfterViewInit, OnDestroy {
     const slug = this.router.url.split(/[?#]/)[0].split('/').filter(Boolean).pop();
     this.office = OFFICE_PAGES.find((p) => p.id === slug) ?? OFFICE_PAGES[0];
     this.o = `OFFICE_PAGE.OFFICES.${this.office.key}.`;
-    this.directionsUrl = [...OFFICES, BAYTOWN_OFFICE].find((x) => x.id === this.office.id)?.directionsUrl ?? this.office.placeUrl;
+    const listed = [...OFFICES, BAYTOWN_OFFICE].find((x) => x.id === this.office.id);
+    this.directionsUrl = listed?.directionsUrl ?? this.office.placeUrl;
+    this.agencyName = listed?.title ?? `A-State Insurance (${this.office.name})`;
     if (this.office.weekdayHours) this.statusKey = C + 'HOURS_BAY.DEFAULT';
     this.form.lang = this.lang;
     this.subs.add(
@@ -406,7 +410,7 @@ export class OfficeDetail implements AfterViewInit, OnDestroy {
         {
           '@type': 'InsuranceAgency',
           '@id': pageUrl + '#office',
-          name: `A-State Insurance (${this.office.name})`,
+          name: this.agencyName,
           alternateName: `A-State Insurance – ${name}`,
           url: pageUrl,
           telephone: this.office.tel,

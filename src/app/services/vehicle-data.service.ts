@@ -25,6 +25,9 @@ export const POPULAR_MAKES: VehicleMake[] = [
   { id: 448, name: 'Toyota' }, { id: 482, name: 'Volkswagen' }, { id: 485, name: 'Volvo' },
 ];
 
+/** NHTSA vehicle types an auto policy covers: cars, pickups, and SUVs/minivans (MPV). */
+const VEHICLE_TYPES = ['passenger car', 'truck', 'multipurpose passenger vehicle (mpv)'];
+
 /**
  * Vehicle makes and models for the auto quote form. Browser only (the server gets empty lists).
  * Results are kept in memory for the page's life; the full make list (~12,400 makes, ~600 kB) is only
@@ -65,30 +68,33 @@ export class VehicleDataService {
   }
 
   /**
-   * Model names for a make, A–Z, without duplicates. With a model year (1990 and later) only that year's
-   * models are returned (GetModelsForMakeIdYear); otherwise every model of the make (GetModelsForMakeId).
-   * Empty on failure, so the form falls back to typing.
+   * Car, pickup and SUV/van model names for a make, A–Z, without duplicates. Motorcycles, ATVs, trailers
+   * and buses are left out (NHTSA lists them under the same make, e.g. Honda's bikes). With a model year
+   * (1990 and later) only that year's models are returned. Empty when every request fails, so the form
+   * falls back to typing.
    */
   getModels(makeId: number, year?: string): Promise<string[]> {
     if (!this.isBrowser || !makeId) return Promise.resolve([]);
     const y = year && /^\d{4}$/.test(year) && Number(year) >= 1990 ? year : '';
     const key = `${makeId}:${y}`;
-    let hit = this.models.get(key);
-    if (!hit) {
-      const url = y
-        ? `${API}/GetModelsForMakeIdYear/makeId/${makeId}/modelyear/${y}?format=json`
-        : `${API}/GetModelsForMakeId/${makeId}?format=json`;
-      hit = firstValueFrom(this.http.get<{ Results: { Model_Name: string }[] }>(url))
-        .then((r) => {
-          const names = (r.Results || []).map((m) => (m.Model_Name || '').trim()).filter(Boolean);
-          return [...new Set(names)].sort((a, b) => a.localeCompare(b));
-        })
-        .catch(() => {
-          this.models.delete(key);
-          return [];
-        });
-      this.models.set(key, hit);
-    }
+    const cached = this.models.get(key);
+    if (cached) return cached;
+
+    type ModelsResponse = { Results: { Model_Name: string }[] };
+    const base = `${API}/GetModelsForMakeIdYear/makeId/${makeId}${y ? `/modelyear/${y}` : ''}/vehicletype/`;
+    const requests = VEHICLE_TYPES.map((t) =>
+      firstValueFrom(this.http.get<ModelsResponse>(`${base}${encodeURIComponent(t)}?format=json`)),
+    );
+    const hit = Promise.allSettled(requests).then((results): string[] => {
+      const ok = results.filter((r): r is PromiseFulfilledResult<ModelsResponse> => r.status === 'fulfilled');
+      if (!ok.length) {
+        this.models.delete(key); // try again next time
+        return [];
+      }
+      const names = ok.flatMap((r) => (r.value.Results || []).map((m) => (m.Model_Name || '').trim())).filter(Boolean);
+      return [...new Set(names)].sort((a, b) => a.localeCompare(b));
+    });
+    this.models.set(key, hit);
     return hit;
   }
 }

@@ -22,9 +22,9 @@
 <ng-template #segsTpl let-value><ng-container *ngFor="let s of value"><a *ngIf="s.h && !s.x" [href]="s.h" [class.tel]="s.h.startsWith('tel:')" (click)="onSegLink(s.h, $event)">{{ s.t }}</a><a *ngIf="s.h && s.x" [href]="s.h" target="_blank" rel="noopener">{{ s.t }}<span class="sr-only"> {{ 'AUTO_QUOTE_PAGE.NEW_TAB' | translate }}</span></a><a *ngIf="s.r" [routerLink]="route(s.r)">{{ s.t }}</a><span *ngIf="s.hl" class="hl">{{ s.t }}</span><b *ngIf="s.b">{{ s.t }}</b><span *ngIf="s.l" [attr.lang]="s.l">{{ s.t }}</span><ng-container *ngIf="!s.h && !s.r && !s.hl && !s.b && !s.l">{{ s.t }}</ng-container></ng-container></ng-template>
 
 <!-- Group of radio chips. store[key] holds the chosen value. Radios keep `name` for grouping only; they are never submitted natively. -->
-<ng-template #chips let-legend="legend" let-name="name" let-opts="opts" let-store="store" let-key="key" let-cls="cls" let-hint="hint" let-hintId="hintId">
+<ng-template #chips let-legend="legend" let-name="name" let-opts="opts" let-store="store" let-key="key" let-cls="cls" let-hint="hint" let-hintId="hintId" let-opt="opt">
   <fieldset [attr.aria-describedby]="hint ? hintId : null">
-    <legend>{{ legend }}</legend>
+    <legend>{{ legend }}<ng-container *ngIf="opt">&ngsp;<span class="opt">{{ 'AUTO_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></ng-container></legend>
     <div class="opts" [ngClass]="cls">
       <div class="opt-chip" *ngFor="let o of opts">
         <input type="radio" [name]="name" [id]="name + '-' + o.V" [value]="o.V" [checked]="store[key] === o.V" (change)="store[key] = o.V" />
@@ -167,7 +167,7 @@
                     [attr.aria-invalid]="errors['v' + v.id + '.vin'] ? 'true' : null" [attr.aria-describedby]="'aq-v' + v.id + '-vin-err'" (input)="onVehicle(v, 'vin', $event)" />
                   <p class="err" [id]="'aq-v' + v.id + '-vin-err'">{{ errors['v' + v.id + '.vin'] }}</p>
                 </div>
-                <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.OWN_LEGEND' | translate), name: 'aq-v' + v.id + '-own', opts: list('AUTO_QUOTE_PAGE.FORM.OWNS'), store: v, key: 'own', cls: '' }"></ng-container>
+                <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.OWN_LEGEND' | translate), name: 'aq-v' + v.id + '-own', opts: list('AUTO_QUOTE_PAGE.FORM.OWNS'), store: v, key: 'own', cls: '', opt: true }"></ng-container>
                 <p class="aq-lender" *ngIf="isLoan(v)"><svg class="icon-sm" aria-hidden="true"><use href="#i-shield" /></svg>{{ 'AUTO_QUOTE_PAGE.FORM.LENDER' | translate }}</p>
                 <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.USE_LEGEND' | translate), name: 'aq-v' + v.id + '-use', opts: list('AUTO_QUOTE_PAGE.FORM.USES'), store: v, key: 'use', cls: 'stack aq-two' }"></ng-container>
                 <div class="cq-row aq-park">
@@ -176,7 +176,7 @@
                     <input type="text" [id]="'aq-v' + v.id + '-miles'" inputmode="numeric" autocomplete="off" maxlength="7" [value]="v.miles" (input)="onVehicle(v, 'miles', $event)" />
                   </div>
                   <div class="field">
-                    <label [for]="'aq-v' + v.id + '-pzip'">{{ 'AUTO_QUOTE_PAGE.FORM.PARKED' | translate }}</label>
+                    <label [for]="'aq-v' + v.id + '-pzip'">{{ 'AUTO_QUOTE_PAGE.FORM.PARKED' | translate }} <span class="opt">{{ 'AUTO_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
                     <p class="aq-sub" [id]="'aq-v' + v.id + '-pzip-hint'">{{ 'AUTO_QUOTE_PAGE.FORM.PARKED_HINT' | translate }}</p>
                     <input type="text" [id]="'aq-v' + v.id + '-pzip'" inputmode="numeric" autocomplete="off" maxlength="5" [value]="v.pzip"
                       [attr.aria-invalid]="errors['v' + v.id + '.pzip'] ? 'true' : null" [attr.aria-describedby]="'aq-v' + v.id + '-pzip-hint aq-v' + v.id + '-pzip-err'" (input)="onVehicle(v, 'pzip', $event)" />
@@ -227,12 +227,6 @@
                 </div>
                 <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.MARITAL_LEGEND' | translate), name: 'aq-d' + d.id + '-marital', opts: list('AUTO_QUOTE_PAGE.FORM.MARITALS'), store: d, key: 'marital', cls: '' }"></ng-container>
                 <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.LICENSE_LEGEND' | translate), name: 'aq-d' + d.id + '-license', opts: list('AUTO_QUOTE_PAGE.FORM.LICENSES'), store: d, key: 'license', cls: 'stack aq-two' }"></ng-container>
-                <div class="field aq-short">
-                  <label [for]="'aq-d' + d.id + '-age'">{{ 'AUTO_QUOTE_PAGE.FORM.FIRST_AGE' | translate }} <span class="opt">{{ 'AUTO_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
-                  <input type="text" [id]="'aq-d' + d.id + '-age'" inputmode="numeric" autocomplete="off" maxlength="2" [value]="d.age"
-                    [attr.aria-invalid]="errors['d' + d.id + '.age'] ? 'true' : null" [attr.aria-describedby]="'aq-d' + d.id + '-age-err'" (input)="onDriver(d, 'age', $event)" />
-                  <p class="err" [id]="'aq-d' + d.id + '-age-err'">{{ errors['d' + d.id + '.age'] }}</p>
-                </div>
               </div>
             </div>
             <button type="button" class="aq-add" id="aq-add-driver" *ngIf="form.drivers.length < maxBlocks" (click)="addBlock('driver')"><svg class="icon-sm" aria-hidden="true"><use href="#i-plus" /></svg>{{ 'AUTO_QUOTE_PAGE.FORM.ADD_DRIVER' | translate }}</button>
@@ -248,9 +242,6 @@
           <div class="cq-step" [hidden]="step !== 4">
             <div class="cq-step-h"><p class="cq-count">{{ 'AUTO_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 4 } }}</p><h3 id="aq-h4" tabindex="-1">{{ list('AUTO_QUOTE_PAGE.FORM.STEP_TITLES')[3] }}</h3></div>
             <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.COV_LEGEND' | translate), name: 'aq-cov', opts: list('AUTO_QUOTE_PAGE.FORM.COVS'), store: form.pick, key: 'coverage', cls: 'stack' }"></ng-container>
-            <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.ACC_LEGEND' | translate), name: 'aq-acc', opts: list('AUTO_QUOTE_PAGE.FORM.COUNTS'), store: form.pick, key: 'accidents', cls: '' }"></ng-container>
-            <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.TIX_LEGEND' | translate), name: 'aq-tix', opts: list('AUTO_QUOTE_PAGE.FORM.COUNTS'), store: form.pick, key: 'tickets', cls: '' }"></ng-container>
-            <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.SR_LEGEND' | translate), name: 'aq-sr', opts: list('AUTO_QUOTE_PAGE.FORM.YNU'), store: form.pick, key: 'sr22', cls: '', hint: ('AUTO_QUOTE_PAGE.FORM.SR_HELP' | translate), hintId: 'aq-sr-help' }"></ng-container>
             <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.INSURED_LEGEND' | translate), name: 'aq-ins', opts: list('AUTO_QUOTE_PAGE.FORM.YN'), store: form.pick, key: 'insured', cls: '' }"></ng-container>
             <div class="cq-row" [hidden]="form.pick['insured'] !== 'yes'">
               <div class="field">
@@ -340,7 +331,6 @@
                     <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.DOB' | translate), v: dateLabel(d.dob) }"></ng-container>
                     <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.MARITAL' | translate), v: label('FORM.MARITALS', d.marital) }"></ng-container>
                     <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.LICENSE' | translate), v: label('FORM.LICENSES', d.license) }"></ng-container>
-                    <ng-container *ngIf="d.age"><ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.FIRST_AGE' | translate), v: ('AUTO_QUOTE_PAGE.FORM.R.FIRST_AGE_V' | translate: { age: d.age }) }"></ng-container></ng-container>
                   </ng-container>
                 </dl>
               </div>
@@ -348,9 +338,6 @@
                 <div class="cq-rev-h"><h4>{{ list('AUTO_QUOTE_PAGE.FORM.R_TITLES')[3] }}</h4><button type="button" class="cq-edit" (click)="edit(4)">{{ 'AUTO_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('AUTO_QUOTE_PAGE.FORM.R_TITLES')[3] }}</span></button></div>
                 <dl>
                   <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.COVERAGE' | translate), v: label('FORM.COVS', form.pick['coverage'] || '') }"></ng-container>
-                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.ACCIDENTS' | translate), v: label('FORM.COUNTS', form.pick['accidents'] || '') }"></ng-container>
-                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.TICKETS' | translate), v: label('FORM.COUNTS', form.pick['tickets'] || '') }"></ng-container>
-                  <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.SR22' | translate), v: label('FORM.YNU', form.pick['sr22'] || '') }"></ng-container>
                   <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.INSURED' | translate), v: label('FORM.YN', form.pick['insured'] || '') }"></ng-container>
                   <ng-container *ngIf="form.pick['insured'] === 'yes'">
                     <ng-container *ngIf="form.carrier.trim()"><ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.CARRIER' | translate), v: form.carrier.trim() }"></ng-container></ng-container>
@@ -453,6 +440,7 @@
 <!-- Sticky mobile bar -->
 <div class="sticky-cta" [class.show]="showSticky" [attr.aria-hidden]="!showSticky">
   <a class="hf-btn btn-primary" href="#quote" [tabIndex]="showSticky ? 0 : -1" (click)="goToForm($event)">{{ 'HOME_PAGE.STICKY.QUOTE' | translate }}</a>
-  <a class="hf-btn btn-outline" href="tel:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'HOME_PAGE.STICKY.CALL' | translate }}</a>
-  <a class="hf-btn btn-outline" href="sms:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-chat" /></svg>{{ 'HOME_PAGE.STICKY.TEXT' | translate }}</a>
+  <a class="hf-btn btn-outline ic" href="tel:+17133577771" [tabIndex]="showSticky ? 0 : -1" [attr.aria-label]="'HOME_PAGE.STICKY.CALL' | translate"><svg class="icon" aria-hidden="true"><use href="#i-phone" /></svg></a>
+  <a class="hf-btn btn-outline ic" href="sms:+17133577771" [tabIndex]="showSticky ? 0 : -1" [attr.aria-label]="'HOME_PAGE.STICKY.TEXT' | translate"><svg class="icon" aria-hidden="true"><use href="#i-chat" /></svg></a>
+  <a class="hf-btn btn-outline ic" href="https://wa.me/13464367283" target="_blank" rel="noopener" [tabIndex]="showSticky ? 0 : -1" [attr.aria-label]="'HOME_PAGE.STICKY.WHATSAPP' | translate"><svg class="icon" aria-hidden="true"><use href="#i-wa" /></svg></a>
 </div>

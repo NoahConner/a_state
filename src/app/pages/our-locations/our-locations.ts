@@ -463,7 +463,7 @@ export class OurLocations implements AfterViewInit, OnDestroy {
       return {
         '@type': 'InsuranceAgency',
         '@id': o.hasPage === false ? officeUrl(i) : officeUrl(i) + '#office',
-        name: `A-State Insurance (${items[i].NAME})`,
+        name: o.title ?? `A-State Insurance (${items[i].NAME})`,
         url: officeUrl(i),
         telephone: o.tel,
         parentOrganization: { '@id': SITE + '/#agency' },

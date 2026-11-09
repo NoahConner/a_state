@@ -155,7 +155,7 @@ export const BAYTOWN_OFFICE: Office = {
   id: '123-e-texas-ave-baytown-tx-77520', name: 'Baytown', title: 'Baytown Insurance', hasPage: true,
   street: '123 E Texas Ave', city: 'Baytown, TX 77520',
   phone: '(281) 837-5729', tel: '+12818375729', lat: 29.7315813, lng: -94.9665137,
-  mapUrl: 'https://www.google.com/maps/search/?api=1&query=123+E+Texas+Ave+Baytown+TX+77520',
+  mapUrl: 'https://maps.app.goo.gl/5wFo6gXMBNksyMjz6',
   directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=123+E+Texas+Ave+Baytown+TX+77520',
 };
 

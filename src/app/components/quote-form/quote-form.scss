@@ -34,11 +34,10 @@ input{font:inherit;color:inherit}
 .hf-btn[disabled]{opacity:.7;cursor:progress}
 .or-call{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;font-size:14.5px;color:var(--stone-700);text-align:center}
 .or-call > span{display:inline-flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px 6px}
-.or-call .wa,.wa-pref a{font-weight:700;white-space:nowrap}
+.wa-pref a{font-weight:700;white-space:nowrap}
 .wa-pref{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;margin:-4px 0 0;font-size:14.5px;color:var(--stone-700);text-align:center}
 .wa-pref .icon-sm{color:#1DA851}
 .or-call .hrs::before{content:"·";margin-right:6px}
-@media (max-width:479px){.or-call{flex-direction:column;gap:2px}.or-call .hrs::before{content:none}}
 @media (hover:hover){
   .tile input:hover + label{border-color:var(--red-700);background:var(--cream);transform:translateY(-2px)}
   .tile input:hover + label .dot{transform:scale(1.12)}

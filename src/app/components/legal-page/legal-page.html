@@ -88,6 +88,7 @@
 <!-- Sticky mobile bar -->
 <div class="sticky-cta" [class.show]="showSticky" [attr.aria-hidden]="!showSticky">
   <a class="hf-btn btn-primary" [routerLink]="route('getAQuote')" [tabIndex]="showSticky ? 0 : -1">{{ 'HOME_PAGE.STICKY.QUOTE' | translate }}</a>
-  <a class="hf-btn btn-outline" href="tel:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'HOME_PAGE.STICKY.CALL' | translate }}</a>
-  <a class="hf-btn btn-outline" href="sms:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-chat" /></svg>{{ 'HOME_PAGE.STICKY.TEXT' | translate }}</a>
+  <a class="hf-btn btn-outline ic" href="tel:+17133577771" [tabIndex]="showSticky ? 0 : -1" [attr.aria-label]="'HOME_PAGE.STICKY.CALL' | translate"><svg class="icon" aria-hidden="true"><use href="#i-phone" /></svg></a>
+  <a class="hf-btn btn-outline ic" href="sms:+17133577771" [tabIndex]="showSticky ? 0 : -1" [attr.aria-label]="'HOME_PAGE.STICKY.TEXT' | translate"><svg class="icon" aria-hidden="true"><use href="#i-chat" /></svg></a>
+  <a class="hf-btn btn-outline ic" href="https://wa.me/13464367283" target="_blank" rel="noopener" [tabIndex]="showSticky ? 0 : -1" [attr.aria-label]="'HOME_PAGE.STICKY.WHATSAPP' | translate"><svg class="icon" aria-hidden="true"><use href="#i-wa" /></svg></a>
 </div>

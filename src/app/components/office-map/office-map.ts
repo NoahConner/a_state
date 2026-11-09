@@ -140,7 +140,7 @@ export class OfficeMap implements AfterViewInit, OnDestroy {
 
     this.markers.clearLayers();
     for (const o of this.list()) {
-      const name = `A-State Insurance (${o.name})`;
+      const name = o.title ?? `A-State Insurance (${o.name})`;
       const el = (tag: string, text: string, cls?: string) => {
         const node = this.document.createElement(tag);
         node.textContent = text;

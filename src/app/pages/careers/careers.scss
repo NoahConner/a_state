@@ -236,7 +236,9 @@ legend{float:none;width:auto;padding:0;margin:0 0 8px;font-size:15px;font-weight
 .consent a{color:var(--red-700);font-weight:700}
 
 /* Sticky mobile bar */
-.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:1020;background:var(--white);border-top:1px solid var(--stone-200);box-shadow:0 -6px 16px rgba(68,64,60,.08);padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom,0px));display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:8px;transform:translateY(110%);transition:transform .2s ease}
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:1020;background:var(--white);border-top:1px solid var(--stone-200);box-shadow:0 -6px 16px rgba(68,64,60,.08);padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom,0px));display:grid;grid-template-columns:minmax(0,1fr) repeat(3,52px);gap:8px;transform:translateY(110%);transition:transform .2s ease}
+.sticky-cta .hf-btn.ic{padding:0}
+.sticky-cta .hf-btn.ic .icon{width:22px;height:22px}
 .sticky-cta.show{transform:none}
 .sticky-cta .hf-btn{padding:0 10px}
 @media (min-width:1024px){.sticky-cta{display:none}}

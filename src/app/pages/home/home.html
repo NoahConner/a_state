@@ -26,10 +26,14 @@
   <div class="hf-container hero-grid">
     <div class="hero-copy">
       <span class="pill"><svg class="icon-sm" aria-hidden="true"><use href="#i-shield" /></svg>{{ 'HOME_PAGE.HERO.PILL' | translate }}</span>
+      <!-- Screen readers and search engines get one steady heading; the typing line is decoration. -->
       <h1 id="hero-title">
-        {{ 'HOME_PAGE.HERO.TITLE_1' | translate }}
-        <span class="hl">{{ 'HOME_PAGE.HERO.TITLE_HL' | translate }}</span>
-        {{ 'HOME_PAGE.HERO.TITLE_2' | translate }}
+        <span class="sr-only">{{ 'HOME_PAGE.HERO.TITLE_SR' | translate }}</span>
+        <span aria-hidden="true">
+          {{ 'HOME_PAGE.HERO.TITLE_1' | translate }}
+          <span class="hl rot"><span #rotText>{{ list('HOME_PAGE.HERO.ROTATE')[0] }}</span><span class="caret"></span></span>
+          {{ 'HOME_PAGE.HERO.TITLE_2' | translate }}
+        </span>
       </h1>
     </div>
 
@@ -234,7 +238,7 @@
       <figure class="map"><app-office-map></app-office-map></figure>
 
       <article class="office" *ngFor="let office of offices">
-        <h3 *ngIf="office.hasPage !== false; else plainTitle"><a class="title-link" [routerLink]="route('ourLocations/:id', office.id)"><span class="nw">A-State</span> Insurance {{ office.name }}</a></h3>
+        <h3 *ngIf="office.hasPage !== false; else plainTitle"><a class="title-link" [routerLink]="route('ourLocations/:id', office.id)"><ng-container *ngIf="office.title; else stdName">{{ office.title }}</ng-container><ng-template #stdName><span class="nw">A-State</span> Insurance {{ office.name }}</ng-template></a></h3>
         <ng-template #plainTitle><h3>{{ office.title }}</h3></ng-template>
         <address><svg class="icon-sm" aria-hidden="true"><use href="#i-pin" /></svg><a [href]="office.mapUrl" target="_blank" rel="noopener">{{ office.street }}, {{ office.city }}</a></address>
         <a class="ph" [href]="'tel:' + office.tel">{{ office.phone }}</a>
@@ -243,14 +247,6 @@
           <a *ngIf="office.hasPage !== false" [routerLink]="route('ourLocations/:id', office.id)">{{ 'HOME_PAGE.OFFICES.DETAILS' | translate }}</a>
         </div>
       </article>
-
-      <div class="mainline">
-        <h3>{{ 'HOME_PAGE.OFFICES.ALL_TITLE' | translate }}</h3>
-        <span>{{ 'HOME_PAGE.OFFICES.MAIN_LINE' | translate }} <a class="tel" href="tel:+17133577771">(713) 357-7771</a></span>
-        <span>{{ 'HOME_PAGE.OFFICES.EMAIL' | translate }} <a href="mailto:save@astateinsurance.com">save&#64;astateinsurance.com</a></span>
-        <span>{{ 'HOME_PAGE.OFFICES.WHATSAPP' | translate }} <a class="wa" href="https://wa.me/13464367283" target="_blank" rel="noopener">(346) 436-SAVE (7283)</a></span>
-        <span>{{ 'HOME_PAGE.FORM.HOURS' | translate }}</span>
-      </div>
     </div>
 
     <div class="cities">
@@ -338,6 +334,7 @@
 <!-- Sticky mobile bar -->
 <div class="sticky-cta" [class.show]="showSticky" [attr.aria-hidden]="!showSticky">
   <a class="hf-btn btn-primary" href="#quote" [tabIndex]="showSticky ? 0 : -1" (click)="goToQuote($event)">{{ 'HOME_PAGE.STICKY.QUOTE' | translate }}</a>
-  <a class="hf-btn btn-outline" href="tel:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'HOME_PAGE.STICKY.CALL' | translate }}</a>
-  <a class="hf-btn btn-outline" href="sms:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-chat" /></svg>{{ 'HOME_PAGE.STICKY.TEXT' | translate }}</a>
+  <a class="hf-btn btn-outline ic" href="tel:+17133577771" [tabIndex]="showSticky ? 0 : -1" [attr.aria-label]="'HOME_PAGE.STICKY.CALL' | translate"><svg class="icon" aria-hidden="true"><use href="#i-phone" /></svg></a>
+  <a class="hf-btn btn-outline ic" href="sms:+17133577771" [tabIndex]="showSticky ? 0 : -1" [attr.aria-label]="'HOME_PAGE.STICKY.TEXT' | translate"><svg class="icon" aria-hidden="true"><use href="#i-chat" /></svg></a>
+  <a class="hf-btn btn-outline ic" href="https://wa.me/13464367283" target="_blank" rel="noopener" [tabIndex]="showSticky ? 0 : -1" [attr.aria-label]="'HOME_PAGE.STICKY.WHATSAPP' | translate"><svg class="icon" aria-hidden="true"><use href="#i-wa" /></svg></a>
 </div>

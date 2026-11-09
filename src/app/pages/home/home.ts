@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnDestroy, PLATFORM_ID } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, NgZone, OnDestroy, PLATFORM_ID, ViewChild } from '@angular/core';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
@@ -55,6 +55,10 @@ export class Home implements AfterViewInit, OnDestroy {
   faqOpen = 0;
   showSticky = false;
 
+  @ViewChild('rotText') private rotText?: ElementRef<HTMLElement>;
+  private rotTimer?: ReturnType<typeof setTimeout>;
+  private rotSub?: Subscription;
+
   private readonly isBrowser: boolean;
   private readonly listCache = new Map<string, any[]>();
   private readonly langSub: Subscription;
@@ -71,6 +75,7 @@ export class Home implements AfterViewInit, OnDestroy {
     private translate: TranslateService,
     private cdr: ChangeDetectorRef,
     private host: ElementRef<HTMLElement>,
+    private zone: NgZone,
     @Inject(PLATFORM_ID) platformId: object,
     @Inject(DOCUMENT) private document: Document,
   ) {
@@ -110,6 +115,10 @@ export class Home implements AfterViewInit, OnDestroy {
   ngAfterViewInit() {
     if (!this.isBrowser) return;
 
+    // Hero heading: start once the words are loaded, and again with the new words on a language switch.
+    this.rotSub = this.translate.get('HOME_PAGE.HERO.ROTATE').subscribe(() => this.startRotator());
+    this.rotSub.add(this.translate.onLangChange.subscribe(() => this.startRotator()));
+
     this.mq = window.matchMedia('(min-width:1024px)');
     this.mq.addEventListener('change', this.onMqChange);
     this.onMqChange();
@@ -133,9 +142,60 @@ export class Home implements AfterViewInit, OnDestroy {
 
   ngOnDestroy() {
     this.langSub.unsubscribe();
+    this.rotSub?.unsubscribe();
+    clearTimeout(this.rotTimer);
     this.mq?.removeEventListener('change', this.onMqChange);
     this.observer?.disconnect();
     this.document.getElementById(SCHEMA_ID)?.remove();
+  }
+
+  // ---------- Hero: typing product name ----------
+
+  /**
+   * Types each product name (HOME_PAGE.HERO.ROTATE), holds it, deletes it and types the next.
+   * Changes the text node directly, outside Angular, so it costs no change detection.
+   * With reduced motion the names simply swap every few seconds.
+   */
+  private startRotator() {
+    clearTimeout(this.rotTimer);
+    const el = this.rotText?.nativeElement;
+    const words = this.list<string>('HOME_PAGE.HERO.ROTATE');
+    if (!el || words.length < 2) return;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let i = 0;
+    let n = words[0].length;
+    let deleting = true;
+    el.textContent = words[0];
+
+    const tick = () => {
+      let wait: number;
+      if (reduce) {
+        i = (i + 1) % words.length;
+        el.textContent = words[i];
+        wait = 2500;
+      } else if (deleting) {
+        n--;
+        el.textContent = words[i].slice(0, n);
+        if (n === 0) {
+          deleting = false;
+          i = (i + 1) % words.length;
+          wait = 300;
+        } else {
+          wait = 40;
+        }
+      } else {
+        n++;
+        el.textContent = words[i].slice(0, n);
+        if (n === words[i].length) {
+          deleting = true;
+          wait = 2000;
+        } else {
+          wait = 85;
+        }
+      }
+      this.rotTimer = setTimeout(tick, wait);
+    };
+    this.zone.runOutsideAngular(() => (this.rotTimer = setTimeout(tick, 2200)));
   }
 
   // ---------- Accordions ----------

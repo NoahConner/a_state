@@ -28,13 +28,13 @@ export interface AqVehicle {
 
 /** One repeating driver block. */
 export interface AqDriver {
-  id: number; first: string; last: string; dob: string; marital: string; license: string; age: string;
+  id: number; first: string; last: string; dob: string; marital: string; license: string;
 }
 
 interface AqForm {
   first: string; last: string; phone: string; email: string; email2: string; address: string;
   vehicles: AqVehicle[]; drivers: AqDriver[];
-  /** Single-choice answers by group: coverage, accidents, tickets, sr22, insured, lang, method, time. */
+  /** Single-choice answers by group: coverage, insured, lang, method, time. */
   pick: Record<string, string>;
   carrier: string; renewal: string; also: Record<string, boolean>; office: string;
 }
@@ -58,13 +58,11 @@ const ALSO_ICONS = ['i-home', 'i-briefcase', 'i-heart', 'i-health'];
 const OWN_VALUES: Record<string, string> = { owned: 'Owned', financed: 'Financed', leased: 'Leased' };
 const USE_VALUES: Record<string, string> = { personal: 'Personal', commuting: 'Commuting', business: 'Business', rideshare: 'Rideshare or delivery' };
 const MARITAL_VALUES: Record<string, string> = { single: 'Single', married: 'Married', other: 'Other' };
-const YNU_VALUES: Record<string, string> = { yes: 'Yes', no: 'No', unsure: 'Not sure' };
 const LANG_VALUES: Record<string, string> = { en: 'English', es: 'Spanish', hi: 'Hindi' };
 const METHOD_VALUES: Record<string, string> = { call: 'Phone Call', text: 'Text Message', email: 'Email' };
 const TIME_VALUES: Record<string, string> = { morning: 'Morning (9 AM–12 PM)', afternoon: 'Afternoon (12 PM–4 PM)', evening: 'Evening (4 PM–7 PM)' };
 const LICENSE_VALUES: Record<string, string> = { license: "Driver's license", state_id: 'Texas/State ID', intl: 'International ID/Matrícula' };
 const COVERAGE_VALUES: Record<string, string> = { minimum: 'State minimum (liability only)', full: 'Full coverage', unsure: 'Not sure' };
-const COUNT_VALUES: Record<string, string> = { '0': '0', '1': '1', '2+': '2+', unsure: 'Not sure' };
 /** "Bundle" answers, one per product that has a slot. BUNDLE_NONE is only sent when none is ticked. */
 const BUNDLE_VALUES: Record<string, string> = {
   home: 'Yes! I want an Auto + Home bundle discount.',
@@ -91,15 +89,12 @@ interface AutoQuotePayload extends PageSourceFields {
     ownership?: string; primary_use?: string;
   }[];
   drivers: {
-    full_name: string; date_of_birth: string; marital_status?: string; license_type?: string; age_first_licensed?: string;
+    full_name: string; date_of_birth: string; marital_status?: string; license_type?: string;
   }[];
   coverage_type?: string;
-  accidents?: string;
-  tickets?: string;
   currently_issued?: string;
   current_carrier?: string;
   renewal_date?: string;
-  sr_22_needed?: string;
   bundle?: string;
   preferred_office?: string;
   preferred_language: string;
@@ -374,18 +369,10 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
     }
   }
 
-  onDriver(d: AqDriver, key: 'first' | 'last' | 'dob' | 'age', event: Event) {
-    const input = event.target as HTMLInputElement;
-    let value = input.value;
-    if (key === 'age') {
-      value = value.replace(/\D/g, '').slice(0, 2);
-      if (value !== input.value) input.value = value;
-    }
-    d[key] = value;
+  onDriver(d: AqDriver, key: 'first' | 'last' | 'dob', event: Event) {
+    d[key] = (event.target as HTMLInputElement).value;
     const k = `d${d.id}.${key}`;
     if (this.errors[k]) this.errors[k] = this.driverError(d, key);
-    // The age-first-licensed check depends on the date of birth.
-    if (key === 'dob' && this.errors[`d${d.id}.age`]) this.errors[`d${d.id}.age`] = this.driverError(d, 'age');
   }
 
   onAlso(key: string, event: Event) {
@@ -504,7 +491,7 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
       }
     } else if (n === 3) {
       for (const d of this.form.drivers) {
-        for (const key of ['first', 'last', 'dob', 'age'] as const) {
+        for (const key of ['first', 'last', 'dob'] as const) {
           check(`d${d.id}.${key}`, `aq-d${d.id}-${key}`, this.driverError(d, key));
         }
       }
@@ -567,7 +554,7 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
     }
   }
 
-  private driverError(d: AqDriver, key: 'first' | 'last' | 'dob' | 'age'): string {
+  private driverError(d: AqDriver, key: 'first' | 'last' | 'dob'): string {
     switch (key) {
       case 'first':
         return d.first.trim() ? '' : this.err('D_FIRST');
@@ -577,13 +564,6 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
         if (!d.dob) return this.err('DOB_EMPTY');
         const a = this.ageOf(d.dob);
         return a === null || a < 15 || a > 100 ? this.err('DOB_AGE') : '';
-      }
-      case 'age': {
-        if (!d.age) return '';
-        const first = Number(d.age);
-        const a = d.dob ? this.ageOf(d.dob) : null;
-        const dobOk = a !== null && a >= 15 && a <= 100;
-        return first < 14 || (dobOk && first > a!) ? this.err('D_AGE') : '';
       }
     }
   }
@@ -667,16 +647,12 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
         date_of_birth: d.dob,
         ...(d.marital ? { marital_status: MARITAL_VALUES[d.marital] } : {}),
         ...(LICENSE_VALUES[d.license] ? { license_type: LICENSE_VALUES[d.license] } : {}),
-        ...(d.age ? { age_first_licensed: d.age } : {}),
       })),
       ...(COVERAGE_VALUES[pick['coverage']] ? { coverage_type: COVERAGE_VALUES[pick['coverage']] } : {}),
-      ...(COUNT_VALUES[pick['accidents']] ? { accidents: COUNT_VALUES[pick['accidents']] } : {}),
-      ...(COUNT_VALUES[pick['tickets']] ? { tickets: COUNT_VALUES[pick['tickets']] } : {}),
       ...(pick['insured'] ? { currently_issued: insured ? 'Yes' : 'No' } : {}),
       ...(carrier ? { current_carrier: carrier } : {}),
       ...(insured && /^\d{4}-\d{2}-\d{2}$/.test(f.renewal) ? { renewal_date: f.renewal } : {}),
       ...(office ? { preferred_office: `${office.street}, ${office.city}` } : {}),
-      ...(pick['sr22'] ? { sr_22_needed: YNU_VALUES[pick['sr22']] } : {}),
       bundle: bundles.length ? bundles.join(' ') : BUNDLE_NONE,
       preferred_language: LANG_VALUES[pick['lang']] ?? 'English',
       ...(pick['method'] ? { contact_method: METHOD_VALUES[pick['method']] } : {}),
@@ -731,7 +707,7 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
   }
 
   private newDriver(): AqDriver {
-    return { id: ++this.seq.driver, first: '', last: '', dob: '', marital: '', license: '', age: '' };
+    return { id: ++this.seq.driver, first: '', last: '', dob: '', marital: '', license: '' };
   }
 
   private emptyForm(): AqForm {

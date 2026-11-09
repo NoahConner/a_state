@@ -96,7 +96,7 @@
     </ul>
     <div class="loc-grid">
       <article class="loc-card" *ngFor="let item of list('LOCATIONS_PAGE.OFFICES.ITEMS'); let i = index" [id]="extras[i].anchor" [attr.aria-labelledby]="extras[i].anchor + '-h'">
-        <h3 [id]="extras[i].anchor + '-h'"><span class="nw">A-State</span> Insurance ({{ item.NAME }})</h3>
+        <h3 [id]="extras[i].anchor + '-h'"><ng-container *ngIf="offices[i].title; else stdName">{{ offices[i].title }}</ng-container><ng-template #stdName><span class="nw">A-State</span> Insurance ({{ item.NAME }})</ng-template></h3>
         <address><svg class="icon-sm" aria-hidden="true"><use href="#i-pin" /></svg><span><span class="lbl">{{ 'LOCATIONS_PAGE.OFFICES.ADDRESS' | translate }}</span>&ngsp;<a class="addr" [href]="offices[i].mapUrl" target="_blank" rel="noopener">{{ item.ADDRESS }}</a></span></address>
         <p class="line"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg><span><span class="lbl">{{ 'LOCATIONS_PAGE.OFFICES.PHONE' | translate }}</span>&ngsp;<a class="ph" [href]="'tel:' + offices[i].tel">{{ offices[i].phone }}</a></span></p>
         <p class="line"><svg class="icon-sm" aria-hidden="true"><use href="#i-wa" /></svg><span><span class="lbl">{{ 'LOCATIONS_PAGE.OFFICES.WHATSAPP' | translate }}</span>&ngsp;<a class="ph" href="https://wa.me/13464367283" target="_blank" rel="noopener">(346) 436-SAVE (7283)</a></span></p>
@@ -252,6 +252,7 @@
 <!-- Sticky mobile bar -->
 <div class="sticky-cta" [class.show]="showSticky" [attr.aria-hidden]="!showSticky">
   <a class="hf-btn btn-primary" href="#quote" [tabIndex]="showSticky ? 0 : -1" (click)="goToSection('quote', $event)">{{ 'HOME_PAGE.STICKY.QUOTE' | translate }}</a>
-  <a class="hf-btn btn-outline" href="tel:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'HOME_PAGE.STICKY.CALL' | translate }}</a>
-  <a class="hf-btn btn-outline" href="sms:+17133577771" [tabIndex]="showSticky ? 0 : -1"><svg class="icon-sm" aria-hidden="true"><use href="#i-chat" /></svg>{{ 'HOME_PAGE.STICKY.TEXT' | translate }}</a>
+  <a class="hf-btn btn-outline ic" href="tel:+17133577771" [tabIndex]="showSticky ? 0 : -1" [attr.aria-label]="'HOME_PAGE.STICKY.CALL' | translate"><svg class="icon" aria-hidden="true"><use href="#i-phone" /></svg></a>
+  <a class="hf-btn btn-outline ic" href="sms:+17133577771" [tabIndex]="showSticky ? 0 : -1" [attr.aria-label]="'HOME_PAGE.STICKY.TEXT' | translate"><svg class="icon" aria-hidden="true"><use href="#i-chat" /></svg></a>
+  <a class="hf-btn btn-outline ic" href="https://wa.me/13464367283" target="_blank" rel="noopener" [tabIndex]="showSticky ? 0 : -1" [attr.aria-label]="'HOME_PAGE.STICKY.WHATSAPP' | translate"><svg class="icon" aria-hidden="true"><use href="#i-wa" /></svg></a>
 </div>

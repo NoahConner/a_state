@@ -107,6 +107,9 @@ legend.sr-only{margin:-1px}
 .cform .opt{font-weight:500;color:var(--stone-500);font-size:14px}
 .cform .req{color:var(--red-700)}
 .cform input[type=text],.cform input[type=tel],.cform input[type=email],.cform input[type=date],.cform select,.cform textarea{font:inherit;font-size:16px;min-height:52px;padding:0 14px;border:1.5px solid var(--stone-500);border-radius:var(--r-btn);background:var(--white);color:var(--stone-700);width:100%}
+/* iOS Safari draws date inputs natively and pins the value to the top: center it like the other fields */
+.cform input[type=date]{-webkit-appearance:none;appearance:none;display:block;line-height:49px;text-align:left}
+.cform input[type=date]::-webkit-date-and-time-value{text-align:left;margin:0}
 .cform textarea{min-height:96px;padding:12px 14px;resize:vertical}
 .cform select{padding-right:40px;-webkit-appearance:none;appearance:none;background:var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2344403C' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 14px center}
 .cform input:focus,.cform select:focus,.cform textarea:focus{outline:none;border-color:var(--red-700);box-shadow:0 0 0 3px rgba(202,43,40,.28)}
@@ -239,7 +242,9 @@ fieldset .err{margin-top:8px}
 @media (min-width:640px){.ready-band .btn-row .hf-btn{flex:0 0 auto}}
 
 /* Sticky mobile bar */
-.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:1020;background:var(--white);border-top:1px solid var(--stone-200);box-shadow:0 -6px 16px rgba(68,64,60,.08);padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom,0px));display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:8px;transform:translateY(110%);transition:transform .2s ease}
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:1020;background:var(--white);border-top:1px solid var(--stone-200);box-shadow:0 -6px 16px rgba(68,64,60,.08);padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom,0px));display:grid;grid-template-columns:minmax(0,1fr) repeat(3,52px);gap:8px;transform:translateY(110%);transition:transform .2s ease}
+.sticky-cta .hf-btn.ic{padding:0}
+.sticky-cta .hf-btn.ic .icon{width:22px;height:22px}
 .sticky-cta.show{transform:none}
 .sticky-cta .hf-btn{padding:0 10px}
 @media (min-width:1024px){.sticky-cta{display:none}}
