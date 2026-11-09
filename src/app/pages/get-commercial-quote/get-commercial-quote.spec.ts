@@ -19,8 +19,8 @@ function setup(lang = 'en', query: Record<string, string> = {}) {
     document,
   );
   Object.assign(c.form, {
-    bizName: ' Test Co ', industry: 'retail', desc: ' Test shop ', zip: '77001', employees: '3',
-    name: ' Test User ', phone: '(555) 010-0100',
+    bizName: ' Test Co ', industry: 'retail', desc: ' Test shop ', address: '123 Main St, Houston, TX 77001', employees: '3',
+    first: ' Test ', last: ' User ', phone: '(555) 010-0100',
   });
   c.form.coverage['gl'] = true;
   const payload = () => (c as any).buildPayload() as any;
@@ -36,6 +36,7 @@ describe('GetCommercialQuote payload', () => {
       industry_type: 'Retail',
       business_description: 'Test shop',
       business_zip_code: '77001',
+      business_address: '123 Main St, Houston, TX 77001',
       number_of_employees: '3',
       coverage_items: ['General Liability'],
       contact_name: 'Test User',
@@ -108,10 +109,16 @@ describe('GetCommercialQuote payload', () => {
 });
 
 describe('GetCommercialQuote validation', () => {
-  it('requires business name, industry, description and a 5-digit ZIP', () => {
+  it('requires business name, industry, description and an address with a 5-digit ZIP', () => {
     const { c, validate } = setup();
-    Object.assign(c.form, { bizName: '', industry: '', desc: '', zip: '7700' });
-    expect(validate(1)).toEqual(['bq-name', 'bq-ind', 'bq-desc', 'bq-zip']);
+    Object.assign(c.form, { bizName: '', industry: '', desc: '', address: '123 Main St, Houston, TX 7700' });
+    expect(validate(1)).toEqual(['bq-name', 'bq-ind', 'bq-desc', 'bq-address']);
+  });
+
+  it('requires first and last name', () => {
+    const { c, validate } = setup();
+    Object.assign(c.form, { first: ' ', last: '' });
+    expect(validate(4)).toEqual(['bq-first', 'bq-last']);
   });
 
   it('requires at least one employee and at least one coverage', () => {
@@ -147,6 +154,9 @@ describe('GetCommercialQuote behaviour', () => {
   it('prefills name and phone and flags group health from the query string', () => {
     const { c } = setup('en', { fullName: 'Test User', phone: '5550100100', coverage: 'group-health' });
     expect(c.form.phone).toBe('(555) 010-0100');
+    Object.assign(c.form, { first: '', last: '' });
+    (c as any).setName(' Ana  Maria Lopez ');
+    expect([c.form.first, c.form.last]).toEqual(['Ana', 'Maria Lopez']);
     expect(c.groupHealth).toBe(true);
     expect(c.covered('unsure')).toBe(true);
     expect(c.tags()).toEqual(['group-health']);

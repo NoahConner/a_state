@@ -40,6 +40,7 @@ describe('GetAutoQuote payload', () => {
     expect(p.vehicles[0]).toEqual({ year: '2020', make: 'Toyota', model: 'Camry' });
     expect(p.first_name).toBe('Test User');
     expect(p.zip_code).toBe('77001');
+    expect(p.full_address).toMatch(/77001$/);
     expect(p.drivers[0]).toEqual({ full_name: 'Test User', date_of_birth: '1990-01-01' });
     expect(p.bundle).toBe('No, just Auto for now.');
   });

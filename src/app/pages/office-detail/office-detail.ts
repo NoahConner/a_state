@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs';
 import { routeTranslations } from '../../app-routing-module';
 import { Language } from '../../services/language';
 import { QuoteLeadCaptureService } from '../../services/quote-lead-capture.service';
-import { buildRoute, OFFICES } from '../../components/header/header';
+import { BAYTOWN_OFFICE, buildRoute, OFFICES } from '../../components/header/header';
 import { Seg } from '../insurance-services/insurance-services';
 import { OFFICE_PAGES, OfficeConfig } from './offices';
 
@@ -33,7 +33,7 @@ const SITE = 'https://astateinsurance.com';
 const C = 'OFFICE_PAGE.COMMON.';
 
 type OpenStatus = 'unknown' | 'open' | 'closed';
-type Field = 'name' | 'phone' | 'type';
+type Field = 'first' | 'last' | 'phone' | 'type';
 
 /**
  * Office page (one per office, chosen from the URL). Text comes from OFFICE_PAGE in the
@@ -64,7 +64,7 @@ export class OfficeDetail implements AfterViewInit, OnDestroy {
   statusKey = C + 'HOURS.DEFAULT';
   today = -1;
 
-  form = { name: '', phone: '', type: '', lang: '', time: '', method: 'call' };
+  form = { first: '', last: '', phone: '', type: '', lang: '', time: '', method: 'call' };
   errors: Partial<Record<Field, string>> = {};
   isSubmitting = false;
 
@@ -98,7 +98,8 @@ export class OfficeDetail implements AfterViewInit, OnDestroy {
     const slug = this.router.url.split(/[?#]/)[0].split('/').filter(Boolean).pop();
     this.office = OFFICE_PAGES.find((p) => p.id === slug) ?? OFFICE_PAGES[0];
     this.o = `OFFICE_PAGE.OFFICES.${this.office.key}.`;
-    this.directionsUrl = OFFICES.find((x) => x.id === this.office.id)?.directionsUrl ?? this.office.placeUrl;
+    this.directionsUrl = [...OFFICES, BAYTOWN_OFFICE].find((x) => x.id === this.office.id)?.directionsUrl ?? this.office.placeUrl;
+    if (this.office.weekdayHours) this.statusKey = C + 'HOURS_BAY.DEFAULT';
     this.form.lang = this.lang;
     this.subs.add(
       this.translate.onLangChange.subscribe(() => {
@@ -234,9 +235,9 @@ export class OfficeDetail implements AfterViewInit, OnDestroy {
 
   // ---------- Quote form ----------
 
-  onNameInput(event: Event) {
-    this.form.name = (event.target as HTMLInputElement).value;
-    if (this.errors.name) this.validate(['name']);
+  onNameInput(field: 'first' | 'last', event: Event) {
+    this.form[field] = (event.target as HTMLInputElement).value;
+    if (this.errors[field]) this.validate([field]);
   }
 
   onPhoneInput(event: Event) {
@@ -250,7 +251,7 @@ export class OfficeDetail implements AfterViewInit, OnDestroy {
     if (this.errors.phone) this.validate(['phone']);
   }
 
-  onBlur(field: 'name' | 'phone') {
+  onBlur(field: 'first' | 'last' | 'phone') {
     if (this.form[field]) this.validate([field]);
   }
 
@@ -274,17 +275,17 @@ export class OfficeDetail implements AfterViewInit, OnDestroy {
     try {
       const sent = await this.quoteLeadCaptureService.submitLead({
         selected_chip: label('TYPES', this.form.type),
-        full_name: this.form.name,
+        full_name: `${this.form.first.trim()} ${this.form.last.trim()}`.trim(),
         phone_number: this.form.phone,
         preferred_office: this.office.name,
-        // Plain values (en/es/hi, morning/…, call/text) so the backend gets the same words on both sites.
+        // Plain values (en/es/hi, morning/…, call/text/whatsapp) so the backend gets the same words on both sites.
         preferred_language: this.form.lang,
         best_time: this.form.time,
         contact_method: this.form.method,
       });
       if (!sent) return;
       const next = QUOTE_ROUTES[this.form.type] ?? 'getAQuote';
-      this.form = { name: '', phone: '', type: '', lang: this.lang, time: '', method: 'call' };
+      this.form = { first: '', last: '', phone: '', type: '', lang: this.lang, time: '', method: 'call' };
       this.errors = {};
       await this.router.navigate(this.route(next));
     } finally {
@@ -297,9 +298,10 @@ export class OfficeDetail implements AfterViewInit, OnDestroy {
     const want = (f: Field) => !only || only.includes(f);
     const t = (k: string) => this.translate.instant(C + 'QUOTE.' + k);
     const bad: Field[] = [];
-    if (want('name')) {
-      this.errors.name = this.form.name.trim().length < 2 ? t('ERR_NAME') : '';
-      if (this.errors.name) bad.push('name');
+    for (const f of ['first', 'last'] as const) {
+      if (!want(f)) continue;
+      this.errors[f] = this.form[f].trim() ? '' : t(f === 'first' ? 'ERR_FIRST' : 'ERR_LAST');
+      if (this.errors[f]) bad.push(f);
     }
     if (want('phone')) {
       const d = this.digits(this.form.phone);
@@ -317,7 +319,7 @@ export class OfficeDetail implements AfterViewInit, OnDestroy {
     return v.replace(/\D/g, '').replace(/^1(?=\d{10})/, '');
   }
 
-  // ---------- Open / closed status (Mon–Sat 9 AM–7 PM Central) ----------
+  // ---------- Open / closed status (Mon–Sat 9 AM–7 PM Central; Baytown Mon–Fri 9 AM–6 PM, Saturday by phone) ----------
 
   private updateStatus() {
     const parts: Record<string, string> = {};
@@ -326,9 +328,22 @@ export class OfficeDetail implements AfterViewInit, OnDestroy {
       .forEach((p) => (parts[p.type] = p.value));
     const day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(parts['weekday']);
     const minutes = Number(parts['hour']) * 60 + Number(parts['minute']);
+    this.today = day;
+    if (this.office.weekdayHours) {
+      const weekday = day >= 1 && day <= 5;
+      const open = weekday && minutes >= 540 && minutes < 1080;
+      this.status = open ? 'open' : 'closed';
+      const k = C + 'HOURS_BAY.';
+      if (open) this.statusKey = k + 'OPEN';
+      else if (day === 6 && minutes >= 540 && minutes < 1140) this.statusKey = k + 'PHONES';
+      else if (weekday && minutes < 540) this.statusKey = k + 'OPENS_TODAY';
+      else if (day >= 1 && day <= 4) this.statusKey = k + 'OPENS_TOMORROW';
+      else this.statusKey = k + 'OPENS_MONDAY';
+      this.cdr.detectChanges();
+      return;
+    }
     const weekday = day >= 1 && day <= 6;
     const open = weekday && minutes >= 540 && minutes < 1140;
-    this.today = day;
     this.status = open ? 'open' : 'closed';
     const k = C + 'HOURS.';
     if (open) this.statusKey = k + 'OPEN';
@@ -407,14 +422,15 @@ export class OfficeDetail implements AfterViewInit, OnDestroy {
           hasMap: this.office.placeUrl,
           openingHoursSpecification: {
             '@type': 'OpeningHoursSpecification',
-            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            // Baytown: walk-ins Mon–Fri only (Saturday is by phone)
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', ...(this.office.weekdayHours ? [] : ['Saturday'])],
             opens: '09:00',
-            closes: '19:00',
+            closes: this.office.weekdayHours ? '18:00' : '19:00',
           },
           availableLanguage: ['English', 'Spanish', 'Hindi'],
           amenityFeature: { '@type': 'LocationFeatureSpecification', name: 'Free parking', value: true },
           areaServed: [
-            ...this.office.hoods.map((h) => ({ '@type': 'Place', name: `${h}, Houston, TX` })),
+            ...this.office.hoods.map((h) => ({ '@type': 'Place', name: `${h}, ${this.office.areaSuffix ?? 'Houston, TX'}` })),
             { '@type': 'State', name: 'Texas' },
           ],
         },

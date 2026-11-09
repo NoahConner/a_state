@@ -43,6 +43,7 @@
         <div [class.today]="today >= 1 && today <= 6"><dt>{{ 'LOCATIONS_PAGE.HOURS.WEEK' | translate }}</dt><dd>{{ 'LOCATIONS_PAGE.HOURS.WEEK_TIME' | translate }}</dd></div>
         <div [class.today]="today === 0"><dt>{{ 'LOCATIONS_PAGE.HOURS.SUNDAY' | translate }}</dt><dd>{{ 'LOCATIONS_PAGE.HOURS.CLOSED' | translate }}</dd></div>
       </dl>
+      <p class="hc-note">{{ 'LOCATIONS_PAGE.HOURS.BAYTOWN' | translate }}</p>
       <p class="reply"><svg class="icon-sm" aria-hidden="true"><use href="#i-car" /></svg>{{ 'LOCATIONS_PAGE.HOURS.NOTE' | translate }}</p>
     </aside>
   </div>
@@ -78,7 +79,7 @@
       </ol>
     </div>
     <!-- Same live office map as the home page -->
-    <figure class="map"><app-office-map></app-office-map></figure>
+    <figure class="map"><app-office-map [withBaytown]="true"></app-office-map></figure>
   </div>
 </section>
 
@@ -98,12 +99,14 @@
         <h3 [id]="extras[i].anchor + '-h'"><span class="nw">A-State</span> Insurance ({{ item.NAME }})</h3>
         <address><svg class="icon-sm" aria-hidden="true"><use href="#i-pin" /></svg><span><span class="lbl">{{ 'LOCATIONS_PAGE.OFFICES.ADDRESS' | translate }}</span>&ngsp;<a class="addr" [href]="offices[i].mapUrl" target="_blank" rel="noopener">{{ item.ADDRESS }}</a></span></address>
         <p class="line"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg><span><span class="lbl">{{ 'LOCATIONS_PAGE.OFFICES.PHONE' | translate }}</span>&ngsp;<a class="ph" [href]="'tel:' + offices[i].tel">{{ offices[i].phone }}</a></span></p>
+        <p class="line"><svg class="icon-sm" aria-hidden="true"><use href="#i-wa" /></svg><span><span class="lbl">{{ 'LOCATIONS_PAGE.OFFICES.WHATSAPP' | translate }}</span>&ngsp;<a class="ph" href="https://wa.me/13464367283" target="_blank" rel="noopener">(346) 436-SAVE (7283)</a></span></p>
+        <p class="line"><svg class="icon-sm" aria-hidden="true"><use href="#i-cal" /></svg><span><span class="lbl">{{ 'LOCATIONS_PAGE.OFFICES.HOURS' | translate }}</span> {{ item.HOURS || ('LOCATIONS_PAGE.OFFICES.HOURS_TEXT' | translate) }}</span></p>
         <p class="line rev"><svg class="icon-sm" aria-hidden="true"><use href="#i-star" /></svg><span><span class="lbl">{{ 'LOCATIONS_PAGE.OFFICES.REVIEWS' | translate }}</span> <span class="stars" aria-hidden="true"><span [style.width]="starWidth(extras[i].rating)"></span></span><b>{{ extras[i].rating.toFixed(1) }}/5.0</b> · {{ 'LOCATIONS_PAGE.OFFICES.REVIEWS_COUNT' | translate: { n: extras[i].reviews } }}</span></p>
         <p class="line"><svg class="icon-sm" aria-hidden="true"><use href="#i-car" /></svg><span><span class="lbl">{{ 'LOCATIONS_PAGE.OFFICES.PARKING' | translate }}</span> {{ item.PARKING }}</span></p>
         <div class="loc-acts">
           <a class="hf-btn btn-primary" href="#quote" (click)="pickOffice(i, $event)">{{ 'LOCATIONS_PAGE.OFFICES.QUOTE' | translate }}</a>
           <a class="hf-btn btn-outline" [href]="offices[i].directionsUrl" target="_blank" rel="noopener">{{ 'LOCATIONS_PAGE.OFFICES.DIRECTIONS' | translate }}</a>
-          <a class="arrow-link" [routerLink]="route('ourLocations/:id', offices[i].id)">{{ 'LOCATIONS_PAGE.OFFICES.DETAILS' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+          <a class="arrow-link" *ngIf="offices[i].hasPage !== false" [routerLink]="route('ourLocations/:id', offices[i].id)">{{ 'LOCATIONS_PAGE.OFFICES.DETAILS' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
         </div>
       </article>
     </div>
@@ -177,12 +180,21 @@
     <form class="cform" novalidate aria-labelledby="lq-h" (submit)="submit($event)">
       <div class="row2">
         <div class="field">
-          <label for="lq-name">{{ 'LOCATIONS_PAGE.QUOTE.NAME' | translate }} <span class="req" aria-hidden="true">*</span></label>
-          <input type="text" id="lq-name" name="name" autocomplete="name" required [value]="form.name"
-            [attr.aria-invalid]="errors.name ? 'true' : null" aria-describedby="lq-name-err"
-            (input)="onNameInput($event)" (blur)="onBlur('name')" />
-          <p class="err" id="lq-name-err" aria-live="polite">{{ errors.name }}</p>
+          <label for="lq-first">{{ 'LOCATIONS_PAGE.QUOTE.FIRST' | translate }} <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="lq-first" name="first_name" autocomplete="given-name" required [value]="form.first"
+            [attr.aria-invalid]="errors.first ? 'true' : null" aria-describedby="lq-first-err"
+            (input)="onNameInput('first', $event)" (blur)="onBlur('first')" />
+          <p class="err" id="lq-first-err" aria-live="polite">{{ errors.first }}</p>
         </div>
+        <div class="field">
+          <label for="lq-last">{{ 'LOCATIONS_PAGE.QUOTE.LAST' | translate }} <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="lq-last" name="last_name" autocomplete="family-name" required [value]="form.last"
+            [attr.aria-invalid]="errors.last ? 'true' : null" aria-describedby="lq-last-err"
+            (input)="onNameInput('last', $event)" (blur)="onBlur('last')" />
+          <p class="err" id="lq-last-err" aria-live="polite">{{ errors.last }}</p>
+        </div>
+      </div>
+      <div class="row2">
         <div class="field">
           <label for="lq-phone">{{ 'LOCATIONS_PAGE.QUOTE.PHONE' | translate }} <span class="req" aria-hidden="true">*</span></label>
           <input type="tel" id="lq-phone" name="phone" inputmode="tel" autocomplete="tel-national" required [value]="form.phone"
@@ -190,13 +202,13 @@
             (input)="onPhoneInput($event)" (blur)="onBlur('phone')" />
           <p class="err" id="lq-phone-err" aria-live="polite">{{ errors.phone }}</p>
         </div>
-      </div>
-      <div class="field">
-        <label for="lq-email">{{ 'LOCATIONS_PAGE.QUOTE.EMAIL' | translate }} <span class="opt">{{ 'LOCATIONS_PAGE.QUOTE.OPTIONAL' | translate }}</span></label>
-        <input type="email" id="lq-email" name="email" autocomplete="email" [value]="form.email"
-          [attr.aria-invalid]="errors.email ? 'true' : null" aria-describedby="lq-email-err"
-          (input)="onEmailInput($event)" (blur)="onBlur('email')" />
-        <p class="err" id="lq-email-err" aria-live="polite">{{ errors.email }}</p>
+        <div class="field">
+          <label for="lq-email">{{ 'LOCATIONS_PAGE.QUOTE.EMAIL' | translate }} <span class="opt">{{ 'LOCATIONS_PAGE.QUOTE.OPTIONAL' | translate }}</span></label>
+          <input type="email" id="lq-email" name="email" autocomplete="email" [value]="form.email"
+            [attr.aria-invalid]="errors.email ? 'true' : null" aria-describedby="lq-email-err"
+            (input)="onEmailInput($event)" (blur)="onBlur('email')" />
+          <p class="err" id="lq-email-err" aria-live="polite">{{ errors.email }}</p>
+        </div>
       </div>
       <fieldset>
         <legend>{{ 'LOCATIONS_PAGE.QUOTE.TYPE' | translate }} <span class="req" aria-hidden="true">*</span></legend>
@@ -217,7 +229,7 @@
           </div>
           <div class="opt-chip" *ngFor="let item of list('LOCATIONS_PAGE.OFFICES.ITEMS'); let i = index">
             <input type="radio" name="lq-office" [id]="'lo-' + extras[i].anchor" [value]="offices[i].id" [checked]="form.office === offices[i].id" (change)="form.office = offices[i].id" />
-            <label [for]="'lo-' + extras[i].anchor">{{ item.NAME }}</label>
+            <label [for]="'lo-' + extras[i].anchor">{{ offices[i].name }}</label>
           </div>
         </div>
       </fieldset>

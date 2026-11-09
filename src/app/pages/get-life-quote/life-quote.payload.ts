@@ -7,10 +7,10 @@
  * - Unanswered optional fields are left out, never sent as '' or null.
  * - Health answers are never sent to analytics; the API includes them in the lead email and ClickUp task.
  */
-import { OFFICES } from '../../components/header/header';
+import { BAYTOWN_OFFICE, OFFICES } from '../../components/header/header';
 import { PageSourceFields } from '../../services/page-source';
 import { ALSO_QUOTE_VALUES, ANSWER_VALUES, LifeQuoteForm, PURPOSE_VALUES, Question } from './life-quote.model';
-import { ISO_DATE_RE } from './life-quote.validation';
+import { ISO_DATE_RE, ZIP_RE } from './life-quote.validation';
 
 export interface LifeQuotePayload extends PageSourceFields {
   type: 'life';
@@ -21,6 +21,7 @@ export interface LifeQuotePayload extends PageSourceFields {
   spouse_date_of_birth?: string;
   spouse_gender?: string;
   zip_code: string;
+  full_address: string;
   // Step 2: health
   uses_tobacco?: string;
   general_health?: string;
@@ -49,7 +50,7 @@ export function buildLifeQuotePayload(form: LifeQuoteForm, source: PageSourceFie
   /** English value of a radio answer, or undefined when it wasn't answered. */
   const english = (q: Question) => ANSWER_VALUES[q][answers[q] ?? ''];
   const forBoth = answers.who === 'both';
-  const office = OFFICES.find((o) => o.id === form.office);
+  const office = [...OFFICES, BAYTOWN_OFFICE].find((o) => o.id === form.office);
 
   const payload: LifeQuotePayload = {
     type: 'life',
@@ -60,7 +61,8 @@ export function buildLifeQuotePayload(form: LifeQuoteForm, source: PageSourceFie
     gender: english('sex'),
     spouse_date_of_birth: forBoth && ISO_DATE_RE.test(form.spouseDob) ? form.spouseDob : undefined,
     spouse_gender: forBoth ? english('spouseSex') : undefined,
-    zip_code: form.zip,
+    zip_code: ZIP_RE.exec(form.address)?.[1] ?? '',
+    full_address: form.address.trim().slice(0, 255),
 
     // Step 2: health
     uses_tobacco: english('tobacco'),
@@ -78,7 +80,7 @@ export function buildLifeQuotePayload(form: LifeQuoteForm, source: PageSourceFie
     bundle_option: ticked(form.alsoQuote, ALSO_QUOTE_VALUES),
 
     // Step 4: contact
-    full_name: form.name.trim(),
+    full_name: `${form.first.trim()} ${form.last.trim()}`.trim(),
     phone_number: form.phone,
     email_address: form.email.trim() || undefined,
     preferred_language: english('lang') ?? 'English',

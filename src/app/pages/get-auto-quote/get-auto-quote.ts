@@ -46,7 +46,7 @@ const MAX_BLOCKS = 6;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const VIN_RE = /^[A-HJ-NPR-Z0-9]{17}$/;
 const TOTAL_STEPS = 6;
-/** A 5-digit ZIP inside the full address. The backend keeps zip_code only (no address column yet). */
+/** A 5-digit ZIP inside the full address; sent as zip_code next to full_address. */
 const ZIP_RE = /\b(\d{5})(?:-\d{4})?\b/;
 
 const NEED_ICONS = ['i-user', 'i-car', 'i-doc', 'i-alert'];
@@ -83,6 +83,7 @@ interface AutoQuotePayload extends PageSourceFields {
   type: 'auto';
   first_name: string;
   zip_code: string;
+  full_address: string;
   email_address?: string;
   phone_number: string;
   vehicles: {
@@ -645,6 +646,7 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
       type: 'auto',
       first_name: this.fullName(f),
       zip_code: ZIP_RE.exec(f.address)?.[1] ?? '',
+      full_address: f.address.trim().slice(0, 255),
       ...(email ? { email_address: email } : {}),
       phone_number: f.phone,
       vehicles: f.vehicles.map((v) => {

@@ -5,11 +5,11 @@ import { Subscription, firstValueFrom } from 'rxjs';
 import { Language } from '../../services/language';
 import { HttpService } from '../../services/http.service';
 import { PageSource, PageSourceFields } from '../../services/page-source';
-import { buildRoute, OFFICES } from '../../components/header/header';
+import { BAYTOWN_OFFICE, buildRoute, OFFICES } from '../../components/header/header';
 import { applyQuotePrefill } from '../../services/quote-prefill';
 
 interface SqForm {
-  name: string; biz: string; phone: string; email: string; zip: string;
+  first: string; last: string; biz: string; phone: string; email: string; address: string;
   obligee: string; amount: string; amountUnsure: boolean; date: string; years: string; office: string;
   /** Single-choice answers by group: applicant, bond, when, credit, renewal, claims, judgments, lang, method, time. */
   pick: Record<string, string>;
@@ -19,7 +19,8 @@ const P = 'SURETY_QUOTE_PAGE.';
 const SCHEMA_ID = 'get-surety-quote-structured-data';
 const SITE = 'https://astateinsurance.com';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const ZIP_RE = /^\d{5}$/;
+/** A 5-digit ZIP (ZIP+4 allowed) somewhere in the address; the first match is sent as zip_code. */
+const ZIP_RE = /\b(\d{5})(?:-\d{4})?\b/;
 const ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const TOTAL_STEPS = 5;
 
@@ -57,6 +58,7 @@ export interface SuretyQuotePayload extends PageSourceFields {
   phone_number: string;
   email_address?: string;
   zip_code: string;
+  full_address: string;
   bond_type: string;
   obligee_name?: string;
   bond_amount?: string;
@@ -80,7 +82,7 @@ export interface SuretyQuotePayload extends PageSourceFields {
   styleUrl: './get-surety-quote.scss',
 })
 export class GetSuretyQuote implements AfterViewInit, OnDestroy {
-  readonly offices = OFFICES;
+  readonly offices = [...OFFICES, BAYTOWN_OFFICE];
   readonly stepNumbers = [1, 2, 3, 4, 5];
   readonly howIcons = HOW_ICONS;
 
@@ -118,7 +120,13 @@ export class GetSuretyQuote implements AfterViewInit, OnDestroy {
     this.isBrowser = isPlatformBrowser(platformId);
     this.form = this.emptyForm();
     // Name, phone and email from the short quote form the visitor just sent (browser only).
-    if (this.isBrowser) applyQuotePrefill(this.form);
+    if (this.isBrowser) {
+      const prefill = { name: '', phone: '', email: '' };
+      applyQuotePrefill(prefill);
+      this.setName(prefill.name);
+      if (prefill.phone) this.form.phone = prefill.phone;
+      if (prefill.email) this.form.email = prefill.email;
+    }
     this.subs.add(
       this.translate.onLangChange.subscribe(() => {
         this.listCache.clear();
@@ -191,7 +199,7 @@ export class GetSuretyQuote implements AfterViewInit, OnDestroy {
 
   // ---------- Inputs ----------
 
-  onText(field: 'name' | 'biz' | 'email' | 'obligee' | 'date', event: Event) {
+  onText(field: 'first' | 'last' | 'biz' | 'email' | 'address' | 'obligee' | 'date', event: Event) {
     this.form[field] = (event.target as HTMLInputElement).value;
     if (this.errors[field]) this.errors[field] = this.fieldError(field);
     if (field === 'email' && this.errors['method']) this.errors['method'] = this.fieldError('method');
@@ -208,12 +216,6 @@ export class GetSuretyQuote implements AfterViewInit, OnDestroy {
     if (this.errors['phone']) this.errors['phone'] = this.fieldError('phone');
   }
 
-  onZipInput(event: Event) {
-    const input = event.target as HTMLInputElement;
-    input.value = input.value.replace(/\D/g, '').slice(0, 5);
-    this.form.zip = input.value;
-    if (this.errors['zip']) this.errors['zip'] = this.fieldError('zip');
-  }
 
   onYearsInput(event: Event) {
     const input = event.target as HTMLInputElement;
@@ -298,10 +300,11 @@ export class GetSuretyQuote implements AfterViewInit, OnDestroy {
       if (msg) bad.push(id);
     };
     if (n === 1) {
-      check('name', 'sq-name');
+      check('first', 'sq-first');
+      check('last', 'sq-last');
       check('phone', 'sq-phone');
       check('email', 'sq-email');
-      check('zip', 'sq-zip');
+      check('address', 'sq-address');
     } else if (n === 2) {
       check('bond', 'sq-b-notary');
       check('date', 'sq-date');
@@ -318,8 +321,10 @@ export class GetSuretyQuote implements AfterViewInit, OnDestroy {
   private fieldError(f: string): string {
     const form = this.form;
     switch (f) {
-      case 'name':
-        return form.name.trim().length < 2 ? this.err('NAME') : '';
+      case 'first':
+        return form.first.trim() ? '' : this.err('FIRST');
+      case 'last':
+        return form.last.trim() ? '' : this.err('LAST');
       case 'phone': {
         const d = this.digits(form.phone);
         return !d ? this.err('PHONE_EMPTY') : d.length !== 10 ? this.err('PHONE_INVALID') : '';
@@ -328,8 +333,10 @@ export class GetSuretyQuote implements AfterViewInit, OnDestroy {
         const e = form.email.trim();
         return e && !EMAIL_RE.test(e) ? this.err('EMAIL') : '';
       }
-      case 'zip':
-        return !form.zip ? this.err('ZIP_EMPTY') : !ZIP_RE.test(form.zip) ? this.err('ZIP') : '';
+      case 'address': {
+        const a = form.address.trim();
+        return !a ? this.err('ADDRESS_EMPTY') : !ZIP_RE.test(a) ? this.err('ADDRESS_ZIP') : '';
+      }
       case 'bond':
         return form.pick['bond'] ? '' : this.err('BOND');
       case 'date':
@@ -392,9 +399,10 @@ export class GetSuretyQuote implements AfterViewInit, OnDestroy {
     const email = f.email.trim();
     const p: Omit<SuretyQuotePayload, keyof PageSourceFields> = {
       type: 'surety_bond',
-      full_name: f.name.trim(),
+      full_name: this.fullName(),
       phone_number: f.phone,
-      zip_code: f.zip,
+      zip_code: ZIP_RE.exec(f.address)?.[1] ?? '',
+      full_address: f.address.trim().slice(0, 255),
       bond_type: BOND_VALUES[pick['bond']] ?? '',
       preferred_language: LANG_VALUES[pick['lang']] ?? 'English',
     };
@@ -455,11 +463,23 @@ export class GetSuretyQuote implements AfterViewInit, OnDestroy {
     return date.toLocaleDateString(locale, { month: 'long', day: 'numeric', year: 'numeric' });
   }
 
+  /** First and last name joined, for the review step and full_name. */
+  fullName(): string {
+    return `${this.form.first.trim()} ${this.form.last.trim()}`.trim();
+  }
+
   // ---------- Helpers ----------
+
+  /** Splits a prefilled full name: first word is the first name, the rest the last name. */
+  private setName(name: string) {
+    const [first = '', ...rest] = name.trim().split(/\s+/).filter(Boolean);
+    if (first) this.form.first = first;
+    if (rest.length) this.form.last = rest.join(' ');
+  }
 
   private emptyForm(): SqForm {
     return {
-      name: '', biz: '', phone: '', email: '', zip: '',
+      first: '', last: '', biz: '', phone: '', email: '', address: '',
       obligee: '', amount: '', amountUnsure: false, date: '', years: '', office: '',
       pick: { lang: this.languageService.getCurrentLanguage() === 'es' ? 'es' : 'en' },
     };

@@ -76,6 +76,7 @@ mark{padding:0}
 .hours dt{font-weight:600}
 .hours dd{font-weight:700;font-variant-numeric:tabular-nums}
 .hours .today{background:linear-gradient(90deg,var(--cream),transparent);border-radius:8px;padding-inline:8px;margin-inline:-8px}
+.hours-card .hc-note{font-size:14px;color:var(--stone-700);margin:0}
 .hours-card .reply{font-size:14.5px;display:flex;gap:8px;align-items:flex-start}
 .hours-card .reply .icon-sm{color:var(--red-600);flex:none;margin-top:3px}
 

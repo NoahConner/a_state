@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Inject, Input, NgZone, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, Inject, Input, NgZone, OnDestroy, OnInit, Output, PLATFORM_ID } from '@angular/core';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { environment } from '../../environments/environment';
 
@@ -52,6 +52,8 @@ function loadPlaces(doc: Document, lang: string): Promise<any> {
 export class AddressAutocompleteDirective implements OnInit, OnDestroy {
   /** Language of the suggestions ('en' | 'es'). */
   @Input() acLang = 'en';
+  /** County name (without " County") of a picked suggestion, emitted after the input event. Only fetched when bound. */
+  @Output() acCounty = new EventEmitter<string>();
 
   private places: any;
   private token: any;
@@ -232,11 +234,17 @@ export class AddressAutocompleteDirective implements OnInit, OnDestroy {
     if (!item) return;
     this.close();
     let address = item.text;
+    let county = '';
+    const wantCounty = this.acCounty.observed;
     try {
       // Fetching the place ends the billing session; formattedAddress includes the ZIP code.
       const place = item.prediction.toPlace();
-      await place.fetchFields({ fields: ['formattedAddress'] });
+      await place.fetchFields({ fields: wantCounty ? ['formattedAddress', 'addressComponents'] : ['formattedAddress'] });
       if (place.formattedAddress) address = place.formattedAddress;
+      if (wantCounty) {
+        const c = (place.addressComponents ?? []).find((x: any) => x.types?.includes('administrative_area_level_2'));
+        county = String(c?.longText ?? '').replace(/\s+County$/i, '').trim();
+      }
     } catch {
       /* keep the suggestion text */
     }
@@ -248,7 +256,10 @@ export class AddressAutocompleteDirective implements OnInit, OnDestroy {
     const ev = new Event('input', { bubbles: true });
     (ev as any).__fromAutocomplete = true;
     // Back inside Angular so the component's (input) handler updates the form and the view.
-    this.zone.run(() => input.dispatchEvent(ev));
+    this.zone.run(() => {
+      input.dispatchEvent(ev);
+      if (county) this.acCounty.emit(county);
+    });
   }
 
   private close() {

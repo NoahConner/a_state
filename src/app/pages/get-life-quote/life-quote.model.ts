@@ -16,13 +16,15 @@ export interface LifeQuoteForm {
   // Step 1: who is covered
   dob: string;          // yyyy-mm-dd from the date input
   spouseDob: string;    // only used when who = 'both'
-  zip: string;
+  address: string;      // full address; must contain a 5-digit ZIP
+
   // Step 2: health
   heightFeet: string;
   heightInches: string;
   weight: string;       // pounds, digits only
   // Step 4: contact
-  name: string;
+  first: string;
+  last: string;
   phone: string;        // formatted as (713) 555-0123
   email: string;
   office: string;       // an OFFICES id, or '' for no preference
@@ -83,9 +85,9 @@ export const HEIGHT_INCHES = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 
 /** A blank form. The preferred language starts as the page language. */
 export function emptyLifeQuoteForm(pageLang: string): LifeQuoteForm {
   return {
-    dob: '', spouseDob: '', zip: '',
+    dob: '', spouseDob: '', address: '',
     heightFeet: '', heightInches: '', weight: '',
-    name: '', phone: '', email: '', office: '',
+    first: '', last: '', phone: '', email: '', office: '',
     answers: { lang: pageLang === 'es' ? 'es' : 'en' },
     purpose: {},
     alsoQuote: {},

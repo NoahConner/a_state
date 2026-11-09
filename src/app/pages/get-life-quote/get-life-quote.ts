@@ -16,7 +16,7 @@ import { Subscription, firstValueFrom } from 'rxjs';
 import { Language } from '../../services/language';
 import { HttpService } from '../../services/http.service';
 import { PageSource } from '../../services/page-source';
-import { buildRoute, OFFICES } from '../../components/header/header';
+import { BAYTOWN_OFFICE, buildRoute, OFFICES } from '../../components/header/header';
 import {
   ALSO_QUOTE_ICONS, ANSWER_VALUES, HEIGHT_FEET, HEIGHT_INCHES, LifeQuoteForm, PURPOSE_ICONS, Question, T, TOTAL_STEPS,
   TYPE_SECTION_ICONS, emptyLifeQuoteForm,
@@ -47,7 +47,7 @@ const SITE = 'https://astateinsurance.com';
 export class GetLifeQuote implements AfterViewInit, OnDestroy {
   // ---------- Fixed data for the template ----------
 
-  readonly offices = OFFICES;
+  readonly offices = [...OFFICES, BAYTOWN_OFFICE];
   readonly stepNumbers = [1, 2, 3, 4, 5];
   readonly typeSectionIcons = TYPE_SECTION_ICONS;
   readonly purposeIcons = PURPOSE_ICONS;
@@ -106,7 +106,13 @@ export class GetLifeQuote implements AfterViewInit, OnDestroy {
     this.isBrowser = isPlatformBrowser(platformId);
     this.form = emptyLifeQuoteForm(this.languageService.getCurrentLanguage());
     // Name, phone and email from the short quote form the visitor just sent (browser only).
-    if (this.isBrowser) applyQuotePrefill(this.form);
+    if (this.isBrowser) {
+      const prefill = { name: '', phone: '', email: '' };
+      applyQuotePrefill(prefill);
+      this.setName(prefill.name);
+      if (prefill.phone) this.form.phone = prefill.phone;
+      if (prefill.email) this.form.email = prefill.email;
+    }
     this.prefillFromQueryString();
 
     this.subscriptions.add(
@@ -179,7 +185,7 @@ export class GetLifeQuote implements AfterViewInit, OnDestroy {
   // Input handlers
   // =====================================================================
 
-  onText(field: 'dob' | 'spouseDob' | 'heightFeet' | 'heightInches' | 'name' | 'email', event: Event) {
+  onText(field: 'dob' | 'spouseDob' | 'address' | 'heightFeet' | 'heightInches' | 'first' | 'last' | 'email', event: Event) {
     this.form[field] = (event.target as HTMLInputElement).value;
     this.recheck(field);
   }
@@ -192,8 +198,8 @@ export class GetLifeQuote implements AfterViewInit, OnDestroy {
     this.recheck('phone');
   }
 
-  /** ZIP and weight accept digits only, up to `maxLength`. */
-  onDigits(field: 'zip' | 'weight', maxLength: number, event: Event) {
+  /** Weight accepts digits only, up to `maxLength`. */
+  onDigits(field: 'weight', maxLength: number, event: Event) {
     const input = event.target as HTMLInputElement;
     input.value = input.value.replace(/\D/g, '').slice(0, maxLength);
     this.form[field] = input.value;
@@ -336,7 +342,7 @@ export class GetLifeQuote implements AfterViewInit, OnDestroy {
   private showSuccess() {
     const form = this.form;
     const method = form.answers.method ?? '';
-    this.sentFirstName = form.name.trim().split(/\s+/)[0];
+    this.sentFirstName = form.first.trim();
     this.sentContactMethod = ANSWER_VALUES.method[method] ? method : 'any';
     this.sentContactValue = method === 'email' ? form.email.trim() : form.phone;
     this.sentAlsoQuote = Object.values(form.alsoQuote).some(Boolean);
@@ -396,9 +402,21 @@ export class GetLifeQuote implements AfterViewInit, OnDestroy {
     return date.toLocaleDateString(locale, { month: 'long', day: 'numeric', year: 'numeric' });
   }
 
+  /** First and last name joined, for the review step. */
+  fullName(): string {
+    return `${this.form.first.trim()} ${this.form.last.trim()}`.trim();
+  }
+
   // =====================================================================
   // Helpers
   // =====================================================================
+
+  /** Splits a prefilled full name: first word is the first name, the rest the last name. */
+  private setName(name: string) {
+    const [first = '', ...rest] = name.trim().split(/\s+/).filter(Boolean);
+    if (first) this.form.first = first;
+    if (rest.length) this.form.last = rest.join(' ');
+  }
 
   /** Name and phone can arrive from the short quote form as ?fullName=&phone=. Only read, never logged or stored. */
   private prefillFromQueryString() {
@@ -406,7 +424,7 @@ export class GetLifeQuote implements AfterViewInit, OnDestroy {
     if (!params) return;
     const name = params.get('fullName')?.trim();
     const phone = params.get('phone')?.trim();
-    if (name) this.form.name = name;
+    if (name) this.setName(name);
     if (phone) this.form.phone = formatPhone(phoneDigits(phone).slice(0, 10));
   }
 

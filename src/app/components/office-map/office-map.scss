@@ -17,11 +17,11 @@
     max-width: none;
     max-height: none;
     object-fit: contain;
-    filter: drop-shadow(0 0 1.5px #7a1513) drop-shadow(0 2px 3px rgba(0, 0, 0, 0.45));
+    filter: drop-shadow(0 0 1.5px #fff) drop-shadow(0 2px 3px rgba(0, 0, 0, 0.45));
   }
   /* No size change on hover: growing the icon moved its edge under the cursor and made it flicker. */
   img.as-pin:hover {
-    filter: drop-shadow(0 0 1.5px #7a1513) drop-shadow(0 3px 6px rgba(0, 0, 0, 0.6)) brightness(1.08);
+    filter: drop-shadow(0 0 1.5px #fff) drop-shadow(0 3px 6px rgba(0, 0, 0, 0.6)) brightness(1.08);
   }
   img.as-pin:focus-visible {
     outline: 2px solid var(--red-600, #ca2b28);

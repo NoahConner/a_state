@@ -2718,11 +2718,19 @@
           "b": "true"
         },
         {
-          "t": " en Google con más de 250 reseñas · ¿Necesita su fianza hoy? "
+          "t": " en Google con más de 300 reseñas · ¿Necesita su fianza hoy? "
         },
         {
           "t": "Llame al (713) 357-7771",
           "h": "tel:+17133577771"
+        },
+        {
+          "t": " · WhatsApp "
+        },
+        {
+          "t": "(346) 436-SAVE (7283)",
+          "h": "https://wa.me/13464367283",
+          "x": "true"
         }
       ]
     },
@@ -2773,12 +2781,14 @@
           "L": "No estoy seguro"
         }
       ],
-      "NAME": "Su nombre completo",
+      "FIRST": "Nombre",
+      "LAST": "Apellido",
       "BIZ": "Nombre del negocio",
       "BIZ_HINT": "(si solicita como negocio)",
       "PHONE": "Número de teléfono",
       "EMAIL": "Correo electrónico",
-      "ZIP": "Código postal",
+      "ADDRESS": "Dirección completa",
+      "ADDRESS_PH": "Calle, ciudad, código postal",
       "BOND_LEGEND": "¿Qué fianza necesita?",
       "BONDS": [
         {
@@ -2964,7 +2974,8 @@
         "Southwest Fwy",
         "Post Oak",
         "Antoine",
-        "Airline"
+        "Airline",
+        "Baytown"
       ],
       "R_TITLES": [
         "Sus datos",
@@ -2978,7 +2989,7 @@
         "BIZ": "Negocio",
         "PHONE": "Teléfono",
         "EMAIL": "Correo",
-        "ZIP": "Código postal",
+        "ADDRESS": "Dirección",
         "BOND": "Fianza",
         "OBLIGEE": "La pide",
         "AMOUNT": "Monto",
@@ -3008,12 +3019,13 @@
       ],
       "NEVER_SOLD": "Nunca vendemos su información.",
       "ERR": {
-        "NAME": "Escriba su nombre completo.",
+        "FIRST": "Escriba su nombre.",
+        "LAST": "Escriba su apellido.",
         "PHONE_EMPTY": "Escriba su número de teléfono.",
         "PHONE_INVALID": "Escriba un número de 10 dígitos, como (713) 555-0123.",
         "EMAIL": "Escriba un correo como nombre@ejemplo.com, o déjelo en blanco.",
-        "ZIP_EMPTY": "Escriba su código postal.",
-        "ZIP": "Escriba un código postal de 5 dígitos.",
+        "ADDRESS_EMPTY": "Escriba su dirección completa.",
+        "ADDRESS_ZIP": "Agregue su código postal de 5 dígitos, como 123 Main St, Houston, TX 77020.",
         "BOND": "Elija una fianza, o “No estoy seguro: ayúdenme a encontrar la fianza correcta”.",
         "DATE_PAST": "Elija una fecha que todavía no haya pasado.",
         "EMAIL_NEEDED": "Agregue su correo en el paso 1, o elija Llamada o Mensaje de texto.",
@@ -3175,7 +3187,15 @@
           "h": "tel:+17133577771"
         },
         {
-          "t": " o visite cualquiera de nuestras 6 oficinas en Houston. Le ayudamos a encontrar la fianza correcta en español, inglés o hindi."
+          "t": " o visite cualquiera de nuestras 6 oficinas en Texas. Le ayudamos a encontrar la fianza correcta en español, inglés o hindi. También puede escribirnos por WhatsApp al "
+        },
+        {
+          "t": "(346) 436-SAVE (7283)",
+          "h": "https://wa.me/13464367283",
+          "x": "true"
+        },
+        {
+          "t": "."
         }
       ],
       "START": "Cotizar mi fianza",
@@ -3209,11 +3229,19 @@
           "b": "true"
         },
         {
-          "t": " en Google con más de 250 reseñas · ¿Prefiere hablar con alguien? "
+          "t": " en Google con más de 300 reseñas · ¿Prefiere hablar con alguien? "
         },
         {
           "t": "Llame al (713) 357-7771",
           "h": "tel:+17133577771"
+        },
+        {
+          "t": " · WhatsApp "
+        },
+        {
+          "t": "(346) 436-SAVE (7283)",
+          "h": "https://wa.me/13464367283",
+          "x": "true"
         }
       ]
     },
@@ -3276,10 +3304,11 @@
           "L": "Otra persona"
         }
       ],
-      "ZIP": "Código postal",
+      "ADDRESS": "Dirección completa",
+      "ADDRESS_PH": "Calle, ciudad, código postal",
       "COUNTY": "Condado",
-      "COUNTY_HINT": "(se llena con el código postal)",
-      "COUNTY_FILLED": "Se llenó con su código postal. Cámbielo si no es correcto.",
+      "COUNTY_HINT": "(se llena con la dirección)",
+      "COUNTY_FILLED": "Se llenó con su dirección. Cámbielo si no es correcto.",
       "COUNTY_SPLIT": "Este código postal está en el condado de {{counties}}. Elija el suyo.",
       "COUNTY_TYPE": "Escriba su condado.",
       "CURRENT_LEGEND": "¿Tiene seguro de salud ahora?",
@@ -3421,7 +3450,8 @@
         }
       ],
       "KEEP": "Doctor, hospital o medicina que quiere mantener",
-      "NAME": "Su nombre completo",
+      "FIRST": "Nombre",
+      "LAST": "Apellido",
       "PHONE": "Número de teléfono",
       "EMAIL": "Correo electrónico",
       "LANG_LEGEND": "Idioma preferido",
@@ -3477,7 +3507,8 @@
         "Southwest Fwy",
         "Post Oak",
         "Antoine",
-        "Airline"
+        "Airline",
+        "Baytown"
       ],
       "R_TITLES": [
         "Quién necesita cobertura y cuándo",
@@ -3487,7 +3518,7 @@
       ],
       "R": {
         "WHO": "Quién",
-        "ZIP": "Código postal",
+        "ADDRESS": "Dirección",
         "COUNTY": "Condado",
         "CURRENT": "Tiene seguro",
         "ENDS": "Termina la cobertura",
@@ -3523,8 +3554,8 @@
       ],
       "NEVER_SOLD": "Nunca vendemos su información.",
       "ERR": {
-        "ZIP_EMPTY": "Escriba su código postal.",
-        "ZIP": "Escriba un código postal de 5 dígitos.",
+        "ADDRESS_EMPTY": "Escriba su dirección completa.",
+        "ADDRESS_ZIP": "Agregue su código postal de 5 dígitos, como 123 Main St, Houston, TX 77020.",
         "ENDS_PAST": "Elija una fecha que todavía no haya pasado.",
         "HH_EMPTY": "Escriba el número de personas en su hogar.",
         "HH_MIN": "Escriba por lo menos 1.",
@@ -3532,7 +3563,8 @@
         "AGES_RANGE": "Revise las edades. Escriba cada edad en años, como 34.",
         "AGES_BLANK": "Escriba una edad para cada persona o quite la casilla vacía.",
         "AGES_HH": "El número de personas en el hogar no puede ser menor que el número de personas que necesitan cobertura.",
-        "NAME": "Escriba su nombre completo.",
+        "FIRST": "Escriba su nombre.",
+        "LAST": "Escriba su apellido.",
         "PHONE_EMPTY": "Escriba su número de teléfono.",
         "PHONE_INVALID": "Escriba un número de 10 dígitos, como (713) 555-0123.",
         "EMAIL": "Escriba un correo como nombre@ejemplo.com, o déjelo en blanco.",
@@ -3694,6 +3726,17 @@
             },
             {
               "t": "."
+            },
+            {
+              "t": " También puede escribirnos por WhatsApp al "
+            },
+            {
+              "t": "(346) 436-SAVE (7283)",
+              "h": "https://wa.me/13464367283",
+              "x": "true"
+            },
+            {
+              "t": "."
             }
           ]
         }
@@ -3710,7 +3753,15 @@
           "h": "tel:+17133577771"
         },
         {
-          "t": " o visite cualquiera de nuestras 6 oficinas en Houston. Comparamos con usted planes de salud en español, inglés o hindi."
+          "t": " o visite cualquiera de nuestras 6 oficinas en Texas. Comparamos con usted planes de salud en español, inglés o hindi. También puede escribirnos por WhatsApp al "
+        },
+        {
+          "t": "(346) 436-SAVE (7283)",
+          "h": "https://wa.me/13464367283",
+          "x": "true"
+        },
+        {
+          "t": "."
         }
       ],
       "START": "Cotizar mi seguro de salud",
@@ -4332,11 +4383,19 @@
           "b": "true"
         },
         {
-          "t": " en Google con más de 250 reseñas · ¿Necesita un certificado de seguro rápido? "
+          "t": " en Google con más de 300 reseñas · ¿Necesita un certificado de seguro rápido? "
         },
         {
           "t": "Llame al (713) 357-7771",
           "h": "tel:+17133577771"
+        },
+        {
+          "t": " · WhatsApp "
+        },
+        {
+          "t": "(346) 436-SAVE (7283)",
+          "h": "https://wa.me/13464367283",
+          "x": "true"
         }
       ]
     },
@@ -4449,7 +4508,8 @@
           "L": "Todavía no está registrado"
         }
       ],
-      "ZIP": "Código postal del negocio",
+      "ADDRESS": "Dirección completa del negocio",
+      "ADDRESS_PH": "Calle, ciudad, código postal",
       "OUTSIDE_LEGEND": "¿Trabaja fuera de Texas?",
       "OUTSIDE": [
         {
@@ -4655,7 +4715,8 @@
           "L": "No estoy seguro"
         }
       ],
-      "NAME": "Su nombre",
+      "FIRST": "Nombre",
+      "LAST": "Apellido",
       "ROLE_LEGEND": "Su puesto",
       "ROLES": [
         {
@@ -4726,7 +4787,8 @@
         "Southwest Fwy",
         "Post Oak",
         "Antoine",
-        "Airline"
+        "Airline",
+        "Baytown"
       ],
       "FLAGS_ARIA": "Notas para su agente",
       "FLAGS": {
@@ -4746,7 +4808,7 @@
         "INDUSTRY": "Industria",
         "DESC": "A qué se dedica",
         "STRUCTURE": "Tipo de negocio",
-        "ZIP": "Código postal",
+        "ADDRESS": "Dirección",
         "OUTSIDE": "Trabaja fuera de Texas",
         "YEARS": "Años en el negocio",
         "EMPLOYEES": "Empleados",
@@ -4789,13 +4851,14 @@
         "BIZ_NAME": "Escriba el nombre de su negocio, o “Todavía no está registrado.”",
         "INDUSTRY": "Elija su industria.",
         "DESC": "Díganos en pocas palabras a qué se dedica su negocio.",
-        "ZIP_EMPTY": "Escriba el código postal de su negocio.",
-        "ZIP": "Escriba un código postal de 5 dígitos.",
+        "ADDRESS_EMPTY": "Escriba la dirección completa de su negocio.",
+        "ADDRESS_ZIP": "Agregue su código postal de 5 dígitos, como 123 Main St, Houston, TX 77020.",
         "EMP_EMPTY": "Escriba el número de empleados, incluyéndose a usted.",
         "EMP_MIN": "Escriba al menos 1 (usted).",
         "COVERAGE": "Elija al menos una opción, o “No estoy seguro: ayúdenme a elegir.”",
         "DATE_PAST": "Elija una fecha que todavía no haya pasado.",
-        "NAME": "Escriba su nombre.",
+        "FIRST": "Escriba su nombre.",
+        "LAST": "Escriba su apellido.",
         "PHONE_EMPTY": "Escriba su número de teléfono.",
         "PHONE_INVALID": "Escriba un número de 10 dígitos, como (713) 555-0123.",
         "EMAIL": "Escriba un correo como nombre@ejemplo.com, o déjelo en blanco.",
@@ -4942,7 +5005,15 @@
           "h": "tel:+17133577771"
         },
         {
-          "t": " o visite cualquiera de nuestras 6 oficinas en Houston. Comparamos con usted cotizaciones de seguro para negocios en Texas, en español, inglés o hindi."
+          "t": " o visite cualquiera de nuestras 6 oficinas en Texas. Comparamos con usted cotizaciones de seguro para negocios en Texas, en español, inglés o hindi. También puede escribirnos por WhatsApp al "
+        },
+        {
+          "t": "(346) 436-SAVE (7283)",
+          "h": "https://wa.me/13464367283",
+          "x": "true"
+        },
+        {
+          "t": "."
         }
       ],
       "START": "Cotizar mi negocio",
@@ -4974,11 +5045,19 @@
           "b": "true"
         },
         {
-          "t": " en Google con más de 250 reseñas · ¿Prefiere hablar con alguien? "
+          "t": " en Google con más de 300 reseñas · ¿Prefiere hablar con alguien? "
         },
         {
           "t": "Llame al (713) 357-7771",
           "h": "tel:+17133577771"
+        },
+        {
+          "t": " · WhatsApp "
+        },
+        {
+          "t": "(346) 436-SAVE (7283)",
+          "h": "https://wa.me/13464367283",
+          "x": "true"
         }
       ]
     },
@@ -5054,7 +5133,8 @@
       "SPOUSE": "Su esposo(a)",
       "SPOUSE_DOB": "Fecha de nacimiento de su esposo(a)",
       "SEX_NOTE": "Las compañías de seguros usan este dato para calcular el precio del seguro de vida. Si ninguna opción le corresponde, elija una y dígaselo a su agente. Él o ella le explicará sus opciones.",
-      "ZIP": "Código postal",
+      "ADDRESS": "Dirección completa",
+      "ADDRESS_PH": "Calle, ciudad, código postal",
       "WHY": [
         {
           "t": "Por qué preguntamos:",
@@ -5242,7 +5322,8 @@
           "L": "Salud"
         }
       ],
-      "NAME": "Su nombre completo",
+      "FIRST": "Nombre",
+      "LAST": "Apellido",
       "PHONE": "Número de teléfono",
       "EMAIL": "Correo electrónico",
       "LANG_LEGEND": "Idioma preferido",
@@ -5298,7 +5379,8 @@
         "Southwest Fwy",
         "Post Oak",
         "Antoine",
-        "Airline"
+        "Airline",
+        "Baytown"
       ],
       "R_TITLES": [
         "Quién está cubierto",
@@ -5314,7 +5396,7 @@
         "YOUR_SEX": "Su sexo",
         "SPOUSE_DOB": "Fecha de nacimiento de su esposo(a)",
         "SPOUSE_SEX": "Sexo de su esposo(a)",
-        "ZIP": "Código postal",
+        "ADDRESS": "Dirección",
         "TOBACCO": "Tabaco o nicotina (12 meses)",
         "HEALTH": "Salud en general",
         "HEIGHT": "Estatura",
@@ -5350,10 +5432,11 @@
       "ERR": {
         "DOB_EMPTY": "Escriba la fecha de nacimiento.",
         "DOB": "Revise la fecha de nacimiento.",
-        "ZIP_EMPTY": "Escriba su código postal.",
-        "ZIP": "Escriba un código postal de 5 dígitos.",
+        "ADDRESS_EMPTY": "Escriba su dirección completa.",
+        "ADDRESS_ZIP": "Agregue su código postal de 5 dígitos, como 123 Main St, Houston, TX 77020.",
         "WEIGHT": "Escriba el peso en libras, como 165, o déjelo en blanco.",
-        "NAME": "Escriba su nombre completo.",
+        "FIRST": "Escriba su nombre.",
+        "LAST": "Escriba su apellido.",
         "PHONE_EMPTY": "Escriba su número de teléfono.",
         "PHONE_INVALID": "Escriba un número de 10 dígitos, como (713) 555-0123.",
         "EMAIL": "Escriba un correo como nombre@ejemplo.com, o déjelo en blanco.",
@@ -5483,6 +5566,17 @@
             },
             {
               "t": "."
+            },
+            {
+              "t": " También puede escribirnos por WhatsApp al "
+            },
+            {
+              "t": "(346) 436-SAVE (7283)",
+              "h": "https://wa.me/13464367283",
+              "x": "true"
+            },
+            {
+              "t": "."
             }
           ]
         }
@@ -5499,7 +5593,15 @@
           "h": "tel:+17133577771"
         },
         {
-          "t": " o visite cualquiera de nuestras 6 oficinas en Houston. Comparamos con usted opciones de seguro de vida en español, inglés o hindi."
+          "t": " o visite cualquiera de nuestras 6 oficinas en Texas. Comparamos con usted opciones de seguro de vida en español, inglés o hindi. También puede escribirnos por WhatsApp al "
+        },
+        {
+          "t": "(346) 436-SAVE (7283)",
+          "h": "https://wa.me/13464367283",
+          "x": "true"
+        },
+        {
+          "t": "."
         }
       ],
       "START": "Cotizar mi seguro de vida",
@@ -68928,7 +69030,7 @@
       "CURRENT": "Nuestras ubicaciones"
     },
     "HERO": {
-      "TITLE": "Encuentre una oficina de A-State Insurance cerca de usted en Houston, TX",
+      "TITLE": "Encuentre una oficina de A-State Insurance cerca de usted en Texas",
       "CTA_MAP": "Encontrar mi oficina más cercana",
       "CTA_QUOTE": "Cotizar gratis",
       "LEAD": [
@@ -68938,6 +69040,17 @@
         {
           "t": "(713) 357-7771",
           "h": "tel:+17133577771"
+        },
+        {
+          "t": "."
+        },
+        {
+          "t": " También puede escribirnos por WhatsApp al "
+        },
+        {
+          "t": "(346) 436-SAVE (7283)",
+          "h": "https://wa.me/13464367283",
+          "x": "true"
         },
         {
           "t": "."
@@ -68956,7 +69069,8 @@
       "OPENS_TODAY": "Cerrado ahora · abre hoy a las 9 a.m.",
       "OPENS_MONDAY": "Cerrado ahora · abre el lunes a las 9 a.m.",
       "OPENS_TOMORROW": "Cerrado ahora · abre mañana a las 9 a.m.",
-      "NOTE": "Estacionamiento gratis · Sin cita"
+      "NOTE": "Estacionamiento gratis · Sin cita",
+      "BAYTOWN": "Baytown: Lun–Vie, 9 a.m.–6 p.m. · Sábado por teléfono"
     },
     "OTP": {
       "LABEL": "En esta página",
@@ -68970,15 +69084,15 @@
       ]
     },
     "MAP": {
-      "TITLE": "Estamos en su vecindario: seis oficinas en Houston",
-      "LEAD": "Desde Denver Harbor en el East Side hasta Fondren Southwest, Westbury, Greater Inwood y Northside-Northline, hay una oficina de A-State cerca de su casa o su trabajo.",
+      "TITLE": "Estamos en su vecindario: seis oficinas en Texas",
+      "LEAD": "Desde Denver Harbor en el East Side hasta Fondren Southwest, Westbury, Greater Inwood, Northside-Northline y Baytown, hay una oficina de A-State cerca de su casa o su trabajo.",
       "LEGEND_ARIA": "Oficinas en el mapa",
-      "MAP_ARIA": "Mapa esquemático de Houston con las seis oficinas de A-State",
+      "MAP_ARIA": "Mapa de Texas con las seis oficinas de A-State",
       "DOWNTOWN": "Centro",
       "CAPTION": "Esquema, no a escala"
     },
     "OFFICES": {
-      "TITLE": "Nuestras oficinas de seguros en Houston",
+      "TITLE": "Nuestras oficinas de seguros en Texas",
       "META_ARIA": "Horario y servicios en todas las oficinas",
       "META": {
         "HOURS_LABEL": "Horario:",
@@ -69002,8 +69116,11 @@
       },
       "ADDRESS": "Dirección:",
       "PHONE": "Teléfono:",
+      "WHATSAPP": "WhatsApp:",
+      "HOURS": "Horario:",
+      "HOURS_TEXT": "Lunes a sábado, 9 a.m.–7 p.m. · Cerrado el domingo",
       "REVIEWS": "Reseñas de Google:",
-      "REVIEWS_COUNT": "{{n}} reseñas",
+      "REVIEWS_COUNT": "más de {{n}} reseñas",
       "PARKING": "Estacionamiento:",
       "QUOTE": "Cotizar",
       "DIRECTIONS": "Cómo llegar",
@@ -69038,12 +69155,19 @@
           "HOOD": "Northside-Northline",
           "ADDRESS": "5206 Airline Dr G, Houston, TX 77022",
           "PARKING": "Gratis, justo frente a la Suite G."
+        },
+        {
+          "NAME": "Baytown",
+          "HOOD": "Baytown",
+          "ADDRESS": "123 E Texas Ave, Baytown, TX 77520",
+          "HOURS": "Lunes a viernes, 9 a.m.–6 p.m. · Sábado por teléfono, 9 a.m.–7 p.m. · Cerrado el domingo",
+          "PARKING": "Gratis, en el estacionamiento pavimentado junto a la oficina."
         }
       ]
     },
     "AREA": {
-      "TITLE": "Atendemos a todo Texas desde Houston",
-      "LEAD": "¿No puede venir a Houston? Nuestros agentes con licencia atienden a clientes en todo Texas por teléfono, texto y correo electrónico.",
+      "TITLE": "Atendemos a todo Texas",
+      "LEAD": "¿No puede visitar una oficina? Nuestros agentes con licencia atienden a clientes en todo Texas por teléfono, texto y correo electrónico.",
       "POPULAR": "Ciudades más grandes que atendemos",
       "SEARCH": "Encuentre su ciudad",
       "CLEAR": "Borrar búsqueda",
@@ -69098,11 +69222,23 @@
         },
         {
           "t": ", u obtenga en línea una cotización gratis y sin compromiso."
+        },
+        {
+          "t": " También puede escribirnos por WhatsApp al "
+        },
+        {
+          "t": "(346) 436-SAVE (7283)",
+          "h": "https://wa.me/13464367283",
+          "x": "true"
+        },
+        {
+          "t": "."
         }
       ],
       "CALL": "Llamar al (713) 357-7771",
       "TEXT_US": "Envíenos un texto",
-      "NAME": "Nombre completo",
+      "FIRST": "Nombre",
+      "LAST": "Apellido",
       "PHONE": "Número de teléfono",
       "EMAIL": "Correo electrónico",
       "OPTIONAL": "(opcional)",
@@ -69134,9 +69270,10 @@
         }
       ],
       "OFFICE": "Oficina preferida",
-      "NO_PREFERENCE": "Sin preferencia",
+      "NO_PREFERENCE": "Cualquiera",
       "SUBMIT": "Cotizar gratis",
-      "ERR_NAME": "Escriba su nombre completo.",
+      "ERR_FIRST": "Escriba su nombre.",
+      "ERR_LAST": "Escriba su apellido.",
       "ERR_PHONE_EMPTY": "Escriba su número de teléfono.",
       "ERR_PHONE_INVALID": "Escriba un número de 10 dígitos, como (713) 555-0123.",
       "ERR_EMAIL": "Escriba un correo como nombre@ejemplo.com, o déjelo en blanco.",
@@ -69147,7 +69284,7 @@
       "ITEMS": [
         {
           "Q": "¿Necesito cita para visitar una oficina de A-State?",
-          "A": "No. Puede visitar sin cita cualquiera de nuestras 6 oficinas en Houston, de lunes a sábado, de 9 a.m. a 7 p.m."
+          "A": "No. Puede visitar sin cita cualquiera de nuestras 6 oficinas en Texas. La mayoría de las oficinas abren de lunes a sábado, de 9 a.m. a 7 p.m. Nuestra oficina de Baytown abre de lunes a viernes, de 9 a.m. a 6 p.m., y atiende por teléfono los sábados."
         },
         {
           "Q": "¿Todas las oficinas tienen agentes que hablan español?",
@@ -69184,7 +69321,7 @@
         },
         {
           "Q": "¿Cuál es su horario?",
-          "A": "De lunes a sábado, de 9:00 a.m. a 7:00 p.m. Cerrado el domingo. El horario de días festivos se publica en el perfil de Google de cada oficina."
+          "A": "De lunes a sábado, de 9:00 a.m. a 7:00 p.m., excepto Baytown, que abre de lunes a viernes, de 9:00 a.m. a 6:00 p.m., y atiende por teléfono los sábados, de 9:00 a.m. a 7:00 p.m. Cerrado el domingo. El horario de días festivos se publica en el perfil de Google de cada oficina."
         },
         {
           "Q": "¿Hay estacionamiento?",
@@ -69209,6 +69346,17 @@
             },
             {
               "t": " y le indicaremos la oficina más cercana."
+            },
+            {
+              "t": " También puede escribirnos por WhatsApp al "
+            },
+            {
+              "t": "(346) 436-SAVE (7283)",
+              "h": "https://wa.me/13464367283",
+              "x": "true"
+            },
+            {
+              "t": "."
             }
           ]
         },
@@ -69228,8 +69376,9 @@
       },
       "CTA_QUOTE": "Cotizar gratis",
       "CTA_CALL": "Llamar al {{phone}}",
+      "CTA_WHATSAPP": "Escríbanos por WhatsApp",
       "CTA_DIRECTIONS": "Cómo llegar",
-      "RATING_LINK": "· {{n}} reseñas en Google",
+      "RATING_LINK": "· más de {{n}} reseñas en Google",
       "HOURS": {
         "ARIA": "Horario de oficina",
         "TITLE": "Oficina de {{name}} · hora del centro",
@@ -69243,6 +69392,19 @@
         "OPENS_MONDAY": "Cerrado ahora · abre el lunes a las 9 a.m.",
         "OPENS_TOMORROW": "Cerrado ahora · abre mañana a las 9 a.m.",
         "NOTE": "Estacionamiento gratis · Sin cita"
+      },
+      "HOURS_BAY": {
+        "DEFAULT": "Lun–Vie, 9 a.m.–6 p.m.",
+        "WEEK": "Lunes a viernes",
+        "WEEK_TIME": "9:00 a.m.–6:00 p.m.",
+        "SATURDAY": "Sábado",
+        "SATURDAY_TIME": "Por teléfono, 9:00 a.m.–7:00 p.m.",
+        "OPEN": "Abierto ahora · hasta las 6 p.m.",
+        "PHONES": "Oficina cerrada · teléfonos abiertos hasta las 7 p.m.",
+        "OPENS_TODAY": "Cerrado ahora · abre hoy a las 9 a.m.",
+        "OPENS_TOMORROW": "Cerrado ahora · abre mañana a las 9 a.m.",
+        "OPENS_MONDAY": "Cerrado ahora · abre el lunes a las 9 a.m.",
+        "FACTS": "Lunes a viernes, 9 a.m.–6 p.m. · Sábado por teléfono, 9 a.m.–7 p.m. · Cerrado el domingo"
       },
       "OTP": {
         "LABEL": "En esta página",
@@ -69260,6 +69422,7 @@
         "ADDRESS": "Dirección:",
         "PHONE": "Teléfono y texto:",
         "TEXT_US": "Envíenos un texto",
+        "WHATSAPP": "WhatsApp:",
         "HOURS": "Horario:",
         "HOURS_VALUE": "Lunes a sábado, 9 a.m.–7 p.m. · Cerrado el domingo",
         "LANGS": "Idiomas:",
@@ -69281,7 +69444,7 @@
         "PARKING": "Estacionamiento:",
         "RATING": "Calificación en Google:",
         "RATING_FROM": "con",
-        "REVIEWS_N": "{{n}} reseñas"
+        "REVIEWS_N": "más de {{n}} reseñas"
       },
       "MAP": {
         "SHOW": "Ver mapa",
@@ -69289,7 +69452,7 @@
         "TITLE": "Mapa de la oficina de {{name}}"
       },
       "HOODS": {
-        "ALL": "Ver las 6 oficinas en Houston",
+        "ALL": "Ver las 6 oficinas",
         "ZIP": "Códigos postales:",
         "ZIP_ARIA": "Códigos postales"
       },
@@ -69313,7 +69476,7 @@
         }
       },
       "REVIEWS": {
-        "SCORE": "con {{n}} reseñas en Google",
+        "SCORE": "con más de {{n}} reseñas en Google",
         "ARIA": "Reseñas de Google",
         "RATED": "Calificación: 5 de 5.",
         "READ_ALL": "Ver todas las reseñas en Google"
@@ -69321,7 +69484,8 @@
       "FAQ_TITLE": "Preguntas frecuentes",
       "QUOTE": {
         "TEXT_US": "Envíenos un texto",
-        "NAME": "Nombre completo",
+        "FIRST": "Nombre",
+        "LAST": "Apellido",
         "PHONE": "Número de teléfono",
         "TYPE": "Tipo de seguro",
         "TYPES": [
@@ -69394,10 +69558,15 @@
           {
             "V": "text",
             "L": "Texto"
+          },
+          {
+            "V": "whatsapp",
+            "L": "WhatsApp"
           }
         ],
         "SUBMIT": "Cotizar gratis",
-        "ERR_NAME": "Escriba su nombre completo.",
+        "ERR_FIRST": "Escriba su nombre.",
+        "ERR_LAST": "Escriba su apellido.",
         "ERR_PHONE_EMPTY": "Escriba su número de teléfono.",
         "ERR_PHONE_INVALID": "Escriba un número de 10 dígitos, como (713) 555-0123.",
         "ERR_TYPE": "Elija un tipo de seguro."
@@ -69414,6 +69583,17 @@
           {
             "t": "(713) 263-9800",
             "h": "tel:+17132639800"
+          },
+          {
+            "t": "."
+          },
+          {
+            "t": " También puede escribirnos por WhatsApp al "
+          },
+          {
+            "t": "(346) 436-SAVE (7283)",
+            "h": "https://wa.me/13464367283",
+            "x": "true"
           },
           {
             "t": "."
@@ -69527,6 +69707,17 @@
               },
               {
                 "t": "."
+              },
+              {
+                "t": " También puede escribirnos por WhatsApp al "
+              },
+              {
+                "t": "(346) 436-SAVE (7283)",
+                "h": "https://wa.me/13464367283",
+                "x": "true"
+              },
+              {
+                "t": "."
               }
             ]
           },
@@ -69548,6 +69739,17 @@
           {
             "t": "(281) 406-1900",
             "h": "tel:+12814061900"
+          },
+          {
+            "t": "."
+          },
+          {
+            "t": " También puede escribirnos por WhatsApp al "
+          },
+          {
+            "t": "(346) 436-SAVE (7283)",
+            "h": "https://wa.me/13464367283",
+            "x": "true"
           },
           {
             "t": "."
@@ -69661,6 +69863,17 @@
               },
               {
                 "t": "."
+              },
+              {
+                "t": " También puede escribirnos por WhatsApp al "
+              },
+              {
+                "t": "(346) 436-SAVE (7283)",
+                "h": "https://wa.me/13464367283",
+                "x": "true"
+              },
+              {
+                "t": "."
               }
             ]
           },
@@ -69682,6 +69895,17 @@
           {
             "t": "(281) 506-4200",
             "h": "tel:+12815064200"
+          },
+          {
+            "t": "."
+          },
+          {
+            "t": " También puede escribirnos por WhatsApp al "
+          },
+          {
+            "t": "(346) 436-SAVE (7283)",
+            "h": "https://wa.me/13464367283",
+            "x": "true"
           },
           {
             "t": "."
@@ -69795,6 +70019,17 @@
               },
               {
                 "t": "."
+              },
+              {
+                "t": " También puede escribirnos por WhatsApp al "
+              },
+              {
+                "t": "(346) 436-SAVE (7283)",
+                "h": "https://wa.me/13464367283",
+                "x": "true"
+              },
+              {
+                "t": "."
               }
             ]
           },
@@ -69816,6 +70051,17 @@
           {
             "t": "(281) 749-1900",
             "h": "tel:+12817491900"
+          },
+          {
+            "t": "."
+          },
+          {
+            "t": " También puede escribirnos por WhatsApp al "
+          },
+          {
+            "t": "(346) 436-SAVE (7283)",
+            "h": "https://wa.me/13464367283",
+            "x": "true"
           },
           {
             "t": "."
@@ -69929,6 +70175,17 @@
               },
               {
                 "t": "."
+              },
+              {
+                "t": " También puede escribirnos por WhatsApp al "
+              },
+              {
+                "t": "(346) 436-SAVE (7283)",
+                "h": "https://wa.me/13464367283",
+                "x": "true"
+              },
+              {
+                "t": "."
               }
             ]
           },
@@ -69950,6 +70207,17 @@
           {
             "t": "(281) 504-7444",
             "h": "tel:+12815047444"
+          },
+          {
+            "t": "."
+          },
+          {
+            "t": " También puede escribirnos por WhatsApp al "
+          },
+          {
+            "t": "(346) 436-SAVE (7283)",
+            "h": "https://wa.me/13464367283",
+            "x": "true"
           },
           {
             "t": "."
@@ -70064,6 +70332,17 @@
               },
               {
                 "t": "."
+              },
+              {
+                "t": " También puede escribirnos por WhatsApp al "
+              },
+              {
+                "t": "(346) 436-SAVE (7283)",
+                "h": "https://wa.me/13464367283",
+                "x": "true"
+              },
+              {
+                "t": "."
               }
             ]
           },
@@ -70073,6 +70352,157 @@
           }
         ],
         "QUOTE_TITLE": "Cotice gratis en nuestra oficina de Airline",
+        "QUOTE_TEXT": "Díganos qué necesita y un agente con licencia de esta oficina comparará compañías y le devolverá la llamada."
+      },
+      "baytown": {
+        "NAME": "Baytown",
+        "TITLE": "A-State Insurance – Baytown, TX",
+        "LEAD": [
+          {
+            "t": "Su agencia de seguros local en 123 E Texas Ave, en el centro histórico de Baytown. Venga sin cita de lunes a viernes, o llame o envíe un texto al "
+          },
+          {
+            "t": "(281) 837-5729",
+            "h": "tel:+12818375729"
+          },
+          {
+            "t": " de lunes a sábado."
+          },
+          {
+            "t": " También puede escribirnos por WhatsApp al "
+          },
+          {
+            "t": "(346) 436-SAVE (7283)",
+            "h": "https://wa.me/13464367283",
+            "x": "true"
+          },
+          {
+            "t": "."
+          }
+        ],
+        "VISIT_TITLE": "Visite nuestra oficina de Baytown",
+        "ADDRESS": "123 E Texas Ave, Baytown, TX 77520",
+        "GETTING_HERE": "En E Texas Ave, en el centro histórico de Baytown, a pocos pasos de Town Square y del Downtown Arts District.",
+        "PARKING": "Gratis, en el estacionamiento pavimentado junto a la oficina.",
+        "WHY_TITLE": "Seguros sin complicaciones en Baytown",
+        "WHY": [
+          {
+            "TITLE": "Venga sin cita.",
+            "TEXT": "Visítenos de lunes a viernes, de 9 a.m. a 6 p.m. No necesita cita. Los sábados, llámenos de 9 a.m. a 7 p.m."
+          },
+          {
+            "TITLE": "Ayuda en su idioma.",
+            "TEXT": "Nuestros agentes hablan español e inglés, y también atendemos en hindi, para que pueda hacer todas sus preguntas y entender cada respuesta."
+          },
+          {
+            "TITLE": "Atendemos a Baytown y el este del condado de Harris.",
+            "TEXT": "Conductores y familias de Baytown vienen a nosotros por seguro de auto económico para sus trayectos por la I-10, la SH 146 y el puente Fred Hartman, por certificados SR-22 para volver a manejar, y por seguros de casa y contra inundaciones para hogares cerca de la bahía de Galveston y Cedar Bayou, todo explicado en español o en inglés."
+          },
+          {
+            "TITLE": "Comparamos más de 50 compañías por usted.",
+            "TEXT": "Como agencia independiente, comparamos cotizaciones de muchas aseguradoras y le mostramos las opciones lado a lado."
+          },
+          {
+            "TITLE": "Sin presión, solo respuestas claras.",
+            "TEXT": "Le explicamos qué cubre cada póliza y qué no cubre, y usted decide."
+          }
+        ],
+        "HOODS_TITLE": "Vecindarios que atiende esta oficina",
+        "HOODS_TEXT": "Centro de Baytown, Goose Creek, Cedar Bayou, Lakewood, Highlands, McNair, Mont Belvieu y La Porte.",
+        "COV_TITLE": "Seguros en nuestra oficina de Baytown",
+        "BAND": {
+          "LANG": "es",
+          "TITLE": "También le atendemos en inglés e hindi",
+          "TEXT": [
+            {
+              "t": "En nuestra oficina de E Texas Ave, los agentes con licencia también atienden en inglés e hindi. Si alguien de su familia prefiere leer en inglés, comparta con ellos la versión en inglés de esta página."
+            }
+          ],
+          "SWITCH": "View this page in English",
+          "SWITCH_LANG": "en"
+        },
+        "REV_TITLE": "Lo que dicen nuestros clientes de Baytown",
+        "REVIEWS": [
+          {
+            "T": "She goes above and beyond",
+            "TEXT": "Susan has been so pleasant and professional to work with. She goes above and beyond my ask. I’m certain that her customer service and compassion has contributed to the long standing success of this business. She will have my business forever!",
+            "BY": "— Meia T., reseña de Google (en inglés)",
+            "LANG": "en"
+          },
+          {
+            "T": "If I could give this place 10 stars",
+            "TEXT": "If I could give this place 10 stars I definitely would! Two of the most sweetest most professional women I’ve come across. Can’t beat their prices and they’re always so informative and welcoming, thank you ladies for always making me feel like a valued customer.",
+            "BY": "— Deja W., reseña de Google (en inglés)",
+            "LANG": "en"
+          },
+          {
+            "T": "Home town feel",
+            "TEXT": "The very best personal care lowest price I guarantee on auto ins they shop multriple company's Susan the nicest lady ever home town feel.",
+            "BY": "— Glen M., reseña de Google (en inglés)",
+            "LANG": "en"
+          },
+          {
+            "T": "Extremely nice and extremely helpful",
+            "TEXT": "As long as I can come here for insurance I will the women inside it are extremely nice and extremely helpful they do everything in their power to get you the best rate",
+            "BY": "— Tia C., reseña de Google (en inglés)",
+            "LANG": "en"
+          },
+          {
+            "T": "Good people. Good prices.",
+            "TEXT": "My mom has been going here since I was little. Now, I'm 23yrs and I'm going here now. Good people. Good prices.",
+            "BY": "— Zinnili E., reseña de Google (en inglés)",
+            "LANG": "en"
+          }
+        ],
+        "FAQ": [
+          {
+            "Q": "¿Necesito cita?",
+            "A": "No. Venga sin cita de lunes a viernes, de 9 a.m. a 6 p.m. Los sábados, llámenos de 9 a.m. a 7 p.m."
+          },
+          {
+            "Q": "¿Hay agentes que hablan español en esta oficina?",
+            "A": "Sí. Nuestros agentes de Baytown hablan español, inglés e hindi."
+          },
+          {
+            "Q": "¿Hay estacionamiento?",
+            "A": "Sí, gratis en el estacionamiento pavimentado junto a la oficina."
+          },
+          {
+            "Q": "¿Qué debo traer?",
+            "A": "Para auto: su póliza actual, las licencias de conducir y los números VIN. Para casa: la dirección de la propiedad y la antigüedad del techo."
+          },
+          {
+            "Q": "¿Puedo cotizar por teléfono?",
+            "A": [
+              {
+                "t": "Sí. Llame o envíe un texto al "
+              },
+              {
+                "t": "(281) 837-5729",
+                "h": "tel:+12818375729"
+              },
+              {
+                "t": "."
+              },
+              {
+                "t": " También puede escribirnos por WhatsApp al "
+              },
+              {
+                "t": "(346) 436-SAVE (7283)",
+                "h": "https://wa.me/13464367283",
+                "x": "true"
+              },
+              {
+                "t": "."
+              }
+            ]
+          },
+          {
+            "Q": "¿Qué vecindarios atiende esta oficina?",
+            "A": "Centro de Baytown, Goose Creek, Cedar Bayou, Highlands, Mont Belvieu y otras zonas del este del condado de Harris. Además, aseguramos a clientes en todo Texas."
+          }
+        ],
+        "QUOTE_TITLE": "Cotice gratis en nuestra oficina de Baytown",
         "QUOTE_TEXT": "Díganos qué necesita y un agente con licencia de esta oficina comparará compañías y le devolverá la llamada."
       }
     }

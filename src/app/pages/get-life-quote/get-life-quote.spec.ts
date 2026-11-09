@@ -11,7 +11,7 @@ const TODAY = '2026-10-26';
 
 /** A form with only the required answers filled in. */
 function filledForm(lang = 'en'): LifeQuoteForm {
-  return { ...emptyLifeQuoteForm(lang), dob: '1980-05-20', zip: '77001', name: ' Test User ', phone: '(555) 010-0100' };
+  return { ...emptyLifeQuoteForm(lang), dob: '1980-05-20', address: '123 Main St, Houston, TX 77001', first: ' Test ', last: ' User ', phone: '(555) 010-0100' };
 }
 
 describe('buildLifeQuotePayload', () => {
@@ -20,6 +20,7 @@ describe('buildLifeQuotePayload', () => {
       type: 'life',
       date_of_birth: '1980-05-20',
       zip_code: '77001',
+      full_address: '123 Main St, Houston, TX 77001',
       full_name: 'Test User',
       phone_number: '(555) 010-0100',
       preferred_language: 'English',
@@ -99,9 +100,15 @@ describe('fieldErrorKey', () => {
     expect(fieldErrorKey('spouseDob', form, TODAY)).toBe('DOB_EMPTY');
   });
 
-  it('requires a 5-digit ZIP', () => {
-    expect(fieldErrorKey('zip', { ...filledForm(), zip: '' })).toBe('ZIP_EMPTY');
-    expect(fieldErrorKey('zip', { ...filledForm(), zip: '770' })).toBe('ZIP');
+  it('requires an address with a 5-digit ZIP', () => {
+    expect(fieldErrorKey('address', { ...filledForm(), address: ' ' })).toBe('ADDRESS_EMPTY');
+    expect(fieldErrorKey('address', { ...filledForm(), address: '123 Main St, Houston, TX 770' })).toBe('ADDRESS_ZIP');
+    expect(fieldErrorKey('address', filledForm())).toBe('');
+  });
+
+  it('requires first and last name', () => {
+    expect(fieldErrorKey('first', { ...filledForm(), first: ' ' })).toBe('FIRST');
+    expect(fieldErrorKey('last', { ...filledForm(), last: '' })).toBe('LAST');
   });
 
   it('checks the weight range only when a weight is given', () => {
@@ -144,8 +151,8 @@ describe('GetLifeQuote', () => {
   });
 
   it('prefills name and phone from the query string', () => {
-    const { c } = setupComponent({ fullName: 'Test User', phone: '5550100100' });
-    expect(c.form.name).toBe('Test User');
+    const { c } = setupComponent({ fullName: 'Ana Maria Lopez', phone: '5550100100' });
+    expect([c.form.first, c.form.last]).toEqual(['Ana', 'Maria Lopez']);
     expect(c.form.phone).toBe('(555) 010-0100');
   });
 
@@ -173,7 +180,7 @@ describe('GetLifeQuote', () => {
     c.step = 5;
     await c.submit(new Event('submit'));
     expect(c.sent).toBe(false);
-    expect(c.form.zip).toBe('77001');
+    expect(c.form.address).toBe('123 Main St, Houston, TX 77001');
     expect(c.submitError).toBe('LIFE_QUOTE_PAGE.FORM.ERR.SUBMIT');
   });
 });

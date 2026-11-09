@@ -42,6 +42,7 @@
       <div class="btn-row">
         <a class="hf-btn btn-primary btn-lg" href="#quote" (click)="goToSection('quote', $event)">{{ 'OFFICE_PAGE.COMMON.CTA_QUOTE' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
         <a class="hf-btn btn-outline btn-lg" [href]="'tel:' + office.tel"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'OFFICE_PAGE.COMMON.CTA_CALL' | translate: { phone: office.phone } }}</a>
+        <a class="hf-btn btn-outline btn-lg" href="https://wa.me/13464367283" target="_blank" rel="noopener"><svg class="icon-sm" aria-hidden="true"><use href="#i-wa" /></svg>{{ 'OFFICE_PAGE.COMMON.CTA_WHATSAPP' | translate }}</a>
         <a class="hf-btn btn-outline btn-lg" [href]="directionsUrl" target="_blank" rel="noopener"><svg class="icon-sm" aria-hidden="true"><use href="#i-route" /></svg>{{ 'OFFICE_PAGE.COMMON.CTA_DIRECTIONS' | translate }}</a>
       </div>
       <p class="hf-lead"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list(o + 'LEAD') }"></ng-container></p>
@@ -50,10 +51,15 @@
     <aside class="hours-card" [attr.aria-label]="'OFFICE_PAGE.COMMON.HOURS.ARIA' | translate">
       <span class="hc-title">{{ 'OFFICE_PAGE.COMMON.HOURS.TITLE' | translate: { name: (o + 'NAME' | translate) } }}</span>
       <span class="status" [attr.data-state]="status"><span class="dot" aria-hidden="true"></span><span>{{ statusKey | translate }}</span></span>
-      <dl class="hours">
-        <div [class.today]="today >= 1 && today <= 6"><dt>{{ 'OFFICE_PAGE.COMMON.HOURS.WEEK' | translate }}</dt><dd>{{ 'OFFICE_PAGE.COMMON.HOURS.WEEK_TIME' | translate }}</dd></div>
+      <dl class="hours" *ngIf="office.weekdayHours; else allWeek">
+        <div [class.today]="today >= 1 && today <= 5"><dt>{{ 'OFFICE_PAGE.COMMON.HOURS_BAY.WEEK' | translate }}</dt><dd>{{ 'OFFICE_PAGE.COMMON.HOURS_BAY.WEEK_TIME' | translate }}</dd></div>
+        <div [class.today]="today === 6"><dt>{{ 'OFFICE_PAGE.COMMON.HOURS_BAY.SATURDAY' | translate }}</dt><dd>{{ 'OFFICE_PAGE.COMMON.HOURS_BAY.SATURDAY_TIME' | translate }}</dd></div>
         <div [class.today]="today === 0"><dt>{{ 'OFFICE_PAGE.COMMON.HOURS.SUNDAY' | translate }}</dt><dd>{{ 'OFFICE_PAGE.COMMON.HOURS.CLOSED' | translate }}</dd></div>
       </dl>
+      <ng-template #allWeek><dl class="hours">
+        <div [class.today]="today >= 1 && today <= 6"><dt>{{ 'OFFICE_PAGE.COMMON.HOURS.WEEK' | translate }}</dt><dd>{{ 'OFFICE_PAGE.COMMON.HOURS.WEEK_TIME' | translate }}</dd></div>
+        <div [class.today]="today === 0"><dt>{{ 'OFFICE_PAGE.COMMON.HOURS.SUNDAY' | translate }}</dt><dd>{{ 'OFFICE_PAGE.COMMON.HOURS.CLOSED' | translate }}</dd></div>
+      </dl></ng-template>
       <p class="reply"><svg class="icon-sm" aria-hidden="true"><use href="#i-car" /></svg>{{ 'OFFICE_PAGE.COMMON.HOURS.NOTE' | translate }}</p>
     </aside>
   </div>
@@ -80,7 +86,8 @@
       <dl class="of-facts">
         <div><dt><svg class="icon-sm" aria-hidden="true"><use href="#i-pin" /></svg>{{ 'OFFICE_PAGE.COMMON.FACTS.ADDRESS' | translate }}</dt><dd>{{ o + 'ADDRESS' | translate }}<a class="sub blk" [href]="directionsUrl" target="_blank" rel="noopener">{{ 'OFFICE_PAGE.COMMON.CTA_DIRECTIONS' | translate }}</a></dd></div>
         <div><dt><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg>{{ 'OFFICE_PAGE.COMMON.FACTS.PHONE' | translate }}</dt><dd><a class="ph" [href]="'tel:' + office.tel">{{ office.phone }}</a><a class="sub" [href]="'sms:' + office.tel">{{ 'OFFICE_PAGE.COMMON.FACTS.TEXT_US' | translate }}</a></dd></div>
-        <div><dt><svg class="icon-sm" aria-hidden="true"><use href="#i-cal" /></svg>{{ 'OFFICE_PAGE.COMMON.FACTS.HOURS' | translate }}</dt><dd>{{ 'OFFICE_PAGE.COMMON.FACTS.HOURS_VALUE' | translate }}</dd></div>
+        <div><dt><svg class="icon-sm" aria-hidden="true"><use href="#i-wa" /></svg>{{ 'OFFICE_PAGE.COMMON.FACTS.WHATSAPP' | translate }}</dt><dd><a class="ph" href="https://wa.me/13464367283" target="_blank" rel="noopener">(346) 436-SAVE (7283)</a></dd></div>
+        <div><dt><svg class="icon-sm" aria-hidden="true"><use href="#i-cal" /></svg>{{ 'OFFICE_PAGE.COMMON.FACTS.HOURS' | translate }}</dt><dd>{{ (office.weekdayHours ? 'OFFICE_PAGE.COMMON.HOURS_BAY.FACTS' : 'OFFICE_PAGE.COMMON.FACTS.HOURS_VALUE') | translate }}</dd></div>
         <div><dt><svg class="icon-sm" aria-hidden="true"><use href="#i-globe" /></svg>{{ 'OFFICE_PAGE.COMMON.FACTS.LANGS' | translate }}</dt><dd><ng-container *ngFor="let l of list('OFFICE_PAGE.COMMON.FACTS.LANGS_VALUE'); let last = last"><span [attr.lang]="l.lang">{{ l.t }}</span><ng-container *ngIf="!last"> · </ng-container></ng-container></dd></div>
         <div><dt><svg class="icon-sm" aria-hidden="true"><use href="#i-route" /></svg>{{ 'OFFICE_PAGE.COMMON.FACTS.GETTING_HERE' | translate }}</dt><dd>{{ o + 'GETTING_HERE' | translate }}</dd></div>
         <div><dt><svg class="icon-sm" aria-hidden="true"><use href="#i-car" /></svg>{{ 'OFFICE_PAGE.COMMON.FACTS.PARKING' | translate }}</dt><dd>{{ o + 'PARKING' | translate }}</dd></div>
@@ -121,7 +128,7 @@
       <a class="arrow-link" [routerLink]="route('ourLocations')">{{ 'OFFICE_PAGE.COMMON.HOODS.ALL' | translate }} <svg class="icon-sm" aria-hidden="true"><use href="#i-arrow" /></svg></a>
     </div>
     <div>
-      <ul class="of-chips" aria-hidden="true"><li *ngFor="let h of office.hoods">{{ h }}</li></ul>
+      <ul class="of-chips" aria-hidden="true"><li *ngFor="let h of (lang === 'es' && office.hoodsEs) || office.hoods">{{ h }}</li></ul>
       <p class="of-zip"><b>{{ 'OFFICE_PAGE.COMMON.HOODS.ZIP' | translate }}</b></p>
       <ul class="of-chips zip" [attr.aria-label]="'OFFICE_PAGE.COMMON.HOODS.ZIP_ARIA' | translate"><li *ngFor="let z of office.zips">{{ z }}</li></ul>
     </div>
@@ -211,12 +218,21 @@
     <form class="cform" novalidate aria-labelledby="oq-h" (submit)="submit($event)">
       <div class="row2">
         <div class="field">
-          <label for="oq-name">{{ 'OFFICE_PAGE.COMMON.QUOTE.NAME' | translate }} <span class="req" aria-hidden="true">*</span></label>
-          <input type="text" id="oq-name" name="name" autocomplete="name" required [value]="form.name"
-            [attr.aria-invalid]="errors.name ? 'true' : null" aria-describedby="oq-name-err"
-            (input)="onNameInput($event)" (blur)="onBlur('name')" />
-          <p class="err" id="oq-name-err" aria-live="polite">{{ errors.name }}</p>
+          <label for="oq-first">{{ 'OFFICE_PAGE.COMMON.QUOTE.FIRST' | translate }} <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="oq-first" name="first_name" autocomplete="given-name" required [value]="form.first"
+            [attr.aria-invalid]="errors.first ? 'true' : null" aria-describedby="oq-first-err"
+            (input)="onNameInput('first', $event)" (blur)="onBlur('first')" />
+          <p class="err" id="oq-first-err" aria-live="polite">{{ errors.first }}</p>
         </div>
+        <div class="field">
+          <label for="oq-last">{{ 'OFFICE_PAGE.COMMON.QUOTE.LAST' | translate }} <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="oq-last" name="last_name" autocomplete="family-name" required [value]="form.last"
+            [attr.aria-invalid]="errors.last ? 'true' : null" aria-describedby="oq-last-err"
+            (input)="onNameInput('last', $event)" (blur)="onBlur('last')" />
+          <p class="err" id="oq-last-err" aria-live="polite">{{ errors.last }}</p>
+        </div>
+      </div>
+      <div class="row2">
         <div class="field">
           <label for="oq-phone">{{ 'OFFICE_PAGE.COMMON.QUOTE.PHONE' | translate }} <span class="req" aria-hidden="true">*</span></label>
           <input type="tel" id="oq-phone" name="phone" inputmode="tel" autocomplete="tel-national" required [value]="form.phone"

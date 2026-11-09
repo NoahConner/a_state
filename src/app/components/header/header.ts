@@ -152,7 +152,7 @@ export const OFFICES: Office[] = [
  * it has no detail page, map pin or quote-form option, so it stays out of OFFICES.
  */
 export const BAYTOWN_OFFICE: Office = {
-  id: '123-e-texas-ave-baytown-tx-77520', name: 'Baytown', title: 'Baytown Insurance', hasPage: false,
+  id: '123-e-texas-ave-baytown-tx-77520', name: 'Baytown', title: 'Baytown Insurance', hasPage: true,
   street: '123 E Texas Ave', city: 'Baytown, TX 77520',
   phone: '(281) 837-5729', tel: '+12818375729', lat: 29.7315813, lng: -94.9665137,
   mapUrl: 'https://www.google.com/maps/search/?api=1&query=123+E+Texas+Ave+Baytown+TX+77520',

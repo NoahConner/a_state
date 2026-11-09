@@ -16,9 +16,10 @@ function setup(lang = 'en') {
     'browser' as any,
     document,
   );
-  c.form.name = ' Test User ';
+  c.form.first = ' Test ';
+  c.form.last = ' User ';
   c.form.phone = '(555) 010-0100';
-  c.form.zip = '77001';
+  c.form.address = '123 Main St, Houston, TX 77001';
   c.form.pick['bond'] = 'notary';
   const payload = () => (c as any).buildPayload() as any;
   const validate = (n: number) => (c as any).validateStep(n) as string[];
@@ -38,6 +39,7 @@ describe('GetSuretyQuote payload', () => {
       full_name: 'Test User',
       phone_number: '(555) 010-0100',
       zip_code: '77001',
+      full_address: '123 Main St, Houston, TX 77001',
       bond_type: 'Notary bond',
       preferred_language: 'English',
       source_page: 'Surety Quote',
@@ -121,13 +123,14 @@ describe('GetSuretyQuote payload', () => {
 });
 
 describe('GetSuretyQuote validation', () => {
-  it('step 1 needs name, phone and a 5-digit ZIP; email only when typed', () => {
+  it('step 1 needs first and last name, phone and an address with a 5-digit ZIP; email only when typed', () => {
     const { c, validate } = setup();
     expect(validate(1)).toEqual([]);
     c.form.email = 'nope';
-    c.form.zip = '770';
-    c.form.name = '';
-    expect(validate(1)).toEqual(['sq-name', 'sq-email', 'sq-zip']);
+    c.form.address = '123 Main St, Houston, TX 770';
+    c.form.first = '';
+    c.form.last = ' ';
+    expect(validate(1)).toEqual(['sq-first', 'sq-last', 'sq-email', 'sq-address']);
   });
 
   it('step 2 needs a bond and a date that has not passed', () => {
@@ -165,7 +168,7 @@ describe('GetSuretyQuote submit', () => {
     expect((post.mock.calls[0][1] as any).type).toBe('surety_bond');
     expect(c.sent).toBe(true);
     expect(c.sentAsap).toBe(true);
-    expect(c.form.name).toBe('');
+    expect(c.form.first).toBe('');
   });
 
   it('does nothing before the review step', async () => {
@@ -182,6 +185,6 @@ describe('GetSuretyQuote submit', () => {
     await c.submit(submitEvent());
     expect(c.sent).toBe(false);
     expect(c.submitError).toBe('SURETY_QUOTE_PAGE.FORM.ERR.SUBMIT');
-    expect(c.form.zip).toBe('77001');
+    expect(c.form.address).toBe('123 Main St, Houston, TX 77001');
   });
 });

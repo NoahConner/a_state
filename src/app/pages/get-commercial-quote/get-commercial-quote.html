@@ -103,11 +103,12 @@
               <p class="err" id="bq-desc-err">{{ errors['desc'] }}</p>
             </div>
             <ng-container *ngTemplateOutlet="chips; context: { legend: ('COMMERCIAL_QUOTE_PAGE.FORM.STRUCTURE_LEGEND' | translate), name: 'bq-st', opts: list('COMMERCIAL_QUOTE_PAGE.FORM.STRUCTURES'), key: 'structure', cls: 'stack aq-two' }"></ng-container>
-            <div class="field aq-short">
-              <label for="bq-zip">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.ZIP' | translate }} <span class="req" aria-hidden="true">*</span></label>
-              <input type="text" id="bq-zip" inputmode="numeric" autocomplete="postal-code" maxlength="5" required [value]="form.zip"
-                [attr.aria-invalid]="errors['zip'] ? 'true' : null" aria-describedby="bq-zip-err" (input)="onDigits('zip', $event)" />
-              <p class="err" id="bq-zip-err">{{ errors['zip'] }}</p>
+            <div class="field">
+              <label for="bq-address">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.ADDRESS' | translate }} <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="bq-address" appAddressAutocomplete [acLang]="languageService.getCurrentLanguage()" autocomplete="street-address" maxlength="255" required [value]="form.address"
+                [placeholder]="'COMMERCIAL_QUOTE_PAGE.FORM.ADDRESS_PH' | translate"
+                [attr.aria-invalid]="errors['address'] ? 'true' : null" aria-describedby="bq-address-err" (input)="onText('address', $event)" />
+              <p class="err" id="bq-address-err">{{ errors['address'] }}</p>
             </div>
             <ng-container *ngTemplateOutlet="chips; context: { legend: ('COMMERCIAL_QUOTE_PAGE.FORM.OUTSIDE_LEGEND' | translate), name: 'bq-tx', opts: list('COMMERCIAL_QUOTE_PAGE.FORM.OUTSIDE'), key: 'outside', cls: '' }"></ng-container>
             <div class="cq-nav">
@@ -196,11 +197,19 @@
           <!-- Step 4: How should we reach you? -->
           <div class="cq-step" [hidden]="step !== 4">
             <div class="cq-step-h"><p class="cq-count">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 4 } }}</p><h3 id="bq-h4" tabindex="-1">{{ list('COMMERCIAL_QUOTE_PAGE.FORM.STEP_TITLES')[3] }}</h3></div>
-            <div class="field">
-              <label for="bq-cname">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.NAME' | translate }} <span class="req" aria-hidden="true">*</span></label>
-              <input type="text" id="bq-cname" autocomplete="name" maxlength="255" required [value]="form.name"
-                [attr.aria-invalid]="errors['name'] ? 'true' : null" aria-describedby="bq-cname-err" (input)="onText('name', $event)" />
-              <p class="err" id="bq-cname-err">{{ errors['name'] }}</p>
+            <div class="cq-row">
+              <div class="field">
+                <label for="bq-first">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.FIRST' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="bq-first" autocomplete="given-name" maxlength="120" required [value]="form.first"
+                  [attr.aria-invalid]="errors['first'] ? 'true' : null" aria-describedby="bq-first-err" (input)="onText('first', $event)" />
+                <p class="err" id="bq-first-err">{{ errors['first'] }}</p>
+              </div>
+              <div class="field">
+                <label for="bq-last">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.LAST' | translate }} <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="bq-last" autocomplete="family-name" maxlength="120" required [value]="form.last"
+                  [attr.aria-invalid]="errors['last'] ? 'true' : null" aria-describedby="bq-last-err" (input)="onText('last', $event)" />
+                <p class="err" id="bq-last-err">{{ errors['last'] }}</p>
+              </div>
             </div>
             <ng-container *ngTemplateOutlet="chips; context: { legend: ('COMMERCIAL_QUOTE_PAGE.FORM.ROLE_LEGEND' | translate), name: 'bq-ro', opts: list('COMMERCIAL_QUOTE_PAGE.FORM.ROLES'), key: 'role', cls: '' }"></ng-container>
             <div class="cq-row">
@@ -248,7 +257,7 @@
                     <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.INDUSTRY' | translate), v: label('FORM.INDUSTRIES', form.industry) }"></ng-container>
                     <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.DESC' | translate), v: form.desc.trim() }"></ng-container>
                     <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.STRUCTURE' | translate), v: label('FORM.STRUCTURES', form.pick['structure'] || '') }"></ng-container>
-                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.ZIP' | translate), v: form.zip }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.ADDRESS' | translate), v: form.address.trim() }"></ng-container>
                     <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.OUTSIDE' | translate), v: label('FORM.OUTSIDE', form.pick['outside'] || '') }"></ng-container>
                   </dl>
                 </div>
@@ -282,7 +291,7 @@
                 <div class="cq-rev">
                   <div class="cq-rev-h"><h4>{{ list('COMMERCIAL_QUOTE_PAGE.FORM.R_TITLES')[3] }}</h4><button type="button" class="cq-edit" (click)="edit(4)">{{ 'COMMERCIAL_QUOTE_PAGE.FORM.EDIT' | translate }}<span class="sr-only"> {{ list('COMMERCIAL_QUOTE_PAGE.FORM.R_TITLES')[3] }}</span></button></div>
                   <dl>
-                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.NAME' | translate), v: form.name.trim() }"></ng-container>
+                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.NAME' | translate), v: fullName() }"></ng-container>
                     <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.ROLE' | translate), v: label('FORM.ROLES', form.pick['role'] || '') }"></ng-container>
                     <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.PHONE' | translate), v: form.phone }"></ng-container>
                     <ng-container *ngTemplateOutlet="rrow; context: { k: ('COMMERCIAL_QUOTE_PAGE.FORM.R.EMAIL' | translate), v: form.email.trim() }"></ng-container>

@@ -16,10 +16,11 @@ function setup(lang = 'en') {
     'browser' as any,
     document,
   );
-  c.form.zip = '77001';
+  c.form.address = '123 Main St, Houston, TX 77001';
   c.form.hh = '2';
   c.form.ages[0].value = '34';
-  c.form.name = ' Test User ';
+  c.form.first = ' Test ';
+  c.form.last = ' User ';
   c.form.phone = '(555) 010-0100';
   const payload = () => (c as any).buildPayload() as any;
   const validate = (n: number) => (c as any).validateStep(n) as string[];
@@ -37,6 +38,7 @@ describe('GetHealthQuote payload', () => {
     expect(setup().payload()).toEqual({
       type: 'health',
       zip_code: '77001',
+      full_address: '123 Main St, Houston, TX 77001',
       household_size: '2',
       ages_covered: '34',
       full_name: 'Test User',
@@ -159,15 +161,18 @@ describe('GetHealthQuote form behaviour', () => {
     expect(c.form.ages.length).toBe(1);
   });
 
-  it('fills the county from Houston-area ZIPs and asks on split ZIPs', () => {
+  it('fills the county from the ZIP in the address and asks on split ZIPs', () => {
     const { c, inputEvent } = setup();
-    c.onZipInput(inputEvent('77459'));
+    c.onAddressInput(inputEvent('1 Main St, Sugar Land, TX 77459'));
     expect(c.form.county).toBe('Fort Bend');
-    c.onZipInput(inputEvent('77002'));
+    // A 5-digit street number is not mistaken for the ZIP.
+    c.onAddressInput(inputEvent('12345 Main St, Houston, TX 77002'));
     expect(c.form.county).toBe('Harris');
-    c.onZipInput(inputEvent('77053'));
+    c.onAddressInput(inputEvent('1 Main St, Houston, TX 77053'));
     expect(c.form.county).toBe('');
     expect(c.countyHint.key).toBe('FORM.COUNTY_SPLIT');
+    c.onPlaceCounty('Galveston');
+    expect(c.form.county).toBe('Galveston');
   });
 
   it('knows the Open Enrollment window', () => {
@@ -179,14 +184,14 @@ describe('GetHealthQuote form behaviour', () => {
 });
 
 describe('GetHealthQuote validation', () => {
-  it('step 1 needs a 5-digit ZIP and a coverage end date that has not passed', () => {
+  it('step 1 needs an address with a 5-digit ZIP and a coverage end date that has not passed', () => {
     const { c, validate } = setup();
-    c.form.zip = '';
-    expect(validate(1)).toEqual(['mq-zip']);
-    c.form.zip = '7700';
-    expect(c.errors['zip']).toBeTruthy();
-    expect(validate(1)).toEqual(['mq-zip']);
-    c.form.zip = '77001';
+    c.form.address = '';
+    expect(validate(1)).toEqual(['mq-address']);
+    c.form.address = '123 Main St, Houston, TX 7700';
+    expect(c.errors['address']).toBeTruthy();
+    expect(validate(1)).toEqual(['mq-address']);
+    c.form.address = '123 Main St, Houston, TX 77001';
     c.form.pick['current'] = 'ending';
     c.form.ends = '2000-01-01';
     expect(validate(1)).toEqual(['mq-ends']);
@@ -211,7 +216,7 @@ describe('GetHealthQuote validation', () => {
     expect(c.errors['ages']).toBe('HEALTH_QUOTE_PAGE.FORM.ERR.AGES_RANGE');
   });
 
-  it('step 4 needs name and phone, and email when Email is the contact method', () => {
+  it('step 4 needs first name, last name and phone, and email when Email is the contact method', () => {
     const { c, validate } = setup();
     expect(validate(4)).toEqual([]);
     c.form.pick['method'] = 'email';
@@ -219,9 +224,10 @@ describe('GetHealthQuote validation', () => {
     c.form.email = 'not-an-email';
     expect(validate(4)).toEqual(['mq-email']);
     c.form.email = 'test@example.com';
-    c.form.name = 'x';
+    c.form.first = ' ';
+    c.form.last = '';
     c.form.phone = '555';
-    expect(validate(4)).toEqual(['mq-name', 'mq-phone']);
+    expect(validate(4)).toEqual(['mq-first', 'mq-last', 'mq-phone']);
   });
 });
 
@@ -240,7 +246,7 @@ describe('GetHealthQuote submit', () => {
     expect(post.mock.calls[0][0]).toBe('/quotes/create');
     expect(c.sent).toBe(true);
     expect(c.sentEnding).toBe(true);
-    expect(c.form.zip).toBe('');
+    expect(c.form.address).toBe('');
   });
 
   it('does nothing before the review step', async () => {
@@ -257,6 +263,6 @@ describe('GetHealthQuote submit', () => {
     await c.submit(submitEvent());
     expect(c.sent).toBe(false);
     expect(c.submitError).toBe('HEALTH_QUOTE_PAGE.FORM.ERR.SUBMIT');
-    expect(c.form.zip).toBe('77001');
+    expect(c.form.address).toBe('123 Main St, Houston, TX 77001');
   });
 });

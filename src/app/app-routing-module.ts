@@ -224,6 +224,12 @@ const routes: Routes = [
     runGuardsAndResolvers: 'always',
     data: { metaPage: 'location_5206-airline-dr-g-houston-tx-77022' },
   },
+  {
+    path: 'our-locations/123-e-texas-ave-baytown-tx-77520',
+    component: OfficeDetail,
+    runGuardsAndResolvers: 'always',
+    data: { metaPage: 'location_123-e-texas-ave-baytown-tx-77520' },
+  },
   { path: 'our-locations/:id', component: LocationDetail, runGuardsAndResolvers: 'always' },
   { path: 'get-a-quote', component: GetAQuote, data: { metaPage: 'getAQuote' } },
   {
@@ -1441,6 +1447,12 @@ const routes: Routes = [
         component: OfficeDetail,
         runGuardsAndResolvers: 'always',
         data: { metaPage: 'location_5206-airline-dr-g-houston-tx-77022' },
+      },
+      {
+        path: 'nuestras-ubicaciones/123-e-texas-ave-baytown-tx-77520',
+        component: OfficeDetail,
+        runGuardsAndResolvers: 'always',
+        data: { metaPage: 'location_123-e-texas-ave-baytown-tx-77520' },
       },
       {
         path: 'nuestras-ubicaciones/:id',

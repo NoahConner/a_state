@@ -6,13 +6,13 @@ import { Subscription, firstValueFrom } from 'rxjs';
 import { Language } from '../../services/language';
 import { HttpService } from '../../services/http.service';
 import { PageSource, PageSourceFields } from '../../services/page-source';
-import { buildRoute, OFFICES } from '../../components/header/header';
+import { BAYTOWN_OFFICE, buildRoute, OFFICES } from '../../components/header/header';
 import { applyQuotePrefill } from '../../services/quote-prefill';
 
 interface BqForm {
-  bizName: string; dba: string; industry: string; desc: string; zip: string; employees: string;
+  bizName: string; dba: string; industry: string; desc: string; address: string; employees: string;
   payroll: string; bondFor: string; carrier: string; expiration: string; startDate: string;
-  name: string; phone: string; email: string; office: string;
+  first: string; last: string; phone: string; email: string; office: string;
   /** Single-choice answers by group: structure, outside, years, revenue, vehicles, works, insured, start, coi, claims, role, lang, method, time. */
   pick: Record<string, string>;
   /** Ticked coverage boxes by value (gl, bop, ... unsure, bond). */
@@ -26,7 +26,8 @@ const P = 'COMMERCIAL_QUOTE_PAGE.';
 const SCHEMA_ID = 'get-commercial-quote-structured-data';
 const SITE = 'https://astateinsurance.com';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const ZIP_RE = /^\d{5}$/;
+/** The business address must contain a 5-digit ZIP (ZIP+4 allowed); the first match is sent as business_zip_code. */
+const ZIP_RE = /\b(\d{5})(?:-\d{4})?\b/;
 const ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const TOTAL_STEPS = 5;
 
@@ -85,6 +86,7 @@ export interface CommercialQuotePayload extends PageSourceFields {
   business_description: string;
   business_entity_type?: string;
   business_zip_code: string;
+  business_address: string;
   works_outside_texas?: string;
   years_in_business?: string;
   number_of_employees: string;
@@ -119,7 +121,7 @@ export interface CommercialQuotePayload extends PageSourceFields {
   styleUrl: './get-commercial-quote.scss',
 })
 export class GetCommercialQuote implements AfterViewInit, OnDestroy {
-  readonly offices = OFFICES;
+  readonly offices = [...OFFICES, BAYTOWN_OFFICE];
   readonly stepNumbers = [1, 2, 3, 4, 5];
   readonly needIcons = NEED_ICONS;
   readonly basicsIcons = BASICS_ICONS;
@@ -136,7 +138,7 @@ export class GetCommercialQuote implements AfterViewInit, OnDestroy {
   groupHealth = false;
 
   form!: BqForm;
-  /** Error text by field key (bizName, industry, desc, zip, employees, coverage, startDate, name, phone, email). */
+  /** Error text by field key (bizName, industry, desc, address, employees, coverage, startDate, first, last, phone, email). */
   errors: Record<string, string> = {};
   isSubmitting = false;
   sent = false;
@@ -167,7 +169,13 @@ export class GetCommercialQuote implements AfterViewInit, OnDestroy {
     this.isBrowser = isPlatformBrowser(platformId);
     this.form = this.emptyForm();
     // Name, phone and email from the short quote form the visitor just sent (browser only).
-    if (this.isBrowser) applyQuotePrefill(this.form);
+    if (this.isBrowser) {
+      const prefill = { name: '', phone: '', email: '' };
+      applyQuotePrefill(prefill);
+      this.setName(prefill.name);
+      if (prefill.phone) this.form.phone = prefill.phone;
+      if (prefill.email) this.form.email = prefill.email;
+    }
     this.applyQueryParams();
     this.subs.add(
       this.translate.onLangChange.subscribe(() => {
@@ -237,7 +245,7 @@ export class GetCommercialQuote implements AfterViewInit, OnDestroy {
 
   // ---------- Inputs ----------
 
-  onText(field: 'bizName' | 'dba' | 'industry' | 'desc' | 'bondFor' | 'carrier' | 'expiration' | 'startDate' | 'name' | 'email', event: Event) {
+  onText(field: 'bizName' | 'dba' | 'industry' | 'desc' | 'address' | 'bondFor' | 'carrier' | 'expiration' | 'startDate' | 'first' | 'last' | 'email', event: Event) {
     this.form[field] = (event.target as HTMLInputElement).value;
     if (this.errors[field]) this.errors[field] = this.fieldError(field);
   }
@@ -250,8 +258,8 @@ export class GetCommercialQuote implements AfterViewInit, OnDestroy {
     if (this.errors['phone']) this.errors['phone'] = this.fieldError('phone');
   }
 
-  /** ZIP and employee count: digits only, 5 at most. */
-  onDigits(field: 'zip' | 'employees', event: Event) {
+  /** Employee count: digits only, 5 at most. */
+  onDigits(field: 'employees', event: Event) {
     const input = event.target as HTMLInputElement;
     input.value = input.value.replace(/\D/g, '').slice(0, 5);
     this.form[field] = input.value;
@@ -354,14 +362,15 @@ export class GetCommercialQuote implements AfterViewInit, OnDestroy {
       check('bizName', 'bq-name');
       check('industry', 'bq-ind');
       check('desc', 'bq-desc');
-      check('zip', 'bq-zip');
+      check('address', 'bq-address');
     } else if (n === 2) {
       check('employees', 'bq-emp');
     } else if (n === 3) {
       check('coverage', 'bq-c-gl');
       check('startDate', 'bq-sdate');
     } else if (n === 4) {
-      check('name', 'bq-cname');
+      check('first', 'bq-first');
+      check('last', 'bq-last');
       check('phone', 'bq-phone');
       check('email', 'bq-email');
     }
@@ -381,16 +390,20 @@ export class GetCommercialQuote implements AfterViewInit, OnDestroy {
         return form.industry ? '' : this.err('INDUSTRY');
       case 'desc':
         return form.desc.trim().length < 3 ? this.err('DESC') : '';
-      case 'zip':
-        return !form.zip ? this.err('ZIP_EMPTY') : !ZIP_RE.test(form.zip) ? this.err('ZIP') : '';
+      case 'address': {
+        const a = form.address.trim();
+        return !a ? this.err('ADDRESS_EMPTY') : !ZIP_RE.test(a) ? this.err('ADDRESS_ZIP') : '';
+      }
       case 'employees':
         return !form.employees ? this.err('EMP_EMPTY') : Number(form.employees) < 1 ? this.err('EMP_MIN') : '';
       case 'coverage':
         return Object.keys(COVERAGE_VALUES).some((k) => form.coverage[k]) ? '' : this.err('COVERAGE');
       case 'startDate':
         return form.startDate && form.startDate < this.todayIso() ? this.err('DATE_PAST') : '';
-      case 'name':
-        return form.name.trim().length < 2 ? this.err('NAME') : '';
+      case 'first':
+        return form.first.trim() ? '' : this.err('FIRST');
+      case 'last':
+        return form.last.trim() ? '' : this.err('LAST');
       case 'phone': {
         const d = this.digits(form.phone);
         return !d ? this.err('PHONE_EMPTY') : d.length !== 10 ? this.err('PHONE_INVALID') : '';
@@ -429,7 +442,7 @@ export class GetCommercialQuote implements AfterViewInit, OnDestroy {
       await firstValueFrom(this.http.post('/quotes/create', this.buildPayload(), true));
       const f = this.form;
       const method = f.pick['method'];
-      this.sentFirst = f.name.trim().split(/\s+/)[0];
+      this.sentFirst = f.first.trim();
       this.sentHow = method && METHOD_VALUES[method] ? method : 'any';
       this.sentContact = method === 'email' ? f.email.trim() : f.phone;
       this.sentBond = this.covered('bond');
@@ -463,10 +476,11 @@ export class GetCommercialQuote implements AfterViewInit, OnDestroy {
       business_name: f.bizName.trim(),
       industry_type: INDUSTRY_VALUES[f.industry] ?? '',
       business_description: f.desc.trim().slice(0, 300),
-      business_zip_code: f.zip,
+      business_zip_code: ZIP_RE.exec(f.address)?.[1] ?? '',
+      business_address: f.address.trim().slice(0, 255),
       number_of_employees: f.employees,
       coverage_items: Object.keys(COVERAGE_VALUES).filter((k) => f.coverage[k]).map((k) => COVERAGE_VALUES[k]),
-      contact_name: f.name.trim(),
+      contact_name: this.fullName(),
       phone_number: f.phone,
       preferred_language: LANG_VALUES[pick['lang']] ?? 'English',
     };
@@ -543,13 +557,25 @@ export class GetCommercialQuote implements AfterViewInit, OnDestroy {
     return date.toLocaleDateString(locale, { month: 'long', day: 'numeric', year: 'numeric' });
   }
 
+  /** First and last name joined, as shown on the review step and sent as contact_name. */
+  fullName(): string {
+    return `${this.form.first.trim()} ${this.form.last.trim()}`.trim();
+  }
+
   // ---------- Helpers ----------
+
+  /** Splits a prefilled full name: first word is the first name, the rest the last name. */
+  private setName(name: string) {
+    const [first = '', ...rest] = name.trim().split(/\s+/).filter(Boolean);
+    if (first) this.form.first = first;
+    if (rest.length) this.form.last = rest.join(' ');
+  }
 
   private emptyForm(): BqForm {
     return {
-      bizName: '', dba: '', industry: '', desc: '', zip: '', employees: '',
+      bizName: '', dba: '', industry: '', desc: '', address: '', employees: '',
       payroll: '', bondFor: '', carrier: '', expiration: '', startDate: '',
-      name: '', phone: '', email: '', office: '',
+      first: '', last: '', phone: '', email: '', office: '',
       pick: { lang: this.languageService.getCurrentLanguage() === 'es' ? 'es' : 'en' },
       coverage: {},
     };
@@ -564,7 +590,7 @@ export class GetCommercialQuote implements AfterViewInit, OnDestroy {
     if (!q) return;
     const name = q.get('fullName')?.trim();
     const phone = q.get('phone')?.trim();
-    if (name) this.form.name = name;
+    if (name) this.setName(name);
     if (phone) this.form.phone = this.formatPhone(this.digits(phone).slice(0, 10));
     if (q.get('coverage') === 'group-health') {
       this.groupHealth = true;

@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { Language } from '../../services/language';
 import { QuoteLeadCaptureService } from '../../services/quote-lead-capture.service';
-import { buildRoute, OFFICES } from '../../components/header/header';
+import { BAYTOWN_OFFICE, buildRoute, OFFICES } from '../../components/header/header';
 import { Seg } from '../insurance-services/insurance-services';
 import { POPULAR_CITIES, TEXAS_CITIES } from './texas-cities';
 
@@ -13,15 +13,16 @@ import { POPULAR_CITIES, TEXAS_CITIES } from './texas-cities';
 const OTP_IDS = ['map', 'offices', 'service-area', 'why-visit', 'quote', 'faqs'];
 
 /**
- * Per-office details from the content doc, in the same order as OFFICES and
+ * Per-office details from the content doc, in the same order as `offices` (OFFICES + Baytown) and
  * LOCATIONS_PAGE.OFFICES.ITEMS. `anchor` is the card id the map pins and legend jump to.
  */
 const OFFICE_EXTRAS = [
-  { anchor: 'office-shotwell', rating: 4.8, reviews: 121 },
-  { anchor: 'office-southwest', rating: 4.4, reviews: 32 },
-  { anchor: 'office-post-oak', rating: 4.7, reviews: 31 },
-  { anchor: 'office-antoine', rating: 4.9, reviews: 43 },
+  { anchor: 'office-shotwell', rating: 4.8, reviews: 120 },
+  { anchor: 'office-southwest', rating: 4.4, reviews: 30 },
+  { anchor: 'office-post-oak', rating: 4.7, reviews: 30 },
+  { anchor: 'office-antoine', rating: 4.9, reviews: 40 },
   { anchor: 'office-airline', rating: 5.0, reviews: 30 },
+  { anchor: 'office-baytown', rating: 4.7, reviews: 80 },
 ];
 
 /** Map pins, in the order they are drawn (back to front). `office` indexes OFFICES. */
@@ -48,7 +49,7 @@ const SITE = 'https://astateinsurance.com';
 const P = 'LOCATIONS_PAGE.';
 
 type OpenStatus = 'unknown' | 'open' | 'closed';
-type Field = 'name' | 'phone' | 'email' | 'type';
+type Field = 'first' | 'last' | 'phone' | 'email' | 'type';
 
 interface CityMatch { name: string; pre: string; hit: string; post: string }
 interface CityGroup { letter: string; id: string; cities: CityMatch[] }
@@ -61,7 +62,7 @@ interface CityGroup { letter: string; id: string; cities: CityMatch[] }
 })
 export class OurLocations implements AfterViewInit, OnDestroy {
   readonly otpIds = OTP_IDS;
-  readonly offices = OFFICES;
+  readonly offices = [...OFFICES, BAYTOWN_OFFICE];
   readonly extras = OFFICE_EXTRAS;
   readonly pins = PINS;
   readonly popularCities = POPULAR_CITIES;
@@ -88,7 +89,7 @@ export class OurLocations implements AfterViewInit, OnDestroy {
   matchCount = TEXAS_CITIES.length;
 
   // Quote form
-  form = { name: '', phone: '', email: '', type: '', office: 'any' };
+  form = { first: '', last: '', phone: '', email: '', type: '', office: 'any' };
   errors: Partial<Record<Field, string>> = {};
   isSubmitting = false;
 
@@ -307,12 +308,12 @@ export class OurLocations implements AfterViewInit, OnDestroy {
     this.form.office = this.offices[index].id;
     if (!this.isBrowser) return;
     this.host.nativeElement.querySelector('#quote')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    setTimeout(() => this.host.nativeElement.querySelector<HTMLElement>('#lq-name')?.focus({ preventScroll: true }), 450);
+    setTimeout(() => this.host.nativeElement.querySelector<HTMLElement>('#lq-first')?.focus({ preventScroll: true }), 450);
   }
 
-  onNameInput(event: Event) {
-    this.form.name = (event.target as HTMLInputElement).value;
-    if (this.errors.name) this.validate(['name']);
+  onNameInput(field: 'first' | 'last', event: Event) {
+    this.form[field] = (event.target as HTMLInputElement).value;
+    if (this.errors[field]) this.validate([field]);
   }
 
   onPhoneInput(event: Event) {
@@ -331,7 +332,7 @@ export class OurLocations implements AfterViewInit, OnDestroy {
     if (this.errors.email) this.validate(['email']);
   }
 
-  onBlur(field: 'name' | 'phone' | 'email') {
+  onBlur(field: 'first' | 'last' | 'phone' | 'email') {
     if (this.form[field]) this.validate([field]);
   }
 
@@ -359,14 +360,14 @@ export class OurLocations implements AfterViewInit, OnDestroy {
     try {
       const sent = await this.quoteLeadCaptureService.submitLead({
         selected_chip: type?.L ?? this.form.type,
-        full_name: this.form.name,
+        full_name: `${this.form.first.trim()} ${this.form.last.trim()}`.trim(),
         phone_number: this.form.phone,
         email: this.form.email,
         preferred_office: office,
       });
       if (!sent) return;
       const next = QUOTE_ROUTES[this.form.type] ?? 'getAQuote';
-      this.form = { name: '', phone: '', email: '', type: '', office: 'any' };
+      this.form = { first: '', last: '', phone: '', email: '', type: '', office: 'any' };
       this.errors = {};
       await this.router.navigate(this.route(next));
     } finally {
@@ -379,9 +380,10 @@ export class OurLocations implements AfterViewInit, OnDestroy {
     const want = (f: Field) => !only || only.includes(f);
     const t = (k: string) => this.translate.instant(P + 'QUOTE.' + k);
     const bad: Field[] = [];
-    if (want('name')) {
-      this.errors.name = this.form.name.trim().length < 2 ? t('ERR_NAME') : '';
-      if (this.errors.name) bad.push('name');
+    for (const f of ['first', 'last'] as const) {
+      if (!want(f)) continue;
+      this.errors[f] = this.form[f].trim() ? '' : t(f === 'first' ? 'ERR_FIRST' : 'ERR_LAST');
+      if (this.errors[f]) bad.push(f);
     }
     if (want('phone')) {
       const d = this.digits(this.form.phone);
@@ -452,13 +454,15 @@ export class OurLocations implements AfterViewInit, OnDestroy {
     const pageUrl = this.url('ourLocations');
     const name = this.translate.instant('LOCATIONS_PAGE.BREADCRUMB.CURRENT');
     const text = (a: string | Seg[]) => (Array.isArray(a) ? a.map((s) => s.t).join('') : a);
-    const officeUrl = (i: number) => this.url('ourLocations/:id', this.offices[i].id);
+    // Baytown has no office page yet, so it points at its card on this page.
+    const officeUrl = (i: number) =>
+      this.offices[i].hasPage === false ? pageUrl + '#' + this.extras[i].anchor : this.url('ourLocations/:id', this.offices[i].id);
     const agencies = this.offices.map((o, i) => {
       // "707 Shotwell St, Suite A, Houston, TX 77020" → street, city, region, postal code
       const m = items[i].ADDRESS.match(/^(.*), ([^,]+), ([A-Z]{2}) (\d{5})$/);
       return {
         '@type': 'InsuranceAgency',
-        '@id': officeUrl(i) + '#office',
+        '@id': o.hasPage === false ? officeUrl(i) : officeUrl(i) + '#office',
         name: `A-State Insurance (${items[i].NAME})`,
         url: officeUrl(i),
         telephone: o.tel,
@@ -471,11 +475,12 @@ export class OurLocations implements AfterViewInit, OnDestroy {
           postalCode: m?.[4],
           addressCountry: 'US',
         },
+        // Baytown: Mon–Fri 9 AM–6 PM in person (Saturday is by phone only).
         openingHoursSpecification: {
           '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', ...(o.id === BAYTOWN_OFFICE.id ? [] : ['Saturday'])],
           opens: '09:00',
-          closes: '19:00',
+          closes: o.id === BAYTOWN_OFFICE.id ? '18:00' : '19:00',
         },
         availableLanguage: ['English', 'Spanish', 'Hindi'],
         amenityFeature: { '@type': 'LocationFeatureSpecification', name: 'Free parking', value: true },

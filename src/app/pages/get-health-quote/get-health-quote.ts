@@ -5,7 +5,7 @@ import { Subscription, firstValueFrom } from 'rxjs';
 import { Language } from '../../services/language';
 import { HttpService } from '../../services/http.service';
 import { PageSource, PageSourceFields } from '../../services/page-source';
-import { buildRoute, OFFICES } from '../../components/header/header';
+import { BAYTOWN_OFFICE, buildRoute, OFFICES } from '../../components/header/header';
 import { applyQuotePrefill } from '../../services/quote-prefill';
 
 interface MqAge {
@@ -14,8 +14,8 @@ interface MqAge {
 }
 
 interface MqForm {
-  zip: string; county: string; ends: string; hh: string; income: string; keep: string;
-  name: string; phone: string; email: string; office: string;
+  address: string; county: string; ends: string; hh: string; income: string; keep: string;
+  first: string; last: string; phone: string; email: string; office: string;
   ages: MqAge[];
   /** Single-choice answers by group: who, current, tobacco, medicare, medicaid, plan, lang, method, time. */
   pick: Record<string, string>;
@@ -27,7 +27,8 @@ const P = 'HEALTH_QUOTE_PAGE.';
 const SCHEMA_ID = 'get-health-quote-structured-data';
 const SITE = 'https://astateinsurance.com';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const ZIP_RE = /^\d{5}$/;
+/** A 5-digit ZIP (ZIP+4 allowed) somewhere in the address. */
+const ZIP_RE = /\b(\d{5})(?:-\d{4})?\b/;
 const ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const TOTAL_STEPS = 5;
 const MAX_AGES = 10;
@@ -86,6 +87,7 @@ export interface HealthQuotePayload extends PageSourceFields {
   type: 'health';
   who_needs_coverage?: string;
   zip_code: string;
+  full_address: string;
   county?: string;
   current_insurance_status?: string;
   coverage_end_date?: string;
@@ -115,7 +117,7 @@ export interface HealthQuotePayload extends PageSourceFields {
   styleUrl: './get-health-quote.scss',
 })
 export class GetHealthQuote implements AfterViewInit, OnDestroy {
-  readonly offices = OFFICES;
+  readonly offices = [...OFFICES, BAYTOWN_OFFICE];
   readonly stepNumbers = [1, 2, 3, 4, 5];
   readonly enrollIcons = ENROLL_ICONS;
   readonly priorityIcons = PRIORITY_ICONS;
@@ -160,7 +162,13 @@ export class GetHealthQuote implements AfterViewInit, OnDestroy {
     this.isBrowser = isPlatformBrowser(platformId);
     this.form = this.emptyForm();
     // Name, phone and email from the short quote form the visitor just sent (browser only).
-    if (this.isBrowser) applyQuotePrefill(this.form);
+    if (this.isBrowser) {
+      const prefill = { name: '', phone: '', email: '' };
+      applyQuotePrefill(prefill);
+      this.setName(prefill.name);
+      if (prefill.phone) this.form.phone = prefill.phone;
+      if (prefill.email) this.form.email = prefill.email;
+    }
     this.subs.add(
       this.translate.onLangChange.subscribe(() => {
         this.listCache.clear();
@@ -235,17 +243,21 @@ export class GetHealthQuote implements AfterViewInit, OnDestroy {
 
   // ---------- Inputs ----------
 
-  onText(field: 'county' | 'ends' | 'keep' | 'name' | 'email', event: Event) {
+  onText(field: 'county' | 'ends' | 'keep' | 'first' | 'last' | 'email', event: Event) {
     this.form[field] = (event.target as HTMLInputElement).value;
     if (this.errors[field]) this.errors[field] = this.fieldError(field);
   }
 
-  onZipInput(event: Event) {
-    const input = event.target as HTMLInputElement;
-    input.value = input.value.replace(/\D/g, '').slice(0, 5);
-    this.form.zip = input.value;
+  onAddressInput(event: Event) {
+    this.form.address = (event.target as HTMLInputElement).value;
     this.fillCounty();
-    if (this.errors['zip']) this.errors['zip'] = this.fieldError('zip');
+    if (this.errors['address']) this.errors['address'] = this.fieldError('address');
+  }
+
+  /** County sent by Google Places when a suggestion is picked; it wins over the ZIP lookup. */
+  onPlaceCounty(county: string) {
+    this.form.county = county;
+    this.countyHint = { key: 'FORM.COUNTY_FILLED' };
   }
 
   onHouseholdInput(event: Event) {
@@ -338,9 +350,10 @@ export class GetHealthQuote implements AfterViewInit, OnDestroy {
 
   // ---------- County ----------
 
+  /** County from the last 5-digit ZIP in the address (Houston-area table); otherwise the visitor types it. */
   private fillCounty() {
-    const z = this.form.zip;
-    if (!ZIP_RE.test(z)) {
+    const z = this.zipOf(this.form.address);
+    if (!z) {
       this.countyHint = { key: 'FORM.COUNTY_HINT' };
       return;
     }
@@ -417,13 +430,14 @@ export class GetHealthQuote implements AfterViewInit, OnDestroy {
       if (msg) bad.push(id);
     };
     if (n === 1) {
-      check('zip', 'mq-zip');
+      check('address', 'mq-address');
       check('ends', 'mq-ends');
     } else if (n === 2) {
       check('hh', 'mq-hh');
       check('ages', this.firstBadAgeId());
     } else if (n === 4) {
-      check('name', 'mq-name');
+      check('first', 'mq-first');
+      check('last', 'mq-last');
       check('phone', 'mq-phone');
       check('email', 'mq-email');
     }
@@ -447,8 +461,10 @@ export class GetHealthQuote implements AfterViewInit, OnDestroy {
   private fieldError(f: string): string {
     const form = this.form;
     switch (f) {
-      case 'zip':
-        return !form.zip ? this.err('ZIP_EMPTY') : !ZIP_RE.test(form.zip) ? this.err('ZIP') : '';
+      case 'address': {
+        const a = form.address.trim();
+        return !a ? this.err('ADDRESS_EMPTY') : !ZIP_RE.test(a) ? this.err('ADDRESS_ZIP') : '';
+      }
       case 'ends':
         // Only matters when coverage is ending; a hidden leftover value is ignored.
         return form.pick['current'] === 'ending' && form.ends && form.ends < this.todayIso() ? this.err('ENDS_PAST') : '';
@@ -463,8 +479,10 @@ export class GetHealthQuote implements AfterViewInit, OnDestroy {
         if (hh >= 1 && filled.length > hh) return this.err('AGES_HH');
         return '';
       }
-      case 'name':
-        return form.name.trim().length < 2 ? this.err('NAME') : '';
+      case 'first':
+        return form.first.trim() ? '' : this.err('FIRST');
+      case 'last':
+        return form.last.trim() ? '' : this.err('LAST');
       case 'phone': {
         const d = this.digits(form.phone);
         return !d ? this.err('PHONE_EMPTY') : d.length !== 10 ? this.err('PHONE_INVALID') : '';
@@ -529,10 +547,11 @@ export class GetHealthQuote implements AfterViewInit, OnDestroy {
     const email = f.email.trim();
     const p: Omit<HealthQuotePayload, keyof PageSourceFields> = {
       type: 'health',
-      zip_code: f.zip,
+      zip_code: ZIP_RE.exec(f.address)?.[1] ?? '',
+      full_address: f.address.trim().slice(0, 255),
       household_size: f.hh,
       ages_covered: f.ages.map((a) => a.value).filter(Boolean).join(', '),
-      full_name: f.name.trim(),
+      full_name: this.fullName(),
       phone_number: f.phone,
       preferred_language: LANG_VALUES[pick['lang']] ?? 'English',
     };
@@ -602,12 +621,30 @@ export class GetHealthQuote implements AfterViewInit, OnDestroy {
     return date.toLocaleDateString(locale, { month: 'long', day: 'numeric', year: 'numeric' });
   }
 
+  /** First and last name joined, for the review step and full_name. */
+  fullName(): string {
+    return `${this.form.first.trim()} ${this.form.last.trim()}`.trim();
+  }
+
   // ---------- Helpers ----------
+
+  /** The last 5-digit ZIP in an address (the street number may also be 5 digits), or ''. */
+  private zipOf(address: string): string {
+    const all = address.match(/\b\d{5}(?=(?:-\d{4})?\b)/g);
+    return all ? all[all.length - 1] : '';
+  }
+
+  /** Splits a prefilled full name: first word is the first name, the rest the last name. */
+  private setName(name: string) {
+    const [first = '', ...rest] = name.trim().split(/\s+/).filter(Boolean);
+    if (first) this.form.first = first;
+    if (rest.length) this.form.last = rest.join(' ');
+  }
 
   private emptyForm(): MqForm {
     return {
-      zip: '', county: '', ends: '', hh: '', income: '', keep: '',
-      name: '', phone: '', email: '', office: '',
+      address: '', county: '', ends: '', hh: '', income: '', keep: '',
+      first: '', last: '', phone: '', email: '', office: '',
       ages: [{ id: ++this.ageSeq, value: '' }],
       pick: { lang: this.languageService.getCurrentLanguage() === 'es' ? 'es' : 'en' },
       events: {},

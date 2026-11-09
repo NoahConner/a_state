@@ -4,28 +4,30 @@
  */
 import { LifeQuoteForm, MAX_AGE } from './life-quote.model';
 
-export type CheckedField = 'dob' | 'spouseDob' | 'zip' | 'weight' | 'name' | 'phone' | 'email';
+export type CheckedField = 'dob' | 'spouseDob' | 'address' | 'weight' | 'first' | 'last' | 'phone' | 'email';
 
 /** Fields checked before leaving each step, in page order. Steps 3 and 5 have nothing required. */
 export const STEP_FIELDS: Record<number, CheckedField[]> = {
-  1: ['dob', 'spouseDob', 'zip'],
+  1: ['dob', 'spouseDob', 'address'],
   2: ['weight'],
-  4: ['name', 'phone', 'email'],
+  4: ['first', 'last', 'phone', 'email'],
 };
 
 /** DOM id of each field's input, used to move focus to the first invalid field. */
 export const FIELD_INPUT_IDS: Record<CheckedField, string> = {
   dob: 'lq-p-dob',
   spouseDob: 'lq-s-dob',
-  zip: 'lq-zip',
+  address: 'lq-address',
   weight: 'lq-wt',
-  name: 'lq-name',
+  first: 'lq-first',
+  last: 'lq-last',
   phone: 'lq-phone',
   email: 'lq-email',
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const ZIP_RE = /^\d{5}$/;
+/** A 5-digit ZIP (ZIP+4 allowed) somewhere in the address; the first match is sent as zip_code. */
+export const ZIP_RE = /\b(\d{5})(?:-\d{4})?\b/;
 export const ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 
 /**
@@ -41,9 +43,11 @@ export function fieldErrorKey(field: CheckedField, form: LifeQuoteForm, today = 
       // Only asked when the visitor chose "Me and my spouse".
       return form.answers.who === 'both' ? dobErrorKey(form.spouseDob, today) : '';
 
-    case 'zip':
-      if (!form.zip) return 'ZIP_EMPTY';
-      return ZIP_RE.test(form.zip) ? '' : 'ZIP';
+    case 'address': {
+      const address = form.address.trim();
+      if (!address) return 'ADDRESS_EMPTY';
+      return ZIP_RE.test(address) ? '' : 'ADDRESS_ZIP';
+    }
 
     case 'weight': {
       // Optional, but a typo like 16 or 1650 would mislead the agent.
@@ -52,8 +56,11 @@ export function fieldErrorKey(field: CheckedField, form: LifeQuoteForm, today = 
       return pounds < 50 || pounds > 700 ? 'WEIGHT' : '';
     }
 
-    case 'name':
-      return form.name.trim().length < 2 ? 'NAME' : '';
+    case 'first':
+      return form.first.trim() ? '' : 'FIRST';
+
+    case 'last':
+      return form.last.trim() ? '' : 'LAST';
 
     case 'phone': {
       const d = phoneDigits(form.phone);

@@ -22,15 +22,25 @@ export interface OfficeConfig {
   phone: string;
   tel: string;
   rating: number;
+  /** Rounded down, shown as "120+" */
   reviews: number;
   /** Google Maps embed; `{hl}` is replaced with the page language settings */
   mapEmbed: string;
   /** Google Maps place page (also used for "Read all reviews") */
   placeUrl: string;
   address: { street: string; city: string; region: string; postalCode: string };
-  /** Neighborhood names, the same in both languages */
+  /** Neighborhood names (English; also used in the schema) */
   hoods: string[];
+  /** Spanish chip names, only where a name differs (e.g. "Centro de Baytown") */
+  hoodsEs?: string[];
   zips: string[];
+  /**
+   * Baytown keeps different hours: walk-ins Mon–Fri 9 AM–6 PM, Saturday by phone 9 AM–7 PM.
+   * The others are open Mon–Sat 9 AM–7 PM.
+   */
+  weekdayHours?: boolean;
+  /** Place names in the schema get ", Houston, TX" unless set (Baytown's areas are their own towns). */
+  areaSuffix?: string;
   /** Index of the "Insurance made simple" card that spans the full width (the local one) */
   wideWhy: number;
   personal: CoverageTile[];
@@ -63,7 +73,7 @@ export const OFFICE_PAGES: OfficeConfig[] = [
     phone: '(713) 263-9800',
     tel: '+17132639800',
     rating: 4.9,
-    reviews: 43,
+    reviews: 40,
     mapEmbed:
       'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3460.550757815734!2d-95.47539188819269!3d29.84838647491884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c608c61ef783%3A0xe3848480e5c382fd!2sA-State%20Insurance!5e0!3m2!{hl}!4v1791917821705!5m2!{hl}',
     placeUrl: 'https://www.google.com/maps?cid=16394374232680923901',
@@ -81,7 +91,7 @@ export const OFFICE_PAGES: OfficeConfig[] = [
     phone: '(281) 406-1900',
     tel: '+12814061900',
     rating: 4.7,
-    reviews: 31,
+    reviews: 30,
     mapEmbed:
       'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3466.8447209615224!2d-95.46534118819837!3d29.666279975012447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640ebc87cb9e9cb%3A0x189839a7af3d6bdb!2sA-State%20Insurance!5e0!3m2!{hl}!4v1791917047536!5m2!{hl}',
     placeUrl: 'https://www.google.com/maps?cid=1772229845732649947',
@@ -99,7 +109,7 @@ export const OFFICE_PAGES: OfficeConfig[] = [
     phone: '(281) 506-4200',
     tel: '+12815064200',
     rating: 4.4,
-    reviews: 32,
+    reviews: 30,
     mapEmbed:
       'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.2901491753355!2d-95.56783138819877!3d29.65335367501906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640e742e1e45833%3A0x1013137366abdc82!2sA-State%20Insurance!5e0!3m2!{hl}!4v1791916005564!5m2!{hl}',
     placeUrl: 'https://www.google.com/maps?cid=1158290915529055362',
@@ -117,7 +127,7 @@ export const OFFICE_PAGES: OfficeConfig[] = [
     phone: '(281) 749-1900',
     tel: '+12817491900',
     rating: 4.8,
-    reviews: 121,
+    reviews: 120,
     mapEmbed:
       'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3463.0513431557292!2d-95.31391098819493!3d29.77615687495578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640b94e64abe0e5%3A0xbcbe087a2f223041!2sA-State%20Insurance!5e0!3m2!{hl}!4v1791915117476!5m2!{hl}',
     placeUrl: 'https://www.google.com/maps?cid=13600317245575278657',
@@ -142,6 +152,27 @@ export const OFFICE_PAGES: OfficeConfig[] = [
     address: { street: '5206 Airline Dr, Suite G', city: 'Houston', region: 'TX', postalCode: '77022' },
     hoods: ['Northside-Northline', 'Independence Heights', 'Lindale Park', 'Brooke Smith', 'Sunset Heights', 'Melrose Park', 'Near Northside'],
     zips: ['77022', '77009', '77076', '77018'],
+    wideWhy: 2,
+    personal: PERSONAL,
+    business: BUSINESS,
+  },
+  {
+    key: 'baytown',
+    id: '123-e-texas-ave-baytown-tx-77520',
+    name: 'Baytown',
+    phone: '(281) 837-5729',
+    tel: '+12818375729',
+    rating: 4.7,
+    reviews: 80,
+    mapEmbed:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3464.600118262964!2d-94.9685591881964!3d29.731340474978307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x863f5dcffc699f69%3A0x96a557993f05e01e!2sBaytown%20Insurance!5e0!3m2!{hl}!4v1793915357101!5m2!{hl}',
+    placeUrl: 'https://www.google.com/maps?cid=10855178792545411102',
+    address: { street: '123 E Texas Ave', city: 'Baytown', region: 'TX', postalCode: '77520' },
+    hoods: ['Downtown Baytown', 'Goose Creek', 'Cedar Bayou', 'Lakewood', 'Highlands', 'McNair', 'Mont Belvieu', 'La Porte'],
+    hoodsEs: ['Centro de Baytown', 'Goose Creek', 'Cedar Bayou', 'Lakewood', 'Highlands', 'McNair', 'Mont Belvieu', 'La Porte'],
+    zips: ['77520', '77521', '77523', '77562'],
+    weekdayHours: true,
+    areaSuffix: 'TX',
     wideWhy: 2,
     personal: PERSONAL,
     business: BUSINESS,
