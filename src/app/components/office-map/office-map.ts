@@ -35,8 +35,8 @@ type LeafletLib = typeof import('leaflet');
   styleUrl: './office-map.scss',
 })
 export class OfficeMap implements AfterViewInit, OnDestroy {
-  /** Also pin the Baytown office (it has no office page, so its popup has no "View office" link). */
-  @Input() withBaytown = false;
+  /** Also pin the Baytown office (on by default: every office map shows all 6 offices). */
+  @Input() withBaytown = true;
 
   @ViewChild('canvas', { static: true }) private canvas!: ElementRef<HTMLElement>;
 

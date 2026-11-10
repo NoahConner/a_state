@@ -206,11 +206,11 @@
                     <p class="err" [id]="'aq-d' + d.id + '-last-err'">{{ errors['d' + d.id + '.last'] }}</p>
                   </div>
                 </div>
-                <div class="cq-row">
+                <div class="aq-dob-row">
                   <div class="field">
                     <label [for]="'aq-d' + d.id + '-dob'">{{ 'AUTO_QUOTE_PAGE.FORM.DOB' | translate }} <span class="req" aria-hidden="true">*</span></label>
-                    <input type="date" [id]="'aq-d' + d.id + '-dob'" autocomplete="off" min="1920-01-01" required [value]="d.dob"
-                      [attr.aria-invalid]="errors['d' + d.id + '.dob'] ? 'true' : null" [attr.aria-describedby]="'aq-d' + d.id + '-dob-err'" (input)="onDriver(d, 'dob', $event)" />
+                    <app-dob-select [inputId]="'aq-d' + d.id + '-dob'" [value]="d.dob" [invalid]="!!errors['d' + d.id + '.dob']"
+                      [describedBy]="'aq-d' + d.id + '-dob-err'" (valueChange)="onDriverDob(d, $event)"></app-dob-select>
                     <p class="err" [id]="'aq-d' + d.id + '-dob-err'">{{ errors['d' + d.id + '.dob'] }}</p>
                   </div>
                 </div>

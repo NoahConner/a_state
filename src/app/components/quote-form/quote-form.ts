@@ -48,7 +48,8 @@ export class QuoteForm {
   @Input() ns = 'HOME_PAGE.FORM';
 
   readonly products = PRODUCTS;
-  selected: ProductKey[] = [];
+  /** The first product (Auto) starts selected; the visitor can untick it or add more. */
+  selected: ProductKey[] = [PRODUCTS[0].key];
   name = '';
   phone = '';
   errors: Partial<Record<Field, string>> = {};
@@ -158,7 +159,7 @@ export class QuoteForm {
   }
 
   private reset() {
-    this.selected = [];
+    this.selected = [PRODUCTS[0].key];
     this.name = '';
     this.phone = '';
     this.errors = {};

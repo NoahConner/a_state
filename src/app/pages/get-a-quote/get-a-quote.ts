@@ -335,7 +335,7 @@ export class GetAQuote implements AfterViewInit, OnDestroy {
   }
 
   private emptyForm(lang: string) {
-    return { first: '', last: '', phone: '', email: '', address: '', type: '', lang, office: '', time: '', message: '' };
+    return { first: '', last: '', phone: '', email: '', address: '', type: 'auto', lang, office: '', time: '', message: '' };
   }
 
   private digits(v: string): string {

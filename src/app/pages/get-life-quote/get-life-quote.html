@@ -86,22 +86,22 @@
             <div class="cq-step-h"><p class="cq-count">{{ 'LIFE_QUOTE_PAGE.FORM.STEP_OF' | translate: { n: 1 } }}</p><h3 id="lq-h1" tabindex="-1">{{ list('LIFE_QUOTE_PAGE.FORM.STEP_TITLES')[0] }}</h3></div>
             <ng-container *ngTemplateOutlet="chips; context: { legend: ('LIFE_QUOTE_PAGE.FORM.WHO_LEGEND' | translate), name: 'lq-w', opts: list('LIFE_QUOTE_PAGE.FORM.WHOS'), key: 'who', cls: 'stack aq-two' }"></ng-container>
             <p class="aq-lender" *ngIf="buyingForSomeoneElse"><svg class="icon-sm" aria-hidden="true"><use href="#i-user" /></svg>{{ 'LIFE_QUOTE_PAGE.FORM.FOR_OTHER' | translate }}</p>
-            <div class="cq-row">
+            <div class="lq-dob-row">
               <div class="field">
                 <label for="lq-p-dob">{{ 'LIFE_QUOTE_PAGE.FORM.DOB' | translate }} <span class="req" aria-hidden="true">*</span></label>
-                <input type="date" id="lq-p-dob" min="1920-01-01" required [value]="form.dob"
-                  [attr.aria-invalid]="errors['dob'] ? 'true' : null" aria-describedby="lq-p-dob-err" (input)="onText('dob', $event)" />
+                <app-dob-select inputId="lq-p-dob" [value]="form.dob" [invalid]="!!errors['dob']"
+                  describedBy="lq-p-dob-err" (valueChange)="onDob('dob', $event)"></app-dob-select>
                 <p class="err" id="lq-p-dob-err">{{ errors['dob'] }}</p>
               </div>
               <ng-container *ngTemplateOutlet="chips; context: { legend: ('LIFE_QUOTE_PAGE.FORM.SEX_LEGEND' | translate), name: 'lq-p-x', opts: list('LIFE_QUOTE_PAGE.FORM.SEXES'), key: 'sex', cls: '', hintId: 'lq-sex-note' }"></ng-container>
             </div>
             <div class="lq-spouse" *ngIf="coversSpouse">
               <p class="lq-sub">{{ 'LIFE_QUOTE_PAGE.FORM.SPOUSE' | translate }}</p>
-              <div class="cq-row">
+              <div class="lq-dob-row">
                 <div class="field">
                   <label for="lq-s-dob">{{ 'LIFE_QUOTE_PAGE.FORM.SPOUSE_DOB' | translate }} <span class="req" aria-hidden="true">*</span></label>
-                  <input type="date" id="lq-s-dob" min="1920-01-01" required [value]="form.spouseDob"
-                    [attr.aria-invalid]="errors['spouseDob'] ? 'true' : null" aria-describedby="lq-s-dob-err" (input)="onText('spouseDob', $event)" />
+                  <app-dob-select inputId="lq-s-dob" [value]="form.spouseDob" [invalid]="!!errors['spouseDob']"
+                    describedBy="lq-s-dob-err" (valueChange)="onDob('spouseDob', $event)"></app-dob-select>
                   <p class="err" id="lq-s-dob-err">{{ errors['spouseDob'] }}</p>
                 </div>
                 <ng-container *ngTemplateOutlet="chips; context: { legend: ('LIFE_QUOTE_PAGE.FORM.SEX_LEGEND' | translate), name: 'lq-s-x', opts: list('LIFE_QUOTE_PAGE.FORM.SEXES'), key: 'spouseSex', cls: '', hintId: 'lq-sex-note' }"></ng-container>

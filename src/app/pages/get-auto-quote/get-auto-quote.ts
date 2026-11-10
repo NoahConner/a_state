@@ -372,6 +372,13 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
     if (this.errors[k]) this.errors[k] = this.driverError(d, key);
   }
 
+  /** Date of birth from the Month / Day / Year dropdowns: yyyy-mm-dd, or '' until all three are chosen. */
+  onDriverDob(d: AqDriver, value: string) {
+    d.dob = value;
+    const k = `d${d.id}.dob`;
+    if (this.errors[k]) this.errors[k] = this.driverError(d, 'dob');
+  }
+
   onAlso(key: string, event: Event) {
     this.form.also[key] = (event.target as HTMLInputElement).checked;
   }

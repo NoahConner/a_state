@@ -13,6 +13,7 @@ import { App } from './app';
 import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
 import { QuoteForm } from './components/quote-form/quote-form';
+import { DobSelect } from './components/dob-select/dob-select';
 import { LegalPage } from './components/legal-page/legal-page';
 import { FootUpper } from './components/foot-upper/foot-upper';
 import { Home } from './pages/home/home';
@@ -226,6 +227,7 @@ export function initializeTranslations(
     Header,
     Footer,
     QuoteForm,
+    DobSelect,
     LegalPage,
     FootUpper,
     Home,

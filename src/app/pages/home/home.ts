@@ -118,6 +118,7 @@ export class Home implements AfterViewInit, OnDestroy {
     // Hero heading: start once the words are loaded, and again with the new words on a language switch.
     this.rotSub = this.translate.get('HOME_PAGE.HERO.ROTATE').subscribe(() => this.startRotator());
     this.rotSub.add(this.translate.onLangChange.subscribe(() => this.startRotator()));
+    this.rotSub.add(this.translate.onTranslationChange.subscribe(() => this.startRotator()));
 
     this.mq = window.matchMedia('(min-width:1024px)');
     this.mq.addEventListener('change', this.onMqChange);
@@ -159,7 +160,9 @@ export class Home implements AfterViewInit, OnDestroy {
   private startRotator() {
     clearTimeout(this.rotTimer);
     const el = this.rotText?.nativeElement;
-    const words = this.list<string>('HOME_PAGE.HERO.ROTATE');
+    // Read the words fresh (not from listCache): on a language switch the cache may still hold the old language.
+    const value = this.translate.instant('HOME_PAGE.HERO.ROTATE');
+    const words: string[] = Array.isArray(value) ? value : [];
     if (!el || words.length < 2) return;
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let i = 0;

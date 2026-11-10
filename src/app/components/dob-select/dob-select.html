@@ -1,0 +1,14 @@
+<div class="dob" role="group">
+  <select [id]="inputId" [attr.aria-invalid]="invalid && !month ? 'true' : null" [attr.aria-describedby]="describedBy" (change)="set('month', $event)">
+    <option value="" [selected]="!month">{{ labels.month }}</option>
+    <option *ngFor="let m of months" [value]="m.v" [selected]="month === m.v">{{ m.name }}</option>
+  </select>
+  <select [id]="inputId + '-day'" [attr.aria-label]="labels.day" [attr.aria-invalid]="invalid && !day ? 'true' : null" [attr.aria-describedby]="describedBy" (change)="set('day', $event)">
+    <option value="" [selected]="!day">{{ labels.day }}</option>
+    <option *ngFor="let d of days" [value]="d" [selected]="day === d">{{ +d }}</option>
+  </select>
+  <select [id]="inputId + '-year'" [attr.aria-label]="labels.year" [attr.aria-invalid]="invalid && !year ? 'true' : null" [attr.aria-describedby]="describedBy" (change)="set('year', $event)">
+    <option value="" [selected]="!year">{{ labels.year }}</option>
+    <option *ngFor="let y of years" [value]="y" [selected]="year === y">{{ y }}</option>
+  </select>
+</div>

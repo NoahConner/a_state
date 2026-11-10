@@ -306,3 +306,5 @@ fieldset .err{margin-top:8px}
 .lq-much p{font-size:17px;line-height:1.65}
 .lq-much p a:not(.arrow-link){font-weight:800;color:var(--red-700)}
 @media (min-width:768px){.lq-much{grid-template-columns:56px 1fr;gap:24px}}
+// Date of birth and sex stack: the Month / Day / Year dropdowns need the full width.
+.lq-dob-row{display:grid;gap:18px}

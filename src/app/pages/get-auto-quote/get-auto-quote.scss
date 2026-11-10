@@ -274,3 +274,5 @@ fieldset .err{margin-top:8px}
   .sticky-cta{padding-block:6px calc(6px + env(safe-area-inset-bottom,0px))}
   .sticky-cta .hf-btn{min-height:44px}
 }
+// Date of birth: full width row so Month / Day / Year dropdowns are not squeezed into half a column.
+.aq-dob-row{display:grid;gap:16px}

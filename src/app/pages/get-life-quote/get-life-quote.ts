@@ -190,6 +190,12 @@ export class GetLifeQuote implements AfterViewInit, OnDestroy {
     this.recheck(field);
   }
 
+  /** Date of birth from the Month / Day / Year dropdowns: yyyy-mm-dd, or '' until all three are chosen. */
+  onDob(field: 'dob' | 'spouseDob', value: string) {
+    this.form[field] = value;
+    this.recheck(field);
+  }
+
   /** Formats the phone as the visitor types: (713) 555-0123. */
   onPhoneInput(event: Event) {
     const input = event.target as HTMLInputElement;
