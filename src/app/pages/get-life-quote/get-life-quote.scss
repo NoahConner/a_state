@@ -160,7 +160,10 @@ fieldset .err{margin-top:8px}
 .cq-nav .btn-lg{min-height:56px}
 .cq-nav .btn-primary{margin-left:auto}
 .cq-nav .flip{transform:scaleX(-1)}
-@media (max-width:479px){.cq-nav{flex-direction:column-reverse;align-items:stretch}.cq-nav .hf-btn{width:100%;white-space:normal;text-align:center}.cq-nav .btn-primary{margin-left:0}}
+/* Phones: Back (icon-only square) and Next share one row, never stacked.
+   Stacked, Back sat just under Next and an iOS layout shift during the tap (keyboard closing, toolbar
+   showing) sent the tap to Back. "Back to review" gets its own row underneath. */
+@media (max-width:479px){.cq-nav{flex-wrap:wrap;align-items:stretch;gap:8px}.cq-nav .hf-btn{white-space:normal;text-align:center}.cq-nav .btn-outline{flex:0 0 52px;width:52px;padding:0;font-size:0;gap:0}.cq-nav .btn-outline .icon-sm{width:20px;height:20px}.cq-nav .btn-primary{flex:1 1 0;min-width:0;margin-left:0;padding-inline:12px;font-size:15px;line-height:1.2;text-wrap:balance}.cq-nav .btn-ghost{order:3;flex:1 1 100%}}
 
 .cq-review{display:grid;gap:10px}
 .cq-rev{border:1px solid var(--stone-200);border-radius:var(--r-md);padding:12px 16px}

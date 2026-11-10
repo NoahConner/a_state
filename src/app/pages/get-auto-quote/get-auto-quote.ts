@@ -21,7 +21,7 @@ export interface AqSeg { t: string; hl?: string; b?: string; l?: string; h?: str
 /** One repeating vehicle block. `id` never changes, so DOM ids stay stable when blocks are removed. */
 export interface AqVehicle {
   id: number; year: string; make: string; model: string; vin: string;
-  use: string; miles: string;
+  use: string;
   // Make/model dropdown state (not sent). makeId is the NHTSA id, 0 when the make was typed and not found.
   makeId: number; makeOther: boolean; models: string[]; modelsState: 'idle' | 'loading' | 'ready'; modelOther: boolean;
 }
@@ -46,6 +46,7 @@ const MAX_BLOCKS = 6;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const VIN_RE = /^[A-HJ-NPR-Z0-9]{17}$/;
 const TOTAL_STEPS = 6;
+const STEP_LOCK_MS = 600;
 /** A 5-digit ZIP inside the full address; sent as zip_code next to full_address. */
 const ZIP_RE = /\b(\d{5})(?:-\d{4})?\b/;
 
@@ -84,7 +85,7 @@ interface AutoQuotePayload extends PageSourceFields {
   email_address?: string;
   phone_number: string;
   vehicles: {
-    year: string; make: string; model: string; vin?: string; annual_miles?: string;
+    year: string; make: string; model: string; vin?: string;
     primary_use?: string;
   }[];
   drivers: {
@@ -136,6 +137,12 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
   submitError = '';
 
   private seq = { vehicle: 0, driver: 0 };
+  /**
+   * Time of the last step change. On phones the page scrolls to the top of the card when the step
+   * changes, so a second (or doubled) tap could land on the new step's Back button and bounce the
+   * visitor back again and again. Navigation taps within STEP_LOCK_MS of a change are ignored.
+   */
+  private stepChangedAt = 0;
   private readonly isBrowser: boolean;
   private readonly listCache = new Map<string, any[]>();
   private readonly subs = new Subscription();
@@ -257,14 +264,11 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
     return `${p.first.trim()} ${p.last.trim()}`.trim();
   }
 
-  onVehicle(v: AqVehicle, key: 'year' | 'make' | 'model' | 'vin' | 'miles', event: Event) {
+  onVehicle(v: AqVehicle, key: 'year' | 'make' | 'model' | 'vin', event: Event) {
     const input = event.target as HTMLInputElement;
     let value = input.value;
     if (key === 'vin') {
       value = value.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 17);
-    } else if (key === 'miles') {
-      const m = value.replace(/\D/g, '').slice(0, 6);
-      value = m ? Number(m).toLocaleString('en-US') : '';
     }
     if (value !== input.value) input.value = value;
     v[key] = value;
@@ -418,22 +422,31 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
 
   // ---------- Steps ----------
 
+  /** True right after a step change (see stepChangedAt). */
+  private stepLocked(): boolean {
+    return Date.now() - this.stepChangedAt < STEP_LOCK_MS;
+  }
+
   next() {
+    if (this.stepLocked()) return;
     const bad = this.validateStep(this.step);
     if (bad.length) return this.focusEl(bad[0]);
     this.show(this.step + 1);
   }
 
   prev() {
+    if (this.stepLocked()) return;
     this.show(this.step - 1);
   }
 
   edit(step: number) {
+    if (this.stepLocked()) return;
     this.editing = true;
     this.show(step);
   }
 
   backToReview() {
+    if (this.stepLocked()) return;
     const bad = this.validateStep(this.step);
     if (bad.length) return this.focusEl(bad[0]);
     for (let k = 1; k <= 5; k++) {
@@ -452,6 +465,7 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
 
   private show(n: number) {
     this.step = n;
+    this.stepChangedAt = Date.now();
     if (n === TOTAL_STEPS) this.editing = false;
     // Driver 1 starts with the name from step 1.
     const d1 = this.form.drivers[0];
@@ -536,7 +550,7 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
     }
   }
 
-  private vehicleError(v: AqVehicle, key: 'year' | 'make' | 'model' | 'vin' | 'miles'): string {
+  private vehicleError(v: AqVehicle, key: 'year' | 'make' | 'model' | 'vin'): string {
     switch (key) {
       case 'year':
         return v.year ? '' : this.err('YEAR');
@@ -582,7 +596,7 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
 
   async submit(event: Event) {
     event.preventDefault();
-    if (this.isSubmitting || this.step !== TOTAL_STEPS) return;
+    if (this.isSubmitting || this.step !== TOTAL_STEPS || this.stepLocked()) return;
     for (let k = 1; k <= 5; k++) {
       if (this.validateStep(k).length) return this.show(k);
     }
@@ -628,13 +642,11 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
       ...(email ? { email_address: email } : {}),
       phone_number: f.phone,
       vehicles: f.vehicles.map((v) => {
-        const miles = v.miles.replace(/\D/g, '');
         return {
           year: v.year === '1989' ? YEAR_OLD_VALUE : v.year,
           make: v.make.trim(),
           model: v.model.trim(),
           ...(v.vin ? { vin: v.vin } : {}),
-          ...(miles ? { annual_miles: miles } : {}),
           ...(v.use ? { primary_use: USE_VALUES[v.use] } : {}),
         };
       }),
@@ -697,7 +709,7 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
 
   private newVehicle(): AqVehicle {
     return {
-      id: ++this.seq.vehicle, year: '', make: '', model: '', vin: '', use: '', miles: '',
+      id: ++this.seq.vehicle, year: '', make: '', model: '', vin: '', use: '',
       makeId: 0, makeOther: false, models: [], modelsState: 'idle', modelOther: false,
     };
   }

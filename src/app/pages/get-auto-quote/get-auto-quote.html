@@ -168,10 +168,6 @@
                   <p class="err" [id]="'aq-v' + v.id + '-vin-err'">{{ errors['v' + v.id + '.vin'] }}</p>
                 </div>
                 <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.USE_LEGEND' | translate), name: 'aq-v' + v.id + '-use', opts: list('AUTO_QUOTE_PAGE.FORM.USES'), store: v, key: 'use', cls: 'stack aq-two' }"></ng-container>
-                <div class="field aq-short">
-                  <label [for]="'aq-v' + v.id + '-miles'">{{ 'AUTO_QUOTE_PAGE.FORM.MILES' | translate }} <span class="opt">{{ 'AUTO_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
-                  <input type="text" [id]="'aq-v' + v.id + '-miles'" inputmode="numeric" autocomplete="off" maxlength="7" [value]="v.miles" (input)="onVehicle(v, 'miles', $event)" />
-                </div>
               </div>
             </div>
             <datalist id="aq-makes"><option *ngFor="let m of allMakes" [value]="m.name"></option></datalist>
@@ -305,7 +301,6 @@
                     <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.YMM' | translate), v: ymm(v) }"></ng-container>
                     <ng-container *ngIf="v.vin"><ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.VIN' | translate), v: v.vin }"></ng-container></ng-container>
                     <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.USE' | translate), v: label('FORM.USES', v.use) }"></ng-container>
-                    <ng-container *ngIf="v.miles"><ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.MILES' | translate), v: v.miles }"></ng-container></ng-container>
                   </ng-container>
                 </dl>
               </div>
