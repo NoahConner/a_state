@@ -43,7 +43,7 @@
         <div class="cq-progress" aria-hidden="true"><span [style.width.%]="step * 20"></span></div>
         <ol class="cq-steps" [attr.aria-label]="'GET_CUSTOM_QUOTE.FORM.STEPS_ARIA' | translate">
           <li *ngFor="let n of stepNumbers; let i = index" [class.done]="n < step" [attr.aria-current]="n === step ? 'step' : null">
-            <span><app-step-icon [name]="$any(['user', 'list', 'shield', 'phone', 'review'])[i]"></app-step-icon></span><b>{{ list('GET_CUSTOM_QUOTE.FORM.STEP_TITLES')[i] }}</b>
+            <span><app-step-icon [name]="$any(['user', 'shield', 'plan', 'phone', 'list'])[i]"></app-step-icon></span><b>{{ list('GET_CUSTOM_QUOTE.FORM.STEP_TITLES')[i] }}</b>
           </li>
         </ol>
 
@@ -269,13 +269,8 @@
                 </dl>
               </div>
             </div>
-            <div class="privacy cq-consent">
-              <svg class="icon-sm" aria-hidden="true"><use href="#i-shield" /></svg>
-              <div>
-                <p><em><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('GET_CUSTOM_QUOTE.FORM.CONSENT') }"></ng-container></em></p>
-                <p class="never"><b>{{ 'GET_CUSTOM_QUOTE.FORM.NEVER_SOLD' | translate }}</b></p>
-              </div>
-            </div>
+            <p class="privacy"><svg class="icon-sm" aria-hidden="true"><use href="#i-shield" /></svg>{{ 'GET_CUSTOM_QUOTE.FORM.PRIVACY' | translate }}</p>
+            <p class="cq-consent"><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('GET_CUSTOM_QUOTE.FORM.CONSENT') }"></ng-container></p>
             <p class="err cq-submit-err" role="status" aria-live="polite">{{ submitError }}</p>
             <div class="cq-nav">
               <button type="button" class="hf-btn btn-outline" [disabled]="isSubmitting" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'GET_CUSTOM_QUOTE.FORM.BACK' | translate }}</button>
@@ -287,8 +282,10 @@
 
       <div class="csuccess" id="cq-success" tabindex="-1" *ngIf="sent">
         <span class="badge" aria-hidden="true"><svg class="icon"><use href="#i-check" /></svg></span>
-        <h3>{{ 'GET_CUSTOM_QUOTE.FORM.SUCCESS.TITLE' | translate }}</h3>
-        <p>{{ 'GET_CUSTOM_QUOTE.FORM.SUCCESS.TEXT' | translate }}</p>
+        <h3>{{ 'GET_CUSTOM_QUOTE.FORM.SUCCESS.TITLE' | translate: { name: sentInfo.first } }}</h3>
+        <!-- The phone or email the agent will use is user input: shown as plain text in <b>, never through translateHtml. -->
+        <p>{{ 'GET_CUSTOM_QUOTE.FORM.SUCCESS.PRE' | translate }}{{ 'GET_CUSTOM_QUOTE.FORM.SUCCESS.HOW.' + sentInfo.how | translate }}<b>{{ sentInfo.to }}</b>{{ 'GET_CUSTOM_QUOTE.FORM.SUCCESS.POST' | translate }}</p>
+        <p class="cq-multi" *ngIf="sentInfo.multi"><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg>{{ 'GET_CUSTOM_QUOTE.FORM.SUCCESS.MULTI' | translate }}</p>
       </div>
     </div>
 

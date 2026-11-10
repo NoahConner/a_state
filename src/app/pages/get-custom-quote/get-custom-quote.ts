@@ -37,7 +37,9 @@ const STEP_FIELDS: Record<number, Field[]> = { 1: ['first', 'last', 'phone', 'em
 const ZIP_RE = /\b(\d{5})(?:-\d{4})?\b/;
 
 /** Values the existing /quotes/create payload already used for these two questions. */
-const CONTACT_VALUES: Record<string, string> = { text: 'Text Message', call: 'Phone', email: 'Email' };
+const CONTACT_VALUES: Record<string, string> = { text: 'Text Message', call: 'Phone', email: 'Email', whatsapp: 'WhatsApp' };
+/** Success message: which FORM.SUCCESS.HOW phrase to use for each contact method ("ANY" when none was chosen). */
+const HOW_KEYS: Record<string, string> = { text: 'TEXT', call: 'CALL', email: 'EMAIL', whatsapp: 'WHATSAPP' };
 const TIME_VALUES: Record<string, string> = { morning: 'Morning', afternoon: 'Afternoon', evening: 'Evening' };
 
 const SCHEMA_ID = 'get-custom-quote-structured-data';
@@ -113,6 +115,8 @@ export class GetCustomQuote implements AfterViewInit, OnDestroy {
   errors: Partial<Record<Field, string>> = {};
   isSubmitting = false;
   sent = false;
+  /** Kept from the answers before the form is reset, for the success message. */
+  sentInfo = { first: '', how: 'ANY', to: '', multi: false };
   submitError = '';
 
   private readonly isBrowser: boolean;
@@ -362,12 +366,19 @@ export class GetCustomQuote implements AfterViewInit, OnDestroy {
     this.cdr.detectChanges();
     try {
       await firstValueFrom(this.http.post('/quotes/create', this.buildPayload(), true));
+      const how = HOW_KEYS[this.form.method] ?? 'ANY';
+      this.sentInfo = {
+        first: this.form.first.trim(),
+        how,
+        to: how === 'EMAIL' ? this.form.email.trim() : this.form.phone,
+        multi: this.isMulti,
+      };
       this.form = this.emptyForm();
       this.errors = {};
       this.step = 1;
       this.editing = false;
       this.sent = true;
-      this.live = this.translate.instant(P + 'FORM.SUCCESS.TITLE');
+      this.live = this.translate.instant(P + 'FORM.SUCCESS.TITLE', { name: this.sentInfo.first });
       this.cdr.detectChanges();
       if (this.isBrowser) {
         this.scrollToCard();

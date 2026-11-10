@@ -42,7 +42,9 @@ const RENEWAL_VALUES: Record<string, string> = { new: 'New', renewal: 'Renewal' 
 const CLAIMS_VALUES: Record<string, string> = { no: 'No', yes: 'Yes', unsure: 'Not sure' };
 const JUDGMENT_VALUES: Record<string, string> = { no: 'No', yes: 'Yes', discuss: 'Prefer to discuss with an agent' };
 const LANG_VALUES: Record<string, string> = { en: 'English', es: 'Spanish', hi: 'Hindi' };
-const METHOD_VALUES: Record<string, string> = { call: 'Call', text: 'Text', email: 'Email' };
+const METHOD_VALUES: Record<string, string> = { call: 'Call', text: 'Text', email: 'Email', whatsapp: 'WhatsApp' };
+/** Success-text phrase key (FORM.SUCCESS.HOW.*) by contact method; no answer means "call or text". */
+const HOW_KEYS: Record<string, string> = { call: 'CALL', text: 'TEXT', email: 'EMAIL', whatsapp: 'WHATSAPP' };
 const TIME_VALUES: Record<string, string> = { morning: 'Morning (9 AM–12 PM)', afternoon: 'Afternoon (12 PM–4 PM)', evening: 'Evening (4 PM–7 PM)' };
 
 /**
@@ -100,6 +102,10 @@ export class GetSuretyQuote implements AfterViewInit, OnDestroy {
   sent = false;
   /** Set at submit time because the form is reset afterwards. */
   sentAsap = false;
+  sentName = '';
+  /** FORM.SUCCESS.HOW key and the phone or email shown in the success text. */
+  sentHow = 'ANY';
+  sentContact = '';
   submitError = '';
 
   private readonly isBrowser: boolean;
@@ -372,13 +378,17 @@ export class GetSuretyQuote implements AfterViewInit, OnDestroy {
     this.cdr.detectChanges();
     try {
       await firstValueFrom(this.http.post('/quotes/create', this.buildPayload(), true));
+      const method = this.form.pick['method'] ?? '';
       this.sentAsap = this.form.pick['when'] === 'asap';
+      this.sentName = this.form.first.trim();
+      this.sentHow = HOW_KEYS[method] ?? 'ANY';
+      this.sentContact = method === 'email' ? this.form.email.trim() : this.form.phone;
       this.form = this.emptyForm();
       this.errors = {};
       this.step = 1;
       this.editing = false;
       this.sent = true;
-      this.live = this.translate.instant(P + 'FORM.SUCCESS.TITLE');
+      this.live = this.translate.instant(P + 'FORM.SUCCESS.TITLE', { name: this.sentName });
       this.cdr.detectChanges();
       if (this.isBrowser) {
         this.scrollToCard();

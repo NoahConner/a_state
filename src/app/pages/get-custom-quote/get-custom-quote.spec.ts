@@ -97,6 +97,28 @@ describe('GetCustomQuote payload', () => {
     expect(payload()['preferred_language']).toBe('Hindi');
   });
 
+  it('maps the contact method to canonical English, including WhatsApp, and omits it when unanswered', () => {
+    const { c, payload } = setup();
+    expect('preferred_contact_method' in payload()).toBe(false);
+    const map: Record<string, string> = { text: 'Text Message', call: 'Phone', email: 'Email', whatsapp: 'WhatsApp' };
+    for (const [id, text] of Object.entries(map)) {
+      c.form.method = id;
+      expect(payload()['preferred_contact_method']).toBe(text);
+    }
+  });
+
+  it('keeps the first name and contact details for the success message after reset', async () => {
+    const { c } = setup();
+    c.form.cov['auto'] = true;
+    c.form.cov['home'] = true;
+    c.form.method = 'whatsapp';
+    c.step = 5;
+    await c.submit({ preventDefault: () => {} } as Event);
+    expect(c.sent).toBe(true);
+    expect(c.sentInfo).toEqual({ first: 'Test', how: 'WHATSAPP', to: '(555) 010-0100', multi: true });
+    expect(c.form.first).toBe('');
+  });
+
   it('submit posts the payload to /quotes/create (fake HttpService)', async () => {
     const { c, post } = setup();
     c.form.cov['auto'] = true;

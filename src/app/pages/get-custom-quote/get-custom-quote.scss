@@ -180,8 +180,7 @@ fieldset .err{margin-top:8px}
 @media (max-width:479px){.cq-rev dl > div{grid-template-columns:1fr;gap:0}}
 .privacy{display:flex;gap:10px;align-items:flex-start;background:var(--cream);border-radius:var(--r-md);padding:12px 14px;font-size:14.5px}
 .privacy .icon-sm{color:var(--red-600);flex:none;margin-top:3px}
-.cq-consent > div{display:grid;gap:8px;min-width:0}
-.cq-consent em{font-style:italic}
+.cq-consent{font-size:13.5px;line-height:1.5;color:var(--stone-500)}
 .cq-consent a{color:var(--red-700);font-weight:600}
 .cq-submit-err{font-size:15px}
 
@@ -189,6 +188,8 @@ fieldset .err{margin-top:8px}
 .csuccess:focus{outline:none}
 .csuccess .badge{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--success-bg);color:var(--success)}
 .csuccess h3{font-size:24px}
+.csuccess b{overflow-wrap:anywhere}
+.csuccess .cq-multi{margin-top:0;text-align:left}
 
 /* Use this form if */
 .cq-use{display:grid;gap:14px}

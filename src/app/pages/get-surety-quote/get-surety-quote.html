@@ -255,8 +255,8 @@
 
       <div class="csuccess" id="sq-success" tabindex="-1" *ngIf="sent">
         <span class="badge" aria-hidden="true"><svg class="icon"><use href="#i-check" /></svg></span>
-        <h3>{{ 'SURETY_QUOTE_PAGE.FORM.SUCCESS.TITLE' | translate }}</h3>
-        <p>{{ 'SURETY_QUOTE_PAGE.FORM.SUCCESS.TEXT' | translate }}</p>
+        <h3>{{ 'SURETY_QUOTE_PAGE.FORM.SUCCESS.TITLE' | translate: { name: sentName } }}</h3>
+        <p>{{ 'SURETY_QUOTE_PAGE.FORM.SUCCESS.TEXT_START' | translate }}{{ 'SURETY_QUOTE_PAGE.FORM.SUCCESS.HOW.' + sentHow | translate }} <b>{{ sentContact }}</b>{{ 'SURETY_QUOTE_PAGE.FORM.SUCCESS.TEXT_END' | translate }}</p>
         <p class="cq-multi" *ngIf="sentAsap"><svg class="icon-sm" aria-hidden="true"><use href="#i-phone" /></svg><span><ng-container *ngTemplateOutlet="segsTpl; context: { $implicit: list('SURETY_QUOTE_PAGE.FORM.SUCCESS.ASAP') }"></ng-container></span></p>
       </div>
     </div>

@@ -64,7 +64,7 @@
         <div class="cq-progress" aria-hidden="true"><span [style.width.%]="step * 100 / 5"></span></div>
         <ol class="cq-steps" [attr.aria-label]="'HEALTH_QUOTE_PAGE.FORM.STEPS_ARIA' | translate">
           <li *ngFor="let n of stepNumbers; let i = index" [class.done]="n < step" [attr.aria-current]="n === step ? 'step' : null">
-            <span><app-step-icon [name]="$any(['user', 'users', 'plan', 'phone', 'review'])[i]"></app-step-icon></span><b>{{ list('HEALTH_QUOTE_PAGE.FORM.STEP_DOTS')[i] }}</b>
+            <span><app-step-icon [name]="$any(['users', 'home', 'heart', 'phone', 'list'])[i]"></app-step-icon></span><b>{{ list('HEALTH_QUOTE_PAGE.FORM.STEP_DOTS')[i] }}</b>
           </li>
         </ol>
 
@@ -92,9 +92,7 @@
             <ng-container *ngTemplateOutlet="chips; context: { legend: ('HEALTH_QUOTE_PAGE.FORM.CURRENT_LEGEND' | translate), name: 'mq-c', opts: list('HEALTH_QUOTE_PAGE.FORM.CURRENT'), key: 'current', cls: 'stack' }"></ng-container>
             <div class="field cq-more aq-short-more" *ngIf="form.pick['current'] === 'ending'">
               <label for="mq-ends">{{ 'HEALTH_QUOTE_PAGE.FORM.ENDS' | translate }}</label>
-              <input type="date" id="mq-ends" autocomplete="off" [value]="form.ends"
-                [attr.aria-invalid]="errors['ends'] ? 'true' : null" aria-describedby="mq-ends-err" (input)="onText('ends', $event)" />
-              <p class="err" id="mq-ends-err">{{ errors['ends'] }}</p>
+              <input type="date" id="mq-ends" autocomplete="off" [value]="form.ends" (input)="onText('ends', $event)" />
             </div>
             <fieldset aria-describedby="mq-ev-note">
               <legend>{{ 'HEALTH_QUOTE_PAGE.FORM.EVENTS_LEGEND' | translate }} <span class="opt">{{ 'HEALTH_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></legend>
@@ -203,8 +201,8 @@
                 <p class="err" id="mq-phone-err">{{ errors['phone'] }}</p>
               </div>
               <div class="field">
-                <label for="mq-email">{{ 'HEALTH_QUOTE_PAGE.FORM.EMAIL' | translate }} <span *ngIf="form.pick['method'] !== 'email'" class="opt">{{ 'HEALTH_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span><span *ngIf="form.pick['method'] === 'email'" class="req" aria-hidden="true">*</span></label>
-                <input type="email" id="mq-email" autocomplete="email" maxlength="254" [attr.aria-required]="form.pick['method'] === 'email' ? 'true' : null" [value]="form.email"
+                <label for="mq-email">{{ 'HEALTH_QUOTE_PAGE.FORM.EMAIL' | translate }} <span class="opt">{{ 'HEALTH_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
+                <input type="email" id="mq-email" autocomplete="email" maxlength="254" [value]="form.email"
                   [attr.aria-invalid]="errors['email'] ? 'true' : null" aria-describedby="mq-email-err" (input)="onText('email', $event)" />
                 <p class="err" id="mq-email-err">{{ errors['email'] }}</p>
               </div>
@@ -292,9 +290,9 @@
 
       <div class="csuccess" id="mq-success" tabindex="-1" *ngIf="sent">
         <span class="badge" aria-hidden="true"><svg class="icon"><use href="#i-check" /></svg></span>
-        <h3>{{ 'HEALTH_QUOTE_PAGE.FORM.SUCCESS.TITLE' | translate }}</h3>
-        <p>{{ 'HEALTH_QUOTE_PAGE.FORM.SUCCESS.TEXT' | translate }}</p>
-        <p class="cq-multi" *ngIf="sentEnding"><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg>{{ 'HEALTH_QUOTE_PAGE.FORM.SUCCESS.ENDS' | translate }}</p>
+        <h3>{{ 'HEALTH_QUOTE_PAGE.FORM.SUCCESS.TITLE' | translate: { first: sentFirstName } }}</h3>
+        <p>{{ 'HEALTH_QUOTE_PAGE.FORM.SUCCESS.PRE' | translate }}{{ 'HEALTH_QUOTE_PAGE.FORM.SUCCESS.HOW.' + sentContactMethod | translate }} <b>{{ sentContactValue }}</b>{{ 'HEALTH_QUOTE_PAGE.FORM.SUCCESS.POST' | translate }}</p>
+        <p class="cq-multi" *ngIf="sentEnds"><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg>{{ 'HEALTH_QUOTE_PAGE.FORM.SUCCESS.ENDS' | translate: { date: dateLabel(sentEnds) } }}</p>
       </div>
     </div>
 

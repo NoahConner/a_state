@@ -1743,7 +1743,7 @@
           "h": "tel:+17133577771"
         },
         {
-          "t": " También puede escribirnos por WhatsApp al "
+          "t": ". También puede escribirnos por WhatsApp al "
         },
         {
           "t": "(346) 436-SAVE (7283)",
@@ -1766,6 +1766,10 @@
         {
           "V": "email",
           "L": "Correo electrónico"
+        },
+        {
+          "V": "whatsapp",
+          "L": "WhatsApp"
         }
       ],
       "TIME": "Mejor hora",
@@ -1826,10 +1830,9 @@
           "r": "privacyPolicy"
         },
         {
-          "t": "."
+          "t": ". Nunca vendemos su información."
         }
       ],
-      "NEVER_SOLD": "Nunca vendemos su información.",
       "ERR": {
         "FIRST": "Escriba su nombre.",
         "LAST": "Escriba su apellido.",
@@ -1846,9 +1849,19 @@
         "SUBMIT": "No pudimos enviar su solicitud. Sus respuestas siguen aquí. Inténtelo de nuevo o llame al (713) 357-7771."
       },
       "SUCCESS": {
-        "TITLE": "Gracias. Recibimos su solicitud de cotización personalizada.",
-        "TEXT": "Un agente con licencia revisará sus respuestas, comparará compañías y le contactará, de lunes a sábado, de 9 a.m. a 7 p.m."
-      }
+        "TITLE": "Gracias, {{name}}. Recibimos su solicitud de cotización personalizada.",
+        "PRE": "Un agente con licencia revisará sus respuestas, comparará compañías y ",
+        "HOW": {
+          "TEXT": "le enviará un mensaje de texto al ",
+          "CALL": "le llamará al ",
+          "EMAIL": "le escribirá a ",
+          "WHATSAPP": "le escribirá por WhatsApp al ",
+          "ANY": "le llamará o le enviará un mensaje de texto al "
+        },
+        "POST": ", de lunes a sábado, de 9 a.m. a 7 p.m.",
+        "MULTI": "Su agente revisará si califica para un descuento por varias pólizas."
+      },
+      "PRIVACY": "Por favor, no envíe números de licencia, de póliza ni de pago por este formulario."
     },
     "BUNDLE": {
       "TITLE": "Cómo funciona combinar sus seguros",
@@ -2428,6 +2441,10 @@
         {
           "V": "email",
           "L": "Correo electrónico"
+        },
+        {
+          "V": "whatsapp",
+          "L": "WhatsApp"
         }
       ],
       "TIME_LEGEND": "Mejor hora",
@@ -2950,6 +2967,10 @@
         {
           "V": "email",
           "L": "Correo electrónico"
+        },
+        {
+          "V": "whatsapp",
+          "L": "WhatsApp"
         }
       ],
       "TIME_LEGEND": "Mejor hora",
@@ -3032,8 +3053,7 @@
         "SUBMIT": "No pudimos enviar su solicitud. Sus respuestas siguen aquí. Inténtelo de nuevo o llame al (713) 357-7771."
       },
       "SUCCESS": {
-        "TITLE": "Gracias. Recibimos su solicitud de cotización de fianza.",
-        "TEXT": "Un agente con licencia comparará compañías de fianzas y le contactará con el precio exacto antes de que compre, de lunes a sábado, de 9 a.m. a 7 p.m.",
+        "TITLE": "Gracias, {{name}}. Recibimos su solicitud de cotización de fianza.",
         "ASAP": [
           {
             "t": "¿Necesita su fianza hoy? Llame al "
@@ -3045,7 +3065,16 @@
           {
             "t": "."
           }
-        ]
+        ],
+        "TEXT_START": "Un agente con licencia comparará compañías de fianzas y ",
+        "HOW": {
+          "CALL": "le llamará al",
+          "TEXT": "le enviará un mensaje de texto al",
+          "EMAIL": "le escribirá a",
+          "WHATSAPP": "le escribirá por WhatsApp al",
+          "ANY": "le llamará o le enviará un mensaje de texto al"
+        },
+        "TEXT_END": " con el precio exacto antes de que compre, de lunes a sábado, de 9 a.m. a 7 p.m."
       }
     },
     "HOW": {
@@ -3307,7 +3336,7 @@
       "ADDRESS": "Dirección completa",
       "ADDRESS_PH": "Calle, ciudad, código postal",
       "COUNTY": "Condado",
-      "COUNTY_HINT": "(se llena con la dirección)",
+      "COUNTY_HINT": "Se llena con su dirección.",
       "COUNTY_FILLED": "Se llenó con su dirección. Cámbielo si no es correcto.",
       "COUNTY_SPLIT": "Este código postal está en el condado de {{counties}}. Elija el suyo.",
       "COUNTY_TYPE": "Escriba su condado.",
@@ -3483,6 +3512,10 @@
         {
           "V": "email",
           "L": "Correo electrónico"
+        },
+        {
+          "V": "whatsapp",
+          "L": "WhatsApp"
         }
       ],
       "TIME_LEGEND": "Mejor hora",
@@ -3556,7 +3589,6 @@
       "ERR": {
         "ADDRESS_EMPTY": "Escriba su dirección completa.",
         "ADDRESS_ZIP": "Agregue su código postal de 5 dígitos, como 123 Main St, Houston, TX 77020.",
-        "ENDS_PAST": "Elija una fecha que todavía no haya pasado.",
         "HH_EMPTY": "Escriba el número de personas en su hogar.",
         "HH_MIN": "Escriba por lo menos 1.",
         "AGES_EMPTY": "Escriba la edad de cada persona que necesita cobertura.",
@@ -3572,9 +3604,17 @@
         "SUBMIT": "No pudimos enviar su solicitud. Sus respuestas siguen aquí. Inténtelo de nuevo o llame al (713) 357-7771."
       },
       "SUCCESS": {
-        "TITLE": "Gracias. Recibimos su solicitud de cotización de salud.",
-        "TEXT": "Un agente con licencia comparará planes, revisará si califica para ahorros y le contactará con sus opciones, por lo general en 5 horas hábiles.",
-        "ENDS": "Haremos lo posible para que no se quede sin seguro antes de que termine su cobertura."
+        "TITLE": "Gracias, {{first}}. Recibimos su solicitud de cotización de salud.",
+        "ENDS": "Haremos lo posible para que no se quede sin seguro antes de que termine su cobertura el {{date}}.",
+        "PRE": "Un agente con licencia comparará planes, revisará si califica para ahorros y ",
+        "HOW": {
+          "call": "le llamará al",
+          "text": "le enviará un mensaje al",
+          "email": "le escribirá a",
+          "whatsapp": "le escribirá por WhatsApp al",
+          "any": "le llamará o enviará un mensaje al"
+        },
+        "POST": " con sus opciones, por lo general en 5 horas hábiles."
       }
     },
     "ENROLL": {
@@ -4096,6 +4136,10 @@
         {
           "V": "email",
           "L": "Correo electrónico"
+        },
+        {
+          "V": "whatsapp",
+          "L": "WhatsApp"
         }
       ],
       "TIME_LEGEND": "Mejor hora",
@@ -4196,10 +4240,18 @@
         "SUBMIT": "No pudimos enviar su solicitud. Sus respuestas siguen aquí. Inténtelo de nuevo o llame al (713) 357-7771."
       },
       "SUCCESS": {
-        "TITLE": "Gracias. Recibimos su solicitud de cotización de casa.",
-        "TEXT": "Un agente con licencia comparará compañías para su casa y le contactará con sus opciones, por lo general en 5 horas hábiles.",
-        "CLOSING": "Daremos prioridad a su cotización antes de su cierre.",
-        "ALSO": "También cotizaremos sus otros seguros y revisaremos si califica para un descuento por varias pólizas."
+        "TITLE": "Gracias, {{name}}. Recibimos su solicitud de cotización de casa.",
+        "CLOSING": "Daremos prioridad a su cotización antes de su cierre el {{date}}.",
+        "ALSO": "También cotizaremos sus otros seguros y revisaremos si califica para un descuento por varias pólizas.",
+        "TEXT_START": "Un agente con licencia comparará compañías para su casa y",
+        "HOW": {
+          "text": "le enviará un mensaje de texto al",
+          "call": "le llamará al",
+          "email": "le escribirá a",
+          "whatsapp": "le escribirá por WhatsApp al",
+          "any": "le llamará o le enviará un mensaje de texto al"
+        },
+        "TEXT_END": "con sus opciones, por lo general en 5 horas hábiles."
       }
     },
     "NEED": {
@@ -4763,6 +4815,10 @@
         {
           "V": "email",
           "L": "Correo electrónico"
+        },
+        {
+          "V": "whatsapp",
+          "L": "WhatsApp"
         }
       ],
       "TIME_LEGEND": "Mejor hora",
@@ -4799,7 +4855,7 @@
       "R_TITLES": [
         "Su negocio",
         "Tamaño de su negocio",
-        "Cobertura, incluidos fianza, fecha de inicio y COI",
+        "Cobertura",
         "Preferencias de contacto"
       ],
       "R": {
@@ -4851,7 +4907,7 @@
         "BIZ_NAME": "Escriba el nombre de su negocio, o “Todavía no está registrado.”",
         "INDUSTRY": "Elija su industria.",
         "DESC": "Díganos en pocas palabras a qué se dedica su negocio.",
-        "ADDRESS_EMPTY": "Escriba la dirección completa de su negocio.",
+        "ADDRESS_EMPTY": "Escriba su dirección completa.",
         "ADDRESS_ZIP": "Agregue su código postal de 5 dígitos, como 123 Main St, Houston, TX 77020.",
         "EMP_EMPTY": "Escriba el número de empleados, incluyéndose a usted.",
         "EMP_MIN": "Escriba al menos 1 (usted).",
@@ -4872,7 +4928,8 @@
           "email": "le escribirá a",
           "call": "le llamará al",
           "text": "le enviará un mensaje al",
-          "any": "le llamará o enviará un mensaje al"
+          "any": "le llamará o enviará un mensaje al",
+          "whatsapp": "le enviará un mensaje por WhatsApp al"
         },
         "POST": " con sus opciones, por lo general en 5 horas hábiles.",
         "BOND": "Cotizaremos su fianza al mismo tiempo.",
@@ -66015,7 +66072,8 @@
       "COMMERCIAL_UMBRELLA": "Umbrella comercial",
       "UMBRELLA": "Umbrella",
       "IDENTITY_THEFT": "Protección contra robo de identidad"
-    }
+    },
+    "WA_FAB_ARIA": "Escríbanos por WhatsApp al (346) 436-SAVE (7283)"
   },
   "SITE_FOOTER": {
     "OFFICES": "Oficinas",

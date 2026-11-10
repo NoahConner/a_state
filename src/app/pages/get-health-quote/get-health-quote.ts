@@ -75,7 +75,7 @@ const PRIORITY_VALUES: Record<string, string> = {
 const YN_VALUES: Record<string, string> = { yes: 'Yes', no: 'No' };
 const YNU_VALUES: Record<string, string> = { yes: 'Yes', no: 'No', unsure: 'Not sure' };
 const LANG_VALUES: Record<string, string> = { en: 'English', es: 'Spanish', hi: 'Hindi' };
-const METHOD_VALUES: Record<string, string> = { call: 'Call', text: 'Text', email: 'Email' };
+const METHOD_VALUES: Record<string, string> = { call: 'Call', text: 'Text', email: 'Email', whatsapp: 'WhatsApp' };
 const TIME_VALUES: Record<string, string> = { morning: 'Morning (9 AM–12 PM)', afternoon: 'Afternoon (12 PM–4 PM)', evening: 'Evening (4 PM–7 PM)' };
 
 /**
@@ -135,12 +135,17 @@ export class GetHealthQuote implements AfterViewInit, OnDestroy {
   countyHint: { key: string; params?: Record<string, string> } = { key: 'FORM.COUNTY_HINT' };
 
   form!: MqForm;
-  /** Error text by field key (zip, ends, hh, ages, name, phone, email). Empty or missing means no error. */
+  /** Error text by field key (address, hh, ages, first, last, phone, email). Empty or missing means no error. */
   errors: Record<string, string> = {};
   isSubmitting = false;
   sent = false;
-  /** Set at submit time because the form is reset afterwards. */
-  sentEnding = false;
+  /** Success-panel details, set at submit time because the form is reset afterwards. */
+  sentFirstName = '';
+  /** How the agent will reach out: a key under SUCCESS.HOW (call, text, email, whatsapp, any). */
+  sentContactMethod = 'any';
+  sentContactValue = '';
+  /** Coverage end date (yyyy-mm-dd) when coverage is ending, for the success note; '' otherwise. */
+  sentEnds = '';
   submitError = '';
 
   private ageSeq = 1;
@@ -431,7 +436,6 @@ export class GetHealthQuote implements AfterViewInit, OnDestroy {
     };
     if (n === 1) {
       check('address', 'mq-address');
-      check('ends', 'mq-ends');
     } else if (n === 2) {
       check('hh', 'mq-hh');
       check('ages', this.firstBadAgeId());
@@ -465,9 +469,6 @@ export class GetHealthQuote implements AfterViewInit, OnDestroy {
         const a = form.address.trim();
         return !a ? this.err('ADDRESS_EMPTY') : !ZIP_RE.test(a) ? this.err('ADDRESS_ZIP') : '';
       }
-      case 'ends':
-        // Only matters when coverage is ending; a hidden leftover value is ignored.
-        return form.pick['current'] === 'ending' && form.ends && form.ends < this.todayIso() ? this.err('ENDS_PAST') : '';
       case 'hh':
         return !form.hh ? this.err('HH_EMPTY') : Number(form.hh) < 1 ? this.err('HH_MIN') : '';
       case 'ages': {
@@ -497,14 +498,6 @@ export class GetHealthQuote implements AfterViewInit, OnDestroy {
     }
   }
 
-  /** Today as yyyy-mm-dd in the visitor's time zone. */
-  private todayIso(): string {
-    const d = new Date();
-    const mm = String(d.getMonth() + 1).padStart(2, '0');
-    const dd = String(d.getDate()).padStart(2, '0');
-    return `${d.getFullYear()}-${mm}-${dd}`;
-  }
-
   // ---------- Submit ----------
 
   async submit(event: Event) {
@@ -519,14 +512,18 @@ export class GetHealthQuote implements AfterViewInit, OnDestroy {
     this.cdr.detectChanges();
     try {
       await firstValueFrom(this.http.post('/quotes/create', this.buildPayload(), true));
-      this.sentEnding = this.form.pick['current'] === 'ending' && ISO_DATE_RE.test(this.form.ends);
+      const method = this.form.pick['method'] ?? '';
+      this.sentFirstName = this.form.first.trim();
+      this.sentContactMethod = METHOD_VALUES[method] ? method : 'any';
+      this.sentContactValue = method === 'email' ? this.form.email.trim() : this.form.phone;
+      this.sentEnds = this.form.pick['current'] === 'ending' && ISO_DATE_RE.test(this.form.ends) ? this.form.ends : '';
       this.form = this.emptyForm();
       this.countyHint = { key: 'FORM.COUNTY_HINT' };
       this.errors = {};
       this.step = 1;
       this.editing = false;
       this.sent = true;
-      this.live = this.translate.instant(P + 'FORM.SUCCESS.TITLE');
+      this.live = this.translate.instant(P + 'FORM.SUCCESS.TITLE', { first: this.sentFirstName });
       this.cdr.detectChanges();
       if (this.isBrowser) {
         this.scrollToCard();

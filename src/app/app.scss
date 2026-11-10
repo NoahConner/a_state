@@ -1,0 +1,45 @@
+// Floating WhatsApp icon button (round, icon only), desktop and laptop only:
+// below 1024px each page's sticky bar already has a WhatsApp icon.
+.wa-fab {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .wa-fab {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 60;
+    display: inline-grid;
+    place-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25d366;
+    color: #fff;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    &:hover {
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+    }
+
+    &:focus-visible {
+      outline: 3px solid #f6c945;
+      outline-offset: 3px;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wa-fab {
+    transition: none;
+  }
+}

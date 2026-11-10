@@ -75,6 +75,12 @@ describe('GetCommercialQuote payload', () => {
     });
   });
 
+  it('sends WhatsApp as the preferred contact method', () => {
+    const { c, payload } = setup();
+    c.form.pick['method'] = 'whatsapp';
+    expect(payload().preferred_contact_method).toBe('WhatsApp');
+  });
+
   it('sends payroll and bond details only when their boxes are ticked', () => {
     const { c, payload } = setup();
     c.form.payroll = '250,000';

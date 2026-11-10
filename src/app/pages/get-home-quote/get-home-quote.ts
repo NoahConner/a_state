@@ -50,7 +50,7 @@ const YN_VALUES: Record<string, string> = { yes: 'Yes', no: 'No' };
 const YNU_VALUES: Record<string, string> = { yes: 'Yes', no: 'No', unsure: 'Not sure' };
 const ALSO_VALUES: Record<string, string> = { auto: 'Auto', life: 'Life', umbrella: 'Umbrella' };
 const LANG_VALUES: Record<string, string> = { en: 'English', es: 'Spanish', hi: 'Hindi' };
-const METHOD_VALUES: Record<string, string> = { text: 'Text', call: 'Call', email: 'Email' };
+const METHOD_VALUES: Record<string, string> = { text: 'Text', call: 'Call', email: 'Email', whatsapp: 'WhatsApp' };
 const TIME_VALUES: Record<string, string> = { morning: 'Morning (9 AM–12 PM)', afternoon: 'Afternoon (12 PM–4 PM)', evening: 'Evening (4 PM–7 PM)' };
 
 /**
@@ -119,7 +119,13 @@ export class GetHomeQuote implements AfterViewInit, OnDestroy {
   isSubmitting = false;
   sent = false;
   /** What the success panel mentions; set at submit time because the form is reset afterwards. */
-  sentBuying = false;
+  sentFirst = '';
+  /** Preferred contact method key (text, call, email, whatsapp), or 'any' when none was chosen. */
+  sentMethod = 'any';
+  /** The phone number, or the email address when the method is Email. */
+  sentContact = '';
+  /** Closing date (yyyy-mm-dd) when buying and a date was given, otherwise ''. */
+  sentClose = '';
   sentAlso = false;
   submitError = '';
 
@@ -397,14 +403,18 @@ export class GetHomeQuote implements AfterViewInit, OnDestroy {
     this.cdr.detectChanges();
     try {
       await firstValueFrom(this.http.post('/quotes/create', this.buildPayload(), true));
-      this.sentBuying = this.form.pick['status'] === 'buying';
+      const method = this.form.pick['method'];
+      this.sentFirst = this.form.first.trim();
+      this.sentMethod = METHOD_VALUES[method] ? method : 'any';
+      this.sentContact = method === 'email' ? this.form.email.trim() : this.form.phone;
+      this.sentClose = this.form.pick['status'] === 'buying' && ISO_DATE_RE.test(this.form.close) ? this.form.close : '';
       this.sentAlso = Object.keys(ALSO_VALUES).some((k) => this.form.also[k]);
       this.form = this.emptyForm();
       this.errors = {};
       this.step = 1;
       this.editing = false;
       this.sent = true;
-      this.live = this.translate.instant(P + 'FORM.SUCCESS.TITLE');
+      this.live = this.translate.instant(P + 'FORM.SUCCESS.TITLE', { name: this.sentFirst });
       this.cdr.detectChanges();
       if (this.isBrowser) {
         this.scrollToCard();

@@ -63,7 +63,7 @@
         <div class="cq-progress" aria-hidden="true"><span [style.width.%]="step * 100 / 6"></span></div>
         <ol class="cq-steps aq-steps" [attr.aria-label]="'HOME_QUOTE_PAGE.FORM.STEPS_ARIA' | translate">
           <li *ngFor="let n of stepNumbers; let i = index" [class.done]="n < step" [attr.aria-current]="n === step ? 'step' : null">
-            <span><app-step-icon [name]="$any(['pin', 'home', 'lock', 'shield', 'phone', 'review'])[i]"></app-step-icon></span><b>{{ list('HOME_QUOTE_PAGE.FORM.STEP_DOTS')[i] }}</b>
+            <span><app-step-icon [name]="$any(['pin', 'home', 'lock', 'shield', 'phone', 'list'])[i]"></app-step-icon></span><b>{{ list('HOME_QUOTE_PAGE.FORM.STEP_DOTS')[i] }}</b>
           </li>
         </ol>
 
@@ -116,7 +116,7 @@
             <ng-container *ngTemplateOutlet="chips; context: { legend: ('HOME_QUOTE_PAGE.FORM.ROOF_AGE_LEGEND' | translate), name: 'hq-ra', opts: list('HOME_QUOTE_PAGE.FORM.ROOF_AGES'), store: form.pick, key: 'roofAge', cls: 'stack aq-two' }"></ng-container>
             <ng-container *ngTemplateOutlet="chips; context: { legend: ('HOME_QUOTE_PAGE.FORM.ROOF_TYPE_LEGEND' | translate), name: 'hq-rt', opts: list('HOME_QUOTE_PAGE.FORM.ROOF_TYPES'), store: form.pick, key: 'roofType', cls: 'stack aq-two' }"></ng-container>
             <ng-container *ngTemplateOutlet="chips; context: { legend: ('HOME_QUOTE_PAGE.FORM.CONSTRUCTION_LEGEND' | translate), name: 'hq-c', opts: list('HOME_QUOTE_PAGE.FORM.CONSTRUCTIONS'), store: form.pick, key: 'construction', cls: 'stack aq-two' }"></ng-container>
-            <ng-container *ngTemplateOutlet="chips; context: { legend: ('HOME_QUOTE_PAGE.FORM.FOUNDATION_LEGEND' | translate), opt: true, name: 'hq-f', opts: list('HOME_QUOTE_PAGE.FORM.FOUNDATIONS'), store: form.pick, key: 'foundation', cls: 'stack aq-two' }"></ng-container>
+            <ng-container *ngTemplateOutlet="chips; context: { legend: ('HOME_QUOTE_PAGE.FORM.FOUNDATION_LEGEND' | translate), opt: true, name: 'hq-f', opts: list('HOME_QUOTE_PAGE.FORM.FOUNDATIONS'), store: form.pick, key: 'foundation', cls: '' }"></ng-container>
             <div class="cq-nav">
               <button type="button" class="hf-btn btn-outline" (click)="prev()"><svg class="icon-sm flip" aria-hidden="true"><use href="#i-arrow" /></svg>{{ 'HOME_QUOTE_PAGE.FORM.BACK' | translate }}</button>
               <button type="button" class="hf-btn btn-ghost" *ngIf="editing" (click)="backToReview()">{{ 'HOME_QUOTE_PAGE.FORM.TO_REVIEW' | translate }}</button>
@@ -307,9 +307,9 @@
 
       <div class="csuccess" id="hq-success" tabindex="-1" *ngIf="sent">
         <span class="badge" aria-hidden="true"><svg class="icon"><use href="#i-check" /></svg></span>
-        <h3>{{ 'HOME_QUOTE_PAGE.FORM.SUCCESS.TITLE' | translate }}</h3>
-        <p>{{ 'HOME_QUOTE_PAGE.FORM.SUCCESS.TEXT' | translate }}</p>
-        <p class="cq-multi" *ngIf="sentBuying"><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg>{{ 'HOME_QUOTE_PAGE.FORM.SUCCESS.CLOSING' | translate }}</p>
+        <h3>{{ 'HOME_QUOTE_PAGE.FORM.SUCCESS.TITLE' | translate: { name: sentFirst } }}</h3>
+        <p>{{ 'HOME_QUOTE_PAGE.FORM.SUCCESS.TEXT_START' | translate }} {{ 'HOME_QUOTE_PAGE.FORM.SUCCESS.HOW.' + sentMethod | translate }} <b>{{ sentContact }}</b> {{ 'HOME_QUOTE_PAGE.FORM.SUCCESS.TEXT_END' | translate }}</p>
+        <p class="cq-multi" *ngIf="sentClose"><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg>{{ 'HOME_QUOTE_PAGE.FORM.SUCCESS.CLOSING' | translate: { date: dateLabel(sentClose) } }}</p>
         <p class="cq-multi" *ngIf="sentAlso"><svg class="icon-sm" aria-hidden="true"><use href="#i-check" /></svg>{{ 'HOME_QUOTE_PAGE.FORM.SUCCESS.ALSO' | translate }}</p>
       </div>
     </div>

@@ -75,6 +75,8 @@ describe('GetHealthQuote payload', () => {
       ['plan', 'unsure', 'plan_type', 'Not sure: help me choose'],
       ['method', 'call', 'contact_method', 'Call'],
       ['method', 'text', 'contact_method', 'Text'],
+      ['method', 'email', 'contact_method', 'Email'],
+      ['method', 'whatsapp', 'contact_method', 'WhatsApp'],
       ['time', 'evening', 'best_time_to_call', 'Evening (4 PM–7 PM)'],
       ['lang', 'hi', 'preferred_language', 'Hindi'],
     ];
@@ -184,18 +186,15 @@ describe('GetHealthQuote form behaviour', () => {
 });
 
 describe('GetHealthQuote validation', () => {
-  it('step 1 needs an address with a 5-digit ZIP and a coverage end date that has not passed', () => {
+  it('step 1 needs an address with a 5-digit ZIP; the coverage end date is optional', () => {
     const { c, validate } = setup();
     c.form.address = '';
     expect(validate(1)).toEqual(['mq-address']);
     c.form.address = '123 Main St, Houston, TX 7700';
-    expect(c.errors['address']).toBeTruthy();
     expect(validate(1)).toEqual(['mq-address']);
+    expect(c.errors['address']).toBe('HEALTH_QUOTE_PAGE.FORM.ERR.ADDRESS_ZIP');
     c.form.address = '123 Main St, Houston, TX 77001';
     c.form.pick['current'] = 'ending';
-    c.form.ends = '2000-01-01';
-    expect(validate(1)).toEqual(['mq-ends']);
-    c.form.pick['current'] = 'no';
     expect(validate(1)).toEqual([]);
   });
 
@@ -239,14 +238,34 @@ describe('GetHealthQuote submit', () => {
     c.step = 5;
     c.form.pick['current'] = 'ending';
     c.form.ends = '2099-01-31';
+    c.form.pick['method'] = 'whatsapp';
     const first = c.submit(submitEvent());
     await c.submit(submitEvent()); // ignored: already sending
     await first;
     expect(post).toHaveBeenCalledTimes(1);
     expect(post.mock.calls[0][0]).toBe('/quotes/create');
     expect(c.sent).toBe(true);
-    expect(c.sentEnding).toBe(true);
+    expect(c.sentEnds).toBe('2099-01-31');
+    expect(c.sentFirstName).toBe('Test');
+    expect(c.sentContactMethod).toBe('whatsapp');
+    expect(c.sentContactValue).toBe('(555) 010-0100');
     expect(c.form.address).toBe('');
+  });
+
+  it('success panel uses the email address when Email is the contact method, "any" when none is chosen', async () => {
+    const { c } = setup();
+    c.step = 5;
+    c.form.pick['method'] = 'email';
+    c.form.email = 'test@example.com';
+    await c.submit(submitEvent());
+    expect(c.sentContactMethod).toBe('email');
+    expect(c.sentContactValue).toBe('test@example.com');
+    expect(c.sentEnds).toBe('');
+
+    const other = setup();
+    other.c.step = 5;
+    await other.c.submit(submitEvent());
+    expect(other.c.sentContactMethod).toBe('any');
   });
 
   it('does nothing before the review step', async () => {

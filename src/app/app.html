@@ -3,3 +3,8 @@
   <router-outlet></router-outlet>
 </main>
 <app-footer></app-footer>
+
+<!-- Floating WhatsApp button on desktop and laptop. Phones use the WhatsApp icon in each page's sticky bar instead. -->
+<a class="wa-fab" href="https://wa.me/13464367283" target="_blank" rel="noopener" [attr.aria-label]="'SITE_NAV.WA_FAB_ARIA' | translate">
+  <svg aria-hidden="true"><use href="#i-wa" /></svg>
+</a>

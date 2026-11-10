@@ -21,7 +21,7 @@ export interface AqSeg { t: string; hl?: string; b?: string; l?: string; h?: str
 /** One repeating vehicle block. `id` never changes, so DOM ids stay stable when blocks are removed. */
 export interface AqVehicle {
   id: number; year: string; make: string; model: string; vin: string;
-  own: string; use: string; miles: string; pzip: string;
+  use: string; miles: string;
   // Make/model dropdown state (not sent). makeId is the NHTSA id, 0 when the make was typed and not found.
   makeId: number; makeOther: boolean; models: string[]; modelsState: 'idle' | 'loading' | 'ready'; modelOther: boolean;
 }
@@ -55,11 +55,10 @@ const ALSO_ICONS = ['i-home', 'i-briefcase', 'i-heart', 'i-health'];
 
 
 /** English values the existing /quotes/create payload used for these questions (labels shown to the visitor are translated). */
-const OWN_VALUES: Record<string, string> = { owned: 'Owned', financed: 'Financed', leased: 'Leased' };
 const USE_VALUES: Record<string, string> = { personal: 'Personal', commuting: 'Commuting', business: 'Business', rideshare: 'Rideshare or delivery' };
 const MARITAL_VALUES: Record<string, string> = { single: 'Single', married: 'Married', other: 'Other' };
 const LANG_VALUES: Record<string, string> = { en: 'English', es: 'Spanish', hi: 'Hindi' };
-const METHOD_VALUES: Record<string, string> = { call: 'Phone Call', text: 'Text Message', email: 'Email' };
+const METHOD_VALUES: Record<string, string> = { call: 'Phone Call', text: 'Text Message', email: 'Email', whatsapp: 'WhatsApp' };
 const TIME_VALUES: Record<string, string> = { morning: 'Morning (9 AM–12 PM)', afternoon: 'Afternoon (12 PM–4 PM)', evening: 'Evening (4 PM–7 PM)' };
 const LICENSE_VALUES: Record<string, string> = { license: "Driver's license", state_id: 'Texas/State ID', intl: 'International ID/Matrícula' };
 const COVERAGE_VALUES: Record<string, string> = { minimum: 'State minimum (liability only)', full: 'Full coverage', unsure: 'Not sure' };
@@ -85,8 +84,8 @@ interface AutoQuotePayload extends PageSourceFields {
   email_address?: string;
   phone_number: string;
   vehicles: {
-    year: string; make: string; model: string; vin?: string; annual_miles?: string; garaging_zip?: string;
-    ownership?: string; primary_use?: string;
+    year: string; make: string; model: string; vin?: string; annual_miles?: string;
+    primary_use?: string;
   }[];
   drivers: {
     full_name: string; date_of_birth: string; marital_status?: string; license_type?: string;
@@ -258,7 +257,7 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
     return `${p.first.trim()} ${p.last.trim()}`.trim();
   }
 
-  onVehicle(v: AqVehicle, key: 'year' | 'make' | 'model' | 'vin' | 'miles' | 'pzip', event: Event) {
+  onVehicle(v: AqVehicle, key: 'year' | 'make' | 'model' | 'vin' | 'miles', event: Event) {
     const input = event.target as HTMLInputElement;
     let value = input.value;
     if (key === 'vin') {
@@ -266,8 +265,6 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
     } else if (key === 'miles') {
       const m = value.replace(/\D/g, '').slice(0, 6);
       value = m ? Number(m).toLocaleString('en-US') : '';
-    } else if (key === 'pzip') {
-      value = value.replace(/\D/g, '').slice(0, 5);
     }
     if (value !== input.value) input.value = value;
     v[key] = value;
@@ -379,10 +376,6 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
     this.form.also[key] = (event.target as HTMLInputElement).checked;
   }
 
-  isLoan(v: AqVehicle): boolean {
-    return v.own === 'financed' || v.own === 'leased';
-  }
-
   /** Contact by email but no email given yet: step 5 asks for it. */
   get needEmail(): boolean {
     return this.form.pick['method'] === 'email' && !this.form.email.trim();
@@ -484,7 +477,7 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
       check('address', 'aq-address', this.fieldError('address'));
     } else if (n === 2) {
       for (const v of this.form.vehicles) {
-        for (const key of ['year', 'make', 'model', 'vin', 'pzip'] as const) {
+        for (const key of ['year', 'make', 'model', 'vin'] as const) {
           const other = (key === 'make' && v.makeOther) || (key === 'model' && this.modelIsText(v)) ? '-other' : '';
           check(`v${v.id}.${key}`, `aq-v${v.id}-${key}${other}`, this.vehicleError(v, key));
         }
@@ -536,7 +529,7 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
     }
   }
 
-  private vehicleError(v: AqVehicle, key: 'year' | 'make' | 'model' | 'vin' | 'miles' | 'pzip'): string {
+  private vehicleError(v: AqVehicle, key: 'year' | 'make' | 'model' | 'vin' | 'miles'): string {
     switch (key) {
       case 'year':
         return v.year ? '' : this.err('YEAR');
@@ -547,8 +540,6 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
       case 'vin':
         if (!v.vin || VIN_RE.test(v.vin)) return '';
         return v.vin.length !== 17 ? this.err('VIN_LENGTH', { n: v.vin.length }) : this.err('VIN_CHARS');
-      case 'pzip':
-        return v.pzip && !/^\d{5}$/.test(v.pzip) ? this.err('PZIP') : '';
       default:
         return '';
     }
@@ -637,8 +628,6 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
           model: v.model.trim(),
           ...(v.vin ? { vin: v.vin } : {}),
           ...(miles ? { annual_miles: miles } : {}),
-          ...(/^\d{5}$/.test(v.pzip) ? { garaging_zip: v.pzip } : {}),
-          ...(v.own ? { ownership: OWN_VALUES[v.own] } : {}),
           ...(v.use ? { primary_use: USE_VALUES[v.use] } : {}),
         };
       }),
@@ -701,7 +690,7 @@ export class GetAutoQuote implements AfterViewInit, OnDestroy {
 
   private newVehicle(): AqVehicle {
     return {
-      id: ++this.seq.vehicle, year: '', make: '', model: '', vin: '', own: '', use: '', miles: '', pzip: '',
+      id: ++this.seq.vehicle, year: '', make: '', model: '', vin: '', use: '', miles: '',
       makeId: 0, makeOther: false, models: [], modelsState: 'idle', modelOther: false,
     };
   }

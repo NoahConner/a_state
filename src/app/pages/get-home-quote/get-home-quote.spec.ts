@@ -203,6 +203,8 @@ describe('GetHomeQuote payload', () => {
     p = payload();
     expect(p.contact_method).toBe('Call');
     expect(p.best_time_to_connect).toBe('Afternoon (12 PM–4 PM)');
+    c.form.pick['method'] = 'whatsapp';
+    expect(payload().contact_method).toBe('WhatsApp');
   });
 
   it('sends preferred_office as "street, city" and omits it for no preference', () => {
@@ -389,15 +391,39 @@ describe('GetHomeQuote submit', () => {
     const { c, post } = setup();
     c.step = 6;
     c.form.pick['status'] = 'buying';
+    c.form.close = '2999-01-31';
+    c.form.pick['method'] = 'whatsapp';
     await c.submit(evt);
     expect(post).toHaveBeenCalledTimes(1);
     const args = post.mock.calls[0] as unknown[];
     expect(args[0]).toBe('/quotes/create');
     expect(args[2]).toBe(true);
     expect(c.sent).toBe(true);
-    expect(c.sentBuying).toBe(true);
+    expect(c.sentFirst).toBe('Test');
+    expect(c.sentMethod).toBe('whatsapp');
+    expect(c.sentContact).toBe('(555) 010-0100');
+    expect(c.sentClose).toBe('2999-01-31');
     expect(c.form.first).toBe('');
     expect(c.form.address).toBe('');
+  });
+
+  it('success panel uses the email address for Email, "any" with no method, and no closing date when not buying', async () => {
+    const { c } = setup();
+    c.step = 6;
+    c.form.pick['method'] = 'email';
+    c.form.email = ' test@example.com ';
+    c.form.pick['status'] = 'owner';
+    c.form.close = '2999-01-31';
+    await c.submit(evt);
+    expect(c.sentMethod).toBe('email');
+    expect(c.sentContact).toBe('test@example.com');
+    expect(c.sentClose).toBe('');
+
+    const second = setup();
+    second.c.step = 6;
+    await second.c.submit(evt);
+    expect(second.c.sentMethod).toBe('any');
+    expect(second.c.sentContact).toBe('(555) 010-0100');
   });
 
   it('does not post before the review step', async () => {

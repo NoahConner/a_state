@@ -167,21 +167,10 @@
                     [attr.aria-invalid]="errors['v' + v.id + '.vin'] ? 'true' : null" [attr.aria-describedby]="'aq-v' + v.id + '-vin-err'" (input)="onVehicle(v, 'vin', $event)" />
                   <p class="err" [id]="'aq-v' + v.id + '-vin-err'">{{ errors['v' + v.id + '.vin'] }}</p>
                 </div>
-                <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.OWN_LEGEND' | translate), name: 'aq-v' + v.id + '-own', opts: list('AUTO_QUOTE_PAGE.FORM.OWNS'), store: v, key: 'own', cls: '', opt: true }"></ng-container>
-                <p class="aq-lender" *ngIf="isLoan(v)"><svg class="icon-sm" aria-hidden="true"><use href="#i-shield" /></svg>{{ 'AUTO_QUOTE_PAGE.FORM.LENDER' | translate }}</p>
                 <ng-container *ngTemplateOutlet="chips; context: { legend: ('AUTO_QUOTE_PAGE.FORM.USE_LEGEND' | translate), name: 'aq-v' + v.id + '-use', opts: list('AUTO_QUOTE_PAGE.FORM.USES'), store: v, key: 'use', cls: 'stack aq-two' }"></ng-container>
-                <div class="cq-row aq-park">
-                  <div class="field">
-                    <label [for]="'aq-v' + v.id + '-miles'">{{ 'AUTO_QUOTE_PAGE.FORM.MILES' | translate }} <span class="opt">{{ 'AUTO_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
-                    <input type="text" [id]="'aq-v' + v.id + '-miles'" inputmode="numeric" autocomplete="off" maxlength="7" [value]="v.miles" (input)="onVehicle(v, 'miles', $event)" />
-                  </div>
-                  <div class="field">
-                    <label [for]="'aq-v' + v.id + '-pzip'">{{ 'AUTO_QUOTE_PAGE.FORM.PARKED' | translate }} <span class="opt">{{ 'AUTO_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
-                    <p class="aq-sub" [id]="'aq-v' + v.id + '-pzip-hint'">{{ 'AUTO_QUOTE_PAGE.FORM.PARKED_HINT' | translate }}</p>
-                    <input type="text" [id]="'aq-v' + v.id + '-pzip'" inputmode="numeric" autocomplete="off" maxlength="5" [value]="v.pzip"
-                      [attr.aria-invalid]="errors['v' + v.id + '.pzip'] ? 'true' : null" [attr.aria-describedby]="'aq-v' + v.id + '-pzip-hint aq-v' + v.id + '-pzip-err'" (input)="onVehicle(v, 'pzip', $event)" />
-                    <p class="err" [id]="'aq-v' + v.id + '-pzip-err'">{{ errors['v' + v.id + '.pzip'] }}</p>
-                  </div>
+                <div class="field aq-short">
+                  <label [for]="'aq-v' + v.id + '-miles'">{{ 'AUTO_QUOTE_PAGE.FORM.MILES' | translate }} <span class="opt">{{ 'AUTO_QUOTE_PAGE.FORM.OPTIONAL' | translate }}</span></label>
+                  <input type="text" [id]="'aq-v' + v.id + '-miles'" inputmode="numeric" autocomplete="off" maxlength="7" [value]="v.miles" (input)="onVehicle(v, 'miles', $event)" />
                 </div>
               </div>
             </div>
@@ -315,10 +304,8 @@
                     <div class="aq-rev-sub" *ngIf="form.vehicles.length > 1">{{ 'AUTO_QUOTE_PAGE.FORM.VEHICLE_N' | translate: { n: vi + 1 } }}</div>
                     <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.YMM' | translate), v: ymm(v) }"></ng-container>
                     <ng-container *ngIf="v.vin"><ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.VIN' | translate), v: v.vin }"></ng-container></ng-container>
-                    <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.OWN' | translate), v: label('FORM.OWNS', v.own) }"></ng-container>
                     <ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.USE' | translate), v: label('FORM.USES', v.use) }"></ng-container>
                     <ng-container *ngIf="v.miles"><ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.MILES' | translate), v: v.miles }"></ng-container></ng-container>
-                    <ng-container *ngIf="v.pzip"><ng-container *ngTemplateOutlet="rrow; context: { k: ('AUTO_QUOTE_PAGE.FORM.R.PARKED' | translate), v: ('AUTO_QUOTE_PAGE.FORM.R.PARKED_V' | translate: { zip: v.pzip }) }"></ng-container></ng-container>
                   </ng-container>
                 </dl>
               </div>

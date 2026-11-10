@@ -71,7 +71,7 @@ const YN_VALUES: Record<string, string> = { yes: 'Yes', no: 'No' };
 const YNU_VALUES: Record<string, string> = { yes: 'Yes', no: 'No', 'not-sure': 'Not sure' };
 const ROLE_VALUES: Record<string, string> = { owner: 'Owner', manager: 'Manager', other: 'Other' };
 const LANG_VALUES: Record<string, string> = { en: 'English', es: 'Spanish', hi: 'Hindi' };
-const METHOD_VALUES: Record<string, string> = { call: 'Call', text: 'Text', email: 'Email' };
+const METHOD_VALUES: Record<string, string> = { call: 'Call', text: 'Text', email: 'Email', whatsapp: 'WhatsApp' };
 const TIME_VALUES: Record<string, string> = { morning: 'Morning (9 AM–12 PM)', afternoon: 'Afternoon (12 PM–4 PM)', evening: 'Evening (4 PM–7 PM)' };
 
 /**

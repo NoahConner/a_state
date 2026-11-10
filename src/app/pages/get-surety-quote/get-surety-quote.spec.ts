@@ -67,6 +67,7 @@ describe('GetSuretyQuote payload', () => {
       ['claims', 'unsure', 'prior_bond_history', 'Not sure'],
       ['judgments', 'discuss', 'has_judgments_liens_bankruptcies', 'Prefer to discuss with an agent'],
       ['method', 'text', 'contact_method', 'Text'],
+      ['method', 'whatsapp', 'contact_method', 'WhatsApp'],
       ['time', 'morning', 'best_time_to_call', 'Morning (9 AM–12 PM)'],
     ];
     for (const [group, id, key, text] of cases) {
@@ -169,6 +170,26 @@ describe('GetSuretyQuote submit', () => {
     expect(c.sent).toBe(true);
     expect(c.sentAsap).toBe(true);
     expect(c.form.first).toBe('');
+  });
+
+  it('keeps the first name and the chosen contact route for the success text', async () => {
+    const { c } = setup();
+    c.step = 5;
+    c.form.pick['method'] = 'whatsapp';
+    await c.submit(submitEvent());
+    expect([c.sentName, c.sentHow, c.sentContact]).toEqual(['Test', 'WHATSAPP', '(555) 010-0100']);
+
+    const e = setup();
+    e.c.step = 5;
+    e.c.form.email = 'test@example.com';
+    e.c.form.pick['method'] = 'email';
+    await e.c.submit(submitEvent());
+    expect([e.c.sentHow, e.c.sentContact]).toEqual(['EMAIL', 'test@example.com']);
+
+    const n = setup();
+    n.c.step = 5;
+    await n.c.submit(submitEvent());
+    expect([n.c.sentHow, n.c.sentContact]).toEqual(['ANY', '(555) 010-0100']);
   });
 
   it('does nothing before the review step', async () => {

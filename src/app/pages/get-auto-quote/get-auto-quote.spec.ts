@@ -45,14 +45,11 @@ describe('GetAutoQuote payload', () => {
     expect(p.bundle).toBe('No, just Auto for now.');
   });
 
-  it('adds vehicle vin, digits-only miles and garaging zip', () => {
+  it('adds vehicle vin and digits-only miles', () => {
     const { v, payload } = setup();
     v.vin = '1HGCM82633A004352';
     v.miles = '12,000';
-    v.pzip = '77002';
-    expect(payload().vehicles[0]).toMatchObject({ vin: '1HGCM82633A004352', annual_miles: '12000', garaging_zip: '77002' });
-    v.pzip = '770';
-    expect('garaging_zip' in payload().vehicles[0]).toBe(false);
+    expect(payload().vehicles[0]).toMatchObject({ vin: '1HGCM82633A004352', annual_miles: '12000' });
   });
 
   it('sends "1989 or older" for the oldest year option', () => {

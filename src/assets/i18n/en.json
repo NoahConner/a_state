@@ -1755,7 +1755,7 @@
           "h": "tel:+17133577771"
         },
         {
-          "t": " You can also WhatsApp us at "
+          "t": ". You can also WhatsApp us at "
         },
         {
           "t": "(346) 436-SAVE (7283)",
@@ -1778,6 +1778,10 @@
         {
           "V": "email",
           "L": "Email"
+        },
+        {
+          "V": "whatsapp",
+          "L": "WhatsApp"
         }
       ],
       "TIME": "Best time",
@@ -1838,10 +1842,9 @@
           "r": "privacyPolicy"
         },
         {
-          "t": "."
+          "t": ". Your information is never sold."
         }
       ],
-      "NEVER_SOLD": "Your information is never sold.",
       "ERR": {
         "FIRST": "Enter your first name.",
         "LAST": "Enter your last name.",
@@ -1858,9 +1861,19 @@
         "SUBMIT": "We couldn't send your request. Your answers are saved here. Please try again, or call (713) 357-7771."
       },
       "SUCCESS": {
-        "TITLE": "Thanks. Your custom quote request is in.",
-        "TEXT": "A licensed agent will review your answers, compare carriers and contact you, Monday to Saturday, 9 AM to 7 PM."
-      }
+        "TITLE": "Thanks, {{name}}. Your custom quote request is in.",
+        "PRE": "A licensed agent will review your answers, compare carriers and ",
+        "HOW": {
+          "TEXT": "text you at ",
+          "CALL": "call you at ",
+          "EMAIL": "email you at ",
+          "WHATSAPP": "message you on WhatsApp at ",
+          "ANY": "call or text you at "
+        },
+        "POST": ", Monday to Saturday, 9 AM to 7 PM.",
+        "MULTI": "Your agent will check whether you qualify for a multi-policy discount."
+      },
+      "PRIVACY": "Please don't send license, policy, or payment numbers through this form."
     },
     "BUNDLE": {
       "TITLE": "How Insurance Bundling Works",
@@ -2440,6 +2453,10 @@
         {
           "V": "email",
           "L": "Email"
+        },
+        {
+          "V": "whatsapp",
+          "L": "WhatsApp"
         }
       ],
       "TIME_LEGEND": "Best time",
@@ -2962,6 +2979,10 @@
         {
           "V": "email",
           "L": "Email"
+        },
+        {
+          "V": "whatsapp",
+          "L": "WhatsApp"
         }
       ],
       "TIME_LEGEND": "Best time",
@@ -3044,8 +3065,7 @@
         "SUBMIT": "We couldn't send your request. Your answers are saved here. Please try again, or call (713) 357-7771."
       },
       "SUCCESS": {
-        "TITLE": "Thanks. Your bond quote request is in.",
-        "TEXT": "A licensed agent will compare surety companies and contact you with the exact price before you buy, Monday to Saturday, 9 AM to 7 PM.",
+        "TITLE": "Thanks, {{name}}. Your bond quote request is in.",
         "ASAP": [
           {
             "t": "Need your bond today? Call "
@@ -3057,7 +3077,16 @@
           {
             "t": "."
           }
-        ]
+        ],
+        "TEXT_START": "A licensed agent will compare surety companies and ",
+        "HOW": {
+          "CALL": "call you at",
+          "TEXT": "text you at",
+          "EMAIL": "email you at",
+          "WHATSAPP": "message you on WhatsApp at",
+          "ANY": "call or text you at"
+        },
+        "TEXT_END": " with the exact price before you buy, Monday to Saturday, 9 AM to 7 PM."
       }
     },
     "HOW": {
@@ -3319,7 +3348,7 @@
       "ADDRESS": "Full address",
       "ADDRESS_PH": "Street, city, ZIP",
       "COUNTY": "County",
-      "COUNTY_HINT": "(fills in from address)",
+      "COUNTY_HINT": "Fills in from your address.",
       "COUNTY_FILLED": "Filled in from your address. Change it if it’s wrong.",
       "COUNTY_SPLIT": "This ZIP is in {{counties}} County. Choose yours.",
       "COUNTY_TYPE": "Type your county.",
@@ -3495,6 +3524,10 @@
         {
           "V": "email",
           "L": "Email"
+        },
+        {
+          "V": "whatsapp",
+          "L": "WhatsApp"
         }
       ],
       "TIME_LEGEND": "Best time",
@@ -3568,7 +3601,6 @@
       "ERR": {
         "ADDRESS_EMPTY": "Enter your full address.",
         "ADDRESS_ZIP": "Add your 5-digit ZIP code, like 123 Main St, Houston, TX 77020.",
-        "ENDS_PAST": "Choose a date that hasn’t passed yet.",
         "HH_EMPTY": "Enter your household size.",
         "HH_MIN": "Enter at least 1.",
         "AGES_EMPTY": "Enter the age of each person who needs coverage.",
@@ -3584,9 +3616,17 @@
         "SUBMIT": "We couldn't send your request. Your answers are saved here. Please try again, or call (713) 357-7771."
       },
       "SUCCESS": {
-        "TITLE": "Thanks. Your health quote request is in.",
-        "TEXT": "A licensed agent will compare plans, check whether you qualify for savings and contact you with your options, usually within 5 business hours.",
-        "ENDS": "We’ll work to avoid a gap before your coverage ends."
+        "TITLE": "Thanks, {{first}}. Your health quote request is in.",
+        "ENDS": "We’ll work to avoid a gap before your coverage ends on {{date}}.",
+        "PRE": "A licensed agent will compare plans, check whether you qualify for savings and ",
+        "HOW": {
+          "call": "call you at",
+          "text": "text you at",
+          "email": "email you at",
+          "whatsapp": "message you on WhatsApp at",
+          "any": "call or text you at"
+        },
+        "POST": " with your options, usually within 5 business hours."
       }
     },
     "ENROLL": {
@@ -4108,6 +4148,10 @@
         {
           "V": "email",
           "L": "Email"
+        },
+        {
+          "V": "whatsapp",
+          "L": "WhatsApp"
         }
       ],
       "TIME_LEGEND": "Best time",
@@ -4208,10 +4252,18 @@
         "SUBMIT": "We couldn't send your request. Your answers are saved here. Please try again, or call (713) 357-7771."
       },
       "SUCCESS": {
-        "TITLE": "Thanks. Your home quote request is in.",
-        "TEXT": "A licensed agent will compare carriers for your home and contact you with your options, usually within 5 business hours.",
-        "CLOSING": "We’ll prioritize your quote before your closing.",
-        "ALSO": "We’ll quote your other coverage too, and check whether you qualify for a multi-policy discount."
+        "TITLE": "Thanks, {{name}}. Your home quote request is in.",
+        "CLOSING": "We’ll prioritize your quote before your closing on {{date}}.",
+        "ALSO": "We’ll quote your other coverage too, and check whether you qualify for a multi-policy discount.",
+        "TEXT_START": "A licensed agent will compare carriers for your home and",
+        "HOW": {
+          "text": "text you at",
+          "call": "call you at",
+          "email": "email you at",
+          "whatsapp": "message you on WhatsApp at",
+          "any": "call or text you at"
+        },
+        "TEXT_END": "with your options, usually within 5 business hours."
       }
     },
     "NEED": {
@@ -4775,6 +4827,10 @@
         {
           "V": "email",
           "L": "Email"
+        },
+        {
+          "V": "whatsapp",
+          "L": "WhatsApp"
         }
       ],
       "TIME_LEGEND": "Best time",
@@ -4811,7 +4867,7 @@
       "R_TITLES": [
         "Your Business",
         "Size of Your Business",
-        "Coverage, including surety bond, start date and COI",
+        "Coverage",
         "Contact Preferences"
       ],
       "R": {
@@ -4863,7 +4919,7 @@
         "BIZ_NAME": "Enter your business name, or type “Not formed yet.”",
         "INDUSTRY": "Choose your industry.",
         "DESC": "Tell us in a few words what your business does.",
-        "ADDRESS_EMPTY": "Enter your business full address.",
+        "ADDRESS_EMPTY": "Enter your full address.",
         "ADDRESS_ZIP": "Add your 5-digit ZIP code, like 123 Main St, Houston, TX 77020.",
         "EMP_EMPTY": "Enter the number of employees, including you.",
         "EMP_MIN": "Enter at least 1 (you).",
@@ -4884,7 +4940,8 @@
           "email": "email you at",
           "call": "call you at",
           "text": "text you at",
-          "any": "call or text you at"
+          "any": "call or text you at",
+          "whatsapp": "message you on WhatsApp at"
         },
         "POST": " with your options, usually within 5 business hours.",
         "BOND": "We’ll quote your surety bond at the same time.",
@@ -66324,7 +66381,8 @@
       "COMMERCIAL_UMBRELLA": "Commercial umbrella",
       "UMBRELLA": "Umbrella",
       "IDENTITY_THEFT": "Identity theft protection"
-    }
+    },
+    "WA_FAB_ARIA": "Chat with us on WhatsApp, (346) 436-SAVE (7283)"
   },
   "SITE_FOOTER": {
     "OFFICES": "Offices",
